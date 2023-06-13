@@ -1,0 +1,213 @@
+/* .reveal just a class for slides, same behavior for following css elements*/
+
+.reveal {
+  display: flex;
+}
+
+.reveal div{
+  text-align: left;
+  align-self: flex-start;
+}
+
+.reveal h1{
+    align-self: flex-start;
+    text-decoration: underline;
+    color: blue;
+    background-color: lightgray;
+}
+
+.reveal h2, h3, h4, h5, h6{
+    align-self: flex-start;
+    margin-bottom: 0;
+}
+
+.reveal h1:first-child,
+.reveal h2:first-child,
+.reveal h3:first-child,
+.reveal h4:first-child,
+.reveal h4:first-child,
+.reveal h6:first-child{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.reveal strong, em{
+    color: blue;
+}
+
+.reveal pre{ /* parent is not p{, possible parent is div */
+    align-self: flex-start;
+}
+
+code{ /* parent is p{, .reveal class is not used*/
+    display: inline-block;
+    color: red;
+    background-color: lightgray;
+    font-size: 11px; /* Use font-size: 11px;, can go higher - cutoff of top of slide */
+}
+
+.reveal p{ /* parent is div{ */
+    align-self: flex-start;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 11px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    white-space: pre-line; /* for concision, can change to white-space: normal; */
+}
+
+.reveal blockquote {
+  display: block;
+  align-self: flex-start;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  white-space: normal; /* for concision, can change to white-space: normal; */
+  font-size: 11px;
+  margin: var(--r-block-margin) auto;
+  padding: 5px;
+  font-style: italic;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+.reveal ol,
+.reveal dl,
+.reveal ul {
+  display: inline-block;
+  align-self: flex-start;
+  text-align: left;
+  font-size: 11px;
+}
+.reveal ol {
+  list-style-type: decimal;
+}
+.reveal ul {
+  list-style-type: disc;
+}
+.reveal ul ul {
+  list-style-type: square;
+}
+.reveal ul ul ul {
+  list-style-type: circle;
+}
+.reveal ul ul,
+.reveal ul ol,
+.reveal ol ol,
+.reveal ol ul {
+  display: block;
+}
+.reveal dt {
+  font-weight: bold;
+}
+.reveal dd {
+  margin-left: 0px;
+}
+
+/* Miscellaneous CSS: */
+
+.reveal .code-wrapper {
+  white-space: normal;
+}
+.reveal .code-wrapper code {
+  white-space: pre;
+}
+.reveal table {
+  margin: auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.reveal table th {
+  font-weight: bold;
+}
+.reveal table th,
+.reveal table td {
+  text-align: left;
+  padding: 0.2em 0.5em;
+  border-bottom: 1px solid;
+}
+.reveal table th[align=center],
+.reveal table td[align=center] {
+  text-align: center;
+}
+.reveal table th[align=right],
+.reveal table td[align=right] {
+  text-align: right;
+}
+.reveal table tbody tr:last-child th,
+.reveal table tbody tr:last-child td {
+  border-bottom: none;
+}
+.reveal sup {
+  vertical-align: super;
+  font-size: smaller;
+}
+.reveal sub {
+  vertical-align: sub;
+  font-size: smaller;
+}
+.reveal small {
+  display: inline-block;
+  font-size: 0.6em;
+  line-height: 1.2em;
+  vertical-align: top;
+}
+.reveal small * {
+  vertical-align: top;
+}
+.reveal img {
+  margin: var(--r-block-margin) 0;
+}
+  .reveal .slides > section.drop {
+  padding-top: 10%;
+  padding-bottom: 10%;
+  height: 100%;
+}
+
+.reveal a {
+  color: var(--r-link-color);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.reveal a:hover {
+  color: var(--r-link-color-hover);
+  text-shadow: none;
+  border: none;
+}
+.reveal .roll span:after {
+  color: #fff;
+  background: var(--r-link-color-dark);
+}
+.reveal .r-frame {
+  border: 4px solid var(--r-main-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+.reveal a .r-frame {
+  transition: all 0.15s linear;
+}
+.reveal a:hover .r-frame {
+  border-color: var(--r-link-color);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
+}
+.reveal .controls {
+  color: var(--r-link-color) !important;
+}
+.reveal .progress {
+  background: rgba(0, 0, 0, 0.2);
+  color: var(--r-link-color);
+}
+@media print {
+  .backgrounds {
+    background-color: var(--r-background-color);
+  }
+}
+.has-dark-background canvas[data-chart] {
+  background-color: white;
+}
+.has-light-background canvas[data-chart] {
+  background-color: unset;
+}
+canvas[data-chart] {
+  padding: 0.5em;
+}
+.reveal .hljs {
+  min-height: 50%;
+}

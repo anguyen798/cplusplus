@@ -1,0 +1,200 @@
+{
+  "main": {
+    "id": "9d6cd46fa58d8596",
+    "type": "split",
+    "children": [
+      {
+        "id": "89ea8254a5b93911",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b5ae2e85828f5b0e",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "c4a9b530d428226d",
+    "type": "split",
+    "children": [
+      {
+        "id": "cc5e21a8c75f598e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3f91e83eb1399448",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "17abaceed8226f34",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "54cf5536c0e62070",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          },
+          {
+            "id": "8cb0060763bb1514",
+            "type": "leaf",
+            "state": {
+              "type": "recent-files",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "81c345e9b6dc9024",
+    "type": "split",
+    "children": [
+      {
+        "id": "535d06ed135f416c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ed450c4bf80f06a5",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "793a51ba06e21bf1",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "14f5c83da2bfffe7",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "0731247c7c13aae2",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          },
+          {
+            "id": "df8e97ef7a88168c",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "obsidian-advanced-slides:Show Slide Preview": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "templater-obsidian:Templater": false,
+      "omnisearch:Omnisearch": false
+    }
+  },
+  "active": "b5ae2e85828f5b0e",
+  "lastOpenFiles": [
+    "cs150/ppt/cs150-ch6.md",
+    "cs150/hw/h31.md",
+    "cs150/hw/h32.md",
+    "cs150/hw/h33.md",
+    "cs150/hw/h20.md",
+    "cs150/hw/h21.md",
+    "cs150/hw/h22.md",
+    "cs150/hw/h23.md",
+    "cs150/hw/h24.md",
+    "cs150/hw/h25.md",
+    "cs150/hw/h26.md",
+    "cs150/hw/h27.md",
+    "cs150/hw/h28.md",
+    "cs150/hw/h29.md",
+    "cs150/hw/h30.md",
+    "cs150/hw/h10.md",
+    "cs150/hw/h11.md",
+    "cs150/hw/h12.md",
+    "cs150/hw/h13.md",
+    "cs150/hw/h14.md",
+    "cs150/hw/h15.md",
+    "cs150/hw/h16.md",
+    "cs150/hw/h17.md",
+    "cs150/hw/h18.md",
+    "cs150/hw/h19.md",
+    "cs150/hw/h19-20_excluded.txt.md",
+    "cs150/hw",
+    "003-Files/Welcome.pdf",
+    "cs150/ppt/cs150-ch1-3a.png",
+    "004-Templates",
+    "003-Files",
+    "002-References",
+    "001-Zettlekasten",
+    "cs150/ppt",
+    "cs150"
+  ]
+}

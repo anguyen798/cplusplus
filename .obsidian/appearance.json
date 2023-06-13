@@ -1,0 +1,11 @@
+{
+  "accentColor": "",
+  "cssTheme": "Minimal",
+  "theme": "obsidian",
+  "enabledCssSnippets": [
+    "Scrollable Slides",
+    "Slide Image Margins",
+    "Better Latex Error"
+  ],
+  "baseFontSize": 18
+}
