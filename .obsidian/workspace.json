@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "89ea8254a5b93911",
+        "id": "7022a9383a9b51e3",
         "type": "tabs",
         "children": [
           {
-            "id": "b5ae2e85828f5b0e",
+            "id": "644bb6957df7c344",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -142,7 +142,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -152,16 +152,24 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "obsidian-advanced-slides:Show Slide Preview": false,
       "obsidian-excalidraw-plugin:Create new drawing": false,
+      "obsidian-advanced-slides:Show Slide Preview": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
       "templater-obsidian:Templater": false,
       "omnisearch:Omnisearch": false
     }
   },
-  "active": "b5ae2e85828f5b0e",
+  "active": "644bb6957df7c344",
   "lastOpenFiles": [
+    "cs150/ppt/cs150-ch7.md",
+    "cs150/ppt/cs150-ch8.md",
     "cs150/ppt/cs150-ch6.md",
+    "cs150/ppt/cs150-ch5.md",
+    "cs150/ppt/cs150-ch4.md",
+    "cs150/ppt/cs150-ch3.md",
+    "cs150/ppt/cs150-ch2.md",
+    "cs150/ppt/cs150-ch1.md",
+    "cs150/ppt/cs150-ch1-3a.png",
     "cs150/hw/h31.md",
     "cs150/hw/h32.md",
     "cs150/hw/h33.md",
@@ -180,16 +188,8 @@
     "cs150/hw/h11.md",
     "cs150/hw/h12.md",
     "cs150/hw/h13.md",
-    "cs150/hw/h14.md",
-    "cs150/hw/h15.md",
-    "cs150/hw/h16.md",
-    "cs150/hw/h17.md",
-    "cs150/hw/h18.md",
-    "cs150/hw/h19.md",
-    "cs150/hw/h19-20_excluded.txt.md",
     "cs150/hw",
     "003-Files/Welcome.pdf",
-    "cs150/ppt/cs150-ch1-3a.png",
     "004-Templates",
     "003-Files",
     "002-References",

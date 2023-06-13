@@ -1,8 +1,40 @@
 {
   "recentFiles": [
     {
+      "basename": "cs150-ch7",
+      "path": "cs150/ppt/cs150-ch7.md"
+    },
+    {
+      "basename": "cs150-ch8",
+      "path": "cs150/ppt/cs150-ch8.md"
+    },
+    {
       "basename": "cs150-ch6",
       "path": "cs150/ppt/cs150-ch6.md"
+    },
+    {
+      "basename": "cs150-ch5",
+      "path": "cs150/ppt/cs150-ch5.md"
+    },
+    {
+      "basename": "cs150-ch4",
+      "path": "cs150/ppt/cs150-ch4.md"
+    },
+    {
+      "basename": "cs150-ch3",
+      "path": "cs150/ppt/cs150-ch3.md"
+    },
+    {
+      "basename": "cs150-ch2",
+      "path": "cs150/ppt/cs150-ch2.md"
+    },
+    {
+      "basename": "cs150-ch1",
+      "path": "cs150/ppt/cs150-ch1.md"
+    },
+    {
+      "basename": "cs150-ch1-3a",
+      "path": "cs150/ppt/cs150-ch1-3a.png"
     },
     {
       "basename": "h31",
@@ -153,28 +185,8 @@
       "path": "cs150/hw/h00.md"
     },
     {
-      "basename": "cs150-ch7",
-      "path": "cs150/ppt/cs150-ch7.md"
-    },
-    {
       "basename": "hw",
       "path": "004-Templates/hw.md"
-    },
-    {
-      "basename": "cs150-ch1",
-      "path": "cs150/ppt/cs150-ch1.md"
-    },
-    {
-      "basename": "cs150-ch5",
-      "path": "cs150/ppt/cs150-ch5.md"
-    },
-    {
-      "basename": "cs150-ch2",
-      "path": "cs150/ppt/cs150-ch2.md"
-    },
-    {
-      "basename": "cs150-ch4",
-      "path": "cs150/ppt/cs150-ch4.md"
     }
   ],
   "omittedPaths": [],
