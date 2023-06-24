@@ -26,4 +26,4 @@ string star_out(const string& str)
 }
 ```
 
-[startOut.cpp](s://codecheck.io/files/2302092225owznnm3sirjg9i9uh)
+[startOut.cpp](https://codecheck.io/files/2302092225owznnm3sirjg9i9uhe865n00)

@@ -4,15 +4,307 @@
     "type": "split",
     "children": [
       {
-        "id": "41d14dc4ce744cac",
+        "id": "51df8be1054bdac4",
         "type": "tabs",
         "children": [
           {
-            "id": "1b20670bffb07100",
+            "id": "88c094f6fde33cd6",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "cs150/pe-ans/PE03/03-01-TheWordEnds-Answer.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "b47b4ccbbf13c2f1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "cs150/pe-ans/PE03/03-02-ThePlusOut-Answer.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "a8c456850cd427c5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "cs150/pe-ans/PE03/03-03-TheStartOut-Answer.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "931031c1c87e1f58",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "cs150/pe-ans/PE03/03-04-TheNikNak-Answer.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "5591e83744c95dee",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "cs150/pe-ans/PE03/03-05-TheSandwich-Answer.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "f842b593b15f2fed",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "cs150/pe-ans/PE03/03-06-TheRepeatSeparator-Answer.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "5e1a45f056be201b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "cs150/pe-ans/PE03/03-07-TheRepeatFront-Answer.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "8566f2b2ceb0e18b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "cs150/pe-ans/PE03/03-08-TheRepeatEnd-Answer.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "804453d71f01b854",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "cs150/pe-ans/PE03/03-09-TheMixString-Answer.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "56b28daadfed6a20",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "cs150/pe-ans/PE03/03-10-TheCountCode-Answer.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "dbb364346df4bd3e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "cs150/pe-ans/PE03/03-11-TheFrontTimes-Answer.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "d7abe311485434e5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "cs150/pe-ans/PE03/03-12-TheStringYak-Answer.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "3c701e10ae6a2dc0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "cs150/pe-ans/PE03/03-13-TheStringBits-Answer.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "f417be60365663c5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "cs150/pe-ans/PE03/03-14-TheStringSplosion-Answer.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "7c461b39a2673927",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "cs150/pe-ans/PE03/03-15-TheStringX-Answer.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "6512c0499c43b167",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "cs150/pe-ans/PE03/03-16-TheStringMatch-Answer.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "835ff8867ace5f6e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "cs150/pe-ans/PE03/03-17-TheLastTwo-Answer.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "3c04f38e59b50beb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "cs150/pe-ans/PE03/03-18-TheCountYZ-Answer.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "cdd4a1127718fcd0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "cs150/pe-ans/PE03/03-19-TheWithoutString-Answer.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "2bf7fd14f1ded2f5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "cs150/pe-ans/PE03/03-20-TheCountTriple-Answer.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "6d5c1e490156041c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "cs150/pe-ans/PE03/03-21-TheSumDigits-Answer.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "1ba80ef6471b3936",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "cs150/pe-ans/PE03/03-22-TheSameEnds-Answer.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "290c647857c0a906",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "cs150/pe-ans/PE03/03-23-TheMirrorEnds-Answer.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "1f2f189e2c42476d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "cs150/pe-ans/PE03/03-24-TheMaxBlock-Answer.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "1e43ea9c09bb43bc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "cs150/pe-ans/PE03/03-25-TheNotReplace-Answer.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -73,7 +365,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 389.5
+    "width": 405.5
   },
   "right": {
     "id": "81c345e9b6dc9024",
@@ -89,7 +381,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "cs150/pepractice/PE-03-4-TheNikNakProblem.md",
+                "file": "cs150/pe-ans/PE03/03-01-TheWordEnds-Answer.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -106,7 +398,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "cs150/pepractice/PE-03-4-TheNikNakProblem.md",
+                "file": "cs150/pe-ans/PE03/03-01-TheWordEnds-Answer.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -129,7 +421,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "cs150/pepractice/PE-03-4-TheNikNakProblem.md"
+                "file": "cs150/pe-ans/PE03/03-01-TheWordEnds-Answer.md"
               }
             }
           },
@@ -164,44 +456,44 @@
       "obsidian-to-anki-plugin:Obsidian_to_Anki - Scan Vault": false
     }
   },
-  "active": "df8e97ef7a88168c",
+  "active": "88c094f6fde33cd6",
   "lastOpenFiles": [
-    "cs150/pepractice/PE-03-3-TheStartOutProblem.md",
-    "cs150/pepractice/PE-03-4-TheNikNakProblem.md",
-    "cs150/pepractice/PE-03-2-ThePlusOutProblem.md",
-    "cs150/pepractice/PE-03-1-TheWordEndsProblem.md",
-    "cs150/pepractice/PE-01-2-Q-TheCylinderAreaProblem.md",
-    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/GPT_Explanations_4983/GPT_Explanations.pdf1",
-    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/GPT_Explanations_4983/GPT_Explanations.pdf",
-    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/GPT_Explanations_4983/GPT_Explanations_4983.log",
-    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/GPT_Explanations_4983",
-    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/QuizHistoryMidterm1S_4982/QuizHistoryMidterm1S.pdf4",
-    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/QuizHistoryMidterm1S_4982/QuizHistoryMidterm1S.pdf3",
-    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/QuizHistoryMidterm1S_4982/QuizHistoryMidterm1S.pdf2",
-    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/QuizHistoryMidterm1S_4982/QuizHistoryMidterm1S.pdf1",
-    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/QuizHistoryMidterm1S_4982/QuizHistoryMidterm1S.pdf",
-    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/QuizHistoryMidterm1S_4982/QuizHistoryMidterm1S_4982.log",
-    "cs150/pepractice/PE-01-2-A-TheCylinderAreaProblem.md",
-    "cs150/pepractice/PE-01-1-A-TheConeVolumeProblem.md",
-    "cs150/pepractice/PE-01-12-Q-TheCapsuleVolumeProblem.md",
-    "cs150/pepractice/PE-01-19-Q-TheHemisphereSurfaceAreaProblem.md",
-    "cs150/pepractice/PE-01-18-Q-TheHemisphereVolumeProblem.md",
-    "cs150/pepractice/PE-01-17-Q-ThePyramidSurfaceAreaProblem.md",
-    "cs150/pepractice/PE-01-16-Q-ThePyramid_Volume-Problem.md",
-    "cs150/pepractice/PE-01-15-Q-TheConicalFrustumVolumeProblem.md",
-    "cs150/pepractice/PE-01-14-Q-TheCapsuleCircumfrenceProblem.md",
-    "cs150/pepractice/PE-01-13-Q-TheCapsuleAreaProblem.md",
-    "cs150/pepractice/PE-01-8-Q-TheOldWindChillProblem.md",
-    "cs150/pepractice/PE-01-13-A-TheCapsuleAreaProblem.md",
-    "cs150/pepractice/PE-01-11-Q-TheStadiumPerimeterProblem.md",
-    "cs150/pepractice/PE-01-12-A-TheCapsuleVolumeProblem.md",
-    "cs150/pepractice/PE-01-10-Q-TheStadiumAreaProblem.md",
-    "cs150/pepractice/PE-01-9-Q-TheConeSlantHeightProblem.md",
-    "cs150/pepractice/PE-01-7-Q-TheNewWindChillProblem.md",
-    "cs150/pepractice/PE-01-6-Q-ThePointDistanceProblem.md",
-    "cs150/pepractice/PE-01-5-Q-TheSphereStatisticsProblem.md",
-    "cs150/pepractice/PE-01-4-Q-ThePolygonAreaProblem.md",
-    "cs150/pepractice/PE-01-4-A-ThePolygonAreaProblem.md",
+    "cs150/pe-ans/PE03/03-25-TheNotReplace-Answer.md",
+    "cs150/pe-ans/PE03/03-24-TheMaxBlock-Answer.md",
+    "cs150/pe-ans/PE03/03-23-TheMirrorEnds-Answer.md",
+    "cs150/pe-ans/PE03/03-22-TheSameEnds-Answer.md",
+    "cs150/pe-ans/PE03/03-21-TheSumDigits-Answer.md",
+    "cs150/pe-ans/PE03/03-20-TheCountTriple-Answer.md",
+    "cs150/pe-ans/PE03/03-19-TheWithoutString-Answer.md",
+    "cs150/pe-ans/PE03/03-18-TheCountYZ-Answer.md",
+    "cs150/pe-ans/PE03/03-17-TheLastTwo-Answer.md",
+    "cs150/pe-ans/PE03/03-16-TheStringMatch-Answer.md",
+    "cs150/pe-ans/PE03/03-15-TheStringX-Answer.md",
+    "cs150/pe-ans/PE03/03-14-TheStringSplosion-Answer.md",
+    "cs150/pe-ans/PE03/03-13-TheStringBits-Answer.md",
+    "cs150/pe-ans/PE03/03-12-TheStringYak-Answer.md",
+    "cs150/pe-ans/PE03/03-11-TheFrontTimes-Answer.md",
+    "cs150/pe-ans/PE03/03-10-TheCountCode-Answer.md",
+    "cs150/pe-ans/PE03/03-09-TheMixString-Answer.md",
+    "cs150/pe-ans/PE03/03-08-TheRepeatEnd-Answer.md",
+    "cs150/pe-ans/PE03/03-07-TheRepeatFront-Answer.md",
+    "cs150/pe-ans/PE03/03-06-TheRepeatSeparator-Answer.md",
+    "cs150/pe-ans/PE03/03-05-TheSandwich-Answer.md",
+    "cs150/pe-ans/PE03/03-04-TheNikNak-Answer.md",
+    "cs150/pe-ans/PE03/03-03-TheStartOut-Answer.md",
+    "cs150/pe-ans/PE03/03-02-ThePlusOut-Answer.md",
+    "cs150/pe-ans/PE03/03-01-TheWordEnds-Answer.md",
+    "cs150/pepractice/PE03/PE-03-20-TheCountTripleProblem.md",
+    "cs150/pepractice/PE03",
+    "cs150/pepractice/New folder",
+    "cs150/pepractice/PE02",
+    "cs150/pepractice/PE01",
+    "cs150/pepractice/PE-01",
+    "cs150/pepractice-answers/PE02",
+    "cs150/pepractice-answers/New folder",
+    "cs150/pepractice-answers/PE01",
+    "cs150/pepractice-answers/PE03",
+    "cs150/pepractice-answers",
     "Untitled.canvas",
     "cs150/ppt/cs150-ch1-3a.png"
   ]

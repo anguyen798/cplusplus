@@ -1,204 +1,120 @@
 {
   "recentFiles": [
     {
-      "basename": "PE-03-4-TheNikNakProblem",
-      "path": "cs150/pepractice/PE-03-4-TheNikNakProblem.md"
+      "basename": "03-01-TheWordEnds-Answer",
+      "path": "cs150/pe-ans/PE03/03-01-TheWordEnds-Answer.md"
     },
     {
-      "basename": "PE-03-3-TheStartOutProblem",
-      "path": "cs150/pepractice/PE-03-3-TheStartOutProblem.md"
+      "basename": "03-25-TheNotReplace-Answer",
+      "path": "cs150/pe-ans/PE03/03-25-TheNotReplace-Answer.md"
     },
     {
-      "basename": "PE-03-2-ThePlusOutProblem",
-      "path": "cs150/pepractice/PE-03-2-ThePlusOutProblem.md"
+      "basename": "03-24-TheMaxBlock-Answer",
+      "path": "cs150/pe-ans/PE03/03-24-TheMaxBlock-Answer.md"
     },
     {
-      "basename": "PE-03-1-TheWordEndsProblem",
-      "path": "cs150/pepractice/PE-03-1-TheWordEndsProblem.md"
+      "basename": "03-23-TheMirrorEnds-Answer",
+      "path": "cs150/pe-ans/PE03/03-23-TheMirrorEnds-Answer.md"
     },
     {
-      "basename": "PE-01-2-Q-TheCylinderAreaProblem",
-      "path": "cs150/pepractice/PE-01-2-Q-TheCylinderAreaProblem.md"
+      "basename": "03-22-TheSameEnds-Answer",
+      "path": "cs150/pe-ans/PE03/03-22-TheSameEnds-Answer.md"
     },
     {
-      "basename": "PE-01-2-A-TheCylinderAreaProblem",
-      "path": "cs150/pepractice/PE-01-2-A-TheCylinderAreaProblem.md"
+      "basename": "03-21-TheSumDigits-Answer",
+      "path": "cs150/pe-ans/PE03/03-21-TheSumDigits-Answer.md"
     },
     {
-      "basename": "PE-01-1-A-TheConeVolumeProblem",
-      "path": "cs150/pepractice/PE-01-1-A-TheConeVolumeProblem.md"
+      "basename": "03-20-TheCountTriple-Answer",
+      "path": "cs150/pe-ans/PE03/03-20-TheCountTriple-Answer.md"
     },
     {
-      "basename": "PE-01-12-Q-TheCapsuleVolumeProblem",
-      "path": "cs150/pepractice/PE-01-12-Q-TheCapsuleVolumeProblem.md"
+      "basename": "03-19-TheWithoutString-Answer",
+      "path": "cs150/pe-ans/PE03/03-19-TheWithoutString-Answer.md"
     },
     {
-      "basename": "PE-01-19-Q-TheHemisphereSurfaceAreaProblem",
-      "path": "cs150/pepractice/PE-01-19-Q-TheHemisphereSurfaceAreaProblem.md"
+      "basename": "03-18-TheCountYZ-Answer",
+      "path": "cs150/pe-ans/PE03/03-18-TheCountYZ-Answer.md"
     },
     {
-      "basename": "PE-01-18-Q-TheHemisphereVolumeProblem",
-      "path": "cs150/pepractice/PE-01-18-Q-TheHemisphereVolumeProblem.md"
+      "basename": "03-17-TheLastTwo-Answer",
+      "path": "cs150/pe-ans/PE03/03-17-TheLastTwo-Answer.md"
     },
     {
-      "basename": "PE-01-17-Q-ThePyramidSurfaceAreaProblem",
-      "path": "cs150/pepractice/PE-01-17-Q-ThePyramidSurfaceAreaProblem.md"
+      "basename": "03-16-TheStringMatch-Answer",
+      "path": "cs150/pe-ans/PE03/03-16-TheStringMatch-Answer.md"
     },
     {
-      "basename": "PE-01-16-Q-ThePyramid_Volume-Problem",
-      "path": "cs150/pepractice/PE-01-16-Q-ThePyramid_Volume-Problem.md"
+      "basename": "03-15-TheStringX-Answer",
+      "path": "cs150/pe-ans/PE03/03-15-TheStringX-Answer.md"
     },
     {
-      "basename": "PE-01-15-Q-TheConicalFrustumVolumeProblem",
-      "path": "cs150/pepractice/PE-01-15-Q-TheConicalFrustumVolumeProblem.md"
+      "basename": "03-14-TheStringSplosion-Answer",
+      "path": "cs150/pe-ans/PE03/03-14-TheStringSplosion-Answer.md"
     },
     {
-      "basename": "PE-01-14-Q-TheCapsuleCircumfrenceProblem",
-      "path": "cs150/pepractice/PE-01-14-Q-TheCapsuleCircumfrenceProblem.md"
+      "basename": "03-13-TheStringBits-Answer",
+      "path": "cs150/pe-ans/PE03/03-13-TheStringBits-Answer.md"
     },
     {
-      "basename": "PE-01-13-Q-TheCapsuleAreaProblem",
-      "path": "cs150/pepractice/PE-01-13-Q-TheCapsuleAreaProblem.md"
+      "basename": "03-12-TheStringYak-Answer",
+      "path": "cs150/pe-ans/PE03/03-12-TheStringYak-Answer.md"
     },
     {
-      "basename": "PE-01-8-Q-TheOldWindChillProblem",
-      "path": "cs150/pepractice/PE-01-8-Q-TheOldWindChillProblem.md"
+      "basename": "03-11-TheFrontTimes-Answer",
+      "path": "cs150/pe-ans/PE03/03-11-TheFrontTimes-Answer.md"
     },
     {
-      "basename": "PE-01-13-A-TheCapsuleAreaProblem",
-      "path": "cs150/pepractice/PE-01-13-A-TheCapsuleAreaProblem.md"
+      "basename": "03-10-TheCountCode-Answer",
+      "path": "cs150/pe-ans/PE03/03-10-TheCountCode-Answer.md"
     },
     {
-      "basename": "PE-01-11-Q-TheStadiumPerimeterProblem",
-      "path": "cs150/pepractice/PE-01-11-Q-TheStadiumPerimeterProblem.md"
+      "basename": "03-09-TheMixString-Answer",
+      "path": "cs150/pe-ans/PE03/03-09-TheMixString-Answer.md"
     },
     {
-      "basename": "PE-01-12-A-TheCapsuleVolumeProblem",
-      "path": "cs150/pepractice/PE-01-12-A-TheCapsuleVolumeProblem.md"
+      "basename": "03-08-TheRepeatEnd-Answer",
+      "path": "cs150/pe-ans/PE03/03-08-TheRepeatEnd-Answer.md"
     },
     {
-      "basename": "PE-01-10-Q-TheStadiumAreaProblem",
-      "path": "cs150/pepractice/PE-01-10-Q-TheStadiumAreaProblem.md"
+      "basename": "03-07-TheRepeatFront-Answer",
+      "path": "cs150/pe-ans/PE03/03-07-TheRepeatFront-Answer.md"
     },
     {
-      "basename": "PE-01-9-Q-TheConeSlantHeightProblem",
-      "path": "cs150/pepractice/PE-01-9-Q-TheConeSlantHeightProblem.md"
+      "basename": "03-06-TheRepeatSeparator-Answer",
+      "path": "cs150/pe-ans/PE03/03-06-TheRepeatSeparator-Answer.md"
     },
     {
-      "basename": "PE-01-7-Q-TheNewWindChillProblem",
-      "path": "cs150/pepractice/PE-01-7-Q-TheNewWindChillProblem.md"
+      "basename": "03-05-TheSandwich-Answer",
+      "path": "cs150/pe-ans/PE03/03-05-TheSandwich-Answer.md"
     },
     {
-      "basename": "PE-01-6-Q-ThePointDistanceProblem",
-      "path": "cs150/pepractice/PE-01-6-Q-ThePointDistanceProblem.md"
+      "basename": "03-04-TheNikNak-Answer",
+      "path": "cs150/pe-ans/PE03/03-04-TheNikNak-Answer.md"
     },
     {
-      "basename": "PE-01-5-Q-TheSphereStatisticsProblem",
-      "path": "cs150/pepractice/PE-01-5-Q-TheSphereStatisticsProblem.md"
+      "basename": "03-03-TheStartOut-Answer",
+      "path": "cs150/pe-ans/PE03/03-03-TheStartOut-Answer.md"
     },
     {
-      "basename": "PE-01-4-Q-ThePolygonAreaProblem",
-      "path": "cs150/pepractice/PE-01-4-Q-ThePolygonAreaProblem.md"
+      "basename": "03-02-ThePlusOut-Answer",
+      "path": "cs150/pe-ans/PE03/03-02-ThePlusOut-Answer.md"
     },
     {
-      "basename": "PE-01-4-A-ThePolygonAreaProblem",
-      "path": "cs150/pepractice/PE-01-4-A-ThePolygonAreaProblem.md"
+      "basename": "PE-03-25-TheNotReplaceProblem",
+      "path": "cs150/pepractice/PE-03-25-TheNotReplaceProblem.md"
     },
     {
-      "basename": "PE-01-3-Q-TheConeSurfaceAreaProblem",
-      "path": "cs150/pepractice/PE-01-3-Q-TheConeSurfaceAreaProblem.md"
+      "basename": "PE-03-24-TheMaxBlockProblem",
+      "path": "cs150/pepractice/PE-03-24-TheMaxBlockProblem.md"
     },
     {
-      "basename": "PE-02-6-Q-TheFizzBuzzTooProblem",
-      "path": "cs150/pepractice/PE-02-6-Q-TheFizzBuzzTooProblem.md"
+      "basename": "PE-03-23-TheMirrorEndsProblem",
+      "path": "cs150/pepractice/PE-03-23-TheMirrorEndsProblem.md"
     },
     {
-      "basename": "PE-01-1-Q-TheConeVolumeProblem",
-      "path": "cs150/pepractice/PE-01-1-Q-TheConeVolumeProblem.md"
-    },
-    {
-      "basename": "PE-01-9-A-TheConeSlantHeightProblem",
-      "path": "cs150/pepractice/PE-01-9-A-TheConeSlantHeightProblem.md"
-    },
-    {
-      "basename": "PE-02-6-A-TheFizzBuzzTooProblem",
-      "path": "cs150/pepractice/PE-02-6-A-TheFizzBuzzTooProblem.md"
-    },
-    {
-      "basename": "PE-02-5-A-TheNoDoublesProblem",
-      "path": "cs150/pepractice/PE-02-5-A-TheNoDoublesProblem.md"
-    },
-    {
-      "basename": "PE-02-5-Q-TheNoDoublesProblem",
-      "path": "cs150/pepractice/PE-02-5-Q-TheNoDoublesProblem.md"
-    },
-    {
-      "basename": "PE-02-1-Q-TheBlueTicketProblem",
-      "path": "cs150/pepractice/PE-02-1-Q-TheBlueTicketProblem.md"
-    },
-    {
-      "basename": "PE-02-2-Q-TheGreenTicketProblem",
-      "path": "cs150/pepractice/PE-02-2-Q-TheGreenTicketProblem.md"
-    },
-    {
-      "basename": "PE-02-3-Q-TheRedTicketProblem",
-      "path": "cs150/pepractice/PE-02-3-Q-TheRedTicketProblem.md"
-    },
-    {
-      "basename": "PE-02-4-Q-TheMaxModFiveProblem",
-      "path": "cs150/pepractice/PE-02-4-Q-TheMaxModFiveProblem.md"
-    },
-    {
-      "basename": "PE-02-4-A-TheMaxModFiveProblem",
-      "path": "cs150/pepractice/PE-02-4-A-TheMaxModFiveProblem.md"
-    },
-    {
-      "basename": "PE-02-3-A-TheRedTicketProblem",
-      "path": "cs150/pepractice/PE-02-3-A-TheRedTicketProblem.md"
-    },
-    {
-      "basename": "PE-02-2-A-TheGreenTicketProblem",
-      "path": "cs150/pepractice/PE-02-2-A-TheGreenTicketProblem.md"
-    },
-    {
-      "basename": "PE-02-1-A-TheBlueTicketProblem",
-      "path": "cs150/pepractice/PE-02-1-A-TheBlueTicketProblem.md"
-    },
-    {
-      "basename": "PE-01-19-A-TheHemisphereSurfaceAreaProblem",
-      "path": "cs150/pepractice/PE-01-19-A-TheHemisphereSurfaceAreaProblem.md"
-    },
-    {
-      "basename": "PE-01-18-A-TheHemisphereVolumeProblem",
-      "path": "cs150/pepractice/PE-01-18-A-TheHemisphereVolumeProblem.md"
-    },
-    {
-      "basename": "PE-01-17-A-ThePyramidSurfaceAreaProblem",
-      "path": "cs150/pepractice/PE-01-17-A-ThePyramidSurfaceAreaProblem.md"
-    },
-    {
-      "basename": "PE-01-16-A-ThePyramid_Volume-Problem",
-      "path": "cs150/pepractice/PE-01-16-A-ThePyramid_Volume-Problem.md"
-    },
-    {
-      "basename": "PE-01-15-A-TheConicalFrustumVolumeProblem",
-      "path": "cs150/pepractice/PE-01-15-A-TheConicalFrustumVolumeProblem.md"
-    },
-    {
-      "basename": "PE-01-14-A-TheCapsuleCircumfrenceProblem",
-      "path": "cs150/pepractice/PE-01-14-A-TheCapsuleCircumfrenceProblem.md"
-    },
-    {
-      "basename": "PE-01-11-A-TheStadiumPerimeterProblem",
-      "path": "cs150/pepractice/PE-01-11-A-TheStadiumPerimeterProblem.md"
-    },
-    {
-      "basename": "PE-01-10-A-TheStadiumAreaProblem",
-      "path": "cs150/pepractice/PE-01-10-A-TheStadiumAreaProblem.md"
-    },
-    {
-      "basename": "PE-01-8-A-TheOldWindChillProblem",
-      "path": "cs150/pepractice/PE-01-8-A-TheOldWindChillProblem.md"
+      "basename": "PE-03-22-TheSameEndsProblem",
+      "path": "cs150/pepractice/PE-03-22-TheSameEndsProblem.md"
     }
   ],
   "omittedPaths": [],
