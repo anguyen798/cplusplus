@@ -1,0 +1,672 @@
+WEBVTT
+
+00:00:05.590 --> 00:00:08.899
+In this video, we'll learn
+about c++ conditional operator.
+
+00:00:09.580 --> 00:00:11.700
+This is a really neat
+and very useful operator.
+
+00:00:12.349 --> 00:00:15.030
+The operator is represented
+by the question mark and the
+
+00:00:15.030 --> 00:00:17.890
+colon symbols, but they aren't
+used next to one another.
+
+00:00:18.680 --> 00:00:21.610
+The conditional operator is a
+ternary operator, which means that
+
+00:00:21.610 --> 00:00:23.390
+it operates on three operands.
+
+00:00:23.790 --> 00:00:26.730
+The first operand is the
+conditional expression, which
+
+00:00:26.730 --> 00:00:28.079
+is usually in parentheses.
+
+00:00:28.849 --> 00:00:32.170
+The conditional expression is
+evaluated first and it must evaluate
+
+00:00:32.189 --> 00:00:34.199
+to a Boolean or true false value.
+
+00:00:35.080 --> 00:00:37.980
+Then we follow the conditional
+expression with the question mark part
+
+00:00:37.980 --> 00:00:41.860
+of the conditional operator, followed
+by expression one, then the colon
+
+00:00:41.860 --> 00:00:43.790
+part, followed by expression two.
+
+00:00:44.300 --> 00:00:46.960
+This may sound complicated
+but it's really super simple.
+
+00:00:47.559 --> 00:00:49.510
+The conditional
+expression is evaluated.
+
+00:00:49.870 --> 00:00:53.589
+If it's true, then the expression
+returns the value of expression one.
+
+00:00:53.850 --> 00:00:57.370
+If it's false, then the expression
+returns the value of expression 2.
+
+00:00:58.380 --> 00:01:01.720
+You can see it's like an if else
+construct in a single expression.
+
+00:01:02.660 --> 00:01:05.880
+While this operator is very
+handy, it's also easy to abuse.
+
+00:01:06.210 --> 00:01:08.979
+Best practice is to never
+nest a conditional operator
+
+00:01:08.980 --> 00:01:10.280
+expression within another one.
+
+00:01:10.539 --> 00:01:13.530
+This leads to if else if logic
+that quickly becomes unreadable
+
+00:01:13.570 --> 00:01:15.270
+and difficult to manage.
+
+00:01:15.630 --> 00:01:17.740
+Let's see some examples of
+the conditional operator.
+
+00:01:19.360 --> 00:01:22.899
+In this example, we have
+variables a and b initialized
+
+00:01:22.929 --> 00:01:24.460
+to 10 and 20, respectively.
+
+00:01:24.690 --> 00:01:28.999
+We also have score initialized to
+92, and result initialized to 0.
+
+00:01:29.690 --> 00:01:32.270
+The first assignment statement
+uses the conditional operator
+
+00:01:32.270 --> 00:01:33.380
+on the right hand side.
+
+00:01:33.970 --> 00:01:36.250
+First, we evaluate a greater than b.
+
+00:01:36.520 --> 00:01:40.759
+If a is greater than b, then the
+value of a is assigned to the result.
+
+00:01:41.300 --> 00:01:44.929
+If a is not greater than b, then
+we assign the value of b to result.
+
+00:01:45.120 --> 00:01:45.640
+That's it.
+
+00:01:45.650 --> 00:01:46.979
+You see it's very straightforward.
+
+00:01:47.230 --> 00:01:49.940
+You can see this works exactly
+like an if else statement,
+
+00:01:50.140 --> 00:01:51.289
+but it's more concise.
+
+00:01:52.390 --> 00:01:55.770
+The second example evaluates
+if a is less than b.
+
+00:01:56.340 --> 00:02:00.070
+If this is true, then the value of
+b minus a is assigned to result.
+
+00:02:00.500 --> 00:02:03.429
+Otherwise, the value of a
+minus b is assigned to result.
+
+00:02:04.009 --> 00:02:06.460
+In the third example, we're
+using the conditional operator
+
+00:02:06.460 --> 00:02:08.440
+to avoid a divide by 0 error.
+
+00:02:09.009 --> 00:02:11.330
+First, we check if
+b is not equal to 0.
+
+00:02:11.850 --> 00:02:16.810
+If this is true, then we divide a by b
+and assign the result back to result.
+
+00:02:17.889 --> 00:02:20.099
+Otherwise, we simply
+assign 0 to the result.
+
+00:02:20.630 --> 00:02:24.299
+Notice how we're avoiding a divide
+by 0 error by making sure that b
+
+00:02:24.299 --> 00:02:26.400
+is not equal to 0 before we divide.
+
+00:02:27.150 --> 00:02:30.980
+Finally, we often see the conditional
+operator used in output statements.
+
+00:02:31.520 --> 00:02:34.410
+In this case, we check if
+score is greater than 90.
+
+00:02:34.570 --> 00:02:36.320
+And if it is, we display excellent.
+
+00:02:36.389 --> 00:02:37.800
+Otherwise, we display good.
+
+00:02:38.820 --> 00:02:41.819
+You can see the conditional operator
+can be very handy and easy to read and
+
+00:02:41.820 --> 00:02:43.270
+understand when it's used this way.
+
+00:02:43.850 --> 00:02:46.140
+Let's head over to the IDE
+and see it in live code.
+
+00:02:47.820 --> 00:02:51.329
+Okay, so now I'm in CodeLite,
+I'm in the section 9 workspace in
+
+00:02:51.330 --> 00:02:53.149
+the conditional operator project.
+
+00:02:53.570 --> 00:02:56.980
+And what I'd like to do is just go
+over a couple of real simple examples
+
+00:02:56.980 --> 00:02:58.510
+of using the conditional operator.
+
+00:02:58.910 --> 00:03:01.970
+First, we'll write it using a regular
+if else statement, then we'll write
+
+00:03:01.970 --> 00:03:03.490
+it using the conditional operator.
+
+00:03:03.650 --> 00:03:05.510
+Okay, so let's get started.
+
+00:03:05.590 --> 00:03:09.480
+Let's create a variable here, we'll
+call it num, and this is what the
+
+00:03:09.480 --> 00:03:12.560
+user is going to enter an integer
+into we're going to save it into here.
+
+00:03:12.900 --> 00:03:21.460
+We'll prompt the user to
+enter an integer, and we'll
+
+00:03:21.460 --> 00:03:22.859
+read that integer into num.
+
+00:03:25.310 --> 00:03:26.630
+Okay, simple as that now.
+
+00:03:26.630 --> 00:03:28.910
+What we want to know is we want
+to know whether the integer they
+
+00:03:28.910 --> 00:03:31.019
+typed in is even or it's odd.
+
+00:03:31.380 --> 00:03:33.319
+So let's use a simple
+if else statement.
+
+00:03:33.339 --> 00:03:39.090
+We'll say if the number they
+entered mod 2 is equal to 0.
+
+00:03:40.780 --> 00:03:45.090
+Okay, In this case, we're dividing by
+2, and we're looking at the remainder.
+
+00:03:45.090 --> 00:03:48.150
+So obviously, if it's an even
+number, the remainder will be 0.
+
+00:03:48.160 --> 00:03:49.130
+That's what we're testing.
+
+00:03:49.830 --> 00:03:51.820
+So in this case, we'll just say cout.
+
+00:03:53.420 --> 00:03:59.170
+Let's say num is even.
+
+00:04:02.970 --> 00:04:06.270
+And in the else case,
+obviously, it has to be odd.
+
+00:04:15.490 --> 00:04:20.339
+Okay, so that's real simple logic here.
+
+00:04:20.470 --> 00:04:21.669
+Let's test this out.
+
+00:04:29.279 --> 00:04:31.060
+Yeah, I forgot the
+l in in the endline.
+
+00:04:33.520 --> 00:04:36.170
+Okay, so an even integer,
+let's say we want to type in 6.
+
+00:04:36.340 --> 00:04:37.210
+6 is even.
+
+00:04:37.250 --> 00:04:37.930
+That's correct.
+
+00:04:38.240 --> 00:04:39.690
+We'll run it one more time with 7.
+
+00:04:40.770 --> 00:04:42.869
+7 is odd simple as that.
+
+00:04:43.759 --> 00:04:47.120
+Now let's rewrite this if else
+statement just using a simple
+
+00:04:47.120 --> 00:04:50.970
+conditional operator, that's
+inside us of the output statement.
+
+00:04:51.240 --> 00:04:56.040
+So we'll say cout, and
+we'll say same thing num.
+
+00:04:56.389 --> 00:04:58.390
+Now here's where we'll put
+the conditional operator.
+
+00:05:00.940 --> 00:05:06.529
+Num is and right here is where
+we'll put the conditional operator.
+
+00:05:06.870 --> 00:05:11.559
+Okay, so in this case, we need to
+wrap this up, and we'll put the
+
+00:05:11.600 --> 00:05:13.140
+conditional operator right in here.
+
+00:05:13.140 --> 00:05:17.570
+So we're going to test to see
+if num mod 2 is equal to 0.
+
+00:05:18.219 --> 00:05:21.579
+Okay, if that is the case, then
+I've got my question mark, which
+
+00:05:21.620 --> 00:05:28.730
+gives me the true side and I'll
+just say even and the colon odd.
+
+00:05:31.260 --> 00:05:32.190
+That's it.
+
+00:05:33.110 --> 00:05:34.820
+And we'll end this with
+a new line as well.
+
+00:05:37.110 --> 00:05:38.719
+And let's run this and
+see what it looks like.
+
+00:05:40.719 --> 00:05:43.510
+So we'll put in 2, and we can
+see both of those statements
+
+00:05:43.510 --> 00:05:46.000
+fire because we've got the
+regular if else statement going.
+
+00:05:46.560 --> 00:05:48.280
+And let's try to run it again with 3.
+
+00:05:50.660 --> 00:05:51.580
+There we go.
+
+00:05:51.770 --> 00:05:53.640
+Now let's see what's
+really going on here.
+
+00:05:54.620 --> 00:06:00.300
+In this case, again we are testing
+to see if the number is even.
+
+00:06:00.650 --> 00:06:05.840
+If this is true, then this piece is
+the one that's going to remember.
+
+00:06:05.840 --> 00:06:08.760
+We've got an output operator
+here an insertion operator.
+
+00:06:08.960 --> 00:06:12.629
+So this is going to be replaced
+this whole thing right here, will be
+
+00:06:12.630 --> 00:06:14.460
+replaced with even, the string even.
+
+00:06:15.179 --> 00:06:17.369
+If it's false, it'll
+be replaced with odds.
+
+00:06:17.369 --> 00:06:19.330
+So we've got the same
+thing going on here, right.
+
+00:06:19.330 --> 00:06:20.090
+Num is even.
+
+00:06:20.270 --> 00:06:23.539
+Numb is odd, except that it's
+all in one statement like that.
+
+00:06:24.080 --> 00:06:26.580
+This may you may be wondering why
+in the world would you do this.
+
+00:06:26.630 --> 00:06:30.730
+Well, a lot of times it's really
+handy to not have this sort of
+
+00:06:30.730 --> 00:06:34.010
+logic here but rather put something
+right in a print statement.
+
+00:06:34.010 --> 00:06:36.359
+So suppose we've got some sort
+of output statement, and we've
+
+00:06:36.360 --> 00:06:39.000
+got some kind of looping thing
+going on and every 10th time
+
+00:06:39.680 --> 00:06:42.370
+I need to do something, I need
+to print something different.
+
+00:06:42.840 --> 00:06:45.930
+It's real handy to use this
+operator in that context because
+
+00:06:45.940 --> 00:06:47.599
+it makes your code a lot cleaner.
+
+00:06:47.889 --> 00:06:51.199
+And if you use it properly, like
+this, it's really easy to understand.
+
+00:06:51.520 --> 00:06:55.210
+Okay, let's do another example,
+and I'll comment this out here.
+
+00:06:58.770 --> 00:07:00.550
+And let's just do a real
+simple example it's just
+
+00:07:00.550 --> 00:07:01.940
+going to compare two integers.
+
+00:07:02.080 --> 00:07:03.850
+Okay, so we need those
+two integers here.
+
+00:07:04.260 --> 00:07:07.550
+We'll call them num1 and num2.
+
+00:07:11.949 --> 00:07:19.350
+And we'll tell the user to enter
+to integers separated by a space.
+
+00:07:23.889 --> 00:07:28.960
+Okay, and we'll read into those
+two integers, num1 and num2.
+
+00:07:30.490 --> 00:07:34.740
+All right, so in this case, I want
+to display the largest and the
+
+00:07:34.740 --> 00:07:36.240
+smallest of those two integers.
+
+00:07:36.270 --> 00:07:38.870
+But I want to do it using
+the conditional operator.
+
+00:07:39.410 --> 00:07:41.260
+So the first thing we need to
+do is we need to see if the
+
+00:07:41.260 --> 00:07:42.540
+integers are the same, right.
+
+00:07:42.559 --> 00:07:44.900
+If they are the same, then
+we'll just say they're the same.
+
+00:07:44.900 --> 00:07:46.460
+There is no largest or smallest.
+
+00:07:46.619 --> 00:07:48.239
+So let's do that logic first.
+
+00:07:48.359 --> 00:07:55.200
+So we'll say if num1 is not
+equal to num2, in this case,
+
+00:07:55.330 --> 00:07:57.769
+we want to say, okay, one's
+bigger than the other which is
+
+00:07:57.770 --> 00:07:59.250
+biggest which is smallest, right.
+
+00:07:59.320 --> 00:08:01.739
+The else case means
+that they're the same.
+
+00:08:02.090 --> 00:08:03.609
+So let's handle that case first.
+
+00:08:03.719 --> 00:08:08.610
+So we'll just say cout and
+we'll just say something like
+
+00:08:08.610 --> 00:08:09.600
+the numbers are the same.
+
+00:08:14.460 --> 00:08:15.719
+And I'll put a new line at the end.
+
+00:08:19.049 --> 00:08:22.169
+Okay, now this is the logic
+we need to figure out now.
+
+00:08:22.299 --> 00:08:25.039
+We need to figure out what's the
+largest and what's the smallest.
+
+00:08:25.180 --> 00:08:27.790
+I could write an if else statement
+in here a couple of times, right.
+
+00:08:28.020 --> 00:08:29.960
+But in this case, I'm just
+going to do it right in line
+
+00:08:29.960 --> 00:08:30.950
+with an output statement.
+
+00:08:31.020 --> 00:08:32.080
+So let's do the first one.
+
+00:08:32.389 --> 00:08:34.039
+We'll say cout.
+
+00:08:34.809 --> 00:08:37.540
+And what I want to do here is I'll
+just say the largest because that's
+
+00:08:37.540 --> 00:08:38.760
+what we're going to look for first.
+
+00:08:41.650 --> 00:08:43.919
+And now we'll use the
+conditional operator.
+
+00:08:43.940 --> 00:08:48.540
+So again, I'll put the parens in
+there and I'll put an end line at
+
+00:08:48.540 --> 00:08:49.710
+the end might as well do it now.
+
+00:08:52.170 --> 00:08:57.789
+Now the logic in here says,
+okay let's test to see if num1
+
+00:08:58.570 --> 00:09:02.220
+is greater than num2, right.
+
+00:09:02.330 --> 00:09:07.420
+If it is, I use the conditional
+operator and display num1.
+
+00:09:08.120 --> 00:09:10.180
+If it's not, I display num2.
+
+00:09:11.010 --> 00:09:11.689
+That's it.
+
+00:09:11.840 --> 00:09:12.509
+Simple as that.
+
+00:09:14.530 --> 00:09:24.480
+And over here, we'll say cout
+smallest and same sort of logic.
+
+00:09:26.950 --> 00:09:28.830
+We'll come right into
+these parens right in here.
+
+00:09:29.620 --> 00:09:30.820
+And what we'll do is we'll test.
+
+00:09:30.830 --> 00:09:33.839
+In this case, num1 less than num2.
+
+00:09:35.179 --> 00:09:37.930
+And if it is, num1.
+
+00:09:37.930 --> 00:09:38.890
+Otherwise, num2.
+
+00:09:40.790 --> 00:09:41.540
+Okay, that's it.
+
+00:09:41.580 --> 00:09:42.760
+Let's run this.
+
+00:09:46.830 --> 00:09:47.779
+And it says no.
+
+00:09:47.790 --> 00:09:48.940
+It should have been num1.
+
+00:09:52.230 --> 00:09:54.199
+Enter two integers
+separated by a space.
+
+00:09:54.230 --> 00:09:55.850
+Let's do the equal case first.
+
+00:09:56.400 --> 00:09:57.949
+The numbers are the same, that's good.
+
+00:09:59.660 --> 00:10:02.020
+Let's do a 5 and 10.
+
+00:10:02.160 --> 00:10:04.200
+Largest is 10, smallest is 5.
+
+00:10:04.590 --> 00:10:06.100
+And now let's do a 10 and a 5.
+
+00:10:09.730 --> 00:10:11.509
+Largest is 10, smallest is still 5.
+
+00:10:11.520 --> 00:10:12.040
+So we're good.
+
+00:10:12.309 --> 00:10:15.190
+So here's a real simple example
+of using the conditional operator.
+
+00:10:15.370 --> 00:10:17.570
+We'll use the conditional
+operator in a couple places
+
+00:10:17.570 --> 00:10:18.820
+as the course progresses.
+
+00:10:19.210 --> 00:10:22.060
+And typically, it's going to be
+inside the loop as we're looping
+
+00:10:22.060 --> 00:10:25.250
+and we want to do something
+every fifth time, tenth time.
+
+00:10:25.820 --> 00:10:27.839
+Let's say you every fifth
+time you want to print a new
+
+00:10:27.839 --> 00:10:29.009
+line or something like that.
+
+00:10:29.309 --> 00:10:32.940
+Then this makes a lot of
+sense to do it inside an
+
+00:10:33.230 --> 00:10:34.660
+output statement like this.

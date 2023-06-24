@@ -1,0 +1,373 @@
+WEBVTT
+
+00:00:05.400 --> 00:00:06.900
+When I take a course,
+
+00:00:06.900 --> 00:00:10.400
+I always like to know what will be covered in that course,so I know what to expect.
+
+00:00:11.200 --> 00:00:14.200
+In this video, I'd like to go over the curriculum for this course.
+
+00:00:14.900 --> 00:00:17.200
+The curriculum has been developed in such a way
+
+00:00:17.200 --> 00:00:20.200
+that students with little to no programming background
+
+00:00:20.200 --> 00:00:23.200
+can get started programming quickly in c++.
+
+00:00:23.750 --> 00:00:26.450
+C++ is a very complex language,
+
+00:00:26.450 --> 00:00:29.950
+probably one of the most complex programming languages used today.
+
+00:00:30.550 --> 00:00:34.050
+That doesn't mean that learning the basics should be impossible to grasp.
+
+00:00:34.550 --> 00:00:38.950
+In fact, all programming languages provide the same general constructs
+
+00:00:38.950 --> 00:00:40.550
+that we use to build programs.
+
+00:00:41.250 --> 00:00:43.800
+This is a beginning modern c++ course.
+
+00:00:44.160 --> 00:00:46.860
+There are many, many topics in c++
+
+00:00:46.860 --> 00:00:49.360
+that are at an intermediate or advanced level.
+
+00:00:49.910 --> 00:00:52.270
+I won't be covering those topics in this course.
+
+00:00:52.820 --> 00:00:56.320
+My goal in this course is to teach the basics of c++
+
+00:00:56.320 --> 00:00:59.820
+so that you can write c++ programs that solve problems.
+
+00:01:00.420 --> 00:01:04.820
+More importantly, this course lays the foundation necessary to go forward
+
+00:01:04.820 --> 00:01:07.520
+and learn more advanced c++ concepts.
+
+00:01:07.920 --> 00:01:10.820
+This foundation will also allow you to read c++
+
+00:01:10.820 --> 00:01:12.620
+code written by other programmers.
+
+00:01:13.720 --> 00:01:16.220
+C++ frameworks are used everywhere.
+
+00:01:16.220 --> 00:01:20.820
+For example, if you want to program games in c++ using the unreal engine,
+
+00:01:21.120 --> 00:01:24.120
+then you'll have the background necessary to use their frameworks.
+
+00:01:24.780 --> 00:01:27.780
+If you want to use the popular c++ boost libraries,
+
+00:01:27.780 --> 00:01:30.780
+you'll be able to use them and understand many of their APIs.
+
+00:01:31.280 --> 00:01:34.880
+Okay. So let's talk about the curriculum and what you can expect in this course.
+
+00:01:35.430 --> 00:01:39.790
+We'll begin our c++ training by going over the CodeLite IDEs interface,
+
+00:01:39.790 --> 00:01:42.990
+and writing a c++ program using CodeLite.
+
+00:01:43.540 --> 00:01:47.040
+As we do this, we'll understand how to compile, build and run
+
+00:01:47.040 --> 00:01:51.440
+a c++ program. I'll also talk a bit about some errors you may encounter.
+
+00:01:51.800 --> 00:01:55.300
+I know what you're thinking. Gee, he's already talking about errors already.
+
+00:01:55.300 --> 00:01:58.400
+I haven't even started learning to program yet and he's talking about errors.
+
+00:01:58.400 --> 00:02:00.000
+Is this going to be that difficult?
+
+00:02:00.500 --> 00:02:02.860
+Don't worry. The sooner we talk about errors,
+
+00:02:02.860 --> 00:02:05.530
+kinds of errors, why they happen and how to fix them,
+
+00:02:05.530 --> 00:02:08.530
+the sooner errors will become normal and expected.
+
+00:02:08.530 --> 00:02:12.090
+I've seen students get turned off from programming because they get errors.
+
+00:02:12.090 --> 00:02:14.590
+Expect the errors, fix them and move on.
+
+00:02:14.590 --> 00:02:18.090
+Then we'll talk about the structure of a basic c++ program.
+
+00:02:18.490 --> 00:02:22.850
+I'll explain pound include, namespaces, comments, the main function
+
+00:02:22.850 --> 00:02:23.950
+cin and cout.
+
+00:02:24.450 --> 00:02:28.050
+These are the elements that nearly every c++ program will have.
+
+00:02:28.650 --> 00:02:31.850
+Then we'll talk about variables and constants and how to use them.
+
+00:02:31.850 --> 00:02:34.750
+You can't write a c++ program that does much of anything,
+
+00:02:34.750 --> 00:02:36.750
+unless it has variables and constants.
+
+00:02:37.250 --> 00:02:40.450
+We'll go over how to declare them, use them, name them and much more.
+
+00:02:40.450 --> 00:02:44.650
+We'll also discuss c++ basic types, which allow you to use integers,
+
+00:02:44.650 --> 00:02:47.250
+floating point numbers, characters, and more.
+
+00:02:47.250 --> 00:02:51.350
+Now that we know what variables are, we'll group a bunch of variables together into collection
+
+00:02:51.350 --> 00:02:52.650
+of variables called an array.
+
+00:02:53.150 --> 00:02:55.950
+Now we'll be storing and using multiple variables,
+
+00:02:55.950 --> 00:02:59.250
+like a bunch of test scores or temperatures for the last seven days.
+
+00:03:00.050 --> 00:03:02.710
+These collections are called arrays and vectors,
+
+00:03:02.710 --> 00:03:04.710
+and we'll learn how to create them and use them.
+
+00:03:05.210 --> 00:03:08.010
+We'll also learn how to use multidimensional structures,
+
+00:03:08.010 --> 00:03:11.210
+so we can model things like grids, boards, and spreadsheets.
+
+00:03:11.710 --> 00:03:14.110
+Then we'll learn about strings in c++.
+
+00:03:14.110 --> 00:03:17.110
+Strings are collections of characters. Like my name Frank,
+
+00:03:17.110 --> 00:03:19.110
+which is F-R-A-N-K.
+
+00:03:19.110 --> 00:03:23.710
+Strings are used extensively in c++, and we'll go over the basics in this section.
+
+00:03:24.110 --> 00:03:27.410
+In the following section, we'll learn how to write program statements.
+
+00:03:27.660 --> 00:03:29.960
+These statements are made up of expressions.
+
+00:03:29.960 --> 00:03:33.060
+We'll also go over some of the c++ operators like
+
+00:03:33.060 --> 00:03:36.060
+plus, minus, multiply, divide and so forth.
+
+00:03:36.940 --> 00:03:40.440
+At the end of this section, you'll be able to write c++ statements
+
+00:03:40.440 --> 00:03:43.440
+that tell the computer what to do in order.
+
+00:03:44.440 --> 00:03:47.100
+Now we get to the real powerful stuff, control flow.
+
+00:03:47.540 --> 00:03:50.740
+It's nice to be able to write a bunch of statements one after the other.
+
+00:03:50.740 --> 00:03:55.240
+But to really have power, we need to be able to make decisions and repeat things more than once.
+
+00:03:56.040 --> 00:03:57.440
+This is control flow.
+
+00:03:57.800 --> 00:04:01.300
+This will open up the world of programming, give you so much power.
+
+00:04:01.800 --> 00:04:04.300
+In the next section, we'll learn how to write functions.
+
+00:04:04.900 --> 00:04:08.900
+A function lets us group a bunch of statements into a single construct.
+
+00:04:09.100 --> 00:04:12.100
+It helps us organize our code and think more abstractly.
+
+00:04:12.650 --> 00:04:16.650
+Following functions, we'll talk about c++ pointers and references.
+
+00:04:16.900 --> 00:04:20.600
+You may have heard horror stories about c++ pointers. Don't worry.
+
+00:04:20.600 --> 00:04:23.100
+I'll walk you through how and why do you use them?
+
+00:04:23.100 --> 00:04:26.100
+And you'll see the incredible power they give you over your hardware.
+
+00:04:26.700 --> 00:04:30.500
+Finally, now that we know the basics of procedural programming in c++,
+
+00:04:30.500 --> 00:04:34.100
+we'll dive into object-oriented programming or OOP.
+
+00:04:34.600 --> 00:04:36.100
+OOP is awesome
+
+00:04:36.100 --> 00:04:39.600
+and lets you model your program in terms of real-world objects.
+
+00:04:40.000 --> 00:04:43.500
+C++ is after all an object-oriented language
+
+00:04:43.500 --> 00:04:47.860
+and that's how we want to use it. Once we understand the basics of OOP,
+
+00:04:47.860 --> 00:04:49.660
+we'll learn about operator overloading,
+
+00:04:49.660 --> 00:04:53.360
+which allows us to define how the built-in c++ operators
+
+00:04:53.360 --> 00:04:56.360
+can be defined so that they work with our own classes.
+
+00:04:56.360 --> 00:04:58.960
+So they feel like they're part of the standard language.
+
+00:04:59.660 --> 00:05:02.660
+Then we'll learn about inheritance and the power that it provides.
+
+00:05:02.660 --> 00:05:06.260
+Imagine reusing existing code by inheriting what you need from it
+
+00:05:06.260 --> 00:05:09.260
+and just modifying the parts that you need to solve your problem.
+
+00:05:10.260 --> 00:05:12.760
+We'll wrap up OOP with polymorphism.
+
+00:05:13.160 --> 00:05:17.160
+Polymorphism allows your program to determine its behavior at runtime
+
+00:05:17.160 --> 00:05:21.760
+and really lets you think in the general, so you don't have to be concerned about details.
+
+00:05:22.560 --> 00:05:25.760
+The last several sections of the course are slightly more advanced,
+
+00:05:25.760 --> 00:05:28.760
+but they're so important that I wanted to include them in this course.
+
+00:05:29.010 --> 00:05:30.510
+The first is smart pointers.
+
+00:05:31.210 --> 00:05:33.810
+We'll talk a lot about c++ pointers
+
+00:05:33.810 --> 00:05:38.210
+since every c++ programmer really needs to understand raw pointers.
+
+00:05:38.360 --> 00:05:41.260
+But c++ also provides smart pointers,
+
+00:05:41.260 --> 00:05:45.360
+which make memory management much simpler and make your program safer to use.
+
+00:05:46.160 --> 00:05:49.460
+Then we'll talk about the c++ standard template library.
+
+00:05:49.820 --> 00:05:53.320
+C++ provides a standard c++ template library
+
+00:05:53.320 --> 00:05:57.720
+with a rich set of containers, iterators and algorithms that are ready to use.
+
+00:05:57.720 --> 00:06:00.920
+Why reinvent the wheel when you can use the wheels you have?
+
+00:06:01.620 --> 00:06:03.620
+I'd go over the basic STL elements
+
+00:06:03.620 --> 00:06:06.820
+so that you can put them together and solve complex problems.
+
+00:06:06.820 --> 00:06:11.220
+We'll finish off the course by talking about input and output to files and exception handling.
+
+00:06:12.120 --> 00:06:15.220
+Exception handling allows you to deal with exceptional conditions
+
+00:06:15.220 --> 00:06:16.580
+that might occur in your program.
+
+00:06:17.130 --> 00:06:21.330
+What if a file doesn't exist or you try an operation and it fails?
+
+00:06:21.690 --> 00:06:23.990
+It's important to understand how to write your code
+
+00:06:23.990 --> 00:06:27.650
+so that it's aware that something has gone wrong so you can recover from it.
+
+00:06:28.310 --> 00:06:29.710
+Wow, that's a lot of material.
+
+00:06:29.710 --> 00:06:33.910
+Some of these topics can be covered by an entire course dedicated just to them.
+
+00:06:33.910 --> 00:06:35.010
+But don't worry,
+
+00:06:35.010 --> 00:06:37.210
+we aren't going to get into every possible option
+
+00:06:37.210 --> 00:06:41.110
+or explain every construct from a theoretical computer science perspective.
+
+00:06:41.910 --> 00:06:45.900
+This course is practical and it's about learning beginning c++,
+
+00:06:45.900 --> 00:06:49.200
+so that you can further explore this amazing programming language
+
+00:06:49.200 --> 00:06:51.200
+and use it in real-world applications.
+
+00:06:51.900 --> 00:06:55.600
+In the next videos, I’ll briefly discuss the challenge exercises
+
+00:06:55.600 --> 00:06:58.300
+and the quizzes that are included in the core sections.

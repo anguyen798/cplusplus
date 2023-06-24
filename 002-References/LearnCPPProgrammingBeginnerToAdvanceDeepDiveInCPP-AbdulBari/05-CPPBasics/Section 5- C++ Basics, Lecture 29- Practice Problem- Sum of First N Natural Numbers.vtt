@@ -1,0 +1,325 @@
+WEBVTT
+
+0
+00:00.920 --> 00:06.450
+In this video let us write a program for finding the sum of first natural numbers.
+
+1
+00:06.450 --> 00:09.980
+Already we have seen the formula in the video called expression.
+
+2
+00:09.980 --> 00:15.470
+So let us write a complete program. let us  see what does it mean by sum of first n natural number, see
+
+3
+00:15.770 --> 00:21.380
+natural numbers starts from one onwards so one plus two plus three plus so on upto some number if you
+
+4
+00:21.380 --> 00:26.300
+want to find a sum of all these numbers that the formula is there that is n into n plus one by two.
+
+5
+00:27.050 --> 00:34.280
+So for example if I want to find out one plus two plus three plus four plus five up to five I want to
+
+6
+00:34.280 --> 00:39.170
+find out how much it is, three plus three six 10 then 15.
+
+7
+00:39.470 --> 00:42.820
+So this is coming up to 15 now sum is 15.
+
+8
+00:42.860 --> 00:47.960
+So if I use that formula what it will be like up to five and finding out.
+
+9
+00:47.990 --> 00:49.910
+So this is a five into(*).
+
+10
+00:50.240 --> 00:52.700
+This is five plus one six by two.
+
+11
+00:53.030 --> 00:55.910
+So how is this a 6 1 6 threes.
+
+12
+00:55.970 --> 00:57.750
+So 5 3 15.
+
+13
+00:57.770 --> 00:59.170
+So this also 15.
+
+14
+00:59.210 --> 01:00.580
+So yes this is the formula.
+
+15
+01:01.940 --> 01:07.040
+So formula for finding the sum all first n natural number, up to what number you find out.
+
+16
+01:07.610 --> 01:10.920
+So this is a well-known formula but I already have explained it now.
+
+17
+01:11.050 --> 01:13.980
+Now next we want to write a program for program.
+
+18
+01:13.980 --> 01:17.890
+Let us first of all write down a flowchart. so I will prepare a flow chart.
+
+19
+01:17.900 --> 01:23.120
+So for the flow chart we should follow these steps for writing the program, as well as for flow chart, input,
+
+20
+01:23.420 --> 01:27.650
+process, output so the basic programs will have these things.
+
+21
+01:27.650 --> 01:29.310
+So what is input for this program.
+
+22
+01:29.660 --> 01:31.260
+Let us see in the formula.
+
+23
+01:31.650 --> 01:32.970
+n is input.
+
+24
+01:33.050 --> 01:37.060
+Yes this is input then what is output sum is output.
+
+25
+01:37.190 --> 01:37.670
+Yes.
+
+26
+01:37.760 --> 01:38.920
+this is the output
+
+27
+01:38.930 --> 01:41.270
+And that is the formula for processing.
+
+28
+01:41.270 --> 01:42.190
+Use the formula.
+
+29
+01:42.710 --> 01:45.360
+So let us draw the flow chart.
+
+30
+01:45.500 --> 01:48.890
+Let us start first start.
+
+31
+01:50.100 --> 01:57.080
+First step I should take the input so I should have input box and here I will say print  enter n
+
+32
+01:57.090 --> 02:02.580
+I should know the value of n. see the input this n here.
+
+33
+02:02.600 --> 02:11.420
+So I should know the value n so enter n then read a value n in a variable, then next step is a
+
+34
+02:11.420 --> 02:14.050
+process, so second step is process.
+
+35
+02:14.080 --> 02:15.360
+So this input is over.
+
+36
+02:15.620 --> 02:23.650
+Next is process, so what's the the processing, calculating sum, so how to cal. sum, sum assigned with n into n
+
+37
+02:23.670 --> 02:26.510
+plus 1 by 2.
+
+38
+02:26.750 --> 02:30.120
+This is processing the next step is output.
+
+39
+02:30.170 --> 02:34.950
+So we have the result. where is result? in variable sum so print that one.
+
+40
+02:34.970 --> 02:38.120
+Then again the input output box.
+
+41
+02:38.120 --> 02:46.370
+So I will write on this and I will give a message that print 'sum is' then after this I will write down
+
+42
+02:46.370 --> 02:49.820
+variable name. so there's a message in double quotes.
+
+43
+02:50.060 --> 02:55.610
+Then after this end of flow chart so stop flow chart.
+
+44
+02:56.270 --> 03:01.650
+So there is a flow chart for finding the sum of first n natural number using this formula.
+
+45
+03:02.090 --> 03:05.260
+Now next thing in the previous video I have written algorithm.
+
+46
+03:05.320 --> 03:06.510
+I will not write it.
+
+47
+03:06.590 --> 03:11.880
+You know how to write it just you have to take these steps and write them and begin and end block.
+
+48
+03:12.030 --> 03:18.830
+For now I will write on a C++ program directly so I remove this and I write down a C++ program looking
+
+49
+03:18.830 --> 03:28.150
+at the flowchart. starting of a program First of all say hash include iostream we have to include this header file
+
+50
+03:29.080 --> 03:36.490
+them using namespace using namespace std that is standard.
+
+51
+03:36.560 --> 03:41.700
+In short it is a std then int main function.
+
+52
+03:41.850 --> 03:44.920
+Now inside this false thing what I should do.
+
+53
+03:45.110 --> 03:47.730
+Enter and print.
+
+54
+03:47.870 --> 03:53.210
+So print means output on the screen so display C out so first thing.
+
+55
+03:53.240 --> 04:02.310
+cout enter n, next I should read the value.
+
+56
+04:02.310 --> 04:10.640
+So for reading the value it is cin so say Cin abstraction operator n what is n.
+
+57
+04:10.640 --> 04:12.160
+n that is a variable.
+
+58
+04:12.300 --> 04:13.930
+So I should declare the variable first.
+
+59
+04:14.120 --> 04:14.780
+Yes.
+
+60
+04:14.840 --> 04:17.900
+So if you read this flowchart what are the variables are required.
+
+61
+04:18.190 --> 04:24.500
+n and also has sum, so which type is this, see it should be int type because you are finding the sum
+
+62
+04:24.510 --> 04:26.450
+of first n natural numbers that are integers.
+
+63
+04:26.600 --> 04:29.950
+So n as well as sum.
+
+64
+04:30.740 --> 04:34.210
+Don't worry about the division because you will not get decimal result there.
+
+65
+04:34.250 --> 04:42.020
+So you will get integer result only. so this is over the next step is finding formula that is sum, sum assign
+
+66
+04:43.480 --> 04:51.130
+n into n plus one by two then after that print the result.
+
+67
+04:51.260 --> 04:59.490
+So sum, this is the step I'm writing  that is output sum is this is the message it is closed.
+
+68
+04:59.510 --> 05:06.740
+Then again insertion operator write down the variable name that is sum. this sum is the variable name
+
+69
+05:06.750 --> 05:08.820
+is a part of a message right.
+
+70
+05:09.020 --> 05:15.110
+So I can even write a complete message sum of first n natural numbers is so and so, then after
+
+71
+05:15.110 --> 05:22.240
+that, as we wrote int here so we can write a return 0 here and that's all.
+
+72
+05:23.210 --> 05:29.230
+So that's all this is the program so there is coding exercise available for this one so which asks you
+
+73
+05:29.230 --> 05:34.690
+to write on the formula so read the coding exercise and read the comments properly and then complete
+
+74
+05:34.690 --> 05:35.600
+the coding exercise.
+
+75
+05:35.600 --> 05:41.450
+Then after that we say that we have a video for demonstration of this one right so after watching you
+
+76
+05:41.450 --> 05:44.020
+practice on your own machine.
+
+77
+05:44.020 --> 05:46.420
+If you have any questions if you get any errors.
+
+78
+05:46.420 --> 05:52.840
+Just give yours screen shot to me in question answer section then I will give you a replay, if you face
+
+79
+05:52.870 --> 05:56.280
+any problem so that's all in this video.
+
+80
+05:56.320 --> 05:58.570
+Now next the videos we will see more formulas.

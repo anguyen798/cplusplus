@@ -1,0 +1,214 @@
+WEBVTT
+
+00:00:05.400 --> 00:00:09.100
+In this video, we'll talk about linker errors and why they can happen.
+
+00:00:09.600 --> 00:00:12.800
+Linker errors occur when the linker is trying to put all the pieces
+
+00:00:12.800 --> 00:00:15.700
+of a program together to create an executable,
+
+00:00:15.700 --> 00:00:17.700
+and one or more pieces are missing.
+
+00:00:18.300 --> 00:00:22.900
+Typically, this can happen when an object file or libraries can't be found by the linker.
+
+00:00:23.400 --> 00:00:25.200
+Fixing linker errors can be tricky.
+
+00:00:25.200 --> 00:00:29.800
+Sometimes it's just a matter of getting the paths correct, so that the linker knows where the missing pieces are.
+
+00:00:30.600 --> 00:00:32.000
+Let's head over to CodeLite.
+
+00:00:32.000 --> 00:00:35.880
+And we'll force a program to have a linker error, so you can see what the error message looks like.
+
+00:00:37.280 --> 00:00:40.880
+So I'm in CodeLite. And I've created a project called linker error
+
+00:00:41.640 --> 00:00:45.410
+based on the template that we use. So all I've got is a main cpp file
+
+00:00:45.410 --> 00:00:46.710
+that says hello world.
+
+00:00:46.710 --> 00:00:48.910
+Now we're going to force a linker error here.
+
+00:00:49.410 --> 00:00:51.660
+This is not something you want to do normally.
+
+00:00:51.660 --> 00:00:53.860
+But I'm going to do it to show you what the error looks like.
+
+00:00:53.860 --> 00:00:56.860
+So what I'm going to say is I'm going to say extern int c
+
+00:00:57.520 --> 00:01:01.220
+or let's just say x. And I'll explain all this to you in just a second.
+
+00:01:01.220 --> 00:01:05.120
+And then in the body of the main, I want to try to use that x right there.
+
+00:01:05.120 --> 00:01:07.680
+It's just an integer. And let's say, I want to print it out.
+
+00:01:10.450 --> 00:01:13.050
+I just want to print out x, simple as that.
+
+00:01:13.750 --> 00:01:15.050
+I'm going to save this.
+
+00:01:15.150 --> 00:01:18.950
+Now you'll see if I compile this program. You'll see what happens. I'm going to right click,
+
+00:01:18.950 --> 00:01:19.830
+compile.
+
+00:01:20.130 --> 00:01:23.130
+I get a clean compile. There's nothing wrong with the program.
+
+00:01:23.830 --> 00:01:25.830
+But when I try to build and run it,
+
+00:01:29.130 --> 00:01:30.630
+you can see the linker error.
+
+00:01:31.830 --> 00:01:33.330
+This is classic linker error,
+
+00:01:33.330 --> 00:01:37.730
+undefined reference to something. In this case, it just happens to be x.
+
+00:01:37.730 --> 00:01:40.530
+Also you'll notice that the linker returned one here,
+
+00:01:40.530 --> 00:01:43.730
+ld returns one, which is the x status. So something
+
+00:01:43.730 --> 00:01:45.230
+was wrong with the link.
+
+00:01:45.230 --> 00:01:49.730
+Obviously, the compile was fine because we got no compiler errors. Let me do that again.
+
+00:01:49.730 --> 00:01:52.090
+There's the compile. No errors. No warnings.
+
+00:01:52.090 --> 00:01:54.090
+So let me explain to you what's going on here.
+
+00:01:54.590 --> 00:01:57.190
+Let me grab my stylus here real quick.
+
+00:01:57.190 --> 00:01:59.890
+And what's going on here is I've got
+
+00:01:59.890 --> 00:02:02.490
+my main cpp file here.
+
+00:02:03.990 --> 00:02:06.490
+And it's going to be compiled
+
+00:02:06.490 --> 00:02:09.490
+to main.o, let's say, or main.object.
+
+00:02:11.690 --> 00:02:14.690
+In here, we have a reference to an x.
+
+00:02:15.050 --> 00:02:17.650
+You can see it right there. You can see it right there.
+
+00:02:17.650 --> 00:02:20.650
+So in here, I've got a reference to an x, which I'm going to use.
+
+00:02:21.350 --> 00:02:23.850
+Now we also have our iostream libraries.
+
+00:02:23.850 --> 00:02:26.550
+So the linker needs to grab those libraries.
+
+00:02:26.550 --> 00:02:29.150
+And I'll just type iostream here. You know what I'm talking about.
+
+00:02:30.750 --> 00:02:32.750
+The linker needs to put these two together
+
+00:02:32.750 --> 00:02:34.750
+to create my main.exe
+
+00:02:35.850 --> 00:02:39.350
+or in this case I believe it would be linker error.exe but you know what I mean.
+
+00:02:40.710 --> 00:02:44.310
+So the compiler is fine. We've created our object file.
+
+00:02:44.810 --> 00:02:48.210
+This library exists. The problem is that I've told
+
+00:02:48.210 --> 00:02:52.010
+the compiler here that this x is not in me.
+
+00:02:52.010 --> 00:02:55.010
+It's somewhere else. It's defined by somebody else.
+
+00:02:55.010 --> 00:02:58.610
+Well, obviously it isn't defined by someone else because that kind of forced the issue here.
+
+00:02:59.380 --> 00:03:04.180
+So now the linker needs to resolve that x, it's saying okay
+
+00:03:04.180 --> 00:03:07.480
+where where do I get that value to print because that's what you asked me to do right here right.
+
+00:03:07.480 --> 00:03:11.080
+I wanted to print the value of x where where is x. It can't find it.
+
+00:03:11.680 --> 00:03:14.480
+That's the linker error. That's exactly what's going on.
+
+00:03:14.480 --> 00:03:18.580
+And let me build this. Again, so you can see the error message one more time.
+
+00:03:20.780 --> 00:03:22.380
+Let's build it and run it.
+
+00:03:29.880 --> 00:03:31.780
+And there's the error message it's saying
+
+00:03:32.580 --> 00:03:35.460
+undefined reference to x you can see exactly what's going on.
+
+00:03:35.460 --> 00:03:38.860
+It can't find x. Now this is not a compiler error.
+
+00:03:38.860 --> 00:03:41.660
+This is a linker error. That's really important to understand.
+
+00:03:41.660 --> 00:03:43.960
+Linker errors are tricky to fix.
+
+00:03:43.960 --> 00:03:47.400
+A lot of times the files that you need to link are missing.
+
+00:03:47.400 --> 00:03:51.000
+They're in the wrong places. You don't have to worry about that using CodeLite.
+
+00:03:51.000 --> 00:03:54.800
+In this course, we're going to basically do everything ourselves.
+
+00:03:54.800 --> 00:03:57.800
+But if you're using libraries from third parties,
+
+00:03:57.800 --> 00:04:01.000
+this is the kind of thing we'll talk about in a more intermediate or advanced course.
+
+00:04:01.000 --> 00:04:04.300
+But I just wanted to show you linker errors. In case you do come up with one,
+
+00:04:04.300 --> 00:04:06.800
+post it in the forum, and we'll work through it together.

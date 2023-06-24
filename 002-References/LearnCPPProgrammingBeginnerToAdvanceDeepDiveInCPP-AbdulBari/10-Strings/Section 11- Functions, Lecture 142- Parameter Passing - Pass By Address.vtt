@@ -1,0 +1,288 @@
+WEBVTT
+
+0
+00:00.500 --> 00:02.720
+Now already you have seen call by value method.
+
+1
+00:02.850 --> 00:09.070
+Now I will show you what is call by address, in call by address, i have same code here, i will
+
+2
+00:09.090 --> 00:17.220
+make some modification to make the code for calling by address, see main function is having x and y variables
+
+3
+00:17.270 --> 00:19.190
+and it is sending them to swap function.
+
+4
+00:19.190 --> 00:25.440
+So it will not send a value, now  it will send the addresses & means the address of a variable
+
+5
+00:25.710 --> 00:30.450
+so it will send the addresses of these variables to swap function.
+
+6
+00:30.450 --> 00:37.440
+Then who can take addresses you well that the variables who store addresses which variables use for
+
+7
+00:37.440 --> 00:38.970
+storing addresses.
+
+8
+00:38.970 --> 00:39.420
+Yes.
+
+9
+00:39.420 --> 00:40.660
+Pointer variables.
+
+10
+00:40.770 --> 00:42.780
+So these must be pointers.
+
+11
+00:42.780 --> 00:45.990
+So I should declare them with stars to make them as pointers.
+
+12
+00:46.020 --> 00:48.070
+Now the formal parameters are pointers.
+
+13
+00:48.090 --> 00:55.140
+Actual parameters are addresses of variables then inside this one, for swapping I will not be swapping
+
+14
+00:55.140 --> 01:02.060
+these addresses, but I'll be swapping the data swapping the data so a is a pointer to X and the B is
+
+15
+01:02.060 --> 01:03.200
+the pointer to y.
+
+16
+01:03.300 --> 01:12.150
+So when i say A its address of x but when I say star A, data of X, so I should write star here star
+
+17
+01:12.240 --> 01:14.610
+a that thisthe reference to pointer.
+
+18
+01:15.870 --> 01:20.120
+Now this code is for call by address.
+
+19
+01:20.190 --> 01:26.430
+So I have made changes so you can see how the changes are made this is call by address. now let us see
+
+20
+01:26.430 --> 01:28.710
+the working of this program.
+
+21
+01:28.770 --> 01:36.000
+Now really that swapped function will modify the values from 10 20 to 20 10 it will swap them.
+
+22
+01:36.020 --> 01:40.500
+This swap function can access actual parameters and it can modify them.
+
+23
+01:41.100 --> 01:44.130
+Let us see the working how it executes.
+
+24
+01:44.130 --> 01:45.000
+Let us start.
+
+25
+01:45.030 --> 01:46.560
+Main function entry point.
+
+26
+01:46.560 --> 01:49.380
+So first the variables x and y are created.
+
+27
+01:49.410 --> 01:55.710
+So X is created in the memory and the Y is also created in the memory inside the stack.
+
+28
+01:55.710 --> 01:56.770
+So let us say that the address
+
+29
+01:56.780 --> 01:59.490
+of this is two hundred and 201.
+
+30
+01:59.520 --> 02:06.110
+And this 210 and 211 just randomly I am giving the address, though they are side by side of the memory.
+
+31
+02:06.270 --> 02:09.700
+Now this is the activision record of the main function.
+
+32
+02:09.720 --> 02:14.780
+This is about main, now next is  swap function is called.
+
+33
+02:15.180 --> 02:19.110
+ADDRESS OF X AND Y that is 200 and 210 are sent here.
+
+34
+02:19.170 --> 02:23.280
+So who are A and B and temp these are the variable swap,
+
+35
+02:23.310 --> 02:29.340
+So the activation record for swap is also created this is for swap and it will have the variables
+
+36
+02:29.430 --> 02:38.860
+A B and temp, now what is copied in A what is being passed from here &.
+
+37
+02:38.890 --> 02:40.960
+So address of A is copied here.
+
+38
+02:40.980 --> 02:41.930
+That is 200.
+
+39
+02:42.210 --> 02:44.230
+It means it is a pointer to this one.
+
+40
+02:44.230 --> 02:47.470
+So 210 it's a pointer to this one.
+
+41
+02:47.710 --> 02:48.810
+temp is a normal data
+
+42
+02:48.840 --> 02:49.260
+variable.
+
+43
+02:49.870 --> 02:50.130
+Now
+
+44
+02:50.130 --> 02:54.900
+The function is called already we have seen that activation records are created.
+
+45
+02:54.900 --> 02:56.970
+Now let us see next what happens.
+
+46
+02:56.970 --> 03:04.740
+See the first line is a temp assign *A, in temp star A, A is 200 star A is 10, that is copied
+
+47
+03:04.740 --> 03:05.720
+here.
+
+48
+03:05.910 --> 03:13.050
+Then star assign star B star A means astrik A here astrick B is copied.
+
+49
+03:13.070 --> 03:13.860
+So that is 20.
+
+50
+03:13.890 --> 03:19.830
+So this becomes 20 then star b assigned temp Astrik B assign 10.
+
+51
+03:19.830 --> 03:20.780
+So this is star b.
+
+52
+03:20.790 --> 03:22.800
+This is B and this is star B.
+
+53
+03:22.920 --> 03:30.600
+So temp it was copied here so you can see that this function is accessing the variables of main function.
+
+
+54
+03:31.020 --> 03:36.790
+Yes we know that one function cannot access the variables of another function but it is possible through
+
+
+55
+03:36.810 --> 03:39.410
+pointers, through pointers it is possible.
+
+
+56
+03:39.750 --> 03:42.160
+So this is called by address mechanism.
+
+
+57
+03:42.300 --> 03:47.710
+So pointer gives a pointer to a function to access the parameters of a calling function.
+
+
+58
+03:47.710 --> 03:55.370
+So that function is accessing x and y. now end of this function comeback, Cout x and y.
+
+
+59
+03:55.380 --> 04:01.410
+So what is the value in x=20 and what is the value in y ten yes they are changed from ten it became
+
+60
+04:01.410 --> 04:03.310
+20 from 20 it became ten.
+
+
+61
+04:03.450 --> 04:08.520
+So their values have changed, who has changed these values, swap function.
+
+
+62
+04:08.940 --> 04:15.750
+So that's it this is call by address if you want any function to modify the actual parameters then you
+
+
+63
+04:15.750 --> 04:22.740
+can go for call but address mechanism and one more thing its not necessary that both the variables
+
+64
+04:22.740 --> 04:23.740
+must be call by address only.
+
+
+65
+04:23.790 --> 04:28.270
+one variable call by value, one variable call by address, or one variable call by reference
+
+
+66
+04:28.290 --> 04:29.500
+you can take it like this.
+
+67
+04:30.240 --> 04:32.180
+It all depends on your requirement.
+
+68
+04:32.310 --> 04:35.040
+So further we will see where call by addresses are useful.

@@ -1,0 +1,1024 @@
+WEBVTT
+
+00:00:05.270 --> 00:00:07.029
+Hello, everyone. Welcome back.
+
+00:00:07.080 --> 00:00:09.010
+I hope you had fun
+with this challenge.
+
+00:00:09.480 --> 00:00:11.540
+It can be a very tough
+challenge sometimes.
+
+00:00:11.540 --> 00:00:13.780
+You've really got to understand
+what's going on with returning
+
+00:00:13.780 --> 00:00:17.919
+references, returning values,
+const correctness and so forth.
+
+00:00:18.100 --> 00:00:19.650
+So let's go through the solution.
+
+00:00:20.040 --> 00:00:24.750
+I'm in the section 14 workspace in
+the challenge-solution1 project.
+
+00:00:25.000 --> 00:00:27.309
+And here's one possible
+solution to this challenge.
+
+00:00:27.349 --> 00:00:30.480
+There's obviously a lot of different
+ways to achieve the same result.
+
+00:00:31.009 --> 00:00:33.730
+First thing is I'm in
+the mystring.h file.
+
+00:00:34.100 --> 00:00:38.150
+And you can see here the prototypes
+for the operator member methods.
+
+00:00:38.150 --> 00:00:40.760
+Remember, now this is the version
+where we're implementing all of
+
+00:00:40.760 --> 00:00:42.720
+these operators as member methods.
+
+00:00:42.769 --> 00:00:46.360
+So right away, we've got a little
+bit of an advantage in the sense that
+
+00:00:46.370 --> 00:00:49.510
+since we're member methods we have
+access to all the private information.
+
+00:00:49.889 --> 00:00:50.540
+So here we go.
+
+00:00:50.549 --> 00:00:52.890
+We've got our unary minus that
+makes the string lowercase.
+
+00:00:53.629 --> 00:00:55.279
+We've got our concatenation operator.
+
+00:00:55.590 --> 00:00:59.910
+And remember, because we've
+got member methods here, this
+
+00:00:59.910 --> 00:01:01.190
+will expect nothing, right.
+
+00:01:01.220 --> 00:01:03.949
+There's nothing in the parameter
+list for a unary operator because
+
+00:01:03.960 --> 00:01:05.800
+this object is the operand.
+
+00:01:07.910 --> 00:01:11.860
+In the case of a binary, operator
+there's only one item to the right
+
+00:01:11.990 --> 00:01:13.410
+in the parameter list, not two.
+
+00:01:14.070 --> 00:01:16.460
+With non-member functions,
+it's different we'll have two.
+
+00:01:17.150 --> 00:01:20.320
+Here is my equality operator,
+my not equal operator.
+
+00:01:20.320 --> 00:01:22.950
+You can see they return Booleans,
+less than, greater than.
+
+00:01:22.950 --> 00:01:25.019
+If you chose to do less than
+or equal to greater than
+
+00:01:25.019 --> 00:01:26.000
+or equal to, that's great.
+
+00:01:26.759 --> 00:01:30.429
+And then I've got my plus
+equal operator that expects a
+
+00:01:30.430 --> 00:01:32.340
+right-hand side string obviously.
+
+00:01:32.730 --> 00:01:34.940
+And then the left-hand side,
+we're assigning back to.
+
+00:01:35.110 --> 00:01:36.890
+That's my concatenate and a sign.
+
+00:01:37.350 --> 00:01:40.400
+There's my star or repeat operator
+in this case where I want to
+
+00:01:40.400 --> 00:01:42.660
+repeat a string n number of times.
+
+00:01:43.059 --> 00:01:44.749
+There's the star equal operator.
+
+00:01:45.179 --> 00:01:48.880
+And then we've got our pre-increment
+and post-increment operators that
+
+00:01:48.890 --> 00:01:50.820
+will simply make a string uppercase.
+
+00:01:51.720 --> 00:01:54.950
+Notice the pre-increment returns
+a reference, the post increment
+
+00:01:54.960 --> 00:01:56.959
+returns mystring by value.
+
+00:01:58.050 --> 00:01:59.210
+Okay, so there you go.
+
+00:01:59.370 --> 00:02:01.660
+And let's go and see the
+implementations for these,
+
+00:02:01.700 --> 00:02:03.880
+and they should be really
+straightforward, it's pretty much
+
+00:02:03.880 --> 00:02:05.070
+what you've been used to doing.
+
+00:02:05.430 --> 00:02:07.970
+So let me start right here
+at the very beginning.
+
+00:02:08.449 --> 00:02:10.820
+Right here on line 94,
+we're looking at equality.
+
+00:02:11.180 --> 00:02:14.409
+So let's take advantage of that
+string compare function, right.
+
+00:02:14.440 --> 00:02:16.570
+So we're going to compare
+this string with the
+
+00:02:16.570 --> 00:02:18.099
+right-hand side object string.
+
+00:02:18.559 --> 00:02:22.230
+And if they're equal to 0,
+then they're the same the
+
+00:02:22.230 --> 00:02:25.560
+Not equals is exactly the same
+except I'm just putting a bang
+
+00:02:25.570 --> 00:02:28.250
+in here, I'm just saying -- I'm
+negating that result.
+
+00:02:28.440 --> 00:02:29.930
+We could certainly call this guy.
+
+00:02:30.250 --> 00:02:32.780
+But it's simple enough just to
+negate what we get back here.
+
+00:02:33.380 --> 00:02:35.060
+The less than is the same idea.
+
+00:02:35.480 --> 00:02:37.220
+I'm using std string hump again.
+
+00:02:37.540 --> 00:02:40.295
+And I'm checking to see if the
+value return was less than 0,
+
+00:02:40.295 --> 00:02:41.490
+and I'm returning that result.
+
+00:02:42.850 --> 00:02:44.470
+Greater than exactly the same way.
+
+00:02:44.470 --> 00:02:48.630
+So you can see how trivial these
+methods are to implement because
+
+00:02:48.710 --> 00:02:51.830
+the std string comp function is
+really doing all the work for us.
+
+00:02:52.360 --> 00:02:55.260
+Now the make lowercase we
+saw this in the slides.
+
+00:02:55.260 --> 00:02:58.239
+And we saw this in some of the
+code examples that we did as well.
+
+00:02:58.879 --> 00:03:02.970
+What we need to do here is allocate
+a character buffer right here an
+
+00:03:02.970 --> 00:03:05.890
+array of characters on the heap
+that's the length of the string
+
+00:03:05.900 --> 00:03:07.370
+that we're in question plus one.
+
+00:03:07.710 --> 00:03:10.530
+Then we need to copy the string
+over to buff and then just
+
+00:03:10.540 --> 00:03:12.239
+loop through that buffer area.
+
+00:03:12.620 --> 00:03:15.810
+And basically, make all those
+characters lowercase, right.
+
+00:03:15.849 --> 00:03:19.160
+And we're using the std to lower
+function right here to simply make the
+
+00:03:19.160 --> 00:03:21.150
+lowercase version of that character.
+
+00:03:21.470 --> 00:03:24.640
+I'm creating the temporary
+object, which I'm returning and
+
+00:03:24.640 --> 00:03:27.380
+don't forget to delete the buffer
+as we mentioned in the slides.
+
+00:03:27.650 --> 00:03:30.460
+Otherwise, we'll leak that memory and
+that's not something we want to do.
+
+00:03:31.059 --> 00:03:33.509
+The concatenate method
+is very, very similar.
+
+00:03:33.870 --> 00:03:36.149
+We're creating an area in on the heap.
+
+00:03:36.170 --> 00:03:39.035
+This time it has to be big
+enough for both strings plus 1.
+
+00:03:39.310 --> 00:03:43.070
+So we're taking the length of str and
+then the like the length of right-hand
+
+00:03:43.070 --> 00:03:44.990
+side str and adding 1 to them.
+
+00:03:45.900 --> 00:03:48.540
+I'm copying the string to the
+buffer, and then I'm concatenating
+
+00:03:48.550 --> 00:03:51.960
+the other string the right-hand
+side string to that, creating a
+
+00:03:51.969 --> 00:03:55.459
+temporary object and returning
+it and deleting my area again.
+
+00:03:56.030 --> 00:03:58.580
+Very, very common
+pattern that you can see.
+
+00:03:58.860 --> 00:04:03.980
+Now let's talk about plus equal
+since we've already overloaded
+
+00:04:03.980 --> 00:04:05.460
+the concatenation operator.
+
+00:04:05.559 --> 00:04:06.989
+Let's take advantage of that.
+
+00:04:06.989 --> 00:04:10.000
+So you can see this basically
+becomes really one line of code,
+
+00:04:10.000 --> 00:04:12.389
+the return doesn't even count
+because we've got a return.
+
+00:04:12.559 --> 00:04:16.329
+So what we're saying here is
+that the current object is equal
+
+00:04:16.329 --> 00:04:19.349
+to the current object plus the
+right-hand side object, right.
+
+00:04:19.560 --> 00:04:23.630
+So this right here we'll call this
+operator that we've already overloaded
+
+00:04:23.630 --> 00:04:25.210
+and take care of everything for us.
+
+00:04:25.849 --> 00:04:29.299
+So this becomes a very trivial
+method once we've overloaded
+
+00:04:29.299 --> 00:04:30.850
+the concatenation operator.
+
+00:04:31.690 --> 00:04:33.130
+Here is the repeat.
+
+00:04:33.840 --> 00:04:36.700
+And what I can do here is I can
+take advantage because remember
+
+00:04:36.710 --> 00:04:39.780
+multiplication or repeating
+is just a bunch of additions.
+
+00:04:40.080 --> 00:04:42.680
+So what we can do here is we
+can take advantage of that.
+
+00:04:42.969 --> 00:04:46.560
+So we can create a temp object
+to just an empty temp object and
+
+00:04:46.560 --> 00:04:51.730
+then just loop end times and add
+this to the temp object, right,
+
+00:04:52.170 --> 00:04:53.790
+which is exactly what we expect.
+
+00:04:53.790 --> 00:04:56.140
+We're incrementing this so many times.
+
+00:04:56.440 --> 00:04:59.010
+And then we just return the
+temp object, in this case.
+
+00:04:59.480 --> 00:05:01.930
+We could do it all in code.
+
+00:05:02.320 --> 00:05:05.620
+If we do it like that if you like,
+one is going to be a little bit
+
+00:05:05.620 --> 00:05:06.980
+more efficient than the other.
+
+00:05:07.060 --> 00:05:09.929
+But this works really well and
+this is very, very readable
+
+00:05:09.929 --> 00:05:13.380
+and modifiable code, which
+is my preference right here.
+
+00:05:14.849 --> 00:05:18.159
+Here's the repeat and assign,
+same idea as the plus equal.
+
+00:05:18.340 --> 00:05:19.580
+This is the star equal.
+
+00:05:20.049 --> 00:05:21.969
+So this equals this times n.
+
+00:05:21.980 --> 00:05:25.730
+We're going to call the overloaded
+star operator, a repeat operator in
+
+00:05:25.730 --> 00:05:29.550
+this case to do it all for us, so
+this method becomes trivial again.
+
+00:05:30.330 --> 00:05:33.610
+Okay, and now let's take a look at
+the last couple of methods here the
+
+00:05:33.620 --> 00:05:35.629
+pre-increment and the post-increment.
+
+00:05:35.889 --> 00:05:37.710
+They both make the string case.
+
+00:05:38.030 --> 00:05:39.690
+The difference is in the semantics.
+
+00:05:39.839 --> 00:05:42.199
+So let's take a look at this
+one right here, pre-increment.
+
+00:05:43.359 --> 00:05:44.610
+This one is dead simple.
+
+00:05:44.990 --> 00:05:46.050
+We've got an object.
+
+00:05:46.100 --> 00:05:49.570
+It's got an str, pointer that
+points to a character array on
+
+00:05:49.570 --> 00:05:52.300
+the heap to do is loop through
+that character array and make
+
+00:05:52.320 --> 00:05:53.479
+everything in there two upper.
+
+00:05:54.240 --> 00:05:56.380
+That's it. And then we return the current object.
+
+00:05:56.610 --> 00:05:59.219
+There's no need to copy
+anything, move anything over.
+
+00:05:59.580 --> 00:06:01.600
+It's the same string we're
+pointing to, we're just
+
+00:06:01.600 --> 00:06:03.300
+simply making it uppercase.
+
+00:06:04.040 --> 00:06:06.530
+And in the case of the post
+increment, remember, the post
+
+00:06:06.530 --> 00:06:09.990
+increment is using that int right
+there, which is just a placeholder.
+
+00:06:09.990 --> 00:06:10.629
+It's unnamed.
+
+00:06:10.630 --> 00:06:11.770
+We don't even use it in here.
+
+00:06:11.940 --> 00:06:14.069
+It's only used by the
+compiler behind the scenes.
+
+00:06:14.559 --> 00:06:17.200
+This returns an object by value.
+
+00:06:17.549 --> 00:06:21.710
+So what we're doing is we're making a
+temporary copy of the current object.
+
+00:06:21.740 --> 00:06:23.120
+That's what this is doing right here.
+
+00:06:24.470 --> 00:06:28.289
+Then we're calling the pre-increment
+function, this guy right here.
+
+00:06:29.840 --> 00:06:33.210
+That's going to increment that string,
+make it uppercase in this case.
+
+00:06:33.210 --> 00:06:36.340
+And then we return the
+temporary object that we
+
+00:06:36.760 --> 00:06:38.120
+saved, that was the old value.
+
+00:06:38.360 --> 00:06:41.330
+So these are the semantics for
+post increment, it's going to
+
+00:06:41.330 --> 00:06:43.260
+be a little bit different than
+the pre because I've got to
+
+00:06:43.290 --> 00:06:45.250
+return the old value, right.
+
+00:06:45.440 --> 00:06:48.680
+That makes sense because what
+we're assigning is the value then
+
+00:06:48.680 --> 00:06:50.570
+we're incrementing the string.
+
+00:06:51.320 --> 00:06:52.199
+So there you go.
+
+00:06:52.449 --> 00:06:55.730
+That's a real simple implementation
+for all of these operators.
+
+00:06:56.040 --> 00:06:57.520
+It may have taken you a while.
+
+00:06:57.530 --> 00:07:00.200
+That's okay, that's part
+of the learning process.
+
+00:07:00.500 --> 00:07:03.579
+I remember when I first did operator
+overloading, it's hard to wrap your
+
+00:07:03.580 --> 00:07:07.600
+head around whether you're returning
+references or values and you know
+
+00:07:07.600 --> 00:07:09.119
+what what exactly is going on here.
+
+00:07:10.199 --> 00:07:12.059
+The last thing we'll do is
+let's take a look at main and
+
+00:07:12.059 --> 00:07:13.650
+you'll see some test cases here.
+
+00:07:14.140 --> 00:07:16.310
+And what I'd like to do I'll
+just run this real quick.
+
+00:07:18.280 --> 00:07:20.460
+And right there's our output.
+
+00:07:20.650 --> 00:07:22.530
+And then it says enter
+a string to repeat.
+
+00:07:22.530 --> 00:07:26.150
+So let me just enter a string
+that looks like dash 00 dash
+
+00:07:26.400 --> 00:07:28.599
+I'll put three 0, just something
+that we can really see.
+
+00:07:29.539 --> 00:07:32.289
+And this is testing the
+extraction operator as well.
+
+00:07:33.040 --> 00:07:34.610
+And how many times would
+you like to repeat it.
+
+00:07:34.650 --> 00:07:36.490
+Let's say I want to
+repeat it five times.
+
+00:07:37.550 --> 00:07:38.219
+And there we go.
+
+00:07:38.260 --> 00:07:40.880
+And I'll get back to this output in
+just a second, but let's go back to
+
+00:07:40.880 --> 00:07:42.650
+our main here and walk through this.
+
+00:07:43.000 --> 00:07:47.510
+You can see right here that I've
+got mystring a which is frank,
+
+00:07:47.510 --> 00:07:48.820
+mystring b which is frank.
+
+00:07:48.830 --> 00:07:50.650
+And I'm saying is a equal to b.
+
+00:07:51.010 --> 00:07:53.219
+And this will print out true
+or false because I've set this
+
+00:07:53.220 --> 00:07:54.640
+modifier right here on the stream.
+
+00:07:55.140 --> 00:07:58.180
+So a obviously is equal
+to b, so we expect a true.
+
+00:07:58.180 --> 00:07:59.460
+That's what we have right here.
+
+00:08:00.160 --> 00:08:01.439
+Is a not equal to b?
+
+00:08:01.440 --> 00:08:03.900
+Well, that's false
+so we get the false.
+
+00:08:04.779 --> 00:08:08.090
+Then we set b to George, and we use
+some of the other comparison operators
+
+00:08:08.330 --> 00:08:09.840
+in addition to the ones we just did.
+
+00:08:09.840 --> 00:08:12.610
+So in this case, frank is definitely
+not equal to george, right.
+
+00:08:12.840 --> 00:08:15.910
+So we expect this to be
+false, which it is right here.
+
+00:08:17.070 --> 00:08:18.640
+Is frank not equal to george?
+
+00:08:18.660 --> 00:08:19.420
+That's true.
+
+00:08:20.429 --> 00:08:22.139
+Is frank less than george.
+
+00:08:22.170 --> 00:08:22.920
+That's true.
+
+00:08:23.279 --> 00:08:25.340
+And finally, is frank
+greater than george?
+
+00:08:25.340 --> 00:08:25.899
+That's false.
+
+00:08:25.909 --> 00:08:27.680
+So you can see that
+output right over here.
+
+00:08:28.950 --> 00:08:30.719
+Okay now we'll get to some other ones.
+
+00:08:30.719 --> 00:08:36.556
+In this case, I've got s1 is frank
+all uppercase, and I'm using the
+
+00:08:36.556 --> 00:08:39.400
+unary minus right here to make it all
+lowercase and then I'm outputting S1.
+
+00:08:40.310 --> 00:08:42.800
+And so you can see we expect
+lowercase frank and that's
+
+00:08:42.800 --> 00:08:44.020
+what we have right here.
+
+00:08:46.140 --> 00:08:48.460
+The next is using the
+concatenation operator.
+
+00:08:48.460 --> 00:08:50.660
+So remember, s1 is lowercase frank.
+
+00:08:51.030 --> 00:08:55.190
+And we're just saying tack on five
+asterisks to that, concatenate
+
+00:08:55.210 --> 00:08:56.480
+five asterisks to the end of that.
+
+00:08:56.549 --> 00:08:59.554
+So we expect this to be frank,
+followed by five asterisks and
+
+00:08:59.650 --> 00:09:01.330
+you see the output right there.
+
+00:09:02.440 --> 00:09:05.110
+And then we're doing it again except
+this time we're using plus equals.
+
+00:09:05.400 --> 00:09:07.339
+So I'm saying s1 plus equals.
+
+00:09:07.750 --> 00:09:09.100
+I think five dashes again.
+
+00:09:09.200 --> 00:09:10.760
+In this case dash is not stars.
+
+00:09:11.130 --> 00:09:16.040
+So what we expect is s1 which is
+right here frank five asterisks, and
+
+00:09:16.040 --> 00:09:18.279
+we want to append those dashes to it.
+
+00:09:18.469 --> 00:09:21.500
+So the output is something like
+this is what you see right here.
+
+00:09:23.310 --> 00:09:26.579
+Okay, now we're going to use
+the repeat operator right here.
+
+00:09:27.080 --> 00:09:31.620
+We're simply saying s2 is one two
+three four five and give me three
+
+00:09:31.620 --> 00:09:34.110
+copies of that and assign it to s1.
+
+00:09:34.190 --> 00:09:38.160
+So what we expect is 1 2 3 4
+5, 1 2 3 4 5
+
+00:09:38.160 --> 00:09:40.570
+and 1 2 3 4 5, just what we see right here.
+
+00:09:41.690 --> 00:09:43.930
+Okay, let me scroll this up
+just a little bit so we put
+
+00:09:44.080 --> 00:09:45.320
+all this on the same screen.
+
+00:09:45.590 --> 00:09:46.640
+So we're right about -- okay.
+
+00:09:46.640 --> 00:09:47.309
+So that's better.
+
+00:09:47.770 --> 00:09:50.979
+So now I've got s3 is abcdef.
+
+00:09:51.570 --> 00:09:55.680
+And all I'm saying is give me
+five copies in this case of s3
+
+00:09:56.390 --> 00:09:57.990
+and just put it right back in s3.
+
+00:09:58.190 --> 00:10:00.660
+So we expect five copies of abcdef.
+
+00:10:01.130 --> 00:10:02.360
+That's what we're getting here.
+
+00:10:02.770 --> 00:10:04.820
+You can see the five
+copies of that string.
+
+00:10:05.599 --> 00:10:07.980
+Now we're using the insertion
+and extraction operators
+
+00:10:07.980 --> 00:10:09.029
+we're testing those.
+
+00:10:09.240 --> 00:10:12.420
+So we've got a couple of variables
+here repeat string and repeat times.
+
+00:10:12.750 --> 00:10:16.200
+And we're just simply asking the user
+interest string to repeat, and we're
+
+00:10:16.200 --> 00:10:19.860
+using the extraction operator to
+read that right into repeat string.
+
+00:10:19.870 --> 00:10:22.550
+That's our own overloaded
+extraction operator.
+
+00:10:23.030 --> 00:10:25.820
+So I typed in dash
+three zeros and a dash.
+
+00:10:26.299 --> 00:10:28.350
+And then how many times would
+you like me to repeat this.
+
+00:10:28.709 --> 00:10:29.999
+I entered five times.
+
+00:10:30.469 --> 00:10:34.770
+And I simply wrote repeat
+string star equals repeat time.
+
+00:10:34.770 --> 00:10:36.560
+So give me five copies of that.
+
+00:10:37.160 --> 00:10:41.590
+And then I'm displaying it right
+here 1 2 3 4 5 copies of that.
+
+00:10:42.790 --> 00:10:45.819
+Then the next line just gives
+me 12 copies of what I just did.
+
+00:10:45.830 --> 00:10:48.969
+So that's going to give me 5 times
+12, it's going to give me 60 of
+
+00:10:48.980 --> 00:10:52.410
+these guys printed out here, which
+is just a really simple test.
+
+00:10:53.480 --> 00:10:57.330
+And then finally, the last tests
+for the concatenation operator
+
+00:10:57.330 --> 00:11:00.530
+are right here I've got repeat
+string is just repeat me.
+
+00:11:00.929 --> 00:11:03.559
+Then I'm simply outputting
+repeat string plus repeat
+
+00:11:03.559 --> 00:11:04.910
+string plus repeat string.
+
+00:11:05.100 --> 00:11:08.840
+So I expect the three copies of that
+to display and there they are: repeat
+
+00:11:08.840 --> 00:11:10.650
+me, repeat me and repeat me again.
+
+00:11:11.410 --> 00:11:14.820
+Okay, there were chaining
+the concatenation operators.
+
+00:11:15.170 --> 00:11:18.260
+And notice that here we're creating
+actually a temporary unnamed.
+
+00:11:18.559 --> 00:11:20.969
+So you can uncomment the
+move assignments and the move
+
+00:11:20.969 --> 00:11:23.949
+constructors and you can see how
+that's happening efficiently.
+
+00:11:25.140 --> 00:11:27.480
+Here we're saying repeat
+stream plus equals, repeat
+
+00:11:27.480 --> 00:11:28.850
+string plus times three.
+
+00:11:29.270 --> 00:11:32.090
+So we're basically
+adding this time right.
+
+00:11:32.290 --> 00:11:35.349
+So we're taking this repeat
+string, which is repeat me.
+
+00:11:36.270 --> 00:11:39.400
+Give me three copies of it and then
+adding it right back to repeat me
+
+00:11:39.400 --> 00:11:40.810
+which had one copy in there already.
+
+00:11:40.949 --> 00:11:42.840
+So we expect to end
+up with four copies.
+
+00:11:42.840 --> 00:11:45.230
+We have 1 2 3 and 4 right here.
+
+00:11:45.230 --> 00:11:50.790
+And then the last several test cases
+are the posts and pre-increments.
+
+00:11:50.950 --> 00:11:52.690
+So we'll do the pre-increment first.
+
+00:11:52.920 --> 00:11:54.510
+In this case, I've got frank.
+
+00:11:55.820 --> 00:11:57.900
+Let me scroll that down just
+a little bit right there.
+
+00:11:58.080 --> 00:11:59.789
+So in this case, I've
+got a pre-increment.
+
+00:11:59.789 --> 00:12:02.520
+Mystring is frank with an uppercase f.
+
+00:12:03.200 --> 00:12:04.840
+And I'm saying pre-increment s.
+
+00:12:04.840 --> 00:12:07.709
+So I expect frank to be
+uppercase when I output it and
+
+00:12:07.710 --> 00:12:08.820
+that's what I'm getting here.
+
+00:12:09.540 --> 00:12:14.519
+I'm setting s back down to lowercase
+and outputting it right there.
+
+00:12:15.849 --> 00:12:20.030
+I'm saying mystring
+result pre-increment s.
+
+00:12:20.140 --> 00:12:23.430
+So when that happens, I expect
+both s and result to contain
+
+00:12:23.430 --> 00:12:26.390
+the uppercase frank which is
+exactly what's happening here.
+
+00:12:27.700 --> 00:12:31.530
+And then finally, we'll test the post
+increment where we're setting s to
+
+00:12:31.530 --> 00:12:35.709
+frank and just simply incrementing
+s, we should get remember post
+
+00:12:35.709 --> 00:12:38.750
+and pre-increment all alone in
+the statement mean the same thing.
+
+00:12:39.010 --> 00:12:42.990
+So in this case, I've got frank as
+uppercase, which I'm displaying.
+
+00:12:43.780 --> 00:12:47.060
+I'm making frank lowercase, and
+then I'm testing the post increment
+
+00:12:47.099 --> 00:12:51.439
+in this context here, which means
+assign the lowercase version
+
+00:12:51.440 --> 00:12:54.030
+to result and then increment s.
+
+00:12:54.230 --> 00:12:57.520
+So result we expect to be
+lowercase, s we expect to be
+
+00:12:57.560 --> 00:12:59.090
+uppercase, and there you go.
+
+00:12:59.630 --> 00:13:02.139
+Okay, so a lot of talk with
+the test cases, but they're
+
+00:13:02.139 --> 00:13:04.370
+important that you understand
+what they're supposed to do.
+
+00:13:04.510 --> 00:13:07.030
+When we look at the challenge
+solution 2, we won't go over these
+
+00:13:07.030 --> 00:13:08.500
+again since we went over them here.
+
+00:13:09.240 --> 00:13:10.289
+But that's pretty much it.
+
+00:13:10.930 --> 00:13:13.770
+Implementing these as member
+methods is pretty straightforward.
+
+00:13:13.780 --> 00:13:15.370
+It's just a matter of understanding.
+
+00:13:16.180 --> 00:13:19.410
+When we're changing str, we've
+got the right-hand object as well.
+
+00:13:19.690 --> 00:13:22.419
+Do we return a reference;
+do we return by value?
+
+00:13:22.559 --> 00:13:23.470
+And that's it.
+
+00:13:23.929 --> 00:13:25.540
+If you have questions,
+please let me know.

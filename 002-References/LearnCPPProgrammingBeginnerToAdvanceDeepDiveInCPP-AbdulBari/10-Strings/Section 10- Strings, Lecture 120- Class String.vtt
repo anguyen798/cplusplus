@@ -1,0 +1,589 @@
+WEBVTT
+
+00:00.480 --> 00:04.170
+In this video I will be explaining about String.
+
+00:04.200 --> 00:07.110
+This is a built in class in C++.
+
+00:07.260 --> 00:10.890
+So already we have learned about string using array and a pointer.
+
+00:10.890 --> 00:13.650
+But now this is a built in class available.
+
+00:13.860 --> 00:19.590
+So here we will be getting a chance to learn what does it mean by class and what does it mean by an
+
+00:19.590 --> 00:24.570
+object and what are member functions or what are operators upon an object?
+
+00:24.570 --> 00:28.470
+So we will get the flavor of object orientation, no doubt.
+
+00:28.470 --> 00:32.010
+In the further sections you will be learning about object orientation.
+
+00:32.160 --> 00:34.830
+We will be writing our own classes by ourselves.
+
+00:35.280 --> 00:39.960
+So for accessing this class we have to include this header file that is a string.
+
+00:40.850 --> 00:43.460
+Now let us learn about this class strain.
+
+00:44.180 --> 00:49.340
+First of all, this is a declaration of a variable of string.
+
+00:49.670 --> 00:53.110
+So this variable is called as an object.
+
+00:53.120 --> 00:59.490
+So when you declare an variable of type class, we use the term object instead of calling it as a variable.
+
+00:59.510 --> 01:02.870
+It's better to call it as an object, so I'll declare it once again.
+
+01:02.870 --> 01:03.390
+Here.
+
+01:03.410 --> 01:09.620
+See if you say string SDR, an object of type string will be created.
+
+01:09.770 --> 01:11.330
+So object is created.
+
+01:11.360 --> 01:13.250
+Now this is the method of declaration.
+
+01:13.250 --> 01:19.160
+But suppose if you want to initialize something like I want to initialize it with word.
+
+01:19.160 --> 01:19.940
+Hello.
+
+01:19.970 --> 01:21.770
+Then let us see what happens.
+
+01:21.980 --> 01:26.210
+If you initialize this, then this object string will be created.
+
+01:26.210 --> 01:29.560
+So this will be creating an array internally.
+
+01:29.570 --> 01:30.140
+Right?
+
+01:30.410 --> 01:32.780
+So we don't have to declare an array internally.
+
+01:32.780 --> 01:34.130
+It will create an array.
+
+01:34.700 --> 01:41.230
+And inside this, this word hello will be stored letter by letter.
+
+01:41.450 --> 01:45.590
+Then afterwards null character, which we have already studied.
+
+01:45.590 --> 01:47.060
+This is also inserted.
+
+01:47.060 --> 01:49.460
+So this null character is also inserted.
+
+01:49.790 --> 01:57.560
+So this string class is also having null character terminated or null character delimited.
+
+01:57.560 --> 02:02.510
+So this is followed in string class also like we have already seen earlier.
+
+02:03.530 --> 02:07.010
+Then one more important thing, I have created a bigger size array.
+
+02:07.010 --> 02:13.160
+So yes, it will not create an exact size array that is required for a string, but it will create some
+
+02:13.160 --> 02:14.720
+little larger size array.
+
+02:14.780 --> 02:18.140
+Let us say, for example, it will create an array of size 16.
+
+02:18.290 --> 02:19.970
+So there are a few more places here.
+
+02:19.970 --> 02:24.080
+So the array size will be created larger than the string.
+
+02:24.290 --> 02:29.730
+If your string itself does itself is larger, then it will create still bigger size array.
+
+02:30.290 --> 02:36.140
+So it will make sure that there are few more spaces remaining after the string is stored, so it will
+
+02:36.140 --> 02:40.550
+have some more capacity for storing or expanding the system.
+
+02:40.760 --> 02:48.380
+So this array size, we call it, as capacity of first string and the number of letters that are stored
+
+02:48.380 --> 02:55.330
+up to the null character that is large zero is called as length of a string, or it is also called as
+
+02:55.340 --> 02:56.870
+size of a string.
+
+02:57.500 --> 02:59.750
+We call it a size or length of a string.
+
+03:00.560 --> 03:07.160
+So always capacity of an array or a string object will be bigger than the length of a string.
+
+03:07.160 --> 03:09.140
+So what is the idea behind this one?
+
+03:09.140 --> 03:12.590
+So it is like a buffer space or extra space if at all.
+
+03:12.590 --> 03:16.010
+I'm modifying this a string and adding more alphabets to this one.
+
+03:16.010 --> 03:18.830
+So there is space already available.
+
+03:19.460 --> 03:21.890
+The next thing if suppose already.
+
+03:21.890 --> 03:28.100
+I have a string and I'm trying to store something bigger than the size or the present capacity of a
+
+03:28.100 --> 03:28.730
+string.
+
+03:28.760 --> 03:30.170
+Then what will happen?
+
+03:30.200 --> 03:31.490
+Will it accommodate?
+
+03:31.490 --> 03:35.840
+Yes, it will increase the size of this array internally.
+
+03:35.870 --> 03:37.490
+Internally it will do it.
+
+03:37.520 --> 03:39.860
+How it will do it is a separate discussion.
+
+03:39.860 --> 03:44.300
+So actually it will create a very bigger size array compared to this one.
+
+03:44.300 --> 03:51.950
+Then it will take a fresh array and it will write down that string, a new string that is the one that
+
+03:51.950 --> 03:53.030
+is bigger than 16.
+
+03:53.030 --> 03:54.260
+So it will store it here.
+
+03:54.260 --> 03:55.880
+So it will delete this.
+
+03:56.690 --> 04:01.460
+So it will automatically manage the size of the same array cannot be increased.
+
+04:01.460 --> 04:08.270
+Remember this new array has to be created and then the string will be stored so you don't have to worry
+
+04:08.270 --> 04:08.900
+about it.
+
+04:08.900 --> 04:13.640
+This class will have a built in mechanism for storing any size of string.
+
+04:13.640 --> 04:19.160
+Whatever you are giving it will increase the capacity to a bigger size and then it will store a new
+
+04:19.160 --> 04:19.670
+string.
+
+04:19.670 --> 04:21.920
+And this will be a new string object.
+
+04:21.920 --> 04:29.810
+Now, so the point here is this is a self manage string, so you don't have to worry about the available
+
+04:29.810 --> 04:35.840
+spaces and you can grow or reduce the size of a string depending on the data that you are storing or
+
+04:35.840 --> 04:38.000
+depending on the text that you are storing in this form.
+
+04:38.990 --> 04:40.460
+Now, let's come back to this.
+
+04:41.350 --> 04:47.800
+Here is a function or a method for reading a string from the keyboard like seen as a known object we
+
+04:47.800 --> 04:48.460
+have been using.
+
+04:48.460 --> 04:54.950
+It does use for getting a stream of characters from the keyboard and it will store it in style.
+
+04:55.660 --> 04:59.200
+But the problem with this one is it will take only one word.
+
+04:59.230 --> 05:02.290
+If you type multiple words, it will not take.
+
+05:02.530 --> 05:09.730
+Then for reading multiple words, we have a global function available that is get line function is available
+
+05:09.730 --> 05:15.040
+and in that we will pass that is string as well as the string object.
+
+05:15.310 --> 05:16.840
+So this is the method of fitting it.
+
+05:16.840 --> 05:21.040
+Now for displaying a string, just simply say see out str.
+
+05:21.040 --> 05:22.750
+It will display a string.
+
+05:23.520 --> 05:29.580
+So we have learned how to declare a string and how to initialize a string and how it will manage its
+
+05:29.580 --> 05:30.220
+size.
+
+05:30.240 --> 05:34.030
+Then also have shown you how to read a string and how to display it.
+
+05:34.050 --> 05:36.480
+So we will see the demonstration of this one.
+
+05:37.080 --> 05:39.060
+Here I have a skeleton of a program.
+
+05:39.060 --> 05:41.940
+Already I have included string header file.
+
+05:42.150 --> 05:44.480
+Now here I will declare a string.
+
+05:44.490 --> 05:47.730
+String str assign.
+
+05:47.760 --> 05:48.450
+Hello.
+
+05:48.780 --> 05:52.200
+Now I will directly display it and let us see what happens.
+
+05:52.680 --> 05:53.430
+String.
+
+05:56.710 --> 06:00.100
+Yes, it is displaying here you can see that the string is displayed.
+
+06:00.220 --> 06:03.010
+So this is declaration plus initialization.
+
+06:03.010 --> 06:06.040
+And then also I have displayed it.
+
+06:06.850 --> 06:11.910
+Now instead of initializing, I will read a string from keyboard.
+
+06:11.920 --> 06:14.170
+So here I will say see out.
+
+06:15.740 --> 06:17.780
+Enter a string.
+
+06:18.640 --> 06:22.300
+Then by using scene I will take a string.
+
+06:22.330 --> 06:23.260
+SDR.
+
+06:24.360 --> 06:24.800
+Right.
+
+06:24.950 --> 06:26.720
+Then afterwards I'm displaying it.
+
+06:26.720 --> 06:30.980
+So here after displaying, I will also use NL.
+
+06:31.010 --> 06:32.780
+So it goes to the next line.
+
+06:34.110 --> 06:35.400
+Let us sit on this one.
+
+06:36.360 --> 06:38.040
+Now here is asking for a string.
+
+06:38.040 --> 06:39.180
+I will enter a string.
+
+06:39.180 --> 06:39.860
+That is.
+
+06:39.870 --> 06:40.560
+Hello.
+
+06:41.790 --> 06:42.790
+I --.
+
+06:45.070 --> 06:46.330
+Now I will enter a string.
+
+06:46.330 --> 06:48.940
+That is hello world.
+
+06:49.510 --> 06:50.980
+So it has taken only hello.
+
+06:50.980 --> 06:53.560
+As I said that if there is a space, there are multiple words.
+
+06:53.560 --> 06:54.500
+It will not take it.
+
+06:54.520 --> 06:55.150
+Yes.
+
+06:55.750 --> 06:59.290
+Now let me run once again and I will write something else.
+
+06:59.950 --> 07:01.690
+I will say programming you.
+
+07:01.790 --> 07:04.770
+It is taking randomly every time something.
+
+07:04.780 --> 07:06.150
+There are no spaces, right?
+
+07:06.160 --> 07:07.100
+It's a single word.
+
+07:07.120 --> 07:07.820
+Remember this one?
+
+07:07.870 --> 07:09.010
+There are no spaces.
+
+07:09.460 --> 07:11.290
+Now let's see whether it takes or not.
+
+07:11.850 --> 07:12.760
+It has taken.
+
+07:13.000 --> 07:14.470
+It is displaying an entire string.
+
+07:14.470 --> 07:16.600
+Whatever I have typed, it has taken that one.
+
+07:17.080 --> 07:19.510
+So it means there is no fixed size of a string.
+
+07:19.510 --> 07:24.190
+So whatever the string you want to store, whatever the size may be, it will increase its capacity
+
+07:24.190 --> 07:26.050
+and try to accommodate that string.
+
+07:26.470 --> 07:28.150
+So does a self manage one?
+
+07:28.660 --> 07:28.820
+No.
+
+07:28.930 --> 07:34.040
+Next thing I have told you that we can use a function that is get line for reading a string.
+
+07:34.060 --> 07:37.960
+Get line say scene and then str.
+
+07:38.800 --> 07:44.280
+Right now I can read multiple characters until I hit new line character.
+
+07:44.290 --> 07:44.680
+Right.
+
+07:44.710 --> 07:46.300
+Let us run this one.
+
+07:49.040 --> 07:49.550
+Yeah.
+
+07:50.910 --> 07:52.260
+Hello, all.
+
+07:52.710 --> 07:54.120
+How are you?
+
+07:54.570 --> 07:58.630
+So I have written multiple characters, multiple words.
+
+07:58.650 --> 08:06.660
+Yeah, it has taken all the words is debtline will allow you to read sentences or passages, whatever
+
+08:06.660 --> 08:07.500
+you want to type.
+
+08:07.950 --> 08:09.740
+Now, let us do one more thing.
+
+08:09.750 --> 08:13.010
+I'll write that line once again and I will try to read it.
+
+08:13.020 --> 08:16.860
+Let us see whether it will read this one or not.
+
+08:19.580 --> 08:22.670
+So it has to read like two times, right?
+
+08:23.030 --> 08:24.380
+Hello, world.
+
+08:25.490 --> 08:27.350
+The next thing you know, it is reading.
+
+08:27.890 --> 08:29.390
+I'll say good morning.
+
+08:30.720 --> 08:31.000
+Yes.
+
+08:31.020 --> 08:31.620
+Flicking.
+
+08:32.070 --> 08:34.800
+So get line is reading multiple words.
+
+08:34.800 --> 08:40.620
+So it's not an issue like earlier in one of the video I have shown you that there is a problem while
+
+08:40.620 --> 08:41.570
+reading a string.
+
+08:41.580 --> 08:44.130
+So that same problem, does it exist or not?
+
+08:44.130 --> 08:44.870
+Let us see.
+
+08:44.880 --> 08:51.000
+So here I will use scene and let us see what happens.
+
+08:51.000 --> 08:52.020
+Scene.
+
+08:52.260 --> 08:54.060
+It will read only one word, no doubt.
+
+08:54.060 --> 08:55.710
+Then again I will say scene.
+
+08:55.710 --> 08:57.490
+So it should read two words, right?
+
+08:57.600 --> 08:58.500
+The next year.
+
+08:59.190 --> 09:01.710
+So one after another it should read two words.
+
+09:01.830 --> 09:02.880
+It should read first word.
+
+09:02.880 --> 09:06.120
+So what I'll do is I'll print this one, right?
+
+09:06.960 --> 09:08.340
+I'll print this, then I get it.
+
+09:08.340 --> 09:11.720
+Should read one more word and then again it should be in that one.
+
+09:11.730 --> 09:13.050
+Let us run this one.
+
+09:16.390 --> 09:17.020
+Hello.
+
+09:18.500 --> 09:19.520
+Yeah, it is.
+
+09:19.520 --> 09:22.790
+Waiting for the second string right now.
+
+09:22.790 --> 09:24.140
+I will say war.
+
+09:25.340 --> 09:26.120
+It's working.
+
+09:26.210 --> 09:31.940
+So there is no problem here that is not taking slash and as a character for the next string.
+
+09:31.970 --> 09:35.960
+Now if I run again and I will type two words, right.
+
+09:35.990 --> 09:36.740
+Hello.
+
+09:36.740 --> 09:37.870
+And then word.
+
+09:38.090 --> 09:39.200
+Then first a string.
+
+09:39.200 --> 09:41.270
+This 1/1 time it will take hello here.
+
+09:41.270 --> 09:43.420
+And second time it will take Wally.
+
+09:43.760 --> 09:44.830
+Let us run this.
+
+09:44.840 --> 09:50.630
+Yeah, it has taken both the words First World has gone to first time reading and second word has gone
+
+09:50.630 --> 09:51.800
+to second time reading.
+
+09:52.310 --> 09:53.780
+So it doesn't allow multiple words.
+
+09:53.780 --> 09:54.290
+So.
+
+09:55.740 --> 09:57.870
+One word is taken by each scene.
+
+09:58.470 --> 09:59.580
+So it's working here.
+
+09:59.580 --> 10:02.910
+We don't have any problem of new line character.
+
+10:03.660 --> 10:07.550
+So that's all in this video I've explained you about a string.
+
+10:07.560 --> 10:13.140
+Then the next video we will see what are the member functions and how to use them, what are their operations?
+
+10:13.230 --> 10:14.970
+So try this on your computer.

@@ -1,0 +1,859 @@
+WEBVTT
+
+00:00:05.350 --> 00:00:09.750
+In this video, we'll learn how we can access class attributes and methods.
+
+00:00:10.410 --> 00:00:13.010
+Of course, we want to create objects from our classes,
+
+00:00:13.010 --> 00:00:16.610
+but we also want to be able to use and modify the object's attributes
+
+00:00:16.610 --> 00:00:18.970
+and call methods for specific objects.
+
+00:00:20.070 --> 00:00:22.370
+There are two ways to access class members.
+
+00:00:22.620 --> 00:00:24.320
+We can use the dot operator
+
+00:00:24.620 --> 00:00:28.220
+and we can use the member of pointer operator or the arrow operator.
+
+00:00:28.880 --> 00:00:32.780
+Remember that some class members may not be accessible since we can hide them,
+
+00:00:32.780 --> 00:00:34.280
+we'll see that in the next video.
+
+00:00:36.080 --> 00:00:40.380
+We've already seen how we can use the dot operator when we worked with standard vector and string.
+
+00:00:40.980 --> 00:00:42.280
+If we have an object,
+
+00:00:42.280 --> 00:00:46.280
+then we can use the dot operator followed by the class member that we want to reference,
+
+00:00:46.280 --> 00:00:47.380
+it's as easy as that.
+
+00:00:47.740 --> 00:00:51.040
+For example, if I have an account object named Frank's account,
+
+00:00:51.440 --> 00:00:55.980
+then I can access the balance attribute with Frank account.balance
+
+00:00:56.680 --> 00:00:59.880
+and I can deposit a 1000 dollars into Frank account
+
+00:00:59.880 --> 00:01:03.540
+by writing Frank account.deposit 1000.
+
+00:01:04.200 --> 00:01:07.200
+In this case, we're accessing the deposit method.
+
+00:01:07.750 --> 00:01:11.050
+Notice that the object is to the left of the dot operator,
+
+00:01:11.050 --> 00:01:14.710
+so that method will be called on that specific object,
+
+00:01:14.910 --> 00:01:17.170
+in this case, the Frank account object.
+
+00:01:20.170 --> 00:01:22.270
+If we have a pointer to an object,
+
+00:01:22.270 --> 00:01:26.260
+then we need to de-reference the pointer first in order to get to the object
+
+00:01:26.260 --> 00:01:28.360
+and then we can apply the dot operator.
+
+00:01:28.860 --> 00:01:30.460
+There's two ways we can do that.
+
+00:01:30.660 --> 00:01:34.860
+Remember in these examples frank account is not an account object,
+
+00:01:34.860 --> 00:01:39.360
+it is a pointer to an account object, which has been dynamically allocated on the heap.
+
+00:01:40.060 --> 00:01:43.860
+The first way to do this is to explicitly de-reference the pointer
+
+00:01:43.860 --> 00:01:45.460
+and then use the dot operator.
+
+00:01:46.160 --> 00:01:48.820
+In order to access the object's class members,
+
+00:01:48.820 --> 00:01:51.820
+we have to de-reference the pointer using the asterisk
+
+00:01:52.180 --> 00:01:55.180
+and then use the dot operator to get the class member we want.
+
+00:01:55.480 --> 00:01:58.080
+But notice that we have to use parentheses here
+
+00:01:58.080 --> 00:02:02.780
+since the dot operator has higher precedence than the pointer de-reference operator,
+
+00:02:02.780 --> 00:02:05.440
+and we want to be sure that we de-reference first.
+
+00:02:06.040 --> 00:02:10.040
+While this syntax is explicit, it can be a little tedious to read and write.
+
+00:02:10.240 --> 00:02:15.230
+So c++ provides an alternate operator called the member of pointer operator,
+
+00:02:15.230 --> 00:02:17.890
+which is often referred to as the arrow operator.
+
+00:02:18.490 --> 00:02:23.150
+It's a dash followed by a greater than sign which looks like an arrow pointing to the right.
+
+00:02:23.950 --> 00:02:27.350
+This operator has the same effect as the first example above.
+
+00:02:27.850 --> 00:02:31.650
+It will de-reference the pointer and then apply the dot operator.
+
+00:02:31.650 --> 00:02:36.550
+As you can see,this operator is very intuitive to read and use and it's used very often.
+
+00:02:37.050 --> 00:02:39.550
+That's all there is to accessing class members.
+
+00:02:39.550 --> 00:02:43.550
+Let's head over to the IDE, and we'll access some class members for the player and
+
+00:02:43.550 --> 00:02:44.550
+account classes.
+
+00:02:45.650 --> 00:02:49.850
+Okay. So I'm in the IDE, and I'm in the section 13 workspace,
+
+00:02:49.850 --> 00:02:52.650
+the AccessingClassMembers project.
+
+00:02:53.150 --> 00:02:57.250
+What we've got here is we've got the same player class and account class
+
+00:02:57.250 --> 00:03:01.450
+that we created in the last video with its attributes and methods, just like we did before.
+
+00:03:01.850 --> 00:03:03.950
+And what we'd like to do now is
+
+00:03:03.950 --> 00:03:07.310
+access some of these attributes and methods from
+
+00:03:07.310 --> 00:03:12.110
+within our main, and we want to access them for specific objects obviously.
+
+00:03:12.110 --> 00:03:16.700
+Now there's a couple of things we're going to do, and we'll discuss them in detail in a few videos from now.
+
+00:03:16.700 --> 00:03:20.700
+But by default all of this information in the class is private,
+
+00:03:20.700 --> 00:03:24.700
+and we don't have access to it. So let's make it all public for this video.
+
+00:03:25.360 --> 00:03:28.460
+And in the next video, we'll talk about public and private.
+
+00:03:28.460 --> 00:03:30.820
+So this is what I'm going to do here is just say public
+
+00:03:31.320 --> 00:03:35.420
+colon for the account class and public colon for the player class,
+
+00:03:35.420 --> 00:03:39.080
+that says that everything after that access modifier is public,
+
+00:03:39.280 --> 00:03:41.880
+which means we've got access to it, no worries at all.
+
+00:03:41.880 --> 00:03:45.080
+Okay. And as I said, we'll talk about public and private in the next video.
+
+00:03:45.680 --> 00:03:48.880
+So what do I do? Well, let's create some objects.
+
+00:03:48.880 --> 00:03:53.240
+Let's create a player object, and let's call it Frank.
+
+00:03:54.040 --> 00:03:58.940
+And now what I want to do is I want to set Frank's name health and xp.
+
+00:03:58.940 --> 00:04:01.140
+Those are the attributes for the player class.
+
+00:04:01.840 --> 00:04:04.940
+Well, how do I get to them? This is where we use the dot operator.
+
+00:04:04.940 --> 00:04:07.540
+Frank is an object, so we can say Frank
+
+00:04:07.840 --> 00:04:09.500
+dot name
+
+00:04:10.000 --> 00:04:13.300
+and we could just set it to Frank or anything else we like.
+
+00:04:14.660 --> 00:04:16.660
+We could say frank.health
+
+00:04:17.860 --> 00:04:19.360
+is a 100, let's say,
+
+00:04:21.560 --> 00:04:24.360
+and finally, we can say Frank's xp
+
+00:04:24.560 --> 00:04:26.760
+is, let's say, 12.
+
+00:04:28.560 --> 00:04:31.560
+Okay. So it's really as simple as that. That sets those
+
+00:04:31.960 --> 00:04:34.460
+attributes, the values for those attributes.
+
+00:04:34.460 --> 00:04:36.820
+Now obviously, if I wanted to print out those attributes,
+
+00:04:36.820 --> 00:04:39.620
+I could just do a cout Frank.health, and that's it.
+
+00:04:39.620 --> 00:04:42.620
+And I'm going to get whatever was stored in there as a value.
+
+00:04:42.620 --> 00:04:45.120
+So let's take a look at this in the debugger
+
+00:04:45.120 --> 00:04:48.920
+and see what it looks like. So I'm going to put a break point right here on line 33.
+
+00:04:49.520 --> 00:04:52.520
+And let's run this in the debugger so we can see what's going on.
+
+00:04:53.120 --> 00:04:58.110
+First of all, you can see over here that frank is a player object,
+
+00:04:58.110 --> 00:04:59.310
+that's its type.
+
+00:04:59.970 --> 00:05:04.230
+And if I expand this, you can see it's all garbage right now, right.
+
+00:05:04.230 --> 00:05:06.230
+So this is all garbage, and
+
+00:05:07.530 --> 00:05:08.730
+let me hit next
+
+00:05:09.730 --> 00:05:14.230
+and I just did. Let me refresh this one more time, you'll see that the string is now empty for the name.
+
+00:05:15.030 --> 00:05:19.430
+Now what I'm doing here is I'm saying set the name attribute for the frank x
+
+00:05:19.430 --> 00:05:21.430
+object to the string frank,
+
+00:05:21.830 --> 00:05:25.830
+okay. And then I'm setting the health attribute for the frank object and the xp
+
+00:05:25.830 --> 00:05:29.930
+attribute for the frank object to 112. So I'll hit
+
+00:05:31.130 --> 00:05:35.390
+next a couple of times 1 2 3 times, I'll execute those three lines of code.
+
+00:05:35.390 --> 00:05:39.390
+And what I'll do here is I'll refresh the screen so that we can see
+
+00:05:39.390 --> 00:05:41.990
+that now we've got frank is the name,
+
+00:05:41.990 --> 00:05:46.190
+the health is 100, the xp is 12. Exactly what we expected.
+
+00:05:46.190 --> 00:05:47.390
+Okay. So
+
+00:05:48.090 --> 00:05:52.190
+that's a really easy way to do this. Now remember, this is all based on the fact
+
+00:05:52.190 --> 00:05:55.550
+that this is public. If this was private, you'd get a compiler error.
+
+00:05:55.550 --> 00:05:58.150
+And I'll discuss that in detail in the next video.
+
+00:05:58.650 --> 00:06:02.250
+Same idea holds for accounts. But how about
+
+00:06:02.750 --> 00:06:05.850
+these methods here. I haven't implemented those methods.
+
+00:06:06.350 --> 00:06:10.250
+So if I try to say something like frank.
+
+00:06:10.550 --> 00:06:14.550
+talk, and i pass in a string to saw say hi
+
+00:06:14.550 --> 00:06:18.350
+there or something like that,
+
+00:06:18.750 --> 00:06:20.250
+this will compile just fine,
+
+00:06:20.250 --> 00:06:23.750
+but it won't link because I haven't implemented this method.
+
+00:06:23.750 --> 00:06:27.110
+How do we implement this method. There's a whole bunch of different ways to do it.
+
+00:06:27.110 --> 00:06:29.410
+Let's do it the simple way. And again,
+
+00:06:29.410 --> 00:06:32.510
+I'm going to do a whole video on methods and how to implement them.
+
+00:06:32.510 --> 00:06:37.500
+But for now, just to get this to work, let's put in a method block here.
+
+00:06:38.000 --> 00:06:41.000
+And just like we've always done, I'm going to say cout
+
+00:06:41.300 --> 00:06:44.300
+what's my name? Well, my name is name.
+
+00:06:45.180 --> 00:06:46.780
+So I'm going to say name.
+
+00:06:47.480 --> 00:06:49.480
+I'm going to put another
+
+00:06:49.480 --> 00:06:52.480
+insertion operator, and I'll say
+
+00:06:54.140 --> 00:06:58.140
+says followed by
+
+00:06:58.140 --> 00:07:01.140
+the text to say, which is being passed into me
+
+00:07:02.740 --> 00:07:04.240
+followed by an endline.
+
+00:07:05.540 --> 00:07:07.740
+That's it. Now I've implemented that method.
+
+00:07:07.740 --> 00:07:12.040
+So now when this code executes right here frank.talk hi there,
+
+00:07:12.040 --> 00:07:14.340
+it should say frank says hi there.
+
+00:07:14.740 --> 00:07:17.340
+Okay. So let me stop this, and let's run this again.
+
+00:07:20.440 --> 00:07:25.100
+And again, we'll run this in the debugger. And since we have some output, what I'm going to do is
+
+00:07:25.100 --> 00:07:28.700
+put that output window right over here so we can actually see what's going on
+
+00:07:29.250 --> 00:07:30.550
+in our output window.
+
+00:07:30.550 --> 00:07:34.550
+Okay. So let's do this again. I'm going to select next.
+
+00:07:35.750 --> 00:07:39.550
+I'm on line 34 now, line 35, line 36.
+
+00:07:40.050 --> 00:07:43.150
+Now I'm going to execute line 36. And at this point,
+
+00:07:43.150 --> 00:07:48.140
+my frank object has the name frank health 100, xp is 12.
+
+00:07:48.540 --> 00:07:52.900
+Now what's going to happen is we're going to call the talk method for the frank object,
+
+00:07:53.560 --> 00:07:57.220
+and control will be transferred right over here to this method we just wrote,
+
+00:07:57.220 --> 00:08:01.580
+we're passing in this string hi there, and it should say frank says hi there,
+
+00:08:01.580 --> 00:08:04.080
+and it should display it right out here. So let's take a look.
+
+00:08:05.070 --> 00:08:08.060
+That's exactly what happens, frank says hi there.
+
+00:08:09.050 --> 00:08:13.200
+Okay. So what's neat about this is that since I'm calling the talk
+
+00:08:13.200 --> 00:08:15.200
+method for the frank object,
+
+00:08:15.500 --> 00:08:18.700
+these attributes are available to that method, right.
+
+00:08:19.060 --> 00:08:23.940
+So I don't have to pass in the name of frank because I've already got it, I can just simply say name.
+
+00:08:23.940 --> 00:08:28.930
+As far as this name is concerned, remember, we we talked about scope a while back.
+
+00:08:29.230 --> 00:08:33.110
+Well, we look for the definition of this variable
+
+00:08:33.110 --> 00:08:36.910
+inside the class first. If it's not there, then we go global.
+
+00:08:36.910 --> 00:08:40.210
+But we're going to look for it here. There it is. That's the one we're going to use.
+
+00:08:41.010 --> 00:08:45.610
+Okay. So there you go. That's a real simple example of calling
+
+00:08:46.110 --> 00:08:49.110
+some a member method, really, really easy.
+
+00:08:49.110 --> 00:08:53.110
+Now how about if we had a pointer. Let's try that.
+
+00:08:53.310 --> 00:08:58.300
+So let me stop this, and we'll do the same kind of code. We'll write it with a pointer,
+
+00:08:58.300 --> 00:09:02.300
+and I'll leave this window a little bit smaller, so we can see. So let's say we have a player
+
+00:09:02.900 --> 00:09:07.700
+and it's a pointer this time called enemy which is a pointer to a player.
+
+00:09:07.700 --> 00:09:11.500
+And I'll just instantiate it right here, so I'll say it's a new player.
+
+00:09:13.300 --> 00:09:16.960
+Okay. So in order to get to that player object,
+
+00:09:16.960 --> 00:09:19.730
+I need to de-reference the pointer, right. Remember,
+
+00:09:19.730 --> 00:09:21.930
+enemy is not a player object.
+
+00:09:21.930 --> 00:09:25.230
+Enemy is a pointer to a player object. So in this case,
+
+00:09:25.230 --> 00:09:29.130
+there's two ways to do it. We can de-reference enemy.
+
+00:09:32.130 --> 00:09:34.690
+Okay. So what I just did was I de-referenced
+
+00:09:34.690 --> 00:09:37.350
+the pointer. So now I've got the object.
+
+00:09:37.350 --> 00:09:40.350
+And I can say enemy.name
+
+00:09:40.950 --> 00:09:42.750
+is enemy,
+
+00:09:44.750 --> 00:09:48.050
+simple as that. I could say enemy
+
+00:09:49.150 --> 00:09:53.750
+.health is 100.
+
+00:09:54.740 --> 00:09:58.440
+And I could do the same thing for xp, but rather than use this syntax
+
+00:09:58.440 --> 00:10:02.240
+where we're explicitly de-referencing the pointer and then doing the dot operator,
+
+00:10:02.240 --> 00:10:05.840
+let's use the arrow operator here. So what we can say is enemy
+
+00:10:07.200 --> 00:10:09.560
+followed by the arrow operator.
+
+00:10:09.560 --> 00:10:13.660
+And then we can say xp is, let's say, 15,
+
+00:10:15.260 --> 00:10:19.360
+right. Now how do you call a method here, same way. We could say enemy
+
+00:10:19.960 --> 00:10:23.960
+arrow. So what I'm going to do is I want to de-reference that pointer
+
+00:10:23.960 --> 00:10:26.460
+and use the dot and then I'm going to call talk
+
+00:10:27.060 --> 00:10:28.060
+and say
+
+00:10:30.160 --> 00:10:31.760
+I will destroy you.
+
+00:10:36.060 --> 00:10:39.660
+Okay. So let's try this now. Let's walk through this one more time.
+
+00:10:39.660 --> 00:10:41.260
+So we'll debug this.
+
+00:10:44.260 --> 00:10:46.060
+I'll move this over here real quick,
+
+00:10:48.420 --> 00:10:50.420
+and let's step through the program.
+
+00:10:50.420 --> 00:10:53.720
+Right now, we're on line 33, that's where we've got the break point.
+
+00:10:53.720 --> 00:10:55.520
+So we're creating the frank object.
+
+00:10:55.520 --> 00:10:59.420
+We're setting the name to frank, the health to 100 and the xp to 12.
+
+00:10:59.420 --> 00:11:02.320
+And then we're going to call the talk method on the frank object,
+
+00:11:02.320 --> 00:11:05.320
+which should display frank says hi there.
+
+00:11:05.920 --> 00:11:08.120
+And that's exactly what happens over here in the output.
+
+00:11:08.620 --> 00:11:12.820
+Now we're going to create this enemy, which is a pointer to a player.
+
+00:11:12.820 --> 00:11:15.480
+Now it's important that you see that. You can see the type here.
+
+00:11:15.480 --> 00:11:18.780
+The debugger is really helping you out here. You can see frank
+
+00:11:19.080 --> 00:11:20.080
+is a player.
+
+00:11:20.880 --> 00:11:23.680
+Enemy is a pointer to a player.
+
+00:11:23.680 --> 00:11:28.580
+You can see that the debugger is really helping you out there with the type. Okay. So at this point right now
+
+00:11:28.830 --> 00:11:33.130
+that enemy is garbage, right. We've got garbage data in the pointer.
+
+00:11:33.330 --> 00:11:38.230
+As soon as i execute line 39, now it will be pointing to a real player object.
+
+00:11:38.230 --> 00:11:40.430
+So I'm going to sit next.
+
+00:11:40.790 --> 00:11:44.990
+Now we've got enemy pointing to a player object. And if I come over here,
+
+00:11:45.350 --> 00:11:48.650
+you can see the name is junk, the health is junk and the --
+
+00:11:48.650 --> 00:11:51.650
+sorry,the name is empty, the health is junk and the xp is junk.
+
+00:11:52.450 --> 00:11:55.450
+Okay. So what do I do here?
+
+00:11:55.450 --> 00:11:57.810
+I want to de-reference enemy and then get the name.
+
+00:11:57.810 --> 00:12:00.170
+So I want to follow the pointer and get the name.
+
+00:12:00.170 --> 00:12:04.530
+Okay. We can also use this area right here with the watches.
+
+00:12:04.530 --> 00:12:06.030
+So I can add a watch.
+
+00:12:06.830 --> 00:12:11.480
+And you can put whatever expression you want. So i just want to see this expression right here,
+
+00:12:12.080 --> 00:12:14.180
+de-reference enemy, that's the object.
+
+00:12:14.540 --> 00:12:18.840
+So when I add that, you can see I'm seeing the same thing that I'm seeing here.
+
+00:12:19.200 --> 00:12:23.800
+Now for some reason, this you need to refresh, this you don't.So it's kind of nice to have these here.
+
+00:12:24.100 --> 00:12:28.000
+So let's walk through this. De-reference enemy that means go to the object
+
+00:12:28.000 --> 00:12:30.200
+that I'm pointing to and set the name to enemy.
+
+00:12:30.500 --> 00:12:33.500
+Okay. So let's execute that line of code.
+
+00:12:34.000 --> 00:12:36.000
+Notice how enemy shows up here.
+
+00:12:36.500 --> 00:12:38.500
+Doesn't show up here unless I refresh,
+
+00:12:39.800 --> 00:12:40.800
+but now it does.
+
+00:12:41.600 --> 00:12:44.700
+Then I want to set the health to 100. So I'll do that next.
+
+00:12:45.360 --> 00:12:46.860
+Now the health is a 100,
+
+00:12:47.960 --> 00:12:52.260
+xp is 15. But now we're using the arrow operator. But it's all the same,
+
+00:12:53.160 --> 00:12:58.460
+xp is 15. And now I want to call the talk method for the enemy object,
+
+00:12:58.460 --> 00:12:59.960
+but I want to do it through the pointer.
+
+00:13:00.620 --> 00:13:04.920
+And when I run this, it should say enemy says I will destroy you, so let's try that out,
+
+00:13:05.520 --> 00:13:08.820
+and that's exactly what it says. Enemy says I will destroy you.
+
+00:13:10.380 --> 00:13:14.180
+Okay. So that gives you an idea of how some of this works.
+
+00:13:14.180 --> 00:13:17.480
+What we'll do next is let's update this a little bit.
+
+00:13:17.480 --> 00:13:20.470
+We'll do that quickly because this video is getting a little long now.
+
+00:13:20.470 --> 00:13:22.470
+And what we'll do is we'll do the account.
+
+00:13:23.130 --> 00:13:24.930
+Okay. Same idea
+
+00:13:24.930 --> 00:13:27.430
+except here I'm going to say something like
+
+00:13:27.830 --> 00:13:29.930
+what do I want to do when the user
+
+00:13:29.930 --> 00:13:34.030
+passes in a number to deposit. Well, what I want to do is just say something like
+
+00:13:34.030 --> 00:13:36.690
+balance plus equals bal, right,
+
+00:13:39.390 --> 00:13:43.890
+just something really,really simple like that I want to increment the balance by whatever they passed into me.
+
+00:13:44.190 --> 00:13:47.790
+And for withdrawal, I just want to say balance
+
+00:13:48.450 --> 00:13:51.750
+minus equals bal.
+
+00:13:53.350 --> 00:13:56.650
+And while I'm at it, I want to also say cout,
+
+00:13:58.450 --> 00:14:00.050
+something like in deposit,
+
+00:14:00.450 --> 00:14:04.050
+just so I know that I'm in there, so we could see this being called.
+
+00:14:05.830 --> 00:14:08.630
+We'll do that, and we'll do the same thing for withdrawal.
+
+00:14:08.630 --> 00:14:11.230
+And again, just so we can see these things are being called.
+
+00:14:11.230 --> 00:14:15.590
+Now we're defining these methods right in here, right inside the class as I said,
+
+00:14:15.590 --> 00:14:17.470
+there's other ways to do this.
+
+00:14:17.470 --> 00:14:21.770
+And I'll show you what those are in a couple of videos. But let me just change this, so we can
+
+00:14:22.170 --> 00:14:26.830
+understand how to access this. That's it. So now let's create
+
+00:14:26.830 --> 00:14:27.730
+right up here.
+
+00:14:28.530 --> 00:14:32.080
+Let's create an account. So we'll say account,
+
+00:14:32.080 --> 00:14:33.580
+and we'll just say frank account,
+
+00:14:35.180 --> 00:14:37.480
+right. That creates an account object.
+
+00:14:37.480 --> 00:14:41.680
+Now I can set the name and the balance of that account. These are public attributes right now.
+
+00:14:41.680 --> 00:14:43.380
+So I could say frank account,
+
+00:14:43.980 --> 00:14:48.080
+and I'll just say equals frank's account.
+
+00:14:48.330 --> 00:14:51.430
+That could be any c++ string.
+
+00:14:51.930 --> 00:14:56.030
+And then I'm going to set the balance. So I'm going to say frank's account.balance,
+
+00:14:56.830 --> 00:14:59.830
+and let's say that there's 5000 dollars in there.
+
+00:15:03.230 --> 00:15:04.330
+Okay. That's it.
+
+00:15:04.330 --> 00:15:08.530
+Now let's say I want to deposit a 1000 dollars into that account.
+
+00:15:08.530 --> 00:15:12.530
+I could say -- again, you need the object that you're working on has to be
+
+00:15:12.530 --> 00:15:17.730
+to the left of the dot operator. So it's going to be frank account.deposit,
+
+00:15:18.090 --> 00:15:20.090
+and I'm going to deposit a 1000.
+
+00:15:22.690 --> 00:15:26.890
+Okay. And then we'll say frank account.withdrawal
+
+00:15:27.690 --> 00:15:30.290
+and let's say we want to withdraw 500.
+
+00:15:32.650 --> 00:15:36.900
+And that's it. And I'm forgetting semicolons because I've been working with a programming language all day,
+
+00:15:36.900 --> 00:15:40.200
+that doesn't need them. So I'll put them in there. Hopefully, I didn't forget any other ones.
+
+00:15:41.190 --> 00:15:45.420
+Okay. So that's it. Let's put a break point here, and let's try running through this.
+
+00:15:45.420 --> 00:15:46.780
+So again, we'll go to the debugger
+
+00:15:48.780 --> 00:15:52.280
+and frank's account equals --
+
+00:15:52.280 --> 00:15:54.780
+oops of course, frank accounts.name.
+
+00:15:56.080 --> 00:15:58.280
+I need to set that specific attribute
+
+00:16:02.280 --> 00:16:04.780
+and frank account.withdraw
+
+00:16:05.770 --> 00:16:07.270
+500.
+
+00:16:12.070 --> 00:16:14.430
+I have an extra paren right there.
+
+00:16:15.090 --> 00:16:17.590
+Okay. Let's try that now.
+
+00:16:18.590 --> 00:16:21.790
+Okay. Perfect. So let's put the output window over here on the side,
+
+00:16:21.790 --> 00:16:24.790
+and let's walk through this. So I'm at line 33 right now.
+
+00:16:24.790 --> 00:16:28.290
+I'm creating frank account. So I'm doing that right now.
+
+00:16:28.290 --> 00:16:31.590
+Now I'm setting frank accounts name to frank's account.
+
+00:16:31.590 --> 00:16:34.590
+We'll do that and the balance to 5000.
+
+00:16:34.890 --> 00:16:37.890
+So let's take a look at frank's account right here, we'll refresh.
+
+00:16:39.550 --> 00:16:42.850
+There's frank's account, and the balance is 5000.
+
+00:16:42.850 --> 00:16:45.050
+Now when I call the deposit method,
+
+00:16:45.050 --> 00:16:48.350
+it's going to call this method right here for that frank account object
+
+00:16:48.350 --> 00:16:50.550
+and increment the balance by a 1000.
+
+00:16:51.210 --> 00:16:52.870
+Okay. So let's do that,
+
+00:16:52.870 --> 00:16:55.870
+and we should we should also get an output statement printing out over here.
+
+00:16:56.670 --> 00:17:00.330
+There you go in deposit. I'll refresh frank account again.
+
+00:17:01.530 --> 00:17:03.890
+Notice I've got 6000 in here now.
+
+00:17:04.290 --> 00:17:07.790
+When I call the withdraw method, this should go down to 5500,
+
+00:17:07.790 --> 00:17:11.090
+and it should say in withdraw. So let's do that one more time,
+
+00:17:11.590 --> 00:17:13.250
+and we'll refresh one more time.
+
+00:17:13.910 --> 00:17:17.910
+There's 5500, exactly what we expected and the in withdrawal kicked in.
+
+00:17:18.710 --> 00:17:22.610
+Okay. Same idea here with a pointer that we did with the player object. I won't do that
+
+00:17:22.610 --> 00:17:25.510
+because the video is getting a little bit longer now, but I'll let you guys try that out.
+
+00:17:25.710 --> 00:17:29.010
+You can create Mary's account, which is a pointer to an account,
+
+00:17:29.010 --> 00:17:34.000
+and then you can access the attributes using this syntax or the arrow operator.
+
+00:17:35.200 --> 00:17:38.800
+Okay. So if you have any questions, please drop by the forum and let us know.

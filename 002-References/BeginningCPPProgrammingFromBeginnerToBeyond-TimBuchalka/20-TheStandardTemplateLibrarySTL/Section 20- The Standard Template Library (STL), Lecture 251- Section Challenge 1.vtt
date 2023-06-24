@@ -1,0 +1,355 @@
+WEBVTT
+
+00:00:05.400 --> 00:00:09.070
+Hello, welcome to the first challenge
+of the stl section of the course.
+
+00:00:09.510 --> 00:00:12.270
+Now I didn't give you any vector
+challenges because you've done quite a
+
+00:00:12.270 --> 00:00:14.000
+lot of vector challenges in the course.
+
+00:00:14.230 --> 00:00:15.929
+So we're going to start
+with a deque, and I know a
+
+00:00:15.929 --> 00:00:17.300
+deque is new to most of you.
+
+00:00:17.500 --> 00:00:19.655
+So I'm in the section 20 workspace.
+
+00:00:19.770 --> 00:00:22.520
+And here you can see
+the challenge_1 project.
+
+00:00:23.020 --> 00:00:25.280
+And the challenge_1solution project.
+
+00:00:25.310 --> 00:00:28.650
+The solution project obviously
+has my solution to this problem.
+
+00:00:29.000 --> 00:00:33.059
+And the challenge_1 has the
+source code to get you started.
+
+00:00:33.429 --> 00:00:34.890
+So let's talk about the challenge.
+
+00:00:35.430 --> 00:00:37.270
+The challenge is all
+about using a deque.
+
+00:00:37.530 --> 00:00:39.280
+So we know what a palindrome is.
+
+00:00:39.290 --> 00:00:40.900
+Some of you may not know
+what a palindrome is.
+
+00:00:40.900 --> 00:00:45.040
+A palindrome is a string that reads
+the same backwards or forwards.
+
+00:00:45.220 --> 00:00:49.629
+So a simple example is
+madam, bob, toot, radar and
+
+00:00:49.630 --> 00:00:50.739
+there's very many, many more.
+
+00:00:51.190 --> 00:00:53.629
+So these are words that read
+the same forward or backwards.
+
+00:00:54.150 --> 00:00:56.930
+Now we can have entire
+phrases can be palindromes.
+
+00:00:57.130 --> 00:01:01.290
+For example, a Toyota's a
+Toyota, a Santa at NASA, a man,
+
+00:01:01.290 --> 00:01:04.639
+a plan, a cat, a ham, a yak,
+a yam, a hat, a canal panama.
+
+00:01:05.330 --> 00:01:08.690
+All these are great examples of
+entire phrases that are palindromes.
+
+00:01:09.110 --> 00:01:11.410
+For the purposes of this
+assignment, we're only going
+
+00:01:11.410 --> 00:01:13.100
+to consider alpha characters.
+
+00:01:13.430 --> 00:01:14.750
+We're going to omit everything else.
+
+00:01:14.930 --> 00:01:20.539
+So spaces, commas, exclamation
+points and so forth, apostrophes,
+
+00:01:20.539 --> 00:01:23.709
+as we see here, will all
+be eliminated or omitted.
+
+00:01:24.080 --> 00:01:29.219
+So when we read something like a Santa
+at NASA, what we're going to convert
+
+00:01:29.230 --> 00:01:31.640
+that to is ASANTAATNASA, like that.
+
+00:01:31.670 --> 00:01:34.850
+All uppercase, and get rid of
+all the special characters that --
+
+00:01:34.890 --> 00:01:36.350
+and obviously, you know what to use.
+
+00:01:36.610 --> 00:01:39.470
+You can use the cc type
+header file for that.
+
+00:01:40.240 --> 00:01:41.640
+So how do you solve this problem.
+
+00:01:41.640 --> 00:01:46.099
+Well, a common method to solve the
+problem is to process the string
+
+00:01:46.100 --> 00:01:47.379
+you end up with something like that.
+
+00:01:47.660 --> 00:01:50.420
+And then you reverse that string
+and you compare the two strings.
+
+00:01:50.490 --> 00:01:53.860
+Obviously, if the two strings are
+the same, right, the one that's
+
+00:01:53.860 --> 00:01:56.580
+normal and the one reversed,
+then it must be a palindrome.
+
+00:01:57.010 --> 00:01:59.270
+But we're not going to do it that
+way, we're going to use a deque.
+
+00:01:59.880 --> 00:02:03.239
+I'm providing a main driver for you
+that'll automatically run a bunch
+
+00:02:03.240 --> 00:02:07.080
+of test cases, and your challenge
+is to write one function, the
+
+00:02:07.080 --> 00:02:08.839
+function is called is palindrome.
+
+00:02:09.280 --> 00:02:12.600
+It returns a true false value,
+and it expects a string.
+
+00:02:13.410 --> 00:02:16.329
+So I'm going to send you a string, and
+you're going to return true or false.
+
+00:02:17.080 --> 00:02:20.930
+The function, as I said, determines
+whether that string is a palindrome.
+
+00:02:20.940 --> 00:02:24.360
+That function must take
+care of removing any spaces
+
+00:02:24.360 --> 00:02:25.510
+and any special characters.
+
+00:02:25.760 --> 00:02:27.050
+So here's a couple of examples.
+
+00:02:27.640 --> 00:02:30.740
+Is palindrome "A Santa at
+NASA", that will return true.
+
+00:02:31.530 --> 00:02:35.030
+Is palindrome "Hello" should return false
+because hello is not a palindrome.
+
+00:02:35.030 --> 00:02:38.790
+All right, and what I'd like you to do
+is to use a deque to solve the problem.
+
+00:02:39.080 --> 00:02:42.609
+After all, that's the section
+we're in, the stl section,
+
+00:02:42.609 --> 00:02:45.679
+and the deque is a perfect
+container to help us solve this.
+
+00:02:47.840 --> 00:02:50.780
+If you need a hint, please post
+something in the Q&A forum.
+
+00:02:51.730 --> 00:02:54.930
+This is a very common question
+that's used in coding interviews.
+
+00:02:55.400 --> 00:02:57.510
+And a lot of times, they'll
+start the coding interview
+
+00:02:57.510 --> 00:02:59.260
+with solve this problem.
+
+00:02:59.600 --> 00:03:03.970
+The majority of the applicants
+will try to come up with the
+
+00:03:03.970 --> 00:03:05.630
+string, reverse it and compare.
+
+00:03:05.820 --> 00:03:09.329
+And at that point the, interviewer will
+say could you use a data structure like
+
+00:03:09.330 --> 00:03:12.840
+a deque to do it, and that gets a lot of
+people because all the books show you
+
+00:03:12.840 --> 00:03:14.519
+how to do it with reversing the string.
+
+00:03:14.839 --> 00:03:16.630
+But it's interesting
+to do it with a deque.
+
+00:03:17.109 --> 00:03:19.829
+Let me run my solution so you
+can see the sample output.
+
+00:03:21.620 --> 00:03:23.070
+And here's the sample output.
+
+00:03:23.400 --> 00:03:25.590
+I've got a result, and
+I've got the string.
+
+00:03:25.590 --> 00:03:29.500
+So in this case, you can see the
+lowercase letter a is true, aa is
+
+00:03:29.500 --> 00:03:32.810
+true, aba is true, abba is true.
+
+00:03:32.810 --> 00:03:36.430
+These are all palindromes, but
+obviously the ab is not a palindrome
+
+00:03:36.720 --> 00:03:42.250
+nor is the abc radar and bob and ana
+are as are all these more complicated
+
+00:03:42.250 --> 00:03:44.399
+phrases, even c++ is, right.
+
+00:03:44.639 --> 00:03:47.520
+Once we get rid of the ++, we're
+left with a c, that's
+
+00:03:47.520 --> 00:03:48.520
+definitely a palindrome.
+
+00:03:49.429 --> 00:03:51.279
+Okay, so there's your test cases.
+
+00:03:51.290 --> 00:03:53.360
+Let me show you what your
+main would look like.
+
+00:03:54.059 --> 00:03:56.160
+And this is the code that
+I'm providing for you.
+
+00:03:57.470 --> 00:03:59.950
+This is the function you have
+to write, right here it's called
+
+00:03:59.980 --> 00:04:03.470
+is palindrome expects a std
+string, returns a boolean.
+
+00:04:03.470 --> 00:04:04.880
+Right now I'm just returning false.
+
+00:04:04.900 --> 00:04:05.899
+You have to write this.
+
+00:04:06.509 --> 00:04:08.289
+And here's the main.
+
+00:04:08.480 --> 00:04:11.309
+I've got a vector of a
+bunch of strings, and these
+
+00:04:11.309 --> 00:04:12.690
+strings are my test cases.
+
+00:04:13.390 --> 00:04:14.290
+And that's it.
+
+00:04:14.290 --> 00:04:15.820
+You shouldn't have to
+do anything in the main.
+
+00:04:15.830 --> 00:04:18.599
+The main is basically going to
+loop through all of these strings
+
+00:04:19.029 --> 00:04:22.550
+and call the is palindrome method
+right there, pass the string into
+
+00:04:22.550 --> 00:04:25.330
+it, you'll return true and false,
+and the main will display it.
+
+00:04:25.570 --> 00:04:28.529
+So your job is to implement
+this function right here,
+
+00:04:28.910 --> 00:04:30.330
+remember, use a deque.
+
+00:04:30.610 --> 00:04:32.250
+Okay, so have fun.
+
+00:04:32.680 --> 00:04:34.910
+Think about it. It's actually a pretty simple problem.
+
+00:04:34.970 --> 00:04:36.730
+And don't go crazy with iterators.
+
+00:04:36.740 --> 00:04:38.420
+You don't have to use
+any of that stuff.
+
+00:04:38.730 --> 00:04:42.070
+Just use the front and the back of
+the deque, that's what it's all about.
+
+00:04:42.480 --> 00:04:44.969
+And when you're done, you can come
+over to challenge one solution
+
+00:04:44.969 --> 00:04:46.179
+and meet me in the next video.

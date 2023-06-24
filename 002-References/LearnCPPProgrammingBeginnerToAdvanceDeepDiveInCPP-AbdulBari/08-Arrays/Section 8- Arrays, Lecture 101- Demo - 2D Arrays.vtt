@@ -1,0 +1,373 @@
+WEBVTT
+
+0
+00:00.440 --> 00:06.900
+Let us see how to declare and initialize 2D array and also how to display the elements how to access
+
+1
+00:06.900 --> 00:09.070
+the elements.
+
+2
+00:09.090 --> 00:14.280
+Usually I'm taking a data type as int only but you can take any data type int will be easy
+
+3
+00:14.280 --> 00:22.100
+for explanation purpose so I'm taking int A, name of a two dimensional array and I will take the size as
+
+4
+00:22.770 --> 00:26.430
+two rows three columns.
+
+5
+00:26.430 --> 00:30.120
+Here a arrays is created.
+
+6
+00:30.190 --> 00:34.450
+Now this not having any elements just a array with garbage value.
+
+7
+00:34.460 --> 00:36.210
+Suppose I want to initialize it.
+
+8
+00:36.210 --> 00:43.190
+Then the method for initializing it, i can initialize is in row wise, first row is 2 4 6
+
+9
+00:43.690 --> 00:48.670
+And second row as a three five seven.
+
+10
+00:48.670 --> 00:53.110
+So in this way I can initialize two rows one by one.
+
+11
+00:53.140 --> 01:01.120
+This is one method  or else even you can initialize a like this also, 2 rows,  three columns.
+
+12
+01:01.960 --> 01:07.580
+I want to set the same values so 2 4 6 3 5 7.
+
+13
+01:07.810 --> 01:12.130
+So there's another way you don't have to give the brackets automatically it will fill all the elements
+
+14
+01:12.130 --> 01:13.450
+one by one.
+
+15
+01:13.510 --> 01:20.950
+I'm getting a warning here that the arrays are not in use A and B C are not in use.
+
+16
+01:21.130 --> 01:23.830
+It's not an error it's just a warning.
+
+17
+01:23.830 --> 01:26.270
+Now I want to display the elements of array.
+
+18
+01:26.320 --> 01:28.330
+I will remove this or a B.
+
+19
+01:28.450 --> 01:30.830
+I want to display the elements of array A.
+
+20
+01:30.970 --> 01:35.400
+So for that I have to use nested for loop and first outer for loop is for row
+
+21
+01:35.400 --> 01:42.520
+So I start from zero and I is less than 2 I plus plus So there will be two rows that is 0 and 1.
+
+22
+01:42.670 --> 01:48.640
+Then ainner for loop is for number of columns and those columns are starting from zero and j is less than
+
+23
+01:48.640 --> 01:52.870
+three because the number of columns are three.
+
+24
+01:52.870 --> 01:59.900
+Now here I will see cout of i & j.
+
+25
+02:01.570 --> 02:08.050
+And after every element I will give some space so that this is how i can access all the elements so I & j will be taking
+
+26
+02:08.050 --> 02:16.670
+the values from 0 0 to 1,3 as already we have seen how nested for loop works.
+
+27
+02:16.860 --> 02:23.330
+Let me run this program and show you what output I get ya.
+
+28
+02:23.480 --> 02:25.390
+2 4 6 3 5 7.
+
+29
+02:25.390 --> 02:29.760
+So both the rows are coming in a single line after the first for loop.
+
+30
+02:29.770 --> 02:35.470
+If I say cout endl, then after the first row it will give a new line
+
+31
+02:38.580 --> 02:43.250
+Ya here is output that is 2 4 6 and 3 5 7.
+
+32
+02:43.250 --> 02:45.760
+So I'm getting a proper output.
+
+33
+02:46.550 --> 02:50.960
+If I remove these brackets also it's the same thing I would get the same array
+
+34
+02:58.770 --> 03:01.930
+yeah two four 6 and 3 5 7.
+
+35
+03:01.950 --> 03:07.960
+What happens if I don't initialize all the element if I initialize just four elements.
+
+36
+03:11.700 --> 03:15.790
+So it's just 2 4 6 3 and the remaining elements are automatically zero.
+
+37
+03:16.710 --> 03:18.440
+I will add those elements.
+
+38
+03:18.510 --> 03:24.620
+Now let us look at the other way of accessing a two dimensional array using for each loop.
+
+39
+03:24.660 --> 03:33.910
+Let us see how we can access it using for each loop here for for each loop I'm writing auto
+
+40
+03:33.950 --> 03:39.830
+As I said if you don't want to involve the datatypes and everything then you can say auto.
+
+41
+03:39.930 --> 03:41.450
+X a.
+
+42
+03:41.790 --> 03:50.430
+Then for each auto reference of y and that is on x
+
+43
+03:54.000 --> 03:54.510
+yes.
+
+44
+03:54.550 --> 04:00.270
+Here you can see that this A is a two dimensional array so foar that I am taking x.
+
+45
+04:00.310 --> 04:01.490
+This will become row.
+
+46
+04:01.510 --> 04:06.690
+This will be for row that is first row is two four six next row is three five seven.
+
+47
+04:06.970 --> 04:09.100
+And this has to be taken as type reference.
+
+48
+04:09.100 --> 04:12.070
+If I don't take it as a reference it's a error.
+
+49
+04:12.280 --> 04:14.280
+So you can see that it is a given error.
+
+50
+04:14.410 --> 04:20.120
+So for using for each loop I must use reference.
+
+51
+04:20.210 --> 04:24.070
+Let's remove this and say int and see what happens.
+
+52
+04:25.550 --> 04:29.260
+It's an error if I make it it of type int
+
+53
+04:32.150 --> 04:33.380
+then also it's an error.
+
+54
+04:33.380 --> 04:42.350
+So instead of this if I give auto then automatically it will take the x variable off type rows of
+
+55
+04:42.440 --> 04:50.620
+a and y variable of type columns of X means the elements of x, this y will take the values from X.
+
+56
+04:50.690 --> 04:53.950
+Now cout I'm getting the final elements in y right.
+
+57
+04:54.170 --> 05:01.190
+I will display y and also I'll give some space let us run this and see
+
+58
+05:05.250 --> 05:07.420
+yeah I'm getting all the elements here.
+
+59
+05:07.420 --> 05:12.910
+They did not give cout so I missed that so I  will write down cout endl.
+
+60
+05:13.350 --> 05:15.930
+Let us run the program and see what happens.
+
+61
+05:15.930 --> 05:17.860
+I'm getting all the elements.
+
+62
+05:18.600 --> 05:20.850
+So I got the two lines of output.
+
+63
+05:21.060 --> 05:24.710
+That is one line for each and all.
+
+64
+05:24.710 --> 05:29.390
+Now let us see how I can read the values in this two dimensional array using cin.
+
+65
+05:29.420 --> 05:32.870
+So what I do is I will copied this loop this is for displaying.
+
+66
+05:33.350 --> 05:36.580
+And paste it this will be displaying all the elements.
+
+67
+05:36.590 --> 05:38.240
+So this is for displaying.
+
+68
+05:38.280 --> 05:46.940
+Now the first nested for loops instead of displaying I will use it for Cin y as y is taking
+
+69
+05:46.940 --> 05:48.860
+each and every element ain an array.
+
+70
+05:49.040 --> 05:51.670
+So X is for rows and y is for every element.
+
+71
+05:51.680 --> 05:54.340
+So I will not initialize this one.
+
+72
+05:54.410 --> 05:56.210
+I will leave it empty.
+
+73
+05:56.210 --> 05:56.960
+Not initialize.
+
+74
+05:56.960 --> 06:01.760
+So let us see whether it will access read all the elements in an array or
+
+75
+06:01.760 --> 06:03.020
+Not from the keyboard.
+
+76
+06:03.230 --> 06:07.210
+And after that I'm also displaying so I should get back the same elements.
+
+77
+06:07.640 --> 06:08.590
+Let us run this, ya
+
+78
+06:13.670 --> 06:14.590
+here.
+
+79
+06:14.770 --> 06:15.770
+There is no prompt.
+
+80
+06:15.790 --> 06:17.010
+I did not give any Message.
+
+81
+06:17.020 --> 06:20.700
+So let me just type the values 2 3 4.
+
+82
+06:20.710 --> 06:24.850
+This is first row 5 7 9.
+
+83
+06:24.860 --> 06:28.960
+Second row and i got the same elements 2 3 4 5 7 9.
+
+84
+06:28.960 --> 06:35.500
+So yes even using cin I can read all the elements in a two dimensional array with the help of for
+
+85
+06:35.560 --> 06:36.910
+each loop.
+
+86
+06:37.690 --> 06:39.470
+So this is the complete code.
+
+87
+06:39.640 --> 06:45.700
+Now first two nested for each loop are used for reading all the elements in a two dimensional array
+
+88
+06:47.050 --> 06:52.380
+and next two for loops are used for displaying all the elements of two dimensional array.
+
+89
+06:52.660 --> 06:53.410
+So that's it.
+
+90
+06:53.440 --> 06:56.390
+We have seen how to declare and initialize a two dimensional.
+
+91
+06:56.410 --> 07:04.120
+And also you have seen how to access the elements in the next video will see how to perform matrix operations
+
+92
+07:04.120 --> 07:06.360
+like addition and subtraction of matrixes.

@@ -1,0 +1,442 @@
+WEBVTT
+
+00:00:05.480 --> 00:00:08.620
+Welcome back, I hope you had
+fun doing that challenge.
+
+00:00:09.010 --> 00:00:12.640
+I'm in the Section 20 workspace
+and the challenge 3 - Solution.
+
+00:00:13.299 --> 00:00:16.289
+This is an example of explaining
+something is going to be much
+
+00:00:16.289 --> 00:00:18.669
+easier than explaining the
+actual problem to begin with.
+
+00:00:18.850 --> 00:00:20.170
+This code is so simple.
+
+00:00:20.230 --> 00:00:23.110
+Hopefully, did it similar
+to the way I did it.
+
+00:00:23.630 --> 00:00:25.440
+Let the STL do its thing.
+
+00:00:25.440 --> 00:00:26.869
+The STL is super powerful.
+
+00:00:27.679 --> 00:00:29.120
+Let's take a look at part one.
+
+00:00:30.610 --> 00:00:32.610
+Here's the solution for part one.
+
+00:00:33.179 --> 00:00:35.309
+And let's walk through
+this one line at a time.
+
+00:00:35.600 --> 00:00:39.790
+We've got our map here called
+words, and it's a map of
+
+00:00:39.800 --> 00:00:42.150
+string, integer key value pairs.
+
+00:00:42.700 --> 00:00:46.230
+I've got a line that's what I'm going
+to read the line from a file into.
+
+00:00:47.050 --> 00:00:49.599
+I've got a word and this is how
+I'm going to process my words.
+
+00:00:49.799 --> 00:00:50.939
+Here's my file.
+
+00:00:51.309 --> 00:00:53.059
+My file is words.txt.
+
+00:00:53.510 --> 00:00:55.480
+If I can't open it, I'm down here.
+
+00:00:55.780 --> 00:00:56.510
+And I'm out.
+
+00:00:57.490 --> 00:01:00.650
+If I can open it then what I want
+to do is I want to process the
+
+00:01:00.650 --> 00:01:02.349
+words from the line I just read.
+
+00:01:02.559 --> 00:01:05.180
+And that's not so easy to do
+there, it's much easier to do
+
+00:01:05.180 --> 00:01:06.470
+if you use a string stream.
+
+00:01:06.750 --> 00:01:09.479
+And if you look at the I O
+videos I talked about string
+
+00:01:09.480 --> 00:01:10.560
+streams in that video.
+
+00:01:10.910 --> 00:01:14.920
+So, in this case, I'm creating a
+string stream called ss over line.
+
+00:01:15.450 --> 00:01:19.650
+So, remember we just read a line,
+let's say we read, and this is a test.
+
+00:01:22.380 --> 00:01:23.920
+And we don't want to
+deal with new lines.
+
+00:01:23.920 --> 00:01:24.969
+We don't want to deal with any of that.
+
+00:01:24.969 --> 00:01:26.150
+So, we just read that line.
+
+00:01:26.309 --> 00:01:27.830
+And then what we're going to
+do is we're going to create the
+
+00:01:27.830 --> 00:01:29.299
+string stream from that line.
+
+00:01:29.299 --> 00:01:30.610
+So, that's going to put in that buffer.
+
+00:01:30.770 --> 00:01:34.810
+So, now I can read words
+from the string-stream and it
+
+00:01:34.810 --> 00:01:36.230
+makes it really, really, easy.
+
+00:01:36.340 --> 00:01:40.480
+So, you can see right there
+while I'm going to extract a
+
+00:01:40.480 --> 00:01:42.230
+word from the string-stream.
+
+00:01:42.230 --> 00:01:44.590
+So, I'm going to extract this
+word, and then this word, and then
+
+00:01:44.590 --> 00:01:45.699
+this word, and then this word.
+
+00:01:46.969 --> 00:01:51.100
+For each one of those words, I'm
+going to pass it into clean-string.
+
+00:01:51.100 --> 00:01:52.880
+So, I can get rid of
+the periods at the end.
+
+00:01:52.880 --> 00:01:55.309
+And suppose I have something
+like commas and so forth.
+
+00:01:55.620 --> 00:01:56.630
+It'll get rid of that.
+
+00:01:57.059 --> 00:02:01.250
+So, in this case, I will end up with
+a clean word and all I have to do
+
+00:02:01.250 --> 00:02:03.360
+is just say words, that's my map.
+
+00:02:04.150 --> 00:02:07.379
+I'm using the subscript operator
+right, so in this case it's
+
+00:02:07.390 --> 00:02:11.799
+equivalent to saying something
+like this, words, this.
+
+00:02:12.850 --> 00:02:15.110
+Let's assume that we're working
+with that guy right there.
+
+00:02:16.030 --> 00:02:19.020
+That is my key if it doesn't
+exist, the value is going to
+
+00:02:19.020 --> 00:02:20.300
+be added with the key, right.
+
+00:02:20.309 --> 00:02:21.810
+So, in this case, that's my key.
+
+00:02:22.039 --> 00:02:22.969
+What do I want to do?
+
+00:02:23.299 --> 00:02:27.220
+I want to increment the value
+at that key, simple as that.
+
+00:02:27.220 --> 00:02:29.130
+So, now I just put that word in once.
+
+00:02:29.550 --> 00:02:33.350
+The next time I see that same
+word, it will already be there.
+
+00:02:33.350 --> 00:02:36.020
+So, it's going to increment
+this to 2 and so forth.
+
+00:02:36.059 --> 00:02:37.370
+That's it, that's the code.
+
+00:02:37.570 --> 00:02:41.830
+It's really one line right there
+that does all the good work.
+
+00:02:42.549 --> 00:02:44.429
+I commented this line out right here.
+
+00:02:44.530 --> 00:02:47.209
+And you can use that for debugging
+purposes if you'd like to make
+
+00:02:47.210 --> 00:02:49.500
+sure that you're reading these
+lines correctly from the file.
+
+00:02:50.380 --> 00:02:51.569
+That's it, that's part one.
+
+00:02:51.570 --> 00:02:52.760
+I told you it's pretty simple.
+
+00:02:52.830 --> 00:02:56.790
+I'm closing the file and then I'm
+calling display words and display
+
+00:02:56.790 --> 00:02:59.729
+words will come up here for part one.
+
+00:02:59.730 --> 00:03:02.990
+And it's going to call
+this function right there.
+
+00:03:03.810 --> 00:03:07.590
+And all it's doing is it's
+just doing a lot of formatting
+
+00:03:07.600 --> 00:03:08.870
+which is just to look nice.
+
+00:03:08.940 --> 00:03:16.670
+But for each pair from the
+words map, I'm dealing with
+
+00:03:16.740 --> 00:03:17.949
+the first and the second.
+
+00:03:17.959 --> 00:03:19.179
+The first is the key.
+
+00:03:20.700 --> 00:03:22.060
+The second is the value.
+
+00:03:23.020 --> 00:03:26.930
+So, this is just displaying
+Aunt 8, Frank 3 and so forth.
+
+00:03:27.980 --> 00:03:29.920
+Okay, let's look at part two.
+
+00:03:31.880 --> 00:03:32.560
+Here's part two.
+
+00:03:32.910 --> 00:03:34.899
+Very, very, similar the idea.
+
+00:03:35.109 --> 00:03:38.200
+We've got our map is words, and
+this is a little bit different
+
+00:03:38.320 --> 00:03:39.840
+right because I've got a key here.
+
+00:03:40.990 --> 00:03:43.410
+And my value is not an Int.
+
+00:03:43.450 --> 00:03:45.100
+In this case, it's a set OF Ints.
+
+00:03:45.530 --> 00:03:48.660
+The whole point of this
+exercise was to show you how
+
+00:03:48.660 --> 00:03:50.040
+you can build these things up.
+
+00:03:50.049 --> 00:03:51.629
+I mean it's really, really, powerful.
+
+00:03:51.920 --> 00:03:54.439
+Many times, we need to
+solve a problem like this.
+
+00:03:55.080 --> 00:03:58.959
+And you'll see some programmers
+creating classes for words, and
+
+00:03:58.960 --> 00:04:01.630
+for lines, and you create a new
+class that's going to model the
+
+00:04:01.630 --> 00:04:04.480
+occurrences of a line you really
+don't need to do any of that
+
+00:04:04.480 --> 00:04:06.220
+because the STL does this for you.
+
+00:04:06.460 --> 00:04:08.229
+This is a real powerful concept.
+
+00:04:08.240 --> 00:04:12.489
+I mean I'm already modeling key value
+pairs right here, why do I need to
+
+00:04:12.500 --> 00:04:15.859
+create another class to do this when
+I just need to solve this problem.
+
+00:04:16.220 --> 00:04:18.959
+Okay, so in this case, I've
+got the same variables.
+
+00:04:18.959 --> 00:04:20.150
+I've got the same file.
+
+00:04:20.150 --> 00:04:22.489
+I'm opening my file
+right here on line 88.
+
+00:04:23.520 --> 00:04:27.229
+I need to have a running count of line
+numbers because I need my line number.
+
+00:04:27.240 --> 00:04:29.120
+So, I'm just starting
+line numbers at zero.
+
+00:04:29.150 --> 00:04:30.740
+I mean I haven't really
+read anything yet.
+
+00:04:31.680 --> 00:04:35.030
+Now what I'm going to do is I'm going
+to read, let me clear this a little bit,
+
+00:04:35.030 --> 00:04:38.150
+I'm going to read the line
+into this variable from the file.
+
+00:04:39.099 --> 00:04:42.020
+And now I want to increment line
+number because I just read a line.
+
+00:04:42.020 --> 00:04:43.540
+So, my number now would be 1.
+
+00:04:44.130 --> 00:04:49.740
+Again, I'm using the string-stream just
+to process words, cleaning the string,
+
+00:04:50.100 --> 00:04:51.640
+and this is the only difference here.
+
+00:04:51.640 --> 00:04:55.770
+So, now I'm doing something like words,
+again let's assume we're using that
+
+00:04:55.770 --> 00:04:58.929
+same that word we just read this.
+
+00:05:00.349 --> 00:05:03.880
+This piece right here, that's the key.
+
+00:05:04.119 --> 00:05:09.100
+This will return the pair and I
+can access the value right there.
+
+00:05:09.280 --> 00:05:10.180
+So, what am I doing?
+
+00:05:10.550 --> 00:05:16.690
+I'm inserting line number into
+the value which is that guy.
+
+00:05:17.290 --> 00:05:21.220
+Right! So, I'm using the sets insert method
+which is really, really, easy.
+
+00:05:21.969 --> 00:05:24.260
+The first time through the line
+number is the line number, I'm
+
+00:05:24.260 --> 00:05:26.000
+just inserting that key value pair.
+
+00:05:26.000 --> 00:05:29.190
+The next time it's just
+updating that value.
+
+00:05:30.310 --> 00:05:33.190
+And that's it, let's
+run this one last time.
+
+00:05:36.590 --> 00:05:37.800
+Here's my output.
+
+00:05:39.049 --> 00:05:41.240
+And you can double check it in
+the code light editor but it's
+
+00:05:41.240 --> 00:05:42.629
+really, really, straightforward.
+
+00:05:42.950 --> 00:05:46.320
+Here's part one where you've got
+your word and the number of times
+
+00:05:46.320 --> 00:05:51.450
+it occurs, and down here is part
+two where we've got the word and the
+
+00:05:51.450 --> 00:05:52.680
+line numbers that it occurred on.
+
+00:05:54.270 --> 00:05:56.180
+Okay, so, hopefully, you
+had fun with this one.
+
+00:05:56.190 --> 00:05:57.930
+And hopefully, you can
+see how easy it is now.
+
+00:05:58.420 --> 00:06:01.240
+So, in the next video we'll talk
+about the container adapters,
+
+00:06:01.560 --> 00:06:04.150
+stack and queue, and we'll have
+another challenge for those.

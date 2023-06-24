@@ -1,0 +1,634 @@
+WEBVTT
+
+00:00:05.600 --> 00:00:09.600
+Nearly all programming languages have the ability to change the value
+
+00:00:09.600 --> 00:00:10.500
+of a variable.
+
+00:00:11.100 --> 00:00:14.400
+In c++, we can change the value stored in a variable,
+
+00:00:14.400 --> 00:00:16.100
+using the assignment operator.
+
+00:00:16.700 --> 00:00:19.200
+The assignment operator is a single equal sign.
+
+00:00:19.600 --> 00:00:22.960
+It's important to understand that this does not represent equality.
+
+00:00:23.460 --> 00:00:25.460
+In the code sample on this page,
+
+00:00:25.460 --> 00:00:29.260
+we are not asserting that the left-hand side is equal to the right-hand side
+
+00:00:29.260 --> 00:00:32.560
+nor are we comparing the left-hand side in the right-hand side.
+
+00:00:32.920 --> 00:00:37.320
+In this case, we're evaluating the value of the expression on the right-hand side
+
+00:00:37.320 --> 00:00:41.520
+and storing that value into the variable represented by the left-hand side.
+
+00:00:42.720 --> 00:00:44.820
+C++ is statically typed.
+
+00:00:44.820 --> 00:00:48.020
+That means that the compiler will be checking to see if it makes sense
+
+00:00:48.020 --> 00:00:51.620
+to store the value from the right-hand side to the left-hand side.
+
+00:00:51.920 --> 00:00:55.720
+If it doesn't make sense, you'll get a compiler error saying exactly that.
+
+00:00:56.620 --> 00:00:59.720
+In order to store value into the left-hand side.
+
+00:00:59.720 --> 00:01:03.220
+The left-hand side must be a signable. It can't be a literal.
+
+00:01:03.220 --> 00:01:04.520
+It can't be a constant.
+
+00:01:04.720 --> 00:01:07.220
+If it is, the compiler will produce an error message.
+
+00:01:07.820 --> 00:01:11.810
+We can assign multiple variables all at once in a single assignment statement.
+
+00:01:11.810 --> 00:01:14.470
+This is possible because the assignment expression
+
+00:01:14.470 --> 00:01:16.870
+evaluates to what was just assigned.
+
+00:01:16.870 --> 00:01:19.670
+So it's easy to chain assignment statements together.
+
+00:01:19.670 --> 00:01:23.770
+Let's head over to the IDE will work with the assignment operator in life code.
+
+00:01:25.670 --> 00:01:28.170
+Okay. So now I'm in the CodeLite IDE.
+
+00:01:28.170 --> 00:01:32.670
+I'm in the section 8 workspace, and the project is called AssignmentOperator.
+
+00:01:33.370 --> 00:01:36.370
+Who got you some examples of how to use the assignment operator
+
+00:01:36.370 --> 00:01:38.730
+in the effects of the assignment operator in this video.
+
+00:01:38.730 --> 00:01:41.730
+So what I've d1 here is that created
+
+00:01:41.730 --> 00:01:44.090
+2 variables, num1 and num2.
+
+00:01:44.090 --> 00:01:48.080
+I'm declaring and initializing them to 10 and 20, respectively.
+
+00:01:48.080 --> 00:01:51.880
+And then I just got a simple output statement that prints out num1 and num2.
+
+00:01:52.380 --> 00:01:54.160
+Right now this is not a assignment.
+
+00:01:54.160 --> 00:01:57.960
+What you what you see up here right now and let me just mark that up,
+
+00:01:57.960 --> 00:02:01.520
+what you see here is not assignment, it's initialization.
+
+00:02:01.520 --> 00:02:03.320
+It's important understand the difference.
+
+00:02:03.320 --> 00:02:06.320
+Initialization happens when the variable is declared,
+
+00:02:06.320 --> 00:02:08.920
+and it gets that value for the very first time.
+
+00:02:09.720 --> 00:02:13.920
+Assignment is when you change a value that already exists in the variable.
+
+00:02:13.920 --> 00:02:17.220
+Okay. So let's try to change 1 of those values.
+
+00:02:17.220 --> 00:02:21.020
+I'm going to type in here. Just something really simple like num 1
+
+00:02:21.020 --> 00:02:23.020
+= 100.
+
+00:02:23.900 --> 00:02:26.260
+You notice I just said num1 = 100.
+
+00:02:27.250 --> 00:02:31.250
+This is 1 of the ways that programmers read this, num1 = 100,
+
+00:02:31.250 --> 00:02:35.150
+assigned 100 to num1, move 100 to num1.
+
+00:02:35.750 --> 00:02:39.750
+You here this sort of jargon, butt off and you'll hear num1 = 100.
+
+00:02:39.750 --> 00:02:43.410
+And what we mean there is, it's an assignment statement. We're not saying that num1
+
+00:02:43.410 --> 00:02:46.110
+is actually equivalent to 100.
+
+00:02:46.110 --> 00:02:49.670
+This is an assignment statement. Num1 in this case is 10, remember.
+
+00:02:49.670 --> 00:02:52.560
+So what we're doing is removing a 100 into that value.
+
+00:02:52.560 --> 00:02:54.760
+Okay. So let's break this down
+
+00:02:54.760 --> 00:02:58.530
+and go through this 1 step at a time. So you really see what's going on here.
+
+00:02:58.530 --> 00:03:01.190
+What we're doing is again, we have a left-hand side
+
+00:03:01.850 --> 00:03:04.350
+on assignment operator and the right-hand side, right?
+
+00:03:05.150 --> 00:03:09.150
+That's an assignment expression. We put a semicolon in the end.Now it's an assignment statement.
+
+00:03:09.750 --> 00:03:13.410
+In this case, we're evaluating the right-hand side expression.
+
+00:03:13.410 --> 00:03:14.770
+In this case, it's a 100.
+
+00:03:15.430 --> 00:03:17.790
+It's a literal. It's going to validate to 100.
+
+00:03:19.390 --> 00:03:23.050
+Now here is my variable num1.
+
+00:03:24.150 --> 00:03:28.350
+Currently it has a 10 in there. You can see that right there, I initialized to 10.
+
+00:03:29.050 --> 00:03:31.410
+When we say something like num1
+
+00:03:32.010 --> 00:03:35.670
+= 100 or again assigned 100 to num1
+
+00:03:36.070 --> 00:03:39.570
+or evaluating that right-hand side in this case, as I said, it's a 100,
+
+00:03:39.570 --> 00:03:42.870
+and we're storing that 100 into num1,
+
+00:03:44.370 --> 00:03:45.570
+but num1 is 10.
+
+00:03:46.370 --> 00:03:50.630
+Yes, but when you use num1, this variable num1 on the left-hand side.
+
+00:03:50.630 --> 00:03:52.990
+We're using its location, not its value.
+
+00:03:53.690 --> 00:03:57.050
+In c ++, there's a concept of L value
+
+00:03:58.650 --> 00:03:59.950
+and R value,
+
+00:04:00.750 --> 00:04:05.250
+and it gets pretty complicated when we're talking about d1 more advanced features in c++.
+
+00:04:05.250 --> 00:04:07.610
+But at this level, it's really pretty simple.
+
+00:04:08.110 --> 00:04:12.100
+The R-value is the con10ts of somebody bullet stay.
+
+00:04:12.400 --> 00:04:13.400
+In this case,
+
+00:04:13.650 --> 00:04:17.450
+the con10ts of num1 is 10. So the R-value of num1 will be 10.
+
+00:04:18.050 --> 00:04:21.050
+The L-value is the location of that variable.
+
+00:04:21.050 --> 00:04:22.650
+So again, what this means is
+
+00:04:22.650 --> 00:04:26.650
+move 100 or store 100 into the location of num1.
+
+00:04:26.650 --> 00:04:30.950
+So what's going to happen is that we just changed the 10 to a 100.
+
+00:04:32.050 --> 00:04:34.610
+Okay. Again, conceptually is pretty straightforward thing.
+
+00:04:34.610 --> 00:04:38.610
+So let me clear this, and we'll run it. And what we expect now is we expect num1 to be a
+
+00:04:38.610 --> 00:04:42.210
+100 and num2 to still be 20 because we haven't messed with it at all.
+
+00:04:43.210 --> 00:04:44.570
+Let me compile and run.
+
+00:04:47.070 --> 00:04:51.270
+And you can see num1 is a 100 because we changed it in the assignment statement
+
+00:04:51.270 --> 00:04:52.770
+and num2 is 20.
+
+00:04:53.270 --> 00:04:57.070
+Okay. It's pretty simple. We don't have to use literals here.
+
+00:04:57.070 --> 00:05:00.670
+We can use anything we like. In this case, I could say num2.
+
+00:05:02.470 --> 00:05:06.570
+Okay. So remember, because this variable num2
+
+00:05:06.570 --> 00:05:08.870
+is on the right-hand side of that assignment statement,
+
+00:05:08.870 --> 00:05:11.870
+we're using its R-value or its value or its contents.
+
+00:05:11.870 --> 00:05:14.870
+We're using the 20 basically. So we're taking the 20,
+
+00:05:15.070 --> 00:05:19.470
+and we're signing it to the location where num1 is that box where num1 lives.
+
+00:05:19.930 --> 00:05:22.230
+So it's going to change that guy to a 20.
+
+00:05:23.030 --> 00:05:26.630
+Okay. Well, we'll put a 20 in num1. However, you want to look at,
+
+00:05:26.630 --> 00:05:31.430
+and draw means the same thing. So now when we print these 2 values,
+
+00:05:31.430 --> 00:05:33.730
+we should get 20 and 20. So let's give it a run.
+
+00:05:35.930 --> 00:05:38.930
+So I'm building and running. And now we've got 20 and 20.
+
+00:05:39.430 --> 00:05:41.930
+Remember, we've got a left-hand side,
+
+00:05:42.430 --> 00:05:46.330
+the assignment operator and the right-hand side followed by semicolon.
+
+00:05:46.330 --> 00:05:49.830
+This right-hand side could be really, really complex.
+
+00:05:49.830 --> 00:05:53.030
+Mean, it could be some really difficult.
+
+00:05:53.530 --> 00:05:56.330
+It could be some really complex mathematical expression
+
+00:05:56.330 --> 00:05:59.530
+that just goes on and on and on and on, doesn't really matter.
+
+00:05:59.530 --> 00:06:04.030
+What the compilers want to do is going to evaluate this expression to some of value.
+
+00:06:05.330 --> 00:06:08.730
+And then it's going to assign that value that was just calculated
+
+00:06:08.730 --> 00:06:10.230
+into that variable.
+
+00:06:12.030 --> 00:06:14.230
+The compiler does type checking for us.
+
+00:06:14.230 --> 00:06:17.530
+Remember, c++ is statically typed which means that
+
+00:06:17.530 --> 00:06:20.130
+a lot of errors are caught by the compiler.
+
+00:06:20.130 --> 00:06:24.630
+This is very different from other languages like Python and Ruby and so forth,
+
+00:06:24.630 --> 00:06:27.430
+where they do all this type checking at runtime.
+
+00:06:27.430 --> 00:06:31.430
+C++ does it at compile time. So when the program is running,
+
+00:06:31.430 --> 00:06:35.430
+your guarantee that this is going to be correct because it's already done a lot of
+
+00:06:35.430 --> 00:06:36.730
+this checking for you.
+
+00:06:37.230 --> 00:06:40.430
+So what the compiler does now is it's going to check to see,
+
+00:06:40.430 --> 00:06:44.830
+does it make sense for me to to assign whatever value was in here to here.
+
+00:06:45.030 --> 00:06:48.690
+How does it know? It's looking the types.
+
+00:06:49.790 --> 00:06:53.790
+It's saying num2 to is an integer, num1 is an integer. Okay. If I did something
+
+00:06:53.790 --> 00:06:56.290
+like num1 = 200,
+
+00:06:56.990 --> 00:07:01.140
+it's going to say okay. That's an integer, does it make sense to assign an integer
+
+00:07:01.140 --> 00:07:04.640
+to an integer? Sure, it does. It's got its rules internally.
+
+00:07:04.640 --> 00:07:08.140
+And we'll talk about mixed mode assignment and mixed mode math
+
+00:07:08.140 --> 00:07:09.800
+in a couple of videos from now.
+
+00:07:09.800 --> 00:07:11.900
+That's where we're adding and
+
+00:07:11.900 --> 00:07:15.000
+multiplying integers and real numbers and assigning
+
+00:07:15.000 --> 00:07:17.000
+potentially a real number to an integer,
+
+00:07:17.000 --> 00:07:20.660
+it's not just int with int, right. We've got different types going working together.
+
+00:07:20.660 --> 00:07:24.460
+And that all works really well too, but we'll talk about that in a couple of videos.
+
+00:07:24.460 --> 00:07:29.260
+So that takes care of this. I hopefully you can see the conceptually is really really straightforward.
+
+00:07:29.260 --> 00:07:32.760
+Let's say that we wanted to change these together.
+
+00:07:34.760 --> 00:07:37.760
+Okay. So what we can do here as we can chain
+
+00:07:37.760 --> 00:07:39.760
+those assignment operators together.
+
+00:07:39.760 --> 00:07:43.060
+And again, let's break this down so you can see what's happening.
+
+00:07:43.060 --> 00:07:44.660
+We're going to say it num1,
+
+00:07:45.960 --> 00:07:50.260
+num2 and some value could be a big old
+
+00:07:50.260 --> 00:07:54.260
+mathematical expression. But in this case, I'm just going to use the 1000 to make things easier.
+
+00:07:55.260 --> 00:07:58.260
+Okay. We've got 2 assignment operators here.
+
+00:07:58.760 --> 00:08:02.660
+What's important understand with assignment operators and examine expressions
+
+00:08:02.660 --> 00:08:05.160
+is that they return a value themselves.
+
+00:08:05.160 --> 00:08:07.160
+They returned what was just assigned.
+
+00:08:07.760 --> 00:08:11.420
+And they associate right to left,
+
+00:08:12.620 --> 00:08:15.980
+which makes sense, right. Another words, this will be the last thing done.
+
+00:08:15.980 --> 00:08:19.980
+So the first thing the compiler does is it sees this expression right here.
+
+00:08:20.580 --> 00:08:24.480
+And it says okay, I want to assign 1000 into num2.
+
+00:08:24.880 --> 00:08:28.180
+Okay, lets do that. So num2 right here is going to get a 1000.
+
+00:08:29.880 --> 00:08:32.480
+Now the value of this expression evaluates to
+
+00:08:32.480 --> 00:08:35.780
+is 1000 because that's the number that was just assigned.
+
+00:08:36.140 --> 00:08:38.140
+So now you've got num1
+
+00:08:38.840 --> 00:08:42.140
+= 1000. So what we do is we assign
+
+00:08:42.140 --> 00:08:43.500
+a 1000 to num1.
+
+00:08:46.500 --> 00:08:48.600
+Okay. And now we're done.
+
+00:08:48.600 --> 00:08:52.100
+So you can see that you can chain these things together and they go right to last.
+
+00:08:52.100 --> 00:08:54.460
+It's a handy way to initialize a bunch of variables
+
+00:08:54.460 --> 00:08:58.860
+to the same value. Again, we can have all sorts of expressions
+
+00:08:58.860 --> 00:09:00.520
+in here and so forth if we want.
+
+00:09:00.520 --> 00:09:02.820
+That's really not considered good practice.
+
+00:09:02.820 --> 00:09:06.720
+The only time that you really should even consider changing his assignment operators
+
+00:09:06.720 --> 00:09:09.280
+is when you were signing the same thing to everything.
+
+00:09:09.280 --> 00:09:12.080
+Like num1, num2, num3, num4 4 = 10
+
+00:09:12.080 --> 00:09:13.880
+or 0 or something like that,
+
+00:09:13.880 --> 00:09:16.480
+that makes sense. But if you've got really complicated
+
+00:09:16.480 --> 00:09:20.480
+expressions in these pieces here, that's probably not a good idea to do.
+
+00:09:20.880 --> 00:09:24.680
+Okay. So let's take a look at that. And let's run this.
+
+00:09:26.280 --> 00:09:29.180
+And you can see now that when they print out,
+
+00:09:29.380 --> 00:09:34.180
+you get a 1000 and 1000, just like you would expect. Num1 is 1000, num2 is 1000.
+
+00:09:35.080 --> 00:09:36.780
+Okay. Let's do an error here.
+
+00:09:39.780 --> 00:09:41.980
+Let's say we wanted to do something like that.
+
+00:09:45.180 --> 00:09:47.480
+Now the c++ compilers pretty smart.
+
+00:09:47.980 --> 00:09:52.580
+And when we talked about classes and objects, we'll talk about how we can make the
+
+00:09:52.580 --> 00:09:56.380
+assignment operator our own so it works with our own classes.
+
+00:09:56.380 --> 00:09:59.880
+C++ is pretty smart. It's going to try
+
+00:10:00.240 --> 00:10:05.140
+to see if it's possible to convert whatever is on the right-hand side to so the left-hand side.
+
+00:10:05.140 --> 00:10:07.740
+In this case, you're telling the compiler
+
+00:10:07.740 --> 00:10:10.440
+store a string Frank, write a sequence of characters
+
+00:10:10.440 --> 00:10:12.440
+into an integer, that makes no sense.
+
+00:10:12.740 --> 00:10:17.540
+The compiler's going to try to see if it can convert that strength when integer somehow.
+
+00:10:17.540 --> 00:10:20.540
+And if it's got some sort of code that maybe you've written,
+
+00:10:20.540 --> 00:10:24.340
+it'll execute that code and converted. In this case, there is no such code.
+
+00:10:24.340 --> 00:10:28.140
+So if I build and run this, I'm going to get an error.
+
+00:10:28.140 --> 00:10:30.940
+And the error is going to say invalid conversion from
+
+00:10:30.940 --> 00:10:35.140
+a character pointer. We'll talk about what that is in a few videos to an integer.
+
+00:10:35.140 --> 00:10:38.690
+So we again, it's conversion issue. It's saying I don't know.
+
+00:10:38.690 --> 00:10:42.190
+These are apples and oranges as far as the compilers concern.
+
+00:10:42.390 --> 00:10:46.490
+So let me clear this. And let's do one more.
+
+00:10:47.390 --> 00:10:50.390
+And let's say we 1 was assigned 100 to num1.
+
+00:10:51.690 --> 00:10:54.990
+We've seen that, that works fine. But what if num1 is a constant.
+
+00:10:55.590 --> 00:10:57.790
+So let's say we made num1 a conts.
+
+00:10:58.890 --> 00:11:03.390
+This shouldn't be allowed, right, because you just said I've got a constant ended you're here, num1,
+
+00:11:03.390 --> 00:11:07.290
+and I initialized it to 10, and now you want to change it to a 100.
+
+00:11:07.290 --> 00:11:09.790
+Obviously, the complier is going to say whoa, wait a minute.
+
+00:11:09.790 --> 00:11:14.050
+You just told me that was a constant. I can't do that for you. So let's try that.
+
+00:11:14.550 --> 00:11:19.150
+We'll run it. And you should see an error something about read only. There you go.
+
+00:11:19.150 --> 00:11:23.510
+Error assignment of read only variables not allowed. So you can't do that.
+
+00:11:24.810 --> 00:11:28.210
+Similarly, I can't do something like this.
+
+00:11:30.910 --> 00:11:35.810
+100, let's say = num1,
+
+00:11:37.310 --> 00:11:37.910
+right.
+
+00:11:38.610 --> 00:11:42.610
+What are you trying to do here? Your compiler is thinking what do you want to do.
+
+00:11:42.610 --> 00:11:47.210
+Okay, we know what num1 is, right. Its value is 10 because it's on the right-hand side.
+
+00:11:47.210 --> 00:11:50.210
+But now you want to assign it to a 100. A 100 is a literal.
+
+00:11:50.210 --> 00:11:54.310
+A 100 doesn't have an L-value. It doesn't have a location in memory.
+
+00:11:54.810 --> 00:11:58.710
+So when you run this, you'll see something like error,
+
+00:11:58.710 --> 00:12:02.210
+L-alue required as the left operand of an assignment.
+
+00:12:02.210 --> 00:12:05.210
+I need to store this somewhere. I need a location
+
+00:12:05.210 --> 00:12:07.910
+and 100 is a literal, does it have a location?
+
+00:12:08.510 --> 00:12:13.170
+Okay. So that's it. Assignment, at this level, is pretty simple.
+
+00:12:13.170 --> 00:12:15.070
+We're going to use it at this level for a bit.
+
+00:12:15.070 --> 00:12:18.070
+Once we get to our own classes and objects, we can make
+
+00:12:18.070 --> 00:12:21.070
+assignment work for us in a really,really powerful way,
+
+00:12:21.070 --> 00:12:23.070
+and we'll talk about that when we get there.
+
+00:12:23.070 --> 00:12:26.670
+In the next video, what we'll do is we'll talk about the mathematical operator.
+
+00:12:26.670 --> 00:12:28.270
+So the arithmetic operators.
+
+00:12:28.270 --> 00:12:31.630
+The plus, the minus, the multiply, the divided and the remainder.

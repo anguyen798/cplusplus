@@ -1,0 +1,237 @@
+WEBVTT
+
+00:00:05.480 --> 00:00:08.310
+Okay, so now that we know about
+pointers and references, let's
+
+00:00:08.310 --> 00:00:11.040
+talk about when we want to
+use pointers versus reference
+
+00:00:11.120 --> 00:00:12.489
+as function parameters.
+
+00:00:13.429 --> 00:00:15.180
+First, let's look at pass-by-value.
+
+00:00:16.170 --> 00:00:19.650
+Remember that pass-by-value
+is what c++ does by default.
+
+00:00:20.040 --> 00:00:23.110
+So you want to use pass-by-value
+parameters when the function
+
+00:00:23.300 --> 00:00:26.890
+does not modify the actual
+parameter and the parameters
+
+00:00:26.920 --> 00:00:28.900
+are small and efficient to copy.
+
+00:00:29.309 --> 00:00:31.960
+This is true of the primitive
+types like integers, doubles,
+
+00:00:31.960 --> 00:00:33.879
+characters Booleans and others.
+
+00:00:34.809 --> 00:00:38.530
+Note that the collection types,
+like strings and vectors and others,
+
+00:00:38.740 --> 00:00:41.419
+have a certain amount of overhead
+involved when they're copied.
+
+00:00:41.690 --> 00:00:44.460
+So you want to think twice
+before you pass those by value.
+
+00:00:46.590 --> 00:00:51.089
+In the case of pass-by-reference
+with a regular pointer, in this
+
+00:00:51.089 --> 00:00:55.690
+case, we do want to modify the actual
+parameter from within the function and
+
+00:00:55.770 --> 00:00:57.670
+the parameter is expensive to copy.
+
+00:00:58.640 --> 00:01:01.510
+And then the last criteria is
+that it's okay for the pointer
+
+00:01:01.510 --> 00:01:03.010
+to contain a null value.
+
+00:01:03.670 --> 00:01:07.190
+This is important because a
+lot of data structures rely on
+
+00:01:07.190 --> 00:01:10.739
+pointers becoming null at the
+end of lists or the end of trees.
+
+00:01:11.080 --> 00:01:14.770
+So in those cases, you really want
+to pass pointers and not references
+
+00:01:14.770 --> 00:01:16.800
+because references can't be null.
+
+00:01:18.620 --> 00:01:21.910
+Let's take a look at pass-by-reference
+using a pointer to const.
+
+00:01:22.480 --> 00:01:26.009
+In this case, this is suitable when
+the function does not modify the
+
+00:01:26.009 --> 00:01:29.729
+actual parameter, but the actual
+parameter is expensive to copy.
+
+00:01:30.639 --> 00:01:34.200
+Also remember that pointers can
+contain null values, and this is
+
+00:01:34.200 --> 00:01:35.790
+very useful in data structures.
+
+00:01:36.150 --> 00:01:39.340
+In this case, the pointer is
+allowed to contain a null value.
+
+00:01:40.559 --> 00:01:45.550
+In the case of pass-by-reference
+using a const pointer to const, in
+
+00:01:45.550 --> 00:01:48.600
+this case, it's very useful when
+the function does not modify the
+
+00:01:48.600 --> 00:01:53.070
+actual parameter and the parameter is
+expensive to copy, it's okay to have
+
+00:01:53.070 --> 00:01:57.409
+a null pointer and also the function
+never modifies the pointer itself.
+
+00:01:58.000 --> 00:02:01.270
+So this is a good example of where
+you would pass something in, and
+
+00:02:01.270 --> 00:02:04.190
+you're guaranteed that the pointer
+is not moving and the data it's
+
+00:02:04.199 --> 00:02:05.760
+pointing to is not going to change.
+
+00:02:06.910 --> 00:02:09.120
+Okay, so now let's look at references.
+
+00:02:09.850 --> 00:02:13.490
+In the case of pass-by-reference
+using a regular reference parameter,
+
+00:02:13.940 --> 00:02:18.080
+this is used when the function does
+modify the actual parameter and
+
+00:02:18.160 --> 00:02:20.020
+the parameter is expensive to copy.
+
+00:02:20.710 --> 00:02:23.910
+Of course, you can never have
+no values in the reference.
+
+00:02:24.119 --> 00:02:26.820
+So if you're working with data
+structures that rely on null
+
+00:02:26.820 --> 00:02:30.190
+values, you really should be
+using pointers and not references.
+
+00:02:32.270 --> 00:02:36.120
+And in the case of pass-by-reference
+using a constant reference, this
+
+00:02:36.120 --> 00:02:39.989
+is useful when the function doesn't
+modify the actual parameter, but
+
+00:02:40.000 --> 00:02:41.940
+the parameter is expensive to copy.
+
+00:02:42.129 --> 00:02:44.300
+And again, you can't
+have null references.
+
+00:02:44.300 --> 00:02:47.910
+So if you need null values,
+go with the pointers.
+
+00:02:48.560 --> 00:02:49.520
+Okay, there you go.
+
+00:02:49.520 --> 00:02:50.590
+Those are a few guidelines.
+
+00:02:50.590 --> 00:02:53.700
+These are just guidelines that can
+be used to make your program better
+
+00:02:53.700 --> 00:02:55.160
+and easier to modify and debug.
+
+00:02:55.940 --> 00:02:57.230
+That's the end of this section.
+
+00:02:57.719 --> 00:03:00.479
+This section can be difficult
+for many beginning programmers,
+
+00:03:00.480 --> 00:03:03.430
+but it's important that you go
+through the example slowly and
+
+00:03:03.430 --> 00:03:04.950
+then make up your own examples.
+
+00:03:05.450 --> 00:03:08.540
+Pointers and references are
+two concepts that make c++
+
+00:03:08.540 --> 00:03:11.910
+very different from other
+languages like java, python,
+
+00:03:11.910 --> 00:03:13.809
+ruby JavaScript and so many more.
+
+00:03:14.360 --> 00:03:17.999
+Remember, at the beginning, I talked
+about c++ programmers being in control
+
+00:03:18.000 --> 00:03:21.750
+of memory and hardware, now you know
+how it works and have the foundation
+
+00:03:21.750 --> 00:03:24.160
+to move to oo programming in c++.
+
+00:03:24.460 --> 00:03:26.090
+That's coming up in the next section.
+
+00:03:26.410 --> 00:03:29.359
+But first, have a go at the
+section challenge, which
+
+00:03:29.360 --> 00:03:31.489
+will give you a little bit
+more practice with pointers.

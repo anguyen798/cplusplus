@@ -1,0 +1,229 @@
+WEBVTT
+
+00:00.420 --> 00:05.670
+Our next challenge is to find the username from an email address.
+
+00:05.790 --> 00:07.380
+I will explain the problem.
+
+00:07.860 --> 00:15.120
+Email address is given here and in this email address there is a symbol hydrate and also dot symbol
+
+00:15.120 --> 00:18.420
+is there for the extension or there may be more than 1.5.
+
+00:18.430 --> 00:21.540
+Also depends on the website name that is used here.
+
+00:22.260 --> 00:25.620
+So whatever is there before activate is a username.
+
+00:26.780 --> 00:30.960
+So the task is to find out the user name from email address.
+
+00:30.990 --> 00:32.360
+So how to solve this?
+
+00:32.390 --> 00:36.800
+To solve this, we have to find out the index of the in this string.
+
+00:37.130 --> 00:41.000
+So index of at the rate that is at index seven.
+
+00:41.870 --> 00:44.480
+So is there any function available to find out?
+
+00:44.480 --> 00:52.160
+The index of it is find function is the or find first off is also there anyway.
+
+00:52.160 --> 00:54.980
+This will be only one time at the rate will be only one time.
+
+00:54.980 --> 00:58.160
+So find is sufficient to find out the index of this one.
+
+00:59.060 --> 01:06.650
+Then we want the entire string from the starting index of zero up to seven.
+
+01:06.740 --> 01:09.290
+So is there any function to find out this one?
+
+01:09.560 --> 01:13.310
+Yes, there is a function that is sub SDR.
+
+01:13.700 --> 01:16.820
+This will find out a substring from any starting index.
+
+01:16.820 --> 01:19.310
+We can mention the number of characters that we want.
+
+01:19.400 --> 01:23.660
+So we can use the find for finding the index of at the rate.
+
+01:23.690 --> 01:27.950
+Then we can use sub SDR for finding the substring from here.
+
+01:28.250 --> 01:30.380
+So that does a simple task.
+
+01:30.410 --> 01:33.150
+You can write the programme by yourself.
+
+01:33.170 --> 01:36.050
+You can post the video and write the program by yourself.
+
+01:36.080 --> 01:40.060
+If you can't write or if you want help, you can continue watching the video.
+
+01:40.070 --> 01:44.540
+And at the end of the video, I'll discuss more about this email address.
+
+01:44.960 --> 01:46.300
+Let us look at the program.
+
+01:46.310 --> 01:49.820
+Already I have taken the email address in a string called email.
+
+01:50.690 --> 01:54.090
+Now I have to take out only the username from this one for that.
+
+01:54.110 --> 01:57.050
+First find out the index of rate.
+
+01:57.380 --> 01:58.520
+So int.
+
+02:00.130 --> 02:02.590
+I will find out the index of heart rate.
+
+02:02.590 --> 02:06.670
+So email dot line and single code.
+
+02:06.670 --> 02:08.830
+So as well as I can use the codes.
+
+02:08.830 --> 02:13.510
+So find functions are available for both overloaded functions are there.
+
+02:13.600 --> 02:15.130
+So I am using find.
+
+02:15.580 --> 02:15.880
+Yeah.
+
+02:15.880 --> 02:21.940
+It is giving some warning here because this will give the index that is long and so I will typecast
+
+02:21.940 --> 02:22.990
+it as integer.
+
+02:23.900 --> 02:24.440
+Okay.
+
+02:24.860 --> 02:27.050
+Then I will create another string.
+
+02:27.140 --> 02:28.820
+That is you name.
+
+02:29.060 --> 02:32.810
+And here I will say import service.
+
+02:33.800 --> 02:35.510
+Starting index is zero.
+
+02:35.510 --> 02:39.290
+And how many letters I want c whatever the index is.
+
+02:39.290 --> 02:44.450
+Suppose this index is 01234567 index is seven.
+
+02:44.450 --> 02:46.820
+And if we count the number of letters before this one.
+
+02:46.820 --> 02:49.340
+So one, two, three, four, five, six, seven.
+
+02:49.340 --> 02:51.260
+So there are seven letters.
+
+02:51.260 --> 02:54.260
+So whatever the index, I am getting that many letters I want.
+
+02:54.260 --> 02:58.550
+So just mention that after this quote.
+
+03:01.460 --> 03:03.830
+User name is.
+
+03:05.450 --> 03:06.350
+You name.
+
+03:07.280 --> 03:08.750
+Now let us run this.
+
+03:11.470 --> 03:12.560
+Yes, John.
+
+03:12.580 --> 03:13.660
+One, two, three.
+
+03:13.660 --> 03:15.850
+Analysts, not even so.
+
+03:16.540 --> 03:18.730
+Next message is coming in the same line.
+
+03:19.120 --> 03:19.660
+Now it is.
+
+03:20.110 --> 03:21.820
+Username is John.
+
+03:22.180 --> 03:23.680
+One, two, three.
+
+03:24.810 --> 03:25.500
+That's it.
+
+03:26.340 --> 03:27.780
+So this was a simple task.
+
+03:28.250 --> 03:31.210
+Now, I'll give you another challenge that you have to do it by yourself.
+
+03:31.230 --> 03:33.270
+I'll explain something about the challenge.
+
+03:33.480 --> 03:40.020
+See, usually we find that this email address can have characters.
+
+03:40.980 --> 03:47.880
+Characters on every website we find this it can have characters and it can have numbers, right?
+
+03:48.180 --> 03:54.880
+And in special characters only underscore is allowed or dot is allowed.
+
+03:54.930 --> 03:57.060
+No special characters are allowed.
+
+03:57.270 --> 04:02.100
+So you have to write a program to check this user name as valid or not.
+
+04:02.410 --> 04:08.610
+Means it should not have the letters outside this valid letters, and so it should have only characters
+
+04:08.610 --> 04:09.060
+numbers.
+
+04:09.060 --> 04:13.830
+And if there are any special characters, it should have only these two special characters.
+
+04:13.830 --> 04:18.450
+And these letters can be even in capital letters or small letters, it can be anything.
+
+04:18.990 --> 04:21.150
+So write a program for this one.
+
+04:22.190 --> 04:23.470
+So that's all in this video.

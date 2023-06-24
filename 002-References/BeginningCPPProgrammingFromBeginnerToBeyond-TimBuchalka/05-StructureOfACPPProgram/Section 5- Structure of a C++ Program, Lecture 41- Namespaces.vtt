@@ -1,0 +1,211 @@
+WEBVTT
+
+00:00:05.400 --> 00:00:09.600
+In this video, we'll briefly go over using c++ name spaces.
+
+00:00:10.480 --> 00:00:14.080
+C++ name spaces can be a little confusing when you first see them.
+
+00:00:15.180 --> 00:00:18.780
+As our c++ programs become more and more complex,
+
+00:00:18.780 --> 00:00:21.880
+our programs become a combination of our own code,
+
+00:00:21.880 --> 00:00:24.580
+the c++ standard libraries and their code
+
+00:00:24.580 --> 00:00:27.580
+and libraries from third-party developers and their code.
+
+00:00:27.580 --> 00:00:30.080
+So as you can imagine, sooner or later
+
+00:00:30.080 --> 00:00:33.740
+we're going to run into the situation where company x names something
+
+00:00:33.740 --> 00:00:35.040
+the same as company y.
+
+00:00:36.040 --> 00:00:39.700
+When we use that name in our program, the c++ compiler
+
+00:00:39.700 --> 00:00:41.300
+doesn't know which one to use.
+
+00:00:41.300 --> 00:00:43.900
+So we have something called the naming conflict.
+
+00:00:44.450 --> 00:00:47.250
+For example, suppose another library that we're using
+
+00:00:47.250 --> 00:00:49.750
+has defined a name called cout.
+
+00:00:50.250 --> 00:00:52.150
+Well, that's a big problem, right.
+
+00:00:52.150 --> 00:00:55.450
+Because now c++ doesn't know which cout to use.
+
+00:00:56.440 --> 00:00:59.940
+C++ allows developers to use namespaces
+
+00:00:59.940 --> 00:01:04.740
+as containers to group their code entities into a namespace scope.
+
+00:01:04.940 --> 00:01:07.600
+That means that i could create a namespace called Frank,
+
+00:01:08.100 --> 00:01:10.700
+and I could define cout within that namespace.
+
+00:01:11.000 --> 00:01:14.100
+Now if a programmer wanted to use my version of cout,
+
+00:01:14.100 --> 00:01:17.660
+all they had to do is say Frank::cout.
+
+00:01:18.760 --> 00:01:21.560
+That's it. If they wanted to use the one in the standard library,
+
+00:01:21.560 --> 00:01:25.060
+they would just say standard::cout. It's as simple as that.
+
+00:01:25.860 --> 00:01:27.560
+Namespaces are used
+
+00:01:27.560 --> 00:01:30.160
+to reduce the possibility of naming conflicts.
+
+00:01:30.820 --> 00:01:34.620
+The double colon operator is called the scope resolution operator.
+
+00:01:34.620 --> 00:01:37.120
+It's used to resolve which name we want to use.
+
+00:01:37.920 --> 00:01:41.120
+However, many programmers find it tedious to type
+
+00:01:41.120 --> 00:01:45.320
+std:: all the time when using cin, cout,
+
+00:01:45.320 --> 00:01:46.820
+endline and so forth.
+
+00:01:47.220 --> 00:01:51.120
+So c++ provides a few mechanisms to help in that regard.
+
+00:01:52.720 --> 00:01:56.600
+In this sample code, you can see that we're explicitly telling the compiler
+
+00:01:56.600 --> 00:01:58.600
+to use cin,
+
+00:01:58.600 --> 00:02:02.800
+cout and endline from the c++ standard name space using std
+
+00:02:02.800 --> 00:02:05.000
+followed by the scope resolution operator.
+
+00:02:05.500 --> 00:02:07.700
+This is how we've written all our code to this point.
+
+00:02:08.400 --> 00:02:12.000
+Now let's take a look at another way we can do this without so much typing.
+
+00:02:13.800 --> 00:02:18.100
+In this case, we can use the using namespace directive
+
+00:02:18.100 --> 00:02:20.900
+followed by the name of the namespace we wish to use.
+
+00:02:21.500 --> 00:02:23.500
+In this case, the standard namespace.
+
+00:02:24.100 --> 00:02:26.900
+Notice that I no longer have to use std
+
+00:02:26.900 --> 00:02:29.400
+followed by the scope resolution operator
+
+00:02:29.400 --> 00:02:31.900
+when I refer to cin, cout and endline.
+
+00:02:32.500 --> 00:02:36.000
+The compiler now knows which one to use based on the using
+
+00:02:36.000 --> 00:02:37.500
+namespace directive.
+
+00:02:38.000 --> 00:02:39.700
+This is pretty easy to use.
+
+00:02:39.700 --> 00:02:44.100
+And it's the way I'll do it in this course from this point forward since it reduces code clutter
+
+00:02:44.100 --> 00:02:46.100
+and it's better from a teaching perspective.
+
+00:02:46.600 --> 00:02:50.100
+However, this may not be the best solution for large programs.
+
+00:02:50.600 --> 00:02:54.600
+Using namespace standard not only brings in cin, cout
+
+00:02:54.600 --> 00:02:55.400
+and endline,
+
+00:02:55.400 --> 00:02:58.900
+it brings in a bunch of other names that are defined in that namespace.
+
+00:02:59.400 --> 00:03:03.000
+So the possibility exists that you may still have a naming conflict.
+
+00:03:03.800 --> 00:03:07.680
+C++ provides another variant of the using namespace directive.
+
+00:03:07.680 --> 00:03:11.480
+Let's take a look at that. In this case, we have a qualified
+
+00:03:11.480 --> 00:03:13.080
+using namespace variant
+
+00:03:13.080 --> 00:03:16.580
+in which we tell the compiler exactly the names I want to use
+
+00:03:16.580 --> 00:03:18.380
+from a specific namespace.
+
+00:03:18.880 --> 00:03:22.080
+In this case, you can see I'm using three using directives,
+
+00:03:22.080 --> 00:03:26.180
+each qualified for a specific name in a specific namespace.
+
+00:03:26.540 --> 00:03:28.140
+The advantage of this approach
+
+00:03:28.140 --> 00:03:31.140
+is that we can still use cin, cout and endline in our code
+
+00:03:31.140 --> 00:03:33.640
+without the name space and scope resolution operator.
+
+00:03:34.240 --> 00:03:38.440
+And we're not getting any other names from the c++ standard namespace.
+
+00:03:39.340 --> 00:03:42.940
+For the examples in this course, you can use the namespace standard directive from
+
+00:03:42.940 --> 00:03:45.140
+the previous slides with no problem.
+
+00:03:45.140 --> 00:03:48.740
+But keep in mind that it may not be the best practice in larger programs.
+
+00:03:49.340 --> 00:03:51.040
+That wraps up namespaces.
+
+00:03:51.040 --> 00:03:55.640
+In the next video, we'll take a quick look at basic IO with cin and cout.

@@ -1,0 +1,199 @@
+WEBVTT
+
+00:05.940 --> 00:12.720
+In this video will be installing the code light IDE or integrated development environment on the Ubuntu
+
+00:12.720 --> 00:14.040
+Linux platform.
+
+00:14.850 --> 00:21.840
+Code light is a free open source cross-platform IDE that works with C++ and it works across Windows,
+
+00:21.840 --> 00:23.920
+Linux as well as Mac.
+
+00:23.940 --> 00:32.850
+So we'll start by opening up your favorite browser and going to code light that code light and you'll
+
+00:32.850 --> 00:36.150
+get a web page similar to this and you want to find the download link.
+
+00:36.150 --> 00:39.240
+Now there's one at the top menu and there's also this big blue button here.
+
+00:39.240 --> 00:40.650
+That's the one I'm going to use.
+
+00:40.650 --> 00:46.500
+So I'm just going to select code light to download and you can give a contribution to the developers
+
+00:46.500 --> 00:49.770
+if you wish, or you can go straight to the downloads, which is what I'll do here.
+
+00:52.720 --> 00:58.330
+Now we're we're going to download Code Lite 11.0, which is a stable release and we're going to download
+
+00:58.330 --> 00:59.600
+this for Ubuntu.
+
+00:59.620 --> 01:04.720
+Now you can see here you've got a Windows installer and OS ten installer and so forth and you can refer
+
+01:04.720 --> 01:07.080
+to those videos if that's the platform you're on.
+
+01:07.090 --> 01:14.020
+But this specific video is for Linux, so you could see here it says setup code lite repository for
+
+01:14.020 --> 01:14.420
+Ubuntu.
+
+01:14.440 --> 01:15.760
+That's the one I'm going to select.
+
+01:17.810 --> 01:18.740
+A word of caution.
+
+01:18.740 --> 01:23.010
+These commands are run a super user, as you can see here with the pseudo.
+
+01:23.030 --> 01:25.340
+So be very careful when you type things in.
+
+01:25.340 --> 01:27.940
+Make sure you're typing things exactly correctly.
+
+01:27.950 --> 01:30.080
+What I'm doing is I'm not even going to type.
+
+01:30.080 --> 01:31.880
+I'm simply going to copy and paste.
+
+01:31.880 --> 01:32.300
+That way.
+
+01:32.300 --> 01:34.040
+I know that I'm making no mistakes.
+
+01:34.460 --> 01:38.540
+So first step is to copy this one line right here.
+
+01:38.540 --> 01:43.100
+And basically what we've got to do this a lot of information on this page regarding official and unofficial
+
+01:43.100 --> 01:45.980
+and so forth, and I'll show you the one that worked great for me.
+
+01:47.330 --> 01:52.190
+So what we're going to do is we're going to copy this line of code here, then we're going to copy this
+
+01:52.190 --> 01:53.240
+line of code here.
+
+01:53.660 --> 01:56.090
+And the version I've got is initial universe.
+
+01:56.090 --> 01:59.210
+So that's the one I'm going to have 16.0 for boom two.
+
+01:59.210 --> 02:00.860
+So that's the one I'm going to choose.
+
+02:00.860 --> 02:03.950
+And then we're going to do a couple more lines and that's it.
+
+02:03.950 --> 02:06.020
+Now the install takes quite a while.
+
+02:06.410 --> 02:10.130
+The last time I did this install it was about 10 minutes, 15 minutes on my machine.
+
+02:10.130 --> 02:14.960
+So I'm going to pause the video as the install happens and we're going to do the install in a terminal
+
+02:14.960 --> 02:15.470
+window.
+
+02:15.470 --> 02:17.270
+So you can see the terminal window is here.
+
+02:17.270 --> 02:21.950
+I've opened it up so I'm going to make this just a little smaller so we can do both at once and you
+
+02:21.950 --> 02:23.060
+can see what's going on.
+
+02:24.080 --> 02:24.890
+Okay, perfect.
+
+02:24.890 --> 02:26.090
+So let's get started.
+
+02:26.090 --> 02:34.760
+Let's copy this first line right here and I'm going to copy and paste it over here, press enter and
+
+02:34.760 --> 02:36.380
+it's going to ask you for your password.
+
+02:38.810 --> 02:43.010
+Obviously, you have to have root access or be super user to install this code.
+
+02:43.010 --> 02:48.100
+So I'm going to press enter and that takes care of the first line.
+
+02:48.120 --> 02:51.110
+I'm going to scroll down and get the second line.
+
+02:51.110 --> 02:58.270
+Now make sure that you replace this string here with the correct distribution of your Ubuntu minus xeno.
+
+02:58.280 --> 02:59.780
+So that's the one I'm going to use.
+
+03:00.320 --> 03:02.300
+I'm going to copy this just like that.
+
+03:05.410 --> 03:06.340
+I'll paste it.
+
+03:06.880 --> 03:09.040
+This time it won't ask me for my password.
+
+03:09.580 --> 03:12.490
+Then I'll go down to the third line, which is the update.
+
+03:14.990 --> 03:16.880
+I'll copy that and paste it as well.
+
+03:23.740 --> 03:25.800
+And that'll just take us a few minutes.
+
+03:28.610 --> 03:29.240
+That's done.
+
+03:29.270 --> 03:36.470
+Now, the last line is the one that takes a long time to install someone, to copy, paste, press,
+
+03:36.470 --> 03:39.620
+enter, and I'll go have a cup of coffee in a little bit.
+
+03:39.650 --> 03:43.800
+It says here, after this operation, we need 451 megabytes of disk space.
+
+03:43.820 --> 03:45.950
+I've got plenty of disk space, so that's fine.
+
+03:45.950 --> 03:47.150
+And I'll just say continue.
+
+03:47.150 --> 03:47.750
+Yes.
+
+03:49.550 --> 03:52.340
+And I'll pause the video now and be back in about 10 minutes.
+
+03:56.090 --> 03:58.700
+At this point, code light has now been installed.
+
+03:58.820 --> 04:01.490
+In the next video, we'll run it and configure it.

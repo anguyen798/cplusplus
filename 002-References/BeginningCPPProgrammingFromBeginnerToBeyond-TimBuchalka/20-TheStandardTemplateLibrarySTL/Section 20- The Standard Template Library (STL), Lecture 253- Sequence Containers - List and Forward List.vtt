@@ -1,0 +1,1588 @@
+WEBVTT
+
+00:00:05.380 --> 00:00:08.559
+In this video, we'll learn
+more about the stl list and
+
+00:00:08.559 --> 00:00:09.920
+forward list containers.
+
+00:00:10.540 --> 00:00:13.120
+These are both sequence containers
+and store their elements
+
+00:00:13.120 --> 00:00:14.680
+in non-contiguous memory.
+
+00:00:15.410 --> 00:00:18.729
+They don't provide direct access
+to elements via the .at method or
+
+00:00:18.730 --> 00:00:21.690
+subscript operator, but they're
+very efficient when we need to
+
+00:00:21.690 --> 00:00:24.820
+insert and delete elements in the
+list once an element is found.
+
+00:00:26.980 --> 00:00:29.460
+Let's first talk about the
+list and then we'll talk
+
+00:00:29.469 --> 00:00:30.850
+about the forward list after.
+
+00:00:31.299 --> 00:00:34.699
+In order to use the list container, we
+have to include the list header file.
+
+00:00:35.750 --> 00:00:39.300
+The list acts as a doubly linked
+list of elements, so we can go from
+
+00:00:39.360 --> 00:00:41.330
+element to element in either direction.
+
+00:00:41.830 --> 00:00:44.980
+Remember, lists do not
+support direct element access.
+
+00:00:45.590 --> 00:00:48.970
+The list has a front and a back,
+and we can use all of the iterators,
+
+00:00:49.219 --> 00:00:52.089
+but the iterators may become
+invalid when deleting elements.
+
+00:00:52.660 --> 00:00:55.270
+So let's see what a doubly linked
+list looks like conceptually.
+
+00:00:58.480 --> 00:01:01.600
+In this slide, we see a diagram
+of what a simple list looks like.
+
+00:01:02.349 --> 00:01:04.860
+Notice that the elements are
+not contiguous in memory.
+
+00:01:05.550 --> 00:01:08.669
+An element has a reference to the
+element after it and before it
+
+00:01:08.670 --> 00:01:12.269
+if they exist, that's why it's
+referred to as a doubly linked list.
+
+00:01:13.129 --> 00:01:16.140
+So there is some overhead involved
+with maintaining these links.
+
+00:01:16.540 --> 00:01:20.905
+We declare l as a list of integers
+and initialize it to 1 2 and 3.
+
+00:01:20.905 --> 00:01:22.840
+The list has a front and a back.
+
+00:01:23.059 --> 00:01:26.260
+The front in this case is the element
+1 and the back is the element 3.
+
+00:01:27.400 --> 00:01:30.330
+With the list we can efficiently
+add and remove elements from the
+
+00:01:30.330 --> 00:01:33.789
+front and the back, and we can
+also efficiently remove and insert
+
+00:01:33.790 --> 00:01:35.300
+elements from anywhere in the list.
+
+00:01:35.580 --> 00:01:38.700
+All we really have to do is remove or
+insert the element and then re-link the
+
+00:01:38.700 --> 00:01:40.240
+links to the other elements around it.
+
+00:01:41.179 --> 00:01:45.059
+Inserting and removing elements other
+than at the ends is very efficient,
+
+00:01:45.370 --> 00:01:48.500
+but in order to do that, we need to
+have an iterator to the element that
+
+00:01:48.500 --> 00:01:50.350
+we want to remove or insert before.
+
+00:01:50.750 --> 00:01:53.880
+This is usually done with the find
+method, and it's done in linear time.
+
+00:01:54.760 --> 00:01:58.189
+If you need a container where you will
+have lots of insertions and removals
+
+00:01:58.420 --> 00:02:01.759
+from the container and you don't
+need direct access to the elements,
+
+00:02:01.920 --> 00:02:03.279
+then the list is a good choice.
+
+00:02:05.459 --> 00:02:09.340
+In the first example in this slide,
+I declared l as a list of integers
+
+00:02:09.340 --> 00:02:11.260
+and initialized it to 1 2 3 and 4.
+
+00:02:11.260 --> 00:02:15.549
+In the second example, I declared
+l1 as a list of integers and I'm
+
+00:02:15.550 --> 00:02:18.709
+using an overloaded constructor
+to create 10 integers and
+
+00:02:18.960 --> 00:02:20.040
+initialize them all to 100.
+
+00:02:21.360 --> 00:02:24.429
+In the third example, I'm declaring
+stooges as a list of strings
+
+00:02:24.770 --> 00:02:27.710
+and initializing them with std
+strings and c-style strings.
+
+00:02:28.560 --> 00:02:31.950
+Like vectors stud arrays and
+decks, lists also support
+
+00:02:31.950 --> 00:02:33.889
+assignment via initializer list.
+
+00:02:34.639 --> 00:02:37.380
+So let's see some other common
+methods provided by the list.
+
+00:02:39.440 --> 00:02:41.029
+Let's start with the size method.
+
+00:02:41.379 --> 00:02:43.929
+This method returns the number
+of elements that are in the list.
+
+00:02:44.540 --> 00:02:48.079
+And max size tells us what the maximum
+number of elements a list can contain.
+
+00:02:49.040 --> 00:02:53.140
+Remember, lists do not allow direct
+access to elements so we can't use the
+
+00:02:53.140 --> 00:02:55.659
+subscript operator or the .at method.
+
+00:02:56.610 --> 00:02:58.249
+These are not available for lists.
+
+00:02:58.930 --> 00:03:02.609
+The list also provides front and
+back methods that return references
+
+00:03:02.610 --> 00:03:05.510
+to the element at the front and the
+element at the back of the list.
+
+00:03:05.770 --> 00:03:10.179
+In this example, l.front refers
+to 1 and l.back refers to the 5.
+
+00:03:12.200 --> 00:03:14.820
+The list allows for efficiently
+inserting elements at the
+
+00:03:14.830 --> 00:03:16.200
+back and at the front.
+
+00:03:16.940 --> 00:03:19.840
+This is done with the pushback
+method and the push front method.
+
+00:03:20.500 --> 00:03:24.180
+We can also have pop back and pop
+front, which efficiently remove
+
+00:03:24.180 --> 00:03:25.590
+elements from the back of the front.
+
+00:03:26.820 --> 00:03:30.279
+In this slide, we have a list
+of person objects called l.
+
+00:03:30.799 --> 00:03:34.590
+We can create a person p1 named
+Larry who is 18 years old, and
+
+00:03:34.590 --> 00:03:38.369
+we can use the pushback method to
+insert p1 at the back of the list.
+
+00:03:38.810 --> 00:03:40.990
+We can also remove it using pop back.
+
+00:03:41.600 --> 00:03:45.190
+Similarly, we can add a person object
+to the front of the list with push
+
+00:03:45.190 --> 00:03:46.869
+front and remove it with pop front.
+
+00:03:47.270 --> 00:03:51.350
+The list container also supports in
+place front and in place back which
+
+00:03:51.350 --> 00:03:54.560
+are efficient ways to create and
+initialize objects that we want to
+
+00:03:54.560 --> 00:03:56.040
+store in the list right in place.
+
+00:03:59.190 --> 00:04:02.030
+Inserting elements into a list
+works a little differently from what
+
+00:04:02.030 --> 00:04:03.500
+we've seen with other containers.
+
+00:04:04.200 --> 00:04:07.749
+We can insert an element before an
+existing element using the insert
+
+00:04:07.750 --> 00:04:11.659
+method but the insert method expects
+an iterator that's referencing the
+
+00:04:11.660 --> 00:04:13.399
+element we want to insert before.
+
+00:04:14.280 --> 00:04:19.769
+In this example, l is a list events
+and I initialized l to 1 2 3 4 and 5.
+
+00:04:20.570 --> 00:04:23.399
+Now I need an iterator to point
+to an element in the list.
+
+00:04:23.630 --> 00:04:26.559
+We can do this lots of ways but
+let's use the find function.
+
+00:04:27.179 --> 00:04:31.000
+We can call find with l.begin,
+l.n, and we're looking for the 3.
+
+00:04:32.010 --> 00:04:36.840
+In this case, the iterator it now is
+referencing the element 3 in the list.
+
+00:04:38.139 --> 00:04:43.460
+If we now call l.insert and pass
+in it which is the iterator and the
+
+00:04:43.460 --> 00:04:46.890
+number we want to insert in this
+case 10, the 10 will be inserted
+
+00:04:46.890 --> 00:04:48.340
+very efficiently before the 3.
+
+00:04:49.770 --> 00:04:53.359
+The iterator will not be invalidated,
+it still references the 3.
+
+00:04:54.030 --> 00:04:58.170
+Now if we call l.erase and pass
+in the iterator, the 3 will be
+
+00:04:58.170 --> 00:05:01.550
+removed from the list and the
+iterator will become invalid now.
+
+00:05:02.400 --> 00:05:04.160
+Lists also allow resizing.
+
+00:05:04.359 --> 00:05:08.070
+We can resize l to a size of 2
+in which case all the elements
+
+00:05:08.110 --> 00:05:09.810
+after the second will be removed.
+
+00:05:10.840 --> 00:05:14.710
+If we resize to a value larger than
+what we currently have, the list will
+
+00:05:14.710 --> 00:05:18.500
+be expanded to that many elements
+and the default initializer for the
+
+00:05:18.509 --> 00:05:22.219
+type of object the list contains
+will be called and those elements
+
+00:05:22.230 --> 00:05:23.949
+stored in the newly created element.
+
+00:05:24.639 --> 00:05:29.690
+So in this case, if we resize l to 5,
+we'll add 3 new elements to the list,
+
+00:05:29.920 --> 00:05:33.330
+and they'll all be initialized to zero
+in this case because they're integers.
+
+00:05:35.309 --> 00:05:37.150
+Finally, how do we traverse a list.
+
+00:05:37.759 --> 00:05:40.559
+We can use a range based for
+loop or we can use iterators.
+
+00:05:41.150 --> 00:05:44.690
+Since lists are bi-directional,
+we can iterate in both directions.
+
+00:05:45.470 --> 00:05:48.054
+So in this case, we have a list
+l00 initialized to the ints 1 2 3
+
+00:05:48.080 --> 00:05:52.719
+4 and 5 and we have an iterator it
+that will be referring to the 3.
+
+00:05:54.509 --> 00:05:58.260
+When we de-reference i-t and
+display the element, we get a 003.
+
+00:05:58.730 --> 00:06:01.560
+When we de-reference i-t and
+display the elem0ent, we get a 3.
+
+00:06:02.530 --> 00:06:08.159
+Then we can increment the
+iterato00n the same way.
+
+00:06:08.480 --> 00:06:11.700
+Finally, we can decrement the iterator
+and we get right back to the 3.
+
+00:06:12.280 --> 00:06:14.529
+Now let's see what some of
+the differences are between
+
+00:06:14.539 --> 00:06:16.140
+a list and a forward list.
+
+00:06:19.299 --> 00:06:22.380
+The forward list was
+added to the stl in c++11.
+
+00:06:23.320 --> 00:06:25.800
+In order to use the forward
+list, we must include the
+
+00:06:25.800 --> 00:06:27.040
+forward list header file.
+
+00:06:28.010 --> 00:06:31.650
+The forward list acts as a singly
+linked list, so the list can only
+
+00:06:31.670 --> 00:06:33.530
+be traversed in one direction.
+
+00:06:33.799 --> 00:06:37.900
+The forward list incurs less overhead
+than the list, but the downside is that
+
+00:06:37.900 --> 00:06:39.470
+we can only use it in one direction.
+
+00:06:39.800 --> 00:06:42.220
+But in many cases, this
+is exactly what we want.
+
+00:06:43.230 --> 00:06:46.860
+Similar to the list, the forward
+list allows for rapid insertion and
+
+00:06:46.860 --> 00:06:50.270
+deletion o1f elements once we have
+an iterator to one of the elements.
+
+00:06:51.070 --> 00:06:54.429
+Also the forward list does not
+support direct element access.
+
+00:06:54.820 --> 00:06:57.130
+As we'll see in a moment,
+the forward list has no
+
+00:06:57.140 --> 00:06:59.219
+concept of back, only front.
+
+00:06:59.620 --> 00:07:02.330
+It doesn't make much sense to
+get to the back of a list and
+
+00:07:02.330 --> 00:07:05.220
+then not be able to traverse
+backwards, so it's not available.
+
+00:07:05.700 --> 00:07:09.790
+Obviously, reverse iterators make no
+sense either so they're not supported.
+
+00:07:10.410 --> 00:07:12.590
+So let's see what a forward
+list might look like.
+
+00:07:15.130 --> 00:07:18.800
+In this slide, we see a diagram of what
+a simple forward list might look like.
+
+00:07:19.420 --> 00:07:21.690
+We declare l as a forward
+list of integers and
+
+00:07:21.690 --> 00:07:23.370
+initialize it to 1 2 and 3.
+
+00:07:24.110 --> 00:07:26.739
+The forward list has
+only a front, no back.
+
+00:07:27.230 --> 00:07:29.309
+The front in this
+case is the element 1.
+
+00:07:30.209 --> 00:07:32.630
+With a forward list, we can
+officially add elements to
+
+00:07:32.630 --> 00:07:34.280
+the front using push front.
+
+00:07:34.900 --> 00:07:37.990
+You can see the pointers are
+going in only one direction.
+
+00:07:39.910 --> 00:07:42.580
+So let's see some of the common
+methods used with forward lists.
+
+00:07:42.910 --> 00:07:44.409
+Let's start with the size method.
+
+00:07:44.759 --> 00:07:45.789
+It's not available.
+
+00:07:45.910 --> 00:07:48.710
+There's an interesting discussion
+about why the decision was made
+
+00:07:48.710 --> 00:07:50.229
+to not provide a size method.
+
+00:07:50.230 --> 00:07:53.180
+If you're interested, let me know
+in the Q&A and we can talk about it.
+
+00:07:54.410 --> 00:07:57.250
+The max size will tell us the
+maximum number of elements
+
+00:07:57.250 --> 00:07:58.510
+the forward list can store.
+
+00:07:59.080 --> 00:08:02.320
+Also notice that we have a
+front method but no back method.
+
+00:08:02.620 --> 00:08:05.539
+In this case, the front method
+returns a reference to the element 1.
+
+00:08:08.769 --> 00:08:14.130
+Since the forward list only uses front
+and not back, we have push front, pop
+
+00:08:14.130 --> 00:08:17.849
+front and in place front available
+for quick insertion of elements
+
+00:08:18.030 --> 00:08:19.739
+at the front of the forward list.
+
+00:08:23.369 --> 00:08:26.700
+So since the forward list is a
+singly linked list, it makes sense
+
+00:08:26.700 --> 00:08:30.880
+to insert elements into the forward
+list after an iterator reference.
+
+00:08:31.450 --> 00:08:35.250
+So the forward list supports methods
+named explicitly like what they do.
+
+00:08:35.990 --> 00:08:39.990
+In this example, l is a forward
+list of the integers 1 2 3 4 5.
+
+00:08:39.990 --> 00:08:43.320
+And we have an iterator
+it that points to the 3.
+
+00:08:43.590 --> 00:08:48.210
+We can now use l.insert after
+and pass in the iterator and
+
+00:08:48.210 --> 00:08:49.640
+the object we want to insert.
+
+00:08:49.950 --> 00:08:52.490
+In this case, the 10 will
+be inserted after the 3.
+
+00:08:53.460 --> 00:08:56.689
+Notice that there are no insert
+and place, erase methods.
+
+00:08:56.690 --> 00:09:00.229
+They're all called insert after
+and place after erase after.
+
+00:09:00.500 --> 00:09:03.800
+The iterator doesn't invalidate in
+this case, it still points to the 3.
+
+00:09:04.120 --> 00:09:07.480
+So we can also use and place after
+an erase after in the same way.
+
+00:09:08.360 --> 00:09:12.619
+And the forward list allows resizing
+in the same way that the list does.
+
+00:09:13.190 --> 00:09:16.360
+Okay, so let's head over to the
+IDE, and we'll see some examples
+
+00:09:16.360 --> 00:09:19.730
+using a list and then we'll have
+a challenge exercise using a list.
+
+00:09:21.440 --> 00:09:22.706
+Okay, so I'm back in the IDE.
+
+00:09:22.930 --> 00:09:27.319
+I'm in the section 20 workspace,
+and I'm in the list project and
+
+00:09:27.320 --> 00:09:29.450
+What I'd like to do here is
+do the same thing we've been
+
+00:09:29.450 --> 00:09:30.480
+doing the previous videos.
+
+00:09:30.480 --> 00:09:33.819
+Go over some examples of
+using the list container.
+
+00:09:34.779 --> 00:09:36.589
+Now there's a couple
+of differences here.
+
+00:09:36.590 --> 00:09:40.650
+One is I'm including this iterator
+header file here, and that's
+
+00:09:40.660 --> 00:09:42.540
+for this advanced function.
+
+00:09:42.540 --> 00:09:43.740
+I'll talk about that in a second.
+
+00:09:44.010 --> 00:09:46.010
+It basically allows us
+to advance an iterator.
+
+00:09:46.740 --> 00:09:49.990
+We can't really do a plus
+equals or minus equals on list
+
+00:09:49.990 --> 00:09:53.160
+iterators, but we can advance
+some using the advanced function.
+
+00:09:53.160 --> 00:09:54.730
+So I'll show you that when I get to it.
+
+00:09:56.100 --> 00:09:58.569
+We have the person class
+that we've had before.
+
+00:09:58.569 --> 00:10:02.240
+And in this case, the only difference
+from the person class that you've seen
+
+00:10:02.240 --> 00:10:04.959
+before is the default constructor.
+
+00:10:04.969 --> 00:10:08.299
+Before we just use the default, we
+let the compiler generate it for us.
+
+00:10:08.830 --> 00:10:12.204
+Here I want the name to be
+unknown and I want the h to be
+
+00:10:12.270 --> 00:10:15.079
+0 when nothing is provided and
+you'll see why in a little bit.
+
+00:10:15.390 --> 00:10:19.459
+When we resize a list, it creates
+objects by using a default.
+
+00:10:19.459 --> 00:10:22.150
+I want you to see those that
+word in that age so you can
+
+00:10:22.150 --> 00:10:23.630
+actually see when that happens.
+
+00:10:24.349 --> 00:10:26.019
+Other than that, it's exactly the same.
+
+00:10:26.059 --> 00:10:28.030
+I've got the overloaded
+constructor here.
+
+00:10:28.309 --> 00:10:32.280
+I am overloading the less than
+operator and equality operator.
+
+00:10:32.280 --> 00:10:34.610
+Those are the 2 real important
+operators for the stl.
+
+00:10:35.900 --> 00:10:39.079
+And I've got a friend
+insertion operator right
+
+00:10:39.080 --> 00:10:40.230
+here for a stream insertion.
+
+00:10:40.969 --> 00:10:46.909
+All right, I've got a template
+function right here that allows me
+
+00:10:46.910 --> 00:10:49.870
+to display any list of any type.
+
+00:10:50.420 --> 00:10:53.189
+So the template parameter
+is t that's being replaced.
+
+00:10:53.190 --> 00:10:55.689
+Again, you've seen this
+before with decks and vectors.
+
+00:10:55.690 --> 00:10:57.579
+So it's just another
+example here with a list.
+
+00:10:58.570 --> 00:10:59.999
+So let's go through these examples.
+
+00:11:00.240 --> 00:11:01.750
+I've got some tests here.
+
+00:11:02.360 --> 00:11:03.689
+And I'll start with test one.
+
+00:11:03.700 --> 00:11:04.909
+You can see the output over here.
+
+00:11:04.909 --> 00:11:06.139
+As I said, I've already run this.
+
+00:11:06.150 --> 00:11:08.770
+So the test is right there
+that's where we're at right now.
+
+00:11:09.710 --> 00:11:11.099
+Here we're creating a list of integers.
+
+00:11:11.099 --> 00:11:14.190
+And you can see the syntax is
+exactly as you would expect.
+
+00:11:14.610 --> 00:11:17.079
+I hope that by now you're
+seeing these patterns, right.
+
+00:11:17.469 --> 00:11:18.880
+And it's not like oh my goodness.
+
+00:11:18.880 --> 00:11:21.410
+In order to use the list, I've
+got to learn all this new stuff.
+
+00:11:21.809 --> 00:11:22.999
+The patterns are the same.
+
+00:11:23.000 --> 00:11:25.130
+If you know how to use the deck
+you know how to use a vector you
+
+00:11:25.130 --> 00:11:28.270
+know how to use the list, it's
+just a matter of going to the stl
+
+00:11:28.270 --> 00:11:32.750
+documentation and see the nuances
+and the specifics for each container.
+
+00:11:33.120 --> 00:11:34.939
+But the general patterns are the same.
+
+00:11:35.139 --> 00:11:40.380
+So in this case, I'm creating l1 as
+one 2 3 4 5, and I'm displaying it.
+
+00:11:40.389 --> 00:11:42.089
+You can see that being
+displayed right here.
+
+00:11:42.819 --> 00:11:46.990
+And now I'm creating l2
+as a list of std strings.
+
+00:11:47.550 --> 00:11:50.510
+And what I'm doing is I'm pushing
+back to the back and front to
+
+00:11:50.510 --> 00:11:51.630
+the front then I'm displaying.
+
+00:11:51.630 --> 00:11:53.320
+And you can see exactly
+what you'd expect.
+
+00:11:53.320 --> 00:11:55.929
+Remember, a list has a
+back and it's got a front.
+
+00:11:56.150 --> 00:11:57.529
+So we're taking advantage of that.
+
+00:11:57.780 --> 00:12:00.119
+It's very efficient
+inserting on both ends.
+
+00:12:01.270 --> 00:12:05.189
+Here I'm creating l3 as a list of
+integers and I'm using the assignment
+
+00:12:05.220 --> 00:12:08.680
+using the initializer list, just like
+we've done with the other containers.
+
+00:12:08.690 --> 00:12:10.160
+And then I'm displaying l3.
+
+00:12:10.670 --> 00:12:12.099
+And you can see it right there.
+
+00:12:12.469 --> 00:12:15.040
+And then we're using the same
+constructor that we've used before.
+
+00:12:15.040 --> 00:12:18.339
+And again, I know this is becoming
+old hat but I I'm doing this
+
+00:12:18.630 --> 00:12:21.390
+there's a method to my madness,
+I'm doing this on purpose so
+
+00:12:21.390 --> 00:12:24.750
+that you can see the consistency
+between all these containers.
+
+00:12:24.890 --> 00:12:26.120
+So that's the constructor.
+
+00:12:26.349 --> 00:12:27.910
+We've got 10 100's.
+
+00:12:27.910 --> 00:12:31.200
+And then we're displaying
+l4, there are the 10 100s.
+
+00:12:31.540 --> 00:12:35.529
+Okay, perfect, so let's
+move on to the second test.
+
+00:12:35.969 --> 00:12:37.040
+And that's right here.
+
+00:12:37.049 --> 00:12:38.370
+You can see the output right over here.
+
+00:12:38.490 --> 00:12:42.120
+In this case, I've got l as
+a list of integers from 1
+
+00:12:42.120 --> 00:12:43.145
+through 10, I'm initializing it.
+
+00:12:43.300 --> 00:12:44.000
+I'm displaying it.
+
+00:12:44.070 --> 00:12:45.610
+There's the display right there.
+
+00:12:46.639 --> 00:12:47.830
+What's the list size.
+
+00:12:47.920 --> 00:12:48.410
+Well, it's 10.
+
+00:12:49.549 --> 00:12:50.310
+What's the front?
+
+00:12:50.330 --> 00:12:51.460
+The front is the 1.
+
+00:12:51.880 --> 00:12:52.630
+What's the back?
+
+00:12:52.639 --> 00:12:53.610
+The back is the 10.
+
+00:12:53.619 --> 00:12:55.780
+Remember, these are references
+we're getting to them so we can
+
+00:12:55.780 --> 00:12:57.050
+actually change them if we like.
+
+00:12:57.900 --> 00:13:00.010
+There's the size is 10,
+the front and the back.
+
+00:13:01.010 --> 00:13:02.629
+We can clear the list.
+
+00:13:02.710 --> 00:13:05.269
+That removes all the elements
+from it and display it again.
+
+00:13:05.500 --> 00:13:09.030
+Now it's empty, and its size is
+0, as you can see right there.
+
+00:13:10.900 --> 00:13:12.699
+Okay, again, very, very consistent.
+
+00:13:12.699 --> 00:13:15.230
+So let's look at -- let's
+take a look at test 3.
+
+00:13:15.250 --> 00:13:18.580
+Now test 3 has a couple of things that
+are going to be different for a list.
+
+00:13:19.150 --> 00:13:22.950
+Here's l, and we're displaying
+l which is 1 through 10.
+
+00:13:22.960 --> 00:13:24.229
+You can see right here is test 3.
+
+00:13:24.229 --> 00:13:24.620
+And right there is
+the 1 through the 10.
+
+00:13:25.160 --> 00:13:30.530
+And now what we're saying
+is let's resize this to 5.
+
+00:13:30.530 --> 00:13:31.569
+So what happens here.
+
+00:13:31.810 --> 00:13:33.185
+Well, it's going to resize it to 5.
+
+00:13:33.390 --> 00:13:36.079
+Basically, it's going to stop it
+right here, and all this is gone.
+
+00:13:36.830 --> 00:13:41.219
+So at this point, if I display l, you
+can see 1 2 3 4 5 here in the output.
+
+00:13:42.340 --> 00:13:43.739
+Now this is interesting.
+
+00:13:43.910 --> 00:13:46.209
+If I resize it to 10,
+what's going to happen?
+
+00:13:46.209 --> 00:13:49.130
+Well, it says -- remember,
+right now it's one 2 3 4 and 5.
+
+00:13:49.750 --> 00:13:53.800
+So it's going to resize it
+to 5 new elements, 1 2 3 4 5.
+
+00:13:54.060 --> 00:13:55.420
+But what's it gonna put in there?
+
+00:13:55.910 --> 00:13:59.090
+Well, what it's gonna do it's gonna
+call the default initializer for each
+
+00:13:59.090 --> 00:14:02.669
+one of those objects for integers
+and for primitive types it's 0.
+
+00:14:02.960 --> 00:14:06.610
+So you're going to get something like
+that when I display it that's exactly
+
+00:14:06.610 --> 00:14:09.230
+what we see 1 2 3 4 5 and 5 0s.
+
+00:14:09.620 --> 00:14:12.830
+But when we have object types,
+it's a whole different story.
+
+00:14:13.160 --> 00:14:14.510
+In this case, look what I'm doing.
+
+00:14:14.510 --> 00:14:18.720
+I've created persons is a
+list of person objects, right.
+
+00:14:18.720 --> 00:14:19.630
+Now it's empty.
+
+00:14:20.290 --> 00:14:24.319
+But if I resize it to 5, now
+I've got 5 person objects, which
+
+00:14:24.320 --> 00:14:27.960
+ones does it create, it uses the
+default constructor for them.
+
+00:14:28.300 --> 00:14:32.150
+So if I display it, you can see
+those strings that I talked about
+
+00:14:32.179 --> 00:14:35.829
+earlier in the person class,
+unknown age 0, unknown age 0.
+
+00:14:36.179 --> 00:14:37.580
+It's exactly what's happening.
+
+00:14:37.770 --> 00:14:39.840
+This is one of the things that
+I talked about i think at the
+
+00:14:39.840 --> 00:14:40.850
+beginning of this section.
+
+00:14:41.590 --> 00:14:45.580
+It's very important when we use the stl
+that we overload the less than, that
+
+00:14:45.580 --> 00:14:48.920
+we overload the equality operator, that
+we overload the default constructor.
+
+00:14:48.960 --> 00:14:49.630
+This is why.
+
+00:14:49.670 --> 00:14:51.469
+This is a really important reason why.
+
+00:14:51.770 --> 00:14:56.280
+If we provide an overloaded constructor
+and we don't provide the default
+
+00:14:56.299 --> 00:14:58.990
+constructor, this will error out
+because the default constructor
+
+00:14:59.000 --> 00:15:00.220
+wouldn't be provided for us.
+
+00:15:00.220 --> 00:15:03.500
+So we've got to make sure that we
+we've got all our bases covered there.
+
+00:15:05.610 --> 00:15:06.520
+Test 4.
+
+00:15:06.590 --> 00:15:09.780
+Let's have a list here of integers
+1 through 10 and display it.
+
+00:15:09.800 --> 00:15:11.440
+You can see test 4 is right down here.
+
+00:15:11.440 --> 00:15:13.040
+Actually, let me scroll
+that up just a little bit so
+
+00:15:13.040 --> 00:15:14.159
+it's a little easier to see.
+
+00:15:15.599 --> 00:15:16.050
+There we go.
+
+00:15:16.240 --> 00:15:17.389
+So here's test 4.
+
+00:15:17.889 --> 00:15:21.069
+Those are my integers, 1 through
+10, that's where I'm at right here.
+
+00:15:21.500 --> 00:15:22.220
+Now I've got an iterator.
+
+00:15:23.540 --> 00:15:25.000
+And obviously, I'm using auto.
+
+00:15:25.000 --> 00:15:27.260
+But obviously if I had to declare
+that the long way, it would
+
+00:15:27.270 --> 00:15:29.399
+be std list int iterator it.
+
+00:15:30.730 --> 00:15:32.919
+But in this case, the compiler
+is deducing it based on the
+
+00:15:32.920 --> 00:15:34.420
+return value of the find.
+
+00:15:34.670 --> 00:15:40.720
+So what am I doing, I'm finding
+that 5 in l from beginning to end.
+
+00:15:41.110 --> 00:15:45.560
+So my iterator it is
+going to be pointing to 5.
+
+00:15:45.560 --> 00:15:48.560
+Now I know it's there, but
+it's good practice to check.
+
+00:15:48.809 --> 00:15:52.339
+So if it is not equal to the
+end, that means I found it.
+
+00:15:52.490 --> 00:15:56.970
+And what I want to do is I want to
+call the insert method on the list
+
+00:15:57.000 --> 00:16:00.410
+l, and I want to insert a 100, where.
+
+00:16:00.620 --> 00:16:01.620
+I need the iterator.
+
+00:16:01.710 --> 00:16:06.060
+That's the -- this is real important
+with lists, both list and forward list.
+
+00:16:06.990 --> 00:16:07.829
+So what what do I do.
+
+00:16:07.830 --> 00:16:08.430
+I need that iterator.
+
+00:16:08.739 --> 00:16:10.230
+The iterator is pointing to the 5.
+
+00:16:10.230 --> 00:16:14.410
+In the case of a list, it's going to
+insert the 100 before the iterator.
+
+00:16:15.170 --> 00:16:17.490
+So it's going to stick
+to 100 right in there.
+
+00:16:18.110 --> 00:16:21.415
+And then when I display the list,
+you can see right here that the
+
+00:16:21.590 --> 00:16:25.930
+100 has been inserted between the
+4 and the 5, right, to the left or
+
+00:16:25.930 --> 00:16:28.679
+previous or before the iterator,
+whatever you want to think about it.
+
+00:16:30.180 --> 00:16:36.110
+In this case, I've got l2, which
+is a list from 1000 2000 3000.
+
+00:16:36.579 --> 00:16:38.939
+Now look what I'm doing,
+I'm inserting into l.
+
+00:16:38.950 --> 00:16:40.949
+Remember, l is this guy right here.
+
+00:16:40.950 --> 00:16:48.730
+Now it's -- l is 1 2 3 4 then a
+100 and then 5 6 7 8 9 and 10.
+
+00:16:48.740 --> 00:16:49.970
+That's l right here.
+
+00:16:51.360 --> 00:16:54.180
+So what I'm doing is I'm -- remember,
+my iterator is still pointing
+
+00:16:54.180 --> 00:16:56.779
+to the 5., it's not invalid
+because I haven't deleted it.
+
+00:16:56.790 --> 00:16:58.910
+So my iterator is still
+pointing right here.
+
+00:16:59.469 --> 00:17:03.869
+So what I want to do is I want
+to say I want to insert into l
+
+00:17:05.180 --> 00:17:07.890
+starting at that iterator, right,
+here to the left of the iterator.
+
+00:17:07.890 --> 00:17:08.720
+What do I want to insert?
+
+00:17:08.730 --> 00:17:12.369
+I want to insert the entire
+list l2 from beginning to end.
+
+00:17:12.510 --> 00:17:13.820
+So what do you think
+that's going to do?
+
+00:17:14.280 --> 00:17:21.120
+Right in here, it's going to put
+in 1000 2000 3000, and it's going
+
+00:17:21.120 --> 00:17:22.810
+to do that super efficiently.
+
+00:17:23.869 --> 00:17:26.450
+Then when I display the
+list here again, you can see
+
+00:17:26.450 --> 00:17:28.750
+what's happening 1 2 3 4.
+
+00:17:28.900 --> 00:17:32.650
+There's your 1000, and then
+1000 2000 3000 and then the 5.
+
+00:17:33.179 --> 00:17:34.850
+Where's iterator pointing to now?
+
+00:17:35.010 --> 00:17:37.019
+Still pointing to the
+5, it's still valid.
+
+00:17:37.990 --> 00:17:40.369
+Okay, let me clear this because
+there's a lot of stuff here.
+
+00:17:40.799 --> 00:17:44.410
+And this is the advanced function
+that I was talking about.
+
+00:17:45.270 --> 00:17:47.560
+This is in the iterator header file.
+
+00:17:48.090 --> 00:17:50.530
+So what we can do here is
+we can advance any iterator,
+
+00:17:51.000 --> 00:17:53.530
+positive or negative assuming
+it's a bi-directional iterator.
+
+00:17:53.530 --> 00:17:54.660
+In this case, it is.
+
+00:17:55.570 --> 00:17:58.199
+There's my iterator, and I
+want to advance it minus 4.
+
+00:17:58.660 --> 00:18:01.490
+So remember, iterator was
+pointing to the 5, right.
+
+00:18:01.880 --> 00:18:03.640
+So now the 5 is over here.
+
+00:18:04.190 --> 00:18:07.230
+I want to move it 4
+to the left 1 2 3 4.
+
+00:18:07.310 --> 00:18:08.780
+It's going to be pointing to the 100.
+
+00:18:10.160 --> 00:18:11.600
+That's what the advanced lets me do.
+
+00:18:11.600 --> 00:18:14.700
+I can also do positive 4 obviously
+or positive 2 or anything I want.
+
+00:18:15.059 --> 00:18:17.009
+So in this case, it's going
+to be pointing to the 100.
+
+00:18:17.240 --> 00:18:20.720
+If I display what it's
+pointing to, there's the 100.
+
+00:18:20.900 --> 00:18:25.699
+And then i can say l.erase it,
+what's that going to do, it's
+
+00:18:25.699 --> 00:18:28.300
+going to erase the element that
+the iterator is pointing to.
+
+00:18:28.910 --> 00:18:30.110
+Then I'm displaying it again.
+
+00:18:30.120 --> 00:18:31.660
+You can see the 100 is gone.
+
+00:18:32.160 --> 00:18:34.669
+At this point, my
+iterator becomes invalid.
+
+00:18:34.670 --> 00:18:36.670
+I just deleted the element
+it was pointing to.
+
+00:18:36.670 --> 00:18:39.030
+So don't use that iterator again.
+
+00:18:39.040 --> 00:18:40.380
+If you need it, reset it.
+
+00:18:41.920 --> 00:18:43.620
+Okay, test 4 is good.
+
+00:18:43.660 --> 00:18:45.729
+Now let's take a look at test 5.
+
+00:18:46.469 --> 00:18:48.449
+In test 5, we'll do a couple of things.
+
+00:18:48.450 --> 00:18:50.939
+The test 5 just has a
+couple of pieces of input.
+
+00:18:50.950 --> 00:18:53.050
+You'll see here it's actually
+waiting for me to type something
+
+00:18:53.050 --> 00:18:54.280
+in, so we'll do that in a second.
+
+00:18:55.330 --> 00:18:59.835
+In test 5, I've got stooges which
+is a list of person objects I'm
+
+00:18:59.835 --> 00:19:01.830
+initializing it to Larry Moe and Curly.
+
+00:19:02.220 --> 00:19:03.230
+And I'm displaying them.
+
+00:19:04.929 --> 00:19:09.000
+Remember, the person class overloaded
+the stream insertion operator, so
+
+00:19:09.000 --> 00:19:11.939
+that's what's happening here, and
+I'm displaying them that's what I've
+
+00:19:11.940 --> 00:19:14.170
+got right here, Larry Moe and Curly.
+
+00:19:15.460 --> 00:19:17.790
+Now I've got a couple of
+variables here, name and age.
+
+00:19:17.830 --> 00:19:20.550
+And what I want to do is I want to
+ask the user to enter the name of the
+
+00:19:20.550 --> 00:19:22.540
+next stooge and then enter their age.
+
+00:19:23.120 --> 00:19:24.150
+And let's do that right now.
+
+00:19:24.150 --> 00:19:29.179
+I'm going to type in -- right in
+here, I'm just going to type in James.
+
+00:19:30.520 --> 00:19:33.350
+And let's say that
+james is 50 years old.
+
+00:19:33.960 --> 00:19:37.860
+Now when I press enter, what's going
+to happen is we're coming right
+
+00:19:37.860 --> 00:19:40.259
+in here on line 130 right here.
+
+00:19:41.270 --> 00:19:42.770
+And I'm in placing back.
+
+00:19:43.410 --> 00:19:46.169
+Remember, here I'm not creating
+an object here, I'm letting the
+
+00:19:46.170 --> 00:19:47.510
+list create the object for me.
+
+00:19:47.510 --> 00:19:48.659
+That's what the in place does.
+
+00:19:48.970 --> 00:19:53.350
+So what's going to happen is James 50
+is going to be passed into this method.
+
+00:19:53.750 --> 00:19:56.510
+This method will create that
+stooge object and insert
+
+00:19:56.510 --> 00:19:57.479
+it at the back for me.
+
+00:19:57.770 --> 00:20:01.139
+So when I press enter, I'll
+display stooges, and I should
+
+00:20:01.139 --> 00:20:04.529
+see James 50 at the back, right
+in here, right after Curly.
+
+00:20:04.900 --> 00:20:05.750
+So let's do that.
+
+00:20:05.760 --> 00:20:06.580
+Let me come over here.
+
+00:20:06.850 --> 00:20:07.860
+I'll press enter.
+
+00:20:09.030 --> 00:20:14.240
+And you can see now that we've got
+Larry Frank Moe Curly and James,
+
+00:20:14.910 --> 00:20:16.529
+right at the back, super efficient.
+
+00:20:17.570 --> 00:20:19.410
+And then the last thing we
+want to do here is we want
+
+00:20:19.410 --> 00:20:21.330
+to insert Frank before Moe.
+
+00:20:22.449 --> 00:20:24.740
+Okay, so where's Moe,
+I need to find it.
+
+00:20:24.760 --> 00:20:27.220
+So I need an iterator that's
+going to point to Moe.
+
+00:20:27.910 --> 00:20:30.860
+I'm going to search stooges
+from beginning to end, and
+
+00:20:30.860 --> 00:20:32.570
+I'm looking for that object.
+
+00:20:33.880 --> 00:20:34.990
+What's it going to use?
+
+00:20:35.590 --> 00:20:38.390
+Operator, equality operator,
+which I've overloaded.
+
+00:20:38.880 --> 00:20:40.560
+So it's going to look from Moe 25.
+
+00:20:40.580 --> 00:20:41.910
+Moe 25 is right here.
+
+00:20:41.910 --> 00:20:42.620
+I know it's there.
+
+00:20:43.340 --> 00:20:46.160
+So my iterator, if it's not
+equal to stooge's n, I found it.
+
+00:20:46.170 --> 00:20:49.460
+So what I'm going to do is
+I'm going to insert at that
+
+00:20:49.460 --> 00:20:51.170
+iterator before the iterator.
+
+00:20:51.170 --> 00:20:52.850
+Everything on the list
+happens before the iterator.
+
+00:20:53.210 --> 00:20:54.459
+I'm going to insert Frank 18.
+
+00:20:55.179 --> 00:20:56.700
+And then I'm going to
+display stooges again.
+
+00:20:57.009 --> 00:21:00.879
+And you can see right here Frank
+18 is right before the Moe,
+
+00:21:01.850 --> 00:21:03.480
+which is exactly like I expected.
+
+00:21:04.260 --> 00:21:06.830
+All right, and then the
+last test is test 6.
+
+00:21:08.150 --> 00:21:09.139
+And this one's pretty cool.
+
+00:21:09.150 --> 00:21:10.070
+All we're doing is sorting.
+
+00:21:10.540 --> 00:21:11.429
+Real, real simple.
+
+00:21:11.639 --> 00:21:16.250
+So in this case, I've got
+stooges is a list of persons.
+
+00:21:16.260 --> 00:21:17.879
+And I've got Larry Moe and Curly.
+
+00:21:18.690 --> 00:21:20.060
+I'm displaying stooges.
+
+00:21:20.100 --> 00:21:22.340
+And you can see it right
+here Larry Moe and Curly.
+
+00:21:22.950 --> 00:21:23.880
+Then I'm sorting it.
+
+00:21:23.910 --> 00:21:26.469
+I'm saying stooges.sort and
+then I'm displaying it again.
+
+00:21:26.470 --> 00:21:27.239
+And look what happened?
+
+00:21:28.280 --> 00:21:29.640
+Curly Larry Moe.
+
+00:21:30.610 --> 00:21:32.329
+What operator is being used here?
+
+00:21:33.599 --> 00:21:35.329
+Operator less than.
+
+00:21:35.340 --> 00:21:36.409
+We overloaded that.
+
+00:21:36.730 --> 00:21:38.630
+And what we're doing in
+our operator less than.
+
+00:21:38.640 --> 00:21:40.550
+Let me go back in case
+you didn't remember.
+
+00:21:40.870 --> 00:21:43.450
+Look at our operator less
+than is comparing ages.
+
+00:21:44.000 --> 00:21:47.379
+So here we've got 17 18 and 25.
+
+00:21:47.389 --> 00:21:50.949
+That's how we decided that
+we were going to sort, right.
+
+00:21:50.950 --> 00:21:51.819
+We're not sorting by name.
+
+00:21:51.820 --> 00:21:52.309
+We could have.
+
+00:21:52.320 --> 00:21:55.870
+We could have written this as name, but
+we decided -- well, let's sort by age.
+
+00:21:56.420 --> 00:21:57.980
+So this is going to sort by that.
+
+00:21:58.830 --> 00:21:59.800
+Okay, so that's it.
+
+00:22:00.290 --> 00:22:02.860
+In the next video, we'll do a
+challenge where we'll simulate a music
+
+00:22:02.860 --> 00:22:05.090
+player using a doubly linked list.

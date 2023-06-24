@@ -1,0 +1,536 @@
+WEBVTT
+
+00:00:05.320 --> 00:00:08.360
+In this video, we'll learn
+about c-style strings.
+
+00:00:09.230 --> 00:00:12.089
+C-style strings are about
+as simple as it gets.
+
+00:00:12.450 --> 00:00:16.300
+They're a sequence of characters,
+stored contiguously in memory.
+
+00:00:17.000 --> 00:00:20.299
+They're implemented as an array
+of characters, so you can access
+
+00:00:20.320 --> 00:00:23.630
+individual characters using
+the array subscript syntax
+
+00:00:23.640 --> 00:00:24.640
+that we've already learned.
+
+00:00:25.140 --> 00:00:27.330
+How do you know where the
+sequence of characters ends.
+
+00:00:28.030 --> 00:00:31.860
+C-style strings use a sentinel valley
+that marks the end of the string.
+
+00:00:32.500 --> 00:00:35.859
+The null character is used, which
+is equivalent to the integer zero.
+
+00:00:36.619 --> 00:00:41.660
+So c-style strings are often referred
+to as zero or null terminated strings.
+
+00:00:42.750 --> 00:00:45.810
+We've been using c-style strings
+all along in this course.
+
+00:00:46.200 --> 00:00:49.279
+We've used them mainly in our output
+statements as string literals.
+
+00:00:50.360 --> 00:00:53.240
+Recall that string literals
+are sequences of characters
+
+00:00:53.240 --> 00:00:54.750
+enclosed in double quotes.
+
+00:00:55.119 --> 00:00:58.300
+These string literals are constants,
+so we can't change them just like
+
+00:00:58.300 --> 00:00:59.970
+we can't change integer literals.
+
+00:01:01.320 --> 00:01:04.199
+Even though we don't explicitly
+provide a null character at
+
+00:01:04.200 --> 00:01:07.770
+the end of the string literal,
+c++ inserts one for us.
+
+00:01:08.049 --> 00:01:10.210
+That's the way the end
+of string is handled.
+
+00:01:10.699 --> 00:01:13.710
+Let's see an example of a string
+literal and how it's stored in memory.
+
+00:01:16.630 --> 00:01:19.310
+Here's a real simple example
+that shows how c-style
+
+00:01:19.310 --> 00:01:20.520
+strings are stored in memory.
+
+00:01:21.150 --> 00:01:23.779
+In this case, we have a c-style
+string literal containing the
+
+00:01:23.780 --> 00:01:26.600
+sequence of characters c++ is fun.
+
+00:01:27.759 --> 00:01:31.080
+These characters are stored in a
+contiguous block of memory that
+
+00:01:31.080 --> 00:01:32.630
+can be accessed as an array.
+
+00:01:33.300 --> 00:01:38.450
+Notice that c++ is fun has exactly
+10 characters, but the compiler
+
+00:01:38.490 --> 00:01:42.330
+allocated 11 characters for the
+array because it needed space for
+
+00:01:42.330 --> 00:01:43.749
+the null character at the end.
+
+00:01:46.090 --> 00:01:49.869
+Literals are great and very
+useful, but we more often than not
+
+00:01:49.870 --> 00:01:51.640
+need to create string variables.
+
+00:01:52.220 --> 00:01:54.800
+Let's see how we can create
+c-style string variables.
+
+00:01:55.480 --> 00:01:58.510
+In this example, we're declaring
+an array and initializing it
+
+00:01:58.510 --> 00:02:02.050
+to Frank, using initializer
+list syntax as we've been doing
+
+00:02:02.050 --> 00:02:03.499
+with integers and other types.
+
+00:02:04.179 --> 00:02:07.800
+Notice that the c++ compiler will
+allocate six characters for this
+
+00:02:07.820 --> 00:02:11.580
+array since it needs to terminate
+the string with the null character.
+
+00:02:12.330 --> 00:02:14.920
+Also notice that the size
+of the array is fixed.
+
+00:02:15.110 --> 00:02:18.839
+So if I wanted to add a y to Frank
+and create Franky, I couldn't
+
+00:02:18.849 --> 00:02:22.110
+without having some potential
+problems since the new string
+
+00:02:22.110 --> 00:02:23.630
+would not be null terminated.
+
+00:02:24.369 --> 00:02:26.500
+You won't get a compiler
+error or even a warning.
+
+00:02:26.770 --> 00:02:30.890
+In fact, in this case, my name sub-5
+is still within the array bounds.
+
+00:02:31.100 --> 00:02:32.330
+Let's see another example.
+
+00:02:34.160 --> 00:02:38.329
+In this example, we are explicitly
+asking the compiler to allocate eight
+
+00:02:38.330 --> 00:02:39.889
+characters for the character array.
+
+00:02:40.230 --> 00:02:42.030
+And we're initializing it to Frank.
+
+00:02:42.199 --> 00:02:46.500
+In this case, it will initialize
+the array with f r a n k,
+
+00:02:46.500 --> 00:02:49.860
+and the rest of the space will be
+zeroed out with null characters.
+
+00:02:50.780 --> 00:02:54.510
+In this case, if I wanted to change
+the character at index 5, which
+
+00:02:54.510 --> 00:02:58.799
+is that first null character to
+a lowercase y, it would be just
+
+00:02:58.799 --> 00:03:02.940
+fine since the string now contains
+Franky and is still null terminated.
+
+00:03:03.760 --> 00:03:04.910
+Let's see another example.
+
+00:03:07.690 --> 00:03:10.799
+In this example, we ask the
+compiler to allocate an array
+
+00:03:10.800 --> 00:03:13.340
+of eight characters, and
+we don't initialize them.
+
+00:03:13.960 --> 00:03:17.379
+This could be very problematic
+because if you use this array as a
+
+00:03:17.379 --> 00:03:22.170
+string, all c-style string functions
+expect to find a null character.
+
+00:03:22.670 --> 00:03:24.740
+And here there may or may not be one.
+
+00:03:24.750 --> 00:03:26.890
+We really don't know what
+the data in the array is.
+
+00:03:27.360 --> 00:03:29.529
+Suppose we wanted to
+display the string now.
+
+00:03:29.960 --> 00:03:31.630
+How do you think this would
+happen, how do you think
+
+00:03:31.630 --> 00:03:33.249
+c-style strings are displayed.
+
+00:03:33.719 --> 00:03:36.520
+Well, in this case we start at
+the first element of the array
+
+00:03:36.780 --> 00:03:38.250
+and we iterate through the array.
+
+00:03:38.900 --> 00:03:41.550
+At every character, we see
+if it's the null character.
+
+00:03:41.960 --> 00:03:44.530
+If it is, we stop since we
+reach the end of the string.
+
+00:03:45.110 --> 00:03:47.370
+If it's not, we print the
+character and then we move
+
+00:03:47.370 --> 00:03:48.380
+to the next character.
+
+00:03:49.040 --> 00:03:51.030
+In this case, we don't know
+what's going to happen.
+
+00:03:51.250 --> 00:03:53.980
+We might see a null right
+away or we might not see a
+
+00:03:53.980 --> 00:03:55.290
+null for a very long time.
+
+00:03:55.810 --> 00:03:58.500
+In the meantime, I'm
+printing stuff to the screen.
+
+00:03:58.830 --> 00:04:01.250
+Some of the stuff may not
+even be displayable since some
+
+00:04:01.250 --> 00:04:02.880
+characters are control characters.
+
+00:04:03.780 --> 00:04:07.230
+You might think we can initialize
+c-style strings using the assignment
+
+00:04:07.230 --> 00:04:10.810
+operator, just like we have with
+other types, but this won't work.
+
+00:04:11.240 --> 00:04:15.010
+If we try to assign the c-style
+literal Frank to my name, we get
+
+00:04:15.010 --> 00:04:18.290
+a compiler error because that's
+not the way c-style strings work.
+
+00:04:19.290 --> 00:04:23.310
+Array names and literals evaluate
+to their location in memory, so
+
+00:04:23.310 --> 00:04:26.799
+we're effectively assigning one
+location to another which is illegal.
+
+00:04:27.759 --> 00:04:30.476
+Think of this as
+saying assign 10 to 12.
+
+00:04:30.550 --> 00:04:32.660
+It doesn't make sense and
+the compiler won't allow it.
+
+00:04:33.350 --> 00:04:35.780
+In order to assign one string
+to another, we need to use a
+
+00:04:35.780 --> 00:04:37.480
+function called string copy.
+
+00:04:37.800 --> 00:04:42.850
+That copies the c-style literal
+f r a n k to the my name array.
+
+00:04:43.469 --> 00:04:46.690
+There are lots of c-style
+functions that c++ plus brings in
+
+00:04:46.690 --> 00:04:48.279
+from the c programming language.
+
+00:04:48.449 --> 00:04:49.550
+Let's see a few of them.
+
+00:04:50.270 --> 00:04:53.790
+The cstring library contains
+many functions that work
+
+00:04:53.790 --> 00:04:55.090
+with c-style strings.
+
+00:04:55.630 --> 00:05:00.150
+These functions are used to copy,
+concatenate, compare, search, get
+
+00:05:00.150 --> 00:05:01.869
+the length of a string and many more.
+
+00:05:02.250 --> 00:05:05.629
+They all rely on one common
+factor that the sequence of
+
+00:05:05.639 --> 00:05:08.690
+characters they're working on is
+terminated with a null character.
+
+00:05:09.600 --> 00:05:12.940
+If you're using c-style strings,
+you must be very aware of this.
+
+00:05:13.290 --> 00:05:15.940
+For example, suppose you
+have a c-style string and you
+
+00:05:15.940 --> 00:05:17.229
+want to determine its length.
+
+00:05:17.929 --> 00:05:19.419
+Well, let's say we have Frank.
+
+00:05:20.040 --> 00:05:23.540
+Since no length information is
+stored with the string only the
+
+00:05:23.540 --> 00:05:27.080
+characters in the array, the only
+way to determine the length is to
+
+00:05:27.080 --> 00:05:31.170
+start counting at the first array
+element and then increment the longest
+
+00:05:31.210 --> 00:05:32.800
+until you see the null character.
+
+00:05:33.240 --> 00:05:36.760
+So in the case of Frank, we
+would look at the f, increment
+
+00:05:36.760 --> 00:05:43.900
+one, look at the r, two, the a,
+three the, n four, the k five.
+
+00:05:44.000 --> 00:05:46.140
+Then we see a null
+character, and we stop.
+
+00:05:46.380 --> 00:05:48.140
+Now we know that the length is five.
+
+00:05:48.520 --> 00:05:51.909
+But if that null character
+is not there, we keep
+
+00:05:51.910 --> 00:05:53.289
+going and we keep counting.
+
+00:05:53.429 --> 00:05:57.640
+So the result will very likely be
+incorrect, even worse if you're
+
+00:05:57.640 --> 00:06:01.450
+copying one string into another and
+the string you're copying isn't null
+
+00:06:01.450 --> 00:06:05.659
+terminated, you'll very likely exceed
+the bounds of the target string and
+
+00:06:05.660 --> 00:06:07.640
+very likely cause a program crash.
+
+00:06:08.460 --> 00:06:09.990
+This all sounds pretty ominous.
+
+00:06:10.219 --> 00:06:13.950
+But in fact, we've been programming
+in c and c++ plus using c-style
+
+00:06:13.950 --> 00:06:16.769
+strings for a very long time,
+and we've gotten pretty good
+
+00:06:16.770 --> 00:06:18.289
+at understanding these issues.
+
+00:06:18.740 --> 00:06:20.460
+But wouldn't it be great
+if we didn't have to worry
+
+00:06:20.460 --> 00:06:21.590
+about these issues at all.
+
+00:06:22.210 --> 00:06:24.220
+That's where c++ strings come in.
+
+00:06:24.520 --> 00:06:26.380
+We'll talk about them
+later in this section.
+
+00:06:27.599 --> 00:06:30.799
+Here a few examples that use
+the c-style string functions.
+
+00:06:31.349 --> 00:06:34.729
+You typically have a function, and you
+pass into the function the name of the
+
+00:06:34.730 --> 00:06:36.670
+string or the string literal or both.
+
+00:06:37.490 --> 00:06:39.630
+We'll talk about functions
+in detail shortly.
+
+00:06:39.910 --> 00:06:42.380
+But conceptually, they're
+really easy to understand.
+
+00:06:42.830 --> 00:06:46.460
+For example, If I'm a function and my job
+is to return the color of a
+
+00:06:46.460 --> 00:06:49.910
+crayon passed to me, then all
+i need from you is the crayon.
+
+00:06:50.440 --> 00:06:53.030
+So you call me and send me
+the crayon, and I'll return
+
+00:06:53.030 --> 00:06:54.629
+red, green, blue and so forth.
+
+00:06:55.320 --> 00:06:57.460
+That's the idea, and
+here it's the same.
+
+00:06:57.790 --> 00:07:00.750
+If you want to know the length
+of the string, pass in the string
+
+00:07:00.750 --> 00:07:04.499
+to the strlen function, and it
+returns the string's length.
+
+00:07:05.280 --> 00:07:09.410
+Here are just a few examples that
+copy, concatenate and compare strings.
+
+00:07:11.330 --> 00:07:16.490
+C++ also has another library called c
+standard lib that contains functions
+
+00:07:16.490 --> 00:07:18.620
+that convert strings to other types.
+
+00:07:19.040 --> 00:07:22.860
+For example, if I have a string
+with the digits 1 and 2, I can
+
+00:07:22.860 --> 00:07:24.780
+convert that to the integer 12.
+
+00:07:25.330 --> 00:07:27.489
+Sometimes these are
+really useful functions.
+
+00:07:28.029 --> 00:07:31.110
+However, all of these functions
+rely on the same thing.
+
+00:07:31.120 --> 00:07:33.580
+They're all working with
+null terminated strings.
+
+00:07:34.180 --> 00:07:37.590
+If you're using c-style strings,
+you have to be very aware of that.
+
+00:07:39.150 --> 00:07:40.609
+Well that completes this video.
+
+00:07:40.610 --> 00:07:43.219
+In the next video, we'll head over
+to the IDE, and we'll write some
+
+00:07:43.219 --> 00:07:45.409
+examples using c-style strings.

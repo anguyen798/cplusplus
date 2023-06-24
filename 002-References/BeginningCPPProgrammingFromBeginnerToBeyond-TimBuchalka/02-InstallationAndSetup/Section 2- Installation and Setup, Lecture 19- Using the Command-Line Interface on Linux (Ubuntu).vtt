@@ -1,0 +1,478 @@
+WEBVTT
+
+00:00:05.400 --> 00:00:09.280
+In this video, we'll go over the steps necessary to create,
+
+00:00:09.480 --> 00:00:11.180
+build and run
+
+00:00:11.180 --> 00:00:14.280
+a c++ program on ubuntu Linux
+
+00:00:14.280 --> 00:00:16.940
+using only a text editor in the command line.
+
+00:00:16.940 --> 00:00:20.540
+So in this video, we won't be using any integrated development environment.
+
+00:00:21.340 --> 00:00:22.140
+First of all,
+
+00:00:22.140 --> 00:00:26.340
+I've created a folder on my desktop called cpp projects.
+
+00:00:26.340 --> 00:00:29.940
+And in that folder, I've created another folder called project1.
+
+00:00:29.940 --> 00:00:32.820
+This is where we're going to store our c++ program.
+
+00:00:33.320 --> 00:00:36.200
+In this case, it's just going to be a main, a real simple test.
+
+00:00:36.200 --> 00:00:37.800
+So I'd like to close this up
+
+00:00:38.100 --> 00:00:42.100
+and the first thing we need to do is we need some sort of editor to type in our program.
+
+00:00:42.100 --> 00:00:45.300
+Now on Linux, we've got gedit.
+
+00:00:45.300 --> 00:00:48.400
+So I could just come to search my computer and type gedit.
+
+00:00:48.400 --> 00:00:52.600
+And we can use that text editor which is a fine text editor. It's real simple.
+
+00:00:52.600 --> 00:00:54.800
+It comes with your installation.
+
+00:00:55.100 --> 00:00:58.900
+There are many other text editors and programmer text editors that you can use,
+
+00:00:58.900 --> 00:01:00.400
+like brackets,
+
+00:01:01.500 --> 00:01:04.600
+atom and many others but this one is already here.
+
+00:01:04.600 --> 00:01:06.600
+So we may as well use it and it works just fine.
+
+00:01:06.850 --> 00:01:09.550
+I've gone ahead and gone to edit preferences.
+
+00:01:09.950 --> 00:01:14.250
+And I just turned on line numbers, and you can set all kinds of different settings that you like.
+
+00:01:14.250 --> 00:01:16.550
+I made the font also a little bigger so you can see it.
+
+00:01:16.550 --> 00:01:18.850
+So it may look a little different when you start yours.
+
+00:01:19.510 --> 00:01:23.410
+So the first thing we want to do is we want to write the c++ program. So let's do it.
+
+00:01:23.410 --> 00:01:24.310
+Include
+
+00:01:27.110 --> 00:01:29.110
+io stream just like we've done before.
+
+00:01:31.990 --> 00:01:34.350
+I'll leave a space and then I'll say int main,
+
+00:01:34.750 --> 00:01:37.450
+two parentheses, the open curly,
+
+00:01:38.350 --> 00:01:40.050
+and I'll close the curly while I'm at it.
+
+00:01:42.410 --> 00:01:45.210
+And now we'll just say we could just press tab.
+
+00:01:45.210 --> 00:01:48.510
+We'll say std::cout.
+
+00:01:48.760 --> 00:01:51.460
+The insertion operator which is the two << signs,
+
+00:01:52.160 --> 00:01:55.960
+break together with no spaces. And I'll say "Hello
+
+00:01:58.060 --> 00:02:02.060
+Ubuntu command line".
+
+00:02:04.360 --> 00:02:05.360
+We'll close the string.
+
+00:02:06.160 --> 00:02:07.620
+We'll put another insertion operator,
+
+00:02:07.620 --> 00:02:11.850
+and let's put a new line at the end that way our cursor will go to the next line when we do the output.
+
+00:02:11.850 --> 00:02:15.350
+And that's e-n-d-l followed by a semi-colon.
+
+00:02:15.350 --> 00:02:17.350
+And then we return 0 just like we always do.
+
+00:02:19.350 --> 00:02:22.120
+That's it. That's our c++ program.
+
+00:02:22.120 --> 00:02:26.120
+Now it's important that we save this with a .cpp extension and not
+
+00:02:26.120 --> 00:02:28.120
+a txt extension.
+
+00:02:28.120 --> 00:02:32.120
+Z++ compiler does not like txt extensions. And you're going to get all kinds of
+
+00:02:32.120 --> 00:02:32.920
+weird errors.
+
+00:02:33.420 --> 00:02:35.920
+Okay. So let's do that. Let's go to file,
+
+00:02:36.520 --> 00:02:37.510
+save as.
+
+00:02:39.010 --> 00:02:41.910
+We'll find where we want to save it. We want to save it to our desktop,
+
+00:02:42.510 --> 00:02:45.280
+cpp projects, project1.
+
+00:02:45.980 --> 00:02:49.980
+That's where we would like to save it. And I'll give it the name as main.cpp.
+
+00:02:51.580 --> 00:02:54.580
+Now you'll notice a couple of things. When I name the file cpp,
+
+00:02:54.580 --> 00:02:55.880
+the editor is smart.
+
+00:02:55.880 --> 00:02:59.980
+So it realizes that this is not a regular text file. It's a c++ text file,
+
+00:02:59.980 --> 00:03:03.480
+so I'll save it. And notice what happened here.
+
+00:03:03.840 --> 00:03:07.140
+Notice the color coding, it knows c++.
+
+00:03:07.140 --> 00:03:09.440
+Again, it's not an integrated development environment.
+
+00:03:09.440 --> 00:03:12.440
+So it doesn't have a lot of hooks to the compiler and so forth.
+
+00:03:12.800 --> 00:03:15.800
+But you can see that now it's really helping me
+
+00:03:15.800 --> 00:03:18.000
+because I can see that my string is terminated.
+
+00:03:18.000 --> 00:03:20.300
+For example, if I get rid of that guy,
+
+00:03:20.300 --> 00:03:24.300
+then that's black and it shouldn't be black, it should be a magenta color.
+
+00:03:25.290 --> 00:03:29.290
+So again, I'm going to press ctrl s to save that file.
+
+00:03:29.290 --> 00:03:31.190
+Now we'd like to compile and run it.
+
+00:03:31.690 --> 00:03:34.190
+So in order to do that, we need to open up a terminal.
+
+00:03:34.990 --> 00:03:36.990
+So I'll come up back up here, and I'll say terminal.
+
+00:03:38.490 --> 00:03:42.490
+And that'll open up a terminal, which I'll pull down just right
+
+00:03:42.490 --> 00:03:44.490
+by here so we can run them together.
+
+00:03:44.490 --> 00:03:46.490
+Now one of the things that you'll notice is that
+
+00:03:47.290 --> 00:03:50.790
+if you do a pwd, which prints your working directory,
+
+00:03:50.790 --> 00:03:52.190
+I'm in home Frank.
+
+00:03:52.190 --> 00:03:56.490
+I don't want to be in home Frank. I want to be in this directory, right up here that you can see desktop,
+
+00:03:56.490 --> 00:03:58.690
+cpp projects, project1.
+
+00:03:59.190 --> 00:04:02.690
+So I need to change into that directory. We can use a cd command
+
+00:04:03.190 --> 00:04:06.070
+to change directories. So I want to go to my desktop,
+
+00:04:06.070 --> 00:04:09.070
+and you can press tab for auto completion,
+
+00:04:09.950 --> 00:04:10.850
+and press enter.
+
+00:04:11.650 --> 00:04:14.650
+Then I want to press -- then I want to type cd
+
+00:04:15.550 --> 00:04:17.150
+cpp projects.
+
+00:04:17.550 --> 00:04:19.750
+And then finally, project1.
+
+00:04:19.750 --> 00:04:23.050
+And you could do this all in one line if you like. I just did it in three steps.
+
+00:04:23.410 --> 00:04:25.170
+So now I'm in the correct directory.
+
+00:04:25.170 --> 00:04:29.770
+If I want to know what's in that directory, I can just type LS, which gives me a listing of the directory.
+
+00:04:29.970 --> 00:04:32.970
+And you can see that my main cpp file is there.
+
+00:04:33.370 --> 00:04:35.370
+That's the one that I want to compile.
+
+00:04:35.620 --> 00:04:39.420
+So let me make this thing a little bit wider just you can see what I'm typing here.
+
+00:04:39.720 --> 00:04:42.520
+So the first thing I want to do is I want to execute the compiler.
+
+00:04:42.520 --> 00:04:45.720
+So I want to say g++, that calls the compiler.
+
+00:04:45.720 --> 00:04:48.120
+That's the gnu c++ compiler.
+
+00:04:49.020 --> 00:04:53.220
+And I want to set some options. These are the same options that we would set with the IDE.
+
+00:04:53.620 --> 00:04:56.500
+Here, we're just going to set them as switches right on the command line.
+
+00:04:56.500 --> 00:04:59.500
+So I'm going to say Wall,
+
+00:05:00.050 --> 00:05:01.710
+that turns on all warnings.
+
+00:05:02.410 --> 00:05:06.410
+Then I want to say -std=
+
+00:05:06.910 --> 00:05:08.910
+c++ 14,
+
+00:05:08.910 --> 00:05:12.410
+that's going to use the for the 2014 c++ standard,
+
+00:05:12.410 --> 00:05:14.010
+which is the latest one that's out there.
+
+00:05:15.570 --> 00:05:20.470
+Now we supply what do you want to compile? Well, I want to compile the main.cpp file.
+
+00:05:20.830 --> 00:05:25.130
+Main.cpp. That's it. So it's going to execute the compiler,
+
+00:05:25.330 --> 00:05:26.660
+turn on all warnings,
+
+00:05:26.660 --> 00:05:30.540
+use the latest standard and compile that one file, main.cpp.
+
+00:05:30.540 --> 00:05:31.440
+I'll press enter.
+
+00:05:32.430 --> 00:05:36.530
+I got back no messages, which is good as they say no news is good news.
+
+00:05:36.530 --> 00:05:39.530
+If you have errors, it'll tell you. If you don't, it'll be nice and quiet.
+
+00:05:40.030 --> 00:05:43.230
+At this point, I'll do an LS again to see what's in our directory.
+
+00:05:43.830 --> 00:05:46.830
+And you can see that it's created a file called a.out.
+
+00:05:47.630 --> 00:05:50.090
+That's the common normal file,
+
+00:05:50.090 --> 00:05:53.590
+executable file that's created when you don't say hey create main or
+
+00:05:53.590 --> 00:05:55.190
+create some other name.
+
+00:05:55.890 --> 00:05:59.490
+To run it, you just type ./a.out.
+
+00:06:00.990 --> 00:06:05.190
+And there you go. It says hello ubuntu command line, exactly what we typed up here in our program.
+
+00:06:06.590 --> 00:06:10.790
+If you don't want the a.out, and you want your own executable,
+
+00:06:10.790 --> 00:06:13.230
+then you could type that in and I'll show you how to do that.
+
+00:06:13.230 --> 00:06:15.530
+What I'm doing now is I'm pressing the up arrow
+
+00:06:16.190 --> 00:06:20.190
+and the down arrow and you can go through what you've typed in that way you don't have to type it all in again.
+
+00:06:20.690 --> 00:06:24.470
+So you want to go back to the statement where you compiled and just type a
+
+00:06:24.470 --> 00:06:28.670
+-o and the name of the file that you want to create.
+
+00:06:28.670 --> 00:06:31.170
+So in this case, let's just say main. That'll be my executable.
+
+00:06:32.170 --> 00:06:35.370
+I'll press enter. I'll do LS again.
+
+00:06:35.370 --> 00:06:37.970
+Now you can see that there's a main file right there.
+
+00:06:38.470 --> 00:06:42.070
+And I can now run main. And I get the same output.
+
+00:06:43.430 --> 00:06:45.730
+Okay. Simple as that it really is very straightforward.
+
+00:06:47.330 --> 00:06:49.330
+Now one of the things that you have to keep in mind.
+
+00:06:49.330 --> 00:06:53.130
+Since this is not an IDE, you've got two things going on here separately, right?
+
+00:06:53.130 --> 00:06:56.430
+You've got your editor here and your command line tool here.
+
+00:06:57.310 --> 00:07:00.860
+They're not really synced together. So you're the one that's syncing them together.
+
+00:07:00.860 --> 00:07:03.860
+So if I remove the semicolon from my text editor
+
+00:07:04.850 --> 00:07:08.210
+and I compile again, I expect an error, right?
+
+00:07:09.410 --> 00:07:13.410
+I didn't get an error. The reason I didn't get the error was because I never saved the file.
+
+00:07:13.660 --> 00:07:16.660
+You have to be sure to save the file and then compile.
+
+00:07:17.460 --> 00:07:20.660
+The IDE sort of handle that magically behind the scenes.
+
+00:07:20.660 --> 00:07:24.920
+They realize that you've made a change. So it's going to compile the latest changes you made.
+
+00:07:25.170 --> 00:07:26.970
+This is different since they're not in sync.
+
+00:07:26.970 --> 00:07:29.470
+So you want to be sure that you can come up here
+
+00:07:29.470 --> 00:07:32.170
+and save file. Save or control s.
+
+00:07:32.970 --> 00:07:37.070
+Now I've saved it, now I compile, now I see the error.
+
+00:07:37.620 --> 00:07:40.120
+So you can see the errors it's expecting a semicolon,
+
+00:07:40.480 --> 00:07:44.680
+which I can replace if I get rid of this quote mark
+
+00:07:44.980 --> 00:07:46.980
+and ctrl s. I'm saving again.
+
+00:07:47.970 --> 00:07:49.670
+Now I run. Now I'm going to get a different error,
+
+00:07:49.670 --> 00:07:52.270
+something about a terminating quote character is missing.
+
+00:07:52.570 --> 00:07:54.170
+So I can put that back in,
+
+00:07:55.170 --> 00:07:58.070
+ctrl s and save and compile again.
+
+00:07:59.260 --> 00:08:01.460
+And we can run main one more time.
+
+00:08:02.060 --> 00:08:05.060
+That's it. So that's it. That's pretty straightforward.
+
+00:08:05.060 --> 00:08:09.560
+These are the steps necessary when you have a plain text editor and the command line.
+
+00:08:09.960 --> 00:08:12.660
+If you cannot install an IDE for some reason,
+
+00:08:12.660 --> 00:08:16.260
+maybe you've got minimal hardware requirements, you just don't like IDEs or
+
+00:08:16.260 --> 00:08:17.760
+you find them too confusing,
+
+00:08:18.160 --> 00:08:20.160
+don't let that stop you from learning c++.
+
+00:08:20.160 --> 00:08:23.160
+You can still use a simple text editor like this
+
+00:08:23.460 --> 00:08:27.860
+and a command line tool and you can see the command, you can see the command right there.
+
+00:08:28.360 --> 00:08:30.240
+It's really, really straightforward.
+
+00:08:30.240 --> 00:08:34.240
+If you've got multiple c++ files, which we will later on in the course,
+
+00:08:34.240 --> 00:08:38.640
+you just type them all in here file1.cpp, file2.cpp and so forth.
+
+00:08:38.840 --> 00:08:41.840
+It'll compile everything, link everything and run it for you.
+
+00:08:42.140 --> 00:08:46.940
+Many times you're if you're a consultant and you're working out there, you'll show up at a place,
+
+00:08:46.940 --> 00:08:49.440
+and there's no IDE. You know you're working as a consultant,
+
+00:08:49.440 --> 00:08:52.340
+all you need is an editor and a command line, and you're in business.
+
+00:08:53.140 --> 00:08:55.140
+Okay. So that wraps up this video.

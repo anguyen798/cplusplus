@@ -1,0 +1,505 @@
+WEBVTT
+
+00:00:05.500 --> 00:00:08.000
+Welcome to the section 17 challenge.
+
+00:00:08.600 --> 00:00:10.800
+I'm in the section 17 workspace.
+
+00:00:10.800 --> 00:00:13.600
+And you'll notice that I've got two challenge projects here.
+
+00:00:13.600 --> 00:00:15.600
+The first one is challenge-1
+
+00:00:15.600 --> 00:00:17.600
+and that's the hardest that I'm going to give you,
+
+00:00:17.600 --> 00:00:20.800
+that's the basically you have to write three functions for this challenge.
+
+00:00:20.800 --> 00:00:23.900
+And I'm giving you the function prototypes, and you have to write the functions.
+
+00:00:23.900 --> 00:00:27.800
+There's also the challenge solution-1. That's my solution to this challenge,
+
+00:00:27.800 --> 00:00:31.700
+and we'll do that in the next video. Also notice that there is a challenge-1.
+
+00:00:31.700 --> 00:00:34.360
+So that implies there's going to be a challenge-2.
+
+00:00:34.360 --> 00:00:36.960
+I'm planning to put another challenge in this section
+
+00:00:36.960 --> 00:00:39.460
+in which we'll implement a doubly linked list using
+
+00:00:39.460 --> 00:00:42.960
+raw pointers, and we'll replace the raw pointers with smart pointers,
+
+00:00:42.960 --> 00:00:44.760
+so you can really play around with it.
+
+00:00:44.760 --> 00:00:48.120
+The best way to understand pointers or even smart pointers
+
+00:00:48.120 --> 00:00:51.110
+is just to play with them to create examples to try them out,
+
+00:00:51.110 --> 00:00:53.710
+make mistakes, understand why this doesn't work.
+
+00:00:53.710 --> 00:00:55.700
+You'll try to copy a unique pointer,
+
+00:00:55.700 --> 00:00:58.800
+and it won't work, and you'll go oh yeah of course you can't copy unique pointers.
+
+00:00:58.800 --> 00:01:01.800
+So this is the idea is just to play with this and
+
+00:01:01.800 --> 00:01:05.700
+get more experience using it. So that's what this challenge is all about.
+
+00:01:05.700 --> 00:01:08.200
+In this challenge, we're going to create
+
+00:01:08.200 --> 00:01:11.800
+a real simple main that's going to instantiate a vec pointer.
+
+00:01:11.800 --> 00:01:13.800
+And I'll show you this vec pointer right here.
+
+00:01:13.800 --> 00:01:16.300
+And then I'll talk about the challenge in more detail in a sec,
+
+00:01:16.300 --> 00:01:19.900
+but let's just get an overview of what's going on here. You can see here's my main.
+
+00:01:20.200 --> 00:01:22.760
+And these are the three function prototypes and you'll have to implement
+
+00:01:22.760 --> 00:01:25.360
+those three functions, but let's talk about the main first.
+
+00:01:25.360 --> 00:01:29.260
+Main has vec pointer. Okay. So here's vec pointer.
+
+00:01:29.810 --> 00:01:33.710
+And what does vec pointer look like. Well, vec pointer is on the stack,
+
+00:01:33.710 --> 00:01:37.510
+and it is -- and this may look a little complicated this declaration here,
+
+00:01:37.510 --> 00:01:40.170
+but break it down into pieces, and it'll make a lot of sense.
+
+00:01:40.170 --> 00:01:44.530
+Vec pointer is a unique pointer. Okay. So it's an object.
+
+00:01:45.130 --> 00:01:46.730
+And this is on the stack here.
+
+00:01:48.530 --> 00:01:52.730
+So what is a unique pointer. We know what a unique pointer is, right. A unique pointer is
+
+00:01:52.730 --> 00:01:56.330
+basically an object that manages a raw pointer.
+
+00:01:56.330 --> 00:02:00.630
+And in this case, it's a unique pointer. So I'm pointing somewhere.
+
+00:02:00.630 --> 00:02:03.230
+Where am I pointing. Well, I'm pointing to a vector.
+
+00:02:04.130 --> 00:02:08.390
+All right. So here's my vector. Remember, a vector can have multiple elements.
+
+00:02:08.890 --> 00:02:10.390
+So here's my vector.
+
+00:02:12.290 --> 00:02:16.650
+Now notice everything over on this side is on the heap, right. All of this stuff is going to be on the heap.
+
+00:02:16.900 --> 00:02:19.500
+The only thing that's on the stack is that vec pointer right here.
+
+00:02:20.000 --> 00:02:22.600
+So now we've got a vector. Okay. I know what that is.
+
+00:02:22.600 --> 00:02:26.900
+Well, what does the vector contain. Well, the vector elements are shared pointers.
+
+00:02:27.400 --> 00:02:29.000
+So each one of these guys
+
+00:02:29.000 --> 00:02:30.900
+is going to be a shared pointer,
+
+00:02:30.900 --> 00:02:33.700
+right. So I'll just put sp here so you know what I'm talking about.
+
+00:02:33.700 --> 00:02:37.700
+So what's a shared pointer. Well, a shared pointer is an object.
+
+00:02:38.300 --> 00:02:42.400
+And the shared pointer in this case manages a test object.
+
+00:02:42.400 --> 00:02:45.900
+And we've got a test class right up here, same one we've been using in this section.
+
+00:02:45.900 --> 00:02:50.200
+So this guy now has a test object that it's managing.
+
+00:02:50.500 --> 00:02:53.500
+And this guy is managing a test object and so forth.
+
+00:02:53.500 --> 00:02:55.500
+So this looks pretty complicated.
+
+00:02:55.500 --> 00:02:59.100
+And it's not that complicated when you really break it down like that.
+
+00:02:59.100 --> 00:03:01.600
+Again, all we've got on the stack is a vec pointer.
+
+00:03:01.960 --> 00:03:04.260
+That points to a vector on the heap,
+
+00:03:04.460 --> 00:03:07.160
+that vector contains shared pointers,
+
+00:03:07.660 --> 00:03:10.430
+and those shared pointers refer to test objects.
+
+00:03:11.230 --> 00:03:13.830
+Okay. So how are we going to do this. Well,
+
+00:03:14.330 --> 00:03:17.330
+I'm going to do this really easily because the vector and the test class,
+
+00:03:17.330 --> 00:03:21.730
+the unique pointer class and the shared pointer classes really do most of the work for us.
+
+00:03:22.030 --> 00:03:26.130
+And we're going to do this with no news and no deletes.
+
+00:03:27.930 --> 00:03:30.430
+Okay. We're not going to use new. We're not going to use delete.
+
+00:03:30.430 --> 00:03:33.030
+We're going to use make shared, make unique,
+
+00:03:33.030 --> 00:03:37.030
+and let the destructors be called automatically when the reference counts
+
+00:03:37.030 --> 00:03:40.030
+go down to zero or when the unique pointer goes out of scope.
+
+00:03:40.030 --> 00:03:43.220
+So this is going to make our memory management really, really simple.
+
+00:03:43.220 --> 00:03:45.210
+We're not going to work with raw pointers at all.
+
+00:03:45.910 --> 00:03:48.210
+All right. So that's the big picture.
+
+00:03:48.210 --> 00:03:51.810
+So now what are we doing. Let's walk through this main. And I'm going to clear this out real quick.
+
+00:03:51.810 --> 00:03:54.810
+And let's walk through our main one step at a time here.
+
+00:03:55.310 --> 00:03:59.310
+So here we've got a vec pointer. That's just going to create that object on the stack.
+
+00:03:59.310 --> 00:04:03.210
+It is not creating that vector on the heap, we need to do that ourselves.
+
+00:04:03.210 --> 00:04:06.710
+So again that vec pointer is just that simple unique
+
+00:04:06.710 --> 00:04:08.310
+pointer object on the stack.
+
+00:04:09.110 --> 00:04:12.110
+In order to create that vector that we're pointing to,
+
+00:04:12.110 --> 00:04:15.610
+we need to call this function make and that's this function right up here.
+
+00:04:15.610 --> 00:04:19.210
+There's the function prototype right here. You can see make, right, over here.
+
+00:04:19.710 --> 00:04:23.310
+Again, this looks really complicated, but it's pretty straightforward again.
+
+00:04:23.310 --> 00:04:25.970
+What are we returning from make. Well, we're returning
+
+00:04:25.970 --> 00:04:30.170
+a unique pointer to a vector of shared pointers that manage test objects,
+
+00:04:30.170 --> 00:04:30.670
+right.
+
+00:04:30.670 --> 00:04:33.470
+So inside make is where we're going to use make unique.
+
+00:04:33.470 --> 00:04:37.920
+They're going to actually create that unique pointer and make it point to that vector.
+
+00:04:39.030 --> 00:04:43.530
+Okay. Once we've got that, we're going to ask the user how many data points do you want to enter.
+
+00:04:43.930 --> 00:04:45.930
+And let's say they type in three.
+
+00:04:46.930 --> 00:04:50.290
+We'll read that into num, and then we'll call fill.
+
+00:04:51.190 --> 00:04:55.310
+And look what we're passing in to fill, we're de-referencing vec pointer.
+
+00:04:55.310 --> 00:04:59.570
+Well, what is vec pointer? Vec pointer is a unique pointer to that vector.
+
+00:04:59.570 --> 00:05:03.770
+So when I de-reference vec pointer, I get the vector that it's pointing to.
+
+00:05:03.770 --> 00:05:07.530
+So I'm calling fill with the vector and the number of elements.
+
+00:05:07.530 --> 00:05:09.730
+And you'll notice that here's fill right here.
+
+00:05:10.530 --> 00:05:15.130
+And all fill is going to do is it's going to loop as many times as the user wanted,
+
+00:05:15.130 --> 00:05:19.130
+in this case 3, and it's going to say so what's the first integer you want to enter, you'll type in 10.
+
+00:05:19.130 --> 00:05:21.690
+What's the second one, 20. What's the third one, 30.
+
+00:05:21.690 --> 00:05:25.250
+And for each one of those integers that the user enters,
+
+00:05:25.250 --> 00:05:27.350
+we're going to create a shared pointer
+
+00:05:27.350 --> 00:05:30.710
+to one of those test objects with that integer they entered right here,
+
+00:05:31.010 --> 00:05:33.610
+and we're going to put that on the vector using pushback.
+
+00:05:33.610 --> 00:05:37.710
+That's it. Now we'll call display. Notice, again,
+
+00:05:37.710 --> 00:05:40.710
+we're de-referencing vec pointer that gives me the vector
+
+00:05:41.210 --> 00:05:43.810
+and display is right here on line 69.
+
+00:05:44.800 --> 00:05:47.000
+And all we're doing in display is we're just
+
+00:05:47.000 --> 00:05:50.200
+iterating through that vector of shared pointers
+
+00:05:50.200 --> 00:05:53.500
+and displaying whatever data those test objects hold.
+
+00:05:53.900 --> 00:05:56.100
+It sounds complicated, it's not so complicated.
+
+00:05:56.100 --> 00:05:59.460
+You just need to break it down into little pieces and take them one step at a time.
+
+00:05:59.460 --> 00:06:03.060
+Let me run this for you so that you can see what the output looks like.
+
+00:06:03.060 --> 00:06:07.660
+And I'll run it based on my solution here. And let's build and run.
+
+00:06:10.560 --> 00:06:14.560
+So the first thing it says is I'm going to just slide this over here so you can see the actual
+
+00:06:14.560 --> 00:06:17.560
+code next to it. So here's my main right here.
+
+00:06:18.360 --> 00:06:22.360
+How many data points do you want to enter? Let's say I want to enter five data points,
+
+00:06:24.160 --> 00:06:25.320
+enter data point 1.
+
+00:06:25.320 --> 00:06:28.580
+Now we are -- right now we're in that fill method.
+
+00:06:28.580 --> 00:06:31.780
+The fill method is one that's going to loop five times in this case,
+
+00:06:31.780 --> 00:06:34.380
+each time asking me for what data i want.
+
+00:06:34.380 --> 00:06:38.480
+It's going to make shared, right, and create that shared pointer to that
+
+00:06:38.480 --> 00:06:42.380
+test object that has whatever I type in. So let's say I want to type 10.
+
+00:06:43.980 --> 00:06:47.880
+Now you'll notice that over here on the right, we've got test constructor that's just a little
+
+00:06:47.880 --> 00:06:50.240
+debug statement that I put in there to help you out.
+
+00:06:50.240 --> 00:06:52.540
+It's being indented so that you can see it.
+
+00:06:52.540 --> 00:06:56.440
+So what's happening here is we've just created a test object with a 10,
+
+00:06:56.840 --> 00:07:00.200
+which is what the user typed in. So let's create another one 20.
+
+00:07:00.600 --> 00:07:04.600
+Remember, we're going to get 5 of these. So we'll do 30, 40
+
+00:07:05.100 --> 00:07:06.090
+and 50.
+
+00:07:07.080 --> 00:07:11.280
+So at this point our fill is done. Now we're going to display
+
+00:07:11.280 --> 00:07:13.280
+all those elements in that vector.
+
+00:07:13.280 --> 00:07:17.580
+So when I press enter now, that will be called display, and it'll display everything.
+
+00:07:18.940 --> 00:07:23.140
+There we go. It says display vector data 10 20 30 40 50.
+
+00:07:23.140 --> 00:07:24.640
+Now look what happens.
+
+00:07:24.640 --> 00:07:28.840
+Test destructor 10 20 30 40 50. Again, I've got a little simple print statement
+
+00:07:28.840 --> 00:07:30.840
+in the destructor for the test class.
+
+00:07:31.200 --> 00:07:35.700
+And you can see that these objects are being cleaned up off the heap, which is really cool.
+
+00:07:35.700 --> 00:07:39.060
+So no deletes necessary because we're using smart pointers.
+
+00:07:39.060 --> 00:07:42.060
+And this is the output that you should get from this main
+
+00:07:42.060 --> 00:07:43.860
+once you implement those functions.
+
+00:07:43.860 --> 00:07:46.160
+So there you go. It's up to you now.
+
+00:07:46.160 --> 00:07:50.820
+What you need to do again is implement, make, fill, and display.
+
+00:07:51.480 --> 00:07:55.480
+And if you scroll up just a little bit here and it's also in the description text,
+
+00:07:55.480 --> 00:07:58.480
+it tells you a little bit more about what those functions should do.
+
+00:07:58.480 --> 00:08:01.480
+So again, the function make it creates and returns a unique
+
+00:08:01.480 --> 00:08:04.140
+pointer to a vector of shared pointers to test objects.
+
+00:08:04.800 --> 00:08:08.100
+The fill function expects a vector of shared pointers
+
+00:08:08.100 --> 00:08:12.460
+to test objects and the integer for however many numbers the user wants to enter.
+
+00:08:12.820 --> 00:08:16.320
+And it prompts the user and creates those shared pointers as it goes.
+
+00:08:16.720 --> 00:08:19.380
+And then the display just displays everything in there.
+
+00:08:19.380 --> 00:08:22.040
+And if you look at the function prototypes that I provided,
+
+00:08:22.290 --> 00:08:25.950
+and you can change these to whatever you like. If you want to try it with
+
+00:08:25.950 --> 00:08:27.750
+without the ref, with the ref,
+
+00:08:27.750 --> 00:08:31.950
+const, non-const, try it out, change them around and see what happens.
+
+00:08:32.310 --> 00:08:35.310
+But these are the function prototypes I'm giving. You can see that
+
+00:08:35.710 --> 00:08:39.010
+make, expects nothing and returns a unique pointer.
+
+00:08:39.510 --> 00:08:44.010
+In this case, fill expects a ref to a vector.
+
+00:08:44.210 --> 00:08:47.200
+Now this one has to be a ref, right. It can't be by value.
+
+00:08:47.200 --> 00:08:49.800
+Otherwise, you won't add anything to the vector.
+
+00:08:49.800 --> 00:08:53.100
+And it can't be const because we actually need to change that vector.
+
+00:08:53.500 --> 00:08:57.860
+But display should -- we should expect a ref, and it should be const.
+
+00:08:57.860 --> 00:09:00.850
+So in this case, I want to be efficient and not copy that vector.
+
+00:09:00.850 --> 00:09:04.510
+And at the same time, I don't want to change it accidentally. So there's my const.
+
+00:09:05.310 --> 00:09:08.110
+All right. That's it. Good luck, have fun, play around,
+
+00:09:08.110 --> 00:09:09.610
+change these prototypes if you like,
+
+00:09:09.810 --> 00:09:13.810
+use the debugger, I'm sure that'll help you a little bit when you're trying to learn this stuff.
+
+00:09:13.810 --> 00:09:16.310
+So those are the three. You shouldn't have to change the main,
+
+00:09:16.310 --> 00:09:18.510
+and you should get the same output as I did.
+
+00:09:18.510 --> 00:09:22.170
+We'll come back to the next video, and we'll do the challenge solution.
+
+00:09:22.170 --> 00:09:24.170
+And you'll see that it's actually pretty straightforward.
+
+00:09:24.170 --> 00:09:27.170
+It's real nice to be able to have c++,
+
+00:09:27.170 --> 00:09:31.170
+manage all this stuff for us using smart pointers.

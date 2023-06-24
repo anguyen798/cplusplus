@@ -1,0 +1,160 @@
+WEBVTT
+
+00:00:05.600 --> 00:00:09.600
+In this video, we'll look at the syntax for multi-dimensional arrays,
+
+00:00:09.600 --> 00:00:10.600
+in c++.
+
+00:00:11.300 --> 00:00:13.300
+We'll focus on two-dimensional arrays,
+
+00:00:13.300 --> 00:00:16.600
+but you can use as many dimensions as they're supported by your system.
+
+00:00:16.900 --> 00:00:20.670
+While there's no real limit to the number of dimensions you can have for arrays,
+
+00:00:20.670 --> 00:00:23.670
+be aware that some compilers do place limits on this.
+
+00:00:23.670 --> 00:00:26.370
+Though the limits are quite high and you're unlikely to reach them.
+
+00:00:27.470 --> 00:00:31.570
+The syntax for declaring multi-dimensional arrays just involves adding another set of
+
+00:00:31.570 --> 00:00:34.170
+square brackets with the new dimension inside them.
+
+00:00:34.570 --> 00:00:38.470
+In this example, you can see we're declaring a two-dimensional array named movie rating.
+
+00:00:38.970 --> 00:00:41.570
+This array has three rows and four columns,
+
+00:00:41.570 --> 00:00:44.870
+which means that the total size of the array is 12 integers.
+
+00:00:45.530 --> 00:00:47.330
+We have not initialized this array,
+
+00:00:47.330 --> 00:00:51.320
+so we should assume that the array elements contain garbage data until initialized.
+
+00:00:51.920 --> 00:00:55.220
+Let's see how we might model real-world data using this 2D array.
+
+00:00:56.020 --> 00:00:58.020
+Suppose we want to collect movie ratings.
+
+00:00:58.520 --> 00:01:01.620
+We have movie reviewers, and each reviews a series of movies
+
+00:01:01.620 --> 00:01:04.120
+with an integer rating from 0 to 5.
+
+00:01:04.720 --> 00:01:08.220
+We have three reviewers and each has to review the same four movies.
+
+00:01:09.020 --> 00:01:13.680
+We could choose to model this data by having one array of movie ratings for each reviewer.
+
+00:01:14.040 --> 00:01:18.540
+So we could declare three arrays of four integers each and solve our problem like that.
+
+00:01:19.040 --> 00:01:21.640
+Another option is to use a two-dimensional array.
+
+00:01:22.000 --> 00:01:25.000
+The first dimension or row in our grid is the reviewer.
+
+00:01:25.600 --> 00:01:28.800
+And there would be four columns in the grid, one for each movie.
+
+00:01:29.500 --> 00:01:31.500
+This is similar to the layout of a spreadsheet.
+
+00:01:32.000 --> 00:01:36.500
+In the figure, the reviewer is the first index or row of our array labeled in red.
+
+00:01:37.000 --> 00:01:40.600
+And the movie is the second index or column of our array labeled in green.
+
+00:01:41.600 --> 00:01:44.400
+Now it's pretty easy to go to a specific row and column
+
+00:01:44.400 --> 00:01:49.300
+and get or set that movie rating for that specific reviewer and that specific movie.
+
+00:01:49.900 --> 00:01:52.400
+Accessing the specific movie rating is easy.
+
+00:01:52.800 --> 00:01:57.700
+I can ask the user to enter a movie rating as an integer and store it in movie ratings sub-1, sub-2.
+
+00:01:58.400 --> 00:02:00.100
+Suppose the user interest is 5.
+
+00:02:00.600 --> 00:02:03.600
+This would update that specific element in the array.
+
+00:02:03.850 --> 00:02:07.450
+I can also display that element to the console using the same syntax.
+
+00:02:08.050 --> 00:02:10.250
+Initializing multi-dimensional arrays
+
+00:02:10.250 --> 00:02:14.450
+uses the same initializer list syntax that we saw with one-dimensional arrays.
+
+00:02:15.050 --> 00:02:18.150
+In this case, we provide in the initializer list
+
+00:02:18.150 --> 00:02:19.650
+the rows of columns.
+
+00:02:20.050 --> 00:02:23.350
+You could do this in a single line, but it's much more readable if you split
+
+00:02:23.350 --> 00:02:25.150
+it across lines as I've done here.
+
+00:02:25.650 --> 00:02:30.310
+You can see the initializer is providing three rows of four integers each
+
+00:02:30.310 --> 00:02:32.610
+which is exactly how we declared the array.
+
+00:02:33.110 --> 00:02:37.910
+While one and two dimensional arrays are by far the most commonly used arrays in programming,
+
+00:02:37.910 --> 00:02:42.310
+extending the syntax to three dimensions and more is just as you would expect.
+
+00:02:42.810 --> 00:02:46.680
+Don't forget that the same characteristics hold for multi-dimensional arrays
+
+00:02:46.680 --> 00:02:48.280
+as for single-dimensional arrays.
+
+00:02:48.880 --> 00:02:52.880
+We'll see multi-dimensional arrays again when we talk about iteration in c++.
+
+00:02:52.880 --> 00:02:55.380
+So that's a look at c++ arrays.
+
+00:02:55.380 --> 00:02:58.380
+If you see them in existing code, you'll understand how they work,
+
+00:02:58.580 --> 00:03:00.580
+what they look like and their syntax.
+
+00:03:01.130 --> 00:03:04.790
+Remember, at the beginning of the section, I mentioned that we rarely use c++
+
+00:03:04.790 --> 00:03:08.290
+arrays in moderate c++. Instead, we use vectors.
+
+00:03:08.790 --> 00:03:10.990
+Let's take a quick look at c++ vectors.

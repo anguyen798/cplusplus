@@ -1,0 +1,712 @@
+WEBVTT
+
+00:01.080 --> 00:05.000
+In this video, we will see a few more functions of string class.
+
+00:05.010 --> 00:06.780
+I have a list of functions here.
+
+00:07.530 --> 00:08.850
+Let us look at this function.
+
+00:08.850 --> 00:09.540
+Copy.
+
+00:10.430 --> 00:18.190
+So already I have shown you a string copy function strip UI previously that that works upon array.
+
+00:18.200 --> 00:19.850
+So it is a similar thing.
+
+00:19.850 --> 00:24.350
+So it will copy a string into a character array.
+
+00:24.770 --> 00:28.900
+It will not create a new string, but it will copy it in a character array.
+
+00:28.940 --> 00:38.720
+So if you have a string as let us say the string is welcome, then if you want to copy this one, then
+
+00:38.720 --> 00:45.590
+you have to take an array of some size, string of some size.
+
+00:45.590 --> 00:46.510
+Let us say ten.
+
+00:47.420 --> 00:52.730
+Then upon this, a string we can call a function as dot copy.
+
+00:53.670 --> 00:56.530
+Then we have to mention this character.
+
+00:56.910 --> 00:58.460
+So that's what you can see this.
+
+00:58.470 --> 01:00.090
+You have to mention character.
+
+01:00.720 --> 01:02.670
+And one more thing here.
+
+01:02.670 --> 01:05.820
+You have to mention how many characters you want from this one.
+
+01:05.940 --> 01:11.670
+Suppose I want this entire string, then I should say as to dot length.
+
+01:12.440 --> 01:15.080
+Let will give the number of letters in the string.
+
+01:15.080 --> 01:16.370
+So I should say this one.
+
+01:17.130 --> 01:19.610
+So this string will be copied in an array.
+
+01:19.620 --> 01:21.990
+So if I draw an array.
+
+01:23.030 --> 01:24.920
+Of some size ten.
+
+01:27.240 --> 01:31.440
+This welcome will be copied and it will terminate by slash zero.
+
+01:31.470 --> 01:35.580
+After copying this welcome, it will add null character at the end.
+
+01:36.630 --> 01:39.240
+So this is about copy function.
+
+01:39.240 --> 01:41.670
+Let us look at the demonstration of this function.
+
+01:42.180 --> 01:45.750
+So here already I have a string that is welcome.
+
+01:46.080 --> 01:51.150
+Now let us declare an array start of size ten.
+
+01:52.050 --> 01:54.990
+Then I will call the function s dot.
+
+01:56.170 --> 02:02.170
+Copy and first parameter is str that is the array.
+
+02:02.200 --> 02:08.560
+Then second parameter is a number of characters I want so I can say l dot length.
+
+02:08.560 --> 02:10.750
+So this will get the length of a string.
+
+02:11.200 --> 02:14.680
+Now here I will print this str.
+
+02:14.980 --> 02:17.280
+So the string will be copied in str.
+
+02:17.290 --> 02:17.890
+Right.
+
+02:17.890 --> 02:20.090
+So let us display it.
+
+02:21.710 --> 02:23.130
+Yeah, it's working.
+
+02:23.150 --> 02:24.570
+So it is copied in style.
+
+02:24.590 --> 02:26.780
+So you can see that I am printing a str.
+
+02:27.050 --> 02:28.910
+Now let us make a change here.
+
+02:28.940 --> 02:32.210
+I don't want the entire length, so I'll remove this.
+
+02:32.450 --> 02:34.700
+I will say I want only first three letters.
+
+02:34.700 --> 02:36.880
+That is w e n right.
+
+02:36.890 --> 02:43.940
+So let us see what happens if I try to just copy w in that time I was copying entire string, the complete
+
+02:43.940 --> 02:44.300
+string.
+
+02:44.300 --> 02:44.650
+Right.
+
+02:44.660 --> 02:46.400
+So full length it was copying.
+
+02:46.820 --> 02:48.350
+Now let us run this.
+
+02:50.080 --> 02:50.620
+Oh.
+
+02:50.650 --> 02:52.510
+It has taken three alphabets.
+
+02:52.600 --> 02:56.920
+Then the remaining it is showing some junk characters, garbage values.
+
+02:57.370 --> 03:01.780
+So in place of commie, it is showing garbage values.
+
+03:01.780 --> 03:04.270
+So it means slash zero.
+
+03:04.270 --> 03:04.830
+That is null.
+
+03:04.840 --> 03:07.060
+Character is not inserted here.
+
+03:07.150 --> 03:07.960
+So.
+
+03:08.940 --> 03:10.530
+It is not automatically inserted.
+
+03:10.530 --> 03:13.240
+So when I was taking length, everything was copied.
+
+03:13.260 --> 03:14.820
+Now let us take it.
+
+03:15.000 --> 03:16.530
+A score of three.
+
+03:16.560 --> 03:21.240
+See, the index is three because I am copying three alphabet.
+
+03:21.260 --> 03:23.210
+So indices are 012.
+
+03:23.220 --> 03:27.480
+So the index three, I will store slash zero.
+
+03:29.100 --> 03:30.330
+Now let us print it.
+
+03:31.410 --> 03:34.860
+Yes, it is trending w e l That's it.
+
+03:34.860 --> 03:40.380
+W e n So when I say complete string length, the entire string, along with the null character, is
+
+03:40.530 --> 03:41.580
+also copied.
+
+03:42.140 --> 03:42.320
+Right.
+
+03:42.360 --> 03:49.650
+But here, if I take few alphabets, then only few alphabets are copied but not null characters.
+
+03:49.650 --> 03:52.530
+So I should add another character at the end of this order.
+
+03:52.950 --> 03:55.410
+So this is a copy function we have seen.
+
+03:55.410 --> 03:58.080
+Now let us move to next function.
+
+03:58.680 --> 04:00.720
+Next function is find.
+
+04:01.720 --> 04:08.980
+This is used for finding the occurrence of a string inside a main street or a character also.
+
+04:10.420 --> 04:14.500
+For example, if there is a string, does the string.
+
+04:14.500 --> 04:15.430
+How are you?
+
+04:15.610 --> 04:16.990
+I want to find out.
+
+04:18.870 --> 04:20.760
+What is the index of?
+
+04:21.840 --> 04:22.320
+Ah.
+
+04:23.240 --> 04:23.570
+Ah.
+
+04:24.570 --> 04:29.550
+So this function will return zero one, two, three, four.
+
+04:29.550 --> 04:32.310
+So it gives the index that is four.
+
+04:32.790 --> 04:38.880
+So it means this word, ah is appearing inside the string and it is starting at index four.
+
+04:39.090 --> 04:41.250
+Even I can give a single character.
+
+04:41.250 --> 04:43.650
+Also I can say find.
+
+04:45.180 --> 04:48.180
+Just a letter Y, very disappearing.
+
+04:48.180 --> 04:53.670
+So from the side, left hand side, it will start right like this was four, five, six, seven, eight.
+
+04:53.670 --> 04:55.950
+So the index will be eight.
+
+04:56.040 --> 04:57.420
+So this is four fine.
+
+04:57.540 --> 05:00.840
+And similarly we have a function called are fine.
+
+05:00.840 --> 05:02.430
+That is reverse fine.
+
+05:02.430 --> 05:06.570
+So it will find the occurrence of a letter from right hand side.
+
+05:06.570 --> 05:11.370
+So if I say str dot find.
+
+05:12.150 --> 05:13.950
+Or letter O.
+
+05:14.040 --> 05:15.770
+Then this is zero one.
+
+05:15.780 --> 05:16.950
+Index will be one.
+
+05:17.190 --> 05:21.120
+And if I say str dot are fine.
+
+05:22.240 --> 05:23.940
+For the same letter o.
+
+05:24.160 --> 05:26.530
+Then from this side it will find out.
+
+05:26.530 --> 05:28.660
+And this will be index eight and nine.
+
+05:28.660 --> 05:30.310
+So this is nine from the side.
+
+05:32.100 --> 05:36.420
+So it will start searching for this letter or as well as a string from the right hand side.
+
+05:36.660 --> 05:39.090
+And one more thing if I find.
+
+05:39.980 --> 05:41.080
+A letter.
+
+05:42.010 --> 05:42.790
+Let us see.
+
+05:42.820 --> 05:43.450
+Kay.
+
+05:44.900 --> 05:47.150
+It is not their inside the string case.
+
+05:47.150 --> 05:48.140
+Not there and this is string.
+
+05:48.140 --> 05:49.370
+So what it will return?
+
+05:49.640 --> 05:55.510
+It may return either minus one or it may return the largest string index.
+
+05:55.520 --> 05:56.590
+That is possible.
+
+05:56.600 --> 06:02.150
+That is, if you remember, max size was a function which was giving the maximum possible size of a
+
+06:02.150 --> 06:02.480
+string.
+
+06:02.480 --> 06:03.800
+So it may return that value.
+
+06:03.800 --> 06:08.480
+So it will return the value that is out of the range of this length of a string.
+
+06:09.280 --> 06:11.260
+So it will be an invalid index.
+
+06:11.260 --> 06:16.420
+So if you're getting index to confirm whether this index is correct or not, you should check whether
+
+06:16.420 --> 06:18.850
+it is lying in between this length or not.
+
+06:18.970 --> 06:21.670
+So it should be less than or equal to this length.
+
+06:21.820 --> 06:24.760
+If it is outside the length, then it is an invalid index.
+
+06:24.760 --> 06:27.400
+It means this letter is not found.
+
+06:28.060 --> 06:30.040
+So what the result will return?
+
+06:30.070 --> 06:32.290
+It depends on the implementation.
+
+06:32.290 --> 06:34.390
+It may change from compiler to compiler.
+
+06:34.390 --> 06:40.480
+So but here, if this key is not there, it will return any index that is outside this index.
+
+06:40.720 --> 06:42.520
+So the length of the string is 11.
+
+06:42.520 --> 06:49.630
+So if any index is outside this, it means that string or a letter is not present inside the string.
+
+06:50.440 --> 06:52.450
+Let us look at the demonstration for this.
+
+06:52.750 --> 07:04.510
+Here I have a string so I will directly call c out and see str dot find and I will give a word r and
+
+07:04.510 --> 07:07.240
+the suspended index is for.
+
+07:09.500 --> 07:10.720
+I'll give the string.
+
+07:10.720 --> 07:12.540
+That is why.
+
+07:12.550 --> 07:13.120
+Oh.
+
+07:16.040 --> 07:17.400
+In Texas eight.
+
+07:18.180 --> 07:18.690
+Right.
+
+07:19.680 --> 07:20.920
+I'll give the next.
+
+07:21.930 --> 07:22.460
+Sorry.
+
+07:23.640 --> 07:24.790
+I'll give a word.
+
+07:24.810 --> 07:26.610
+Is Redstone, Nancy?
+
+07:27.400 --> 07:28.250
+As is not there.
+
+07:28.270 --> 07:34.690
+So it has given some largest number that is outside the range or the length of the string that is not
+
+07:34.690 --> 07:35.560
+within the length.
+
+07:35.590 --> 07:38.890
+So it means this word is not found.
+
+07:40.700 --> 07:42.230
+I'll just give a letter.
+
+07:43.490 --> 07:44.000
+Oh.
+
+07:44.390 --> 07:46.010
+Always found at index one.
+
+07:46.280 --> 07:48.830
+Yes, this is at index one.
+
+07:50.430 --> 07:52.050
+Now I have shown you our index.
+
+07:52.050 --> 07:52.760
+Let us write.
+
+07:52.770 --> 07:56.450
+As I have shown, you are fine.
+
+07:56.460 --> 07:58.110
+So let us use our fine.
+
+08:01.220 --> 08:06.180
+Just giving the index of a letter O from the right hand side.
+
+08:06.180 --> 08:07.620
+That is index nine.
+
+08:09.220 --> 08:09.980
+That's it.
+
+08:10.000 --> 08:12.100
+So this is about the fine function.
+
+08:12.310 --> 08:14.110
+Let us move on to the next function.
+
+08:14.440 --> 08:16.210
+Our next function is fine.
+
+08:16.240 --> 08:23.170
+First off, this will find occurrence of a character from the left hand sort of string.
+
+08:23.320 --> 08:25.570
+It will find out the first occurrence.
+
+08:25.780 --> 08:29.560
+Now, here, already I have taken a string and also have given indices.
+
+08:29.560 --> 08:31.270
+That will be easy for us to know.
+
+08:31.270 --> 08:32.050
+The index.
+
+08:33.050 --> 08:35.390
+I'll use this function, then I'll explain you.
+
+08:35.420 --> 08:40.400
+Suppose I say find first off, letter L.
+
+08:41.950 --> 08:45.130
+So suppose they want to find out the index of letter L.
+
+08:45.130 --> 08:47.050
+So it gives the index that is two.
+
+08:48.550 --> 08:51.370
+Well that there is a function called last stuff.
+
+08:51.370 --> 08:53.890
+Then it will give the index that is nine.
+
+08:54.770 --> 08:58.850
+So but first off, I get the index of this too.
+
+08:58.850 --> 09:05.870
+And last off I get the index of that is this L that is nine and we have one more version in this one.
+
+09:05.870 --> 09:08.240
+Right, overloaded function.
+
+09:09.310 --> 09:12.850
+So I can call this function by giving the starting index.
+
+09:12.860 --> 09:15.130
+Also find first of.
+
+09:17.240 --> 09:21.020
+L and I want the starting index to be three.
+
+09:21.040 --> 09:28.030
+So I wanted to search from index three onwards so it will search for my index three know the first letter
+
+09:28.030 --> 09:29.890
+that is index three itself is l.
+
+09:29.890 --> 09:31.630
+So it is the index that is three.
+
+09:31.840 --> 09:35.620
+So here it gives the index two and here it gives the index three.
+
+09:37.240 --> 09:38.740
+Suppose here for fine.
+
+09:38.740 --> 09:41.200
+First off, if I give the index that is four.
+
+09:41.200 --> 09:44.890
+So from index four onwards it will start looking for a letter.
+
+09:44.890 --> 09:46.990
+L So that is found at nine.
+
+09:46.990 --> 09:48.250
+So this will be nine.
+
+09:48.700 --> 09:55.030
+So you can find the occurrence, first occurrence of a given letter from the starting of a string as
+
+09:55.030 --> 10:02.110
+well as you can start from any index so you can find it from left hand side, right and even you can
+
+10:02.110 --> 10:03.940
+find it from right hand side.
+
+10:03.940 --> 10:10.180
+So first off, this for left hand side, last of is for right hand side.
+
+10:10.180 --> 10:17.080
+Even in this function, we can mention multiple characters or multiple alphabets for finding the occurrence.
+
+10:17.080 --> 10:27.040
+Like if I say find, first off, I'll give the letters that is L and E, so I'm making a string.
+
+10:27.740 --> 10:33.500
+So it will look for either L or E, whichever is found.
+
+10:33.500 --> 10:34.820
+It will return in index.
+
+10:34.820 --> 10:38.450
+So the result of this one will be index one.
+
+10:38.450 --> 10:40.280
+Is it the index one?
+
+10:41.150 --> 10:43.630
+So it will not look for the matching of this string.
+
+10:43.640 --> 10:44.930
+It is not like find.
+
+10:45.290 --> 10:50.370
+Find was for searching whether this string is present in this one or not.
+
+10:50.390 --> 10:53.450
+But here it will look for individual letters.
+
+10:53.450 --> 10:56.630
+If any of the letter is found, then it will give the index.
+
+10:56.630 --> 10:59.570
+So I have given L or E.
+
+10:59.600 --> 11:01.280
+So as E is found here.
+
+11:01.280 --> 11:02.720
+So it will give the index one.
+
+11:04.490 --> 11:06.350
+So let us look at these functions.
+
+11:07.220 --> 11:09.020
+I have a string hello world.
+
+11:09.080 --> 11:15.590
+Now I will directly call this function which see out so str dot find first of.
+
+11:16.340 --> 11:18.470
+And I'll give the letter N.
+
+11:19.930 --> 11:20.290
+Yes.
+
+11:20.290 --> 11:21.370
+Index is two.
+
+11:21.610 --> 11:23.230
+So this is zero.
+
+11:23.230 --> 11:23.830
+This is one.
+
+11:23.830 --> 11:24.940
+And this is two.
+
+11:24.970 --> 11:26.140
+This is two.
+
+11:27.160 --> 11:29.380
+Now I will give the starting index three.
+
+11:29.380 --> 11:33.010
+So I want to look for L from starting index three.
+
+11:33.580 --> 11:34.240
+Let us see.
+
+11:35.620 --> 11:37.090
+She is the result.
+
+11:37.750 --> 11:40.660
+And if I give beyond three, that is four.
+
+11:40.660 --> 11:42.850
+So it should give me index that is nine.
+
+11:46.070 --> 11:47.900
+Yes, it is giving a next nine.
+
+11:48.880 --> 11:52.030
+Like I said, we can give a string also.
+
+11:52.060 --> 11:54.610
+I'll give a string that is l e.
+
+11:54.640 --> 11:56.280
+But it will not take it as a string.
+
+11:56.290 --> 11:58.030
+It will take individual letters.
+
+12:00.180 --> 12:04.020
+So it has given the next one because is found at index one.
+
+12:04.740 --> 12:07.860
+So defining the occurrence of a letter, right.
+
+12:07.860 --> 12:10.830
+So you can give a group of letters as a string.
+
+12:12.390 --> 12:12.840
+Now.
+
+12:12.840 --> 12:16.890
+Here, I'll give Elle an install find.
+
+12:16.920 --> 12:21.030
+First off, I'll say last stuff.
+
+12:21.150 --> 12:22.800
+I'll change the name of a function.
+
+12:24.640 --> 12:25.990
+Let us say last off.
+
+12:25.990 --> 12:27.880
+So it should give the index nine.
+
+12:28.990 --> 12:31.030
+Yes, it has given the index nine.
+
+12:32.850 --> 12:34.320
+So that's it.
+
+12:34.350 --> 12:35.250
+That's all.
+
+12:35.280 --> 12:37.980
+You can use this function for fighting.
+
+12:37.980 --> 12:42.030
+Any particular character within a string does a very useful function.

@@ -1,0 +1,64 @@
+Folder D:\github.com\anguyen798\cplusplus\002-References\BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka\DwnlData\user\www_stuvia_com_4980\ was created.
+Rebuilding old downloaded file parts...
+Connecting...
+Windows 10.0
+v6.41b14   Time: Wed Jun 21 11:00:18.197 2023 (1687370418 sec)
+owp https://www.stuvia.com/en-us/doc/1563680/c-for-everyone-horstmann-solutions-summaries-and-outlines.-2022-updated
+Url https://www.stuvia.com/live/views/pdfviewer/loader.php?docid=1563680&mode=preview&csrf=ODVkYWJlZmM3OGJkMDM4YWQwMjUzYjVkZDFjMDlkMjVlNzc4MDM4Zg==
+User : anonymous, password :xxx
+EM = 0x6e409920, 0x6e409920,
+DM = 0x6e409980, 0x6e409980.
+Time: 1687370418.197
+C0:gethost
+C0:Found 18.164.154.49
+Time: 1687370418.229
+C0:Connecting...
+C0:Checking connect, socket = 18480 
+C0:Connect OK.
+Time: 1687370418.241
+C0:170 bytes of handshake (2) data sent
+C0:5494 bytes of handshake data received (L711)
+C0:93 bytes of handshake (4) data sent
+C0:171 bytes of handshake data received (L711)
+C0:InitializeSecurityContext (2) ret=0x0
+C0:Handshake was successful
+C0:Protocol: 0x800
+Cipher: 0x660e
+Cipher strength: 128
+Hash: 0x800c
+Hash strength: 0
+Key exchange: 0xae06
+Key exchange strength: 255
+C0:Send GET...
+C0:Header: 13, Trailer: 16, MaxMessage: 16384
+C0:743 bytes of request sent
+C0:HTTP/1.1 200 OK
+C0:Content-Type: application/pdf
+C0:Transfer-Encoding: chunked
+C0:Connection: keep-alive
+C0:Date: Wed, 21 Jun 2023 18:00:19 GMT
+C0:Server: Apache/2.4.41 (Ubuntu)
+C0:X-Frame-Options: sameorigin
+C0:Expires: Thu, 19 Nov 1981 08:52:00 GMT
+C0:Cache-Control: private, max-age=0, must-revalidate
+C0:Pragma: no-cache
+C0:Content-Disposition: inline;filename=Stuvia.pdf
+C0:Access-Control-Allow-Origin: https://www.stuvia.com/hosted-imgs
+C0:X-Cache: Miss from cloudfront
+C0:Via: 1.1 567b5c2f1b95cf53f49263a9de378980.cloudfront.net (CloudFront)
+C0:X-Amz-Cf-Pop: LAX53-P3
+C0:X-Amz-Cf-Id: EGiWSBmk4xTI0b4einrS_ZcMegC_8OvshUKcYIZ93W4DcWew3XlP2A==
+C0:
+C0:Receiving data...
+Receiving data...
+C0:Recv transfer encoding chunked, size=0, eb:C0:0
+C0:stratPos=0, endPos=0, downloaded=449864, posInCmpBuff3=0
+C0:Sending Close Notify
+C0:Disconnect.
+http:rcd, dwnl finished, s1(t7)
+Download complete. Downloaded 449864 Bytes Total
+Assembling all downloaded portions into one file...
+Size of D:\github.com\anguyen798\cplusplus\002-References\BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka\DwnlData\user\www_stuvia_com_4980\www_stuvia_com is 449864
+Rebuilding complete, real size = 449864
+time 1687370419, speed 972274, downl 449864 Bytes
+Cannot rename downloaded file from temp folder (D:\github.com\anguyen798\cplusplus\002-References\BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka\DwnlData\user\www_stuvia_com_4980\www_stuvia_com) to D:\Temp\Stuvia.pdf. The file has been saved in temp folder., errno = 183

@@ -1,0 +1,733 @@
+WEBVTT
+
+00:00:05.300 --> 00:00:09.300
+In this video, I'd like to implement a class template for an array class.
+
+00:00:09.300 --> 00:00:12.960
+Now this is going to be a little bit more complicated than anything we've done before,
+
+00:00:12.960 --> 00:00:16.520
+but I'm sure you'll be able to follow along if you've been following along with the course.
+
+00:00:16.520 --> 00:00:20.020
+I'm in the section 20 workspace, and I'm in the ClassTemplate
+
+00:00:20.020 --> 00:00:23.380
+Array project. Now I've started this a little bit already.
+
+00:00:23.380 --> 00:00:27.580
+And the idea here is we'd like to create an array class.
+
+00:00:27.580 --> 00:00:31.140
+Okay, not an array a raw array, and not a dynamic array,
+
+00:00:31.140 --> 00:00:32.640
+just a class array.
+
+00:00:33.000 --> 00:00:37.200
+And eventually, we want it to be of any size and of any type,
+
+00:00:37.200 --> 00:00:40.800
+That'd be pretty cool. And we want this to be a fixed size array.
+
+00:00:41.200 --> 00:00:44.800
+And basically, it would be a replacement for using a raw array.
+
+00:00:44.800 --> 00:00:48.790
+C++ already has this for us. In c++11,
+
+00:00:48.790 --> 00:00:51.990
+we have an array class in the standard template library,
+
+00:00:51.990 --> 00:00:54.090
+and I'll talk about that in a couple of videos.
+
+00:00:54.090 --> 00:00:57.790
+But let's see how we could implement the beginnings of that so we can really learn from it.
+
+00:00:58.290 --> 00:01:02.490
+So we don't want to have an array of something, right.
+
+00:01:02.490 --> 00:01:06.790
+Well, in this case, let's just stick to integers. And then later on what we'll do is we'll make this generic.
+
+00:01:07.290 --> 00:01:08.790
+The array is a fixed size.
+
+00:01:08.790 --> 00:01:12.670
+And that fixed size is n. And I've got this n right here. None of this will compile yet,
+
+00:01:12.670 --> 00:01:15.270
+but i just want to get this point across here.
+
+00:01:15.670 --> 00:01:17.570
+The question is how do we get this n.?
+
+00:01:18.070 --> 00:01:22.270
+Well, the user knows how big the array needs to be. Let's say it's 10 integers or 20 integers
+
+00:01:22.270 --> 00:01:23.370
+or 100 integers.
+
+00:01:23.370 --> 00:01:26.870
+They could pass that in through a constructor argument, right.
+
+00:01:27.370 --> 00:01:30.730
+The problem with that is that the compiler needs to know
+
+00:01:30.730 --> 00:01:32.730
+what the value of n is
+
+00:01:32.730 --> 00:01:35.030
+right here in order to create this array.
+
+00:01:35.030 --> 00:01:38.830
+Now we're not doing something like using a pointer
+
+00:01:39.490 --> 00:01:41.150
+and creating a new
+
+00:01:41.150 --> 00:01:43.950
+array of integers, like we did before, we're not doing that.
+
+00:01:43.950 --> 00:01:46.830
+That's not what I want to do. I want to create it on the stack.
+
+00:01:46.830 --> 00:01:49.600
+So the compiler needs to know the value of that n.
+
+00:01:50.150 --> 00:01:53.650
+And it can't know that if we pass it into a constructor argument because
+
+00:01:53.650 --> 00:01:55.650
+it could be a variable, it could be any value.
+
+00:01:55.650 --> 00:01:59.910
+So one of the first things we want to do is figure out how to do this.
+
+00:01:59.910 --> 00:02:04.510
+So I want to be able to create an array class. And let me show you the way I want to do it.
+
+00:02:04.510 --> 00:02:07.910
+I want to do something like this. I want to be able to say give me an array,
+
+00:02:08.710 --> 00:02:10.710
+let's say it's arr.
+
+00:02:10.710 --> 00:02:13.710
+Right now it's an array of integers by default you can see right here,
+
+00:02:14.370 --> 00:02:18.370
+and I'll just do that. Now that's not good enough because there's no size information.
+
+00:02:18.370 --> 00:02:20.370
+But if I can do something like that,
+
+00:02:21.570 --> 00:02:25.470
+that's pretty cool. So I can pass in the size of the array
+
+00:02:25.470 --> 00:02:27.130
+as a template parameter.
+
+00:02:28.230 --> 00:02:32.130
+Well, how do we do that. Everything we've seen so far has been type parameters, right.
+
+00:02:32.130 --> 00:02:36.430
+Well, it's possible to have non-type template parameters.
+
+00:02:36.430 --> 00:02:37.930
+And let me show you how that works.
+
+00:02:37.930 --> 00:02:41.430
+And basically what we're doing here is we just have a regular array class,
+
+00:02:41.430 --> 00:02:43.930
+it's got a constructor, a default constructor,
+
+00:02:43.930 --> 00:02:45.930
+it's got a constructor with an initial value.
+
+00:02:45.930 --> 00:02:49.230
+So what we're doing here is just setting all the values of the array to that value.
+
+00:02:49.930 --> 00:02:53.230
+I've got a method called fill, which will just change all those array elements
+
+00:02:53.230 --> 00:02:55.230
+to whatever value is passed in here.
+
+00:02:55.230 --> 00:02:57.890
+Then I've got a couple of more methods that I'll talk about in a little bit.
+
+00:02:57.890 --> 00:03:03.090
+So first thing first. Let's make this array class
+
+00:03:03.090 --> 00:03:04.490
+a template class.
+
+00:03:04.490 --> 00:03:06.990
+So what we can do is we can come up here,
+
+00:03:08.090 --> 00:03:10.090
+and we could say template.
+
+00:03:11.390 --> 00:03:15.270
+And now we've got our template parameters here, right. Now what do we do here.
+
+00:03:15.630 --> 00:03:19.290
+We're not passing in a type. We'll do that later when we make this a generic type.
+
+00:03:19.290 --> 00:03:23.790
+But what we want here is the size of the array. So we can supply n right here.
+
+00:03:25.090 --> 00:03:29.290
+Now when I use the syntax that I used earlier I've got my n. Now that's pretty cool.
+
+00:03:29.290 --> 00:03:33.590
+So that's how we get the n. The user provides the n at compile time.
+
+00:03:33.590 --> 00:03:35.950
+Now the compiler can actually create that array.
+
+00:03:36.830 --> 00:03:40.190
+Now we've got a friend function here that's just used to display the array.
+
+00:03:40.190 --> 00:03:43.850
+And in this case here, it needs to know what that n is.
+
+00:03:43.850 --> 00:03:45.840
+So I'm just going to put an n right in here.
+
+00:03:46.340 --> 00:03:50.000
+So it needs that template parameter. Now as I come down here,
+
+00:03:50.000 --> 00:03:52.600
+none of this code really needs to be changed.
+
+00:03:52.600 --> 00:03:55.300
+There might be a couple of new things that you haven't seen before.
+
+00:03:55.300 --> 00:03:58.400
+This one here I don't know if we ever overloaded the subscript operator,
+
+00:03:59.060 --> 00:04:00.610
+but we're doing it right here,
+
+00:04:01.210 --> 00:04:05.010
+and it's the subscript operator, right, the 2 square brackets so that we can
+
+00:04:05.010 --> 00:04:06.710
+use it as array indexing.
+
+00:04:06.710 --> 00:04:10.370
+And all we're doing is returning a reference, so that we're able to change it as well.
+
+00:04:10.370 --> 00:04:14.030
+So now let's go down to the main and see how we can actually use this.
+
+00:04:15.910 --> 00:04:17.910
+And here's a couple of examples. Now
+
+00:04:17.910 --> 00:04:19.910
+we'll write the rest of this in a little bit,
+
+00:04:19.910 --> 00:04:22.510
+but take a look at how useful this array is.
+
+00:04:23.500 --> 00:04:25.750
+Here I'm creating an array of 5
+
+00:04:25.750 --> 00:04:29.740
+integers. These are all integers right now, right. I haven't made it generic yet.
+
+00:04:29.740 --> 00:04:31.740
+But here I have an array of 5 integers,
+
+00:04:31.740 --> 00:04:35.340
+and I can display what's the array size, it should display 5.
+
+00:04:35.640 --> 00:04:39.840
+And then it'll display the the integers because because I've overloaded the insertion operator.
+
+00:04:40.240 --> 00:04:44.240
+I can fill the array to 0s. I can fill it to 10s, and display it again.
+
+00:04:44.240 --> 00:04:47.740
+And this is where the overloaded subscript operator comes in,
+
+00:04:47.740 --> 00:04:50.440
+so I can specifically set. And remember, what's going to happen here
+
+00:04:50.440 --> 00:04:53.240
+is it's going to call nums.
+
+00:04:54.540 --> 00:04:55.540
+operator
+
+00:04:56.530 --> 00:04:59.780
+subscript operator, and it's going to pass in 0 in this case.
+
+00:05:00.030 --> 00:05:01.530
+So that's what's being called.
+
+00:05:01.930 --> 00:05:04.230
+And I'm just setting those values in this case.
+
+00:05:04.230 --> 00:05:09.130
+If this is on the left side, we're using the l-value. If it's on the right side, we'be using the r-value.
+
+00:05:09.380 --> 00:05:09.880
+That's it.
+
+00:05:10.980 --> 00:05:14.580
+And here in this case here, we're actually using an initializer,
+
+00:05:14.580 --> 00:05:16.580
+we're initializing 100 integers, right.
+
+00:05:16.580 --> 00:05:19.580
+So let's let me run this, so you can see the output.
+
+00:05:21.680 --> 00:05:22.880
+And this
+
+00:05:22.880 --> 00:05:25.480
+is all we did. And it's so powerful. All we really needed we did
+
+00:05:25.480 --> 00:05:30.470
+was pass in that integer n as a non-type template parameter.
+
+00:05:30.470 --> 00:05:34.670
+So you can see what's happening. Here I've got 5
+
+00:05:35.170 --> 00:05:37.770
+integers and that array is called nums.
+
+00:05:38.430 --> 00:05:42.230
+And notice when I display it, I get 5 pieces of garbage right here, right.
+
+00:05:42.630 --> 00:05:44.430
+That's exactly what we'd expect.
+
+00:05:44.430 --> 00:05:47.790
+Now here I'm filling it to 0, and then I'm displaying it again, and I'm getting this
+
+00:05:47.790 --> 00:05:49.690
+output right here, all the bunch of 0s.
+
+00:05:50.190 --> 00:05:51.790
+Then I'm filling it to 10s.
+
+00:05:52.670 --> 00:05:54.670
+And you can see them display right here.
+
+00:05:54.970 --> 00:05:59.220
+And then in this case, I'm setting nums of 0 to a 1000 and nums of 3 to 2000.
+
+00:05:59.220 --> 00:06:03.520
+You can see right in this line when I display it. You can see that num of 0 is here,
+
+00:06:03.520 --> 00:06:05.420
+and num sub 3 is right here.
+
+00:06:06.280 --> 00:06:09.880
+Okay. So let me scroll just a little bit down. And
+
+00:06:09.880 --> 00:06:13.480
+this last example, we're creating a 100
+
+00:06:14.280 --> 00:06:16.280
+integers. Remember, they're all integers.
+
+00:06:16.280 --> 00:06:20.580
+So we're creating 100 integers. This right here is that template parameter n.
+
+00:06:20.580 --> 00:06:25.080
+This right up there when we created the top one was the template parameter n.
+
+00:06:25.080 --> 00:06:28.580
+So in this case, we're creating an array of 100 integers.
+
+00:06:28.580 --> 00:06:32.180
+It's a fixed size array. We're not doing any memory allocation.
+
+00:06:32.180 --> 00:06:34.380
+It's happening on the stack, which is pretty cool.
+
+00:06:34.380 --> 00:06:36.380
+The compilers handling the sizing,
+
+00:06:36.680 --> 00:06:41.040
+and we're initializing all of those elements to one. We're displaying them all right here there's 100 of them.
+
+00:06:42.030 --> 00:06:45.690
+Okay. So that's it. Now we've got a pretty powerful
+
+00:06:45.690 --> 00:06:48.390
+little array class here that allow us to create
+
+00:06:48.390 --> 00:06:51.380
+an array of any size but only of integers.
+
+00:06:51.380 --> 00:06:55.180
+So let's take this to the next step and make it totally generic,
+
+00:06:55.180 --> 00:06:56.680
+which is really where we want to go.
+
+00:06:57.040 --> 00:06:59.340
+So let me close this window down up here.
+
+00:06:59.340 --> 00:07:04.530
+And a couple of things, I'll scroll all the way to the top, so I can give you these little notes here.
+
+00:07:04.730 --> 00:07:09.230
+Since c++11, the stl has been around before c++11.
+
+00:07:09.230 --> 00:07:10.830
+But in c++11,
+
+00:07:11.190 --> 00:07:15.070
+we have std array. And this is an array with a lowercase a here,
+
+00:07:15.070 --> 00:07:17.730
+and I'll explain what that array is in a couple of videos
+
+00:07:17.730 --> 00:07:20.230
+from now when we go over some of these container classes.
+
+00:07:20.230 --> 00:07:22.230
+This is a template-based array class.
+
+00:07:23.220 --> 00:07:27.990
+The idea here is in modern c++, we really shouldn't be using arrays,
+
+00:07:27.990 --> 00:07:31.790
+raw arrays. We should be using std arrays and std vectors. Now
+
+00:07:32.450 --> 00:07:36.150
+the the vector is great, right, but the vector can shrink, and it can grow,
+
+00:07:36.150 --> 00:07:38.650
+and it varies in size depending on what you need,
+
+00:07:38.650 --> 00:07:41.750
+that's one of the great things about the vector, you don't have to worry about that.
+
+00:07:42.110 --> 00:07:44.310
+But sometimes you know exactly what you have.
+
+00:07:44.310 --> 00:07:48.110
+You know that you have 10 integers, you have 20 integers or 5 strings.
+
+00:07:48.110 --> 00:07:52.010
+And the vector might be overkill, and it could be a little less efficient.
+
+00:07:52.010 --> 00:07:55.110
+In a case like that, you really want to use std array.
+
+00:07:55.610 --> 00:07:58.610
+It's much more efficient. It's not going to shrink. It's not going to grow.
+
+00:07:58.610 --> 00:08:01.310
+It's exactly that fixed size, and sometimes
+
+00:08:01.310 --> 00:08:02.910
+that's exactly what we need.
+
+00:08:02.910 --> 00:08:06.110
+If we've got 12 months in the year, that's not going to grow, right.
+
+00:08:06.110 --> 00:08:08.360
+So it's a good example of using a std array.
+
+00:08:08.360 --> 00:08:12.360
+Now let's make this template class generic.
+
+00:08:12.610 --> 00:08:16.970
+So what do we have to do it's really all about this guy right here.
+
+00:08:17.960 --> 00:08:21.320
+It's not about size. Size is always going to be an integer,
+
+00:08:21.320 --> 00:08:25.090
+probably even better if we made that a size t-type since it's going to be an unsigned,
+
+00:08:25.090 --> 00:08:26.690
+but we'll just leave it n for now.
+
+00:08:27.350 --> 00:08:31.150
+Values is the one that's going to change. It's not just going to be integers.
+
+00:08:31.150 --> 00:08:34.550
+It could be anything. So that's where we want to replace
+
+00:08:34.550 --> 00:08:37.550
+our placeholder,right, our type name t.
+
+00:08:37.550 --> 00:08:39.050
+So we'll do that right now.
+
+00:08:39.050 --> 00:08:43.200
+So let's start right here in the template parameter right here, and we'll say type name.
+
+00:08:44.300 --> 00:08:46.960
+And we can use t again. We can use anything we want.
+
+00:08:46.960 --> 00:08:51.760
+Now that's going to be what's going to be replaced by whatever type the user wants,
+
+00:08:51.760 --> 00:08:54.760
+right. So let's walk through this and make sure we get them all.
+
+00:08:55.860 --> 00:08:59.740
+This is fine. This guy is going to be a t because now we've got
+
+00:08:59.740 --> 00:09:04.730
+values is an array that's n size of t types.
+
+00:09:05.130 --> 00:09:08.930
+Okay. Here we've got 2 template parameters so we need to
+
+00:09:08.930 --> 00:09:10.530
+supply t,n.
+
+00:09:12.030 --> 00:09:14.430
+And this is just my friend operator
+
+00:09:14.430 --> 00:09:17.930
+that allows me to display these things on an output stream real easily.
+
+00:09:17.930 --> 00:09:21.430
+So that should take care of that. Now let's take a look down here.
+
+00:09:21.830 --> 00:09:25.130
+We've got the initial value that we want to set
+
+00:09:25.130 --> 00:09:29.010
+the array elements to that can no longer be an int because it could be anything
+
+00:09:29.010 --> 00:09:30.510
+so we want that to be a t.
+
+00:09:31.710 --> 00:09:34.710
+Here the same idea, we want to fill the array with whatever
+
+00:09:34.710 --> 00:09:38.270
+t's are provided to us. Remember, the t is just a plugable type,
+
+00:09:38.270 --> 00:09:41.870
+could be an int, a double,a character or something more complicated.
+
+00:09:42.670 --> 00:09:45.670
+Get size is okay. It's going to return an integer.
+
+00:09:45.670 --> 00:09:49.170
+But this guy right here overloaded subscript operator
+
+00:09:49.170 --> 00:09:53.360
+is not going to return an integer reference, it's going to return a reference to a t.
+
+00:09:54.720 --> 00:09:59.620
+Okay. Now this won't compile any longer. Let me compile it just so you can see what's going on.
+
+00:09:59.620 --> 00:10:01.180
+We're going to get errors right here,
+
+00:10:01.180 --> 00:10:05.180
+why because look at our template definition right here. It's expecting
+
+00:10:05.180 --> 00:10:07.380
+2 items. It's expecting a type,
+
+00:10:07.380 --> 00:10:08.940
+and it's expecting an integer.
+
+00:10:08.940 --> 00:10:12.540
+But right now, we're only providing the integer here.
+
+00:10:12.540 --> 00:10:16.200
+So we need to provide the type. So we could say int comma and then the 5.
+
+00:10:16.860 --> 00:10:19.970
+And now we've got exactly what we did before,
+
+00:10:20.470 --> 00:10:22.270
+right. So let's try that again.
+
+00:10:23.570 --> 00:10:24.560
+Same here.
+
+00:10:24.560 --> 00:10:27.810
+We've got a 100 but let's try integers.
+
+00:10:27.810 --> 00:10:32.580
+And we'll modify this to a different type in just a second. That's it. Now if I run this,
+
+00:10:32.580 --> 00:10:33.880
+I've got a clean run.
+
+00:10:34.480 --> 00:10:37.680
+It looks like I didn't do much, but there's a lot going on here.
+
+00:10:37.680 --> 00:10:40.280
+Because in this case, the compiler is providing
+
+00:10:41.080 --> 00:10:43.080
+2 template classes for me, right.
+
+00:10:43.080 --> 00:10:47.080
+One is using integers with 5, and one is using integers with a 100.
+
+00:10:47.520 --> 00:10:50.620
+So now what we can do is we can modify this.
+
+00:10:50.620 --> 00:10:53.120
+Let's say we want to modify it so that we can hold
+
+00:10:53.120 --> 00:10:57.120
+stood strings and not just integers. So we're going to create an array,
+
+00:10:57.720 --> 00:11:00.720
+provide the type, which is going to be std string.
+
+00:11:01.820 --> 00:11:04.520
+And how many do we want? Let's say we want 10 of them.
+
+00:11:07.120 --> 00:11:10.320
+That's it. You can really see the power of templates here.
+
+00:11:10.320 --> 00:11:12.820
+So now what do we do. Let's call this guy strings.
+
+00:11:13.480 --> 00:11:14.280
+And
+
+00:11:14.940 --> 00:11:16.240
+let's give it an initial value.
+
+00:11:16.240 --> 00:11:20.540
+We'll call that constructor with the initial value. And what we'll do is we'll just say std string,
+
+00:11:21.040 --> 00:11:24.640
+and we'll construct a string. Let's just call it Frank, makes it easy.
+
+00:11:27.540 --> 00:11:31.240
+That's it. And then I'm going to just copy and paste this right here
+
+00:11:32.490 --> 00:11:34.150
+and rename a few variables,
+
+00:11:34.550 --> 00:11:38.650
+so that we know now that the size of strings now not nums.
+
+00:11:39.520 --> 00:11:42.020
+That's my array right here that I just named
+
+00:11:42.320 --> 00:11:44.520
+is strings.getsize,
+
+00:11:46.220 --> 00:11:50.420
+and what we want to do is display it. That's it. Let's run this.
+
+00:11:51.620 --> 00:11:55.500
+There it is. The size of strings is 10. And now I've got 10
+
+00:11:55.500 --> 00:11:56.860
+std strings in there.
+
+00:11:57.520 --> 00:12:01.520
+Pretty cool, right. I mean I didn't really do much. All I did was make this class generic.
+
+00:12:01.520 --> 00:12:05.520
+That's awesome. Now suppose I want to change that first string,
+
+00:12:05.520 --> 00:12:08.880
+right, the 0th index. So I could simply say strings
+
+00:12:09.380 --> 00:12:10.380
+sub-0
+
+00:12:11.740 --> 00:12:12.740
+equals,
+
+00:12:13.240 --> 00:12:17.240
+and we'll create a std string. I can't use a character pointer literal right here
+
+00:12:17.240 --> 00:12:21.940
+because the typing would be wrong. So I'm going to create a std string for, let's say, Larry.
+
+00:12:23.300 --> 00:12:26.900
+And that is going to be put in for the 0th item,
+
+00:12:26.900 --> 00:12:28.460
+and then I'll just display them again,
+
+00:12:28.820 --> 00:12:30.820
+and we should be able to see that first
+
+00:12:32.070 --> 00:12:36.170
+item in that strings array should not be Larry. So let me run that real quick.
+
+00:12:36.570 --> 00:12:40.450
+And there it is. You can see it right there is Larry. That's pretty cool, right.
+
+00:12:41.700 --> 00:12:45.500
+All right. Last thing is let's fill this array with some x's, let's say.
+
+00:12:45.500 --> 00:12:48.380
+So we'll say strings.fill.
+
+00:12:48.780 --> 00:12:51.780
+And again, I want to fill this with a std string
+
+00:12:52.330 --> 00:12:54.030
+and let's just say x.
+
+00:12:56.530 --> 00:12:58.330
+And we'll display it one more time.
+
+00:13:01.210 --> 00:13:04.910
+Now we should see all x's when it displays. And there they are, right down here.
+
+00:13:05.910 --> 00:13:10.260
+So that really finishes this video up in this little mini section about templates,
+
+00:13:10.260 --> 00:13:14.760
+including function templates and class templates. You can see the power here, right.
+
+00:13:14.760 --> 00:13:17.460
+It's so powerful. Now obviously --
+
+00:13:17.860 --> 00:13:20.860
+let me scroll up real here. Obviously, you would never do this right here.
+
+00:13:20.860 --> 00:13:22.850
+We're just doing this to learn.
+
+00:13:23.250 --> 00:13:25.850
+If you need an array, use std array.
+
+00:13:26.210 --> 00:13:29.310
+It's part of the stl. Everything's baked into it.
+
+00:13:29.310 --> 00:13:33.310
+It supports algorithms and iterators and all kinds of good stuff that we'll talk about
+
+00:13:33.310 --> 00:13:37.410
+soon. So again, if you need a fixed size
+
+00:13:37.410 --> 00:13:41.400
+array in modern c++, use std array.
+
+00:13:42.000 --> 00:13:46.300
+So the next video, we'll start talking about containers, iterators,
+
+00:13:46.300 --> 00:13:49.800
+algorithms, and then we'll look at each one of the containers,
+
+00:13:49.800 --> 00:13:54.100
+in other words, array, vector, lists, sets and maps and everything,
+
+00:13:54.100 --> 00:13:56.100
+and we'll go through some examples for those.

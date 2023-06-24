@@ -1,0 +1,441 @@
+WEBVTT
+
+0
+00:00.240 --> 00:04.010
+In this video we will learn about Nested conditional statement.
+
+1
+00:04.080 --> 00:05.150
+It is Called as nested if.
+
+2
+00:05.310 --> 00:10.800
+what does it mean let us learn that at first,  then I will show you a program on that one.
+
+3
+00:11.500 --> 00:13.980
+So let us see Nested if see here.
+
+4
+00:13.990 --> 00:20.430
+This is a conditional statement from here to here is if block and here to here is an else block.
+
+5
+00:20.470 --> 00:25.720
+So this is an if statement as statements, else statements. if and else block. inside if,
+
+6
+00:25.810 --> 00:29.020
+Again there is a if and else block, can you write like this.
+
+7
+00:29.020 --> 00:32.970
+Yes you can write depends on your problem depends on your requirement.
+
+8
+00:33.040 --> 00:33.250
+Right.
+
+9
+00:33.550 --> 00:38.950
+So inside if also you can have its own again if and else if required.
+
+10
+00:39.070 --> 00:41.690
+Also inside else also so you can write.
+
+11
+00:41.830 --> 00:44.140
+Yes I have one more thing.
+
+12
+00:44.140 --> 00:45.730
+Can I write if again inside this.
+
+13
+00:45.820 --> 00:49.380
+Yes you can write if and else up to any nested level.
+
+14
+00:49.960 --> 00:52.630
+So this is supported by C++.
+
+15
+00:52.630 --> 00:53.590
+So that's it.
+
+16
+00:53.740 --> 00:58.540
+In some cases we need to write nested conditional statements like this.
+
+17
+00:58.810 --> 01:05.100
+And most of the time it happens to be here inside else block rather than iF block.
+
+18
+01:05.200 --> 01:09.710
+Mostly it will be inside else block. if so and so else,
+
+19
+01:09.750 --> 01:12.050
+in else again if so and so.
+
+20
+01:12.070 --> 01:17.340
+So we write this. we will be using this type of conditional statement many times in our program.
+
+21
+01:17.350 --> 01:18.640
+So we will come across them.
+
+22
+01:18.820 --> 01:19.030
+Right.
+
+23
+01:19.450 --> 01:23.020
+So that's all about nested if. now I have an example,
+
+24
+01:23.020 --> 01:29.220
+So let us take an example and use nested if statements for writing a program.
+
+25
+01:29.590 --> 01:31.900
+So for that already I have a flowchart here.
+
+26
+01:32.140 --> 01:35.800
+So let me take example and explain you about the flowchart and the problem.
+
+27
+01:35.800 --> 01:36.810
+Then I will write a program.
+
+28
+01:37.840 --> 01:41.980
+Let us write the program for finding GREATEST OF THREE NUMBERS.
+
+29
+01:41.980 --> 01:45.670
+Suppose I have three numbers as input ABC.
+
+30
+01:45.670 --> 01:46.620
+I have this input.
+
+31
+01:47.110 --> 01:50.310
+I want to find out who is having greatest number.
+
+32
+01:50.350 --> 01:53.940
+Actually these are three variables in which variable we have greatest number.
+
+33
+01:54.400 --> 01:59.590
+So let us check it. if suppose this is having value 10 and this is having value 5 and this
+
+34
+01:59.590 --> 02:03.120
+is three then which is a greater? a.
+
+35
+02:03.580 --> 02:05.070
+How do you say a is greater than 
+
+36
+02:05.290 --> 02:13.600
+All because a is greater than b and A is greater than C so when a can be greater that it should
+
+37
+02:13.600 --> 02:19.320
+be greater than b also  and it should be greater than c also then we can say a is greater.
+
+38
+02:19.510 --> 02:28.180
+So it means if a is greater than B as well as means AND it a should be greater  than
+
+39
+02:28.180 --> 02:31.300
+C then who is greater?a is greater.
+
+40
+02:31.380 --> 02:32.400
+Right, a is greater.
+
+41
+02:32.400 --> 02:35.290
+just i will write down here,  it's not a C++ code.
+
+42
+02:36.140 --> 02:42.200
+So if suppose a is not having ten it is having value 2
+
+43
+02:42.620 --> 02:43.990
+Then what happens.
+
+44
+02:44.250 --> 02:45.540
+Check this a is greater .
+
+45
+02:45.550 --> 02:51.350
+Then B, no a  itself is not greater than B it's not greater than c. first of all a is not greater than  B.
+
+46
+02:51.350 --> 02:51.950
+That is false.
+
+47
+02:51.950 --> 02:53.900
+So this is false.
+
+48
+02:53.900 --> 02:56.270
+And even if this is true then it fails.
+
+49
+02:56.300 --> 02:57.990
+But this also false.
+
+50
+02:58.090 --> 03:05.570
+So if a is 4 then this is false and this is true this will be true then what is the result of
+
+51
+03:05.570 --> 03:06.040
+AND.
+
+52
+03:06.230 --> 03:12.250
+You know we have known about this a logical operators so false and true is a false.
+
+53
+03:12.250 --> 03:19.210
+So A is not a greater than who is greater if a is not greater than then two are remaining B and
+
+54
+03:19.210 --> 03:24.760
+C so either B is good or C is greater. let us compare them so afterwards.
+
+55
+03:24.840 --> 03:25.840
+Else.
+
+56
+03:25.900 --> 03:32.120
+else if B is greater than C then B is a greater right.
+
+57
+03:32.130 --> 03:40.670
+B is bring down on in this also ends C is great that design writing pseudocode like thing.
+
+58
+03:40.880 --> 03:41.780
+It's not a program.
+
+59
+03:42.260 --> 03:45.310
+So if a is good to then boarded an eighth grader.
+
+60
+03:45.500 --> 03:47.840
+Otherwise b or c can we get.
+
+61
+03:47.880 --> 03:53.520
+So it is good to then see we don't have to compare it in all just we would see among two one is gone.
+
+62
+03:53.570 --> 03:53.800
+Right.
+
+63
+03:53.810 --> 03:55.990
+One is gone is gone.
+
+64
+03:56.010 --> 03:56.900
+Like a lot of data.
+
+65
+03:56.930 --> 04:00.510
+So what we meaning B and C it B is good to then see.
+
+66
+04:00.620 --> 04:01.780
+Otherwise C is good.
+
+67
+04:01.910 --> 04:05.750
+So this is all we can check the greatest of three numbers.
+
+68
+04:05.810 --> 04:10.470
+So already you have a flowchart here and between them what's ABC and here I am checking if it is greater
+
+69
+04:10.470 --> 04:20.360
+than B as often as I used to then see if true this should be true if true then print a and stop I was
+
+70
+04:20.480 --> 04:27.890
+missing this is false then what is possible B good at it and see if B is good at and C then print B
+
+71
+04:28.280 --> 04:29.170
+and then stop.
+
+72
+04:29.270 --> 04:29.990
+If this is true
+
+73
+04:32.630 --> 04:36.750
+else if not then who is good at it last season.
+
+74
+04:36.790 --> 04:37.140
+Good.
+
+75
+04:37.570 --> 04:38.310
+And stop.
+
+76
+04:38.470 --> 04:42.820
+So there are two conditional statement conditional statement and again conditional statement.
+
+77
+04:43.390 --> 04:46.670
+So let us see how to write on this in a C++ program.
+
+78
+04:46.810 --> 04:48.150
+I relied on the program here.
+
+79
+04:49.450 --> 04:54.880
+So here is a program I have a main function although written partially I have three variables because
+
+80
+04:55.150 --> 05:02.560
+we need three variables that enter three numbers then read seen a b c we are reading the variance right
+
+81
+05:03.490 --> 05:13.600
+now I have to write on the punishment statements if it is greater than B and it is greater than C then
+
+82
+05:13.600 --> 05:18.220
+I have to print that a C out just a.
+
+83
+05:18.250 --> 05:22.500
+So actually I want I'm not giving a message to just Sam displaying a grade on them.
+
+84
+05:22.520 --> 05:26.680
+That's what I saw on the screen only them but it will appear next.
+
+85
+05:26.680 --> 05:29.770
+Else is inside Ms.
+
+86
+05:29.860 --> 05:36.690
+Again check if B is greater than C if so c out.
+
+87
+05:36.910 --> 05:42.040
+B else C out.
+
+88
+05:42.050 --> 05:45.770
+C Not one more thing I have to explain your here.
+
+89
+05:45.940 --> 05:52.200
+C inside this as we have a finance so that I know floor I get because these are single statements not
+
+90
+05:52.310 --> 05:59.230
+f just inside else if they're just off after rails only separated by flow back and then we can write
+
+91
+05:59.230 --> 06:07.870
+on this if followed by this one also B is greater than C then here I can see C out B right.
+
+92
+06:08.230 --> 06:16.660
+And finally here again right Edwards and c c out C so this will be unlisted nested if a statement only
+
+93
+06:16.900 --> 06:18.220
+you can even write like this.
+
+94
+06:18.220 --> 06:26.250
+So if I read now if he is get it and b earnings get it and c I don't see if B's here at NC ls C..
+
+95
+06:26.770 --> 06:33.470
+So this is all we can write can nested conditional statement that is nested if I write.
+
+96
+06:34.220 --> 06:36.660
+So there is a coding exercise for this one.
+
+97
+06:36.680 --> 06:42.050
+So you have to write on these conditional statements in that coding exercise only this portion you have
+
+98
+06:42.050 --> 06:42.470
+to write on.
+
+99
+06:42.470 --> 06:44.460
+That is spend this one or this one on this one.
+
+100
+06:44.460 --> 06:45.680
+Anyone notice.
+
+101
+06:46.070 --> 06:50.510
+Then there are more coding exercises you have to solve them by yourself.
+
+102
+06:50.850 --> 06:54.140
+And the description is given in detail just you study it right.
+
+103
+06:54.290 --> 06:56.920
+So it's not a complex problem which is a simple problem.
+
+104
+06:57.060 --> 06:59.920
+Read the question and understand it and solve it.
+
+105
+06:59.960 --> 07:02.270
+And if you can't solve it just give a message.
+
+106
+07:02.270 --> 07:07.670
+I will reply you back under the demo will have a label for this one so watch it and I write the program
+
+107
+07:07.670 --> 07:09.380
+by yourself on your machine.
+
+108
+07:09.390 --> 07:18.290
+Practice coding exercises just to make you feel confident on the topic and come from that you have understood
+
+109
+07:18.290 --> 07:20.820
+the topic so that following the speech.

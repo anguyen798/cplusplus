@@ -1,0 +1,1186 @@
+WEBVTT
+
+00:05.340 --> 00:09.720
+In this video, we'll look at what it means for an enumeration to be UN scoped.
+
+00:09.990 --> 00:16.170
+In the last video we looked at the structure and syntax of an enumeration and said that an enumerations
+
+00:16.170 --> 00:17.670
+key defines its scope.
+
+00:17.970 --> 00:23.370
+So far we've only seen the singular enum key use, and so you won't be surprised to hear that this key
+
+00:23.370 --> 00:25.710
+implements an scoped enumeration.
+
+00:26.890 --> 00:29.620
+But what does it mean for an enumeration to be on scoped?
+
+00:29.830 --> 00:35.050
+When an enumeration is scoped, it's enumerators are unqualified and they're visible throughout the
+
+00:35.050 --> 00:38.040
+entire scope in which the enumeration was declared.
+
+00:38.050 --> 00:43.810
+This means that if we want to use an enumerations enumerators, it's not necessary to specify which
+
+00:43.840 --> 00:46.420
+enumeration the enumerators belong to.
+
+00:46.540 --> 00:47.620
+Seems great, right?
+
+00:47.620 --> 00:48.790
+Let's work for us.
+
+00:48.790 --> 00:52.150
+But as we'll see later, this can sometimes cause issues.
+
+00:52.150 --> 00:54.850
+And this is why scoped enumerations are so useful.
+
+00:54.850 --> 00:58.930
+In the meantime, let's look at some common uses of scoped enumerations.
+
+01:01.080 --> 01:06.930
+One of the most common uses of enumerations is as conditionals and control structures such as if and
+
+01:06.930 --> 01:07.890
+switch statements.
+
+01:08.310 --> 01:13.740
+As we saw with the rocket launch example, by using an enumeration to represent the different states
+
+01:13.740 --> 01:19.050
+and sequences of the launch, we can create a readable control structure using if statements.
+
+01:19.350 --> 01:25.050
+Now suppose the ordering of control is reversed as seen here, so that the first condition evaluated
+
+01:25.050 --> 01:30.300
+is whether the state is nominal and the last condition evaluated is whether the state is engine failure.
+
+01:30.990 --> 01:36.300
+Can you think of any reason why this series of if L statements might not be the best implementation
+
+01:36.300 --> 01:37.770
+for our control structure?
+
+01:38.920 --> 01:42.850
+To understand why we might want to implement a different control structure.
+
+01:42.850 --> 01:47.350
+Let's imagine that state returned from the function gets state is engine failure.
+
+01:47.680 --> 01:53.920
+Obviously we want to initiate the abort sequence as quickly as possible, but with the current implementation,
+
+01:53.920 --> 01:59.410
+we must first evaluate whether the state is nominal and then evaluate whether the state is inclement
+
+01:59.410 --> 01:59.950
+weather.
+
+02:00.460 --> 02:05.830
+Then only after each of those two states have been evaluated can we determine that the state is engine
+
+02:05.830 --> 02:09.130
+failure and finally initiate the abort sequence.
+
+02:09.580 --> 02:11.270
+I know what you're probably thinking.
+
+02:11.290 --> 02:13.810
+The extra time taken has to be negligible.
+
+02:13.810 --> 02:17.170
+And for small control structures like this, it's certainly true.
+
+02:17.560 --> 02:22.960
+But what if instead we were evaluating 100 different states and again, the engine failure state is
+
+02:22.960 --> 02:24.220
+evaluated last.
+
+02:24.370 --> 02:28.180
+That extra time taken in this case might not be so negligible.
+
+02:29.080 --> 02:34.180
+You may think to simply reorder the condition evaluations of the control structure, but we often want
+
+02:34.180 --> 02:40.390
+equal access time for each of our control evaluations, meaning we want the nominal state to be evaluated
+
+02:40.390 --> 02:44.950
+as quickly as possible, as well as the engine failure state and so forth.
+
+02:45.250 --> 02:48.850
+So is there a way we can do this using if statements?
+
+02:48.940 --> 02:49.990
+Unfortunately not.
+
+02:49.990 --> 02:52.120
+But we can do it using switch statements.
+
+02:53.880 --> 02:58.260
+Switch statements are by far the most popular control structure used with enumerations.
+
+02:58.500 --> 03:04.200
+This is not only because they provide better readability than EPFL statements, but also because for
+
+03:04.200 --> 03:10.020
+five or more cases generally they are implemented as jump tables which provide equal access time for
+
+03:10.020 --> 03:10.920
+all cases.
+
+03:11.460 --> 03:16.380
+This means that regardless of where we position the nominal and engine failure states in the control
+
+03:16.380 --> 03:19.290
+structure, they'll be evaluated in equal time.
+
+03:20.470 --> 03:24.760
+It should be noted, though, that we can only use switch statements with the enumeration so long as
+
+03:24.760 --> 03:28.780
+the enumerators we use as switch cases have unique values.
+
+03:29.140 --> 03:34.150
+Otherwise, the switch will not be able to discern between its cases and the code won't compile.
+
+03:36.670 --> 03:41.830
+As we saw with our accidental launch scenario, we might want the user to initialize enumeration type
+
+03:41.830 --> 03:42.340
+variable.
+
+03:43.230 --> 03:48.510
+Unfortunately, we can't use the standard C in command with the extraction operator because the extraction
+
+03:48.510 --> 03:53.070
+operator has no knowledge of what a state type variable is or how to deal with it.
+
+03:54.030 --> 03:56.490
+Thankfully, we have two methods to deal with this.
+
+03:56.670 --> 04:02.730
+The first is to extract the user input value into a type that the extraction operator does know about
+
+04:02.730 --> 04:05.280
+and then cast it to the state type variable.
+
+04:05.730 --> 04:10.280
+The second is to overload the extraction operator to deal with state type variables.
+
+04:10.290 --> 04:12.000
+Let's take a look at both of these.
+
+04:15.480 --> 04:20.880
+Here we can see the first method which reads the user input into a temporary variable, which is then
+
+04:20.880 --> 04:22.710
+cast to a state type variable.
+
+04:23.250 --> 04:28.800
+When we declare the type of the temporary variable, in some cases the underlying type of an enumeration
+
+04:28.800 --> 04:30.330
+might not be obvious.
+
+04:30.510 --> 04:34.500
+So we can use the class template underlying type T to deduce it.
+
+04:34.860 --> 04:40.170
+In this case, the underlying type of the state enumeration is integer, so the type of the user input
+
+04:40.170 --> 04:42.270
+variable will also be integer.
+
+04:42.840 --> 04:48.150
+It's important to note that when we cast variables to enumeration types, the value of the variable
+
+04:48.150 --> 04:49.380
+does not change.
+
+04:49.410 --> 04:54.420
+This means that there's no guarantee that the cast state enumeration type variable will have a value
+
+04:54.420 --> 04:57.540
+corresponding to the enumerations enumerators.
+
+04:59.220 --> 05:04.290
+For example, if the user were to enter the value three, it would be cast to the state type variable
+
+05:04.290 --> 05:05.970
+state with no issues.
+
+05:06.330 --> 05:10.950
+Obviously this is not what we want since three does not correspond to any state enumerator.
+
+05:11.700 --> 05:16.710
+Our only recourse in this situation is to implement our own checks to ensure that the variable we're
+
+05:16.710 --> 05:21.690
+casting has a value corresponding to one of the enumerations enumerators.
+
+05:23.050 --> 05:28.000
+This is usually done by using a switch statement with the condition being the variable to be tested
+
+05:28.000 --> 05:31.150
+and the case is being each of the enumerations enumerators.
+
+05:32.260 --> 05:34.690
+There are many ways to perform these kinds of checks.
+
+05:34.690 --> 05:39.220
+But the important thing to remember is that you're responsible for ensuring that a variable cast to
+
+05:39.220 --> 05:42.850
+an enumeration type will have a valid enumerator value.
+
+05:43.360 --> 05:48.250
+In an example like this, you may want to set the output stream to a failed state in the case of an
+
+05:48.250 --> 05:49.150
+invalid state.
+
+05:51.120 --> 05:56.640
+The second method of reading user input values into enumeration types is by overloading the extraction
+
+05:56.640 --> 05:57.300
+operator.
+
+05:57.750 --> 06:03.330
+Using this method, we overload the extraction operator to take as parameters a reference to the input
+
+06:03.330 --> 06:07.860
+stream and a reference to the state variable that the user input will be read into.
+
+06:08.670 --> 06:14.430
+It's important that we declare it enumeration in the same scope as any function referencing the enumeration
+
+06:14.430 --> 06:15.630
+or its enumerators.
+
+06:16.380 --> 06:21.900
+This is to ensure that the enumeration type and its enumerators can be accessed from within the function.
+
+06:22.500 --> 06:28.680
+In this case, we've declared the state enumeration in the same global namespace that contains the overloaded
+
+06:28.680 --> 06:30.450
+extraction operator function.
+
+06:30.450 --> 06:31.850
+Within the function.
+
+06:31.860 --> 06:37.080
+Again, we have declared a temporary user input variable with the same type as the underlying type of
+
+06:37.080 --> 06:38.040
+the enumeration.
+
+06:38.370 --> 06:44.340
+Next, the user's input is extracted from the input stream and assigned to the temporary variable,
+
+06:44.340 --> 06:49.350
+which is then checked to ensure that its value corresponds to a valid state enumerator.
+
+06:49.770 --> 06:54.080
+If it does, the temporary variable is cast to the reference state variable.
+
+06:54.090 --> 06:55.120
+If it doesn't.
+
+06:55.140 --> 06:59.370
+The user is displayed a message informing them that they have not entered a valid state.
+
+06:59.970 --> 07:03.150
+Finally, the input stream is returned to the calling function.
+
+07:03.420 --> 07:08.760
+As you may have noticed, this method is identical to the first, but this time we've implemented it
+
+07:08.760 --> 07:10.860
+as an overloaded extraction operator.
+
+07:10.980 --> 07:14.130
+This is so we can write clean readable code like this.
+
+07:15.110 --> 07:19.520
+Now that we've seen how to use see in with enumerations, let's switch our focus to see how we can use
+
+07:19.520 --> 07:21.140
+see out with the durations.
+
+07:23.270 --> 07:29.200
+To display enumeration type variables, we can use the standard, see out and the insertion operator
+
+07:29.210 --> 07:30.200
+when we do so.
+
+07:30.200 --> 07:36.500
+The enumeration type variable is implicitly converted to its underlying type and its value is displayed.
+
+07:37.040 --> 07:42.410
+This means that when we display enumeration type variables, it's always there value that's displayed
+
+07:42.410 --> 07:44.360
+and never there enumerator name.
+
+07:44.660 --> 07:50.450
+This makes sense since an enumerators name isn't a string but simply a name used to identify its value
+
+07:50.450 --> 07:51.440
+within the code.
+
+07:53.240 --> 07:57.470
+Sometimes it may be useful to display the name of the enumeration type variable.
+
+07:57.680 --> 08:03.170
+And so to accomplish this, we can implement a simple switch statement using the variable as the condition
+
+08:03.170 --> 08:06.080
+and its cases being the enumerations enumerators.
+
+08:06.470 --> 08:11.630
+As you may have guessed, we could even implement this functionality by overloading the insertion operator.
+
+08:15.490 --> 08:21.160
+In this case, we overload the insertion operator to take as parameters a reference to the output stream
+
+08:21.160 --> 08:24.310
+and a reference to the state variable whose name will be displayed.
+
+08:25.050 --> 08:30.090
+Again, it's important to declare the enumeration in the same namespace as the overloaded function so
+
+08:30.090 --> 08:34.200
+that the enumeration type and its enumerators can be accessed from within the function.
+
+08:35.140 --> 08:36.820
+Within the overloaded function.
+
+08:36.820 --> 08:41.320
+The reference state is compared to the enumerations enumerators and the appropriate enumerator name
+
+08:41.320 --> 08:43.150
+is inserted into the output stream.
+
+08:43.660 --> 08:49.390
+Finally, the output stream is returned to the calling function by overloading the insertion operator
+
+08:49.390 --> 08:54.520
+to display the names of state type variables, we can write clean readable code like this.
+
+08:55.780 --> 09:00.910
+Now that we've covered some of the most common uses and pitfalls of UN scoped enumerations, let's head
+
+09:00.910 --> 09:03.400
+over to the IDE and see some more examples.
+
+09:05.580 --> 09:06.000
+Okay.
+
+09:06.000 --> 09:12.750
+So I'm in the ID, I'm in the enumerations workspace and I'm in the UN scoped E Nums project.
+
+09:13.380 --> 09:18.180
+What I've done in this project is written three tests that exercise different kinds of functionalities
+
+09:18.180 --> 09:20.520
+for UN scoped enumerations.
+
+09:20.520 --> 09:24.930
+Right now I've got Test two and Test three commented out, so we're just running test one now.
+
+09:24.930 --> 09:25.830
+I've already built it in.
+
+09:25.830 --> 09:27.630
+The output is over here on the right.
+
+09:27.630 --> 09:29.400
+But let's look at the code that I wrote.
+
+09:29.400 --> 09:31.020
+So you get an idea of what's going on here.
+
+09:31.350 --> 09:36.630
+So the first thing I did was I created a enumeration and it's called direction and you can see it right
+
+09:36.630 --> 09:37.260
+there.
+
+09:37.620 --> 09:41.610
+Notice that it's un scoped and the enumerators are north, south, east and west.
+
+09:41.610 --> 09:47.310
+And as we know, this gets a zero, this gets a one, this gets two and West gets the three and that's
+
+09:47.310 --> 09:49.230
+automatically done by the compiler.
+
+09:49.650 --> 09:54.330
+Now the first thing we want to know is if we try to create another enumeration, let's say, called
+
+09:54.330 --> 09:59.880
+Street, that models different kinds of street names, for example, and we've got Main North Street,
+
+09:59.880 --> 10:01.200
+Elm Street and so forth.
+
+10:01.200 --> 10:04.560
+We can't do this because we've got North twice.
+
+10:04.710 --> 10:07.680
+And the compiler is going to say, I don't know what you're trying to do.
+
+10:07.710 --> 10:09.150
+You're trying to declare that.
+
+10:09.150 --> 10:14.790
+So this is one of the limitations as I mentioned in the slides with UN scoped enumerations and we can
+
+10:14.790 --> 10:17.490
+handle that with scoped enumerations in the next example.
+
+10:17.490 --> 10:18.570
+That's where we're at here.
+
+10:18.570 --> 10:23.160
+And let me just show you what's going on in this example here, I wrote a function.
+
+10:23.160 --> 10:25.470
+The function is called Direction to String.
+
+10:25.470 --> 10:27.300
+You can see the name of the function right there.
+
+10:27.330 --> 10:34.890
+It expects a direction parameter and depending on the enumerator of that direction, we're going to
+
+10:34.890 --> 10:36.360
+return a string.
+
+10:36.360 --> 10:41.490
+It's either going to be north, south, east or west, depending on what the case of that enumerator
+
+10:41.490 --> 10:42.390
+is right there.
+
+10:43.080 --> 10:44.670
+And as you can see, it's returning a string.
+
+10:44.670 --> 10:49.500
+So this is just a real handy utility function where you pass in a direction and it's going to return
+
+10:49.500 --> 10:53.280
+north, south, east, west or unknown direction as a string.
+
+10:53.670 --> 10:55.500
+So we've got that and here's the test.
+
+10:55.500 --> 10:58.650
+The test is really straightforward and you can see the output over here on the right.
+
+10:58.830 --> 10:59.970
+So let's walk through this.
+
+10:59.970 --> 11:01.500
+You can see exactly what I'm talking about.
+
+11:01.890 --> 11:06.540
+So the first thing we're doing is we're outputting test and that's the output you see right there.
+
+11:06.750 --> 11:13.710
+And we're creating a variable here called direction and that variable is of a direction type.
+
+11:13.710 --> 11:17.370
+Now remember, when we create an enumeration, we're creating a new type in the system.
+
+11:17.370 --> 11:23.130
+So this is very similar to doing something like int I and initializing it to zero, let's say in this
+
+11:23.130 --> 11:23.580
+case.
+
+11:23.580 --> 11:27.570
+So we're using a type, we're creating a variable and we're initializing it.
+
+11:27.570 --> 11:28.530
+Same thing.
+
+11:28.530 --> 11:31.770
+We're using the type, a new type that we've just created.
+
+11:31.770 --> 11:36.620
+When we created that enumeration, there is the variable name and there's the initialize here.
+
+11:37.410 --> 11:38.370
+So that's it.
+
+11:38.370 --> 11:39.750
+I've initialize the north.
+
+11:39.750 --> 11:41.940
+Remember what we had originally here?
+
+11:41.940 --> 11:47.430
+We had north was zero, south was one, west, east was two and west was three.
+
+11:47.430 --> 11:51.000
+So right now that's enumerator value is zero, right?
+
+11:51.000 --> 11:52.440
+That's the underlying value.
+
+11:52.440 --> 11:56.970
+So we're going to display direction and then we're just going to pass in direction to that overloaded
+
+11:56.970 --> 11:57.990
+operator right here.
+
+11:58.260 --> 12:03.510
+As far as that's concerned, this is an integer now scoped numerators work very differently.
+
+12:03.510 --> 12:05.160
+But let's just talk about scoped here.
+
+12:05.160 --> 12:10.470
+So this is going to display zero and that's what's happening here that I'm calling direction to string.
+
+12:10.470 --> 12:15.930
+I'm passing in direction that's going to convert it to a string as we saw in the function a minute ago.
+
+12:15.930 --> 12:17.550
+And it's going to display north.
+
+12:18.240 --> 12:21.930
+If we set the direction to West, it's going to do exactly the same thing.
+
+12:21.930 --> 12:23.550
+It's going to display three and then West.
+
+12:23.550 --> 12:28.530
+In this case, if we try to set the direction to five, for example, we're going to get a compiler
+
+12:28.530 --> 12:30.510
+error because five is not valid.
+
+12:31.260 --> 12:34.110
+Be very careful when you're casting enumerators.
+
+12:34.320 --> 12:37.320
+You could cast things that aren't there and that's a problem.
+
+12:37.320 --> 12:38.250
+So here's an example.
+
+12:38.250 --> 12:41.940
+Here I am casting a direction as my variable.
+
+12:41.970 --> 12:45.000
+I'm casting 100 to a direction type.
+
+12:45.420 --> 12:47.820
+The compiler assumes you know what you're doing.
+
+12:47.850 --> 12:52.350
+Remember, right now all we've got is zero, one, two and three in there, right north, south, east
+
+12:52.350 --> 12:52.980
+and west.
+
+12:53.160 --> 12:58.230
+But if you're doing a cast like this, the compiler says, okay, I know you know what you're doing,
+
+12:58.230 --> 13:01.770
+so I'm going to let you do it and notice what this place displays 100.
+
+13:01.770 --> 13:05.880
+And then when we try to display the two string, we get unknown direction.
+
+13:06.270 --> 13:09.960
+And this is very, very similar to doing a static cast.
+
+13:09.960 --> 13:11.610
+So this is what's happening here.
+
+13:11.610 --> 13:14.220
+I just wrote this here so that you can understand what's happening.
+
+13:14.220 --> 13:17.520
+We come up here and you guys could try this out on your own.
+
+13:17.520 --> 13:25.770
+If we come up here to the top and we do something like North is one, you know, South is ten and then
+
+13:25.770 --> 13:27.330
+east and west would get 11.
+
+13:27.330 --> 13:31.290
+Then when you display these values here, you'll get different displaced.
+
+13:31.710 --> 13:33.420
+OC So that takes care of test one.
+
+13:33.420 --> 13:35.370
+You can play around with it and modify things.
+
+13:35.370 --> 13:37.350
+So let's switch over to Test two.
+
+13:39.320 --> 13:39.650
+Okay.
+
+13:39.650 --> 13:45.770
+So I've gone ahead and commented out test one and uncommon two doubt test two here and I've rerun the
+
+13:45.770 --> 13:48.080
+program and this is the output you can see over here.
+
+13:48.080 --> 13:50.420
+So now let's talk about what's going on in test two.
+
+13:50.690 --> 13:52.760
+Let me scroll back up to test two.
+
+13:52.760 --> 14:00.050
+So here's the enumeration that I'm using for the test two example in this case, I'm modeling a grocery
+
+14:00.050 --> 14:02.120
+item that's the enumeration I've created.
+
+14:02.240 --> 14:04.880
+And my numerators are milk, bread, apple and orange.
+
+14:04.880 --> 14:08.120
+And again, behind the scenes, we're getting a01, two, two and a three.
+
+14:08.420 --> 14:13.550
+And if we've got specific codes that we could use, and I believe I'm doing that a little bit later
+
+14:13.550 --> 14:19.790
+in the scoped enumeration, so let's say that milk is 350 and bread might be 150 or something like that.
+
+14:19.790 --> 14:25.460
+Those might be internal codes that we're using that represent the the code for milk, the code for bread
+
+14:25.460 --> 14:26.150
+and so forth.
+
+14:26.150 --> 14:29.450
+So if we need something like that, that's perfectly valid to do.
+
+14:29.450 --> 14:34.100
+But in this case, I'm just going to use the implicit initial zero one, two and three.
+
+14:34.280 --> 14:39.680
+Now, rather than having a function called to string like the one we created a little bit ago in test
+
+14:39.680 --> 14:40.070
+one.
+
+14:40.070 --> 14:46.670
+I want to overload the insertion operator because I want to be able to take these enumeration variables.
+
+14:46.670 --> 14:52.520
+They just put the right on an output stream and much easier than having to call a function and it blends
+
+14:52.520 --> 14:54.560
+right into the way C++ feels.
+
+14:54.560 --> 14:57.110
+So in this case, I've covered this in the class.
+
+14:57.110 --> 15:01.130
+If you're not familiar with overloading operators, there's a whole section in the course about it.
+
+15:01.130 --> 15:07.820
+So in this case, I'm overloading the insertion operator and I'm inserting a grocery item or the string
+
+15:07.820 --> 15:11.540
+representation of a grocery item into an output stream.
+
+15:12.140 --> 15:13.340
+So really simple.
+
+15:13.340 --> 15:15.050
+Right there is the grocery item.
+
+15:15.050 --> 15:16.340
+I'm switching off of it.
+
+15:16.340 --> 15:18.710
+We could have used it if else matter if we want.
+
+15:18.710 --> 15:20.330
+But in this case I'm using a switch.
+
+15:20.360 --> 15:21.350
+I'm switching off of it.
+
+15:21.350 --> 15:24.830
+If it's milk, I'm putting milk on the output stream.
+
+15:24.920 --> 15:26.750
+Bread, apple, orange.
+
+15:26.750 --> 15:31.130
+If it's something else, I'm writing invalid object and I'm returning the output stream.
+
+15:31.130 --> 15:35.960
+And now we also have a little test function here that I've written which can come in really handy.
+
+15:35.960 --> 15:39.560
+It's called is valid grocery item and it returns a boolean, right?
+
+15:39.560 --> 15:40.670
+A true false value.
+
+15:40.670 --> 15:44.420
+So given a grocery item, is it a valid enumerator?
+
+15:44.420 --> 15:47.750
+Well, it is a valid enumerator if it's one of the ones that I've defined.
+
+15:47.750 --> 15:48.020
+Right.
+
+15:48.020 --> 15:49.220
+Milk, bread, apple or orange.
+
+15:49.220 --> 15:52.130
+So in the case of any of these, I'm returning true.
+
+15:52.880 --> 15:54.650
+Otherwise I'm returning false.
+
+15:54.830 --> 15:59.390
+If I return false and I've got something else in there, I've probably cast it to something.
+
+15:59.390 --> 16:02.810
+And now I want to display a grocery list.
+
+16:02.810 --> 16:04.310
+And that's what Test two is all about.
+
+16:04.310 --> 16:07.250
+And test choose down here and I'll show you what that looks like in a moment.
+
+16:07.250 --> 16:13.610
+But the idea with this function is the function is called display grocery list and it expects a stood
+
+16:13.610 --> 16:15.800
+vector of grocery items.
+
+16:16.160 --> 16:20.900
+So basically a collection of grocery items and those guys are enumerations.
+
+16:21.020 --> 16:23.330
+So all I'm doing is I'm looping.
+
+16:23.330 --> 16:26.060
+You can see right here, I'm using a range based for loop.
+
+16:26.210 --> 16:29.570
+I'm looping over that grocery list right here.
+
+16:29.960 --> 16:32.930
+And for each grocery item, I'm displaying it.
+
+16:32.930 --> 16:33.890
+How am I displaying it?
+
+16:33.890 --> 16:37.430
+I'm using that overloaded operator that I just overloaded a moment ago.
+
+16:38.060 --> 16:44.360
+And I'm also keeping track of how many invalid items and how many valid items I've have using my is
+
+16:44.360 --> 16:46.730
+valid grocery item function that I wrote.
+
+16:47.270 --> 16:48.470
+So that's all we're doing.
+
+16:48.470 --> 16:52.880
+We're looping through each element in that list, we're displaying it and then we're checking, was
+
+16:52.880 --> 16:54.200
+it a valid item, yes or no?
+
+16:54.200 --> 16:55.910
+And keep counters for those.
+
+16:55.910 --> 16:58.310
+And then at the end we're just displaying some information.
+
+16:58.700 --> 17:02.540
+And now let's look at the actual example, which is right here.
+
+17:02.540 --> 17:07.040
+And in this case, this was actually pretty interesting because you can see I'm creating my shopping
+
+17:07.040 --> 17:15.020
+list here, which is a state vector of grocery items and I'm pushing back apple, apple, milk, orange.
+
+17:15.500 --> 17:17.630
+Those are all valid enumerators, right?
+
+17:17.630 --> 17:22.490
+The steward vector can contain those because it contains grocery items.
+
+17:22.730 --> 17:25.040
+What we're going to do is we're going to add them to that vector.
+
+17:25.040 --> 17:25.850
+That's what that's doing.
+
+17:25.850 --> 17:28.610
+That's what the pushback does in this case.
+
+17:28.610 --> 17:33.170
+If I try to say something like grocery item, item is 100, I'm going to get a compiler error.
+
+17:33.290 --> 17:34.940
+The compiler won't let me do that.
+
+17:34.940 --> 17:41.240
+However, if I create an integer called helicopter or some other silly name and initialize it to 100,
+
+17:41.240 --> 17:45.680
+and I pushed that it's going to let me push it, but it's going to be an invalid item when I display
+
+17:45.680 --> 17:45.920
+it.
+
+17:46.880 --> 17:53.570
+In this case, if I create a grocery item and initialize it to zero and this is a cast that's going
+
+17:53.570 --> 17:54.380
+to be milk, right?
+
+17:54.380 --> 17:59.390
+Because milk was the zero value enumerator in that enumeration.
+
+17:59.390 --> 18:00.710
+So that's what we're doing.
+
+18:00.710 --> 18:02.240
+We're just pushing some items on there.
+
+18:02.240 --> 18:04.970
+And then I'm displaying that list with the function I just showed you.
+
+18:04.970 --> 18:07.010
+So when this runs, this is what we get.
+
+18:07.010 --> 18:10.190
+We get apple, apple, milk, orange.
+
+18:10.220 --> 18:11.360
+You can see them right here.
+
+18:11.360 --> 18:13.220
+Apple, apple, milk, orange.
+
+18:13.430 --> 18:19.130
+Then we're going to get an invalid item, which is this guy right here, the helicopter, and then this
+
+18:19.130 --> 18:19.940
+guy is zero.
+
+18:19.940 --> 18:21.260
+So we're going to get milk again.
+
+18:22.290 --> 18:27.630
+And since we're keeping track of valid and invalid items, you can see here that we've got six total
+
+18:27.630 --> 18:28.320
+items.
+
+18:28.320 --> 18:30.630
+Five are valid and one is invalid.
+
+18:30.630 --> 18:34.170
+And that would be this guy right here, the helicopter.
+
+18:36.080 --> 18:40.760
+So that covers test two and again play around with this change some things, try some things out and
+
+18:40.760 --> 18:42.090
+you'll really get a feel for it.
+
+18:42.130 --> 18:46.220
+The important thing to understand here is just how much more readable this code becomes.
+
+18:47.690 --> 18:48.110
+Okay.
+
+18:48.110 --> 18:50.100
+So finally we're in test three.
+
+18:50.140 --> 18:50.490
+Okay.
+
+18:50.510 --> 18:52.760
+So let me show you what's going on in test three and test three.
+
+18:52.760 --> 18:58.940
+We've got an enumeration state that is the state which is either engine failure, inclement weather,
+
+18:58.940 --> 19:00.740
+nominal or unknown.
+
+19:00.740 --> 19:05.480
+Now, this is a common thing that you'll see a lot of times in enumeration is some sort of unknown or
+
+19:05.510 --> 19:07.570
+unspecified state.
+
+19:07.580 --> 19:13.040
+A lot of times it comes in real handy because sometimes we get strange values and it's nice to assign
+
+19:13.040 --> 19:15.470
+them to a known state, in this case an unknown state.
+
+19:15.470 --> 19:16.730
+So that's that.
+
+19:16.730 --> 19:21.170
+Then we've got a sequence which is the abort sequence, the whole sequence or the launch sequence,
+
+19:21.170 --> 19:22.970
+depending on what the state is.
+
+19:22.970 --> 19:25.010
+We execute a specific sequence.
+
+19:25.010 --> 19:31.250
+So what we've done here is we've got our stream extraction operator that we've overloaded and this is
+
+19:31.250 --> 19:36.920
+pretty neat because it allows the user to enter something and we're going to create a state variable
+
+19:36.920 --> 19:37.430
+from it.
+
+19:37.430 --> 19:41.870
+So in this case, we're going to use the underlying type and you can see that right there.
+
+19:41.870 --> 19:43.190
+That's the underlying type.
+
+19:43.190 --> 19:46.730
+We know that the underlying type for this enumeration is an INT.
+
+19:46.730 --> 19:52.070
+We could have used int user input just like this, but it's much better to use the underlying type because
+
+19:52.070 --> 19:57.830
+it could change in the future if someone assigns some initial enumerator value to one of those things.
+
+19:57.830 --> 19:58.880
+That's not an int.
+
+19:59.150 --> 20:06.050
+And what we're doing is we're reading that user input from the input stream, we're switching on it
+
+20:06.350 --> 20:11.750
+and depending on what it is in this case, if it's one of those things that we know about right engine
+
+20:11.750 --> 20:18.380
+failure, inclement weather, nominal or unknown, we're casting that user input to a state type and
+
+20:18.380 --> 20:20.810
+assigning it to state, which is that guy right there.
+
+20:20.900 --> 20:25.190
+Otherwise we're going to assign it to the state unknown because they've obviously entered something
+
+20:25.190 --> 20:25.700
+else.
+
+20:25.700 --> 20:30.110
+And the idea being if it's in an unknown state, we're not going to launch this rocket, we're going
+
+20:30.110 --> 20:30.710
+to abort.
+
+20:30.710 --> 20:34.460
+So we've got those three sequences you can see up here, abort, hold and launch.
+
+20:34.880 --> 20:39.590
+Here we are overloading the string insertion operator just like we did before.
+
+20:39.590 --> 20:42.080
+So given a C but for sequence in this case.
+
+20:42.080 --> 20:48.170
+So given a sequence, if it's abort, we're just going to display, abort, hold or launch depending
+
+20:48.170 --> 20:49.730
+on what the numerator value is.
+
+20:50.240 --> 20:54.770
+And then in the case of initiate, when we're calling initiate with a sequence, it's just going to
+
+20:54.770 --> 20:58.340
+display the sequence that's being initiated just so we can actually see it.
+
+20:58.340 --> 21:03.110
+And this is going to use the overloaded stream insertion operator right there.
+
+21:04.200 --> 21:04.370
+Okay.
+
+21:04.440 --> 21:05.420
+So here's test three.
+
+21:05.430 --> 21:06.320
+So take a look at this.
+
+21:06.330 --> 21:07.280
+It's pretty straightforward.
+
+21:07.290 --> 21:09.450
+I'm creating my state variable right here.
+
+21:10.270 --> 21:12.520
+And I'm reading that from the user.
+
+21:12.560 --> 21:15.980
+Now this is using our extraction opera that we just overloaded.
+
+21:16.000 --> 21:21.430
+You can see how neat this is because this feels just like anything else in C++, right?
+
+21:21.910 --> 21:23.170
+This is how we read integers.
+
+21:23.170 --> 21:24.460
+This is how we read strings.
+
+21:24.460 --> 21:25.900
+This is how we read a lot of things.
+
+21:26.260 --> 21:30.040
+However, this is a user defined type that we created state.
+
+21:30.040 --> 21:36.340
+So we have to overload the extraction operator so that we can write code like this depending on whatever
+
+21:36.340 --> 21:42.130
+state the user entered, if they entered engine failure or if it's unknown, right?
+
+21:42.130 --> 21:43.210
+They entered something else.
+
+21:43.210 --> 21:45.310
+We're going to initiate the abort sequence.
+
+21:46.000 --> 21:49.960
+If it's inclement weather, we're going to hold and if it's nominal, we're going to launch.
+
+21:50.470 --> 21:54.730
+So let's run this and I'll put in a zero, which is engine failure.
+
+21:54.730 --> 21:56.830
+And we're initiating the abort sequence, right?
+
+21:56.830 --> 21:57.640
+That's what we want.
+
+21:57.640 --> 21:58.870
+So let's try it with another one.
+
+21:58.870 --> 22:00.040
+Let's run it again.
+
+22:00.040 --> 22:06.100
+In this case will put in a one and we're holding because one is inclement weather.
+
+22:06.100 --> 22:07.000
+That's pretty cool.
+
+22:07.740 --> 22:09.130
+Let's try it again.
+
+22:09.150 --> 22:10.800
+Let's put in a chew this time.
+
+22:11.710 --> 22:13.060
+And we move this over here.
+
+22:13.540 --> 22:14.650
+We're going to put in a two.
+
+22:14.680 --> 22:16.090
+We're launching, right.
+
+22:16.090 --> 22:18.400
+Because two is nominal.
+
+22:19.160 --> 22:21.660
+And now let's put in something like 100 or something, right?
+
+22:21.680 --> 22:26.130
+Something that's definitely not a valid enumerator for the estate.
+
+22:26.150 --> 22:29.240
+So let's run this and it's put in 100.
+
+22:29.570 --> 22:31.670
+And what we want is we want to abort.
+
+22:33.270 --> 22:34.590
+And that's exactly what we get.
+
+22:34.590 --> 22:36.510
+The user input is not a valid launch date.
+
+22:36.510 --> 22:41.040
+So what we're doing is we're setting the state to unknown, which initiates that abort sequence right
+
+22:41.040 --> 22:41.450
+here.
+
+22:41.460 --> 22:46.170
+This is all well and good, but what's really important that you understand is look at that code.
+
+22:46.170 --> 22:47.790
+Look how readable this is.
+
+22:48.000 --> 22:49.380
+We're switching on the state.
+
+22:49.380 --> 22:51.780
+If the if it's engine failure unknown, we initiate abort.
+
+22:51.780 --> 22:57.960
+We're using these enumerators, which is so important instead of just having magic numbers and all kinds
+
+22:57.960 --> 23:01.800
+of weird things in our code that make things very, very difficult to understand.
+
+23:02.550 --> 23:02.730
+Okay.
+
+23:02.820 --> 23:07.410
+So I encourage you to play around with this code, change things around, understand it.
+
+23:07.410 --> 23:11.880
+The best way to learn this is just to get in that code and fiddle with it and change it around a little
+
+23:11.880 --> 23:15.900
+bit and add some new states and try different things in the next video.
+
+23:15.900 --> 23:20.760
+What we'll do is we'll talk about scoped enumerations and we'll see how much better they actually are.

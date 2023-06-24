@@ -1,0 +1,169 @@
+WEBVTT
+
+0
+00:05.600 --> 00:07.600
+Welcome to the section 8 challenge.
+
+1
+00:08.300 --> 00:11.600
+For this program, I'm going to be using US dollars and cents,
+
+2
+00:11.600 --> 00:15.200
+but feel free to use whatever currency system you're familiar with that you want to use.
+
+3
+00:16.080 --> 00:20.580
+The idea here is you want to write a program that asks the user to enter the following.
+
+4
+00:20.780 --> 00:23.780
+Ask them to enter an integer representing the number of cents.
+
+5
+00:24.280 --> 00:27.780
+You can assume that the number of cents entered is greater than or equal to zero.
+
+6
+00:28.180 --> 00:31.680
+The program then displays how to provide that change to the user.
+
+7
+00:31.680 --> 00:36.080
+So in the U.S, we have one dollar is a hundred cents, a quarter is 25 cents,
+
+8
+00:36.080 --> 00:40.480
+a dime is 10 cents, a nickel is 5 cents, and a penny is one cent.
+
+9
+00:40.530 --> 00:44.030
+So in this example suppose the user enters 92 cents.
+
+10
+00:44.580 --> 00:48.080
+Your results will display that you can provide this change as follows.
+
+11
+00:48.080 --> 00:49.280
+No dollars.
+
+12
+00:49.280 --> 00:51.480
+Three quarters that would be 75 cents.
+
+13
+00:51.480 --> 00:54.780
+A dime, which would be another 10 cents that would give you 85.
+
+14
+00:54.780 --> 00:58.980
+The nickel is 5., there's your 90. And the two pennies, there's your 92.
+
+15
+00:59.780 --> 01:02.080
+As I said feel free to use your own currency system.
+
+16
+01:02.080 --> 01:06.080
+Also think of how you might want to solve this problem using the modulo operator.
+
+17
+01:06.080 --> 01:08.580
+When i give you my solution, I'll have two solutions.
+
+18
+01:08.580 --> 01:12.780
+I'll have one without the modulo operator and one that uses the modulo operator,
+
+19
+01:12.780 --> 01:16.180
+just so you can see two different ways to approach the problem. Quick hint,
+
+20
+01:16.180 --> 01:20.170
+please don't just sit down and start coding this. Think about how you want to solve it.
+
+21
+01:20.170 --> 01:24.730
+Write down some pseudocode that's English-like statements so you can get your thoughts straight.
+
+22
+01:24.730 --> 01:28.830
+Figure out what your algorithm is or your steps that you want to use to solve the program.
+
+23
+01:28.830 --> 01:32.930
+So have fun, make sure you test your program. Don't forget to test zero.
+
+24
+01:33.430 --> 01:35.430
+Don't forget to test large numbers.
+
+25
+01:35.430 --> 01:39.930
+And what I'm going to do is I'm going to do a couple of sample runs just so you can see how this works.
+
+26
+01:40.430 --> 01:42.790
+So in this example it says enter an amount in cents.
+
+27
+01:42.790 --> 01:45.090
+So let's say I type in 92 cents.
+
+28
+01:45.790 --> 01:49.590
+And the program responds you can provide change for this as follows.
+
+29
+01:50.250 --> 01:53.550
+Dollar zero, three quarters, one dime,
+
+30
+01:53.550 --> 01:56.550
+one nickel, two pennies, just like we would expect.
+
+31
+01:56.800 --> 01:59.400
+As I mentioned don't forget to test with zero,
+
+32
+01:59.900 --> 02:02.260
+and we should get all zeros straight down the line.
+
+33
+02:03.360 --> 02:05.720
+And let's say we want to test
+
+34
+02:06.020 --> 02:09.820
+this with 267 cents, that's 2 dollars and 67 cents.
+
+35
+02:11.120 --> 02:14.720
+In this case, we've got our two dollars, we've got two quarters. That gives us 50,
+
+36
+02:14.970 --> 02:16.770
+the dime gives us 60,
+
+37
+02:16.770 --> 02:19.970
+the nickel 65 and the two pennies 67.
+
+38
+02:19.970 --> 02:23.630
+So there are your 267 cents. All right. So
+
+39
+02:23.630 --> 02:24.620
+have a go at it.
+
+40
+02:24.620 --> 02:28.220
+And when you come back, go to the solutions section. I'll go over my solution.
+
+41
+02:28.820 --> 02:29.420
+Good luck.

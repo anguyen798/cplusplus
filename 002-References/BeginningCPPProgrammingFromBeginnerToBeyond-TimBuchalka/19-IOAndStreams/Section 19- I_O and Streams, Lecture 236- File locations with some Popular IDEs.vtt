@@ -1,0 +1,274 @@
+WEBVTT
+
+00:00:05.300 --> 00:00:08.500
+In this video, I'll go over some of the popular IDEs
+
+00:00:08.500 --> 00:00:12.860
+and where you should place the input files that you're going to read from.
+
+00:00:13.260 --> 00:00:16.360
+CodeLite I won't do because we've been using it throughout the course,
+
+00:00:16.360 --> 00:00:20.460
+but we've got windows visual studio code blocks cline and XCode,
+
+00:00:20.460 --> 00:00:24.710
+and I'll do a really short video on all of them. It's the same little program that all it tries to do is
+
+00:00:24.710 --> 00:00:27.210
+open a file called test.txt.
+
+00:00:27.710 --> 00:00:31.210
+And what I found was that in CodeLite, we need to do a ..
+
+00:00:31.710 --> 00:00:33.310
+/test.text.
+
+00:00:33.860 --> 00:00:38.630
+In windows visual studio, it's just a file name, and code blocks is also just the file name.
+
+00:00:38.630 --> 00:00:42.230
+In CLion just like in CodeLite we need to go up a directory
+
+00:00:42.230 --> 00:00:44.030
+and then provide the name of the file.
+
+00:00:44.030 --> 00:00:47.830
+And XCode is a little different, so please watch the video if you're using Xcode,
+
+00:00:47.830 --> 00:00:51.190
+and I'll show you how to set it up so that you can use input files.
+
+00:00:51.190 --> 00:00:53.850
+Okay. So first let's start with visual studio.
+
+00:00:59.950 --> 00:01:02.310
+So this example I've got visual studio.
+
+00:01:02.710 --> 00:01:07.590
+And you can see when I run this sample, it says error opening file because the file doesn't exist.
+
+00:01:07.590 --> 00:01:12.290
+So what we want to do is create the file. So we can click the resource area and click add
+
+00:01:13.090 --> 00:01:16.090
+new item and then select text file
+
+00:01:16.090 --> 00:01:19.690
+and give it the name test.txt, it's lowercase
+
+00:01:23.690 --> 00:01:24.490
+and press add.
+
+00:01:26.290 --> 00:01:30.790
+And at this point, that file has been added. We can go back to our c++ file
+
+00:01:30.790 --> 00:01:32.390
+and execute it at this point.
+
+00:01:32.890 --> 00:01:36.250
+And notice we're just using test.txt as the file name.
+
+00:01:36.250 --> 00:01:39.610
+And we should get good to go. There we go. Good to go.
+
+00:01:39.610 --> 00:01:43.610
+So it's all set. So that's the way you would create an input file in visual studio.
+
+00:01:45.600 --> 00:01:49.400
+So now let's see how we can get this to work using the code blocks IDE.
+
+00:01:50.160 --> 00:01:53.490
+For this example, I'm in the code blocks IDE.
+
+00:01:53.490 --> 00:01:56.490
+And you can see I've got the same file here where I'm trying to open
+
+00:01:56.490 --> 00:01:59.850
+an input file stream named test.txt.
+
+00:02:00.400 --> 00:02:04.200
+It's not here right now. So if i try to run, it says problem opening file,
+
+00:02:04.200 --> 00:02:08.200
+just as we expect. So what we'll do is we'll come up here.
+
+00:02:08.200 --> 00:02:13.000
+So what we can do is we can come up here to -- we can select our project and say file new
+
+00:02:13.500 --> 00:02:14.500
+empty file,
+
+00:02:16.000 --> 00:02:18.500
+do you want to add this new file to the active project?
+
+00:02:19.050 --> 00:02:23.650
+I'll save the project first. And all we're doing here is we're just creating that file
+
+00:02:23.650 --> 00:02:25.640
+test.txt.
+
+00:02:26.940 --> 00:02:31.140
+And make sure that it's in the file test directory or whatever the project directory is.
+
+00:02:31.640 --> 00:02:35.840
+And we're basically where you see your cpp source file right here.
+
+00:02:35.840 --> 00:02:40.100
+I'll save. Then it's going to ask me select the targets, that's important,
+
+00:02:40.100 --> 00:02:42.600
+make sure those are checked, select it.
+
+00:02:43.260 --> 00:02:47.860
+And at that point, you can see it creates this folder called others with the test.txt in it.
+
+00:02:48.160 --> 00:02:51.160
+And now if we run this, we're good to go.
+
+00:02:51.960 --> 00:02:56.460
+Okay. So that's how you would create and a file for input in code blocks.
+
+00:02:58.460 --> 00:03:02.960
+Next up is CLion. Let's see how we can get the input files to read using CLion.
+
+00:03:04.360 --> 00:03:06.560
+I'm in the CLion IDE on windows.
+
+00:03:06.560 --> 00:03:09.760
+And you can see I've got a real simple program
+
+00:03:09.760 --> 00:03:13.880
+that's going to test opening a file, the file name is test.txt.
+
+00:03:14.380 --> 00:03:17.480
+If I run this, I can just click that little green arrow right here
+
+00:03:17.480 --> 00:03:20.840
+or I can click the green arrow up here. I'll just do it right here.
+
+00:03:21.340 --> 00:03:24.940
+You'll see that what we'll have is we'll have an error that says problem opening file,
+
+00:03:25.300 --> 00:03:29.850
+just as we expect because the file doesn't exist. So I'm going to come up here to the project,
+
+00:03:30.100 --> 00:03:33.200
+right click and say new file.
+
+00:03:35.000 --> 00:03:40.360
+The file name would be test.txt.
+
+00:03:40.360 --> 00:03:43.720
+I'll save that. And we'll try to run it again.
+
+00:03:44.020 --> 00:03:46.920
+And I'll click the cpp file again.
+
+00:03:50.120 --> 00:03:52.480
+Again, we're seeing a problem opening file.
+
+00:03:52.480 --> 00:03:56.280
+And if we look at the directory structure, you'll see the problem is that
+
+00:03:56.280 --> 00:03:59.960
+the exe file is being created in here, you can see it right here
+
+00:03:59.960 --> 00:04:01.620
+file test exe,
+
+00:04:01.620 --> 00:04:05.220
+so it's a level up. So what you need to do is the same thing we did in CodeLite,
+
+00:04:05.220 --> 00:04:09.770
+we just basically say ../ we'll save it, we'll run it again.
+
+00:04:12.270 --> 00:04:16.170
+And we're good to go. So that's how you do this in Clion.
+
+00:04:17.770 --> 00:04:20.430
+And we'll finish up this section with XCode.
+
+00:04:20.430 --> 00:04:22.430
+XCode is a little bit different.
+
+00:04:22.430 --> 00:04:25.930
+So watch the video if you're using XCode, and you need to have input files.
+
+00:04:27.290 --> 00:04:29.790
+Okay. So I'm on a mac running XCode.
+
+00:04:30.340 --> 00:04:34.590
+And I've got that simple program here. I'm trying to open a file named text.txt.
+
+00:04:35.090 --> 00:04:36.640
+If I try to run this,
+
+00:04:37.640 --> 00:04:40.640
+I'll get an error down here saying problem opening file.
+
+00:04:40.640 --> 00:04:43.940
+So the file's not there, so let's add the file.
+
+00:04:43.940 --> 00:04:46.440
+So let's right click here, we'll say new file,
+
+00:04:47.430 --> 00:04:52.090
+and I'll select mac os, and I'll scroll all the way down to the bottom so it says empty.
+
+00:04:55.690 --> 00:04:58.690
+And we'll create test.txt.
+
+00:05:01.790 --> 00:05:05.290
+That's it. So the file's there now. So if we run again,
+
+00:05:05.890 --> 00:05:08.990
+it still won't find it. We'll have a problem opening file.
+
+00:05:09.870 --> 00:05:13.750
+The way that XCode works and mac works is that exe file, the app is
+
+00:05:14.550 --> 00:05:18.550
+stored in some derived data directory really, really far removed from the project.
+
+00:05:18.550 --> 00:05:23.540
+So the best way to do this on a mac is to come up to product
+
+00:05:26.540 --> 00:05:29.090
+then select scheme and edit scheme
+
+00:05:30.190 --> 00:05:34.390
+and then look for this working directory right here.
+
+00:05:35.160 --> 00:05:37.860
+It's under options on run debug.
+
+00:05:37.860 --> 00:05:39.460
+You select working directory,
+
+00:05:39.860 --> 00:05:43.360
+and you select -- you say use a custom working directory.
+
+00:05:43.360 --> 00:05:46.360
+And what we want to choose is we want to search --
+
+00:05:47.020 --> 00:05:49.720
+and what you want to do is select the working directory
+
+00:05:49.720 --> 00:05:53.920
+where those files are, your main cpp and your test.txt and you select it.
+
+00:05:55.020 --> 00:05:59.010
+We close this up now. And now if we run, we should be good to go,
+
+00:05:59.890 --> 00:06:02.090
+and we are and it will find the file just fine.
+
+00:06:02.750 --> 00:06:06.050
+Most of the other IDEs will also allow you to change the working directory,
+
+00:06:06.050 --> 00:06:08.710
+but it's much easier just to change the file path on those,
+
+00:06:09.010 --> 00:06:10.890
+but on a mac this is the best way to do it.

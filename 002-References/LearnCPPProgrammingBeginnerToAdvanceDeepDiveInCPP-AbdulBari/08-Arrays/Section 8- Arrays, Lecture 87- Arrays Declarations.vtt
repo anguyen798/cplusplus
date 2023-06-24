@@ -1,0 +1,441 @@
+WEBVTT
+
+0
+00:01.600 --> 00:07.460
+Here let us learn how to declare and initialize and how to use an arrray.
+
+1
+00:07.470 --> 00:14.980
+So let us learn some of the basics, if you want an array of type integer let us call it a size 5.
+
+2
+00:14.990 --> 00:19.360
+So i will be getting five integers starting from index zero to 4.
+
+3
+00:19.620 --> 00:21.010
+It is not initialized.
+
+4
+00:21.030 --> 00:23.130
+I have not assign any values.
+
+5
+00:23.130 --> 00:26.720
+If you want to display this I'll be actually getting garbage values.
+
+6
+00:26.880 --> 00:33.840
+Let's try this and see how displays for going to all the elements of an array ,one by one I should
+
+7
+00:33.840 --> 00:37.320
+have a counter So there i will be used as a counter.
+
+8
+00:37.590 --> 00:46.070
+I assign zero and i is less than 5 because they need to start from zero to 4 then I plus plus And
+
+9
+00:46.110 --> 00:50.840
+here I will say cout A of I.
+
+10
+00:51.060 --> 00:53.150
+And also I will write.
+
+11
+00:53.200 --> 00:56.260
+endl after printing this one.
+
+12
+00:56.310 --> 00:59.310
+Let us run this and see what happens.
+
+13
+01:01.350 --> 01:03.770
+See this is initialize as
+
+14
+01:03.850 --> 01:11.740
+zeroes , few values are zero four values are 0, 1 one of the value is, and one of the value is a smaller negative number.
+
+15
+01:11.760 --> 01:13.320
+So all these are garbage.
+
+16
+01:13.320 --> 01:22.110
+Only because the array is not initialized How we can initialized an array, one method is I can initialize an array by assigning
+
+17
+01:22.110 --> 01:31.780
+some values like 3 4 10 and 12 and  5.
+
+18
+01:32.220 --> 01:33.490
+Let us run this and see
+
+19
+01:37.300 --> 01:41.060
+now I got the same values 3 4 10 12 and 5.
+
+20
+01:41.230 --> 01:46.660
+So this is the way an array can be initialized i will remove these values
+
+21
+01:46.660 --> 01:49.600
+The size of the array is 5 but I'm giving only two values.
+
+22
+01:49.600 --> 01:51.280
+Let us see what happens.
+
+23
+01:54.520 --> 01:59.990
+See 3 and 4 are there and the rest of the values are By default zero.
+
+24
+02:00.040 --> 02:02.950
+See what happens when you are initializing in the Arctic.
+
+25
+02:03.430 --> 02:09.620
+You need not initialize all the locations are all and do yourself and you can initialize feel so the
+
+26
+02:09.630 --> 02:13.180
+rest of them will be automatically initialized to zero.
+
+27
+02:13.300 --> 02:16.440
+If I say just 0 then what happens.
+
+28
+02:16.480 --> 02:21.070
+All of them will get zero because the first one is zero and remaining all of them automatically become
+
+29
+02:21.070 --> 02:21.410
+zero.
+
+30
+02:21.410 --> 02:25.820
+Yes all these are zero.
+
+31
+02:25.930 --> 02:31.810
+If i give some values here, two four six eight ten.
+
+32
+02:31.840 --> 02:34.210
+I have given five values here.
+
+33
+02:34.210 --> 02:36.780
+Can they exceed the number of values.
+
+34
+02:36.780 --> 02:38.250
+Let us see what happens.
+
+35
+02:38.350 --> 02:44.600
+I haven't given one extra value so it's compile time error.
+
+36
+02:44.620 --> 02:50.170
+So it gives an error that access elements in an array initializer you cannot have a number of elements
+
+37
+02:50.170 --> 02:52.050
+more than the size of an array.
+
+38
+02:52.390 --> 02:56.830
+So I should give it a size 6.
+
+39
+02:56.830 --> 03:01.210
+Now let me run this way and see for 6 elements
+
+40
+03:05.560 --> 03:09.140
+yeah I'm getting all the elements.
+
+41
+03:10.030 --> 03:15.410
+If I don't give the size the size here, will it allow, Yes this is another method
+
+42
+03:15.570 --> 03:18.010
+You don't have to give the size of an array.
+
+43
+03:18.010 --> 03:24.910
+Just you can give the set of values and the size of a not even be exactly equal to the number of elements
+
+44
+03:24.970 --> 03:27.370
+that you are mentioning in the list.
+
+45
+03:27.400 --> 03:29.200
+Let us run this and see.
+
+46
+03:29.740 --> 03:32.350
+Yes it's working as there was no error.
+
+47
+03:32.470 --> 03:36.960
+So the size of an array is 6.  now  next
+
+48
+03:37.000 --> 03:42.760
+I have to show you one more type of for loop that is called for each loop that is mostly useful for a
+
+49
+03:42.870 --> 03:46.120
+array or collection type of data structure.
+
+50
+03:46.120 --> 03:59.680
+So here int X I take one variable x and that is for a and cout x and also endl. see
+
+51
+03:59.680 --> 04:04.200
+This is declaring a variable x for the elements in a.
+
+52
+04:04.360 --> 04:10.300
+So when we say for this will be iterating through this array
+
+53
+04:10.480 --> 04:17.620
+For all the elements one by one and each element will be taken in X every time, so first two will become
+
+54
+04:17.620 --> 04:21.650
+x then four will become X then 6 will become X and goes on.
+
+55
+04:21.660 --> 04:25.330
+So in this way it will iterate through the entire array.
+
+56
+04:25.570 --> 04:29.320
+Whatever the size may be so we don't have to know the size of an array.
+
+57
+04:29.320 --> 04:31.650
+This will take care, for each loop it will take care.
+
+58
+04:31.690 --> 04:36.450
+So let us see it will display all elements yes.
+
+59
+04:36.470 --> 04:39.960
+This is working at the same as that.
+
+60
+04:40.400 --> 04:43.460
+Now here I will take the size of an array as a 6.
+
+61
+04:43.790 --> 04:48.390
+And I will give only three elements.
+
+62
+04:48.440 --> 04:53.480
+Let's see what happens when to go to all six elements or just three elements.
+
+63
+04:55.940 --> 05:02.850
+It's going to all six elements, so it means this for loop will work according to the size of the array
+
+64
+05:02.850 --> 05:08.810
+size of a not based on the number of elements stored in a array.
+
+65
+05:08.850 --> 05:11.970
+We have not store the remaining three elements which are initialized to zero
+
+66
+05:15.780 --> 05:17.890
+but it is displaying the complete array.
+
+67
+05:18.030 --> 05:24.840
+So these are very useful for loop. this was  introduced in C++ 11 version 11
+
+68
+05:28.350 --> 05:33.090
+so this for loop is a part of modern C++.
+
+69
+05:33.090 --> 05:35.680
+This was not there in older version of C++.
+
+70
+05:35.680 --> 05:42.720
+This was introduced in C++ 11, and this is a very useful loop for accessing arrays.
+
+71
+05:42.870 --> 05:54.020
+If I have a flow type array, then I can initialize a float type array by giving some Float numbers 2.5 F
+
+72
+05:54.780 --> 06:03.740
+and comma 5.6 f , 9, 8, 7.
+
+73
+06:03.750 --> 06:11.050
+So some of them I have given float  literal and some are integer literal,  so I can use any of these.
+
+74
+06:11.090 --> 06:19.260
+Now here when I'm taking integer for A let us see weather it works or not but this x should be of typpe 
+
+75
+06:19.260 --> 06:19.700
+float
+
+76
+06:19.750 --> 06:21.300
+Because these are float values
+
+77
+06:24.600 --> 06:31.340
+yes it's working and it is truncating the decimal part and taking only integer parts of these numbers.
+
+78
+06:31.380 --> 06:34.890
+Now here actually I should write float then it looks perfectly
+
+79
+06:39.260 --> 06:42.020
+yeah I'm getting all the values as it is.
+
+80
+06:42.090 --> 06:44.540
+So I got the correct values.
+
+81
+06:44.750 --> 06:46.170
+Instead of giving float.
+
+82
+06:46.190 --> 06:48.930
+Even I can auto
+
+83
+06:49.700 --> 06:53.670
+So I don't have to know what is the type of an array also just auto x.
+
+84
+06:53.690 --> 06:55.010
+I can give the array name
+
+85
+06:55.010 --> 06:58.310
+So it is very powerful and very easy for the programmer.
+
+86
+06:58.400 --> 07:02.030
+He don't even have to know what type of array he has declared.
+
+87
+07:02.030 --> 07:05.170
+He don't have to go up in the program and check the type of an array,
+
+88
+07:08.420 --> 07:10.370
+for now x will be of type float.
+
+89
+07:10.410 --> 07:15.490
+So you can see that I'm getting the values to point five and 5.6 and so on.
+
+90
+07:15.510 --> 07:18.230
+So this is of type float
+
+91
+07:21.080 --> 07:29.030
+if I have to declare an array of type characters then it must be initialized with the character literals
+
+92
+07:29.030 --> 07:31.560
+so I can do.
+
+93
+07:32.240 --> 07:42.270
+I can store a and for B I will take 66 and for C I'll take C and for D
+
+94
+07:42.950 --> 07:45.790
+I will take it as 68.
+
+95
+07:45.800 --> 07:49.610
+So let us see what happens when I print this using for each loop.
+
+96
+07:49.610 --> 07:51.290
+Now here X is auto.
+
+97
+07:51.290 --> 07:54.700
+So it will automatically take it as a character type.
+
+98
+07:57.460 --> 07:58.590
+A B C D.
+
+99
+07:58.690 --> 08:02.530
+I have given ASCII codes of letter B and letter D.
+
+100
+08:02.560 --> 08:07.490
+I'm showing it as characters so it is displaying them as characters.
+
+101
+08:07.540 --> 08:12.610
+If I take them as instead of auto I will  write it as int and   let us see what happens.
+
+102
+08:12.610 --> 08:15.420
+what values I will get here.
+
+103
+08:15.430 --> 08:18.240
+I'm getting 65 66 67 and 68.
+
+104
+08:18.250 --> 08:20.360
+So it means these are the ASCII codes.
+
+105
+08:20.410 --> 08:22.160
+I have converted them into integer.
+
+106
+08:22.420 --> 08:29.250
+So these elements are taken as integer type and displayed here.
+
+107
+08:29.810 --> 08:30.970
+So that's it about array.
+
+108
+08:30.970 --> 08:32.330
+So you practice this thing.
+
+109
+08:32.330 --> 08:35.060
+Just go through it and test it by yourself.

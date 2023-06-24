@@ -1,0 +1,1073 @@
+﻿WEBVTT
+
+00:00:00.000 --> 00:00:07.000
+Hello everyone, this is Steve Gilbert. Welcome to lecture 7, More on Loops.
+
+00:00:07.000 --> 00:00:16.000
+So we're going to continue with what we talked about on chapter 6, on lecture 6, where you were introduced to loops.
+
+00:00:16.000 --> 00:00:26.000
+Now, many programmers think that writing loops correctly is a matter of luck or trial and error or magic.
+
+00:00:26.000 --> 00:00:38.000
+It's like a holy grail. That is not actually the case. It's easy to consistently write loops that are correct, that work the first time.
+
+00:00:38.000 --> 00:00:46.000
+You just have to learn how. Unless you're taught how to do it, you won't do it correctly. It's not natural.
+
+00:00:46.000 --> 00:00:53.000
+Now I learned the technique that I'm going to teach you back in the 1980s when I first started programming.
+
+00:00:53.000 --> 00:01:00.000
+This was developed by a professor at Berkeley named Doug Cooper, who wrote the book "O Pascal".
+
+00:01:00.000 --> 00:01:05.000
+It's helped me as a programmer more than any other thing that I learned in school.
+
+00:01:05.000 --> 00:01:14.000
+And I hope that you'll spend the time to kind of internalize these techniques and make them useful for you.
+
+00:01:14.000 --> 00:01:19.000
+Now first, when we think about a loop, we need to think about two things.
+
+00:01:19.000 --> 00:01:24.000
+Here's a simple problem specification that requires a loop.
+
+00:01:24.000 --> 00:01:29.000
+I want you to count the number of characters in a sentence that ends with a period.
+
+00:01:29.000 --> 00:01:37.000
+Count the number of characters in a sentence that ends with a period. Include the period in the count.
+
+00:01:37.000 --> 00:01:44.000
+Now, the goal is what the loop is trying to accomplish. What work are we trying to produce?
+
+00:01:44.000 --> 00:01:53.000
+What information are we trying to discover? Our goal here is to produce a count of the entire characters in a sentence.
+
+00:01:53.000 --> 00:01:59.000
+How long is this sentence including the period at the end of it?
+
+00:01:59.000 --> 00:02:07.000
+The bounds is what makes the loop stop. So this loop will stop when it encounters a period.
+
+00:02:07.000 --> 00:02:12.000
+So when we found a period, we're done. We don't need the loop anymore.
+
+00:02:12.000 --> 00:02:17.000
+And the plan is a set of steps needed to reach our goal.
+
+00:02:17.000 --> 00:02:25.000
+So here's a plan. Let's read the first character. While the character is not a period, count the character.
+
+00:02:25.000 --> 00:02:28.000
+Then read the next character.
+
+00:02:28.000 --> 00:02:37.000
+Now, once you have the plan and the goal and the bounds, you need to think about where to put those parts in your loop.
+
+00:02:37.000 --> 00:02:44.000
+So this is called the loop's topology. If you look at the loop on the right, you'll see four different sections.
+
+00:02:44.000 --> 00:02:50.000
+There's something that happens before the loop. There's a loop test condition. There's a loop body.
+
+00:02:50.000 --> 00:02:56.000
+And then there's something that happens after the loop. And we have some vocabulary for this as well.
+
+00:02:56.000 --> 00:03:05.000
+The actions that occur before the loop, whether associated with the goal or the bounds, are called the loop's preconditions.
+
+00:03:05.000 --> 00:03:10.000
+Stuff that happens before we encounter the loop.
+
+00:03:10.000 --> 00:03:18.000
+The actions that control the loop, the test part, is called the loop's bounds. That's what stops the loop.
+
+00:03:18.000 --> 00:03:23.000
+The actions that take place in the body are the operations of the loop.
+
+00:03:23.000 --> 00:03:29.000
+That can include advancing the loop or updating the variables in the loop's goal.
+
+00:03:29.000 --> 00:03:36.000
+And the actions that occur after the loop is over are called the loop's postcondition.
+
+00:03:36.000 --> 00:03:39.000
+So let's look at how we'd put that to work.
+
+00:03:39.000 --> 00:03:45.000
+First, we're going to look at the steps that are required to make the loop go around.
+
+00:03:45.000 --> 00:03:53.000
+In this part, you want to think only about what makes the loop work, not that the work that the loop does.
+
+00:03:53.000 --> 00:03:59.000
+So you're not thinking at all about whether you're counting or printing or anything like that.
+
+00:03:59.000 --> 00:04:02.000
+Just what makes the loop work.
+
+00:04:02.000 --> 00:04:11.000
+The first question you always have to ask, and the first piece of code you will always write, is the loop's bounds.
+
+00:04:11.000 --> 00:04:14.000
+What makes the loop stop?
+
+00:04:14.000 --> 00:04:21.000
+So in our case, if we're counting the letters in a period, we'd say "while letter is not a period."
+
+00:04:21.000 --> 00:04:30.000
+Well, that's good. If I write that down in code, "while letter not equal to period," my code won't compile.
+
+00:04:30.000 --> 00:04:33.000
+So that brings us to step two.
+
+00:04:33.000 --> 00:04:37.000
+So the loop bounds is done in that second section.
+
+00:04:37.000 --> 00:04:44.000
+So let me just go back to here. That's where the loop bounds is done.
+
+00:04:44.000 --> 00:04:50.000
+The second part is figuring out what it takes to enter the loop.
+
+00:04:50.000 --> 00:04:56.000
+What setup is needed to allow us to run this bounds condition?
+
+00:04:56.000 --> 00:04:59.000
+This is called the bounds precondition.
+
+00:04:59.000 --> 00:05:04.000
+So what setup is needed for this to be syntactically correct?
+
+00:05:04.000 --> 00:05:09.000
+In our case, here's the string we're checking, str.
+
+00:05:09.000 --> 00:05:14.000
+This is pseudocode. The little arrow means set string to the string to check.
+
+00:05:14.000 --> 00:05:18.000
+Set letter to the first character in string.
+
+00:05:18.000 --> 00:05:22.000
+And here's our bounds condition, "while the letter is not a period."
+
+00:05:22.000 --> 00:05:30.000
+And so now if we translated that to C++ code, our program would compile and it would run.
+
+00:05:30.000 --> 00:05:33.000
+But it would continue running forever.
+
+00:05:33.000 --> 00:05:41.000
+As long as the first character was not a period, when we went back again, letter would still be the first character.
+
+00:05:41.000 --> 00:05:49.000
+And so the third step in the mechanical part of getting your loop to work is advancing the loop.
+
+00:05:49.000 --> 00:05:54.000
+Moving it from the setup or startup condition towards the bounds.
+
+00:05:54.000 --> 00:06:01.000
+In our case, inside the body of the loop, we'd have to set the letter to the next character in string.
+
+00:06:01.000 --> 00:06:06.000
+Whether we do that in a counter, whether we do it some other way, that's immaterial.
+
+00:06:06.000 --> 00:06:12.000
+In the plan, all we need to do is make sure the letter is the next character in string.
+
+00:06:12.000 --> 00:06:18.000
+Now we have a loop that runs, goes through the correct number of times,
+
+00:06:18.000 --> 00:06:24.000
+and all we have to think about is, now what do I do for the work?
+
+00:06:24.000 --> 00:06:26.000
+What do I do to reach my goal?
+
+00:06:26.000 --> 00:06:32.000
+So part two, doing the work, is trying to reach our goal.
+
+00:06:32.000 --> 00:06:37.000
+And the goal of every loop is to produce some information.
+
+00:06:37.000 --> 00:06:43.000
+In our case, the goal of our loop is to produce the count of the characters in a sentence.
+
+00:06:43.000 --> 00:06:46.000
+The count of the characters in a sentence.
+
+00:06:46.000 --> 00:06:52.000
+So first, you go back to that top section, the precondition section,
+
+00:06:52.000 --> 00:06:55.000
+and you create a variable to hold the answer.
+
+00:06:55.000 --> 00:06:58.000
+This is called the goal precondition.
+
+00:06:58.000 --> 00:07:03.000
+So here I'd come back up above those two variables I already created,
+
+00:07:03.000 --> 00:07:06.000
+and I'd create another variable, count.
+
+00:07:06.000 --> 00:07:10.000
+That'll be the result of the loop. That'll hold the answer.
+
+00:07:10.000 --> 00:07:14.000
+Secondly, or fifth, step five actually,
+
+00:07:14.000 --> 00:07:21.000
+what work do you need to do to update those variables?
+
+00:07:21.000 --> 00:07:23.000
+This is the loop operation.
+
+00:07:23.000 --> 00:07:30.000
+Well in our case, every time we get in the loop, before we go to the next character,
+
+00:07:30.000 --> 00:07:32.000
+we need to update the goal.
+
+00:07:32.000 --> 00:07:34.000
+We need to update the goal.
+
+00:07:34.000 --> 00:07:38.000
+So do the work required to update the variables.
+
+00:07:38.000 --> 00:07:41.000
+This is in the body, this is in the loop operation.
+
+00:07:41.000 --> 00:07:47.000
+Now, the loop's finished, have we reached our goal?
+
+00:07:47.000 --> 00:07:51.000
+You always have to answer that question after the loop is over.
+
+00:07:51.000 --> 00:07:55.000
+You have always reached your bounds.
+
+00:07:55.000 --> 00:07:59.000
+In other words, we have always encountered a period.
+
+00:07:59.000 --> 00:08:02.000
+But, have we counted the period yet?
+
+00:08:02.000 --> 00:08:04.000
+No, we haven't. So we haven't reached our goal,
+
+00:08:04.000 --> 00:08:09.000
+we haven't counted the number of characters in a sentence, including the period.
+
+00:08:09.000 --> 00:08:14.000
+And so after the loop is over, we'd have to count the period itself.
+
+00:08:14.000 --> 00:08:19.000
+So make sure when you're writing these loops that you always ask yourself these six questions,
+
+00:08:19.000 --> 00:08:21.000
+including the last one.
+
+00:08:21.000 --> 00:08:27.000
+Have I reached my goal? Is the answer I have the correct answer?
+
+00:08:27.000 --> 00:08:31.000
+Okay, so that's really short. There's more information in the text.
+
+00:08:31.000 --> 00:08:36.000
+I hope you'll read it, and I hope you'll spend some time engaging in it.
+
+00:08:36.000 --> 00:08:45.000
+It's not really a hands-on exercise, but it's something that will make your programming much, much easier.
+
+00:08:45.000 --> 00:08:53.000
+Okay, so let's go now and talk about necessary and intentional bounds.
+
+00:08:53.000 --> 00:08:59.000
+Suppose we have a string that contains 123.25,
+
+00:08:59.000 --> 00:09:07.000
+and we want to extract just the integer portion, just the 123 part.
+
+00:09:07.000 --> 00:09:10.000
+We'd write a loop, and we'd write a sentinel loop,
+
+00:09:10.000 --> 00:09:15.000
+and the loop would stop when we find the period, the sentinel.
+
+00:09:15.000 --> 00:09:20.000
+So this is just similar to what we just talked about.
+
+00:09:20.000 --> 00:09:24.000
+This bounds condition is called the intentional bounds.
+
+00:09:24.000 --> 00:09:28.000
+We intend to stop when we find a period.
+
+00:09:28.000 --> 00:09:33.000
+So here is the loop in code, size T, I equals zero.
+
+00:09:33.000 --> 00:09:37.000
+Because it's a sentinel loop, we'll write it as an indefinite loop using while.
+
+00:09:37.000 --> 00:09:43.000
+While str at I is not equal to the period, plus plus I.
+
+00:09:43.000 --> 00:09:52.000
+This works perfectly fine, it's perfectly correct, except what if the string doesn't contain a period?
+
+00:09:52.000 --> 00:09:55.000
+In that case, our program will crash.
+
+00:09:55.000 --> 00:10:00.000
+And so you always need to ask yourself while you're writing the loop bounds,
+
+00:10:00.000 --> 00:10:05.000
+will this work for any possible input?
+
+00:10:05.000 --> 00:10:07.000
+Will it work for the empty string?
+
+00:10:07.000 --> 00:10:10.000
+Will it work for a negative number?
+
+00:10:10.000 --> 00:10:12.000
+That sort of thing.
+
+00:10:12.000 --> 00:10:16.000
+So in this case, if the string doesn't contain a period,
+
+00:10:16.000 --> 00:10:23.000
+we need to add a second bounds condition called the necessary bounds.
+
+00:10:23.000 --> 00:10:29.000
+The necessary bounds is what's required if you don't find your intentional bounds.
+
+00:10:29.000 --> 00:10:37.000
+And so here, we'd add a necessary bounds with an and statement before our intentional bounds.
+
+00:10:37.000 --> 00:10:43.000
+Notice we're going to keep going while I is less than or equal to the string size,
+
+00:10:43.000 --> 00:10:48.000
+and the string at I is not equal to the period.
+
+00:10:48.000 --> 00:10:56.000
+We're going to keep counting in that case, or we're going to keep incrementing.
+
+00:10:56.000 --> 00:11:02.000
+Now, the break statement jumps out of a switch or a loop.
+
+00:11:02.000 --> 00:11:10.000
+In a loop, break jumps from inside this if statement all the way out to the first statement,
+
+00:11:10.000 --> 00:11:12.000
+following the loop's body.
+
+00:11:12.000 --> 00:11:21.000
+And as you saw in lecture six, this can make your code clearer when you use it to construct a loop and a half.
+
+00:11:21.000 --> 00:11:26.000
+Again, as in lecture six, I mentioned this is available in languages like Ada,
+
+00:11:26.000 --> 00:11:30.000
+where they use the syntax exit when.
+
+00:11:30.000 --> 00:11:36.000
+In C++, we create an exit when with an if statement along with a break.
+
+00:11:36.000 --> 00:11:42.000
+Now, I should mention that in a loop, you should only have a break inside an if statement.
+
+00:11:42.000 --> 00:11:45.000
+If you have a break outside of an if statement,
+
+00:11:45.000 --> 00:11:52.000
+it will just create some code that is non-executable or unreachable code.
+
+00:11:52.000 --> 00:11:58.000
+So, notice there's a slight difference here between the previous algorithm.
+
+00:11:58.000 --> 00:12:03.000
+In this algorithm, we put the necessary bounds in the loop condition.
+
+00:12:03.000 --> 00:12:09.000
+So, we're going to keep going while I is less than the string size.
+
+00:12:09.000 --> 00:12:13.000
+We put the intentional bounds inside an if statement.
+
+00:12:13.000 --> 00:12:19.000
+So, if str@i equals the period, we're done and break.
+
+00:12:19.000 --> 00:12:23.000
+The big difference is that when you write a loop and a half,
+
+00:12:23.000 --> 00:12:29.000
+your intentional bounds, the part that's in the if statement inside the loop,
+
+00:12:29.000 --> 00:12:32.000
+is written as a positive statement.
+
+00:12:32.000 --> 00:12:37.000
+It tells you what you need to do to get out of the loop.
+
+00:12:37.000 --> 00:12:41.000
+So, notice this says str@i equals equals period,
+
+00:12:41.000 --> 00:12:45.000
+whereas when we wrote it as part of the condition here,
+
+00:12:45.000 --> 00:12:49.000
+we said str@i not equal to period.
+
+00:12:49.000 --> 00:12:54.000
+So, in the condition, we're saying what's required to keep going.
+
+00:12:54.000 --> 00:13:01.000
+In the loop and a half, we're saying what's required to get out of the loop.
+
+00:13:01.000 --> 00:13:05.000
+What's required to get out of the loop.
+
+00:13:05.000 --> 00:13:10.000
+Now, the continue statement is similar to a break.
+
+00:13:10.000 --> 00:13:16.000
+Both continue and break are forms of controlled jump statements.
+
+00:13:16.000 --> 00:13:22.000
+The continue statement, instead of leaving the loop, starts the next iteration.
+
+00:13:22.000 --> 00:13:24.000
+So, here's a while loop.
+
+00:13:24.000 --> 00:13:31.000
+We have an if statement. Again, like break, continue should only appear inside an if statement.
+
+00:13:31.000 --> 00:13:35.000
+And we have one condition that will keep the loop going.
+
+00:13:35.000 --> 00:13:42.000
+And if we have another condition, we're going to skip up back to the original condition.
+
+00:13:42.000 --> 00:13:44.000
+Now, why would we want to do that?
+
+00:13:44.000 --> 00:13:50.000
+We'd want to do that if the condition we're setting here is some kind of error condition.
+
+00:13:50.000 --> 00:13:56.000
+That means that down here at the bottom, I can process the data we're processing
+
+00:13:56.000 --> 00:14:00.000
+without having an if and an else statement here.
+
+00:14:00.000 --> 00:14:05.000
+So, this is, again, a shorthand.
+
+00:14:05.000 --> 00:14:13.000
+In the for statement, the continue will jump not to the condition, not to the end less than 10,
+
+00:14:13.000 --> 00:14:15.000
+but to the update expression.
+
+00:14:15.000 --> 00:14:20.000
+And while, it jumps right up to the test condition.
+
+00:14:20.000 --> 00:14:23.000
+So, we're going to put this to work.
+
+00:14:23.000 --> 00:14:25.000
+We're only going to do one exercise.
+
+00:14:25.000 --> 00:14:30.000
+This lecture is considerably shorter than the other lectures we've had so far.
+
+00:14:30.000 --> 00:14:40.000
+And we're going to do an exercise that is going to take a string that contains a dollar formatted string,
+
+00:14:40.000 --> 00:14:45.000
+like a dollar sign, a space, commas, and so forth.
+
+00:14:45.000 --> 00:14:52.000
+And we're going to look at the algorithm to convert it to a floating point number.
+
+00:14:52.000 --> 00:14:59.000
+How do we convert a string to a floating point number?
+
+00:14:59.000 --> 00:15:14.000
+So, again, if you haven't done this already, make sure that you have opened the problem statement here for lecture 7.
+
+00:15:14.000 --> 00:15:20.000
+And so, the input string we're going to get may have dollar signs, spaces, and commas.
+
+00:15:20.000 --> 00:15:23.000
+It may or may not have a decimal point.
+
+00:15:23.000 --> 00:15:30.000
+You may assume that the number is well formed, meaning it's not going to have two decimal points.
+
+00:15:30.000 --> 00:15:35.000
+And it's not an exponential notation, so you don't need to deal with that.
+
+00:15:35.000 --> 00:15:39.000
+We're not going to use any library functions except for size.
+
+00:15:39.000 --> 00:15:42.000
+We can use is digit.
+
+00:15:42.000 --> 00:15:44.000
+Of course, we could have written that ourselves.
+
+00:15:44.000 --> 00:15:47.000
+And we can use at here.
+
+00:15:47.000 --> 00:15:52.000
+So this is going to produce a double with the actual value of the string.
+
+00:15:52.000 --> 00:15:56.000
+So this is an ICO7A.
+
+00:15:56.000 --> 00:15:58.000
+It's Mo Money.
+
+00:15:58.000 --> 00:16:05.000
+We're going to put our name on it.
+
+00:16:05.000 --> 00:16:09.000
+We're going to write the function that's going to return a double.
+
+00:16:09.000 --> 00:16:12.000
+It's named Mo Money.
+
+00:16:12.000 --> 00:16:20.000
+It's going to take a const string ref str.
+
+00:16:20.000 --> 00:16:22.000
+Its result is going to be a double.
+
+00:16:22.000 --> 00:16:26.000
+So double result.
+
+00:16:26.000 --> 00:16:29.000
+Let's initialize it to zero.
+
+00:16:29.000 --> 00:16:33.000
+And let's return result.
+
+00:16:33.000 --> 00:16:37.000
+And then let's go ahead and try it out.
+
+00:16:37.000 --> 00:16:41.000
+Make sure we've opened a shell here on A.
+
+00:16:41.000 --> 00:16:43.000
+Open an integrated terminal.
+
+00:16:43.000 --> 00:16:46.000
+Okay, that didn't actually open it on A.
+
+00:16:46.000 --> 00:16:50.000
+We can just do CD A.
+
+00:16:50.000 --> 00:16:55.000
+And now we're in the correct folder.
+
+00:16:55.000 --> 00:17:00.000
+I can go ahead and close that so you can see it a little better.
+
+00:17:00.000 --> 00:17:05.000
+I'm going to do make test.
+
+00:17:05.000 --> 00:17:23.000
+And notice that it takes in values like $75, $.55, $1.50.75, $1,295.25.
+
+00:17:23.000 --> 00:17:31.000
+And this is what it expects to get the output of the result out.
+
+00:17:31.000 --> 00:17:37.000
+Okay, so let's put that away and let's look at the algorithm we need to do.
+
+00:17:37.000 --> 00:17:44.000
+So what we're going to need to do is we're going to need to process that string.
+
+00:17:44.000 --> 00:17:49.000
+And we're going to look at every character inside that.
+
+00:17:49.000 --> 00:17:54.000
+So one way I can look at every character is I can just write a for loop.
+
+00:17:54.000 --> 00:18:04.000
+So I'm going to say for auto C in STR.
+
+00:18:04.000 --> 00:18:11.000
+Actually, let's write a traditional for loop.
+
+00:18:11.000 --> 00:18:18.000
+Size T I equals zero.
+
+00:18:18.000 --> 00:18:31.000
+Actually, since we've been talking about loops and a half, let's do that.
+
+00:18:31.000 --> 00:18:40.000
+So size T I equals zero.
+
+00:18:40.000 --> 00:18:50.000
+And let's actually say size T len equals STR size.
+
+00:18:50.000 --> 00:18:55.000
+I don't want to just call STR size each time I go.
+
+00:18:55.000 --> 00:19:03.000
+So while I is less than len, so this is our necessary bounds.
+
+00:19:03.000 --> 00:19:17.000
+And now let's look at what possible things.
+
+00:19:17.000 --> 00:19:25.000
+Actually, you know, the while loop is not going to work here because it's going to skip the update at the bottom.
+
+00:19:25.000 --> 00:19:28.000
+So I'm going to go back to writing it as a for loop.
+
+00:19:28.000 --> 00:19:33.000
+This is not scripted as you can tell.
+
+00:19:33.000 --> 00:19:38.000
+So for size T I equals zero.
+
+00:19:38.000 --> 00:19:41.000
+Len equals STR size.
+
+00:19:41.000 --> 00:19:50.000
+I less than len plus plus I.
+
+00:19:50.000 --> 00:20:00.000
+Okay, so we can accept three kinds of things.
+
+00:20:00.000 --> 00:20:06.000
+Digits, a period, or we can get three kinds of things.
+
+00:20:06.000 --> 00:20:13.000
+We can get a digit, we can get a period, we can get something that's a space or a dollar sign.
+
+00:20:13.000 --> 00:20:27.000
+So if we have a period, so when I process this number 150.75, I'm going to be processing, so let's just look down where I have 150.75.
+
+00:20:27.000 --> 00:20:33.000
+I'm going to be processing two different parts of the number.
+
+00:20:33.000 --> 00:20:42.000
+I'm going to be parsing the integer part and I'm going to be processing the fractional or the cents part.
+
+00:20:42.000 --> 00:20:46.000
+So I'm going to be processing the dollars and the cents.
+
+00:20:46.000 --> 00:20:49.000
+Okay, the dollars and the cents.
+
+00:20:49.000 --> 00:20:54.000
+So let's create a variable for dollars.
+
+00:20:54.000 --> 00:21:13.000
+Int dollars is zero and double cents is zero.
+
+00:21:13.000 --> 00:21:24.000
+Now if I see, so one part of my loop I want to process the whole part. One part of my loop I want to process the cents part.
+
+00:21:24.000 --> 00:21:30.000
+One part of the loop I want to process the dollars part. One part I want to process the cents part.
+
+00:21:30.000 --> 00:21:39.000
+So I need to keep track of whether or not I've seen a period.
+
+00:21:39.000 --> 00:21:47.000
+So what I'm going to say is bool int dollars.
+
+00:21:47.000 --> 00:21:50.000
+And I'm going to set that to true.
+
+00:21:50.000 --> 00:21:56.000
+Oh no, int cents.
+
+00:21:56.000 --> 00:21:59.000
+And I'm going to set that to false.
+
+00:21:59.000 --> 00:22:05.000
+I'm not in the cents, I'm assuming that I'm in the dollars.
+
+00:22:05.000 --> 00:22:10.000
+So now I'm ready to look at the characters.
+
+00:22:10.000 --> 00:22:23.000
+So if str at i is equal to the period, what do I have?
+
+00:22:23.000 --> 00:22:38.000
+I have my, I have int cents equals true.
+
+00:22:38.000 --> 00:22:47.000
+And I don't need to process that anymore, so I can continue.
+
+00:22:47.000 --> 00:22:53.000
+Now if it's not a period, it might not be a digit.
+
+00:22:53.000 --> 00:23:01.000
+So if not is digit, str at i.
+
+00:23:01.000 --> 00:23:05.000
+And let's actually save str at i as a character.
+
+00:23:05.000 --> 00:23:15.000
+So char c equals str at i.
+
+00:23:15.000 --> 00:23:21.000
+And again, I don't like calling a function multiple times to get the same value.
+
+00:23:21.000 --> 00:23:26.000
+So if c is not a digit, is what that says.
+
+00:23:26.000 --> 00:23:34.000
+So if not is digit, not is digit c, then what do we want to do?
+
+00:23:34.000 --> 00:23:43.000
+We want to just get the next one. We don't need to process it.
+
+00:23:43.000 --> 00:23:47.000
+So now what do I know if I got to line 22?
+
+00:23:47.000 --> 00:23:50.000
+I know that I have the digit.
+
+00:23:50.000 --> 00:23:53.000
+And now I have two possibilities.
+
+00:23:53.000 --> 00:24:01.000
+If int cents, I'm going to process that one way.
+
+00:24:01.000 --> 00:24:08.000
+Else, I'm going to process it the other way.
+
+00:24:08.000 --> 00:24:18.000
+So first, I want to find out what the, so the digits are 0, 1, 2, 3, and so forth.
+
+00:24:18.000 --> 00:24:22.000
+But they are the characters 0.
+
+00:24:22.000 --> 00:24:28.000
+And that actually has the ASCII value 48.
+
+00:24:28.000 --> 00:24:38.000
+So to turn that character digit into a binary digit, I have to subtract 48 from it.
+
+00:24:38.000 --> 00:24:49.000
+So I'm going to say int digit equals c minus, and instead of 48, I'm going to just say the character is 0.
+
+00:24:49.000 --> 00:24:52.000
+So that's the same as subtracting 48.
+
+00:24:52.000 --> 00:24:57.000
+So now I have the binary digit.
+
+00:24:57.000 --> 00:25:07.000
+Now my dollars equals dollars times 10.
+
+00:25:07.000 --> 00:25:10.000
+Now dollars is 0 at this time.
+
+00:25:10.000 --> 00:25:14.000
+Plus my digit.
+
+00:25:14.000 --> 00:25:22.000
+So this algorithm is the algorithm for converting a sequence of characters into an integer.
+
+00:25:22.000 --> 00:25:28.000
+Into an integer part.
+
+00:25:28.000 --> 00:25:33.000
+And there's nothing else inside there. That's all there is to it.
+
+00:25:33.000 --> 00:25:42.000
+Now, I could actually put this here.
+
+00:25:42.000 --> 00:25:47.000
+Let's, again, I don't like repeating pieces of code.
+
+00:25:47.000 --> 00:25:57.000
+So if we get to this piece of code.
+
+00:25:57.000 --> 00:26:00.000
+If we get to that piece of code.
+
+00:26:00.000 --> 00:26:05.000
+So if we're in the sense, then, and we can write this.
+
+00:26:05.000 --> 00:26:23.000
+Then dollars equals dollars times 10 plus digit.
+
+00:26:23.000 --> 00:26:26.000
+Plus a digit.
+
+00:26:26.000 --> 00:26:31.000
+Oh no, that's actually that part right there.
+
+00:26:31.000 --> 00:26:35.000
+So for this part.
+
+00:26:35.000 --> 00:26:48.000
+So basically what we're doing is we're multiplying the first digit by 1, the second digit by 10, the third digit by 100, the fourth digit by 1000, and so forth.
+
+00:26:48.000 --> 00:26:54.000
+To get the dollar amount.
+
+00:26:54.000 --> 00:27:00.000
+Now here, what we want to do is divide the first digit by 10.
+
+00:27:00.000 --> 00:27:03.000
+Divide the next digit by 100.
+
+00:27:03.000 --> 00:27:10.000
+Divide the next digit by 1000, and so forth.
+
+00:27:10.000 --> 00:27:14.000
+Does that make sense?
+
+00:27:14.000 --> 00:27:22.000
+So that means we need to keep track of 10, 100, 1000.
+
+00:27:22.000 --> 00:27:26.000
+I'm going to create a variable here I'm going to call the base to do that.
+
+00:27:26.000 --> 00:27:33.000
+So double base equals 10.
+
+00:27:33.000 --> 00:27:57.000
+And so the sense is going to be sense plus the digit divided by the base.
+
+00:27:57.000 --> 00:28:04.000
+And then of course each time the base starts out at 10, now it needs to go to 100.
+
+00:28:04.000 --> 00:28:08.000
+So base times equals 10.
+
+00:28:08.000 --> 00:28:18.000
+So 10 times 10, 10 times 10 times 10, 10 times 10 times 10, and so forth.
+
+00:28:18.000 --> 00:28:27.000
+Okay, so here we've processed the... so let's look at what we've done so far.
+
+00:28:27.000 --> 00:28:30.000
+We've gone through every character in the string.
+
+00:28:30.000 --> 00:28:32.000
+We've found out what that character is.
+
+00:28:32.000 --> 00:28:37.000
+If it's a period, we just set our little flag here, in sense equals true.
+
+00:28:37.000 --> 00:28:41.000
+And we continue and go up back to the next loop.
+
+00:28:41.000 --> 00:28:44.000
+If it's not a digit, we continue.
+
+00:28:44.000 --> 00:28:46.000
+We just skip it, we don't have to process it.
+
+00:28:46.000 --> 00:28:52.000
+That means when I get to line 23, I know that I have a digit in C,
+
+00:28:52.000 --> 00:28:55.000
+and I can turn it into a binary number.
+
+00:28:55.000 --> 00:29:00.000
+So digit here is the binary value of whatever C is.
+
+00:29:00.000 --> 00:29:05.000
+I've converted the character zero to the number zero.
+
+00:29:05.000 --> 00:29:11.000
+And here is the base for the numbers we're doing, which are decimal.
+
+00:29:11.000 --> 00:29:17.000
+So if I'm in cents, I take cents and I add the digit divided by the base.
+
+00:29:17.000 --> 00:29:20.000
+So 1/10, right?
+
+00:29:20.000 --> 00:29:22.000
+Then I multiply the base.
+
+00:29:22.000 --> 00:29:25.000
+So now I'll have the digit divided by 100.
+
+00:29:25.000 --> 00:29:29.000
+Next time I'll have the digit divided by 1,000, and so forth.
+
+00:29:29.000 --> 00:29:32.000
+If it's not in cents, if I'm doing the dollars part,
+
+00:29:32.000 --> 00:29:42.000
+I just multiply the dollars I have already times 10, and I add the digit to it.
+
+00:29:42.000 --> 00:29:59.000
+Now the result is going to be dollars plus cents.
+
+00:29:59.000 --> 00:30:01.000
+And we're going to return the result.
+
+00:30:01.000 --> 00:30:06.000
+So let's see how we did here.
+
+00:30:06.000 --> 00:30:08.000
+So let's save that.
+
+00:30:08.000 --> 00:30:10.000
+Let's do make.
+
+00:30:10.000 --> 00:30:11.000
+No errors.
+
+00:30:11.000 --> 00:30:14.000
+Let's do make test.
+
+00:30:14.000 --> 00:30:31.000
+Okay, one of them worked, which is the 75.
+
+00:30:31.000 --> 00:30:34.000
+This one did not work at all.
+
+00:30:34.000 --> 00:30:40.000
+This one did not work at all.
+
+00:30:40.000 --> 00:30:44.000
+This one did not work at all.
+
+00:30:44.000 --> 00:30:52.000
+Okay, so maybe what I'm going to guess, I'm going to make a quick guess
+
+00:30:52.000 --> 00:30:59.000
+and make this digit a double.
+
+00:30:59.000 --> 00:31:07.000
+And I'm also going to make dollars a double as well.
+
+00:31:07.000 --> 00:31:09.000
+So that's just my first guess.
+
+00:31:09.000 --> 00:31:16.000
+If not, we'll have to go through and trace through and maybe debug it.
+
+00:31:16.000 --> 00:31:26.000
+So let's do make test.
+
+00:31:26.000 --> 00:31:36.000
+And I just made double dollars.
+
+00:31:36.000 --> 00:31:39.000
+But I still got exactly the wrong answer.
+
+00:31:39.000 --> 00:31:42.000
+So let me look at my calculation here.
+
+00:31:42.000 --> 00:31:46.000
+I'm going to turn off and pause this for a few seconds while I think about it,
+
+00:31:46.000 --> 00:31:52.000
+rather than making you watch me sit here and think about it.
+
+00:31:52.000 --> 00:31:54.000
+Okay, folks, I see my errors.
+
+00:31:54.000 --> 00:31:57.000
+You notice on line 24 I have the base set to 10.
+
+00:31:57.000 --> 00:32:00.000
+Well, this is inside the loop here.
+
+00:32:00.000 --> 00:32:04.000
+So every time I'm setting it back to 10, it's never going to 100 or 1,000.
+
+00:32:04.000 --> 00:32:14.000
+So I need to move that double base equals 10 outside of the loop up here.
+
+00:32:14.000 --> 00:32:20.000
+So let's...
+
+00:32:20.000 --> 00:32:24.000
+So you'll notice in my test here,
+
+00:32:24.000 --> 00:32:28.000
+the dollar part was working perfectly fine.
+
+00:32:28.000 --> 00:32:30.000
+I'm getting the correct number of dollars.
+
+00:32:30.000 --> 00:32:33.000
+I'm not getting the correct number of cents.
+
+00:32:33.000 --> 00:32:37.000
+So the cents algorithm was never doing the thousand.
+
+00:32:37.000 --> 00:32:42.000
+So I was...when I had .55, I was setting the base back to 10 here,
+
+00:32:42.000 --> 00:32:48.000
+and I was adding .5 and .5 rather than .5 and .05,
+
+00:32:48.000 --> 00:32:51.000
+which is what this algorithm should have done.
+
+00:32:51.000 --> 00:32:53.000
+So this should work okay.
+
+00:32:53.000 --> 00:32:55.000
+Let's try it now.
+
+00:32:55.000 --> 00:32:57.000
+Make test.
+
+00:32:57.000 --> 00:33:01.000
+And all of our tests pass correctly.
+
+00:33:01.000 --> 00:33:06.000
+So let me give you one last look at that code here.
+
+00:33:06.000 --> 00:33:11.000
+So you can see it all on the screen at once.
+
+00:33:11.000 --> 00:33:20.000
+And I'm actually going to get rid of a couple comments here
+
+00:33:20.000 --> 00:33:25.000
+and make this code a little bit more compact,
+
+00:33:25.000 --> 00:33:43.000
+so you can see it all at once.
+
+00:33:43.000 --> 00:33:50.000
+Okay, and that will allow you to see all of the function there.
+
+00:33:50.000 --> 00:33:52.000
+Let me put one more line,
+
+00:33:52.000 --> 00:34:00.000
+and you can get the whole thing on one screen, I believe.
+
+00:34:00.000 --> 00:34:02.000
+Not quite, but close.
+
+00:34:02.000 --> 00:34:06.000
+Yeah, now there's the whole thing on one screen.
+
+00:34:06.000 --> 00:34:08.000
+Okay, I told you this would be shorter,
+
+00:34:08.000 --> 00:34:11.000
+only a little bit more than a half an hour.
+
+00:34:11.000 --> 00:34:16.000
+And I will see you next time for Chapter 8.
+

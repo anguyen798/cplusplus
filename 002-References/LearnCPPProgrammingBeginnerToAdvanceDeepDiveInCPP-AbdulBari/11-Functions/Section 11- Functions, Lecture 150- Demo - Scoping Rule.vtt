@@ -1,0 +1,89 @@
+WEBVTT
+
+0
+00:00.240 --> 00:02.470
+Let us look at what are the levels of scopes.
+
+1
+00:02.500 --> 00:03.240
+C plus plus.
+
+2
+00:03.270 --> 00:09.870
+Suppose I have three variables X that is global variable and there's a local to the main function.
+
+3
+00:09.980 --> 00:13.030
+And this is local within this block.
+
+4
+00:13.050 --> 00:17.150
+So C++ have block level scope now inside this block.
+
+5
+00:17.190 --> 00:25.950
+If I print cout X then which value will be printed, so it will print the nearest value of x that is 30
+
+6
+00:26.580 --> 00:27.770
+and outside the block.
+
+7
+00:27.810 --> 00:36.270
+If I say cout X then which X will be printed it will printing the value that is in it's nearest
+
+8
+00:36.270 --> 00:37.000
+scope.
+
+9
+00:37.050 --> 00:39.600
+So this variable was inside this block.
+
+10
+00:39.610 --> 00:41.590
+Now cout is outside the block.
+
+11
+00:41.790 --> 00:43.400
+So when I look out.
+
+12
+00:43.440 --> 00:48.120
+So it will find this variable x so it will display this value 20.
+
+13
+00:48.140 --> 00:55.170
+So if I run this program I will get the value 30 and then 20 and inside the main function this X will
+
+14
+00:55.170 --> 00:57.010
+never be accessible.
+
+15
+00:57.120 --> 01:01.230
+That is ten, cannot be accessible inside main function.
+
+16
+01:01.230 --> 01:07.170
+Whenever I say X this will be accessing this local variable X but if at all I want to access this global
+
+17
+01:07.170 --> 01:12.350
+variable x then I should say cout scope resolution x.
+
+18
+01:12.420 --> 01:18.360
+So this'll be accessing that Global X that you can see that the color of x has change to green.
+
+19
+01:18.360 --> 01:27.720
+Now let us run this and see the values that I should get are first here 30 then 20 then here ten, yea
+
+20
+01:27.720 --> 01:32.460
+here are 30 20 and 10, this is the values that I got from this one.
+
+21
+01:32.580 --> 01:34.880
+So C++ have block levels scope.

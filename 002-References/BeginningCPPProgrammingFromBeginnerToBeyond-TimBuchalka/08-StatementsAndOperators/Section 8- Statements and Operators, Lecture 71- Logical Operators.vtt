@@ -1,0 +1,808 @@
+WEBVTT
+
+00:00:05.500 --> 00:00:09.400
+In this video we'll learn about c++ logical operators.
+
+00:00:10.200 --> 00:00:14.000
+These operators allow us to build complex conditions in our programs.
+
+00:00:14.600 --> 00:00:19.260
+C++ has three logical operators. These are not and,
+
+00:00:19.260 --> 00:00:20.160
+and or.
+
+00:00:21.060 --> 00:00:23.460
+These operators work on Boolean expressions
+
+00:00:23.460 --> 00:00:26.260
+and evaluate to a Boolean value themselves.
+
+00:00:26.860 --> 00:00:28.960
+There are several ways to write these operators.
+
+00:00:28.960 --> 00:00:33.460
+You can use the keyword like syntax using the words not and,
+
+00:00:33.460 --> 00:00:34.260
+and or.
+
+00:00:34.860 --> 00:00:38.860
+Or you can use the operator symbol syntax using the bang sign,
+
+00:00:38.860 --> 00:00:43.060
+the double ampersand and the double pipe symbol or the double vertical bar.
+
+00:00:43.760 --> 00:00:46.560
+Personally I've never seen any c++ code
+
+00:00:46.560 --> 00:00:49.060
+that uses the keyword like syntax
+
+00:00:49.060 --> 00:00:51.660
+so I'll use the operator symbol syntax in this course.
+
+00:00:52.860 --> 00:00:56.060
+Let's quickly review Boolean algebra by using a truth table.
+
+00:00:59.260 --> 00:01:03.360
+The logical not operator simply negates the result of the expression
+
+00:01:03.360 --> 00:01:04.350
+it's applied to.
+
+00:01:05.250 --> 00:01:09.250
+Note that this is a unary operator since it only works with one operand.
+
+00:01:09.550 --> 00:01:13.150
+So if the expression a is true, then not a is false.
+
+00:01:13.450 --> 00:01:16.450
+And if the expression a is false, then not a is true.
+
+00:01:17.050 --> 00:01:18.650
+Let's look at the logical and.
+
+00:01:21.350 --> 00:01:23.680
+The logical and is a binary operator,
+
+00:01:23.680 --> 00:01:26.980
+and it's only true when both its operands are true.
+
+00:01:27.480 --> 00:01:30.680
+So you can see in the table when expression a is true
+
+00:01:30.680 --> 00:01:32.880
+and expression b is true,
+
+00:01:32.880 --> 00:01:35.380
+then a and b is true.
+
+00:01:36.180 --> 00:01:39.180
+a and b is false for all other combinations.
+
+00:01:39.780 --> 00:01:41.780
+Finally, let's look at the logical or.
+
+00:01:43.780 --> 00:01:47.080
+The logical or operator is also a binary operator.
+
+00:01:47.580 --> 00:01:51.380
+The value of the logical or is true when either expression is true.
+
+00:01:52.080 --> 00:01:55.580
+So the only time it's false is when both expressions are false.
+
+00:01:56.570 --> 00:02:01.070
+Using just these three logical operators, we can write some pretty complex logic.
+
+00:02:01.570 --> 00:02:05.170
+And if we combine the logical operators with the relational operators,
+
+00:02:05.170 --> 00:02:08.470
+we're in great shape to begin to solve many, many problems.
+
+00:02:09.570 --> 00:02:13.170
+Let's see what happens when we combine these operators together in an expression.
+
+00:02:15.370 --> 00:02:18.870
+Just like we had to understand precedence with the mathematical operators,
+
+00:02:18.870 --> 00:02:21.670
+we need to understand precedence for the logical operators.
+
+00:02:22.170 --> 00:02:26.770
+Logical not has the highest precedence, followed by logical and,
+
+00:02:26.770 --> 00:02:28.570
+followed by logical or.
+
+00:02:29.170 --> 00:02:32.940
+Of course, as with mathematical expressions, you can use parentheses
+
+00:02:32.940 --> 00:02:35.540
+to achieve exactly the behavior you're looking for.
+
+00:02:36.420 --> 00:02:40.420
+Let's wrap up logical operators by looking at a few example expressions
+
+00:02:40.420 --> 00:02:43.620
+and then talking about something called short circuit evaluation.
+
+00:02:46.420 --> 00:02:49.120
+Here a few examples of logical expressions.
+
+00:02:49.670 --> 00:02:52.570
+In the first expression, we're determining if num1
+
+00:02:52.570 --> 00:02:56.070
+is greater than or equal to 10 and less than 20.
+
+00:02:56.670 --> 00:02:59.670
+Notice that we use num1 in both expressions.
+
+00:02:59.670 --> 00:03:03.870
+We can't just write num1 greater than or equal to 10 and less than 20.
+
+00:03:03.870 --> 00:03:07.370
+We have to write num1 greater than or equal to 10
+
+00:03:07.370 --> 00:03:09.870
+and num1 less than 20.
+
+00:03:11.170 --> 00:03:14.670
+Since we have an and, both expressions must be true
+
+00:03:14.670 --> 00:03:16.870
+for the entire expression to be true.
+
+00:03:18.370 --> 00:03:22.170
+In the next logical expression, we're using a logical or.
+
+00:03:22.170 --> 00:03:26.170
+In this case, either expression or both can be true for the entire
+
+00:03:26.170 --> 00:03:27.270
+expression to be true.
+
+00:03:27.770 --> 00:03:30.370
+So if num1 is less than or equal to 10,
+
+00:03:30.370 --> 00:03:32.870
+then the entire expression will be true.
+
+00:03:32.870 --> 00:03:35.770
+Also if num1 is greater than or equal to 20,
+
+00:03:35.770 --> 00:03:37.770
+then the entire expression will be true.
+
+00:03:38.020 --> 00:03:42.680
+Notice how both expressions cannot be true since num1 cannot be less than 10
+
+00:03:42.680 --> 00:03:45.680
+and it can't be greater than or equal to 20 at the same time.
+
+00:03:46.840 --> 00:03:50.340
+The next logical expression is checking if it's not raining
+
+00:03:50.340 --> 00:03:53.640
+and the temperature is greater than 32 degrees Fahrenheit.
+
+00:03:54.540 --> 00:03:57.440
+The following expression uses a logical or
+
+00:03:57.440 --> 00:04:00.430
+and it will be true if it's raining or if it's snowing.
+
+00:04:01.130 --> 00:04:03.430
+Finally, the last logical expression
+
+00:04:03.430 --> 00:04:06.630
+is checking to see if temperature is greater than 100
+
+00:04:06.630 --> 00:04:10.530
+and it is humid or it's raining. Remember here,
+
+00:04:10.530 --> 00:04:12.830
+that the and has precedence over the or.
+
+00:04:13.730 --> 00:04:16.930
+I think you can see how powerful our logical expressions can be
+
+00:04:16.930 --> 00:04:19.430
+by simply combining these primitive operators.
+
+00:04:19.930 --> 00:04:23.430
+Also notice how important our variable names become as well.
+
+00:04:25.230 --> 00:04:28.330
+Let's finish up by discussing short circuit evaluation.
+
+00:04:29.130 --> 00:04:32.680
+C++ will stop evaluating a logical expression
+
+00:04:32.680 --> 00:04:34.280
+as soon as it knows the result.
+
+00:04:34.980 --> 00:04:38.280
+For example, suppose we have an expression like the first one.
+
+00:04:38.580 --> 00:04:41.780
+Expression one and expression two and expression 3.
+
+00:04:42.440 --> 00:04:44.210
+If expression 1 is false,
+
+00:04:44.610 --> 00:04:47.810
+then there is no way that the entire expression can be true
+
+00:04:47.810 --> 00:04:50.110
+since all the expressions must be true.
+
+00:04:50.770 --> 00:04:54.210
+So why bother evaluating expression 2 and expression 3
+
+00:04:54.210 --> 00:04:57.110
+when the compiler already knows that the result will be false.
+
+00:04:57.770 --> 00:05:00.170
+This is called short circuit evaluation
+
+00:05:00.170 --> 00:05:03.170
+and is commonly used in many programming languages.
+
+00:05:03.420 --> 00:05:06.720
+Programmers take advantage of this behavior to optimize their code.
+
+00:05:07.820 --> 00:05:11.380
+In the second example if any of the expressions is true,
+
+00:05:11.380 --> 00:05:13.980
+then the entire logical expression is true. So
+
+00:05:14.530 --> 00:05:16.410
+if expression one is true,
+
+00:05:16.410 --> 00:05:19.910
+then the compiler already knows that the entire expression is true
+
+00:05:19.910 --> 00:05:23.210
+and it won't evaluate expression two or expression three.
+
+00:05:24.010 --> 00:05:26.780
+However if expression 1 is false,
+
+00:05:26.780 --> 00:05:30.080
+then the compiler continues evaluating expression 2
+
+00:05:30.080 --> 00:05:31.780
+since it doesn't know the result yet.
+
+00:05:33.030 --> 00:05:37.030
+We'll use logical operators in depth when we learn about control structures.
+
+00:05:37.530 --> 00:05:41.730
+But for now, let's head over to CodeLite and see a few simple examples in live code.
+
+00:05:43.330 --> 00:05:46.430
+I'm in CodeLite in section 8 workspace
+
+00:05:46.430 --> 00:05:49.030
+and I'm in the logical operators project.
+
+00:05:50.530 --> 00:05:55.230
+In this project, we'll go over some few, a few examples of using logical operators.
+
+00:05:55.430 --> 00:05:57.430
+Let's start with a really simple one here.
+
+00:05:58.030 --> 00:06:01.030
+What I've got is I'm going to use this variable num
+
+00:06:01.030 --> 00:06:03.630
+to read numbers into just simple integers.
+
+00:06:04.030 --> 00:06:07.830
+I'm going to establish a range where the lower end is 10 and the upper end is 20.
+
+00:06:07.830 --> 00:06:12.330
+So that'll be like a number line, where this will be 10 here and this will be 20 over here.
+
+00:06:13.690 --> 00:06:15.690
+Now I'm going to ask the user to
+
+00:06:15.690 --> 00:06:19.390
+enter an integer and tell them what the bounds are, 10 and 20 in this case.
+
+00:06:19.890 --> 00:06:22.890
+Then I want to be sure that that number they entered is within the bounds,
+
+00:06:22.890 --> 00:06:25.890
+and I just want to display true or false if it's within the bounds.
+
+00:06:26.190 --> 00:06:29.890
+And what we're doing here is we're going to say not inclusive of 10
+
+00:06:30.190 --> 00:06:31.790
+and not inclusive of 20.
+
+00:06:31.790 --> 00:06:36.290
+Okay, so it's going to be between -- it's going to be 11 to 19 inclusive.
+
+00:06:36.950 --> 00:06:38.550
+All right. So that's what we're going to do.
+
+00:06:38.550 --> 00:06:42.550
+Now we're going to store that true false value in this variable right here
+
+00:06:42.550 --> 00:06:43.850
+called within bounds.
+
+00:06:44.550 --> 00:06:47.550
+And here's our formula, here's our expression, right here.
+
+00:06:48.850 --> 00:06:52.850
+Basically we're going to check to make sure that num is greater than lower,
+
+00:06:53.350 --> 00:06:56.750
+so num is going to be greater than lower so so is that
+
+00:06:56.750 --> 00:06:58.350
+user typed in 15,
+
+00:06:59.340 --> 00:07:01.840
+we want to make sure that it's greater than lower
+
+00:07:01.840 --> 00:07:04.340
+and we want to make sure that it's less than upper.
+
+00:07:05.240 --> 00:07:09.540
+So we want to be sure that it's in here somewhere,
+
+00:07:10.840 --> 00:07:14.140
+right. So that's where we've got that logical and condition.
+
+00:07:14.740 --> 00:07:16.400
+So we'll do that. And then
+
+00:07:16.900 --> 00:07:21.100
+we'll simply print out the number is between lower and upper and then true or false.
+
+00:07:21.100 --> 00:07:23.100
+And we can just display within bounds here.
+
+00:07:23.400 --> 00:07:25.760
+So let's run this with a couple of test cases.
+
+00:07:27.160 --> 00:07:29.820
+And here we go. Enter an integer - the bounds are 10 and 20.
+
+00:07:29.820 --> 00:07:32.620
+Now let's enter an integer that is within those bounds.
+
+00:07:32.620 --> 00:07:35.920
+15 is right in the middle, and we'll press enter.
+
+00:07:36.420 --> 00:07:40.620
+And the result is 15 is between 10 and 20, true.
+
+00:07:41.280 --> 00:07:44.080
+Okay. So let's run another test case.
+
+00:07:44.780 --> 00:07:48.980
+Let's go off the right side to 22. Now we would expect the false.
+
+00:07:49.780 --> 00:07:52.280
+22 is between 10 and 20, false.
+
+00:07:52.880 --> 00:07:54.880
+Let's do a test case on the left side.
+
+00:07:57.180 --> 00:08:00.780
+We'll go five, we also expect the false.
+
+00:08:01.780 --> 00:08:03.110
+And that's what we've got.
+
+00:08:03.110 --> 00:08:07.310
+And then don't forget to test those edge cases, the 10 and the 20.
+
+00:08:07.510 --> 00:08:09.310
+So let's try 10
+
+00:08:09.310 --> 00:08:13.610
+we expect false, right? Because being on 10 is not being between 10 and 20,
+
+00:08:13.610 --> 00:08:14.600
+in this case.
+
+00:08:15.200 --> 00:08:19.190
+So I get back a false. And the last test case we could run is 20,
+
+00:08:20.790 --> 00:08:23.490
+and we also expect a false and that's what we're getting.
+
+00:08:24.190 --> 00:08:26.550
+It's very common to have these
+
+00:08:26.550 --> 00:08:28.910
+errors, where instead of checking
+
+00:08:29.270 --> 00:08:32.270
+greater than here, you're doing greater than or equal to
+
+00:08:32.270 --> 00:08:34.670
+when you should be doing greater than and so forth.
+
+00:08:34.670 --> 00:08:38.770
+So you've got to be sure to test your code. Okay. So that's a simple example
+
+00:08:38.770 --> 00:08:41.970
+of testing to see if a number is between two numbers.
+
+00:08:42.220 --> 00:08:44.020
+Now let me comment that out,
+
+00:08:44.620 --> 00:08:46.920
+and we'll do another example here.
+
+00:08:47.520 --> 00:08:51.020
+And of course we're assuming that lower is less than upper and all of these examples.
+
+00:08:51.920 --> 00:08:55.520
+Now we want to do on this one is we want to test to see if the number is
+
+00:08:55.520 --> 00:08:56.820
+outside the bounds.
+
+00:08:57.370 --> 00:09:01.870
+Okay. So I want to be, I want to be true if the number is outside the bounds. So
+
+00:09:01.870 --> 00:09:06.070
+we'll do the same idea here, right? We've got we've got the line and here's the 10,
+
+00:09:06.070 --> 00:09:06.870
+and here's the 20.
+
+00:09:08.670 --> 00:09:11.070
+And if the number is over here somewhere, we want a true.
+
+00:09:11.070 --> 00:09:13.370
+And if the number's over here somewhere, we want it true.
+
+00:09:15.970 --> 00:09:19.770
+Now we could just simply negate the previous result, right.
+
+00:09:20.650 --> 00:09:24.350
+So if the number is in here, if the number's not in here then it's obviously either here or here,
+
+00:09:24.350 --> 00:09:26.610
+right. But what we'll do is we'll do it explicitly.
+
+00:09:26.610 --> 00:09:29.210
+We've got a variable called outside the bounds.
+
+00:09:29.810 --> 00:09:31.710
+And we're going to check to be sure that number
+
+00:09:31.710 --> 00:09:35.010
+is less than lower so that's taking care of this bit right here
+
+00:09:35.910 --> 00:09:38.210
+or number is greater than upper.
+
+00:09:39.310 --> 00:09:43.810
+There's no way we can use an and here. That would be a mistake, right, because the number will never be
+
+00:09:43.810 --> 00:09:47.810
+less than 10 and greater than 20. That won't happen it's impossible.
+
+00:09:47.810 --> 00:09:51.010
+So that would be a mistake and that's a pretty common mistake
+
+00:09:51.010 --> 00:09:54.010
+but you'll find it when you test. And there's your or.
+
+00:09:54.010 --> 00:09:56.010
+So let's run this example.
+
+00:09:58.610 --> 00:10:00.610
+And in this case, the bounds are 10 and 20.
+
+00:10:00.610 --> 00:10:03.910
+So let's say we want to go 25. Now we expect true now,
+
+00:10:04.570 --> 00:10:07.870
+and that's we're getting because 25 is outside of 10 and 20.
+
+00:10:08.870 --> 00:10:10.230
+Let's try the lower end.
+
+00:10:12.230 --> 00:10:13.230
+Let's try five.
+
+00:10:14.930 --> 00:10:16.230
+That's also true,
+
+00:10:16.830 --> 00:10:20.530
+and let's try one of the this, let's try a number in between,
+
+00:10:22.030 --> 00:10:25.930
+15, here. We expect that to be false and it is because 15 is
+
+00:10:25.930 --> 00:10:30.050
+not outside the range. And then we could test with 10 and 20, and I'll leave that up to you guys.
+
+00:10:30.550 --> 00:10:33.350
+Okay. So let me comment that out.
+
+00:10:35.250 --> 00:10:39.750
+And the third example is actually checking to see whether
+
+00:10:40.250 --> 00:10:44.550
+the numbers are right on the bounds, whether they're 10 or 20.
+
+00:10:45.050 --> 00:10:49.050
+So what we're doing here, again, is we've got the line got our number line,
+
+00:10:49.050 --> 00:10:51.350
+and we've got 10 over here and 20 over here.
+
+00:10:51.950 --> 00:10:54.950
+And we want to be sure if we want to return true
+
+00:10:55.350 --> 00:10:57.950
+if it's 10 or if it's 20.
+
+00:10:58.550 --> 00:11:00.050
+Okay, right on the bound.
+
+00:11:00.050 --> 00:11:03.710
+So we've got another variable here called unbounds. I'm setting it to false,
+
+00:11:03.710 --> 00:11:07.510
+and the condition is really simple. If the number is equal to the lower
+
+00:11:07.510 --> 00:11:10.510
+that's it so if the number is 10 or
+
+00:11:10.510 --> 00:11:12.510
+the number is equal to the upper.
+
+00:11:13.960 --> 00:11:17.960
+Okay. So if we've got a 10 or a 20, in this case because that's what lower and upper are,
+
+00:11:18.460 --> 00:11:22.560
+this will return true. Remember it can't be 10 and 20 so we need the or here.
+
+00:11:23.360 --> 00:11:27.060
+And with the or if either piece is true, the entire thing is true.
+
+00:11:27.660 --> 00:11:30.260
+So let me clear this and we'll run this example.
+
+00:11:30.920 --> 00:11:33.720
+So we should get back true for 10 and 20.
+
+00:11:34.320 --> 00:11:37.620
+So here's 10. There we go, we've got a true.
+
+00:11:38.420 --> 00:11:40.420
+We'll run it again with 20.
+
+00:11:43.420 --> 00:11:47.570
+That also gives us true and everything else should give us a false, right? No matter what we put in.
+
+00:11:47.570 --> 00:11:48.570
+Let's put 15,
+
+00:11:49.970 --> 00:11:53.470
+we get a false and you could use some test cases outside 20
+
+00:11:53.470 --> 00:11:55.670
+and less than 10 to check it out as well.
+
+00:11:56.770 --> 00:11:59.070
+So hopefully you're with me here. That's pretty straightforward
+
+00:11:59.070 --> 00:12:00.730
+stuff but pretty powerful stuff.
+
+00:12:00.730 --> 00:12:03.230
+This is how you do input validation.
+
+00:12:03.230 --> 00:12:06.830
+You're asking a user to enter a number between something and something or
+
+00:12:06.830 --> 00:12:09.330
+you know enter the the amount of your check.
+
+00:12:09.330 --> 00:12:11.830
+Obviously, they're not going to enter negative numbers.
+
+00:12:11.830 --> 00:12:14.530
+And there may be a limit to the upper end,
+
+00:12:14.530 --> 00:12:18.030
+so you can validate your data because if you have bad data,
+
+00:12:18.030 --> 00:12:19.130
+you're going to get bad results.
+
+00:12:20.130 --> 00:12:23.230
+Now in this case here, I'll comment all of this out
+
+00:12:23.230 --> 00:12:26.890
+and we'll I'll go through it and explain it to you.
+
+00:12:27.490 --> 00:12:30.890
+Okay. So what we've got here is we've got
+
+00:12:31.490 --> 00:12:32.390
+and,
+
+00:12:34.190 --> 00:12:37.290
+let me comment that bit out as well, all right, so here's where we're at.
+
+00:12:37.290 --> 00:12:40.890
+Here's the idea. We want to determine if you need to wear a coat
+
+00:12:41.550 --> 00:12:45.910
+and that determination is based on the temperature and the wind speed.
+
+00:12:45.910 --> 00:12:47.910
+So I've got a Boolean value
+
+00:12:47.910 --> 00:12:51.910
+and that Boolean value right here is going to be where coat that will be true or false.
+
+00:12:51.910 --> 00:12:53.510
+Whether you need to wear a coat or not.
+
+00:12:54.170 --> 00:12:57.670
+And I'm going to read two variables in from the user. I'm going to read the temperature
+
+00:12:57.670 --> 00:13:00.670
+in Fahrenheit and the winds, the wind speed in miles per hour.
+
+00:13:01.270 --> 00:13:02.770
+And here are my limits.
+
+00:13:02.770 --> 00:13:05.370
+So wind over this value requires a coat.
+
+00:13:05.370 --> 00:13:08.970
+So if the wind is over 25 miles an hour, I need a coat.
+
+00:13:09.570 --> 00:13:12.870
+And the temperature below this value requires a coat.
+
+00:13:12.870 --> 00:13:16.470
+So if the temperature is below 45 degrees Fahrenheit, you need a coat.
+
+00:13:16.970 --> 00:13:18.970
+Okay. But we're going to test this two different ways.
+
+00:13:18.970 --> 00:13:23.070
+We're first going to use an or condition and then we're going to use the and condition.
+
+00:13:23.570 --> 00:13:25.970
+So for the or condition what we're saying is that
+
+00:13:25.970 --> 00:13:29.070
+if the wind speed is greater than 25
+
+00:13:29.670 --> 00:13:33.030
+or the temperature is less than 45, you need a coat.
+
+00:13:33.630 --> 00:13:35.730
+For the and condition, we're going to say
+
+00:13:35.730 --> 00:13:39.030
+that the temperature has to be less than 45 and the wind
+
+00:13:39.030 --> 00:13:40.830
+speed has to be greater than 25.
+
+00:13:41.430 --> 00:13:44.930
+Okay. And the conditions are pretty much,
+
+00:13:44.930 --> 00:13:46.930
+I hope what you would expect at this point.
+
+00:13:47.430 --> 00:13:49.030
+You can see what we're doing here.
+
+00:13:49.830 --> 00:13:52.430
+We're setting for the or condition.
+
+00:13:53.030 --> 00:13:55.330
+We're setting it right here we're checking - obviously
+
+00:13:55.330 --> 00:13:57.880
+we're reading the temperature and the wind speed from the user.
+
+00:13:57.880 --> 00:14:01.180
+And then we've got temperature less than the temperature for the coat.
+
+00:14:01.840 --> 00:14:03.640
+That's one of the expressions.
+
+00:14:03.640 --> 00:14:08.140
+And then we've got the or wind speed is greater than the wind speed for a coat.
+
+00:14:08.140 --> 00:14:11.940
+So if it's an or that means that if this is true, the whole thing is true.
+
+00:14:12.540 --> 00:14:15.840
+And if this is true the, whole thing is true so either piece is true.
+
+00:14:16.840 --> 00:14:18.640
+Down here we're using an and.
+
+00:14:19.440 --> 00:14:22.440
+So for this where coat to become true
+
+00:14:22.440 --> 00:14:27.240
+both these pieces must be true. So the temperature must be colder than the temperature coat.
+
+00:14:27.240 --> 00:14:30.240
+And the wind speed must be greater than the wind speed for a coat.
+
+00:14:31.040 --> 00:14:35.440
+Okay. So let's run this and we'll get two output statements.
+
+00:14:41.770 --> 00:14:46.570
+Okay. So let's see - let's say that the temperature is 30 degrees Fahrenheit, that's pretty cold.
+
+00:14:47.770 --> 00:14:49.770
+And the wind speed is
+
+00:14:49.770 --> 00:14:52.370
+60 miles per hour, it's almost a hurricane.
+
+00:14:53.170 --> 00:14:57.070
+Both cases say you need to wear a coat. So in this case,
+
+00:14:57.370 --> 00:15:01.770
+the or case says true. Obviously, both those pieces are true and the and case
+
+00:15:01.770 --> 00:15:03.570
+would obviously say true as well.
+
+00:15:04.870 --> 00:15:06.870
+Okay. Let's run another example here.
+
+00:15:07.570 --> 00:15:10.570
+Let's say that in this case the temperature is pretty cold,
+
+00:15:11.670 --> 00:15:13.470
+but the wind speed is not so bad.
+
+00:15:14.270 --> 00:15:18.170
+So in this case, according to the first rule, which is the or rule,
+
+00:15:18.170 --> 00:15:19.970
+I need a coat because it's cold.
+
+00:15:20.670 --> 00:15:24.770
+The second rule says I don't need a coat because the wind speed in this case is too low.
+
+00:15:25.970 --> 00:15:30.330
+Okay. So hopefully that makes sense. You can see how powerful this can be. Just a really simple
+
+00:15:30.330 --> 00:15:34.830
+switch of a condition can totally change the logic really depending on what we want.
+
+00:15:35.430 --> 00:15:40.030
+Remember, check those edge cases those are the ones where people tend to make mistakes on,
+
+00:15:40.230 --> 00:15:42.230
+greater than or equal to.
+
+00:15:42.230 --> 00:15:46.130
+Sometimes you don't mean equal to, you just mean greater than or the other way around.
+
+00:15:46.130 --> 00:15:48.130
+So testing is so, so important.

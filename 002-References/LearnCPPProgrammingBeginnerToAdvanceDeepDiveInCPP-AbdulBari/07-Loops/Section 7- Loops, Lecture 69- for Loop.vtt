@@ -1,0 +1,322 @@
+WEBVTT
+
+0
+00:00.070 --> 00:04.650
+Now let us look at For loop. for loop is also a loop.
+
+1
+00:04.650 --> 00:06.490
+It is used for repeatation.
+
+2
+00:06.490 --> 00:15.420
+word for, for these many times, so thst's it, For means if you know the number of times you want to repeat
+
+3
+00:15.480 --> 00:24.480
+use for loop.  for loop is called as counter controlled loop it is called counter control loop means whenever
+
+4
+00:24.480 --> 00:27.110
+countingis involved for repeatation.
+
+5
+00:27.300 --> 00:28.980
+Then we use for loop.
+
+6
+00:30.030 --> 00:33.670
+I take an example and tell you what does it mean by counting.
+
+7
+00:33.750 --> 00:36.150
+Let us say I'll take a situation.
+
+8
+00:36.150 --> 00:37.140
+Let us take a situation.
+
+9
+00:37.140 --> 00:39.300
+Suppose you are preparing coffee.
+
+10
+00:39.570 --> 00:41.430
+You don't know how to prepare coffee.
+
+11
+00:41.430 --> 00:44.380
+Somebody has given you instruction and you're following it.
+
+12
+00:45.060 --> 00:48.500
+Now you are making your coffee for Four people.
+
+13
+00:48.540 --> 00:51.800
+Now the question is how much sugar do you should add.
+
+14
+00:52.650 --> 00:58.720
+You should add the sugar and mix it at the sugar and mix it, so here are 2 methods.
+
+15
+00:58.740 --> 01:06.030
+One method I can say go on adding the sugar and mixing it like half a spoon at a time and check if it
+
+16
+01:06.030 --> 01:09.070
+is becoming better sweet enough right.
+
+17
+01:09.120 --> 01:11.000
+If it is sweet enough, stop.
+
+18
+01:11.070 --> 01:16.980
+So when it is not sweet continue put the sugar not sweet continue, put the sugar not sweet, continue.
+
+19
+01:17.040 --> 01:21.900
+So this is where you are going to repeat how many times we don't know
+
+20
+01:22.370 --> 01:22.890
+We don't know
+
+21
+01:23.490 --> 01:26.430
+You have to check whether it is sweet or not if it is not sweet.
+
+22
+01:26.430 --> 01:28.300
+Continue, if it is sweet you should stop.
+
+23
+01:28.800 --> 01:32.940
+So this is not based on counting not check this one.
+
+24
+01:32.940 --> 01:34.080
+Now check this one.
+
+25
+01:34.230 --> 01:40.440
+No I am asking you to make coffee for four people and you asked me how much sugar to add I said four
+
+26
+01:40.440 --> 01:50.480
+spoons, one mix it, two mix it, three four that's all. so you will  count and do it,  you count and do it.
+
+27
+01:50.490 --> 01:52.500
+There are many examples in daily life.
+
+28
+01:52.500 --> 01:53.690
+We do it like this.
+
+29
+01:53.790 --> 01:54.430
+We do it.
+
+30
+01:54.430 --> 01:57.100
+We do the things for some number of times.
+
+31
+01:57.240 --> 02:01.710
+Sometimes we do the things we pick the things until we reach that point.
+
+32
+02:02.310 --> 02:07.130
+So when you have to repeat the steps based on counting and then use for loop.
+
+33
+02:07.830 --> 02:13.250
+So this example we have already seen, pinting numbers from 1 to N.
+
+34
+02:13.550 --> 02:15.940
+there we have to count only, count one print.
+
+35
+02:16.020 --> 02:17.880
+Then two print, then three print.
+
+36
+02:17.970 --> 02:20.820
+We are counting and printing and reaching at reaching till n.
+
+37
+02:20.850 --> 02:26.210
+And so for n times we are printing so this is the flow chart already we have seen this was the flow
+
+38
+02:26.200 --> 02:32.490
+chart for while loop I have shown it does the same flow chart now same thing can also be done using
+
+39
+02:32.490 --> 02:37.190
+for loop and is better if you use for loop because you know how many times you want to repeat.
+
+40
+02:37.230 --> 02:40.320
+So let us see the syntax for for Loop here.
+
+41
+02:40.330 --> 02:43.290
+for Loop will have three parts in it.
+
+42
+02:43.290 --> 02:50.010
+First is initialization, then semicolon, condition then semicolon, then updation three parts will be there
+
+43
+02:50.060 --> 02:52.680
+and then afterwards it will have its body.
+
+44
+02:52.730 --> 03:00.270
+Here he will process how it works how these three parts works we will understand this first we will
+
+45
+03:00.270 --> 03:08.100
+understand it's working first time initialization is done, first time, then condition is checked these
+
+46
+03:08.100 --> 03:13.800
+are the 2 things that will happen first time, if the condition is true then it will process so processing
+
+47
+03:13.800 --> 03:21.060
+let us say it third part, after this it will go to this updation fourth step then again it will check the condition
+
+48
+03:21.060 --> 03:27.630
+the condition if the condition is true then again it will enter it and perform this one process see
+
+49
+03:27.640 --> 03:32.520
+this time it will not do initialization so initialization is done only once and conditions check if
+
+50
+03:32.520 --> 03:38.430
+the condition is true then the bodie is execute updation condition body and again updation condition body.
+
+51
+03:38.430 --> 03:42.630
+this will be go on repeating as long as this condition is true.
+
+52
+03:42.840 --> 03:49.380
+So after this again it will perform this one then again this one then again this one then again this
+
+53
+03:49.380 --> 03:57.860
+one that again this then again this right it will repeat these steps, so now if you count these one two
+
+54
+03:57.870 --> 04:05.790
+three four five you can understand how it is changing so I just show it once again first second process
+
+55
+04:06.270 --> 04:12.000
+update condition process update condition process. updation condition process, update condition failed,
+
+56
+04:12.120 --> 04:14.720
+stop. this is how it works.
+
+57
+04:14.940 --> 04:18.680
+That's all that's working now why it has three parts.
+
+58
+04:18.780 --> 04:26.760
+Let us see in the diagram see for repeating this for some number of times we need initialization of
+
+59
+04:26.760 --> 04:34.860
+high we need that and the condition is definitely there then we need to update the value of 5, So
+
+60
+04:34.860 --> 04:40.170
+who is working like a counter here one two three four, I is working as a counter.
+
+61
+04:40.510 --> 04:48.300
+Yes that counter you can put all those statements here only so just let us look at this the same program
+
+62
+04:48.330 --> 04:53.770
+that we have seen in the previous  video for printing numbers. let us compare it with this one start, take a  no.
+read a no.
+
+63
+04:53.810 --> 05:02.650
+then I assign one, where it is this.  here initialaization part then condition, this 
+
+64
+05:02.650 --> 05:12.140
+the condition then updation this one is written here, though it is done after printing yes.
+
+65
+05:12.220 --> 05:14.070
+It will not be done in the beginning.
+
+66
+05:14.080 --> 05:19.360
+First it will check the initialize and check the condition print and then go back and update.
+
+67
+05:19.660 --> 05:25.300
+Yes it will happen that time only but we write all three things together here only so that we can say
+
+68
+05:25.300 --> 05:31.270
+that I starts from one go upto to n and every time I will be increasing by 1.
+
+69
+05:31.600 --> 05:34.580
+So everything is here in a single line we can read and understand.
+
+70
+05:35.680 --> 05:40.640
+So this is how for Loop is written. same previous program is written using for Loop.
+
+71
+05:40.920 --> 05:44.140
+And it looks more simple and more readable and easy to understand.
+
+72
+05:44.740 --> 05:49.150
+Yes insulation condition and updation are together at one place.
+
+73
+05:49.150 --> 05:53.980
+So this is the most commonly used loop in C++ programming.
+
+74
+05:54.310 --> 05:55.870
+So that's a level the for loop.
+
+75
+05:56.110 --> 06:00.320
+So there is a demo available for all the loops together I have given the demo you can more the demo
+
+76
+06:00.340 --> 06:05.230
+and you tried this program on your own machine and in coding exercise you may have to write on just
+
+77
+06:05.230 --> 06:10.430
+the loop there where the excercise is given. read the exercise properly understand it and solve it. all
+
+78
+06:10.440 --> 06:14.660
+are easy to understand but logic you have to write on the procedure you have to write on.
+
+79
+06:15.610 --> 06:16.640
+So that's all in this video.

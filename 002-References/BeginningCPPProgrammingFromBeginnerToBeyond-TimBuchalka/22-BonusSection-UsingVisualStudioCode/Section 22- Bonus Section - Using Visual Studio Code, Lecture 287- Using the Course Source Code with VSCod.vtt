@@ -1,0 +1,457 @@
+WEBVTT
+
+00:05.130 --> 00:06.120
+Hello, everyone.
+
+00:07.060 --> 00:07.660
+In this video.
+
+00:07.660 --> 00:13.930
+What we'll do is we'll download and extract the source code provided in the course and we'll set it
+
+00:13.930 --> 00:16.240
+up so that we can use it with Visual Studio code.
+
+00:16.900 --> 00:21.010
+The source code is located in one of the last sections of the course.
+
+00:21.010 --> 00:26.920
+Right now it's in section 22, but that could change as I add content to the course that probably becomes
+
+00:26.920 --> 00:29.650
+section 23 and then 24 and so forth.
+
+00:29.650 --> 00:35.830
+So the best thing is to search for a section named extra information source code and other stuff, and
+
+00:35.830 --> 00:40.090
+in there there will be a video source code for all sections.
+
+00:40.090 --> 00:44.830
+And when you select that this is what you're going to get, it's a bunch of links to zip files that
+
+00:44.830 --> 00:48.040
+contain the source code for the course projects.
+
+00:48.760 --> 00:52.840
+So what you want to do is depending on which section of the course you're in, you want to download
+
+00:52.840 --> 00:54.340
+the zip file for that section.
+
+00:54.340 --> 00:58.780
+So in this case, I'm going to download the source code for section four and I'm just going to click
+
+00:58.780 --> 01:03.340
+on there and that will download a zip file, which I'm just going to save.
+
+01:03.520 --> 01:08.530
+Okay, now that I've saved it, I'm going to go to my downloads and I'm just going to extract it.
+
+01:08.530 --> 01:12.430
+So I'm just going to right click and extract right here.
+
+01:14.340 --> 01:14.640
+All right.
+
+01:14.640 --> 01:15.900
+So this is what we've got now.
+
+01:15.900 --> 01:20.700
+You can see it's extracted it to a section four folder, and inside that section for folder are all
+
+01:20.700 --> 01:21.510
+the projects.
+
+01:21.510 --> 01:25.080
+So what I want to do is I want to just copy this section for folder.
+
+01:26.450 --> 01:31.400
+Or you can cut it if you like to the desktop just so I can show you how to do it here.
+
+01:33.220 --> 01:39.450
+So now I've just downloaded and extracted all the projects in that section into this section four folder.
+
+01:39.460 --> 01:40.630
+So I think you know what to do.
+
+01:40.630 --> 01:46.300
+Now, what we want to do is we want to open up this section for folder in Visual Studio code and then
+
+01:46.300 --> 01:50.080
+set up IntelliSense, the task Jason and the launch JSON again.
+
+01:50.080 --> 01:51.070
+So let's do that.
+
+01:51.490 --> 01:54.010
+I'm going to close all this up because I don't need it anymore.
+
+01:54.010 --> 01:56.440
+And what I want to do now is I want to open a folder.
+
+01:56.440 --> 02:02.050
+So again, we'll open folder and I'm going to go to my desktop and I want to open section four.
+
+02:02.770 --> 02:03.940
+That's the one I want.
+
+02:03.940 --> 02:04.960
+So I'm just going to click.
+
+02:04.960 --> 02:05.650
+Okay.
+
+02:06.370 --> 02:11.380
+And now you'll see that Section four was opened up in Visual Studio code, which is exactly what we
+
+02:11.380 --> 02:11.860
+want.
+
+02:12.070 --> 02:16.540
+So also notice that there are some folders like code, light and Makefile and things like that.
+
+02:16.540 --> 02:17.680
+Don't worry about those.
+
+02:17.680 --> 02:21.070
+Those are things that code light needs Visual Studio.
+
+02:21.070 --> 02:22.180
+We'll just ignore them.
+
+02:22.180 --> 02:26.770
+But we need to configure this to work with Visual Studio, so we have to go through the same process
+
+02:26.770 --> 02:28.180
+that we did before.
+
+02:28.180 --> 02:31.750
+We have to do it once per major section.
+
+02:31.780 --> 02:32.710
+A couple of ways to do this.
+
+02:32.710 --> 02:36.580
+We could do it manually like we did before, which is what I'm going to do here, just so you can see
+
+02:36.580 --> 02:43.360
+it one more time, or you can copy your vs code folder from an existing project into this project.
+
+02:43.720 --> 02:45.490
+So let's just do it manually.
+
+02:45.640 --> 02:51.910
+First thing we want to do is I want to close this, get started and I want to click on any of the let's
+
+02:51.910 --> 02:57.910
+see this guy right here, any of the main CP files in there, any C++ source file is what we need.
+
+02:58.090 --> 03:05.770
+And then we're going to go to view command palette and type in again C plus plus until we see edit configurations
+
+03:05.770 --> 03:06.460
+UI.
+
+03:07.260 --> 03:09.330
+We're going to set up the IntelliSense again.
+
+03:09.360 --> 03:10.710
+We'll scroll down.
+
+03:11.500 --> 03:13.730
+And make sure that we've got.
+
+03:13.750 --> 03:18.850
+So we'll score right here to compile path and we want to be sure that we're using G plus plus right
+
+03:18.850 --> 03:19.390
+there.
+
+03:19.960 --> 03:25.180
+And then we're going to scroll down a little bit more to the C++ standard and we're going to choose
+
+03:25.180 --> 03:26.590
+C++ 17.
+
+03:28.150 --> 03:28.690
+That's it.
+
+03:28.690 --> 03:31.900
+I'm going to control SW to save and I'm done with that.
+
+03:33.560 --> 03:34.250
+Perfect.
+
+03:34.340 --> 03:39.290
+Now you notice we've got our code folder here and our CPP properties are set up.
+
+03:39.440 --> 03:45.530
+So again, I'm going to select Main CP and I'm going to come up to terminal and configure the default
+
+03:45.530 --> 03:46.490
+build task.
+
+03:47.510 --> 03:49.940
+I'm going to select G plus plus.
+
+03:51.920 --> 03:54.980
+And now once I'm here, I'm going to make those same changes we made before.
+
+03:55.010 --> 03:56.880
+I'm going to enable all warnings.
+
+03:56.900 --> 04:07.250
+So dash wall, we are going to enable the C++ 17 standard and we're going to change the file on line
+
+04:07.250 --> 04:09.080
+12 to file your name.
+
+04:12.480 --> 04:15.180
+Want to copy this and I'm going to paste it right in here.
+
+04:17.180 --> 04:24.700
+And then finally we're going to add the slash star TCP IP so that we'll compile all the files.
+
+04:24.710 --> 04:27.860
+Now, when we do these, you notice this sometimes you'll see squiggly.
+
+04:27.860 --> 04:31.970
+So for example, if I get rid of that comma, you'll see some squiggles show up, right?
+
+04:32.000 --> 04:36.470
+We don't want any of those are errors and we just want to be sure that everything looks clean.
+
+04:36.470 --> 04:40.240
+If something doesn't look clean, look at the video and make sure that you haven't missed any quote,
+
+04:40.310 --> 04:41.900
+marks or commas and so forth.
+
+04:42.050 --> 04:43.220
+So that's it.
+
+04:43.220 --> 04:46.970
+I'm going to save this and I'm going to close this up.
+
+04:47.330 --> 04:52.580
+Now what we'll do is we'll select main CPP on first program, and you can see what the first program
+
+04:52.580 --> 04:55.280
+is doing is similar to what we did before with the favorite number.
+
+04:55.310 --> 04:57.170
+What I want to do now is just test it out.
+
+04:57.170 --> 05:02.180
+So I'm going to select that and I'm going to go to terminal and run the build test.
+
+05:02.180 --> 05:06.770
+So that will build our project and you'll see builds finished successfully.
+
+05:07.160 --> 05:13.100
+So remember the main executable was created right here, right inside that project.
+
+05:13.100 --> 05:18.830
+So I'm going to right click on it, open an integrated terminal, and then I'm going to type dot slash
+
+05:18.830 --> 05:19.400
+main.
+
+05:20.450 --> 05:21.890
+What's my favorite number?
+
+05:22.270 --> 05:23.690
+It's 34 this time.
+
+05:24.320 --> 05:24.860
+Amazing.
+
+05:24.860 --> 05:25.950
+That's my favorite number, too.
+
+05:25.970 --> 05:27.770
+That's exactly what we're supposed to get.
+
+05:28.810 --> 05:29.200
+Okay.
+
+05:29.200 --> 05:29.620
+Perfect.
+
+05:29.620 --> 05:37.840
+So now let's say I wanted to run Project one, I can go to Main CP there and again I can come up to
+
+05:37.840 --> 05:38.500
+Terminal.
+
+05:39.400 --> 05:40.440
+Run build test.
+
+05:40.450 --> 05:42.570
+Now it's going to build project one.
+
+05:42.590 --> 05:44.680
+You could see from the message right here.
+
+05:44.680 --> 05:46.870
+You can see Project one is being built right there.
+
+05:47.260 --> 05:52.540
+We've created our executive role within Project One, which I can right click open to the integrated
+
+05:52.540 --> 05:59.650
+terminal and you can see Project one, just project one, we can run it again and now we're running
+
+05:59.650 --> 06:00.300
+Project one.
+
+06:00.310 --> 06:04.520
+So this is a really easy way to organize yourself and to get everything running nicely.
+
+06:04.540 --> 06:05.570
+We're done with that.
+
+06:05.590 --> 06:08.410
+The last step is to get the debugger working.
+
+06:08.410 --> 06:12.460
+So what we can do now again, select one of the main CP files.
+
+06:12.460 --> 06:13.330
+There's one.
+
+06:14.160 --> 06:17.760
+And we come up to run and add configuration.
+
+06:19.450 --> 06:22.330
+And select c++ gdb ltb.
+
+06:23.250 --> 06:24.390
+And then g plus.
+
+06:24.390 --> 06:25.050
+Plus.
+
+06:26.980 --> 06:28.660
+We're going to get some stuff happening.
+
+06:28.960 --> 06:32.350
+Whatever happens, just let it happen and then just kill it right here.
+
+06:33.330 --> 06:35.550
+So I'll press that little red square.
+
+06:35.670 --> 06:40.950
+And now what we want to do is we want to come back over to our explorer and we want to edit that launch
+
+06:41.190 --> 06:42.120
+JSON file.
+
+06:42.120 --> 06:46.450
+And all we really want to do is change this guy right here, this current working directory.
+
+06:46.470 --> 06:51.750
+I want to change that to file directory name so I'm just going to copy and paste.
+
+06:54.790 --> 06:55.290
+That's it.
+
+06:55.300 --> 06:56.170
+I'll save.
+
+06:56.770 --> 06:58.930
+And let's pick first program again.
+
+06:58.930 --> 07:00.100
+So we're right here.
+
+07:00.250 --> 07:02.480
+Let's say that this is the one we want to debug.
+
+07:02.500 --> 07:04.600
+So what we can do is we can click on the bug.
+
+07:04.630 --> 07:07.290
+If there are any breakpoints down here, we can clear them.
+
+07:07.300 --> 07:08.880
+We'll add our own breakpoint.
+
+07:08.890 --> 07:13.570
+Let's say we want to add a breakpoint right on line eight, and then we select that little green play
+
+07:13.570 --> 07:14.590
+button right up here.
+
+07:15.920 --> 07:17.870
+And the debugger will engage.
+
+07:19.410 --> 07:24.250
+You can see where we're stopped on line eight and you can see my favorite numbers over here.
+
+07:24.250 --> 07:25.260
+And we just move over.
+
+07:25.290 --> 07:27.900
+Now, you'll notice that we're getting three, two, seven, six, seven.
+
+07:27.900 --> 07:28.910
+What in the world is that?
+
+07:28.920 --> 07:30.080
+I don't see that anywhere.
+
+07:30.090 --> 07:32.730
+Well, we haven't initialized favorite number 20 thing.
+
+07:32.730 --> 07:37.140
+So whatever display's here really is undefined and I'll talk more about that in the class.
+
+07:37.140 --> 07:39.750
+That's really important issue with C++.
+
+07:39.750 --> 07:41.940
+So now we can just step through the program.
+
+07:42.810 --> 07:44.700
+Let's step through right here.
+
+07:45.510 --> 07:48.150
+Enter your favorite number between one and 100.
+
+07:48.180 --> 07:52.380
+So let's say I wanted to enter 56 and press enter.
+
+07:53.070 --> 07:56.640
+Now we're on my nine and I can step over that.
+
+07:56.880 --> 08:02.790
+Also notice my favorite number changed here and I can hover over to see that it's 56.
+
+08:03.150 --> 08:04.770
+And when we're done, we could just finish.
+
+08:05.870 --> 08:06.560
+And that's it.
+
+08:06.770 --> 08:12.260
+So that's how we can get the source code provided for the course to work with Visual Studio code.
+
+08:12.290 --> 08:13.430
+It's really pretty easy.
+
+08:13.430 --> 08:18.080
+Once you get the hang of it, you can set up the test JSON and launch JSON files really quickly.
+
+08:18.170 --> 08:23.450
+Or like I said, you could just copy them and paste them into the new structure that you're creating.
+
+08:23.630 --> 08:23.960
+All right.
+
+08:23.960 --> 08:27.620
+So that shows you how to set everything up for Linux Ubuntu.
+
+08:27.650 --> 08:29.090
+I'll see you in the rest of the course.

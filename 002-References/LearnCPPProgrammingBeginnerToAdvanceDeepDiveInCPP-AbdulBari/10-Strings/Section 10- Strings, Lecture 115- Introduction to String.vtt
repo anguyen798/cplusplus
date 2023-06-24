@@ -1,0 +1,589 @@
+WEBVTT
+
+00:00.300 --> 00:02.910
+In this section, I'll be talking about string.
+
+00:03.750 --> 00:05.940
+First, let us understand what is a string?
+
+00:06.060 --> 00:09.870
+String is a collection of characters or letters.
+
+00:09.900 --> 00:14.220
+See, by grouping the letters, we can form a word or a name.
+
+00:14.220 --> 00:14.880
+Like.
+
+00:14.970 --> 00:16.760
+This is a name of a person.
+
+00:16.910 --> 00:17.210
+Right.
+
+00:17.220 --> 00:18.480
+There's a name of a person.
+
+00:19.470 --> 00:23.130
+And there's a name of a place that is city name.
+
+00:23.520 --> 00:30.840
+Even it may be a complete address and it may be a sentence like this, like this is also a string or
+
+00:30.840 --> 00:33.990
+a paragraph is also a string.
+
+00:34.710 --> 00:36.410
+You can have different size of string.
+
+00:36.420 --> 00:41.250
+The larger size is allowed more than 2000 characters you can have in a string.
+
+00:41.250 --> 00:44.200
+So depends on the compiler and its versions.
+
+00:44.220 --> 00:45.600
+The sizes are different.
+
+00:45.720 --> 00:48.400
+So 2000 characters is more than enough.
+
+00:48.420 --> 00:55.530
+So in our programs we can use the strings for storing names or words or sentences or paragraphs.
+
+00:55.650 --> 01:00.290
+Now, as we said, string is a collection of characters, so let us see that.
+
+01:00.300 --> 01:01.560
+See, this is a string.
+
+01:01.560 --> 01:02.190
+This is a name.
+
+01:02.190 --> 01:10.560
+So here is a letter and I is also a letter C Etch A, E, L all these are letters.
+
+01:10.560 --> 01:12.480
+So it's a collection of alphabets.
+
+01:12.480 --> 01:16.200
+So the set of alphabets together is forming a string.
+
+01:16.230 --> 01:22.530
+Now I will show you how to represent a string, and we will also learn the possible operations on a
+
+01:22.530 --> 01:23.040
+string.
+
+01:23.460 --> 01:26.750
+In C++, there are two methods of representing a string.
+
+01:26.760 --> 01:29.160
+One is using array of characters.
+
+01:29.160 --> 01:33.660
+So as I said that a string is a set of characters that is array of characters.
+
+01:33.990 --> 01:38.430
+And the second thing is C++ is also providing a class called String.
+
+01:39.270 --> 01:44.880
+This method is available in C language and also it can be used in C++.
+
+01:45.060 --> 01:48.120
+So this is one of the method that is using a character array.
+
+01:48.120 --> 01:53.670
+And the second method is C++ is also having a class called String.
+
+01:53.670 --> 01:58.050
+So in C++, we prefer using this class whenever we want to store a string.
+
+01:58.260 --> 01:59.730
+This is a good option.
+
+02:00.120 --> 02:05.760
+So what we will learn about both of these methods, first, I will show you about character array and
+
+02:05.760 --> 02:08.450
+then I'll show you string class.
+
+02:08.460 --> 02:12.560
+So let us start with a string using character array.
+
+02:12.660 --> 02:17.510
+So here I will discuss how we can declare a string and how we can initialize it.
+
+02:17.520 --> 02:22.140
+So if you look at this, this is just a character care x.
+
+02:22.140 --> 02:27.410
+So X is a character type variable which can store only a single letter.
+
+02:27.420 --> 02:32.820
+So if you see a character takes one bite of memory, so A is stored in that one.
+
+02:32.820 --> 02:39.090
+So it's ASCII code that is ASCII code of A will be stored in that one bite of memory character type
+
+02:39.090 --> 02:41.940
+variable can store just a single letter.
+
+02:42.120 --> 02:44.760
+They cannot store a string like this.
+
+02:44.760 --> 02:47.880
+They cannot store like this for storing a string.
+
+02:47.910 --> 02:49.920
+We have to take an array.
+
+02:49.920 --> 02:53.370
+So this is an array of type character.
+
+02:53.370 --> 02:56.130
+And when you use double codes, it's a string.
+
+02:56.130 --> 03:03.150
+If you observe here, I have used single codes here for character constant and here for string constant
+
+03:03.150 --> 03:04.470
+double codes are used.
+
+03:04.470 --> 03:06.990
+So this we will call it as a string literal.
+
+03:07.020 --> 03:09.510
+This is a little or this is constant.
+
+03:10.230 --> 03:14.070
+Now what happens when you declare an array and also initialize it with the string?
+
+03:14.070 --> 03:15.120
+Let us see here.
+
+03:15.450 --> 03:18.000
+So an array of size ten will be created.
+
+03:18.000 --> 03:19.740
+As I have mentioned, size is ten.
+
+03:19.740 --> 03:22.020
+So idea of size ten is created.
+
+03:22.020 --> 03:28.350
+And in that all these alphabets are stored like each is a character, so each location can store a single
+
+03:28.350 --> 03:28.860
+character.
+
+03:28.860 --> 03:31.830
+So hell0 are stored.
+
+03:31.830 --> 03:35.220
+And this is one of the important things that we have to learn.
+
+03:35.340 --> 03:42.540
+This is a null character or a string delimiter, we call it as string delimiter.
+
+03:45.230 --> 03:47.720
+She is also called as a character.
+
+03:49.490 --> 03:50.060
+So
+
+03:52.850 --> 03:55.610
+this is a combination of two characters, that is.
+
+03:56.640 --> 03:59.370
+Backslash and zero.
+
+03:59.400 --> 04:04.170
+This is not oh, this is zero number zero backslash and zero.
+
+04:04.170 --> 04:05.280
+And it's a character.
+
+04:06.030 --> 04:07.430
+Its value is zero.
+
+04:07.440 --> 04:12.420
+So it is also called as null character or string delimiter or a string.
+
+04:12.450 --> 04:14.000
+Terminator also you can call.
+
+04:14.490 --> 04:21.210
+So in C as well as in C++, when you are using an array of characters, then definitely the string will
+
+04:21.210 --> 04:23.790
+be having zero at the end.
+
+04:23.910 --> 04:25.890
+It terminates with the slash zero.
+
+04:26.040 --> 04:27.330
+So here you can observe.
+
+04:27.330 --> 04:31.980
+I have taken an array of size ten, so the capacity of this array is ten.
+
+04:31.980 --> 04:35.580
+But I have stored only five letters in this one.
+
+04:36.510 --> 04:39.870
+Then there must be some character to show where the string is ending.
+
+04:39.870 --> 04:42.780
+So this acts as a string terminator.
+
+04:43.590 --> 04:49.800
+Now next next method of initialize declaration and initialization here have declared in character array
+
+04:49.800 --> 04:51.330
+and I'm initializing this one.
+
+04:51.330 --> 04:53.580
+I did not mention the size here.
+
+04:53.580 --> 04:55.740
+The size was mentioned here it is not mentioned.
+
+04:55.740 --> 05:02.460
+So it will automatically create an array of exact size, including the space for a string terminator
+
+05:02.460 --> 05:03.690
+that is null character.
+
+05:05.220 --> 05:07.020
+Then let us look at next method here.
+
+05:07.020 --> 05:11.160
+I have not mentioned the size, but I am initializing a character array.
+
+05:11.160 --> 05:17.430
+This is just like initializing character array, but this null character is also included and inclusion
+
+05:17.430 --> 05:20.100
+of this character makes it as a string.
+
+05:20.100 --> 05:22.560
+Without this character, it is not a string.
+
+05:24.840 --> 05:26.520
+Then one more method here.
+
+05:26.520 --> 05:29.910
+Even you can use the ASCII codes of the alphabet.
+
+05:29.910 --> 05:33.120
+So I have used 65, 66, 67.
+
+05:33.120 --> 05:39.030
+So actually alphabets capital A, B, C, D will be stored here.
+
+05:39.270 --> 05:41.670
+So these alphabets will be stored here.
+
+05:41.670 --> 05:43.050
+So it will store capital.
+
+05:43.080 --> 05:49.710
+A 65 is for capital B is 66, then C, then D, then null character.
+
+05:49.980 --> 05:51.600
+This array will be created.
+
+05:54.300 --> 05:56.970
+Right now there is one more method.
+
+05:57.210 --> 06:00.780
+Using a pointer we can create a string.
+
+06:00.780 --> 06:07.530
+So this will be creating an array and as is the pointer that will be pointing on to that string.
+
+06:07.530 --> 06:09.240
+So broadly, there are two methods.
+
+06:09.240 --> 06:14.520
+One is using a character and second one is using a pointer.
+
+06:14.550 --> 06:21.470
+Mostly we use a pointer to a string if we want to have a string inside heap, right?
+
+06:21.480 --> 06:24.960
+So we just declare it and here I have already initialize it.
+
+06:24.960 --> 06:26.580
+So this is nothing but a literal.
+
+06:26.580 --> 06:30.240
+This is a literal and literals are created inside code section.
+
+06:30.240 --> 06:32.580
+So this will be actually created in code section.
+
+06:32.670 --> 06:38.250
+And then later on, if we want to store any other value into this one, any other string, then it will
+
+06:38.250 --> 06:39.810
+be created inside heap.
+
+06:40.260 --> 06:44.700
+So if you want a string in heap, then go for character pointer.
+
+06:44.700 --> 06:48.940
+If you want it in a stack, then go for character array.
+
+06:50.040 --> 06:56.760
+So these are the two methods use either character array or either use a pointer to a string.
+
+06:57.390 --> 06:59.730
+Now, next, I'll give you the demonstration for this one.
+
+06:59.760 --> 07:02.580
+How these things can be declared and initialize.
+
+07:02.580 --> 07:04.920
+So let us look at the demonstration for this one.
+
+07:05.100 --> 07:07.620
+So here already I have a main function ready.
+
+07:07.620 --> 07:10.710
+So let me create a string cat.
+
+07:12.210 --> 07:14.170
+As of size ten.
+
+07:14.190 --> 07:15.840
+Then here I will store.
+
+07:15.870 --> 07:16.650
+Hello.
+
+07:18.520 --> 07:20.080
+Then I want to display this one.
+
+07:20.080 --> 07:27.340
+So let us say see out se and also I will use NL for the next line.
+
+07:28.510 --> 07:30.010
+Now let us run this and see.
+
+07:30.010 --> 07:30.380
+Yeah.
+
+07:30.400 --> 07:31.780
+Hello is displayed here.
+
+07:32.230 --> 07:38.140
+See, though, I have taken an array of size ten, but it is displaying only five letters.
+
+07:38.140 --> 07:41.560
+Because after this fifth letter there is a null character.
+
+07:41.560 --> 07:44.230
+So see out will stop there at null character.
+
+07:44.230 --> 07:46.930
+So that null character indicates the end of a string.
+
+07:46.930 --> 07:54.520
+So most of the functions or operations build in C++ uses that null character to find the end of a string.
+
+07:55.440 --> 07:59.670
+Now here, I will remove this size and I will run it again.
+
+07:59.670 --> 08:00.520
+Once again.
+
+08:00.540 --> 08:01.740
+Yeah, this is working.
+
+08:01.740 --> 08:04.350
+So without mentioning the size also, I can do that.
+
+08:04.380 --> 08:11.090
+Now I will show you one more method creating a string by initializing each and every alphabet.
+
+08:11.100 --> 08:13.940
+So I will take this each letter.
+
+08:13.950 --> 08:17.370
+So I'm initializing array of characters.
+
+08:18.570 --> 08:19.020
+Right?
+
+08:19.020 --> 08:21.000
+So these are all alphabets.
+
+08:21.030 --> 08:25.320
+Now, the next thing is slash zero, right?
+
+08:25.770 --> 08:29.190
+Now, this is also another method of creating a string.
+
+08:29.220 --> 08:31.470
+So it has displayed up to Hello.
+
+08:31.500 --> 08:33.390
+Now I'll show you one more thing here.
+
+08:33.390 --> 08:34.870
+I have given slash zero.
+
+08:34.890 --> 08:37.320
+Then beyond this, I'll give you more characters.
+
+08:38.730 --> 08:42.710
+Letter P, then one more P than one more p.
+
+08:42.750 --> 08:44.010
+Let us see what happens.
+
+08:44.010 --> 08:45.480
+So here is a/0.
+
+08:45.480 --> 08:47.460
+So I should stop here after.
+
+08:47.460 --> 08:47.790
+Hello?
+
+08:47.790 --> 08:49.890
+It should not print this p, right?
+
+08:49.890 --> 08:51.300
+Yes, it is printing only.
+
+08:51.300 --> 08:51.780
+Hello.
+
+08:51.780 --> 08:55.290
+So this shows that it is stopping at null character.
+
+08:55.290 --> 08:56.270
+That is slash zero.
+
+08:56.280 --> 08:56.940
+That's it.
+
+08:57.060 --> 09:02.850
+Now let me create a string by giving ASCII codes of alphabets.
+
+09:02.850 --> 09:06.450
+That's 65, 66, 67 and 68.
+
+09:06.660 --> 09:11.190
+Then for another character, I'll give Slash zero.
+
+09:12.150 --> 09:15.720
+That is a character I have given in single course.
+
+09:15.750 --> 09:17.370
+Now, let us run this one.
+
+09:18.090 --> 09:20.310
+Yes, I got a BCD.
+
+09:21.070 --> 09:23.370
+Now I said that null character is nothing but zero.
+
+09:23.370 --> 09:26.700
+So I'll mention zero there and let us see whether it works or not.
+
+09:28.700 --> 09:29.960
+Yes, it is working.
+
+09:30.710 --> 09:39.530
+After the zero I'll give 69 and 70 also means E and fc0 is here, right?
+
+09:39.560 --> 09:40.490
+Zero is here.
+
+09:40.520 --> 09:43.310
+So whether it will print these to let us check.
+
+09:45.860 --> 09:48.080
+No, it prints only a BCD.
+
+09:48.110 --> 09:53.990
+So instead of suddenly character that is zero, even you can use a numeric value that is integer value
+
+09:54.110 --> 09:54.590
+zero.
+
+09:55.940 --> 09:59.550
+Now lastly, I'll show you one more method that is using a pointer.
+
+09:59.570 --> 10:03.060
+So this is not supported by latest compiler of C++.
+
+10:03.080 --> 10:09.350
+Let us take a pointer and here I will give a string that is string literal or the string constant.
+
+10:11.640 --> 10:12.230
+Yeah.
+
+10:12.240 --> 10:18.720
+There is a warning that C++ 11 doesn't allow conversion from a string literal to a character pointer.
+
+10:19.200 --> 10:23.090
+So let us run it and see if it's working just as giving a warning.
+
+10:23.100 --> 10:26.160
+So it is suggesting don't use this one right.
+
+10:26.160 --> 10:27.920
+This will not work perfectly always.
+
+10:27.930 --> 10:32.070
+As I said in C++, we have a class called String which will be learning afterwards.
+
+10:32.070 --> 10:36.900
+But let us take string as and here I will initialize it with the zero.
+
+10:36.930 --> 10:38.490
+Hello, that is a string.
+
+10:38.500 --> 10:43.260
+Hell, I'm initialized now here doesn't give any error message.
+
+10:43.260 --> 10:45.030
+Just I want to show you the error message.
+
+10:45.030 --> 10:50.670
+So C++ supports a string class, so it's asking you to take a string class better instead of taking
+
+10:50.670 --> 10:52.230
+a character pointer.
+
+10:52.440 --> 10:52.990
+Right.
+
+10:53.010 --> 10:58.320
+So here in my compiler, in my C++ compiler settings, it's giving a warning.
+
+10:58.320 --> 10:59.790
+So try it on your machine.
+
+11:00.390 --> 11:02.460
+So that's all I have shown you.
+
+11:02.490 --> 11:03.360
+What is a string?
+
+11:03.360 --> 11:06.660
+And I have shown you how to initialize and also have given demonstration.
+
+11:06.660 --> 11:11.430
+So I suggest you you do this one by yourself after watching this video.
+
+11:11.460 --> 11:14.670
+You do all these things by yourself and be ready with this one.
+
+11:14.670 --> 11:17.850
+So further we will see operations on strings.

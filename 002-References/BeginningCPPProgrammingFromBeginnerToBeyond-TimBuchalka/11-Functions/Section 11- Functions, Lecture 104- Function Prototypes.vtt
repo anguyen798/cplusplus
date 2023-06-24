@@ -1,0 +1,823 @@
+WEBVTT
+
+00:00:05.590 --> 00:00:09.440
+In the previous video, I mentioned
+that the c++ compiler must know
+
+00:00:09.440 --> 00:00:12.729
+all about a function before it
+allows that function to be called.
+
+00:00:13.020 --> 00:00:14.139
+I didn't say why though.
+
+00:00:14.900 --> 00:00:17.739
+The reason for this is that the
+compiler can't check to see if
+
+00:00:17.740 --> 00:00:21.030
+the number of parameters passed
+in and their types are correct
+
+00:00:21.030 --> 00:00:23.930
+when the function is called,
+unless it knows about the function
+
+00:00:23.930 --> 00:00:25.400
+being called before it's called.
+
+00:00:26.189 --> 00:00:27.950
+There are two ways we
+can make this happen.
+
+00:00:28.150 --> 00:00:30.799
+The first way is to make
+sure we define all functions
+
+00:00:30.799 --> 00:00:31.950
+before they're used.
+
+00:00:32.200 --> 00:00:35.110
+This is okay for many small
+programs, but it quickly
+
+00:00:35.110 --> 00:00:36.770
+becomes very difficult to do.
+
+00:00:37.170 --> 00:00:40.040
+And in the case of two functions that
+call one another is impossible.
+
+00:00:40.680 --> 00:00:42.870
+So rather than have to worry
+about the order in which we
+
+00:00:42.870 --> 00:00:47.010
+define functions, c++ allows us
+to create function prototypes.
+
+00:00:48.450 --> 00:00:51.720
+Function prototypes tell the compiler
+all it needs to know about a function,
+
+00:00:52.029 --> 00:00:54.629
+so that it can be sure that the
+function is being called correctly.
+
+00:00:55.700 --> 00:00:59.040
+Function prototypes are also called
+forward declarations since you're
+
+00:00:59.050 --> 00:01:02.299
+basically telling the compiler,
+hey compiler this is what this
+
+00:01:02.300 --> 00:01:04.900
+function is going to look like,
+make sure I use it that way.
+
+00:01:05.360 --> 00:01:08.229
+In smaller programs, all the
+function prototypes are generally
+
+00:01:08.259 --> 00:01:12.139
+placed near the top of a program,
+usually after the pound includes.
+
+00:01:12.740 --> 00:01:16.199
+As programs get larger, we split
+our programs up into multiple files,
+
+00:01:16.480 --> 00:01:18.630
+so we include .h or header files.
+
+00:01:18.840 --> 00:01:21.350
+And we include function
+prototypes in these files.
+
+00:01:21.730 --> 00:01:23.619
+We'll see that a little
+bit later in the course.
+
+00:01:23.929 --> 00:01:25.969
+Let's see what these function
+prototypes look like.
+
+00:01:27.639 --> 00:01:29.940
+Here, I've defined a function
+called function name at
+
+00:01:29.940 --> 00:01:31.110
+the bottom of the slide.
+
+00:01:31.750 --> 00:01:33.800
+The function prototype
+for this function is the
+
+00:01:33.800 --> 00:01:35.190
+first line of code you see.
+
+00:01:35.660 --> 00:01:38.050
+Notice that it looks very
+much like the function header.
+
+00:01:38.370 --> 00:01:41.069
+That's the part of the function
+definition right before
+
+00:01:41.070 --> 00:01:42.079
+the body of the function.
+
+00:01:42.940 --> 00:01:45.580
+With a function prototype, the
+compiler doesn't need to know what
+
+00:01:45.599 --> 00:01:49.500
+the implementation of the function
+is, only its header information.
+
+00:01:50.320 --> 00:01:52.850
+So in this case it knows that
+you'll later define a function
+
+00:01:52.850 --> 00:01:56.679
+named function name that expects no
+parameters and returns an integer.
+
+00:01:57.610 --> 00:02:00.230
+And if you use a function
+named function name, it will
+
+00:02:00.230 --> 00:02:01.699
+enforce those conditions.
+
+00:02:01.980 --> 00:02:05.039
+If you try to use it in any other
+way, say by calling it with an
+
+00:02:05.039 --> 00:02:07.519
+integer in the parameter list,
+then you'll get a compiler error.
+
+00:02:07.920 --> 00:02:08.729
+Pretty easy, right.
+
+00:02:09.100 --> 00:02:10.979
+You can have as many
+prototypes as you need.
+
+00:02:11.220 --> 00:02:14.290
+One per function, and it doesn't
+matter what order you declare them in.
+
+00:02:15.099 --> 00:02:16.580
+Let's take a look at another one.
+
+00:02:17.680 --> 00:02:20.370
+In this case, we have the same
+function named function name.
+
+00:02:20.650 --> 00:02:23.059
+But this time, it expects
+exactly one parameter.
+
+00:02:23.570 --> 00:02:26.520
+So we provide a function prototype
+to the compiler that has an
+
+00:02:26.520 --> 00:02:27.900
+int in the parameter list.
+
+00:02:28.270 --> 00:02:31.089
+Note that we can supply the name
+of the parameter if we wish, but
+
+00:02:31.090 --> 00:02:32.500
+it isn't used by the compiler.
+
+00:02:33.179 --> 00:02:35.549
+The compiler doesn't care
+about the name, only the type.
+
+00:02:36.130 --> 00:02:39.500
+So either of these function
+prototypes can be used. Best
+
+00:02:39.500 --> 00:02:42.909
+practice is to provide the parameter
+names for documentation purposes.
+
+00:02:43.320 --> 00:02:44.540
+Let's see another example.
+
+00:02:46.030 --> 00:02:49.060
+In this example, we have a function
+that returns nothing when called.
+
+00:02:49.450 --> 00:02:52.849
+So the function prototype must
+include the void keyword, prior
+
+00:02:52.850 --> 00:02:55.870
+to the function name, just like
+the function definition does.
+
+00:02:57.500 --> 00:03:00.175
+In this case, the function
+expects two parameters, an
+
+00:03:00.320 --> 00:03:01.730
+integer and a standard string.
+
+00:03:02.220 --> 00:03:05.140
+So either one of these function
+prototypes in the slide is valid.
+
+00:03:05.820 --> 00:03:09.420
+In one case, we provide the
+parameter types and names and the
+
+00:03:09.420 --> 00:03:10.920
+other only the parameter types.
+
+00:03:12.710 --> 00:03:15.300
+The function prototype for the
+say hello function we saw in
+
+00:03:15.300 --> 00:03:19.549
+the previous video would look
+like this: void say hello and
+
+00:03:19.550 --> 00:03:20.930
+then the empty parameter list.
+
+00:03:21.100 --> 00:03:23.440
+Notice the semicolon at the
+end, that's very important.
+
+00:03:23.760 --> 00:03:26.540
+We're not specifying a
+body, only the prototype.
+
+00:03:27.250 --> 00:03:29.569
+If we try to call this
+function in any other manner,
+
+00:03:29.570 --> 00:03:30.619
+we'll get a compiler error.
+
+00:03:32.500 --> 00:03:35.290
+So let's see how the compiler uses
+this information in the function
+
+00:03:35.290 --> 00:03:37.170
+prototype to help us write code.
+
+00:03:37.930 --> 00:03:40.700
+The function prototype here
+says that I'll define a function
+
+00:03:40.700 --> 00:03:44.339
+named say hello that expects no
+parameters and returns nothing.
+
+00:03:45.200 --> 00:03:47.230
+Then I use or call
+the function in main.
+
+00:03:47.710 --> 00:03:50.740
+The first function call is fine
+since it matches the prototype.
+
+00:03:51.420 --> 00:03:53.919
+The second function call
+will cause a compiler error.
+
+00:03:54.480 --> 00:03:57.320
+We told the compiler that the
+function expects no parameters,
+
+00:03:57.530 --> 00:04:00.180
+but we're passing in an
+integer to the function call.
+
+00:04:00.250 --> 00:04:01.750
+The compiler won't allow this.
+
+00:04:02.350 --> 00:04:05.210
+The third function call
+is within an output statement.
+
+00:04:05.500 --> 00:04:06.940
+Think about this one for a second.
+
+00:04:07.150 --> 00:04:11.109
+You're telling the compiler to display
+the value that say hello evaluates to.
+
+00:04:11.949 --> 00:04:14.210
+But the function prototype
+says that the function say
+
+00:04:14.220 --> 00:04:15.619
+hello doesn't return anything.
+
+00:04:16.180 --> 00:04:18.660
+So the compiler gives you an
+error since something's not right.
+
+00:04:20.809 --> 00:04:22.820
+In this slide, I'm providing
+the same code that you
+
+00:04:22.820 --> 00:04:23.980
+saw in the previous video.
+
+00:04:24.240 --> 00:04:27.059
+However, in this example I'm
+providing function prototypes
+
+00:04:27.339 --> 00:04:30.710
+for the say hello and say world
+functions at the top of the file.
+
+00:04:31.660 --> 00:04:34.570
+Now the compiler knows about these
+functions and I can call them in
+
+00:04:34.600 --> 00:04:37.740
+any order I wish in my program
+and the compiler will make sure
+
+00:04:37.740 --> 00:04:39.070
+that they're called as intended.
+
+00:04:39.620 --> 00:04:42.469
+Let's head over to the IDE
+and prototype some functions.
+
+00:04:44.410 --> 00:04:48.690
+Okay, I'm in the CodeLite IDE and
+I'm in the section 11 workspace
+
+00:04:48.690 --> 00:04:50.736
+in the function prototypes project.
+
+00:04:50.736 --> 00:04:54.657
+What I'm going to do here is I'm
+going to take the sample that we
+
+00:04:54.657 --> 00:04:58.317
+did in the previous video where we
+calculated the area of a circle and
+
+00:04:58.317 --> 00:05:00.408
+the volume of a cylinder and so forth.
+
+00:05:00.408 --> 00:05:02.499
+And I'm going to rearrange
+these functions to
+
+00:05:02.499 --> 00:05:03.940
+actually break the program.
+
+00:05:04.000 --> 00:05:06.700
+Now this worked out because
+I was very careful about how
+
+00:05:06.700 --> 00:05:09.930
+I defined these functions and
+where I defined these functions.
+
+00:05:10.160 --> 00:05:13.310
+So again, the compiler is
+going straight down and
+
+00:05:13.310 --> 00:05:14.770
+reading the source file.
+
+00:05:15.260 --> 00:05:18.540
+So it sees calc area defined
+here, calculator of a circle.
+
+00:05:19.160 --> 00:05:22.490
+Then it sees it used since
+it's already seen it defined,
+
+00:05:22.490 --> 00:05:23.590
+it's happy about that.
+
+00:05:23.969 --> 00:05:25.369
+In this case, it's the same thing.
+
+00:05:25.370 --> 00:05:29.050
+It sees calc volume of the
+cylinder, I use it down here.
+
+00:05:29.480 --> 00:05:30.650
+It's happy about that.
+
+00:05:30.930 --> 00:05:33.930
+So everything it's seen
+before it's being used.
+
+00:05:34.280 --> 00:05:38.150
+But if I take some of this code,
+let's say that I take all of
+
+00:05:38.150 --> 00:05:42.969
+this code actually, right before
+my main and I just cut it and I
+
+00:05:42.969 --> 00:05:44.530
+want to paste it after the main.
+
+00:05:45.540 --> 00:05:48.500
+Okay, so now we've got some
+issues because the compiler
+
+00:05:48.500 --> 00:05:50.950
+is now seeing - let me clean up
+this whitespace a little bit.
+
+00:05:51.950 --> 00:05:55.490
+The compiler is now seeing area
+circle function being called but
+
+00:05:55.500 --> 00:05:58.159
+it hasn't seen the definition
+yet because it comes later.
+
+00:05:58.590 --> 00:05:59.719
+That's going to cause an issue.
+
+00:05:59.969 --> 00:06:01.690
+Same thing with volume
+of the cylinder.
+
+00:06:01.940 --> 00:06:03.590
+So you're going to get issues here.
+
+00:06:03.730 --> 00:06:06.400
+So let me run this or compile
+it actually, it won't run.
+
+00:06:06.770 --> 00:06:07.420
+And there you go.
+
+00:06:07.460 --> 00:06:10.710
+Area of the circle was not declared
+in the scope, so it has no idea
+
+00:06:10.710 --> 00:06:13.780
+what that function's all about
+because it hasn't seen it yet.
+
+00:06:14.099 --> 00:06:16.440
+Okay, you're going to
+get two errors here.
+
+00:06:16.809 --> 00:06:22.000
+If we change the order and put this
+guy down here, we're going to get even
+
+00:06:22.000 --> 00:06:25.380
+more errors because now we're using
+something before it's being seen.
+
+00:06:25.380 --> 00:06:27.890
+So now we're going to get
+probably three errors, right.
+
+00:06:28.309 --> 00:06:30.140
+So that's a problem.
+
+00:06:30.340 --> 00:06:31.670
+How do we fix this problem?
+
+00:06:31.670 --> 00:06:33.470
+Well, that's where function
+prototypes come in.
+
+00:06:34.119 --> 00:06:35.819
+So let's let's use
+function prototypes.
+
+00:06:35.820 --> 00:06:37.220
+They're really, really easy to use.
+
+00:06:37.390 --> 00:06:40.050
+What I want to do is for every
+function that I'm defining,
+
+00:06:40.360 --> 00:06:43.700
+I want to prototype it before
+I've defined it, so obviously
+
+00:06:43.700 --> 00:06:44.810
+at the beginning of the file.
+
+00:06:44.980 --> 00:06:47.369
+And we'll do it right after
+the namespace statement.
+
+00:06:47.670 --> 00:06:49.570
+So let's look at this first one here.
+
+00:06:50.370 --> 00:06:54.079
+I'm just going to copy it and paste it
+because basically that's what I want.
+
+00:06:54.520 --> 00:06:59.050
+So I'm going to put it right here and
+I'll just put a little comment here
+
+00:06:59.250 --> 00:07:00.640
+just so you know what's going on.
+
+00:07:03.220 --> 00:07:05.219
+So here are my function prototypes.
+
+00:07:05.870 --> 00:07:09.429
+Remember, the function prototype
+is only the name of the function
+
+00:07:09.920 --> 00:07:12.909
+and what it expects and what it
+returns with a semicolon at the
+
+00:07:12.910 --> 00:07:14.540
+end right here, no function body.
+
+00:07:15.160 --> 00:07:20.180
+So now the the compiler sees that
+you've prototyped calc volume cylinder
+
+00:07:20.500 --> 00:07:24.000
+to expect two doubles and return a
+double, so we can type check that.
+
+00:07:24.280 --> 00:07:26.320
+Okay, let's deal with all of these.
+
+00:07:26.380 --> 00:07:31.539
+So let's do the next one, which is
+my calculate area of the circle.
+
+00:07:32.180 --> 00:07:37.110
+I'll copy that up here, and paste
+it, and put a semicolon on the end.
+
+00:07:38.190 --> 00:07:41.469
+Now remember, we don't need
+to have these variable names
+
+00:07:41.469 --> 00:07:42.680
+here, these parameter names.
+
+00:07:42.950 --> 00:07:44.409
+The compiler could care less.
+
+00:07:44.410 --> 00:07:46.610
+So I'm just going to get rid of
+this one just so you can see.
+
+00:07:47.779 --> 00:07:48.960
+The compiler doesn't care.
+
+00:07:48.960 --> 00:07:52.920
+All the compiler needs to know is
+what is the type of that parameter.
+
+00:07:53.140 --> 00:07:54.599
+So in this case double is fine.
+
+00:07:54.950 --> 00:07:58.080
+As I mentioned earlier, best
+practice is to put the names in
+
+00:07:58.080 --> 00:07:59.759
+there for documentation purposes.
+
+00:07:59.759 --> 00:08:01.659
+But I'll leave it out here
+just so you can see that it
+
+00:08:01.660 --> 00:08:03.080
+actually does work just fine.
+
+00:08:03.180 --> 00:08:04.879
+Okay, so now we've got those two.
+
+00:08:05.219 --> 00:08:08.050
+Let's deal with area of the
+circle and then we'll deal
+
+00:08:08.050 --> 00:08:09.130
+with volume of the cylinder.
+
+00:08:09.780 --> 00:08:11.530
+So we'll put area of
+the circle right here.
+
+00:08:12.170 --> 00:08:14.950
+The order in which you put the
+prototypes in doesn't matter because
+
+00:08:14.950 --> 00:08:16.180
+the compiler is going to see them all.
+
+00:08:16.599 --> 00:08:18.000
+So there's the area of the circle.
+
+00:08:18.240 --> 00:08:21.159
+Notice this returns nothing
+and expects nothing.
+
+00:08:21.710 --> 00:08:25.229
+Okay, and then we'll do the last one,
+which is the volume of the cylinder.
+
+00:08:27.020 --> 00:08:30.760
+So I'll come back up and I'll put
+that last prototype right in here.
+
+00:08:32.070 --> 00:08:32.840
+That's it.
+
+00:08:32.919 --> 00:08:36.789
+Now if I compile and run,
+I'll get a clean run.
+
+00:08:37.130 --> 00:08:40.899
+So we'll put 12 and type in
+whatever numbers you like.
+
+00:08:42.490 --> 00:08:46.120
+So that's pretty cool, makes
+it really easy to not have
+
+00:08:46.120 --> 00:08:48.730
+to worry about ordering oh my
+goodness you know what did I call
+
+00:08:48.730 --> 00:08:50.170
+this, did I define this first.
+
+00:08:51.580 --> 00:08:53.740
+This was a problem in early languages.
+
+00:08:54.349 --> 00:08:56.970
+I remember using Pascal and there
+was just no way to get around
+
+00:08:56.970 --> 00:08:59.920
+this, eventually they added
+something like forward declarations
+
+00:09:00.150 --> 00:09:01.420
+which really makes things handy.
+
+00:09:01.640 --> 00:09:05.859
+So this is just standard practice
+that c and c++ programmers use to
+
+00:09:05.860 --> 00:09:07.490
+create those function prototypes.
+
+00:09:07.880 --> 00:09:11.569
+Now what really is nice about this - 
+suppose that I mess up my function
+
+00:09:11.570 --> 00:09:17.029
+prototype and I tell the compiler
+that, that area circle function
+
+00:09:17.469 --> 00:09:20.939
+that I'm going to define later,
+this is the way you should check
+
+00:09:20.940 --> 00:09:22.370
+to make sure I use it correctly.
+
+00:09:22.780 --> 00:09:25.090
+Well, I'm not using it correctly
+right there because I'm not
+
+00:09:25.090 --> 00:09:26.340
+passing an integer into it.
+
+00:09:26.610 --> 00:09:28.080
+So this won't compile.
+
+00:09:28.290 --> 00:09:29.480
+This will give me an error right here.
+
+00:09:29.480 --> 00:09:32.359
+It says too few arguments
+to this function right here.
+
+00:09:32.639 --> 00:09:35.290
+So you've told it -- again,
+remember, it hasn't seen
+
+00:09:35.290 --> 00:09:36.609
+this one down here yet right.
+
+00:09:37.710 --> 00:09:40.630
+You've told it that that function
+will be used as in the prototype.
+
+00:09:40.670 --> 00:09:42.920
+And here, you're not using
+it as in the prototype.
+
+00:09:43.490 --> 00:09:44.610
+Okay, so let me get rid of that.
+
+00:09:45.170 --> 00:09:49.380
+Also if I send in, let's
+say 5 into here or 4, right.
+
+00:09:49.530 --> 00:09:50.909
+Again, this is not going to match.
+
+00:09:50.910 --> 00:09:54.080
+You've just told it that this
+function here expects nothing.
+
+00:09:54.430 --> 00:09:58.040
+But now you passed in an integer,
+so again it's not going to like
+
+00:09:58.040 --> 00:10:00.940
+that, it's going to say too many
+arguments now to the function call.
+
+00:10:02.230 --> 00:10:05.210
+Okay, so let's clean that
+up, and that's really all
+
+00:10:05.210 --> 00:10:06.219
+there is to prototypes.
+
+00:10:06.219 --> 00:10:10.510
+Now normally, as your programs
+get larger, these prototypes
+
+00:10:10.559 --> 00:10:13.480
+will end up going in a
+different file, in a .h file.
+
+00:10:13.480 --> 00:10:16.040
+And we'll get to .h files or
+header files, our own header
+
+00:10:16.040 --> 00:10:19.710
+files when we talk about classes
+because that's very common to
+
+00:10:19.710 --> 00:10:22.140
+create two pieces of the program.
+
+00:10:22.349 --> 00:10:26.519
+One is the header information and
+one is the actual implementation,
+
+00:10:26.820 --> 00:10:29.400
+very similar to what's
+going on here with iostream.
+
+00:10:29.639 --> 00:10:31.360
+Those are really
+considered header files.
+
+00:10:31.650 --> 00:10:34.100
+So you're going to grab a lot
+of information from there.
+
+00:10:34.110 --> 00:10:36.860
+And that's usually where we
+put our function prototypes.
+
+00:10:36.860 --> 00:10:37.850
+But there you go.
+
+00:10:38.360 --> 00:10:42.300
+Let me run this again and make sure
+it's clean, got a clean run here.
+
+00:10:42.590 --> 00:10:45.590
+So this -- I'll leave this code out
+there for you to play with as well.
+
+00:10:45.940 --> 00:10:49.220
+Get used to these function prototypes,
+we do them all the time, and it
+
+00:10:49.220 --> 00:10:50.810
+will really make your code better.
+
+00:10:51.210 --> 00:10:53.290
+Let the compiler help
+you every chance it gets.

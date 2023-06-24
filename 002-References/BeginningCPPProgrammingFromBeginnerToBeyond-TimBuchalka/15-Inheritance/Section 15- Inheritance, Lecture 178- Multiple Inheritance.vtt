@@ -1,0 +1,101 @@
+WEBVTT
+
+00:00:05.580 --> 00:00:07.899
+In this video, we'll
+see a simple example of
+
+00:00:07.900 --> 00:00:10.320
+multiple inheritance in c++.
+
+00:00:11.660 --> 00:00:15.840
+Multiple inheritance occurs when a
+derived class inherits from two or
+
+00:00:15.840 --> 00:00:17.890
+more base classes at the same time.
+
+00:00:18.830 --> 00:00:21.330
+The base classes may belong to
+unrelated class hierarchies.
+
+00:00:23.200 --> 00:00:26.750
+The class diagram on the right shows
+an example of multiple inheritance.
+
+00:00:27.330 --> 00:00:31.359
+In this case, the class department
+chair is derived from both
+
+00:00:31.480 --> 00:00:33.629
+faculty and administrator classes.
+
+00:00:34.440 --> 00:00:37.556
+So if we use public inheritance,
+then a department chair is a
+
+00:00:37.710 --> 00:00:41.780
+faculty member and a department
+chair is also an administrator.
+
+00:00:44.410 --> 00:00:47.400
+The c++ syntax for multiple
+inheritance is simple.
+
+00:00:48.200 --> 00:00:52.190
+We declare our derived class and then
+provide a comma separated list of the
+
+00:00:52.199 --> 00:00:54.050
+base classes that it's derived from.
+
+00:00:54.639 --> 00:00:57.949
+In this case, department chair is
+our derived class, and its base
+
+00:00:57.950 --> 00:01:00.110
+classes are faculty and administrator.
+
+00:01:00.530 --> 00:01:03.620
+We're only showing public inheritance
+here, but we could also use the
+
+00:01:03.620 --> 00:01:05.489
+other types of c++ inheritance.
+
+00:01:06.420 --> 00:01:09.560
+Multiple inheritance is beyond the
+scope of this course, and it can
+
+00:01:09.560 --> 00:01:11.759
+be very, very complex in practice.
+
+00:01:12.650 --> 00:01:15.419
+There are some compelling use
+cases for multiple inheritance.
+
+00:01:15.730 --> 00:01:19.670
+However, in many cases we can refactor
+our design so that the multiple
+
+00:01:19.670 --> 00:01:23.200
+inheritance can be avoided, and many
+times we end up with a better design.
+
+00:01:24.000 --> 00:01:26.650
+This isn't because there's anything
+wrong with multiple inheritance.
+
+00:01:26.900 --> 00:01:30.569
+The problem with multiple inheritance
+is that because it can be so complex,
+
+00:01:30.910 --> 00:01:34.880
+many developers don't fully understand
+it, and, therefore, may misuse it.
+
+00:01:35.690 --> 00:01:39.079
+More often, you see multiple
+inheritance in class libraries and
+
+00:01:39.080 --> 00:01:40.879
+frameworks that you might be using.

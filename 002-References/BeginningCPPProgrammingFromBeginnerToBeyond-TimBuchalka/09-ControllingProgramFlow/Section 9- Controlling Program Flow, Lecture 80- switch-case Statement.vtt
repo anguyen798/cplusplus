@@ -1,0 +1,1237 @@
+WEBVTT
+
+00:00:05.750 --> 00:00:08.800
+In this video, we'll learn
+about c++ switch statement.
+
+00:00:09.780 --> 00:00:12.890
+As you've already seen, it's
+very common to have to execute
+
+00:00:12.890 --> 00:00:16.840
+specific sections of code depending
+on the value of a constant.
+
+00:00:17.549 --> 00:00:21.130
+For this particular use case, the
+switch statement comes in very useful.
+
+00:00:21.710 --> 00:00:24.940
+We'll learn the switch, case,
+break and default keywords.
+
+00:00:25.980 --> 00:00:28.110
+The syntax for the switch
+statement is a little more
+
+00:00:28.110 --> 00:00:29.560
+involved than the if statement.
+
+00:00:29.809 --> 00:00:32.170
+But it's not too bad once you
+understand what it's doing.
+
+00:00:33.049 --> 00:00:36.529
+First, we have the switch keyword,
+which is followed by the control
+
+00:00:36.530 --> 00:00:38.550
+expression inside parentheses.
+
+00:00:39.170 --> 00:00:42.670
+This control expression
+must evaluate to an integral
+
+00:00:42.670 --> 00:00:44.600
+type or an enumeration type.
+
+00:00:45.760 --> 00:00:49.739
+Then you have a series of case
+statements enclosed in curly braces.
+
+00:00:51.040 --> 00:00:54.510
+The value of the control expression
+will be compared to the values,
+
+00:00:54.720 --> 00:00:56.440
+following the case keywords.
+
+00:00:57.320 --> 00:01:00.339
+These case statements must
+also evaluate to an integral or
+
+00:01:00.340 --> 00:01:04.489
+enumeration type and must be known
+at compile time that means they
+
+00:01:04.489 --> 00:01:06.300
+must be constants or literals.
+
+00:01:07.389 --> 00:01:10.280
+When the value of the control
+expression matches, the case
+
+00:01:10.280 --> 00:01:14.780
+expression then the code after
+the colon is executed until
+
+00:01:14.780 --> 00:01:16.009
+you hit a break statement.
+
+00:01:16.880 --> 00:01:20.250
+The break statements are optional,
+but best practice is to include
+
+00:01:20.250 --> 00:01:23.070
+break statements for every case
+statement unless you've got
+
+00:01:23.070 --> 00:01:24.410
+a really good reason not to.
+
+00:01:25.639 --> 00:01:27.979
+In the next, several slides
+we'll go through the behavior
+
+00:01:27.980 --> 00:01:30.950
+of a switch statement with
+and without break statements.
+
+00:01:31.790 --> 00:01:34.520
+Finally, a switch statement
+can have a default case at
+
+00:01:34.520 --> 00:01:37.570
+the end that will execute when
+none of the cases is true.
+
+00:01:38.099 --> 00:01:41.920
+This is similar to that catch-all else
+at the bottom of an if-else statement.
+
+00:01:43.500 --> 00:01:46.270
+The break statement is not
+needed in the default case.
+
+00:01:46.539 --> 00:01:49.500
+Let's see some examples of the
+various forms of the switch statement.
+
+00:01:52.690 --> 00:01:56.360
+In this example, selection
+is a character type which of
+
+00:01:56.360 --> 00:01:57.940
+course is also an integral type.
+
+00:01:58.780 --> 00:02:02.130
+We assume that the user has entered
+a character at the keyboard and
+
+00:02:02.130 --> 00:02:03.789
+it's been assigned to selection.
+
+00:02:04.670 --> 00:02:07.990
+We can write if else if statements
+to execute code depending
+
+00:02:07.990 --> 00:02:09.039
+on the character entered.
+
+00:02:09.389 --> 00:02:12.300
+But in this case, we can use a
+switch statement since the control
+
+00:02:12.300 --> 00:02:16.259
+expression is an integral type
+and the case statement contains
+
+00:02:16.260 --> 00:02:17.769
+character literals to match.
+
+00:02:18.210 --> 00:02:22.740
+So suppose the user enters the
+character 2, the switch will start at
+
+00:02:22.750 --> 00:02:26.380
+the first case statement and compare
+the 2 to the literal expression,
+
+00:02:26.630 --> 00:02:28.049
+following the case keyword.
+
+00:02:28.440 --> 00:02:30.680
+So the 2 will first
+be compared to the 1.
+
+00:02:30.680 --> 00:02:34.970
+Since this is not true, we proceed
+and check the next case statement.
+
+00:02:35.960 --> 00:02:37.210
+In this case, we have a match.
+
+00:02:37.830 --> 00:02:40.669
+So all the code following
+the colon will be executed.
+
+00:02:41.079 --> 00:02:43.200
+Notice that we can have
+multiple statements here
+
+00:02:43.200 --> 00:02:44.470
+without the need for a block.
+
+00:02:45.070 --> 00:02:48.170
+However, if you need to declare
+variables in this section,
+
+00:02:48.430 --> 00:02:50.960
+then you need to put the
+curly braces in for a block.
+
+00:02:51.870 --> 00:02:55.750
+So we display two selected then we
+execute the break statement which
+
+00:02:55.750 --> 00:02:57.170
+completes the switch statement.
+
+00:02:57.490 --> 00:03:00.339
+No further cases will be
+checked and we continue with
+
+00:03:00.340 --> 00:03:01.260
+the rest of the program.
+
+00:03:02.150 --> 00:03:07.010
+Notice that in the case of 3 and 4,
+we display 3 or 4 has been selected
+
+00:03:07.220 --> 00:03:08.780
+and then we're done with this switch.
+
+00:03:09.139 --> 00:03:12.170
+This is handy since we can write
+logic that's equivalent to an or
+
+00:03:12.170 --> 00:03:14.030
+statement, as we see in this case.
+
+00:03:14.839 --> 00:03:17.190
+Finally, the switch
+has a default case.
+
+00:03:17.520 --> 00:03:20.990
+If none of the previous case
+statements match, then we execute
+
+00:03:20.990 --> 00:03:25.880
+the default, which in this case
+displays 1 2 3 4 not selected.
+
+00:03:26.910 --> 00:03:28.929
+No break is needed in
+the default statement.
+
+00:03:29.320 --> 00:03:31.970
+Also the default statement
+is optional, but it's best
+
+00:03:31.980 --> 00:03:33.060
+practice to include one.
+
+00:03:34.039 --> 00:03:37.040
+Let's look at an example where we
+don't have some break statements.
+
+00:03:39.400 --> 00:03:42.630
+This is an example of the fall through
+behavior of the switch statement.
+
+00:03:43.150 --> 00:03:46.980
+Notice that there are no break
+statement in cases 1, 2 and 3.
+
+00:03:47.650 --> 00:03:50.319
+Case 4 is the only case
+that has a break statement.
+
+00:03:51.040 --> 00:03:55.620
+Suppose the user enters the character
+1, and it was assigned to selection.
+
+00:03:56.210 --> 00:03:58.710
+We check the first case
+statement and it matches.
+
+00:03:59.010 --> 00:04:01.329
+So we execute the code
+following the colon.
+
+00:04:01.680 --> 00:04:03.820
+In this case, we display one selected.
+
+00:04:04.530 --> 00:04:08.370
+Now we continue executing code going
+straight down the switch statement
+
+00:04:08.650 --> 00:04:10.560
+until we hit a break statement.
+
+00:04:11.059 --> 00:04:14.160
+So in this case, we also
+display 2 selected and 3
+
+00:04:14.160 --> 00:04:15.690
+selected and 4 selected.
+
+00:04:16.110 --> 00:04:17.820
+Finally, we hit a break statement.
+
+00:04:18.040 --> 00:04:20.719
+In case, 4 and we're
+done with the switch.
+
+00:04:21.300 --> 00:04:24.300
+Remember, once a match is made,
+all the code in the switch
+
+00:04:24.300 --> 00:04:28.030
+cases, including and following
+that match, will be executed
+
+00:04:28.350 --> 00:04:29.919
+until we hit a break statement.
+
+00:04:30.250 --> 00:04:32.240
+No other conditions will be checked.
+
+00:04:33.360 --> 00:04:36.300
+This sort of logic can be handy
+in some cases when you want to
+
+00:04:36.310 --> 00:04:40.009
+execute a subset of statements
+depending on various conditions.
+
+00:04:40.429 --> 00:04:43.330
+However, this should not be the way
+you normally code a switch statement.
+
+00:04:43.710 --> 00:04:47.299
+Best practice is to include a break
+statement in every case statement.
+
+00:04:48.070 --> 00:04:51.240
+If you need logic that falls
+through, please document the
+
+00:04:51.240 --> 00:04:54.530
+code and be very clear in the
+documentation that the fall through
+
+00:04:54.530 --> 00:04:56.240
+behavior is what you intended.
+
+00:04:56.760 --> 00:05:00.120
+If another programmer sees the
+code and needs to modify it,
+
+00:05:00.469 --> 00:05:03.570
+they'll understand this and be very
+careful when adding or removing
+
+00:05:03.570 --> 00:05:05.119
+new conditions or statements.
+
+00:05:05.949 --> 00:05:09.040
+Let's see an example of using a
+switch statement with an enumeration.
+
+00:05:11.020 --> 00:05:13.770
+In this example, we see an example
+of using a switch statement
+
+00:05:13.770 --> 00:05:15.099
+with an enumeration type.
+
+00:05:15.790 --> 00:05:19.130
+We have an enumeration type
+called color with 3 enumeration
+
+00:05:19.130 --> 00:05:20.670
+constants: red, green and blue.
+
+00:05:21.230 --> 00:05:24.530
+We also have a variable named screen
+color, which we initialize to green.
+
+00:05:25.160 --> 00:05:27.690
+But it can hold any of the
+3 enumeration constants.
+
+00:05:28.740 --> 00:05:31.659
+Using this enumeration variable
+in the switch statement is a very
+
+00:05:31.660 --> 00:05:35.580
+common use case and a great way to
+execute code depending on its value.
+
+00:05:36.410 --> 00:05:38.749
+In this case, we switch off
+the screen color which can
+
+00:05:38.799 --> 00:05:40.210
+only be red, green or blue.
+
+00:05:40.210 --> 00:05:44.289
+And we execute the appropriate code
+when we match the specific value.
+
+00:05:45.300 --> 00:05:48.400
+Also notice that in this case,
+we're supplying a default case
+
+00:05:48.650 --> 00:05:51.990
+but this should never execute
+unless we add another enumeration
+
+00:05:52.020 --> 00:05:55.529
+constant to our enumeration and
+forget to include a case for it.
+
+00:05:58.690 --> 00:06:00.949
+So let's review what we learned
+about the switch statement.
+
+00:06:01.390 --> 00:06:04.290
+The control expression must
+evaluate to an integral type,
+
+00:06:04.730 --> 00:06:07.560
+the switch statement is commonly
+used with enumeration types.
+
+00:06:08.380 --> 00:06:12.339
+The case expressions must be known
+at compile time, so only constants or
+
+00:06:12.650 --> 00:06:14.439
+literals can be used, no variables.
+
+00:06:15.299 --> 00:06:19.309
+Once a match occurs, all code in the
+following case statements is executed
+
+00:06:19.610 --> 00:06:21.450
+until a break statement is reached.
+
+00:06:22.220 --> 00:06:25.730
+Finally, best practice is to always
+include break statements for each
+
+00:06:25.740 --> 00:06:28.470
+case and also provide a default case.
+
+00:06:29.240 --> 00:06:32.370
+Let's head over to the IDE and see
+some switch statements in action.
+
+00:06:33.860 --> 00:06:38.450
+I'm in the IDE in the section 9
+workspace in the switch project.
+
+00:06:39.420 --> 00:06:42.330
+And what we're going to do, we're
+going to do a little program here
+
+00:06:42.330 --> 00:06:43.610
+that uses a switch statement.
+
+00:06:43.870 --> 00:06:46.909
+We're going to ask the user what
+grade they expect on an exam that'll
+
+00:06:46.920 --> 00:06:49.589
+be a character: a, b, c, d, f.
+
+00:06:50.099 --> 00:06:53.869
+And we'll tell them what
+they need to score to get it.
+
+00:06:54.350 --> 00:06:58.180
+Okay, so I made a start here
+where we have a letter grade
+
+00:06:58.190 --> 00:07:00.960
+that's a character, and that's
+what the user is going to enter.
+
+00:07:01.510 --> 00:07:05.060
+We prompt the user to enter the
+letter grade they expect on the exam,
+
+00:07:05.130 --> 00:07:06.860
+and we read that into letter grade.
+
+00:07:07.150 --> 00:07:11.369
+Okay, so now what we want to do is we
+want to switch off of letter grade.
+
+00:07:11.719 --> 00:07:12.620
+It's a character.
+
+00:07:12.690 --> 00:07:14.300
+So that's definitely an integral type.
+
+00:07:14.660 --> 00:07:21.480
+So we'll say switch, and we
+want to switch off letter grade.
+
+00:07:21.980 --> 00:07:25.070
+Okay, I'll put in the syntax I
+need which is the open and close
+
+00:07:25.080 --> 00:07:26.550
+curlies for my switch statement.
+
+00:07:27.179 --> 00:07:30.179
+Now what we have in here is
+we need to provide the cases.
+
+00:07:30.199 --> 00:07:35.430
+Now in this case, we can provide upper
+and lower case for each character.
+
+00:07:35.430 --> 00:07:36.040
+So we could say.
+
+00:07:36.040 --> 00:07:40.830
+Case lowercase a and case uppercase a.
+
+00:07:40.880 --> 00:07:43.359
+I want the same behavior
+right because the user could
+
+00:07:43.360 --> 00:07:45.300
+certainly type a lowercase a.
+
+00:07:45.950 --> 00:07:51.420
+So if they type a lowercase or an
+uppercase a, all we'll say is cout,
+
+00:07:52.360 --> 00:07:56.570
+let's say, you need a 90 or above.
+
+00:07:58.090 --> 00:07:59.349
+And we'll tell them to study hard.
+
+00:08:03.570 --> 00:08:08.299
+Okay, so that'll be the
+statement for that specific case.
+
+00:08:09.540 --> 00:08:10.360
+We need a break.
+
+00:08:10.380 --> 00:08:11.799
+Otherwise, we'll fall through.
+
+00:08:11.800 --> 00:08:13.470
+I don't want to fall
+through in this example.
+
+00:08:13.990 --> 00:08:15.950
+And let's do the b case.
+
+00:08:18.290 --> 00:08:19.970
+Again, lowercase and uppercase.
+
+00:08:20.940 --> 00:08:24.110
+And also remember that I'm
+using single quote marks here
+
+00:08:24.110 --> 00:08:25.460
+because these are characters.
+
+00:08:25.980 --> 00:08:30.260
+So in the case of a b if that's
+what they want, I'll say something
+
+00:08:30.270 --> 00:08:36.530
+like you need 80 to 89, for a b.
+
+00:08:38.139 --> 00:08:39.299
+And we'll say go study.
+
+00:08:45.219 --> 00:08:46.540
+And I'll use an endline here.
+
+00:08:47.730 --> 00:08:49.030
+And again, I want to break.
+
+00:08:52.570 --> 00:08:54.059
+Let's do our c case.
+
+00:08:54.059 --> 00:08:55.270
+It's only a couple left.
+
+00:08:55.549 --> 00:08:57.240
+So there's my lowercase c.
+
+00:08:57.580 --> 00:08:59.010
+Here's my uppercase c.
+
+00:09:00.820 --> 00:09:09.780
+And in this case, I'll just say output
+a, something like you need 70 to
+
+00:09:09.800 --> 00:09:15.870
+79 for an average grade, let's say.
+
+00:09:19.939 --> 00:09:21.400
+And we'll endline here.
+
+00:09:22.670 --> 00:09:23.580
+Again, a break.
+
+00:09:26.599 --> 00:09:27.979
+We'll do the d case.
+
+00:09:35.520 --> 00:09:42.880
+And here, we'll say something
+like I don't know like, you
+
+00:09:42.880 --> 00:09:44.160
+should strive for a better grade.
+
+00:09:55.379 --> 00:10:02.719
+Let's just say all you need is 60
+to 69 or something like that, and
+
+00:10:02.720 --> 00:10:04.150
+we'll put an endline here as well.
+
+00:10:08.299 --> 00:10:11.720
+Of course, the break is required here
+because I don't want to fall through.
+
+00:10:12.699 --> 00:10:14.170
+And then in the case of f.
+
+00:10:14.710 --> 00:10:26.250
+Again, lowercase f or uppercase
+f, here we'll just do cout, let's
+
+00:10:26.250 --> 00:10:28.909
+just put a little placeholder
+here to test ourselves because we
+
+00:10:28.910 --> 00:10:32.260
+want to add a little bit of code
+here once we finish this example.
+
+00:10:34.160 --> 00:10:37.850
+Okay, and we'll break out of here.
+
+00:10:39.340 --> 00:10:46.840
+Our default is going to say something
+like, sorry that's not a valid grade.
+
+00:10:55.910 --> 00:10:58.400
+And I think we're
+pretty much done here.
+
+00:10:59.940 --> 00:11:04.399
+Okay, let me clean that up just a
+little bit, so let's look through
+
+00:11:04.400 --> 00:11:06.049
+this right before we run it.
+
+00:11:06.289 --> 00:11:08.830
+We're grabbing the letter from
+-- the letter gray from the user.
+
+00:11:08.830 --> 00:11:09.910
+We're switching off of it.
+
+00:11:10.400 --> 00:11:12.650
+We're checking for
+lowercase, uppercase a.
+
+00:11:13.170 --> 00:11:16.480
+We've got a message: the
+b, the c, the d, the f.
+
+00:11:16.500 --> 00:11:18.010
+And sorry not a valid grade.
+
+00:11:18.259 --> 00:11:19.790
+And we'll get back to
+the f in a little bit.
+
+00:11:19.790 --> 00:11:21.019
+We'll write some code in there.
+
+00:11:21.200 --> 00:11:22.929
+So let's execute this.
+
+00:11:25.759 --> 00:11:27.170
+Enter the letter grade you expect.
+
+00:11:27.220 --> 00:11:30.970
+I want an a, you need
+90 or above, study hard.
+
+00:11:31.590 --> 00:11:34.710
+Okay, let's do the b.
+
+00:11:35.469 --> 00:11:37.060
+I'll do a lowercase b this time.
+
+00:11:37.809 --> 00:11:39.460
+You need 80 to 89 for a b.
+
+00:11:39.469 --> 00:11:40.110
+Go study.
+
+00:11:40.730 --> 00:11:41.980
+And let's do the f.
+
+00:11:45.250 --> 00:11:46.430
+And there's my x's.
+
+00:11:46.580 --> 00:11:51.990
+Okay, so what we want to do
+now is in this case right here
+
+00:11:51.990 --> 00:11:56.170
+in the f case, let's ask, are
+you sure you really want an f.
+
+00:11:56.400 --> 00:11:58.240
+You know did you type
+this in correctly.
+
+00:11:58.660 --> 00:12:00.669
+So what we want to do is
+we want to write a little
+
+00:12:00.700 --> 00:12:02.370
+if else if statement here.
+
+00:12:02.790 --> 00:12:05.160
+And I'm going to declare
+a variable in here.
+
+00:12:05.160 --> 00:12:07.920
+So I want to be sure
+that I'm using a block.
+
+00:12:08.920 --> 00:12:11.370
+And I want to use the block
+right in here like this.
+
+00:12:13.910 --> 00:12:16.190
+Okay, so I'm going to
+get rid of this guy.
+
+00:12:18.289 --> 00:12:20.380
+And I want to put the
+break inside this block.
+
+00:12:21.590 --> 00:12:24.760
+Sometimes the IDEs don't put
+those curlies in the right places.
+
+00:12:24.780 --> 00:12:25.800
+I think it's okay now.
+
+00:12:26.120 --> 00:12:28.180
+Okay, so this is the
+logic I want here.
+
+00:12:28.300 --> 00:12:29.780
+So I want to have another character.
+
+00:12:30.290 --> 00:12:32.950
+And I want to -- I'll call it
+confirm because I want to confirm
+
+00:12:32.950 --> 00:12:34.079
+that they really want an f.
+
+00:12:35.270 --> 00:12:38.160
+And we'll initialize
+it to blank, to 0.
+
+00:12:40.240 --> 00:12:46.819
+And then we'll say cout, are
+you sure or something like
+
+00:12:46.820 --> 00:12:48.000
+that, we'll say yes, no.
+
+00:12:51.630 --> 00:12:53.799
+Okay, so they'll enter a yes or no.
+
+00:12:55.450 --> 00:12:58.080
+And I'll read into confirm.
+
+00:12:58.930 --> 00:13:02.030
+Again, so they're going to type in a
+character, either yes or no hopefully.
+
+00:13:02.830 --> 00:13:03.550
+So what do we do.
+
+00:13:03.719 --> 00:13:07.489
+Well, let's say if they type in
+a yes uppercase or lowercase,
+
+00:13:08.650 --> 00:13:10.089
+we'll give them a message.
+
+00:13:10.100 --> 00:13:12.169
+If they type in a no, we'll
+give them another message.
+
+00:13:12.490 --> 00:13:15.120
+And we've got to make sure
+that they type a yes or no.
+
+00:13:15.120 --> 00:13:18.260
+If they typed anything else, we'll
+give them a little message that says
+
+00:13:18.780 --> 00:13:20.109
+I have no idea what you're saying.
+
+00:13:20.270 --> 00:13:21.370
+Okay, so let's do that.
+
+00:13:21.620 --> 00:13:28.409
+Let's say if the confirm
+character is equal to a lowercase
+
+00:13:28.789 --> 00:13:34.900
+y or the confirmed character
+is equal to an uppercase y.
+
+00:13:34.900 --> 00:13:37.290
+Remember, don't forget to do
+the double equal signs here
+
+00:13:37.300 --> 00:13:38.270
+because we're comparing.
+
+00:13:39.240 --> 00:13:42.110
+So if that's the case and I'm not
+going to use any any block statements
+
+00:13:42.110 --> 00:13:43.230
+here because I don't need to.
+
+00:13:43.429 --> 00:13:45.000
+I'll just say cout.
+
+00:13:46.129 --> 00:13:53.760
+Okay, I guess you didn't study or I
+guess you don't want to study, right.
+
+00:13:55.510 --> 00:13:56.910
+And I'll give them an endline here.
+
+00:13:59.200 --> 00:14:04.030
+Else - let's check to see if they
+actually typed no
+
+00:14:04.040 --> 00:14:05.680
+because  it could be anything else now, right.
+
+00:14:05.770 --> 00:14:07.420
+All we know is that it's not a yes.
+
+00:14:07.670 --> 00:14:14.260
+So in this case, we'll say else
+if confirm is a little lowercase
+
+00:14:15.040 --> 00:14:25.540
+n or again confirm is an uppercase
+n, then we'll just simply say
+
+00:14:25.540 --> 00:14:32.550
+something like cout good, go study.
+
+00:14:39.520 --> 00:14:42.780
+So now here, we need that
+catch-all else, right.
+
+00:14:42.790 --> 00:14:46.210
+At this point, they typed something
+in other than a yes or no.
+
+00:14:47.330 --> 00:14:50.150
+So what do we do here, we tell them
+boy you really do want that f, right.
+
+00:14:50.190 --> 00:14:56.900
+We'll just say you cout illegal
+choice or something or something
+
+00:14:56.900 --> 00:14:57.870
+more clever if you like.
+
+00:15:02.080 --> 00:15:02.840
+Okay.
+
+00:15:03.000 --> 00:15:08.310
+That should do it, now because
+I'm creating and declaring that
+
+00:15:08.380 --> 00:15:12.650
+character right here, I need
+those curlies inside the block.
+
+00:15:14.139 --> 00:15:16.679
+Otherwise, if I was not
+declaring a variable here, I
+
+00:15:16.680 --> 00:15:17.746
+don't need to put the curlies.
+
+00:15:17.746 --> 00:15:21.280
+But once I have to declare a
+variable I need those curlies.
+
+00:15:21.280 --> 00:15:25.440
+Right, so let's execute this
+and see what's going on.
+
+00:15:26.150 --> 00:15:27.320
+Okay, so what's the letter grade?
+
+00:15:27.330 --> 00:15:28.850
+The only one I really
+changed was the f.
+
+00:15:28.850 --> 00:15:32.259
+So let's type the f, and
+now it says are you sure.
+
+00:15:32.290 --> 00:15:33.210
+I'll say, yes.
+
+00:15:34.270 --> 00:15:37.250
+Okay, I guess you didn't study,
+exactly what we expected.
+
+00:15:37.260 --> 00:15:39.430
+Let me run it again with the f.
+
+00:15:40.500 --> 00:15:41.860
+Are you sure, no.
+
+00:15:42.720 --> 00:15:43.680
+Good go study.
+
+00:15:44.420 --> 00:15:46.689
+And then we'll just give
+it another character.
+
+00:15:47.849 --> 00:15:49.230
+Again, we'll go f.
+
+00:15:49.740 --> 00:15:52.970
+And let's say, are you
+sure q., illegal choice.
+
+00:15:53.039 --> 00:15:53.540
+There you go.
+
+00:15:53.820 --> 00:15:58.800
+So here you can see some logic
+using the switch statement with
+
+00:15:59.270 --> 00:16:02.969
+a character, which is an integral
+type, a bunch of literals here with
+
+00:16:02.969 --> 00:16:05.269
+this lowercase a's and and so forth.
+
+00:16:05.870 --> 00:16:12.349
+And in the case f, we've got some
+if else if logic going on as well.
+
+00:16:12.570 --> 00:16:15.650
+So you could see that the logic
+for this is pretty straightforward.
+
+00:16:17.340 --> 00:16:19.160
+The switch statement
+makes it nice to do.
+
+00:16:19.160 --> 00:16:20.220
+It's kind of long.
+
+00:16:20.340 --> 00:16:21.989
+The code is pretty wordy.
+
+00:16:22.349 --> 00:16:25.540
+But it's very very easy to
+see, very easy to understand.
+
+00:16:26.000 --> 00:16:28.029
+And when you read this,
+I mean it can't get much
+
+00:16:28.029 --> 00:16:28.980
+clearer than that, right.
+
+00:16:28.980 --> 00:16:31.060
+You're switching off a letter
+greater if it's an a or an a or
+
+00:16:31.060 --> 00:16:32.830
+a b or a b really, really clear.
+
+00:16:33.310 --> 00:16:36.040
+Indentation again and style
+really, really important.
+
+00:16:36.830 --> 00:16:39.530
+If everything here was at the
+same level all the way on the
+
+00:16:39.530 --> 00:16:42.110
+left hand side, it would be
+really really hard to read and
+
+00:16:42.110 --> 00:16:43.410
+figure out what goes where.
+
+00:16:44.120 --> 00:16:48.309
+Okay, so that takes care of the
+switch statement in this context.
+
+00:16:48.600 --> 00:16:51.310
+Next, we'll do the switch statement
+using an enumeration and we'll
+
+00:16:51.310 --> 00:16:52.360
+do that one really quickly.
+
+00:16:54.950 --> 00:16:58.020
+Okay, so I've switched to
+the switch enum project.
+
+00:16:58.670 --> 00:17:00.480
+And I've started it already.
+
+00:17:00.480 --> 00:17:01.589
+So let's go over it here.
+
+00:17:01.920 --> 00:17:05.870
+What I've done here is I've created
+an enumeration type called direction.
+
+00:17:06.109 --> 00:17:08.930
+And you can see it right
+here between lines 10 and 12.
+
+00:17:09.120 --> 00:17:12.250
+And the enumeration constants
+are left right up and down.
+
+00:17:12.300 --> 00:17:13.379
+So it's pretty straightforward.
+
+00:17:13.380 --> 00:17:15.809
+Remember, when you declare
+an enumeration, you're
+
+00:17:15.809 --> 00:17:16.829
+creating a new type.
+
+00:17:17.139 --> 00:17:19.609
+So we can create
+variables of that type.
+
+00:17:19.609 --> 00:17:23.679
+So heading is of type direction, just
+like we could have said I is an int.
+
+00:17:24.059 --> 00:17:26.359
+And we're initializing it
+to left, which is one of
+
+00:17:26.359 --> 00:17:27.790
+those enumeration constants.
+
+00:17:27.950 --> 00:17:32.000
+Okay, so now what we want to do is we
+want to switch off of that heading.
+
+00:17:32.540 --> 00:17:34.110
+Heading is an enumeration.
+
+00:17:34.320 --> 00:17:36.560
+So basically, it's an integral type.
+
+00:17:36.560 --> 00:17:38.210
+That's what your numerations are.
+
+00:17:38.210 --> 00:17:41.920
+So here, I'm going to type in switch
+and I want to switch off heading.
+
+00:17:43.520 --> 00:17:48.750
+In this case, our cases are
+left, right, up and down, right.
+
+00:17:49.240 --> 00:17:50.820
+They have to be they
+can't be anything else.
+
+00:17:51.630 --> 00:17:53.400
+Let me get rid of
+that extra curly here.
+
+00:17:54.000 --> 00:18:04.380
+So we can say, case left and then
+at this point we could just say
+
+00:18:04.380 --> 00:18:07.629
+something like cout, let's say going.
+
+00:18:07.630 --> 00:18:13.379
+Left just something really simple
+so that we know we hit the right
+
+00:18:13.910 --> 00:18:16.220
+case, and we'll put an endline here.
+
+00:18:17.219 --> 00:18:18.879
+And of course, I want to break.
+
+00:18:22.840 --> 00:18:28.820
+Okay, we'll say case right, and
+we'll do the same thing, I'll
+
+00:18:28.820 --> 00:18:31.420
+just copy and paste these two
+lines to save a little time.
+
+00:18:32.480 --> 00:18:34.879
+And now I'm going to compile this.
+
+00:18:34.889 --> 00:18:37.889
+And you'll see the issue
+that we see right away.
+
+00:18:39.560 --> 00:18:41.720
+And let me just clean this
+up, just a little bit.
+
+00:18:43.210 --> 00:18:44.709
+Okay, so let's compile this.
+
+00:18:47.280 --> 00:18:50.110
+And I get a run that says going
+left just like I expect right.
+
+00:18:50.380 --> 00:18:54.469
+But look down here and
+you've got some warnings.
+
+00:18:54.720 --> 00:18:57.960
+The warnings are saying
+warning enumeration value
+
+00:18:58.050 --> 00:19:00.490
+up not handled, right.
+
+00:19:00.970 --> 00:19:03.670
+Warning enumeration
+value down not handle.
+
+00:19:04.290 --> 00:19:07.470
+This is telling you that the
+compiler understands that there are
+
+00:19:07.530 --> 00:19:09.610
+four enumeration constants here.
+
+00:19:10.170 --> 00:19:13.250
+You're using an enumeration variable
+in your switch, but you're only
+
+00:19:13.260 --> 00:19:14.800
+handling two of those cases.
+
+00:19:15.160 --> 00:19:16.820
+Well, c++ gives you the warning.
+
+00:19:16.820 --> 00:19:19.530
+A lot of other programming
+languages now won't compile.
+
+00:19:19.530 --> 00:19:20.719
+This this will be an error.
+
+00:19:20.880 --> 00:19:22.669
+They force you to
+handle all the types.
+
+00:19:22.920 --> 00:19:28.230
+So you could create two more types for
+up and down or you can use a default
+
+00:19:28.449 --> 00:19:30.900
+that's going to catch everything else.
+
+00:19:34.250 --> 00:19:35.500
+And I'll just say okay here.
+
+00:19:44.799 --> 00:19:46.399
+And now no warnings.
+
+00:19:46.490 --> 00:19:47.960
+All good, and we're going left.
+
+00:19:48.400 --> 00:19:50.260
+Okay, so that's really
+what I wanted to show you
+
+00:19:50.260 --> 00:19:51.560
+with the enumeration types.
+
+00:19:51.560 --> 00:19:54.580
+When you use them with switch
+statements I mean there's a reason
+
+00:19:54.580 --> 00:19:56.510
+you create an enumeration type, right.
+
+00:19:56.510 --> 00:19:58.220
+You've got these
+enumeration constants.
+
+00:19:58.220 --> 00:20:01.409
+So that variable heading could
+be any one of those four.
+
+00:20:01.639 --> 00:20:06.820
+So you really should be handling all
+four cases in your switch or using
+
+00:20:06.820 --> 00:20:10.810
+a default to handle the fall through
+in case one of them doesn't match.
+
+00:20:11.560 --> 00:20:14.149
+Okay, so that finishes up this
+video with the switch statement.

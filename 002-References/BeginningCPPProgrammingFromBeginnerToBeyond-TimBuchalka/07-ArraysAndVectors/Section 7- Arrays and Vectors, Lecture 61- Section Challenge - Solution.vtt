@@ -1,0 +1,316 @@
+WEBVTT
+
+00:00:06.360 --> 00:00:09.260
+Welcome back. I hope you enjoyed working with vectors
+
+00:00:09.260 --> 00:00:11.060
+and learn more about how to use them.
+
+00:00:11.560 --> 00:00:14.920
+You can find my solution in the section 7 workspace
+
+00:00:14.920 --> 00:00:16.920
+in the challenge solution project.
+
+00:00:17.520 --> 00:00:20.520
+Let's go through my solution to this challenge one line at a time.
+
+00:00:20.520 --> 00:00:23.880
+I've inserted the challenge directives in my solution as comments,
+
+00:00:23.880 --> 00:00:27.240
+so it's easier to follow along. So where do we start.
+
+00:00:27.240 --> 00:00:30.740
+First thing we need to do is we need to include the vector library.
+
+00:00:30.740 --> 00:00:34.940
+If you didn't do that you probably got some syntax errors about vector not found and
+
+00:00:34.940 --> 00:00:36.240
+probably got a lot of errors.
+
+00:00:36.900 --> 00:00:39.900
+Also we can use the namespace standard.
+
+00:00:39.900 --> 00:00:43.100
+We don't have to do this but it makes the code a lot less cluttered,
+
+00:00:43.100 --> 00:00:46.400
+and it's easier to display for teaching purposes that way.
+
+00:00:46.400 --> 00:00:48.400
+If you didn't include namespace standard,
+
+00:00:48.400 --> 00:00:51.800
+you might have gotten errors and you probably did something like standard
+
+00:00:51.800 --> 00:00:53.900
+scope resolution operator vector.
+
+00:00:53.900 --> 00:00:57.200
+So let's do the first directive. It says declare two empty vectors
+
+00:00:57.200 --> 00:01:00.500
+of integers named vector1 and vector2, respectively.
+
+00:01:00.500 --> 00:01:03.700
+On lines 42 and 43, that's exactly what I'm doing.
+
+00:01:03.700 --> 00:01:06.500
+You can see vector1 is a vector of integers,
+
+00:01:06.500 --> 00:01:08.500
+and vector2 is a vector of integers.
+
+00:01:09.000 --> 00:01:11.360
+There is no constructor here with the size.
+
+00:01:11.360 --> 00:01:15.360
+There's no initialization list. So these are going to be empty vectors.
+
+00:01:15.960 --> 00:01:20.060
+The second directive on line 45 says add 10 and 20 to vector1
+
+00:01:20.060 --> 00:01:22.060
+dynamically using pushback.
+
+00:01:22.060 --> 00:01:26.760
+That's what I'm doing on lines 47 and 48, vector1.pushback10,
+
+00:01:26.960 --> 00:01:28.960
+vector1.pushback20.
+
+00:01:28.960 --> 00:01:32.860
+These two elements will be added to the back of the vector and the storage will be allocated
+
+00:01:32.860 --> 00:01:34.060
+automatically for them.
+
+00:01:34.560 --> 00:01:37.260
+This is where we can see that the vectors can grow.
+
+00:01:38.060 --> 00:01:42.660
+On line 50, we want to display the elements in vector 1 using the at method,
+
+00:01:42.660 --> 00:01:46.660
+and we also want to display the size of the vector using the size method.
+
+00:01:46.660 --> 00:01:50.860
+So you can see that between lines 52 and 55, that's what I'm doing here.
+
+00:01:50.860 --> 00:01:55.850
+On line 53, I'm simply saying give me the element at vectorn1's 0
+
+00:01:56.150 --> 00:01:58.450
+and then give me the element at 1.
+
+00:01:58.450 --> 00:02:01.450
+So that will display 20 and 20 because that's what's in there.
+
+00:02:01.750 --> 00:02:04.050
+And then I'm gonna say vector1 contains
+
+00:02:04.550 --> 00:02:09.150
+vector.size will return 2 because there's currently 2 elements in the vector1.
+
+00:02:09.550 --> 00:02:12.550
+So it should display vector1 contains two elements.
+
+00:02:12.750 --> 00:02:16.110
+Okay. So, so far pretty easy. Let me scroll up just a little bit.
+
+00:02:16.610 --> 00:02:18.210
+. And on line 57,
+
+00:02:18.210 --> 00:02:21.610
+we're doing the same thing with a 100 and 200 but to vector2.
+
+00:02:21.610 --> 00:02:23.760
+So i'm adding 100 and 200
+
+00:02:23.760 --> 00:02:26.360
+dynamically using pushback on vector2.
+
+00:02:26.610 --> 00:02:28.210
+Vector2 was empty.
+
+00:02:28.210 --> 00:02:31.510
+So after this, vector2 should have 100 and 200
+
+00:02:31.510 --> 00:02:32.810
+and the size of 2.
+
+00:02:33.810 --> 00:02:38.260
+What we're doing on line 64 through 67 is the same thing we did with vector1,
+
+00:02:38.260 --> 00:02:39.960
+except we're doing it with vector2.
+
+00:02:39.960 --> 00:02:43.320
+We're displaying the results. This should display 100,
+
+00:02:43.320 --> 00:02:46.620
+200, and vector2 contains two elements.
+
+00:02:47.420 --> 00:02:50.720
+Okay. Let me scroll up a little bit more now on line 69,
+
+00:02:51.320 --> 00:02:55.680
+the directive says declare an empty two-dimensional vector called vector2d.
+
+00:02:56.280 --> 00:03:00.780
+And there's a little hint there that says remember that a 2d vector is a vector of vectors.
+
+00:03:00.980 --> 00:03:04.280
+So this is how we would declare this. Vector2d,
+
+00:03:04.280 --> 00:03:05.580
+that's my object,
+
+00:03:06.480 --> 00:03:08.880
+is a vector of integer vectors
+
+00:03:08.880 --> 00:03:12.080
+or a vector of vector of integers, however, you want to pronounce it.
+
+00:03:12.080 --> 00:03:16.080
+So you get the idea there. So it's a vector that can hold other vectors.
+
+00:03:16.080 --> 00:03:18.380
+Therefore, you have the two dimensionality.
+
+00:03:18.980 --> 00:03:22.520
+On line 74 and 75, what we're doing is we're adding
+
+00:03:22.520 --> 00:03:26.020
+an entire vector to the vector2d with pushback.
+
+00:03:26.020 --> 00:03:30.620
+We can do that, right, because it's a vector of vector. So I could certainly add a vector to it.
+
+00:03:30.620 --> 00:03:33.820
+And that's what's happening on line 77 and 78.
+
+00:03:33.820 --> 00:03:36.920
+On line 77, I'm adding vector1
+
+00:03:36.920 --> 00:03:40.220
+to vector2d using pushback,
+
+00:03:40.470 --> 00:03:44.030
+which means that remember vector2d at this point was empty.
+
+00:03:44.030 --> 00:03:47.530
+So storage will be allocated, vector1 will be put in there
+
+00:03:47.530 --> 00:03:50.830
+doing the same with vector2. So at this point, we'll have
+
+00:03:51.190 --> 00:03:54.490
+a two dimensional vector that contains two vectors.
+
+00:03:55.290 --> 00:03:59.690
+So on line 80, we're displaying the elements in vector2d d using the at method.
+
+00:03:59.690 --> 00:04:04.090
+So you can see here I'm displaying the element at 0, 0., and then the element at 0, 1.
+
+00:04:04.090 --> 00:04:07.080
+And then the element at 1, 0 and the element at 1, 1.
+
+00:04:07.080 --> 00:04:11.780
+So this should display 10, 20 and 100, 200.
+
+00:04:12.380 --> 00:04:15.280
+So this is the interesting part now. I've asked you to change
+
+00:04:15.680 --> 00:04:19.580
+vector1's first element, right. The element at index 0 to a 1000,
+
+00:04:19.980 --> 00:04:22.280
+and then display the vector again.
+
+00:04:22.780 --> 00:04:26.380
+What did you expect? Some of you might have thought that that first element
+
+00:04:26.380 --> 00:04:31.370
+would have changed, right, because after all we did put vector1 into the 2d vector.
+
+00:04:31.730 --> 00:04:34.530
+And you might be surprised that it didn't.And we'll talk about that
+
+00:04:34.530 --> 00:04:39.520
+in a second. But here, we're displaying vector1 just to see if it actually did change.
+
+00:04:39.520 --> 00:04:43.720
+So let's run this, and we'll walk through the output. So I'm going to build and run.
+
+00:04:45.620 --> 00:04:48.620
+And you can see at the beginning, we're saying okay vector1,
+
+00:04:48.620 --> 00:04:51.420
+right, we pushed to 10 and the 20. So that was fine.
+
+00:04:51.420 --> 00:04:55.520
+And then vector1 contains the two elements. That's what we expect. Vector2,
+
+00:04:56.020 --> 00:04:58.420
+we inserted the 100 and the 200.
+
+00:04:58.420 --> 00:05:00.720
+And vector2 now contains two elements.
+
+00:05:01.520 --> 00:05:05.520
+Vector2d contains vector1 and vector2 within it, right.
+
+00:05:05.520 --> 00:05:08.820
+Again, it's a 2d vector. So the first one was 10, 20.
+
+00:05:08.820 --> 00:05:11.820
+The second one was 100, 200. Pretty cool.
+
+00:05:11.820 --> 00:05:15.480
+But now at this point what we did was this is where we're at right now.
+
+00:05:15.480 --> 00:05:19.680
+We just changed vector1's first element to a 1000.
+
+00:05:20.180 --> 00:05:24.180
+And then we printed out that 2d vector again. But you can see the 2d vector,
+
+00:05:24.180 --> 00:05:28.580
+there's no 1000 here where the 10 is. That's where you would expect it, right.
+
+00:05:29.080 --> 00:05:32.680
+There isn't. The reason for that is that when you add elements to vectors,
+
+00:05:32.680 --> 00:05:35.680
+you actually make a copy of what you're inserting.
+
+00:05:35.880 --> 00:05:38.080
+So that tells you a little bit about what's going on.
+
+00:05:38.080 --> 00:05:40.580
+A little bit later on in the course what we'll do is
+
+00:05:40.580 --> 00:05:44.180
+we'll have vectors of references or vectors of pointers.
+
+00:05:44.180 --> 00:05:47.380
+And those are a little bit different because here we can actually
+
+00:05:47.380 --> 00:05:50.740
+change what it's pointing to and it'll be reflected in the vector.
+
+00:05:50.740 --> 00:05:54.140
+But when you're using integers and floats and doubles, remember,
+
+00:05:54.140 --> 00:05:57.440
+we're making copies of what we're putting into the vector.
+
+00:05:57.440 --> 00:06:01.240
+All right. So that completes this solution. I hope you enjoyed the challenge.
+
+00:06:01.240 --> 00:06:02.840
+And I'll see you in the next video.

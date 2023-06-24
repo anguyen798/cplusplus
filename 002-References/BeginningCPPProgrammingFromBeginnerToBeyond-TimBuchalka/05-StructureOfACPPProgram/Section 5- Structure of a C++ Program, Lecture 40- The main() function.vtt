@@ -1,0 +1,163 @@
+WEBVTT
+
+00:00:05.400 --> 00:00:09.500
+In this video, we'll briefly go over the c++ main function.
+
+00:00:10.600 --> 00:00:15.200
+Every c++ program must have exactly one main function somewhere.
+
+00:00:15.600 --> 00:00:18.900
+A c++ program can consist of hundreds of files,
+
+00:00:19.150 --> 00:00:22.140
+but one of those files must contain the main function.
+
+00:00:23.040 --> 00:00:26.040
+Note that the name main must be written in lowercase letters.
+
+00:00:26.740 --> 00:00:29.100
+When a c++ program executes,
+
+00:00:29.100 --> 00:00:32.100
+the main function is called by the operating system,
+
+00:00:32.100 --> 00:00:35.100
+and the code between the curly braces executes.
+
+00:00:35.900 --> 00:00:38.260
+When execution hits the return statement,
+
+00:00:38.260 --> 00:00:41.560
+the program returns the integer value to the operating system.
+
+00:00:42.440 --> 00:00:46.880
+If the return value is zero, then the program terminated successfully.
+
+00:00:46.880 --> 00:00:49.180
+If the return value is not zero,
+
+00:00:49.180 --> 00:00:52.860
+then the operating system can check the value returned and determine what went wrong.
+
+00:00:55.260 --> 00:00:56.760
+There are two versions of main,
+
+00:00:56.760 --> 00:01:00.200
+and they're both valid as per the c++ specification.
+
+00:01:00.200 --> 00:01:04.000
+So far we've only seen the version on the left, which returns an integer
+
+00:01:04.000 --> 00:01:06.200
+and has nothing between the two parentheses.
+
+00:01:06.750 --> 00:01:10.950
+This version of main expects no information from the operating system in order to run.
+
+00:01:11.450 --> 00:01:14.450
+This is the version that we'll use mostly in this course.
+
+00:01:15.330 --> 00:01:19.130
+The second version of main is the one on the right. In this version,
+
+00:01:19.130 --> 00:01:22.130
+main expects information from the operating system.
+
+00:01:22.130 --> 00:01:24.730
+So suppose that when you execute the program,
+
+00:01:24.730 --> 00:01:28.030
+you need to pass information into the program from the command line.
+
+00:01:28.230 --> 00:01:31.430
+This is very, very common for command line applications.
+
+00:01:31.930 --> 00:01:35.530
+In this case, we tell the compiler that we need two pieces of information.
+
+00:01:36.130 --> 00:01:39.430
+First, we need the number of pieces of information that were passed in.
+
+00:01:39.730 --> 00:01:41.030
+That's argc.
+
+00:01:41.530 --> 00:01:44.830
+We can use any variable name here. But historically, we use argc,
+
+00:01:44.830 --> 00:01:46.630
+which stands for argument count.
+
+00:01:47.620 --> 00:01:52.020
+The second piece of information is the actual arguments that we passed into the program.
+
+00:01:52.520 --> 00:01:55.820
+This is captured by argv, which is the argument vector.
+
+00:01:56.370 --> 00:01:58.870
+The syntax for argv looks a little strange,
+
+00:01:58.870 --> 00:02:01.070
+but it'll make sense as the course progresses.
+
+00:02:01.070 --> 00:02:04.870
+It's basically a bunch of strings, such as program.exe,
+
+00:02:04.870 --> 00:02:07.470
+argument1 and argument2 in this example.
+
+00:02:07.830 --> 00:02:10.630
+We'll talk more about strings and vectors as we move forward,
+
+00:02:10.630 --> 00:02:13.330
+but I wanted to show you both versions of the main function
+
+00:02:13.330 --> 00:02:16.330
+in case you're looking at code out there and you see the second version,
+
+00:02:16.730 --> 00:02:19.430
+both are perfectly valid and both are commonly seen.
+
+00:02:20.090 --> 00:02:22.590
+Note that main must always return an integer.
+
+00:02:23.250 --> 00:02:25.850
+Main happens to be an example of a function.
+
+00:02:25.850 --> 00:02:30.050
+A function is basically a name that we can use to reference a block of code.
+
+00:02:30.050 --> 00:02:33.750
+In this example, main is everything between the curly braces.
+
+00:02:34.350 --> 00:02:36.450
+Functions are very commonly used
+
+00:02:36.450 --> 00:02:39.450
+and we'll write our own functions as the course progresses.
+
+00:02:39.450 --> 00:02:42.650
+There'll be an entire section of the course devoted to functions,
+
+00:02:42.950 --> 00:02:45.250
+but main is a very special function.
+
+00:02:45.250 --> 00:02:48.450
+As we learn c++, our entire program
+
+00:02:48.450 --> 00:02:51.050
+will be contained inside the main function.
+
+00:02:51.050 --> 00:02:53.650
+And as our programs become more complex,
+
+00:02:53.650 --> 00:02:56.250
+we'll write our own functions and then classes
+
+00:02:56.250 --> 00:02:58.850
+to better modularize and organize our code.
+
+00:02:59.650 --> 00:03:02.310
+In the next video, we'll talk about namespaces
+
+00:03:02.310 --> 00:03:04.710
+and see how we can use them in our first program.

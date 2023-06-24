@@ -1,0 +1,821 @@
+WEBVTT
+
+0
+00:00.360 --> 00:03.360
+So our next topic, new topic is array.
+
+1
+00:03.640 --> 00:09.960
+So in this video I'll give you introduction to array and how to use them and explain about them, then in the
+
+2
+00:09.960 --> 00:13.480
+coming videos we will write on the programs using arrays.
+
+3
+00:13.680 --> 00:16.640
+Let us understand arrays so for understanding arrays.
+
+4
+00:16.650 --> 00:20.190
+If you are comfortable with mathematics let us start with mathematics.
+
+5
+00:20.200 --> 00:23.640
+See in mathematics there are two types of values.
+
+6
+00:23.640 --> 00:26.270
+One is scalar vlaue, scalar value means
+
+7
+00:26.270 --> 00:29.980
+Single value by definition scalar means magnitude.
+
+8
+00:30.030 --> 00:31.850
+so it means a single value.
+
+9
+00:31.920 --> 00:37.380
+Then next is vector, then what is a vector, vector is a list of values means.
+
+10
+00:37.380 --> 00:41.750
+It is having magnitude as well as dimension.
+
+11
+00:41.760 --> 00:44.160
+So yes this is the list of values.
+
+12
+00:44.160 --> 00:46.990
+This a single dimension list of values.
+
+13
+00:47.100 --> 00:52.820
+So if you have more than one value. now it's a single value we will call  X. now multiple values that
+
+14
+00:52.830 --> 00:54.750
+are also called as A.
+
+15
+00:54.750 --> 00:59.960
+Now how come single name is used for all the values. so in mathematics 
+
+16
+00:59.970 --> 01:01.500
+We differentiate like this.
+
+17
+01:01.590 --> 01:06.160
+we say this is A1,  in mathematics we start from one.
+
+18
+01:06.160 --> 01:08.840
+So for us let us take it from zero.
+
+19
+01:08.880 --> 01:12.700
+Because in mathematics you can start from zero also, one also.
+
+20
+01:12.870 --> 01:14.060
+Let us start from zero.
+
+21
+01:14.070 --> 01:14.880
+This is A0.
+
+22
+01:14.910 --> 01:15.780
+This is A1.
+
+23
+01:15.780 --> 01:16.660
+This is a A2.
+
+24
+01:16.680 --> 01:17.920
+This is A3.
+
+25
+01:17.940 --> 01:18.780
+This is A4.
+
+26
+01:18.800 --> 01:19.320
+So on.
+
+27
+01:19.740 --> 01:20.190
+Okay.
+
+28
+01:20.220 --> 01:21.570
+This values is A0.
+
+29
+01:21.600 --> 01:22.240
+Yes.
+
+30
+01:22.320 --> 01:23.110
+Next is A1.
+
+31
+01:23.250 --> 01:31.740
+so instead of writing the name every time, I will say 0 1 2 3 4 5 6 7 8 9.
+
+32
+01:32.130 --> 01:39.750
+Yes this is A of zero, like in mathematics you might have used this one x1 x2 x3 x 4.
+
+33
+01:39.990 --> 01:42.290
+So these are multiple values.
+
+34
+01:42.420 --> 01:46.470
+They are differentiated by their subscript, this is  a subscript.
+
+35
+01:46.470 --> 01:48.550
+So yes these are subscript.
+
+36
+01:48.900 --> 01:50.960
+So this is the concept for mathematics.
+
+37
+01:51.090 --> 01:56.030
+If you have the list of elements so you will give single name and you differentiate them with their
+
+38
+01:56.050 --> 02:00.430
+index or subscript that is 0 1 2 3 4 so on.
+
+39
+02:00.480 --> 02:03.450
+Same concept is applied in programming models.
+
+40
+02:04.140 --> 02:07.130
+So let us come to C++ in C++.
+
+41
+02:07.260 --> 02:13.430
+If I have to store a single value then I have to declare a variable, so variable will have a data type.
+
+42
+02:13.460 --> 02:16.230
+Let us say it as integer type x assign 5.
+
+43
+02:16.560 --> 02:19.010
+So this is a integer type variable.
+
+44
+02:19.060 --> 02:20.690
+X having value 5.
+
+45
+02:21.150 --> 02:24.270
+So we know very well that integer takes two bytes.
+
+46
+02:24.270 --> 02:26.200
+We are assuming this right, integer takes 2 bytes.
+
+47
+02:26.220 --> 02:31.320
+So this will consume two bytes of memory and then in that value 5 will be stored.
+
+48
+02:31.350 --> 02:36.040
+So this is named as X and if I write the address is also.
+
+49
+02:36.060 --> 02:41.220
+So let us say the address of first bite is 200 and next bite is 201.
+
+50
+02:41.250 --> 02:45.960
+So int takes 2 bytes and in that value 5 is stored, we know about this one
+
+51
+02:45.980 --> 02:49.800
+Now next how to have the list of elements.
+
+52
+02:49.800 --> 02:52.820
+Yes that concept is arrays.
+
+53
+02:52.850 --> 02:55.890
+Arrays in programming or in C++.
+
+54
+02:55.890 --> 02:59.710
+So how to declare that, how to store so so many values in a single variable.
+
+55
+02:59.760 --> 03:00.410
+See this.
+
+56
+03:00.810 --> 03:05.440
+I will say integer A,  ok name is A, then i can store only one value.
+
+57
+03:05.440 --> 03:07.910
+No no I can mention the size also.
+
+58
+03:07.950 --> 03:13.060
+Okay I can mention the size, A of size 10, these are square brackets.
+
+59
+03:13.500 --> 03:14.790
+If size 10.
+
+60
+03:14.850 --> 03:18.330
+Now you can store 10 values with same name A.
+
+61
+03:18.520 --> 03:26.460
+then how it looks like in the memory so it will allocate memory for 10 integers. these are all 10 int
+
+62
+03:26.500 --> 03:38.640
+Now this is index 0 1 2 3 4 5 6 7 8 9 so these are name basis and the name for all of them is A this
+
+63
+03:38.650 --> 03:40.090
+is what we get an array.
+
+64
+03:40.630 --> 03:47.950
+So all these 10 integers are side by side we say contiguous or side by side.
+
+65
+03:47.950 --> 03:50.170
+If you want to see the memory alocated,
+
+66
+03:50.170 --> 03:54.010
+Let us say the first byte's adress is three hundred.
+
+67
+03:54.110 --> 03:59.890
+As each is an integer only all these are integer total we have 10 integer so first int memory is
+
+68
+03:59.910 --> 04:08.430
+300 and 30, right. next is a three hundred and two and three, next is four and five and this
+
+69
+04:08.430 --> 04:14.700
+is six and seven means this is three hundred and six and seven, eight and nine, goes on.
+
+70
+04:14.710 --> 04:22.860
+So how many bytes it's consuming total it will consume 20 bytes 10 integers two bites each total 20 bytes
+
+71
+04:22.890 --> 04:23.770
+of memory.
+
+72
+04:23.770 --> 04:27.910
+This was just two bytes because that was just single integer.
+
+73
+04:27.910 --> 04:34.770
+This is how I can create 10 variables with one name so we say its an array.
+
+74
+04:34.820 --> 04:36.490
+Now I want to store those elements.
+
+75
+04:36.490 --> 04:41.590
+Yes you can store all those elements one by one in al these locations. now how to store them.
+
+76
+04:41.590 --> 04:48.190
+Let us see, suppose here in X, when i want to create X and want to assign 5 that time only
+
+77
+04:48.190 --> 04:53.320
+I have initialized, we are familiar with the initialization, now can i initialize this one.
+
+78
+04:53.710 --> 04:55.810
+Yes we can initialize this also.
+
+79
+04:55.810 --> 05:00.260
+So here only assign in embraces that is in Flower bracket,
+
+80
+05:00.580 --> 05:13.750
+write down all those elements that are 5 8 3 9 7 4 8 6 3 and 2 so those values will be filled here 5
+
+81
+05:13.810 --> 05:17.560
+8 3 9 7 4 8 6 3 2.
+
+82
+05:17.680 --> 05:18.890
+That will be familiar.
+
+83
+05:19.030 --> 05:20.320
+This is how it will be stored.
+
+84
+05:20.470 --> 05:21.190
+So that's it.
+
+85
+05:21.190 --> 05:25.120
+I'm able to store list of values under one name.
+
+86
+05:25.120 --> 05:28.090
+Now how do you differentiate what is this value.
+
+87
+05:28.090 --> 05:32.290
+This is a of 4, then what is the this value? A of 3.
+
+88
+05:32.290 --> 05:35.500
+What is this value, A of 8, index 8
+
+89
+05:35.770 --> 05:40.060
+So we can access each of them by using their index.
+
+90
+05:40.090 --> 05:42.250
+How to access them let us see.
+
+91
+05:42.320 --> 05:46.750
+if Suppose I want to print this nine, so I have to say A of three.
+
+92
+05:46.810 --> 05:57.260
+So Cout A of three. so when I say A of 3, 9 will be printed.
+
+93
+05:57.310 --> 05:57.670
+Right.
+
+94
+05:57.940 --> 06:01.320
+So individual all the elements you can print whichever one you want.
+
+95
+06:01.320 --> 06:09.230
+You have to use array name and you have to use it index Cout A of eight.
+
+96
+06:09.310 --> 06:11.080
+Can you tell me which value will be printed.
+
+97
+06:11.590 --> 06:17.800
+Yes, 8 is 3, value is three there, so three will be printed. and one more thing,
+
+98
+06:17.800 --> 06:20.510
+Students ask this, they get confused here.
+
+99
+06:20.620 --> 06:24.190
+If I say cout A it should spend a whole array.
+
+100
+06:24.310 --> 06:26.300
+No it will not print the whole array.
+
+101
+06:26.770 --> 06:29.730
+If you say cout A, it will not print the entire array.
+
+102
+06:30.250 --> 06:30.670
+Right.
+
+103
+06:30.790 --> 06:31.770
+Remember this.
+
+104
+06:31.930 --> 06:37.480
+You have to print each and every element one by one separately, whichever one you want you print.
+
+105
+06:37.630 --> 06:40.830
+Or if you want to print all, you can print all of them.
+
+106
+06:40.830 --> 06:45.430
+Now I'll explain you how to print all these elements like one by one.
+
+107
+06:45.430 --> 06:52.210
+Let us see how to access an array, so for that I will write down freshly. now I have taken main function.
+
+108
+06:52.240 --> 06:56.810
+So first of all let me create an array, so for that I should declare an array.
+
+109
+06:56.920 --> 07:02.020
+So let us declare an array, integer danger of Begin a small size.
+
+110
+07:02.110 --> 07:03.050
+That is 5.
+
+111
+07:03.970 --> 07:05.660
+So then you run the program.
+
+112
+07:05.770 --> 07:07.480
+It will consume memory.
+
+113
+07:07.780 --> 07:13.900
+So if you look at the picture we have already discussed once in the video that our memory is divided
+
+114
+07:13.900 --> 07:16.360
+into three sections and utilize, that.
+
+115
+07:16.360 --> 07:22.630
+This is a code section and this is a stack and this is heap actually stock will be here and the heap
+
+116
+07:22.630 --> 07:23.140
+will be here.
+
+117
+07:23.150 --> 07:24.860
+but I'm showing  stack just ablove the code section.
+
+118
+07:25.300 --> 07:29.430
+so that's easy to clearly see the things.
+
+119
+07:29.530 --> 07:36.220
+Now when the main function is running inside main memory inside the main memory, program is running this
+
+120
+07:36.220 --> 07:44.560
+will take memory, so where it will take inside the stack, so it will consume memory here 1 2 3 4, 0 1
+
+121
+07:44.560 --> 07:45.790
+2 3 4.
+
+122
+07:45.970 --> 07:48.280
+So array will be created like that.
+
+123
+07:48.280 --> 07:50.530
+So that picture I will draw it here once again.
+
+124
+07:50.980 --> 07:53.920
+So let us take a bigger picture.
+
+125
+07:54.160 --> 07:55.730
+These are indices right.
+
+126
+07:56.140 --> 08:01.170
+So I already have shown you that if there is the adresses are there, if the first adress is 300, then this
+
+127
+08:01.170 --> 08:06.760
+301, this is 302, and 303, 304, and five and so on.
+
+128
+08:06.980 --> 08:14.740
+so now the array is created I want to initialize also so let us see how to initialize this I want  to initialize
+
+129
+08:14.740 --> 08:17.960
+with the values 2 4 6 8 and 10.
+
+130
+08:18.100 --> 08:21.660
+So this will be created and the values will be filled here.
+
+131
+08:21.660 --> 08:24.040
+Two four six eight and 10 right.
+
+132
+08:24.520 --> 08:26.770
+So here also I will draw it.
+
+133
+08:26.800 --> 08:30.800
+Now one important thing I want to print all these values.
+
+134
+08:30.810 --> 08:33.130
+So for printing I have to use indices.
+
+135
+08:33.370 --> 08:35.040
+So let me show you just one line.
+
+136
+08:35.350 --> 08:45.460
+I will say cout A0,  which value will be printed? just first value will be printed, 2, then I want to
+
+137
+08:45.460 --> 08:51.490
+print the next value, which would be A1, then next value, it should A of 2.
+
+138
+08:52.030 --> 08:58.490
+So can you figure out how we can change that index 0 1 2 3 4 so on.
+
+139
+08:58.540 --> 09:03.760
+how we can change it, do you  remember in the previous videos we have used this thing.
+
+140
+09:04.570 --> 09:10.920
+Yes counter, for loop because this step is repeating print the next print the next print.
+
+141
+09:11.020 --> 09:14.760
+Yes we can use a for loop here and we can use a counter.
+
+142
+09:14.800 --> 09:17.230
+So I will write down this in a for loop
+
+143
+09:17.320 --> 09:23.890
+So here itself i will declared a variable, I assign zero I is less than five.
+
+144
+09:23.980 --> 09:30.850
+So the last value will be 4, I plus plus not inside this  cout
+
+145
+09:30.850 --> 09:39.550
+A[i], and every element I want in the next line so say endl, this is how all the elements of an array
+
+146
+09:39.550 --> 09:40.590
+can be printed.
+
+147
+09:40.930 --> 09:46.990
+So I should say all the elements of an array can be accessed, weather you are printing them or displaying
+
+148
+09:46.990 --> 09:48.450
+whatever you want you can do it.
+
+149
+09:48.940 --> 09:52.020
+But using for loop you can go to each and every element.
+
+150
+09:52.030 --> 09:54.570
+So First time A[0] i is 0.
+
+151
+09:54.580 --> 10:02.160
+So it will be of 0, then A[1], then 2 then 3... like this we can visit all the locations in
+
+152
+10:02.160 --> 10:02.820
+an array.
+
+153
+10:03.470 --> 10:04.530
+I'll show you here.
+
+154
+10:04.600 --> 10:11.830
+See here and I will take i and this is A[i] let us take it, initially I is zero.
+
+155
+10:11.830 --> 10:12.630
+So what is this.
+
+156
+10:12.670 --> 10:17.170
+A of 0, 0 is what, 2, the next time I is one.
+
+157
+10:17.200 --> 10:20.440
+So this is A of one, A [1] is what, 4.
+
+158
+10:20.530 --> 10:23.460
+Value four. this one, then I will two.
+
+159
+10:23.550 --> 10:27.330
+So a[2],  is what, six.
+
+160
+10:27.460 --> 10:30.190
+So like that it can access all the elements.
+
+161
+10:30.190 --> 10:32.990
+So this is how all the elements are displayed.
+
+162
+10:33.010 --> 10:34.160
+Let's look at things again.
+
+163
+10:34.170 --> 10:40.020
+We have learned how to declare an array, how to initialize an array and how to access all the elements.
+
+164
+10:40.070 --> 10:46.060
+Now next thing I will show you how you can declare and initialize an array and  can we can have
+
+165
+10:46.060 --> 10:52.830
+different data types array, we will look at this one, let us look at this quickly.
+
+166
+10:52.910 --> 10:56.270
+This means integer type array size 5.
+
+167
+10:56.450 --> 10:58.250
+Yes you can have integer type array.
+
+168
+10:58.400 --> 10:59.990
+Can you have float type of array.
+
+169
+11:00.020 --> 11:02.690
+Yes we can have a float type of array also.
+
+170
+11:02.750 --> 11:04.850
+Can you have a character type of array.
+
+171
+11:04.850 --> 11:06.500
+Yes we can declare.
+
+172
+11:06.950 --> 11:09.330
+So you can have any data for an array.
+
+173
+11:09.740 --> 11:12.040
+So array can be of any type.
+
+174
+11:12.180 --> 11:15.210
+And if it is int, all five elements are int only.
+
+175
+11:15.290 --> 11:15.730
+Right.
+
+176
+11:15.740 --> 11:21.350
+So similar data elements, all of similar data elements, all are float, all are characters.
+
+177
+11:21.380 --> 11:23.510
+Next I want to initialize.
+
+178
+11:23.510 --> 11:30.170
+Yes you can initialize these so you can get the values like two four six eight 10 these values will
+
+179
+11:30.190 --> 11:36.230
+be filled, and float values if you want to initialize like one point one, two point four, three point seven
+
+180
+11:36.380 --> 11:39.050
+six point two, nine point five.
+
+181
+11:39.050 --> 11:41.750
+These values will be filled, now char type.
+
+182
+11:41.750 --> 11:43.590
+How do initialize character data.
+
+183
+11:44.270 --> 11:45.740
+A B.
+
+184
+11:45.770 --> 11:50.060
+These are character, characters must be enclosed in single quotes.
+
+185
+11:50.180 --> 11:56.340
+So this is initialize, so a declaration plus initialization, 2 things are over.
+
+186
+11:56.650 --> 12:03.460
+Now one more thing I will show you, can I be clearer an array of size 5 five and I mentioned only
+
+187
+12:03.500 --> 12:04.460
+two and four.
+
+188
+12:04.820 --> 12:12.350
+Yes you can mention what happens, five arrays will be created to zero one two three and four.
+
+189
+12:12.350 --> 12:17.500
+Now only two and four will be filled, automatically all the values will be automatically zero.
+
+190
+12:17.830 --> 12:19.810
+This you should know.
+
+191
+12:19.880 --> 12:20.600
+Next thing.
+
+192
+12:21.070 --> 12:27.160
+can we create an array without  giving size and get the value one two four six.
+
+193
+12:27.170 --> 12:28.280
+Yes.
+
+194
+12:28.280 --> 12:29.920
+How much array will be created.
+
+195
+12:29.970 --> 12:31.370
+Four Elements I have given.
+
+196
+12:31.640 --> 12:34.340
+So array of size four will be created.
+
+197
+12:34.340 --> 12:41.200
+And the values will be filled in that one, 1 2 4 6, so you can just give the values without
+
+198
+12:41.200 --> 12:45.560
+giving size, and the size of that array will be equal to the number of values that you have given.
+
+199
+12:46.400 --> 12:47.860
+So we learn one more thing.
+
+200
+12:47.930 --> 12:53.060
+that when you are creating an array of some size you can give all the values you can give a few values
+
+201
+12:53.510 --> 12:58.210
+or you can just give values don't give the size automatically it will take the size.
+
+202
+12:58.220 --> 13:02.100
+So these are the few things that you should know about declaration andinitialization.
+
+203
+13:02.930 --> 13:04.280
+So that's all in this video.
+
+204
+13:04.280 --> 13:09.160
+There is a demo for this one and then after that we will write some programs up on array.

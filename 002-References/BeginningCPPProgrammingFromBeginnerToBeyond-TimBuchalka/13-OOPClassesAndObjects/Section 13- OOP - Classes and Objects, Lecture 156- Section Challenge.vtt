@@ -1,0 +1,695 @@
+WEBVTT
+
+00:00:05.200 --> 00:00:09.080
+Hello, everyone. Welcome to the section 13 challenge.
+
+00:00:09.740 --> 00:00:11.840
+Congratulations on finishing up this section.
+
+00:00:11.840 --> 00:00:14.640
+This section was long. It had a lot of information.
+
+00:00:14.640 --> 00:00:17.240
+Some of it pretty easy, some of it not so easy.
+
+00:00:17.540 --> 00:00:20.340
+So now we're at the challenge. And what we want to do here is we want to
+
+00:00:20.340 --> 00:00:22.140
+apply some of the things that we've learned.
+
+00:00:22.140 --> 00:00:25.690
+Obviously, we're not going to do everything that we've learned in one challenge project,
+
+00:00:25.690 --> 00:00:27.690
+that would make it a very complex project.
+
+00:00:27.690 --> 00:00:29.690
+But we want to model some objects.
+
+00:00:29.940 --> 00:00:33.940
+We want to model other objects in terms of those objects we want to be able to call methods
+
+00:00:33.940 --> 00:00:37.440
+and break up our program into separate files
+
+00:00:37.440 --> 00:00:40.740
+so that we can manage it easily. So let's talk about the challenge.
+
+00:00:41.140 --> 00:00:45.500
+For this challenge, we're going to develop the foundation for a program for movie fanatics.
+
+00:00:45.860 --> 00:00:48.660
+And what we want to do is they want to keep track of the movies they've watched
+
+00:00:48.660 --> 00:00:53.060
+and how many times they've watched each movie.
+So the program has to support the following.
+
+00:00:53.560 --> 00:00:55.560
+We're going to have a class called movie.
+
+00:00:56.060 --> 00:00:58.260
+Now this models a single movie,
+
+00:00:58.260 --> 00:01:02.620
+which includes the movie's name, the movie's rating and how many times we've watched the movie.
+
+00:01:03.220 --> 00:01:05.580
+Of course, we can add fields to this like um
+
+00:01:05.580 --> 00:01:09.140
+the rating, you're rating for the movie, so like 1 2 3 4 5,
+
+00:01:09.140 --> 00:01:10.440
+depending on how much you like it.
+
+00:01:10.940 --> 00:01:15.640
+Also a note maybe a little comment area that you could type information about the movie.
+
+00:01:15.640 --> 00:01:19.740
+All kinds of information maybe the who the leading star of the movie is and so forth. forth.
+
+00:01:19.740 --> 00:01:20.740
+You get the idea.
+
+00:01:20.990 --> 00:01:25.090
+But at a minimum, this is what we're going to do just the movie's name,the movie's rating,
+
+00:01:25.090 --> 00:01:27.690
+which would be gpg pg pg-13 or r,
+
+00:01:28.090 --> 00:01:29.590
+and how many times you've watched the movie.
+
+00:01:30.290 --> 00:01:33.390
+We're also going to model a collection of movies.
+
+00:01:34.490 --> 00:01:36.590
+And that's what the movies class does.
+
+00:01:36.590 --> 00:01:40.890
+Now notice this is plural because it's modeling a collection of movie objects.
+
+00:01:40.890 --> 00:01:42.690
+We're going to model it with a vector.
+
+00:01:43.570 --> 00:01:47.720
+Now obviously, the movie's class needs to know about the movie
+
+00:01:47.720 --> 00:01:50.710
+since it is a collection of movie objects.
+
+00:01:51.500 --> 00:01:55.190
+However, our main driver should only interact with the movies class.
+
+00:01:55.190 --> 00:01:57.760
+So it's going to create a movie's object and work with that.
+
+00:01:57.760 --> 00:02:01.060
+Okay. So here's a simple example of what main could do.
+
+00:02:01.610 --> 00:02:04.010
+So we're going to create a movies object.
+
+00:02:04.560 --> 00:02:08.760
+Then I'm going to ask that movie's object to add a movie by providing the movie's name,
+
+00:02:08.760 --> 00:02:10.060
+the rating and the watch count.
+
+00:02:11.050 --> 00:02:15.940
+I could ask the movie's object to increment the watch count for a specific movie given its name.
+
+00:02:16.600 --> 00:02:20.100
+And I could also ask the movie's objects to display all the movies that it has.
+
+00:02:20.760 --> 00:02:24.760
+Now obviously the movies class has a bunch of movies in it.
+
+00:02:25.120 --> 00:02:27.320
+So in that case, it could just ask each movie,
+
+00:02:27.320 --> 00:02:30.620
+hey, display yourself, display yourself, display yourself. And that's kind of what we're going to do.
+
+00:02:31.280 --> 00:02:32.280
+Now additionally,
+
+00:02:32.940 --> 00:02:36.820
+we need to have a little bit of logic here so that we don't have duplicate movies.
+
+00:02:36.820 --> 00:02:41.220
+So if we try to add a movie whose name is already in the movies collection,
+
+00:02:41.220 --> 00:02:43.120
+we should display an error to the user.
+
+00:02:44.000 --> 00:02:46.600
+And if we try to increment the watched count
+
+00:02:46.600 --> 00:02:50.960
+for a movie whose name is not in the movies collection, we should also display an error to the user.
+
+00:02:51.320 --> 00:02:55.620
+I've created a basic shell, and that basic shell is right here
+
+00:02:55.620 --> 00:02:57.920
+in the section 13 challenge project.
+
+00:02:59.020 --> 00:03:03.420
+Movie and main have been fully implemented for you with comments,
+
+00:03:03.920 --> 00:03:05.520
+movies has not.
+
+00:03:05.820 --> 00:03:09.700
+So the idea here is that you would go into the movies.cpp
+
+00:03:09.700 --> 00:03:12.300
+in the movies.h, and I'll talk about the structure in a second
+
+00:03:12.600 --> 00:03:14.200
+and implement those.
+
+00:03:14.200 --> 00:03:17.000
+Now the shell is there. So the stubs are all there
+
+00:03:17.000 --> 00:03:19.500
+just, look for the places where i write you implement this.
+
+00:03:20.600 --> 00:03:24.500
+The other option is don't use any of my stuff. Do it yourself.
+
+00:03:24.500 --> 00:03:28.060
+Just go based on this description
+
+00:03:28.420 --> 00:03:31.920
+as well as the main because the mail the main gives you a little bit of insight
+
+00:03:31.920 --> 00:03:36.520
+into the structure and then implement movie cpp, movies cpp,
+
+00:03:36.520 --> 00:03:38.720
+the h files all that stuff yourself
+
+00:03:38.720 --> 00:03:42.270
+depending on on how comfortable you feel with c++ plus right now.
+
+00:03:42.270 --> 00:03:45.570
+If you're a beginner, just start out with the
+
+00:03:45.570 --> 00:03:47.370
+shell that I'm giving you. If you feel
+
+00:03:47.370 --> 00:03:50.670
+more comfortable and you've a little bit more advanced, then just try it on your own.
+
+00:03:51.330 --> 00:03:54.230
+Okay. So how are we going to structure our project.
+
+00:03:54.230 --> 00:03:58.230
+Well, we're going to have different files. We want to be able to separate our files.
+
+00:03:58.230 --> 00:04:00.110
+So this is what it's going to look like.
+
+00:04:00.110 --> 00:04:03.310
+We're going to have movie.h, that's an include file
+
+00:04:03.310 --> 00:04:05.310
+that has the specification
+
+00:04:05.310 --> 00:04:08.210
+for a movie class. And again, remember, a movie
+
+00:04:08.210 --> 00:04:10.410
+is a model of a single movie.
+
+00:04:11.010 --> 00:04:14.370
+Then we've got movie.cpp, which is our implementation
+
+00:04:15.170 --> 00:04:18.170
+just like we've seen before. I've got movies.h,
+
+00:04:18.170 --> 00:04:22.570
+which is our include file for the movies class specification.
+
+00:04:22.570 --> 00:04:25.070
+And then movies.cpp is the implementation.
+
+00:04:25.070 --> 00:04:28.570
+And then finally,I have a main cpp that just has the main driver
+
+00:04:28.570 --> 00:04:33.130
+that creates the movies object and adds movies to it, increments counts and displays.
+
+00:04:33.530 --> 00:04:37.530
+Okay. So again this program might sound simple. It's not
+
+00:04:37.530 --> 00:04:39.230
+it's not trivial, for sure.
+
+00:04:39.230 --> 00:04:42.330
+It's definitely not trivial if you try to do it 100% on your own.
+
+00:04:42.330 --> 00:04:46.320
+But it's a fun project to do, and it'll really help you with the coding.
+
+00:04:46.320 --> 00:04:49.310
+Now what I want to do is I want to show you the main.
+
+00:04:49.310 --> 00:04:51.080
+And I've included the main down here
+
+00:04:51.080 --> 00:04:54.080
+in the description, but I'm going to show it to you in the source code,it's the same thing.
+
+00:04:54.680 --> 00:04:57.670
+And I'm going to show you the main for the challenge solution here.
+
+00:04:57.670 --> 00:05:00.370
+So I'm going to double click on that main cpp file.
+
+00:05:01.170 --> 00:05:04.670
+And you can see that there's two helper functions that I've already written,
+
+00:05:04.670 --> 00:05:06.470
+and they're the function prototypes here.
+
+00:05:06.470 --> 00:05:08.670
+And the reason I wrote those is because
+
+00:05:08.670 --> 00:05:12.570
+when I asked the movie's object to add a movie and that movie is already there,
+
+00:05:12.820 --> 00:05:16.620
+I need to display an error message, right. So I have all that if else logic.
+
+00:05:16.620 --> 00:05:18.920
+So if the movie's not there at it, if it is,
+
+00:05:18.920 --> 00:05:20.920
+give me an error message, that kind of thing.
+
+00:05:20.920 --> 00:05:23.520
+So I wanted to wrap that up in a helper function
+
+00:05:23.520 --> 00:05:26.520
+so that my main looks really nice like this. Just
+
+00:05:26.520 --> 00:05:29.820
+add movie rather than have all that if else print out logic
+
+00:05:29.820 --> 00:05:32.920
+all in the main, which kind of gets really ugly and hard to follow.
+
+00:05:32.920 --> 00:05:35.920
+But let's walk through this really quickly here.
+
+00:05:35.920 --> 00:05:40.820
+Here's my main, and I'm going to create a movies object that's the collection.
+
+00:05:41.480 --> 00:05:45.080
+And then I'm going to ask that movie's object to display its movies.
+
+00:05:45.520 --> 00:05:49.920
+Obviously, there are no movies in there now. So it should display something like no movies or
+
+00:05:49.920 --> 00:05:52.420
+you have no movies yet or something, something meaningful.
+
+00:05:52.920 --> 00:05:54.320
+Then what I want to do is
+
+00:05:54.320 --> 00:05:58.420
+I want to call add movie. Now add movie is this helper function that I created, right.
+
+00:05:58.420 --> 00:06:00.220
+Here you can see the comment right here.
+
+00:06:00.220 --> 00:06:04.220
+So I'm going to call add movie. I'm going to pass in my movies,
+
+00:06:04.220 --> 00:06:05.720
+right, as a reference.
+
+00:06:06.420 --> 00:06:09.820
+I'm going to pass in the information for the movie. So in this case, I want to add
+
+00:06:09.820 --> 00:06:14.020
+big, which is the movie's name pg-13, and I've watched it twice.
+
+00:06:14.820 --> 00:06:18.020
+At that point, this function here gets called.
+
+00:06:18.020 --> 00:06:19.520
+And notice, what it's doing.
+
+00:06:19.520 --> 00:06:23.120
+It's asking the movies object to add the movie.
+
+00:06:23.520 --> 00:06:27.120
+Okay.So at this point,it's really delegating that behavior to the movie's object.
+
+00:06:27.120 --> 00:06:29.820
+And again, the only reason this function is here right here
+
+00:06:29.820 --> 00:06:33.480
+is to help us with that error checking so we don't clutter up all the main code.
+
+00:06:34.580 --> 00:06:39.480
+That's it. Now we're going to add another movie, star wars. And I'm going to add a third movie, Cinderella.
+
+00:06:40.280 --> 00:06:43.640
+So if I run this at this point, this is what I've got.
+
+00:06:44.740 --> 00:06:48.100
+You can see, I'll move this over so we can kind of line them up.
+
+00:06:49.100 --> 00:06:51.760
+Here's my movies. And I'm going to say display the movies.
+
+00:06:51.760 --> 00:06:54.060
+And it's going to say, sorry, no movies to display.
+
+00:06:54.360 --> 00:06:57.660
+Now I'm going to add a movie, add a movie and add a movie.
+
+00:06:57.910 --> 00:06:59.570
+And this is going to say big added,
+
+00:06:59.570 --> 00:07:03.070
+star wars added, Cinderella added and that message is coming right from here.
+
+00:07:04.430 --> 00:07:07.430
+Okay. So now i want to display the movies.
+
+00:07:07.430 --> 00:07:11.030
+So what I can do is I'll just comment this line out. We'll take it one step at a time
+
+00:07:11.030 --> 00:07:12.830
+that way you'll really understand what's going on.
+
+00:07:12.830 --> 00:07:16.330
+So I'm going to ask the my movies objects to display itself.
+
+00:07:16.730 --> 00:07:20.830
+Well, it's going to loop through its collection and print out all the movie objects that it has.
+
+00:07:20.830 --> 00:07:23.490
+So in this case, we've added big, star wars and Cinderella.
+
+00:07:23.490 --> 00:07:25.990
+So that's what I expect to print out. So let's run this.
+
+00:07:26.590 --> 00:07:28.090
+And here you see again
+
+00:07:29.080 --> 00:07:32.080
+that we added big, star wars and Cinderella like before.
+
+00:07:32.080 --> 00:07:35.980
+Now when we call the display method of the my movies class,
+
+00:07:35.980 --> 00:07:37.480
+this is what I'm going to get:
+
+00:07:37.730 --> 00:07:40.830
+big, star wars and Cinderella. So it's going to print out those three movies.
+
+00:07:41.710 --> 00:07:45.910
+Okay. So it's really simple as that. And let's just add a couple of more
+
+00:07:46.270 --> 00:07:47.170
+here
+
+00:07:48.670 --> 00:07:52.670
+and display those too. Now this is a little bit different now because I'm adding
+
+00:07:52.670 --> 00:07:54.670
+my movie, and I'm adding Cinderella.
+
+00:07:54.670 --> 00:07:59.370
+Well, I've already added Cinderella so I expect this to tell me sorry it already exists.
+
+00:07:59.810 --> 00:08:04.210
+Then I want to add ice age, which should be okay. And then I want to print those out again.
+
+00:08:04.460 --> 00:08:09.120
+I should only see Cinderella once, right. If i see Cinderella twice, then there's something wrong with my code.
+
+00:08:09.120 --> 00:08:10.320
+So let's run this.
+
+00:08:11.310 --> 00:08:15.670
+And you can see here big added, star wars added, Cinderella added, just like we did before.
+
+00:08:16.660 --> 00:08:18.660
+We're displaying those three movies.
+
+00:08:18.660 --> 00:08:21.560
+Now Cinderella already exists, so we didn't add it again.
+
+00:08:21.920 --> 00:08:25.720
+We did add ice age. And then when we display all four of the movies now that's we expect.
+
+00:08:25.720 --> 00:08:27.720
+We don't expect to see Cinderella twice.
+
+00:08:28.620 --> 00:08:29.420
+Okay.
+
+00:08:29.420 --> 00:08:31.780
+So a couple more things.
+
+00:08:32.780 --> 00:08:35.480
+We can obviously watch a movie again,
+
+00:08:35.480 --> 00:08:37.580
+and this doesn't store this information on
+
+00:08:37.580 --> 00:08:41.780
+on disk on file or anything. We'll get to all that stuff later. But right now,
+
+00:08:41.780 --> 00:08:43.480
+it's just keeping it all in memory.
+
+00:08:43.480 --> 00:08:45.580
+So in this case, I'm going to say increment watched
+
+00:08:45.580 --> 00:08:49.180
+my movie. So what I'm saying here is I want to increment the watch count
+
+00:08:49.430 --> 00:08:50.230
+for big.
+
+00:08:50.830 --> 00:08:53.330
+And I want to increment the watch account for ice age.
+
+00:08:53.330 --> 00:08:55.930
+Now if you remember, the watch count for big is 2
+
+00:08:56.330 --> 00:08:58.630
+and for ice age was 12.
+
+00:08:58.630 --> 00:09:03.230
+So now when I display my movies, I would expect to see 3 and 13, right.
+
+00:09:03.230 --> 00:09:04.480
+So let's try that out.
+
+00:09:05.470 --> 00:09:06.830
+So big was 2,
+
+00:09:07.430 --> 00:09:08.830
+ice age was 12.
+
+00:09:09.030 --> 00:09:12.230
+Now big is 3, ice age is 13,
+
+00:09:12.780 --> 00:09:14.140
+just like what we expect.
+
+00:09:15.140 --> 00:09:17.240
+And now the last test case here,
+
+00:09:17.240 --> 00:09:21.340
+and this is by no means a lot of test cases, but it's enough to get you started.
+
+00:09:21.340 --> 00:09:24.640
+Now what I want to do is I want to increment the number of times that I've watched
+
+00:09:24.640 --> 00:09:26.410
+this movie called xxx,
+
+00:09:26.410 --> 00:09:29.560
+and that could be anything as long as it's not in the collection.
+
+00:09:29.560 --> 00:09:34.020
+Obviously, it's not in the collection, so I can't implement -- I can't increment it, right. It makes no sense.
+
+00:09:34.020 --> 00:09:38.820
+So I would expect some sign of some sort of error message there. So let's run this one last time.
+
+00:09:39.620 --> 00:09:41.120
+And what we get is
+
+00:09:43.620 --> 00:09:47.220
+that last statement xxx not found so I obviously
+
+00:09:47.220 --> 00:09:51.670
+there's no movie called xxx. So I could not have incremented the watch out for it.
+
+00:09:52.110 --> 00:09:54.510
+Okay. So that's a simple run, you get the idea.
+
+00:09:54.510 --> 00:09:59.310
+Notice there's no user menu where you can say select 1 to add a movie, select 2 to delete a movie.
+
+00:09:59.310 --> 00:10:03.190
+We could certainly add that later but we need to get this part working first.
+
+00:10:03.190 --> 00:10:06.790
+So now let's take a look at the movie h
+
+00:10:07.690 --> 00:10:10.790
+file, which is our header. And there it is right here.
+
+00:10:10.790 --> 00:10:15.450
+This models a movie with the following attributes. And you can see I've already implemented this.
+
+00:10:15.700 --> 00:10:19.000
+I've got a name, a rating and a watch, which are strings and integers.
+
+00:10:19.000 --> 00:10:22.600
+I've got a constructor that expects all three of those attributes.
+
+00:10:22.600 --> 00:10:25.590
+I've got a copy constructor that -- it's really just empty.
+
+00:10:26.140 --> 00:10:29.740
+I've got a destructor again that's empty that we're not using any raw pointers,
+
+00:10:29.740 --> 00:10:30.990
+so we really don't need these.
+
+00:10:31.760 --> 00:10:34.560
+And then I've implemented the basic getters and setters,
+
+00:10:34.560 --> 00:10:36.540
+set name, get name and so forth.
+
+00:10:37.040 --> 00:10:41.040
+Notice that these are const correct. So my get names are all const.
+
+00:10:41.440 --> 00:10:45.040
+are all const. My get functions, I should say,
+
+00:10:45.040 --> 00:10:46.640
+as well as my display.
+
+00:10:47.000 --> 00:10:51.600
+So I don't want my display modifying anything. So I'm going to make that a const method.
+
+00:10:52.100 --> 00:10:52.980
+That's it.
+
+00:10:52.980 --> 00:10:56.340
+Now let's look at movie cpp, which is the implementation.
+
+00:10:56.340 --> 00:11:00.700
+And you can see here I'm implementing the constructor as an initializer list.
+
+00:11:01.200 --> 00:11:04.560
+Here's my copy constructor, which is simply delegating to the constructor.
+
+00:11:05.000 --> 00:11:09.000
+I could have simply used the default that I get for free from the compiler,
+
+00:11:09.000 --> 00:11:11.250
+but I decided to implement it explicitly.
+
+00:11:11.250 --> 00:11:13.450
+So again, just to get a little bit more practice,
+
+00:11:13.850 --> 00:11:16.210
+my destructor is here. It doesn't do anything.
+
+00:11:16.980 --> 00:11:20.580
+And here is the display method. The display method just displays
+
+00:11:20.580 --> 00:11:24.180
+the name, the rating and the watched for each one of those objects.
+
+00:11:25.080 --> 00:11:25.880
+That's it.
+
+00:11:25.880 --> 00:11:28.440
+Now let's take a look at movies.h.
+
+00:11:29.100 --> 00:11:32.100
+Here's the specification for my movies class.
+
+00:11:32.100 --> 00:11:35.700
+And again, movies is a collection of movie objects.
+
+00:11:37.360 --> 00:11:39.360
+And there's my vector.
+
+00:11:39.560 --> 00:11:42.360
+I have a constructor. I have a destructor.
+
+00:11:43.860 --> 00:11:47.460
+I have the add movie method, which you have to implement.
+
+00:11:47.760 --> 00:11:52.360
+And I have the increment watched method which you have to implement as well as a display method.
+
+00:11:52.360 --> 00:11:55.560
+So if we look at the cpp files, those are all in there, right.
+
+00:11:55.560 --> 00:11:59.550
+I've got no code in my constructor right now a default constructor.
+
+00:11:59.550 --> 00:12:03.550
+I've got no code in my destructor.
+
+00:12:03.800 --> 00:12:06.400
+And there's my add movie.
+
+00:12:07.280 --> 00:12:10.980
+Right now it's just returning false. You need to implement the logic in this method.
+
+00:12:10.980 --> 00:12:14.980
+And here's my increment watched, which again returns false.
+
+00:12:15.340 --> 00:12:19.140
+And then finally, we have the display method, which displays those objects.
+
+00:12:19.140 --> 00:12:22.700
+Now obviously, all you want to do here is just loop through that collection
+
+00:12:22.700 --> 00:12:24.700
+and display each movie object.
+
+00:12:24.700 --> 00:12:29.100
+And remember, each movie knows how to display itself. So just call
+
+00:12:29.100 --> 00:12:31.300
+that movie object.display method.
+
+00:12:32.550 --> 00:12:37.350
+Okay. So a lot here. Take your time, try to understand the logic.
+
+00:12:37.350 --> 00:12:40.850
+If you have any questions, let me know. And good luck with this.
+
+00:12:41.210 --> 00:12:44.010
+When you're done, take out -- check out the challenge solution.
+
+00:12:44.010 --> 00:12:47.610
+Obviously, if you're doing this from scratch, my solution is going to be different from yours.
+
+00:12:47.610 --> 00:12:50.210
+But good luck with it, and most of all have fun.

@@ -1,0 +1,218 @@
+WEBVTT
+
+00:00:06.120 --> 00:00:08.989
+In this section, we'll get a
+first look at object-oriented
+
+00:00:09.270 --> 00:00:10.710
+or oo programming.
+
+00:00:11.599 --> 00:00:14.520
+We've already done a bit of oo
+programming when we use the standard
+
+00:00:14.520 --> 00:00:17.819
+string and vector classes, but now
+we'll learn much more about oo
+
+00:00:17.820 --> 00:00:21.340
+programming and especially how to
+create our own classes and objects.
+
+00:00:22.350 --> 00:00:25.870
+Before learning about c++
+object-oriented features, we'll
+
+00:00:25.870 --> 00:00:29.830
+learn what oo programming is and
+why it's so popular and useful.
+
+00:00:30.420 --> 00:00:33.390
+Then we'll learn exactly what
+classes and objects are, and how
+
+00:00:33.390 --> 00:00:34.910
+they work in the world of oo.
+
+00:00:35.699 --> 00:00:38.530
+We'll see how to declare some
+simple classes and create
+
+00:00:38.530 --> 00:00:39.780
+objects from those classes.
+
+00:00:39.970 --> 00:00:43.460
+We'll then see how we can use the dot
+operator and the pointer operators,
+
+00:00:43.570 --> 00:00:46.870
+so that we can get to the parts of
+an object that we want to access.
+
+00:00:47.900 --> 00:00:51.260
+Two of the main strengths of object
+orientation are encapsulation
+
+00:00:51.290 --> 00:00:52.500
+and information hiding.
+
+00:00:53.010 --> 00:00:57.080
+We'll define these concepts in this
+section and see how c++ is public
+
+00:00:57.280 --> 00:01:01.510
+and private access modifiers,
+allow us to prevent access to parts
+
+00:01:01.510 --> 00:01:04.789
+of our code while still allowing
+access to the interface that will
+
+00:01:04.789 --> 00:01:06.180
+be used by other programmers.
+
+00:01:07.110 --> 00:01:09.369
+Then we'll turn our attention
+to the many ways that we can
+
+00:01:09.410 --> 00:01:11.910
+construct or initialize our objects.
+
+00:01:12.299 --> 00:01:14.080
+This is all done with constructors.
+
+00:01:14.350 --> 00:01:17.530
+These are methods that we write
+that give us control over exactly
+
+00:01:17.530 --> 00:01:18.950
+how our objects are created.
+
+00:01:19.770 --> 00:01:22.369
+There are lots of variations
+in constructors, and we'll
+
+00:01:22.370 --> 00:01:25.000
+look at the most common and
+understand their primary purpose.
+
+00:01:25.719 --> 00:01:29.000
+We'll learn about initializer
+lists, default, overloaded, copy
+
+00:01:29.000 --> 00:01:32.740
+and move constructors, and we'll
+see when and how to implement them.
+
+00:01:33.710 --> 00:01:36.500
+Sometimes when we work with
+pointers inside classes.
+
+00:01:36.690 --> 00:01:39.690
+We have to be aware of whether
+the pointer or what the pointer
+
+00:01:39.690 --> 00:01:41.410
+is pointing to is being copied.
+
+00:01:42.160 --> 00:01:45.149
+This concept is called
+shallow versus deep copying.
+
+00:01:45.589 --> 00:01:48.249
+By default, c++ provides
+shallow copying.
+
+00:01:48.510 --> 00:01:51.540
+But sometimes we need to do more than
+that, and we'll learn how and why.
+
+00:01:52.370 --> 00:01:54.030
+We'll also discuss destructors.
+
+00:01:54.270 --> 00:01:57.220
+Sometimes when an object is
+destroyed, there can be things that
+
+00:01:57.220 --> 00:01:58.929
+we have to do to tidy up after them.
+
+00:01:59.309 --> 00:02:03.050
+This might include closing files,
+freeing allocated memory, writing
+
+00:02:03.050 --> 00:02:05.260
+log messages to files and so forth.
+
+00:02:06.070 --> 00:02:09.679
+C++ provides destructors that
+are called automatically when
+
+00:02:09.710 --> 00:02:11.100
+objects are going to be destroyed.
+
+00:02:12.270 --> 00:02:14.750
+Then we'll learn about the
+this pointer, which many
+
+00:02:14.750 --> 00:02:18.220
+times confuses beginning c++
+programmers, but don't worry,
+
+00:02:18.300 --> 00:02:19.900
+it's pretty simple once explained.
+
+00:02:21.059 --> 00:02:24.380
+Sometimes when we write oo programs,
+we want certain attributes to
+
+00:02:24.380 --> 00:02:27.670
+belong to the entire class and
+not to the objects themselves.
+
+00:02:28.220 --> 00:02:31.130
+That's exactly what static
+class members allow you to do.
+
+00:02:32.139 --> 00:02:35.209
+Finally, we'll wrap up this section
+by understanding the difference
+
+00:02:35.210 --> 00:02:39.769
+between structs and classes and
+see how c plus plus classes can grant
+
+00:02:39.770 --> 00:02:42.879
+friendship privileges to other
+parts of the program so they can
+
+00:02:42.890 --> 00:02:47.000
+access private information in
+an easy but controlled manner.
+
+00:02:47.940 --> 00:02:51.439
+Once you complete this section,
+you'll have the basic fundamentals
+
+00:02:51.440 --> 00:02:55.339
+necessary to model your programs
+using real-world objects.
+
+00:02:55.860 --> 00:02:59.340
+This will not only help you think
+more abstractly, it'll also make your
+
+00:02:59.340 --> 00:03:03.480
+code more robust, easier to debug
+and easier for others to modify.
+
+00:03:04.480 --> 00:03:07.540
+This sounds like a lot to learn,
+but we'll take it in small steps
+
+00:03:07.560 --> 00:03:09.300
+and build up our classes as we go.
+
+00:03:09.660 --> 00:03:12.940
+Let's get started with
+oo programming and c++.

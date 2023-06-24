@@ -1,0 +1,579 @@
+WEBVTT
+
+00:00:05.640 --> 00:00:09.379
+Hello, welcome back to the
+challenge 2 solution for section 20.
+
+00:00:09.480 --> 00:00:12.370
+So I'm in the section 20
+workspace, and I'm in the
+
+00:00:12.370 --> 00:00:15.170
+challenge_2_solution project.
+
+00:00:15.670 --> 00:00:17.799
+And what I'd like to do is
+just go over my solution.
+
+00:00:17.799 --> 00:00:20.720
+This is a really, really
+straightforward program.
+
+00:00:21.220 --> 00:00:25.070
+If you're not used to thinking
+abstractly with stl containers
+
+00:00:25.070 --> 00:00:28.080
+and iterators and so forth, then
+it becomes much more difficult.
+
+00:00:28.080 --> 00:00:32.049
+But once you really take advantage
+of using the power of the stl,
+
+00:00:32.049 --> 00:00:33.269
+it makes much, much easier.
+
+00:00:33.630 --> 00:00:35.420
+So here's what I've got going on here.
+
+00:00:35.779 --> 00:00:38.580
+I've got my song class, which
+we've already talked about.
+
+00:00:38.590 --> 00:00:39.600
+It's very straightforward.
+
+00:00:39.600 --> 00:00:41.180
+I talked about that
+in the previous video.
+
+00:00:41.700 --> 00:00:44.050
+And I'm going to scroll down to the
+methods that we're going to implement.
+
+00:00:44.080 --> 00:00:46.640
+So here is the display
+menu which i gave you.
+
+00:00:47.469 --> 00:00:49.680
+And here's that very first
+method you had to implement,
+
+00:00:50.040 --> 00:00:51.040
+play the current song.
+
+00:00:51.330 --> 00:00:53.489
+So I'm being passed in a song object.
+
+00:00:53.489 --> 00:00:53.940
+What do I do?
+
+00:00:53.940 --> 00:00:56.559
+I just say playing,
+and I display the song.
+
+00:00:56.690 --> 00:01:02.400
+Simple as that, the song class
+overloads my stream insertion operator
+
+00:01:02.410 --> 00:01:04.910
+so it becomes basically a one-liner.
+
+00:01:06.200 --> 00:01:08.380
+The next one is displaying
+the actual playlist.
+
+00:01:08.690 --> 00:01:10.069
+And again, really straightforward.
+
+00:01:10.080 --> 00:01:13.060
+What am I getting, I'm
+getting the playlist, which
+
+00:01:13.080 --> 00:01:15.490
+is a list of song objects.
+
+00:01:15.850 --> 00:01:18.200
+And I'm also getting the current
+song because I want to display both
+
+00:01:18.200 --> 00:01:20.940
+of them that way I have all the
+information I need in the display.
+
+00:01:22.150 --> 00:01:25.439
+All I'm doing is arranged based
+for loop over the playlist.
+
+00:01:26.929 --> 00:01:30.739
+I'm grabbing the song that's there and
+displaying it, just like we did here.
+
+00:01:31.370 --> 00:01:33.590
+So we're using the overloaded
+insertion operator.
+
+00:01:33.620 --> 00:01:36.210
+That's going to display all the
+songs in the playlist in the loop.
+
+00:01:36.740 --> 00:01:38.519
+And then I'm just going to
+say the current song that's
+
+00:01:38.539 --> 00:01:40.430
+playing is current song.
+
+00:01:41.200 --> 00:01:42.890
+This code is the same as this code.
+
+00:01:42.890 --> 00:01:45.939
+I could have called this function
+from there, either way is fine.
+
+00:01:46.959 --> 00:01:48.349
+And now let's look at the main.
+
+00:01:48.350 --> 00:01:49.570
+That's the real workhorse.
+
+00:01:50.560 --> 00:01:55.320
+You can see that I am
+defining playlist right here.
+
+00:01:55.550 --> 00:01:56.800
+And this of course is main.
+
+00:01:57.580 --> 00:02:00.810
+I'm initializing it to these six songs.
+
+00:02:00.810 --> 00:02:02.349
+You could choose any songs you like.
+
+00:02:03.250 --> 00:02:05.279
+This right here is so important.
+
+00:02:05.420 --> 00:02:07.560
+If you forget to do this,
+you can run into issues.
+
+00:02:07.560 --> 00:02:09.460
+That's why I gave you
+that one line in the code.
+
+00:02:10.310 --> 00:02:14.730
+Current song is an iterator
+to a song in a std list.
+
+00:02:14.730 --> 00:02:16.570
+And I'm setting it to the beginning.
+
+00:02:16.570 --> 00:02:19.969
+So in other words, I'm always starting
+right at that first song up there.
+
+00:02:21.089 --> 00:02:23.729
+And then I'm displaying
+the playlist what.
+
+00:02:23.730 --> 00:02:27.579
+Am I passing in I'm passing in the
+playlist, and I'm passing in the song.
+
+00:02:27.590 --> 00:02:29.880
+Remember, current song is an iterator.
+
+00:02:29.890 --> 00:02:32.470
+So I need to de-reference
+that iterator to get to the
+
+00:02:32.470 --> 00:02:33.840
+song that it's pointing to.
+
+00:02:34.849 --> 00:02:38.419
+To be double safe and to use defensive
+programming, you always want to make
+
+00:02:38.420 --> 00:02:42.590
+sure that that is actually pointing
+to the list and not off the list.
+
+00:02:43.010 --> 00:02:46.450
+But in this case, I'm sure I'm not
+off the list anywhere in this program.
+
+00:02:46.450 --> 00:02:49.560
+So I'm not doing it, but defensive
+programming probably would be a
+
+00:02:49.560 --> 00:02:53.329
+good idea to check to make sure that
+iterator is not pointing off the list.
+
+00:02:54.230 --> 00:02:56.119
+Okay, so now we're in the loop.
+
+00:02:56.969 --> 00:02:59.899
+And we've got a character
+variable that's where I'm going
+
+00:02:59.900 --> 00:03:02.020
+to read the user selection into.
+
+00:03:02.640 --> 00:03:03.880
+I'm displaying the menu.
+
+00:03:03.920 --> 00:03:05.230
+I'm reading their selection.
+
+00:03:05.280 --> 00:03:08.640
+I'm making the selection uppercase
+that way I don't have to use
+
+00:03:08.989 --> 00:03:11.079
+ors here in my if statements.
+
+00:03:11.710 --> 00:03:15.680
+And if the selection is f, that
+means we're playing the first song.
+
+00:03:16.020 --> 00:03:19.880
+I'm just displaying this little message
+right here, just playing for a song.
+
+00:03:20.550 --> 00:03:25.390
+And I'm setting the iterator
+current song equals playlist.begin.
+
+00:03:25.580 --> 00:03:28.520
+That's the first element in
+the list, the first song.
+
+00:03:29.080 --> 00:03:31.790
+That's it, and I'm
+calling play current song.
+
+00:03:31.850 --> 00:03:34.489
+And I'm dereferencing that
+iterator and passing this song in.
+
+00:03:35.529 --> 00:03:37.800
+That'll display that,
+that song is playing.
+
+00:03:38.270 --> 00:03:41.390
+And these little messages here I've
+got one here and I've got one here.
+
+00:03:41.390 --> 00:03:43.190
+You don't really don't need
+those, but I just put them in
+
+00:03:43.190 --> 00:03:46.420
+there that way you can explicitly
+see these functions working.
+
+00:03:47.550 --> 00:03:48.810
+So let's look at next.
+
+00:03:48.910 --> 00:03:50.160
+I'll scroll up just a bit.
+
+00:03:51.170 --> 00:03:53.089
+So here we're going
+to play the next song.
+
+00:03:54.029 --> 00:03:54.870
+What do I do.
+
+00:03:54.980 --> 00:03:56.510
+I increment the iterator.
+
+00:03:57.360 --> 00:04:01.440
+Now it's possible that I was on the
+last song, and now I'm off the list.
+
+00:04:01.600 --> 00:04:03.909
+So I really need to
+be -- I need to check here.
+
+00:04:04.190 --> 00:04:07.770
+So if the current song is
+equal to playlist end, that
+
+00:04:07.770 --> 00:04:09.209
+means I'm off the list, right.
+
+00:04:09.440 --> 00:04:12.050
+I just pressed next, and
+I was on the last song.
+
+00:04:12.340 --> 00:04:16.089
+So what I need to do here is wrap to
+the start of the playlist and then
+
+00:04:16.089 --> 00:04:20.409
+set my iterator to the beginning, and
+then we probably press current song.
+
+00:04:20.420 --> 00:04:22.700
+Now if I'm not at the end, then I
+was somewhere at the beginning or
+
+00:04:22.700 --> 00:04:23.950
+in the middle, it's not a big deal.
+
+00:04:24.450 --> 00:04:26.459
+That's it, that's the logic right here.
+
+00:04:27.330 --> 00:04:29.099
+For previous, it's very similar.
+
+00:04:30.250 --> 00:04:32.460
+So I'm displaying
+playing previous song.
+
+00:04:33.110 --> 00:04:36.750
+And I'm checking to see if the current
+song is equal to the first song,
+
+00:04:37.160 --> 00:04:38.740
+then I need to wrap around, right.
+
+00:04:38.750 --> 00:04:41.999
+So in this case, I need to set
+the current song to the end.
+
+00:04:42.000 --> 00:04:43.210
+Now notice what happens here.
+
+00:04:43.400 --> 00:04:45.150
+Remember, here's my list.
+
+00:04:46.279 --> 00:04:48.149
+And this is the end of the list, right.
+
+00:04:48.199 --> 00:04:49.660
+This is just a placeholder.
+
+00:04:49.680 --> 00:04:50.800
+There's no song there.
+
+00:04:51.090 --> 00:04:54.190
+So I want to set it to there because
+in the next line, I want to decrement
+
+00:04:54.190 --> 00:04:56.289
+it and bring it right back to here.
+
+00:04:57.179 --> 00:04:59.950
+So that way I don't have to
+duplicate code all over the place.
+
+00:05:01.130 --> 00:05:01.729
+So that's it.
+
+00:05:01.729 --> 00:05:02.760
+I decrement the song.
+
+00:05:02.760 --> 00:05:04.640
+And I call play current
+song with the song.
+
+00:05:04.640 --> 00:05:07.590
+And now it's going to be
+playing the last song if I was
+
+00:05:07.590 --> 00:05:08.790
+at the beginning of the list.
+
+00:05:09.500 --> 00:05:11.250
+Otherwise, it's just going
+to play the previous one.
+
+00:05:12.520 --> 00:05:15.349
+The edition right here
+where we're adding songs.
+
+00:05:15.679 --> 00:05:16.879
+I've got some variables.
+
+00:05:16.880 --> 00:05:19.519
+I've got my name, my artist,
+which is strings and the rating.
+
+00:05:19.940 --> 00:05:23.360
+I've got this line of code where
+if I provided in your description
+
+00:05:23.600 --> 00:05:26.799
+this just clears out anything
+that's in standard in or cin.
+
+00:05:26.800 --> 00:05:30.480
+In case, you've got garbage characters
+in there or extra returns from
+
+00:05:30.510 --> 00:05:34.360
+processing, this is just a good
+practice to get into whenever you
+
+00:05:34.370 --> 00:05:37.219
+really need to just clear out stuff
+I don't want anything in there.
+
+00:05:37.450 --> 00:05:41.750
+So I'm just clearing everything out,
+and then I'm adding and playing a new
+
+00:05:41.750 --> 00:05:43.100
+song, I'm displaying that message.
+
+00:05:43.100 --> 00:05:45.470
+And I'm asking the user to
+enter the name of the song,
+
+00:05:45.500 --> 00:05:46.969
+the artist and the rating.
+
+00:05:47.990 --> 00:05:52.880
+And once I have that, I'm creating a
+new song based on that information.
+
+00:05:53.580 --> 00:05:57.999
+And I'm inserting using
+playlist.insert and current song,
+
+00:05:58.000 --> 00:05:59.140
+remember, that's my iterator.
+
+00:05:59.230 --> 00:06:00.860
+So I'm inserting it before that.
+
+00:06:00.870 --> 00:06:01.710
+That's the behavior.
+
+00:06:01.710 --> 00:06:03.969
+I could use in place here
+as well, whatever you like.
+
+00:06:04.530 --> 00:06:06.990
+Now what happened was,
+remember, here was my iterator,
+
+00:06:08.309 --> 00:06:09.470
+which was current song.
+
+00:06:09.929 --> 00:06:10.900
+It's pointing here.
+
+00:06:11.040 --> 00:06:12.580
+And I just inserted that song here.
+
+00:06:12.580 --> 00:06:14.770
+So I need to decrement
+that operator to play it.
+
+00:06:16.049 --> 00:06:17.429
+So right here is where I'm doing that.
+
+00:06:17.430 --> 00:06:20.540
+I'm decrementing the iterator
+right here and I'm playing
+
+00:06:20.540 --> 00:06:22.099
+the song that I just inserted.
+
+00:06:23.020 --> 00:06:25.370
+All right, now the last
+couple is just real simple.
+
+00:06:25.880 --> 00:06:30.280
+Here list, I'm just calling display
+playlist, and I'm passing in the
+
+00:06:30.280 --> 00:06:31.530
+playlist in the current song.
+
+00:06:32.340 --> 00:06:35.329
+Q, I'm quitting anything
+else is an illegal choice.
+
+00:06:36.789 --> 00:06:38.670
+That's it, you can see it's
+really straightforward, right.
+
+00:06:38.670 --> 00:06:40.070
+I've got no looping variables.
+
+00:06:40.070 --> 00:06:42.159
+I'm not worried about
+keeping track of stuff.
+
+00:06:42.170 --> 00:06:45.890
+The only thing I'm keeping track
+of is I've got my list here.
+
+00:06:47.360 --> 00:06:50.700
+And all I'm doing is I've got
+that current song that's the only
+
+00:06:50.719 --> 00:06:51.909
+thing that really concerns me.
+
+00:06:51.910 --> 00:06:53.700
+I've got that current song iterator.
+
+00:06:54.080 --> 00:06:57.659
+And all I'm doing is moving that
+guy back and forth along the list.
+
+00:06:57.660 --> 00:06:58.520
+Really, really simple.
+
+00:06:58.750 --> 00:07:01.740
+It never invalidates because
+when I'm inserting something, I'm
+
+00:07:01.740 --> 00:07:03.430
+inserting something before it.
+
+00:07:03.880 --> 00:07:05.659
+So all i need to do
+is just move it back.
+
+00:07:06.409 --> 00:07:08.210
+So I'm never going to invalidate that.
+
+00:07:08.240 --> 00:07:11.089
+And the way that the code is written,
+it's never going to go off the list.
+
+00:07:11.090 --> 00:07:14.170
+So that's why I'm not checking
+to make sure it's in the
+
+00:07:14.170 --> 00:07:15.410
+list but I certainly could.
+
+00:07:16.460 --> 00:07:17.880
+All right, I hope you
+had fun with this.
+
+00:07:17.910 --> 00:07:19.409
+I hope you've extended it as well.
+
+00:07:19.900 --> 00:07:23.020
+If you have your solution, you think
+it's really cool, post it in the Q&A.
+
+00:07:23.030 --> 00:07:24.060
+We'll all comment on it.
+
+00:07:24.840 --> 00:07:26.920
+All right, I'll see you in the
+next video where we're going
+
+00:07:26.920 --> 00:07:28.889
+to start talking about sets.

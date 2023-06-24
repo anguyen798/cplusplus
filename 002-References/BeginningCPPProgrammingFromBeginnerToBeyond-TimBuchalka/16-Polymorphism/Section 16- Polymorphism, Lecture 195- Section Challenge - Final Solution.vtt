@@ -1,0 +1,346 @@
+WEBVTT
+
+00:00:05.360 --> 00:00:09.560
+Welcome back. We're in the last part of the solution to the challenge for section 16.
+
+00:00:09.810 --> 00:00:13.310
+The only thing we've got left to do is clean up those account util files,
+
+00:00:13.310 --> 00:00:15.510
+so that we don't have all this duplicated code.
+
+00:00:15.870 --> 00:00:18.070
+So I'm in the challenge solution project.
+
+00:00:18.570 --> 00:00:23.560
+And this challenge solution project right now is exactly like we left off part 2.
+
+00:00:24.360 --> 00:00:27.560
+So the first thing we want to do is we want to look at these helper functions,
+
+00:00:27.560 --> 00:00:31.660
+and we really want to get rid of all of them except what we absolutely need.
+
+00:00:31.660 --> 00:00:35.920
+And what we absolutely do need is, remember, we're going to come at these things now with
+
+00:00:35.920 --> 00:00:37.280
+base class pointers,
+
+00:00:37.280 --> 00:00:41.080
+so that way we can just use dynamic binding and only have one version of them.
+
+00:00:41.080 --> 00:00:44.740
+So that's what we're going to do. We're going to keep display deposit and withdraw.
+
+00:00:44.740 --> 00:00:48.340
+But instead of having a vector of account objects, we're going to have a vector of
+
+00:00:48.340 --> 00:00:49.940
+pointers to account objects.
+
+00:00:50.440 --> 00:00:54.940
+That's my base class pointer. That's what really gives me the power of dynamic polymorphism.
+
+00:00:54.940 --> 00:00:56.840
+So that's what I need to do.
+
+00:00:57.830 --> 00:00:59.830
+All of these down here I can get rid of.
+
+00:00:59.830 --> 00:01:04.230
+I don't need specialized versions of these things because the whole point of
+
+00:01:04.230 --> 00:01:08.230
+dynamic polymorphism is to let the runtime system figure out
+
+00:01:08.230 --> 00:01:09.230
+which one to use.
+
+00:01:09.230 --> 00:01:12.230
+So this is what we want to reduce it to.
+
+00:01:12.230 --> 00:01:16.430
+I'm going to modify that to say pointer classes because that's really what we are
+
+00:01:16.430 --> 00:01:20.890
+and also these include files. Notice that the only thing we really care about is account,
+
+00:01:20.890 --> 00:01:25.090
+so we don't need all these include files, we can get rid of them. We only need the account.
+
+00:01:26.340 --> 00:01:28.040
+Okay. So that's where we're at now.
+
+00:01:28.040 --> 00:01:31.640
+Now the implementation for all of those functions, let's go to that file.
+
+00:01:33.140 --> 00:01:35.700
+So in the account util cpp file,
+
+00:01:35.700 --> 00:01:39.000
+we only want to keep the first three, and we're going to modify them slightly.
+
+00:01:39.500 --> 00:01:40.600
+The rest of them we can
+
+00:01:40.600 --> 00:01:45.260
+just get rid of because those are the specialized versions for savings, checking account and trust account.
+
+00:01:45.260 --> 00:01:49.760
+And those were assuming static binding. So we're not doing static binding anymore, so we don't need them at all.
+
+00:01:50.010 --> 00:01:51.570
+So let's get rid of them.
+
+00:01:52.810 --> 00:01:57.010
+And this is what I've got now. I've got three functions:display,
+
+00:01:57.010 --> 00:01:58.510
+deposit and withdraw.
+
+00:01:58.910 --> 00:02:02.410
+Now we do need to modify them slightly because our prototypes now expect
+
+00:02:02.410 --> 00:02:03.710
+pointers right here.
+
+00:02:04.570 --> 00:02:06.070
+So that's a pointer,
+
+00:02:07.430 --> 00:02:10.990
+and I'm just going to say account object pointers because that's really what we are.
+
+00:02:11.990 --> 00:02:15.990
+So let's take a look at this for a second and understand what's going on here.
+
+00:02:16.990 --> 00:02:20.590
+In this case, I've got for const, auto.
+
+00:02:21.190 --> 00:02:24.970
+There's my account, right. Now this is -- this needs to change a little bit
+
+00:02:24.970 --> 00:02:27.970
+because I don't really want a reference. I already have a pointer,
+
+00:02:27.970 --> 00:02:31.170
+so I don't need that at all. I just need to get rid of that.
+
+00:02:31.170 --> 00:02:36.050
+And then now since auto will be a pointer, I just need to de-reference the pointer here.
+
+00:02:36.550 --> 00:02:39.750
+That's an object, and that will call the overloaded operator
+
+00:02:39.750 --> 00:02:41.950
+that we just created,the insertion operator.
+
+00:02:41.950 --> 00:02:45.450
+So that's just a really precise change, but that's all we need to do here.
+
+00:02:45.950 --> 00:02:50.450
+The same with deposit. In deposit, we've got account pointers again,
+
+00:02:50.600 --> 00:02:53.400
+so we'll change that because the vector is a little different.
+
+00:02:54.060 --> 00:02:57.660
+And we don't need the reference here because we've got a pointer.
+
+00:02:58.160 --> 00:02:59.260
+But what do we do now.
+
+00:02:59.260 --> 00:03:03.960
+Well, we've got to call the deposit method right, but we have a pointer, so we just need to change the operator
+
+00:03:04.160 --> 00:03:05.460
+to the arrow operator.
+
+00:03:06.060 --> 00:03:07.060
+That's it.
+
+00:03:07.660 --> 00:03:10.260
+And then here with withdraw, last step,
+
+00:03:10.510 --> 00:03:13.710
+again,we've got pointers to accounts in the vector.
+
+00:03:14.270 --> 00:03:18.670
+So what do we do here, same idea. Get rid of the reference because we've got pointers there,
+
+00:03:18.970 --> 00:03:21.970
+and we call account withdraw from the pointer.
+
+00:03:22.870 --> 00:03:25.870
+We also need to make a couple of changes right here.
+
+00:03:25.870 --> 00:03:30.270
+We need to dereference that pointer to get the account here as well,
+
+00:03:30.670 --> 00:03:33.870
+that will also call the overloaded insertion operator.
+
+00:03:33.870 --> 00:03:38.070
+We need to dereference the pointer here to get the object and here as well.
+
+00:03:39.370 --> 00:03:41.870
+And that should do it. You can see how much
+
+00:03:41.870 --> 00:03:44.470
+code we got rid of. We got rid of a ton of code,
+
+00:03:44.720 --> 00:03:48.600
+and we've simplified our project, we've simplified our thinking.
+
+00:03:48.600 --> 00:03:51.700
+We can come at these now with base class pointers
+
+00:03:51.700 --> 00:03:54.900
+and let the runtime system figure out which method to bind.
+
+00:03:55.560 --> 00:03:57.860
+All right. So now let's go to our main and take a look.
+
+00:03:58.660 --> 00:04:02.660
+Here's our main. There's a whole bunch of stuff in here. Let's give it a run and see what happens.
+
+00:04:04.360 --> 00:04:08.720
+There we go. There's our run. You can see here I'm creating a checking account.
+
+00:04:09.080 --> 00:04:13.180
+Again, this is not a pointer, so this is just creating a plain object on the stack.
+
+00:04:13.180 --> 00:04:15.180
+Frank with 5000, there it is.
+
+00:04:15.680 --> 00:04:19.360
+Now I'm creating a trust account, and I'm creating that account dynamically
+
+00:04:19.360 --> 00:04:23.360
+through a base class pointer. And there's James.
+
+00:04:23.360 --> 00:04:25.360
+No balance, no interest and no withdrawals.
+
+00:04:25.860 --> 00:04:27.960
+And notice how we were able to print that
+
+00:04:27.960 --> 00:04:32.160
+on the stream just because we're using our overloaded operators and it's printing it correctly.
+
+00:04:32.520 --> 00:04:37.120
+Now we're creating Larry, Moe, and Curly as three pointers to accounts.
+
+00:04:37.120 --> 00:04:38.320
+And again,
+
+00:04:38.320 --> 00:04:41.980
+we're create -- we're instantiating a checking account, a savings account and a trust account.
+
+00:04:42.380 --> 00:04:45.880
+And then we're adding those three pointers to this vector accounts.
+
+00:04:46.760 --> 00:04:49.890
+Now we're calling display accounts, that's that function that we just
+
+00:04:49.890 --> 00:04:51.490
+updated in the account util.
+
+00:04:51.740 --> 00:04:56.100
+And it's going to display the three accounts, and I expect dynamic binding.
+
+00:04:56.100 --> 00:04:58.350
+That's exactly what happens. You can see right here:
+
+00:04:58.350 --> 00:05:00.710
+checking, savings and trust. That's, pretty cool.
+
+00:05:02.210 --> 00:05:06.570
+Then we deposit a 1000 dollars into each one of those accounts. You can see right here
+
+00:05:06.570 --> 00:05:09.570
+I'm depositing a 1000 to checking, to savings and to trust.
+
+00:05:10.770 --> 00:05:13.870
+Finally, we're withdrawing 2000,
+
+00:05:13.870 --> 00:05:17.470
+that's this code right here. You can see the last one fails because there's not enough balance.
+
+00:05:18.020 --> 00:05:22.020
+And then finally, we display the accounts one last time, and we see the balances.
+
+00:05:22.380 --> 00:05:26.280
+We clean up our pointers, and we're done. Now we're done.
+
+00:05:26.280 --> 00:05:29.780
+The challenge is over. I hope you had a fun time doing it.
+
+00:05:29.780 --> 00:05:32.340
+If you had trouble with it, don't worry.
+
+00:05:32.340 --> 00:05:37.220
+This was not an easy challenge. This was a very, very challenging exercise.
+
+00:05:37.580 --> 00:05:40.780
+Go back and understand what I did compared to what you did.
+
+00:05:40.780 --> 00:05:44.380
+Maybe you just forgot to dereference a pointer and it was as simple as that.
+
+00:05:44.380 --> 00:05:48.180
+For example, if you're in the account util cpp file,
+
+00:05:48.680 --> 00:05:52.480
+and if we forgot to de-reference these pointers right here,
+
+00:05:54.680 --> 00:05:57.680
+let's just do the withdraw, and you'll see the difference when I run this again,
+
+00:05:57.680 --> 00:05:59.680
+you'll see the difference when I run this again.
+
+00:06:00.120 --> 00:06:02.720
+Look what prints out here on the withdrawal, right. There you see that.
+
+00:06:03.380 --> 00:06:06.380
+That's the pointers. Those are the addresses.
+
+00:06:06.680 --> 00:06:08.980
+So that's a clue, right. I'm printing the pointer.
+
+00:06:08.980 --> 00:06:11.340
+Oh of course, I'm printing the pointer. I don't want to print the pointer.
+
+00:06:11.340 --> 00:06:15.140
+I want to print one it's pointing to. So that's where you have to go back here,
+
+00:06:15.140 --> 00:06:19.500
+and now dereference that pointer and get what it's pointing to,
+
+00:06:19.500 --> 00:06:21.400
+and that'll get you exactly what you got.
+
+00:06:22.900 --> 00:06:27.260
+All right. So congratulations on finishing this section. This was a very complex section.
+
+00:06:27.620 --> 00:06:30.620
+And this really takes your c++ knowledge to another level.
+
+00:06:30.620 --> 00:06:33.920
+What we'll do in the next section is we'll talk about smart pointers,
+
+00:06:33.920 --> 00:06:36.520
+and we'll be able to finally get rid of all these raw pointers.
+
+00:06:36.520 --> 00:06:39.520
+In modern c++, we need to understand raw pointers.
+
+00:06:39.520 --> 00:06:41.520
+We must understand raw pointers,
+
+00:06:41.520 --> 00:06:44.510
+but we really want to develop using smart pointers
+
+00:06:44.510 --> 00:06:47.810
+and never ever having to worry about de-allocating storage with delete.

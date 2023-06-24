@@ -1,0 +1,586 @@
+WEBVTT
+
+00:00:05.300 --> 00:00:08.180
+Welcome to the first challenge for section 19.
+
+00:00:08.180 --> 00:00:12.380
+This challenge is all about using what you learned about formatting output
+
+00:00:12.380 --> 00:00:16.480
+to format a table of tours to different cities in
+
+00:00:16.480 --> 00:00:19.140
+South America, including prices and so forth,
+
+00:00:19.140 --> 00:00:20.840
+and we'll get to that in a second.
+
+00:00:20.840 --> 00:00:23.500
+But I'm in the section 19 workspace,
+
+00:00:23.500 --> 00:00:26.700
+and there are two projects, challenge_1 is
+
+00:00:26.700 --> 00:00:28.850
+the source code that I'm providing for you,
+
+00:00:28.850 --> 00:00:32.730
+and challenge_1_solution is my solution to the
+
+00:00:32.730 --> 00:00:33.530
+challenge.
+
+00:00:33.530 --> 00:00:37.530
+So let's take a look at what the challenge is all about, then I'll give you a sample run,
+
+00:00:37.530 --> 00:00:39.530
+and then you can try it out on your own.
+
+00:00:40.630 --> 00:00:45.030
+So as I said, it's about formatting output, and we're going to do everything to cout.
+
+00:00:45.030 --> 00:00:47.390
+We're going to display everything to the console.
+
+00:00:47.390 --> 00:00:51.940
+Later on we can change that and display the files,and that's what we're going to learn next in this section.
+
+00:00:51.940 --> 00:00:55.820
+So let's start. I'm giving you this starter source code for the challenge,
+
+00:00:55.820 --> 00:00:57.920
+and I'll go through that in just a second,
+
+00:00:57.920 --> 00:01:02.280
+but the challenge is for you to display the provided data in a nicely formatted table.
+
+00:01:02.280 --> 00:01:05.980
+Your table doesn't have to match mine. You can do however you like.
+
+00:01:05.980 --> 00:01:09.780
+Now the point is for you to become comfortable with these manipulators,
+
+00:01:09.780 --> 00:01:14.040
+play around with them, don't just try to mimic my table exactly.
+
+00:01:14.040 --> 00:01:17.040
+Be creative, do your own thing.
+
+00:01:17.040 --> 00:01:20.700
+So I'm going to give you three structures. We haven't really done
+
+00:01:20.700 --> 00:01:24.360
+these sorts of structures before, but they're really, really straightforward.
+
+00:01:24.360 --> 00:01:27.240
+They're not classes. We're going to use structures because
+
+00:01:27.240 --> 00:01:30.440
+we don't really need to model operations. We just want to model data.
+
+00:01:30.440 --> 00:01:33.940
+And when we're modeling data. It's really common to just use structures.
+
+00:01:33.940 --> 00:01:36.440
+Again, I'll show you what they look like in just a second.
+
+00:01:36.440 --> 00:01:41.430
+So the first thing is these structures work together to create a tours structure,
+
+00:01:41.980 --> 00:01:45.640
+and that's going to contain about information about tours to South America.
+
+00:01:45.640 --> 00:01:48.300
+And the tours include the countries that you can visit,
+
+00:01:48.300 --> 00:01:50.100
+the cities within those countries,
+
+00:01:50.100 --> 00:01:54.090
+and those cities have population and cost data associated with the tour.
+
+00:01:54.290 --> 00:01:56.990
+I know population, I was thinking the same thing.
+
+00:01:56.990 --> 00:01:59.490
+I just wanted a really big number so that you could format it.
+
+00:01:59.490 --> 00:02:02.490
+Watch the challenge video, which you're obviously watching right now.
+
+00:02:02.490 --> 00:02:06.390
+But if you're looking at the code, I'm hoping that you come back to this video and watch it,
+
+00:02:06.390 --> 00:02:10.590
+so that you can see what the expected output looks like. I tried to copy the output to this
+
+00:02:11.090 --> 00:02:12.450
+document here,
+
+00:02:12.450 --> 00:02:15.250
+but everybody's got different fonts, and some of the fonts
+
+00:02:15.250 --> 00:02:17.910
+aren't mono-spaced and the document would look really weird.
+
+00:02:17.910 --> 00:02:22.270
+So I'll just run it for you so you can see exactly what it's supposed to look like.
+
+00:02:22.770 --> 00:02:26.770
+In the code, I'm going to give you some starter code that displays all the data
+
+00:02:26.770 --> 00:02:29.320
+from these structures and vectors
+
+00:02:29.320 --> 00:02:32.620
+using tabs to kind of align things and it looks pretty ugly.
+
+00:02:32.620 --> 00:02:35.180
+But your job is to clean it up make it look pretty.
+
+00:02:35.180 --> 00:02:38.680
+Okay. So as I always say have fun, create functions, constants.
+
+00:02:38.680 --> 00:02:41.880
+Do whatever you think makes sense, explore, play around.
+
+00:02:41.880 --> 00:02:44.870
+Do it, and then do it again a different way. That's how you really really learn.
+
+00:02:44.870 --> 00:02:49.470
+Okay. So let's go to the source code. So again, I'm in the challenge_1 project.
+
+00:02:49.470 --> 00:02:51.830
+And I'm looking at main code right here.
+
+00:02:51.830 --> 00:02:56.130
+And let's go over these data structures. First of all,
+
+00:02:56.130 --> 00:02:59.030
+what we've got is we're including our normal
+
+00:03:00.030 --> 00:03:00.830
+group here.
+
+00:03:00.830 --> 00:03:05.330
+We've got iostream, we've got iomanip since we're going to use the manipulators.
+
+00:03:05.330 --> 00:03:07.330
+We've got a vector. And we've got a string.
+
+00:03:07.930 --> 00:03:11.830
+And we've got these three structures right here. Here's the first one. It's city,
+
+00:03:12.430 --> 00:03:16.030
+country and tours. And let me start with city.
+
+00:03:17.020 --> 00:03:21.720
+Think of a struct. We we talked about a struct a little bit earlier in the object-oriented classes
+
+00:03:21.720 --> 00:03:23.320
+and fun methods section.
+
+00:03:23.820 --> 00:03:26.920
+It's like a class except everything's public,
+
+00:03:26.920 --> 00:03:30.020
+you can have constructors, you can have all kinds of stuff. But
+
+00:03:30.020 --> 00:03:32.380
+typically, we use structs like this
+
+00:03:32.380 --> 00:03:35.580
+to just model data, sometimes you just want pure data
+
+00:03:35.580 --> 00:03:39.580
+and you want to deal with constructors and methods. And you really don't need any of that.
+
+00:03:39.580 --> 00:03:44.180
+So this is just a good way to collect data together. So what we've got here is we've got a city,
+
+00:03:44.680 --> 00:03:49.180
+and each city has a name. So let's say the name for one of the cities is
+
+00:03:49.180 --> 00:03:51.180
+Bogota in Colombia,
+
+00:03:51.580 --> 00:03:53.580
+a population which is a long.
+
+00:03:53.580 --> 00:03:55.380
+And I don't know how many millions there are.
+
+00:03:55.380 --> 00:03:58.740
+I made some of those numbers up.Let's just say 18 million or something like that.
+
+00:03:59.240 --> 00:04:02.940
+And the cost of taking a tour to Bogota from Miami.
+
+00:04:02.940 --> 00:04:07.140
+So that's 569 dollars. And again, I don't know what that number is, it's in the
+
+00:04:07.140 --> 00:04:08.440
+data you'll see in a minute.
+
+00:04:08.940 --> 00:04:10.540
+So that's a city.
+
+00:04:10.790 --> 00:04:15.150
+We're going to have many of these cities, right. We'll have Rio de Janeiro. We'll have Santiago Chile.
+
+00:04:15.150 --> 00:04:17.950
+We'll have a whole bunch of places that we can visit in South America.
+
+00:04:17.950 --> 00:04:20.950
+Each one will be modeled by a city.
+
+00:04:21.250 --> 00:04:22.000
+Perfect.
+
+00:04:22.000 --> 00:04:25.300
+Now let's look at the country.
+
+00:04:25.300 --> 00:04:28.600
+The country has a name in this case, it would be Colombia,
+
+00:04:31.200 --> 00:04:35.100
+right. And it has a std vector of cities.
+
+00:04:35.900 --> 00:04:39.500
+So I might have three or four cities associated with Colombia.
+
+00:04:39.500 --> 00:04:42.800
+I might have two or three cities associated with Brazil and so forth.
+
+00:04:42.800 --> 00:04:47.100
+So this is how we structure our data using these structures building
+
+00:04:47.100 --> 00:04:48.460
+one within the other.
+
+00:04:48.460 --> 00:04:53.360
+Finally, we've got our main object here, which is the tours, and it has a title,
+
+00:04:53.720 --> 00:04:54.720
+and that title,
+
+00:04:54.720 --> 00:04:58.270
+I don't remember exactly what it is, but I'll show it to you in a minute when I show you the data.
+
+00:04:58.270 --> 00:05:02.630
+It's something like the tours to South America or something and some
+
+00:05:02.630 --> 00:05:05.630
+big title that will be the header on our report.
+
+00:05:06.180 --> 00:05:10.280
+And the tours has a vector of countries.
+
+00:05:10.640 --> 00:05:15.240
+Okay, makes sense. So we could have the title, which is this guy.
+
+00:05:17.840 --> 00:05:20.640
+And then we could have, let's say, Columbia,
+
+00:05:22.140 --> 00:05:23.640
+and we could have Brazil
+
+00:05:25.300 --> 00:05:27.800
+as our countries, and we could have Argentina.
+
+00:05:29.680 --> 00:05:33.340
+And then the countries have cities within them. You can see them right here.
+
+00:05:33.340 --> 00:05:36.940
+So you may have Bogota here,
+
+00:05:37.600 --> 00:05:40.200
+and the population is 18 million
+
+00:05:40.200 --> 00:05:44.700
+and the cost is $567 or something like that.
+
+00:05:44.700 --> 00:05:47.200
+Then you would display the next city and the next city.
+
+00:05:47.200 --> 00:05:50.190
+Then you'd go to Brazil, and you'd display Rio and so forth.
+
+00:05:50.190 --> 00:05:52.990
+So this is what our report is going to look like.
+
+00:05:52.990 --> 00:05:57.090
+And the reason we structure this data is because it makes it so much easier
+
+00:05:57.090 --> 00:06:00.750
+to process that way. We don't have to just play around with hundreds of arrays
+
+00:06:00.750 --> 00:06:02.750
+and strings and so forth.
+
+00:06:03.300 --> 00:06:07.660
+So we're using what we should be using. We're using std strings, and we're using std vectors.
+
+00:06:07.660 --> 00:06:10.860
+I mean that's what modern c++ is all about. It's not using
+
+00:06:10.860 --> 00:06:14.160
+character pointers, and we're not using anything else,
+
+00:06:14.160 --> 00:06:15.960
+just real solid data structures.
+
+00:06:15.960 --> 00:06:18.620
+Okay. So how do we initialize these guys.
+
+00:06:18.620 --> 00:06:20.620
+Let me scroll down just a little bit.
+
+00:06:21.520 --> 00:06:23.220
+And here you see
+
+00:06:24.020 --> 00:06:28.020
+some of the initialization. And this is done for you. I've already written this for you.
+
+00:06:28.020 --> 00:06:29.020
+You could just use it.
+
+00:06:29.520 --> 00:06:33.820
+Notice that this piece right here. This is using our uniform initialization,
+
+00:06:33.820 --> 00:06:36.020
+right. This is the kind of stuff we've been using all along,
+
+00:06:36.020 --> 00:06:38.520
+except we're doing it all in one shot here.
+
+00:06:39.520 --> 00:06:41.520
+So here is a city.
+
+00:06:43.020 --> 00:06:45.920
+Here's another city. Here's another city. Here's another city.
+
+00:06:45.920 --> 00:06:48.920
+These four cities are a vector.
+
+00:06:49.420 --> 00:06:53.720
+And that vector is the vector of cities in that country Columbia,
+
+00:06:54.520 --> 00:06:57.180
+right. And that country Columbia is
+
+00:06:57.180 --> 00:07:00.840
+one of these guys, and here's the title, at the top of the tours.
+
+00:07:00.840 --> 00:07:04.740
+So what we're doing is we're building this using uniform initialization,
+
+00:07:04.740 --> 00:07:09.040
+which makes it really, really nice to visually see what's going on here.
+
+00:07:09.040 --> 00:07:13.140
+So you could see that I've got, let me scroll up just a little bit here,
+
+00:07:13.140 --> 00:07:14.640
+so hopefully, we can see them all.
+
+00:07:15.440 --> 00:07:19.440
+Yep, I think we can see them all. Great. So in this case,
+
+00:07:19.440 --> 00:07:20.440
+there's my title.
+
+00:07:21.340 --> 00:07:25.140
+Okay. Here is a country, another country,
+
+00:07:25.140 --> 00:07:27.140
+another country, another country.
+
+00:07:28.130 --> 00:07:31.730
+Okay. I don't know what happened to my mouse. It all of a sudden got really big,
+
+00:07:31.730 --> 00:07:34.330
+let me fix that real quick. And
+
+00:07:34.830 --> 00:07:38.730
+within those countries, I've got cities, and cities,
+
+00:07:38.730 --> 00:07:42.990
+and cities. And here's a single city. You can always assume that there must be --
+
+00:07:42.990 --> 00:07:44.990
+if you've got a country, you must have a city
+
+00:07:44.990 --> 00:07:49.290
+so you can assume that you're never going to have a country without a city. That'll just make your
+
+00:07:49.290 --> 00:07:50.590
+processing a little bit easier.
+
+00:07:51.270 --> 00:07:53.420
+That's it. So that's our data.
+
+00:07:53.420 --> 00:07:56.780
+And let me show you how you would work with this data.
+
+00:07:56.780 --> 00:08:00.980
+So let me scroll up and clear this a little bit. Here's the code I'm giving you.
+
+00:08:02.340 --> 00:08:05.140
+And you may not see it right off the bat,
+
+00:08:05.140 --> 00:08:09.500
+but it should be pretty intuitive once you start walking to it and thinking about it a little bit.
+
+00:08:09.500 --> 00:08:12.100
+You can see what we're starting out here, we're displaying the title.
+
+00:08:12.760 --> 00:08:16.360
+The title is part of that tours object, right tours.title.
+
+00:08:16.690 --> 00:08:18.690
+And then for each
+
+00:08:18.940 --> 00:08:23.440
+country that's in the countries in that tour object.
+
+00:08:23.440 --> 00:08:25.440
+So we're going to loop through all the different countries,
+
+00:08:25.440 --> 00:08:28.000
+right, Colombia, Brazil, Argentina and so forth.
+
+00:08:28.000 --> 00:08:29.990
+For each one, I'm displaying the name.
+
+00:08:30.650 --> 00:08:34.550
+And then I'm looking through that cities vector that's inside of it.
+
+00:08:34.550 --> 00:08:37.750
+And for each city in that city's vector, I'm displaying the city.
+
+00:08:38.550 --> 00:08:40.950
+That's really it. It's really, really straightforward.
+
+00:08:40.950 --> 00:08:45.450
+Again, take a minute, understand the concept, walk through this.
+
+00:08:45.450 --> 00:08:49.150
+Before you start trying to format this data, make sure you understand how we're getting the data,
+
+00:08:49.150 --> 00:08:50.450
+it's real important.
+
+00:08:50.450 --> 00:08:53.810
+Once we do that, we can display this information.
+
+00:08:53.810 --> 00:08:57.250
+It's not going to look very pretty because you can see we're using tab characters
+
+00:08:57.250 --> 00:08:59.250
+to kind of align these columns,
+
+00:08:59.250 --> 00:09:02.750
+and it's not going to do a real good job but at least you'll be able to see what's going on.
+
+00:09:02.750 --> 00:09:07.250
+If I run this now, it'll be the output that you should be getting as well.
+
+00:09:07.550 --> 00:09:11.210
+So let me run that project right now, that's what you should get.
+
+00:09:12.410 --> 00:09:17.400
+Tour ticket prices from Miami, you can see Colombia and the city is Brazilian, city is Chile
+
+00:09:17.400 --> 00:09:18.600
+and Argentina.
+
+00:09:19.100 --> 00:09:22.700
+But you can see this isn't lined up nicely because we're not doing any real formatting,
+
+00:09:22.700 --> 00:09:24.500
+we're just using the tab character.
+
+00:09:25.750 --> 00:09:30.250
+Okay. So let me stop that, and then let me show you the solution output
+
+00:09:30.800 --> 00:09:33.790
+looks something like this, which is much nicer.
+
+00:09:34.090 --> 00:09:37.750
+And I'm displaying this ruler up here.
+
+00:09:38.150 --> 00:09:41.650
+I'm doing this in a width of 70 total, you don't have to do that.
+
+00:09:41.650 --> 00:09:43.850
+That's just what I chose because it's easy to see.
+
+00:09:44.850 --> 00:09:48.510
+You can see here I'm displaying tour ticket prices from Miami centered.
+
+00:09:48.510 --> 00:09:52.610
+There's no way to center something. Remember, when we use the set width
+
+00:09:52.610 --> 00:09:55.270
+and the justification, we can only do left or right.
+
+00:09:55.270 --> 00:09:59.770
+So centering it, you're going to have to do maybe a little bit of math and figure out what's the center.
+
+00:10:00.270 --> 00:10:02.470
+Now I've got a header here. I'm displaying
+
+00:10:02.470 --> 00:10:06.670
+the country, the city, the population, the price, a line of dashes.
+
+00:10:06.670 --> 00:10:10.230
+And then I'm just lining up the data. So I've got all the countries:
+
+00:10:10.230 --> 00:10:12.430
+Columbia, Brazil, Chile, Argentina;
+
+00:10:12.430 --> 00:10:15.930
+the cities within the countries, the population of those cities
+
+00:10:15.930 --> 00:10:17.930
+that's right justified here in this field
+
+00:10:17.930 --> 00:10:22.730
+as well as the price, which is right justified. And I've got the two decimal digits displaying.
+
+00:10:24.430 --> 00:10:28.130
+Okay. So that's it. Good luck with this one.
+
+00:10:28.130 --> 00:10:32.930
+Again, this project is -- this little challenge is more than just formatting.
+
+00:10:33.290 --> 00:10:35.990
+I really want you to understand the structures and how you access
+
+00:10:35.990 --> 00:10:38.890
+those structures using the vectors within the structures.
+
+00:10:38.890 --> 00:10:41.090
+It's really simple once you get it.
+
+00:10:41.090 --> 00:10:45.090
+And it's really powerful to be able to use those structures that have those vectors of structures
+
+00:10:45.090 --> 00:10:45.890
+within them.
+
+00:10:46.140 --> 00:10:50.140
+Very powerful, very easy to use. You saw how easy it was to declare the data.
+
+00:10:50.640 --> 00:10:53.240
+Okay. So that's it. Good luck with the challenge.
+
+00:10:53.240 --> 00:10:55.440
+I'll see you on the other side in the solution.
+
+00:10:55.440 --> 00:10:57.640
+Don't rush through this. Take your time.
+
+00:10:57.640 --> 00:11:01.640
+Once this challenge is over, we'll start working with files.

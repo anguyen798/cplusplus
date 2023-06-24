@@ -1,0 +1,1056 @@
+WEBVTT
+
+00:00:05.500 --> 00:00:08.659
+In this video, we'll learn more about
+function parameters, and we'll also
+
+00:00:08.660 --> 00:00:10.070
+talk about the return statement.
+
+00:00:11.139 --> 00:00:15.229
+When we call a function and pass
+data into that function, this data
+
+00:00:15.360 --> 00:00:17.280
+are the parameters to that function.
+
+00:00:18.059 --> 00:00:20.689
+In the function call, these
+data are called arguments.
+
+00:00:20.990 --> 00:00:23.430
+In the function definition,
+they're called parameters.
+
+00:00:23.650 --> 00:00:26.700
+We'll define the vocabulary more
+precisely in the next slide.
+
+00:00:27.750 --> 00:00:31.220
+As we've already seen, when we call
+a function, the arguments we use to
+
+00:00:31.220 --> 00:00:34.650
+call the function and the parameters
+that the function expects must
+
+00:00:34.670 --> 00:00:37.080
+match in number, order and type.
+
+00:00:37.630 --> 00:00:38.620
+Let's see an example.
+
+00:00:40.350 --> 00:00:43.870
+In this example, we have a function
+prototype that tells the compiler
+
+00:00:44.139 --> 00:00:47.139
+that we'll define a function
+named add numbers that expects two
+
+00:00:47.630 --> 00:00:48.959
+integers and returns an integer.
+
+00:00:49.960 --> 00:00:53.180
+Then in the main, I declare an
+integer variable named result,
+
+00:00:53.260 --> 00:00:54.640
+and we initialize it to 0.
+
+00:00:55.430 --> 00:00:58.080
+Then we call the add numbers
+function and pass in the
+
+00:00:58.080 --> 00:01:00.470
+integer literals 100 and 200.
+
+00:01:01.410 --> 00:01:04.650
+The compiler will type check this
+function call to be sure it's valid.
+
+00:01:05.010 --> 00:01:08.320
+Since I'm passing in two integers
+and the function prototype says
+
+00:01:08.320 --> 00:01:11.329
+exactly that, then the compiler
+will not produce an error.
+
+00:01:11.980 --> 00:01:14.210
+You can see at the bottom of
+the slide, that I've defined
+
+00:01:14.210 --> 00:01:15.380
+the add numbers function.
+
+00:01:15.770 --> 00:01:18.040
+It has two integer
+parameters, a and b.
+
+00:01:18.700 --> 00:01:21.878
+In the case of the function call in
+main, a will be 100
+
+00:01:21.878 --> 00:01:23.520
+and b will be 200.
+
+00:01:23.720 --> 00:01:27.520
+100 plus 200 is computed
+and 300 is returned.
+
+00:01:27.520 --> 00:01:31.520
+The 300 is then assigned to the
+variable result in the main function.
+
+00:01:32.160 --> 00:01:33.560
+Let's take a look at another example.
+
+00:01:35.610 --> 00:01:39.079
+In this example, I didn't provide
+a function prototype to save space.
+
+00:01:39.309 --> 00:01:41.529
+But you should know at this
+point that it would be void
+
+00:01:41.539 --> 00:01:43.130
+say hello standard string.
+
+00:01:44.230 --> 00:01:46.870
+Notice that the function say
+hello expects one parameter,
+
+00:01:47.039 --> 00:01:48.940
+and it's a c++ string object.
+
+00:01:49.590 --> 00:01:53.130
+And it displays hello followed by
+whatever string is in the name object.
+
+00:01:53.860 --> 00:01:55.630
+The next three statements
+would normally be in
+
+00:01:55.630 --> 00:01:56.920
+main on another function.
+
+00:01:57.240 --> 00:01:58.600
+These are the function calls.
+
+00:01:58.990 --> 00:02:01.009
+The first is say hello Frank.
+
+00:02:01.370 --> 00:02:04.699
+Notice that frank is a c-style
+string literal, but the function
+
+00:02:04.699 --> 00:02:06.730
+expects a c++ string object.
+
+00:02:07.359 --> 00:02:08.620
+Aren't these types different.
+
+00:02:09.000 --> 00:02:10.890
+Why doesn't the compiler
+produce an error here.
+
+00:02:11.490 --> 00:02:12.980
+Yes, the types are different.
+
+00:02:13.190 --> 00:02:16.780
+But the compiler will try to convert
+one type to another if it knows
+
+00:02:16.800 --> 00:02:18.509
+how to make the function call work.
+
+00:02:19.380 --> 00:02:22.269
+In this case the, c-style string
+literal Frank is converted
+
+00:02:22.270 --> 00:02:23.890
+to a c++ string object.
+
+00:02:24.299 --> 00:02:26.790
+The same would happen if a
+function expected a double
+
+00:02:26.990 --> 00:02:28.390
+and I passed an intent to it.
+
+00:02:28.860 --> 00:02:31.600
+The int would be promoted to the
+double as we've already seen.
+
+00:02:32.450 --> 00:02:33.920
+Notice the last function call.
+
+00:02:34.380 --> 00:02:37.660
+In this case, I'm calling the
+function say hello with a single
+
+00:02:37.660 --> 00:02:41.799
+string object parameter, my dog,
+which is a variable name for a string
+
+00:02:41.799 --> 00:02:43.590
+object with the string buster in it.
+
+00:02:44.910 --> 00:02:47.950
+Let's talk a bit about how
+parameters are passed into functions.
+
+00:02:51.020 --> 00:02:56.010
+In c++, when you pass data into a
+function that data is passed by value.
+
+00:02:56.730 --> 00:03:00.510
+What this means is that the value
+of the data is passed in by copy.
+
+00:03:00.700 --> 00:03:03.010
+So the compiler makes
+a copy of the data.
+
+00:03:03.630 --> 00:03:06.170
+That means that the code in the
+function does not change the
+
+00:03:06.170 --> 00:03:07.450
+argument that was passed in.
+
+00:03:07.880 --> 00:03:11.060
+When we finished the function,
+the original data that was in the
+
+00:03:11.060 --> 00:03:12.720
+function call will be unchanged.
+
+00:03:13.370 --> 00:03:15.180
+This is good and not so good.
+
+00:03:15.599 --> 00:03:19.070
+It's good because since we're making
+a copy, we can't change the original
+
+00:03:19.079 --> 00:03:21.120
+argument by mistake or intentionally.
+
+00:03:21.870 --> 00:03:25.470
+It's not good because sometimes
+making a copy of data can be expensive
+
+00:03:25.770 --> 00:03:29.670
+both in storage needed and in time
+needed to actually copy that data.
+
+00:03:30.370 --> 00:03:32.539
+Also, sometimes we really
+do want to change the
+
+00:03:32.540 --> 00:03:33.989
+actual data being passed in.
+
+00:03:34.879 --> 00:03:38.360
+Fear not, c++ has solutions
+for all these use cases, and
+
+00:03:38.360 --> 00:03:39.490
+we'll learn about them soon.
+
+00:03:40.210 --> 00:03:43.859
+Let's define some vocabulary used
+in programming languages, that is
+
+00:03:44.040 --> 00:03:46.160
+formal versus actual parameters.
+
+00:03:47.200 --> 00:03:49.810
+Formal parameters are the
+parameters defined in the function's
+
+00:03:50.070 --> 00:03:52.179
+definition, in the function header.
+
+00:03:53.190 --> 00:03:55.460
+Actual parameters are the
+parameters that are used when
+
+00:03:55.460 --> 00:03:58.700
+the function is called that is
+in the function call statement.
+
+00:03:59.710 --> 00:04:02.720
+Many programmers and languages
+call actual parameters the
+
+00:04:02.790 --> 00:04:03.950
+arguments to a function.
+
+00:04:05.010 --> 00:04:08.899
+In c++, the actual parameters
+are passed by value or copied
+
+00:04:09.110 --> 00:04:10.359
+to the formal parameters.
+
+00:04:10.829 --> 00:04:12.850
+Let me show you an example
+that will make this clear.
+
+00:04:15.550 --> 00:04:17.709
+In this slide, I have a
+function definition for a
+
+00:04:17.709 --> 00:04:19.289
+function called param test.
+
+00:04:19.779 --> 00:04:22.280
+And this function expects
+one parameter called formal.
+
+00:04:23.040 --> 00:04:25.219
+This is an example of
+a formal parameter.
+
+00:04:25.849 --> 00:04:28.700
+If this function expected more
+than one parameter, they would all
+
+00:04:28.709 --> 00:04:30.380
+be considered formal parameters.
+
+00:04:31.100 --> 00:04:33.690
+In the main function, I'm
+declaring an integer named
+
+00:04:33.730 --> 00:04:35.870
+actual and initializing it to 50.
+
+00:04:36.560 --> 00:04:38.940
+I'm displaying actual
+which will display 50.
+
+00:04:39.570 --> 00:04:42.859
+Then I'm calling the param test
+function with the actual parameter.
+
+00:04:43.540 --> 00:04:44.950
+This is the function call.
+
+00:04:45.339 --> 00:04:49.250
+Any parameters passed to functions
+here are considered actual parameters.
+
+00:04:50.310 --> 00:04:53.969
+In this case, the value of
+the actual parameter is copied
+
+00:04:54.030 --> 00:04:55.210
+to the formal parameter.
+
+00:04:56.010 --> 00:04:59.570
+So formal in the param test
+function will have the value 50.
+
+00:05:00.090 --> 00:05:02.219
+But it's at a different
+location in memory than the
+
+00:05:02.240 --> 00:05:04.040
+actual since a copy was made.
+
+00:05:05.379 --> 00:05:08.840
+I then display formal and param
+tests, so 50 is displayed.
+
+00:05:09.190 --> 00:05:12.120
+Then I assign 100 to formal
+and display it again.
+
+00:05:12.380 --> 00:05:14.150
+So you see 100 is displayed.
+
+00:05:14.730 --> 00:05:16.849
+Now the function is done,
+and we return back to
+
+00:05:16.849 --> 00:05:18.409
+main, and we print actual.
+
+00:05:18.889 --> 00:05:20.380
+Actual will still be 50.
+
+00:05:20.380 --> 00:05:23.409
+It was never changed because
+param test was working
+
+00:05:23.410 --> 00:05:24.650
+with a copy all along.
+
+00:05:25.270 --> 00:05:27.820
+It's very important that you
+understand the concept of pass
+
+00:05:27.820 --> 00:05:30.980
+by value since it's critical
+to understanding functions.
+
+00:05:31.780 --> 00:05:34.320
+Let's talk about the function
+return statement next.
+
+00:05:36.660 --> 00:05:39.630
+As we've already seen, if a
+function is defined as returning
+
+00:05:39.630 --> 00:05:43.590
+a value of a specific type, then
+the function must return a value of
+
+00:05:43.590 --> 00:05:45.020
+that type using a return statement.
+
+00:05:46.130 --> 00:05:49.060
+We've already seen a few examples
+of this, and we've been doing it
+
+00:05:49.120 --> 00:05:50.490
+in the main function all along.
+
+00:05:51.190 --> 00:05:55.359
+If the function return type is void,
+then the return statement is optional.
+
+00:05:56.200 --> 00:05:59.029
+A return statement can occur
+anywhere in the function body,
+
+00:05:59.359 --> 00:06:02.109
+but you usually see it as the last
+statement of the function body.
+
+00:06:02.640 --> 00:06:05.299
+The return statement immediately
+terminates the function.
+
+00:06:06.100 --> 00:06:09.240
+It's possible to have multiple
+return statements in a function
+
+00:06:09.480 --> 00:06:11.130
+depending on the logic in your code.
+
+00:06:11.490 --> 00:06:13.440
+However, this is not a best practice.
+
+00:06:13.509 --> 00:06:15.789
+You typically want a
+single return statement.
+
+00:06:16.480 --> 00:06:18.900
+Remember, having multiple
+break statements in a loop
+
+00:06:19.110 --> 00:06:21.650
+and the potential problems you
+could have with readability.
+
+00:06:21.810 --> 00:06:25.010
+Well, the same is true with multiple
+return statements and functions.
+
+00:06:26.070 --> 00:06:29.279
+Finally, if the function
+returns a value, then this value
+
+00:06:29.280 --> 00:06:31.859
+becomes the result of the code
+that's called the function.
+
+00:06:32.429 --> 00:06:35.340
+Let's head over to the IDE and
+see some examples of parameter
+
+00:06:35.340 --> 00:06:36.970
+passing and pass by value.
+
+00:06:38.650 --> 00:06:42.090
+Okay, I'm in the IDE, and I'm
+in the section 11 workspace in
+
+00:06:42.090 --> 00:06:44.090
+the function parameters project.
+
+00:06:45.070 --> 00:06:49.219
+In this example, what I'd like to do
+is go over some simple function calls
+
+00:06:49.230 --> 00:06:51.600
+that pass in parameters by value.
+
+00:06:52.150 --> 00:06:55.830
+And I want to make the point and
+hopefully you'll understand that those
+
+00:06:55.910 --> 00:06:58.310
+by value parameters do not change.
+
+00:06:58.470 --> 00:07:00.240
+That's really important to understand.
+
+00:07:00.400 --> 00:07:03.070
+So I've got four
+function prototypes here.
+
+00:07:03.290 --> 00:07:06.239
+The first one is called pass
+by value one, the second is
+
+00:07:06.240 --> 00:07:07.689
+called pass by value two.
+
+00:07:07.689 --> 00:07:10.370
+And the first one just expects
+an integer, the second one
+
+00:07:10.370 --> 00:07:12.639
+expects a c++ string object.
+
+00:07:13.400 --> 00:07:17.440
+The pass by value three function
+expects a vector of string objects.
+
+00:07:18.000 --> 00:07:21.480
+And the last one print vector
+just prints out a vector.
+
+00:07:21.480 --> 00:07:23.950
+So if you send it a vector
+of strings it displays all
+
+00:07:23.960 --> 00:07:25.120
+the strings in the vector.
+
+00:07:25.450 --> 00:07:28.500
+Okay, o let's look at it the
+first one, pass by value one.
+
+00:07:28.789 --> 00:07:32.120
+It expects a number and the
+parameter name for that number is
+
+00:07:32.120 --> 00:07:33.770
+num, that's the formal parameter.
+
+00:07:33.960 --> 00:07:35.900
+And all I'm doing is
+changing num to a 1000.
+
+00:07:36.180 --> 00:07:37.140
+Really, really simple.
+
+00:07:37.450 --> 00:07:38.620
+So let's look at my main.
+
+00:07:38.950 --> 00:07:40.950
+In my main, I've got num, which is 10.
+
+00:07:41.860 --> 00:07:46.389
+And I'm simply saying num before
+calling about pass by value 1 is
+
+00:07:46.549 --> 00:07:49.010
+hopefully, that'll print out a
+10, right, that's what we expect.
+
+00:07:49.410 --> 00:07:51.300
+Then I'm going to call pass
+by value, and I'm going to
+
+00:07:51.310 --> 00:07:53.390
+pass into it num, which is 10.
+
+00:07:53.720 --> 00:07:57.540
+Remember, pass by value 1
+changes that value to a 1000.
+
+00:07:58.260 --> 00:08:01.050
+And then I come back and i
+print out that number again.
+
+00:08:01.799 --> 00:08:05.070
+Now you may think that we're going
+to get a 1000, here but we're not.
+
+00:08:05.100 --> 00:08:06.240
+It's passed by value.
+
+00:08:06.240 --> 00:08:09.020
+So we actually passed in
+a copy to that function.
+
+00:08:09.190 --> 00:08:13.800
+So the function was changing the copy,
+not the actual which is this num here.
+
+00:08:13.960 --> 00:08:16.790
+So let me run this, and then I'll walk
+you through exactly what's going on.
+
+00:08:17.290 --> 00:08:21.559
+You can see here none before calling
+10, num after calling still 10.
+
+00:08:21.940 --> 00:08:23.900
+Okay, so let's talk about that.
+
+00:08:24.260 --> 00:08:27.430
+Remember, num is equal to
+10 and it's in my main.
+
+00:08:27.560 --> 00:08:31.010
+So in this case, here's
+my main function.
+
+00:08:31.630 --> 00:08:34.700
+And it's got a local variable
+in there called num, and
+
+00:08:34.700 --> 00:08:36.039
+we initialized it to 10.
+
+00:08:36.610 --> 00:08:38.429
+Then we called this
+function right here.
+
+00:08:38.789 --> 00:08:40.759
+So this would be passed by value one.
+
+00:08:43.230 --> 00:08:44.230
+And I'll just call it one.
+
+00:08:44.450 --> 00:08:46.500
+Okay, just to save some writing time.
+
+00:08:46.720 --> 00:08:48.840
+So that's passed by by value one.
+
+00:08:48.860 --> 00:08:50.930
+And it expects an integer num.
+
+00:08:51.179 --> 00:08:53.150
+So it's got its own copy of num.
+
+00:08:53.160 --> 00:08:54.449
+That's the formal parameter.
+
+00:08:54.719 --> 00:08:57.770
+And at this point, the 10
+gets copied over to num.
+
+00:08:59.570 --> 00:09:03.250
+Okay, now I'm going
+to set num to a 1000.
+
+00:09:03.250 --> 00:09:08.050
+Remember, this num right here
+refers to that guy, not this one.
+
+00:09:09.179 --> 00:09:12.469
+So I'm changing the local num,
+the formal parameter to a 1000.
+
+00:09:12.750 --> 00:09:14.520
+So I'm just changing
+this one to a 1000.
+
+00:09:15.370 --> 00:09:16.600
+I never touched this one.
+
+00:09:17.430 --> 00:09:19.030
+Now this function is finished.
+
+00:09:19.390 --> 00:09:21.449
+So this function is now finished.
+
+00:09:21.450 --> 00:09:24.729
+This is gone and, I'll talk
+about what gone means in a couple
+
+00:09:24.729 --> 00:09:27.720
+of videos when I talk about
+activation records and the stack.
+
+00:09:28.330 --> 00:09:29.749
+That's it. Now we return.
+
+00:09:29.749 --> 00:09:33.010
+And in the main, we display
+num, well num never changed.
+
+00:09:33.030 --> 00:09:36.790
+Remember, this was an
+absolute copy of it.
+
+00:09:37.730 --> 00:09:40.170
+And so hopefully, that makes
+sense with pass by value.
+
+00:09:40.600 --> 00:09:42.050
+Let me show you another example.
+
+00:09:42.360 --> 00:09:46.370
+Here we've got another
+num, which is 20.
+
+00:09:46.770 --> 00:09:49.464
+So don't get confused with the names.
+
+00:09:49.719 --> 00:09:52.449
+I could use any name I want
+in that formal parameter.
+
+00:09:52.449 --> 00:09:54.410
+I just chose num to make a point.
+
+00:09:54.600 --> 00:09:56.160
+In this case, it's another num.
+
+00:09:56.480 --> 00:09:59.980
+So when we pass -- when we print
+here, we're going to print to 20, then
+
+00:09:59.980 --> 00:10:03.900
+we're going to call pass by value 1
+again and pass in that num, so the 20
+
+00:10:03.920 --> 00:10:05.660
+gets copied to the formal parameter.
+
+00:10:05.690 --> 00:10:06.890
+We change it to a thousand.
+
+00:10:07.190 --> 00:10:09.309
+Again, we change that local copy.
+
+00:10:09.730 --> 00:10:12.239
+And when we come back, we
+still have a 20, right.
+
+00:10:12.240 --> 00:10:13.850
+We never touched the actual.
+
+00:10:14.030 --> 00:10:15.190
+So let me run this.
+
+00:10:16.010 --> 00:10:19.350
+And now, we're going to see 10 10
+and 20 20, just what we expect.
+
+00:10:20.330 --> 00:10:22.300
+It's no different
+when you use objects.
+
+00:10:22.300 --> 00:10:25.120
+So in this case, I'll
+uncomment that code.
+
+00:10:25.500 --> 00:10:29.490
+In this case, you can see
+that I've got a string, a c++
+
+00:10:29.490 --> 00:10:30.959
+string object called name.
+
+00:10:31.770 --> 00:10:33.180
+And I've initialized it to Frank.
+
+00:10:33.550 --> 00:10:37.040
+And then before I call pass by
+value 2, I'm going to display it.
+
+00:10:37.050 --> 00:10:38.430
+That's going to display Frank.
+
+00:10:39.099 --> 00:10:42.250
+Then I'm going to pass that
+string object into pass by value
+
+00:10:42.719 --> 00:10:46.429
+2, which is another function,
+and that function is right here.
+
+00:10:46.930 --> 00:10:50.180
+It's going to change its
+parameter to change, whatever
+
+00:10:50.180 --> 00:10:51.829
+was there before is now changed.
+
+00:10:52.220 --> 00:10:55.770
+And then when I come back,
+I'm printing out name again.
+
+00:10:56.240 --> 00:11:01.499
+Name has not changed because that
+changed here, changed a copy.
+
+00:11:01.920 --> 00:11:04.239
+Okay, so let's walk
+through this one again.
+
+00:11:04.660 --> 00:11:05.429
+So what do we have.
+
+00:11:05.430 --> 00:11:06.700
+We have main,
+
+00:11:08.700 --> 00:11:11.700
+we've got the main function, and it's got a variable
+
+00:11:11.700 --> 00:11:14.210
+called name, and it's Frank.
+
+00:11:17.250 --> 00:11:20.890
+Okay, then we called pass by value 2.
+
+00:11:21.559 --> 00:11:26.400
+So this would be passed by
+value 2, and it has a parameter,
+
+00:11:26.400 --> 00:11:29.470
+right, a formal parameter, which
+is a variable, it's called s.
+
+00:11:30.100 --> 00:11:31.750
+And we copied Frank in there.
+
+00:11:31.750 --> 00:11:33.540
+So right now this becomes Frank.
+
+00:11:35.410 --> 00:11:38.140
+Now we say s is changed.
+
+00:11:38.160 --> 00:11:41.530
+So we get rid of Frank, and
+we replaced it with changed.
+
+00:11:43.119 --> 00:11:45.600
+And again, these are all
+strings, string objects.
+
+00:11:46.600 --> 00:11:50.460
+Now we return back to main,
+this function is now done.
+
+00:11:51.160 --> 00:11:54.480
+I never changed the name because
+I never even knew about it.
+
+00:11:54.520 --> 00:11:56.780
+I was working with a
+local copy all along.
+
+00:11:57.849 --> 00:12:00.389
+Okay, so it's same thing with
+integers as with objects.
+
+00:12:00.610 --> 00:12:06.410
+So in this case, if I run this
+program, you can see the name before
+
+00:12:06.410 --> 00:12:08.300
+calling pass by value 2 is Frank.
+
+00:12:08.300 --> 00:12:11.110
+And the name after calling
+pass by value 2 is Frank.
+
+00:12:11.110 --> 00:12:12.420
+Again, it hasn't changed.
+
+00:12:13.170 --> 00:12:15.350
+All right, let's do one more
+just to drive this point home.
+
+00:12:15.350 --> 00:12:17.669
+This is really important that you
+understand what's going on here.
+
+00:12:18.400 --> 00:12:21.920
+In this example, I'm using
+a vector of string objects.
+
+00:12:21.920 --> 00:12:23.800
+I don't think we've used a
+vector of string objects.
+
+00:12:23.800 --> 00:12:26.620
+We basically used, I think,
+vectors of integers and doubles.
+
+00:12:26.870 --> 00:12:28.239
+We can have a vector of anything.
+
+00:12:28.490 --> 00:12:33.589
+So here, we're saying that
+stooges is a vector of strings.
+
+00:12:33.730 --> 00:12:36.529
+And the strings in that vector
+are Larry, Moe and Curly.
+
+00:12:37.150 --> 00:12:41.160
+So I'm printing out stooges
+before calling pass by value 3.
+
+00:12:42.170 --> 00:12:45.549
+And I'm calling this function
+called print vector that just
+
+00:12:45.570 --> 00:12:48.330
+prints out those strings in that
+vector, whatever they happen to be.
+
+00:12:48.920 --> 00:12:52.809
+Then I'm calling pass by value 3,
+and I'm passing in stooges and then
+
+00:12:52.809 --> 00:12:54.110
+I'm just printing it out again.
+
+00:12:54.559 --> 00:12:57.410
+Okay, so let me run this first,
+and then we'll walk through it.
+
+00:12:57.650 --> 00:13:00.980
+So you can see that before calling
+the function: Larry, Moe and Curly.
+
+00:13:01.400 --> 00:13:04.189
+After calling that should say,
+after right there, after calling
+
+00:13:04.190 --> 00:13:05.649
+the function Larry, Moe and Curly.
+
+00:13:06.270 --> 00:13:08.830
+Okay, so let me change that and
+make that correct that way.
+
+00:13:08.830 --> 00:13:11.949
+When you guys see it in the resources,
+you'll know what I'm talking about.
+
+00:13:12.090 --> 00:13:13.240
+So let me run that again.
+
+00:13:14.930 --> 00:13:18.350
+Okay, so before calling Larry
+Moe Curly, after calling
+
+00:13:18.390 --> 00:13:19.270
+Larry Moe curly.
+
+00:13:19.390 --> 00:13:20.999
+So let's walk through this example.
+
+00:13:21.700 --> 00:13:24.709
+Here is the function pass by value 3.
+
+00:13:25.639 --> 00:13:27.199
+So in this case what have I got?
+
+00:13:27.210 --> 00:13:33.100
+Well, I've got my main, and my
+main has the stooges variable,
+
+00:13:33.580 --> 00:13:35.750
+which is a vector of strings.
+
+00:13:35.770 --> 00:13:39.799
+In this case, it's
+Larry Moe and Curly.
+
+00:13:41.429 --> 00:13:42.930
+These are all string objects.
+
+00:13:45.410 --> 00:13:48.640
+Right now, I call this
+function right here.
+
+00:13:49.150 --> 00:13:51.199
+And I pass in stooges to it.
+
+00:13:51.990 --> 00:13:57.260
+So this is pass by value 3, and
+it has that formal parameter v.
+
+00:13:58.059 --> 00:13:59.489
+That could be any name we want.
+
+00:14:01.020 --> 00:14:04.659
+Right now Larry Moe and
+Curly get copied into v.
+
+00:14:04.820 --> 00:14:08.740
+So this will be Larry Moe and Curly.
+
+00:14:11.550 --> 00:14:14.470
+Now I execute this line
+right here v.clear.
+
+00:14:14.570 --> 00:14:15.880
+That deletes these guys.
+
+00:14:15.889 --> 00:14:17.250
+So now v is empty.
+
+00:14:18.880 --> 00:14:19.380
+And that's it.
+
+00:14:19.389 --> 00:14:20.720
+Then I return back to main.
+
+00:14:20.740 --> 00:14:21.429
+What happens?
+
+00:14:21.460 --> 00:14:23.559
+This function is now gone.
+
+00:14:24.770 --> 00:14:27.830
+And when I come back to main,
+it still has that stooges
+
+00:14:27.830 --> 00:14:29.160
+vector Larry Moe and Curly.
+
+00:14:29.360 --> 00:14:30.250
+I never touched it.
+
+00:14:30.250 --> 00:14:32.120
+Because again, I was
+working with a copy.
+
+00:14:33.940 --> 00:14:37.399
+In the next few videos, we'll learn
+how to send information in so that
+
+00:14:37.400 --> 00:14:40.140
+I can modify the actual parameters.
+
+00:14:40.379 --> 00:14:42.760
+But it's important to understand
+that by default this is the
+
+00:14:42.760 --> 00:14:45.750
+behavior pass by value, make a copy.
+
+00:14:46.110 --> 00:14:48.200
+Okay, so hopefully that makes sense.
+
+00:14:48.200 --> 00:14:51.900
+And if there are any questions,
+please post them on the course forums.

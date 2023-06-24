@@ -1,0 +1,544 @@
+WEBVTT
+
+00:00:05.200 --> 00:00:09.200
+In this video, I'd like to go over the basics of algorithms
+
+00:00:09.200 --> 00:00:10.700
+in the standard template library.
+
+00:00:11.470 --> 00:00:15.130
+The stl algorithms work on sequences of elements
+
+00:00:15.130 --> 00:00:19.730
+that are obtained from stl containers using stl iterators.
+
+00:00:19.730 --> 00:00:21.730
+It's really a beautifully designed library.
+
+00:00:22.530 --> 00:00:25.530
+The stl has many common and useful algorithms.
+
+00:00:25.930 --> 00:00:29.490
+Once you learn how to use them, you'll keep coming back to them over and over again.
+
+00:00:30.290 --> 00:00:31.790
+There are many algorithms,
+
+00:00:31.790 --> 00:00:34.290
+and the algorithms themselves have many variants,
+
+00:00:34.690 --> 00:00:37.690
+way too much to describe in a single section of a course.
+
+00:00:38.190 --> 00:00:41.180
+I'll go over some useful algorithms, but more importantly,
+
+00:00:41.180 --> 00:00:44.780
+I'll teach you the techniques involved so that you can use any stl algorithm.
+
+00:00:45.880 --> 00:00:50.130
+You can refer to online references such as cppreference.com
+
+00:00:50.130 --> 00:00:52.810
+for details about the entire algorithms library.
+
+00:00:53.470 --> 00:00:56.870
+Many of the algorithms in the stl require the programmer to provide
+
+00:00:56.870 --> 00:00:59.870
+extra information in order for them to work.
+
+00:01:00.120 --> 00:01:04.480
+For example, suppose we want to display all the even numbers in a container,
+
+00:01:04.980 --> 00:01:08.580
+we can use an algorithm called for each that will apply a function to
+
+00:01:08.580 --> 00:01:10.180
+each element in the container,
+
+00:01:10.730 --> 00:01:13.730
+but it depends on the programmer providing that function.
+
+00:01:14.720 --> 00:01:19.490
+So there are three main ways in the stl to provide such information to algorithms.
+
+00:01:19.490 --> 00:01:21.990
+They are functors or function objects,
+
+00:01:21.990 --> 00:01:24.650
+function pointers and lambda expressions.
+
+00:01:25.310 --> 00:01:28.560
+I'll show you a simple example of each so you know them.
+
+00:01:28.560 --> 00:01:32.160
+But I'll be using lambda expressions for the examples in this section.
+
+00:01:32.410 --> 00:01:35.110
+You should also use lambda expressions in your code
+
+00:01:35.110 --> 00:01:38.410
+since this is how to do it going forward in modern c++.
+
+00:01:39.210 --> 00:01:42.210
+So what do these algorithms look like and how do we use them?
+
+00:01:43.810 --> 00:01:48.110
+We saw a simple example of using the accumulate algorithm a few videos back.
+
+00:01:48.660 --> 00:01:52.860
+But in this video, I want to show you a few more and then we'll code some in the IDE.
+
+00:01:53.660 --> 00:01:58.430
+First, in order to use the stl algorithms, we must include the algorithms header file.
+
+00:01:58.930 --> 00:02:01.030
+It's also important to understand
+
+00:02:01.030 --> 00:02:04.280
+that different containers support different types of algorithms.
+
+00:02:04.280 --> 00:02:07.080
+And since algorithms depend on iterators,
+
+00:02:07.080 --> 00:02:10.880
+this determines the types of algorithms we can use with certain containers.
+
+00:02:11.180 --> 00:02:14.280
+I know this sounds complicated, but it's really not so bad.
+
+00:02:14.280 --> 00:02:18.280
+As you become more experienced with the stl, it all becomes second nature.
+
+00:02:19.980 --> 00:02:23.640
+So before I show you some examples of stl algorithms in action,
+
+00:02:23.640 --> 00:02:26.140
+let's talk about iterator invalidation.
+
+00:02:27.130 --> 00:02:31.130
+This topic can get quite complex, but let's look at it in its simplest terms.
+
+00:02:31.790 --> 00:02:34.790
+We know that iterators point to container elements.
+
+00:02:35.590 --> 00:02:37.790
+We need to understand that it's possible
+
+00:02:37.790 --> 00:02:40.790
+that an iterator may become invalid during processing.
+
+00:02:41.450 --> 00:02:43.750
+Let's see a very obvious example.
+
+00:02:44.190 --> 00:02:47.690
+Suppose we have an iterator and we're iterating over the elements of a vector and
+
+00:02:47.690 --> 00:02:49.690
+displaying the elements as we go.
+
+00:02:50.240 --> 00:02:53.840
+Then as we're doing this, we call the vectors clear method.
+
+00:02:54.500 --> 00:02:56.500
+This deletes all the elements from the vector,
+
+00:02:57.160 --> 00:02:59.160
+but the iterator doesn't know that.
+
+00:02:59.460 --> 00:03:01.760
+The iterator will happily continue iterating
+
+00:03:01.760 --> 00:03:05.120
+until it sees the end of the vector, but this is no longer valid.
+
+00:03:05.890 --> 00:03:10.390
+If something like this happens, then the behavior is undefined in c++.
+
+00:03:10.640 --> 00:03:13.640
+Every stl container has documentation
+
+00:03:13.640 --> 00:03:15.840
+about when iterators become invalid.
+
+00:03:16.240 --> 00:03:18.640
+We won't worry too much about it in this section,
+
+00:03:18.640 --> 00:03:23.630
+but it's something to be aware of as you move on to more advanced stl work after this course.
+
+00:03:25.130 --> 00:03:28.130
+Okay. So let's see some examples of stl algorithms.
+
+00:03:28.130 --> 00:03:30.130
+First, let's look at the find function.
+
+00:03:31.250 --> 00:03:35.650
+The find algorithm tries to locate the first occurrence of an element in a container.
+
+00:03:36.050 --> 00:03:40.950
+Like most stl algorithms, there are many variants available so let's keep it simple.
+
+00:03:41.650 --> 00:03:45.310
+If the function finds the element, it returns an iterator that
+
+00:03:45.310 --> 00:03:46.970
+points to the element it just found.
+
+00:03:47.370 --> 00:03:49.730
+If the function does not find the element,
+
+00:03:49.730 --> 00:03:52.930
+it will return an iterator pointing to the end of the container,
+
+00:03:52.930 --> 00:03:55.930
+pretty simple. So let's see this in code.
+
+00:03:56.480 --> 00:03:59.680
+First we declare a vector of integers, we'll call it vec,
+
+00:03:59.680 --> 00:04:02.340
+and we initialize it to the integers 1 2 and 3.
+
+00:04:03.540 --> 00:04:05.140
+We then call std find
+
+00:04:05.140 --> 00:04:09.390
+and pass in the iterators we need to get the sequence of elements we want.
+
+00:04:09.390 --> 00:04:12.390
+After that, we pass in the element we want to find.
+
+00:04:12.390 --> 00:04:15.690
+In this case, we call find with vec.begin,
+
+00:04:15.890 --> 00:04:17.690
+vec.end and 3.
+
+00:04:18.290 --> 00:04:21.950
+So we want to find 3, and we want to search the entire vector.
+
+00:04:22.750 --> 00:04:26.750
+The result of the function will be stored in a variable loc.
+
+00:04:27.000 --> 00:04:30.660
+I'm using auto to let the compiler deduce the type of loc,
+
+00:04:31.020 --> 00:04:34.380
+but you know what it must be an iterator to a vector of integers.
+
+00:04:35.080 --> 00:04:35.880
+That's it.
+
+00:04:35.880 --> 00:04:40.180
+Now we can check the value of loc. And if it's not vec.end,
+
+00:04:40.180 --> 00:04:43.780
+we know loc is pointing to the first occurrence of 3,
+
+00:04:44.140 --> 00:04:47.500
+and we can do whatever we want with it. In this case, I'm just displaying it.
+
+00:04:47.800 --> 00:04:51.160
+Okay. So let's take a breath here and understand the power we have.
+
+00:04:51.820 --> 00:04:55.320
+We just found the first occurrence of an element in a vector.
+
+00:04:55.320 --> 00:04:59.510
+What if we wanted to find the first occurrence in a list or another type of container.
+
+00:04:59.510 --> 00:05:03.390
+It works exactly the same way. That's the power I'm talking about.
+
+00:05:03.390 --> 00:05:07.290
+We don't need to know the details about how the container is implemented
+
+00:05:07.290 --> 00:05:10.890
+or how complicated finding an element might be behind the scenes.
+
+00:05:12.490 --> 00:05:17.480
+Remember, find needs to be able to compare two elements in order to see if they're the same.
+
+00:05:18.280 --> 00:05:21.880
+In order to do this, it will use the equality operator.
+
+00:05:21.880 --> 00:05:23.880
+For primitive types like ints,
+
+00:05:23.880 --> 00:05:27.680
+we don't have to do a thing since the compiler knows how to compare primitive types.
+
+00:05:28.480 --> 00:05:32.140
+But if we're using our own user-defined objects in containers,
+
+00:05:32.690 --> 00:05:36.190
+then we must provide the overloaded equality operator for our objects
+
+00:05:36.190 --> 00:05:38.070
+since that's what the algorithm will call.
+
+00:05:38.930 --> 00:05:42.230
+In this case, you can see we have a vector of player objects.
+
+00:05:42.890 --> 00:05:45.390
+Let's assume it's initialized to a bunch of players,
+
+00:05:45.990 --> 00:05:49.690
+and we define p to be the player we want to find in the vector.
+
+00:05:50.190 --> 00:05:52.190
+Notice the code for the find function.
+
+00:05:52.190 --> 00:05:54.890
+It looks the same as for ints except for the p.
+
+00:05:55.440 --> 00:05:58.540
+The only difference is that the compiler will compare p
+
+00:05:58.540 --> 00:06:00.040
+to the container elements
+
+00:06:00.040 --> 00:06:04.400
+using the overloaded equality operator that you must provide in the player class.
+
+00:06:05.300 --> 00:06:07.900
+Also, we can define what equality means.
+
+00:06:07.900 --> 00:06:12.160
+We might want all player attributes to match or only the name or only the xp.
+
+00:06:12.160 --> 00:06:13.760
+We have all the power to decide.
+
+00:06:15.850 --> 00:06:19.450
+Now let's look at a more complex algorithm, the for each function.
+
+00:06:20.650 --> 00:06:24.650
+This function applies a function to each element in the iterator sequence.
+
+00:06:24.950 --> 00:06:26.950
+Okay, but what function does it apply?
+
+00:06:27.310 --> 00:06:30.110
+Whatever function you tell it to apply. That's pretty cool.
+
+00:06:30.770 --> 00:06:33.770
+So how do we provide this function to the for each function.
+
+00:06:34.370 --> 00:06:37.970
+There are three ways, and I'll show you each way in the following slides.
+
+00:06:37.970 --> 00:06:41.630
+We can use functors, function pointers and lambda expressions.
+
+00:06:42.630 --> 00:06:46.880
+Functors and function pointers have been around since the beginning of the stl.
+
+00:06:47.680 --> 00:06:51.280
+Lambda expressions were added in c++11,
+
+00:06:51.280 --> 00:06:53.880
+and they're really the way to go in modern c++.
+
+00:06:54.870 --> 00:06:59.860
+So let's write a for each function that displays the square of each integer element in the vector.
+
+00:07:00.110 --> 00:07:02.110
+First, let's do it with a functor.
+
+00:07:03.410 --> 00:07:07.510
+In this slide, we'll see how we can use a functor or function object,
+
+00:07:07.870 --> 00:07:09.870
+but let's start at the bottom first.
+
+00:07:10.120 --> 00:07:13.120
+In the last statement, we're using it for each function
+
+00:07:13.120 --> 00:07:16.020
+and providing the iterated parameters as usual.
+
+00:07:16.020 --> 00:07:18.790
+So this will iterate over the entire vector vec.
+
+00:07:19.340 --> 00:07:22.340
+Okay. Now look at the last parameter square.
+
+00:07:23.000 --> 00:07:25.360
+In this case, square is an object,
+
+00:07:25.360 --> 00:07:28.560
+a function object of type square functor.
+
+00:07:28.560 --> 00:07:31.560
+You can see where i created the square object in red type.
+
+00:07:32.060 --> 00:07:34.060
+And square functor is a structure.
+
+00:07:34.560 --> 00:07:37.560
+It can also be a class that has a single public method.
+
+00:07:37.810 --> 00:07:39.810
+I know this might look a little strange.
+
+00:07:39.810 --> 00:07:43.810
+The method that's being overloaded is the function call operator.
+
+00:07:44.060 --> 00:07:46.420
+That's the open and close parentheses.
+
+00:07:46.780 --> 00:07:48.780
+It expects a single item
+
+00:07:48.780 --> 00:07:52.380
+that's the same type as the elements in the container we're processing.
+
+00:07:52.880 --> 00:07:57.380
+And in this case, it executes the code for each integer passed into it.
+
+00:07:58.380 --> 00:08:01.380
+Okay. I know this sounds pretty complicated, but let's walk through it.
+
+00:08:02.040 --> 00:08:05.340
+We're going to iterate through each element in the vector.
+
+00:08:05.340 --> 00:08:09.140
+And in each iteration the overloaded function call operator function
+
+00:08:09.140 --> 00:08:11.340
+for the square object will be called,
+
+00:08:11.340 --> 00:08:13.940
+and the current container element is passed to it.
+
+00:08:14.340 --> 00:08:16.840
+In this case, we'll call square,
+
+00:08:16.840 --> 00:08:19.200
+and each container element will display.
+
+00:08:19.200 --> 00:08:23.400
+So in this case, we get 1 4 9 and 16 since they're squared.
+
+00:08:24.060 --> 00:08:27.260
+Note that the original container elements are not modified.
+
+00:08:28.140 --> 00:08:31.740
+Now let's do the same thing but using function pointers
+
+00:08:31.740 --> 00:08:32.740
+instead of a function.
+
+00:08:34.340 --> 00:08:35.940
+Again, let's start at the bottom.
+
+00:08:36.240 --> 00:08:40.240
+Notice that the code for the for each algorithm is exactly the same.
+
+00:08:40.740 --> 00:08:44.640
+But in this case, the square parameter is not a function object,
+
+00:08:44.640 --> 00:08:46.640
+it's the name of a regular function.
+
+00:08:47.300 --> 00:08:50.300
+And we declared that function at the top of the slide in red.
+
+00:08:51.100 --> 00:08:54.000
+What's being passed into the for each function
+
+00:08:54.000 --> 00:08:56.500
+is a pointer to the square function,
+
+00:08:56.500 --> 00:08:59.800
+which is really the address of the function square itself.
+
+00:09:00.400 --> 00:09:03.400
+So at each iteration of the for each loop,
+
+00:09:03.600 --> 00:09:07.750
+the square function will be called and the current container element passed into it.
+
+00:09:08.110 --> 00:09:12.470
+So we get the same output as with the functor, 1 4 9 and 16.
+
+00:09:13.670 --> 00:09:16.870
+Notice that we only use the function name as the parameter,
+
+00:09:16.870 --> 00:09:21.570
+we don't place parentheses after it since that would call the function, that's not what we want.
+
+00:09:21.930 --> 00:09:26.280
+Finally, in the next slide we'll use a lambda expression to accomplish the same thing.
+
+00:09:28.280 --> 00:09:32.280
+In this example, we'll use the lambda expression directly in the function call.
+
+00:09:33.080 --> 00:09:37.380
+Lambda expressions were introduced in c++11 as I said, and they're widely
+
+00:09:37.380 --> 00:09:38.980
+used in modern c++.
+
+00:09:39.880 --> 00:09:41.560
+If you come from another language,
+
+00:09:41.560 --> 00:09:45.360
+you may know them as lambdas, closures, blocks or anonymous functions,
+
+00:09:45.360 --> 00:09:46.720
+it's basically all the same.
+
+00:09:47.820 --> 00:09:51.720
+First, notice that we have no other code except the call to the for each algorithm.
+
+00:09:52.720 --> 00:09:55.160
+One of the benefits of lambda expressions
+
+00:09:55.160 --> 00:09:58.160
+is that we can define them right where they're being used.
+
+00:09:58.710 --> 00:10:02.810
+The first part of the for each function is the same, we're providing our iterators.
+
+00:10:03.310 --> 00:10:07.910
+The last parameter is what changes, in this case, we're using a lambda expression.
+
+00:10:09.010 --> 00:10:13.510
+The syntax of the lambda expression will become more clear with time and practice,
+
+00:10:13.510 --> 00:10:16.170
+but it consists of a pair of square brackets
+
+00:10:16.170 --> 00:10:20.530
+followed by the parameters that will be passed in to the lambda expression
+
+00:10:20.530 --> 00:10:21.530
+in parentheses.
+
+00:10:22.300 --> 00:10:25.600
+In this case, a single integer which we'll name x.
+
+00:10:26.000 --> 00:10:29.600
+Then this is followed by the body of code we execute. That's it.
+
+00:10:29.600 --> 00:10:32.200
+It's really pretty easy and all in one place,
+
+00:10:32.200 --> 00:10:35.200
+so we know exactly what's happening in each iteration
+
+00:10:35.200 --> 00:10:37.200
+by looking right in the function call.
+
+00:10:38.190 --> 00:10:40.790
+I'll go over a couple of other stl algorithms,
+
+00:10:40.790 --> 00:10:44.490
+and I'll use lambda expressions and walk through them in the IDE next.
+
+00:10:44.490 --> 00:10:46.490
+So let's head over there in the next video.

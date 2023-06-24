@@ -1,0 +1,2360 @@
+﻿WEBVTT
+
+00:00:00.000 --> 00:00:08.000
+Hello folks, this is Steve Gilbert. Welcome to lecture 2 on C++ syntax and variables.
+
+00:00:08.000 --> 00:00:22.000
+So before you get started, make sure that you've gone over to lecture 2 and you've started the, uh, downloaded the, uh, starter file, the in-class exercises file here.
+
+00:00:22.000 --> 00:00:26.000
+This is going to be the problem that we're going to work on today.
+
+00:00:26.000 --> 00:00:33.000
+So let's talk about what computers actually do.
+
+00:00:33.000 --> 00:00:35.000
+What do computers actually do?
+
+00:00:35.000 --> 00:00:45.000
+Well, computers take input, which is raw data, they convert that input or process it, and they output it as information.
+
+00:00:45.000 --> 00:00:51.000
+This is the fundamental process that every piece of computing goes through.
+
+00:00:51.000 --> 00:01:07.000
+It's kind of like a Cuisinart. With my Cuisinart I can take onions, I can take peppers, I can take tomatoes, and I can put them in the Cuisinart, and the Cuisinart will chop them and process them, and I will get salsa as my output.
+
+00:01:07.000 --> 00:01:17.000
+So we're going to look at this input processing and output, uh, technique while writing a C++ IPO program.
+
+00:01:17.000 --> 00:01:22.000
+So let's go ahead and look at the instructions for that program.
+
+00:01:22.000 --> 00:01:25.000
+So here's our problem description.
+
+00:01:25.000 --> 00:01:33.000
+Workers at a particular company have won a 7.6% pay increase, retroactive for six months.
+
+00:01:33.000 --> 00:01:46.000
+We're going to write a program that takes an employee's previous annual salary as input, and outputs the amount of retroactive pay to the employee, the new annual salary, and the new monthly salary.
+
+00:01:46.000 --> 00:01:52.000
+Use a variable declaration with the modifier const to express the pay increase.
+
+00:01:52.000 --> 00:01:59.000
+Then the instructions give us some, uh, a picture showing us what the output looks like.
+
+00:01:59.000 --> 00:02:02.000
+This should be called a mockup or a sample run.
+
+00:02:02.000 --> 00:02:06.000
+So you notice we're going to ask the user to enter the current annual salary.
+
+00:02:06.000 --> 00:02:09.000
+They're going to type in a number, 10,000 here.
+
+00:02:09.000 --> 00:02:14.000
+And then it's going to print out the new annual, the new monthly, and retroactive salary.
+
+00:02:14.000 --> 00:02:18.000
+And it has those three numbers inside a set of brackets.
+
+00:02:18.000 --> 00:02:25.000
+Those brackets are simply to make it easy for us to test the code to make sure that we have the output.
+
+00:02:25.000 --> 00:02:30.000
+So, how do we solve this problem?
+
+00:02:30.000 --> 00:02:33.000
+Well, how do we solve any computer problem?
+
+00:02:33.000 --> 00:02:40.000
+We solve any computer problem by designing the inputs, the outputs, and the calculations.
+
+00:02:40.000 --> 00:02:43.000
+So let's talk about that, and let's look at that.
+
+00:02:43.000 --> 00:02:46.000
+Now I'm going to go over to our IDE.
+
+00:02:46.000 --> 00:02:49.000
+I have opened up the problem over here.
+
+00:02:49.000 --> 00:02:55.000
+And so notice this is in our IC folder that we downloaded when you first started.
+
+00:02:55.000 --> 00:03:03.000
+And in the IC folder, in IC02, for lecture two, notice we have a lib salary calc A.
+
+00:03:03.000 --> 00:03:09.000
+This is a binary library that's going to contain the testing code and so forth.
+
+00:03:09.000 --> 00:03:14.000
+We have a make file, which is going to control the building of the program.
+
+00:03:14.000 --> 00:03:18.000
+And we have the file that we're going to work on, salary calc.
+
+00:03:18.000 --> 00:03:20.000
+So click that, open it up.
+
+00:03:20.000 --> 00:03:26.000
+You can drag the terminal down here near the bottom so it's not taking up so much space.
+
+00:03:26.000 --> 00:03:33.000
+And we're going to go ahead and put our names on this in two places, just like you saw with the homework.
+
+00:03:33.000 --> 00:03:36.000
+So, Steven Gilbert.
+
+00:03:36.000 --> 00:03:40.000
+And for the date, I'm just going to put the semester.
+
+00:03:40.000 --> 00:03:47.000
+Actually, I'm going to put CS150 so I could perhaps use this video for another semester.
+
+00:03:47.000 --> 00:03:55.000
+Secondly, we're always going to make sure you put in your user name, your Canvas login name here.
+
+00:03:55.000 --> 00:03:58.000
+It needs to be all in lower case.
+
+00:03:58.000 --> 00:04:00.000
+Mine's S. Gilbert.
+
+00:04:00.000 --> 00:04:05.000
+Yours will be whatever you use to log into the CS150 Homework Console.
+
+00:04:05.000 --> 00:04:09.000
+And we're going to put one line that describes what the program does.
+
+00:04:09.000 --> 00:04:24.000
+And it's going to calculate wages after salary increase.
+
+00:04:24.000 --> 00:04:33.000
+Now, to figure out the inputs, outputs, and processing, the easiest way to do that is simply to take the problem over here.
+
+00:04:33.000 --> 00:04:37.000
+I'm going to copy it from the problem description.
+
+00:04:37.000 --> 00:04:42.000
+Come over to our IDE.
+
+00:04:42.000 --> 00:04:47.000
+And paste it in here where it says "Add your implementation comments" here.
+
+00:04:47.000 --> 00:04:49.000
+So I'm just going to paste that there.
+
+00:04:49.000 --> 00:04:54.000
+And then I'm going to go ahead and I'm just going to break that into multiple lines.
+
+00:04:54.000 --> 00:05:03.000
+I'm just using my mouse and the Enter key.
+
+00:05:03.000 --> 00:05:14.000
+And I'm going to make it into a nice comment so that I can read it when I'm working on my code, rather than having to keep going back to the instructions.
+
+00:05:14.000 --> 00:05:19.000
+Now, I'm going to select all this code, just with my mouse like that.
+
+00:05:19.000 --> 00:05:23.000
+Then I'm going to hold down my Control key and the forward slash key.
+
+00:05:23.000 --> 00:05:25.000
+It's the one with the question mark on it.
+
+00:05:25.000 --> 00:05:35.000
+And notice that that is going to comment that code out so that I can look at this and find out what the inputs, outputs, and processing are.
+
+00:05:35.000 --> 00:05:40.000
+So, what are the inputs that we can see from this problem statement?
+
+00:05:40.000 --> 00:05:46.000
+Well, it says it's going to take an employee's previous annual salary.
+
+00:05:46.000 --> 00:06:05.000
+So I'm going to write here as a comment, "Input, annual salary."
+
+00:06:05.000 --> 00:06:08.000
+Now, what is the output?
+
+00:06:08.000 --> 00:06:13.000
+It's going to output the amount of retroactive pay.
+
+00:06:13.000 --> 00:06:24.000
+So, outputs is retroactive pay.
+
+00:06:24.000 --> 00:06:39.000
+It is new annual and monthly salaries.
+
+00:06:39.000 --> 00:06:44.000
+Okay, so I know that I have the input.
+
+00:06:44.000 --> 00:06:47.000
+The output, is anything given about this problem?
+
+00:06:47.000 --> 00:06:49.000
+Or do we assume anything?
+
+00:06:49.000 --> 00:07:11.000
+So, given or the assumption is that pay increase is 7.6% for 6 months.
+
+00:07:11.000 --> 00:07:26.000
+So, the pay increase is 7.6%. The retroactive pay is for 6 months.
+
+00:07:26.000 --> 00:07:34.000
+Okay, so let's figure out, so we've figured out what the inputs, the output, and the salary is.
+
+00:07:34.000 --> 00:07:38.000
+So now we need to figure out how to calculate the salary.
+
+00:07:38.000 --> 00:07:43.000
+We need to put in the algorithms here.
+
+00:07:43.000 --> 00:07:47.000
+So again, we do this before we write a single line of code.
+
+00:07:47.000 --> 00:07:50.000
+We figure out what we're going to do.
+
+00:07:50.000 --> 00:08:19.000
+So, the processing step for new annual is going to be take the annual salary and multiply it times 1 plus the pay increase.
+
+00:08:19.000 --> 00:08:47.000
+Okay, now that we have the new annual salary for the new monthly, I'm going to take the new annual salary and divide it by 12.
+
+00:08:47.000 --> 00:08:54.000
+12 for the month per year.
+
+00:08:54.000 --> 00:08:57.000
+And finally, we have one last piece of processing.
+
+00:08:57.000 --> 00:09:01.000
+I need the retro pay.
+
+00:09:01.000 --> 00:09:12.000
+And that I'm going to get by taking the new annual, the old annual, new annual, which will be larger.
+
+00:09:12.000 --> 00:09:26.000
+Subtracting the old annual and then dividing that whole thing, that difference, by 2.
+
+00:09:26.000 --> 00:09:33.000
+Because remember, they're only getting paid for 6 months and 6 months is half of a year.
+
+00:09:33.000 --> 00:09:42.000
+Okay, so once I've done that, I can get rid of my problem statement that I've put up here.
+
+00:09:42.000 --> 00:09:50.000
+And I have a plan or a goal or a way to start.
+
+00:09:50.000 --> 00:09:54.000
+So this is what we did.
+
+00:09:54.000 --> 00:09:59.000
+We designed the inputs, the outputs, and the calculations.
+
+00:09:59.000 --> 00:10:04.000
+And then we added our IDs and our comments to the file.
+
+00:10:04.000 --> 00:10:11.000
+Now step 2 for these kinds of programs is always just to mock up the input and the output.
+
+00:10:11.000 --> 00:10:14.000
+And use literals for each piece.
+
+00:10:14.000 --> 00:10:18.000
+So let's look at what the output looks like.
+
+00:10:18.000 --> 00:10:24.000
+So this is what the output should look like. I'm just going to copy it here.
+
+00:10:24.000 --> 00:10:28.000
+I'm going to come over to my IDE.
+
+00:10:28.000 --> 00:10:36.000
+And I'm going to paste it here where it says write your code here.
+
+00:10:36.000 --> 00:10:44.000
+Now, one neat thing you can do with your editor is I can hold down my Alt key.
+
+00:10:44.000 --> 00:10:49.000
+And I can move it through two lines like that.
+
+00:10:49.000 --> 00:10:55.000
+Oh no, I can't.
+
+00:10:55.000 --> 00:10:59.000
+No, I take that back. We can do it in the old editor. We can't do it in the next editor.
+
+00:10:59.000 --> 00:11:02.000
+So I'm just going to select those lines I'm going to tab over.
+
+00:11:02.000 --> 00:11:10.000
+And then I'm going to put quotes around the parts that I want to stay as is.
+
+00:11:10.000 --> 00:11:14.000
+Quote.
+
+00:11:14.000 --> 00:11:17.000
+Quote.
+
+00:11:17.000 --> 00:11:25.000
+And quote.
+
+00:11:25.000 --> 00:11:30.000
+Quote.
+
+00:11:30.000 --> 00:11:42.000
+So the part that's going to stay plain text, I'm putting inside quotes to turn it into a string.
+
+00:11:42.000 --> 00:11:46.000
+And now I'm just going to use the cout object on that to print that out.
+
+00:11:46.000 --> 00:11:52.000
+I'm going to say cout. I'm going to print out that first string part.
+
+00:11:52.000 --> 00:11:54.000
+Then I'm going to print out the dollars.
+
+00:11:54.000 --> 00:11:58.000
+And then that's the end of that line, so I'm going to print an end line.
+
+00:11:58.000 --> 00:12:00.000
+I'm going to do the same thing for the second line.
+
+00:12:00.000 --> 00:12:05.000
+Cout.
+
+00:12:05.000 --> 00:12:07.000
+I'm going to print that text.
+
+00:12:07.000 --> 00:12:12.000
+Now here I don't really like a long line, so I'm going to bring this one down like that.
+
+00:12:12.000 --> 00:12:16.000
+Tab it over so it's indented.
+
+00:12:16.000 --> 00:12:20.000
+And put the operator there, the output operator.
+
+00:12:20.000 --> 00:12:23.000
+I'm going to put the output operator between those two pieces.
+
+00:12:23.000 --> 00:12:27.000
+The output operator between those two pieces.
+
+00:12:27.000 --> 00:12:30.000
+The output operator between those two pieces.
+
+00:12:30.000 --> 00:12:33.000
+Those two pieces.
+
+00:12:33.000 --> 00:12:35.000
+Those two pieces.
+
+00:12:35.000 --> 00:12:42.000
+And finally a new line at the end of it.
+
+00:12:42.000 --> 00:12:50.000
+Okay, so now I have figured out what I want to do. I've planned.
+
+00:12:50.000 --> 00:12:56.000
+I have mocked up the output. Let's see if it works.
+
+00:12:56.000 --> 00:13:01.000
+We're going to do that by first making sure we're in this folder.
+
+00:13:01.000 --> 00:13:08.000
+The way we're going to do that is I'm going to right click on the A, that is the name of that folder, ICO2A.
+
+00:13:08.000 --> 00:13:12.000
+And I'm going to say Open in Integrated Terminal.
+
+00:13:12.000 --> 00:13:19.000
+And notice my terminal then is going to have the full path to where I'm building my program.
+
+00:13:19.000 --> 00:13:26.000
+If it doesn't have the full path, if it just says $, that means you're in the wrong folder.
+
+00:13:26.000 --> 00:13:32.000
+So let's run this. Let's do Make Run.
+
+00:13:32.000 --> 00:13:37.000
+So that compiles it, that runs it, that prints the output.
+
+00:13:37.000 --> 00:13:42.000
+And if I look at this output, enter the current salary, there's a space here like there should be.
+
+00:13:42.000 --> 00:13:50.000
+There's a space here and there's spaces and commas between each of these as there should be.
+
+00:13:50.000 --> 00:13:55.000
+And I compare that to this output. It looks almost the same.
+
+00:13:55.000 --> 00:14:06.000
+Now we have one slight problem here is that we don't have the correct number of decimal places for two of these numbers.
+
+00:14:06.000 --> 00:14:10.000
+I believe one of them is okay, the 6-7, yeah the 6-7 looks okay.
+
+00:14:10.000 --> 00:14:15.000
+These two aren't showing the decimal places. We'll see how to figure that out later.
+
+00:14:15.000 --> 00:14:22.000
+So again, this is the part that you can simply memorize and learn how to do.
+
+00:14:22.000 --> 00:14:27.000
+This is a technique for building these kinds of programs that you can do very quickly
+
+00:14:27.000 --> 00:14:32.000
+so you can get the format for the output correct.
+
+00:14:32.000 --> 00:14:42.000
+So now, let's go ahead and talk about variables and values to actually solve this program.
+
+00:14:42.000 --> 00:14:52.000
+And so, okay, so we ran it and we compared it to the hand output, handout.
+
+00:14:52.000 --> 00:14:55.000
+And now we're going to talk about variables and values.
+
+00:14:55.000 --> 00:15:03.000
+So what's a variable? A variable is simply a box that is made out of memory.
+
+00:15:03.000 --> 00:15:14.000
+So your computer has a CPU, it has memory, it has external storage like a hard disk or something like that.
+
+00:15:14.000 --> 00:15:20.000
+It has input and output devices. But memory and CPU are the main parts of it.
+
+00:15:20.000 --> 00:15:24.000
+And memory is where we are going to store data.
+
+00:15:24.000 --> 00:15:32.000
+So if I take three or four blocks of memory, what we call bytes, that could be a box.
+
+00:15:32.000 --> 00:15:40.000
+Programs store their data that they get for input and they process in things called variables.
+
+00:15:40.000 --> 00:15:44.000
+So a variable is like a box and it has a label on it.
+
+00:15:44.000 --> 00:15:49.000
+The label is going to describe the kind of thing that's in the box.
+
+00:15:49.000 --> 00:15:55.000
+The box is memory, the label is its name.
+
+00:15:55.000 --> 00:15:59.000
+Now with this box, we can put something into it.
+
+00:15:59.000 --> 00:16:04.000
+That means we can initialize a variable with a value.
+
+00:16:04.000 --> 00:16:09.000
+We can take something out of it. That means we can read it or print it or output it.
+
+00:16:09.000 --> 00:16:11.000
+Finally, we can change what's in the box.
+
+00:16:11.000 --> 00:16:16.000
+We can assign to the variable and put a new value into the box.
+
+00:16:16.000 --> 00:16:19.000
+So this is just an analogy, of course.
+
+00:16:19.000 --> 00:16:24.000
+It's a way of thinking about what's going on with variables.
+
+00:16:24.000 --> 00:16:28.000
+Now the size of the box restricts what you can put in it.
+
+00:16:28.000 --> 00:16:31.000
+If you have a little box, you might put jewelry in it.
+
+00:16:31.000 --> 00:16:35.000
+If you have a bigger box, you might put a hat or something like that in it.
+
+00:16:35.000 --> 00:16:39.000
+So the size of the box restricts what you can store.
+
+00:16:39.000 --> 00:16:44.000
+Again, this is an analogy. If you have one byte, you can store a certain amount of things.
+
+00:16:44.000 --> 00:16:50.000
+If you have ten bytes, you can store something larger and a different kind of thing.
+
+00:16:50.000 --> 00:16:55.000
+So this concept, the fact that variables hold data
+
+00:16:55.000 --> 00:17:01.000
+and that data can be different types is called a values type.
+
+00:17:01.000 --> 00:17:08.000
+So inside a variable, we call that information, the things that are in that byte, its value.
+
+00:17:08.000 --> 00:17:12.000
+A variable can have different values as the program runs.
+
+00:17:12.000 --> 00:17:18.000
+It might start out with one value, and later on as the program runs, we'll change it to a different value.
+
+00:17:18.000 --> 00:17:22.000
+There are also different kinds of values we can put in variables.
+
+00:17:22.000 --> 00:17:26.000
+We have different kinds of containers for each of those values.
+
+00:17:26.000 --> 00:17:32.000
+So if you go down to 7-Eleven and you buy coffee, they give you one kind of container to hold the coffee.
+
+00:17:32.000 --> 00:17:36.000
+If you buy a Big Gulp or a Slurpee, they give you a different kind of container.
+
+00:17:36.000 --> 00:17:39.000
+Popcorn goes in a different kind of container as well.
+
+00:17:39.000 --> 00:17:46.000
+In addition, you can have different sizes of containers for the same kind of things.
+
+00:17:46.000 --> 00:17:53.000
+So you could buy a Big Gulp, which is 32 ounces, or a Super Big Gulp, which is 64 ounces.
+
+00:17:53.000 --> 00:17:59.000
+We do something similar with variables and values.
+
+00:17:59.000 --> 00:18:05.000
+So a value is a quantity of data.
+
+00:18:05.000 --> 00:18:10.000
+So 1 is a value. 3.1459 is a value.
+
+00:18:10.000 --> 00:18:13.000
+Steve is a value, in double quotes.
+
+00:18:13.000 --> 00:18:16.000
+D is a value, in single quotes.
+
+00:18:16.000 --> 00:18:18.000
+True is a value.
+
+00:18:18.000 --> 00:18:22.000
+And each of those values represent different kinds of things.
+
+00:18:22.000 --> 00:18:25.000
+1 represents an integer.
+
+00:18:25.000 --> 00:18:30.000
+3.1459 represents a floating point or real number.
+
+00:18:30.000 --> 00:18:34.000
+Steve, in double quotes, represents what we call a string.
+
+00:18:34.000 --> 00:18:37.000
+D represents a character.
+
+00:18:37.000 --> 00:18:40.000
+And true represents a Boolean value.
+
+00:18:40.000 --> 00:18:42.000
+You've already seen the objects Cout.
+
+00:18:42.000 --> 00:18:45.000
+Cout represents a stream object.
+
+00:18:45.000 --> 00:18:50.000
+So values are quantities of data.
+
+00:18:50.000 --> 00:18:59.000
+Now, the kind of value is called the variables type.
+
+00:18:59.000 --> 00:19:05.000
+And our formal definition for a value is simply a set of bits.
+
+00:19:05.000 --> 00:19:09.000
+So if you have one byte, you have eight bits.
+
+00:19:09.000 --> 00:19:14.000
+If you have two bytes, you have 16 bits.
+
+00:19:14.000 --> 00:19:20.000
+If we take those bits by themselves, they don't have any meaning.
+
+00:19:20.000 --> 00:19:24.000
+If we interpret them according to their type, they have a meaning.
+
+00:19:24.000 --> 00:19:30.000
+So if we say that this byte in memory is a character,
+
+00:19:30.000 --> 00:19:33.000
+it may represent the letter capital A.
+
+00:19:33.000 --> 00:19:38.000
+If we take the same set of bits, exactly the same set of bits,
+
+00:19:38.000 --> 00:19:42.000
+and we say, no, we're going to interpret that as an integer,
+
+00:19:42.000 --> 00:19:45.000
+it would have the value 65.
+
+00:19:45.000 --> 00:19:52.000
+So a value is a set of bits that we interpret according to its type.
+
+00:19:52.000 --> 00:19:57.000
+So if that's a value, what is a variable?
+
+00:19:57.000 --> 00:19:59.000
+So a variable, I've already given you an analogy.
+
+00:19:59.000 --> 00:20:01.000
+It's a box of memory.
+
+00:20:01.000 --> 00:20:06.000
+But mainly, but formally, it's a named storage location
+
+00:20:06.000 --> 00:20:08.000
+that holds a value.
+
+00:20:08.000 --> 00:20:13.000
+Now in C++, we can use pretty much the same names
+
+00:20:13.000 --> 00:20:16.000
+that you would use in Java or Python.
+
+00:20:16.000 --> 00:20:22.000
+Generally, the name has to start with a upper or lowercase letter,
+
+00:20:22.000 --> 00:20:26.000
+and it can contain numbers or underscores.
+
+00:20:26.000 --> 00:20:28.000
+It cannot contain spaces.
+
+00:20:28.000 --> 00:20:30.000
+It cannot contain hyphens.
+
+00:20:30.000 --> 00:20:34.000
+There are some other requirements about where the underscores can appear.
+
+00:20:34.000 --> 00:20:38.000
+It cannot contain dollar signs like some names in Java can.
+
+00:20:38.000 --> 00:20:42.000
+And the names all have to be ASCII characters.
+
+00:20:42.000 --> 00:20:45.000
+They cannot be Unicode characters.
+
+00:20:45.000 --> 00:20:49.000
+So in Java, for instance, although I'm sure most of you never did this,
+
+00:20:49.000 --> 00:20:54.000
+you could use the symbol pi, which is, of course, a Greek letter,
+
+00:20:54.000 --> 00:20:56.000
+as the name of a variable.
+
+00:20:56.000 --> 00:20:59.000
+You can't do that in C++.
+
+00:20:59.000 --> 00:21:04.000
+So a variable is a named storage location that holds a value.
+
+00:21:04.000 --> 00:21:08.000
+It's not the same as a value.
+
+00:21:08.000 --> 00:21:12.000
+We say that a variable is something that we can point to it in memory
+
+00:21:12.000 --> 00:21:15.000
+if we visualize memory and say,
+
+00:21:15.000 --> 00:21:19.000
+"This variable lives at that location."
+
+00:21:19.000 --> 00:21:21.000
+We say that it's addressable.
+
+00:21:21.000 --> 00:21:25.000
+And the name we use for things that are addressable like that
+
+00:21:25.000 --> 00:21:27.000
+are objects.
+
+00:21:27.000 --> 00:21:31.000
+So variables and objects, kind of in the lower case,
+
+00:21:31.000 --> 00:21:34.000
+not the object-oriented sense of objects,
+
+00:21:34.000 --> 00:21:38.000
+are things in memory that hold a value
+
+00:21:38.000 --> 00:21:41.000
+and that they're addressable.
+
+00:21:41.000 --> 00:21:47.000
+Now, each variable holds values of one type.
+
+00:21:47.000 --> 00:21:50.000
+What that means is, unlike, say, Python,
+
+00:21:50.000 --> 00:21:52.000
+those of you who came from Python,
+
+00:21:52.000 --> 00:21:55.000
+you cannot create a variable A
+
+00:21:55.000 --> 00:21:58.000
+and put an integer in it at one time
+
+00:21:58.000 --> 00:22:01.000
+and then put a string in it at another time.
+
+00:22:01.000 --> 00:22:04.000
+Each variable holds a value of one type.
+
+00:22:04.000 --> 00:22:12.000
+So we say that these variables are strongly typed in C++.
+
+00:22:12.000 --> 00:22:17.000
+Now, to create, that is, to declare and to define a variable,
+
+00:22:17.000 --> 00:22:19.000
+we do two things.
+
+00:22:19.000 --> 00:22:23.000
+We give it a name, and we specify the kind of thing it holds,
+
+00:22:23.000 --> 00:22:25.000
+or its type.
+
+00:22:25.000 --> 00:22:31.000
+So the syntax is just type, space, name, semicolon.
+
+00:22:31.000 --> 00:22:34.000
+Now, of course, you might wonder, if we do that,
+
+00:22:34.000 --> 00:22:37.000
+what value is going to be in it?
+
+00:22:37.000 --> 00:22:40.000
+Well, no value or a random value.
+
+00:22:40.000 --> 00:22:44.000
+Now, in Java and in Python, if you did this,
+
+00:22:44.000 --> 00:22:47.000
+if you just said type name, well, Python doesn't have types,
+
+00:22:47.000 --> 00:22:50.000
+but in Java, if we said int a,
+
+00:22:50.000 --> 00:22:52.000
+we can use that variable a.
+
+00:22:52.000 --> 00:22:55.000
+In C++, we can, but it's really a mistake
+
+00:22:55.000 --> 00:22:59.000
+because we haven't given the variable an initial value.
+
+00:22:59.000 --> 00:23:03.000
+So we can give the variable an initial value when we create it.
+
+00:23:03.000 --> 00:23:05.000
+This is called initialization.
+
+00:23:05.000 --> 00:23:08.000
+And there are several syntaxes for this.
+
+00:23:08.000 --> 00:23:09.000
+You might wonder why.
+
+00:23:09.000 --> 00:23:13.000
+That's because C++ has been around since the early '90s,
+
+00:23:13.000 --> 00:23:16.000
+and as time's gone on, they've changed the syntax.
+
+00:23:16.000 --> 00:23:18.000
+The syntax has been updated.
+
+00:23:18.000 --> 00:23:22.000
+So this is called legacy or traditional initialization.
+
+00:23:22.000 --> 00:23:24.000
+It looks kind of like assignment,
+
+00:23:24.000 --> 00:23:26.000
+but it's not really the same thing.
+
+00:23:26.000 --> 00:23:28.000
+It's just creating the variable
+
+00:23:28.000 --> 00:23:30.000
+and giving it an initial value when you create it.
+
+00:23:30.000 --> 00:23:32.000
+We can do it this way.
+
+00:23:32.000 --> 00:23:37.000
+So type name, and we put the value in parentheses after the name.
+
+00:23:37.000 --> 00:23:41.000
+This was in the original version of C++.
+
+00:23:41.000 --> 00:23:45.000
+And in the newest version of C++, C++11,
+
+00:23:45.000 --> 00:23:49.000
+we can actually use braces, curly braces around the value.
+
+00:23:49.000 --> 00:23:52.000
+And this has some advantages.
+
+00:23:52.000 --> 00:23:56.000
+So as you go forward, you generally should prefer this third reason,
+
+00:23:56.000 --> 00:23:58.000
+although most of us, or many of us,
+
+00:23:58.000 --> 00:24:04.000
+probably still use the first one just for, you know, from habit.
+
+00:24:04.000 --> 00:24:09.000
+Now the equals sign here when we say name equals value,
+
+00:24:09.000 --> 00:24:13.000
+of course, doesn't mean equality as it is in algebra.
+
+00:24:13.000 --> 00:24:17.000
+What it means is copy the stuff from the right
+
+00:24:17.000 --> 00:24:19.000
+into the variable on the left,
+
+00:24:19.000 --> 00:24:26.000
+or initialize name with this value.
+
+00:24:26.000 --> 00:24:29.000
+Okay, so let's create a variable.
+
+00:24:29.000 --> 00:24:31.000
+Let's go back to our problem.
+
+00:24:31.000 --> 00:24:35.000
+Let's create a variable to hold the current salary.
+
+00:24:35.000 --> 00:24:40.000
+Now the question is, what kind of thing should it be?
+
+00:24:40.000 --> 00:24:43.000
+C++ has two families of numbers.
+
+00:24:43.000 --> 00:24:47.000
+They have integers, and they have real or floating point numbers.
+
+00:24:47.000 --> 00:24:51.000
+Integers are whole, discrete numbers.
+
+00:24:51.000 --> 00:24:54.000
+And floating point numbers, or real numbers,
+
+00:24:54.000 --> 00:24:56.000
+may have a fractional part.
+
+00:24:56.000 --> 00:25:02.000
+And so our salary could have a fractional part.
+
+00:25:02.000 --> 00:25:07.000
+In other words, someone could make, you know, $1,000.52.
+
+00:25:07.000 --> 00:25:12.000
+And so we would want to use a real or floating point number.
+
+00:25:12.000 --> 00:25:17.000
+Like Java, the most common real or floating point number we use
+
+00:25:17.000 --> 00:25:20.000
+is called double.
+
+00:25:20.000 --> 00:25:28.000
+So let's create a double variable.
+
+00:25:28.000 --> 00:25:31.000
+So I'm going to create, and I'm going to do it,
+
+00:25:31.000 --> 00:25:33.000
+I'm actually going to divide my code here.
+
+00:25:33.000 --> 00:25:35.000
+I'm going to put three more comments.
+
+00:25:35.000 --> 00:25:40.000
+I'm going to say this is the input section.
+
+00:25:40.000 --> 00:25:44.000
+I'm going to say this is the processing section.
+
+00:25:44.000 --> 00:25:49.000
+And then I'm going to say this is the output section.
+
+00:25:49.000 --> 00:25:52.000
+And I always do that when I write an IPO program.
+
+00:25:52.000 --> 00:26:00.000
+So I keep track of the sequence of instructions as I type them.
+
+00:26:00.000 --> 00:26:04.000
+So we're going to create a variable.
+
+00:26:04.000 --> 00:26:07.000
+Its type is going to be double.
+
+00:26:07.000 --> 00:26:15.000
+And its name is going to be annual salary.
+
+00:26:15.000 --> 00:26:20.000
+Now, this is called snake case.
+
+00:26:20.000 --> 00:26:24.000
+And you're free to use that style.
+
+00:26:24.000 --> 00:26:33.000
+Or we could write it as --
+
+00:26:33.000 --> 00:26:37.000
+this is called camel case.
+
+00:26:37.000 --> 00:26:41.000
+And this is popular in Java, of course.
+
+00:26:41.000 --> 00:26:43.000
+It's the current style.
+
+00:26:43.000 --> 00:26:45.000
+So you can use either one of those.
+
+00:26:45.000 --> 00:26:48.000
+I have no preference on those,
+
+00:26:48.000 --> 00:26:51.000
+although I'm going to use the annual salary,
+
+00:26:51.000 --> 00:26:56.000
+the one that is camel case.
+
+00:26:56.000 --> 00:26:58.000
+Actually, I do have a preference on them,
+
+00:26:58.000 --> 00:27:00.000
+but I don't have a preference for this class.
+
+00:27:00.000 --> 00:27:02.000
+You're free to use either one.
+
+00:27:02.000 --> 00:27:05.000
+I just find the camel case a little easier to type.
+
+00:27:05.000 --> 00:27:20.000
+Don't do this.
+
+00:27:20.000 --> 00:27:22.000
+Don't start it with an uppercase character.
+
+00:27:22.000 --> 00:27:28.000
+So this is fine, all lowercase, separated by underscore.
+
+00:27:28.000 --> 00:27:29.000
+This is fine.
+
+00:27:29.000 --> 00:27:34.000
+Start with a lowercase and use capital letters as the interior.
+
+00:27:34.000 --> 00:27:36.000
+So it's camel case.
+
+00:27:36.000 --> 00:27:38.000
+This is called proper case.
+
+00:27:38.000 --> 00:27:43.000
+We'll use proper case for classes and structures.
+
+00:27:43.000 --> 00:27:44.000
+So there's annual salary.
+
+00:27:44.000 --> 00:27:49.000
+Now the question is, what should I initialize that with?
+
+00:27:49.000 --> 00:27:54.000
+In other words, annual salary has no value.
+
+00:27:54.000 --> 00:27:59.000
+What should I initialize it with?
+
+00:27:59.000 --> 00:28:03.000
+The answer is, we shouldn't initialize this with anything.
+
+00:28:03.000 --> 00:28:05.000
+We want to get the input from the user.
+
+00:28:05.000 --> 00:28:07.000
+We want to get the input.
+
+00:28:07.000 --> 00:28:11.000
+We want to get the value from input.
+
+00:28:11.000 --> 00:28:15.000
+We don't want to give it an initial starting value.
+
+00:28:15.000 --> 00:28:17.000
+And so to get the value from input,
+
+00:28:17.000 --> 00:28:21.000
+we use an object that is similar to cout.
+
+00:28:21.000 --> 00:28:26.000
+This object is called cin, the character input object,
+
+00:28:26.000 --> 00:28:30.000
+which will allow us to type from the keyboard.
+
+00:28:30.000 --> 00:28:35.000
+Think of cin as similar to the scanner in Java,
+
+00:28:35.000 --> 00:28:38.000
+if you're familiar with the Java programming language.
+
+00:28:38.000 --> 00:28:42.000
+And to do that, we'll simply say cin.
+
+00:28:42.000 --> 00:28:45.000
+This is called the extraction operator,
+
+00:28:45.000 --> 00:28:49.000
+and we'll extract from cin the characters,
+
+00:28:49.000 --> 00:28:51.000
+convert those characters to the value,
+
+00:28:51.000 --> 00:28:55.000
+and store the value inside the variable.
+
+00:28:55.000 --> 00:29:01.000
+So let's look at our problem here and see how we do that.
+
+00:29:01.000 --> 00:29:05.000
+So here's my annual salary.
+
+00:29:05.000 --> 00:29:13.000
+And so I'm going to say cin annual salary.
+
+00:29:13.000 --> 00:29:16.000
+Now we have to make one more change.
+
+00:29:16.000 --> 00:29:19.000
+Don't forget to make this change.
+
+00:29:19.000 --> 00:29:23.000
+Notice this 1,000 is really not supposed
+
+00:29:23.000 --> 00:29:25.000
+to be part of the output.
+
+00:29:25.000 --> 00:29:28.000
+This 1,000 is supposed to be what the user types in.
+
+00:29:28.000 --> 00:29:32.000
+So we need to come up here from our mockup,
+
+00:29:32.000 --> 00:29:36.000
+from our dummy data, and remove that 1,000.
+
+00:29:36.000 --> 00:29:40.000
+This endl, this new line, again,
+
+00:29:40.000 --> 00:29:44.000
+that new line is not supposed to be part of the output.
+
+00:29:44.000 --> 00:29:49.000
+We want the user to type their input directly after this,
+
+00:29:49.000 --> 00:29:51.000
+which is called the prompt.
+
+00:29:51.000 --> 00:29:54.000
+So we want to prompt them, we want to get the input,
+
+00:29:54.000 --> 00:29:58.000
+and so this endl goes away as well.
+
+00:29:58.000 --> 00:30:00.000
+Make sure you leave the semicolon.
+
+00:30:00.000 --> 00:30:05.000
+So when the user hits enter after typing in the annual salary,
+
+00:30:05.000 --> 00:30:08.000
+that will work.
+
+00:30:08.000 --> 00:30:11.000
+So let's just try that briefly.
+
+00:30:11.000 --> 00:30:14.000
+Let's just go up and let's just do make run again.
+
+00:30:14.000 --> 00:30:18.000
+You can just up arrow to get make run.
+
+00:30:18.000 --> 00:30:21.000
+And notice it stops now, and it waits for me
+
+00:30:21.000 --> 00:30:23.000
+to type something in.
+
+00:30:23.000 --> 00:30:27.000
+So I'm going to type in $10,000,
+
+00:30:27.000 --> 00:30:29.000
+and notice I get the same output.
+
+00:30:29.000 --> 00:30:33.000
+Of course, since our output isn't tied to our input at all,
+
+00:30:33.000 --> 00:30:38.000
+we'd get the same output no matter what we did in this case.
+
+00:30:38.000 --> 00:30:41.000
+So here is creating a variable
+
+00:30:41.000 --> 00:30:50.000
+and getting input into a variable.
+
+00:30:50.000 --> 00:30:53.000
+Now, processing.
+
+00:30:53.000 --> 00:30:55.000
+So we've done the input phase.
+
+00:30:55.000 --> 00:30:57.000
+The input phase is done.
+
+00:30:57.000 --> 00:30:58.000
+Now the processing phase.
+
+00:30:58.000 --> 00:31:03.000
+We want to turn our input into our desired output.
+
+00:31:03.000 --> 00:31:08.000
+And our desired output is annual and monthly salary
+
+00:31:08.000 --> 00:31:11.000
+or new annual and new monthly salary
+
+00:31:11.000 --> 00:31:13.000
+and the retroactive pay.
+
+00:31:13.000 --> 00:31:19.000
+And so we're going to create variables for each output value.
+
+00:31:19.000 --> 00:31:23.000
+So again, you can use, I'm going to be consistent here
+
+00:31:23.000 --> 00:31:28.000
+and use camel case, but again, feel free to use snake case
+
+00:31:28.000 --> 00:31:30.000
+if you prefer that.
+
+00:31:30.000 --> 00:31:33.000
+So these are going to be all doubles
+
+00:31:33.000 --> 00:31:35.000
+since our original was a double.
+
+00:31:35.000 --> 00:31:45.000
+So annual, I'll call that new annual.
+
+00:31:45.000 --> 00:31:52.000
+And double new monthly.
+
+00:31:52.000 --> 00:31:59.000
+And double retro pay.
+
+00:31:59.000 --> 00:32:03.000
+Now, we could now, that we have the variables,
+
+00:32:03.000 --> 00:32:05.000
+we could process them.
+
+00:32:05.000 --> 00:32:08.000
+And in C, that was very, very common.
+
+00:32:08.000 --> 00:32:10.000
+Many other languages that's common.
+
+00:32:10.000 --> 00:32:13.000
+But that's really not a good habit to get in.
+
+00:32:13.000 --> 00:32:19.000
+So instead of doing that, instead of doing int var
+
+00:32:19.000 --> 00:32:22.000
+and then on another line, putting in your calculation,
+
+00:32:22.000 --> 00:32:26.000
+you should initialize it on the line that calculates it.
+
+00:32:26.000 --> 00:32:29.000
+So let's just review our three algorithms.
+
+00:32:29.000 --> 00:32:34.000
+So the first one was we're going to let our new annual
+
+00:32:34.000 --> 00:32:39.000
+be the original times one plus the raised percent.
+
+00:32:39.000 --> 00:32:42.000
+We're going to let our monthly be the annual
+
+00:32:42.000 --> 00:32:45.000
+divided by the months per year.
+
+00:32:45.000 --> 00:32:47.000
+And we're going to let our retroactive pay
+
+00:32:47.000 --> 00:32:53.000
+be annual minus original divided by two.
+
+00:32:53.000 --> 00:32:56.000
+Now, we have to be careful when we do this.
+
+00:32:56.000 --> 00:32:58.000
+We have to be careful we put the parentheses
+
+00:32:58.000 --> 00:33:02.000
+in each correct place.
+
+00:33:02.000 --> 00:33:04.000
+So using that algorithm, I'm going to say
+
+00:33:04.000 --> 00:33:14.000
+my new annual is going to be my annual salary.
+
+00:33:14.000 --> 00:33:17.000
+Now, instead of that, we use star,
+
+00:33:17.000 --> 00:33:23.000
+just like in Java and Pascal and in Python.
+
+00:33:23.000 --> 00:33:32.000
+And this is going to be one plus the raised percent,
+
+00:33:32.000 --> 00:33:35.000
+which is 7.6%.
+
+00:33:35.000 --> 00:33:37.000
+But again, like other programming languages,
+
+00:33:37.000 --> 00:33:39.000
+we can't write it out like that.
+
+00:33:39.000 --> 00:33:42.000
+We have to write it out as this mathematical equivalent,
+
+00:33:42.000 --> 00:33:47.000
+which is 0.76 with a dot in front of it.
+
+00:33:47.000 --> 00:33:51.000
+And just like in algebra, we have to be aware
+
+00:33:51.000 --> 00:33:55.000
+of where the parentheses go in an expression.
+
+00:33:55.000 --> 00:34:01.000
+So in this expression, notice that this does
+
+00:34:01.000 --> 00:34:03.000
+multiplication before addition.
+
+00:34:03.000 --> 00:34:08.000
+And so this says annual times one plus 0.76.
+
+00:34:08.000 --> 00:34:14.000
+So that would give me a raise of 7 cents,
+
+00:34:14.000 --> 00:34:16.000
+not what I want for the year.
+
+00:34:16.000 --> 00:34:24.000
+So to get the addition to happen first,
+
+00:34:24.000 --> 00:34:28.000
+what I'm going to need to do is put parentheses around that.
+
+00:34:28.000 --> 00:34:30.000
+So that gives me the new annual salary.
+
+00:34:30.000 --> 00:34:38.000
+Our algorithm for the monthly was new annual
+
+00:34:38.000 --> 00:34:44.000
+divided by 12, or months per year.
+
+00:34:44.000 --> 00:34:57.000
+And the retro pay was the new annual, the larger one,
+
+00:34:57.000 --> 00:35:12.000
+minus the annual.
+
+00:35:12.000 --> 00:35:15.000
+That would give me the retroactive pay for one year,
+
+00:35:15.000 --> 00:35:17.000
+but we only get the retroactive pay for six months.
+
+00:35:17.000 --> 00:35:22.000
+So I'm going to divide it by two.
+
+00:35:22.000 --> 00:35:25.000
+And again here, if we didn't have the parentheses on,
+
+00:35:25.000 --> 00:35:28.000
+that would give me the new annual salary
+
+00:35:28.000 --> 00:35:31.000
+minus the annual salary divided by two,
+
+00:35:31.000 --> 00:35:36.000
+which again would be much more than I actually deserved
+
+00:35:36.000 --> 00:35:38.000
+in the output.
+
+00:35:38.000 --> 00:35:41.000
+So this is the calculation or the processing part.
+
+00:35:41.000 --> 00:35:50.000
+This is the calculation or the processing part.
+
+00:35:50.000 --> 00:35:59.000
+Okay, so now let's look at that pay increase, 7.6 amount.
+
+00:35:59.000 --> 00:36:06.000
+And you can see that here in this expression here, 7.6%.
+
+00:36:06.000 --> 00:36:09.000
+Now if someone reads that,
+
+00:36:09.000 --> 00:36:15.000
+they're going to wonder what that 7.6% means.
+
+00:36:15.000 --> 00:36:20.000
+We call that 7.6% a magic number.
+
+00:36:20.000 --> 00:36:22.000
+And we should avoid doing that.
+
+00:36:22.000 --> 00:36:27.000
+We should use named constants, not literal values in your code.
+
+00:36:27.000 --> 00:36:30.000
+As a matter of fact, there's a software engineering rule
+
+00:36:30.000 --> 00:36:34.000
+called the magic number rule that says that any literal
+
+00:36:34.000 --> 00:36:40.000
+other than zero, one, or minus one is suspect in your code.
+
+00:36:40.000 --> 00:36:43.000
+And you should think about replacing it.
+
+00:36:43.000 --> 00:36:45.000
+So to create a constant,
+
+00:36:45.000 --> 00:36:48.000
+we use something that's similar to Java with final,
+
+00:36:48.000 --> 00:36:51.000
+but instead we use a qualifier called const.
+
+00:36:51.000 --> 00:36:58.000
+And so const double, and here I'm using the Google style,
+
+00:36:58.000 --> 00:37:03.000
+which is to create constants starting with the lower case k
+
+00:37:03.000 --> 00:37:05.000
+and then proper case.
+
+00:37:05.000 --> 00:37:10.000
+Here's the Java style for this.
+
+00:37:10.000 --> 00:37:13.000
+I'm going to try and use the Google style from now on
+
+00:37:13.000 --> 00:37:20.000
+because in C++ all caps usually mean something called a macro.
+
+00:37:20.000 --> 00:37:22.000
+So let's go ahead and add that.
+
+00:37:22.000 --> 00:37:25.000
+And I'm going to actually add two constants
+
+00:37:25.000 --> 00:37:28.000
+to our example program here.
+
+00:37:28.000 --> 00:37:36.000
+So in my processing, I'm going to create a const,
+
+00:37:36.000 --> 00:37:51.000
+const double k raised percent equals 0.0776.
+
+00:37:51.000 --> 00:37:55.000
+See if I can type it right, 076.
+
+00:37:55.000 --> 00:38:12.000
+And then in my code I'm going to replace that with k raised percent.
+
+00:38:12.000 --> 00:38:17.000
+I'm not quite sure why I didn't pick up the name here.
+
+00:38:17.000 --> 00:38:19.000
+Let's see if I spelled it right.
+
+00:38:19.000 --> 00:38:22.000
+Yeah, it'll probably pick it up in a couple seconds.
+
+00:38:22.000 --> 00:38:26.000
+We're going to create a second one here for this months per year.
+
+00:38:26.000 --> 00:38:31.000
+So I'm going to say const, just to give you some practice,
+
+00:38:31.000 --> 00:38:41.000
+constant k months per year is 12.
+
+00:38:41.000 --> 00:38:55.000
+I think we all know that, but k months per year.
+
+00:38:55.000 --> 00:38:57.000
+Okay, that looks pretty good.
+
+00:38:57.000 --> 00:39:03.000
+Let's go ahead and try running it again.
+
+00:39:03.000 --> 00:39:06.000
+So to clear the terminal like this,
+
+00:39:06.000 --> 00:39:10.000
+you can hold down the control key and press L.
+
+00:39:10.000 --> 00:39:12.000
+So that will clear the terminal.
+
+00:39:12.000 --> 00:39:15.000
+So I'm going to say make run again.
+
+00:39:15.000 --> 00:39:19.000
+Okay, I got an error.
+
+00:39:19.000 --> 00:39:24.000
+That's because I put a period here instead of a semicolon.
+
+00:39:24.000 --> 00:39:30.000
+There I got a semicolon.
+
+00:39:30.000 --> 00:39:34.000
+So let's clear the terminal and run it again.
+
+00:39:34.000 --> 00:39:44.000
+Okay, so it wants my current salary $10,000.
+
+00:39:44.000 --> 00:39:50.000
+Okay, well my output actually, we actually kind of skipped one step.
+
+00:39:50.000 --> 00:39:54.000
+And that is I've done the input, I've done the processing,
+
+00:39:54.000 --> 00:39:59.000
+but my output I'm still using constants here, literals.
+
+00:39:59.000 --> 00:40:04.000
+And so I want to take new annual,
+
+00:40:04.000 --> 00:40:08.000
+and I want to replace this number that I put in there.
+
+00:40:08.000 --> 00:40:10.000
+And I want to replace new monthly,
+
+00:40:10.000 --> 00:40:14.000
+and I want to replace that number that I put in there.
+
+00:40:14.000 --> 00:40:17.000
+And I want to take retro pay,
+
+00:40:17.000 --> 00:40:23.000
+and I want to take replace that number that I put in there.
+
+00:40:23.000 --> 00:40:27.000
+So once we've done that,
+
+00:40:27.000 --> 00:40:31.000
+now let's go ahead and make run.
+
+00:40:31.000 --> 00:40:34.000
+This time when I put in the $10,000,
+
+00:40:34.000 --> 00:40:37.000
+it's actually doing my processing and calculation.
+
+00:40:37.000 --> 00:40:41.000
+If I put in different numbers, I'd get different values out.
+
+00:40:41.000 --> 00:40:46.000
+And, ooh, it actually even looks worse than it did before.
+
+00:40:46.000 --> 00:40:48.000
+I still don't have the periods here.
+
+00:40:48.000 --> 00:40:51.000
+I have three decimal places there,
+
+00:40:51.000 --> 00:40:54.000
+and I have no decimal places there.
+
+00:40:54.000 --> 00:40:57.000
+So let's tackle that next.
+
+00:40:57.000 --> 00:41:01.000
+How do we format real numbers?
+
+00:41:01.000 --> 00:41:04.000
+And we format real numbers with something called
+
+00:41:04.000 --> 00:41:07.000
+input/output manipulators.
+
+00:41:07.000 --> 00:41:10.000
+These are in a different header file.
+
+00:41:10.000 --> 00:41:12.000
+They are not in I/O Stream.
+
+00:41:12.000 --> 00:41:16.000
+They are in the header file called I/O Manip.
+
+00:41:16.000 --> 00:41:18.000
+And these are objects.
+
+00:41:18.000 --> 00:41:21.000
+These provide objects and functions
+
+00:41:21.000 --> 00:41:25.000
+that we can set inside and print out to the stream
+
+00:41:25.000 --> 00:41:28.000
+to modify the way the stream works.
+
+00:41:28.000 --> 00:41:32.000
+Now, we're only going to memorize one of these now.
+
+00:41:32.000 --> 00:41:36.000
+So we're going to put in the I/O Manip.
+
+00:41:36.000 --> 00:41:38.000
+And I've probably already put it at the top.
+
+00:41:38.000 --> 00:41:43.000
+Yeah, I've already put it here at the top for this problem.
+
+00:41:43.000 --> 00:41:49.000
+And we're going to say, before we do any output,
+
+00:41:49.000 --> 00:41:52.000
+we're going to say, I want all of my real numbers
+
+00:41:52.000 --> 00:41:57.000
+to appear in fixed format, meaning not scientific notation.
+
+00:41:57.000 --> 00:42:00.000
+And when those real numbers appear,
+
+00:42:00.000 --> 00:42:03.000
+I want their decimal places or their precision
+
+00:42:03.000 --> 00:42:06.000
+to be two decimal places.
+
+00:42:06.000 --> 00:42:10.000
+Now again, this only needs to appear once.
+
+00:42:10.000 --> 00:42:13.000
+It only needs to appear once.
+
+00:42:13.000 --> 00:42:16.000
+So let's try our running it again.
+
+00:42:16.000 --> 00:42:22.000
+Make run $10,000.
+
+00:42:22.000 --> 00:42:26.000
+And notice now, we get-- oh, actually, I got--
+
+00:42:26.000 --> 00:42:29.000
+these numbers are wrong, aren't they?
+
+00:42:29.000 --> 00:42:31.000
+Oh, I did 1,000, not 10,000.
+
+00:42:31.000 --> 00:42:38.000
+Let me do 10,000.
+
+00:42:38.000 --> 00:42:41.000
+OK, so this time I got my two decimals there.
+
+00:42:41.000 --> 00:42:42.000
+I got my 0.67.
+
+00:42:42.000 --> 00:42:44.000
+I got my two decimals there.
+
+00:42:44.000 --> 00:42:52.000
+Now, once we've run this,
+
+00:42:52.000 --> 00:42:54.000
+I'm going to maximize that panel size,
+
+00:42:54.000 --> 00:42:58.000
+and I can minimize it there rather than bringing it up and down.
+
+00:42:58.000 --> 00:43:02.000
+Once I've done this, I can test to make sure if it's correct.
+
+00:43:02.000 --> 00:43:06.000
+So I'm going to say, make test.
+
+00:43:06.000 --> 00:43:12.000
+And notice it will check for all of these different kinds of inputs
+
+00:43:12.000 --> 00:43:15.000
+for the original salary.
+
+00:43:15.000 --> 00:43:20.000
+Notice it will say here my name and the instructor tests.
+
+00:43:20.000 --> 00:43:25.000
+And this is what you're going to take a picture of for your screen.
+
+00:43:25.000 --> 00:43:29.000
+At the top, it wants a picture of your source code.
+
+00:43:29.000 --> 00:43:34.000
+And then you're going to paste in a picture of your test results there.
+
+00:43:34.000 --> 00:43:37.000
+So those are the two things we're going to turn in for this.
+
+00:43:37.000 --> 00:43:42.000
+We don't--I'm going to minimize that again.
+
+00:43:42.000 --> 00:43:45.000
+We don't, when we're doing in-class exercises,
+
+00:43:45.000 --> 00:43:47.000
+you won't do make submit.
+
+00:43:47.000 --> 00:43:49.000
+If you tried to do make submit, it would tell you,
+
+00:43:49.000 --> 00:43:54.000
+I'm sorry, there's nothing like that here, so make submit.
+
+00:43:54.000 --> 00:43:58.000
+It'll say, no, there's no rule to make the target submit.
+
+00:43:58.000 --> 00:44:07.000
+And so that simply means we don't do that for in-class exercises.
+
+00:44:07.000 --> 00:44:11.000
+Okay, so that's it for the in-class exercise.
+
+00:44:11.000 --> 00:44:15.000
+Let me talk to you a little bit more about variables.
+
+00:44:15.000 --> 00:44:19.000
+In this class, unlike your first programming class,
+
+00:44:19.000 --> 00:44:25.000
+we're actually going to talk about things at a more technical level.
+
+00:44:25.000 --> 00:44:31.000
+And so we're going to use vocabulary more literally or specifically.
+
+00:44:31.000 --> 00:44:36.000
+So we have five terms that we use with a variable.
+
+00:44:36.000 --> 00:44:40.000
+We also use these with functions and classes.
+
+00:44:40.000 --> 00:44:46.000
+So a declaration associates a name with a type.
+
+00:44:46.000 --> 00:44:54.000
+And so a declaration of a variable has this keyword extern in front of it.
+
+00:44:54.000 --> 00:45:02.000
+So when I say extern int x, I'm telling the compiler that x is of type int.
+
+00:45:02.000 --> 00:45:08.000
+This does not specifically create the variable at this point.
+
+00:45:08.000 --> 00:45:13.000
+The variable can be created somewhere else in your program.
+
+00:45:13.000 --> 00:45:17.000
+And the variables in your program must be declared
+
+00:45:17.000 --> 00:45:20.000
+for the rest of your program to compile.
+
+00:45:20.000 --> 00:45:24.000
+They do not need to be defined. For instance,
+
+00:45:24.000 --> 00:45:28.000
+in your homework you have a variable assignment.
+
+00:45:28.000 --> 00:45:30.000
+Let's go look at one of your homeworks.
+
+00:45:30.000 --> 00:45:32.000
+So I'm going to go up to homework.
+
+00:45:32.000 --> 00:45:35.000
+I'm going to go homework 1.
+
+00:45:35.000 --> 00:45:39.000
+I'm going to look at homework1.cpp.
+
+00:45:39.000 --> 00:45:42.000
+And I'm going to bring this down.
+
+00:45:42.000 --> 00:45:45.000
+And notice there's this string assignment.
+
+00:45:45.000 --> 00:45:48.000
+Notice it's not just string assignment.
+
+00:45:48.000 --> 00:45:51.000
+It's extern string assignment.
+
+00:45:51.000 --> 00:45:58.000
+That means that this variable, the compiler knows that assignment is a string,
+
+00:45:58.000 --> 00:46:01.000
+but it doesn't see the definition of that.
+
+00:46:01.000 --> 00:46:04.000
+It's defined somewhere else.
+
+00:46:04.000 --> 00:46:10.000
+In this case, it's defined in this file, libh01.a.
+
+00:46:10.000 --> 00:46:13.000
+It's defined in some compile code.
+
+00:46:13.000 --> 00:46:21.000
+So a declaration allows us to use a variable that is defined elsewhere.
+
+00:46:21.000 --> 00:46:28.000
+A definition is something that actually creates an object or code.
+
+00:46:28.000 --> 00:46:36.000
+So when I write int y, the compiler reserves enough space for an int
+
+00:46:36.000 --> 00:46:43.000
+and remembers that that particular space it reserved is only for an int.
+
+00:46:43.000 --> 00:46:50.000
+So this is called a definition or, in this case, a defining declaration.
+
+00:46:50.000 --> 00:46:53.000
+It both associates the name y with int,
+
+00:46:53.000 --> 00:47:00.000
+and it creates the variable or allocates the space for the variable y at that time.
+
+00:47:00.000 --> 00:47:03.000
+Now I'm going to kind of go ahead a little bit
+
+00:47:03.000 --> 00:47:06.000
+and talk about something we're going to talk about later.
+
+00:47:06.000 --> 00:47:12.000
+So if in this variable I say int y,
+
+00:47:12.000 --> 00:47:17.000
+I have created a variable y inside that function.
+
+00:47:17.000 --> 00:47:19.000
+It's only visible inside that function,
+
+00:47:19.000 --> 00:47:24.000
+and it has automatically managed the memory for it.
+
+00:47:24.000 --> 00:47:30.000
+If I come up here and I say int x, I've created a variable x,
+
+00:47:30.000 --> 00:47:34.000
+but that variable is not automatically managed.
+
+00:47:34.000 --> 00:47:37.000
+It's put in what we call the static storage area.
+
+00:47:37.000 --> 00:47:40.000
+This is what we call a global variable,
+
+00:47:40.000 --> 00:47:45.000
+and y down here is a local variable.
+
+00:47:45.000 --> 00:47:50.000
+So both of those are allocated in different regions of memory,
+
+00:47:50.000 --> 00:47:54.000
+and we'll talk about that much later in the course.
+
+00:47:54.000 --> 00:48:01.000
+Now, in Java and in the C# programming language,
+
+00:48:01.000 --> 00:48:05.000
+defining a variable is not enough to use it.
+
+00:48:05.000 --> 00:48:08.000
+You must also give it a value.
+
+00:48:08.000 --> 00:48:11.000
+If you do not, you will get an error.
+
+00:48:11.000 --> 00:48:14.000
+In C++ that is not the case.
+
+00:48:14.000 --> 00:48:18.000
+In C++, if we don't use this variable, it is an error.
+
+00:48:18.000 --> 00:48:22.000
+If we tried to print out the variable y, it is an error,
+
+00:48:22.000 --> 00:48:27.000
+but it is not a syntax or a compiler time error.
+
+00:48:27.000 --> 00:48:30.000
+It is a logical error.
+
+00:48:30.000 --> 00:48:34.000
+And so to use a variable, you must provide it a value
+
+00:48:34.000 --> 00:48:39.000
+by using initialization, provide an initial value,
+
+00:48:39.000 --> 00:48:42.000
+assignment, copy a new value into the object
+
+00:48:42.000 --> 00:48:44.000
+after it's been created,
+
+00:48:44.000 --> 00:48:48.000
+or input, like we did for annual salary.
+
+00:48:48.000 --> 00:48:51.000
+That's just a special form of assignment.
+
+00:48:51.000 --> 00:48:53.000
+So I want to talk about each of these four things
+
+00:48:53.000 --> 00:48:57.000
+before we stop today's lecture.
+
+00:48:57.000 --> 00:49:00.000
+So initializing variables--
+
+00:49:00.000 --> 00:49:03.000
+so the variable definition doesn't create it.
+
+00:49:03.000 --> 00:49:07.000
+If I do this, it's--
+
+00:49:07.000 --> 00:49:10.000
+when you create the variable with a definition,
+
+00:49:10.000 --> 00:49:14.000
+you have to initialize it or otherwise populate it.
+
+00:49:14.000 --> 00:49:17.000
+Again, it's not a syntax error.
+
+00:49:17.000 --> 00:49:19.000
+It is a logic error.
+
+00:49:19.000 --> 00:49:22.000
+And there are three ways to initialize a variable.
+
+00:49:22.000 --> 00:49:27.000
+There is the new way that we have in C++11.
+
+00:49:27.000 --> 00:49:35.000
+Double x--or double c embraces the initial value.
+
+00:49:35.000 --> 00:49:37.000
+This is called uniform initialization.
+
+00:49:37.000 --> 00:49:40.000
+It didn't work before C++11.
+
+00:49:40.000 --> 00:49:43.000
+Of course, that's 10 years old now.
+
+00:49:43.000 --> 00:49:46.000
+This is called legacy initialization,
+
+00:49:46.000 --> 00:49:49.000
+double a equals 2.5.
+
+00:49:49.000 --> 00:49:53.000
+This is not direct--not assignment.
+
+00:49:53.000 --> 00:49:56.000
+We'll talk about what assignment is in a second.
+
+00:49:56.000 --> 00:49:58.000
+And this is direct initialization
+
+00:49:58.000 --> 00:50:02.000
+with the value inside the parenthesis.
+
+00:50:02.000 --> 00:50:05.000
+You should prefer this top one now.
+
+00:50:05.000 --> 00:50:11.000
+You should prefer the top one because in most languages,
+
+00:50:11.000 --> 00:50:12.000
+if I were to write this--
+
+00:50:12.000 --> 00:50:15.000
+now I'm just going to write some code here.
+
+00:50:15.000 --> 00:50:23.000
+If I were to write this in int x equals 3.15,
+
+00:50:23.000 --> 00:50:25.000
+most of you who have taken Java
+
+00:50:25.000 --> 00:50:29.000
+would recognize that that is an error, right?
+
+00:50:29.000 --> 00:50:33.000
+We can't store a 3.15 if x is an integer.
+
+00:50:33.000 --> 00:50:35.000
+We will lose the .15.
+
+00:50:35.000 --> 00:50:38.000
+In C++, that's not an error.
+
+00:50:38.000 --> 00:50:41.000
+It simply throws away the .5
+
+00:50:41.000 --> 00:50:44.000
+and converts it automatically to 3.
+
+00:50:44.000 --> 00:50:46.000
+And that's kind of error-prone, isn't it?
+
+00:50:46.000 --> 00:50:49.000
+You might have meant to make something a double,
+
+00:50:49.000 --> 00:50:51.000
+and instead you made it an int,
+
+00:50:51.000 --> 00:50:53.000
+and you saw the 3.15,
+
+00:50:53.000 --> 00:50:55.000
+and you thought, "For sure, I've made it a double."
+
+00:50:55.000 --> 00:50:59.000
+And so if we use the other kind of syntax here,
+
+00:50:59.000 --> 00:51:03.000
+if we instead wrote it like that,
+
+00:51:03.000 --> 00:51:05.000
+when we compiled our program,
+
+00:51:05.000 --> 00:51:08.000
+it would say that that is an error.
+
+00:51:08.000 --> 00:51:11.000
+So prefer this one with the braces
+
+00:51:11.000 --> 00:51:14.000
+instead of the old legacy style,
+
+00:51:14.000 --> 00:51:23.000
+which permits you to lose some precision on your variables.
+
+00:51:23.000 --> 00:51:25.000
+The same thing is true with assignment.
+
+00:51:25.000 --> 00:51:28.000
+So assignment doesn't have the type in front of it.
+
+00:51:28.000 --> 00:51:33.000
+It's not creating a value with initial value.
+
+00:51:33.000 --> 00:51:36.000
+So, for instance, look at this.
+
+00:51:36.000 --> 00:51:37.000
+Again, I'm going to go back here
+
+00:51:37.000 --> 00:51:40.000
+and just put code inside here.
+
+00:51:40.000 --> 00:51:44.000
+I can do this, int x.
+
+00:51:44.000 --> 00:51:46.000
+Okay, so that's assignment.
+
+00:51:46.000 --> 00:51:53.000
+I can do this, int y.
+
+00:51:53.000 --> 00:51:56.000
+But I cannot do this, int z.
+
+00:51:56.000 --> 00:51:58.000
+z equals 4.
+
+00:51:58.000 --> 00:52:02.000
+So this statement here is an assignment.
+
+00:52:02.000 --> 00:52:05.000
+It can only happen when your program runs.
+
+00:52:05.000 --> 00:52:08.000
+This statement isn't an initialization.
+
+00:52:08.000 --> 00:52:11.000
+It happens when your program is compiled.
+
+00:52:11.000 --> 00:52:16.000
+And so assignments are executable statements.
+
+00:52:16.000 --> 00:52:21.000
+They can only appear inside of a function.
+
+00:52:21.000 --> 00:52:27.000
+They only are executed when the program runs.
+
+00:52:27.000 --> 00:52:31.000
+The other thing about assignment is just like initialization,
+
+00:52:31.000 --> 00:52:37.000
+if you use this traditional style, num equals 3.159,
+
+00:52:37.000 --> 00:52:41.000
+even if num is an int or a character,
+
+00:52:41.000 --> 00:52:43.000
+it will do that assignment.
+
+00:52:43.000 --> 00:52:46.000
+And that obviously is kind of error prone.
+
+00:52:46.000 --> 00:52:50.000
+So you should get in the habit, when you use assignment,
+
+00:52:50.000 --> 00:52:53.000
+of putting the value inside braces.
+
+00:52:53.000 --> 00:52:57.000
+Now if n2 is an integer, the compiler will warn me,
+
+00:52:57.000 --> 00:53:00.000
+"Oh, you're trying to put the wrong kind of value in that integer.
+
+00:53:00.000 --> 00:53:03.000
+Do you really mean to do that?"
+
+00:53:03.000 --> 00:53:08.000
+And so again, C++11 has added several safety features
+
+00:53:08.000 --> 00:53:11.000
+that allow you to catch your errors earlier
+
+00:53:11.000 --> 00:53:15.000
+rather than later with a bug that appears in your code.
+
+00:53:15.000 --> 00:53:18.000
+Finally, the third way we can populate a variable
+
+00:53:18.000 --> 00:53:23.000
+is through input, like we did with annual salary.
+
+00:53:23.000 --> 00:53:27.000
+Okay, so let me talk about assignment.
+
+00:53:27.000 --> 00:53:31.000
+So assignment stores a value in a variable.
+
+00:53:31.000 --> 00:53:34.000
+The assignment operator is the equals token.
+
+00:53:34.000 --> 00:53:40.000
+It doesn't mean a quality like it would be in algebra.
+
+00:53:40.000 --> 00:53:45.000
+And assignment is an expression, not a statement.
+
+00:53:45.000 --> 00:53:47.000
+That means it has a value.
+
+00:53:47.000 --> 00:53:53.000
+That means I can say this.
+
+00:53:53.000 --> 00:54:03.000
+Again, I'm just using up one of my homework assignments here.
+
+00:54:03.000 --> 00:54:07.000
+I can say a equals b equals 7.
+
+00:54:07.000 --> 00:54:12.000
+That's because this expression copies 7 to b.
+
+00:54:12.000 --> 00:54:14.000
+That's the side effect.
+
+00:54:14.000 --> 00:54:16.000
+b is changed to 7.
+
+00:54:16.000 --> 00:54:18.000
+And the whole thing has a value.
+
+00:54:18.000 --> 00:54:20.000
+The value of that expression is 7,
+
+00:54:20.000 --> 00:54:24.000
+which is then copied to a in that case.
+
+00:54:24.000 --> 00:54:28.000
+So assignment is an expression, not a statement.
+
+00:54:28.000 --> 00:54:34.000
+Now of course, this, a equals 3, is an assignment statement
+
+00:54:34.000 --> 00:54:45.000
+because I made it a statement by putting a semicolon at the end of it.
+
+00:54:45.000 --> 00:54:48.000
+Okay, so the assignment statement has three parts.
+
+00:54:48.000 --> 00:54:52.000
+The object where the value is going to be stored.
+
+00:54:52.000 --> 00:54:55.000
+That appears on the left of the assignment operator,
+
+00:54:55.000 --> 00:54:59.000
+and so it's called an L value.
+
+00:54:59.000 --> 00:55:02.000
+An L value has to be an object.
+
+00:55:02.000 --> 00:55:06.000
+That means it has to be a region where we can store values.
+
+00:55:06.000 --> 00:55:09.000
+That means it has to be addressable.
+
+00:55:09.000 --> 00:55:13.000
+The assignment operator, the equals sign, as I mentioned before,
+
+00:55:13.000 --> 00:55:18.000
+is not the equivalency operator.
+
+00:55:18.000 --> 00:55:21.000
+And finally, the value to be stored.
+
+00:55:21.000 --> 00:55:25.000
+This appears on the right-hand side, so it's called an R value.
+
+00:55:25.000 --> 00:55:29.000
+And so let me give you another couple of examples here.
+
+00:55:29.000 --> 00:55:34.000
+Again, messing up my piece of homework code here.
+
+00:55:34.000 --> 00:55:41.000
+So int a equals 3, b equals 5.
+
+00:55:41.000 --> 00:55:44.000
+So I can write b equals a.
+
+00:55:44.000 --> 00:55:48.000
+In this case, a is an R value, b is an L value.
+
+00:55:48.000 --> 00:55:52.000
+I can write b equals 7.
+
+00:55:52.000 --> 00:55:57.000
+Again, b is an L value, 7 is an R value.
+
+00:55:57.000 --> 00:56:01.000
+I cannot write 7 equals b.
+
+00:56:01.000 --> 00:56:06.000
+I can't do that because the thing on the left is not an object in memory.
+
+00:56:06.000 --> 00:56:08.000
+It's not a place where I can store stuff.
+
+00:56:08.000 --> 00:56:11.000
+It is not an L value.
+
+00:56:11.000 --> 00:56:18.000
+One other thing about L values is we have one kind of L value that you cannot assign to.
+
+00:56:18.000 --> 00:56:21.000
+And that's called a non-modifiable L value.
+
+00:56:21.000 --> 00:56:28.000
+So const int x equals 3.
+
+00:56:28.000 --> 00:56:40.000
+So that's illegal because x is an L value because it appeared on the left-hand side of this assignment operator,
+
+00:56:40.000 --> 00:56:44.000
+but the const made it non-modifiable, so I can never again assign to it.
+
+00:56:44.000 --> 00:56:49.000
+I can only assign to it in its initial value.
+
+00:56:49.000 --> 00:56:57.000
+So constants are non-modifiable L values.
+
+00:56:57.000 --> 00:57:01.000
+Arrays are also non-modifiable L values.
+
+00:57:01.000 --> 00:57:06.000
+The last thing we looked at in this lecture is input.
+
+00:57:06.000 --> 00:57:13.000
+So for numeric input, we're going to use cn and the extraction operator.
+
+00:57:13.000 --> 00:57:22.000
+So these arrows pointing away from cn signify that we're extracting or reading characters from cn,
+
+00:57:22.000 --> 00:57:27.000
+and we're putting the result in this variable over here.
+
+00:57:27.000 --> 00:57:35.000
+Now the way the cn object works is it reads and it discards leading whitespace characters.
+
+00:57:35.000 --> 00:57:39.000
+So the user can type in space space 42.
+
+00:57:39.000 --> 00:57:41.000
+That's perfectly fine.
+
+00:57:41.000 --> 00:57:50.000
+Once it finds a character, so the user has typed in space space, discarded those, 42,
+
+00:57:50.000 --> 00:57:56.000
+it reads the characters and it matches the characters to the type of the variable.
+
+00:57:56.000 --> 00:57:59.000
+Suppose my type of my variable was an int.
+
+00:57:59.000 --> 00:58:07.000
+It would match the four and it would say, "Yes, I can use that," and it would save that variable.
+
+00:58:07.000 --> 00:58:10.000
+Reads the two. "Yes, I can do that."
+
+00:58:10.000 --> 00:58:15.000
+And then suppose the user typed x, so 42x.
+
+00:58:15.000 --> 00:58:20.000
+When it finds a character that doesn't match, it stops reading.
+
+00:58:20.000 --> 00:58:28.000
+So now the cn object has read and saved two characters, a four and a two, those two characters.
+
+00:58:28.000 --> 00:58:35.000
+It takes those two characters, reading is finished, and it converts those characters to binary data.
+
+00:58:35.000 --> 00:58:41.000
+It would convert the two characters, the character ASCII character four and the ASCII character two,
+
+00:58:41.000 --> 00:58:48.000
+convert those to the binary number 42, and it would store it in this variable.
+
+00:58:48.000 --> 00:58:55.000
+Now the question is, what happens if the input doesn't match the type of the variable?
+
+00:58:55.000 --> 00:59:06.000
+In other words, what happens if we said cn variable, the variable was of type int, and the person typed in dog?
+
+00:59:06.000 --> 00:59:14.000
+Well, in Java, what happens, and Python as well, the code goes into some kind of exception.
+
+00:59:14.000 --> 00:59:22.000
+Your program crashes, essentially, and prints nice red error messages, depending on the type of IDE you have.
+
+00:59:22.000 --> 00:59:30.000
+In C++, that doesn't happen. We say that cn goes into a fail state.
+
+00:59:30.000 --> 00:59:35.000
+It simply stops reading any other input until you deal with it.
+
+00:59:35.000 --> 00:59:41.000
+There is no runtime exception like there is in Java.
+
+00:59:41.000 --> 00:59:47.000
+Now, what if we had this statement, cn variable, the variable was an int,
+
+00:59:47.000 --> 00:59:55.000
+and we already saw that they could type in 42 dog, and it would read the 42, okay.
+
+00:59:55.000 --> 00:59:59.000
+We saw that they couldn't type in dog, cn would fail.
+
+00:59:59.000 --> 01:00:02.000
+What if they don't type in anything?
+
+01:00:02.000 --> 01:00:09.000
+Well, if they don't type in anything, if there is no input waiting, the program blocks.
+
+01:00:09.000 --> 01:00:14.000
+That's because the keyboard driver, basically, when you say cn variable,
+
+01:00:14.000 --> 01:00:23.000
+control is transferred from your program over to the keyboard device driver of the user.
+
+01:00:23.000 --> 01:00:29.000
+The device driver is telling it, wait a second, I'll wait for the user to type.
+
+01:00:29.000 --> 01:00:39.000
+So, you've seen when this happens, that you basically get a blinking cursor on the screen as the program waits for input.
+
+01:00:39.000 --> 01:00:44.000
+Okay, so that's it for lecture two. I'll see you next time.
+

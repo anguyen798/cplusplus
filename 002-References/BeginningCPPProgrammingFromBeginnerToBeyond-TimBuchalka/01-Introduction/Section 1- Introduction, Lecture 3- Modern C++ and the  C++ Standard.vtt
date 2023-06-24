@@ -1,0 +1,148 @@
+WEBVTT
+
+00:00:05.770 --> 00:00:09.760
+In this video, we'll take a brief look at the history of c++
+
+00:00:09.760 --> 00:00:12.360
+based on some major language milestones.
+
+00:00:13.260 --> 00:00:15.260
+In the early 1970s,
+
+00:00:15.260 --> 00:00:18.860
+Dennis Ritchie created the c programming language at Bell Labs.
+
+00:00:19.660 --> 00:00:23.960
+The development of c was closely tied to the development of the UNIX operating system.
+
+00:00:25.060 --> 00:00:30.260
+In 1979 Bjarne Stroustrup working on what became c++.
+
+00:00:30.860 --> 00:00:33.460
+He initially called it c with classes.
+
+00:00:33.460 --> 00:00:37.460
+His idea was to add 2 C object-oriented features that he knew
+
+00:00:37.460 --> 00:00:39.060
+from a language called similar.
+
+00:00:39.660 --> 00:00:42.660
+In 1983, the name was changed to c++,
+
+00:00:42.660 --> 00:00:45.960
+and the first commercial release was in 1989.
+
+00:00:46.560 --> 00:00:50.220
+In 1998, the c++ standards committee published the first
+
+00:00:50.220 --> 00:00:54.320
+c++ standard informally known as C++98.
+
+00:00:55.220 --> 00:00:58.420
+Multiple issues with C++98 were addressed,
+
+00:00:58.420 --> 00:01:01.120
+and the C++03 standard was released.
+
+00:01:02.120 --> 00:01:06.620
+Then in mid-2011, the C++11 standard was released, and then after that
+
+00:01:06.620 --> 00:01:09.620
+++14 and C++17.
+
+00:01:10.320 --> 00:01:13.680
+As you can see, C++ has been around for quite some time.
+
+00:01:14.340 --> 00:01:18.140
+Notice that I’ve bolded and italicized the last three standards.
+
+00:01:18.340 --> 00:01:21.640
+These standards are sort of a renaissance for C++
+
+00:01:21.640 --> 00:01:23.540
+that change the language going forward.
+
+00:01:23.940 --> 00:01:26.940
+These changes are what modern C++ is all about.
+
+00:01:27.740 --> 00:01:30.540
+Generally, C++ that's based on the language
+
+00:01:30.540 --> 00:01:33.540
+as defined before the C++11 standard
+
+00:01:33.540 --> 00:01:35.840
+is considered classical C++.
+
+00:01:36.500 --> 00:01:40.170
+And C++ based on C++11 and forward
+
+00:01:40.170 --> 00:01:42.170
+is considered modern C++.
+
+00:01:42.670 --> 00:01:44.670
+That's fine, but what does that mean?
+
+00:01:44.670 --> 00:01:49.570
+Well, modern C++ is a way of saying that it's C++ as defined today
+
+00:01:50.070 --> 00:01:52.570
+with new ways of managing objects in memory,
+
+00:01:52.570 --> 00:01:55.870
+lambdas, smart shared, pointers, threading and more.
+
+00:01:56.070 --> 00:01:58.570
+These terms may not mean anything to you yet.
+
+00:01:58.570 --> 00:02:01.770
+But modern C++ feels like a new programming language
+
+00:02:01.770 --> 00:02:03.770
+when compared to classical C++.
+
+00:02:04.760 --> 00:02:08.420
+In fact Bjarne Stroustrup described modern C++
+
+00:02:08.420 --> 00:02:12.920
+as a new language one with modern abstractions for ease of use and power. Along with
+
+00:02:13.220 --> 00:02:15.420
+Along with the language features themselves,
+
+00:02:15.420 --> 00:02:20.020
+modern C++  is also about best practices and core guidelines.
+
+00:02:20.520 --> 00:02:23.520
+In this course, we'll be using modern C++.
+
+00:02:23.720 --> 00:02:27.720
+As we go through the course, I'll sometimes mention that this feature was introduced in
+
+00:02:27.720 --> 00:02:31.720
+++ 11 or C++ 14 and so forth.
+
+00:02:32.220 --> 00:02:35.620
+I'll do that for a few reasons, but the most important is so that you know
+
+00:02:35.620 --> 00:02:39.620
+where to look for this feature as your C++ studies continue after you finish
+
+00:02:39.620 --> 00:02:40.620
+this course.
+
+00:02:41.120 --> 00:02:45.220
+I'll also show you best practices and gotchas that you should be aware of.
+
+00:02:45.520 --> 00:02:49.120
+If you're new to programming, you may be wondering how all this works.
+
+00:02:49.120 --> 00:02:51.120
+After all, it sometimes seems like magic.
+
+00:02:51.780 --> 00:02:55.780
+How can we get a computer to do what we wanted to do using a programming language,
+
+00:02:55.780 --> 00:02:57.380
+let's see in the next video.

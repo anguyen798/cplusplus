@@ -1,0 +1,250 @@
+WEBVTT
+
+00:00:05.200 --> 00:00:09.200
+Okay. So now that we've downloaded and installed the command line tools
+
+00:00:09.200 --> 00:00:11.200
+and the c++ compiler,
+
+00:00:11.200 --> 00:00:14.500
+we're now going to install the CodeLite integrated development environment.
+
+00:00:15.400 --> 00:00:17.280
+And CodeLite
+
+00:00:17.280 --> 00:00:21.280
+is an open source free cross-platform integrated development
+
+00:00:21.280 --> 00:00:25.280
+environment. It works with c, c++ PHP and JavaScript.
+
+00:00:25.280 --> 00:00:27.780
+We're only going to use the c++ side of it.
+
+00:00:27.780 --> 00:00:30.780
+It runs on OS 10 windows and Linux.
+
+00:00:30.780 --> 00:00:34.770
+So once you learn it on one platform, it's really easy to use it on others.
+
+00:00:34.770 --> 00:00:37.770
+So what we're going to do is we're going to go to the website for CodeLite.
+
+00:00:37.770 --> 00:00:42.270
+And you can see I've already got a browser open and I've typed in CodeLite.org
+
+00:00:42.470 --> 00:00:45.570
+that c-o-d-e-l-i-t-e.org.
+
+00:00:45.570 --> 00:00:47.930
+And you're going to get a website. And as I've said before,
+
+00:00:47.930 --> 00:00:49.930
+websites change over time.
+
+00:00:49.930 --> 00:00:52.430
+What we're going to be looking for is a download link.
+
+00:00:52.430 --> 00:00:54.430
+Now at the time of this recording
+
+00:00:54.980 --> 00:00:58.680
+CodeLite 14.0.0 was just released.
+
+00:00:58.680 --> 00:01:02.280
+So this is the latest and greatest, and that's what I'm going to install right now.
+
+00:01:02.280 --> 00:01:06.180
+So I'm going to look for a download link. You can see obviously this big green box right here.
+
+00:01:06.180 --> 00:01:09.680
+You can always go to the downloads as well. So I'm just going to click this,
+
+00:01:10.040 --> 00:01:12.040
+and that's going to take me to a page
+
+00:01:12.040 --> 00:01:15.440
+where i can donate to the developer if I choose to.
+
+00:01:15.440 --> 00:01:18.240
+I'm just going to select the download link right here.
+
+00:01:20.540 --> 00:01:24.540
+And we're looking for the OS 10 version. You can see it's the third one down here.
+
+00:01:24.540 --> 00:01:28.240
+CodeLite 14.0 app bundle for OS 10
+
+00:01:28.240 --> 00:01:30.540
+10.15 which is Catalina.
+
+00:01:30.940 --> 00:01:32.940
+I'm going to select that,
+
+00:01:34.300 --> 00:01:35.970
+and that'll start the download.
+
+00:01:35.970 --> 00:01:40.270
+Now I've already done it before so you can see that I'm doing it right here. So I'm just going to
+
+00:01:40.270 --> 00:01:42.630
+cancel that download because I've already done it.
+
+00:01:42.630 --> 00:01:45.330
+And I'm going to come up here to my downloads link.
+
+00:01:47.530 --> 00:01:49.030
+And you could see
+
+00:01:49.630 --> 00:01:53.130
+right there. Now you can see that it's downloaded as
+
+00:01:53.130 --> 00:01:56.730
+a .tar.gz file now.If you're not familiar with that
+
+00:01:56.730 --> 00:01:59.230
+the gc just means it's compressed
+
+00:01:59.230 --> 00:02:01.230
+and the tar means that it's an archive.
+
+00:02:01.230 --> 00:02:04.230
+So it's really very, very similar to a zip file
+
+00:02:04.230 --> 00:02:08.230
+if you're familiar with that. So what we need to do is we need to decompress it
+
+00:02:08.230 --> 00:02:09.730
+and untar it.
+
+00:02:09.980 --> 00:02:12.780
+Sounds complicated all you need to do is double click on it.
+
+00:02:12.780 --> 00:02:14.780
+So I'm going to show it in finder,
+
+00:02:15.380 --> 00:02:18.820
+and you could see right here is the file.
+
+00:02:18.820 --> 00:02:22.020
+So all I'm going to do here is double click on it.
+
+00:02:27.320 --> 00:02:31.660
+Okay. That's really it. And you can see the CodeLite application is now good to go.
+
+00:02:31.660 --> 00:02:33.160
+You can see the icon.
+
+00:02:33.160 --> 00:02:36.660
+Don't worry about this file down here that's just the recording file that I'm using.
+
+00:02:36.660 --> 00:02:39.860
+So all we need to do now is grab that
+
+00:02:39.860 --> 00:02:44.260
+and drag it into our applications folder here. So I'm going to select it
+
+00:02:44.760 --> 00:02:47.320
+and just drag it down to my applications.
+
+00:02:47.320 --> 00:02:49.680
+And that's it. It's now installed.
+
+00:02:49.680 --> 00:02:51.180
+Now we just need to run it.
+
+00:02:51.180 --> 00:02:53.780
+So what I'm going to do to run it is I'm just going to come up here,
+
+00:02:53.780 --> 00:02:55.980
+I'm going to close my browser and get it out of the way.
+
+00:02:56.280 --> 00:02:59.640
+I'm just going to come up to go applications
+
+00:03:00.440 --> 00:03:01.690
+and select CodeLite.
+
+00:03:02.350 --> 00:03:06.150
+I could also type it into spotlight search, but there's CodeLite right here.
+
+00:03:06.150 --> 00:03:07.680
+Now if I try to run it,
+
+00:03:09.280 --> 00:03:10.480
+which I just did,
+
+00:03:11.380 --> 00:03:13.680
+you sometimes will get this message
+
+00:03:13.680 --> 00:03:17.480
+CodeLite cannot be opened because the developer cannot be verified.
+
+00:03:17.480 --> 00:03:20.780
+This is pretty normal. It all depends on what your security settings are like.
+
+00:03:20.780 --> 00:03:23.140
+So you can move it to the trash or you can cancel.
+
+00:03:23.140 --> 00:03:26.350
+Well, I don't want to do either. I don't want to throw it away, and I don't want to cancel,
+
+00:03:26.350 --> 00:03:28.050
+but what I do want to do is run it.
+
+00:03:28.050 --> 00:03:32.750
+So what you can do is you do cancel here and then come up to your
+
+00:03:33.300 --> 00:03:35.000
+system preferences.
+
+00:03:35.250 --> 00:03:38.250
+And let me close this down just to get it out of the way as well.
+
+00:03:38.250 --> 00:03:40.570
+So you go to your system preferences
+
+00:03:40.570 --> 00:03:43.570
+and you can come to security and privacy right here.
+
+00:03:44.230 --> 00:03:45.630
+And I'll just select that
+
+00:03:47.930 --> 00:03:49.130
+and go to general.
+
+00:03:50.120 --> 00:03:53.220
+And then you can see right down here it says CodeLite was blocked
+
+00:03:53.220 --> 00:03:56.420
+from use because it's not from an identified developer.
+
+00:03:57.220 --> 00:03:59.720
+And what we'll do is we'll just say open anyway.
+
+00:03:59.720 --> 00:04:03.380
+And at that point it's good to go let me open it. Here we go.
+
+00:04:03.930 --> 00:04:07.230
+Here we go. Now it's a little bit different. Right now it says open.
+
+00:04:07.230 --> 00:04:09.830
+So I'm going to click open, and that's going to run CodeLite.
+
+00:04:09.830 --> 00:04:12.490
+I'm not going to do that right now. I'll do that in the next video,
+
+00:04:12.490 --> 00:04:14.350
+where we'll configure it to run.
+
+00:04:14.350 --> 00:04:17.750
+So at this point we've installed the command line tools,
+
+00:04:17.750 --> 00:04:19.650
+and we've installed CodeLite.
+
+00:04:19.650 --> 00:04:23.150
+So it's just a matter of getting it all ready to go in the next video we'll configure it,
+
+00:04:23.150 --> 00:04:26.150
+so we can build the c++ program. I'll see you in the next video.

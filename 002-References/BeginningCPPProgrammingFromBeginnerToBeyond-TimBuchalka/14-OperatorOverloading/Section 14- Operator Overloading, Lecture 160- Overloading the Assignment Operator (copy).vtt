@@ -1,0 +1,988 @@
+WEBVTT
+
+00:00:05.400 --> 00:00:09.000
+In this video, we'll learn how to overload the copy assignment operator.
+
+00:00:09.960 --> 00:00:14.660
+The assignment operator is used by c++ when it assigns one object to another object.
+
+00:00:15.320 --> 00:00:18.020
+Don't confuse assignment with initialization.
+
+00:00:18.380 --> 00:00:21.980
+Initialization is done by constructors when we create new objects.
+
+00:00:22.640 --> 00:00:26.140
+The statement mystring s2 equals s1
+
+00:00:26.140 --> 00:00:29.500
+is not an assignment statement, it's an initialization statement
+
+00:00:29.500 --> 00:00:32.000
+because s2 hasn't been created yet.
+
+00:00:32.440 --> 00:00:36.440
+C++ allows us to use the assignment operator in this context
+
+00:00:36.440 --> 00:00:41.340
+but this assignment is really equivalent to mystring s2 from s1.
+
+00:00:41.590 --> 00:00:44.590
+As shown in the comment, it will invoke the copy constructor.
+
+00:00:45.480 --> 00:00:48.480
+Notice the statement s2 equals s1.
+
+00:00:48.480 --> 00:00:52.280
+This is assignment since s2 has already been created and initialized
+
+00:00:52.280 --> 00:00:53.530
+previous to the statement.
+
+00:00:54.300 --> 00:00:57.900
+So an assignment occurs when an object has already been initialized
+
+00:00:57.900 --> 00:00:59.900
+and you want to assign another object to it.
+
+00:01:00.700 --> 00:01:04.300
+C++ provides a default way of assigning one object to another.
+
+00:01:04.300 --> 00:01:07.800
+And if you don't provide your own overloaded assignment operator,
+
+00:01:07.800 --> 00:01:11.300
+then c++ will provide a compiler generated one for you.
+
+00:01:11.960 --> 00:01:15.560
+This is very similar to what it did with the default copy constructor.
+
+00:01:16.160 --> 00:01:19.860
+The behavior for the default assignment is member-wise assignment,
+
+00:01:19.860 --> 00:01:21.860
+which means shallow copying.
+
+00:01:22.520 --> 00:01:24.880
+If your class doesn't have raw pointers,
+
+00:01:24.880 --> 00:01:28.480
+then the default assignment operator will probably be just fine.
+
+00:01:28.480 --> 00:01:31.480
+However, in mystream class, we have a raw pointer,
+
+00:01:31.480 --> 00:01:33.680
+so we'll overload the assignment operator
+
+00:01:33.680 --> 00:01:36.980
+so that it deep copies the pointed two data on the heap.
+
+00:01:38.280 --> 00:01:41.580
+So how exactly do we overload the copy assignment operator?
+
+00:01:42.080 --> 00:01:46.080
+First, the assignment operator must be overloaded as a member function,
+
+00:01:46.080 --> 00:01:48.330
+so we can provide a method prototype
+
+00:01:48.330 --> 00:01:51.330
+that has the general pattern shown in the top declaration.
+
+00:01:52.230 --> 00:01:55.230
+We then simply replace type with the name of our class.
+
+00:01:55.780 --> 00:01:58.580
+Notice that the name of the method is operator equal.
+
+00:01:59.240 --> 00:02:01.900
+That's how we declare methods that overload operators.
+
+00:02:01.900 --> 00:02:05.900
+The keyword operator followed by the operator that we wish to overload.
+
+00:02:06.400 --> 00:02:08.100
+So for the mystring class,
+
+00:02:08.100 --> 00:02:12.400
+the overloaded assignment operator method returns a reference to a mystring object.
+
+00:02:12.800 --> 00:02:16.300
+This is important since we want to avoid extra copies
+
+00:02:16.300 --> 00:02:17.800
+if we return by value.
+
+00:02:17.800 --> 00:02:22.800
+And we also want to allow chain assignments, such as p1 equals p2 equals p3.
+
+00:02:23.950 --> 00:02:25.950
+We'll define this method in the next slide,
+
+00:02:25.950 --> 00:02:29.940
+but once it's defined, we can write code like s2 equals s1,
+
+00:02:29.940 --> 00:02:32.740
+which assigns object s1 to object s2.
+
+00:02:33.040 --> 00:02:35.340
+That's very readable in writable code,
+
+00:02:35.340 --> 00:02:39.840
+and it feels exactly like if we were assigning one of the c++ built-in types,
+
+00:02:40.240 --> 00:02:43.240
+but now it's working with our own user-defined classes.
+
+00:02:43.240 --> 00:02:45.040
+That's pretty easy and pretty neat.
+
+00:02:45.040 --> 00:02:49.400
+The compiler will actually convert the s2 equals s1 assignment statement
+
+00:02:49.400 --> 00:02:53.760
+to s2.operator equal and pass in s1 behind the scenes.
+
+00:02:54.260 --> 00:02:57.620
+Let's see how we would implement the copy assignment for the mystring class.
+
+00:02:58.920 --> 00:03:02.170
+Here's the code for the overloaded copy assignment operator.
+
+00:03:02.170 --> 00:03:04.570
+It looks complicated but it really isn't.
+
+00:03:04.570 --> 00:03:07.930
+We'll break this down into the basic steps over the next few slides.
+
+00:03:08.810 --> 00:03:12.250
+Remember, the object on the left-hand side of an assignment statement
+
+00:03:12.250 --> 00:03:14.450
+is referred to by the this pointer.
+
+00:03:14.810 --> 00:03:18.310
+And the object on the right-hand side is being passed into the method.
+
+00:03:18.310 --> 00:03:22.670
+I've named the right-hand side object RHS for right-hand side to be clear.
+
+00:03:23.570 --> 00:03:27.370
+Since we're assigning the right-hand side object to the left-hand side object,
+
+00:03:27.370 --> 00:03:31.140
+we must make a deep copy of the right-hand side object's attributes
+
+00:03:31.140 --> 00:03:33.500
+and copy them over to the left-hand side object.
+
+00:03:33.500 --> 00:03:36.100
+So what does this mean semantically?
+
+00:03:36.100 --> 00:03:40.200
+Well, the left-hand side object or this object will be overwritten.
+
+00:03:40.600 --> 00:03:43.600
+So we need to de-allocate anything it refers to on the heap.
+
+00:03:44.300 --> 00:03:45.960
+Then we have to allocate space
+
+00:03:45.960 --> 00:03:49.460
+in the left-hand side object for the right-hand side object's data,
+
+00:03:49.460 --> 00:03:53.260
+and then we finally copy the data over to the left side from the right side.
+
+00:03:54.060 --> 00:03:56.560
+Let's go over this code one statement at a time
+
+00:03:56.560 --> 00:03:59.260
+since I know it can be hard to follow when you're first learning this.
+
+00:04:01.030 --> 00:04:04.630
+The first thing we want to do is check to see if we're doing self-assignment.
+
+00:04:04.630 --> 00:04:08.930
+For example, p1 equals p1 or assign p1 to itself.
+
+00:04:09.430 --> 00:04:14.030
+We can easily check for that by checking the address of the left-hand side object,
+
+00:04:14.030 --> 00:04:16.030
+which is in the pointer this
+
+00:04:16.030 --> 00:04:19.030
+and comparing it to the address of the right hand object.
+
+00:04:19.690 --> 00:04:23.690
+If they're the same, then we really don't want to do anything and we just return
+
+00:04:23.690 --> 00:04:26.690
+de-reference this, which is the left-side object.
+
+00:04:27.910 --> 00:04:31.570
+If we don't have self-assignment, then we need to de-allocate storage
+
+00:04:31.570 --> 00:04:35.070
+for this string since it's pointing to a string on the heap.
+
+00:04:35.870 --> 00:04:39.670
+We need to de-allocate the storage. Otherwise when we copy the new data over,
+
+00:04:39.670 --> 00:04:42.030
+we'll orphan this memory and end up with a memory leak.
+
+00:04:43.690 --> 00:04:48.390
+Now the left side object is ready to be assigned from the data from the right side object,
+
+00:04:48.390 --> 00:04:51.990
+but we haven't yet allocated storage on the heap for the deep copy.
+
+00:04:52.240 --> 00:04:54.540
+So we need to allocate enough storage on the heap,
+
+00:04:54.540 --> 00:04:57.840
+that's the size of the string in the right object plus 1
+
+00:04:57.840 --> 00:05:00.340
+since we need the space for the string terminator.
+
+00:05:00.940 --> 00:05:02.840
+That's it. Now we can do the copy.
+
+00:05:04.200 --> 00:05:07.750
+We can perform the copy by copying over one character at a time
+
+00:05:07.750 --> 00:05:09.350
+until we see the null character.
+
+00:05:09.710 --> 00:05:11.710
+But since we're using a c-style string,
+
+00:05:11.710 --> 00:05:15.370
+we can simply call the string library method stood string copy,
+
+00:05:15.370 --> 00:05:19.130
+which copies the string from the right-hand side object to the left-hand side object.
+
+00:05:19.130 --> 00:05:23.730
+That's it. We're done. All we have to do now is return the left side object so we can support
+
+00:05:23.730 --> 00:05:24.720
+chain assignment.
+
+00:05:25.520 --> 00:05:27.520
+This may seem like a lot at first,
+
+00:05:27.520 --> 00:05:31.520
+but it's a pattern or idiom that we always use in c++ when we're doing deep
+
+00:05:31.520 --> 00:05:32.520
+copy assignment.
+
+00:05:33.320 --> 00:05:36.020
+In this case, we only have a single raw pointer.
+
+00:05:36.020 --> 00:05:40.420
+If your class has multiple raw pointers, then don't forget to deep copy each of them.
+
+00:05:41.520 --> 00:05:45.520
+Let's go over to the IDE and step through copy assignment using the debugger
+
+00:05:45.520 --> 00:05:48.120
+so you can see exactly how this works in live code.
+
+00:05:48.820 --> 00:05:53.720
+Okay. So I'm back in the IDE. And in this case, I'm in the section 14 workspace,
+
+00:05:54.080 --> 00:05:57.680
+and I'm in the mystring_copy_assignment project.
+
+00:05:58.380 --> 00:06:00.180
+What we want to do now is
+
+00:06:00.180 --> 00:06:04.180
+we've got our mystream class and it's really basic. Right now it's only got the constructors,
+
+00:06:04.180 --> 00:06:07.680
+the copy constructor, the couple of getters and the display,
+
+00:06:07.680 --> 00:06:11.360
+just as we've seen before. And what we want to do is we want to add
+
+00:06:11.360 --> 00:06:15.360
+the copy assignment operator. We want to overload that and add it to the class.
+
+00:06:15.360 --> 00:06:19.360
+But before we do that, let's talk about the semantics of exactly what we're trying
+
+00:06:19.360 --> 00:06:22.510
+to achieve. So I've written four lines of code right here
+
+00:06:22.510 --> 00:06:26.110
+in my main. I've actually got a lot more in the main, which i will uncomment out later.
+
+00:06:26.660 --> 00:06:30.650
+So let's talk about these four lines of code and talk about it in the context of assignment.
+
+00:06:31.150 --> 00:06:35.650
+You can see what's going on here. I'm instantiating my object a.
+
+00:06:35.650 --> 00:06:38.950
+It's a mystring object, and I'm initializing it to hello.
+
+00:06:38.950 --> 00:06:43.710
+So when this line executes, I will have something like this. I'll have my a object.
+
+00:06:43.710 --> 00:06:46.710
+It will have an str attribute, which is a pointer.
+
+00:06:47.210 --> 00:06:49.410
+Hello will be allocated on the heap.
+
+00:06:50.400 --> 00:06:54.400
+Remember, there's a null character there at the end. So this is really six characters big,
+
+00:06:54.760 --> 00:06:57.990
+and that str attribute will be pointing to it.
+
+00:06:57.990 --> 00:07:01.990
+So that's the condition that I'll be in after the construction of the a object.
+
+00:07:01.990 --> 00:07:05.980
+Then when we create the b object, will be in a situation like this
+
+00:07:06.280 --> 00:07:09.280
+where this will be b, this will be str again.
+
+00:07:09.280 --> 00:07:12.080
+In this case, I'm pointing to an empty stream because that's
+
+00:07:12.080 --> 00:07:14.740
+how we defined our no args constructor,
+
+00:07:14.990 --> 00:07:16.650
+so will be something like that.
+
+00:07:16.650 --> 00:07:21.250
+Remember, the empty string consists of a single character with the null character in it.
+
+00:07:22.550 --> 00:07:26.650
+Then we're going to execute this code right here, b equals a or assign a to b.
+
+00:07:27.150 --> 00:07:28.950
+In this case, this is assignment
+
+00:07:28.950 --> 00:07:31.950
+because b already exists, b has been instantiated.
+
+00:07:32.500 --> 00:07:34.500
+So what we want to happen is a
+
+00:07:35.000 --> 00:07:38.000
+couple of things. First, we want to be sure that we're not assigning to ourselves,
+
+00:07:38.000 --> 00:07:41.000
+b equals b or a equals a, that's easy to do.
+
+00:07:42.250 --> 00:07:46.650
+Then what we'll do is we really want b to contain that hello, right.
+
+00:07:46.650 --> 00:07:50.550
+But we don't want this situation like we had with a shallow copy.
+
+00:07:50.550 --> 00:07:53.210
+We want to create a copy of that hello string
+
+00:07:53.210 --> 00:07:56.870
+on the heap. So in order to do that, there's a couple of things I need to do.
+
+00:07:56.870 --> 00:08:00.170
+First of all, I need to de-allocate this right,
+
+00:08:00.170 --> 00:08:03.670
+and this could be a lot bigger than just an empty string. This could be a very large string.
+
+00:08:03.670 --> 00:08:05.270
+So i want to de-allocate that.
+
+00:08:05.630 --> 00:08:09.630
+Then I want to allocate space for 6 characters, right, because I'm
+
+00:08:09.630 --> 00:08:14.230
+copying hello in there and hello as h-e-l-l-o and the null terminator.
+
+00:08:14.230 --> 00:08:18.730
+I want to be in this situation, I want to copy
+
+00:08:19.390 --> 00:08:20.390
+hello over.
+
+00:08:21.490 --> 00:08:22.990
+And at this point,
+
+00:08:22.990 --> 00:08:26.290
+what we've got is this kind of situation. All this is gone now.
+
+00:08:26.650 --> 00:08:29.530
+That's been de-allocated so we don't leak memory there.
+
+00:08:29.530 --> 00:08:31.030
+And this is where we want to be with b.
+
+00:08:31.830 --> 00:08:35.830
+Okay. So that's where we're headed. You can see the steps that we need to do visually here.
+
+00:08:35.830 --> 00:08:37.630
+We're going to do them in code next.
+
+00:08:37.630 --> 00:08:41.730
+Now this example here is also an assignment because we're assigning something to b
+
+00:08:41.730 --> 00:08:45.730
+and b already exists. In this case, it's a little bit different because
+
+00:08:45.730 --> 00:08:49.190
+we don't have an operator equal that expects a character pointer,
+
+00:08:49.190 --> 00:08:51.690
+right, which is what this is right here, c-style string.
+
+00:08:51.690 --> 00:08:55.940
+So what we need to do is we need to construct a temporary object
+
+00:08:55.940 --> 00:08:58.900
+using the overloaded constructor just like what we did over here,
+
+00:08:59.600 --> 00:09:03.900
+and then assign that temporary object to b and then that will eventually be destroyed,
+
+00:09:03.900 --> 00:09:07.300
+the temporary object will. Okay. So that's it. That's where we're going.
+
+00:09:07.300 --> 00:09:10.600
+Let me clear this, and we'll start writing the code now.
+
+00:09:10.600 --> 00:09:12.600
+And then once we're done, we'll walk through this example.
+
+00:09:13.150 --> 00:09:15.590
+So let's start with our header file.
+
+00:09:16.140 --> 00:09:19.140
+What we need to do is we need to write the prototype here,
+
+00:09:19.140 --> 00:09:22.740
+and I'll leave a little bit of extra space, so it's really clear for the
+
+00:09:22.740 --> 00:09:24.740
+overloaded assignment operator.
+
+00:09:25.240 --> 00:09:29.240
+So we know it returns a mystring object by reference.
+
+00:09:29.900 --> 00:09:32.600
+We know that the name is operator equal,
+
+00:09:32.600 --> 00:09:36.800
+that's just the way we name operator methods in c++.
+
+00:09:37.200 --> 00:09:40.000
+That just tells the compiler they're overloading the
+
+00:09:40.000 --> 00:09:41.500
+equal or assignment operator.
+
+00:09:42.000 --> 00:09:46.500
+What does it expect? Well, the right-hand side. Remember, the left-hand side is this. I
+
+00:09:46.500 --> 00:09:51.400
+It's a pointer the current object. The right-hand side is simply going to be a constant
+
+00:09:51.400 --> 00:09:54.700
+mystring reference.
+
+00:09:55.300 --> 00:09:58.800
+And I'll name it right-hand side. We don't have to provide a name here in the prototype.
+
+00:09:59.460 --> 00:10:03.460
+And I'll just say copy assignment,
+
+00:10:04.260 --> 00:10:07.620
+that's our prototype. Again, be really sure that you understand this.
+
+00:10:07.620 --> 00:10:11.220
+We're overloading the equal operator or the assignment operator.
+
+00:10:12.020 --> 00:10:14.220
+The left-hand side is the current object.
+
+00:10:14.220 --> 00:10:16.420
+The right-hand side is what we're assigning.
+
+00:10:17.020 --> 00:10:20.020
+And we want this guy const because we really don't want to mess with it.
+
+00:10:20.020 --> 00:10:22.520
+It's not our object, so I don't want to mess with it at all.
+
+00:10:23.020 --> 00:10:27.020
+Also remember, this is not construction. This is assignment.
+
+00:10:27.020 --> 00:10:29.020
+That left-hand side already exists.
+
+00:10:29.570 --> 00:10:34.170
+Okay. So now let's write the code for that copy assignment.
+
+00:10:34.170 --> 00:10:37.170
+Now I've made a little room here so that I can
+
+00:10:37.170 --> 00:10:40.570
+put in the code and we've also got some break points. So I've already gone ahead and put one in.
+
+00:10:40.570 --> 00:10:43.870
+So what we'll do is we're now going to implement that. So mystring,
+
+00:10:44.750 --> 00:10:48.050
+right, we're returning a reference and this is
+
+00:10:48.710 --> 00:10:49.810
+operator
+
+00:10:50.810 --> 00:10:51.610
+equal.
+
+00:10:53.610 --> 00:10:57.510
+What does it expect, just like the prototype costs to mystring
+
+00:10:57.510 --> 00:10:59.010
+reference right-hand side.
+
+00:11:01.310 --> 00:11:03.810
+Okay. Now the first thing I want to do is I just want to do a little output
+
+00:11:03.810 --> 00:11:06.110
+statement so that we know when this is being called.
+
+00:11:06.510 --> 00:11:08.510
+So I'll just say std cout,
+
+00:11:10.210 --> 00:11:12.210
+and we'll just say something like copy assignment.
+
+00:11:15.210 --> 00:11:16.510
+And we'll just std endline.
+
+00:11:19.110 --> 00:11:19.710
+Perfect.
+
+00:11:20.210 --> 00:11:21.910
+So what do we need to do first? Well,
+
+00:11:21.910 --> 00:11:25.900
+first thing we need to do is make sure that we're not assigning to ourselves. That's simple enough.
+
+00:11:25.900 --> 00:11:29.260
+If this -- now remember,
+
+00:11:29.260 --> 00:11:33.950
+this is a pointer to the current object and a pointer holds an address.
+
+00:11:33.950 --> 00:11:38.050
+So if this is the address of the right-hand side,
+
+00:11:38.050 --> 00:11:40.350
+in other words, really the same object,
+
+00:11:40.350 --> 00:11:43.350
+then all I want to do is just return this,
+
+00:11:44.050 --> 00:11:47.150
+okay. And we need to de-reference this in this case.
+
+00:11:47.150 --> 00:11:51.150
+Remember, if we just say return this, this won't compile because then that means that this guy would be
+
+00:11:51.150 --> 00:11:53.150
+expecting a pointer back,
+
+00:11:53.150 --> 00:11:56.850
+but we're not. We're doing a reference back, not a pointer.
+
+00:11:56.850 --> 00:11:59.150
+Okay. So we're gonna pass up the reference back.
+
+00:11:59.700 --> 00:12:00.600
+That's it.
+
+00:12:00.600 --> 00:12:03.800
+Now we start doing the real work. First thing we need to do is,
+
+00:12:03.800 --> 00:12:07.790
+remember, that this object is the one that's being copied into.
+
+00:12:07.790 --> 00:12:09.590
+So it may be pointing to something, right,
+
+00:12:09.590 --> 00:12:12.490
+that str attribute may be pointing to a string.
+
+00:12:12.490 --> 00:12:16.290
+Actually, it is pointing to a string even if it's just an empty string.
+
+00:12:16.290 --> 00:12:18.290
+So what we need to do is just delete
+
+00:12:19.990 --> 00:12:23.890
+and make sure you use the brackets here because it's an array of characters we're deleting
+
+00:12:23.890 --> 00:12:24.520
+str,
+
+00:12:25.020 --> 00:12:27.380
+okay. If this makes it more clear,
+
+00:12:27.880 --> 00:12:31.240
+then feel free to use the this keyword right there,
+
+00:12:31.600 --> 00:12:32.600
+it's all the same.
+
+00:12:33.400 --> 00:12:36.400
+Then we're going to say str equals
+
+00:12:36.760 --> 00:12:41.260
+new character. We need to allocate that array of characters on the heap.
+
+00:12:41.920 --> 00:12:44.580
+And how many characters do we need to allocate? Well,
+
+00:12:44.580 --> 00:12:48.080
+we're copying the right-hand side object data into it, right.
+
+00:12:48.080 --> 00:12:51.380
+So the right-hand side object has an str attribute.
+
+00:12:51.380 --> 00:12:53.280
+So however big that string is
+
+00:12:53.280 --> 00:12:57.080
+plus 1 because we need space for the string terminator.
+
+00:12:57.080 --> 00:12:59.980
+So how big is this going to be? Well, it's going to be --
+
+00:13:02.580 --> 00:13:07.180
+take the string length of not str
+
+00:13:07.180 --> 00:13:09.780
+right but right-hand side str.
+
+00:13:11.580 --> 00:13:15.940
+And since we're a member method we have access to that and we want to add 1.
+
+00:13:18.940 --> 00:13:22.240
+Perfect. So now we've allocated the space that we need on the heap,
+
+00:13:22.640 --> 00:13:27.590
+the only thing left really is to copy that string over from the right-hand side and then just return,
+
+00:13:27.590 --> 00:13:30.890
+so let's do that. So we'll do stud string copy
+
+00:13:32.590 --> 00:13:34.590
+to str again,
+
+00:13:34.890 --> 00:13:36.990
+you could say this str if that's clear.
+
+00:13:38.670 --> 00:13:42.670
+From RHS, right-hand, side string so that's.
+
+00:13:42.670 --> 00:13:46.670
+The string copy the string copy function simply copies one character at
+
+00:13:46.670 --> 00:13:49.030
+a time until it hits the terminating character.
+
+00:13:49.030 --> 00:13:51.030
+It copies that as well, then it's done.
+
+00:13:51.690 --> 00:13:53.890
+And the last thing to do is just return
+
+00:13:54.690 --> 00:13:57.490
+the object that we just copied into, the left-hand side.
+
+00:13:58.390 --> 00:14:01.390
+That's it. Let's go and run this.
+
+00:14:01.690 --> 00:14:05.190
+But before we do that, let's actually debug it. So I'm going to go back to my main,
+
+00:14:05.190 --> 00:14:08.750
+and let's start the debugger. So this is where we're at.
+
+00:14:09.250 --> 00:14:13.050
+Let's step through this so we can really understand what's going on here.
+
+00:14:13.050 --> 00:14:15.050
+At this point, I'm on line 10.
+
+00:14:15.850 --> 00:14:19.850
+I'm constructing or instantiating that a object, right.
+
+00:14:19.850 --> 00:14:23.210
+And I'm providing some initialization information, this string.
+
+00:14:23.210 --> 00:14:26.070
+So in this case, I'm going to call the overloaded constructor.
+
+00:14:26.070 --> 00:14:27.870
+So let's do that. Let's step through.
+
+00:14:28.530 --> 00:14:31.530
+There is the call to the overloaded constructor that expects
+
+00:14:31.530 --> 00:14:36.030
+a character pointer just like we expect, it's not null. So we're gonna skip the if part,
+
+00:14:37.030 --> 00:14:40.830
+and we're right here. So how many characters are we allocating for this guy?
+
+00:14:40.830 --> 00:14:45.430
+Well, whatever the string that was being passed in by plus 1 for the null terminator.
+
+00:14:45.430 --> 00:14:48.430
+And then we're just copying it over. So let's step through this.
+
+00:14:48.730 --> 00:14:51.930
+And when we get back here, you can see that a right here,
+
+00:14:52.930 --> 00:14:55.810
+that str attribute is pointing to the string hello,
+
+00:14:55.810 --> 00:14:57.310
+exactly like we expected.
+
+00:14:57.910 --> 00:15:01.270
+The b object, same idea except we're calling a no args
+
+00:15:01.270 --> 00:15:03.930
+constructor since we're not providing any information.
+
+00:15:03.930 --> 00:15:07.730
+And when we get back, we expect b's string attribute to be an empty string.
+
+00:15:07.730 --> 00:15:08.930
+be an empty string. So let's do that.
+
+00:15:09.730 --> 00:15:13.730
+There you can see the no args constructor. It's simply creating one character
+
+00:15:13.730 --> 00:15:15.630
+and putting the null terminator in there.
+
+00:15:16.780 --> 00:15:18.780
+So at this point, you can see that
+
+00:15:18.780 --> 00:15:22.280
+a is hello and b is that empty string right here.
+
+00:15:23.080 --> 00:15:25.680
+Now is the assignment. I'm assigning a to b.
+
+00:15:25.680 --> 00:15:29.780
+So let's step through this. We expect operator equal to be called,
+
+00:15:30.580 --> 00:15:34.580
+and that's exactly what happens right here. We're on line 38 of the
+
+00:15:34.580 --> 00:15:36.780
+copy assignment overloaded method.
+
+00:15:37.080 --> 00:15:39.080
+We display copy assignment.
+
+00:15:39.080 --> 00:15:41.080
+We're going to check for self-assignment.
+
+00:15:41.080 --> 00:15:43.580
+Here we don't have self-assignment, so that will be skipped.
+
+00:15:43.880 --> 00:15:47.980
+Now we're going to delete the left-hand side object's
+
+00:15:47.980 --> 00:15:50.480
+string on the heap. So we're deleting that.
+
+00:15:52.680 --> 00:15:55.180
+And at this point, we're going to copy.
+
+00:15:55.180 --> 00:15:58.080
+And you can see that the right-hand side is hello
+
+00:15:58.480 --> 00:16:02.280
+and the left-hand side right now is just pointing to garbage, right,
+
+00:16:02.280 --> 00:16:04.640
+because we've deleted that, so it's invalid memory.
+
+00:16:04.640 --> 00:16:06.440
+We're really pointing anywhere right now.
+
+00:16:06.440 --> 00:16:10.340
+So what we're going to do is simply replace that with
+
+00:16:10.340 --> 00:16:13.700
+an area that I'm creating on the heap that's going to store the string that,
+
+00:16:13.700 --> 00:16:16.200
+I'm just about to copy. So let's do that now,
+
+00:16:16.860 --> 00:16:19.460
+and then we're going to copy that string over.
+
+00:16:19.460 --> 00:16:21.360
+So at this point, I'll refresh here.
+
+00:16:21.360 --> 00:16:24.590
+And you can see that right-hand side was still hello, and now this
+
+00:16:25.090 --> 00:16:27.590
+is also hello. And there you go.
+
+00:16:28.490 --> 00:16:33.090
+And you can see from the addresses, they are indeed two unique areas in memory.
+
+00:16:33.090 --> 00:16:36.090
+I'm returning the object by reference,
+
+00:16:36.890 --> 00:16:40.890
+and that's it. I'll refresh this side again. And now we've got a and b,
+
+00:16:40.890 --> 00:16:44.690
+and they should be the same: a is hello, b is hello, and there, again,
+
+00:16:44.690 --> 00:16:46.190
+two different areas in memory.
+
+00:16:47.090 --> 00:16:50.790
+This example here what's going to happen is on line 14 is
+
+00:16:50.790 --> 00:16:55.390
+we're going to call the overloaded operator, again, to create that object.
+
+00:16:55.790 --> 00:16:58.570
+And then once that object is created, we'll assign it over.
+
+00:16:58.570 --> 00:17:02.690
+So that temporary object is going to be assigned over. So let's just walk through that really quickly here.
+
+00:17:02.690 --> 00:17:06.790
+And you can see right here I'm calling the overloaded constructor,
+
+00:17:06.790 --> 00:17:09.150
+which is going to create a temporary object.
+
+00:17:10.300 --> 00:17:12.300
+And now that temporary object
+
+00:17:12.300 --> 00:17:16.100
+will be assigned. So you can see the assignment operator being called now.
+
+00:17:16.100 --> 00:17:19.700
+So I'll walk through that again. We delete what we're at.
+
+00:17:19.700 --> 00:17:20.800
+We move it over.
+
+00:17:22.700 --> 00:17:26.600
+And we get rid of the temporary object. That's the destructor being called right there.
+
+00:17:29.400 --> 00:17:31.200
+That's it so we're done here.
+
+00:17:31.200 --> 00:17:34.560
+You can see a is hello, and b is now this is a test.
+
+00:17:34.960 --> 00:17:37.760
+And as we unwind, we're going to
+
+00:17:38.160 --> 00:17:41.460
+call the destructor for b and then the destructor for a,
+
+00:17:41.460 --> 00:17:42.960
+and our program is done.
+
+00:17:44.210 --> 00:17:47.010
+Okay. So that gives you an idea of the assignment operator
+
+00:17:47.010 --> 00:17:50.810
+the copy assignment operator. It's pretty straightforward. And what I've also done is
+
+00:17:50.810 --> 00:17:55.310
+I've created some other test cases here that you can walk through and learn from.
+
+00:17:55.310 --> 00:17:59.210
+And what I'll do is I'll just uncomment them out, and then I'll run the program really quickly.
+
+00:17:59.210 --> 00:18:01.770
+So what I've got is I've just got some examples of
+
+00:18:01.770 --> 00:18:05.470
+creating more objects and assigning objects to vectors and so forth
+
+00:18:05.470 --> 00:18:09.470
+and you can see that when we do things like s equals changed,
+
+00:18:09.470 --> 00:18:12.530
+we're going to create a copy assignment. And that's exactly what we want.
+
+00:18:12.530 --> 00:18:16.630
+We don't really want to create that guy using the conversion constructor
+
+00:18:16.630 --> 00:18:19.130
+and then use a copy constructor to copy stuff over.
+
+00:18:19.130 --> 00:18:22.010
+We're just doing assignment, and we don't want to do
+
+00:18:22.010 --> 00:18:24.510
+anything related to shallow assignment, right.
+
+00:18:24.510 --> 00:18:28.110
+We want to do deep assignment. Otherwise, we're going to end up with all kinds of problems.
+
+00:18:28.110 --> 00:18:32.470
+So I'll run this, and there's the output. You can see that we've got
+
+00:18:32.970 --> 00:18:34.570
+copy assignment happening.
+
+00:18:34.570 --> 00:18:37.570
+We've got Larry a bunch of times. And like I said, you can run through this
+
+00:18:37.570 --> 00:18:40.770
+and walk through it yourselves. It's really important that you
+
+00:18:40.770 --> 00:18:44.430
+step through a program like this. You can really, really understand what's going on.
+
+00:18:44.430 --> 00:18:49.130
+But you can see that copy assignment is called all over the place here because that's exactly what we want.
+
+00:18:49.730 --> 00:18:52.180
+Okay. So now in the next video what we'll do is
+
+00:18:52.180 --> 00:18:55.060
+we'll do move assignment, which is pretty powerful.
+
+00:18:55.260 --> 00:18:57.860
+And it'll take care of assigning temporary
+
+00:18:57.860 --> 00:19:00.860
+values much more efficiently than copy assignment.

@@ -1,0 +1,77 @@
+WEBVTT
+
+0
+00:01.170 --> 00:02.730
+Here's an exercise program.
+
+1
+00:02.850 --> 00:06.720
+So you have to write a program to calculate net salary.
+
+2
+00:06.940 --> 00:13.200
+program should take following inputs that is basic salary and what is the percentage of alliances and
+
+3
+00:13.650 --> 00:17.950
+percentage of deductions and the formula for salaries given below.
+
+4
+00:18.000 --> 00:24.300
+So net salary is cal. by adding basic salary plus percentage of allowances of basic
+
+5
+00:24.300 --> 00:29.470
+salary and subtracting percentage of deductions.
+
+6
+00:29.550 --> 00:33.970
+So I'll show you the program how it should work and what should be the input and output.
+
+7
+00:34.050 --> 00:40.440
+And you have to develop the same program. A pdf od program is also given in the resource if you want.
+
+8
+00:40.430 --> 00:44.130
+You can download it but I suggest you write the program completely.
+
+9
+00:44.130 --> 00:47.970
+If you face any difficulties then you can see that pdf.
+
+10
+00:48.600 --> 00:56.140
+So here I run the program for calculating net salary of an employee, i will run program.
+
+11
+00:56.160 --> 01:02.670
+See here just asking basic salary, let's say the  basic salary is a thousand bucks and what is the percentage
+
+12
+01:02.670 --> 01:03.760
+of allowances.
+
+13
+01:03.760 --> 01:05.760
+Suppose it is 20 percent.
+
+14
+01:06.030 --> 01:11.010
+And what is the percentage of deduction that is 5 so 20 percent allowances.
+
+15
+01:11.010 --> 01:17.970
+means it  will  12 hundred and five percent deduction means 50 subtracted from 1200 and that is
+
+16
+01:17.970 --> 01:19.760
+1150 yes.
+
+17
+01:19.880 --> 01:25.460
+so the ANSWER is 1150. so it should take these values and display this output.
+
+18
+01:26.310 --> 01:31.880
+So program is also available under resources as a PDf and you can download that.

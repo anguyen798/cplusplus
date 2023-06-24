@@ -1,0 +1,149 @@
+WEBVTT
+
+0
+00:00.750 --> 00:05.040
+Let us write programs for finding addition of two matrices.
+
+1
+00:05.050 --> 00:16.100
+So for matrices I will take two matrices of order two by three I will directly initialize the values
+
+2
+00:16.160 --> 00:21.810
+that is 3 3 3 3 3 3.
+
+3
+00:21.920 --> 00:22.770
+So all values 
+
+4
+00:22.820 --> 00:29.810
+I have taken same, I will take one more array B of same dimension because the addition and subtraction can be done
+
+5
+00:29.840 --> 00:32.260
+Only if the dimensions are same.
+
+6
+00:32.660 --> 00:40.520
+And here I will take all the values as one so that will be easy for us to verify our results, then i am taking
+
+7
+00:40.520 --> 00:50.440
+one more array C of size same two by three and this is empty.
+
+8
+00:50.510 --> 00:56.460
+Now for generating matrix C by adding the elements of A and B I need nested for loop.
+
+9
+00:56.480 --> 01:05.450
+So using nested for loop, I'll go through all the elements of C first for loop, for I assigned zero and I is less than
+
+10
+01:05.480 --> 01:10.620
+2 I plus plus, and one more for loop in here.
+
+11
+01:10.640 --> 01:14.990
+I will use j, j assign zero.
+
+12
+01:15.140 --> 01:17.690
+j is Less than three J plus plus
+
+13
+01:24.300 --> 01:27.430
+I will close these loops here.
+
+14
+01:27.460 --> 01:37.150
+I will say c of every i and j should be assigned with each of i and j.
+
+15
+01:37.150 --> 01:45.790
+Plus B of I and j, elements of A and B are the corresponding location.
+
+16
+01:45.820 --> 01:47.920
+I , j are added.
+
+17
+01:47.980 --> 01:55.250
+And the result is stored in C of i&j. after adding these two matrices I want to see the output so for output
+
+18
+01:55.260 --> 02:00.030
+again I need two for loop so I'll copy this and I'll paste them here.
+
+19
+02:04.430 --> 02:09.520
+And instead of adding I will display the elements of c matrix
+
+20
+02:09.580 --> 02:18.910
+cout  C[i][j] I'll give the element and between every element I need some space so let us
+
+21
+02:18.920 --> 02:27.370
+give a space and after the end of each row I should go to the next line that is endl, now this for loop is
+
+22
+02:27.510 --> 02:30.110
+for displaying C-Matrix.
+
+23
+02:30.170 --> 02:35.740
+And these nested for loops are for adding A and B and storing the result in C.
+
+24
+02:36.080 --> 02:39.400
+So after adding I should get all elements as 4 4 4.
+
+25
+02:39.410 --> 02:40.880
+So let us see what the output
+
+26
+02:44.260 --> 02:44.710
+Yeah.
+
+27
+02:44.750 --> 02:46.240
+And 4 4 4.
+
+28
+02:46.590 --> 02:49.650
+That's it.
+
+29
+02:49.650 --> 02:55.860
+If I want to make a program for subtracting two matrixes just here at this place,
+
+30
+02:55.890 --> 02:59.950
+I should make a change as minus and everything is same.
+
+31
+02:59.970 --> 03:04.000
+So this should become 2 2 for all the elements.
+
+32
+03:06.950 --> 03:09.370
+So you get all the elements has two.
+
+33
+03:09.650 --> 03:10.410
+So that's it.
+
+34
+03:10.430 --> 03:12.770
+So I have shown you addition and subtraction.
+
+35
+03:12.770 --> 03:19.460
+So you find out how to do multiplication of two matrices and that is a challenge for you for finding
+
+36
+03:19.460 --> 03:21.280
+multiplication of two matrices.

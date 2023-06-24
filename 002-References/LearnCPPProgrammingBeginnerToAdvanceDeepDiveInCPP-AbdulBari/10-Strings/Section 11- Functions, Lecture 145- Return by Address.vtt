@@ -1,0 +1,173 @@
+WEBVTT
+
+0
+00:00.270 --> 00:08.610
+Let us look at our type of function that is written by address so a function can also return addresses, function 
+
+1
+00:08.610 --> 00:14.400
+can take parameters as addresses so they are called as call by address type of parameter passing, and also
+
+2
+00:14.400 --> 00:16.910
+function can return an address also.
+
+3
+00:17.130 --> 00:20.720
+Let us see some example function which returns in addresses
+
+4
+00:20.730 --> 00:30.540
+So I will write one function called as fun and it takes some size as a parameter then what it does.
+
+5
+00:30.750 --> 00:38.940
+I will write the return type afterwards but what it does is it will take one pointer and create
+
+6
+00:38.970 --> 00:43.710
+an  array of that size.
+
+7
+00:43.920 --> 00:48.200
+So where the memorie is allocated, where the new is used here.
+
+8
+00:48.210 --> 00:50.010
+So the memorie is created in heap.
+
+9
+00:50.010 --> 00:54.860
+So this is creating an array inside heap and P is a pointer to that memory.
+
+10
+00:54.900 --> 01:03.760
+So let us take for example if the size is five so array of size 5 was created in the heap and the P is
+
+11
+01:03.760 --> 01:05.800
+a pointer to this one.
+
+12
+01:05.970 --> 01:09.420
+So this belongs to  function fun, now i will add some code here
+
+13
+01:09.450 --> 01:20.610
+So what I do is I will fill those values from 1-5 for int i assign 0  I is less than size
+
+14
+01:21.120 --> 01:30.480
+and I++. so this will be taking me through all these elements of Array P then P of I, i will assign I+1
+
+15
+01:30.650 --> 01:33.860
+means whatever the value of i is plus one.
+
+16
+01:33.900 --> 01:38.930
+So p of zero as 1, P of 1 is 2 then 3 4 5.
+
+17
+01:39.030 --> 01:45.960
+So this will fill the elements with natural numbers from 1 to 5 then what the function has done created
+
+18
+01:45.960 --> 01:47.660
+an array and filled the elements.
+
+19
+01:47.660 --> 01:54.840
+Now return P,  what is P. P is a pointer to an array of type Integer.
+
+20
+01:54.870 --> 01:57.870
+So this is a pointer of type Integer.
+
+21
+01:57.870 --> 01:58.950
+So that's it.
+
+22
+01:58.950 --> 02:05.050
+This function is useful for creating an array and initializing all the elements from 1 through whatever
+
+23
+02:05.050 --> 02:06.450
+the size you have mentioned.
+
+24
+02:06.600 --> 02:09.870
+And then it will return pointer to that funcion.
+
+25
+02:09.990 --> 02:19.380
+So if I call this from main function then I will take a pointer here PTR and I will call the function
+
+26
+02:19.380 --> 02:21.330
+fun with the size of 5.
+
+27
+02:21.690 --> 02:23.070
+So what happens.
+
+28
+02:23.070 --> 02:29.220
+This function will create an array of size 5 and initialize sum elements there and returns the pointer.
+
+29
+02:29.220 --> 02:34.560
+So this main is having a pointer PTR so it will be pointing on this one.
+
+30
+02:34.740 --> 02:36.240
+Is it allowed like this.
+
+31
+02:36.240 --> 02:36.890
+Yes.
+
+32
+02:36.930 --> 02:42.580
+See this function has created some memory in the heap and it has not deleted.
+
+33
+02:42.610 --> 02:49.590
+So the heap memory will be as it is and it is handing over that address to the main function so PTR 
+
+34
+02:49.630 --> 02:50.940
+will be a pointer to that one.
+
+35
+02:51.600 --> 02:59.460
+So if you have any work related to heap memory then those functions can return the address of that
+
+36
+02:59.460 --> 03:05.040
+heap memory and it will be useful for the calling function main is calling it and the main can
+
+37
+03:05.040 --> 03:06.620
+access that memory.
+
+38
+03:06.630 --> 03:10.700
+Finally we saw that a function can also return address.
+
+39
+03:10.740 --> 03:17.090
+So this is a return by address method so function can take to addresses also and return the
+
+40
+03:17.210 --> 03:18.050
+address also.
+
+41
+03:18.060 --> 03:21.070
+So I have given you one example where it may be useful.
+
+42
+03:21.420 --> 03:27.660
+So this is one of the example. so we will try this practically and we will see this one.

@@ -1,0 +1,277 @@
+WEBVTT
+
+00:05.150 --> 00:09.680
+In this video, we'll look at some of the motivating factors that led to the creation of enumerated
+
+00:09.710 --> 00:10.400
+types.
+
+00:10.670 --> 00:13.820
+But first, let's see what an enumeration is conceptually.
+
+00:14.730 --> 00:20.610
+At Enumeration is a user defined data type, the models a set of constant integral values.
+
+00:20.790 --> 00:23.520
+That might sound complicated, but it really isn't.
+
+00:24.000 --> 00:28.680
+Suppose we want to define a type that holds a value, that represents a day of the week.
+
+00:29.160 --> 00:31.890
+An enumeration is a great way to accomplish that.
+
+00:32.220 --> 00:38.310
+Once we create an enumeration type than any variable of that type can only be used to represent the
+
+00:38.310 --> 00:41.010
+days Monday, Tuesday, Wednesday and so forth.
+
+00:41.780 --> 00:46.940
+There are lots of examples like this the months of the year, the suits in a deck of cards, the values
+
+00:46.940 --> 00:52.760
+in a deck of cards, the states in a system, for example, the state of the player in a game, the
+
+00:52.760 --> 00:54.050
+directions on a compass.
+
+00:54.050 --> 00:55.160
+You get the idea.
+
+00:55.490 --> 00:58.340
+Let's see what motivated the creation of enumerations.
+
+01:01.070 --> 01:02.660
+Prior to enumerated types.
+
+01:02.660 --> 01:07.550
+Many algorithms contain unnamed numerical constants, also known as magic numbers.
+
+01:08.240 --> 01:14.150
+These constants are unique values, with often no explanation as to how they were obtained or whether
+
+01:14.150 --> 01:15.680
+their values are significant.
+
+01:16.400 --> 01:21.770
+To make matters worse, they were often used as conditionals and control statements, leaving onlookers
+
+01:21.770 --> 01:24.530
+with no idea of what an algorithm was doing.
+
+01:24.890 --> 01:30.110
+This often results in an algorithm suffering from low readability and high numbers of logic errors.
+
+01:31.000 --> 01:35.950
+The story of enumerated types is really a story of the importance of readability and programming and
+
+01:35.950 --> 01:38.410
+how it can affect an algorithm's correctness.
+
+01:38.860 --> 01:44.080
+To understand how enumerated types increase readability and algorithm correctness, let's look at an
+
+01:44.080 --> 01:44.800
+example.
+
+01:47.260 --> 01:52.270
+Here we can see a control structure that takes his input, an integer value corresponding to the state
+
+01:52.270 --> 01:53.260
+of some system.
+
+01:53.680 --> 01:59.460
+The system can be in either state zero one or two, depending on the state of the system.
+
+01:59.470 --> 02:03.340
+The control structure initiates some sequence for the system to perform.
+
+02:03.340 --> 02:09.790
+The system can perform one of three sequences corresponding to the integer values three, four or five.
+
+02:10.420 --> 02:14.440
+Besides what I just explained, there's not much more we can deduce from this algorithm.
+
+02:14.710 --> 02:19.750
+You might not see this as a problem since you didn't write the code, and so why should you care about
+
+02:19.750 --> 02:20.110
+it?
+
+02:20.590 --> 02:23.680
+However, as programmers, we're often required to work on code.
+
+02:23.680 --> 02:29.080
+We didn't write ourselves and we don't have the ability to ask the original authors questions since
+
+02:29.080 --> 02:30.220
+they might have moved on.
+
+02:30.820 --> 02:35.620
+If you ever write a piece of code for commercial purposes, I can guarantee you that you will not be
+
+02:35.620 --> 02:36.700
+the last to read it.
+
+02:37.270 --> 02:43.030
+This is why readability is so important and much of the reason why enumerated types became so popular.
+
+02:43.930 --> 02:45.040
+To emphasize this.
+
+02:45.040 --> 02:47.890
+Let's imagine a scenario involving the code we see here.
+
+02:48.100 --> 02:53.380
+Suppose you're a novice programmer stationed at NASA's Kennedy Space Center, and the launch sequence
+
+02:53.380 --> 02:56.620
+for the new SLS rocket has accidentally been initiated.
+
+02:57.340 --> 03:02.140
+The only way to stop the rocket from launching is to provide the control structure with a state that
+
+03:02.140 --> 03:04.120
+will initiate the abort sequence.
+
+03:04.480 --> 03:07.240
+Do you feel confident that you could provide the correct state?
+
+03:08.110 --> 03:09.130
+Of course you don't.
+
+03:09.160 --> 03:13.900
+We have no understanding of this algorithm or the mapping between states and sequences.
+
+03:13.900 --> 03:15.460
+So how can we fix this?
+
+03:15.550 --> 03:18.220
+Well, you might have guessed we're going to use enumerated types.
+
+03:19.340 --> 03:25.400
+By including two enumerated types state and sequence, we can assign meaningful names to each of the
+
+03:25.400 --> 03:27.980
+integral values used in the control structure.
+
+03:28.670 --> 03:31.360
+Don't worry about the syntax of the enumeration right now.
+
+03:31.370 --> 03:33.260
+We'll cover those in detail soon.
+
+03:34.040 --> 03:38.390
+Instead, let's focus on the control structure and specifically its readability.
+
+03:38.960 --> 03:42.290
+Immediately we can see the readability has dramatically improved.
+
+03:42.410 --> 03:48.440
+We now know what each integral value represents and can even see the mapping between states and sequences.
+
+03:49.040 --> 03:52.910
+If the state is engine failure, the corresponding sequence is abort.
+
+03:53.450 --> 03:58.040
+Inclement weather corresponds to hold and nominal corresponds to launch.
+
+03:58.970 --> 04:04.640
+Thinking back to our scenario, it now becomes clear that the engine failure state should be provided
+
+04:04.640 --> 04:08.330
+to the control structure in order to initiate the abort sequence.
+
+04:08.960 --> 04:11.750
+In addition to increasing an algorithm's readability.
+
+04:11.780 --> 04:15.530
+I also mentioned that enumerated types can increase algorithmic correctness.
+
+04:15.560 --> 04:18.440
+Let's take a look at an example using the same control structure.
+
+04:20.480 --> 04:25.460
+As is often the case with rocket launch systems, you usually want the state of the launch to be determined
+
+04:25.460 --> 04:28.250
+by a predefined function as opposed to human.
+
+04:28.580 --> 04:34.010
+Suppose again that you're a novice programmer at NASA, but this time they've tasked you with writing
+
+04:34.010 --> 04:36.200
+the launch sequence controls for the rocket.
+
+04:36.440 --> 04:41.840
+You've been informed of an already existing function called Get State, which returns the state of the
+
+04:41.840 --> 04:42.470
+launch.
+
+04:43.240 --> 04:48.490
+With this information, you get to work and write the control structure using unnamed numerical constants
+
+04:48.490 --> 04:51.820
+and retrieve the state of the launch from the get state function.
+
+04:52.180 --> 04:53.410
+Or so you think.
+
+04:54.220 --> 04:59.770
+Unbeknownst to you, there are two get state functions, one that returns the state of the launch and
+
+04:59.770 --> 05:02.740
+another that returns the state of the breakroom refrigerator.
+
+05:03.010 --> 05:08.140
+Unfortunately, you use the wrong get state function, but because you've defined the state variable
+
+05:08.140 --> 05:12.910
+as an integer and both functions return integers, the program will compile without errors.
+
+05:13.760 --> 05:18.980
+Obviously we don't want the launch sequence being determined by the state of the breakroom refrigerator.
+
+05:18.980 --> 05:21.350
+But what could we do to prevent this from happening?
+
+05:21.380 --> 05:23.900
+Well, this is where enumerated types can help us again.
+
+05:24.320 --> 05:30.410
+By using enumerated types, we can impose a type restriction on the state variable being of the enumerated
+
+05:30.410 --> 05:31.330
+type state.
+
+05:31.340 --> 05:35.900
+It can only assume one of three values engine failure, inclement weather, or nominal.
+
+05:36.140 --> 05:41.120
+If we try to assign a value to the state variable that's not one of these three values, the compiler
+
+05:41.120 --> 05:42.350
+will generate an error.
+
+05:42.500 --> 05:47.750
+This means that if a programmer were to call the wrong state function, that does not return a state
+
+05:47.750 --> 05:48.810
+type variable.
+
+05:48.830 --> 05:50.510
+The program will not compile.
+
+05:50.720 --> 05:56.360
+This eliminates any possibility of the state of the breakroom refrigerator determining the launch sequence.
+
+05:56.660 --> 06:01.400
+Now that we've seen how enumerated types can increase readability and algorithm correctness, it should
+
+06:01.400 --> 06:06.360
+be obvious how they became so popular with the motivation of enumerated types behind us.
+
+06:06.380 --> 06:09.110
+Let's head over to the next video and we'll see their structure.

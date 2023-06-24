@@ -1,0 +1,520 @@
+WEBVTT
+
+00:00:05.360 --> 00:00:09.360
+In this video, we'll see how c++ looks for catch handlers
+
+00:00:09.360 --> 00:00:10.960
+when an exception is thrown.
+
+00:00:11.840 --> 00:00:14.840
+Suppose we have a function and it throws an exception.
+
+00:00:16.140 --> 00:00:19.020
+If the function doesn't handle its own exception,
+
+00:00:19.220 --> 00:00:22.420
+then the function terminates and it's removed from the call stack.
+
+00:00:23.410 --> 00:00:27.310
+Then c++ looks at the call stack to determine the function
+
+00:00:27.310 --> 00:00:32.300
+that's now at the top since that function must have called the function that just terminated.
+
+00:00:33.500 --> 00:00:38.000
+If this function used a try block, then the catch handlers are checked for a match.
+
+00:00:38.000 --> 00:00:41.500
+And if one is found, it fires, and we keep processing
+
+00:00:41.500 --> 00:00:43.500
+as we've seen in the examples already.
+
+00:00:44.300 --> 00:00:46.000
+But if there is no try block
+
+00:00:46.000 --> 00:00:49.560
+or there is a try block but it doesn't have a catch handler that matches,
+
+00:00:49.920 --> 00:00:52.320
+then the function is removed from the call stack
+
+00:00:52.320 --> 00:00:55.980
+and the process repeats. This is called stack unwinding.
+
+00:00:56.860 --> 00:00:58.970
+If we get to the main function
+
+00:00:58.970 --> 00:01:01.570
+and the exception isn't handled there either,
+
+00:01:01.570 --> 00:01:05.170
+then the program terminates since the exception was not handled.
+
+00:01:06.070 --> 00:01:09.730
+Remember, what happens when a function is removed or popped from the stack,
+
+00:01:09.730 --> 00:01:12.090
+all of its local variables are destroyed.
+
+00:01:12.290 --> 00:01:15.650
+This means that for local objects their destructors are called.
+
+00:01:16.550 --> 00:01:18.650
+If we have to free memory with delete,
+
+00:01:18.650 --> 00:01:22.150
+then these statements may not execute at all, and we will leak memory.
+
+00:01:22.950 --> 00:01:26.550
+This makes it critical that you implement classes that require resources
+
+00:01:26.550 --> 00:01:28.950
+as RAII classes.
+
+00:01:29.610 --> 00:01:33.410
+We talked about RAII in the smart pointer section of the course.
+
+00:01:34.210 --> 00:01:37.210
+Make sure that you clean up your resources and your destructors
+
+00:01:37.210 --> 00:01:39.210
+since you never know when they might be called,
+
+00:01:39.210 --> 00:01:43.810
+and you don't want to leak any memory or leave files or resources in unstable states.
+
+00:01:44.810 --> 00:01:48.570
+Stack unwinding is one of those things that's best understood with an example.
+
+00:01:48.570 --> 00:01:52.130
+So let's head over to the IDE, and I'll show you an example of a program
+
+00:01:52.130 --> 00:01:53.930
+and how stack unwinding works.
+
+00:01:54.700 --> 00:02:00.200
+Okay. So I'm in the IDE. I'm in the section 18 workspace in the StackUnwinding project.
+
+00:02:01.000 --> 00:02:04.600
+And what I've got here is just some really simple function calls.
+
+00:02:04.600 --> 00:02:08.260
+There is no exception handling. There's no throwing. There's no catching.
+
+00:02:08.260 --> 00:02:11.720
+There's nothing special going on here. We will add that in a minute.
+
+00:02:11.720 --> 00:02:15.710
+This is our base case. So I just want to go over this to make sure that you understand
+
+00:02:15.960 --> 00:02:18.260
+what happens when we've got this function calling.
+
+00:02:18.260 --> 00:02:22.620
+So let's start here. Here's my stack. Remember, all this happens in the stack.
+
+00:02:22.620 --> 00:02:25.120
+So here's my stack. Remember, all the function calls
+
+00:02:25.120 --> 00:02:29.520
+happen on the stack. So I've got my main. So that means that I've got main on the stack.
+
+00:02:29.920 --> 00:02:33.720
+So main is activated on the stack. We print out starting main,
+
+00:02:34.080 --> 00:02:37.080
+and then we call function a. Well, function a is up here.
+
+00:02:37.780 --> 00:02:40.380
+Function a gets pushed on the stack.
+
+00:02:40.380 --> 00:02:42.080
+So this would be function a here,
+
+00:02:42.580 --> 00:02:46.780
+and it displays starting function a. Then it calls function b,
+
+00:02:47.280 --> 00:02:51.180
+so we go to function b now, function b gets pushed on the stack.
+
+00:02:53.180 --> 00:02:57.180
+It displays starting function b. It calls function c.
+
+00:02:57.480 --> 00:02:59.480
+And function c is put on the stack,
+
+00:02:59.480 --> 00:03:03.780
+so you can see it's a real nice orderly process of function calling.
+
+00:03:03.780 --> 00:03:06.440
+It displays starting function c.
+
+00:03:06.440 --> 00:03:10.440
+Then it displays ending function c. Then it's popped off the stack.
+
+00:03:10.440 --> 00:03:13.440
+B completes now, and says ending function b.
+
+00:03:13.440 --> 00:03:14.940
+And it's popped off the stack,
+
+00:03:15.540 --> 00:03:18.980
+a says ending function a. It's popped off the stack,
+
+00:03:18.980 --> 00:03:22.880
+finally, we're back here, and we end up printing finishing main.
+
+00:03:23.240 --> 00:03:27.340
+Okay. So each function announces itself and then it says I'm done.
+
+00:03:27.340 --> 00:03:30.220
+And if we run this project, I'll clear this screen here,
+
+00:03:30.220 --> 00:03:33.820
+and if we run this project what we'll get is exactly what I just said,
+
+00:03:33.820 --> 00:03:35.620
+let me move this over here so we can see it.
+
+00:03:36.820 --> 00:03:38.810
+Here you can see we're starting main,
+
+00:03:38.810 --> 00:03:41.710
+then we're calling function a, function b, function c.
+
+00:03:41.710 --> 00:03:46.310
+And now we're starting to unwind, right. Our program is finishing. So function c is done.
+
+00:03:46.310 --> 00:03:49.670
+Function b is done. Function a is done and then main.
+
+00:03:49.670 --> 00:03:52.930
+This is what you would expect. This is normal control flow
+
+00:03:52.930 --> 00:03:54.930
+when there is no exception handling.
+
+00:03:54.930 --> 00:03:58.430
+Now what we're going to do is we're going to add a couple of throws in here and a catch.
+
+00:03:58.430 --> 00:04:02.430
+So you can see exactly what happens when we're doing stack unwinding
+
+00:04:02.430 --> 00:04:05.630
+with exception handling. Remember, exception handling
+
+00:04:05.630 --> 00:04:08.990
+definitely could change the normal control flow of your program.
+
+00:04:09.490 --> 00:04:12.790
+So this is the normal flow of our program assuming we've got
+
+00:04:12.790 --> 00:04:15.790
+no exception handling and no exceptions and no problems at all.
+
+00:04:15.790 --> 00:04:20.090
+All right. So let's say that function c throws an exception,
+
+00:04:20.590 --> 00:04:23.350
+and we'll just throw 100, we could throw anything.
+
+00:04:23.350 --> 00:04:27.650
+The point is we're throwing an exception. So I'm just going to throw 100 here.
+
+00:04:28.550 --> 00:04:32.450
+And in my main where I call function a right here,
+
+00:04:32.450 --> 00:04:34.810
+I'm going to enclose that in a try block.
+
+00:04:35.310 --> 00:04:36.810
+So there's my try block,
+
+00:04:39.170 --> 00:04:40.670
+and I'll indent that.
+
+00:04:41.470 --> 00:04:44.470
+And then what I'll do is I'll put a catch handler here
+
+00:04:44.970 --> 00:04:47.970
+and that will expect an integer
+
+00:04:48.370 --> 00:04:49.970
+by ref, we'll call it ex.
+
+00:04:50.470 --> 00:04:54.270
+And we'll just write something like std cout,
+
+00:04:55.270 --> 00:04:57.570
+let's just say caught error
+
+00:04:58.450 --> 00:04:59.150
+in main.
+
+00:05:00.810 --> 00:05:02.810
+Okay. Something real simple like that.
+
+00:05:05.510 --> 00:05:08.870
+Now let's walk through this and see what we expect to happen.
+
+00:05:09.670 --> 00:05:12.670
+We're here. Main begins and it
+
+00:05:12.670 --> 00:05:16.670
+prints out starting main.Actually, let me close this up just a little bit so I've got a little bit more
+
+00:05:16.670 --> 00:05:17.670
+room to work.
+
+00:05:21.920 --> 00:05:24.420
+Okay. Perfect. Everything fits just right.
+
+00:05:24.820 --> 00:05:29.420
+Okay. So we're here in main, and we're going to print out starting main.
+
+00:05:30.420 --> 00:05:35.020
+Then we're going to try function a. Function a could throw an exception.
+
+00:05:35.270 --> 00:05:36.470
+So I'm coming over here.
+
+00:05:36.970 --> 00:05:39.970
+I call function a, and it prints out starting function a.
+
+00:05:39.970 --> 00:05:41.470
+And it calls function b.
+
+00:05:41.970 --> 00:05:44.070
+Function b begins displays
+
+00:05:44.870 --> 00:05:48.860
+function b. Starting function b, it calls function c,
+
+00:05:48.860 --> 00:05:52.760
+which displays starting function c. Now it throws an exception.
+
+00:05:53.360 --> 00:05:56.060
+What does that mean? That means that this function is now done
+
+00:05:56.060 --> 00:05:58.560
+because it's not catching its own exception here.
+
+00:05:58.560 --> 00:06:01.460
+So this code right here will not execute.
+
+00:06:01.710 --> 00:06:04.310
+We will never see this function complete normally
+
+00:06:04.310 --> 00:06:06.670
+because it's being pulled off the stack right now.
+
+00:06:07.570 --> 00:06:11.770
+Okay. Now what happens. Well, now we go back to whoever called function c,
+
+00:06:12.270 --> 00:06:15.470
+which was function b. So now we're back here
+
+00:06:16.130 --> 00:06:18.830
+and does that have a catch handler for an integer?
+
+00:06:18.830 --> 00:06:21.830
+No, so this guy gets popped off the stack,
+
+00:06:22.330 --> 00:06:25.990
+right. So this won't execute either. We go back to a,
+
+00:06:26.490 --> 00:06:29.930
+right, because a called b, it doesn't have a catch handler.
+
+00:06:29.930 --> 00:06:34.130
+This won't execute either. And now we finally get back to the main,
+
+00:06:34.130 --> 00:06:36.890
+the main does have a catch handler. This will fire,
+
+00:06:36.890 --> 00:06:39.090
+and our program will finish normally.
+
+00:06:39.590 --> 00:06:42.890
+But what's happened on the stack is real, real different, right.
+
+00:06:42.890 --> 00:06:46.390
+You'll notice these three functions got ripped off the stack immediately.
+
+00:06:46.390 --> 00:06:50.590
+All its local variables were destroyed, destructors were called if if any.
+
+00:06:50.590 --> 00:06:54.590
+So you've got to be real careful with your objects here. Make sure that their destructors
+
+00:06:54.590 --> 00:06:58.950
+are correct because they just got called, and they didn't get called as you expected
+
+00:06:58.950 --> 00:07:03.250
+them to be called. So let's run this and see the output now.
+
+00:07:03.500 --> 00:07:06.260
+Now notice the output, Now notice the output,
+
+00:07:06.260 --> 00:07:10.960
+We're starting main. We're starting a. We're starting b. We're starting c, right. Just as we said.
+
+00:07:10.960 --> 00:07:15.160
+Now c throws an exception right here on line 23. It doesn't catch it.
+
+00:07:15.160 --> 00:07:19.160
+So c is gone right now. Notice how the ending function c is never called.
+
+00:07:19.460 --> 00:07:22.340
+We go back to b. It doesn't catch an integer.
+
+00:07:22.340 --> 00:07:25.140
+It's gone. We never see the ending function b.
+
+00:07:25.140 --> 00:07:28.340
+We go back to function a, it doesn't catch it either.
+
+00:07:28.340 --> 00:07:32.540
+So notice what happens here, right. We never see the ending function a message.
+
+00:07:32.540 --> 00:07:34.740
+We finally come back to the main.
+
+00:07:34.740 --> 00:07:39.640
+Main catches the exception. There you go, caught error in main and it finishes normally.
+
+00:07:39.940 --> 00:07:42.700
+So this is a good example of stack unwinding.
+
+00:07:42.700 --> 00:07:45.690
+You can see exactly what's going up that chain right
+
+00:07:45.690 --> 00:07:47.890
+now. If I do something like --
+
+00:07:48.880 --> 00:07:51.880
+let's try in function b, let's say, right here,
+
+00:07:54.540 --> 00:07:57.040
+let's say that we're going to call function c,
+
+00:07:57.040 --> 00:07:59.840
+let's just try to call function c and see what happens.
+
+00:08:02.040 --> 00:08:05.340
+And in this case, we can catch
+
+00:08:06.640 --> 00:08:07.630
+the integer.
+
+00:08:11.430 --> 00:08:16.230
+And what I'll do is I'll copy that output statement that I created just down here in main real quick.
+
+00:08:17.890 --> 00:08:19.690
+And I'll paste it right in here
+
+00:08:22.090 --> 00:08:26.490
+and I'll just simply say caught error in. This is function b.
+
+00:08:29.040 --> 00:08:32.270
+Okay. So now let's walk through this example and see what's going on.
+
+00:08:32.270 --> 00:08:34.150
+Let me close this up again.
+
+00:08:34.150 --> 00:08:38.030
+And I'll scroll up just a little bit. So hopefully, we can fit it all in here.
+
+00:08:38.030 --> 00:08:39.830
+Okay. That's function a up top.
+
+00:08:41.080 --> 00:08:43.740
+All right. So here's main. We're trying function a.
+
+00:08:44.240 --> 00:08:47.240
+Function a could throw an exception or anything
+
+00:08:47.240 --> 00:08:49.540
+called by function a could throw an exception as well.
+
+00:08:49.540 --> 00:08:54.140
+So I'm calling function a. It says starting function a, and it calls function b.
+
+00:08:54.500 --> 00:08:57.860
+Function b displays starting function b,
+
+00:08:57.860 --> 00:09:00.760
+and it tries to execute function c.
+
+00:09:01.560 --> 00:09:06.060
+So what's going to happen here is function c executes, and it throws an exception.
+
+00:09:06.060 --> 00:09:08.060
+This will not execute.
+
+00:09:08.060 --> 00:09:09.860
+Function c is now gone.
+
+00:09:09.860 --> 00:09:13.520
+But now we come back, and function b is handling the exception.
+
+00:09:14.070 --> 00:09:17.970
+So now this will work, and this will work. And from now on,
+
+00:09:17.970 --> 00:09:21.970
+function b and then function a will all execute normally.
+
+00:09:22.170 --> 00:09:25.170
+Okay. So let's run this and see what we get.
+
+00:09:26.670 --> 00:09:30.660
+All right. Look at this. What have we got. We've got starting main.
+
+00:09:30.660 --> 00:09:34.960
+Then we're starting a. We're starting b. And we're starting c.
+
+00:09:35.660 --> 00:09:38.060
+Now c throws that error, right.
+
+00:09:38.060 --> 00:09:42.420
+So c is gone. Notice how the ending c is never printed.
+
+00:09:42.780 --> 00:09:45.980
+We catch the error right here on line 21.
+
+00:09:45.980 --> 00:09:49.280
+And then we continue normally because we've handled the exception.
+
+00:09:49.280 --> 00:09:52.640
+So we've got ending b and, then we come back here, and end a.
+
+00:09:52.640 --> 00:09:54.940
+And finally, we finish off our main.
+
+00:09:54.940 --> 00:09:59.300
+So this is stack unwinding. I encourage you to play around with this example,
+
+00:09:59.300 --> 00:10:01.300
+put some throws and catches.
+
+00:10:01.300 --> 00:10:04.660
+It's really the only way to really understand it is to play with it.
+
+00:10:04.660 --> 00:10:08.650
+Put some try some catches, throw in different places and see what's happening.
+
+00:10:08.650 --> 00:10:12.880
+And you'll be able to trace through this. And once you really understand what's going on,
+
+00:10:12.880 --> 00:10:17.240
+you'll definitely understand exception handling and stack unwinding.
+
+00:10:17.240 --> 00:10:20.040
+And it's critical that you understand that.
+
+00:10:20.240 --> 00:10:23.600
+Because remember, things are going to get thrown off the stack, so you've got to be sure
+
+00:10:23.600 --> 00:10:27.600
+that you're handling your resources correctly.

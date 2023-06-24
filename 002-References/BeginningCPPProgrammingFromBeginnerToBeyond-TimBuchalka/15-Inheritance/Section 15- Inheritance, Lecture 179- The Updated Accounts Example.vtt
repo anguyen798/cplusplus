@@ -1,0 +1,1537 @@
+WEBVTT
+
+00:00:05.100 --> 00:00:09.370
+Hello, everyone. I'm in the IDE in the
+section 15 workspace.
+
+00:00:09.370 --> 00:00:11.090
+And I'm in the challenge project.
+
+00:00:11.349 --> 00:00:14.569
+And before I go over what the
+challenge is for this section, I'd
+
+00:00:14.570 --> 00:00:17.890
+like to go over the account class
+that has been modified slightly.
+
+00:00:18.109 --> 00:00:20.349
+And this is the account class
+hierarchy that we're going
+
+00:00:20.350 --> 00:00:21.520
+to use for the challenge.
+
+00:00:21.790 --> 00:00:24.380
+So I'd like to go through it
+in detail so you understand
+
+00:00:24.380 --> 00:00:25.599
+exactly what's going on.
+
+00:00:25.940 --> 00:00:29.529
+It's very very similar to the account
+class that we've been using along, but
+
+00:00:29.530 --> 00:00:31.019
+I've made a couple of changes to it.
+
+00:00:31.270 --> 00:00:33.360
+So why don't we start
+here at the account class.
+
+00:00:33.360 --> 00:00:35.900
+You can see I've got my
+account header file and my
+
+00:00:35.900 --> 00:00:37.300
+account implementation file.
+
+00:00:37.690 --> 00:00:39.780
+But let's talk about
+this account class.
+
+00:00:39.900 --> 00:00:42.069
+As you can see, there's
+my class account.
+
+00:00:42.380 --> 00:00:45.660
+And I've got my overloaded
+insertion operator, which
+
+00:00:45.660 --> 00:00:48.279
+allows me to put accounts on
+a stream really really easily.
+
+00:00:48.860 --> 00:00:51.350
+Then I've declared these
+2 const expressions.
+
+00:00:51.660 --> 00:00:55.910
+And think of these as constants that
+are available only to the class.
+
+00:00:55.920 --> 00:00:57.090
+They're within the class scope.
+
+00:00:57.700 --> 00:01:00.210
+Sure, we could have defined
+these outside of class scope,
+
+00:01:00.510 --> 00:01:03.100
+but then what we do is we pollute
+the global name space, and we
+
+00:01:03.100 --> 00:01:04.149
+really don't want to do that.
+
+00:01:04.620 --> 00:01:06.650
+And the reason we're doing
+that is because we're providing
+
+00:01:06.660 --> 00:01:10.030
+default parameter values
+in the constructor here.
+
+00:01:10.250 --> 00:01:12.510
+So you can see that we've
+got default name here as
+
+00:01:12.510 --> 00:01:14.100
+well as default balance here.
+
+00:01:14.540 --> 00:01:17.400
+So by using these, I can do
+it like this, and I can just
+
+00:01:17.400 --> 00:01:18.600
+change them in one place.
+
+00:01:18.920 --> 00:01:22.640
+The other option is just to do the
+constructor like this, just like
+
+00:01:22.750 --> 00:01:26.289
+we've done before where I supply
+the default parameter unnamed
+
+00:01:26.289 --> 00:01:28.079
+account and the balance is 0.
+
+00:01:28.369 --> 00:01:30.039
+Okay, so again, you
+could do it either way.
+
+00:01:30.539 --> 00:01:32.710
+I kind of like doing it this
+way because it gives me all
+
+00:01:32.710 --> 00:01:34.200
+my constants in one place.
+
+00:01:34.240 --> 00:01:37.060
+They are within class scope,
+and you can decide whether you
+
+00:01:37.060 --> 00:01:39.070
+want to make them private or
+protected or public, and you've
+
+00:01:39.110 --> 00:01:40.479
+really got a lot of flexibility.
+
+00:01:41.070 --> 00:01:42.639
+So there's my constructor.
+
+00:01:43.490 --> 00:01:45.529
+And obviously, we've got an account.
+
+00:01:45.549 --> 00:01:47.459
+In this case, I added the name, right.
+
+00:01:47.469 --> 00:01:49.700
+The name is a std string a c++ string.
+
+00:01:49.990 --> 00:01:52.720
+So in this case, what an
+account is it's got a name
+
+00:01:53.130 --> 00:01:54.510
+and it's got a balance.
+
+00:01:54.740 --> 00:01:56.580
+So here's my constructor.
+
+00:01:56.900 --> 00:01:59.009
+It expects a name and a balance.
+
+00:01:59.070 --> 00:02:01.509
+If we don't get a name,
+we get a named account.
+
+00:02:01.520 --> 00:02:04.230
+If we don't get a balance,
+we get 0 for the balance.
+
+00:02:04.930 --> 00:02:07.459
+And at this point, we've
+got our deposit, withdrawal.
+
+00:02:07.459 --> 00:02:10.709
+And I just put in a get balance method
+here which could be handy to use.
+
+00:02:10.940 --> 00:02:13.480
+I don't think I'm using it in the
+code, but you may want to use it.
+
+00:02:13.950 --> 00:02:16.620
+So I've got a deposit method
+and a withdrawal method, real
+
+00:02:16.650 --> 00:02:18.360
+basic functionality here, right.
+
+00:02:18.679 --> 00:02:22.280
+Simply add whatever is given to
+you to the balance, and withdraw
+
+00:02:22.280 --> 00:02:24.740
+whatever's given to you the balance
+assuming that we don't run into a
+
+00:02:24.740 --> 00:02:27.609
+negative balance when it's over,
+so just like we've seen before.
+
+00:02:28.400 --> 00:02:31.270
+Now let's look at the
+implementation for this.
+
+00:02:31.360 --> 00:02:32.869
+So we'll look at account cpp.
+
+00:02:34.599 --> 00:02:37.770
+So here's the account cpp, and
+it's going to be, again, very, very
+
+00:02:38.690 --> 00:02:40.549
+familiar implementation I think.
+
+00:02:40.820 --> 00:02:43.270
+So here you've got your
+account constructor.
+
+00:02:43.740 --> 00:02:46.880
+Notice that it expects these 2
+parameters, and those guy have
+
+00:02:46.880 --> 00:02:48.360
+defaults associated with them.
+
+00:02:48.640 --> 00:02:52.510
+So in this case, this constructor
+fires, and I'm just setting my
+
+00:02:52.510 --> 00:02:56.250
+name and my balance to whatever was
+passed in, real simple constructor.
+
+00:02:57.190 --> 00:02:58.589
+Here's my deposit method.
+
+00:02:58.590 --> 00:02:59.789
+It's expecting an amount.
+
+00:02:59.789 --> 00:03:01.270
+You can see the amount right here.
+
+00:03:01.750 --> 00:03:04.070
+If the amount is less than
+0, I'm returning false.
+
+00:03:04.070 --> 00:03:06.690
+This is one of the little changes
+that I made to these methods.
+
+00:03:06.690 --> 00:03:11.370
+Notice that deposit and
+withdrawal both return true
+
+00:03:11.370 --> 00:03:12.840
+false values, right, a Boolean.
+
+00:03:13.110 --> 00:03:15.159
+So this will return
+true if the deposit was
+
+00:03:15.160 --> 00:03:17.300
+successful, false otherwise.
+
+00:03:17.809 --> 00:03:18.439
+Same here.
+
+00:03:18.470 --> 00:03:20.120
+This will return true
+if the withdrawal was
+
+00:03:20.120 --> 00:03:22.000
+successful, false otherwise.
+
+00:03:22.570 --> 00:03:27.280
+This is a pretty rudimentary way
+of doing error checking because
+
+00:03:27.280 --> 00:03:28.580
+you're just returning true false.
+
+00:03:28.870 --> 00:03:31.159
+There could be a lot of
+different reasons for failure.
+
+00:03:31.480 --> 00:03:33.820
+And we'll talk about that
+when we talk about exceptions
+
+00:03:33.820 --> 00:03:34.789
+and exception handling.
+
+00:03:35.190 --> 00:03:37.030
+But for now, this would
+serve us just fine.
+
+00:03:37.450 --> 00:03:40.600
+So here's my deposit
+method given an amount.
+
+00:03:41.150 --> 00:03:43.780
+If the amount is less than 0,
+I'm going to return false because
+
+00:03:43.780 --> 00:03:44.950
+that really doesn't make sense.
+
+00:03:44.950 --> 00:03:47.170
+I don't want to deposit
+negative amounts, which would
+
+00:03:47.179 --> 00:03:48.530
+be kind of like withdrawals.
+
+00:03:49.299 --> 00:03:54.080
+If the amount is not less than
+0, then I'm simply incrementing
+
+00:03:54.080 --> 00:03:56.630
+the balance by the amount and
+returning true, successful.
+
+00:03:57.010 --> 00:03:58.720
+Here's my withdrawal, same idea.
+
+00:03:58.800 --> 00:04:00.340
+I'm getting an amount to withdraw.
+
+00:04:00.710 --> 00:04:03.440
+I'm checking to see if I
+subtract that from the balance
+
+00:04:03.440 --> 00:04:04.640
+if I still have a balance.
+
+00:04:04.900 --> 00:04:09.159
+In which case if I do, I do the
+withdrawal and I return true.
+
+00:04:09.179 --> 00:04:10.040
+It was successful.
+
+00:04:10.420 --> 00:04:12.179
+Otherwise, I return false right here.
+
+00:04:13.489 --> 00:04:16.340
+All right, here's my get balance,
+which simply returns the balance.
+
+00:04:16.340 --> 00:04:17.660
+Notice that's a const method.
+
+00:04:18.140 --> 00:04:21.340
+And then the very last function
+down here is my overloaded
+
+00:04:21.599 --> 00:04:24.219
+insertion operator, which
+is a friend of this class.
+
+00:04:24.759 --> 00:04:28.670
+It expects a stream, and
+it expects an account.
+
+00:04:29.359 --> 00:04:32.180
+And all it displays is the account,
+followed by the account name.
+
+00:04:32.180 --> 00:04:35.150
+Notice that i have access to
+these guys because I'm a friend.
+
+00:04:35.750 --> 00:04:38.210
+So all it's displaying is the
+account name and the account balance.
+
+00:04:38.559 --> 00:04:39.870
+So hopefully, that makes sense.
+
+00:04:39.870 --> 00:04:42.160
+You can walk through it
+and study it a little bit.
+
+00:04:42.160 --> 00:04:45.009
+Before you start the challenge
+-- and like I said, I'll explain
+
+00:04:45.009 --> 00:04:46.260
+the challenge in the next video.
+
+00:04:46.619 --> 00:04:49.120
+So now let's take a look
+at our savings account.
+
+00:04:49.500 --> 00:04:51.770
+We've got 2 classes in this hierarchy.
+
+00:04:51.770 --> 00:04:52.490
+We've got an account.
+
+00:04:52.580 --> 00:04:53.710
+We've got a savings account.
+
+00:04:54.240 --> 00:04:55.609
+So here's my savings account.
+
+00:04:56.290 --> 00:04:59.519
+And notice that in a savings
+account is a type of account.
+
+00:04:59.570 --> 00:05:02.309
+So that's kind of a clue as to
+what we're going to do, right.
+
+00:05:02.309 --> 00:05:04.299
+Right here, public inheritance.
+
+00:05:04.740 --> 00:05:06.269
+So it's an account.
+
+00:05:06.600 --> 00:05:08.599
+But what it does is it
+adds an interest rate.
+
+00:05:08.599 --> 00:05:10.640
+And you can see the
+interest rate right here.
+
+00:05:10.640 --> 00:05:12.409
+It's a protected data member.
+
+00:05:13.900 --> 00:05:16.899
+And the withdrawal is the
+same as a regular account.
+
+00:05:16.899 --> 00:05:19.389
+So you can see that the
+withdraw isn't here, right.
+
+00:05:19.770 --> 00:05:22.559
+There's no need to override
+withdraw because the accounts
+
+00:05:22.559 --> 00:05:24.109
+withdraw works just fine.
+
+00:05:24.309 --> 00:05:25.120
+It's all we want to do.
+
+00:05:25.440 --> 00:05:27.370
+We have no specialization for that.
+
+00:05:27.620 --> 00:05:28.790
+So I commented right here.
+
+00:05:28.890 --> 00:05:30.610
+Inherits the account withdraw method.
+
+00:05:31.540 --> 00:05:33.080
+The deposit does specialize.
+
+00:05:33.080 --> 00:05:33.960
+It's a little bit different.
+
+00:05:33.969 --> 00:05:37.830
+So the amount supplied to the
+deposit will be incremented by
+
+00:05:38.270 --> 00:05:39.989
+the amount I should say here.
+
+00:05:39.990 --> 00:05:40.640
+Sorry about that.
+
+00:05:40.640 --> 00:05:44.000
+I will fix that by the
+amount times the interest
+
+00:05:44.000 --> 00:05:44.941
+rate divided by 100, right.
+
+00:05:44.941 --> 00:05:49.065
+So if the interest rate is 5, then
+that would be 0.05, which is the
+
+00:05:49.270 --> 00:05:52.539
+5%, times the amount, and we're
+going to put that right back in.
+
+00:05:53.770 --> 00:05:55.909
+Okay, that's pretty much it here.
+
+00:05:55.910 --> 00:05:57.579
+The rest is pretty self-explanatory.
+
+00:05:57.580 --> 00:05:59.889
+I think I've got 3
+const expressions here.
+
+00:06:00.420 --> 00:06:03.850
+The first one is unnamed savings
+account, which is my default name.
+
+00:06:03.850 --> 00:06:05.000
+Notice that it's right here.
+
+00:06:05.000 --> 00:06:06.419
+If it's not supplied, that's it.
+
+00:06:07.060 --> 00:06:09.790
+My default balance and my
+default interest rate are
+
+00:06:09.790 --> 00:06:12.160
+over here and right here.
+
+00:06:12.160 --> 00:06:14.130
+Again, you don't have to do this here.
+
+00:06:14.370 --> 00:06:19.200
+You can simply put them in right
+in here 0 0 0 0 and unnamed
+
+00:06:19.200 --> 00:06:20.280
+savings account right here.
+
+00:06:20.850 --> 00:06:24.750
+This has got to be c++11
+to do this kind of thing.
+
+00:06:25.440 --> 00:06:27.090
+And let's see what else.
+
+00:06:28.420 --> 00:06:29.290
+What else do we have.
+
+00:06:29.300 --> 00:06:34.079
+We have the constructor, which expects
+all 3 of those guys, as I said.
+
+00:06:35.199 --> 00:06:38.659
+And I've got my deposit, which
+I have to override to support
+
+00:06:38.700 --> 00:06:40.400
+this kind of deposit behavior.
+
+00:06:41.670 --> 00:06:44.890
+Okay, so one of the things that
+hopefully you'll notice -- and this is
+
+00:06:44.890 --> 00:06:49.789
+one of the ideas with inheritance is
+that as you derive classes, you really
+
+00:06:49.799 --> 00:06:53.839
+should have to do a lot less than
+the previous class did, right, which
+
+00:06:53.840 --> 00:06:56.570
+makes sense because after all what
+we're doing is we're specializing.
+
+00:06:57.300 --> 00:06:58.280
+We're not redoing.
+
+00:06:58.660 --> 00:07:00.650
+So let's take a look at
+the implementation for
+
+00:07:00.650 --> 00:07:01.650
+the savings account.
+
+00:07:03.139 --> 00:07:04.739
+You see it's not a lot of code here.
+
+00:07:05.070 --> 00:07:06.159
+And that's the whole idea.
+
+00:07:06.170 --> 00:07:08.280
+I mean if you find yourself
+writing a lot of code in the
+
+00:07:08.280 --> 00:07:11.450
+specialization classes that
+you're deriving, then either
+
+00:07:11.450 --> 00:07:14.770
+it's a really complex derivation
+or something's not quite right.
+
+00:07:15.490 --> 00:07:17.599
+So let's take a look
+at the constructor.
+
+00:07:17.690 --> 00:07:19.050
+Here you can see the constructor.
+
+00:07:19.590 --> 00:07:22.840
+It expects a name, a balance
+and an interest rate.
+
+00:07:23.730 --> 00:07:26.290
+And remember, a savings
+account is an account.
+
+00:07:26.290 --> 00:07:28.740
+So I need to take care of
+that account part of me.
+
+00:07:29.119 --> 00:07:33.170
+So right here I'm invoking
+my base classes constructor.
+
+00:07:33.640 --> 00:07:36.489
+And I'm passing in name and balance.
+
+00:07:36.540 --> 00:07:39.210
+Remember, that's what an account
+has a name and a balance.
+
+00:07:39.510 --> 00:07:41.720
+So I'm going to let the
+account class take care of
+
+00:07:41.720 --> 00:07:43.010
+that, it knows about that.
+
+00:07:43.610 --> 00:07:46.000
+Those are not my
+instance variables here.
+
+00:07:46.000 --> 00:07:47.379
+I'm only putting in the int rate.
+
+00:07:48.199 --> 00:07:51.240
+Once that's done, I'll come back,
+and I will initialize the enter
+
+00:07:51.270 --> 00:07:53.969
+the interest rate to whatever
+was passed in right over here.
+
+00:07:54.940 --> 00:07:55.830
+And that'll do it.
+
+00:07:55.930 --> 00:07:58.770
+Notice that none of these
+constructors have bodies to them.
+
+00:07:59.740 --> 00:08:01.590
+Well, I shouldn't say that
+they do have bodies to them.
+
+00:08:01.590 --> 00:08:02.580
+You can see the body right here.
+
+00:08:02.580 --> 00:08:04.030
+There's no code in the body.
+
+00:08:04.350 --> 00:08:06.560
+You could simply put cout
+statements in there if you
+
+00:08:06.560 --> 00:08:07.860
+want to see them execute.
+
+00:08:08.320 --> 00:08:11.299
+Also there's no destructors, there's
+no copy constructors, there's no
+
+00:08:11.300 --> 00:08:14.660
+overloaded assignment operators
+because we don't need any of those.
+
+00:08:14.750 --> 00:08:16.019
+The balance is a double.
+
+00:08:16.020 --> 00:08:19.060
+The interest rate is a double
+and the name is a std string.
+
+00:08:19.070 --> 00:08:20.960
+They know how to take care
+of themselves, so we don't
+
+00:08:20.960 --> 00:08:22.020
+have to worry about that.
+
+00:08:22.090 --> 00:08:23.659
+We don't have any raw pointers here.
+
+00:08:24.580 --> 00:08:26.880
+All right, so now let's take
+a look at the deposit method.
+
+00:08:27.350 --> 00:08:28.530
+Here's the deposit method.
+
+00:08:28.540 --> 00:08:32.440
+You can see we expect an amount to
+deposit, and we're going to increment
+
+00:08:32.450 --> 00:08:36.939
+that amount by the amount itself times
+the interest rate divided by 100,
+
+00:08:36.960 --> 00:08:38.789
+that's what the business logic says.
+
+00:08:39.330 --> 00:08:42.069
+Once we know the amount that
+we want to deposit, it's right
+
+00:08:42.070 --> 00:08:44.819
+here, then we really don't
+want to do that ourselves.
+
+00:08:44.820 --> 00:08:47.780
+We want to ask our account
+class to do it for us.
+
+00:08:48.120 --> 00:08:51.060
+So we're going to call the
+deposit method in the account
+
+00:08:51.060 --> 00:08:52.940
+class, which is right here.
+
+00:08:53.389 --> 00:08:55.930
+And you need to put this
+piece right in front here.
+
+00:08:56.450 --> 00:08:59.089
+Otherwise, the compiler will call this
+method right here, and you're going
+
+00:08:59.119 --> 00:09:00.900
+to end up with recursion forever.
+
+00:09:01.450 --> 00:09:03.440
+And so be real careful about that.
+
+00:09:03.440 --> 00:09:06.510
+You want to be sure that you
+call the account classes deposit
+
+00:09:06.510 --> 00:09:08.240
+method, and we pass in the amount.
+
+00:09:08.340 --> 00:09:09.120
+That's it.
+
+00:09:09.340 --> 00:09:10.660
+And notice something else here.
+
+00:09:10.910 --> 00:09:13.169
+This returns a Boolean, right.
+
+00:09:13.340 --> 00:09:19.660
+Well I'm returning whatever my base
+classes deposit method return to me.
+
+00:09:20.420 --> 00:09:23.430
+And so if it failed over there,
+I'm just returning fail here.
+
+00:09:23.440 --> 00:09:25.790
+If it worked over there,
+I'm returning true here.
+
+00:09:26.410 --> 00:09:30.730
+Okay, so again, we're leveraging on
+the fact that all of these deposit and
+
+00:09:30.759 --> 00:09:32.539
+withdraw methods will return Booleans.
+
+00:09:33.110 --> 00:09:36.479
+Notice there is no withdraw method
+because we're inheriting our parents.
+
+00:09:36.810 --> 00:09:39.283
+It's public in the account
+so it's public and me,
+
+00:09:39.460 --> 00:09:40.660
+so I've got access to it.
+
+00:09:41.740 --> 00:09:45.839
+And here is the overloaded insertion
+operator for a savings account.
+
+00:09:47.040 --> 00:09:50.320
+I mentioned slicing before, if we
+don't provide this and we pass a
+
+00:09:50.320 --> 00:09:54.610
+savings account into the account
+overloaded insertion operator, it'll
+
+00:09:54.610 --> 00:09:56.760
+slice and this piece here won't print.
+
+00:09:57.620 --> 00:10:00.590
+It'll still print name and balance
+because all accounts have names and
+
+00:10:00.590 --> 00:10:04.480
+balances but this piece here this
+is what my savings account brings.
+
+00:10:04.889 --> 00:10:08.060
+So this will just display savings
+account, the account name, the
+
+00:10:08.060 --> 00:10:11.610
+account balance and whatever the
+interest rate is in percent there.
+
+00:10:11.879 --> 00:10:15.240
+Okay, perfect, so now I wrote a
+little bit more code just to make
+
+00:10:15.250 --> 00:10:18.820
+our lives a little easier and it's
+right in these 2 files right here.
+
+00:10:18.830 --> 00:10:22.980
+I created 2 files, one is called
+account underscore util.header
+
+00:10:22.980 --> 00:10:26.419
+file and an account underscore
+util implementation file.
+
+00:10:26.889 --> 00:10:30.770
+And these are utility functions that
+we're going to use with these classes.
+
+00:10:31.140 --> 00:10:33.940
+They're not part of the class,
+they're simply utility functions.
+
+00:10:33.950 --> 00:10:34.780
+Let's take a look.
+
+00:10:34.960 --> 00:10:36.560
+Let's take a look at the header file.
+
+00:10:37.520 --> 00:10:41.200
+Okay, so I've got some simple utility
+helper functions for the account
+
+00:10:41.360 --> 00:10:43.220
+class and the savings account class.
+
+00:10:43.740 --> 00:10:46.939
+You'll see a lot of duplicated
+code here, a lot of this duplicated
+
+00:10:46.940 --> 00:10:49.589
+code is going to go away in
+the next section when we talk
+
+00:10:49.590 --> 00:10:51.050
+about polymorphic functions.
+
+00:10:51.370 --> 00:10:53.380
+But here, we're doing
+everything statically, so
+
+00:10:53.380 --> 00:10:54.480
+we've got to do it this way.
+
+00:10:54.930 --> 00:10:56.120
+So take a look at this.
+
+00:10:56.120 --> 00:10:57.600
+I've got a display function.
+
+00:10:57.600 --> 00:10:59.770
+I remember, these are
+regular functions.
+
+00:11:00.050 --> 00:11:02.209
+These are not class member functions.
+
+00:11:02.219 --> 00:11:05.810
+These are just plain old
+global c++ functions.
+
+00:11:06.209 --> 00:11:09.910
+It's called display, and it expects
+a vector of accounts, right,
+
+00:11:09.920 --> 00:11:11.970
+a bunch of accounts, by ref.
+
+00:11:12.780 --> 00:11:15.599
+Then I've got -- and all that does is
+just loops through them and displays
+
+00:11:15.599 --> 00:11:17.520
+each one of them, and I'll show
+you the code for that in a moment.
+
+00:11:17.540 --> 00:11:20.100
+These are just the prototypes
+that we're going to use in main.
+
+00:11:20.759 --> 00:11:22.010
+Here I've got a deposit.
+
+00:11:22.299 --> 00:11:25.470
+And all that's going to do is
+give me a list or a vector, in
+
+00:11:25.470 --> 00:11:27.260
+this case, of account objects.
+
+00:11:27.820 --> 00:11:30.860
+And I'm going to deposit
+this amount into all of them.
+
+00:11:30.880 --> 00:11:33.530
+So this is going to really be
+nice for us to test our code.
+
+00:11:34.150 --> 00:11:35.610
+Same thing here with withdrawal.
+
+00:11:36.009 --> 00:11:39.420
+Withdrawal a 1000 dollars from all
+of these accounts that I send you.
+
+00:11:40.480 --> 00:11:42.129
+So those are the ones
+for the account class.
+
+00:11:42.150 --> 00:11:44.190
+These are the ones for
+the savings account class.
+
+00:11:44.190 --> 00:11:47.540
+You can see that I've got savings
+accounts here and accounts here.
+
+00:11:48.290 --> 00:11:51.570
+Okay, also notice that the names are
+the same display display, deposit
+
+00:11:51.570 --> 00:11:52.950
+deposit, withdrawal withdrawal, right.
+
+00:11:52.950 --> 00:11:54.580
+So we're overloading here.
+
+00:11:54.650 --> 00:11:56.559
+We're using what we learned
+a long time ago when we
+
+00:11:56.559 --> 00:11:57.569
+talked about functions.
+
+00:11:57.940 --> 00:11:59.260
+We're overloading the functions.
+
+00:11:59.279 --> 00:12:01.559
+The compiler can tell
+them apart because of this
+
+00:12:01.570 --> 00:12:02.880
+first argument right here.
+
+00:12:02.880 --> 00:12:04.930
+This is a vector of savings accounts.
+
+00:12:04.930 --> 00:12:06.520
+This is a vector of accounts.
+
+00:12:07.810 --> 00:12:10.780
+Okay, so let's take a look
+at some of the code for this.
+
+00:12:11.139 --> 00:12:14.339
+Like I said, it's a bit
+long and repetitive, but
+
+00:12:14.370 --> 00:12:15.700
+hopefully you'll get the idea.
+
+00:12:16.480 --> 00:12:17.419
+Here's the display.
+
+00:12:17.730 --> 00:12:21.820
+So if you send me a vector of
+account objects by reference.
+
+00:12:22.070 --> 00:12:24.610
+And again, this is const because I
+don't want to modify it, I'm just
+
+00:12:24.610 --> 00:12:27.540
+displaying it, then I'm just going
+to print out this line of counts.
+
+00:12:27.550 --> 00:12:30.980
+And then I'm going to loop and say
+use a range-based for loop and for
+
+00:12:30.980 --> 00:12:34.709
+every account in that vector, I'm
+just printing it out, just like that.
+
+00:12:34.730 --> 00:12:37.500
+That's using the overloaded
+insertion operator.
+
+00:12:38.620 --> 00:12:40.310
+And that'll display them real nicely.
+
+00:12:41.010 --> 00:12:42.070
+Here's the deposit.
+
+00:12:42.110 --> 00:12:45.920
+In this case, I don't want this to
+be const as we did over there, up top
+
+00:12:45.920 --> 00:12:47.780
+here because i do want to modify it.
+
+00:12:48.270 --> 00:12:52.739
+And it's as simple as loop through
+the accounts for each account
+
+00:12:52.750 --> 00:12:54.540
+deposit that amount into it.
+
+00:12:55.230 --> 00:12:58.700
+If it came back true, that means
+the deposit was successful.
+
+00:12:58.720 --> 00:13:03.880
+And I just display deposited however
+much amount to whatever account if.
+
+00:13:03.880 --> 00:13:09.990
+It fails for whatever reason, I'm just
+saying failed deposit to this account.
+
+00:13:11.580 --> 00:13:17.640
+And last method here is
+the withdrawal, same idea.
+
+00:13:17.880 --> 00:13:23.020
+I want to withdraw this amount from
+all of the objects in that vector.
+
+00:13:23.630 --> 00:13:27.239
+So all I'm going to do is loop
+through, I'm going to call the
+
+00:13:27.239 --> 00:13:29.030
+withdrawal method on each account.
+
+00:13:29.030 --> 00:13:32.490
+And if it comes back true, then
+the withdrawal was successful,
+
+00:13:32.490 --> 00:13:35.920
+and I'll display I withdrew a
+1000 dollars from each account.
+
+00:13:36.560 --> 00:13:38.520
+If it fails, I'll say that as well.
+
+00:13:39.969 --> 00:13:41.659
+Okay, so you can see
+it's pretty standard.
+
+00:13:41.660 --> 00:13:42.990
+It's nothing we haven't done before.
+
+00:13:42.990 --> 00:13:45.709
+The only thing that's different maybe
+is the organization that we're doing.
+
+00:13:45.990 --> 00:13:50.760
+So I've got those 3 functions for
+account, and then I've basically
+
+00:13:50.760 --> 00:13:54.340
+got the same 3 functions for
+savings account, you can see
+
+00:13:54.340 --> 00:13:55.900
+savings accounts right there.
+
+00:13:56.590 --> 00:13:58.260
+So it's really pretty much the same.
+
+00:13:58.270 --> 00:14:01.519
+The only difference is that this
+deposit and this withdrawal right
+
+00:14:01.520 --> 00:14:06.870
+here will use the specialized
+versions of the deposit and
+
+00:14:06.890 --> 00:14:08.280
+withdraw from the savings account.
+
+00:14:09.610 --> 00:14:10.470
+So that's it.
+
+00:14:10.470 --> 00:14:11.400
+Let's look at the main.
+
+00:14:12.770 --> 00:14:15.009
+Here's my main, and it's not
+that long, but we're going
+
+00:14:15.010 --> 00:14:16.180
+a lot going on here though.
+
+00:14:16.460 --> 00:14:20.040
+Notice that I'm including
+account util.h, right because
+
+00:14:20.040 --> 00:14:21.749
+i need those utility functions.
+
+00:14:22.379 --> 00:14:24.839
+And let me scroll up just a
+little bit, and you can see what's
+
+00:14:24.840 --> 00:14:26.180
+happening here with the count.
+
+00:14:26.740 --> 00:14:28.040
+I'm creating a vector.
+
+00:14:28.040 --> 00:14:29.400
+We've used the vector before.
+
+00:14:29.400 --> 00:14:32.510
+We'll learn more about the vector
+and the list and other things when we
+
+00:14:32.510 --> 00:14:37.350
+talk about the c++ standard template
+library, but we've used vector so we
+
+00:14:37.350 --> 00:14:38.680
+should be pretty familiar with it.
+
+00:14:39.240 --> 00:14:43.380
+So I'm creating a vector here called
+accounts, a vector of account objects.
+
+00:14:44.000 --> 00:14:47.260
+And I'm just simply creating
+an empty account, right.
+
+00:14:47.260 --> 00:14:49.839
+That's going to be an unnamed
+account with a 0 balance.
+
+00:14:50.170 --> 00:14:55.139
+I'm creating another account called
+Larry with 0, Moe with 22000, and
+
+00:14:55.139 --> 00:14:59.579
+Curly with 5000, and I'm pushing those
+accounts at the back of that vector.
+
+00:15:00.330 --> 00:15:04.390
+So all we're doing there is creating a
+vector and creating 4 account objects
+
+00:15:04.390 --> 00:15:05.910
+and putting them in the vector.
+
+00:15:06.750 --> 00:15:09.390
+Once we're done with that, we're
+going to use those utility functions.
+
+00:15:09.400 --> 00:15:11.240
+So you can see this is where
+it comes in real handy.
+
+00:15:11.660 --> 00:15:15.480
+Display the accounts, deposit
+a 1000 into each one of those
+
+00:15:15.480 --> 00:15:19.170
+accounts, and withdraw 2000
+from each one of those accounts.
+
+00:15:19.810 --> 00:15:22.360
+So that's going to deal with accounts,
+and then we're going to do the exact
+
+00:15:22.360 --> 00:15:24.109
+same thing with savings accounts.
+
+00:15:24.360 --> 00:15:27.470
+So in this case, I've got a
+vector of savings account objects,
+
+00:15:27.470 --> 00:15:28.989
+and I'll call it save accounts.
+
+00:15:29.759 --> 00:15:32.519
+And the same idea, I'm
+going to create a savings
+
+00:15:32.520 --> 00:15:34.130
+account object, that's empty.
+
+00:15:35.059 --> 00:15:37.590
+I'm going to create a savings
+account object that's superman,
+
+00:15:37.970 --> 00:15:40.000
+another one for a batman with 2000.
+
+00:15:40.270 --> 00:15:44.270
+And finally, wonderwoman
+with 5000 and 5% interest.
+
+00:15:44.280 --> 00:15:48.550
+Okay, these get the default values
+for both the balance and the
+
+00:15:48.550 --> 00:15:50.020
+interest these guys right here.
+
+00:15:50.710 --> 00:15:53.120
+And this guy gets all 3
+default values, right.
+
+00:15:53.139 --> 00:15:55.680
+It's going to be an unnamed
+savings account with no
+
+00:15:55.680 --> 00:15:56.980
+balance and no interest rate.
+
+00:15:57.970 --> 00:16:01.365
+And then we'll do the same thing with
+this, display deposit and withdrawal.
+
+00:16:01.600 --> 00:16:04.860
+You can see that we've got the
+same code here and here but
+
+00:16:04.860 --> 00:16:07.429
+different functions will be
+called because of the overloading.
+
+00:16:08.179 --> 00:16:10.310
+So let's run this and
+you'll see the output.
+
+00:16:10.730 --> 00:16:12.860
+And hopefully, you'll see
+why i did those utility.
+
+00:16:12.870 --> 00:16:15.010
+Use those utility functions
+because it's just going to make
+
+00:16:15.010 --> 00:16:18.520
+our lives much, much easier
+and make our main very clear.
+
+00:16:18.920 --> 00:16:20.680
+So let me run this, build and run.
+
+00:16:21.700 --> 00:16:23.550
+And here you can see the output.
+
+00:16:23.980 --> 00:16:25.079
+I'll scroll to the top.
+
+00:16:25.920 --> 00:16:29.040
+And right here, I'm
+displaying the accounts.
+
+00:16:29.040 --> 00:16:31.750
+And this is what you're
+seeing here on the right side.
+
+00:16:32.090 --> 00:16:35.280
+Account unnamed account, that's
+from this guy right here.
+
+00:16:35.280 --> 00:16:37.719
+Then we see Larry with no balance.
+
+00:16:37.719 --> 00:16:39.290
+Then we see Moe with 2000.
+
+00:16:39.290 --> 00:16:41.119
+And then we see Curly with 5000.
+
+00:16:42.840 --> 00:16:44.770
+Then I call the deposit function.
+
+00:16:44.990 --> 00:16:46.829
+And what that's going to do is
+it's going to loop through all
+
+00:16:46.840 --> 00:16:49.819
+these 4 accounts and deposit
+a 1000 dollars into each one.
+
+00:16:50.640 --> 00:16:53.919
+So you can see here I'm deposited
+all of them returned successful.
+
+00:16:54.129 --> 00:16:56.900
+So I deposited a 1000 to
+the unnamed account, and
+
+00:16:56.900 --> 00:16:58.359
+its balance is now a 1000.
+
+00:16:58.979 --> 00:17:01.709
+I deposited a 1000 to
+Larry, he's a 1000.
+
+00:17:02.129 --> 00:17:04.769
+Moe is now 3000, and curly is 6000.
+
+00:17:05.919 --> 00:17:08.520
+And then what I'm going to do
+is I'm going to withdraw 2000
+
+00:17:08.530 --> 00:17:11.000
+dollars from each one of those
+accounts as I loop through them.
+
+00:17:11.410 --> 00:17:13.010
+And I'll scroll this
+up just a little bit.
+
+00:17:13.020 --> 00:17:17.649
+And here you can see that right
+now I'm withdrawing 2000 dollars
+
+00:17:17.960 --> 00:17:20.560
+from the unnamed account, but
+the unnamed account only had
+
+00:17:20.560 --> 00:17:21.949
+a one 1000 dollar balance.
+
+00:17:22.039 --> 00:17:25.319
+So it failed, and the
+balance is still a 1000.
+
+00:17:26.170 --> 00:17:29.120
+I tried to withdraw
+2000 dollars from Larry.
+
+00:17:29.160 --> 00:17:30.550
+Well, Larry only has a 1000.
+
+00:17:30.580 --> 00:17:31.690
+So that failed as well.
+
+00:17:32.660 --> 00:17:36.760
+And I tried to withdraw 2000 from Moe
+and Curly, they have enough balance.
+
+00:17:36.770 --> 00:17:38.500
+So Moe is now a 1000.
+
+00:17:38.549 --> 00:17:39.510
+And curly is now 4000.
+
+00:17:40.190 --> 00:17:43.960
+And now the savings, let me
+scroll up just a little bit
+
+00:17:43.960 --> 00:17:44.940
+so you can see it better.
+
+00:17:45.930 --> 00:17:48.800
+Here now we're doing it with the
+same thing but with savings accounts.
+
+00:17:49.040 --> 00:17:53.620
+So I'm creating 4 savings
+account objects, in this case.
+
+00:17:53.620 --> 00:18:00.590
+The empty one, superman with 0 0,
+batman with 2000 and 0, and wonder
+
+00:18:00.590 --> 00:18:03.360
+woman with 5000 and 5% interest.
+
+00:18:03.870 --> 00:18:04.870
+And then I'm displaying them.
+
+00:18:04.880 --> 00:18:06.480
+You can see them being displayed here.
+
+00:18:06.950 --> 00:18:11.530
+I'm displaying the unnamed
+savings account 0 0, superman 0
+
+00:18:11.530 --> 00:18:16.450
+0, batman 2000 0, and then wonder
+woman 5000 and 5% interest.
+
+00:18:17.330 --> 00:18:20.570
+Then I'm calling the deposit method
+for each one of those guys again in
+
+00:18:20.570 --> 00:18:22.310
+the loop using the utility function.
+
+00:18:22.660 --> 00:18:25.100
+And what's happening is I'm
+going to deposit a 1000 dollars
+
+00:18:25.100 --> 00:18:26.550
+into each one of those accounts.
+
+00:18:26.850 --> 00:18:29.810
+And notice that I'm depositing
+a 1000 into unnamed, right.
+
+00:18:29.810 --> 00:18:31.410
+So now it's got a 1000 balance.
+
+00:18:31.810 --> 00:18:34.010
+I'm depositing a 1000 into superman.
+
+00:18:34.010 --> 00:18:35.410
+So it has a 1000.
+
+00:18:35.510 --> 00:18:39.410
+I'm depositing a 1000 into
+batman, so it was 2000 up here.
+
+00:18:39.610 --> 00:18:42.910
+Now it's 3000. Notice it had a 0% interest rate.
+
+00:18:42.910 --> 00:18:45.910
+So we didn't get that extra
+little bonus that we want.
+
+00:18:45.910 --> 00:18:49.410
+But in this case, I'm depositing
+a 1000 to wonder woman.
+
+00:18:49.410 --> 00:18:52.010
+And wonder woman has
+got a 5% interest rate.
+
+00:18:52.010 --> 00:18:55.810
+So you can see that, that indeed took
+that into account, so it's really
+
+00:18:55.810 --> 00:18:58.810
+using that specialized deposit method.
+
+00:18:58.810 --> 00:19:03.110
+And then what we'll do is we'll
+withdraw some 2000 dollars from each one of those accounts.
+
+00:19:03.110 --> 00:19:06.610
+In this case, it's going to
+fail with the unnamed account
+
+00:19:06.610 --> 00:19:09.610
+because the unnamed account
+only has a balance of a 1000.
+
+00:19:09.610 --> 00:19:13.020
+It's going to fail again with the
+superman account because it also
+
+00:19:13.020 --> 00:19:14.530
+only has a balance of a 1000.
+
+00:19:15.020 --> 00:19:19.870
+But with batman and wonder woman,
+it'll be just fine because batman
+
+00:19:19.870 --> 00:19:22.990
+had 3000 and wonder woman had 6050.
+
+00:19:23.300 --> 00:19:25.879
+So you can see that now
+we've got a 1000 in batman
+
+00:19:25.880 --> 00:19:28.629
+and 4050 in wonder woman.
+
+00:19:29.199 --> 00:19:32.690
+Hopefully, that makes sense, and that
+gives you an idea of these classes.
+
+00:19:33.080 --> 00:19:36.230
+Study these, look at them, play
+with them, run through the debugger,
+
+00:19:36.230 --> 00:19:37.730
+throw some statements in there.
+
+00:19:38.040 --> 00:19:40.290
+And what we'll do -- I think
+you know what we're going to
+
+00:19:40.290 --> 00:19:43.859
+do we're going to add a few
+new classes to this hierarchy.
+
+00:19:43.860 --> 00:19:46.460
+And I'll talk about that in
+the next video when I talk
+
+00:19:46.469 --> 00:19:48.150
+about the actual challenge.

@@ -1,0 +1,262 @@
+WEBVTT
+
+00:00:05.700 --> 00:00:09.400
+One question that students often ask when they're considering a career
+
+00:00:09.400 --> 00:00:13.000
+in software development is what programming language should I learn?
+
+00:00:13.500 --> 00:00:16.000
+There's really no easy answer to that question.
+
+00:00:16.000 --> 00:00:19.000
+Experienced professional programmers generally know many
+
+00:00:19.000 --> 00:00:22.300
+programming languages and use them based on many factors.
+
+00:00:22.600 --> 00:00:26.600
+The question I'd like to address in this video is why learn C++.
+
+00:00:27.700 --> 00:00:30.100
+Let's start with C++ popularity.
+
+00:00:31.000 --> 00:00:35.200
+Much, if not most of the software written today is still written in C++
+
+00:00:35.500 --> 00:00:37.860
+and this has been the case for many, many years.
+
+00:00:38.520 --> 00:00:41.520
+There are many programming language popularity indexes
+
+00:00:41.520 --> 00:00:46.020
+that use different criteria for ranking the popularity of programming languages.
+
+00:00:46.020 --> 00:00:48.820
+Let's head over to a browser and we'll look at a few of them.
+
+00:00:51.320 --> 00:00:52.720
+I've opened up a browser,
+
+00:00:52.720 --> 00:00:56.980
+and I've loaded several sites that rank programming languages based on popularity.
+
+00:00:57.640 --> 00:01:01.630
+All of the data I'm showing is current as of November 2017.
+
+00:01:01.630 --> 00:01:04.930
+So depending on when you access the site, your results may differ.
+
+00:01:06.130 --> 00:01:10.030
+Each site uses their own criteria and I encourage you to browse through these sites.
+
+00:01:10.030 --> 00:01:13.230
+I've provided the URLs for these sites in the course resources.
+
+00:01:13.890 --> 00:01:16.990
+First let's look at the Tobi index. As you can see,
+
+00:01:16.990 --> 00:01:19.290
+++ is currently ranked third.
+
+00:01:19.990 --> 00:01:21.590
+If you select that row,
+
+00:01:21.590 --> 00:01:26.390
+you can learn more about C++ popularity since 2001.
+
+00:01:26.390 --> 00:01:30.380
+It's pretty impressive for language to be ranked so consistently for so long
+
+00:01:30.380 --> 00:01:33.580
+considering how many new languages and frameworks appear on the scene.
+
+00:01:34.130 --> 00:01:37.930
+The next site is the PYPL popularity index.
+
+00:01:38.480 --> 00:01:41.180
+As you can see C++ is currently ranked sixth.
+
+00:01:42.180 --> 00:01:44.880
+Next, we'll look at the IEEE Spectrum Rankings.
+
+00:01:45.380 --> 00:01:48.580
+On IEEE Spectrum, C++ is ranked number four.
+
+00:01:49.080 --> 00:01:52.180
+The Redmonk ranking has C++ at number six.
+
+00:01:53.280 --> 00:01:55.980
+And finally, we'll take a look at Zdnet's rankings,
+
+00:01:55.980 --> 00:01:59.540
+they combine popular indexes and create an ensemble ranking,
+
+00:01:59.540 --> 00:02:01.840
+which shows C++ at number four.
+
+00:02:03.140 --> 00:02:05.940
+They also provide an analysis of the data that's a good read.
+
+00:02:06.740 --> 00:02:08.040
+Let's return to the slides.
+
+00:02:09.140 --> 00:02:10.940
+As you can see from these sites,
+
+00:02:10.940 --> 00:02:14.740
+C++ is still a very popular language among software developers
+
+00:02:14.740 --> 00:02:16.890
+and the ranking is consistently high.
+
+00:02:16.890 --> 00:02:18.190
+If you go to GitHub,
+
+00:02:18.190 --> 00:02:21.790
+you'll see that there's a huge number of active C++ repositories,
+
+00:02:21.790 --> 00:02:25.290
+and C++ is also extremely active on stack overflow.
+
+00:02:25.890 --> 00:02:29.690
+Popularity is important, but C++ is also a relevant language.
+
+00:02:29.690 --> 00:02:34.290
+There are many, many leading software titles written entirely or partly in C++.
+
+00:02:34.990 --> 00:02:39.090
+These include the windows, Linux and MacOS 10 operating systems,
+
+00:02:39.340 --> 00:02:42.700
+many of the adobe products such as photoshop and illustrator,
+
+00:02:42.700 --> 00:02:46.700
+the mysql and mongodb database engines and many, many more.
+
+00:02:47.690 --> 00:02:50.290
+Leading tech companies UC++ for many of their
+
+00:02:50.290 --> 00:02:52.390
+products and internal research and development.
+
+00:02:52.750 --> 00:02:55.750
+These include Amazon, Apple, Microsoft, PayPal,
+
+00:02:55.750 --> 00:02:57.750
+Google Facebook, Oracle and more.
+
+00:02:58.850 --> 00:03:02.650
+Finally. The types of projects that C++ is being used on
+
+00:03:02.650 --> 00:03:03.650
+are pretty cool.
+
+00:03:03.650 --> 00:03:07.650
+In many cases, these are the engines that drive many popular frameworks.
+
+00:03:08.250 --> 00:03:12.250
+For example, engines for virtual reality, the unreal game engine,
+
+00:03:12.250 --> 00:03:15.150
+machine learning, network and telecom and more.
+
+00:03:16.050 --> 00:03:19.550
+There are many reasons why C++ is so popular and relevant,
+
+00:03:19.550 --> 00:03:21.850
+but the main reason is because it's so powerful.
+
+00:03:22.250 --> 00:03:26.050
+What do I mean by powerful? C++ is super fast.
+
+00:03:26.050 --> 00:03:29.250
+It's a general purpose programming language that supports both
+
+00:03:29.250 --> 00:03:33.650
+procedural and object-oriented programming, making it very flexible.
+
+00:03:34.250 --> 00:03:37.150
+It scales easily and it can also be portable.
+
+00:03:38.350 --> 00:03:41.550
+C++ can do many things that other languages just can't,
+
+00:03:41.550 --> 00:03:44.750
+that's why nearly every major language has a way to interface
+
+00:03:44.750 --> 00:03:46.410
+with the code written in C++.
+
+00:03:47.110 --> 00:03:49.710
+With all this power and flexibility comes complexity,
+
+00:03:50.110 --> 00:03:52.610
+there's no question that C++ is one of the most complex
+
+00:03:52.610 --> 00:03:56.600
+programming languages out there but learning the basics is pretty easy
+
+00:03:56.600 --> 00:03:58.200
+and that's what this course is all about.
+
+00:03:59.200 --> 00:04:03.600
+Finally, you've probably heard that C++ programmers command higher salaries.
+
+00:04:03.600 --> 00:04:04.600
+This is true.
+
+00:04:04.850 --> 00:04:09.050
+You may have even heard the phrase C++ equals salary++.
+
+00:04:09.550 --> 00:04:12.650
+Career opportunities are out there for C++ programmers.
+
+00:04:12.650 --> 00:04:15.650
+I've consulted for many years with major U.S corporations
+
+00:04:15.650 --> 00:04:17.650
+on the hiring of software developers.
+
+00:04:17.650 --> 00:04:20.450
+This includes full stack developers, java developers
+
+00:04:20.450 --> 00:04:23.950
+iOS and android developers and C++ developers.
+
+00:04:24.610 --> 00:04:27.110
+Having C++ skills on your resume
+
+00:04:27.110 --> 00:04:30.110
+is often like a badge of honor amongst software developers,
+
+00:04:30.110 --> 00:04:33.410
+and many times it'll get you that job interview. Why?
+
+00:04:33.410 --> 00:04:35.970
+Because C++ programmers have a skill set
+
+00:04:35.970 --> 00:04:38.370
+that sets them apart from many other programmers.
+
+00:04:38.920 --> 00:04:42.120
+One final thought, since so many programming languages
+
+00:04:42.120 --> 00:04:44.220
+are influenced by C++,
+
+00:04:44.220 --> 00:04:48.320
+learning new languages is often easier since you already have solid foundation
+
+00:04:48.320 --> 00:04:50.820
+in a root programming language, like C++.
+
+00:04:51.620 --> 00:04:54.620
+As you can see you've made a good choice in learning C++.
+
+00:04:54.620 --> 00:04:58.320
+In the next video, we'll briefly look at the evolution of C++
+
+00:04:58.320 --> 00:04:59.820
+and the C++ standard.

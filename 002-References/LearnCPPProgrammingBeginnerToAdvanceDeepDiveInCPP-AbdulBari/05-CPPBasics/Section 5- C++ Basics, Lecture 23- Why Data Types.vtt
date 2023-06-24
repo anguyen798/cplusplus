@@ -1,0 +1,557 @@
+WEBVTT
+
+0
+00:00.390 --> 00:06.860
+In this video we will learn about data types so we will understand why we need to data types so let me remind
+
+1
+00:06.900 --> 00:12.270
+you, already I said that a program is a set of two ingredients.
+
+2
+00:12.270 --> 00:19.170
+That is data and instruction or operations that are performed on the data I have shown how the program
+
+3
+00:19.170 --> 00:21.050
+runs and said the memory I have shown.
+
+4
+00:21.050 --> 00:23.510
+There are three sections that code section and stack.
+
+5
+00:23.520 --> 00:25.800
+Okay I'm showing stock here and that is heap.
+
+6
+00:26.070 --> 00:29.240
+So stack will contain data that is all the variables.
+
+7
+00:29.310 --> 00:35.120
+Then this will contain instructions this we have already seen in previous one of the videos.
+
+8
+00:35.160 --> 00:40.760
+Now we are writing the program so that they perform operations on data and get some results.
+
+9
+00:40.770 --> 00:43.190
+That is computational results.
+
+10
+00:43.290 --> 00:48.480
+We want our work to be done by machines by executing programs.
+
+11
+00:48.480 --> 00:51.480
+So let us understand how we work in daily life.
+
+12
+00:51.690 --> 00:58.280
+So in daily life we use that data in various places like for example the amount of bill amount 
+
+13
+00:58.280 --> 01:04.210
+that is the total amount or the price of some item or your roll number your marks.
+
+14
+01:04.230 --> 01:06.980
+You are door number, bestie name, your name.
+
+15
+01:07.170 --> 01:10.020
+Various things are there, this is nothing but data right.
+
+16
+01:10.440 --> 01:15.640
+So this data how we use it in our daily life and what computations we perform.
+
+17
+01:15.690 --> 01:17.370
+Let us understand this fast.
+
+18
+01:17.490 --> 01:22.260
+So I will categorize the data we use two types of data in our daily life.
+
+19
+01:22.260 --> 01:29.240
+One is numeric data that is set of numbers or figures.
+
+20
+01:29.340 --> 01:33.050
+Then we use character type data right.
+
+21
+01:33.090 --> 01:39.570
+Character types are not words or sentences or names names of places.
+
+22
+01:39.570 --> 01:41.120
+That is in the form of character.
+
+23
+01:41.130 --> 01:44.150
+You can also call this as alphabetic type of data.
+
+24
+01:49.560 --> 01:57.960
+So data is either numeric or alphabetic or you can say character and sometime we use mix often numeric
+
+25
+01:58.050 --> 02:07.740
+and alphabetic like if I'm writing a door number, suppose 125-A, that's a door number.
+
+26
+02:08.490 --> 02:12.030
+And this is having on a number as well as alphabet.
+
+27
+02:12.030 --> 02:17.600
+So let us consider this also as alphabetical and do it as having numbers but alphabet side.
+
+28
+02:17.640 --> 02:22.190
+Let us call it as alphabetic otherwise you can say alpha-numeric.
+
+29
+02:22.470 --> 02:25.980
+But basically it is like a character only, leave it.
+
+30
+02:26.050 --> 02:28.410
+Now I would pick up these two one by one.
+
+31
+02:28.470 --> 02:30.770
+I will explain more detail about this.
+
+32
+02:31.020 --> 02:36.180
+So let us pick up numeric if I have a number that is the prize or for some item.
+
+33
+02:36.180 --> 02:42.040
+Let us see it is 12 dollars or a roll number of a student.
+
+34
+02:42.060 --> 02:51.450
+That is twenty five is the rule number or the bill amount is fifteen dollars thirty five cents fifteen
+
+35
+02:51.450 --> 02:52.770
+point three five.
+
+36
+02:53.220 --> 02:58.020
+So if you observe this is not having decimal and this is having decimal.
+
+37
+02:58.410 --> 03:02.960
+So with this I can say that in daily life we use two type of numbers.
+
+38
+03:02.970 --> 03:06.700
+One is that with a decimal, without decimal.
+
+39
+03:06.900 --> 03:12.720
+We don't usually differentiate them we say it's a number only but when it comes to computers remember
+
+40
+03:13.080 --> 03:17.600
+that number has to be represented in binary form right.
+
+41
+03:17.690 --> 03:19.960
+It has to be present in binary form.
+
+42
+03:20.070 --> 03:22.080
+Then how do you represent a decimal.
+
+43
+03:22.440 --> 03:23.480
+So it's a problem.
+
+44
+03:23.490 --> 03:26.280
+So it has to be handled specially.
+
+45
+03:26.370 --> 03:31.000
+So we our decimal numbers are different and with decimal numbers are different.
+
+46
+03:31.050 --> 03:37.830
+So all electronic devices like computer or your mobile phone or calculator anything if you take all
+
+47
+03:37.830 --> 03:43.620
+electronic devices with numbers are used they treat these two numbers differently because there is an extra
+
+48
+03:43.680 --> 03:51.030
+effort required for presenting decimal point number so I will categorize this number as integer
+
+49
+03:51.420 --> 03:53.280
+that is without a decimal.
+
+50
+03:53.400 --> 04:02.420
+And next is floating point with the decimal. floating point means decimal
+
+51
+04:02.470 --> 04:03.390
+only right.
+
+52
+04:03.660 --> 04:09.540
+So the way of representing the decimal number is a approach is called Floating Point.
+
+53
+04:09.690 --> 04:11.330
+So this you will understand later.
+
+54
+04:11.340 --> 04:16.950
+So now I have to type off numbers integer and floating point.
+
+55
+04:16.950 --> 04:22.980
+This is how, not just C++, all the programming languages present day programming languages like C C++
+
+56
+04:23.010 --> 04:29.400
+Java C sharp Python anything you take they differentiate the data like this and floating point as a
+
+57
+04:29.400 --> 04:36.340
+standard all machine follow the same method for representing decimal point the next coming onto this
+
+58
+04:36.340 --> 04:38.540
+side that is characters.
+
+59
+04:38.610 --> 04:51.360
+So here if I write a name that is Mark or Anil, these are the names or name of a place Delhi, right? or
+
+60
+04:51.420 --> 04:54.900
+any word program is a word.
+
+61
+04:55.230 --> 04:59.270
+So it may be a name of a person it may be a name of a place or it may be a.
+
+62
+04:59.400 --> 05:01.060
+Any word from dictionary.
+
+63
+05:01.140 --> 05:02.630
+These are nothing but a character.
+
+64
+05:02.640 --> 05:06.750
+So actually character is just a single letter, a single letter is a character right.
+
+65
+05:07.080 --> 05:10.260
+But together they are forming it as a string.
+
+66
+05:10.290 --> 05:14.250
+So we call this as string in our program.
+
+67
+05:14.250 --> 05:20.490
+So string is nothing but a collection of alphabets or characters that are forming a single entity that
+
+68
+05:20.490 --> 05:27.640
+is a string so string may be a name of a person or a word or any word from missionary or a song.
+
+69
+05:27.720 --> 05:29.610
+So this also represented as string.
+
+70
+05:29.910 --> 05:35.840
+So if I talk about programming languages they support character type also and collection of characters
+
+71
+05:35.840 --> 05:37.080
+but a string.
+
+72
+05:37.590 --> 05:42.100
+So individual character also and the collection of characters both are supported by language.
+
+73
+05:42.110 --> 05:45.480
+So in C++ both are supported. now one thing.
+
+74
+05:45.660 --> 05:51.450
+As I said back, these numbers has to be represented in binary than then about the characters.
+
+75
+05:51.630 --> 05:57.760
+They are also represented in binary. binary means it's a numeric then these are characters.
+
+76
+05:58.020 --> 06:04.500
+So yes there are some codes a use for representing characters that we learn when we talk about characters.
+
+77
+06:05.280 --> 06:11.790
+So this is about different data types we use in daily life and I have categorized these daily user data
+
+78
+06:11.790 --> 06:15.900
+type in the data types that we use in our programs.
+
+79
+06:15.900 --> 06:23.820
+Now let us come to the next point see this type of data has to be stored in the memory so that program
+
+80
+06:23.820 --> 06:24.980
+can work on that.
+
+81
+06:25.230 --> 06:27.340
+So let us discuss up on this point.
+
+82
+06:27.390 --> 06:28.370
+So I will remove this.
+
+83
+06:28.470 --> 06:31.460
+I will discuss. when it comes to memory.
+
+84
+06:31.470 --> 06:39.570
+Memory is a defined are represented in terms of bytes so one byte if I take one bite is nothing but collection
+
+85
+06:39.570 --> 06:43.890
+of 8 bits.
+
+86
+06:43.890 --> 06:45.390
+So these are 8 bits.
+
+87
+06:45.480 --> 06:52.960
+So it's a collection of 8 bits and data is stored in the  form of zeros and ones in this one.
+
+88
+06:52.960 --> 06:55.730
+So whatever the form of bits may be.
+
+89
+06:55.900 --> 06:58.460
+Now this binary form we say it's a data.
+
+90
+06:58.900 --> 07:02.980
+Now the question is if you want to store in digitized data.
+
+91
+07:02.980 --> 07:05.860
+Shall we take just one byte? so in one bite.
+
+92
+07:05.860 --> 07:08.460
+What is the maximum number that we can store.
+
+93
+07:08.500 --> 07:10.150
+That is minimum is zero.
+
+94
+07:10.150 --> 07:16.290
+And the max is 255. so largest no. is 255 I cannot have bigger figures.
+
+95
+07:16.330 --> 07:16.960
+Yes.
+
+96
+07:17.050 --> 07:19.260
+Then shall we take more than one bites.
+
+97
+07:19.300 --> 07:19.840
+Yes.
+
+98
+07:19.840 --> 07:22.530
+Shall we take two bytes or 4 bytes.
+
+99
+07:22.540 --> 07:23.260
+So that's it.
+
+100
+07:23.500 --> 07:26.060
+So this you will learn in the next video.
+
+101
+07:26.170 --> 07:27.160
+That is integer.
+
+102
+07:27.160 --> 07:28.870
+How many bytes it would take.
+
+103
+07:28.870 --> 07:30.370
+And what is the minimum value.
+
+104
+07:30.370 --> 07:32.680
+What is the maximum value it will store.
+
+105
+07:32.680 --> 07:35.470
+These are the type of things that we learned in the coming video.
+
+106
+07:35.840 --> 07:36.290
+OK.
+
+107
+07:36.370 --> 07:43.180
+So I'll give you the detailed explanation of all the data data that are available in C++ so the same
+
+108
+07:43.180 --> 07:50.170
+way we will learn integer type of data, how much memory it takes, how many bytes it will take.
+
+109
+07:50.250 --> 07:50.670
+Right.
+
+110
+07:50.680 --> 07:57.400
+So how many bytes and float type of data how many bytes it will take and character type of data how
+
+111
+07:57.400 --> 08:02.370
+many bytes it takes and how it is represented in the memory, we will learn about this.
+
+112
+08:02.380 --> 08:07.810
+So if you have the clear idea of what the data is then you can use them properly for storing your data.
+
+113
+08:08.770 --> 08:10.430
+So this was about size.
+
+114
+08:10.450 --> 08:15.280
+Now next important thing about variable I will discuss a little bit about variable.
+
+115
+08:15.790 --> 08:21.950
+So once you learn about the data types in the coming videos then later on we will learn how to take a
+
+116
+08:21.970 --> 08:24.320
+data or to store data in the program.
+
+117
+08:24.330 --> 08:26.310
+Suppose i want want integer type data.
+
+118
+08:26.630 --> 08:29.560
+Okay I will say integer then where do you store data.
+
+119
+08:29.560 --> 08:38.050
+So for that we declare a variable and say that I want a b c so I can get three variables depending on
+
+120
+08:38.050 --> 08:42.640
+the number of bytes taken my integer if it  is taking two bytes then I get two  bytes  provide for each
+
+121
+08:43.030 --> 08:46.160
+and if they are taking 4 bytes then they will get 4-4 bytes for each.
+
+122
+08:46.190 --> 08:51.660
+I get the variables like this and then we will use this variable name in our programs like say
+
+123
+08:51.670 --> 08:58.990
+a assigned 10 or b assign 5 then C assign a plus b we do it like this we performed operations store the
+
+124
+08:58.990 --> 08:59.380
+data.
+
+125
+08:59.620 --> 09:04.480
+So ten is  stored in this one and five is stored in this one and the result is stored in this one.
+
+126
+09:04.900 --> 09:06.860
+So that's all in the programs.
+
+127
+09:06.880 --> 09:10.540
+We use the names of the variable that is stored in the memory.
+
+128
+09:10.540 --> 09:14.740
+So we don't use the memory addresses but we use the names.
+
+129
+09:14.740 --> 09:16.450
+So that is the concept of variable.
+
+130
+09:16.960 --> 09:20.050
+So a variable is used for storing data.
+
+131
+09:20.080 --> 09:26.790
+This is used for storing data the next what type of data you must mentioned that type of data also. based 
+
+132
+09:26.800 --> 09:27.180
+on that.
+
+133
+09:27.190 --> 09:30.220
+We can have the value of that data type.
+
+134
+09:30.340 --> 09:35.670
+See this integer doesn't allow decimal so we can use only integer if you want float then declared it as
+
+135
+09:35.680 --> 09:37.660
+float then you can store float in this one also.
+
+136
+09:38.380 --> 09:42.570
+So these concept we will learn them in detail in coming videos.
+
+137
+09:42.610 --> 09:44.060
+This was just an introduction.
+
+138
+09:44.080 --> 09:48.610
+So continue with the next video and you learn details about data types.

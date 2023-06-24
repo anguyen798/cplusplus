@@ -1,0 +1,1179 @@
+WEBVTT
+
+00:00:05.590 --> 00:00:09.780
+In this video, we'll learn how copy
+and move constructors and overloaded
+
+00:00:09.780 --> 00:00:11.459
+assignment work with inheritance.
+
+00:00:12.219 --> 00:00:14.790
+As we've seen, copy and
+move constructors and the
+
+00:00:14.799 --> 00:00:17.720
+copy and move assignment
+operators are not automatically
+
+00:00:17.720 --> 00:00:19.560
+inherited from the base class.
+
+00:00:20.500 --> 00:00:23.070
+First, let's remember that
+you may not have to provide
+
+00:00:23.080 --> 00:00:24.340
+these operations at all.
+
+00:00:24.660 --> 00:00:28.119
+Depending on your class and its
+composition, the compiler provided
+
+00:00:28.130 --> 00:00:29.720
+versions may be all you need.
+
+00:00:30.219 --> 00:00:32.790
+However, we can explicitly
+invoke these special
+
+00:00:32.790 --> 00:00:36.510
+constructors and the overloaded assignment
+operators in our base class from
+
+00:00:36.510 --> 00:00:38.269
+the derived class if necessary.
+
+00:00:40.200 --> 00:00:41.980
+First, let's look at
+the copy constructor.
+
+00:00:43.340 --> 00:00:47.330
+If we need to copy a derived object,
+then we must ensure that the base part
+
+00:00:47.330 --> 00:00:49.350
+of that derived object is also copied.
+
+00:00:50.120 --> 00:00:53.989
+If that base class has a copy
+constructor, then we can explicitly
+
+00:00:53.989 --> 00:00:57.550
+invoke it in our derived copy
+constructor's initialization list.
+
+00:00:58.320 --> 00:01:00.750
+This is very similar to what
+we did with our non-special
+
+00:01:00.750 --> 00:01:02.680
+constructors in the previous video.
+
+00:01:03.750 --> 00:01:06.449
+The only part that might be
+confusing is that the base class
+
+00:01:06.460 --> 00:01:10.380
+constructor expects a reference
+to a base object, but we have a
+
+00:01:10.380 --> 00:01:12.720
+derived object in the derived class.
+
+00:01:13.760 --> 00:01:17.039
+In this case, the derived object is
+referenced by the variable other.
+
+00:01:17.660 --> 00:01:21.450
+So we can invoke the base class and
+pass in other, how does that work?
+
+00:01:22.090 --> 00:01:24.260
+Well, remember we
+have is a inheritance.
+
+00:01:24.490 --> 00:01:26.390
+So a derived is a base.
+
+00:01:26.789 --> 00:01:29.750
+And since a derived is a base,
+we can pass in a drive to a
+
+00:01:29.750 --> 00:01:31.200
+method that expects a base.
+
+00:01:32.020 --> 00:01:36.090
+In this case, the compiler uses
+slicing and slices out the base
+
+00:01:36.280 --> 00:01:37.890
+part of the derived object.
+
+00:01:38.750 --> 00:01:42.410
+Slicing can sometimes cause issues,
+but in this case, it's fine since
+
+00:01:42.410 --> 00:01:45.490
+what we want to do is copy the
+base part of the derived object.
+
+00:01:46.270 --> 00:01:48.529
+Let's see the entire
+process in context.
+
+00:01:50.480 --> 00:01:53.540
+In this example, we have our
+base class, and it has an
+
+00:01:53.550 --> 00:01:55.020
+integer attribute named value.
+
+00:01:55.589 --> 00:01:58.080
+And let's just focus on
+the copy constructor.
+
+00:01:58.559 --> 00:02:03.060
+We construct a new object based on
+the other object, and we simply copy
+
+00:02:03.120 --> 00:02:07.179
+other.value to this dot value and
+display a message to the console.
+
+00:02:07.840 --> 00:02:10.220
+You may be wondering why we
+need a copy constructor at all
+
+00:02:10.220 --> 00:02:13.049
+in this example, and you'd be
+absolutely correct, we don't.
+
+00:02:13.590 --> 00:02:17.239
+The compiler provided copy constructor
+would be perfectly appropriate here.
+
+00:02:17.450 --> 00:02:20.250
+However, for instructional
+purposes, I'm writing the copy
+
+00:02:20.730 --> 00:02:23.209
+constructor so that we can see
+exactly what's being called.
+
+00:02:24.129 --> 00:02:26.060
+Okay, so now let's
+see the derived class.
+
+00:02:27.380 --> 00:02:28.660
+Here's the derived class.
+
+00:02:28.990 --> 00:02:32.869
+Notice that it's derived publicly
+from base, and it adds an integer
+
+00:02:32.870 --> 00:02:34.380
+attribute name doubled value.
+
+00:02:34.990 --> 00:02:39.080
+The derived class has its own copy
+constructor that expects a ref to a
+
+00:02:39.080 --> 00:02:40.910
+derived object that will be copied.
+
+00:02:41.779 --> 00:02:46.010
+In this case, we're explicitly
+copying the base part of other
+
+00:02:46.310 --> 00:02:50.170
+by invoking the base class copy
+constructor in the derived copy
+
+00:02:50.170 --> 00:02:51.890
+constructor's initialization list.
+
+00:02:52.550 --> 00:02:55.679
+Again, notice that we pass the
+other object, which will be
+
+00:02:55.679 --> 00:02:57.740
+sliced to yield its base part.
+
+00:02:58.760 --> 00:03:03.010
+Once we copy the base part, we can
+take care of copying double value and
+
+00:03:03.010 --> 00:03:04.700
+then display a message to the console.
+
+00:03:05.240 --> 00:03:07.230
+The move constructor
+works the same way.
+
+00:03:09.270 --> 00:03:11.790
+Now let's see how overloaded
+copy assignment works.
+
+00:03:12.460 --> 00:03:15.269
+Here's our base class again,
+and it has an overloaded
+
+00:03:15.270 --> 00:03:16.670
+copy assignment operator.
+
+00:03:17.260 --> 00:03:20.899
+In this method, we check for
+self-assignment, and then we assign
+
+00:03:20.900 --> 00:03:24.990
+the right-hand side's values to this
+object, and we return this object.
+
+00:03:25.300 --> 00:03:28.330
+This is exactly what we've learned
+already and done previously.
+
+00:03:28.870 --> 00:03:30.640
+Now let's see the derived class.
+
+00:03:31.369 --> 00:03:35.410
+Here is our derived class, which
+is publicly derived from base.
+
+00:03:35.910 --> 00:03:38.520
+As before, it adds a
+double value attribute.
+
+00:03:39.610 --> 00:03:42.240
+It also has an overloaded
+copy assignment operator.
+
+00:03:43.040 --> 00:03:46.620
+In this method, it's important
+that we assign the base part
+
+00:03:46.620 --> 00:03:49.589
+of the derived object and then
+take care of the doubled value.
+
+00:03:50.190 --> 00:03:53.850
+So after we check for self-assignment,
+we call our base classes
+
+00:03:53.900 --> 00:03:57.220
+overloaded assignment operator
+and pass in the right-hand side
+
+00:03:57.270 --> 00:03:58.679
+object that we want to assign.
+
+00:03:59.550 --> 00:04:01.720
+This will take care of
+assigning the base part.
+
+00:04:02.400 --> 00:04:05.110
+Then we simply set double
+value to the right-hand sides
+
+00:04:05.110 --> 00:04:07.809
+double value to complete the
+assignment of the derived part.
+
+00:04:08.360 --> 00:04:10.549
+Finally, we just
+return to this object.
+
+00:04:11.529 --> 00:04:14.860
+Note that if we don't explicitly
+call the base classes overloaded
+
+00:04:14.860 --> 00:04:18.039
+assignment operator, then the
+base part will not be assigned.
+
+00:04:18.470 --> 00:04:20.789
+Again, the move assignment
+works in a similar manner.
+
+00:04:23.010 --> 00:04:24.530
+Okay, so let's recap.
+
+00:04:25.049 --> 00:04:28.269
+Often you don't need to provide
+your own copy, move constructors
+
+00:04:28.279 --> 00:04:30.040
+or overloaded assignment operators.
+
+00:04:30.590 --> 00:04:34.150
+If you do not define them in the
+derived class, then the compiler
+
+00:04:34.150 --> 00:04:37.460
+will create them automatically and
+call the base class versions for you.
+
+00:04:38.340 --> 00:04:42.029
+If you do provide them in the derived
+class, then you must invoke the
+
+00:04:42.030 --> 00:04:44.240
+base versions explicitly yourself.
+
+00:04:45.250 --> 00:04:48.570
+Finally, be careful when you
+use raw pointers and dynamically
+
+00:04:48.590 --> 00:04:52.219
+allocated memory, especially if
+both the base and the derived
+
+00:04:52.220 --> 00:04:53.540
+classes have raw pointers.
+
+00:04:53.910 --> 00:04:57.070
+If so, you'll likely want
+deep copy semantics for both
+
+00:04:57.080 --> 00:04:58.870
+the base and derived classes.
+
+00:04:59.940 --> 00:05:02.860
+So let's head over to the IDE, and
+we'll step through this example.
+
+00:05:04.570 --> 00:05:05.889
+Okay, so I'm back in the IDE.
+
+00:05:05.930 --> 00:05:11.720
+I'm in the section 15 workspace in
+the CopyConstructorAssignmentOperator project
+
+00:05:12.830 --> 00:05:15.450
+Now this project is very similar
+to what we've seen before.
+
+00:05:15.450 --> 00:05:18.639
+I'll scroll up here, and you can
+see we have a base class that has an
+
+00:05:18.650 --> 00:05:22.590
+integer attribute called value and
+then we've got a no args constructor
+
+00:05:22.850 --> 00:05:27.200
+an overloaded integer constructor,
+a copy constructor here and an
+
+00:05:27.220 --> 00:05:29.200
+overloaded copy assignment operator.
+
+00:05:29.650 --> 00:05:32.490
+And these are exactly like we've seen
+before, and we also have a destructor,
+
+00:05:32.490 --> 00:05:33.770
+of course, down here at the bottom.
+
+00:05:34.760 --> 00:05:38.130
+What we're doing here is when we
+get no args, we'll set value to 0.
+
+00:05:38.240 --> 00:05:41.260
+When we get an integer, we'll set
+value to whatever integer we get.
+
+00:05:41.730 --> 00:05:44.030
+In this case, here's
+my copy constructor.
+
+00:05:44.390 --> 00:05:48.070
+Again, the compiler provided
+one would have been great but I
+
+00:05:48.070 --> 00:05:50.020
+want to make sure that you see
+how these things are called.
+
+00:05:50.410 --> 00:05:53.349
+So in this case, I'm just copying
+the others value to this value,
+
+00:05:53.349 --> 00:05:56.890
+and the same thing with the
+overloaded copy assignment operator.
+
+00:05:57.130 --> 00:05:59.709
+I'm checking that we don't
+have self-assignment, and I'm
+
+00:05:59.709 --> 00:06:02.380
+just assigning the right-hand
+sides value to this value.
+
+00:06:03.030 --> 00:06:04.170
+Okay, great.
+
+00:06:04.180 --> 00:06:06.700
+Now let me close down this
+derive so we'll get to the
+
+00:06:06.700 --> 00:06:07.730
+derived in a little bit.
+
+00:06:08.440 --> 00:06:11.890
+So if we run this, we've
+got -- here's a real simple main.
+
+00:06:11.900 --> 00:06:13.859
+And I've got a break
+point right on line 65.
+
+00:06:14.099 --> 00:06:16.200
+The first thing we want to
+do is we want to create a b
+
+00:06:16.200 --> 00:06:18.800
+object, and we're providing
+an integer as an initializer.
+
+00:06:19.890 --> 00:06:23.430
+What we expect there is that the
+overloaded integer constructor fires,
+
+00:06:23.430 --> 00:06:24.740
+and that's exactly what will happen.
+
+00:06:25.180 --> 00:06:26.979
+Then we've got a copy
+constructor because we're
+
+00:06:26.980 --> 00:06:28.919
+creating a b1 based on a b.
+
+00:06:29.340 --> 00:06:31.030
+And then finally, an
+assignment operator.
+
+00:06:31.030 --> 00:06:32.590
+And this is copy assignment here.
+
+00:06:32.590 --> 00:06:33.770
+This is an l-value.
+
+00:06:34.469 --> 00:06:40.180
+Okay, so let's walk through this,
+and this should be pretty much
+
+00:06:40.180 --> 00:06:41.650
+review from what we've done before.
+
+00:06:41.650 --> 00:06:43.800
+I just want to make sure that
+you understand the base part
+
+00:06:43.800 --> 00:06:45.160
+before we do the derived part.
+
+00:06:46.000 --> 00:06:48.549
+All right, so I'm right here
+on line 65, I'm just about to
+
+00:06:48.550 --> 00:06:50.260
+create that object right here b.
+
+00:06:50.549 --> 00:06:54.160
+So let's step through this, and
+we expect the base overloaded
+
+00:06:54.160 --> 00:06:57.460
+integer constructor to be
+called, and that's exactly where
+
+00:06:57.460 --> 00:06:59.120
+we are right here on line 16.
+
+00:06:59.550 --> 00:07:02.479
+We'll set the value to 100,
+which is what x is right here,
+
+00:07:04.809 --> 00:07:08.349
+and we'll display int base
+constructor, and that's it.
+
+00:07:08.370 --> 00:07:10.380
+We've just constructed this object b.
+
+00:07:10.629 --> 00:07:13.740
+Let's take a look at it real quick,
+you can see its value is 100.
+
+00:07:13.740 --> 00:07:15.540
+And that's a base class object.
+
+00:07:16.370 --> 00:07:19.190
+Now we're going to construct
+b1, which is also a base
+
+00:07:19.200 --> 00:07:20.649
+class object based on b.
+
+00:07:20.650 --> 00:07:22.479
+So we're going to call
+the copy constructor.
+
+00:07:22.479 --> 00:07:25.460
+And you can see the copy
+constructor right here on line 19.
+
+00:07:25.960 --> 00:07:29.480
+So let's do that,
+and I double clicked.
+
+00:07:29.480 --> 00:07:32.469
+But you'll see what I'm in here
+we're in base, and we set this
+
+00:07:32.470 --> 00:07:36.210
+value to the others value, and we
+just -- we're going to displace base
+
+00:07:36.230 --> 00:07:37.750
+copy constructor here in a second.
+
+00:07:38.320 --> 00:07:41.180
+So let me execute that, and that's it.
+
+00:07:41.190 --> 00:07:45.480
+So now you can see that b and
+b1 are indeed copies of one
+
+00:07:45.480 --> 00:07:49.200
+another, and we use the base
+copy constructor to do that.
+
+00:07:50.120 --> 00:07:52.380
+Finally, we're going
+to say b equals b1.
+
+00:07:52.570 --> 00:07:54.770
+In this case, b already exists.
+
+00:07:54.890 --> 00:07:57.559
+So this is not a constructor,
+this is copy assignment.
+
+00:07:58.080 --> 00:08:02.399
+So we expect this method right here
+on line 24 to be called because
+
+00:08:02.400 --> 00:08:04.090
+that's my copy assignment operator.
+
+00:08:04.359 --> 00:08:05.549
+So I'll step through this.
+
+00:08:06.350 --> 00:08:07.199
+There it's called.
+
+00:08:07.279 --> 00:08:10.210
+We'll just say base operator
+equals being called.
+
+00:08:10.950 --> 00:08:13.700
+It's not self-assignment, and
+I'm simply assigning the right
+
+00:08:13.700 --> 00:08:18.350
+hands value to this value, and
+returning the object, and I'm done.
+
+00:08:19.309 --> 00:08:22.580
+Okay, so you can see exactly
+what's happened, exactly
+
+00:08:22.580 --> 00:08:23.590
+what we expected, right.
+
+00:08:23.830 --> 00:08:26.810
+Now we're going to unwind because
+these objects are going out of scope.
+
+00:08:26.900 --> 00:08:31.289
+So we expect b1 to be destroyed first,
+and then b to be destroyed second.
+
+00:08:31.690 --> 00:08:36.829
+So the first destructor is the one
+for b1, and we'll execute that.
+
+00:08:36.830 --> 00:08:38.360
+There you can see the
+output right here.
+
+00:08:38.770 --> 00:08:42.709
+And then the destructor
+for the b object executes,
+
+00:08:42.709 --> 00:08:43.710
+and our program is done.
+
+00:08:45.020 --> 00:08:47.150
+Okay, so now let me
+comment these lines out.
+
+00:08:47.600 --> 00:08:50.650
+And what we'll do is we'll
+uncomment these lines, and we'll
+
+00:08:51.080 --> 00:08:52.530
+go through this code in a sec.
+
+00:08:53.000 --> 00:08:55.990
+I'm going to move that
+break point down to line 69.
+
+00:08:56.639 --> 00:09:00.080
+And let's take a look at our derived
+class right here, I'll expand it.
+
+00:09:01.320 --> 00:09:05.770
+So here we have a derived class
+that is derived publicly from base.
+
+00:09:06.060 --> 00:09:08.459
+It adds its own
+attribute doubled value.
+
+00:09:08.460 --> 00:09:11.910
+Remember, it gets value from base,
+but we've added double value.
+
+00:09:12.550 --> 00:09:16.329
+And here I've got a no args
+constructor, and it invokes the base
+
+00:09:16.549 --> 00:09:20.360
+classes, no args constructor because
+we want to make sure that the --
+
+00:09:20.360 --> 00:09:23.609
+I mean this would happen automatically,
+but I'm just doing explicitly here.
+
+00:09:24.430 --> 00:09:27.490
+Then we've got the overloaded
+constructor for the drive.
+
+00:09:27.490 --> 00:09:30.880
+Then what we do here is we call
+the overloaded base constructor
+
+00:09:30.889 --> 00:09:31.940
+for an int right here.
+
+00:09:32.469 --> 00:09:35.400
+And when that's done, then we
+take care of initializing our
+
+00:09:35.410 --> 00:09:39.190
+own stuff, which in this case is
+doubled value, which we simply
+
+00:09:39.190 --> 00:09:41.319
+initialize it to 2 times x.
+
+00:09:42.690 --> 00:09:45.440
+And then we've got our copy
+constructor right here.
+
+00:09:45.570 --> 00:09:46.910
+It expects a derived.
+
+00:09:47.210 --> 00:09:50.179
+And what we do here is we
+call our base classes copy
+
+00:09:50.189 --> 00:09:52.379
+constructor, and we pass other.
+
+00:09:52.789 --> 00:09:54.060
+Other is a derived.
+
+00:09:54.080 --> 00:09:58.080
+Remember, base expects a base,
+but since a derived is a base, we
+
+00:09:58.080 --> 00:09:59.680
+can certainly pass other in here.
+
+00:09:59.980 --> 00:10:02.280
+And when we go through the
+debugger in this case, I'll show
+
+00:10:02.280 --> 00:10:03.870
+you the slicing and how it works.
+
+00:10:04.639 --> 00:10:06.859
+Then we initialize our
+part, and we're done.
+
+00:10:07.450 --> 00:10:09.610
+And then finally, we've got
+the assignment operator.
+
+00:10:10.020 --> 00:10:12.730
+The copy assignment operator where
+we check for self-assignment.
+
+00:10:13.080 --> 00:10:14.770
+And this line is
+really important here.
+
+00:10:15.040 --> 00:10:19.050
+What I'm doing here is we're
+calling our base classes overloaded
+
+00:10:19.050 --> 00:10:22.050
+assignment operator, and we're
+passing in the right-hand side.
+
+00:10:22.440 --> 00:10:27.680
+Again, that method in our base
+class expects a base object here,
+
+00:10:27.690 --> 00:10:29.050
+right a ref to a base object.
+
+00:10:29.240 --> 00:10:31.920
+What we're doing here is
+we're passing in a derived.
+
+00:10:32.150 --> 00:10:34.260
+So the same idea we're
+going to get slicing there.
+
+00:10:34.810 --> 00:10:38.109
+Then once the base is assigned,
+I take care of assigning the part
+
+00:10:38.130 --> 00:10:41.840
+of the derived that really this
+method is only concerned about,
+
+00:10:42.429 --> 00:10:44.120
+and we return this, and we're done.
+
+00:10:44.799 --> 00:10:46.699
+Okay so let's take a look
+at the main real quick.
+
+00:10:46.699 --> 00:10:50.050
+Here we are -- it's very similar
+to the example with the base.
+
+00:10:50.320 --> 00:10:53.590
+Here we're creating d, which
+is a derived class object.
+
+00:10:54.010 --> 00:10:56.440
+And we're using the initializer
+the integer initializer, so it'll
+
+00:10:56.440 --> 00:10:58.420
+so it'll call the overloaded constructor.
+
+00:10:58.820 --> 00:11:01.430
+Then we're copy
+constructing d1 from d.
+
+00:11:01.840 --> 00:11:05.469
+And then finally, we're going to
+do copy assignment from d1 to d.
+
+00:11:06.290 --> 00:11:09.470
+Okay, so I think that's -- I think you
+get the picture of what's going on.
+
+00:11:09.780 --> 00:11:11.950
+It'll definitely make sense
+now when we step through.
+
+00:11:11.950 --> 00:11:16.640
+It so let's start the debugger
+and step through this example.
+
+00:11:18.500 --> 00:11:20.349
+So we're right here on line 69.
+
+00:11:20.690 --> 00:11:23.199
+We're just about to
+construct that d object.
+
+00:11:23.510 --> 00:11:27.940
+We expect this constructor right
+here on line 43 to execute.
+
+00:11:28.310 --> 00:11:30.710
+That's the overloaded constructor
+that expects an integer.
+
+00:11:31.050 --> 00:11:32.110
+So I'll step in.
+
+00:11:32.530 --> 00:11:34.089
+And that's exactly where I'm at.
+
+00:11:34.650 --> 00:11:37.550
+Now I need to construct
+the base part of me.
+
+00:11:37.870 --> 00:11:41.470
+So I'm going to invoke my
+base classes, overloaded
+
+00:11:41.470 --> 00:11:43.810
+constructor and pass in x to it.
+
+00:11:44.140 --> 00:11:47.020
+So you can see that that's
+what's happened now.
+
+00:11:47.140 --> 00:11:50.600
+I'm now in my base classes
+constructor, which is going
+
+00:11:50.600 --> 00:11:53.620
+to take care of initializing
+that base part of me.
+
+00:11:54.230 --> 00:11:55.629
+So we'll do that.
+
+00:11:56.370 --> 00:12:00.620
+We'll display base constructor, and
+you can see now that I'm on line 45.
+
+00:12:01.340 --> 00:12:03.280
+So I'm back in my derived constructor.
+
+00:12:03.280 --> 00:12:04.810
+It just initialized the base.
+
+00:12:05.150 --> 00:12:07.829
+It initialized double val, and
+now it's just going to do a simple
+
+00:12:07.830 --> 00:12:10.780
+display statement, and we're good.
+
+00:12:10.960 --> 00:12:13.129
+So we've just created that d object.
+
+00:12:13.630 --> 00:12:17.849
+And you can see the d object
+looks like 100 for my base value
+
+00:12:17.850 --> 00:12:19.790
+and 200 for my doubled value.
+
+00:12:21.260 --> 00:12:23.770
+Okay, so now let's look at
+the copy constructor, that's
+
+00:12:23.770 --> 00:12:24.890
+what's being called here.
+
+00:12:25.160 --> 00:12:28.330
+Remember, we're constructing -- let
+me scroll up just a little bit here.
+
+00:12:28.559 --> 00:12:30.540
+We're constructing d1 based on d.
+
+00:12:30.840 --> 00:12:33.255
+So what we expect to be
+called is our copy constructor
+
+00:12:33.580 --> 00:12:35.380
+right here on line 47.
+
+00:12:35.910 --> 00:12:38.590
+So let's do that, so I
+think I double clicked.
+
+00:12:38.830 --> 00:12:43.530
+What really happened was that our
+derived copy constructor got called.
+
+00:12:43.830 --> 00:12:46.096
+And then it immediately called
+our base copy constructor
+
+00:12:46.096 --> 00:12:47.440
+and we passed in other.
+
+00:12:47.710 --> 00:12:51.300
+Now remember, other was or
+is a derived object here.
+
+00:12:51.929 --> 00:12:56.699
+But now I'm up here in my base class
+copy constructor, but look at other.
+
+00:12:57.200 --> 00:12:58.530
+You can see what I passed in.
+
+00:12:58.910 --> 00:13:00.099
+Now it's a 100, right.
+
+00:13:00.450 --> 00:13:04.150
+But other originally had
+that doubled value as well.
+
+00:13:04.150 --> 00:13:05.520
+So that got sliced out.
+
+00:13:05.880 --> 00:13:07.689
+And the only piece that
+we're interested in is the
+
+00:13:07.689 --> 00:13:09.189
+base part of that object.
+
+00:13:09.370 --> 00:13:10.610
+So that's what's happening here.
+
+00:13:10.910 --> 00:13:12.820
+So we'll continue executing this.
+
+00:13:13.370 --> 00:13:16.020
+Now we just copy constructed our base.
+
+00:13:16.430 --> 00:13:18.960
+And when we come back right
+here on line 48 and 49,
+
+00:13:20.650 --> 00:13:22.200
+we've set double value.
+
+00:13:22.460 --> 00:13:25.109
+And now our derived copy
+constructor is done.
+
+00:13:25.400 --> 00:13:28.080
+So you can see that the derived copy
+constructor, and you'll see that
+
+00:13:28.080 --> 00:13:29.380
+on the output right here,
+
+00:13:30.680 --> 00:13:32.670
+you see that the derived copy constructor
+
+00:13:33.280 --> 00:13:35.486
+invoked the base copy constructor.
+
+00:13:35.486 --> 00:13:38.919
+And it passed in that derived
+object to it, which got sliced.
+
+00:13:40.010 --> 00:13:42.880
+Okay, so last thing left
+to do is the assignment
+
+00:13:42.880 --> 00:13:44.280
+operator, the copy assignment.
+
+00:13:44.290 --> 00:13:48.609
+So now we're going to say d equals
+d1 or assign d1 to d, right.
+
+00:13:49.060 --> 00:13:49.690
+So we're here.
+
+00:13:49.690 --> 00:13:54.240
+We expect line 52 to execute
+right here, that's our copy
+
+00:13:54.240 --> 00:13:55.510
+assignment for derived.
+
+00:13:55.780 --> 00:13:56.580
+So I'll click this.
+
+00:13:56.580 --> 00:13:57.700
+I'll try to click it once.
+
+00:13:59.000 --> 00:14:01.279
+Good. So now that's we're on line 53 now.
+
+00:14:01.280 --> 00:14:04.480
+We're simply going to display
+derived operator equals.
+
+00:14:05.750 --> 00:14:07.579
+We're going to check
+for self-assignment.
+
+00:14:08.600 --> 00:14:14.529
+And now what I want to do is I want
+to copy the right-hand side to the
+
+00:14:14.530 --> 00:14:16.740
+left hand-side but only the base part.
+
+00:14:17.240 --> 00:14:21.000
+So in this case, I want to call my
+bass classes overloaded operator
+
+00:14:21.370 --> 00:14:22.760
+and pass in right-hand side.
+
+00:14:22.770 --> 00:14:25.110
+So now take a look at right-hand side.
+
+00:14:25.590 --> 00:14:27.940
+Right-hand side is a derived, right.
+
+00:14:27.950 --> 00:14:32.310
+So it's got a base, and it's got
+its derived double value here.
+
+00:14:32.740 --> 00:14:35.689
+But watch what happens when I call
+that method, right here you'll
+
+00:14:35.690 --> 00:14:37.310
+see I'll transfer control to it.
+
+00:14:39.880 --> 00:14:42.380
+And this is where I'm at
+right here on line 25.
+
+00:14:43.010 --> 00:14:45.130
+Look at that object now,
+look at right-hand side.
+
+00:14:45.140 --> 00:14:46.939
+Notice that now it
+just -- it's a base now.
+
+00:14:47.120 --> 00:14:48.850
+So it just got sliced, right.
+
+00:14:48.890 --> 00:14:51.319
+That double part is
+not part of a base.
+
+00:14:51.480 --> 00:14:52.790
+So it's sliced out.
+
+00:14:53.599 --> 00:14:57.489
+So now we just keep executing, we're
+going to execute the base operator
+
+00:14:57.490 --> 00:15:02.099
+equal, which assigns the right-hand
+side's value to the left-hand
+
+00:15:02.100 --> 00:15:05.210
+side's value or this in this case
+since it's a member function.
+
+00:15:07.560 --> 00:15:10.179
+And we just assigned the base part.
+
+00:15:10.179 --> 00:15:11.550
+We're now on line 57.
+
+00:15:11.550 --> 00:15:16.979
+We're going to take care of the double
+value part of us, and we are done.
+
+00:15:17.820 --> 00:15:18.680
+That's it.
+
+00:15:18.790 --> 00:15:19.670
+Pretty straightforward.
+
+00:15:19.970 --> 00:15:23.490
+Now obviously these values are
+going to be the same because we
+
+00:15:23.490 --> 00:15:27.770
+just assigned them, and they both
+have a base part and a derived part.
+
+00:15:28.450 --> 00:15:30.959
+Now they're going to go out
+of scope, so we need to unwind
+
+00:15:30.960 --> 00:15:32.489
+and then destroy these objects.
+
+00:15:32.710 --> 00:15:35.780
+So the destructor will be
+called in the reverse order
+
+00:15:35.780 --> 00:15:36.970
+of the constructors, right.
+
+00:15:37.300 --> 00:15:40.590
+So the first destructor that will
+be called is the one for d1 here.
+
+00:15:41.210 --> 00:15:42.430
+And we'll execute that.
+
+00:15:42.430 --> 00:15:45.200
+And you can see that the
+derived destructor executes
+
+00:15:46.340 --> 00:15:50.460
+followed by the base destructor
+right up here on line 32.
+
+00:15:52.570 --> 00:15:55.750
+There we go, and then the same thing
+will happen with the next object.
+
+00:15:55.750 --> 00:16:00.780
+And our program is done.
+
+00:16:01.950 --> 00:16:04.170
+Okay, so this gives you some
+insight into the way that
+
+00:16:04.170 --> 00:16:07.880
+the derived constructors
+and copy constructors work.
+
+00:16:08.670 --> 00:16:10.099
+You can see it really makes sense.
+
+00:16:10.100 --> 00:16:12.940
+The only thing that might be a
+little confusing at the beginning
+
+00:16:12.959 --> 00:16:18.120
+is that, for example, our derived
+copy constructor and operator equal
+
+00:16:18.340 --> 00:16:24.569
+expect a derived, and the base class
+versions expect a base, same here.
+
+00:16:25.080 --> 00:16:26.700
+But that's where the slicing comes in.
+
+00:16:26.710 --> 00:16:30.690
+We can certainly pass a derived into
+here because the derived is a base.
+
+00:16:32.020 --> 00:16:33.250
+Okay, so that covers it.
+
+00:16:33.320 --> 00:16:34.790
+If there are any questions,
+please let me know.

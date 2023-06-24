@@ -1,0 +1,772 @@
+WEBVTT
+
+00:00:05.400 --> 00:00:06.400
+In this video,
+
+00:00:06.400 --> 00:00:10.760
+we'll see some of the stream formatting options available for floating point numbers
+
+00:00:11.560 --> 00:00:14.660
+formatting. Floating point numbers focuses mainly on the amount of
+
+00:00:14.660 --> 00:00:17.160
+precision used to display the number.
+
+00:00:17.710 --> 00:00:20.710
+By default, the precision is set to 6 digits.
+
+00:00:21.010 --> 00:00:24.810
+We'll cover the specifics of what that exactly means in this lecture.
+
+00:00:25.610 --> 00:00:30.010
+We can also set the number of digits to display to the right side of the decimal point.
+
+00:00:30.010 --> 00:00:32.610
+By default, there is no fixed set size.
+
+00:00:33.810 --> 00:00:37.470
+We can also choose to show trailing 0s up to a certain number,
+
+00:00:37.870 --> 00:00:42.070
+and we can also decide if the floating point number 4 should be displayed as 4
+
+00:00:42.070 --> 00:00:46.370
+or 4.0 or 4.00 and so forth.
+
+00:00:46.970 --> 00:00:49.970
+But by default, these trailing 0s are not displayed.
+
+00:00:50.770 --> 00:00:53.970
+And then we have some of the same options that we had when we used integers.
+
+00:00:54.370 --> 00:00:58.370
+By default, a lowercase e is used when we're displaying floating point numbers
+
+00:00:58.370 --> 00:01:00.370
+using scientific notation.
+
+00:01:00.370 --> 00:01:05.030
+And the plus sign is not displayed when we display positive floating point numbers.
+
+00:01:06.130 --> 00:01:08.900
+All of these manipulators persist once they're set.
+
+00:01:09.450 --> 00:01:12.050
+So first let's take a look at how precision works.
+
+00:01:13.750 --> 00:01:16.550
+By default, the precision used to display floating
+
+00:01:16.550 --> 00:01:20.430
+point numbers is 6 digits and rounding always occurs.
+
+00:01:20.930 --> 00:01:23.130
+In this example, we have the number
+
+00:01:23.130 --> 00:01:26.430
+1234.5678.
+
+00:01:26.830 --> 00:01:29.630
+If we display this number at c++, we'll use
+
+00:01:29.630 --> 00:01:31.630
+6 as the default precision
+
+00:01:31.630 --> 00:01:34.990
+and start at the most significant digit which is the 1,
+
+00:01:34.990 --> 00:01:39.190
+and it will display 6 digits starting from there rounding at the end.
+
+00:01:39.190 --> 00:01:43.850
+In this case, 1234.57 will be displayed.
+
+00:01:44.840 --> 00:01:49.040
+If c++ plus can't display the number in the given amount of significance,
+
+00:01:49.040 --> 00:01:52.240
+then it'll use scientific notation, and we'll see that in a bit.
+
+00:01:54.040 --> 00:01:56.940
+Here's another example. We have a large number
+
+00:01:56.940 --> 00:02:02.440
+123456789.987654321,
+
+00:02:02.440 --> 00:02:05.740
+I did it that way just so it's really easy to keep track of these digits.
+
+00:02:06.290 --> 00:02:07.990
+If we display this number,
+
+00:02:07.990 --> 00:02:12.190
+c++ plus will try to do it with 6 significant digits, but this won't work
+
+00:02:12.190 --> 00:02:15.190
+since it will display 123456,
+
+00:02:15.190 --> 00:02:17.190
+and the number displayed wouldn't be accurate.
+
+00:02:17.190 --> 00:02:20.850
+So in this case, the number we displayed using scientific notation.
+
+00:02:20.850 --> 00:02:25.250
+And notice 1.23457 has got the 6 digits
+
+00:02:25.250 --> 00:02:27.450
+of precision that's the default.
+
+00:02:27.450 --> 00:02:30.950
+And notice that we're still using precision 6, but this time
+
+00:02:30.950 --> 00:02:32.550
+using scientific notation.
+
+00:02:33.750 --> 00:02:37.250
+Suppose we wanted to display the number using precision 9.
+
+00:02:38.350 --> 00:02:43.010
+We can use the set precision manipulator where the 9 is the argument to do just that.
+
+00:02:43.010 --> 00:02:48.310
+In this case, the number will display as 1234567 90.
+
+00:02:48.610 --> 00:02:50.410
+Note the rounding at the end.
+
+00:02:51.210 --> 00:02:54.870
+Also notice how no trailing 0s are displayed in this example.
+
+00:02:56.370 --> 00:02:58.360
+So that's the way precision works
+
+00:02:58.360 --> 00:03:01.720
+when we're not fixing the number of digits to the right of the decimal.
+
+00:03:02.080 --> 00:03:05.880
+When we use the fixed manipulator, precision is handled differently.
+
+00:03:06.680 --> 00:03:10.680
+Now we're looking at precision starting from the right side of the decimal point.
+
+00:03:10.680 --> 00:03:14.180
+In this case, we still have a default precision of 6,
+
+00:03:14.380 --> 00:03:16.580
+but we're also using the fixed manipulator.
+
+00:03:16.580 --> 00:03:20.570
+This will use a precision of 6 starting with the digits after the decimal,
+
+00:03:21.070 --> 00:03:23.070
+and we'll round as necessary.
+
+00:03:23.070 --> 00:03:27.730
+So in this case, exactly 6 digits are displayed after the decimal point,
+
+00:03:27.730 --> 00:03:29.930
+and 0s are added if necessary.
+
+00:03:30.430 --> 00:03:33.430
+As you can guess, set precision 2 and fixed
+
+00:03:33.430 --> 00:03:36.230
+are commonly used to display currency amounts.
+
+00:03:36.230 --> 00:03:38.730
+We actually did this in a few of the course lessons.
+
+00:03:40.230 --> 00:03:43.590
+In this example, we're still using that very large number,
+
+00:03:43.590 --> 00:03:48.190
+but we're setting the precision to 3 and also using the fixed manipulator.
+
+00:03:48.590 --> 00:03:52.950
+So now this will display exactly 3 digits after the decimal point
+
+00:03:52.950 --> 00:03:54.500
+and rounding will occur.
+
+00:03:54.500 --> 00:03:58.000
+So we've got a 0.988 after the decimal point.
+
+00:03:59.600 --> 00:04:03.850
+In this example, we want to set precision to 3 and also use
+
+00:04:03.850 --> 00:04:05.150
+scientific notation.
+
+00:04:05.950 --> 00:04:10.310
+You can see the manipulators being used and the display is exactly as we expect,
+
+00:04:10.510 --> 00:04:13.310
+1.23 times 10 to the 8th.
+
+00:04:13.310 --> 00:04:17.610
+Notice the precision is 3, we see that with the 1.23.
+
+00:04:19.600 --> 00:04:24.500
+We can display the e in the scientific notation format as a capital e
+
+00:04:24.500 --> 00:04:26.700
+by using the upper case manipulator.
+
+00:04:27.250 --> 00:04:29.850
+Remember, by default, it's no uppercase.
+
+00:04:31.510 --> 00:04:35.410
+Now let's see how the show positive manipulator works with floating point numbers.
+
+00:04:35.410 --> 00:04:38.210
+The behavior is the same as we saw with integers.
+
+00:04:38.210 --> 00:04:40.410
+If we use the showpos manipulator,
+
+00:04:40.410 --> 00:04:44.770
+then we'll get a preceding plus sign on positive floating point numbers.
+
+00:04:45.270 --> 00:04:48.470
+Note that we can toggle back to not showing the plus sign
+
+00:04:48.470 --> 00:04:50.470
+with the no show pause manipulator.
+
+00:04:52.350 --> 00:04:56.350
+With floating point numbers, we can also use the show point manipulator.
+
+00:04:56.350 --> 00:05:00.710
+This will display trailing 0s based on the level of precision used.
+
+00:05:00.710 --> 00:05:03.710
+For example, if our number is 12.34,
+
+00:05:03.710 --> 00:05:08.310
+and we display it using only the defaults, then 12.34 will display.
+
+00:05:08.910 --> 00:05:10.910
+We're using a precision of 6,
+
+00:05:10.910 --> 00:05:13.610
+but only 4 digits will display in this case.
+
+00:05:13.860 --> 00:05:17.520
+If we wanted to add trailing 0s up to precision,
+
+00:05:17.520 --> 00:05:19.820
+we can use the show point manipulator.
+
+00:05:20.420 --> 00:05:24.080
+Now you can see that 2 0s are added to the number being displayed.
+
+00:05:24.740 --> 00:05:28.640
+Again, you can use the no show point to toggle back to the default behavior.
+
+00:05:30.040 --> 00:05:34.340
+Finally, if you want to reset the floating point format back to the general format,
+
+00:05:34.340 --> 00:05:38.640
+you can do that in 1 of 2 ways. You can use the unset f method
+
+00:05:38.640 --> 00:05:41.890
+or you can use the reset ios flag manipulator.
+
+00:05:41.890 --> 00:05:44.140
+There are a bunch of other flags, but at this point,
+
+00:05:44.140 --> 00:05:46.800
+you know what you would need. So rather than list them all here,
+
+00:05:46.800 --> 00:05:49.400
+I'll refer you to the c++ reference docs.
+
+00:05:49.950 --> 00:05:54.200
+Now let's head over to the IDE, and we'll format some floating point values.
+
+00:05:54.200 --> 00:05:56.560
+Then in the next video, we'll finish off formatting
+
+00:05:56.560 --> 00:05:59.920
+with setting field widths justification and filling.
+
+00:06:00.420 --> 00:06:02.920
+Okay. So I'm back in the IDE again.
+
+00:06:02.920 --> 00:06:07.120
+And I'm still in the section 19 workspace. And I'm in the manip
+
+00:06:07.120 --> 00:06:09.120
+_floating project.
+
+00:06:09.780 --> 00:06:12.980
+And what we'll do here is we'll play around with some floating point numbers.
+
+00:06:12.980 --> 00:06:16.580
+Now let's take a look at the numbers that we'll be using for this example.
+
+00:06:16.580 --> 00:06:19.180
+We've got 3 numbers right here. They're all doubles.
+
+00:06:19.180 --> 00:06:23.380
+And you can see I've got 1 that's going from 1 up to 9 and then from 9 down to
+
+00:06:23.380 --> 00:06:24.930
+1 after the decimal point,
+
+00:06:24.930 --> 00:06:29.590
+that'll just make it really easy for us to see which digits are being rounded.
+
+00:06:29.590 --> 00:06:33.470
+I've got another one that's a little smaller 1234.5678.
+
+00:06:33.870 --> 00:06:37.370
+And I've got this last one right here 1234.0.
+
+00:06:37.370 --> 00:06:41.250
+Okay. And what we'll do first is we'll just do normal
+
+00:06:41.250 --> 00:06:44.910
+displaying these guys out to the console with absolutely
+
+00:06:44.910 --> 00:06:47.370
+nothing fancy, no manipulation at all, just
+
+00:06:47.370 --> 00:06:50.570
+using pure defaults. And that's what's going on right here.
+
+00:06:50.570 --> 00:06:54.370
+On lines 14 to 16, I'm just playing num1 num2 num3.
+
+00:06:54.370 --> 00:06:58.570
+Now remember, by default, we've got 6 digits of precision.
+
+00:06:59.230 --> 00:07:01.430
+We're not showing the positive sign.
+
+00:07:01.430 --> 00:07:03.980
+We're not showing trailing 0s,
+
+00:07:03.980 --> 00:07:07.340
+and we're not showing uppercase letters and scientific notation.
+
+00:07:07.340 --> 00:07:08.840
+Okay. That's the default.
+
+00:07:08.840 --> 00:07:13.640
+So let's run this first. Now what do we expect here. We expect num1
+
+00:07:13.940 --> 00:07:17.540
+to not be able to work, right. I mean if you think about this for a second here,
+
+00:07:17.540 --> 00:07:21.310
+you can see that num1 has -- let's assume we wanted to display 6
+
+00:07:21.310 --> 00:07:23.010
+significant figures right here.
+
+00:07:23.810 --> 00:07:26.810
+We would just play 123456, and that would
+
+00:07:26.810 --> 00:07:28.470
+really give us problems,
+
+00:07:28.470 --> 00:07:30.970
+right, because that's not even close to being an accurate number.
+
+00:07:30.970 --> 00:07:32.970
+So c++ won't do that.
+
+00:07:32.970 --> 00:07:36.170
+What it'll do is it'll display that number in scientific notation,
+
+00:07:36.170 --> 00:07:40.160
+and it will still use 6 for precision. I'll show you how that works in a second.
+
+00:07:40.360 --> 00:07:44.260
+Now this guy can be, right. We've got -- there's 4 digits right here, and then 2.
+
+00:07:44.260 --> 00:07:48.160
+So we expect those 6 digits to display, and those last 2 will be rounded.
+
+00:07:49.150 --> 00:07:51.750
+And this guy here, remember by default,
+
+00:07:51.750 --> 00:07:54.950
+we don't display trailing 0s, so that's just gonna display 1234.
+
+00:07:54.950 --> 00:07:59.310
+So let's run this, and we'll verify that we got what we expected.
+
+00:08:00.910 --> 00:08:04.210
+Okay. So let me move this window over here so we can see what's going on.
+
+00:08:04.210 --> 00:08:07.870
+Let me do that again. There we go. So in this case, we're displaying num1,
+
+00:08:07.870 --> 00:08:12.170
+right. And notice what happens. 1.23457, you can see the rounding,
+
+00:08:12.170 --> 00:08:14.770
+you can see all 6 digits being displayed here.
+
+00:08:15.170 --> 00:08:18.830
+But we're using scientific notation because there's no way that it can be
+
+00:08:18.830 --> 00:08:23.430
+properly displayed or accurately displayed I should say in 6 digits.
+
+00:08:23.430 --> 00:08:27.680
+This next one though num2 right 1234.57,
+
+00:08:27.680 --> 00:08:31.880
+that's exactly what we expect.Here you see the 6 digits. And then num3,
+
+00:08:31.880 --> 00:08:34.180
+1234, it's displayed. There's no .
+
+00:08:34.180 --> 00:08:38.340
+0 or .00 unless we use a modifier which we'll use in a little bit.
+
+00:08:38.640 --> 00:08:42.000
+So that's the default. And it's really important that you understand the default
+
+00:08:42.000 --> 00:08:43.500
+and how it begins.
+
+00:08:43.500 --> 00:08:48.490
+So that's using the default settings. Now let's try something. Let's
+
+00:08:48.740 --> 00:08:50.740
+-- we're going to set the precision to 2.
+
+00:08:50.740 --> 00:08:53.940
+So what we're asking for is 2 significant digits.
+
+00:08:53.940 --> 00:08:56.140
+They can't do that with any of these,
+
+00:08:56.140 --> 00:08:59.800
+right. 1.2, where's it going to stop.
+
+00:08:59.800 --> 00:09:03.600
+So what it'll do is it'll display all 3 of them in scientific notation
+
+00:09:03.600 --> 00:09:06.500
+using a precision of 2. So I'll show you how that looks.
+
+00:09:07.700 --> 00:09:10.030
+And you can see exactly what's going on,
+
+00:09:10.030 --> 00:09:14.930
+1.2 for all of them. Those are the 2 significant digits of precision, right.
+
+00:09:14.930 --> 00:09:17.920
+Times 10 to the 8h to 3rd and so forth.
+
+00:09:17.920 --> 00:09:20.120
+So now let's set a precision of 5.
+
+00:09:20.120 --> 00:09:22.820
+Now we'll be able to do some of them with a precision of 5, but
+
+00:09:22.820 --> 00:09:25.620
+others it won't. So I'll uncomment this block out.
+
+00:09:28.420 --> 00:09:29.970
+And let's execute that.
+
+00:09:31.470 --> 00:09:34.470
+And now you can see what's going on. Num1
+
+00:09:34.970 --> 00:09:37.970
+cannot be displayed in 5 significant digits here.
+
+00:09:37.970 --> 00:09:42.960
+So the precision is going to be 5 digits here, but it's going to be in scientific notation.
+
+00:09:43.660 --> 00:09:48.460
+The other number up here, I'll scroll up so you can see it, 1234.567,
+
+00:09:48.460 --> 00:09:52.120
+there are your 5 significant figures here, right. Your precision is 5.
+
+00:09:52.120 --> 00:09:57.020
+So what it's doing is it's rounding that fifth one from -- which is point 0.56 to 6.
+
+00:09:57.570 --> 00:10:01.930
+And then again the last one is 1234, we're not adding any 0s or anything.
+
+00:10:01.930 --> 00:10:06.130
+So that's the default kind of behavior. So it really gives you an idea of what's going on.
+
+00:10:06.130 --> 00:10:08.830
+In this case, we're going to set precision to 9.
+
+00:10:08.830 --> 00:10:12.150
+Everything will fit here. So let's try that.
+
+00:10:13.810 --> 00:10:16.810
+And you can see what's happening with precision 9.
+
+00:10:16.810 --> 00:10:19.310
+I get 1234567,
+
+00:10:19.310 --> 00:10:22.310
+instead of 89, I'm getting 90 because it's rounding that.
+
+00:10:22.810 --> 00:10:26.110
+This guy's displaying all of it because it can display all of it,
+
+00:10:26.110 --> 00:10:28.670
+right 1234.5678.
+
+00:10:28.670 --> 00:10:32.570
+And the 1234 still displays the same way because we're not adding any 0s.
+
+00:10:32.570 --> 00:10:35.450
+Okay. So now you understand precision.
+
+00:10:35.450 --> 00:10:38.950
+Now let's talk about fixed and how it changes precision.
+
+00:10:38.950 --> 00:10:42.940
+So what we're doing here is we're setting precision to 3.
+
+00:10:43.930 --> 00:10:45.930
+You can see that happening right here on line 40.
+
+00:10:45.930 --> 00:10:48.290
+And we're fixing the decimal point.
+
+00:10:48.290 --> 00:10:51.650
+So now the precision happens after the decimal point.
+
+00:10:52.150 --> 00:10:55.950
+Okay. So let's run this and take a look at the output.
+
+00:10:55.950 --> 00:10:57.950
+Okay. So take a look at the output here.
+
+00:10:58.550 --> 00:11:01.150
+Again, I'll scroll up so we can see these numbers up top.
+
+00:11:01.650 --> 00:11:04.650
+So now we're displaying 123456789,
+
+00:11:04.650 --> 00:11:08.850
+right. We're displaying all of that. And the precision now applies
+
+00:11:08.850 --> 00:11:09.850
+after the decimal.
+
+00:11:09.850 --> 00:11:13.650
+So notice that all 3 of these guys are displaying 3
+
+00:11:14.310 --> 00:11:16.810
+digits after the decimal because that's the precision,
+
+00:11:16.810 --> 00:11:20.310
+and we're fixing that size. So it's going to round. In this case,
+
+00:11:20.310 --> 00:11:23.110
+9876 becomes 988,
+
+00:11:23.610 --> 00:11:27.410
+and 5678 becomes 568.
+
+00:11:27.410 --> 00:11:32.010
+And in this case here, you can see that it's displaying all the 0s on the end,
+
+00:11:32.710 --> 00:11:35.410
+okay, because we set the fixed formatter.
+
+00:11:36.400 --> 00:11:41.000
+All right. So hopefully that makes sense. Let me stop that, and we'll run
+
+00:11:41.000 --> 00:11:43.800
+a couple more. Let's take a look at this example.
+
+00:11:44.500 --> 00:11:47.300
+What we're doing here is we're setting the precision to 3,
+
+00:11:47.300 --> 00:11:49.500
+and we want to do a scientific notation.
+
+00:11:49.500 --> 00:11:53.800
+So this should be very similar to what happened before with the precision 2 when stuff wouldn't fit.
+
+00:11:53.800 --> 00:11:56.800
+So again, precision is 3 and scientific notation.
+
+00:11:56.800 --> 00:12:00.600
+So what we get is right down here
+
+00:12:00.600 --> 00:12:05.100
+1.235. Notice the precision is 3, right.
+
+00:12:05.100 --> 00:12:09.700
+But what happened because it's fixed, I set fixed up here
+
+00:12:09.700 --> 00:12:14.200
+and fix is persistent. So it carries down even though I didn't say fixed right here,
+
+00:12:14.200 --> 00:12:16.400
+it's fixed because I've set it up here.
+
+00:12:16.400 --> 00:12:18.760
+So in this case, I get the 3 decimals
+
+00:12:18.760 --> 00:12:22.420
+after the decimal point, the 3 digits, I should say, after the decimal point,
+
+00:12:22.920 --> 00:12:27.420
+and it's all in scientific notation. And then a couple more examples.
+
+00:12:28.020 --> 00:12:31.520
+You notice that e in the exponential notation,
+
+00:12:31.520 --> 00:12:34.320
+in scientific notation was a lowercase e.
+
+00:12:34.320 --> 00:12:38.650
+I can make it a capital e by simply using std uppercase here.
+
+00:12:38.650 --> 00:12:41.010
+And let's just run that to be sure that we get it.
+
+00:12:41.810 --> 00:12:44.910
+And there you go. Right down here at the bottom you can see 1.23,
+
+00:12:44.910 --> 00:12:48.710
+and you can see the e is capitalized here, right. It was lowercase here,
+
+00:12:48.710 --> 00:12:49.910
+in the previous example.
+
+00:12:51.270 --> 00:12:54.070
+In this case, I'm using the show positive.
+
+00:12:55.060 --> 00:12:59.260
+And what I'm doing is I'm just setting it to precision 3 fixed
+
+00:12:59.260 --> 00:13:02.760
+and show positive. So this will show a positive
+
+00:13:02.760 --> 00:13:05.960
+plus sign in front of positive numbers.
+
+00:13:05.960 --> 00:13:09.060
+Let's run that. And then you can see down here at the bottom again.
+
+00:13:09.060 --> 00:13:11.420
+I'll move this up just a little so you can see it a little better.
+
+00:13:11.420 --> 00:13:16.410
+You can see the plus symbol being displayed in front of all these positive floating point numbers.
+
+00:13:16.410 --> 00:13:19.070
+If they were negative, obviously the negative sign would show.
+
+00:13:20.370 --> 00:13:23.970
+Now we can set these guys back to the defaults
+
+00:13:23.970 --> 00:13:27.570
+either by doing an unset f calling that method,
+
+00:13:27.570 --> 00:13:31.770
+and we can pass in scientific and fixed sending them back to the defaults.
+
+00:13:31.770 --> 00:13:34.270
+And what we're doing here is just a binary or,
+
+00:13:34.270 --> 00:13:37.270
+or we could use the reset ios flags
+
+00:13:37.630 --> 00:13:41.630
+manipulator here and pass in show position, and that'll unset that.
+
+00:13:42.430 --> 00:13:46.230
+All right. So let me clean this up here.
+
+00:13:46.230 --> 00:13:49.530
+Now notice what I'm doing here, I'm setting precision to 10,
+
+00:13:49.930 --> 00:13:53.730
+and I'm telling it to show point. Okay. What this is going to do is going to add
+
+00:13:53.730 --> 00:13:57.330
+these trailing 0s up to 10 spaces.
+
+00:13:57.330 --> 00:14:00.690
+All right, or up to 10 precision. So let's run that.
+
+00:14:00.690 --> 00:14:03.490
+And we can see num1, num2 and num3.
+
+00:14:04.690 --> 00:14:09.470
+There you go. You can see right here 1234567890,
+
+00:14:09.470 --> 00:14:10.370
+it's rounding here.
+
+00:14:10.770 --> 00:14:15.130
+And then 1234.5678, we've got a couple of 0s on the end.
+
+00:14:15.130 --> 00:14:19.030
+But you notice, all of them now are in precision 10, right.
+
+00:14:19.030 --> 00:14:23.390
+And in this case, we have 1234 point and then six 0s at the end.
+
+00:14:24.090 --> 00:14:27.890
+We'll set these guys back to the defaults. And I'll show you how to do that right here.
+
+00:14:28.690 --> 00:14:31.590
+And then we'll run one more time we should get that same behavior
+
+00:14:31.590 --> 00:14:33.140
+we got at the very beginning.
+
+00:14:33.140 --> 00:14:37.440
+So what I'm doing here is I'm setting this back to the general notation here.
+
+00:14:37.440 --> 00:14:40.440
+I'm setting the precision to 6, which was the default.
+
+00:14:40.440 --> 00:14:43.640
+And I'm setting show positive and
+
+00:14:43.640 --> 00:14:45.840
+show point back to their defaults.
+
+00:14:45.840 --> 00:14:48.610
+And then I'm just displaying num1, num2, num3 at the end.
+
+00:14:48.610 --> 00:14:51.210
+And what we should get back is what we got at the beginning.
+
+00:14:51.710 --> 00:14:55.470
+So down at the bottom, here you go. We get the scientific notation for this guy.
+
+00:14:55.470 --> 00:15:00.460
+We've got the 6 precision digits here, and we've got the 1234 right here.
+
+00:15:01.760 --> 00:15:04.760
+Okay. So that's it that's. A good example of
+
+00:15:04.760 --> 00:15:07.260
+these floating point formatters.
+
+00:15:07.260 --> 00:15:09.820
+They're pretty powerful, they're pretty easy to use.
+
+00:15:09.820 --> 00:15:14.720
+In the next video what we'll do is we'll learn about setting field widths and justifying things left to right,
+
+00:15:14.720 --> 00:15:19.220
+and you can use those along with these to really format tables and get your format
+
+00:15:19.220 --> 00:15:21.220
+looking really nicely for output.

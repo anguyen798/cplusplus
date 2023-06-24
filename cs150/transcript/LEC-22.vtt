@@ -1,0 +1,1976 @@
+﻿WEBVTT
+
+00:00:00.000 --> 00:00:09.000
+Hello everyone, this is Steve Gilbert. Welcome to lecture 22 on C-style strings.
+
+00:00:09.000 --> 00:00:13.000
+So let's talk about C-style strings.
+
+00:00:13.000 --> 00:00:23.000
+A C-string is a character array that was used for traditional or built-in strings in C.
+
+00:00:23.000 --> 00:00:27.000
+These were inherited by C++.
+
+00:00:27.000 --> 00:00:34.000
+So if I create an array, I can actually initialize it, a char array,
+
+00:00:34.000 --> 00:00:41.000
+I can initialize it with what we call a string literal, with just "hello" in double quotes.
+
+00:00:41.000 --> 00:00:49.000
+That will initialize or create an array that has six elements in it.
+
+00:00:49.000 --> 00:00:52.000
+So notice the different ways we could do that.
+
+00:00:52.000 --> 00:01:00.000
+We could allocate it by saying "greeting6 = hello" or we could do it the same way we do all the other arrays.
+
+00:01:00.000 --> 00:01:08.000
+We could say "greeting =" and then put in the "h" and the "e" and the "l" and the "l" and the "o"
+
+00:01:08.000 --> 00:01:13.000
+along with one additional value.
+
+00:01:13.000 --> 00:01:19.000
+Now notice when we initialize a C-style string or a character array,
+
+00:01:19.000 --> 00:01:23.000
+we don't need to use braces or commas as with the additional array.
+
+00:01:23.000 --> 00:01:26.000
+We don't need to use this third style right here.
+
+00:01:26.000 --> 00:01:32.000
+We can just do it by putting in the string itself.
+
+00:01:32.000 --> 00:01:38.000
+Now the array that's created when we do this occupies six bytes, not five.
+
+00:01:38.000 --> 00:01:44.000
+It has one byte for each of the characters, the "h" and the "e" and the "l" and the "l" and the "o."
+
+00:01:44.000 --> 00:01:50.000
+That's followed by a binary zero, the zero character.
+
+00:01:50.000 --> 00:01:55.000
+It's not the integer zero, it's the character with the ASCII value zero.
+
+00:01:55.000 --> 00:01:58.000
+We call this the null terminator.
+
+00:01:58.000 --> 00:02:02.000
+You notice I've spelled null with a single "l" there.
+
+00:02:02.000 --> 00:02:08.000
+So null is the name of the character with the ASCII value zero.
+
+00:02:08.000 --> 00:02:15.000
+If you look at an ASCII character set, let's go see if we can find one in our web browser here.
+
+00:02:15.000 --> 00:02:20.000
+Let's look up ASCII table.
+
+00:02:20.000 --> 00:02:28.000
+If we look up an ASCII table, you'll notice that these characters have names.
+
+00:02:28.000 --> 00:02:35.000
+So the character that has the decimal value zero has the name "nul."
+
+00:02:35.000 --> 00:02:46.000
+And so that was just the ASCII name for the character that had the value zero, the ASCII character zero.
+
+00:02:46.000 --> 00:02:50.000
+Sometimes students get that confused with "null."
+
+00:02:50.000 --> 00:02:53.000
+An "null" is something different.
+
+00:02:53.000 --> 00:03:00.000
+It also has the value zero, but it's the C representation of a pointer with the value zero.
+
+00:03:00.000 --> 00:03:10.000
+We actually don't use "null" in C++. We use "nullpointer" instead, which is an entirely different type.
+
+00:03:10.000 --> 00:03:16.000
+Now, let's look at two examples of C-style strings.
+
+00:03:16.000 --> 00:03:20.000
+Here's the one I just showed you, "pet1 = dog."
+
+00:03:20.000 --> 00:03:23.000
+That is the equivalent to this.
+
+00:03:23.000 --> 00:03:32.000
+"char pet1 [] =" and then embraces initializing the D, the O, the G.
+
+00:03:32.000 --> 00:03:39.000
+And even though in this top one we don't see the null character, that null character is actually there.
+
+00:03:39.000 --> 00:03:46.000
+So the memories are allocated for four characters in user space.
+
+00:03:46.000 --> 00:03:53.000
+That means in your space that you can make a change to.
+
+00:03:53.000 --> 00:04:01.000
+So "pet1" is, its type is an array of four characters.
+
+00:04:01.000 --> 00:04:06.000
+It's a block of four characters, and if we created this in the static storage area,
+
+00:04:06.000 --> 00:04:10.000
+in other words, outside any function, it would be in the static area.
+
+00:04:10.000 --> 00:04:17.000
+If we created it on the stack, in other words, inside a function, it would be on the stack.
+
+00:04:17.000 --> 00:04:20.000
+This is slightly different.
+
+00:04:20.000 --> 00:04:34.000
+So "pet2" is a pointer. "pet2" is a pointer, and it points to the first character of an array of four characters.
+
+00:04:34.000 --> 00:04:44.000
+So there is still a "cat" null character out there, but that "cat" null character is not stored in your space.
+
+00:04:44.000 --> 00:04:49.000
+It's not stored on the stack. It's not stored on the static storage area.
+
+00:04:49.000 --> 00:04:59.000
+It's stored in a section of read-only memory, a special part of the static storage area.
+
+00:04:59.000 --> 00:05:06.000
+Now, in C, this is allowed. In C++, this is actually not really correct.
+
+00:05:06.000 --> 00:05:13.000
+In C++, because this is stored in a read-only memory section, C++ said,
+
+00:05:13.000 --> 00:05:19.000
+"Well, we should allow the compiler to know that, and so we should write it as const char*."
+
+00:05:19.000 --> 00:05:26.000
+So in C++, if you write this, you'll probably get some kind of warning or error.
+
+00:05:26.000 --> 00:05:35.000
+Now, notice that I can take this pointer, char*pet2=cat, and I can reassign it to "pet1."
+
+00:05:35.000 --> 00:05:44.000
+I can say "pet2=pet1," because "pet2" is a pointer. That pointer can be changed, but I could not do the opposite.
+
+00:05:44.000 --> 00:05:49.000
+I could not say "pet1=pet2." "pet1" is fixed.
+
+00:05:49.000 --> 00:05:56.000
+It is a constant address of the first character here.
+
+00:05:56.000 --> 00:06:06.000
+So the standard library inherited a collection of functions in the header called "cstring."
+
+00:06:06.000 --> 00:06:12.000
+Now, C and older C++ implementations will use the header called "string.h."
+
+00:06:12.000 --> 00:06:24.000
+All of the headers in C++ that start with "c," like "cstring," are inherited from the C language, and the C standard library.
+
+00:06:24.000 --> 00:06:32.000
+So let's look first at how we find the size of a string, if we want to loop through it.
+
+00:06:32.000 --> 00:06:42.000
+With a C++ string, like "a" here, we get the length by calling "a.length" or "a.size."
+
+00:06:42.000 --> 00:06:49.000
+We call a member function because a C++ string is an object of a class.
+
+00:06:49.000 --> 00:06:59.000
+"b" is a C string. In other words, it's an array of 1, 2, 3, 4, 5, 6, 7, 8 characters.
+
+00:06:59.000 --> 00:07:04.000
+And it's stored in this array on the stack, in this case.
+
+00:07:04.000 --> 00:07:13.000
+And we will get the size by passing the array "b" to a function called "strlen."
+
+00:07:13.000 --> 00:07:17.000
+So "strlen" is in this header file "cstring."
+
+00:07:17.000 --> 00:07:28.000
+Now, if we want to loop through the string, with a C string, we have to use the traditional "for" loop.
+
+00:07:28.000 --> 00:07:31.000
+You'd have to do "i < len b."
+
+00:07:31.000 --> 00:07:37.000
+With a C++ string, we can still do this, but we can do this as well.
+
+00:07:37.000 --> 00:07:40.000
+You can't do this with a C-style string.
+
+00:07:40.000 --> 00:07:48.000
+So, again, C strings and C++ strings are different kinds of things.
+
+00:07:48.000 --> 00:08:02.000
+Now, to assign or copy a string in C++, you do it exactly the same way that an integer does.
+
+00:08:02.000 --> 00:08:05.000
+You say "string a = hello."
+
+00:08:05.000 --> 00:08:09.000
+And to make a copy of "a," you do "string b = a."
+
+00:08:09.000 --> 00:08:14.000
+So that means that we have two copies of the word "hello."
+
+00:08:14.000 --> 00:08:17.000
+How do we do that in C?
+
+00:08:17.000 --> 00:08:20.000
+Well, in C, we have one string here.
+
+00:08:20.000 --> 00:08:24.000
+Now, notice I'm using the second time, where I have a constant character.
+
+00:08:24.000 --> 00:08:27.000
+And this is in read-only memory.
+
+00:08:27.000 --> 00:08:31.000
+I have an array that I'm going to copy that into, "b."
+
+00:08:31.000 --> 00:08:34.000
+I've allocated enough space to hold it.
+
+00:08:34.000 --> 00:08:41.000
+And I'm going to call the function in C string called "strcpy."
+
+00:08:41.000 --> 00:08:43.000
+S-T-R-C-P-Y.
+
+00:08:43.000 --> 00:08:49.000
+And I'm going to copy into "b" this array all the characters from "a."
+
+00:08:49.000 --> 00:08:57.000
+Now, how this works is the loop inside the function strcpy simply copies the first character into "b."
+
+00:08:57.000 --> 00:09:03.000
+Then it copies the second character following that, the third character, the fourth character, the fifth character.
+
+00:09:03.000 --> 00:09:07.000
+And then it copies the null character, and then it stops.
+
+00:09:07.000 --> 00:09:15.000
+Now, because of that, you have to make sure that the destination, here "b" is the destination where we're going to put the characters,
+
+00:09:15.000 --> 00:09:21.000
+has sufficient space to store all of the characters plus the null byte.
+
+00:09:21.000 --> 00:09:26.000
+Let's look at string concatenation.
+
+00:09:26.000 --> 00:09:30.000
+So C++ string concatenation works like this.
+
+00:09:30.000 --> 00:09:40.000
+You create a string "a," and then you add "a" to another string, "beautiful" in this case, and we create another string.
+
+00:09:40.000 --> 00:09:47.000
+So we have one string "a" that has "hello" in it, and "b" that has "hello, beautiful."
+
+00:09:47.000 --> 00:09:59.000
+If we want to do the same thing in C, what we have to do is create the C string we're going to copy from.
+
+00:09:59.000 --> 00:10:07.000
+We create the C string we're going to copy to, and initialize it with the value that we're starting with.
+
+00:10:07.000 --> 00:10:12.000
+And then we use a function called "string cat," or "strcat."
+
+00:10:12.000 --> 00:10:15.000
+So this is string concatenation.
+
+00:10:15.000 --> 00:10:18.000
+And it will concatenate into "b."
+
+00:10:18.000 --> 00:10:20.000
+Now here, it's going to do the same thing.
+
+00:10:20.000 --> 00:10:30.000
+It's going to start copying from "a" into "b," but before it does that, it's going to loop all the way down here until it finds the null byte.
+
+00:10:30.000 --> 00:10:34.000
+And so when it copies this space, it's going to overwrite the null byte here.
+
+00:10:34.000 --> 00:10:40.000
+And then it's going to copy the "b" and the "e" and the "a" and the "t" and so forth until it gets to the null byte here.
+
+00:10:40.000 --> 00:10:45.000
+It will copy there, and then "b" will contain "hello, beautiful."
+
+00:10:45.000 --> 00:10:57.000
+Again, it's entirely up to you to make sure the destination, in this case "b," has sufficient space to store all the characters from "hello"
+
+00:10:57.000 --> 00:11:03.000
+and all the characters from "beautiful" and the null byte at the end of it.
+
+00:11:03.000 --> 00:11:13.000
+Now, for string comparison, with C++ strings, you treat them just like integers.
+
+00:11:13.000 --> 00:11:24.000
+If string "a" is "hello" and "b" is something that's unknown, you just say if "a" equals equals "b," just like you would with integers.
+
+00:11:24.000 --> 00:11:29.000
+If "a" is less than "b" to see if it appears before "b" in the dictionary.
+
+00:11:29.000 --> 00:11:35.000
+If "a" is greater than "b" to see if it falls later than "a" in the dictionary.
+
+00:11:35.000 --> 00:11:39.000
+In C, you cannot use the relational operators.
+
+00:11:39.000 --> 00:11:46.000
+You could use the equals equals sign, but as we saw with arrays, using equals equals with arrays is legal.
+
+00:11:46.000 --> 00:11:50.000
+In other words, it compiles, but it's stupid. It doesn't work.
+
+00:11:50.000 --> 00:11:58.000
+So, if we have two C strings, "a" is "hello" and "b" is whatever,
+
+00:11:58.000 --> 00:12:05.000
+then we call the function strcmp and pass "a" and "b" to it.
+
+00:12:05.000 --> 00:12:14.000
+If "a" and "b" have the same characters in the same order, it returns zero. There is no difference.
+
+00:12:14.000 --> 00:12:22.000
+If "a" would appear less than "b," or in other words, it would appear before "b" in the dictionary,
+
+00:12:22.000 --> 00:12:26.000
+then it returns a number that is less than zero.
+
+00:12:26.000 --> 00:12:32.000
+And if "a" would appear after "b" in the dictionary, it returns greater than zero.
+
+00:12:32.000 --> 00:12:37.000
+Now, notice strcmp is not a predicate or Boolean function.
+
+00:12:37.000 --> 00:12:46.000
+It doesn't return true and false. It returns three values, zero, less than zero, or greater than zero.
+
+00:12:46.000 --> 00:12:54.000
+And so it's very common to forget that. It's a common bug to think that it is a Boolean function.
+
+00:12:54.000 --> 00:13:02.000
+And of course, because of the way C++ works, it will take that zero or non-zero and turn it into true and false.
+
+00:13:02.000 --> 00:13:06.000
+You generally will not get the answer that you expect.
+
+00:13:06.000 --> 00:13:16.000
+So remember when you call strcmp to test the value that's returned from strcmp.
+
+00:13:16.000 --> 00:13:20.000
+Okay, so let's go ahead and open our first exercise.
+
+00:13:20.000 --> 00:13:24.000
+This is a function called mincat.
+
+00:13:24.000 --> 00:13:33.000
+We're going to use the standard C-string functions to write a function that concatenates two C-string literals.
+
+00:13:33.000 --> 00:13:37.000
+So s1 and s2 are the two strings.
+
+00:13:37.000 --> 00:13:41.000
+Out is an array of characters where the answer goes.
+
+00:13:41.000 --> 00:13:47.000
+Now remember, we cannot return arrays, so we could not return a C-string.
+
+00:13:47.000 --> 00:13:50.000
+So this is an output parameter.
+
+00:13:50.000 --> 00:13:54.000
+Maxlen is the size of the output array.
+
+00:13:54.000 --> 00:14:00.000
+And so we have to make sure that we don't overstep the size of that.
+
+00:14:00.000 --> 00:14:03.000
+So here's how we're going to do that.
+
+00:14:03.000 --> 00:14:11.000
+We're going to find the length of the shorter string and put it in the variable called len.
+
+00:14:11.000 --> 00:14:20.000
+Then when we concatenate, we're going to concatenate only the last len characters from the longer string.
+
+00:14:20.000 --> 00:14:24.000
+So in the problem you'll see several examples.
+
+00:14:24.000 --> 00:14:28.000
+So let's switch over to our IDE here.
+
+00:14:28.000 --> 00:14:34.000
+And I've already opened ic22a mincat.cpp.
+
+00:14:34.000 --> 00:14:37.000
+I'm going to move that down a little bit and we'll look at it.
+
+00:14:37.000 --> 00:14:40.000
+So we're going to write a function named mincat.
+
+00:14:40.000 --> 00:14:44.000
+We're going to be given two C-string literals.
+
+00:14:44.000 --> 00:14:46.000
+We're going to append them together.
+
+00:14:46.000 --> 00:14:51.000
+And we're going to return the results in the third argument, a non-constant array of char.
+
+00:14:51.000 --> 00:14:55.000
+The fourth parameter is the size of the array.
+
+00:14:55.000 --> 00:15:03.000
+If the input strings are different lengths, then we'll omit the leading characters from the longer string
+
+00:15:03.000 --> 00:15:06.000
+so it's the same length as the shorter string.
+
+00:15:06.000 --> 00:15:13.000
+So if we try to concatenate "hello" and "hi", the shorter string has only two characters.
+
+00:15:13.000 --> 00:15:18.000
+And so we're only going to use the two last characters from "hello".
+
+00:15:18.000 --> 00:15:22.000
+And so that will concatenate as "low" and "hi".
+
+00:15:22.000 --> 00:15:25.000
+Now the strings can be of any length.
+
+00:15:25.000 --> 00:15:31.000
+Now if the combined string output is larger than the space available,
+
+00:15:31.000 --> 00:15:37.000
+then we're going to divide the available space in half, after leaving room for the terminator of course,
+
+00:15:37.000 --> 00:15:43.000
+and concatenate the last n characters from each string.
+
+00:15:43.000 --> 00:15:47.000
+So we're going to use the functions from the C-string header.
+
+00:15:47.000 --> 00:15:51.000
+We're not going to use any of the C++ string library.
+
+00:15:51.000 --> 00:15:53.000
+So let's write that here.
+
+00:15:53.000 --> 00:15:57.000
+Now notice it's not going to return anything as a function.
+
+00:15:57.000 --> 00:15:59.000
+It's going to be really a procedure.
+
+00:15:59.000 --> 00:16:02.000
+So we're going to call it "mincat".
+
+00:16:02.000 --> 00:16:14.000
+It's going to take a const char * s1, const char * s2,
+
+00:16:14.000 --> 00:16:23.000
+a char out that is going to have, we don't know how many lengths,
+
+00:16:23.000 --> 00:16:34.000
+and a size t for max length.
+
+00:16:34.000 --> 00:16:37.000
+Okay, so that's all we need to do to stub that out.
+
+00:16:37.000 --> 00:16:46.000
+Let's open a terminal on that window by right clicking and open an integrated terminal.
+
+00:16:46.000 --> 00:16:50.000
+And then let's just do "make" to make sure that it compiles.
+
+00:16:50.000 --> 00:16:56.000
+It should, right? We haven't really done anything other than put in the parameters and everything.
+
+00:16:56.000 --> 00:16:59.000
+Okay, so I need to know the lengths of these.
+
+00:16:59.000 --> 00:17:03.000
+How do I find the length of s1 and s2?
+
+00:17:03.000 --> 00:17:09.000
+So I'm going to say
+
+00:17:09.000 --> 00:17:16.000
+size t, or int if you want,
+
+00:17:16.000 --> 00:17:22.000
+len1 = strlen s1.
+
+00:17:22.000 --> 00:17:25.000
+So call the function strlen.
+
+00:17:25.000 --> 00:17:33.000
+So size t, len2 = strlen s2.
+
+00:17:33.000 --> 00:17:37.000
+Now I need to create the length that's going to be the shorter of it.
+
+00:17:37.000 --> 00:17:42.000
+So size t, len =
+
+00:17:42.000 --> 00:17:45.000
+and here I'm going to use the conditional operator.
+
+00:17:45.000 --> 00:17:50.000
+So len1 < len2
+
+00:17:50.000 --> 00:17:53.000
+question mark, I'm going to use len1.
+
+00:17:53.000 --> 00:17:57.000
+Otherwise I'm going to use len2.
+
+00:17:57.000 --> 00:18:05.000
+You could use an if statement, but it would be a little bit longer and take a little bit more time.
+
+00:18:05.000 --> 00:18:08.000
+Now, what we want to do
+
+00:18:08.000 --> 00:18:11.000
+is we want to concatenate into out
+
+00:18:11.000 --> 00:18:14.000
+s1 and s2
+
+00:18:14.000 --> 00:18:16.000
+but only the len characters.
+
+00:18:16.000 --> 00:18:19.000
+So we're going to say str
+
+00:18:19.000 --> 00:18:22.000
+the last len characters.
+
+00:18:22.000 --> 00:18:25.000
+So we're going to say strcopy
+
+00:18:25.000 --> 00:18:26.000
+our first thing.
+
+00:18:26.000 --> 00:18:29.000
+We're going to copy into out.
+
+00:18:29.000 --> 00:18:36.000
+We're going to take len
+
+00:18:36.000 --> 00:18:39.000
+s1
+
+00:18:39.000 --> 00:18:42.000
+plus len1.
+
+00:18:42.000 --> 00:18:46.000
+Now remember s1 is a pointer.
+
+00:18:46.000 --> 00:18:47.000
+It's an address.
+
+00:18:47.000 --> 00:18:51.000
+We add len1 to it and what are we pointing to?
+
+00:18:51.000 --> 00:18:54.000
+We're pointing to the null byte in s2.
+
+00:18:54.000 --> 00:18:58.000
+Now if I subtract len from that
+
+00:18:58.000 --> 00:19:01.000
+what I have is the number of characters
+
+00:19:01.000 --> 00:19:04.000
+for the first item.
+
+00:19:04.000 --> 00:19:09.000
+Now I'm going to concatenate s2.
+
+00:19:09.000 --> 00:19:12.000
+So I'm going to say strcap
+
+00:19:12.000 --> 00:19:16.000
+not strcopy. I'm going to concatenate into out.
+
+00:19:16.000 --> 00:19:18.000
+I'm going to copy s2
+
+00:19:18.000 --> 00:19:20.000
+plus len2.
+
+00:19:20.000 --> 00:19:23.000
+So move that pointer down to the end
+
+00:19:23.000 --> 00:19:28.000
+and remove it back, len characters.
+
+00:19:28.000 --> 00:19:35.000
+Okay, let's go ahead and try that.
+
+00:19:35.000 --> 00:19:42.000
+Let's do make test.
+
+00:19:42.000 --> 00:19:46.000
+And it looks like it worked except for three of them.
+
+00:19:46.000 --> 00:19:51.000
+And that is because this only has five characters available.
+
+00:19:51.000 --> 00:19:55.000
+So it works fine if we have an unlimited number of characters
+
+00:19:55.000 --> 00:19:59.000
+available in the answer or out parameter.
+
+00:19:59.000 --> 00:20:02.000
+But if we don't have an unlimited number of characters
+
+00:20:02.000 --> 00:20:04.000
+we have a problem.
+
+00:20:04.000 --> 00:20:07.000
+So we haven't done this second part here.
+
+00:20:07.000 --> 00:20:11.000
+We haven't done this part right here if the combined output
+
+00:20:11.000 --> 00:20:15.000
+is larger than the space available.
+
+00:20:15.000 --> 00:20:19.000
+So let's do that right here.
+
+00:20:19.000 --> 00:20:25.000
+We'll say if
+
+00:20:25.000 --> 00:20:29.000
+if len times two
+
+00:20:29.000 --> 00:20:34.000
+is greater than
+
+00:20:34.000 --> 00:20:39.000
+maxlen plus one
+
+00:20:39.000 --> 00:20:42.000
+that means it won't fit, right?
+
+00:20:42.000 --> 00:20:45.000
+And if that's the case we have to set len
+
+00:20:45.000 --> 00:20:49.000
+equal to maxlen
+
+00:20:49.000 --> 00:20:56.000
+minus one. So allow to the null byte
+
+00:20:56.000 --> 00:21:01.000
+divided by two. So each character, each string can only use
+
+00:21:01.000 --> 00:21:06.000
+that amount of space.
+
+00:21:06.000 --> 00:21:13.000
+Okay, let's try it again.
+
+00:21:13.000 --> 00:21:19.000
+Let's clear that with control L and do make test.
+
+00:21:19.000 --> 00:21:25.000
+And we got all of them working correctly.
+
+00:21:25.000 --> 00:21:31.000
+I'm going to show you in a second something else about C style strings.
+
+00:21:31.000 --> 00:21:36.000
+Many people say, well, you know, this is all good and fine
+
+00:21:36.000 --> 00:21:40.000
+but why would I want to do this when I already have the C++ string class?
+
+00:21:40.000 --> 00:21:47.000
+What can I do with this that I can't do with the C++ string class?
+
+00:21:47.000 --> 00:21:51.000
+Well, the reason that we want to learn to use the C
+
+00:21:51.000 --> 00:21:55.000
+string type in addition to the C++ string type
+
+00:21:55.000 --> 00:21:59.000
+is because we want to interact with things like
+
+00:21:59.000 --> 00:22:03.000
+the operating system. So all operating systems
+
+00:22:03.000 --> 00:22:08.000
+from the newest, Mac OS X, Windows,
+
+00:22:08.000 --> 00:22:13.000
+Linux, all of them are written in the C language.
+
+00:22:13.000 --> 00:22:17.000
+And if you want to talk to the operating system,
+
+00:22:17.000 --> 00:22:21.000
+if you want to write a Windows program, you must use
+
+00:22:21.000 --> 00:22:25.000
+the C programming language to do that. Or some other
+
+00:22:25.000 --> 00:22:31.000
+higher level language that translates it to C for you, like C#.
+
+00:22:31.000 --> 00:22:36.000
+So let's look at something in B here.
+
+00:22:36.000 --> 00:22:40.000
+PNV
+
+00:22:40.000 --> 00:22:44.000
+and let's bring that down there, that's too high.
+
+00:22:44.000 --> 00:22:48.000
+And let's open a terminal on B.
+
+00:22:48.000 --> 00:22:53.000
+Open an integrated terminal so we have a fresh terminal down there. I can close the other ones.
+
+00:22:53.000 --> 00:22:58.000
+And what we want to do
+
+00:22:58.000 --> 00:23:03.000
+is in the operating system, this is true for Windows,
+
+00:23:03.000 --> 00:23:09.000
+for the Mac, for Linux of course, which we're working on,
+
+00:23:09.000 --> 00:23:14.000
+variables that are used among
+
+00:23:14.000 --> 00:23:19.000
+different programs can be set in an area of memory called the environment.
+
+00:23:19.000 --> 00:23:24.000
+So this is not global inside your program, it's global
+
+00:23:24.000 --> 00:23:29.000
+outside your program. So for instance, if I want to know
+
+00:23:29.000 --> 00:23:38.000
+actually I'll just show you what all the variables are.
+
+00:23:38.000 --> 00:23:44.000
+So if I do printenv in Unix,
+
+00:23:44.000 --> 00:23:49.000
+in Windows the command would just be set and hit enter,
+
+00:23:49.000 --> 00:23:54.000
+it goes and it prints a list of those variables
+
+00:23:54.000 --> 00:23:59.000
+and tells me what the values of those variables are.
+
+00:23:59.000 --> 00:24:04.000
+So notice that there's a variable called githubapiurl.
+
+00:24:04.000 --> 00:24:08.000
+There's a variable called workdeer.
+
+00:24:08.000 --> 00:24:12.000
+There's a variable called gemhome and so forth.
+
+00:24:12.000 --> 00:24:16.000
+And so these variables are set into
+
+00:24:16.000 --> 00:24:21.000
+the environment. We set several of these variables when we configured
+
+00:24:21.000 --> 00:24:26.000
+our IDE. Remember when you configure your IDE
+
+00:24:26.000 --> 00:24:30.000
+or when you reset your IDE,
+
+00:24:30.000 --> 00:24:34.000
+it will set things like your CS150 username
+
+00:24:34.000 --> 00:24:38.000
+and so forth. Those are in the environment.
+
+00:24:38.000 --> 00:24:42.000
+Well this command printenv is just a program
+
+00:24:42.000 --> 00:24:47.000
+and it's a program that reads a global array
+
+00:24:47.000 --> 00:24:52.000
+of character pointers and so that is written
+
+00:24:52.000 --> 00:24:56.000
+as char star
+
+00:24:56.000 --> 00:25:01.000
+a bracket or environ bracket
+
+00:25:01.000 --> 00:25:05.000
+or we can write it as using simply two stars like that.
+
+00:25:05.000 --> 00:25:09.000
+And so we are going to write a program
+
+00:25:09.000 --> 00:25:14.000
+that does the same thing as this. And I want to show you how easy this is to do
+
+00:25:14.000 --> 00:25:18.000
+but you have to know about C style strings.
+
+00:25:18.000 --> 00:25:22.000
+So this variable is declared
+
+00:25:22.000 --> 00:25:26.000
+in the operating system, is defined in the operating system
+
+00:25:26.000 --> 00:25:30.000
+and we want to use it in our program.
+
+00:25:30.000 --> 00:25:34.000
+So how do you use a variable in one program
+
+00:25:34.000 --> 00:25:38.000
+that's declared in another or defined in another? You make it
+
+00:25:38.000 --> 00:25:42.000
+external. So we're going to declare this variable.
+
+00:25:42.000 --> 00:25:46.000
+We're not going to define it. We're going to say extern
+
+00:25:46.000 --> 00:25:50.000
+char star star environment.
+
+00:25:50.000 --> 00:25:54.000
+So now we can use that variable.
+
+00:25:54.000 --> 00:25:58.000
+That variable has been declared or defined elsewhere.
+
+00:25:58.000 --> 00:26:02.000
+We have declared it in our program and so we can use that
+
+00:26:02.000 --> 00:26:06.000
+to connect to the operating system.
+
+00:26:06.000 --> 00:26:10.000
+So if I dereference environment
+
+00:26:10.000 --> 00:26:14.000
+what I get is a pointer to a character.
+
+00:26:14.000 --> 00:26:18.000
+In other words what I get is a C style string.
+
+00:26:18.000 --> 00:26:22.000
+And so what I want to say
+
+00:26:22.000 --> 00:26:26.000
+is while
+
+00:26:26.000 --> 00:26:34.000
+actually I want to create a variable. I'll call it p.
+
+00:26:34.000 --> 00:26:38.000
+So auto p equals
+
+00:26:38.000 --> 00:26:42.000
+environment.
+
+00:26:42.000 --> 00:26:46.000
+In other words I don't want to change
+
+00:26:46.000 --> 00:26:50.000
+environment.
+
+00:26:50.000 --> 00:26:54.000
+And you might wonder why don't you put const there if you don't want to change it.
+
+00:26:54.000 --> 00:26:58.000
+That's because in C, which the operating system was written in,
+
+00:26:58.000 --> 00:27:02.000
+they didn't have const. They didn't use const like that.
+
+00:27:02.000 --> 00:27:06.000
+So we're going to say auto p equals environment
+
+00:27:06.000 --> 00:27:10.000
+while star p
+
+00:27:14.000 --> 00:27:18.000
+while
+
+00:27:18.000 --> 00:27:26.000
+while star p is not equal to the null pointer
+
+00:27:26.000 --> 00:27:30.000
+we're going to print out
+
+00:27:30.000 --> 00:27:38.000
+that variable.
+
+00:27:38.000 --> 00:27:42.000
+Okay now this actually won't quite work
+
+00:27:42.000 --> 00:27:46.000
+correctly. If you notice the end of this it tells us
+
+00:27:46.000 --> 00:27:50.000
+the name of the program. This environmental variable underscore
+
+00:27:50.000 --> 00:27:54.000
+is the name of the program we're actually running.
+
+00:27:54.000 --> 00:27:58.000
+So we're going to compile this. The name is p_env
+
+00:27:58.000 --> 00:28:02.000
+So we're going to say make p_env
+
+00:28:02.000 --> 00:28:06.000
+and then we're going to run
+
+00:28:06.000 --> 00:28:10.000
+p_env dash p_env
+
+00:28:10.000 --> 00:28:14.000
+and we did not get what we wanted
+
+00:28:14.000 --> 00:28:18.000
+oops, let me control c to stop it. Ah!
+
+00:28:18.000 --> 00:28:22.000
+It crashed. So what did I forget here? I forgot the fact
+
+00:28:22.000 --> 00:28:26.000
+that the first time we're going to be pointing to the first string but we're going to continue
+
+00:28:26.000 --> 00:28:30.000
+to be pointing to the same string each time. So we have an endless loop
+
+00:28:30.000 --> 00:28:34.000
+that is just pointing to the first environmental variable and
+
+00:28:34.000 --> 00:28:38.000
+printing it over and over and over again. So
+
+00:28:38.000 --> 00:28:42.000
+to go to the next one, what do we have to do? We have to increment the
+
+00:28:42.000 --> 00:28:46.000
+pointer. Okay, let's build that
+
+00:28:46.000 --> 00:28:50.000
+again
+
+00:28:50.000 --> 00:28:54.000
+and let's run it again.
+
+00:28:54.000 --> 00:28:58.000
+Okay, so now notice we got exactly
+
+00:28:58.000 --> 00:29:02.000
+the same thing we had before.
+
+00:29:06.000 --> 00:29:10.000
+My github user is sgilbertstudent
+
+00:29:10.000 --> 00:29:14.000
+and so we have written
+
+00:29:14.000 --> 00:29:18.000
+a program that has exactly the
+
+00:29:18.000 --> 00:29:22.000
+same output as a
+
+00:29:22.000 --> 00:29:26.000
+built in piece of code.
+
+00:29:26.000 --> 00:29:30.000
+We couldn't do this with C++ strings
+
+00:29:30.000 --> 00:29:34.000
+you have to use C style strings and pointers
+
+00:29:34.000 --> 00:29:38.000
+to do this.
+
+00:29:38.000 --> 00:29:42.000
+Now to process
+
+00:29:42.000 --> 00:29:46.000
+C style strings, what you do is you treat them
+
+00:29:46.000 --> 00:29:50.000
+exactly like an array, except
+
+00:29:50.000 --> 00:29:54.000
+you're not worried about the length of it. You assume that there's a
+
+00:29:54.000 --> 00:29:58.000
+terminating null character in the array. And so
+
+00:29:58.000 --> 00:30:02.000
+instead of counter controlled loops, we're going to use a sentinel
+
+00:30:02.000 --> 00:30:06.000
+loop, like this example of the strlen function.
+
+00:30:06.000 --> 00:30:10.000
+So strlen here is returning an int, the actual version
+
+00:30:10.000 --> 00:30:14.000
+of strlen returns a size T. And it's
+
+00:30:14.000 --> 00:30:18.000
+going to create a counter i, and while
+
+00:30:18.000 --> 00:30:22.000
+s at i is not equal to the null character, it's
+
+00:30:22.000 --> 00:30:26.000
+going to increment i. At the end of that, i will have
+
+00:30:26.000 --> 00:30:30.000
+the count of the number of characters in the
+
+00:30:30.000 --> 00:30:34.000
+string. So the traditional C library string functions
+
+00:30:34.000 --> 00:30:38.000
+all depend on that null character at the end
+
+00:30:38.000 --> 00:30:42.000
+of the string. Now you can write your
+
+00:30:42.000 --> 00:30:46.000
+code using array syntax. There's no loss of
+
+00:30:46.000 --> 00:30:50.000
+efficiency, if you're more comfortable with that it's perfectly fine, but
+
+00:30:50.000 --> 00:30:54.000
+it's more common to use pointer syntax. So here's a version
+
+00:30:54.000 --> 00:30:58.000
+of strlen that uses pointer syntax. Notice
+
+00:30:58.000 --> 00:31:02.000
+s is a const char star, or a pointer
+
+00:31:02.000 --> 00:31:06.000
+to a const character. We have length, and
+
+00:31:06.000 --> 00:31:10.000
+while star s is not equal to the null byte,
+
+00:31:10.000 --> 00:31:14.000
+we dereference the pointer s, it's not equal to the null byte,
+
+00:31:14.000 --> 00:31:18.000
+we increment s to go to the next character,
+
+00:31:18.000 --> 00:31:22.000
+and we also increment the length. So we get a pointer
+
+00:31:22.000 --> 00:31:26.000
+to a constant character, while s doesn't point to the terminating null
+
+00:31:26.000 --> 00:31:30.000
+byte, we move s and we count the character.
+
+00:31:30.000 --> 00:31:34.000
+So this is much more common to use pointers
+
+00:31:34.000 --> 00:31:38.000
+with C style strings than it is with arrays. As I
+
+00:31:38.000 --> 00:31:42.000
+mentioned though, there is no loss of efficiency if you use
+
+00:31:42.000 --> 00:31:46.000
+array syntax. So if you're more comfortable with that, you're perfectly
+
+00:31:46.000 --> 00:31:50.000
+fine using that.
+
+00:31:50.000 --> 00:31:54.000
+Now, it's also very common to use a much more
+
+00:31:54.000 --> 00:31:58.000
+concise syntax when processing C strings
+
+00:31:58.000 --> 00:32:02.000
+with pointers. So notice this just has three lines,
+
+00:32:02.000 --> 00:32:06.000
+the length is zero, while star s plus plus
+
+00:32:06.000 --> 00:32:10.000
+len plus plus return len. So this is
+
+00:32:10.000 --> 00:32:14.000
+a very, very common C string idiom.
+
+00:32:14.000 --> 00:32:18.000
+You should recognize it and understand it. I don't necessarily encourage you to
+
+00:32:18.000 --> 00:32:22.000
+write this kind of code. It is no more efficient than the
+
+00:32:22.000 --> 00:32:26.000
+more understandable code on the previous page. It just took
+
+00:32:26.000 --> 00:32:30.000
+a little bit of fewer typing. So let me just go
+
+00:32:30.000 --> 00:32:34.000
+through why that works so you understand it.
+
+00:32:34.000 --> 00:32:38.000
+So star s will dereference the pointer
+
+00:32:38.000 --> 00:32:42.000
+s. Dereference the pointer s. However
+
+00:32:42.000 --> 00:32:46.000
+this is not star s, it's star s plus plus.
+
+00:32:46.000 --> 00:32:50.000
+And so plus plus and
+
+00:32:50.000 --> 00:32:54.000
+star have the same precedence.
+
+00:32:54.000 --> 00:32:58.000
+So the s has to know whether to do the plus plus first or the
+
+00:32:58.000 --> 00:33:02.000
+star first. And because the precedence is the
+
+00:33:02.000 --> 00:33:06.000
+same, that won't help it decide. And so it has to fall
+
+00:33:06.000 --> 00:33:10.000
+back on what we call the tiebreaker rule, associativity, and
+
+00:33:10.000 --> 00:33:14.000
+decide does this go left to right, star s, and then
+
+00:33:14.000 --> 00:33:18.000
+increment it, which would mean incrementing the value
+
+00:33:18.000 --> 00:33:22.000
+that was at s, or does it mean plus plus s
+
+00:33:22.000 --> 00:33:26.000
+and then dereference the plus plus s.
+
+00:33:26.000 --> 00:33:30.000
+And these are right associative.
+
+00:33:30.000 --> 00:33:34.000
+Most operators, arithmetic operators, are less
+
+00:33:34.000 --> 00:33:38.000
+associated. These are right associative, so the plus plus goes first
+
+00:33:38.000 --> 00:33:42.000
+with the tiebreaker rule. Now the value
+
+00:33:42.000 --> 00:33:46.000
+returned from s plus plus is not
+
+00:33:46.000 --> 00:33:50.000
+the pointer s after it's been changed
+
+00:33:50.000 --> 00:33:54.000
+it's the pointer s before it's changed, because
+
+00:33:54.000 --> 00:33:58.000
+this is post-increment. So we take the value
+
+00:33:58.000 --> 00:34:02.000
+that s had before it was changed, we change s
+
+00:34:02.000 --> 00:34:06.000
+move it to the second character, return the value of s
+
+00:34:06.000 --> 00:34:10.000
+that it had before it was changed, dereference that
+
+00:34:10.000 --> 00:34:14.000
+and if that is not the null character
+
+00:34:14.000 --> 00:34:18.000
+if it's the null character, this is false. If it
+
+00:34:18.000 --> 00:34:22.000
+is the null character, then we increment
+
+00:34:22.000 --> 00:34:26.000
+length, and finally we return length. So this stops
+
+00:34:26.000 --> 00:34:30.000
+when it dereferences the null character.
+
+00:34:30.000 --> 00:34:34.000
+Now again, if we look at the previous
+
+00:34:34.000 --> 00:34:38.000
+example, here we're explicitly saying
+
+00:34:38.000 --> 00:34:42.000
+while star s is not equal to the null character. Here
+
+00:34:42.000 --> 00:34:46.000
+we're implicitly saying that. And so I think it's
+
+00:34:46.000 --> 00:34:50.000
+better always to be explicit. I would prefer that you write code that is
+
+00:34:50.000 --> 00:34:54.000
+a little clearer and easier to understand. But if you don't understand
+
+00:34:54.000 --> 00:34:58.000
+what this does, when you actually read C code, and you
+
+00:34:58.000 --> 00:35:02.000
+see this very common idiom, you'll be confused.
+
+00:35:02.000 --> 00:35:06.000
+Okay, so we are going
+
+00:35:06.000 --> 00:35:10.000
+to finish up this lecture by looking at
+
+00:35:10.000 --> 00:35:14.000
+an example. This is from the online
+
+00:35:14.000 --> 00:35:18.000
+C-String practice problems in, not coding
+
+00:35:18.000 --> 00:35:22.000
+bat, in Code Step-by-Step. There's
+
+00:35:22.000 --> 00:35:26.000
+a link on the home page. But the online version wants to use
+
+00:35:26.000 --> 00:35:30.000
+the library functions. The version we're going to use is not going to use any
+
+00:35:30.000 --> 00:35:34.000
+library function. It's very similar to what you'll be asked to do for
+
+00:35:34.000 --> 00:35:38.000
+PEO8. So we're going to open
+
+00:35:38.000 --> 00:35:42.000
+countmatches.cpp. We're going to look through an array
+
+00:35:42.000 --> 00:35:46.000
+of C-style strings, just like we did with PN.
+
+00:35:46.000 --> 00:35:50.000
+We're going to count the number of strings that contain the first string.
+
+00:35:50.000 --> 00:35:54.000
+And so this is the really tricky part right here that you need to learn
+
+00:35:54.000 --> 00:35:58.000
+to understand to do well on PEO8. How do
+
+00:35:58.000 --> 00:36:02.000
+you see if one string is contained inside another
+
+00:36:02.000 --> 00:36:06.000
+string? So I'm going to solve it two ways. I'm going to solve it first using
+
+00:36:06.000 --> 00:36:10.000
+array notation, and then I'll do it using pointer notation.
+
+00:36:10.000 --> 00:36:14.000
+It's a little easier actually with pointer notation, I think.
+
+00:36:14.000 --> 00:36:18.000
+But you may prefer it with array notation.
+
+00:36:18.000 --> 00:36:22.000
+So let's pop that up. Let's go ahead and
+
+00:36:22.000 --> 00:36:26.000
+close the things we had previously.
+
+00:36:26.000 --> 00:36:30.000
+[typing]
+
+00:36:30.000 --> 00:36:34.000
+[typing]
+
+00:36:34.000 --> 00:36:38.000
+Okay, so
+
+00:36:38.000 --> 00:36:42.000
+countmatches.cpp. Let's close those
+
+00:36:42.000 --> 00:36:46.000
+two and let's open a shell on that one.
+
+00:36:46.000 --> 00:36:50.000
+Yes, we have a shell open on C.
+
+00:36:50.000 --> 00:36:54.000
+Okay, now notice
+
+00:36:54.000 --> 00:36:58.000
+I'm going to put my name inside here.
+
+00:36:58.000 --> 00:37:02.000
+You can put your name and section and date at the top
+
+00:37:02.000 --> 00:37:06.000
+if you want. You don't have to, but this is the one that is important. So we're writing
+
+00:37:06.000 --> 00:37:10.000
+a function called countmatches, and it accepts a string
+
+00:37:10.000 --> 00:37:14.000
+to match, a const char char, an array of characters. So you can
+
+00:37:14.000 --> 00:37:18.000
+really see it here. That's how it's called.
+
+00:37:18.000 --> 00:37:22.000
+So if we know that, we know what to write here. And it's going to return the number
+
+00:37:22.000 --> 00:37:26.000
+of times that it matches. So we'll say int countmatches
+
+00:37:26.000 --> 00:37:30.000
+const char
+
+00:37:30.000 --> 00:37:34.000
+star str
+
+00:37:34.000 --> 00:37:38.000
+str
+
+00:37:38.000 --> 00:37:42.000
+Let's call that, it has it as strs
+
+00:37:42.000 --> 00:37:46.000
+up there, but let's call this one arrays.
+
+00:37:46.000 --> 00:37:50.000
+So
+
+00:37:50.000 --> 00:37:54.000
+that's our
+
+00:37:54.000 --> 00:37:58.000
+array.
+
+00:37:58.000 --> 00:38:02.000
+And then we're going to have a size T.
+
+00:38:02.000 --> 00:38:06.000
+This is the length
+
+00:38:06.000 --> 00:38:10.000
+of the array.
+
+00:38:10.000 --> 00:38:14.000
+So that's pretty easy to loop through this array.
+
+00:38:14.000 --> 00:38:18.000
+So let's go ahead and run this.
+
+00:38:18.000 --> 00:38:22.000
+So we'll go for size
+
+00:38:22.000 --> 00:38:26.000
+T, i = 0
+
+00:38:26.000 --> 00:38:30.000
+i < n++i
+
+00:38:30.000 --> 00:38:34.000
+And then what we want is
+
+00:38:34.000 --> 00:38:38.000
+arr sub i and see if it contains the string.
+
+00:38:38.000 --> 00:38:42.000
+Now instead of actually doing that,
+
+00:38:42.000 --> 00:38:46.000
+I'm going to write a function. So I'm going to write my function
+
+00:38:46.000 --> 00:38:50.000
+right up here, because the function is the guts of what we want.
+
+00:38:50.000 --> 00:38:54.000
+So I'm going to say if
+
+00:38:54.000 --> 00:39:02.000
+if contains
+
+00:39:02.000 --> 00:39:14.000
+arr sub i
+
+00:39:14.000 --> 00:39:18.000
+str
+
+00:39:18.000 --> 00:39:26.000
+Here's what I want to write.
+
+00:39:26.000 --> 00:39:30.000
+if arr
+
+00:39:30.000 --> 00:39:34.000
+i contains str
+
+00:39:34.000 --> 00:39:38.000
+So figuring out how to put that in a function is
+
+00:39:38.000 --> 00:39:42.000
+hard.
+
+00:39:42.000 --> 00:39:46.000
+Or is in
+
+00:39:46.000 --> 00:39:50.000
+if is in
+
+00:39:50.000 --> 00:39:54.000
+contains is nicer.
+
+00:39:54.000 --> 00:40:04.000
+It's hard to know whether to put the arr first or the string,
+
+00:40:04.000 --> 00:40:08.000
+but I would want to say if arr i contains the string,
+
+00:40:08.000 --> 00:40:12.000
+then what I want to do is update my result.
+
+00:40:12.000 --> 00:40:16.000
+So result++
+
+00:40:16.000 --> 00:40:20.000
+Of course we haven't created our result, so int result
+
+00:40:20.000 --> 00:40:24.000
+equals 0
+
+00:40:24.000 --> 00:40:28.000
+and return result
+
+00:40:28.000 --> 00:40:32.000
+So that's simple enough that that looks like it should work okay.
+
+00:40:32.000 --> 00:40:36.000
+So the hard part of this is figuring out how to write
+
+00:40:36.000 --> 00:40:40.000
+contains. So we're going to have
+
+00:40:40.000 --> 00:40:44.000
+two strings. It's going to be a boolean
+
+00:40:44.000 --> 00:40:48.000
+contains const char
+
+00:40:48.000 --> 00:40:52.000
+star s1 and const
+
+00:40:52.000 --> 00:40:56.000
+char star s2
+
+00:40:56.000 --> 00:41:00.000
+and let's just return
+
+00:41:00.000 --> 00:41:04.000
+false here.
+
+00:41:04.000 --> 00:41:08.000
+And if we find it, we'll return true.
+
+00:41:08.000 --> 00:41:12.000
+Okay, so we actually have enough here. We have enough to
+
+00:41:12.000 --> 00:41:16.000
+stub it. We've stubbed it out. And so we can try it. So we can say
+
+00:41:16.000 --> 00:41:20.000
+make test
+
+00:41:20.000 --> 00:41:24.000
+and we see none of those
+
+00:41:24.000 --> 00:41:28.000
+fail because it returns 0 in each case, right? It doesn't find any.
+
+00:41:28.000 --> 00:41:32.000
+And so now
+
+00:41:32.000 --> 00:41:36.000
+we're ready to think about contains. So contains
+
+00:41:36.000 --> 00:41:40.000
+is going to be arr sub i and if we look at
+
+00:41:40.000 --> 00:41:44.000
+this example right here, we'll see arr sub i is going to be
+
+00:41:44.000 --> 00:41:48.000
+rainbow. So does rainbow contain o?
+
+00:41:48.000 --> 00:41:52.000
+It does. So
+
+00:41:52.000 --> 00:41:56.000
+imagine, and I said I was going to
+
+00:41:56.000 --> 00:42:00.000
+do this two ways, right? I was going to do it with an array
+
+00:42:00.000 --> 00:42:04.000
+and a string and so
+
+00:42:04.000 --> 00:42:16.000
+let's do it first with an array.
+
+00:42:16.000 --> 00:42:20.000
+Okay, so
+
+00:42:20.000 --> 00:42:24.000
+we need to have a couple of variables.
+
+00:42:24.000 --> 00:42:28.000
+One variable is going to go through s1.
+
+00:42:28.000 --> 00:42:32.000
+So I'm going to do size t for these.
+
+00:42:32.000 --> 00:42:36.000
+You can do int. It's fine.
+
+00:42:36.000 --> 00:42:40.000
+And I'll call that i1.
+
+00:42:40.000 --> 00:42:48.000
+And so we're going to say while
+
+00:42:48.000 --> 00:42:52.000
+s1
+
+00:42:52.000 --> 00:42:56.000
+at i1 is not equal to the
+
+00:42:56.000 --> 00:43:00.000
+null character
+
+00:43:00.000 --> 00:43:04.000
+i1++
+
+00:43:04.000 --> 00:43:08.000
+That will walk us
+
+00:43:08.000 --> 00:43:12.000
+through this string. That will walk us through this string.
+
+00:43:12.000 --> 00:43:16.000
+Now we want to
+
+00:43:16.000 --> 00:43:20.000
+at each point in here, we want to see if
+
+00:43:20.000 --> 00:43:24.000
+s2 is at that point. So we're going to create
+
+00:43:24.000 --> 00:43:28.000
+another variable, i2.
+
+00:43:28.000 --> 00:43:32.000
+So size p i2
+
+00:43:32.000 --> 00:43:36.000
+and we're going to say
+
+00:43:36.000 --> 00:43:40.000
+while
+
+00:43:40.000 --> 00:43:48.000
+s2
+
+00:43:48.000 --> 00:43:52.000
+i2
+
+00:43:52.000 --> 00:43:56.000
+is equal to
+
+00:43:56.000 --> 00:44:00.000
+s1
+
+00:44:00.000 --> 00:44:04.000
+i1
+
+00:44:04.000 --> 00:44:08.000
+plus i2
+
+00:44:08.000 --> 00:44:12.000
+because we're going to have to look at the first character here
+
+00:44:12.000 --> 00:44:16.000
+the first character here, the second character here
+
+00:44:16.000 --> 00:44:20.000
+the second character here, and so we're going to have to offset s1
+
+00:44:20.000 --> 00:44:24.000
+by not only its index, but the index
+
+00:44:24.000 --> 00:44:28.000
+of the second character.
+
+00:44:28.000 --> 00:44:32.000
+So while those are the same
+
+00:44:32.000 --> 00:44:36.000
+and s2
+
+00:44:36.000 --> 00:44:40.000
+i2 is not equal to
+
+00:44:40.000 --> 00:44:44.000
+the null character and
+
+00:44:44.000 --> 00:44:48.000
+s1 i1 plus i2
+
+00:44:48.000 --> 00:44:52.000
+is not equal to the
+
+00:44:52.000 --> 00:44:56.000
+null character
+
+00:44:56.000 --> 00:45:00.000
+we're going to increment i2
+
+00:45:00.000 --> 00:45:04.000
+i2++
+
+00:45:04.000 --> 00:45:08.000
+That means that at some point
+
+00:45:08.000 --> 00:45:12.000
+we're either going to read all of s2
+
+00:45:12.000 --> 00:45:16.000
+and this is going to fail or
+
+00:45:16.000 --> 00:45:20.000
+the characters are not going to match
+
+00:45:20.000 --> 00:45:24.000
+like that will immediately not match when we try to compare the o here to the r there
+
+00:45:24.000 --> 00:45:28.000
+will drop out. So after we drop out
+
+00:45:28.000 --> 00:45:32.000
+in other words this while loop is guaranteed to drop out
+
+00:45:32.000 --> 00:45:36.000
+it's guaranteed to drop out
+
+00:45:36.000 --> 00:45:40.000
+and after we drop out, if we are looking at the null
+
+00:45:40.000 --> 00:45:44.000
+character after the end of this ow
+
+00:45:44.000 --> 00:45:48.000
+in other words if
+
+00:45:48.000 --> 00:45:52.000
+s2 i2 is equal to the null character
+
+00:45:52.000 --> 00:45:56.000
+then we have found our character. So if
+
+00:45:56.000 --> 00:46:00.000
+s2 sub i2
+
+00:46:00.000 --> 00:46:04.000
+equals the null character
+
+00:46:04.000 --> 00:46:08.000
+then
+
+00:46:08.000 --> 00:46:12.000
+got a parenthesis in the wrong place there
+
+00:46:12.000 --> 00:46:16.000
+then we're just going to return true
+
+00:46:16.000 --> 00:46:24.000
+ok so this is doing contains
+
+00:46:24.000 --> 00:46:28.000
+now we have actually one problem here and you'll see it here
+
+00:46:28.000 --> 00:46:32.000
+in a minute. It actually works for most of the
+
+00:46:32.000 --> 00:46:36.000
+characters but not for all of them. So we'll go make tests
+
+00:46:36.000 --> 00:46:40.000
+and you can see it doesn't work for this one
+
+00:46:40.000 --> 00:46:44.000
+and this one. So what is s2
+
+00:46:44.000 --> 00:46:48.000
+in these two cases? It's the null string
+
+00:46:48.000 --> 00:46:52.000
+it's the empty string and notice we have this little
+
+00:46:52.000 --> 00:46:56.000
+sentence here. The empty string is a substring of any string
+
+00:46:56.000 --> 00:47:00.000
+you may assume, so an empty string is a substring
+
+00:47:00.000 --> 00:47:04.000
+of any string. So what that means is we have to say
+
+00:47:04.000 --> 00:47:08.000
+if star
+
+00:47:08.000 --> 00:47:12.000
+if s2 sub 0 equals
+
+00:47:12.000 --> 00:47:16.000
+the null string, or the null byte
+
+00:47:16.000 --> 00:47:20.000
+then it's the empty string so we're going to return
+
+00:47:20.000 --> 00:47:24.000
+true. That means it matches any string. So we have this
+
+00:47:24.000 --> 00:47:28.000
+special case here for this sentence right in here
+
+00:47:28.000 --> 00:47:32.000
+and that should take us from 67%
+
+00:47:32.000 --> 00:47:36.000
+to 100%
+
+00:47:36.000 --> 00:47:40.000
+so that does
+
+00:47:40.000 --> 00:47:44.000
+take us to 100%. Now let's do one more
+
+00:47:44.000 --> 00:47:52.000
+let's do one more and that is
+
+00:47:52.000 --> 00:47:56.000
+I want to, I'm going to leave this here so you can
+
+00:47:56.000 --> 00:48:00.000
+see it. I'm going to change its name
+
+00:48:00.000 --> 00:48:04.000
+to xcontains. So we won't
+
+00:48:04.000 --> 00:48:08.000
+actually be calling it. And I'm going to
+
+00:48:08.000 --> 00:48:12.000
+write a version of contains that only uses pointers
+
+00:48:12.000 --> 00:48:16.000
+so bool
+
+00:48:16.000 --> 00:48:20.000
+contains const char star
+
+00:48:20.000 --> 00:48:24.000
+s1 const char star s2
+
+00:48:24.000 --> 00:48:28.000
+I'm going to
+
+00:48:28.000 --> 00:48:32.000
+say file
+
+00:48:32.000 --> 00:48:36.000
+star
+
+00:48:36.000 --> 00:48:40.000
+s1 is not equal to the null character
+
+00:48:40.000 --> 00:48:44.000
+and of course you know we could write this as file
+
+00:48:44.000 --> 00:48:48.000
+star s1. I mean that would be the same
+
+00:48:48.000 --> 00:48:52.000
+thing.
+
+00:48:52.000 --> 00:48:56.000
+s1++
+
+00:48:56.000 --> 00:49:00.000
+If we get down here we're going to return false
+
+00:49:00.000 --> 00:49:04.000
+if
+
+00:49:04.000 --> 00:49:08.000
+star s2
+
+00:49:08.000 --> 00:49:12.000
+equals the null character or if not
+
+00:49:12.000 --> 00:49:16.000
+star s2 we're going to return true
+
+00:49:16.000 --> 00:49:20.000
+and here we're going to try and do the same thing we did before
+
+00:49:20.000 --> 00:49:24.000
+so I'm going to create a couple of pointers. I'm going to say
+
+00:49:24.000 --> 00:49:28.000
+auto p1 equals s1
+
+00:49:28.000 --> 00:49:32.000
+auto p2 equals s2
+
+00:49:32.000 --> 00:49:36.000
+while star p1 equals
+
+00:49:36.000 --> 00:49:40.000
+star p2 and
+
+00:49:40.000 --> 00:49:44.000
+star p1 is not equal to the
+
+00:49:44.000 --> 00:49:48.000
+null character or while star p1
+
+00:49:48.000 --> 00:49:52.000
+and star p2 is not
+
+00:49:52.000 --> 00:49:56.000
+equal to the null character
+
+00:49:56.000 --> 00:50:00.000
+hold on I'm having a hard time
+
+00:50:00.000 --> 00:50:04.000
+finding that character there
+
+00:50:04.000 --> 00:50:08.000
+null character
+
+00:50:08.000 --> 00:50:12.000
+we're going to do p1++ p2++
+
+00:50:12.000 --> 00:50:16.000
+now when we get
+
+00:50:16.000 --> 00:50:20.000
+out of this if p2
+
+00:50:20.000 --> 00:50:24.000
+which is pointing to s2 if that is pointing
+
+00:50:24.000 --> 00:50:28.000
+to the null byte in other words if we got out of this loop because
+
+00:50:28.000 --> 00:50:32.000
+that was true then the
+
+00:50:32.000 --> 00:50:36.000
+character is there so if
+
+00:50:36.000 --> 00:50:40.000
+star p2 is equal to the null byte
+
+00:50:40.000 --> 00:50:44.000
+return true
+
+00:50:44.000 --> 00:50:48.000
+I find this a little bit easier mainly
+
+00:50:48.000 --> 00:50:52.000
+because when I'm using pointers I don't have to do this addition
+
+00:50:52.000 --> 00:50:56.000
+here of the offsets to get the value and that
+
+00:50:56.000 --> 00:51:00.000
+part kind of always confuses me here so I find this a little bit
+
+00:51:00.000 --> 00:51:04.000
+clearer and cleaner
+
+00:51:04.000 --> 00:51:08.000
+in your text this algorithm is shown at the last
+
+00:51:08.000 --> 00:51:12.000
+part of this chapter and so it's important that you learn and
+
+00:51:12.000 --> 00:51:16.000
+memorize this algorithm so let's go ahead and copy
+
+00:51:16.000 --> 00:51:20.000
+that or test it let's do make test
+
+00:51:20.000 --> 00:51:24.000
+and we got 100% once
+
+00:51:24.000 --> 00:51:28.000
+again. Okay so that's it for lecture
+
+00:51:28.000 --> 00:51:32.000
+22 I will see you guys next time
+
+00:51:32.000 --> 00:51:34.000
+Thank you.
+

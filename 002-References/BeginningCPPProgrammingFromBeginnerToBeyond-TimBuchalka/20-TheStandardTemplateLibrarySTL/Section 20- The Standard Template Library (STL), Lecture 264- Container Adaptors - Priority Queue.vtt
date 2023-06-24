@@ -1,0 +1,576 @@
+WEBVTT
+
+00:00:05.190 --> 00:00:07.560
+In this video, we'll learn
+more about the Priority Queue.
+
+00:00:08.340 --> 00:00:10.790
+The priority queue is a
+container adapter just like
+
+00:00:10.790 --> 00:00:11.980
+the stack and the queue.
+
+00:00:12.530 --> 00:00:16.699
+The priority queue allows insertions
+and removal of elements in order
+
+00:00:16.719 --> 00:00:17.999
+from the front of the container.
+
+00:00:18.859 --> 00:00:21.480
+Elements are stored internally
+in vectors by default.
+
+00:00:22.230 --> 00:00:24.990
+But a data structure called the
+heap is used behind the scenes.
+
+00:00:25.420 --> 00:00:27.840
+Don't confuse a heap data
+structure with the heap that
+
+00:00:27.840 --> 00:00:31.220
+we used to store dynamically
+allocated data in our program.
+
+00:00:31.389 --> 00:00:32.430
+They're totally different.
+
+00:00:33.420 --> 00:00:35.629
+Elements are inserted
+in priority order.
+
+00:00:35.869 --> 00:00:39.030
+So, the largest priority element
+will always be at the front of the
+
+00:00:39.030 --> 00:00:40.790
+priority queue, that's pretty cool.
+
+00:00:40.980 --> 00:00:44.380
+We can insert elements at the front
+and when we get an element from the
+
+00:00:44.380 --> 00:00:47.860
+front, we're guaranteed that it will be
+the largest element in the container.
+
+00:00:48.170 --> 00:00:49.410
+And it's super-efficient.
+
+00:00:49.769 --> 00:00:53.679
+Iterators make no sense with priority
+queues, so they're not supported
+
+00:00:53.680 --> 00:00:55.320
+and neither are the STL algorithms.
+
+00:00:58.250 --> 00:01:01.559
+In order to use the priority queue,
+we must include the queue header file.
+
+00:01:01.820 --> 00:01:05.280
+The priority queue has just a couple
+of methods that are super powerful.
+
+00:01:05.559 --> 00:01:09.970
+The push method inserts an element into
+the priority queue in sorted order.
+
+00:01:10.650 --> 00:01:14.320
+The pop method removes the top
+element from the priority queue.
+
+00:01:14.670 --> 00:01:18.490
+And the top method accesses the
+top element without removing it.
+
+00:01:18.700 --> 00:01:22.690
+The top element will always be the
+highest priority element which defaults
+
+00:01:22.740 --> 00:01:24.419
+to the element with the greatest value.
+
+00:01:25.250 --> 00:01:28.510
+Finally, we have the empty and
+size methods as we've seen before.
+
+00:01:30.480 --> 00:01:33.100
+So, let's see a simple example
+of using the priority queue.
+
+00:01:34.480 --> 00:01:37.580
+First, we create a priority
+queue, and we'll call it pq.
+
+00:01:37.580 --> 00:01:40.850
+Behind the scenes, it's using the
+vector as the underlying container.
+
+00:01:41.490 --> 00:01:44.270
+Then we push 4 integers
+onto the priority queue.
+
+00:01:45.030 --> 00:01:48.020
+And then we display
+the top with pq.top.
+
+00:01:48.690 --> 00:01:52.860
+In this case, 20 will be displayed
+because 20 was the largest element
+
+00:01:52.860 --> 00:01:54.450
+inserted into the priority queue.
+
+00:01:55.140 --> 00:01:58.199
+We can remove the element
+from the top with pq.pop.
+
+00:01:58.860 --> 00:02:02.729
+And if we display the top again,
+we'll display 10 since 10 is
+
+00:02:02.730 --> 00:02:05.360
+the next largest integer that
+was added to the priority queue.
+
+00:02:05.719 --> 00:02:08.600
+That's it, it's really very
+simple and very powerful.
+
+00:02:09.169 --> 00:02:11.250
+Let's head over to the ide
+and I'll show you an example
+
+00:02:11.250 --> 00:02:12.370
+of using a priority queue.
+
+00:02:13.510 --> 00:02:14.830
+Okay, so I'm back in the ide.
+
+00:02:14.830 --> 00:02:16.470
+I'm in the section 20 workspace.
+
+00:02:16.520 --> 00:02:20.820
+And I'm in the priority queue project,
+so what we'll do here is we'll
+
+00:02:20.889 --> 00:02:22.089
+play around with a priority queue.
+
+00:02:22.100 --> 00:02:24.219
+We'll do it both with integers,
+and we'll do it with an
+
+00:02:24.219 --> 00:02:25.709
+object here at person objects.
+
+00:02:26.250 --> 00:02:29.950
+So, I'm including q that's
+where the priority queue lives.
+
+00:02:30.280 --> 00:02:33.190
+So, I need to include that to make
+sure that we have access to it.
+
+00:02:33.530 --> 00:02:35.930
+We've got our good old person
+class that we've been using
+
+00:02:35.930 --> 00:02:37.020
+throughout this section.
+
+00:02:37.559 --> 00:02:39.870
+And again, it's same
+as it has been before.
+
+00:02:40.329 --> 00:02:44.130
+This is the really important one
+right here that operator less standard
+
+00:02:44.140 --> 00:02:45.489
+overloaded less than operator.
+
+00:02:45.490 --> 00:02:46.980
+That's one we're going
+to use in a moment.
+
+00:02:47.180 --> 00:02:48.440
+So, remember what it's doing.
+
+00:02:49.350 --> 00:02:51.280
+Actually, what we'll do is we'll
+use it, and then we'll change it.
+
+00:02:51.620 --> 00:02:53.930
+So, remember what it's doing
+here, it's comparing ages.
+
+00:02:54.240 --> 00:02:55.359
+So, that's the ordering.
+
+00:02:55.370 --> 00:02:56.289
+That it's going to use.
+
+00:02:56.289 --> 00:02:58.260
+And that's what the
+priority key uses as well.
+
+00:02:59.209 --> 00:03:02.350
+And let's see we've got the
+overloaded insertion operator
+
+00:03:02.390 --> 00:03:03.690
+exactly like we did before.
+
+00:03:04.050 --> 00:03:08.090
+I've got a template function here
+that expects a priority queue
+
+00:03:08.090 --> 00:03:10.010
+of any type and it displays it.
+
+00:03:10.270 --> 00:03:13.590
+This is destructive, so
+I'm passing by value.
+
+00:03:14.170 --> 00:03:17.199
+You've probably seen this a bunch of
+times, now with queues and stacks.
+
+00:03:17.219 --> 00:03:18.149
+And you're getting used to it.
+
+00:03:18.359 --> 00:03:20.820
+So, I'm just getting the
+free while it's not empty.
+
+00:03:20.820 --> 00:03:23.070
+I'm getting the top which
+is the biggest element.
+
+00:03:23.520 --> 00:03:26.150
+I'm popping it and printing
+it until it's empty.
+
+00:03:27.830 --> 00:03:29.299
+Alright, so that's
+what's happening there.
+
+00:03:29.349 --> 00:03:31.590
+So, let's take a look
+at these two tests.
+
+00:03:32.910 --> 00:03:38.450
+Test one, I'm creating a priority
+queue, and I'm looping through this
+
+00:03:38.450 --> 00:03:42.005
+collection of integers here, and
+I'm pushing it on to the queue, to
+
+00:03:42.330 --> 00:03:43.580
+the priority queue I should say.
+
+00:03:43.990 --> 00:03:47.469
+Remember, what's happening here is when
+they're being pushed in, everything
+
+00:03:47.480 --> 00:03:50.839
+the pushing all happens at the top
+but behind the scenes, it's ordering.
+
+00:03:51.160 --> 00:03:53.900
+So, it's using a heap data
+structure behind the scenes, so
+
+00:03:53.900 --> 00:03:58.490
+the top of this priority queue
+will always be the largest integer.
+
+00:03:59.240 --> 00:04:02.070
+Now, in this case, notice
+I have 3, 5, 7 here.
+
+00:04:02.070 --> 00:04:03.510
+And I have 3, 5, 7 here.
+
+00:04:04.170 --> 00:04:05.899
+The duplicates will be put in there.
+
+00:04:05.929 --> 00:04:08.179
+It's okay to have duplicates
+and priority queues, so that's
+
+00:04:08.179 --> 00:04:09.140
+why I put them in there.
+
+00:04:09.299 --> 00:04:10.259
+So, that's what we're doing here.
+
+00:04:10.260 --> 00:04:13.140
+We're pushing all of those
+integers and then what's the
+
+00:04:13.140 --> 00:04:15.350
+size, well, I pushed 12 of them.
+
+00:04:15.880 --> 00:04:16.779
+What's the top one?
+
+00:04:16.800 --> 00:04:19.010
+It's the biggest one,
+it's that 100 right there.
+
+00:04:21.019 --> 00:04:25.929
+When I display the priority queue,
+you can see 100, 23, 12, 12,
+
+00:04:25.929 --> 00:04:27.169
+7, 7, all the way down to zero.
+
+00:04:27.170 --> 00:04:30.019
+You can see the ordering, it's
+exactly as we would expect
+
+00:04:30.039 --> 00:04:31.659
+the top which is right there.
+
+00:04:31.659 --> 00:04:36.170
+It's that 100 right there that
+is the greatest or the largest
+
+00:04:36.190 --> 00:04:38.460
+integer in the priority queue.
+
+00:04:39.389 --> 00:04:41.090
+So, let me clear this up.
+
+00:04:41.780 --> 00:04:47.380
+So, now what I'll do is I'll pop that
+max element from the priority queue,
+
+00:04:47.590 --> 00:04:49.179
+so that's going to take the 100 off.
+
+00:04:49.490 --> 00:04:53.310
+And then when I display the priority
+queue, now the new top is 23, it's the
+
+00:04:53.310 --> 00:04:54.840
+next largest number that was there.
+
+00:04:55.010 --> 00:04:57.880
+That's really all there is to a
+priority queue, super powerful.
+
+00:04:57.889 --> 00:05:00.149
+A lot of times, we have needs
+for something like this.
+
+00:05:00.869 --> 00:05:03.489
+Let's say, we're doing operating
+systems, and we're scheduling
+
+00:05:04.090 --> 00:05:06.339
+jobs, and they have to run
+based on a certain priority.
+
+00:05:06.650 --> 00:05:07.340
+This is awesome.
+
+00:05:07.340 --> 00:05:09.530
+We use priority queues all the
+time because they make a lot of
+
+00:05:09.530 --> 00:05:10.890
+sense and they're super-efficient.
+
+00:05:11.640 --> 00:05:13.370
+So, let's take a look at test two.
+
+00:05:13.760 --> 00:05:18.380
+In test two, I've created a
+priority queue right here, pq
+
+00:05:18.660 --> 00:05:22.090
+again of person objects this time.
+
+00:05:22.779 --> 00:05:24.840
+And I'm pushing a bunch
+of person objects now.
+
+00:05:25.110 --> 00:05:27.990
+I named these people a through
+f just so we can see the
+
+00:05:27.990 --> 00:05:29.150
+ordering with the string.
+
+00:05:29.720 --> 00:05:32.410
+And then I've got some,
+just random numbers here.
+
+00:05:32.670 --> 00:05:35.640
+We can see that the
+largest number is 27.
+
+00:05:35.650 --> 00:05:41.469
+Remember before we said that
+the operator less than for
+
+00:05:41.469 --> 00:05:46.290
+the person class was checking
+age that's the discriminant.
+
+00:05:46.540 --> 00:05:49.640
+So, in this case, when we put
+these things on these person
+
+00:05:49.640 --> 00:05:52.280
+objects on the priority queue,
+and we display the priority queue,
+
+00:05:52.280 --> 00:05:53.720
+look what we're getting here.
+
+00:05:55.139 --> 00:05:57.721
+Notice that it's not ordered by name,
+we've got f, and d, and c, and a, and
+
+00:05:57.730 --> 00:06:02.130
+e, and b, it's ordered by that age.
+
+00:06:02.390 --> 00:06:06.489
+So, the person with the largest age
+is at the top of the priority queue.
+
+00:06:06.780 --> 00:06:10.519
+So, we've got 27, 18,
+14, 10, 7, and down to 1.
+
+00:06:11.599 --> 00:06:12.849
+That's it, that's pretty cool.
+
+00:06:13.090 --> 00:06:16.900
+So, if I decided to, let me
+just stop this and if I decided
+
+00:06:16.900 --> 00:06:19.560
+to change the order, remember,
+right here, it's ordered by age.
+
+00:06:19.850 --> 00:06:22.860
+So, if I decided to come up here
+to my person class, let me scroll
+
+00:06:22.860 --> 00:06:24.070
+up a little bit right here.
+
+00:06:24.719 --> 00:06:29.310
+And let's say that I want to change
+this, so it doesn't check age
+
+00:06:29.550 --> 00:06:34.099
+instead it'll do, let's say, name,
+so we're going to return this.>name
+
+00:06:35.449 --> 00:06:40.020
+less than the right hand sides name: something like that.
+
+00:06:40.590 --> 00:06:45.650
+Now when we run this again, you
+can see the output right over here.
+
+00:06:47.510 --> 00:06:49.430
+Let me move that over just a
+little bit, so I can write.
+
+00:06:50.780 --> 00:06:52.780
+You can see the output right here now.
+
+00:06:54.059 --> 00:06:56.469
+It’s no longer by age, right.
+
+00:06:56.470 --> 00:06:59.050
+It just happens to be 27
+there because of the f, but
+
+00:06:59.050 --> 00:07:02.320
+it's f, e, d, c, b, a, right.
+
+00:07:02.679 --> 00:07:04.770
+So, f is the largest name.
+
+00:07:05.670 --> 00:07:08.700
+If we go the other way, we've got a,
+b, c, d, e, f, right, so there you go.
+
+00:07:08.960 --> 00:07:14.170
+So, if I remove the top, it's going to
+remove f: 27 right there, that's it.
+
+00:07:14.210 --> 00:07:17.690
+That's it for the priority queues,
+very useful data structure to know
+
+00:07:17.690 --> 00:07:22.260
+about, dead simple to use in C++
+with the standard template library.
+
+00:07:22.690 --> 00:07:25.149
+A lot of other programming
+languages have libraries that
+
+00:07:25.170 --> 00:07:28.760
+support just about everything
+that's in the STL, and they're
+
+00:07:28.760 --> 00:07:30.169
+all pretty easy to use actually.
+
+00:07:30.410 --> 00:07:32.960
+What's really important is that
+you practice and you understand the
+
+00:07:33.160 --> 00:07:35.540
+STL, you just do a lot of examples.
+
+00:07:35.900 --> 00:07:37.929
+I did a lot of examples
+in these videos.
+
+00:07:37.980 --> 00:07:41.909
+And I did that as I said for a reason,
+it's really the best way to learn this
+
+00:07:41.940 --> 00:07:46.459
+is to just go along with me, and tweak
+yours, and make yours different, and
+
+00:07:46.459 --> 00:07:48.190
+change like I just did right here.
+
+00:07:48.530 --> 00:07:51.040
+You know, change this, and see what
+the effect is and that's how you
+
+00:07:51.050 --> 00:07:52.200
+really, really, learn this stuff.
+
+00:07:53.410 --> 00:07:57.169
+Alright, so that is
+actually the end of the STL.
+
+00:07:57.170 --> 00:07:58.170
+Hurray! Right?
+
+00:07:58.179 --> 00:08:01.510
+It ended up being a lot longer
+than I thought it was going to be.
+
+00:08:01.510 --> 00:08:04.400
+I re-recorded some videos, and
+I hope it's useful to you all.

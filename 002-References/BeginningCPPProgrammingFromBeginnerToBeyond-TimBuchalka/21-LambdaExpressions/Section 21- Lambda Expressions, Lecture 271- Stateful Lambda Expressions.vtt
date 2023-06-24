@@ -1,0 +1,277 @@
+WEBVTT
+
+00:05.250 --> 00:09.090
+In the last video we learned about stateless lambda expressions.
+
+00:09.090 --> 00:13.650
+That is, lambda expressions that capture no information from their environment.
+
+00:14.620 --> 00:19.180
+In this video, we'll learn about their close relative, the stateful lambda expression.
+
+00:19.630 --> 00:24.100
+That is a lambda expression that does capture information from its environment.
+
+00:24.670 --> 00:30.220
+It's important to note that stateful lambda expressions are just like stateless lambda expressions,
+
+00:30.220 --> 00:32.890
+except they have non empty capture lists.
+
+00:32.890 --> 00:37.330
+So everything we do with the stateless lambda, we can do with a stateful lambda and more.
+
+00:37.360 --> 00:42.970
+So what exactly do we mean when we refer to a lambda capturing information from its environment and
+
+00:42.970 --> 00:44.350
+how is it able to do this?
+
+00:44.950 --> 00:51.130
+Well, what we're referring to is the lambda ability to use variables declared within its reaching scope
+
+00:51.130 --> 00:54.430
+without having to pass them into the lambda as parameters.
+
+00:55.190 --> 01:00.560
+This is accomplished by simply listing the variables we would like the lambda to use within its capture
+
+01:00.560 --> 01:01.160
+list.
+
+01:01.190 --> 01:02.270
+Pretty cool, right?
+
+01:02.270 --> 01:03.680
+But how does it work?
+
+01:03.740 --> 01:09.260
+Well, to fully understand this, we first need to take a look under the hood to see what happens when
+
+01:09.260 --> 01:11.030
+a lambda expression is compiled.
+
+01:12.360 --> 01:17.650
+Here we can see a simple stateless lambda expression defined to represent the lambda.
+
+01:17.670 --> 01:23.520
+The compiler generates what's known as a closure type class with a default constructor and an operator
+
+01:23.520 --> 01:24.030
+function.
+
+01:24.030 --> 01:26.010
+Implementing the logic of the lambda.
+
+01:26.040 --> 01:31.980
+The class isn't generated until compile time, so it might now be clear why the auto keyword must be
+
+01:31.980 --> 01:35.100
+used is to specify the for the type and lambdas.
+
+01:35.610 --> 01:39.900
+It's because when we define lambda expressions, the type hasn't been generated yet.
+
+01:40.810 --> 01:46.510
+The type is only generated when the lambda is compiled and so of course can only be assigned by the
+
+01:46.510 --> 01:47.980
+compiler at compile time.
+
+01:48.250 --> 01:52.600
+With this in mind, can you see what's happening when we assign a land expression to a variable?
+
+01:53.020 --> 01:59.410
+What we're actually doing is instantiating an object of the compiler generated closure by making a call
+
+01:59.410 --> 02:00.640
+to its constructor.
+
+02:01.210 --> 02:05.320
+Hopefully now you'll have a better understanding of how lambdas operate behind the scenes.
+
+02:05.320 --> 02:10.270
+But that still leaves the question of how they can capture information from their environment using
+
+02:10.270 --> 02:13.000
+the capsule list as the challenge.
+
+02:13.000 --> 02:18.340
+Positive video now and see if you can figure it out with your new knowledge of how lambdas work when
+
+02:18.340 --> 02:18.760
+you're done.
+
+02:18.760 --> 02:21.520
+Unpause the video and we'll go through it in the next slide.
+
+02:25.800 --> 02:31.140
+If you thought of storing the captured variables as member variables of the compiler generated closure,
+
+02:31.440 --> 02:33.060
+then you were absolutely right.
+
+02:33.540 --> 02:39.750
+When defining a stateful lambdas capture list where defining the parameterized constructor of the lambdas
+
+02:39.750 --> 02:45.180
+compiler generated closure when the state for Lambda Expression is instantiated.
+
+02:45.360 --> 02:51.480
+A unique function object is created using the parameterized constructor, which stores the captured
+
+02:51.480 --> 02:53.790
+variables as member variables.
+
+02:54.690 --> 02:56.910
+We can see this being done in the example.
+
+02:57.760 --> 03:03.670
+A simple stateful lambda expression is defined which captures the local variable Y and takes a single
+
+03:03.670 --> 03:04.870
+parameter x.
+
+03:05.530 --> 03:11.860
+The compiler generates a closure for the lambda with a parameterized constructor that takes as its parameter
+
+03:11.860 --> 03:16.540
+the variable y and assigns it to the closures member variable y.
+
+03:16.570 --> 03:21.820
+You'll notice that the generated closure has an operator function implementing the logic of the lambda
+
+03:21.820 --> 03:23.090
+as we would expect.
+
+03:23.110 --> 03:25.990
+However, this time it's a constant member function.
+
+03:26.470 --> 03:32.170
+This means that no member variable of the instantiated object can be modified by this function, and
+
+03:32.170 --> 03:35.230
+so the member variable y cannot be modified.
+
+03:35.930 --> 03:42.200
+The reason for this is because by default, all variables captured by value are captured by contract
+
+03:42.200 --> 03:42.800
+value.
+
+03:43.670 --> 03:48.500
+As you can imagine, this can be quite restricting when we're trying to implement certain functionalities.
+
+03:48.500 --> 03:54.030
+So C++ provides us with a multitude of ways in which we could capture variables.
+
+03:54.050 --> 03:55.460
+Let's take a look at them.
+
+03:56.320 --> 03:57.760
+As seen in the last example.
+
+03:57.760 --> 04:02.530
+The first way in which a lambda expression can capture a variable is by value.
+
+04:02.650 --> 04:07.570
+This is the default capturing mode, and so it can be accomplished by simply listing the variables.
+
+04:07.570 --> 04:09.670
+Name in the lambdas capsule list.
+
+04:10.510 --> 04:16.270
+It's important to remember that a variable being captured by value is actually being captured by cost
+
+04:16.270 --> 04:19.990
+value, so it won't be modifiable within the lambda.
+
+04:20.260 --> 04:24.730
+But what if we want to capture a variable by value and modify it within the lambda?
+
+04:26.760 --> 04:32.130
+In that case, we can use the keyword mutable to tell the compiler to generate the lambdas operator
+
+04:32.130 --> 04:35.550
+function as a non const member function.
+
+04:35.820 --> 04:41.040
+By doing so, we can capture variables by value and modify them within the lambda.
+
+04:42.120 --> 04:45.510
+As you might have guessed, we can also capture variables by reference.
+
+04:46.140 --> 04:51.660
+In this case, any changes made to a variable captured by reference within the lambda will be visible
+
+04:51.660 --> 04:53.010
+outside the lambda.
+
+04:53.800 --> 04:58.960
+Using both capturing modes, we can define a lambdas capsule list any number of ways for any number
+
+04:58.960 --> 04:59.800
+of variables.
+
+05:00.070 --> 05:05.560
+But what if we want to capture a large number of variables, but we don't want to have to list each
+
+05:05.560 --> 05:06.280
+variable.
+
+05:06.310 --> 05:07.570
+How do we do this?
+
+05:09.350 --> 05:11.510
+This is where default captures come in.
+
+05:12.050 --> 05:17.630
+A default capture allows the lambda to capture all variables referenced within its body according to
+
+05:17.630 --> 05:19.250
+the defined capture mode.
+
+05:20.610 --> 05:26.280
+An equal sign positioned first in the lambdas capsule list denotes that all referenced variables should
+
+05:26.280 --> 05:27.870
+be captured by value.
+
+05:29.270 --> 05:32.600
+An ampersand denotes that they should be captured by reference.
+
+05:33.760 --> 05:39.400
+And if we use the this keyword, this denotes that the referenced member variables of the current object,
+
+05:39.400 --> 05:43.180
+the lambda is defined within should be captured by reference.
+
+05:45.120 --> 05:50.940
+When implementing default captures, we can also explicitly capture variables according to different
+
+05:50.940 --> 05:51.990
+capture modes.
+
+05:52.650 --> 05:58.050
+It's important to note that when we do so, we must always place the default capture first in the capture
+
+05:58.080 --> 05:58.650
+list.
+
+05:59.160 --> 06:02.970
+Also, the explicit capture cannot be the same as the default.
+
+06:03.000 --> 06:05.010
+Otherwise the lender won't compile.
+
+06:05.900 --> 06:11.450
+With so many possible combinations of default and explicit parameters, it's hard to cover them all.
+
+06:11.720 --> 06:15.980
+But what we've covered should prepare you for most situations in which you will need to use stateful
+
+06:15.980 --> 06:16.730
+lambdas.
+
+06:17.000 --> 06:19.730
+Now let's head over to the IDE and implement some.

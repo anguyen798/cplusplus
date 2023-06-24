@@ -1,0 +1,430 @@
+WEBVTT
+
+00:00:05.900 --> 00:00:10.260
+In this video, we'll talk about the steps needed to write output to text files
+
+00:00:10.260 --> 00:00:11.860
+using c++ streams.
+
+00:00:12.850 --> 00:00:17.730
+In the following slides, I'll talk about the main classes and methods that we can use to write to files,
+
+00:00:17.730 --> 00:00:20.090
+and then I'll go over a few examples in live code.
+
+00:00:21.090 --> 00:00:25.090
+The two classes I'll discuss for text file output are fstream
+
+00:00:25.090 --> 00:00:26.390
+and ofstream.
+
+00:00:26.940 --> 00:00:28.930
+We must always include fstream,
+
+00:00:29.430 --> 00:00:33.420
+then we declare a stream object of either fstream or ofstream type.
+
+00:00:34.220 --> 00:00:38.220
+We then connect the stream object we just created to the file we want to write to in our
+
+00:00:38.220 --> 00:00:42.120
+file system. Once the file is connected and open, we can write to it.
+
+00:00:43.110 --> 00:00:47.410
+By default, c++ will create the file if it does not exist.
+
+00:00:47.410 --> 00:00:51.710
+And if it does exist, the contents of the file will be truncated or removed
+
+00:00:51.710 --> 00:00:53.370
+unless we state otherwise.
+
+00:00:54.030 --> 00:00:56.690
+We can write the files in binary or text mode,
+
+00:00:56.690 --> 00:01:00.190
+and we can use any of the stream manipulators that we've already learned about.
+
+00:01:01.180 --> 00:01:04.380
+Then when we're done processing the file, we must close the file.
+
+00:01:04.380 --> 00:01:06.730
+This is very important for output files
+
+00:01:06.730 --> 00:01:10.390
+since it flushes any buffers that may not have been written out to the file yet.
+
+00:01:10.940 --> 00:01:14.600
+It's pretty easy. In the next few slides, we'll discuss the details
+
+00:01:14.600 --> 00:01:16.700
+of opening a file for output,
+
+00:01:16.700 --> 00:01:19.140
+checking to make sure the file was opened correctly,
+
+00:01:19.140 --> 00:01:22.640
+writing to the file in different ways and then closing the file.
+
+00:01:24.940 --> 00:01:29.540
+It's important to remember that by default output files will be created if they don't exist.
+
+00:01:30.040 --> 00:01:33.480
+But we have to make sure that if we provide a path along with the file name
+
+00:01:33.480 --> 00:01:36.360
+when we open the file that that path must exist.
+
+00:01:36.360 --> 00:01:38.860
+Otherwise, we'll get an error when creating the file.
+
+00:01:39.740 --> 00:01:43.400
+If the file already exists then it will be overwritten or truncated
+
+00:01:43.400 --> 00:01:47.900
+unless we specify that we want to append to the contents of the existing file.
+
+00:01:48.300 --> 00:01:51.400
+Finally, we can write in text mode or in binary mode.
+
+00:01:51.400 --> 00:01:54.100
+In this section, we're only concentrating on text mode.
+
+00:01:57.300 --> 00:02:00.800
+So in this example, we're creating an object named outfile,
+
+00:02:00.800 --> 00:02:03.300
+and we're using the fstream class as its type.
+
+00:02:03.800 --> 00:02:06.600
+Notice that I'm also initializing the object as well.
+
+00:02:06.800 --> 00:02:10.360
+The initializer takes two arguments. The first is the name of the file
+
+00:02:10.360 --> 00:02:12.540
+as we've already seen with input files.
+
+00:02:12.540 --> 00:02:15.840
+This can be very operating system and ide dependent.
+
+00:02:15.840 --> 00:02:20.440
+So in CodeLite we're going to use dot dot slash so it puts the file in our parent directory.
+
+00:02:21.430 --> 00:02:25.790
+The second parameter specifies the mode and properties of the file that's being opened.
+
+00:02:26.290 --> 00:02:29.590
+In the first example, we're using stood ios out.
+
+00:02:29.590 --> 00:02:32.390
+This means to open the file in output mode.
+
+00:02:32.390 --> 00:02:35.090
+So we're able to write to it but not read from it.
+
+00:02:35.640 --> 00:02:38.240
+By default, files are opened in text mode.
+
+00:02:38.790 --> 00:02:42.790
+In the second example, we're opening the file in output mode and in binary mode.
+
+00:02:43.290 --> 00:02:47.650
+This is necessary when we're writing non-text files that contain binary data.
+
+00:02:48.550 --> 00:02:52.250
+Notice the vertical bar or pipe character between stood ios out
+
+00:02:52.250 --> 00:02:55.850
+and stood ios binary, this is the bit-wise or operator.
+
+00:02:55.850 --> 00:02:59.400
+And when we use it in context like this, it sets both output
+
+00:02:59.400 --> 00:03:01.060
+and binary modes to true.
+
+00:03:01.860 --> 00:03:06.210
+At this point, the file will be opened if it was found and truncated or will be created.
+
+00:03:07.110 --> 00:03:09.610
+In this slide, we use the fstream class.
+
+00:03:09.610 --> 00:03:13.860
+The fstream class can actually open a file for reading and writing at the same time.
+
+00:03:13.860 --> 00:03:18.260
+We won't be doing that. But if you have a file that you need to read from and write to,
+
+00:03:18.260 --> 00:03:20.760
+we can use the fstream class to do that.
+
+00:03:24.760 --> 00:03:28.560
+In this slide, we'll be using the ofstream class as the type of out file.
+
+00:03:29.110 --> 00:03:32.440
+Ofstream is used commonly for output files only.
+
+00:03:32.990 --> 00:03:37.290
+We can create an ofstream object the same way we created an fstream object.
+
+00:03:37.290 --> 00:03:39.650
+However, in the case of an ofstream object,
+
+00:03:39.650 --> 00:03:43.250
+std ios out is optional since it's already the default.
+
+00:03:43.750 --> 00:03:47.350
+So the first two declarations of outfile have the same effect.
+
+00:03:48.650 --> 00:03:53.550
+There's another way to open the file that's commonly seen in code, we saw it with input files. So let's see those next.
+
+00:03:57.350 --> 00:04:02.250
+When we open a file for output, we have a few choices as to how we want to open the file.
+
+00:04:02.950 --> 00:04:05.950
+By default, the file is opened for truncation,
+
+00:04:05.950 --> 00:04:09.550
+and we can explicitly specify that as in the first example.
+
+00:04:09.910 --> 00:04:13.910
+If we want the output file open, but we want all further output to append to
+
+00:04:13.910 --> 00:04:15.210
+the end of the file,
+
+00:04:15.210 --> 00:04:19.010
+then we can use the stood ios app flag when we open the file.
+
+00:04:20.000 --> 00:04:23.300
+Finally, we can use the std ios ate flag.
+
+00:04:23.300 --> 00:04:25.400
+When we want to open a file that exists
+
+00:04:25.400 --> 00:04:30.390
+and we want to set the initial position of the next right to the end of the existing file.
+
+00:04:30.750 --> 00:04:33.630
+But we're free to move around using random access.
+
+00:04:33.630 --> 00:04:36.630
+We aren't going to use random access files in this course.
+
+00:04:36.630 --> 00:04:39.530
+We'll focus solely on text-based sequential files.
+
+00:04:40.730 --> 00:04:42.930
+Now just as we saw with input files,
+
+00:04:42.930 --> 00:04:46.590
+we can first create the stream object and then open it, so let's see that.
+
+00:04:49.950 --> 00:04:53.050
+In this example, notice that we're creating out file
+
+00:04:53.050 --> 00:04:57.750
+as an ofstream object but we haven't provided any file name to associate with it.
+
+00:04:59.250 --> 00:05:02.350
+This is common use case since many times we don't know the file name
+
+00:05:02.350 --> 00:05:05.950
+and we have to get it from the user or from some other resource at runtime.
+
+00:05:06.350 --> 00:05:09.650
+Once we have the file name, we can then use the open method
+
+00:05:09.650 --> 00:05:11.850
+on the stream object to open the file.
+
+00:05:11.850 --> 00:05:15.210
+So we can say outfile.open and give it the file name
+
+00:05:15.410 --> 00:05:19.070
+or outfile.open file name and any flags we need.
+
+00:05:20.370 --> 00:05:24.170
+Now that we attempted to create the output stream and connect it to a file,
+
+00:05:24.170 --> 00:05:27.530
+we have to be sure this was successful before we start writing to the file,
+
+00:05:27.530 --> 00:05:28.830
+and we'll do that next.
+
+00:05:30.930 --> 00:05:34.590
+The process here is exactly as it was with input file streams.
+
+00:05:34.590 --> 00:05:37.190
+We have to be sure that the file was open successfully.
+
+00:05:37.590 --> 00:05:41.790
+So we can call the is open method on the file stream object we created.
+
+00:05:41.790 --> 00:05:45.590
+This returns a Boolean indicating whether the file is open for processing.
+
+00:05:46.360 --> 00:05:50.720
+If we get back true, we're good to go. If we get back false, some error occurred.
+
+00:05:51.420 --> 00:05:54.720
+If no error occur, then we can go ahead and write to the file.
+
+00:05:55.710 --> 00:05:59.310
+Let's see another way that we can test to see if the file was opened successfully.
+
+00:06:02.510 --> 00:06:06.010
+In this case, we can simply test the stream object itself.
+
+00:06:06.010 --> 00:06:09.810
+If the stream object was not instantiated, then this will return false
+
+00:06:09.810 --> 00:06:11.810
+and we can decide what to do next.
+
+00:06:12.060 --> 00:06:15.720
+Otherwise, it's good to go, and we can proceed writing to the file.
+
+00:06:20.710 --> 00:06:23.310
+Once we finish writing to the file, we have to close it.
+
+00:06:23.560 --> 00:06:26.060
+This is a simple method call to the close method.
+
+00:06:26.560 --> 00:06:30.760
+With output files, this is very important since it flushes out any buffers
+
+00:06:30.760 --> 00:06:32.760
+that may not have been written out to file yet.
+
+00:06:33.420 --> 00:06:37.520
+Okay. So now we know how to open a file, check to make sure that it's open and close it,
+
+00:06:37.520 --> 00:06:38.510
+now let's write to it.
+
+00:06:42.310 --> 00:06:46.610
+There are many ways to write to a file. In these examples, we're going to use text files.
+
+00:06:46.860 --> 00:06:51.260
+The most common way is to use formatted output using the stream insertion operator.
+
+00:06:51.510 --> 00:06:55.660
+So in this example, we have an integer, a double and a string and three variables.
+
+00:06:55.660 --> 00:06:58.020
+And we want to write them out to our output file.
+
+00:06:58.680 --> 00:07:01.560
+We can assume that outfile was created successfully.
+
+00:07:02.060 --> 00:07:06.610
+All we have to do is use the insertion operator as we've been using all along with cout
+
+00:07:06.610 --> 00:07:10.410
+except that we insert the values into outfile. That's it.
+
+00:07:10.410 --> 00:07:12.410
+Very simple, very powerful.
+
+00:07:12.410 --> 00:07:16.110
+Remember, the stream manipulators we learned about in the beginning of this section,
+
+00:07:16.110 --> 00:07:19.610
+we can use them all as well to format our output however we want.
+
+00:07:20.600 --> 00:07:24.400
+Also notice that endline flushes out any unwritten buffers.
+
+00:07:26.900 --> 00:07:30.260
+So let's write a program that copies one text file to another.
+
+00:07:30.920 --> 00:07:34.580
+We'll assume the existing file is myfile.txt,
+
+00:07:34.580 --> 00:07:37.880
+and we want to copy it to another file named copy.txt.
+
+00:07:38.880 --> 00:07:43.480
+First, we create an ifstream object in file and initialize it to our input file.
+
+00:07:44.140 --> 00:07:48.390
+Then we create an ofstream object out file initialize it to our output file.
+
+00:07:49.090 --> 00:07:53.090
+In this case, if the output file does not exist, it will be created.
+
+00:07:53.590 --> 00:07:55.990
+If it does exist, it will be truncated.
+
+00:07:56.990 --> 00:07:59.790
+We need to be sure that both files were open successfully,
+
+00:07:59.790 --> 00:08:03.670
+so we check using two if statements and if there's any error we terminate.
+
+00:08:04.370 --> 00:08:07.470
+In the next slide, we'll complete the program and actually do the copying.
+
+00:08:10.130 --> 00:08:14.490
+So at this point, our input file and output files are open and ready for processing.
+
+00:08:14.990 --> 00:08:19.670
+We can use a while loop with a get line to read the input file one line at a time
+
+00:08:19.670 --> 00:08:21.330
+into the string variable line.
+
+00:08:21.930 --> 00:08:25.430
+If the read was, successful, the while loop condition will be true and we write
+
+00:08:25.430 --> 00:08:29.750
+the line to out file then we close both files. That's it.
+
+00:08:29.750 --> 00:08:32.550
+Really, really easy to copy one file to another.
+
+00:08:35.210 --> 00:08:39.710
+Okay. So let's see one more example. This time we'll use unformatted read and write,
+
+00:08:40.070 --> 00:08:42.370
+and then we'll see some examples in live code.
+
+00:08:43.030 --> 00:08:47.130
+In this example, again, we're using infile as an ifstream object and
+
+00:08:47.130 --> 00:08:49.630
+out file as an ofstream object.
+
+00:08:49.630 --> 00:08:53.400
+We go through the same steps necessary to open the files, check to be sure they're
+
+00:08:53.400 --> 00:08:56.000
+open and so forth. And then in the next slide,
+
+00:08:56.000 --> 00:09:00.900
+we'll do the actual copying, but this time in an unformatted manner, one character at a time.
+
+00:09:02.890 --> 00:09:07.490
+So here in the while loop, we read a character from infile using the get method.
+
+00:09:07.490 --> 00:09:12.480
+And if it's successful, we write that character to outfile using the put method.
+
+00:09:12.780 --> 00:09:16.280
+When we reach the end of file, the loop terminates, and we close the files.
+
+00:09:16.280 --> 00:09:20.380
+That's it. So there you go. Two different ways to copy text files.
+
+00:09:20.380 --> 00:09:22.580
+One that's doing it one line at a time
+
+00:09:22.580 --> 00:09:26.940
+and another one that's doing it one character at a time, using unformatted read and write.
+
+00:09:27.840 --> 00:09:32.640
+Great. So now let's head over to the IDE, and we'll see some examples of creating and writing to text files.

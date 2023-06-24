@@ -1,0 +1,892 @@
+WEBVTT
+
+00:00:05.360 --> 00:00:10.240
+Let's start by exploring c++11 smart pointers with the unique pointer.
+
+00:00:11.140 --> 00:00:15.140
+The unique pointer is a simple smart pointer that's very efficient,
+
+00:00:15.140 --> 00:00:18.020
+and it can be a drop in replacement in many cases
+
+00:00:18.020 --> 00:00:20.120
+for your typical pointer use case
+
+00:00:20.120 --> 00:00:23.420
+where you allocate storage use it and then free in the same block.
+
+00:00:23.820 --> 00:00:26.920
+A unique pointer declaration uses a template parameter
+
+00:00:26.920 --> 00:00:30.320
+which is the type of the object that the smart pointer will manage on the heap.
+
+00:00:31.120 --> 00:00:34.020
+So this allows us to declare unique pointer objects
+
+00:00:34.020 --> 00:00:35.620
+that point to any type we need.
+
+00:00:36.620 --> 00:00:39.120
+As the name states, unique pointers are unique,
+
+00:00:39.320 --> 00:00:43.420
+so you can't have multiple unique pointers pointing to the same object on the heap.
+
+00:00:44.020 --> 00:00:47.620
+This implies a strong ownership relationship between the pointer
+
+00:00:47.620 --> 00:00:48.620
+and what it points to.
+
+00:00:49.280 --> 00:00:51.940
+Unique pointers can't be copied or assigned.
+
+00:00:51.940 --> 00:00:55.600
+So their copy constructors and copy assignment operators are not available.
+
+00:00:56.260 --> 00:00:58.660
+If you try to copy or assign them, you'll get an error.
+
+00:00:59.260 --> 00:01:01.760
+But unique pointers can be moved,
+
+00:01:01.760 --> 00:01:06.360
+so they're great for placing in standard template library containers such as vectors.
+
+00:01:06.360 --> 00:01:08.560
+And since the ownership is unique,
+
+00:01:08.560 --> 00:01:11.360
+you're guaranteed that when the pointer goes out of scope,
+
+00:01:11.360 --> 00:01:14.960
+the object that it points to will automatically be cleaned up from the heap.
+
+00:01:15.320 --> 00:01:16.720
+That's pretty powerful stuff.
+
+00:01:18.520 --> 00:01:21.020
+So let's see one way we can create a unique pointer.
+
+00:01:22.010 --> 00:01:26.010
+Here you can see that we're declaring p1 to be a unique pointer to an int.
+
+00:01:27.000 --> 00:01:30.500
+We're also initializing it to point to a new int that we create on the heap
+
+00:01:30.500 --> 00:01:32.800
+and that integer has been initialized to a 100.
+
+00:01:33.790 --> 00:01:36.590
+Now p1 owns that object on the heap.
+
+00:01:36.590 --> 00:01:40.490
+When p1 goes out of scope, the int on the heap will be de-allocated.
+
+00:01:40.490 --> 00:01:42.790
+You don't need to call delete with the smart pointer.
+
+00:01:43.590 --> 00:01:47.790
+Now as far as using the pointer, the syntax is pretty much like using a raw pointer.
+
+00:01:47.990 --> 00:01:52.090
+You can see that if we de-reference p1, we get the integer that it points to,
+
+00:01:52.090 --> 00:01:54.390
+in this case, 100 and we display it.
+
+00:01:54.890 --> 00:01:58.390
+We can also modify the integer we're pointing to in a similar manner.
+
+00:01:58.390 --> 00:02:01.990
+There's another better way to initialize a unique pointer, and I'll show you that in a little bit.
+
+00:02:02.890 --> 00:02:06.690
+It's also possible to create a raw pointer variable and then initialize the
+
+00:02:06.690 --> 00:02:08.890
+unique pointer variable using that raw pointer.
+
+00:02:08.890 --> 00:02:12.190
+I'm not going to describe that since it's not good practice to do
+
+00:02:12.190 --> 00:02:16.550
+since you're referring to an object on the heap from a smart pointer and from a raw pointer,
+
+00:02:16.550 --> 00:02:18.210
+not something you typically want.
+
+00:02:19.610 --> 00:02:22.610
+The unique pointer has many methods, but here are some useful ones.
+
+00:02:23.160 --> 00:02:26.360
+In this case, we again have a unique pointer p1
+
+00:02:26.360 --> 00:02:28.560
+that points to the integer 100 on the heap.
+
+00:02:29.760 --> 00:02:32.750
+The get method returns a pointer to the manage object.
+
+00:02:33.300 --> 00:02:35.300
+You won't often need to use this method,
+
+00:02:35.300 --> 00:02:38.900
+but it can be useful when you're working with libraries that use raw pointers.
+
+00:02:39.700 --> 00:02:43.300
+The reset method sets the pointer to null pointer and the memory
+
+00:02:43.300 --> 00:02:44.800
+it points to will be released.
+
+00:02:45.600 --> 00:02:48.600
+Also notice that we can check if a pointer is initialized
+
+00:02:48.600 --> 00:02:51.600
+using a simple if statement as in if p1.
+
+00:02:51.750 --> 00:02:52.750
+In this example,
+
+00:02:53.050 --> 00:02:57.050
+the if block won't execute since we just reset the pointer to null pointer.
+
+00:02:57.930 --> 00:03:01.230
+We can also compare unique pointers using relational operators.
+
+00:03:02.220 --> 00:03:05.470
+Of course, unique pointers as well as other smart pointer types
+
+00:03:05.470 --> 00:03:09.470
+allow us to point to user-defined types. In this example,
+
+00:03:09.470 --> 00:03:12.970
+we're creating a unique pointer that will point to an account object,
+
+00:03:13.410 --> 00:03:16.410
+and we initialize it to point to the Larry account.
+
+00:03:17.010 --> 00:03:19.370
+Notice the syntax is as you would expect.
+
+00:03:19.370 --> 00:03:23.170
+We use a count as the template argument in the unique pointer declaration.
+
+00:03:23.170 --> 00:03:25.530
+What this says is that the unique pointer p1
+
+00:03:25.530 --> 00:03:28.030
+will manage an account object on the heap.
+
+00:03:28.530 --> 00:03:31.530
+And we're creating that account object in the initializer list.
+
+00:03:32.630 --> 00:03:35.630
+Now we can use this pointer as we would use a raw pointer.
+
+00:03:35.630 --> 00:03:37.990
+We can de-reference to get the account object
+
+00:03:37.990 --> 00:03:41.890
+as well as access the account object member methods via the member selection
+
+00:03:41.890 --> 00:03:43.090
+or error operator.
+
+00:03:43.640 --> 00:03:45.840
+And again, when p1 goes out of scope,
+
+00:03:45.840 --> 00:03:49.140
+the heap storage associated with the account object is de-allocated.
+
+00:03:50.500 --> 00:03:53.830
+As we said, unique pointers can't be copied or assigned,
+
+00:03:53.830 --> 00:03:58.170
+in this example, we create a vector that will contain unique pointers to integers,
+
+00:03:58.320 --> 00:04:01.920
+and we also create a pointer, which is a unique pointer to an int,
+
+00:04:01.920 --> 00:04:04.920
+and it points to the integer on the heap, which has been initialized to 100.
+
+00:04:05.720 --> 00:04:09.320
+We can't simply push back that unique pointer to the vector
+
+00:04:09.620 --> 00:04:12.080
+because that implies a copy of the object.
+
+00:04:12.080 --> 00:04:15.680
+And since unique pointers can't be copied, this will give you a compiler error.
+
+00:04:16.580 --> 00:04:19.880
+However, we can use move semantics to move the pointer.
+
+00:04:19.880 --> 00:04:24.380
+In this case, ptr gives up ownership of the pointer, and it's moved to the vector.
+
+00:04:24.880 --> 00:04:28.680
+The vector  now owns the pointer, and ptr will be set to null pointer.
+
+00:04:29.180 --> 00:04:32.480
+When the vector goes out of scope, it will de-allocate all its elements,
+
+00:04:32.480 --> 00:04:35.040
+and the integer on the heap will be de-allocated correctly.
+
+00:04:35.040 --> 00:04:38.040
+Now let's see another better way to initialize unique pointers.
+
+00:04:38.440 --> 00:04:42.240
+Since c++14, we can use the make unique function.
+
+00:04:43.040 --> 00:04:46.640
+This function returns a unique pointer of the specified type,
+
+00:04:46.640 --> 00:04:49.640
+and it allows us to pass initialization values
+
+00:04:49.640 --> 00:04:51.940
+into the constructor for the manage object.
+
+00:04:52.340 --> 00:04:53.840
+So in the first example,
+
+00:04:53.840 --> 00:04:56.940
+we declare p1 as a unique pointer to an integer
+
+00:04:57.440 --> 00:05:00.040
+and use make unique to initialize the pointer
+
+00:05:00.040 --> 00:05:02.640
+and create the managed object all in one step.
+
+00:05:03.540 --> 00:05:06.840
+Notice that in this case, we're not using the new keyword.
+
+00:05:06.840 --> 00:05:11.040
+In the second example, p2 is a unique pointer to an account object.
+
+00:05:11.290 --> 00:05:15.650
+And again, we use make unique and provide the template argument account
+
+00:05:15.650 --> 00:05:20.010
+as well as the initialization values, which will be used by the account constructor.
+
+00:05:20.610 --> 00:05:23.610
+Again, in this case, we don't use the new keyword.
+
+00:05:24.410 --> 00:05:28.210
+The last example works the same way except we're using the auto keyword
+
+00:05:28.210 --> 00:05:30.810
+to let the compiler deduce the type of p3
+
+00:05:30.810 --> 00:05:33.110
+based on what make unique returns,
+
+00:05:33.710 --> 00:05:36.610
+in this case, a unique pointer to a player object.
+
+00:05:36.610 --> 00:05:39.110
+The auto keyword can be very useful here
+
+00:05:39.110 --> 00:05:41.470
+since it makes the code more readable and more writeable.
+
+00:05:42.020 --> 00:05:45.820
+Now let's head over to the IDE and go through some examples of using unique
+
+00:05:45.820 --> 00:05:47.050
+pointers in live code.
+
+00:05:48.750 --> 00:05:52.750
+Okay. So I'm back in the IDE. I'm in the section 17 workspace
+
+00:05:52.750 --> 00:05:54.750
+in the UniquePointers project.
+
+00:05:54.750 --> 00:05:58.650
+Now there's a lot of stuff going on here, but let's start it out slow. You can see that
+
+00:05:58.650 --> 00:06:02.150
+in the source tree here, we have our account hierarchy,
+
+00:06:02.150 --> 00:06:03.710
+including our printable interface.
+
+00:06:03.710 --> 00:06:06.910
+So this is the one that's using dynamic polymorphism
+
+00:06:06.910 --> 00:06:09.310
+with that abstract base class account.
+
+00:06:09.310 --> 00:06:12.310
+We're going to use thunique pointers in a vector.
+
+00:06:12.310 --> 00:06:15.310
+But before we get there, let's just play around with a real simple
+
+00:06:15.310 --> 00:06:18.710
+class called test that I wrote right here, it starts on line 12.
+
+00:06:18.710 --> 00:06:20.700
+You can see that I've got a class test,
+
+00:06:20.700 --> 00:06:22.000
+and it's got an integer
+
+00:06:22.000 --> 00:06:26.000
+as an instance variable. It's got a couple of constructors, one just initializes
+
+00:06:26.000 --> 00:06:28.800
+data to 0. That's the no args constructor.
+
+00:06:28.800 --> 00:06:32.000
+And the other constructor just initializes data to whatever is passed in.
+
+00:06:32.500 --> 00:06:35.860
+I've got a data method that returns that data and a d structure
+
+00:06:35.860 --> 00:06:38.220
+that just says hi I'm a destructor, real simple.
+
+00:06:38.220 --> 00:06:41.420
+So let's create a test object just to be sure that this works okay.
+
+00:06:41.420 --> 00:06:43.720
+So let's create a test object called t1,
+
+00:06:43.720 --> 00:06:45.870
+and we'll initialize it to a 1000.
+
+00:06:45.870 --> 00:06:48.070
+Now when we run this, because it's on the stack,
+
+00:06:48.070 --> 00:06:51.070
+we should get the constructor and the destructor being called.
+
+00:06:51.070 --> 00:06:53.430
+And you can see that's exactly what's happening here.
+
+00:06:53.430 --> 00:06:57.430
+Test constructor with a 1000, test destructor with a 1000. Perfect.
+
+00:06:57.430 --> 00:06:59.030
+Now let's do it with a pointer.
+
+00:07:00.390 --> 00:07:02.590
+And what we'll do is we'll just modify this slightly.
+
+00:07:02.590 --> 00:07:07.090
+We'll say parens t1 is a new test.
+
+00:07:07.890 --> 00:07:09.890
+And we'll still use the 1000.
+
+00:07:09.890 --> 00:07:13.690
+Now obviously, if i don't delete it, I'm going to leak memory.
+
+00:07:13.690 --> 00:07:15.990
+So you can see that's exactly what happened here, right.
+
+00:07:15.990 --> 00:07:19.490
+My test constructor was called, but the destructor was never called.
+
+00:07:19.490 --> 00:07:24.480
+So as we've already learned what we have to do is we have to say delete t1.
+
+00:07:25.280 --> 00:07:26.480
+And now when we run,
+
+00:07:27.280 --> 00:07:30.880
+we'll have both the constructor and the destructor called, and we're not going to leak any memory.
+
+00:07:30.880 --> 00:07:35.180
+That's exactly what we want. This is using raw pointers. What we want to do now is use
+
+00:07:35.580 --> 00:07:38.580
+different kinds of smart pointers in the next couple of videos.
+
+00:07:38.580 --> 00:07:42.380
+In this video, we're using a unique pointer. So I'm going to comment this code out.
+
+00:07:42.980 --> 00:07:45.480
+And we'll do the same thing using a unique pointer.
+
+00:07:46.280 --> 00:07:47.880
+So the first thing we want to do is
+
+00:07:47.880 --> 00:07:49.680
+we want to declare the unique pointer.
+
+00:07:49.680 --> 00:07:52.980
+Remember -- so we're going to say std unique pointer.
+
+00:07:54.280 --> 00:07:58.280
+And now we need a template parameter. This is the type of class that we want
+
+00:07:58.280 --> 00:08:00.280
+to reference. So in this case, it's test.
+
+00:08:00.940 --> 00:08:04.440
+Later on, we're going to use a count, but it can really be any class you want.
+
+00:08:04.840 --> 00:08:08.440
+And what do we want to call our pointer. Let's call it t1.
+
+00:08:09.040 --> 00:08:12.940
+And now we'll use the new way of creating it. We'll say new test,
+
+00:08:13.340 --> 00:08:15.940
+and give it the constructor parameter.
+
+00:08:16.840 --> 00:08:19.840
+All right. So what's that going to do. Let's walk through this one.
+
+00:08:19.840 --> 00:08:24.440
+We're creating a variable called t1, which is a unique pointer to a test object.
+
+00:08:24.800 --> 00:08:28.400
+And we're instantiating that test object right here and initializing it to 100.
+
+00:08:28.400 --> 00:08:33.000
+So in this case, we've got that unique pointer pointing to this heap object right here.
+
+00:08:33.600 --> 00:08:36.300
+Notice there's no delete t1 necessary.
+
+00:08:36.300 --> 00:08:38.500
+What's going to happen here is the constructor will be called
+
+00:08:38.500 --> 00:08:40.860
+and then the destructor will be called automatically,
+
+00:08:40.860 --> 00:08:44.740
+like we've seen so let's run that and you can see right here
+
+00:08:44.740 --> 00:08:46.400
+test constructor 400,
+
+00:08:46.400 --> 00:08:49.400
+test destructor 400, we never call delete.
+
+00:08:49.400 --> 00:08:53.000
+We did call new because that's the style that we used to run that one.
+
+00:08:53.000 --> 00:08:57.000
+So now let's use the make unique function to do the same thing. So we'll say, again, std.
+
+00:08:57.360 --> 00:09:01.560
+And again, we're going to point to a test object. We'll call this t2,
+
+00:09:01.920 --> 00:09:04.600
+and then we'll simply say equals std
+
+00:09:04.600 --> 00:09:05.600
+make unique.
+
+00:09:07.960 --> 00:09:12.560
+And the first thing we want to do is we want to pass in the template argument, which is test
+
+00:09:13.060 --> 00:09:16.660
+followed by whatever constructor data we want to pass in.
+
+00:09:16.660 --> 00:09:18.160
+So let's say this is a 1000.
+
+00:09:19.260 --> 00:09:23.060
+Okay. Now this syntax might look a little odd, but it really is pretty straightforward.
+
+00:09:23.060 --> 00:09:27.260
+Again, I'm creating a unique pointer to a test. It's called t2,
+
+00:09:27.260 --> 00:09:29.620
+and I'm using the make unique function to do it.
+
+00:09:29.620 --> 00:09:32.980
+Well, the make unique function can make any kind of unique pointer.
+
+00:09:32.980 --> 00:09:36.640
+So we have to tell it what kind of unique pointer we want, and that's what we're doing right here.
+
+00:09:37.440 --> 00:09:38.770
+Once we do that,
+
+00:09:38.770 --> 00:09:41.650
+the piece here inside the parens we're here the 1000,
+
+00:09:41.650 --> 00:09:44.650
+that is the argument that you want to pass into the constructor,
+
+00:09:44.650 --> 00:09:47.150
+that's going to call this constructor right here on line 17.
+
+00:09:48.250 --> 00:09:52.610
+So now what we'll have is we'll have two unique pointers, both on the stack,
+
+00:09:52.610 --> 00:09:55.910
+both will be constructed. And when they're when they go out of scope,
+
+00:09:55.910 --> 00:10:00.170
+the heap memory that they point to will be destroyed automatically. So we don't have to call delete.
+
+00:10:00.170 --> 00:10:03.730
+And let's run that, and you can see here test constructor for a 100,
+
+00:10:03.730 --> 00:10:07.530
+for a 1000, and then we're destroying both of them. So that's pretty cool.
+
+00:10:07.530 --> 00:10:11.730
+We really had nothing to do in this case right here on line 28
+
+00:10:11.730 --> 00:10:14.930
+with the make unique function. We didn't even have to use the new keyword at all.
+
+00:10:14.930 --> 00:10:17.730
+And that's one of the things that you'll hear about modern c++.
+
+00:10:17.730 --> 00:10:19.630
+You don't have to use new. You don't have to use delete.
+
+00:10:19.630 --> 00:10:22.230
+You can just use smart pointers, and they handle it all.
+
+00:10:22.230 --> 00:10:25.830
+And for the most part, that's true, but there are cases where you still have to use new.
+
+00:10:26.490 --> 00:10:30.590
+Okay. So that's a good example right here. Now let's do another example.
+
+00:10:30.590 --> 00:10:33.250
+Suppose that I want to create another unique pointer,
+
+00:10:33.910 --> 00:10:36.510
+and we'll call this one t3,
+
+00:10:36.760 --> 00:10:39.460
+and it will also be to a test.
+
+00:10:39.460 --> 00:10:41.760
+Let's just call it t3, just like that.
+
+00:10:42.120 --> 00:10:46.780
+And it's initialized. Remember, this is an object so it's going to call a constructor for the unique pointer.
+
+00:10:46.780 --> 00:10:48.280
+It's just not pointing anywhere now.
+
+00:10:48.280 --> 00:10:52.580
+So now what do we do. Can we say t3 equals t1?
+
+00:10:53.680 --> 00:10:57.980
+Well, I can't do that because I'm not allowed to assign unique pointers.
+
+00:10:57.980 --> 00:11:01.180
+And you can see the error right here, use of the deleted function.
+
+00:11:01.180 --> 00:11:04.960
+It's a long-winded error basically telling you that that operator -- you kind of see
+
+00:11:04.960 --> 00:11:08.960
+it over here in the error message. It's kind of telling you that that operator equal has been deleted.
+
+00:11:08.960 --> 00:11:10.460
+You don't have access to it.
+
+00:11:10.460 --> 00:11:12.750
+Same thing if you tried to copy construct,
+
+00:11:13.350 --> 00:11:17.350
+it won't let you because you're not allowed to copy or assign unique pointers.
+
+00:11:17.350 --> 00:11:21.450
+But you can move them. So what we can do is we can say std
+
+00:11:22.110 --> 00:11:23.810
+move t1.
+
+00:11:24.610 --> 00:11:28.610
+And what that's going to do it's going to move the ownership of that test object on the heap
+
+00:11:28.610 --> 00:11:30.380
+from t1 to t3.
+
+00:11:30.380 --> 00:11:33.380
+So now t3 will be referring to it owning it,
+
+00:11:33.380 --> 00:11:37.040
+and t1 will have a null pointer in it. So we can run this.
+
+00:11:37.040 --> 00:11:39.840
+And you can see everything works exactly the same.
+
+00:11:39.840 --> 00:11:42.440
+And we can actually test right here. We could say if
+
+00:11:42.800 --> 00:11:44.340
+not t1,
+
+00:11:44.340 --> 00:11:48.460
+right, so if t1 is not pointing anywhere -- in other words, if t1 is a null pointer,
+
+00:11:48.460 --> 00:11:51.120
+then we could just simply say cout
+
+00:11:52.220 --> 00:11:55.020
+and just something like t1 is null pointer.
+
+00:11:55.020 --> 00:11:56.920
+It's the only way that this is possible, right.
+
+00:11:58.380 --> 00:12:01.680
+And we'll end that line here, and we should see that display.
+
+00:12:03.880 --> 00:12:05.870
+Oops, let me put that paren back in.
+
+00:12:08.370 --> 00:12:11.670
+And there you go. You can see the output right there. It says t1 is null pointer.
+
+00:12:11.670 --> 00:12:14.870
+That's exactly what we expect, right, because when you move the ownership
+
+00:12:14.870 --> 00:12:16.770
+from t1 to t3,
+
+00:12:16.770 --> 00:12:20.370
+t3 now owns that object. T1 is now null.
+
+00:12:20.370 --> 00:12:24.570
+It can't own the object because we're not sharing ownership.
+
+00:12:24.570 --> 00:12:27.070
+Now let's create some unique pointers to accounts.
+
+00:12:27.070 --> 00:12:29.380
+And the way we can do that is really, really straightforward again.
+
+00:12:29.380 --> 00:12:32.980
+And let me let me comment this all out so it doesn't all keep displaying.
+
+00:12:33.230 --> 00:12:36.830
+And what we could say is we could say that we want a unique pointer
+
+00:12:37.830 --> 00:12:39.330
+to an account.
+
+00:12:40.330 --> 00:12:43.100
+Now remember, this is a base class pointer now, which is what we want
+
+00:12:43.100 --> 00:12:45.090
+because we want dynamic polymorphism.
+
+00:12:45.490 --> 00:12:48.090
+And what do we want to call it, let's call it a1.
+
+00:12:48.090 --> 00:12:50.290
+And we'll use make unique.
+
+00:12:52.290 --> 00:12:54.590
+So now what are we pointing to, we can't say account
+
+00:12:54.590 --> 00:12:56.690
+because account is an abstract base class.
+
+00:12:56.690 --> 00:12:59.890
+So we have to have one of those types of account, one of our concrete classes.
+
+00:12:59.890 --> 00:13:02.890
+So in this case, let's say we want to point to a checking account.
+
+00:13:06.890 --> 00:13:09.790
+And now what are the constructor parameters for a checking account.
+
+00:13:09.790 --> 00:13:14.190
+What we can say Moe and let's say 5000 dollars,
+
+00:13:15.690 --> 00:13:17.690
+and that should do it.
+
+00:13:17.690 --> 00:13:20.690
+At this point, we can use that object however we want, right,
+
+00:13:20.690 --> 00:13:23.990
+but we have to get to the object. So if I want to display that object,
+
+00:13:24.350 --> 00:13:28.790
+I can simply say de-reference a1. Remember, a1 is a pointer.
+
+00:13:28.790 --> 00:13:31.990
+So if I de-reference a1, I get that checking account object,
+
+00:13:32.490 --> 00:13:36.290
+and it's going to call our overloaded insertion operator that we've defined.
+
+00:13:36.290 --> 00:13:40.590
+So let's see if it does. Let's get rid of that extra paren right here,
+
+00:13:40.950 --> 00:13:42.450
+and let's give this a run.
+
+00:13:43.810 --> 00:13:47.310
+And there you go. Checking account Moe 5000 dollars, pretty cool.
+
+00:13:48.910 --> 00:13:51.910
+Of course, we can use the object in any which way we want.
+
+00:13:51.910 --> 00:13:55.710
+So we can say a1, and we could say deposit
+
+00:13:56.110 --> 00:13:57.910
+another 5000 dollars.
+
+00:13:58.900 --> 00:14:00.560
+And let's display the object again.
+
+00:14:01.160 --> 00:14:05.360
+So you can see we're using -- we're de-referencing, and we're using the arrow operator here as well
+
+00:14:05.360 --> 00:14:08.240
+to access the actual object that we're pointing to.
+
+00:14:08.240 --> 00:14:09.740
+So now we can build and run.
+
+00:14:10.100 --> 00:14:13.460
+And you can see that Moe was 5000, and now Moe is 10000.
+
+00:14:14.010 --> 00:14:15.310
+All right. Pretty cool.
+
+00:14:15.310 --> 00:14:18.210
+Now let's do a couple of more. Let's create a vector.
+
+00:14:18.210 --> 00:14:20.810
+And what we can do here is we can create a vector.
+
+00:14:21.710 --> 00:14:25.370
+And that vector is going to be a vector of unique pointers.
+
+00:14:27.370 --> 00:14:30.620
+And those unique pointers will point to account objects.
+
+00:14:31.610 --> 00:14:34.610
+Okay. So again, it's a vector of unique pointers.
+
+00:14:34.610 --> 00:14:37.970
+And those unique pointers are going to be referencing account objects.
+
+00:14:37.970 --> 00:14:39.630
+And we could just call this accounts,
+
+00:14:41.290 --> 00:14:45.290
+simple as that. And now what we can do is we can create some account objects,
+
+00:14:45.290 --> 00:14:49.390
+right. But in this case, we're going to create them on the heap because we've got pointers to them.
+
+00:14:49.390 --> 00:14:51.750
+And we're going to create a savings, a checking and a trust.
+
+00:14:51.750 --> 00:14:55.050
+And I'll copy that code over just to save a little typing time.
+
+00:14:55.930 --> 00:14:59.590
+Okay. So I copied it over. You can see what I'm doing. I'm adding
+
+00:14:59.590 --> 00:15:02.590
+checking account James with a 1000 balance
+
+00:15:02.590 --> 00:15:06.250
+to the accounts vector. And I'm doing that using the pushback method.
+
+00:15:06.250 --> 00:15:08.610
+And I'm also using make unique. Because remember,
+
+00:15:08.610 --> 00:15:10.710
+this is a vector of unique pointers.
+
+00:15:10.710 --> 00:15:14.810
+So I'm adding James Billy and Bobby, a checking, a savings and a trust account.
+
+00:15:14.810 --> 00:15:16.060
+So that's pretty easy.
+
+00:15:16.060 --> 00:15:18.560
+Now all we need to do is loop through that vector
+
+00:15:18.560 --> 00:15:20.760
+and display those account objects, right.
+
+00:15:20.760 --> 00:15:23.120
+So let's do that. We'll say for,
+
+00:15:23.120 --> 00:15:27.110
+and we could -- we can use a range-based for loop here. And I can say for auto,
+
+00:15:27.110 --> 00:15:31.910
+and let's just call that acc in accounts, which is my collection.
+
+00:15:32.810 --> 00:15:35.510
+And at this point, all we really need to do is just say
+
+00:15:35.510 --> 00:15:37.010
+std cout,
+
+00:15:38.010 --> 00:15:41.610
+right, de-reference acc, which is my account
+
+00:15:41.970 --> 00:15:46.270
+and display a new line. Now this won't compile. When I try to compile this,
+
+00:15:46.670 --> 00:15:50.820
+I'm going to get an error right here. And the problem is this is doing copy,
+
+00:15:50.820 --> 00:15:54.480
+right. We're copying each of those unique pointers that's in the account,
+
+00:15:54.480 --> 00:15:57.470
+vector. But we can't we're not allowed to copy unique pointers.
+
+00:15:57.470 --> 00:15:59.470
+So we have to do this by reference.
+
+00:15:59.770 --> 00:16:02.270
+And it's even better if we do it by const reference.
+
+00:16:03.070 --> 00:16:04.570
+So now we can run our program.
+
+00:16:04.570 --> 00:16:07.070
+And you'll see that we're displaying
+
+00:16:07.470 --> 00:16:09.460
+James Billy and Bobby's accounts.
+
+00:16:10.460 --> 00:16:14.860
+Okay. And notice that we didn't do a single delete here, right.
+
+00:16:15.220 --> 00:16:17.880
+Memories being cleared up automatically for us.
+
+00:16:17.880 --> 00:16:20.780
+If we really wanted to see those destructors called,
+
+00:16:20.780 --> 00:16:24.080
+we can go into our account classes and just change that
+
+00:16:24.080 --> 00:16:28.080
+destructor from the default instructor to actually just put some code in there that says
+
+00:16:28.080 --> 00:16:30.440
+hi I'm being destructed or something like that,
+
+00:16:30.440 --> 00:16:32.640
+but they are being called, and that's pretty cool.
+
+00:16:32.640 --> 00:16:36.640
+In the next video what we'll do is we'll learn about shared pointers.

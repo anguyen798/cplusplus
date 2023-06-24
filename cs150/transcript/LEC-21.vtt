@@ -1,0 +1,1433 @@
+﻿WEBVTT
+
+00:00:01.000 --> 00:00:13.000
+Hello everyone, this is Steve Gilbert. Welcome to lecture 21. We're going to continue talking about arrays. In this lecture, partially filled arrays and two-dimensional arrays.
+
+00:00:13.000 --> 00:00:23.000
+So let's start right in with partially filled arrays. So often you'll use only a portion of an array.
+
+00:00:23.000 --> 00:00:31.000
+So here I have an array. You can see it has 10 elements, but I'm really only using the first four elements.
+
+00:00:31.000 --> 00:00:40.000
+And since the array size can't change, when you're working with arrays, you need to plan for the worst case.
+
+00:00:40.000 --> 00:00:47.000
+You need to make the allocated array large enough to hold the maximum data that your problem will use.
+
+00:00:47.000 --> 00:00:55.000
+Then you create a couple of extra variables. Capacity over here is going to represent the worst case, your allocated size.
+
+00:00:55.000 --> 00:01:01.000
+And size is going to be the effective size of the array.
+
+00:01:01.000 --> 00:01:09.000
+Now under the hood, this is how the vector class actually works. It kind of does this magic for you.
+
+00:01:09.000 --> 00:01:16.000
+But now that we're working with arrays, which are built into the language, we're going to see how that works.
+
+00:01:16.000 --> 00:01:25.000
+So go ahead and open up the first exercise here. So go ahead and go to week 6.
+
+00:01:25.000 --> 00:01:33.000
+Go to partially filled arrays. Click the lecture exercise. On the lecture exercise, click the link for the starter form.
+
+00:01:33.000 --> 00:01:39.000
+Let me click it here. Make a copy.
+
+00:01:39.000 --> 00:01:45.000
+And this will be the set of instructions we're going to use.
+
+00:01:45.000 --> 00:01:51.000
+So we're going to write three template functions which should work for any numeric type.
+
+00:01:51.000 --> 00:01:56.000
+ToString, the parameter is going to be the array and the number of elements.
+
+00:01:56.000 --> 00:02:00.000
+We're going to return a string with each element separated by a space.
+
+00:02:00.000 --> 00:02:04.000
+No commas this time. And the element surrounded by brackets.
+
+00:02:04.000 --> 00:02:17.000
+ReadArray, this is going to read from cin and it's going to read into an array and return the size as a size t.
+
+00:02:17.000 --> 00:02:23.000
+We'll end with a non-numeric sentinel, so people can type in a q.
+
+00:02:23.000 --> 00:02:30.000
+Or filling the entire array will end the input. Either one of those.
+
+00:02:30.000 --> 00:02:42.000
+And finally indexOf. For indexOf we're going to return the index or the position of the first occurrence of the value that we want to find.
+
+00:02:42.000 --> 00:02:48.000
+You find the prototypes of partial.h and we're going to test with makeTest.
+
+00:02:48.000 --> 00:02:54.000
+So let's go over here. Let's open up IC21A.
+
+00:02:54.000 --> 00:03:03.000
+And partial.h is going to have our prototypes. Notice it's created a static constant not found.
+
+00:03:03.000 --> 00:03:07.000
+And these are our template functions.
+
+00:03:07.000 --> 00:03:10.000
+Notice here in the header file I've written the templates.
+
+00:03:10.000 --> 00:03:16.000
+What we're going to do is we're just going to copy those templates.
+
+00:03:16.000 --> 00:03:18.000
+Those prototypes.
+
+00:03:18.000 --> 00:03:23.000
+And we're going to go into partial.cpp.
+
+00:03:23.000 --> 00:03:26.000
+And we're going to implement them right there.
+
+00:03:26.000 --> 00:03:35.000
+Now remember when you implement a template function you need to include the template class T or type name T as well.
+
+00:03:35.000 --> 00:03:39.000
+Put our name on the top of it.
+
+00:03:39.000 --> 00:03:46.000
+So let's look at the steps we need to do these exercises.
+
+00:03:46.000 --> 00:03:51.000
+First we're going to look at filling or reading from input.
+
+00:03:51.000 --> 00:03:57.000
+Now I want to read a new value from input.
+
+00:03:57.000 --> 00:04:01.000
+And I want to put it right here in position 4.
+
+00:04:01.000 --> 00:04:05.000
+Notice size is already set to 4.
+
+00:04:05.000 --> 00:04:12.000
+So the equivalent of pushback for a partially filled array, pushback in vector of course,
+
+00:04:12.000 --> 00:04:17.000
+simply puts the value into A at size.
+
+00:04:17.000 --> 00:04:22.000
+So we'll put the value inside here and we'll increment size.
+
+00:04:22.000 --> 00:04:27.000
+Of course that only works if size is less than capacity.
+
+00:04:27.000 --> 00:04:31.000
+So let's look at that exercise here.
+
+00:04:31.000 --> 00:04:34.000
+That part.
+
+00:04:34.000 --> 00:04:37.000
+So that's going to be the read array.
+
+00:04:37.000 --> 00:04:41.000
+Reads from C and stores values at the end of the array.
+
+00:04:41.000 --> 00:04:43.000
+Our parameter A is the array.
+
+00:04:43.000 --> 00:04:46.000
+It's an input/output parameter.
+
+00:04:46.000 --> 00:04:49.000
+And capacity is going to be the number of elements.
+
+00:04:49.000 --> 00:04:52.000
+It's going to return the current size.
+
+00:04:52.000 --> 00:04:57.000
+So this is assuming, notice we didn't pass in the current size,
+
+00:04:57.000 --> 00:05:03.000
+so it's assuming that size is going to start out at 0.
+
+00:05:03.000 --> 00:05:08.000
+So size T size equals 0.
+
+00:05:08.000 --> 00:05:14.000
+And we're going to then return that size.
+
+00:05:14.000 --> 00:05:21.000
+Okay, so now we need to read values into elements.
+
+00:05:21.000 --> 00:05:22.000
+What type are the elements?
+
+00:05:22.000 --> 00:05:24.000
+The elements are of type T.
+
+00:05:24.000 --> 00:05:29.000
+So we're going to need to make a T in.
+
+00:05:29.000 --> 00:05:35.000
+This is the value we're going to read.
+
+00:05:35.000 --> 00:05:40.000
+And it can be integer, it can be double, it can be any numeric type.
+
+00:05:40.000 --> 00:05:50.000
+And so we're going to keep reading while size is less than capacity.
+
+00:05:50.000 --> 00:05:54.000
+And we can successfully read a value.
+
+00:05:54.000 --> 00:05:59.000
+If there's a non-numeric terminator in there, like a Q, this will stop.
+
+00:05:59.000 --> 00:06:05.000
+So we'll say CNN.
+
+00:06:05.000 --> 00:06:10.000
+Okay, so there's our loop to read an array.
+
+00:06:10.000 --> 00:06:23.000
+And so we'll say A at size equals N, and size plus plus.
+
+00:06:23.000 --> 00:06:27.000
+And of course we've returned size here.
+
+00:06:27.000 --> 00:06:31.000
+We've returned size.
+
+00:06:31.000 --> 00:06:37.000
+Now let's go ahead and stub these other two out so we can --
+
+00:06:37.000 --> 00:06:44.000
+So I'm just going to return not found for this first one.
+
+00:06:44.000 --> 00:06:48.000
+So it's going to return not found or the index of it.
+
+00:06:48.000 --> 00:06:54.000
+And for this one, two string.
+
+00:06:54.000 --> 00:07:02.000
+I'm going to return not done.
+
+00:07:02.000 --> 00:07:10.000
+Okay, so let's open a terminal on that.
+
+00:07:10.000 --> 00:07:18.000
+And let's go ahead and do make to make sure it compiles.
+
+00:07:18.000 --> 00:07:24.000
+Okay, no syntax errors. Let's do make test.
+
+00:07:24.000 --> 00:07:30.000
+Okay, it says we've got 20%, so read array actually seems to work.
+
+00:07:30.000 --> 00:07:33.000
+Two string, we haven't done anything on yet.
+
+00:07:33.000 --> 00:07:37.000
+Read array int.
+
+00:07:37.000 --> 00:07:40.000
+When I called two string on it, of course that's not done.
+
+00:07:40.000 --> 00:07:44.000
+And here's read array int.
+
+00:07:44.000 --> 00:07:47.000
+And since we're using index -- oh no, this is index.
+
+00:07:47.000 --> 00:07:50.000
+Read array int right here.
+
+00:07:50.000 --> 00:07:54.000
+And read array double both seem to work right now.
+
+00:07:54.000 --> 00:07:58.000
+So both of those seem to work.
+
+00:07:58.000 --> 00:08:05.000
+Alright, let's put that away and let's go to our next one we want to write here.
+
+00:08:05.000 --> 00:08:09.000
+Which is printing or two string.
+
+00:08:09.000 --> 00:08:15.000
+Now we can't use operator, the output operator, because the array doesn't know its size.
+
+00:08:15.000 --> 00:08:20.000
+So we need to write a two string that we could use in place of that.
+
+00:08:20.000 --> 00:08:25.000
+So we want to write two string, but we only want to print the valid elements.
+
+00:08:25.000 --> 00:08:29.000
+Again, this is review, we're going to do the fence post algorithm.
+
+00:08:29.000 --> 00:08:33.000
+We want the elements values separated by a single space.
+
+00:08:33.000 --> 00:08:35.000
+So we're going to print the delimiter.
+
+00:08:35.000 --> 00:08:38.000
+If there are any elements, print the first one.
+
+00:08:38.000 --> 00:08:41.000
+Use a loop to print the remaining elements.
+
+00:08:41.000 --> 00:08:50.000
+Proceed each by the separator. After the if, print the closing, the limiter.
+
+00:08:50.000 --> 00:08:54.000
+Now there are a couple ways to do this. I don't remember which one I did for my test.
+
+00:08:54.000 --> 00:08:58.000
+Let's see if we got s-stream. We don't have s-stream up here.
+
+00:08:58.000 --> 00:09:00.000
+So let's see if we can do it with two string.
+
+00:09:00.000 --> 00:09:04.000
+If not, we'll need to include s-stream.
+
+00:09:04.000 --> 00:09:10.000
+So what we'll do is return
+
+00:09:10.000 --> 00:09:14.000
+so string result
+
+00:09:14.000 --> 00:09:18.000
+and we'll return result.
+
+00:09:18.000 --> 00:09:24.000
+And let's say result
+
+00:09:24.000 --> 00:09:30.000
+equals the opening
+
+00:09:30.000 --> 00:09:32.000
+bracket.
+
+00:09:32.000 --> 00:09:40.000
+If size is greater than zero,
+
+00:09:40.000 --> 00:09:45.000
+result plus equals two string
+
+00:09:45.000 --> 00:09:49.000
+from the string class
+
+00:09:49.000 --> 00:09:53.000
+a sub zero.
+
+00:09:53.000 --> 00:10:00.000
+And then for size t, i equals one,
+
+00:10:00.000 --> 00:10:04.000
+i less than size.
+
+00:10:04.000 --> 00:10:08.000
+And let's change this to
+
+00:10:08.000 --> 00:10:11.000
+size t size.
+
+00:10:11.000 --> 00:10:19.000
+Notice the parameter says it's supposed to be named size and my thing had it set to n right there, which is a mistake.
+
+00:10:19.000 --> 00:10:24.000
+i less than size plus plus i.
+
+00:10:24.000 --> 00:10:29.000
+Result plus equals
+
+00:10:29.000 --> 00:10:33.000
+a space plus two string
+
+00:10:33.000 --> 00:10:38.000
+a sub i.
+
+00:10:38.000 --> 00:10:42.000
+And
+
+00:10:42.000 --> 00:10:46.000
+then after the if
+
+00:10:46.000 --> 00:10:50.000
+plus equals closing thing
+
+00:10:50.000 --> 00:10:52.000
+and we'll return the result.
+
+00:10:52.000 --> 00:10:55.000
+Now this may or may not work. I think it'll work with the integers.
+
+00:10:55.000 --> 00:10:59.000
+I'm not sure it'll work with the doubles.
+
+00:10:59.000 --> 00:11:03.000
+In fact, it does work perfectly fine with the doubles.
+
+00:11:03.000 --> 00:11:08.000
+But I don't think it'll give us exactly this output. I think it'll give us output that
+
+00:11:08.000 --> 00:11:16.000
+has slightly more decimal places. But let's try it and see.
+
+00:11:16.000 --> 00:11:19.000
+So we can make tests.
+
+00:11:19.000 --> 00:11:25.000
+Okay, and I missed a semicolon there.
+
+00:11:25.000 --> 00:11:31.000
+Right there on line 20.
+
+00:11:31.000 --> 00:11:37.000
+You know, remember when you're looking at these errors, it'll tell you what the line is in the file right there.
+
+00:11:37.000 --> 00:11:43.000
+Partial cpp line 20.
+
+00:11:43.000 --> 00:11:47.000
+Make tests.
+
+00:11:47.000 --> 00:11:52.000
+Okay, so two string for integers works perfectly fine.
+
+00:11:52.000 --> 00:11:59.000
+Two string for doubles is giving me actually slightly more than I wanted.
+
+00:11:59.000 --> 00:12:12.000
+So actually the two string for double is perfectly fine, but so that it matches our test, let's do it the way we looked at before.
+
+00:12:12.000 --> 00:12:22.000
+And so let's include sstream in this.
+
+00:12:22.000 --> 00:12:31.000
+And let's comment out all this.
+
+00:12:31.000 --> 00:12:35.000
+So that's the method using two string to do it.
+
+00:12:35.000 --> 00:12:38.000
+Two string built into the string class.
+
+00:12:38.000 --> 00:12:43.000
+So we'll use ostring, stream out.
+
+00:12:43.000 --> 00:12:51.000
+Out.
+
+00:12:51.000 --> 00:12:57.000
+If size greater than zero.
+
+00:12:57.000 --> 00:13:01.000
+Out a sub zero.
+
+00:13:01.000 --> 00:13:10.000
+For size t, i equals one, i less than size, plus plus i.
+
+00:13:10.000 --> 00:13:17.000
+Out space a sub i.
+
+00:13:17.000 --> 00:13:20.000
+Out.
+
+00:13:20.000 --> 00:13:26.000
+And return out string.
+
+00:13:26.000 --> 00:13:39.000
+Okay, so this will fix the problem we have right here when it expects 130139, but it founds 130386.
+
+00:13:39.000 --> 00:13:43.000
+It finds one more decimal place when I do two string there.
+
+00:13:43.000 --> 00:13:50.000
+And so let's go ahead and try it once again.
+
+00:13:50.000 --> 00:13:58.000
+And two string for doubles works the way the test is expecting it.
+
+00:13:58.000 --> 00:14:01.000
+Now there's nothing wrong with doing it the other way.
+
+00:14:01.000 --> 00:14:09.000
+Just my test program is expecting the output in a particular way using the ostring stream.
+
+00:14:09.000 --> 00:14:17.000
+Okay, the last thing we're going to look at is the index of, oh no.
+
+00:14:17.000 --> 00:14:21.000
+I don't have a slide on index of.
+
+00:14:21.000 --> 00:14:25.000
+So let's just go ahead and look at the instructions for index of.
+
+00:14:25.000 --> 00:14:29.000
+Index of is a linear search.
+
+00:14:29.000 --> 00:14:37.000
+We're going to look through from the beginning of the array.
+
+00:14:37.000 --> 00:14:40.000
+Notice the array is not changed.
+
+00:14:40.000 --> 00:14:43.000
+And we're going to look through this value.
+
+00:14:43.000 --> 00:14:47.000
+That should be, again, for my documentation, it calls it value.
+
+00:14:47.000 --> 00:14:48.000
+I've called it val there.
+
+00:14:48.000 --> 00:14:52.000
+That's a mistake.
+
+00:14:52.000 --> 00:15:04.000
+And we're going to say for size p, i equals zero, i less than size, plus plus i.
+
+00:15:04.000 --> 00:15:17.000
+If a at i equals val, q, we're going to return i.
+
+00:15:17.000 --> 00:15:22.000
+And if it's not equal to value, we're going to return not found.
+
+00:15:22.000 --> 00:15:24.000
+Okay, let's try that.
+
+00:15:24.000 --> 00:15:27.000
+That's our last check.
+
+00:15:27.000 --> 00:15:30.000
+Let's do make test.
+
+00:15:30.000 --> 00:15:33.000
+And that passes 100%.
+
+00:15:33.000 --> 00:15:42.000
+Okay, for our second group down here, we want to look at erasing elements.
+
+00:15:42.000 --> 00:15:48.000
+We're going to write an erase template function which searches for an element in the partially filled array
+
+00:15:48.000 --> 00:15:53.000
+and removes it if found, keeping the array in order.
+
+00:15:53.000 --> 00:15:57.000
+We're going to use make test to test your code.
+
+00:15:57.000 --> 00:16:01.000
+The parameters are the array, the number of elements,
+
+00:16:01.000 --> 00:16:04.000
+that's an output parameter.
+
+00:16:04.000 --> 00:16:09.000
+Actually, it's an input and output parameter because it has a value going in
+
+00:16:09.000 --> 00:16:12.000
+and it will have a different value going out, the value to remove.
+
+00:16:12.000 --> 00:16:18.000
+We'll retrieve true if a value was removed, false if not.
+
+00:16:18.000 --> 00:16:22.000
+Notice you'll find several examples inside run.
+
+00:16:22.000 --> 00:16:25.000
+So how do we erase an element?
+
+00:16:25.000 --> 00:16:31.000
+Now, unlike vector, there is no erase function.
+
+00:16:31.000 --> 00:16:38.000
+So if I want to delete this element, the 0, 1, 2, 3, 4, if I want to delete element 4,
+
+00:16:38.000 --> 00:16:42.000
+what I have to do is move element 5 into its position,
+
+00:16:42.000 --> 00:16:45.000
+move element 6 into the position where 5 was,
+
+00:16:45.000 --> 00:16:49.000
+move element 7 into the position where 6 was,
+
+00:16:49.000 --> 00:16:52.000
+and then delete the size.
+
+00:16:52.000 --> 00:16:58.000
+So find the element that matches the value, decrement the size,
+
+00:16:58.000 --> 00:17:03.000
+shift the elements left, and then update the index.
+
+00:17:03.000 --> 00:17:07.000
+Finally, we're going to return, in this case, not the elements removed,
+
+00:17:07.000 --> 00:17:13.000
+but we're going to return true or false.
+
+00:17:13.000 --> 00:17:17.000
+So if we couldn't find it, we'll return false.
+
+00:17:17.000 --> 00:17:27.000
+So let's go over there and let's close those two terminals, let's close partial,
+
+00:17:27.000 --> 00:17:34.000
+let's open up B,
+
+00:17:34.000 --> 00:17:47.000
+let's get partial.cpp and grab our prototype,
+
+00:17:47.000 --> 00:17:54.000
+and put our name on here,
+
+00:17:54.000 --> 00:18:00.000
+and define our function template right there,
+
+00:18:00.000 --> 00:18:06.000
+and return false, and we'll stub that out.
+
+00:18:06.000 --> 00:18:11.000
+So let's open a shell.
+
+00:18:11.000 --> 00:18:16.000
+Let's do make test.
+
+00:18:16.000 --> 00:18:21.000
+Okay, and our code compiles and runs. Doesn't exactly work.
+
+00:18:21.000 --> 00:18:26.000
+Okay, so I'm going to start with this array, I'm going to try and erase 5, that should be true,
+
+00:18:26.000 --> 00:18:34.000
+and then I should have 2, 8, 11, since I'm not erasing anything yet, I have that.
+
+00:18:34.000 --> 00:18:39.000
+So now we'll look at how to erase it.
+
+00:18:39.000 --> 00:18:45.000
+So let's close our terminal here, and let's look at that algorithm.
+
+00:18:45.000 --> 00:18:49.000
+So A is an input out parameter, this is an input out parameter, size.
+
+00:18:49.000 --> 00:19:04.000
+And val, I call that value here, so I'm having a problem keeping my documentation and my name actually in sync here.
+
+00:19:04.000 --> 00:19:09.000
+Okay, so let's find the element val.
+
+00:19:09.000 --> 00:19:21.000
+So for size p, i equals 0, i less than size, plus plus i,
+
+00:19:21.000 --> 00:19:31.000
+if a sub i equals val, let's call it value in both cases.
+
+00:19:31.000 --> 00:19:42.000
+Make it the same in this one and the previous one.
+
+00:19:42.000 --> 00:19:49.000
+If a sub i equals the value, then I've found the one that I want to delete,
+
+00:19:49.000 --> 00:19:55.000
+and so I'm going to return true, I found it, and I'm going to delete it.
+
+00:19:55.000 --> 00:20:04.000
+So the steps, I found the element number 1, I'm going to decrement the size, so size minus minus,
+
+00:20:04.000 --> 00:20:09.000
+and I'm going to shift all the elements left.
+
+00:20:09.000 --> 00:20:30.000
+So for size p, j equals i, j less than size, j plus plus, a sub j equals a sub j plus 1.
+
+00:20:30.000 --> 00:20:39.000
+So the current element, where val was, I'm going to replace with the one that was right after it.
+
+00:20:39.000 --> 00:20:43.000
+And then I'm going to do the next thing until I get to the size.
+
+00:20:43.000 --> 00:20:47.000
+Of course we deleted one, so we're going to return true.
+
+00:20:47.000 --> 00:20:51.000
+So let's try that and see if it works.
+
+00:20:51.000 --> 00:20:55.000
+We'll do make test.
+
+00:20:55.000 --> 00:21:02.000
+And so I deleted 5 from a, and so a now has 2, 8, 11, 14.
+
+00:21:02.000 --> 00:21:07.000
+I delete 14, the element in the last position, it has 2, 8, 11.
+
+00:21:07.000 --> 00:21:12.000
+I try and delete 1, it returns false because 1 isn't found.
+
+00:21:12.000 --> 00:21:20.000
+I try and delete 2, the element in the beginning, and 2 is erased from a,
+
+00:21:20.000 --> 00:21:24.000
+and so a has 8 and 11 afterwards.
+
+00:21:24.000 --> 00:21:28.000
+We do the same thing with a double because it's a template function,
+
+00:21:28.000 --> 00:21:34.000
+and it works perfectly fine for both types of values.
+
+00:21:34.000 --> 00:21:37.000
+Alright, so that's erasing.
+
+00:21:37.000 --> 00:21:41.000
+How about inserting elements into an array?
+
+00:21:41.000 --> 00:21:47.000
+With inserting elements into an array, you do a shift, just like with deletions,
+
+00:21:47.000 --> 00:21:53.000
+but the shift has to happen not starting at the place where you want to insert,
+
+00:21:53.000 --> 00:21:55.000
+but it has to start at the end.
+
+00:21:55.000 --> 00:21:59.000
+You have to shift the last element into the first unused element,
+
+00:21:59.000 --> 00:22:03.000
+the next to the last element into the next unused element,
+
+00:22:03.000 --> 00:22:07.000
+the element in front of that, and now we have two copies of this element,
+
+00:22:07.000 --> 00:22:11.000
+and we can overwrite that element with the value.
+
+00:22:11.000 --> 00:22:20.000
+So I want to insert 3.25 into this array that has 4 elements.
+
+00:22:20.000 --> 00:22:28.000
+So to insert it, I first have to check to make sure size is greater or equal to capacity.
+
+00:22:28.000 --> 00:22:31.000
+Now in this exercise, the one we're going to do here,
+
+00:22:31.000 --> 00:22:34.000
+we're not going to return true or false.
+
+00:22:34.000 --> 00:22:36.000
+We're going to return a pointer.
+
+00:22:36.000 --> 00:22:39.000
+So, again, we could return the value.
+
+00:22:39.000 --> 00:22:41.000
+We could return an index.
+
+00:22:41.000 --> 00:22:43.000
+We could return true or false.
+
+00:22:43.000 --> 00:22:45.000
+We could return a count.
+
+00:22:45.000 --> 00:22:50.000
+All of those would be possible and we'd have to keep track of them.
+
+00:22:50.000 --> 00:22:56.000
+In this case, we're going to return the address of the element that was inserted,
+
+00:22:56.000 --> 00:23:00.000
+very similar to what an iterator actually does,
+
+00:23:00.000 --> 00:23:04.000
+and I want to insert 3.25.
+
+00:23:04.000 --> 00:23:07.000
+So what I start by doing is creating a variable
+
+00:23:07.000 --> 00:23:12.000
+and set it to the first element that is larger than value.
+
+00:23:12.000 --> 00:23:15.000
+So I loop through, I say, "Is .3 larger than 3.25?"
+
+00:23:15.000 --> 00:23:16.000
+No.
+
+00:23:16.000 --> 00:23:19.000
+"Is 2.3 larger than 3.25?"
+
+00:23:19.000 --> 00:23:20.000
+No.
+
+00:23:20.000 --> 00:23:23.000
+"Is 7.1 larger than 3.25?"
+
+00:23:23.000 --> 00:23:25.000
+Oh, yes it is.
+
+00:23:25.000 --> 00:23:26.000
+So this is my position.
+
+00:23:26.000 --> 00:23:30.000
+My position is going to be position 2.
+
+00:23:30.000 --> 00:23:39.000
+Then I'm going to copy elements from size, which is 4, down to pos.
+
+00:23:39.000 --> 00:23:46.000
+I'm going to move the 9.5 into the 4, the 7.1 into the 9.5.
+
+00:23:46.000 --> 00:23:49.000
+Now I'm at pos, I'm at 2.
+
+00:23:49.000 --> 00:23:54.000
+I'm going to add the element, the 3.5, where the 7.1 is now,
+
+00:23:54.000 --> 00:23:58.000
+and I'm going to increment the size so it goes from 4 to 5.
+
+00:23:58.000 --> 00:24:06.000
+In this case, we're going to return the address of the added element.
+
+00:24:06.000 --> 00:24:14.000
+OK, so let's go ahead and close this terminal, close this version of partial,
+
+00:24:14.000 --> 00:24:22.000
+open up the one from C.
+
+00:24:22.000 --> 00:24:28.000
+So I'll just copy from partial.h,
+
+00:24:28.000 --> 00:24:33.000
+I'll open up partial.cpp and paste it in there,
+
+00:24:33.000 --> 00:24:40.000
+and I'll put my name on the top of this.
+
+00:24:40.000 --> 00:24:44.000
+OK, so this is going to insert an int value into the array A,
+
+00:24:44.000 --> 00:24:56.000
+keeping the elements in order.
+
+00:24:56.000 --> 00:25:05.000
+So I am going to check first to make sure that the size is less than capacity.
+
+00:25:05.000 --> 00:25:14.000
+So if size is greater or equal to capacity,
+
+00:25:14.000 --> 00:25:22.000
+I have no room to add the item, so I'm going to return null pointer.
+
+00:25:22.000 --> 00:25:29.000
+Now I know I have room to add an item, so I'm simply going to find out where it is added.
+
+00:25:29.000 --> 00:25:37.000
+So I'm going to say size p pos equals 0,
+
+00:25:37.000 --> 00:25:46.000
+while pos is less than size,
+
+00:25:46.000 --> 00:26:06.000
+and A sub pos is less than value.
+
+00:26:06.000 --> 00:26:10.000
+And then I'm going to say pos plus plus.
+
+00:26:10.000 --> 00:26:17.000
+OK, so pos will be pointing to the element that is greater or equal to value.
+
+00:26:17.000 --> 00:26:22.000
+And so this means we're going to insert in front of any equal items.
+
+00:26:22.000 --> 00:26:26.000
+Equal items will be pushed to the right.
+
+00:26:26.000 --> 00:26:29.000
+OK, so now pos is the value.
+
+00:26:29.000 --> 00:26:44.000
+I need to do for size p i equals size i greater than pos minus minus pos.
+
+00:26:44.000 --> 00:26:53.000
+And I need to say A sub i equals A sub i minus 1.
+
+00:26:53.000 --> 00:26:58.000
+The one in front of it gets copied there.
+
+00:26:58.000 --> 00:27:03.000
+Now I need to add the element at pos.
+
+00:27:03.000 --> 00:27:10.000
+I need to say A sub pos equals our value.
+
+00:27:10.000 --> 00:27:12.000
+We've inserted it.
+
+00:27:12.000 --> 00:27:18.000
+I need to increment the size, size plus plus, because we've added a new element in it.
+
+00:27:18.000 --> 00:27:23.000
+And I need to return the address of the added element.
+
+00:27:23.000 --> 00:27:29.000
+So I need to return the address of A at pos.
+
+00:27:29.000 --> 00:27:33.000
+Now we can also write this as A plus pos.
+
+00:27:33.000 --> 00:27:34.000
+That would be the same.
+
+00:27:34.000 --> 00:27:42.000
+We could use address arithmetic instead of the address operator to do that.
+
+00:27:42.000 --> 00:27:45.000
+OK, let's open a shell on this.
+
+00:27:45.000 --> 00:27:50.000
+Right click, open an integrated terminal.
+
+00:27:50.000 --> 00:27:51.000
+Let's close that.
+
+00:27:51.000 --> 00:27:55.000
+Let's do make test.
+
+00:27:55.000 --> 00:28:03.000
+OK, I got an unexpected qualifier on line 21 in partial.cpp.
+
+00:28:03.000 --> 00:28:08.000
+Line 21, and that's because I meant to delete that,
+
+00:28:08.000 --> 00:28:16.000
+and I accidentally hit the key below the backspace key and added in a backslash.
+
+00:28:16.000 --> 00:28:28.000
+OK, make test.
+
+00:28:28.000 --> 00:28:35.000
+OK.
+
+00:28:35.000 --> 00:28:40.000
+OK, obviously my code doesn't work, so I have made a mistake.
+
+00:28:40.000 --> 00:28:44.000
+I have an empty array, capacity 5.
+
+00:28:44.000 --> 00:28:47.000
+I insert 4 into it, that's fine.
+
+00:28:47.000 --> 00:28:56.000
+Then I insert 1. I expect 1, 4, but I found 4, 4.
+
+00:28:56.000 --> 00:29:00.000
+Then I found 4, 4, 4.
+
+00:29:00.000 --> 00:29:04.000
+Insert 5.
+
+00:29:04.000 --> 00:29:07.000
+So let's look at our code here.
+
+00:29:07.000 --> 00:29:16.000
+Either the pos, I'm figuring out, well pos is less than size,
+
+00:29:16.000 --> 00:29:42.000
+and a at pos is less than value pos.
+
+00:29:42.000 --> 00:29:48.000
+OK, so we need to look at this second one and trace through it together.
+
+00:29:48.000 --> 00:29:56.000
+And this is a good thing to do to debug your code.
+
+00:29:56.000 --> 00:30:04.000
+So we want this one when the array is, has the value 4 in it.
+
+00:30:04.000 --> 00:30:08.000
+So size is, so this is false.
+
+00:30:08.000 --> 00:30:14.000
+Size t pos is 0, size t pos is going to be looking at that.
+
+00:30:14.000 --> 00:30:24.000
+We're trying to insert 1.
+
+00:30:24.000 --> 00:30:32.000
+So a sub 0
+
+00:30:32.000 --> 00:30:37.000
+is a sub 0 before
+
+00:30:37.000 --> 00:30:46.000
+it's not less than value, 4 less than 1 would be false, would drop out.
+
+00:30:46.000 --> 00:30:49.000
+So pos should be 0.
+
+00:30:49.000 --> 00:30:57.000
+For i equals size 1, i greater than pos,
+
+00:30:57.000 --> 00:31:12.000
+minus minus pos, so i is greater than pos, i is 1, pos is 0.
+
+00:31:12.000 --> 00:31:23.000
+So a sub 1 equals pos, so we put the 4 in that.
+
+00:31:23.000 --> 00:31:28.000
+That works fine.
+
+00:31:28.000 --> 00:31:33.000
+Then a sub 0 equals 1,
+
+00:31:33.000 --> 00:31:47.000
+so this plus plus return a.
+
+00:31:47.000 --> 00:31:51.000
+OK, I'm going to, I'm going to pos this while I figure this out kind of on my own.
+
+00:31:51.000 --> 00:32:04.000
+Because it looks like that code is correct and it's obviously not working.
+
+00:32:04.000 --> 00:32:09.000
+Alright folks, I'm back. It took me a long time to figure out what I had done wrong.
+
+00:32:09.000 --> 00:32:14.000
+You notice in this loop I'm setting i to size, i greater than pos.
+
+00:32:14.000 --> 00:32:21.000
+Then I'm decrementing pos, that would be like decrementing length, I should be decrementing i.
+
+00:32:21.000 --> 00:32:30.000
+And so now I believe our insertion will work correctly.
+
+00:32:30.000 --> 00:32:35.000
+Yes, so now we correctly insert, inserts it in the correct place.
+
+00:32:35.000 --> 00:32:43.000
+So sometimes you just have to look at those things for a while to find out what you did wrong.
+
+00:32:43.000 --> 00:32:53.000
+Alright, now let's talk about multidimensional arrays.
+
+00:32:53.000 --> 00:33:04.000
+So a multidimensional array we logically think of as rows and columns, right, like a spreadsheet, a matrix.
+
+00:33:04.000 --> 00:33:08.000
+Internally, however, it's stored linearly.
+
+00:33:08.000 --> 00:33:14.000
+Memory is linear and it's stored linearly as an array of an arrays.
+
+00:33:14.000 --> 00:33:20.000
+The second row in the array follows the last element of the first row.
+
+00:33:20.000 --> 00:33:25.000
+Now the syntax for 2D arrays is a little bit different than it is in Java.
+
+00:33:25.000 --> 00:33:34.000
+2D arrays are not used as much as they are in Java because they're much less flexible in C++.
+
+00:33:34.000 --> 00:33:39.000
+So first we have to have constants for both the rows and the columns.
+
+00:33:39.000 --> 00:33:45.000
+And so here I've created a two-dimensional array with rows and columns.
+
+00:33:45.000 --> 00:33:52.000
+Looks pretty similar to what you do in Java, except for the fact that these need to be constants.
+
+00:33:52.000 --> 00:33:59.000
+You can default initialize it starting in C++11, so it's not uninitialized.
+
+00:33:59.000 --> 00:34:04.000
+And you can initialize it by providing rows and columns inside.
+
+00:34:04.000 --> 00:34:13.000
+Now if I left off these inner braces, it would still give me, as long as columns is three here,
+
+00:34:13.000 --> 00:34:22.000
+notice I don't need to supply the rows in that case, and it would still give me two rows of three columns.
+
+00:34:22.000 --> 00:34:26.000
+Two rows of three columns, even if I left off the inner braces.
+
+00:34:26.000 --> 00:34:29.000
+The inner braces would not be required.
+
+00:34:29.000 --> 00:34:34.000
+What the inner braces do is allow you to initialize each row separately.
+
+00:34:34.000 --> 00:34:45.000
+So suppose I initialized row one just with one element and brace, and then row two with four, five, and six.
+
+00:34:45.000 --> 00:34:53.000
+Row one would have one, zero, zero, and row two would have then the four, five, and six inside it.
+
+00:34:53.000 --> 00:35:00.000
+So that's how you can initialize a two-dimensional array.
+
+00:35:00.000 --> 00:35:04.000
+Now you access the elements using row and column.
+
+00:35:04.000 --> 00:35:07.000
+This is called row major order.
+
+00:35:07.000 --> 00:35:14.000
+If you access outside the bounds, for instance, if I wrote balances zero sub six,
+
+00:35:14.000 --> 00:35:21.000
+you can see zero has zero, one, two, three, four, five, six, looks like it would be right here.
+
+00:35:21.000 --> 00:35:26.000
+We know, however, that row one is immediately following it.
+
+00:35:26.000 --> 00:35:35.000
+We could just line up these rows right here, and so we know that this would access one sub zero.
+
+00:35:35.000 --> 00:35:40.000
+That would normally work, but technically it's undefined behavior.
+
+00:35:40.000 --> 00:35:47.000
+So you should probably avoid doing it, although I've never seen it not work, but you should avoid doing that.
+
+00:35:47.000 --> 00:35:51.000
+You can calculate the number of rows.
+
+00:35:51.000 --> 00:35:56.000
+So you have an array, it's been declared, you want to calculate the number of rows.
+
+00:35:56.000 --> 00:36:01.000
+Now normally you'll store those in constant variables, right, or in constants.
+
+00:36:01.000 --> 00:36:06.000
+But if you have a two-dimensional array and you want to know the number of rows,
+
+00:36:06.000 --> 00:36:11.000
+it's exactly like finding the number of elements in a one-dimensional array.
+
+00:36:11.000 --> 00:36:14.000
+The size of A divided by the size of A sub zero.
+
+00:36:14.000 --> 00:36:22.000
+Because A sub zero is not this first element, this first row is A sub zero.
+
+00:36:22.000 --> 00:36:29.000
+So that's dividing the whole size, the number of bytes allocated for the two-dimensional array,
+
+00:36:29.000 --> 00:36:32.000
+by the number of bytes allocated for the first row.
+
+00:36:32.000 --> 00:36:37.000
+If you want to find the first column, you take the size of the first row,
+
+00:36:37.000 --> 00:36:45.000
+size of A sub zero, and divide that by the size of A sub zero sub zero.
+
+00:36:45.000 --> 00:36:53.000
+A sub zero sub zero.
+
+00:36:53.000 --> 00:36:57.000
+Now when you're passing a two-dimensional array to a function,
+
+00:36:57.000 --> 00:37:02.000
+you have to specify the number of columns as a constant.
+
+00:37:02.000 --> 00:37:08.000
+So in Java, we can write it this second way, where I have the illegal here on my slide.
+
+00:37:08.000 --> 00:37:13.000
+We can just say that n is a two-dimensional array of ints,
+
+00:37:13.000 --> 00:37:16.000
+and we can find out the rows and the columns at run time.
+
+00:37:16.000 --> 00:37:18.000
+We cannot in C++.
+
+00:37:18.000 --> 00:37:27.000
+So this function odds will only work with arrays that have this fixed number of columns.
+
+00:37:27.000 --> 00:37:32.000
+Now if you only want to process a particular column,
+
+00:37:32.000 --> 00:37:37.000
+then you could pass an additional argument for that column.
+
+00:37:37.000 --> 00:37:43.000
+Now you can take a single row from a two-dimensional array,
+
+00:37:43.000 --> 00:37:50.000
+and you can pass it to a function that takes a one-dimensional array just by subscripting it.
+
+00:37:50.000 --> 00:37:55.000
+So A sub zero in this element is not the first int,
+
+00:37:55.000 --> 00:38:02.000
+it's the first row of five ints will be passed to that.
+
+00:38:02.000 --> 00:38:10.000
+So we're going to look at an exercise here that tries processing two-dimensional arrays.
+
+00:38:10.000 --> 00:38:15.000
+Again, as I mentioned, these are not really used a lot in C++,
+
+00:38:15.000 --> 00:38:18.000
+but I just want you to get some practice doing it.
+
+00:38:18.000 --> 00:38:26.000
+So we're going to write several versions of a function called average.
+
+00:38:26.000 --> 00:38:32.000
+So let's go ahead and close our partial, close that,
+
+00:38:32.000 --> 00:38:42.000
+go and in D, open up A2DH, which we're going to make some changes to,
+
+00:38:42.000 --> 00:38:56.000
+so put your name on it, and summer 2022.
+
+00:38:56.000 --> 00:38:59.000
+And we're going to put some prototypes right here.
+
+00:38:59.000 --> 00:39:03.000
+Arrays must have a constant second dimension.
+
+00:39:03.000 --> 00:39:06.000
+Change this for different size 2D arrays.
+
+00:39:06.000 --> 00:39:16.000
+So here in my prototype, all my test programs are doing it for 10 columns is the constant size.
+
+00:39:16.000 --> 00:39:18.000
+So that's the maximum columns.
+
+00:39:18.000 --> 00:39:26.000
+What we're going to do is something similar to partially filled arrays for 2D arrays.
+
+00:39:26.000 --> 00:39:34.000
+So first we're going to write a function called average that's going to take a 2D array.
+
+00:39:34.000 --> 00:39:37.000
+All of these will return a double down here.
+
+00:39:37.000 --> 00:39:47.000
+So this is going to take a 2D array of ints, the number of rows, the number of columns,
+
+00:39:47.000 --> 00:39:51.000
+and we're going to default the columns to max calls.
+
+00:39:51.000 --> 00:39:57.000
+So we're going to say double average.
+
+00:39:57.000 --> 00:40:08.000
+It is going to be a constant A.
+
+00:40:08.000 --> 00:40:16.000
+Now we don't have to supply the rows, but we do have to supply max calls.
+
+00:40:16.000 --> 00:40:26.000
+And it's going to be size T rows and size T columns.
+
+00:40:26.000 --> 00:40:31.000
+And we'll default that to max calls.
+
+00:40:31.000 --> 00:40:38.000
+So if they don't pass that last argument, it will print out 10 columns, right?
+
+00:40:38.000 --> 00:40:41.000
+Or it will use 10 columns.
+
+00:40:41.000 --> 00:40:50.000
+Now we're going to write an average function that takes a one dimensional array of int in the columns.
+
+00:40:50.000 --> 00:41:10.000
+So double average, constant A, bracket, bracket, size T columns equals max calls.
+
+00:41:10.000 --> 00:41:19.000
+And finally we're going to take a 2D array of int, and it's going to average the numbers in columns.
+
+00:41:19.000 --> 00:41:22.000
+So it's going to take columns and column.
+
+00:41:22.000 --> 00:41:51.000
+So double average, constant A, max calls, size T rows, size T columns, size T column.
+
+00:41:51.000 --> 00:42:03.000
+And let's open up a shell on this so I can make the thing a little bit wider.
+
+00:42:03.000 --> 00:42:10.000
+Ok, so here are our three prototypes for the functions we're going to write.
+
+00:42:10.000 --> 00:42:16.000
+Now notice I have a prototype here that will print a 2D array in this form.
+
+00:42:16.000 --> 00:42:29.000
+Notice it will print the rows surrounded so it's kind of a fence post with the interior one, just the values like that.
+
+00:42:29.000 --> 00:42:33.000
+And it is going to print on this stream.
+
+00:42:33.000 --> 00:42:37.000
+It takes the rows and the size T is max calls.
+
+00:42:37.000 --> 00:42:52.000
+Now if we open up A2.cpp, put our name on it, our ID at least.
+
+00:42:52.000 --> 00:42:56.000
+You'll see I've already completed the A out function.
+
+00:42:56.000 --> 00:43:09.000
+So you notice it's using rows and columns here, rows and columns for the number of elements to print.
+
+00:43:09.000 --> 00:43:16.000
+And so if columns is anything other than max call, it will only print that number of elements.
+
+00:43:16.000 --> 00:43:19.000
+So it's like a partially filled array.
+
+00:43:19.000 --> 00:43:26.000
+So we have an array that looks like this.
+
+00:43:26.000 --> 00:43:55.000
+One, two, three, four, zero, zero, zero, zero, zero, zero, zero, and six, seven, eight, nine, zero, zero, zero, zero, zero, zero, zero, and three, five, seven, nine, zero, zero, zero, zero, zero.
+
+00:43:55.000 --> 00:44:03.000
+Now we only want to use these first four columns.
+
+00:44:03.000 --> 00:44:05.000
+We don't want to use the rest of it.
+
+00:44:05.000 --> 00:44:12.000
+So we're passing an array that looks like this whole thing, but we're only using this part of it inside here.
+
+00:44:12.000 --> 00:44:20.000
+And so that way we can make different rows and different columns.
+
+00:44:20.000 --> 00:44:27.000
+So that's the idea of partially filled arrays with two-dimensional arrays.
+
+00:44:27.000 --> 00:44:31.000
+So let's grab our code for A2.h.
+
+00:44:31.000 --> 00:44:47.000
+And let's bring our functions over here.
+
+00:44:47.000 --> 00:45:04.000
+OK, now you remember when we bring a prototype over, if it has any default arguments, we need to remove those default arguments.
+
+00:45:04.000 --> 00:45:16.000
+So let's put the bottom on it.
+
+00:45:16.000 --> 00:45:23.000
+So even though this thing is allocated max col size, we're only going to use columns.
+
+00:45:23.000 --> 00:45:29.000
+So we're going to say double sum is zero.
+
+00:45:29.000 --> 00:45:54.000
+Or size PR equals zero, R less than rows, R plus plus. Or size TC equals zero, C less than columns, C plus plus.
+
+00:45:54.000 --> 00:46:09.000
+Sum plus equals A at rows, R, and C at the row and column.
+
+00:46:09.000 --> 00:46:24.000
+So now we have the sum here, and we can return sum divided by rows times columns.
+
+00:46:24.000 --> 00:46:38.000
+The number of elements. So here is averaging. You need to use a nested loop when you're averaging a two-dimensional array.
+
+00:46:38.000 --> 00:46:44.000
+Now, we haven't handled any error checking here, so what if rows and columns is zero?
+
+00:46:44.000 --> 00:46:49.000
+Of course, we would have an error here. And we should check that.
+
+00:46:49.000 --> 00:46:57.000
+And you'll notice down here, I did that with an assert.
+
+00:46:57.000 --> 00:46:59.000
+Actually, I checked a different assert.
+
+00:46:59.000 --> 00:47:09.000
+Okay, so we're going to average a single column. So double sum is zero.
+
+00:47:09.000 --> 00:47:19.000
+Or size TI equals zero, I less than columns, I plus plus.
+
+00:47:19.000 --> 00:47:24.000
+Sum plus equals A sub I.
+
+00:47:24.000 --> 00:47:32.000
+Return sum divided by columns. Again, no error checking there to make sure that that's not zero.
+
+00:47:32.000 --> 00:47:37.000
+And this one is going to look very similar.
+
+00:47:37.000 --> 00:48:00.000
+So double sum. Or size TR equals zero, R less than rows, R plus plus. Sum plus equals A sub R sub column.
+
+00:48:00.000 --> 00:48:15.000
+Alright, so we're only adding one column there. And then return sum divided by the number of rows.
+
+00:48:15.000 --> 00:48:19.000
+Alright, so let's go ahead and try it out.
+
+00:48:19.000 --> 00:48:23.000
+Let's do make first to make sure we don't have any syntax errors. Nope.
+
+00:48:23.000 --> 00:48:26.000
+Let's do make test.
+
+00:48:26.000 --> 00:48:33.000
+Okay, so here is A out and I've supplied a size four when I do it.
+
+00:48:33.000 --> 00:48:38.000
+Here's A out. If I don't supply a value, I only supply the three arguments.
+
+00:48:38.000 --> 00:48:44.000
+And so notice it's printing those extra zeros at the end that we didn't use.
+
+00:48:44.000 --> 00:48:49.000
+Here's the average of all the used elements.
+
+00:48:49.000 --> 00:48:54.000
+And so that's average values, rows. And because there's only four.
+
+00:48:54.000 --> 00:48:57.000
+Here's the average of all the elements, which would not give us the right value, right?
+
+00:48:57.000 --> 00:49:00.000
+Because we're not really using these.
+
+00:49:00.000 --> 00:49:06.000
+So we'd want to call it with average, take in the values, the number of rows that we're using,
+
+00:49:06.000 --> 00:49:11.000
+and the number of columns that are actually in use.
+
+00:49:11.000 --> 00:49:16.000
+Here's the average of the second row. Here's the average of the second row, only four columns.
+
+00:49:16.000 --> 00:49:21.000
+Notice you call it again by passing that default argument that was the default argument.
+
+00:49:21.000 --> 00:49:29.000
+And here's the average of the third column in the entire array.
+
+00:49:29.000 --> 00:49:37.000
+Okay, so that's it for lecture 21. I'll see you next time for our next lecture.
+

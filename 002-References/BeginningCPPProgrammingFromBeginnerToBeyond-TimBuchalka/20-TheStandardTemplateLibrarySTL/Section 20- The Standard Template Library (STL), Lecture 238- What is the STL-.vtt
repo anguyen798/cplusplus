@@ -1,0 +1,469 @@
+WEBVTT
+
+00:00:05.300 --> 00:00:08.900
+In this video, I'd like to do an overview of the basic elements
+
+00:00:08.900 --> 00:00:12.700
+of the c++ standard template library and see what it's all about.
+
+00:00:13.500 --> 00:00:17.500
+The stl is a library of powerful, reusable, adaptable,
+
+00:00:17.500 --> 00:00:19.200
+generic classes and functions.
+
+00:00:19.860 --> 00:00:21.860
+Okay. So what do all those words mean.
+
+00:00:22.060 --> 00:00:24.060
+Well, the stl is powerful.
+
+00:00:24.060 --> 00:00:27.420
+We've already seen a bit of that power when we use the vector class.
+
+00:00:27.420 --> 00:00:29.020
+The stl is reusable.
+
+00:00:29.420 --> 00:00:34.020
+Remember, when we created vectors of integers and doubles and accounts and so forth,
+
+00:00:34.020 --> 00:00:38.220
+we didn't have to do anything except tell the vector what we wanted it to hold.
+
+00:00:39.020 --> 00:00:40.620
+The stl is adaptable.
+
+00:00:40.770 --> 00:00:43.870
+It provides containers, iterators and algorithms
+
+00:00:43.870 --> 00:00:47.970
+that we can adapt to make them do whatever we need them to do with our programs.
+
+00:00:48.630 --> 00:00:52.930
+Finally, the stl is implemented using template, functions and classes.
+
+00:00:52.930 --> 00:00:56.290
+We'll learn about c++ templates in the next few videos.
+
+00:00:56.290 --> 00:00:59.590
+They're one of the features that makes c++ so powerful.
+
+00:01:00.470 --> 00:01:03.130
+The stl is a huge class library.
+
+00:01:03.130 --> 00:01:05.690
+We'll only be scratching the surface in this section.
+
+00:01:05.690 --> 00:01:08.050
+But once you understand how to use the stl,
+
+00:01:08.050 --> 00:01:11.550
+the principles we'll learn will apply across the entire stl.
+
+00:01:12.440 --> 00:01:15.440
+The stl was developed around 1994
+
+00:01:15.440 --> 00:01:19.440
+by Alexander Stepanov, and even today is considered one of the best
+
+00:01:19.440 --> 00:01:21.940
+designed generic class libraries ever created.
+
+00:01:24.120 --> 00:01:25.220
+So what is the stl?
+
+00:01:25.920 --> 00:01:30.120
+Well, at its core, the stl is an assortment of commonly used containers.
+
+00:01:30.120 --> 00:01:32.620
+We'll see some of these containers in the next slide.
+
+00:01:33.120 --> 00:01:35.820
+The algorithms provided by the stl
+
+00:01:35.820 --> 00:01:40.180
+have published and well understood time and size complexity information.
+
+00:01:40.180 --> 00:01:43.680
+That means that when you use the containers and algorithms in the stl,
+
+00:01:43.680 --> 00:01:45.180
+there are no surprises.
+
+00:01:45.180 --> 00:01:49.880
+You know exactly how the algorithms behave as the size of the collection increases.
+
+00:01:50.180 --> 00:01:53.080
+Complexity theory is beyond the scope of this course,
+
+00:01:53.080 --> 00:01:55.080
+but it's an important part of software development.
+
+00:01:56.180 --> 00:01:58.430
+The stl has been around a long time.
+
+00:01:58.430 --> 00:02:01.930
+It's been tried and tested across many millions of lines of code.
+
+00:02:02.480 --> 00:02:07.040
+The stl is consistent, fast, type safe as well as extensible.
+
+00:02:08.700 --> 00:02:11.060
+The stl has three main components:
+
+00:02:11.060 --> 00:02:13.960
+containers, algorithms and iterators.
+
+00:02:14.760 --> 00:02:18.110
+Containers are collections of objects or primitive types.
+
+00:02:18.110 --> 00:02:22.560
+These include array, vector, deck, stack, set, map and more.
+
+00:02:23.440 --> 00:02:25.100
+Algorithms are functions for
+
+00:02:25.100 --> 00:02:27.980
+processing sequence of elements from containers.
+
+00:02:28.750 --> 00:02:32.110
+The stl has about 60 algorithms that can be used
+
+00:02:32.110 --> 00:02:34.610
+and extended to work with any type of data.
+
+00:02:35.160 --> 00:02:38.760
+These algorithms allow us to find a specific element in a container,
+
+00:02:38.760 --> 00:02:41.420
+find the max or min element in a container
+
+00:02:41.420 --> 00:02:44.320
+count, the number of elements in a container, accumulate
+
+00:02:44.320 --> 00:02:46.820
+or sum up the values of container elements,
+
+00:02:46.820 --> 00:02:51.020
+sort containers. And that's just a few examples,we can do much, much more.
+
+00:02:52.120 --> 00:02:57.110
+Finally, iterators generate the sequences of elements from the
+
+00:02:57.110 --> 00:02:58.710
+containers that the algorithms use.
+
+00:02:59.370 --> 00:03:03.370
+There are several types of iterators that allow us to generate sequences of elements
+
+00:03:03.370 --> 00:03:04.470
+in various ways.
+
+00:03:05.020 --> 00:03:09.520
+Note that one of the beautiful aspects of the design of the stl is that the containers,
+
+00:03:09.770 --> 00:03:14.020
+algorithms and iterators are designed totally independently from one another.
+
+00:03:14.020 --> 00:03:16.020
+Yet, they work together seamlessly.
+
+00:03:16.820 --> 00:03:20.180
+Also note that I said the stl has three main components.
+
+00:03:20.680 --> 00:03:24.240
+It also has a few other components such as functors and allocators,
+
+00:03:24.240 --> 00:03:26.240
+but we won't be covering those in this section.
+
+00:03:28.440 --> 00:03:30.940
+Before we get into the details of the stl,
+
+00:03:30.940 --> 00:03:34.540
+let's see a simple example of how we could use some of its functionality.
+
+00:03:35.340 --> 00:03:39.700
+We'll use a vector of integers for these examples since we're already familiar with vectors.
+
+00:03:40.200 --> 00:03:43.500
+In this example, I'm including the vector and algorithm header files.
+
+00:03:44.100 --> 00:03:48.900
+Vector allows me to work with vectors and algorithm allows me to use the stl algorithms.
+
+00:03:49.450 --> 00:03:51.750
+So let's create a simple vector of integers.
+
+00:03:51.750 --> 00:03:57.040
+We'll call it v, and initialize it to three integers 1 5 and 3.
+
+00:03:58.140 --> 00:04:00.140
+Now suppose we want to sort that vector.
+
+00:04:01.140 --> 00:04:03.940
+We can use the stl sort algorithm to do that,
+
+00:04:03.940 --> 00:04:07.440
+but the sort algorithm needs a sequence of objects to sort.
+
+00:04:07.840 --> 00:04:09.440
+That's where the iterator comes in.
+
+00:04:09.840 --> 00:04:13.840
+We provide the sequence using v.begin and v.. End
+
+00:04:14.090 --> 00:04:17.790
+this provides the sort algorithm with the integers in the vector v
+
+00:04:17.790 --> 00:04:22.040
+from the beginning element to the ending element, in other words, the entire vector.
+
+00:04:22.590 --> 00:04:23.490
+That's it.
+
+00:04:23.490 --> 00:04:26.490
+Now we can display the vector using a range-based for loop,
+
+00:04:26.490 --> 00:04:28.740
+and we can see the elements in the vector are now sorted.
+
+00:04:29.290 --> 00:04:31.950
+Pretty easy, right. The iterator we used
+
+00:04:31.950 --> 00:04:34.950
+produced a sequence of all the integers in the vector,
+
+00:04:34.950 --> 00:04:38.510
+but we could have easily provided only a subset if that's what we needed.
+
+00:04:39.170 --> 00:04:42.610
+So suppose we had a need to only sort the first half of a vector,
+
+00:04:42.610 --> 00:04:47.110
+we could modify the iterator to produce just the first half of the elements.
+
+00:04:48.100 --> 00:04:50.660
+Also we aren't restricted to using a vector.
+
+00:04:50.660 --> 00:04:54.660
+We can sort just about any stl container exactly the same way.
+
+00:04:55.160 --> 00:04:59.310
+Also, we can extend the sort algorithm to tell it exactly how to compare
+
+00:04:59.310 --> 00:05:00.810
+the elements when sorting.
+
+00:05:00.810 --> 00:05:03.810
+For example, maybe we have a vector of account objects,
+
+00:05:03.810 --> 00:05:05.310
+and we want to sort them by balance.
+
+00:05:07.010 --> 00:05:10.810
+Suppose that now we want to reverse the order of the integers in this vector.
+
+00:05:11.470 --> 00:05:14.470
+We can use the stl reverse algorithm to do that.
+
+00:05:14.830 --> 00:05:19.080
+The code is exactly the same, but we use the reverse function instead of sort.
+
+00:05:19.880 --> 00:05:23.680
+And when we display the vectors elements, we get 5 3 1, as we expect.
+
+00:05:24.480 --> 00:05:27.140
+Also, I should mention that behind the scenes,
+
+00:05:27.140 --> 00:05:31.640
+the ranged based for loop is itself an iterator. We'll talk more about that later.
+
+00:05:32.740 --> 00:05:36.340
+Now let's see a different type of algorithm function, the accumulate function.
+
+00:05:37.000 --> 00:05:39.000
+In this case, I want to add up
+
+00:05:39.000 --> 00:05:42.890
+all the integers in the vector and store the result in a variable called sum.
+
+00:05:43.690 --> 00:05:46.350
+To do this, I can use the accumulate function.
+
+00:05:46.850 --> 00:05:50.840
+Notice that the function has parameters. The first two are iterators:
+
+00:05:50.840 --> 00:05:52.840
+where do I start, where do I end.
+
+00:05:53.500 --> 00:05:57.750
+This produces the sequence of elements that the accumulate function will process.
+
+00:05:58.250 --> 00:06:00.910
+The third parameter 0, in this case,
+
+00:06:00.910 --> 00:06:05.810
+is what the running sum will start at, typically 0, but we can use any number.
+
+00:06:06.470 --> 00:06:09.370
+We want the type of this third parameter is very important.
+
+00:06:09.370 --> 00:06:11.870
+So if you want to sum integers, use 0.
+
+00:06:11.870 --> 00:06:15.070
+If you want to sum doubles, use 0.0
+
+00:06:15.070 --> 00:06:19.870
+the total is stored in sum and in this case we display 9, which is 1 plus 3 plus 5,
+
+00:06:19.870 --> 00:06:21.530
+the sum of the elements in the vector
+
+00:06:22.080 --> 00:06:25.960
+From these simple examples, you can see how powerful using containers,
+
+00:06:25.960 --> 00:06:27.620
+iterators and algorithms can be.
+
+00:06:29.110 --> 00:06:32.910
+Now let's talk about the various types of containers provided by the stl.
+
+00:06:33.270 --> 00:06:36.150
+We have three basic categories of containers:
+
+00:06:36.150 --> 00:06:39.750
+sequence, associative and container adapters.
+
+00:06:40.350 --> 00:06:43.710
+Sequence containers are containers that maintain the ordering
+
+00:06:43.710 --> 00:06:45.310
+of inserted elements.
+
+00:06:45.310 --> 00:06:48.310
+These containers include array, vector, list,
+
+00:06:48.310 --> 00:06:49.910
+forward list and deck.
+
+00:06:50.510 --> 00:06:53.610
+We'll discuss each of these containers in this section of the course.
+
+00:06:54.210 --> 00:06:57.810
+Associative containers insert elements in a predefined order
+
+00:06:57.810 --> 00:06:59.170
+or no order at all.
+
+00:06:59.830 --> 00:07:03.830
+For example, a set is a collection of elements where there are no duplicates,
+
+00:07:04.330 --> 00:07:06.930
+but there may be an order associated with it or not
+
+00:07:06.930 --> 00:07:09.930
+we've got the option to choose whatever one we want.
+
+00:07:09.930 --> 00:07:13.530
+A map is like a dictionary, where we associate a word
+
+00:07:13.530 --> 00:07:17.530
+with its definition. There are many variants of this category.
+
+00:07:17.530 --> 00:07:21.630
+So we can have ordered sets, unordered sets, sets that allow duplicates,
+
+00:07:21.630 --> 00:07:23.930
+maps that allow duplicates and so forth.
+
+00:07:24.290 --> 00:07:27.950
+These are very powerful data structures that are often underused.
+
+00:07:27.950 --> 00:07:30.720
+We'll talk about them in this section, and I'll show you how to use them.
+
+00:07:31.720 --> 00:07:34.080
+The last category container adapters
+
+00:07:34.080 --> 00:07:36.280
+are variations of the other containers.
+
+00:07:36.940 --> 00:07:41.540
+This category does not support iterators so they can't be used with stl algorithms,
+
+00:07:41.540 --> 00:07:46.420
+but they're so commonly used in programming that the stl provides support for them.
+
+00:07:46.420 --> 00:07:49.220
+These include the stack, the queue and the priority queue.
+
+00:07:51.920 --> 00:07:55.580
+In this slide, you can see that the stl has several types of iterators.
+
+00:07:56.240 --> 00:07:59.840
+Input iterators make container elements available to your program.
+
+00:08:00.240 --> 00:08:03.040
+Output iterators can iterate over a sequence
+
+00:08:03.040 --> 00:08:05.040
+and write an element to a container.
+
+00:08:05.590 --> 00:08:09.990
+Forward iterators can iterate forward over a sequence and can read or write any element.
+
+00:08:10.540 --> 00:08:13.340
+Bi-directional iterators are like forward iterators,
+
+00:08:13.340 --> 00:08:16.340
+but they can iterate over a sequence in both directions.
+
+00:08:16.740 --> 00:08:21.100
+And finally, random access iterators can use the subscript operator
+
+00:08:21.100 --> 00:08:24.700
+to directly access elements. We saw that with the vector class.
+
+00:08:25.950 --> 00:08:29.550
+Finally, we have the stl algorithms. As I mentioned previously,
+
+00:08:29.550 --> 00:08:31.910
+there are about 60 algorithms in the stl.
+
+00:08:32.570 --> 00:08:35.570
+And the algorithms are classified into two major groups:
+
+00:08:35.570 --> 00:08:38.450
+non-modifying and modifying algorithms.
+
+00:08:38.450 --> 00:08:42.450
+Depending on whether the algorithm modifies the sequence, it acts upon.
+
+00:08:43.050 --> 00:08:45.710
+As you can see, there is a lot to the stl,
+
+00:08:45.710 --> 00:08:48.910
+and we can't possibly cover it all in detail in a single section.
+
+00:08:48.910 --> 00:08:51.910
+In fact, entire books have been written about the stl.
+
+00:08:52.410 --> 00:08:54.710
+But by the time you get to the end of this section,
+
+00:08:54.710 --> 00:08:57.370
+you'll understand the fundamentals of the stl
+
+00:08:57.370 --> 00:09:00.870
+and be able to use stl containers, iterators and algorithms
+
+00:09:00.870 --> 00:09:02.370
+to solve real problems.
+
+00:09:02.920 --> 00:09:06.120
+But before we get to the stl, let's talk a little bit about generic
+
+00:09:06.120 --> 00:09:11.000
+programming and templates so that we can understand the design behind the stl.

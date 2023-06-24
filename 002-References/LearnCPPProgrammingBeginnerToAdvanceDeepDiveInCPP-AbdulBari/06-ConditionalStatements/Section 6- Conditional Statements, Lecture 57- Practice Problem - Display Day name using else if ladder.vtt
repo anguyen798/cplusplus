@@ -1,0 +1,193 @@
+WEBVTT
+
+0
+00:00.930 --> 00:06.580
+Let us write  a program to take a day number and display name. variablei will take and
+
+1
+00:06.600 --> 00:17.540
+And here I will say cout enter day number than cin day.
+
+2
+00:17.730 --> 00:19.660
+I'm reading the volume in this video.
+
+3
+00:20.310 --> 00:26.230
+Now if day no. is one I will say Monday or two tuesday so on.
+
+4
+00:26.250 --> 00:26.960
+So let us write.
+
+5
+00:27.000 --> 00:36.500
+If day is equals to 1 then cout Monday
+
+6
+00:39.000 --> 00:44.410
+and endl. else now again i have to write down the condition.
+
+7
+00:44.400 --> 00:48.200
+So what I did do is,  i will copied and past it here.
+
+8
+00:55.860 --> 01:00.540
+This is for second day that is tuesday.
+
+9
+01:01.500 --> 01:03.100
+I'll copy this entire thing
+
+10
+01:10.100 --> 01:11.210
+I'll paste here.
+
+11
+01:11.320 --> 01:13.210
+This is for Wednesday
+
+12
+01:15.930 --> 01:19.080
+third day then it is wednesday
+
+13
+01:23.480 --> 01:28.210
+fourth day that is Thursday.
+
+14
+01:31.680 --> 01:35.790
+Fifth day is Friday.
+
+15
+01:38.700 --> 01:42.820
+6th is Saturday.
+
+16
+01:43.740 --> 01:44.700
+And finally
+
+17
+01:47.520 --> 01:49.620
+7 day is Sunday
+
+18
+01:54.720 --> 02:02.760
+else cout  invalid day number.
+
+19
+02:03.020 --> 02:11.140
+So here is a code for taking a day number and displaying day name.
+
+20
+02:11.220 --> 02:12.530
+Let me run this program
+
+21
+02:17.890 --> 02:20.480
+enter day number, i will say day is 4.
+
+22
+02:20.650 --> 02:22.790
+So I go there as it does Thursday.
+
+23
+02:23.350 --> 02:32.700
+I'll run it again enter day number so I will enter day as 7.
+
+24
+02:32.920 --> 02:35.080
+So I got Sunday.
+
+25
+02:35.080 --> 02:42.140
+Here it is Sunday now run it again. enter day number as 10.
+
+26
+02:42.310 --> 02:45.740
+So I got a message that is invalid day.
+
+27
+02:46.300 --> 02:48.140
+It's working.
+
+28
+02:48.170 --> 02:53.710
+Now one interesting thing I will show you I'll put a breakpoint on line 9 so that it will run to line
+
+29
+02:53.710 --> 02:58.660
+number 8 then it will start debugging from line 9.
+
+30
+02:58.660 --> 03:02.660
+So I'll put the breakpoint run.
+
+31
+03:03.280 --> 03:05.470
+Now here it is asking day number.
+
+32
+03:05.470 --> 03:07.240
+I'll give the day no. as 7.
+
+33
+03:07.240 --> 03:09.190
+That is for Sunday.
+
+34
+03:09.220 --> 03:18.910
+Let us check what happens. see it has stop at line number 9 where day is one, now  if I press F 7 then it will
+
+35
+03:18.910 --> 03:19.680
+jump onto 
+
+36
+03:19.750 --> 03:28.090
+If-else see it has came to this line and checking whether day is it two then checking day 3
+
+37
+03:28.090 --> 03:33.430
+line then f7 it is checking here in this line.
+
+38
+03:33.430 --> 03:38.220
+That is the day 4 goes on to checking all the conditions.
+
+39
+03:38.230 --> 03:46.560
+Then next is the 5 and 6 then 7 Sunday, then it comes out.
+
+40
+03:46.600 --> 03:50.130
+See it has to check all the conditions to reach a 7.
+
+41
+03:50.320 --> 03:57.430
+So this code is little time consuming because for reaching 7 day it has to check all days from 1 to
+
+42
+03:57.430 --> 04:00.610
+7.
+
+43
+04:00.610 --> 04:02.110
+This type of code is called as
+
+44
+04:02.110 --> 04:08.650
+else-if ladder, now instead of using else if ladder we have a better syntax in C++ that is switch case
+
+45
+04:08.690 --> 04:14.310
+we can go for switch case so you can try this program by yourself.
+
+46
+04:14.320 --> 04:17.660
+Type the program and run and see.
+
+47
+04:17.740 --> 04:19.900
+I suggest you to make use of debugger.

@@ -1,0 +1,796 @@
+WEBVTT
+
+00:00:05.360 --> 00:00:09.260
+In this video, we'll learn about some of the commonly used c++
+
+00:00:09.260 --> 00:00:10.760
+primitive data types.
+
+00:00:11.160 --> 00:00:15.060
+These types are also sometimes called fundamental data types because they're implemented
+
+00:00:15.060 --> 00:00:17.420
+directly by the c++ language.
+
+00:00:18.520 --> 00:00:21.520
+The types we'll discuss in this video are the character types,
+
+00:00:21.520 --> 00:00:25.180
+the integer types which include both signed and unsigned integers,
+
+00:00:25.680 --> 00:00:28.040
+the floating point types and the Boolean type.
+
+00:00:28.840 --> 00:00:32.830
+It's important to keep in mind that unlike many other programming languages,
+
+00:00:32.830 --> 00:00:36.830
+the size and precision of c++'s primitive data types
+
+00:00:36.830 --> 00:00:41.230
+are largely dependent on the platform that you're working on in the compiler you're using.
+
+00:00:42.030 --> 00:00:44.630
+This means that as a c++ programmer,
+
+00:00:44.630 --> 00:00:48.130
+you need to be aware of your specific machine and understand how much storage
+
+00:00:48.130 --> 00:00:51.130
+is allocated for these types to effectively use them.
+
+00:00:52.130 --> 00:00:54.730
+The c++ include file climits
+
+00:00:54.730 --> 00:00:57.530
+contains information about the size and precision
+
+00:00:57.530 --> 00:01:00.030
+of the data types for your specific compiler.
+
+00:01:02.830 --> 00:01:06.820
+As you know, computers store information using a binary representation,
+
+00:01:06.820 --> 00:01:09.020
+which consists of zeros and ones.
+
+00:01:09.720 --> 00:01:12.920
+And these fundamental type sizes are expressed in bits.
+
+00:01:13.620 --> 00:01:18.220
+The more bits allocated to a type, the more unique values that can be represented.
+
+00:01:18.580 --> 00:01:21.780
+Also the more bits, the more storage that's necessary
+
+00:01:21.780 --> 00:01:23.180
+to represent that type in memory.
+
+00:01:24.080 --> 00:01:28.480
+In this table, you can see how many values can be represented in a given number of bits.
+
+00:01:28.980 --> 00:01:31.980
+The formula used to calculate these values is 2,
+
+00:01:31.980 --> 00:01:33.980
+raised to the number of bits power.
+
+00:01:34.480 --> 00:01:38.580
+So we can store 256 distinct values in 8 bits.
+
+00:01:38.580 --> 00:01:42.680
+65,536 distinct values in 16 bits.
+
+00:01:42.930 --> 00:01:46.230
+Over 4 billion distinct values in 32 bits.
+
+00:01:46.230 --> 00:01:50.430
+And over 18 billion, billion distinct values in 32 bits.
+
+00:01:51.130 --> 00:01:54.430
+Now let's take a look at the specific primitive types one at a time.
+
+00:01:56.030 --> 00:01:59.630
+The c++ character data type is used to represent characters
+
+00:01:59.630 --> 00:02:02.230
+such as the letter a, x and so forth.
+
+00:02:03.130 --> 00:02:06.130
+The character data type is often implemented as eight bits,
+
+00:02:06.130 --> 00:02:10.330
+which means it can represent a maximum of 256 characters.
+
+00:02:11.130 --> 00:02:15.130
+This is plenty to represent the alphabets for many spoken languages.
+
+00:02:15.130 --> 00:02:18.490
+However, some spoken languages have thousands of characters.
+
+00:02:18.490 --> 00:02:22.490
+And in many cases, multiple symbols are combined to form single characters.
+
+00:02:23.190 --> 00:02:27.550
+In order to support these languages, c++ supports a wider character type
+
+00:02:27.550 --> 00:02:30.850
+that can be as large as necessary to represent these characters.
+
+00:02:31.650 --> 00:02:36.050
+Unicode is a common standard used to represent multiple character sets for any language.
+
+00:02:36.410 --> 00:02:38.710
+When we work with characters in this course,
+
+00:02:38.710 --> 00:02:42.610
+we'll use the char data type since it easily supports the Latin character set.
+
+00:02:43.910 --> 00:02:47.210
+C++ also supports the integer data types.
+
+00:02:47.210 --> 00:02:49.710
+Integers are used to represent whole numbers,
+
+00:02:49.710 --> 00:02:52.710
+both signed and unsigned integers are supported,
+
+00:02:53.110 --> 00:02:56.470
+there are many variants of the integer data type, let's take a look at some of them.
+
+00:02:57.830 --> 00:03:01.430
+The following tables show the c++ integer data types for
+
+00:03:01.430 --> 00:03:03.430
+both signed and unsigned integers.
+
+00:03:04.330 --> 00:03:06.330
+In addition to those shown in the table,
+
+00:03:06.330 --> 00:03:10.730
+it's possible to store both signed and unsigned integers in the character data type.
+
+00:03:11.530 --> 00:03:15.730
+Notice that some of the keywords in this table are bold and others are italicized.
+
+00:03:16.130 --> 00:03:18.730
+Also typical sizes are included in the table.
+
+00:03:20.610 --> 00:03:23.410
+For example, if you want to declare a signed integer
+
+00:03:23.410 --> 00:03:25.710
+you don't need to use the signed keyword
+
+00:03:25.710 --> 00:03:28.010
+since by default integers are signed.
+
+00:03:28.410 --> 00:03:32.110
+Similarly, if you want an integer type that stores very large numbers,
+
+00:03:32.110 --> 00:03:34.610
+you can simply declare the type as long, long.
+
+00:03:34.970 --> 00:03:37.570
+And you'll get a signed long, long integer.
+
+00:03:38.070 --> 00:03:41.570
+If you want unsigned integers that is integers that are 0
+
+00:03:41.570 --> 00:03:45.770
+or positive values only, then you're required to use the unsigned keyword.
+
+00:03:46.270 --> 00:03:49.470
+I know this may seem a little confusing with all the optional keywords,
+
+00:03:49.470 --> 00:03:53.370
+but it's not so bad if you just think that by default all integers are signed.
+
+00:03:54.370 --> 00:03:57.670
+I know what you're thinking. Which ones of these do i use in my application?
+
+00:03:57.970 --> 00:03:59.970
+And the answer is it depends.
+
+00:03:59.970 --> 00:04:02.570
+If you want an integer variable, it stores ages
+
+00:04:02.570 --> 00:04:04.870
+then you could use an unsigned int or even an int.
+
+00:04:05.230 --> 00:04:09.030
+If you want an integer to represent the number of kilometers between the planets,
+
+00:04:09.030 --> 00:04:11.630
+then you probably want to use an unsigned long, long.
+
+00:04:12.330 --> 00:04:15.330
+For most applications, using int is perfectly acceptable.
+
+00:04:15.830 --> 00:04:19.530
+But you do need to keep in mind the limitations especially when you perform
+
+00:04:19.530 --> 00:04:22.930
+math on variables and store results in other variables
+
+00:04:22.930 --> 00:04:26.430
+since the results may not fit into the variable you're saving to.
+
+00:04:26.430 --> 00:04:28.130
+This could cause an overflow.
+
+00:04:28.130 --> 00:04:32.590
+We'll look at a specific example of an overflow and live code at the end of this video.
+
+00:04:34.090 --> 00:04:36.950
+C++ also supports floating point types.
+
+00:04:37.750 --> 00:04:41.250
+These are used to represent non-integer numbers, such as real numbers,
+
+00:04:41.250 --> 00:04:44.250
+numbers like 1.2, 0.5 and pi.
+
+00:04:44.650 --> 00:04:47.950
+It's important to understand that computers have finite storage
+
+00:04:47.950 --> 00:04:51.940
+and many real numbers have an infinite number of digits after the decimal point.
+
+00:04:51.940 --> 00:04:54.140
+Pi is a perfect example of this.
+
+00:04:55.040 --> 00:04:58.840
+In these cases, computers store an approximation of the real number.
+
+00:04:58.840 --> 00:05:02.440
+There's no way the computer can store numbers such as pi precisely.
+
+00:05:03.240 --> 00:05:07.570
+Floating point numbers are represented internally by the computer as signed numbers
+
+00:05:07.570 --> 00:05:09.170
+with a mantissa and an exponent.
+
+00:05:09.830 --> 00:05:12.730
+You may remember your scientific notation from school,
+
+00:05:12.730 --> 00:05:15.830
+1.234 times 10 to the seventh power.
+
+00:05:15.830 --> 00:05:17.430
+That's the way they're stored internally.
+
+00:05:18.230 --> 00:05:22.530
+This isn't something you need to worry about since it's handled automatically internally.
+
+00:05:22.530 --> 00:05:25.130
+But it's important to know that these are approximations.
+
+00:05:26.010 --> 00:05:30.410
+There are three types of floating point numbers. Float, double and long double.
+
+00:05:30.410 --> 00:05:33.710
+Each has varying precision and size depending on the compiler.
+
+00:05:34.510 --> 00:05:37.510
+Note that long double can store very, very small
+
+00:05:37.510 --> 00:05:39.810
+and very, very large floating point numbers.
+
+00:05:40.610 --> 00:05:43.210
+The last primitive we'll learn about is the Boolean type.
+
+00:05:44.410 --> 00:05:47.710
+The Boolean data type is used to represent true and false values.
+
+00:05:48.370 --> 00:05:51.370
+In c++, 0 is false
+
+00:05:51.370 --> 00:05:54.370
+and any non-zero value is true.
+
+00:05:54.620 --> 00:05:57.920
+C++ also includes the true and false keywords
+
+00:05:57.920 --> 00:05:59.620
+that are often used with the Boolean type.
+
+00:06:00.620 --> 00:06:04.620
+As you can imagine, Boolean types are used whenever you need to know if something changes state.
+
+00:06:04.620 --> 00:06:08.420
+For example, game over, key pressed, is invincible.
+
+00:06:08.420 --> 00:06:11.720
+These are all good examples of using the Boolean data type
+
+00:06:11.720 --> 00:06:14.220
+since their values can be either true or false.
+
+00:06:15.220 --> 00:06:19.020
+Great. Now let's head over to code line and see some of these primitive types in action.
+
+00:06:20.520 --> 00:06:22.520
+So now I'm in the CodeLite IDE,
+
+00:06:22.520 --> 00:06:27.020
+and I've created a project called primitive types that's in the section 6 workspace.
+
+00:06:27.520 --> 00:06:29.320
+In this c++ file,
+
+00:06:29.320 --> 00:06:33.120
+I'm going to go over some examples of using the primitive types.
+
+00:06:33.120 --> 00:06:37.520
+We'll start with characters. We'll do integers and floating point numbers and then at the end, we'll do Booleans.
+
+00:06:37.520 --> 00:06:40.820
+And I'll also show you an example of an overflow so you can see
+
+00:06:40.820 --> 00:06:43.020
+the typical behavior you get with those.
+
+00:06:43.020 --> 00:06:46.220
+I've written the code ahead of time, and I've commented out a lot of it.
+
+00:06:46.220 --> 00:06:49.220
+And what I'll do is I'll uncomment and run pieces of it at a time,
+
+00:06:49.220 --> 00:06:50.520
+so you can see it build.
+
+00:06:50.520 --> 00:06:54.080
+So the first thing we want to do is take a look at this first example here.
+
+00:06:54.080 --> 00:06:57.380
+This is a good example of using the character data type.
+
+00:06:57.380 --> 00:07:01.780
+My middle initial is a J. So the variable name is called middle initial,
+
+00:07:01.980 --> 00:07:05.480
+and it's of character data type. So it can hold a single character.
+
+00:07:06.140 --> 00:07:09.340
+The way that c++ represents single characters
+
+00:07:09.340 --> 00:07:12.000
+is with single quotes around the J do.
+
+00:07:12.000 --> 00:07:15.660
+Not put double quotes there that would make it a string and you'll get an error.
+
+00:07:16.160 --> 00:07:18.260
+So what I'm doing here is I'm simply
+
+00:07:18.260 --> 00:07:21.060
+initializing the middle initial variable to J
+
+00:07:21.060 --> 00:07:24.260
+and then displaying it right here in the output statement.
+
+00:07:24.260 --> 00:07:26.260
+So I'll build and run
+
+00:07:27.360 --> 00:07:29.360
+and I'm just going to click here remember so it doesn't ask me
+
+00:07:29.360 --> 00:07:31.960
+my choice all the time, and I just want to build and execute.
+
+00:07:33.960 --> 00:07:38.360
+You can see here it says my middle initial is J. Exactly what I expect.
+
+00:07:39.160 --> 00:07:42.160
+Okay. So now let me uncomment the integer types here.
+
+00:07:42.760 --> 00:07:47.160
+The way that you can comment and uncomment lines very easily is just select the lines you're interested
+
+00:07:47.860 --> 00:07:52.260
+in and just press ctrl / or command / on a mac,
+
+00:07:52.260 --> 00:07:56.060
+and that will toggle between a comment and non-comment.
+
+00:07:56.310 --> 00:07:57.810
+Okay. So in this case,
+
+00:07:58.610 --> 00:08:01.610
+I've created a variable called the exam score,
+
+00:08:02.410 --> 00:08:04.290
+and I'm initializing it to 55.
+
+00:08:04.290 --> 00:08:07.590
+Now exam score is an unsigned short int.
+
+00:08:08.190 --> 00:08:12.590
+Remember, we have to say unsigned if we want our variables to be unsigned.
+
+00:08:12.590 --> 00:08:15.190
+But i don't have to say int, I can simply say short.
+
+00:08:15.190 --> 00:08:18.190
+So this is the same as saying unsigned short exam score.
+
+00:08:19.190 --> 00:08:23.590
+Okay. So I'm initializing that to 55. And again I'll build and run.
+
+00:08:24.950 --> 00:08:29.250
+And now you can see my middle initial still J, and my exam score was 55.
+
+00:08:30.270 --> 00:08:33.570
+Okay. In this case, we've got another number,
+
+00:08:33.930 --> 00:08:37.930
+and I'll uncomment that out. The number of countries represented in my meeting
+
+00:08:37.930 --> 00:08:38.930
+were 65,
+
+00:08:38.930 --> 00:08:42.590
+and I'm initializing it. This is a simple integer by default. It's going to be signed.
+
+00:08:43.250 --> 00:08:47.450
+And here it's going to say there were 65 countries represented in my meeting.
+
+00:08:48.050 --> 00:08:52.040
+So let me run that again. I'm pressing ctrl F5 on windows
+
+00:08:52.040 --> 00:08:53.440
+just to use the shortcut.
+
+00:08:54.640 --> 00:08:58.000
+And you can see here there were 65 countries represented in my meeting.
+
+00:08:59.360 --> 00:09:01.860
+Now in this case, we've got a much larger number.
+
+00:09:02.660 --> 00:09:04.660
+Let me uncomment these two lines out.
+
+00:09:05.960 --> 00:09:09.320
+So now I've got people in Florida. That's my variable name.
+
+00:09:09.320 --> 00:09:13.980
+This is the state I live in, and there are 20,610,000 people
+
+00:09:14.180 --> 00:09:16.680
+living in Florida the last i just checked on google.
+
+00:09:16.680 --> 00:09:18.980
+So I'm defining this as a long.
+
+00:09:19.780 --> 00:09:22.980
+I'm hoping that, that fits in the in the long. It's a pretty big number.
+
+00:09:22.980 --> 00:09:25.480
+I'm pretty sure it does. Let's try that.
+
+00:09:25.780 --> 00:09:30.180
+So I'll press ctrl F5 again, we'll run it, and you can see there are about
+
+00:09:30.180 --> 00:09:33.060
+20,610,000 people in Florida.
+
+00:09:34.360 --> 00:09:36.460
+Now in this case, how about number of people on earth.
+
+00:09:37.460 --> 00:09:41.260
+I'll uncomment those two lines. And you can see my variable name is people on earth
+
+00:09:41.860 --> 00:09:45.520
+and there are about 7,600,000,000 people on earth.
+
+00:09:45.520 --> 00:09:48.960
+Now something that's interesting is as these numbers get bigger and bigger and bigger.
+
+00:09:48.960 --> 00:09:52.260
+They're hard to read and. It's really easy to forget zeros and so forth.
+
+00:09:52.260 --> 00:09:55.060
+So the c++14 standard
+
+00:09:55.060 --> 00:09:59.360
+allows you to use those little tick marks right there. You can put them anywhere you want. It really doesn't care.
+
+00:09:59.560 --> 00:10:03.460
+Just to make it easier for you to read it strips them out it just creates the number.
+
+00:10:03.460 --> 00:10:05.670
+If this doesn't compile on your end
+
+00:10:05.670 --> 00:10:07.870
+most likely you're not using the c++
+
+00:10:07.870 --> 00:10:10.870
+14 compiler. You're using the c++11 compiler.
+
+00:10:11.070 --> 00:10:14.870
+You could set it to c++14 or you could just get rid of these little tick marks
+
+00:10:14.870 --> 00:10:19.070
+to make it compile. So when I run this, you'll see something interesting happen.
+
+00:10:19.430 --> 00:10:21.130
+I'm pressing ctrl F5 again.
+
+00:10:21.930 --> 00:10:25.830
+Notice I'm getting an error. The error says, error narrowing conversion.
+
+00:10:26.830 --> 00:10:31.330
+It's trying to fit that number into a long, and it doesn't
+
+00:10:31.330 --> 00:10:32.230
+fit.
+
+00:10:32.230 --> 00:10:36.330
+This is one of the benefits that I mentioned about using the list initialization
+
+00:10:36.330 --> 00:10:38.330
+right here with the curly braces.
+
+00:10:38.330 --> 00:10:42.230
+Notice what happens if I did but actually you know what let me just run this first
+
+00:10:42.930 --> 00:10:46.920
+as a long, long which is really what I want because otherwise it's not going to fit.
+
+00:10:47.520 --> 00:10:50.220
+So now I've got my long, long. And I'm going to build and run this.
+
+00:10:51.620 --> 00:10:55.220
+And you can see there are about seven point. You can see the number is correct.
+
+00:10:55.220 --> 00:10:56.220
+Okay.
+
+00:10:56.220 --> 00:10:59.520
+But if I did a regular initialization
+
+00:10:59.520 --> 00:11:03.420
+like a c style initialization with an equal sign here or an assignment statement
+
+00:11:03.420 --> 00:11:04.520
+something like that.
+
+00:11:05.880 --> 00:11:09.540
+And we'll go back to long because we know it's not going to fit in along.
+
+00:11:11.140 --> 00:11:14.740
+And I'll build and run again, look what prints out.
+
+00:11:14.940 --> 00:11:17.940
+There are about -98999 people on earth.
+
+00:11:17.940 --> 00:11:20.140
+That's an example of an overflow.
+
+00:11:20.140 --> 00:11:22.440
+But you also notice that we didn't get an error.
+
+00:11:23.240 --> 00:11:26.540
+That's one of the benefits of using the list initialization.
+
+00:11:26.540 --> 00:11:30.660
+If I use listeners initialization, it will catch those problems for me
+
+00:11:30.660 --> 00:11:32.960
+at compile time, which is really, really nice.
+
+00:11:33.460 --> 00:11:35.660
+So again, I'll compile here.
+
+00:11:39.260 --> 00:11:43.360
+Oh ctrl F5, boom there's the error. I know I've got a problem. I can fix it.
+
+00:11:43.960 --> 00:11:45.260
+So I'll make this a long, long.
+
+00:11:46.860 --> 00:11:51.760
+Okay. So hopefully that makes sense. Always use that list initialization syntax. It's so much better.
+
+00:11:52.760 --> 00:11:56.760
+In this case, I want the distance to alpha Centauri. That's pretty far. This is,
+
+00:11:56.760 --> 00:12:00.760
+I believe, in kilometers, yep. It's in kilometers. That's what my output statement says.
+
+00:12:00.760 --> 00:12:04.560
+I'll uncomment these two lines. And let's run this.
+
+00:12:07.550 --> 00:12:11.750
+And you can see that the distance to Alpha Centauri is. And that's my number. That's correct.
+
+00:12:13.750 --> 00:12:17.310
+Okay. So that's a good example of an overflow. I'll show you another example of an overflow
+
+00:12:17.310 --> 00:12:21.810
+at the end of this source code that may not be as obvious as this.
+
+00:12:22.810 --> 00:12:26.110
+Okay. So here's a couple of examples using floating point types.
+
+00:12:26.110 --> 00:12:29.110
+Remember, these are real numbers. These are numbers with decimal points.
+
+00:12:29.110 --> 00:12:33.470
+So in this case, my car payment is $401.23.
+
+00:12:33.970 --> 00:12:35.330
+I can uncomment this out.
+
+00:12:36.690 --> 00:12:41.090
+Obviously, if I try to store $401.23 into an integer,
+
+00:12:41.090 --> 00:12:44.590
+I've got a problem because the integer would only hold the whole number.
+
+00:12:44.590 --> 00:12:48.590
+So the $0.23 would get truncated off and i could have a problem. Okay.
+
+00:12:48.590 --> 00:12:50.590
+So in this case. Let's run this.
+
+00:12:51.390 --> 00:12:55.590
+And now you can see that my car payment here is $401.23.
+
+00:12:57.690 --> 00:13:02.090
+Okay. If I want to store a larger number, I could use a double.
+
+00:13:03.340 --> 00:13:05.460
+In this case, I'm just storing pi.
+
+00:13:05.460 --> 00:13:08.560
+And this guy, I'm hard coding pi to be 3.14159.
+
+00:13:08.560 --> 00:13:12.560
+It could be obviously much, much longer. And in this case, it's a double.
+
+00:13:14.460 --> 00:13:17.460
+And you can see that there's pi 3.14159.
+
+00:13:19.760 --> 00:13:24.160
+I can also store very large and very small numbers using long doubles.
+
+00:13:24.660 --> 00:13:29.060
+So in this case, I'm storing 2.7 times 10 to the 120th power.
+
+00:13:29.360 --> 00:13:33.610
+That's a very large number. And I'm going to store that into this large amount variable,
+
+00:13:33.610 --> 00:13:36.310
+and then I'm going to display it. So let's build and run.
+
+00:13:37.310 --> 00:13:39.110
+And you can see 2.7
+
+00:13:39.110 --> 00:13:42.410
+times 10 to the 120th power is a very big number.
+
+00:13:42.410 --> 00:13:44.410
+You can see it's actually storing that correctly.
+
+00:13:45.410 --> 00:13:49.610
+The last one we'll look at is the Boolean type. The Boolean type is a true false value.
+
+00:13:49.810 --> 00:13:51.310
+So in this case,
+
+00:13:51.910 --> 00:13:55.310
+I'll comment that out. You can see I've got a variable called game over.
+
+00:13:55.310 --> 00:13:58.310
+Let me use the correct_style here.
+
+00:13:59.210 --> 00:14:02.510
+I've got a variable called game over/and in this case,
+
+00:14:04.210 --> 00:14:08.090
+you could see that I've been working on a project that's using camel case,
+
+00:14:08.090 --> 00:14:12.090
+muscle memory kicks in. So in this case, I've got a variable
+
+00:14:12.090 --> 00:14:13.090
+called game over,
+
+00:14:13.490 --> 00:14:15.490
+and I'm initializing it to false.
+
+00:14:15.790 --> 00:14:18.390
+And then I'm saying the value of game over is,
+
+00:14:18.390 --> 00:14:21.590
+and you might expect that this would print out faults here
+
+00:14:21.590 --> 00:14:26.050
+but it doesn't print up vaults. What it does is it prints out zero.
+
+00:14:26.250 --> 00:14:29.650
+Because as far as c++ is concerned zero is false.
+
+00:14:31.150 --> 00:14:32.650
+If it was true, it would print out a one.
+
+00:14:33.450 --> 00:14:36.650
+Now here's an example of an overflow that's not so obvious,
+
+00:14:36.650 --> 00:14:37.950
+and I'll comment that out.
+
+00:14:38.850 --> 00:14:41.620
+Here, I'm so -- I have a variable called value one,
+
+00:14:41.620 --> 00:14:45.220
+and I've got another variable called value two. They're both short integers.
+
+00:14:45.720 --> 00:14:49.220
+And I'm assigning 30000 to this one and 1000 to this one.
+
+00:14:49.820 --> 00:14:52.320
+Those numbers will fit in those variables.
+
+00:14:53.320 --> 00:14:55.680
+But then I'm going to create another variable called sum,
+
+00:14:56.380 --> 00:14:59.380
+and I've got value one times value two.
+
+00:14:59.580 --> 00:15:03.980
+Now I know that this the product of those I guess I should have called it product huh,
+
+00:15:04.180 --> 00:15:05.780
+let me call it product just to be
+
+00:15:06.980 --> 00:15:08.280
+a little bit more correct here,
+
+00:15:10.280 --> 00:15:11.160
+there we go.
+
+00:15:11.160 --> 00:15:13.960
+So I know that the product of those two numbers
+
+00:15:13.960 --> 00:15:16.960
+does not fit in a short. So let's compile this,
+
+00:15:19.960 --> 00:15:24.660
+and you can see that the sum of 30000 and 1000 is some
+
+00:15:24.660 --> 00:15:25.650
+negative number.
+
+00:15:25.650 --> 00:15:28.150
+Obviously, that's an overflow error.
+
+00:15:28.150 --> 00:15:30.750
+Be very careful with these things. Make
+
+00:15:30.750 --> 00:15:36.050
+sure those two pieces each will individually fit in the shorts but the product certainly can't.
+
+00:15:36.550 --> 00:15:39.910
+Okay. But notice the compiler is helping me. Here the compiler comparison warning.
+
+00:15:40.410 --> 00:15:43.410
+You've got potentially a narrowing conversion here.
+
+00:15:43.710 --> 00:15:48.010
+So don't ignore those warnings as the compilers do a pretty good job about
+
+00:15:48.010 --> 00:15:50.010
+predicting problems that can happen.
+
+00:15:50.890 --> 00:15:54.190
+Okay. So that concludes this video. You can see some simple examples of
+
+00:15:54.190 --> 00:15:56.490
+creating variables, initializing variables,
+
+00:15:56.490 --> 00:15:59.090
+using some of c++ primitive types.

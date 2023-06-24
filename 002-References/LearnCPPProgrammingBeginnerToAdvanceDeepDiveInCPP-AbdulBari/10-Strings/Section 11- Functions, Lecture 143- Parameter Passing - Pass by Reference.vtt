@@ -1,0 +1,321 @@
+WEBVTT
+
+0
+00:00.310 --> 00:03.630
+Next is call by reference.
+
+1
+00:03.780 --> 00:04.800
+See if you remember.
+
+2
+00:04.800 --> 00:09.830
+References are a nickname to a variable existing variable.
+
+3
+00:10.500 --> 00:14.110
+So let us look at called by reference mechanism.
+
+4
+00:14.240 --> 00:21.780
+See this code is for call by value only as it is call by value code Only, you can read it once, its same.
+
+5
+00:22.190 --> 00:28.590
+Now I will make changes in this one to make it as a code for call by reference.
+
+6
+00:28.920 --> 00:36.540
+Let us see the changes and the changes are very minor,  very minor changes are there. see at the place of call.
+
+7
+00:36.570 --> 00:40.170
+We don't write anything you remember and call by address,
+
+8
+00:40.180 --> 00:47.980
+We were writting & here but we don't write anything in call by reference and here in call by
+
+9
+00:48.000 --> 00:48.940
+address.
+
+10
+00:48.950 --> 00:51.850
+We were writing stars but in call by reference.
+
+11
+00:51.850 --> 00:59.310
+We write &s here and in call by address we were filling stars here.
+
+12
+00:59.320 --> 01:00.290
+No stars.
+
+13
+01:00.300 --> 01:01.910
+Nothing as it is.
+
+14
+01:02.650 --> 01:09.010
+So it's more like the syntax, syntax of the way of writing is same as call by value only.
+
+15
+01:09.010 --> 01:15.910
+Only the changes at the parameters we write & and they become references so the syntax is very
+
+16
+01:15.910 --> 01:16.650
+simple.
+
+17
+01:16.720 --> 01:18.750
+More like call by value only.
+
+18
+01:18.850 --> 01:23.430
+But now this mechanism can modify the actual parameters.
+
+19
+01:23.470 --> 01:32.220
+It works similar to call by address so unlike call by value where the changes cannot be done in
+
+20
+01:32.220 --> 01:36.980
+actual parameters but in call by reference changes can be done in this parameters.
+
+21
+01:37.010 --> 01:38.630
+So let's see how it works.
+
+22
+01:39.080 --> 01:44.000
+I will show the execution, the main function start, the moment main function start.
+
+23
+01:44.010 --> 01:52.190
+The variables are created for main and this is X, having value of 10 and Y having value 20.
+
+24
+01:52.190 --> 01:57.590
+This is for main. now swap function is called.
+
+25
+01:57.650 --> 02:04.070
+This function is called and this is having three variables  that is A B and temp. but what are A and B
+
+26
+02:04.070 --> 02:08.050
+they are not separate variable they are references to x.
+
+27
+02:08.090 --> 02:14.330
+So this itself is A  and this itself is B and it is having temp also.
+
+28
+02:14.410 --> 02:20.530
+So how is this possible that function can directly access the variables of this function.
+
+29
+02:20.540 --> 02:23.370
+It's not possible it's not possible.
+
+30
+02:24.410 --> 02:26.330
+Then how it happens.
+
+31
+02:26.330 --> 02:32.270
+see We already know that one function cannot access the variables of another  function at all but here
+
+32
+02:32.270 --> 02:36.370
+we are saying that, that swap function will call this as a.
+
+33
+02:36.360 --> 02:38.230
+And this as B, how it is possible.
+
+34
+02:38.540 --> 02:45.560
+So when you use a call by reference mechanism watch carefully what happens when the machine code is generated.
+
+35
+02:45.560 --> 02:52.700
+Machine code will not be generated like this but the machine code looks like this main function and
+
+36
+02:52.700 --> 02:58.600
+the main function is having it code and in this place that is where the swap function is called
+
+37
+02:59.060 --> 03:01.800
+The machine code of swap function will be copied.
+
+38
+03:01.880 --> 03:04.420
+So this piece of code is for swap function.
+
+39
+03:04.430 --> 03:10.460
+So this means that whenever you use call by reference mechanism it will not generate separate piece
+
+40
+03:10.460 --> 03:11.650
+of machine code.
+
+41
+03:11.810 --> 03:14.970
+It will copy the machine code at the place of function call.
+
+42
+03:15.170 --> 03:17.670
+So this swap is not a seperate function.
+
+43
+03:17.760 --> 03:20.360
+It's a part of Main function only.
+
+44
+03:20.660 --> 03:22.260
+Yes exactly.
+
+45
+03:22.280 --> 03:23.530
+It's the part of main function.
+
+46
+03:23.540 --> 03:27.780
+So that same part of main function is calling this as A.
+
+47
+03:27.800 --> 03:28.810
+And this as to B.
+
+48
+03:28.850 --> 03:29.870
+So there is no harm.
+
+49
+03:29.990 --> 03:34.630
+So there is no activation record created and actually function is not called.
+
+50
+03:34.830 --> 03:40.670
+There is no function at all in machine code, in source code we wrote function but in machine code there
+
+51
+03:40.670 --> 03:42.330
+is no function.
+
+52
+03:42.380 --> 03:43.820
+Then what about this temp,
+
+53
+03:43.820 --> 03:49.740
+Temp will also be created for time being inside the activision record of Main function only.
+
+54
+03:50.060 --> 03:56.630
+And this will be there as long as this piece of swap code is executing, then that will access temp assign
+
+55
+03:56.620 --> 03:59.950
+A, temp assign B and B assign temp, so of value are interchanged
+
+56
+03:59.960 --> 04:05.060
+This becomes 20 and this becomes 10 with the help of this temp that's it.
+
+57
+04:05.060 --> 04:11.500
+So this is the greatness of C++ that is no other languages having this type of feature that basically
+
+58
+04:11.510 --> 04:15.780
+whenever you write a separate function a separate piece of machine code will be generated.
+
+59
+04:15.920 --> 04:20.870
+But in C++ that piece of machine code can be replaced at the place of function call.
+
+60
+04:21.650 --> 04:23.770
+So when do you call call by reference.
+
+61
+04:23.780 --> 04:27.350
+So whenever you want the actual parameters should be modified.
+
+62
+04:27.350 --> 04:28.470
+This is one.
+
+63
+04:28.580 --> 04:34.560
+Second point you should not write any complex logic inside the function if you are using call by reference.
+
+64
+04:34.580 --> 04:37.870
+Even if one parameters call by reference you should be careful.
+
+65
+04:37.890 --> 04:43.120
+Reason this code has to be copied at this place whatever the function is called if you call multiple
+
+66
+04:43.130 --> 04:45.720
+times then multiple times copying will be done.
+
+67
+04:45.740 --> 04:50.210
+So when the code is being copied, this is the job of a compiler to copy the code there.
+
+68
+04:50.240 --> 04:53.940
+So if the code is complex it may not be able to do it perfectly.
+
+69
+04:54.140 --> 04:59.900
+So usually you find warnings if you're using loops inside this type of function.
+
+70
+04:59.900 --> 05:04.720
+when you use call by reference avoid using loop one or two lines of statement is sufficient.
+
+71
+05:04.780 --> 05:11.330
+Now one more thing I can tell you one more point here that if the piece of machine code of a function
+
+72
+05:11.330 --> 05:18.350
+is copied at the place of function call like this then such functions are called as inline functions
+
+73
+05:18.350 --> 05:19.640
+in C++.
+
+74
+05:19.690 --> 05:26.320
+when you use a call by reference function automatically becomes in-line function.
+
+75
+05:26.540 --> 05:30.120
+So we also have a topic called in-line function separately, we will  study about it later.
+
+76
+05:30.800 --> 05:32.940
+So these are the three parameter passing method.
+
+77
+05:33.230 --> 05:37.520
+I will take the same example and sure you practically how they are different from one another.
+
+78
+05:38.390 --> 05:43.460
+And also you can practice this one, and slowly we will be using them in the programming you'll be getting
+
+79
+05:43.460 --> 05:45.710
+more and more idea of where to use them.

@@ -1,0 +1,271 @@
+WEBVTT
+
+00:00:05.300 --> 00:00:09.400
+Okay. In this video what I want to do is read a poem from a text file
+
+00:00:09.400 --> 00:00:11.400
+and just display it out to the console.
+
+00:00:11.800 --> 00:00:14.300
+And we're going to use getline to do that.
+
+00:00:14.300 --> 00:00:19.200
+So I'm in the section 19 workspace, in the readfile_3 project.
+
+00:00:19.800 --> 00:00:23.200
+And what I've done here is I've got a poem already and I created
+
+00:00:23.200 --> 00:00:26.560
+a file called poem.text, just like we did before.
+
+00:00:27.060 --> 00:00:30.060
+And this is Shakespeare's sonnet 18 poem.
+
+00:00:30.060 --> 00:00:33.960
+And you can see it's 14 lines. And what I want to do is read
+
+00:00:33.960 --> 00:00:36.560
+each line and display it out to the console.
+
+00:00:36.560 --> 00:00:39.660
+Now if we try to do this with the extraction operator
+
+00:00:39.660 --> 00:00:41.860
+reading one of these words at a time.
+
+00:00:41.860 --> 00:00:45.060
+It's much trickier because when do we hit the end of line,
+
+00:00:45.060 --> 00:00:47.060
+we really don't want to deal with any of that.
+
+00:00:47.060 --> 00:00:50.060
+The simplest way to do it is just to read one line at a time
+
+00:00:50.060 --> 00:00:54.060
+and then display that line right out. So let me show you where the main is.
+
+00:00:55.720 --> 00:00:59.520
+This is about as simple as it gets. I've got iostream,
+
+00:00:59.520 --> 00:01:01.020
+fstream included.
+
+00:01:01.220 --> 00:01:05.320
+You can see here I've created my infile. And I'm opening
+
+00:01:05.620 --> 00:01:09.220
+poem.txt in my parents directory, which is exactly
+
+00:01:09.220 --> 00:01:11.220
+where I want it to be in CodeLite.
+
+00:01:11.720 --> 00:01:15.920
+If the file is not able to be opened I'm displaying an error, again, and I'm out of here.
+
+00:01:16.420 --> 00:01:21.220
+And I'm closing the file at the end. So what I need to do here is simply process that file.
+
+00:01:21.720 --> 00:01:25.720
+So how do we do this, it's really just two lines of code. It's really, really straightforward.
+
+00:01:25.720 --> 00:01:30.620
+So what I'm going to do here is just say while, I'm going to use std getline.
+
+00:01:31.720 --> 00:01:34.270
+And there's two versions of getline by the way.
+
+00:01:34.270 --> 00:01:37.870
+There's a getline that works with character pointers or c-style strings.
+
+00:01:37.870 --> 00:01:41.470
+And there's a version that works with c++ strings.
+
+00:01:41.830 --> 00:01:45.830
+We're using c++ strings from now on in the course so that's what we're going to be using.
+
+00:01:46.130 --> 00:01:48.130
+So we're using std getline
+
+00:01:48.130 --> 00:01:51.730
+give it the name of the input stream, which in this case is infile.
+
+00:01:51.730 --> 00:01:55.530
+And where do I want this read into, I want this read into line.
+
+00:01:55.530 --> 00:01:59.430
+We haven't defined line yet. So let's define line. I'll do that right here.
+
+00:01:59.430 --> 00:02:03.030
+I'll say std string line.
+
+00:02:04.030 --> 00:02:07.030
+That's it. That's where the input's going into.
+
+00:02:07.030 --> 00:02:08.630
+So what do we do.
+
+00:02:10.630 --> 00:02:14.290
+Well, while we're getting a line, and it's successful, this will be true.
+
+00:02:14.290 --> 00:02:19.090
+So what do we want to do with that line. We just want to display it, right, to the console.
+
+00:02:19.290 --> 00:02:21.490
+So can't get much easier than this. Cout
+
+00:02:22.490 --> 00:02:25.490
+line and I need a new line.
+
+00:02:26.990 --> 00:02:30.490
+That's it. That's really that simple. So if I run this
+
+00:02:32.290 --> 00:02:33.290
+there's the poem,
+
+00:02:34.390 --> 00:02:37.940
+right. One line at a time till I hit the end of the line.
+
+00:02:37.940 --> 00:02:41.240
+I'm reading that in. And I'm just displaying it right back out.
+
+00:02:42.600 --> 00:02:47.790
+Okay. Pretty easy, right. Now you can see how easy it would be to write a file copy utility.
+
+00:02:48.290 --> 00:02:52.390
+We haven't learned about writing files yet thinking you know where we're going, right.
+
+00:02:52.390 --> 00:02:55.890
+We can just like -- we write to std cout we can write to a file.
+
+00:02:55.890 --> 00:03:00.590
+So we can easily write a utility that will copy a file. And we're actually going to do that.
+
+00:03:00.790 --> 00:03:04.150
+We're going to when we get to the output file section we'll read this file,
+
+00:03:04.150 --> 00:03:07.150
+and maybe this one or Romeo Juliet or something a bigger one,
+
+00:03:07.150 --> 00:03:10.820
+and we'll write it out with line numbers and so forth. That way we can modify it a little bit.
+
+00:03:11.680 --> 00:03:15.780
+So that's it. This is using getline, reading one line at a time.
+
+00:03:15.780 --> 00:03:20.380
+Now what I want to do next is I want to go into ReadFile_4 project.
+
+00:03:20.380 --> 00:03:24.980
+And what we'll do is we'll do the same thing, but we'll use unformatted input.
+
+00:03:24.980 --> 00:03:28.640
+So we'll do it one character at a time. So I'll set that up, and I'll be right back.
+
+00:03:30.840 --> 00:03:36.940
+Okay. So I'm back in the ReadFile_4 project for the section 19 workspace.
+
+00:03:37.140 --> 00:03:40.840
+And what we're going to do here is we're going to read sonnet 18 again,
+
+00:03:40.840 --> 00:03:43.340
+except we're going to use unformatted
+
+00:03:43.340 --> 00:03:46.240
+input. In this case, we're just going to use the get method
+
+00:03:46.240 --> 00:03:49.540
+and what that'll do is it'll return one character at a time.
+
+00:03:49.540 --> 00:03:51.840
+And we'll just display that one character out.
+
+00:03:51.840 --> 00:03:55.540
+So the advantages of using unformatted input are
+
+00:03:55.540 --> 00:04:00.040
+you don't have to worry about new lines, you don't have to worry about end of files, you don't have to worry about
+
+00:04:00.040 --> 00:04:04.190
+fancy characters and different things that could maybe break the way that you're reading
+
+00:04:04.190 --> 00:04:05.390
+because it's formatted,
+
+00:04:05.390 --> 00:04:09.190
+and it's just going to process characters unformatted, it's pretty cool.
+
+00:04:09.190 --> 00:04:13.490
+It gives you a lot of flexibility. And that's what we'll do now. So
+
+00:04:13.490 --> 00:04:17.290
+this is where we're at again. We've got iostream and fstream, exactly where before.
+
+00:04:17.290 --> 00:04:20.650
+We've created our infile object and opened the file,
+
+00:04:20.650 --> 00:04:23.450
+and we've tested to be sure we've got an open file.
+
+00:04:23.850 --> 00:04:26.450
+We're closing it down here. So right in here
+
+00:04:26.450 --> 00:04:29.110
+is where we're going to do our processing of the file.
+
+00:04:29.410 --> 00:04:33.110
+How do we do this. Well, pretty simple again. While
+
+00:04:33.910 --> 00:04:36.910
+infile.get
+
+00:04:37.410 --> 00:04:39.710
+sum character c.
+
+00:04:40.070 --> 00:04:44.070
+Okay. We need to define c as a character, so we'll do that right here.
+
+00:04:44.070 --> 00:04:47.370
+We'll say char c.
+
+00:04:48.870 --> 00:04:52.770
+That's it. It's really pretty simple. So while this is true,
+
+00:04:53.470 --> 00:04:56.470
+what do I do? Std cout
+
+00:04:57.470 --> 00:04:58.970
+the character.
+
+00:04:58.970 --> 00:05:02.270
+And then that's it. I mean down here, I guess we could print
+
+00:05:04.270 --> 00:05:08.270
+a new line here just so we get a little bit of space at the end so we can see a little better.
+
+00:05:10.270 --> 00:05:14.040
+But that's it. So while we're reading a character and it's true,
+
+00:05:14.040 --> 00:05:18.440
+right, we haven't hit end of file, we haven't hit some bad bits, we haven't read some --
+
+00:05:18.440 --> 00:05:21.740
+we haven't had any hardware issues, while all this is good,
+
+00:05:21.740 --> 00:05:24.240
+we've got that c,we're just going to display it.
+
+00:05:24.600 --> 00:05:25.900
+So if we run this,
+
+00:05:27.200 --> 00:05:29.400
+there's the poem, exactly like it was before.
+
+00:05:30.600 --> 00:05:32.600
+That's it. Now you're ready for the challenge,
+
+00:05:32.600 --> 00:05:35.600
+and the challenge is going to be a fun one. There's a couple of challenges actually.
+
+00:05:35.600 --> 00:05:38.900
+So I'll see you in the next video, and I'll explain the challenge to you.

@@ -1,0 +1,49 @@
+WEBVTT
+
+00:00:05.500 --> 00:00:08.700
+In this section of the course, we'll take a look at the basic structure
+
+00:00:08.700 --> 00:00:10.300
+of a simple c++ program.
+
+00:00:10.850 --> 00:00:14.150
+First, we'll look at the basic components of a c++ program.
+
+00:00:14.150 --> 00:00:16.150
+These includes things like keywords,
+
+00:00:16.150 --> 00:00:20.550
+identifiers, operators, punctuation, comments and syntax.
+
+00:00:21.210 --> 00:00:25.410
+Then we'll discuss the pre-processor directives that c++ uses.
+
+00:00:25.410 --> 00:00:28.610
+These are the statements that begin with the pound sign or the hashtag.
+
+00:00:29.160 --> 00:00:31.160
+And we'll discuss what they do and how they work.
+
+00:00:31.710 --> 00:00:35.810
+We'll then take a look at the main function specifically and functions in general.
+
+00:00:36.410 --> 00:00:39.010
+Then we'll discuss what c++ namespaces are
+
+00:00:39.010 --> 00:00:42.010
+and why we use the standard namespace so often.
+
+00:00:42.010 --> 00:00:44.010
+That's the STD word reviews throughout.
+
+00:00:44.610 --> 00:00:47.910
+We’ll then learn about the types of comments that c++ supports
+
+00:00:47.910 --> 00:00:49.910
+and why we use comments in our code at all.
+
+00:00:50.510 --> 00:00:54.770
+Finally, we'll talk about basic stream input output using cin and cout.
+
+00:00:54.770 --> 00:00:55.870
+Let's get started.

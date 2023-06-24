@@ -1,0 +1,232 @@
+WEBVTT
+
+00:05.320 --> 00:06.310
+Hello, everyone.
+
+00:06.430 --> 00:12.670
+In this video we're going to download and install Visual Studio code on Windows and we're also going
+
+00:12.670 --> 00:15.700
+to set up the C++ extension for it.
+
+00:16.210 --> 00:24.970
+Now, before you execute anything in this video, please be sure that the GW 64 C++ compiler has already
+
+00:24.970 --> 00:27.310
+been installed and configured on your system.
+
+00:27.310 --> 00:31.660
+That's very important that that's done already before we install Visual Studio code.
+
+00:32.080 --> 00:37.630
+If you haven't done that, please go to section two and refer to the instructions for installing Min
+
+00:37.690 --> 00:41.800
+GW 64, the C++ compiler on Windows.
+
+00:42.850 --> 00:45.190
+So moving forward, I'm assuming that that's done.
+
+00:45.400 --> 00:50.740
+What we want to do is open up your favorite browser and head over to code Visual Studio.
+
+00:51.700 --> 00:55.480
+You can also search for Visual Studio code in Google and it'll take you there.
+
+00:55.990 --> 01:00.370
+You're going to get a page that looks similar to this and you can see that this is big blue button right
+
+01:00.370 --> 01:02.830
+here looking right out and saying download for Windows.
+
+01:02.830 --> 01:05.380
+So it's already detected that I'm running Windows.
+
+01:05.380 --> 01:09.610
+And there's also a download button over here that gives you some more options in case you've got a 32
+
+01:09.610 --> 01:11.110
+bit version of Windows.
+
+01:11.110 --> 01:15.310
+So I've got a regular 64 bit version of Windows, which is what most people have.
+
+01:15.400 --> 01:20.080
+And what I'm going to do is I'm just going to click this button, download for Windows and that will
+
+01:20.080 --> 01:21.280
+start my download.
+
+01:21.550 --> 01:26.170
+It'll take you to this getting started page and you can see here that the file is going to be saved
+
+01:26.170 --> 01:31.900
+when I click Save File and once that installer is saved, that's what I want to execute.
+
+01:31.900 --> 01:36.700
+So I'm going to come up here to my browser and grab that download, which is right here, and I'm just
+
+01:36.700 --> 01:40.300
+going to double click on it to install it.
+
+01:41.050 --> 01:44.770
+Now, once the install begins right here, I'm just going to get rid of this browser.
+
+01:44.770 --> 01:48.040
+I don't need it anymore and I really don't want it to clutter up my screen.
+
+01:48.040 --> 01:49.510
+So here's the license agreement.
+
+01:49.510 --> 01:55.510
+You can look through that and accept the agreement and then select next select the path you want to
+
+01:55.510 --> 01:56.260
+install it to.
+
+01:56.260 --> 01:57.910
+I'm just going to use the defaults.
+
+01:58.570 --> 01:59.710
+I'll select next.
+
+02:00.880 --> 02:04.960
+Next again, and now it says select additional tests.
+
+02:04.990 --> 02:08.490
+The only thing that I said on here is that last checkbox right here.
+
+02:08.530 --> 02:09.700
+Add to the path.
+
+02:09.940 --> 02:15.160
+If you want to create an icon on your desktop for Visual Studio code, then select this first option.
+
+02:16.060 --> 02:19.030
+I'll select next and then install.
+
+02:20.800 --> 02:22.630
+The install will progress pretty quickly.
+
+02:22.630 --> 02:24.820
+This is a fairly small application.
+
+02:24.820 --> 02:26.890
+It's a very fast application as well.
+
+02:28.230 --> 02:32.670
+So once it's finished, what we'll do is we'll launch Visual Studio code.
+
+02:32.710 --> 02:34.070
+That's what I'm going to do right now.
+
+02:34.080 --> 02:38.160
+You can see that that checkbox is checked and I'm going to select Finish.
+
+02:39.170 --> 02:44.300
+And that'll bring up Visual Studio code, and I'm just going to make this full screen.
+
+02:46.640 --> 02:49.160
+We can just get rid of some of these messages.
+
+02:49.160 --> 02:53.120
+And this is the screen that you're going to get the first time that you install Visual Studio code.
+
+02:53.150 --> 02:57.260
+It's just a getting started screen and it's kind of small.
+
+02:57.290 --> 02:59.060
+So I'm just going to enlarge this font.
+
+02:59.060 --> 02:59.960
+I'm just going to hit control.
+
+02:59.960 --> 03:04.310
+Plus, just to make it a little bit nicer on video so you can see it a little bit better.
+
+03:04.700 --> 03:06.800
+So this just gives you some information.
+
+03:06.800 --> 03:09.710
+You want to pick a theme and I'll just pick this same dark theme.
+
+03:10.760 --> 03:13.730
+You can look at the different languages that it supports and so forth.
+
+03:13.730 --> 03:15.450
+So there's a lot of information in here.
+
+03:15.470 --> 03:16.790
+I'm going to close that.
+
+03:17.750 --> 03:21.500
+And now what I'm going to do is I'm going to go to this icon right over here at the left, down at the
+
+03:21.500 --> 03:23.420
+bottom extensions.
+
+03:23.420 --> 03:24.740
+And I'm going to select that.
+
+03:26.030 --> 03:32.040
+And what I want to do is I want to install the C C++ extension and you can see it right here.
+
+03:32.060 --> 03:37.940
+Notice that I have zero extensions installed because I just installed Visual Studio code as a fresh
+
+03:37.940 --> 03:38.630
+install.
+
+03:38.630 --> 03:41.600
+So in this case, this is the extension that I want to install.
+
+03:41.600 --> 03:42.920
+It's here under popular.
+
+03:43.160 --> 03:48.650
+If that does not show up under here, you can always search for the extension up here, just type C++
+
+03:48.800 --> 03:50.510
+and you'll see it right there.
+
+03:50.660 --> 03:52.580
+So this is the one we want to select.
+
+03:52.670 --> 03:57.020
+You'll know it's the one because you've got this circle here with some purple, white and black and
+
+03:57.020 --> 04:00.170
+it says C slash, C++, Microsoft.
+
+04:00.170 --> 04:03.620
+And it's got about 20 million downloads at the time of this video.
+
+04:03.860 --> 04:06.350
+And what we want to do here is just select install.
+
+04:07.130 --> 04:11.240
+You'll see down here at the bottom some messages of installation messages.
+
+04:11.480 --> 04:12.500
+At this point, we're done.
+
+04:12.500 --> 04:16.670
+We've installed Visual Studio code and the C++ extension.
+
+04:16.670 --> 04:22.400
+So what I want to do now is just close this up and go right over here to my explorer and we are good
+
+04:22.400 --> 04:22.940
+to go now.
+
+04:22.940 --> 04:29.040
+So in the next video, what we'll do is we'll create a folder that will store some of our C++ projects.
+
+04:29.060 --> 04:35.030
+We'll create a small C++ program and we'll run that and I'll show you how to configure Visual Studio
+
+04:35.030 --> 04:37.520
+code to build and run that project.
+
+04:37.520 --> 04:38.960
+So I'll see you in the next video.

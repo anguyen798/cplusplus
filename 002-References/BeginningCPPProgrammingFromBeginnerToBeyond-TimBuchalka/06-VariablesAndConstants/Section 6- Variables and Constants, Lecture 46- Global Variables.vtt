@@ -1,0 +1,178 @@
+WEBVTT
+
+00:00:05.500 --> 00:00:07.100
+In our example programs,
+
+00:00:07.100 --> 00:00:11.200
+we've declared our variables within the curly braces of the main function.
+
+00:00:11.900 --> 00:00:14.400
+These variables are called local variables
+
+00:00:14.400 --> 00:00:16.760
+because their scope or visibility
+
+00:00:16.760 --> 00:00:21.360
+is limited to the statements in the main function that follow the declaration of the variable.
+
+00:00:21.960 --> 00:00:23.760
+This is generally what you want to do.
+
+00:00:23.760 --> 00:00:27.560
+However, sometimes you see variables declared outside of any function,
+
+00:00:28.110 --> 00:00:30.610
+these variables are called global variables,
+
+00:00:30.610 --> 00:00:33.110
+and they can be accessed from any part of your program.
+
+00:00:34.010 --> 00:00:38.310
+Unlike local variables, global variables are automatically initialized to zero.
+
+00:00:39.110 --> 00:00:42.510
+We'll talk more about scope and visibility as the course progresses.
+
+00:00:42.510 --> 00:00:45.310
+However, I wanted to introduce you to this concept here
+
+00:00:45.310 --> 00:00:49.310
+since there is a lot of code out there aimed at beginning c++ programmers
+
+00:00:49.310 --> 00:00:51.670
+that uses global variables in their examples.
+
+00:00:52.470 --> 00:00:56.470
+Global variables have their place, but they also come with some potential problems.
+
+00:00:56.470 --> 00:01:00.130
+Since global variables can be accessed by any part of the program,
+
+00:01:00.130 --> 00:01:03.430
+this means they can potentially be changed from any part of the program.
+
+00:01:03.790 --> 00:01:06.790
+So if you've got a program that's thousands of lines of code,
+
+00:01:06.790 --> 00:01:09.790
+this can make finding errors and debugging more difficult.
+
+00:01:09.790 --> 00:01:13.790
+Let me show you an example of using global variables in case you see code like this out
+
+00:01:13.790 --> 00:01:15.790
+there as you study c++.
+
+00:01:17.590 --> 00:01:19.390
+I'm in the CodeLite IDE.
+
+00:01:19.390 --> 00:01:22.750
+And you can see that I've declared a variable, called age.
+
+00:01:22.750 --> 00:01:27.050
+And age is declared right here and it's within the scope of main.
+
+00:01:27.550 --> 00:01:30.450
+What that means is that this is a local variable.
+
+00:01:31.330 --> 00:01:33.830
+In other words, it's local to this function.
+
+00:01:34.630 --> 00:01:37.130
+So I can use age within this function.
+
+00:01:37.130 --> 00:01:39.130
+So for example here I'm using age
+
+00:01:39.130 --> 00:01:42.930
+and the compiler is going to say okay which age are we talking about,
+
+00:01:42.930 --> 00:01:47.330
+and it's going to find the age right here. So if I run this, it'll replace age
+
+00:01:47.330 --> 00:01:48.230
+with 18.
+
+00:01:48.830 --> 00:01:52.190
+This is the way we're going to program in this course. However,
+
+00:01:52.190 --> 00:01:56.190
+you may see code out there that looks a little bit different. Let me show you how that works.
+
+00:01:56.690 --> 00:02:01.190
+You may see code out there where this is not declared inside of main.
+
+00:02:01.190 --> 00:02:03.790
+Instead, it's declared outside of main.
+
+00:02:05.790 --> 00:02:09.690
+This makes age a global variable, which means that it can be accessed from
+
+00:02:09.690 --> 00:02:10.890
+anywhere in the program.
+
+00:02:11.890 --> 00:02:15.190
+So now what happens when the compiler sees age here.
+
+00:02:15.490 --> 00:02:19.150
+First, it looks locally to see if it has a declaration of age.
+
+00:02:19.150 --> 00:02:20.850
+In this case, it does not.
+
+00:02:20.850 --> 00:02:25.250
+Then it looks globally to see if age has been declared at the global level.
+
+00:02:25.250 --> 00:02:28.650
+It has, it finds it right here and now it prints out 18.
+
+00:02:29.900 --> 00:02:33.500
+Okay. So that's an example of a global variable. It's the concept.
+
+00:02:33.500 --> 00:02:35.100
+Again it's pretty straightforward
+
+00:02:35.100 --> 00:02:38.490
+and it's possible to have both global variables and local variables.
+
+00:02:38.490 --> 00:02:42.890
+So I could do something like this. I could say int age
+
+00:02:42.890 --> 00:02:44.390
+is 16.
+
+00:02:45.690 --> 00:02:48.490
+And notice that now I have two variables named age,
+
+00:02:48.490 --> 00:02:50.990
+I've got one that's local and one that's global.
+
+00:02:51.240 --> 00:02:53.540
+When the compiler sees the use of age
+
+00:02:54.040 --> 00:02:57.040
+in the output statement, first, it looks locally.
+
+00:02:57.340 --> 00:03:01.740
+It looks right here. It finds this age, and it's going to use 16 here,
+
+00:03:01.740 --> 00:03:03.240
+it will not use this one.
+
+00:03:03.740 --> 00:03:06.740
+So this one shadows the outer global variable.
+
+00:03:06.740 --> 00:03:08.940
+That's really all there is to global variables.
+
+00:03:08.940 --> 00:03:12.540
+Lots of times you'll see code as I mentioned where you won't see this here at all,
+
+00:03:12.790 --> 00:03:14.790
+and everything is global.
+
+00:03:15.190 --> 00:03:19.440
+They're okay for teaching purposes, but it's really not a good practice to start using
+
+00:03:19.440 --> 00:03:21.040
+global variables all over your code.

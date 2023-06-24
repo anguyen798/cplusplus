@@ -1,0 +1,244 @@
+WEBVTT
+
+00:00.150 --> 00:06.030
+Now let us see where to write our programs, where to write C++ programs.
+
+00:06.030 --> 00:07.920
+So there are various IDs.
+
+00:07.920 --> 00:15.300
+You can use the IDs and also you can practice your programs on online compiler.
+
+00:15.300 --> 00:19.650
+So I suggest you to better use online compilers, right?
+
+00:19.650 --> 00:25.400
+So if you face any difficulty, you can share the code and we can test it on same online compiler and
+
+00:25.400 --> 00:26.850
+it can we can help you better.
+
+00:26.850 --> 00:28.620
+And also you can use the IDs.
+
+00:28.620 --> 00:31.890
+I will show you how to use the IDs in the next lectures.
+
+00:32.730 --> 00:38.820
+If you are already using some ID and comfortable with some ID like code blocks or Def, C++ or Visual
+
+00:38.820 --> 00:40.200
+Studio, you can use it.
+
+00:40.290 --> 00:41.040
+All right.
+
+00:41.040 --> 00:47.010
+So now I will show you where to practice C++ programs online.
+
+00:47.160 --> 00:56.520
+So open Chrome browser and here type online GDB online gdb.
+
+00:56.820 --> 00:59.700
+So don't select dotcom, don't select dotcom.
+
+00:59.700 --> 01:03.120
+Just give space and say C++.
+
+01:03.840 --> 01:09.480
+Don't directly go to dotcom, write online, GDB, C++.
+
+01:10.470 --> 01:13.680
+If you want to use a C, you can use C also.
+
+01:13.680 --> 01:19.920
+So enter now the first link that is online compiler and debugger for C and C++.
+
+01:19.920 --> 01:20.970
+Click on this one.
+
+01:20.970 --> 01:23.850
+So here you are on online gdb.
+
+01:24.650 --> 01:25.110
+Right.
+
+01:25.130 --> 01:26.040
+There's a compiler.
+
+01:26.060 --> 01:27.980
+No, you can read it in the URL.
+
+01:28.040 --> 01:30.680
+It is online C++ compiler.
+
+01:30.710 --> 01:31.400
+All right.
+
+01:31.430 --> 01:36.710
+Now, one important thing on the right hand side, on the right hand top, you can see here, C++ is
+
+01:36.710 --> 01:38.780
+selected right on the right hand side.
+
+01:38.810 --> 01:40.250
+C++ is selected.
+
+01:40.400 --> 01:45.480
+That is the reason I told you to type on GDB and C++ then.
+
+01:45.500 --> 01:50.210
+In Google search it has already shown you C++ links, so we directly came here.
+
+01:50.420 --> 01:54.080
+Otherwise if you want to change the language, you can change the language.
+
+01:54.080 --> 01:59.030
+You can select other languages also like Java or C language or other languages.
+
+01:59.030 --> 02:01.520
+So there are many various languages all available.
+
+02:01.640 --> 02:06.180
+So you can use this online compiler for various languages.
+
+02:06.200 --> 02:06.740
+All right.
+
+02:06.770 --> 02:10.370
+But we are using it for C++, so don't touch anything.
+
+02:10.370 --> 02:17.930
+Just leave it, because already you have selected C++ compiler and you can see that so readily available.
+
+02:17.930 --> 02:20.570
+Some piece of code is available here.
+
+02:20.570 --> 02:22.410
+That is C++ code is available here.
+
+02:22.430 --> 02:24.450
+So it is a hello world program.
+
+02:24.470 --> 02:26.430
+It will print Hello World.
+
+02:26.460 --> 02:26.840
+All right.
+
+02:26.840 --> 02:28.690
+So I don't have to type anything.
+
+02:28.700 --> 02:30.740
+This is a sample program is already available.
+
+02:30.860 --> 02:32.780
+Just click on run.
+
+02:32.870 --> 02:34.010
+It will run the code.
+
+02:34.040 --> 02:35.420
+Here it is at the bottom.
+
+02:35.420 --> 02:36.740
+It has shown the result.
+
+02:36.740 --> 02:38.150
+That is Hello world.
+
+02:38.180 --> 02:38.630
+All right.
+
+02:38.660 --> 02:42.600
+Now, if you want to write something in your program, just as a sample, I will write down.
+
+02:42.680 --> 02:43.250
+Okay.
+
+02:43.430 --> 02:46.250
+So later, we will be learning about this one.
+
+02:47.180 --> 02:49.180
+I'm not going to explain what I am writing.
+
+02:49.270 --> 02:50.660
+I just am testing it.
+
+02:50.660 --> 03:01.100
+And two numbers then seen reading two numbers X and Y, then z, assign x plus y.
+
+03:01.130 --> 03:03.710
+I am writing a program for adding to numbers.
+
+03:03.710 --> 03:06.740
+So instead of Hello World I will just modify it.
+
+03:06.740 --> 03:10.040
+I'm not writing it separately.
+
+03:10.310 --> 03:14.510
+Some s addition of two numbers is print z.
+
+03:14.540 --> 03:17.170
+Now don't try to understand anything, okay?
+
+03:17.210 --> 03:17.780
+Just.
+
+03:17.780 --> 03:21.920
+I have written something to demonstrate that you can write any program here.
+
+03:22.100 --> 03:24.890
+You don't have to touch anything just inside the main function.
+
+03:24.890 --> 03:26.180
+Start writing a program.
+
+03:26.210 --> 03:28.610
+So I have written my code in main function.
+
+03:28.610 --> 03:31.590
+Now let us run it and see whether it will add it to numbers or not.
+
+03:31.610 --> 03:33.470
+So it's asking me to enter two numbers.
+
+03:33.470 --> 03:38.200
+I'll give the first number as ten and second number as 20, and the result is 30.
+
+03:38.210 --> 03:38.960
+So I'm starting.
+
+03:38.960 --> 03:40.490
+Yes, it is working perfectly.
+
+03:40.490 --> 03:42.290
+So that's it, this is a better place.
+
+03:42.290 --> 03:42.680
+Alright.
+
+03:42.680 --> 03:46.370
+And if you find there are many compilers available, online compilers are available, you can practice
+
+03:46.370 --> 03:47.280
+any way you like.
+
+03:47.300 --> 03:50.060
+All right, so this is the way you can practice online.
+
+03:50.420 --> 03:50.920
+All right.
+
+03:50.930 --> 03:56.400
+And if you want to install it in the next lectures, you will find how to install it on your machine.
+
+03:56.420 --> 03:57.020
+All right.
+
+03:57.020 --> 03:59.210
+So that's all in this lecture.
+
+03:59.210 --> 04:01.550
+So practice programs here in online.

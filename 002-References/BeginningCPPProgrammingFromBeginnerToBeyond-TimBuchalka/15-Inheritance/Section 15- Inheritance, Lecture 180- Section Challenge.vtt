@@ -1,0 +1,368 @@
+WEBVTT
+
+00:00:05.290 --> 00:00:10.030
+Hello, everyone. Welcome to the section 15 challenge,
+that's the inheritance challenge.
+
+00:00:10.500 --> 00:00:12.519
+This is a very challenging challenge.
+
+00:00:13.219 --> 00:00:16.449
+You're no longer beginning c++
+programmers, that's for sure.
+
+00:00:17.049 --> 00:00:20.580
+This challenge involves extending
+a class hierarchy by adding a
+
+00:00:20.580 --> 00:00:23.570
+few more classes, and I'll talk
+about them in just a second.
+
+00:00:24.030 --> 00:00:28.030
+And it also involves understanding
+someone else's code, which is
+
+00:00:28.030 --> 00:00:31.180
+something that happens in real life
+or actually more often than not
+
+00:00:31.189 --> 00:00:33.070
+you're modifying someone else's code.
+
+00:00:33.460 --> 00:00:36.240
+We don't write our own code from
+scratch very often out there.
+
+00:00:36.459 --> 00:00:38.380
+So this is part of the challenge.
+
+00:00:39.020 --> 00:00:42.650
+Before you attempt this challenge,
+watch the video previous to this
+
+00:00:42.670 --> 00:00:46.169
+video where I go over the classes
+that are in this project. I go
+
+00:00:46.170 --> 00:00:49.609
+over the account class and the
+savings account classes in detail.
+
+00:00:49.960 --> 00:00:53.469
+If you haven't done that, I encourage
+you to do so now and then come
+
+00:00:53.469 --> 00:00:54.989
+back and give the challenge a shot.
+
+00:00:55.290 --> 00:00:58.440
+So let me go over the challenge
+and tell you what's involved.
+
+00:00:58.690 --> 00:01:03.240
+First of all, I'm in the section 15
+workspace in the challenge project.
+
+00:01:03.580 --> 00:01:04.969
+This is your starting point.
+
+00:01:05.300 --> 00:01:08.440
+This has an account class and
+a savings account class that's
+
+00:01:08.440 --> 00:01:09.949
+derived from the account class.
+
+00:01:10.510 --> 00:01:11.379
+Everything's working.
+
+00:01:11.379 --> 00:01:12.429
+The tests are there.
+
+00:01:12.430 --> 00:01:14.820
+The utility functions
+are there and so forth.
+
+00:01:14.820 --> 00:01:18.660
+So you're provided with these
+two classes, as I mentioned here.
+
+00:01:18.900 --> 00:01:21.660
+You're provided with the account
+class and the savings account class.
+
+00:01:21.960 --> 00:01:24.250
+The savings account class
+is an account so we're
+
+00:01:24.250 --> 00:01:25.519
+using public inheritance.
+
+00:01:25.780 --> 00:01:28.470
+So in this case, we have an account
+that has a name and a balance.
+
+00:01:28.779 --> 00:01:32.280
+And then the savings account is an
+account and it adds an interest rate.
+
+00:01:32.840 --> 00:01:35.810
+And as I mentioned, watch the
+previous video and you'll get a
+
+00:01:35.860 --> 00:01:39.195
+good understanding of exactly how
+the deposit method works and the
+
+00:01:39.195 --> 00:01:40.880
+withdrawal methods work and so forth.
+
+00:01:40.990 --> 00:01:44.539
+Also I created some account helper
+functions in the account util
+
+00:01:44.559 --> 00:01:48.735
+header and cpp files that make
+it easy to display deposit to and
+
+00:01:48.820 --> 00:01:52.690
+withdraw funds from a vector of
+accounts and savings accounts.
+
+00:01:52.900 --> 00:01:54.590
+And that's what I'm using
+in the main driver,
+
+00:01:54.590 --> 00:01:55.950
+just to make it a little easier.
+
+00:01:56.360 --> 00:01:58.890
+Otherwise, your main gets really,
+really convoluted and you're
+
+00:01:58.890 --> 00:02:03.009
+always checking for was this a
+successful deposit or was this a
+
+00:02:03.009 --> 00:02:05.580
+successful withdrawal, and the code
+just gets really nasty to follow.
+
+00:02:05.670 --> 00:02:07.510
+So what's this challenge about.
+
+00:02:07.860 --> 00:02:12.269
+Let me just scroll up just
+a little bit and -- so this
+
+00:02:12.270 --> 00:02:16.180
+challenge is we're going to add
+two classes to this hierarchy.
+
+00:02:16.540 --> 00:02:20.370
+The first class you see right here
+it's a checking account class.
+
+00:02:20.740 --> 00:02:23.169
+And we want to add that to
+the inheritance hierarchy.
+
+00:02:23.170 --> 00:02:26.700
+So we want this to be a derived
+class of either account or
+
+00:02:26.700 --> 00:02:28.030
+savings account, you decide.
+
+00:02:28.540 --> 00:02:32.100
+A checking account has a name
+and a balance and it has a fee of
+
+00:02:32.100 --> 00:02:34.660
+1.50 per withdrawal transaction.
+
+00:02:35.270 --> 00:02:39.000
+So every time we do a withdrawal,
+we're going to assess 1.50 flat fee.
+
+00:02:39.839 --> 00:02:43.790
+The trust account is the other account
+I want you to add to the hierarchy.
+
+00:02:44.350 --> 00:02:47.390
+And again, you decide whether it
+belongs under account or under
+
+00:02:47.390 --> 00:02:51.100
+savings aha or under checking account
+and for that matter is the checking
+
+00:02:51.110 --> 00:02:52.289
+account under a trust account.
+
+00:02:52.289 --> 00:02:54.140
+So you figure out
+what the hierarchy is.
+
+00:02:54.140 --> 00:02:57.030
+It's pretty straightforward I think
+once you sit down and think about it.
+
+00:02:57.349 --> 00:03:00.309
+So a trust account has a name
+a balance and an interest rate.
+
+00:03:01.160 --> 00:03:05.040
+But the trust account deposit works
+just like the savings account deposit
+
+00:03:05.110 --> 00:03:10.490
+except when we've got deposits that
+are 5000 dollars or more, we'll get
+
+00:03:10.490 --> 00:03:12.490
+a fifty dollar bonus by the bank.
+
+00:03:13.520 --> 00:03:16.510
+The trust account withdrawal
+is also different.
+
+00:03:16.930 --> 00:03:21.250
+It only allows three withdrawals per
+year, and each of these must be less
+
+00:03:21.250 --> 00:03:23.400
+than 20% of the account balance.
+
+00:03:24.050 --> 00:03:27.009
+You don't have to keep track of
+calendar time, as I mentioned here.
+
+00:03:27.070 --> 00:03:31.019
+So just make it fail on the fourth
+attempt to withdraw. Sorry, I'll
+
+00:03:31.020 --> 00:03:32.410
+change that, that should be withdraw.
+
+00:03:32.450 --> 00:03:33.830
+I'll fix that in the spec.
+
+00:03:35.309 --> 00:03:37.160
+Okay, so the fourth
+withdrawal will fail.
+
+00:03:37.650 --> 00:03:38.720
+So what are some hints.
+
+00:03:38.830 --> 00:03:41.650
+Well, reuse existing functionality.
+
+00:03:41.780 --> 00:03:43.609
+That's the whole idea
+behind inheritance, right.
+
+00:03:43.610 --> 00:03:44.930
+It's all about reusability.
+
+00:03:45.200 --> 00:03:46.850
+So don't reinvent the wheel.
+
+00:03:46.850 --> 00:03:48.249
+Don't duplicate code.
+
+00:03:49.000 --> 00:03:50.620
+Reuse as much as you can.
+
+00:03:51.650 --> 00:03:54.209
+Think about what the base class
+will be for each of these new
+
+00:03:54.220 --> 00:03:55.680
+classes that we're going to add.
+
+00:03:56.770 --> 00:04:00.580
+Also I've created those helper
+functions in the account util file.
+
+00:04:01.110 --> 00:04:05.479
+You may want to add the trust account
+and checking account versions to them.
+
+00:04:05.679 --> 00:04:08.599
+I would recommend that you do that,
+that just makes it much easier
+
+00:04:08.599 --> 00:04:10.149
+to use these things in the main.
+
+00:04:10.430 --> 00:04:12.520
+But you don't have to,
+you can just test these in
+
+00:04:12.520 --> 00:04:13.590
+the main, it's up to you.
+
+00:04:14.550 --> 00:04:15.670
+As always, have fun.
+
+00:04:16.000 --> 00:04:19.460
+You're no longer beginner c++
+programmers, that's for sure.
+
+00:04:19.829 --> 00:04:22.450
+Once we delve into the world
+of inheritance, this is no
+
+00:04:22.450 --> 00:04:25.349
+longer beginning c++, this
+is more intermediate c++.
+
+00:04:25.849 --> 00:04:28.579
+So congratulations that you've
+made it this far in the course.
+
+00:04:28.930 --> 00:04:31.639
+And the last thing is if you
+want more practice with operator
+
+00:04:31.649 --> 00:04:34.959
+overloading, you can overload the
+plus equal and the minus equal
+
+00:04:34.969 --> 00:04:38.079
+so that they do deposit and
+withdrawal, which can be handy.
+
+00:04:39.069 --> 00:04:40.359
+Okay, so that's it.
+
+00:04:41.029 --> 00:04:44.619
+I'll be back in the next video with
+my solution, but give this a shot.
+
+00:04:44.649 --> 00:04:47.769
+And as I said don't get
+frustrated with this.
+
+00:04:47.779 --> 00:04:49.640
+This is not an easy challenge.
+
+00:04:49.640 --> 00:04:51.080
+There's a lot going on here.
+
+00:04:51.440 --> 00:04:55.330
+And just take it one step at a time,
+do one class at a time, implement one
+
+00:04:55.340 --> 00:04:57.479
+method at a time and test as you go.
+
+00:04:57.719 --> 00:04:59.819
+And before you know it,
+you've got a great solution.
+
+00:04:59.880 --> 00:05:01.900
+All right, so good luck, and
+I'll see you in the next video.

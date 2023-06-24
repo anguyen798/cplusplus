@@ -1,0 +1,529 @@
+WEBVTT
+
+00:05.240 --> 00:06.210
+Welcome back.
+
+00:06.230 --> 00:13.730
+Now that we've got Visual Studio code installed and the C++ extension installed, we can now start creating
+
+00:13.730 --> 00:17.850
+C++ projects that we can build and run within Visual Studio code.
+
+00:17.870 --> 00:21.120
+So first thing we need to do is we need to create a folder.
+
+00:21.140 --> 00:23.950
+I'm going to create the folder, not within V's code.
+
+00:23.960 --> 00:26.630
+I'm going to create it right on my desktop.
+
+00:26.750 --> 00:30.920
+So I'm just going to come over here to my desktop and I'm going to create a new folder and I'm just
+
+00:30.920 --> 00:32.630
+going to call it section X.
+
+00:33.020 --> 00:37.430
+The idea being that whatever section you're working on, you can create a Section five, Section six,
+
+00:37.430 --> 00:39.350
+Section seven, folder and so forth.
+
+00:39.560 --> 00:41.650
+So this could represent any folder.
+
+00:41.660 --> 00:42.620
+We'll create it.
+
+00:43.620 --> 00:44.880
+And I'll close this up.
+
+00:45.690 --> 00:49.980
+Then we want to go into Visual Studio code and open that folder we just created.
+
+00:50.430 --> 00:51.840
+We can click the blue button here.
+
+00:51.840 --> 00:56.010
+If this is open, we can also hit control O, Control K and so forth.
+
+00:56.220 --> 01:01.400
+Or we can come up here to file open folder right there.
+
+01:01.410 --> 01:02.670
+So I'll just do that.
+
+01:02.970 --> 01:07.710
+And I'm going to select the folder I just created on my desktop, section X and I'll press.
+
+01:07.720 --> 01:08.310
+Okay.
+
+01:08.790 --> 01:11.280
+And now you can see that that folder has been open.
+
+01:11.280 --> 01:13.860
+It's right here, section x, there's nothing in it right now.
+
+01:13.860 --> 01:16.830
+It's just an empty folder and this getting started page.
+
+01:16.830 --> 01:18.570
+I'm just going to close that to get that out of the way.
+
+01:19.760 --> 01:20.270
+Perfect.
+
+01:20.270 --> 01:23.840
+So now what we need to do is we need to create a folder within this folder.
+
+01:23.840 --> 01:30.470
+This is the top level folder so we can do that by selecting that icon right there, which is new folder.
+
+01:30.830 --> 01:33.170
+And I'm just going to call this project one.
+
+01:33.170 --> 01:39.200
+So this would be my project one folder, the idea being that we can create multiple project folders
+
+01:39.200 --> 01:41.120
+within this section X folder.
+
+01:42.200 --> 01:47.300
+Now once we do that, we need to create a C++ program that we'll be able to run, and we want to do
+
+01:47.300 --> 01:48.620
+that within Project one.
+
+01:48.620 --> 01:53.150
+So we want to be sure that Project one is selected and I'm going to press this icon right here for new
+
+01:53.150 --> 01:58.910
+file and I want to create Main CP, that's our C++ program.
+
+01:59.360 --> 02:02.000
+When I select that, it opens up on this site here.
+
+02:02.000 --> 02:08.030
+And what I want to do here is I want to write a really simple C++ program and I'm going to do a pound
+
+02:08.030 --> 02:10.910
+include IO stream.
+
+02:10.940 --> 02:13.430
+A lot of this won't make sense to you if you're just starting the course.
+
+02:13.430 --> 02:14.030
+That's okay.
+
+02:14.100 --> 02:18.980
+Just follow along, type along, and this will all be explained as the course progresses.
+
+02:19.220 --> 02:23.930
+Then we're going to say using namespace standard and now what we're going to do is we're going to create
+
+02:23.930 --> 02:25.160
+the main function.
+
+02:25.160 --> 02:30.950
+So we'll say int main and we'll just do a display statement, rule something really simple, we'll just
+
+02:30.950 --> 02:38.510
+say C out and hello from Project one and we'll put a new line at the end and finally we'll return zero.
+
+02:38.510 --> 02:42.080
+As I said, the syntax will be explained as the course progresses.
+
+02:42.080 --> 02:43.160
+Now I'm going to save that.
+
+02:43.160 --> 02:47.120
+So I'm just going to come to here file, save or control this.
+
+02:47.120 --> 02:48.680
+We can't run it quite yet.
+
+02:48.680 --> 02:53.840
+We've got to do a little bit of configuration which is going to help us build and run this project.
+
+02:53.840 --> 02:55.670
+So there's two things we need to do.
+
+02:55.970 --> 02:58.550
+First, we need to configure IntelliSense.
+
+02:58.550 --> 03:04.070
+That's the piece of software that runs in Visual Studio code that kind of watches you as you type.
+
+03:04.070 --> 03:08.270
+And it's trying to help you with ideas and suggestions and finding mistakes as you go.
+
+03:08.270 --> 03:11.570
+So we could go to view command palette.
+
+03:12.450 --> 03:17.190
+And then what we wanted to do right in here, we want to just type C++ and find this.
+
+03:17.190 --> 03:21.690
+Edit configurations UI C, C++, edit configurations UI.
+
+03:21.720 --> 03:23.100
+It might be somewhere down here.
+
+03:23.100 --> 03:25.290
+In this case, it showed up right up here for me.
+
+03:25.290 --> 03:29.430
+So I just want to select that and we're going to make a couple of small changes to this.
+
+03:29.430 --> 03:36.150
+First of all, go to the compiler path and be sure that you don't have DCC, but we want G plus plus.
+
+03:37.190 --> 03:41.570
+We want g plus plus we want to use a C plus plus compiler, not the C compiler.
+
+03:41.690 --> 03:43.490
+So you want to be sure that that's there.
+
+03:43.580 --> 03:49.130
+And then we want to come down to the C++ standard and we want to use C++ 17.
+
+03:49.280 --> 03:50.090
+There we go.
+
+03:50.090 --> 03:50.540
+That's it.
+
+03:50.540 --> 03:56.180
+So now we can file, save that file and we can close that up because we're done with that.
+
+03:56.960 --> 04:03.290
+Now you'll notice what happened over here on the left side, a vs code folder was created and that folder
+
+04:03.290 --> 04:11.510
+contains a file called CP Properties JSON and that file contains the configuration information for IntelliSense.
+
+04:11.510 --> 04:13.760
+What we just said up perfect.
+
+04:13.760 --> 04:17.240
+So next step is to create a default build task.
+
+04:17.240 --> 04:20.450
+That's what's going to compile the code and build it.
+
+04:20.450 --> 04:26.270
+So in order to do that, we want to come to terminal and select configure default, build test right
+
+04:26.270 --> 04:27.140
+here at the bottom.
+
+04:27.140 --> 04:30.110
+And at this point it's asking you, Hey, what compiler are you using?
+
+04:30.110 --> 04:36.830
+Be sure to select the G plus plus option, not CPP or anything else, just g plus plus.
+
+04:37.310 --> 04:42.860
+You may have several different versions like I do just select C++ and it will use the most recent version.
+
+04:42.860 --> 04:43.940
+So I'll do that.
+
+04:43.940 --> 04:45.920
+And now I get this file that pops up.
+
+04:45.920 --> 04:50.570
+We need to make a few small changes to this file so we can configure the build.
+
+04:50.720 --> 04:56.750
+I'm coming here to line nine in the ARGs section and I just want to add right after the minus G, I
+
+04:56.750 --> 05:06.590
+want to add minus or dash capital W a LX and the alpha is in lowercase followed by a comma that tells
+
+05:06.590 --> 05:09.020
+the build to display all warnings.
+
+05:09.020 --> 05:15.830
+Then we need to do dash std equals C plus plus 17 with a comma at the end.
+
+05:15.830 --> 05:20.510
+Again, that tells the build system to use the C++ 17 standard.
+
+05:21.200 --> 05:23.750
+And we've got one more small change right here.
+
+05:23.870 --> 05:29.900
+We want to change line 12 from file to file your name.
+
+05:29.900 --> 05:34.610
+So what I want to do is I want to copy that and paste it right in here.
+
+05:36.020 --> 05:36.920
+Just like that.
+
+05:36.920 --> 05:41.360
+So now we've got file journey and we still have the dollar sign in the curlies, but we want to change
+
+05:41.360 --> 05:42.890
+file to file your name.
+
+05:44.530 --> 05:49.720
+So the next thing we want to do is we want to add a slash forward slash star.
+
+05:50.020 --> 05:59.770
+CP Right after that closed curly this tells the build system to build all the C++ files in that project
+
+06:00.010 --> 06:01.240
+by default.
+
+06:01.240 --> 06:04.150
+Visual Studio code when it comes configured.
+
+06:04.180 --> 06:06.220
+It only does the one file.
+
+06:06.250 --> 06:11.260
+So as we build projects that get bigger, we're going to have multiple C++ files.
+
+06:11.260 --> 06:13.120
+So it's really important that we do that.
+
+06:13.750 --> 06:17.950
+So I'm going to control S to save and I'm going to close that down.
+
+06:18.460 --> 06:21.760
+And now we're ready to build and run this program.
+
+06:22.210 --> 06:23.770
+So what do we do first?
+
+06:23.800 --> 06:29.530
+It's very important that we select the C++ file that we want to build within the right project.
+
+06:29.560 --> 06:36.130
+It's possible that we'll have multiple projects and every project will have its own C++ file.
+
+06:36.730 --> 06:42.730
+That has to be selected because the Build System and Visual Studio code will build the active file,
+
+06:42.730 --> 06:44.380
+which is the one that's been selected.
+
+06:44.650 --> 06:53.890
+So once we have that selected, we can come up to terminal and run, build task or control shift B And
+
+06:53.890 --> 07:00.340
+what will happen is right down here you can see the output of the bill that says build finished successfully.
+
+07:00.910 --> 07:07.150
+You can also see our GPUs plus compiler being executed with those options that we typed into our tests,
+
+07:07.150 --> 07:07.990
+JSON.
+
+07:08.170 --> 07:15.460
+And you can also see that it's using the project one folder and it's compiling all the star CP files.
+
+07:15.460 --> 07:18.670
+So it's exactly what it's doing, exactly what we told it to do.
+
+07:19.470 --> 07:26.010
+So now we have an executable that we can run and that executable is called Main and it's right here
+
+07:26.010 --> 07:26.970
+in the project.
+
+07:27.210 --> 07:29.220
+Before we only had the one source file.
+
+07:29.220 --> 07:31.140
+Now we've got the executive file.
+
+07:31.140 --> 07:32.340
+So how do we run that?
+
+07:32.340 --> 07:34.800
+Let me close this up and just make a little bit more room.
+
+07:34.800 --> 07:36.990
+We can right click on that file.
+
+07:38.360 --> 07:44.360
+And select open and integrated terminal that will open up a terminal window down here and notice it's
+
+07:44.360 --> 07:45.680
+in the project one folder.
+
+07:45.680 --> 07:47.390
+That's exactly where we want to be.
+
+07:47.390 --> 07:51.110
+And if you type else, that will list the files in that directory.
+
+07:51.500 --> 07:55.820
+And you can see there's my main CP and there's my main executive.
+
+07:55.910 --> 07:56.660
+It's green.
+
+07:56.660 --> 08:02.360
+So if I want to run this program, all I need to do is type dot forward slash main.
+
+08:02.780 --> 08:06.320
+Really important that you use the dot forward slash so you can find it.
+
+08:06.650 --> 08:10.490
+And when we press enter, we expect this to display hello from Project one.
+
+08:10.490 --> 08:11.330
+So let's do it.
+
+08:12.300 --> 08:14.880
+And that's exactly what we get from Project one.
+
+08:14.880 --> 08:16.020
+So there you go.
+
+08:16.230 --> 08:22.080
+This shows you how to set this up so that it can build and run C++ projects.
+
+08:22.120 --> 08:24.300
+Right now we only have the one project, project one.
+
+08:24.300 --> 08:25.830
+So let's create another project.
+
+08:26.430 --> 08:28.080
+We need to create a new folder.
+
+08:28.110 --> 08:33.600
+The problem is, if we create a new folder right now, it's going to create an underneath project one.
+
+08:33.600 --> 08:34.810
+That's not what I want.
+
+08:34.830 --> 08:40.830
+I want Project two to be at the same level as Project one, and it's not really intuitive as to how
+
+08:40.830 --> 08:41.370
+you would do that.
+
+08:41.370 --> 08:44.420
+You would think, Well, you select this one, but then the folders go away.
+
+08:44.430 --> 08:48.900
+So the way to do it is just select Project one and then press escape.
+
+08:49.440 --> 08:51.470
+And when you press escape, notice what happens.
+
+08:51.480 --> 08:54.360
+You get this blue bounding box here going around.
+
+08:54.390 --> 08:59.760
+Now when you create the folder, you can type in project two or whatever you like, and it's at the
+
+08:59.760 --> 09:01.620
+same level as Project one.
+
+09:01.620 --> 09:03.330
+That's exactly how you would do that.
+
+09:03.600 --> 09:06.690
+We can create as many project folders as we need.
+
+09:07.200 --> 09:14.730
+Now, in Project two, I need to create my C++ file, so I'll select new file and type in main CP.
+
+09:15.840 --> 09:20.340
+And what I want to put in here is let's put in the same thing that we had here.
+
+09:20.340 --> 09:24.030
+I'm just going to copy and paste this so that I don't have to type it all in again.
+
+09:24.030 --> 09:29.160
+So I'm just going to select it all and I'm going to copy and I'm going to come back to Project Two's
+
+09:29.160 --> 09:30.630
+main and paste it in here.
+
+09:31.470 --> 09:32.310
+There we go.
+
+09:32.340 --> 09:33.900
+Let me close this window up down here.
+
+09:33.900 --> 09:35.130
+Give us a little bit more room.
+
+09:35.130 --> 09:41.550
+And all I'm going to do here is say hello from Project two and I'll control S to save this.
+
+09:42.390 --> 09:49.110
+So now if I want to build this project project to, I have to select that.
+
+09:49.920 --> 09:54.540
+If you select this or this and try to do a build, you're going to get all kinds of weird things happening
+
+09:54.540 --> 09:56.210
+because it doesn't know what to do.
+
+09:56.220 --> 10:00.390
+So we want to select the C++ file within Project two.
+
+10:00.390 --> 10:05.250
+And again, we want to go to terminal and we want to the build task.
+
+10:06.440 --> 10:10.130
+And notice we get exactly the same thing build finish successfully.
+
+10:10.130 --> 10:17.000
+Except you can see it's working on Project two now and we created an executive file in Project two.
+
+10:17.420 --> 10:19.220
+Project one was not affected.
+
+10:19.580 --> 10:25.880
+So if we want to run this file, we can right click on it, open it in the Integrated Terminal.
+
+10:26.870 --> 10:28.670
+Notice we're in Project two folder now.
+
+10:28.670 --> 10:34.970
+We could just do that dot slash main and we expect now to say hello from Project two and that's exactly
+
+10:35.000 --> 10:35.720
+what we get.
+
+10:36.680 --> 10:37.490
+So that's it.
+
+10:37.490 --> 10:44.270
+That shows you how to create folder structures, create C++ files, build and run the active tasks.
+
+10:44.270 --> 10:50.870
+We can add as many projects as we like inside this folder, this section, X folder, and it's a real
+
+10:50.900 --> 10:54.140
+handy way to keep yourself organized in the next video.
+
+10:54.140 --> 11:00.830
+What we'll do is I'll show you how to set up Visual Studio code so that we can debug C++ projects.
+
+11:00.860 --> 11:05.390
+Debugging is really important and helps us find errors and understand our code better.
+
+11:05.390 --> 11:10.940
+And the idea with the debugger is that we can execute our code one line at a time and we can jump around
+
+11:10.940 --> 11:17.090
+between pieces of code and we can actually see the values of our variables as we're executing the code.
+
+11:17.180 --> 11:20.750
+So it's a very, very powerful tool to have in our tool belt.
+
+11:20.750 --> 11:22.880
+So I'll see you in the next video and we'll do that.

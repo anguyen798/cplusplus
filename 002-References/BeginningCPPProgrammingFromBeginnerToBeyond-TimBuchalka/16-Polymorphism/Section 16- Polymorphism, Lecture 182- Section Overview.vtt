@@ -1,0 +1,86 @@
+WEBVTT
+
+00:00:06.050 --> 00:00:08.620
+In this section of the course,
+we'll see how we can use
+
+00:00:08.620 --> 00:00:12.430
+polymorphism and inheritance to
+provide us with the power to create
+
+00:00:12.430 --> 00:00:14.390
+reusable and flexible programs.
+
+00:00:15.540 --> 00:00:17.579
+We'll start by understanding
+the different types of
+
+00:00:17.609 --> 00:00:21.630
+polymorphism available in c++,
+and then we'll focus on dynamic
+
+00:00:21.660 --> 00:00:23.290
+polymorphism in this section.
+
+00:00:24.370 --> 00:00:27.590
+Then we'll learn how to use base class
+pointers to really take our class
+
+00:00:27.590 --> 00:00:31.830
+hierarchies to a new level and see
+how we can now think more abstractly
+
+00:00:31.990 --> 00:00:33.730
+and not have to worry about details.
+
+00:00:34.449 --> 00:00:37.260
+Throughout this section of the
+course, we'll see examples of
+
+00:00:37.279 --> 00:00:40.710
+static and dynamic binding of
+function calls, and we'll understand
+
+00:00:40.710 --> 00:00:42.199
+the pros and cons of each.
+
+00:00:42.960 --> 00:00:47.180
+Then we'll use virtual functions to
+achieve polymorphic functions, that is
+
+00:00:47.320 --> 00:00:49.130
+functions that are bound at runtime.
+
+00:00:49.849 --> 00:00:55.490
+We'll see how important it is to
+have virtual destructors, and use the
+
+00:00:55.490 --> 00:00:59.490
+and use the c++11 override and final specifiers.
+
+00:01:00.460 --> 00:01:03.459
+Then we'll see how we can use
+base class references to also
+
+00:01:03.460 --> 00:01:05.039
+achieve dynamic polymorphism.
+
+00:01:06.360 --> 00:01:09.190
+Finally, we'll learn what pure
+virtual functions and abstract
+
+00:01:09.190 --> 00:01:13.389
+classes are, and why we would want
+to use them as is and in interfaces.
+
+00:01:13.680 --> 00:01:16.990
+There's a lot to cover, but I think
+you'll find this section pretty easy to grasp
+
+00:01:16.990 --> 00:01:19.690
+since you have a
+pretty solid foundation already.
+
+00:01:19.890 --> 00:01:22.090
+So let's get started
+with polymorphism.

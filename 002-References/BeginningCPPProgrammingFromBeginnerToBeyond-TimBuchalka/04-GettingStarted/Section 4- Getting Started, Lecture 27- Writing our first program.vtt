@@ -1,0 +1,442 @@
+WEBVTT
+
+00:00:05.400 --> 00:00:08.400
+In this video, we'll write our very first program.
+
+00:00:09.100 --> 00:00:11.200
+So what we want to do is we want to create a project.
+
+00:00:11.200 --> 00:00:14.700
+So again, I'm in the section 4 workspace, and I'm going to right click on there
+
+00:00:15.400 --> 00:00:17.000
+and say new, new project.
+
+00:00:18.100 --> 00:00:20.300
+I'm going to select my default template again.
+
+00:00:20.800 --> 00:00:23.100
+And I'm just going to call this first program.
+
+00:00:25.500 --> 00:00:28.200
+And I'll select next and finish.
+
+00:00:30.400 --> 00:00:33.760
+Now notice that project1 is the active project so I want to be sure that
+
+00:00:33.760 --> 00:00:36.760
+first program is the active project. So I could just double click on, it
+
+00:00:37.560 --> 00:00:40.560
+and I can open up that c++ file. That's it.
+
+00:00:41.060 --> 00:00:43.360
+So this is the source code for the first program.
+
+00:00:43.860 --> 00:00:47.960
+Now what I want to do is I want to erase this and I want you to really just type it in
+
+00:00:47.960 --> 00:00:51.760
+that way you get used to typing these things in at the beginning that's probably the
+
+00:00:51.760 --> 00:00:53.960
+best way to do it is just to follow along.
+
+00:00:53.960 --> 00:00:55.660
+So let me tell you what this program is about.
+
+00:00:55.660 --> 00:00:57.960
+This program is going to ask the user
+
+00:00:57.960 --> 00:01:00.960
+to enter their favorite number, a number between 1 and a 100.
+
+00:01:01.620 --> 00:01:02.920
+And then it's going to display.
+
+00:01:03.580 --> 00:01:07.680
+Wow, that's amazing. That's my favorite number too. That's it. Okay.
+
+00:01:07.680 --> 00:01:11.780
+So let's start. First thing we need to do is we need to do pound include
+
+00:01:12.380 --> 00:01:13.740
+of iostream.
+
+00:01:13.740 --> 00:01:17.840
+Now as I type, I'm going to press io then when I press s,
+
+00:01:18.140 --> 00:01:22.340
+you can see that the code completion is helping me out is trying to figure out what I want.
+
+00:01:22.590 --> 00:01:25.090
+And it's giving me its guess as to what I want.
+
+00:01:25.390 --> 00:01:28.990
+And I want iostream, so I'm just going to select it and close it.
+
+00:01:29.590 --> 00:01:31.790
+There is no semicolon here on this statement.
+
+00:01:32.450 --> 00:01:37.050
+These pound directives, and we'll talk more about what these preprocessor directives are
+
+00:01:37.050 --> 00:01:40.750
+in section 5, but they don't take semicolons at the end.
+
+00:01:40.750 --> 00:01:44.050
+So I'm going to press enter. And now we want to create our main function.
+
+00:01:44.050 --> 00:01:46.850
+Remember, the main function is the main entry point.
+
+00:01:46.850 --> 00:01:49.450
+This is the place where execution begins.
+
+00:01:49.450 --> 00:01:53.850
+So we're going to say int main left paren, right paren.
+
+00:01:54.450 --> 00:01:56.650
+And then we're going to put a left curly
+
+00:01:56.650 --> 00:02:00.050
+and the IDE will terminate that left curly with the right curly.
+
+00:02:00.710 --> 00:02:03.210
+We'll talk more about style as we go, but
+
+00:02:03.210 --> 00:02:06.410
+some programmers like to line up their braces like this,
+
+00:02:06.410 --> 00:02:08.410
+others like to line them up like that.
+
+00:02:08.410 --> 00:02:11.400
+Right now, it doesn't matter. Let's just line them up like this.
+
+00:02:11.400 --> 00:02:15.760
+All right. So what do we need to do. We need to prompt the user to enter
+
+00:02:16.420 --> 00:02:20.670
+their favorite number. So how do I do that? I do that with a cout statement.
+
+00:02:20.670 --> 00:02:23.270
+So I'm going to say std::
+
+00:02:24.570 --> 00:02:25.570
+cout,
+
+00:02:26.870 --> 00:02:31.470
+and we'll do the insertion operator which inserts something into that stream.
+
+00:02:31.470 --> 00:02:35.570
+Remember, cout is typically tied to your console, your terminal,
+
+00:02:35.570 --> 00:02:37.070
+so the user can type things in.
+
+00:02:38.170 --> 00:02:39.670
+And we're going to display,
+
+00:02:40.770 --> 00:02:43.770
+enter your favorite
+
+00:02:45.370 --> 00:02:48.770
+number between,
+
+00:02:50.270 --> 00:02:51.370
+let's say, 1 and 100.
+
+00:02:53.370 --> 00:02:55.870
+And I'll just put a colon there.
+
+00:02:55.870 --> 00:02:58.370
+Now you'll notice that you've got a quote mark
+
+00:02:58.370 --> 00:03:01.370
+and then a terminating quote mark. This is called a string.
+
+00:03:01.670 --> 00:03:03.170
+This is called the string literal.
+
+00:03:04.170 --> 00:03:06.670
+This will be displayed exactly as is.
+
+00:03:07.870 --> 00:03:12.070
+Now this is a statement, so all statements end in a semicolon.
+
+00:03:13.630 --> 00:03:16.430
+Remember, main returns an integer
+
+00:03:16.930 --> 00:03:21.530
+and that integer is 0 if everything is good. So I'm going to return 0,
+
+00:03:24.230 --> 00:03:28.230
+right. So if i run this program now, it's all -- it's going to say is enter your favorite number
+
+00:03:28.230 --> 00:03:29.430
+between 100.
+
+00:03:29.430 --> 00:03:32.130
+That's it. It's not going to grab the number from anywhere,
+
+00:03:32.130 --> 00:03:34.130
+it's not going to display anything else.
+
+00:03:34.380 --> 00:03:38.370
+We need to somehow read what the user types in on the keyboard.
+
+00:03:38.870 --> 00:03:40.870
+So just like cout,
+
+00:03:41.370 --> 00:03:44.570
+writes to the console cin reads from the console.
+
+00:03:45.370 --> 00:03:48.570
+So what we're going to do here is we're going to say std
+
+00:03:49.470 --> 00:03:50.470
+cm,
+
+00:03:50.870 --> 00:03:54.970
+and now we're going to use the extraction operator because we want to extract information.
+
+00:03:54.970 --> 00:03:58.330
+And it's the same as the insertion operator except going the other way.
+
+00:03:59.330 --> 00:04:03.730
+But now what we're saying is we want to grab whatever the user types in and we want to store it somewhere.
+
+00:04:04.330 --> 00:04:06.030
+We where do we store that?
+
+00:04:06.030 --> 00:04:08.330
+Well, this is where variables come in. And we'll do
+
+00:04:08.330 --> 00:04:11.430
+a lot of talking about variables in section 6.
+
+00:04:11.430 --> 00:04:14.100
+I'll talk about how do you declare them, how you initialize them,
+
+00:04:14.100 --> 00:04:16.100
+the rules for naming them and so forth.
+
+00:04:16.100 --> 00:04:19.400
+But declaring variables is very straightforward. So let's do that here.
+
+00:04:19.400 --> 00:04:23.060
+What we do is we tell the compiler. Remember, the compiler is really dumb.
+
+00:04:23.060 --> 00:04:26.860
+It's not guessing it. It does exactly what we tell it to do.
+
+00:04:27.360 --> 00:04:31.020
+So what I'm going to do is I'm going to tell it that I want a variable name
+
+00:04:31.020 --> 00:04:35.120
+and that name is called favorite number that's where I want you to store what the user typed in.
+
+00:04:35.720 --> 00:04:39.020
+And you also have to tell it what kind of data that is.
+
+00:04:39.020 --> 00:04:42.020
+Is it a string? Is it some big huge structure?
+
+00:04:42.380 --> 00:04:45.180
+No, in this case it's just a whole number an integer.
+
+00:04:45.180 --> 00:04:48.380
+So we're going to say int
+
+00:04:48.980 --> 00:04:51.380
+favorite_number
+
+00:04:52.880 --> 00:04:53.880
+;
+
+00:04:54.240 --> 00:04:56.570
+that's it. That's a variable declaration.
+
+00:04:56.770 --> 00:05:01.170
+You've just told the compiler that this variable name right here favorite number is an integer.
+
+00:05:01.830 --> 00:05:05.190
+Now I can read
+
+00:05:05.190 --> 00:05:09.790
+information into that, so I can say std::
+
+00:05:09.790 --> 00:05:13.590
+and again the std will explain later on, it's a namespace
+
+00:05:13.590 --> 00:05:16.950
+but we definitely need it here stdcn
+
+00:05:16.950 --> 00:05:18.250
+into favorite number.
+
+00:05:18.250 --> 00:05:20.450
+Now again, I'm going to type fav
+
+00:05:21.250 --> 00:05:23.750
+and the code completion will try to figure out what I want,
+
+00:05:23.750 --> 00:05:26.350
+so it's going to use favorite number I can just press enter
+
+00:05:27.350 --> 00:05:28.850
+semicolon on the end.
+
+00:05:29.850 --> 00:05:33.650
+So notice what we've done so far, we've included iostream.
+
+00:05:33.650 --> 00:05:38.050
+Why did we include iostream because we need the input output libraries.
+
+00:05:38.450 --> 00:05:41.950
+We can't do IO without it. So we're including it.
+
+00:05:41.950 --> 00:05:44.050
+Now the compiler understands
+
+00:05:44.050 --> 00:05:47.550
+about input and output. It understands cout and cin.
+
+00:05:47.550 --> 00:05:49.150
+They are defined in here.
+
+00:05:50.750 --> 00:05:54.310
+Great, so I'm outputting enter your favorite number between 1 and 100.
+
+00:05:54.310 --> 00:05:56.910
+Now the user is going to type something at the keyboard.
+
+00:05:56.910 --> 00:06:00.910
+And whatever they type, we're going to store it into favorite number,
+
+00:06:00.910 --> 00:06:02.210
+this guy right there.
+
+00:06:04.110 --> 00:06:06.110
+Right now we just need to say
+
+00:06:07.410 --> 00:06:08.210
+cout
+
+00:06:09.910 --> 00:06:12.210
+and I can say something like amazing.
+
+00:06:15.010 --> 00:06:16.610
+That's my favorite number too.
+
+00:06:22.310 --> 00:06:26.510
+Here we can do an end line, so we
+
+00:06:26.510 --> 00:06:29.010
+flush the buffers and print out to the next line.
+
+00:06:29.010 --> 00:06:31.410
+That's it. So let's go through this again one more time.
+
+00:06:31.810 --> 00:06:36.210
+We've got a main function. This is the entry point. This is where execution begins.
+
+00:06:36.710 --> 00:06:39.510
+All c++ programs must have a main function.
+
+00:06:40.110 --> 00:06:43.910
+All c++ programs must only have exactly one main function.
+
+00:06:44.710 --> 00:06:47.710
+So when the program begins to execute, this is where it starts.
+
+00:06:48.370 --> 00:06:51.370
+Here I've defined a variable called favorite number
+
+00:06:52.370 --> 00:06:54.730
+and it's an integer, it can only hold whole numbers.
+
+00:06:55.230 --> 00:06:57.590
+I'm outputting to the console.
+
+00:06:57.590 --> 00:06:59.990
+Enter your favorite number between 1 and 100,
+
+00:06:59.990 --> 00:07:03.290
+the user is not going to input something into the console a number.
+
+00:07:03.290 --> 00:07:08.190
+And I'm going to read it and store it into that location into that variable, into that box.
+
+00:07:09.490 --> 00:07:13.890
+Then I'm going to say cout, amazing. That's my favorite number too.
+
+00:07:14.390 --> 00:07:18.790
+And I'm just going to print end line at the end that'll flush out the buffers
+
+00:07:18.790 --> 00:07:21.350
+and move the cursor over to the next line.
+
+00:07:21.350 --> 00:07:22.850
+Finally, I return zero.
+
+00:07:23.550 --> 00:07:24.550
+Everything's good.
+
+00:07:25.150 --> 00:07:28.450
+Now next thing to do is to build this program.
+
+00:07:28.450 --> 00:07:32.350
+Program is not going to run up by itself. We need to compile it. We need to link it.
+
+00:07:32.350 --> 00:07:36.340
+And then we need to execute it. That whole process of compiling
+
+00:07:36.340 --> 00:07:37.940
+and linking is called building.
+
+00:07:38.640 --> 00:07:41.440
+Now you'll notice that when you right click
+
+00:07:41.440 --> 00:07:44.140
+on that source file right here main cpp,
+
+00:07:44.800 --> 00:07:46.300
+you see it says compile.
+
+00:07:47.900 --> 00:07:49.200
+Now if I press that,
+
+00:07:50.500 --> 00:07:52.500
+it's going to compile our program.
+
+00:07:52.500 --> 00:07:55.300
+And you can see here 0 errors, 0 warnings.
+
+00:07:55.300 --> 00:07:58.600
+We'll talk about what happens if you get errors and warnings a little bit later.
+
+00:07:58.800 --> 00:08:02.400
+Also notice that we're using the c++14 standard,
+
+00:08:02.400 --> 00:08:03.700
+which is what we want to use.
+
+00:08:04.680 --> 00:08:07.680
+That's what we did when we set up that default template if you recall.
+
+00:08:09.180 --> 00:08:11.880
+What we need to do next is to build
+
+00:08:11.880 --> 00:08:14.880
+the project by compiling and linking
+
+00:08:14.880 --> 00:08:18.080
+that's going to create the exe file on windows
+
+00:08:18.080 --> 00:08:21.430
+or the executable files on Linux and mac.
+
+00:08:21.680 --> 00:08:23.180
+And we'll do that in the next video.

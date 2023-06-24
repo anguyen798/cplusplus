@@ -1,0 +1,322 @@
+WEBVTT
+
+00:00.390 --> 00:04.360
+Let us look at the difference between global and local variables.
+
+00:04.380 --> 00:08.940
+These are the commonly used terms in programming, global variables and local variables.
+
+00:08.940 --> 00:11.610
+So for that I have a sample piece of code here.
+
+00:11.760 --> 00:14.140
+Let us read the code and understand it for us.
+
+00:14.190 --> 00:16.500
+Then I can show you the differences between them.
+
+00:16.500 --> 00:19.200
+See, this is the main function.
+
+00:19.200 --> 00:20.610
+Main function?
+
+00:20.610 --> 00:22.500
+And is it having any variables?
+
+00:22.500 --> 00:25.830
+No, there is no variable here, but g assign 15.
+
+00:25.830 --> 00:30.270
+So it is g g is here, but it's outside the function.
+
+00:31.140 --> 00:34.800
+It's neither in fun nor in main function.
+
+00:34.800 --> 00:37.020
+See, these are two different functions I have.
+
+00:37.020 --> 00:38.460
+It's not any one of these.
+
+00:38.460 --> 00:39.570
+So it is separate.
+
+00:39.630 --> 00:42.750
+Can you have a variable outside all the functions?
+
+00:42.750 --> 00:43.470
+Yes.
+
+00:43.470 --> 00:46.170
+Such variables are called as global variable.
+
+00:47.410 --> 00:48.910
+They are accessible there.
+
+00:48.940 --> 00:52.300
+They are accessible in all the functions of your program.
+
+00:52.300 --> 00:58.300
+So they are accessible in function fun also and they're accessible in function main also so they can
+
+00:58.300 --> 00:59.680
+be used anywhere.
+
+01:00.840 --> 01:02.880
+These are global variables.
+
+01:03.630 --> 01:07.230
+Then if I continue reading this one g assign 15.
+
+01:07.230 --> 01:15.120
+So this variable is becoming 15 and is 15 now then called function fun fun end eight.
+
+01:15.150 --> 01:16.490
+What is this variable?
+
+01:16.500 --> 01:20.280
+This belonged to function fun and it is a local variable.
+
+01:20.280 --> 01:26.190
+So we already know about them that those variables are located in the mean memory whenever the function
+
+01:26.190 --> 01:29.580
+is called and DL located whenever the function terminates.
+
+01:29.580 --> 01:32.400
+So this variable is local to our function.
+
+01:32.400 --> 01:36.090
+Let us continue g assign g plus a five.
+
+01:36.090 --> 01:38.880
+Five is added to this one so this becomes 20.
+
+01:38.930 --> 01:42.360
+Okay then see how g 20 is displayed.
+
+01:42.360 --> 01:45.270
+Then functions come back g plus plus.
+
+01:45.270 --> 01:50.760
+So this becomes 21 and here 21 is pretend doing nothing.
+
+01:50.760 --> 01:52.080
+Just as a sample code.
+
+01:52.080 --> 01:57.030
+I have written to show you that this variable can be accessed in any one of these function.
+
+01:57.180 --> 02:04.530
+So this is a global variable and this is a local variable.
+
+02:04.560 --> 02:10.800
+A variable inside the function is local and the variable outside all the functions is global.
+
+02:10.950 --> 02:17.820
+And even if I declare some variable here x, then this is local to main function.
+
+02:17.820 --> 02:20.610
+This is this is also a local variable.
+
+02:21.120 --> 02:26.460
+So the variables inside the functions are local, the variables outside the functions are global.
+
+02:26.490 --> 02:28.650
+Now let us know their differences.
+
+02:29.500 --> 02:31.510
+First local variables.
+
+02:31.510 --> 02:33.520
+They are not accessible in other function.
+
+02:33.520 --> 02:36.550
+They belong to that function in which they are declared.
+
+02:37.480 --> 02:39.940
+First point, then second point.
+
+02:40.240 --> 02:43.040
+They remain in the memory as long as the function is running.
+
+02:43.060 --> 02:45.040
+Once the function ends, they are terminated.
+
+02:45.830 --> 02:49.220
+Two points then what about the global variable?
+
+02:49.520 --> 02:53.210
+Global variables are accessible in all the functions of a program.
+
+02:53.390 --> 02:54.440
+That's the first thing.
+
+02:54.950 --> 02:55.850
+Then the second thing.
+
+02:55.850 --> 02:56.980
+How long they are there?
+
+02:56.990 --> 03:00.170
+As long as the program is running, they are there in the memory.
+
+03:01.040 --> 03:02.210
+They are there in the memory.
+
+03:02.300 --> 03:03.070
+Now, let us see.
+
+03:03.090 --> 03:08.750
+We know this memory area and this we call it as code section and this we call it as a stack.
+
+03:08.750 --> 03:11.360
+And this we call it as he.
+
+03:11.540 --> 03:18.800
+Now, if I use those to function, function, fun and function mean, then how this code will work.
+
+03:19.610 --> 03:24.380
+Let us see first thing where the global variable, where the memory for the global variable is created.
+
+03:24.380 --> 03:25.340
+Where do you think?
+
+03:25.580 --> 03:27.670
+Is it inside the stack or inside the heap?
+
+03:27.680 --> 03:31.940
+If it is inside the stack, then does it belong to function fund or main function?
+
+03:32.270 --> 03:39.470
+No memory for those global variables is located inside the code section, so actually not here.
+
+03:39.470 --> 03:40.670
+We show it like this.
+
+03:40.670 --> 03:48.560
+A small piece of memory is belonging to the code section only, which is meant for keeping global variables.
+
+03:48.560 --> 03:51.680
+So we show it like this and the initial size is zero.
+
+03:51.680 --> 03:55.040
+So code section is from here to here.
+
+03:55.070 --> 03:56.720
+This whole thing is a code section.
+
+03:56.720 --> 04:02.450
+So instead of creating any confusion to make it more clear, I will show it here.
+
+04:03.050 --> 04:03.890
+I'll show it here.
+
+04:03.890 --> 04:05.300
+Inside the code section.
+
+04:06.140 --> 04:06.720
+OC.
+
+04:07.830 --> 04:12.030
+If you read four books or if you check somewhere on online, you can find some diagrams.
+
+04:12.030 --> 04:13.320
+Where about the code section?
+
+04:13.320 --> 04:18.870
+There's a small section, there's a part of code section only subsection of code section that is for
+
+04:18.870 --> 04:19.620
+global variables.
+
+04:19.620 --> 04:21.780
+So but I'm showing it directly here.
+
+04:22.050 --> 04:24.540
+This is easy for remembering and understanding it.
+
+04:24.540 --> 04:28.590
+Avoid all confusions that is created in code section.
+
+04:28.590 --> 04:29.400
+That's it.
+
+04:29.460 --> 04:35.370
+Then whatever you say, I want to run the program program gets loaded here at loading time.
+
+04:35.370 --> 04:36.810
+Only they will get the memory.
+
+04:37.050 --> 04:38.850
+Now let me continue execution.
+
+04:38.850 --> 04:43.290
+First of all, main function is called main function is having one dummy variable.
+
+04:43.290 --> 04:46.230
+I have taken it just for the sake of this diagram.
+
+04:46.230 --> 04:47.550
+I have taken this variable.
+
+04:47.550 --> 04:53.310
+So four main x is created having value ten this is for main.
+
+04:54.150 --> 04:58.530
+The next is g assign 15 so main can access this one and it will become 15.
+
+04:58.740 --> 05:01.440
+Then function one is called this function phone is called.
+
+05:01.440 --> 05:08.130
+Then it is having its own variable function fun a and this is having value five.
+
+05:08.130 --> 05:11.160
+Yes, next line is G, assign g plus A.
+
+05:11.190 --> 05:12.990
+So this becomes 115 plus five.
+
+05:12.990 --> 05:13.710
+That is 20.
+
+05:13.710 --> 05:21.510
+So this becomes 20 C function one is also accessing this one, then c g so the value 20 is displayed
+
+05:21.660 --> 05:24.720
+now function ends, all lines end.
+
+05:24.720 --> 05:29.280
+Once the function ends, it's memory is g located, g is still there.
+
+05:29.310 --> 05:35.490
+See you can see how how long the variable E was there in the memory, as long as this function was running.
+
+05:35.490 --> 05:36.870
+But what about G?
+
+05:36.900 --> 05:41.280
+Is there always I don't have to show you the remaining part now.
+
+05:41.280 --> 05:44.280
+So this is the difference between global and local variable.
+
+05:44.280 --> 05:49.500
+I have given you the points and I have also shown you where they are created inside the main memory.
+
+05:51.390 --> 05:57.970
+So we use global variables a lot of times declaring global variables as a common practice of programmers.
+
+05:58.020 --> 06:01.560
+They use it when they don't find a right place for a variable.
+
+06:01.560 --> 06:04.810
+The thing that it should be accessible by most of the functions.
+
+06:04.830 --> 06:06.870
+Then you make it as global.
+
+06:07.640 --> 06:09.620
+So let us try this and see.

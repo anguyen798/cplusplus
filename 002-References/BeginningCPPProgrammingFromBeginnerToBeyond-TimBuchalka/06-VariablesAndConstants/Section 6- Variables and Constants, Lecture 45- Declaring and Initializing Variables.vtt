@@ -1,0 +1,712 @@
+WEBVTT
+
+00:00:05.800 --> 00:00:09.500
+In this video, we'll learn how to declare and initialize variables.
+
+00:00:09.860 --> 00:00:13.520
+Then we'll head over to CodeLite and declare and initialize some variables in live code.
+
+00:00:14.780 --> 00:00:18.580
+The syntax for a variable declaration in c++ is very simple.
+
+00:00:19.080 --> 00:00:22.080
+First, you tell the compiler what the type of the variable is.
+
+00:00:22.480 --> 00:00:25.140
+Then you tell the compiler what the name of the variable is.
+
+00:00:25.140 --> 00:00:27.840
+And finally, you terminate the declaration with a semicolon.
+
+00:00:28.940 --> 00:00:32.930
+Later in this section, I'll go over some of the basic c++ types,
+
+00:00:32.930 --> 00:00:36.730
+but here are a few as a preview. Int is an integer or a whole number.
+
+00:00:37.130 --> 00:00:39.130
+A double is a floating point number.
+
+00:00:39.530 --> 00:00:43.130
+And a string is a sequence of characters like you would see in my name Frank.
+
+00:00:43.930 --> 00:00:48.330
+Also notice that we can declare variables of non-c++ built-in types.
+
+00:00:49.030 --> 00:00:53.530
+One of the very powerful features of c++ is object-oriented programming,
+
+00:00:53.730 --> 00:00:55.930
+which allows us to create our own types.
+
+00:00:56.430 --> 00:00:59.830
+So we can create variables that represent an account or a person
+
+00:00:59.830 --> 00:01:03.820
+using the same syntax as we used for integers and doubles.
+
+00:01:03.820 --> 00:01:06.820
+This is great since it makes our program so much more readable.
+
+00:01:07.320 --> 00:01:10.420
+In the next, slide we'll talk about some of the rules that you must follow
+
+00:01:10.420 --> 00:01:11.920
+when you name variables.
+
+00:01:11.920 --> 00:01:16.120
+Remember, in c++ we must declare our variables before we use them.
+
+00:01:16.620 --> 00:01:18.820
+So let's take a look at some of the variable naming rules.
+
+00:01:19.720 --> 00:01:23.220
+The rules for naming c++ variables are very very simple.
+
+00:01:23.720 --> 00:01:28.080
+C++ variable names can contain letters, numbers and underscores.
+
+00:01:28.440 --> 00:01:31.740
+However, the first letter of the name cannot be a number,
+
+00:01:31.740 --> 00:01:33.340
+it can be an underscore or a letter.
+
+00:01:34.340 --> 00:01:38.840
+As discussed previously, c++ keywords are also reserved
+
+00:01:38.840 --> 00:01:40.840
+words so you can't use those names.
+
+00:01:40.840 --> 00:01:44.500
+You can't use int, you can't use double as your own names.
+
+00:01:45.100 --> 00:01:49.560
+Also you cannot declare a variable name that's already been declared in the same scope.
+
+00:01:49.560 --> 00:01:53.060
+So if you declared x to be an integer, you can't do that again.
+
+00:01:53.860 --> 00:01:56.360
+Remember, c++ is case-sensitive.
+
+00:01:56.360 --> 00:01:59.360
+So the name, age in uppercase is considered
+
+00:01:59.360 --> 00:02:03.350
+different from the name, age and lowercase. Let's take a look at a few examples.
+
+00:02:04.710 --> 00:02:08.810
+In the left column of the table, you can see some legal c++ variable names.
+
+00:02:10.310 --> 00:02:12.810
+Since c++ is case-sensitive,
+
+00:02:12.810 --> 00:02:15.810
+age beginning with an uppercase A is considered
+
+00:02:15.810 --> 00:02:18.480
+a different name from age beginning with a lowercase a.
+
+00:02:19.380 --> 00:02:22.740
+We can begin our variable names with underscores or letters.
+
+00:02:23.140 --> 00:02:26.640
+And we can also have underscores and numbers within the variable name.
+
+00:02:27.240 --> 00:02:30.440
+The right column has some examples of the legal variable names.
+
+00:02:30.940 --> 00:02:33.340
+The first example is lowercase int.
+
+00:02:33.340 --> 00:02:37.640
+This is not allowed since lowercase int is a reserved word in c++.
+
+00:02:38.440 --> 00:02:42.640
+We cannot have special characters like the dollar sign or mathematical characters
+
+00:02:42.640 --> 00:02:43.640
+like the plus sign.
+
+00:02:43.940 --> 00:02:47.240
+Also notice that variable names cannot have spaces in them.
+
+00:02:48.040 --> 00:02:50.640
+Now let's talk about cout. Cout is a little different.
+
+00:02:51.140 --> 00:02:55.340
+Cout is a legal name because it conforms to the variable naming rules.
+
+00:02:55.640 --> 00:02:58.640
+However, if you include iostream in your program,
+
+00:02:58.640 --> 00:03:03.040
+then cout is already defined somewhere else. It's defined by the standard library.
+
+00:03:03.040 --> 00:03:06.040
+So it no longer becomes a valid name
+
+00:03:06.340 --> 00:03:09.540
+since it's been defined somewhere you cannot re-declare it yourself.
+
+00:03:10.200 --> 00:03:14.000
+So the rules that the c++ compiler enforces for variable names
+
+00:03:14.000 --> 00:03:15.600
+are pretty simple as you can see.
+
+00:03:16.100 --> 00:03:19.600
+Now let's take a look at variable naming style and best practices.
+
+00:03:20.600 --> 00:03:23.900
+The most important thing you can do is to be consistent with whatever
+
+00:03:23.900 --> 00:03:26.100
+naming convention you choose to use.
+
+00:03:26.500 --> 00:03:29.300
+There are many style guides and naming conventions out there.
+
+00:03:29.300 --> 00:03:31.700
+In many cases, you'll be working for a company,
+
+00:03:31.700 --> 00:03:35.000
+and they have a specific style and any convention that you have to use.
+
+00:03:35.800 --> 00:03:39.800
+This has nothing to do with the c++ compiler, but it's still very important.
+
+00:03:40.400 --> 00:03:43.700
+For example, google has a published c++ style guide
+
+00:03:43.700 --> 00:03:45.200
+as do many other companies.
+
+00:03:45.900 --> 00:03:49.600
+One of the first decisions you make with regard to variable naming
+
+00:03:49.600 --> 00:03:53.800
+is whether you want to use camel case or underscores to separate words.
+
+00:03:54.400 --> 00:03:57.760
+Both styles make the text more readable by avoiding long streams
+
+00:03:57.760 --> 00:04:00.120
+of lowercase letters which are harder to read.
+
+00:04:00.820 --> 00:04:04.620
+CamelCase capitalizes the first letter of every word in your name
+
+00:04:04.620 --> 00:04:06.120
+and doesn't use underscores.
+
+00:04:07.320 --> 00:04:10.520
+The other style is to use underscores to separate words.
+
+00:04:10.520 --> 00:04:13.620
+Either style is fine, the important thing is to be consistent.
+
+00:04:13.620 --> 00:04:16.120
+In this course, I'll use the underscore style.
+
+00:04:17.120 --> 00:04:21.520
+Please use meaningful names. Don't use obscure abbreviations. For example,
+
+00:04:21.920 --> 00:04:25.720
+instead of using the variable name m-o-e to represent the mass
+
+00:04:25.720 --> 00:04:29.020
+of the earth, just use the real name mass of earth,
+
+00:04:29.320 --> 00:04:32.320
+with underscores or CamelCase either way.
+
+00:04:32.320 --> 00:04:36.920
+Sure it's a little bit more typing but your program becomes so much more readable and maintainable.
+
+00:04:38.720 --> 00:04:41.380
+Never use variable names before initializing them.
+
+00:04:41.740 --> 00:04:46.240
+Uninitialized variables can cause all kinds of unexpected results in c++.
+
+00:04:46.680 --> 00:04:49.680
+I'll show you an example of this when we head over to the IDE.
+
+00:04:50.380 --> 00:04:53.040
+Finally, it's best practice to declare your variables
+
+00:04:53.040 --> 00:04:55.240
+as close to when you need them as possible.
+
+00:04:55.240 --> 00:04:57.840
+In other words, if your program uses 10 variables,
+
+00:04:57.840 --> 00:05:01.440
+don't declare all 10 of them at the top of the file and then use them later.
+
+00:05:01.440 --> 00:05:03.440
+Instead declare them right before you use them.
+
+00:05:04.240 --> 00:05:08.240
+There are many, many more programming best practices, and we'll discuss them throughout the course.
+
+00:05:09.940 --> 00:05:12.540
+So now let's talk about initializing variables.
+
+00:05:12.540 --> 00:05:15.840
+Notice the first line of code in this example, int age.
+
+00:05:16.140 --> 00:05:19.040
+This is a variable declaration that's uninitialized.
+
+00:05:19.040 --> 00:05:22.040
+You have no idea what the value of age is.
+
+00:05:22.040 --> 00:05:24.940
+And that's the problem. If you try to display age
+
+00:05:24.940 --> 00:05:27.140
+or perhaps use it in some calculation,
+
+00:05:27.140 --> 00:05:31.240
+you'll run into problems because it was never initialized, so its value could be anything.
+
+00:05:32.340 --> 00:05:36.040
+Uninitialized variables are a very common source of programming errors.
+
+00:05:36.700 --> 00:05:39.900
+C++ provides three ways to initialize variables.
+
+00:05:39.900 --> 00:05:44.100
+All three are equivalent and, they're related to the way that c++ has evolved
+
+00:05:44.100 --> 00:05:45.200
+over the years.
+
+00:05:45.200 --> 00:05:48.560
+The first is to use an assignment operator. That's the equal sign.
+
+00:05:49.220 --> 00:05:52.420
+This will assign 21 to age right when it's created,
+
+00:05:52.420 --> 00:05:54.420
+so it will be immediately initialized.
+
+00:05:55.120 --> 00:05:58.720
+The second uses parentheses around the value, in this case 21.
+
+00:05:59.520 --> 00:06:02.020
+This is a constructor-style initialization.
+
+00:06:02.020 --> 00:06:05.520
+We'll talk about constructors when we talk about object-oriented programming.
+
+00:06:06.180 --> 00:06:08.180
+The final initialization statement
+
+00:06:08.180 --> 00:06:11.680
+is the c++11 initialization syntax.
+
+00:06:12.080 --> 00:06:16.180
+This style of initialization is consistent across different types in c++
+
+00:06:16.180 --> 00:06:19.180
+and has some benefits that we'll discuss later in this course.
+
+00:06:19.180 --> 00:06:21.780
+I encourage you to use this style of initialization.
+
+00:06:22.280 --> 00:06:25.880
+Now let's head over to CodeLite and see some of these examples in live code.
+
+00:06:27.680 --> 00:06:29.480
+Okay. So now I'm in CodeLite.
+
+00:06:29.480 --> 00:06:33.140
+And let's write a real simple program that calculates the area
+
+00:06:33.140 --> 00:06:34.640
+of a room in square feet.
+
+00:06:34.640 --> 00:06:38.540
+So the idea is we'll ask the user for the length of the room and the width of the room
+
+00:06:38.540 --> 00:06:42.740
+and then we'll multiply those two together to calculate the square footage of the room,
+
+00:06:42.740 --> 00:06:44.740
+the area of the room. Okay.
+
+00:06:44.940 --> 00:06:47.540
+Now obviously, we need two variables. But before we do that,
+
+00:06:47.540 --> 00:06:50.540
+let me show you one of the issues with uninitialized variables
+
+00:06:50.540 --> 00:06:52.540
+as we talked about in the previous slides.
+
+00:06:52.540 --> 00:06:56.940
+Let's create a real simple variable here called age, just like we did before.
+
+00:06:57.340 --> 00:07:00.340
+And I'm not going to initialize it on purpose.
+
+00:07:00.340 --> 00:07:03.340
+And what I want to do is just output that value
+
+00:07:05.110 --> 00:07:08.110
+to cout. Let's build this,
+
+00:07:10.510 --> 00:07:14.010
+and I'll execute it. And you can see the what's printing out here.
+
+00:07:14.510 --> 00:07:19.310
+You can see there's age. I'm outputting age, and that's the value that's in age right now.
+
+00:07:19.910 --> 00:07:22.210
+Not what we expected for sure.
+
+00:07:23.010 --> 00:07:26.610
+The problem is that we never initialize the variable age.
+
+00:07:26.610 --> 00:07:29.710
+So the value that's in that variable could be anything.
+
+00:07:29.710 --> 00:07:33.010
+And in this case, it is anything. Okay. So
+
+00:07:33.010 --> 00:07:34.510
+let me show you how that works.
+
+00:07:35.310 --> 00:07:38.310
+So let's go back to our conceptual model. Here's our memory.
+
+00:07:39.560 --> 00:07:43.920
+I've got a memory location, let's say that that's maybe location 2000 that could be anything.
+
+00:07:44.580 --> 00:07:47.570
+And age is associated with that location.
+
+00:07:48.070 --> 00:07:52.320
+Now in there, there are a series of zeros and ones.
+
+00:07:52.320 --> 00:07:54.320
+That's how we store values in computers.
+
+00:07:55.120 --> 00:07:57.520
+Whatever value happens to be in there
+
+00:07:57.520 --> 00:08:01.620
+is the value that will be displayed on the console. Remember,
+
+00:08:01.620 --> 00:08:03.120
+when I output age,
+
+00:08:03.680 --> 00:08:07.040
+the compiler is going to grab whatever this value is in here
+
+00:08:07.440 --> 00:08:09.440
+and replace it right in there.
+
+00:08:09.440 --> 00:08:12.940
+In this case, we've got that we got that really strange, very large number.
+
+00:08:13.440 --> 00:08:17.840
+The idea is we really want to initialize this guy
+
+00:08:18.440 --> 00:08:20.320
+to something even zero
+
+00:08:21.820 --> 00:08:26.810
+before we use it. So you can see here, I'm using it before I initialize it.
+
+00:08:26.810 --> 00:08:28.060
+That's not a good idea.
+
+00:08:28.060 --> 00:08:31.060
+Okay. So let me clear this. And
+
+00:08:32.660 --> 00:08:37.020
+if we now initialize this to let's say 0 or 21 or whatever we'd like,
+
+00:08:38.520 --> 00:08:39.750
+I'll use 21 here.
+
+00:08:40.980 --> 00:08:42.280
+Now we'll build and run.
+
+00:08:45.580 --> 00:08:47.580
+You can see now it's printing out 21.
+
+00:08:48.880 --> 00:08:51.480
+Okay so that gives you an idea. Now also
+
+00:08:51.480 --> 00:08:53.360
+when we did not initialize it,
+
+00:08:53.360 --> 00:08:56.760
+the compiler did give us a warning. I'll just right click here and compile.
+
+00:08:57.530 --> 00:08:59.730
+Notice the warning that the compiler is giving me down here,
+
+00:08:59.730 --> 00:09:03.330
+it's saying warning age is used uninitialized in this function.
+
+00:09:03.830 --> 00:09:05.830
+That's a clue. Don't ignore those warnings.
+
+00:09:05.830 --> 00:09:10.030
+The compiler is telling you be careful. You're using something that you never initialized.
+
+00:09:10.530 --> 00:09:14.890
+Okay. So that gives you an idea of what's going on with uninitialized variables.
+
+00:09:14.890 --> 00:09:17.690
+All right. So let me erase this, and let's write our program.
+
+00:09:19.790 --> 00:09:23.590
+So what we need here is we need to ask the user for
+
+00:09:23.790 --> 00:09:26.150
+the length of the room and the width of the room.
+
+00:09:26.550 --> 00:09:29.550
+We'll grab those two values from cin,
+
+00:09:29.550 --> 00:09:32.850
+then we'll multiply them together, and we'll display the square footage of the room.
+
+00:09:32.850 --> 00:09:35.850
+Really, really simple program. But let's get started.
+
+00:09:35.850 --> 00:09:39.950
+So what we'll do is we'll say cout, and remember, I don't have to use standard
+
+00:09:39.950 --> 00:09:43.150
+scope resolution operator here because I'm using namespace.
+
+00:09:43.750 --> 00:09:46.050
+So I'll say enter,
+
+00:09:46.550 --> 00:09:48.150
+the width of the room
+
+00:09:49.450 --> 00:09:51.120
+and we'll assume this is in feet.
+
+00:09:52.120 --> 00:09:54.620
+We'll put a semicolon at the end of that line to terminate it.
+
+00:09:56.020 --> 00:10:00.020
+Now we need to read something into a variable, right. So we need to do
+
+00:10:00.020 --> 00:10:01.820
+cin into something.
+
+00:10:02.520 --> 00:10:07.510
+Well, we need to declare that variable. Let's declare it right up here. We could call it width.
+
+00:10:07.910 --> 00:10:11.110
+And it's going to be an integers, let's say. Remember, we've got to say the type,
+
+00:10:11.110 --> 00:10:14.110
+followed by the name of the variable, followed by a semicolon.
+
+00:10:14.710 --> 00:10:16.310
+This is perfectly fine.
+
+00:10:16.710 --> 00:10:20.410
+Width is probably not a great name. Something like room width
+
+00:10:20.410 --> 00:10:21.210
+is better.
+
+00:10:21.210 --> 00:10:25.510
+It provides much more information to whoever's going to come later and modify this code.
+
+00:10:25.910 --> 00:10:27.610
+So now we've got the room width
+
+00:10:27.610 --> 00:10:30.710
+and I'm going to enter the room width and I'm going to read it into
+
+00:10:31.610 --> 00:10:32.610
+room width.
+
+00:10:33.610 --> 00:10:36.610
+Right now, we've got our variable. Now you'll notice a couple of things.
+
+00:10:36.610 --> 00:10:38.910
+One is we never initialized room width.
+
+00:10:39.410 --> 00:10:43.960
+In this case, it's probably okay because I'm going to read something into it before I use it
+
+00:10:43.960 --> 00:10:47.760
+but best practice is let's initialize that.
+
+00:10:47.760 --> 00:10:48.760
+We'll set it to zero.
+
+00:10:50.260 --> 00:10:54.860
+Now we need another variable, right. We need the length of the room. So I'll just cut and paste this
+
+00:10:55.360 --> 00:10:58.760
+to save a little time here.
+
+00:10:59.260 --> 00:11:02.560
+And I'm going to say enter the length of the room.
+
+00:11:03.460 --> 00:11:06.760
+And we're going to read that into another variable called room length.
+
+00:11:11.160 --> 00:11:13.360
+And again, we'll initialize that to zero.
+
+00:11:14.060 --> 00:11:18.660
+In this case, zero is fine. You could initialize it to anything that makes sense in your application.
+
+00:11:19.460 --> 00:11:23.860
+All right, so now we'll read that one into room length. I'll just change this variable name right here.
+
+00:11:24.660 --> 00:11:28.060
+So look at what's going on here. We've initialized two variables,
+
+00:11:28.060 --> 00:11:30.660
+room width and room length. They're both integers.
+
+00:11:31.060 --> 00:11:33.760
+Again, notice the syntax. The type name is integer,
+
+00:11:33.760 --> 00:11:37.560
+followed by the name of the variable. And in this case, we're initializing it.
+
+00:11:38.060 --> 00:11:42.500
+I'm prompting the user to enter the width of the room and I'm reading that integer into room width.
+
+00:11:42.800 --> 00:11:45.300
+Then I'm prompting the user to enter the length of the room,
+
+00:11:45.300 --> 00:11:50.160
+and I'm reading that integer into room length. All I have left to do now is just say cout,
+
+00:11:50.960 --> 00:11:53.960
+and I'll say the area of the room
+
+00:11:55.040 --> 00:11:59.030
+is and we'll do the calculation here right in line.
+
+00:11:59.030 --> 00:12:01.630
+It's going to be room width times
+
+00:12:02.930 --> 00:12:03.930
+room length.
+
+00:12:05.930 --> 00:12:08.230
+And we may as well say square feet.
+
+00:12:11.430 --> 00:12:12.090
+That's it.
+
+00:12:12.090 --> 00:12:14.090
+We'll complete this with an end line,
+
+00:12:16.750 --> 00:12:20.740
+and I'll clean a little bit of this space up just to make it a little bit more readable.
+
+00:12:20.740 --> 00:12:23.340
+That's it. We're returning zero at the end.
+
+00:12:23.340 --> 00:12:25.340
+Now let's build and run this.
+
+00:12:27.840 --> 00:12:32.240
+We get a clean compile, and it says enter the width of the room. Let's say that the width is 10 feet.
+
+00:12:32.900 --> 00:12:36.450
+Enter the length of the room, let's say it's 5 feet. Always remember,
+
+00:12:36.450 --> 00:12:38.650
+we know what to expect, I expect a 50.
+
+00:12:39.150 --> 00:12:42.450
+Press enter. It says the area of the room is 50 square feet.
+
+00:12:42.450 --> 00:12:44.650
+So we get back what we expected. Always
+
+00:12:44.650 --> 00:12:48.450
+think about what you're going to get back before you do this. Otherwise,
+
+00:12:48.850 --> 00:12:50.850
+you may have errors that you didn't think about
+
+00:12:50.850 --> 00:12:53.730
+or press any key to continue. That's it. That's a
+
+00:12:53.730 --> 00:12:57.730
+pretty straightforward solution you can see how we use variables, how we can initialize variables,
+
+00:12:57.730 --> 00:12:59.230
+how you can read into variables.
+
+00:12:59.230 --> 00:13:01.230
+Now a best practice would be
+
+00:13:01.730 --> 00:13:04.330
+rather than declare these two variables up here,
+
+00:13:04.830 --> 00:13:08.130
+what we could do is we could declare them closer to where we're using them.
+
+00:13:08.130 --> 00:13:11.430
+So in this case, this is the first use of room width.
+
+00:13:11.930 --> 00:13:16.130
+So i could modify this by taking this line here and I'll just cut it
+
+00:13:16.130 --> 00:13:17.730
+and I'll paste it right in here.
+
+00:13:19.930 --> 00:13:22.930
+And I'll do the same with room length. I'll cut it from here,
+
+00:13:23.430 --> 00:13:25.030
+and I'll paste it right in here.
+
+00:13:27.350 --> 00:13:31.550
+And again, I'll just clean up the code a little bit, get rid of some of this extra white space.
+
+00:13:32.550 --> 00:13:35.430
+Now you can see what's happening. I'm prompting the user.
+
+00:13:35.430 --> 00:13:38.100
+I'm declaring that variable. I'm reading into it.
+
+00:13:38.650 --> 00:13:42.310
+I'm prompting the user for the length. I'm declaring the variable. I'm reading into.
+
+00:13:42.810 --> 00:13:45.810
+So this is basically what we talked about in the previous slides.
+
+00:13:45.810 --> 00:13:48.170
+You can see this is a really simple example.
+
+00:13:48.170 --> 00:13:51.530
+Try it out, play around with it. There'll be a challenge exercise
+
+00:13:51.530 --> 00:13:54.330
+at the end of this section that's going to extend this a little bit.
+
+00:13:54.330 --> 00:13:58.320
+So that's the end of this video. This shows you how to initialize variables,
+
+00:13:58.320 --> 00:14:01.850
+use the variables. In the next video, we'll talk a little bit about
+
+00:14:01.850 --> 00:14:03.510
+scope and global variables.

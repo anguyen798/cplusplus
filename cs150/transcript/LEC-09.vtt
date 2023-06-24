@@ -1,0 +1,890 @@
+﻿WEBVTT
+
+00:00:00.000 --> 00:00:07.600
+Hello everyone, this is Steve Gilbert. Welcome to lecture 9. We're going to continue talking about
+
+00:00:07.600 --> 00:00:15.800
+functions and function libraries and we're going to concentrate on data flow today. In your reading
+
+00:00:15.800 --> 00:00:21.520
+you'll also read about two control structures, the switch statement, the conditional operator,
+
+00:00:21.520 --> 00:00:29.120
+and the do while loop that we didn't cover earlier. But I won't cover those in this lecture.
+
+00:00:29.120 --> 00:00:38.880
+So we're going to start with a little review on separate compilation and testing. So make sure
+
+00:00:38.880 --> 00:00:50.600
+that you have gone to week 3. In week 3 on Tuesday click the lecture exercise, click the link for the
+
+00:00:50.600 --> 00:00:56.400
+starter form, and in the starter form this is what we're going to do. We're going to recapitulate the
+
+00:00:56.400 --> 00:01:01.800
+material from the textbook section covering libraries and testing. So we're going to create
+
+00:01:01.800 --> 00:01:10.960
+a library named exlib that has two functions min and max in the namespace ex. So it'll be in the
+
+00:01:10.960 --> 00:01:17.760
+namespace ex which will return the appropriate value from three input parameters of type double.
+
+00:01:17.760 --> 00:01:28.760
+So we're going to place our code in the folder exlib. This is in IC9 exlib already. We're going
+
+00:01:28.760 --> 00:01:35.800
+to open the client file named cpp, client cpp, and the run test function. We're going to add a
+
+00:01:35.800 --> 00:01:43.880
+begin function test and an end function blocks for max and one for min. We're going to create a
+
+00:01:43.880 --> 00:01:51.400
+file wide epsilon concept constant and then we're going to write three different assert double equals
+
+00:01:51.400 --> 00:01:57.520
+tests for each function. And then we're going to type make client. It should fail to compile because
+
+00:01:57.520 --> 00:02:03.040
+we've only tested our functions. We haven't yet declared or defined them. Then we're going to
+
+00:02:03.040 --> 00:02:11.120
+shoot a screenshot of the error messages we get. So remember the client program is the program that
+
+00:02:11.120 --> 00:02:19.240
+tests your program. So go ahead and add your student ID here. I'm going to close that down
+
+00:02:19.240 --> 00:02:32.280
+there. And this is a skeleton for our testing framework. So we're going to write a function
+
+00:02:32.280 --> 00:02:45.160
+test for max and we're going to write a function test for min. So notice I copied the begin function
+
+00:02:45.160 --> 00:02:56.640
+test and the end function test. So we are going to write functions that test a double and so we're
+
+00:02:56.640 --> 00:03:02.640
+going to need a file wide constant here. Actually it doesn't need to be file wide. We can just well
+
+00:03:02.640 --> 00:03:14.360
+let's make it file wide like it says. So const double k epsilon equals 1.0 e to the minus 14.
+
+00:03:14.360 --> 00:03:26.040
+I'm trying to use the Google constant style now instead of the capitalized. Okay so this one
+
+00:03:26.040 --> 00:03:33.560
+min and max are going to take three arguments. We're going to return the smaller or the larger
+
+00:03:33.560 --> 00:03:38.520
+or the smaller and max we're going to turn the larger. So we're going to use this version of
+
+00:03:38.520 --> 00:03:51.520
+assert double equals. So let's call our function here. So it's going to be in the namespace EX
+
+00:03:51.520 --> 00:04:18.280
+and we're going to call max and we want the max from 1.1 1.01 and 1.011. Okay so they're very
+
+00:04:18.280 --> 00:04:33.200
+close together. Our tolerance value here is going to be k epsilon and what we expect to get out of
+
+00:04:33.200 --> 00:04:41.920
+that the largest of those is 1.011. I'm going to write three tests because I want to make sure
+
+00:04:41.920 --> 00:04:49.200
+that the code is actually doing what it says. And so what I'm going to do is notice this is
+
+00:04:49.200 --> 00:04:56.040
+the last place in this this is in the last place. In the second one I'm going to move it into the
+
+00:04:56.040 --> 00:05:15.600
+second place and in the third one I'm going to move it into the first place. So 1.011 1.1 and
+
+00:05:15.600 --> 00:05:27.640
+1.011. I'll make that 0.1 and I'll move 1.1 down here. Yeah and so this kind of makes sure since
+
+00:05:27.640 --> 00:05:32.800
+we have three input parameters we have three tests to make sure it can identify what the
+
+00:05:32.800 --> 00:05:43.000
+largest one is. For a second function we're going to run the same tests. I'm just going to copy that
+
+00:05:43.000 --> 00:06:04.440
+down there. But instead of the max function I'm going to call min. And instead of 1.01 oh actually
+
+00:06:04.440 --> 00:06:20.240
+that's not the maximum here the maximum of each of these is 1.1 right. And let's move that 1.1 over
+
+00:06:20.240 --> 00:06:32.560
+here. So there it's in the first there it's the last and we'll do 1.011. Okay so we have it the
+
+00:06:32.560 --> 00:06:47.040
+first second and third we got back 1.1 that is the maximum. Here the smallest one is 1.01 and
+
+00:06:47.040 --> 00:06:58.040
+1.01 is in the middle there at the end there. Let's move it to the front here. So again we're
+
+00:06:58.040 --> 00:07:10.960
+checking three different positions to get 1.01. Okay so that's just how testing works. You write
+
+00:07:10.960 --> 00:07:21.600
+a function you call your function you you write an assert equals method after you put in this boiler
+
+00:07:21.600 --> 00:07:28.840
+plate in the assert equals method you get the actual value by calling the function you're trying
+
+00:07:28.840 --> 00:07:36.920
+to test. Then you put in the expected value here and when this runs it will call your function it
+
+00:07:36.920 --> 00:07:42.920
+will compare these and it'll give you a plus sign or a negative sign. It didn't pass and tell you
+
+00:07:42.920 --> 00:07:51.240
+why it didn't pass. So let's go ahead let's open a terminal on EXLIB here open a new integrated
+
+00:07:51.240 --> 00:08:03.720
+terminal. Yeah let's make that a little bigger so we can see it and let's do make client. Okay so
+
+00:08:03.720 --> 00:08:10.160
+notice we got a whole bunch of errors EX has not been declared and so this is the picture we'll
+
+00:08:10.160 --> 00:08:18.840
+take for our first one that says EX has not been declared. So again notice we have tested our
+
+00:08:18.840 --> 00:08:25.720
+functions which is what you'll normally do first but we haven't even yet declared them or defined
+
+00:08:25.720 --> 00:08:32.120
+them. Okay so now we're going to test them we're going to create a header file extreme.h it'll
+
+00:08:32.120 --> 00:08:37.520
+contain the prototypes for our two functions you need to remember to add the header guards the
+
+00:08:37.520 --> 00:08:45.680
+namespace and document each of the functions using the javadoc documentation. Then include the file
+
+00:08:45.680 --> 00:08:53.600
+in the appropriate place in client.cpp and make client again. Our program should now compile but
+
+00:08:53.600 --> 00:09:00.640
+not link and when it does we'll paste a picture of that error message. So again the error message
+
+00:09:00.640 --> 00:09:06.240
+you're going to have in your first picture is going to be like this. Let me just shoot a picture
+
+00:09:06.240 --> 00:09:24.680
+I'm going to use the Windows Windows shift s and so that picture is going to look something like
+
+00:09:24.680 --> 00:09:41.160
+this. And now we're going to do the second part. So let me do that let me create the new file so
+
+00:09:41.160 --> 00:09:57.720
+I'll just right-click here on EXLIB new file and I'll call this file extreme.h and in extreme.h
+
+00:09:57.720 --> 00:10:18.360
+I'm going to start with the header guards if endef extreme.h defined extreme.h endif I'm
+
+00:10:18.360 --> 00:10:41.160
+going to put the file header at the top at file extreme.h at author and at version or at date
+
+00:10:41.160 --> 00:10:51.640
+and close that. So there's my file comment here are my two functions but first I need a namespace
+
+00:10:51.640 --> 00:11:09.000
+so namespace EX. Inside my namespace I need my two functions so double min double a double b
+
+00:11:09.000 --> 00:11:27.920
+double c and double max double a double b double c my documentation comment for that
+
+00:11:27.920 --> 00:11:54.000
+slash slash finds smallest of a b and c or of three doubles at param a at param b second number
+
+00:11:54.000 --> 00:12:21.840
+and at param c and at return the smallest of a b and c. Put a T on the end of that one and finally
+
+00:12:21.840 --> 00:12:32.360
+backspace and end that. Okay I can comment I can just copy this because the comments going to be
+
+00:12:32.360 --> 00:12:40.320
+almost the same for the second one. This is just going to be the largest of course.
+
+00:12:40.320 --> 00:12:51.660
+And we have one more comment to do.
+
+00:12:51.660 --> 00:13:16.460
+Okay we need to comment the namespace as well. Okay so here's our source code for the prototype
+
+00:13:16.460 --> 00:13:31.340
+and we should now be able to do again exactly the same line make client. Oh what did I forget?
+
+00:13:31.340 --> 00:13:40.300
+I forgot to come over here and my client still doesn't know about that so I need to include
+
+00:13:40.300 --> 00:13:54.660
+Xtreme.h. Now I've written my function tests for this so now let's try it we should get a
+
+00:13:54.660 --> 00:14:05.340
+different set of errors. Make client. Notice that looks entirely different so when I have
+
+00:14:05.340 --> 00:14:16.860
+make client this is an entirely different kind of error. Again for my picture I'm gonna take
+
+00:14:16.860 --> 00:14:25.140
+something like that. Undefined references. So we've declared them now we can come over
+
+00:14:25.140 --> 00:14:37.940
+here and paste our second picture in there. So now we're going to create an implementation file.
+
+00:14:37.940 --> 00:14:46.900
+We have used the functions. We have by calling the functions in our client we have declared
+
+00:14:46.900 --> 00:14:52.980
+the functions and we can see that that compiles but does not yet link. Now we're going to create
+
+00:14:52.980 --> 00:14:58.940
+an implementation file Xtreme.cpp containing the implementation of the two files. We have
+
+00:14:58.940 --> 00:15:04.460
+to include the header file and any other library functions such as string or C math. Then we're
+
+00:15:04.460 --> 00:15:10.900
+going to create a make file and we should now be able to build and test our program with make test.
+
+00:15:10.900 --> 00:15:26.740
+So let's add our third file here. New file and this new file is going to be Xtreme.cpp.
+
+00:15:26.740 --> 00:15:49.900
+And we're going to include Xtreme.h. I'm going to assume I don't need any functions in here so I'm
+
+00:15:49.900 --> 00:15:57.380
+not going to use the using namespace or anything. And so I'm going to go to Xtreme.h. I'm going to
+
+00:15:57.380 --> 00:16:06.540
+get my whole namespace. I'm going to copy it over into Xtreme.cpp. I'm going to get rid of
+
+00:16:06.540 --> 00:16:16.620
+these documentation comments. We don't need them inside the implementation. I'm going to put on a
+
+00:16:16.620 --> 00:16:29.260
+return zero. I'm going to stub them out by removing the semicolon, giving it a body and
+
+00:16:29.260 --> 00:16:39.060
+returning just a dummy value. Now I'm going to add one more file, the make files. So again right click
+
+00:16:39.060 --> 00:16:51.260
+new file, make file. In the make file I'm going to create a variable for the exe and I'm going to
+
+00:16:51.260 --> 00:17:05.780
+call that test Xtreme. I'm going to create a variable for the object files. So I need client.o
+
+00:17:05.780 --> 00:17:21.660
+and really what I'm doing down here is looking for the cpp files. Client.o CS150 check.o Xtreme.o
+
+00:17:21.660 --> 00:17:32.220
+and that looks like all the cpp files. Now I'm going to do my rule so the object file depends
+
+00:17:32.220 --> 00:17:40.140
+on the executable. That's what I'm trying to build. The executable depends on the object files
+
+00:17:40.140 --> 00:17:50.020
+and our rule for building that is to use the C++ compiler. Think of those xx's as pluses on their
+
+00:17:50.020 --> 00:18:07.300
+sides. Pass in the options called the CXX flags. Pass in the input which is the object file and
+
+00:18:07.300 --> 00:18:21.780
+let's make these, let's put an S on the end of this and put an S there. OBJS, OBJS, OBJS. I'm
+
+00:18:21.780 --> 00:18:28.780
+not quite sure. Oh because I didn't put the dollar sign in the right place. Syntax highlighting
+
+00:18:28.780 --> 00:18:39.620
+helps quite a bit right? And then -0 and I'm going to build the executable. Okay I'm also
+
+00:18:39.620 --> 00:18:46.940
+going to make a make test. So this is a pseudo target. So test relies on the executable being
+
+00:18:46.940 --> 00:18:56.460
+built. That's the target is the test and the dependency is the executable and for that I'm
+
+00:18:56.460 --> 00:19:04.220
+going to do ./, select the current directory, run the executable and because we're using the
+
+00:19:04.220 --> 00:19:15.700
+testing framework -t will run the tests when we do it. So let's try that. Let's clear this off.
+
+00:19:15.700 --> 00:19:22.780
+So make should work with no errors. It should just come back. It should build all of those
+
+00:19:22.780 --> 00:19:33.500
+object files and the executable. Make test should run our tests. All of our tests should pass because
+
+00:19:33.500 --> 00:19:41.220
+we're passing in zero as the return. We just stubbed out the answer but all of our tests run
+
+00:19:41.220 --> 00:19:49.420
+correctly. So let's do the last part. The last part is just figuring out which are the smallest
+
+00:19:49.420 --> 00:20:12.780
+of A, B and C. So if A is less than B and A is less than C we're going to return A. If B is less
+
+00:20:12.780 --> 00:20:24.660
+than A and B is less than C we're going to return B and if none of those are true we're going to
+
+00:20:24.660 --> 00:20:34.900
+return A. Now I probably should do it the way I've been showing you do it. So double result
+
+00:20:34.900 --> 00:21:01.660
+equals A else else if result equals B else
+
+00:21:01.660 --> 00:21:22.140
+else and this of course should be C return result. Now if these are all the same it will
+
+00:21:22.140 --> 00:21:28.940
+return the farthest one and return C in this case. Let's put the same thing down here for the minimum
+
+00:21:28.940 --> 00:21:41.020
+or maximum that was minimum. So if A is greater than B and A is greater than C and B is greater
+
+00:21:41.020 --> 00:21:53.980
+than A B is greater than C. Okay so there's our implementation. Let's test it out. Let's open up
+
+00:21:53.980 --> 00:22:03.700
+the thing here. Let me move that over so that the tests actually appear better and let's clear that
+
+00:22:03.700 --> 00:22:15.980
+with ctrl L and let's do make test. Okay and so all of those correctly give us the value. Can we be
+
+00:22:15.980 --> 00:22:23.100
+sure that they are working correctly? Yes because we figured out manually what the answer should be
+
+00:22:23.100 --> 00:22:35.740
+and put it into the testing function the assert function the assert equals function. Okay so let's
+
+00:22:35.740 --> 00:22:42.740
+look at what we've done here. So we created the client we wrote three assert equals tests for both
+
+00:22:42.740 --> 00:22:51.860
+min and max. We built it and we did a screenshot with the error message. Then we created the header
+
+00:22:51.860 --> 00:23:01.060
+file. We added the header guards to the header file. We added the documentation and then we did
+
+00:23:01.060 --> 00:23:08.620
+make client again and we got a different error message than we got up here. So what here the
+
+00:23:08.620 --> 00:23:18.300
+min and max were undeclared undeclared. Here min and max were declared so we didn't get a compiler
+
+00:23:18.300 --> 00:23:24.900
+error but they were undefined because we hadn't implemented them. So then we implemented them. We
+
+00:23:24.900 --> 00:23:33.260
+walked through those six steps that I told you to memorize and wrote the stubs. The test ran but
+
+00:23:33.260 --> 00:23:39.700
+didn't give us the correct answer and then we went back in and did the implementation. And so the
+
+00:23:39.700 --> 00:23:46.140
+tests worked and you can go ahead and shoot your final screenshots there. I'm not going to do it
+
+00:23:46.140 --> 00:23:53.220
+on this thing but they want a screenshot of your source code for extreme.h, a screenshot for the
+
+00:23:53.220 --> 00:24:01.500
+source code for extreme.cp, for client.cp, do make test to get a screenshot of running client,
+
+00:24:01.500 --> 00:24:08.420
+a screenshot of your make file and let's do the generated documentation. I will do that for you.
+
+00:24:08.420 --> 00:24:29.020
+Okay so remember what we need to do for Doxygen is we need to do a Doxygen doxy file. Okay we're
+
+00:24:29.020 --> 00:24:36.980
+going to get an error. Okay so Doxygen is already installed on mine. If it is not, if you get Doxygen
+
+00:24:36.980 --> 00:24:49.460
+does not exist or it's not a file or something like that, do apt sudo apt-get install Doxygen.
+
+00:24:49.460 --> 00:25:10.380
+Next do, see I've already installed, I've already got it installed here. Next do Doxygen - g. That
+
+00:25:10.380 --> 00:25:18.460
+will create a doxy file. Now I'm just going to go ahead and do this without changing any of the
+
+00:25:18.460 --> 00:25:34.060
+changes and that's just Doxygen doxy file. It generates all of the files. It tells me there's
+
+00:25:34.060 --> 00:25:40.580
+some problems down here and those are things we wanted to fix before. Then I'm going to come over
+
+00:25:40.580 --> 00:25:49.060
+here and notice I have this HTML folder. I'm going to right-click on the HTML folder, open in an
+
+00:25:49.060 --> 00:25:59.740
+integrated terminal. Okay I'm going to say HTTP - server and I'm going to serve those pages up so
+
+00:25:59.740 --> 00:26:08.220
+we can look at them in a web browser. Now it'll give us back the URL so you can do ctrl-click to
+
+00:26:08.220 --> 00:26:18.940
+open that URL in your web browser and then just find the index.html and open it. Now on the index
+
+00:26:18.940 --> 00:26:27.620
+you notice we have one namespace ex and click that namespace ex and you'll see the documentation,
+
+00:26:27.620 --> 00:26:36.220
+the generated documentation for those two functions that we added as javadoc comments.
+
+00:26:36.220 --> 00:26:47.420
+Okay when you're done don't just leave that server running use ctrl-c to close the server.
+
+00:26:47.420 --> 00:27:03.340
+Use ctrl-c to close the server. All right let's go on to this week and let's talk about function
+
+00:27:03.340 --> 00:27:12.780
+signatures. Now in languages like C function names must be unique. That means you ended up
+
+00:27:12.780 --> 00:27:21.300
+inventing new names to do the same work as another function if you had different kinds of arguments.
+
+00:27:21.300 --> 00:27:30.460
+So in the C standard library there's the function abs which works for integers, there's fabs which
+
+00:27:30.460 --> 00:27:39.260
+works for floating point numbers, and there's elabs which works for longs. In C++ standard
+
+00:27:39.260 --> 00:27:44.620
+library we use the same name for all of those functions for those three different functions.
+
+00:27:44.620 --> 00:27:55.940
+So how can we do that in C++? Well in C++ two functions can have the same name if the number
+
+00:27:55.940 --> 00:28:06.820
+of arguments they require differs or the type or order of their arguments differ. So this combination
+
+00:28:06.820 --> 00:28:15.500
+of the method name, the parameter types, number, and order is called the function signature. And
+
+00:28:15.500 --> 00:28:24.700
+it acts like DNA to uniquely identify a particular function under the hood to the linker to the
+
+00:28:24.700 --> 00:28:35.340
+compiler. Now an overloaded function is a function that has the same name but a different signature
+
+00:28:35.340 --> 00:28:42.460
+and of course a different implementation or a different body. So here are four functions all
+
+00:28:42.460 --> 00:28:50.940
+named f. So one takes an int, one takes an int and a double, one takes a double and an int. So notice
+
+00:28:50.940 --> 00:28:55.820
+these both take the same kind of arguments but in different order. And one takes three arguments
+
+00:28:55.820 --> 00:29:03.540
+double, double, double. If we looked inside the object code we'd see those functions have a
+
+00:29:03.540 --> 00:29:11.140
+different name. This is called a mangled name. And so the name for the double, double, double is
+
+00:29:11.140 --> 00:29:23.100
+underscore capital Z 1 F DDD. Right? So F plus three doubles. Here's F plus double and an int.
+
+00:29:23.100 --> 00:29:32.100
+Here's F and an int and a double. And here's F with only a single int. A single int. So this
+
+00:29:32.100 --> 00:29:40.500
+mangle name is used internally by the compiler and linker to uniquely identify a particular
+
+00:29:40.500 --> 00:29:48.420
+function. And that's how overloading works physically and why it was allowed in C++. In C
+
+00:29:48.420 --> 00:30:00.500
+function names are not mangled internally. Now when you call a function the compiler has to
+
+00:30:00.500 --> 00:30:06.100
+know which function you're trying to call. It has to have some way of telling exactly which
+
+00:30:06.100 --> 00:30:14.900
+function you mean. And this is called overloading resolution. So you resolve overloaded functions
+
+00:30:14.900 --> 00:30:22.420
+first by looking at all of the functions with the same name. These are called the candidate set.
+
+00:30:22.420 --> 00:30:31.780
+So in our four examples previously we would pick up all of the F's. Secondly we go through the
+
+00:30:31.780 --> 00:30:40.100
+candidates and we see how many have the correct number of convertible arguments. So in the
+
+00:30:40.100 --> 00:30:47.540
+previous one if I called F 1 comma 2 it would look through, it would throw out the first one which
+
+00:30:47.540 --> 00:30:53.700
+only took an int and the third fourth one which took three ints and it would leave a viable set
+
+00:30:53.700 --> 00:31:00.180
+of only two functions. The one that takes int and double and the one that takes double followed by
+
+00:31:00.180 --> 00:31:09.460
+int. Then it would look for an exact type match. Well in this case I don't have any exact type
+
+00:31:09.460 --> 00:31:14.980
+matches. I'm calling it with two ints but I have a function that takes an int and a double and I
+
+00:31:14.980 --> 00:31:22.020
+have a function that takes a double and an int. So I don't get that test at all. I skip it entirely.
+
+00:31:22.020 --> 00:31:29.380
+Now I look to see if there are any partial matches. Well the int and double matches one
+
+00:31:29.380 --> 00:31:35.860
+argument, the first argument, but the double and int also matches one argument. So I have two that
+
+00:31:35.860 --> 00:31:44.180
+match partially. Then if I don't have any partial matches but I can do conversions, I have the
+
+00:31:44.180 --> 00:31:51.460
+correct number of arguments and they're convertible, I try that. Well again I have int double and
+
+00:31:51.460 --> 00:31:59.300
+double int. Both of those work and if none of them, if I am not down to one specific function
+
+00:31:59.300 --> 00:32:05.940
+at this point, I have what's called ambiguity. There is more than one viable conversion.
+
+00:32:05.940 --> 00:32:13.860
+So let's look at a couple of questions. Consider this function call. Which of these function
+
+00:32:13.860 --> 00:32:22.180
+overloaded functions will be invoked? So I'm calling g one two. Now notice I'm not using the
+
+00:32:22.180 --> 00:32:30.020
+return type but even if I was that return type is not used as part of the resolution. However if I
+
+00:32:30.020 --> 00:32:37.140
+was assigning it to something then that expression would look at the return type and so b and d
+
+00:32:37.700 --> 00:32:46.260
+would not work in that case. In this case however my candidate set is a b c d and e or a b c and d.
+
+00:32:46.260 --> 00:32:56.020
+All of them have the same name. They're all in the candidate set. Second, find out the ones with the
+
+00:32:56.020 --> 00:33:03.860
+correct number of convertible arguments. Well this takes two, this takes two, this takes two, this
+
+00:33:03.860 --> 00:33:10.900
+takes two. They're all convertible so my viable set is the same as my candidate set. A, B, C, and D
+
+00:33:10.900 --> 00:33:19.300
+are all in the viable set. Number three, see if there are any exact matches. Well int and double
+
+00:33:19.300 --> 00:33:27.060
+it matches but not double. The double doesn't match here. The int matches there. Int, int, oh that
+
+00:33:27.060 --> 00:33:37.540
+matches exactly. So this must call the function c. This must call the function in number c. Let's try
+
+00:33:37.540 --> 00:33:51.380
+another one. So look at this function call. So I have fn with 1.0, 2.0, and 3.5. So first what are
+
+00:33:51.380 --> 00:34:00.100
+the candidates? A, B, C, and D. I have four functions named fn. Second, what's the viable set?
+
+00:34:00.100 --> 00:34:09.700
+Well can I convert 1 to an int? Yes. 2.0 to a double? Yes. 3.5 to a double reference? No.
+
+00:34:09.700 --> 00:34:17.140
+This is not a variable that can be converted to a double reference. So A is out. How about B?
+
+00:34:17.860 --> 00:34:26.660
+1.0 to an int? Yes. 2.0 to an int? Yes. 3.5 to a double reference? No. B is out. How about C?
+
+00:34:26.660 --> 00:34:38.100
+Okay, okay, and okay. Okay so C is okay. And D? Int, int, int. Again all of these are convertible
+
+00:34:38.100 --> 00:34:47.380
+so my viable set now consists of C and D. Do we have an exact match? Double, double, double.
+
+00:34:48.020 --> 00:34:56.980
+Nope, we don't have an exact match. Do I have a partial match? Well C matches one argument. D
+
+00:34:56.980 --> 00:35:04.420
+does not match any arguments. So in this case C will be the function that's chosen in that case.
+
+00:35:04.420 --> 00:35:15.300
+Yeah the second thing we want to talk about here is default arguments. So a function can have both
+
+00:35:15.300 --> 00:35:23.940
+mandatory and optional arguments. So this is how we would write the function. The function F here
+
+00:35:23.940 --> 00:35:33.780
+requires you to pass in one argument, but if you don't pass in B or C those default argument values
+
+00:35:33.780 --> 00:35:40.980
+will be used. Okay and that means we can call the function F in three different ways. If I call it
+
+00:35:40.980 --> 00:35:49.460
+with one argument then B will be set to the default value 3 and C will be set to the default value 4.
+
+00:35:49.460 --> 00:35:58.260
+If I call it with two arguments A will be set to 7, B will be set to 2, and C will use its default
+
+00:35:58.260 --> 00:36:07.380
+value 4. And if I call it with three arguments then A will be 8, B will be 5, and C will be 3.
+
+00:36:08.100 --> 00:36:15.460
+So even though I have one single function not all the arguments are required. Now there are some
+
+00:36:15.460 --> 00:36:22.500
+rules about this. First you cannot have a mandatory parameter after an optional one,
+
+00:36:22.500 --> 00:36:31.620
+and secondly you cannot have any references. So this would be illegal. I have provided an
+
+00:36:31.620 --> 00:36:43.460
+optional value for A and I have required them to put in B. So if I call F of 1, which one is it
+
+00:36:43.460 --> 00:36:49.380
+supposed to do? Is that supposed to go in the first argument? It just won't work. So that's illegal.
+
+00:36:49.380 --> 00:36:56.580
+No mandatory parameters in B after an optional parameter. And A is optional.
+
+00:36:59.220 --> 00:37:08.260
+Secondly I can have an int ref A. That's perfectly fine. But int ref B equals 3 is not fine.
+
+00:37:08.260 --> 00:37:18.660
+So you cannot have default arguments for reference parameters. Again 3 is... what is B a reference to?
+
+00:37:18.660 --> 00:37:28.820
+3 is not a variable and B would have to be a reference or another name for a existing variable.
+
+00:37:30.820 --> 00:37:37.620
+So we're going to try this, our second example today. We have this function that has main.
+
+00:37:37.620 --> 00:37:48.180
+I want to print hello and I want to print the A cosine of minus 1. And I expect to get out when I
+
+00:37:48.180 --> 00:37:57.460
+do that hello, which is just printing the words hello, and I expect to get out 3.1459.
+
+00:37:59.140 --> 00:38:06.740
+Now I also expect to be able to call the function with a string goodbye and a second argument.
+
+00:38:06.740 --> 00:38:12.740
+That's going to add a new line and I would expect to get goodbye and a new line. Notice I didn't
+
+00:38:12.740 --> 00:38:20.260
+have a new line when I just did print without the second argument. And finally I expect to be able
+
+00:38:20.260 --> 00:38:27.940
+to print the A cosine with an argument for the new line and an argument saying how many decimal
+
+00:38:27.940 --> 00:38:35.220
+places. Notice when I printed it up here I just got the default number of decimal places. So we're
+
+00:38:35.220 --> 00:38:45.700
+going to have a function with overloaded arguments. And we're going to do this one not in our
+
+00:38:47.220 --> 00:38:56.500
+not in our CS50 IDE, which we're done with for today, but in our code check.
+
+00:38:56.500 --> 00:39:07.460
+Okay so we're going to write two functions, the void function print and the second prints a double.
+
+00:39:07.460 --> 00:39:15.140
+And both have default bool arguments and the second has an additional default argument
+
+00:39:15.140 --> 00:39:17.540
+indicating how many decimals to use.
+
+00:39:17.540 --> 00:39:25.140
+So here's the main function we had. I'm going to make that a little bigger so we can see the whole
+
+00:39:25.140 --> 00:39:38.100
+thing. Okay so our first function, both these are void functions, so void print and void print.
+
+00:39:41.860 --> 00:39:48.020
+Okay the first one is going to take a const string reference and a bool
+
+00:39:48.020 --> 00:39:54.420
+newline equals false.
+
+00:39:54.420 --> 00:40:04.500
+Okay so by default if they don't pass the second argument it prints it as a new line.
+
+00:40:05.300 --> 00:40:10.420
+This one is going to take a double. I'll just call it num.
+
+00:40:10.420 --> 00:40:16.660
+It's going to take a bool newline equals false.
+
+00:40:16.660 --> 00:40:21.780
+And then it's going to take an int
+
+00:40:21.780 --> 00:40:33.620
+digits precision. I'll call it precision. And here I'm going to pass in a value
+
+00:40:34.340 --> 00:40:39.460
+that is going to indicate, so minus one is going to indicate that I don't want to pass
+
+00:40:39.460 --> 00:40:45.540
+in a precision. I want to be able to say I don't want any decimals printed.
+
+00:40:45.540 --> 00:40:54.660
+So two overloaded functions, two versions of print and two
+
+00:40:58.500 --> 00:41:08.180
+optional parameters here, one optional parameter here. So this is just going to say cout,
+
+00:41:08.180 --> 00:41:12.180
+let's give that string a name shall we?
+
+00:41:12.180 --> 00:41:26.340
+cout str and then if newline cout endo. So that one was pretty easy right?
+
+00:41:27.300 --> 00:41:35.780
+Okay let's look at the second one. So in this one we're going to say cout num
+
+00:41:35.780 --> 00:41:43.220
+and if newline cout endo.
+
+00:41:43.220 --> 00:41:52.340
+But here we need to decide what to do about the precision. So if precision
+
+00:41:54.740 --> 00:42:09.380
+not equal to minus one, then cout fixed set precision.
+
+00:42:09.380 --> 00:42:12.340
+Precision.
+
+00:42:12.340 --> 00:42:21.620
+And so that'll allow us to call this with print the a cosine of one with a newline
+
+00:42:21.620 --> 00:42:28.100
+and 17 digits of precision there. Okay let's try it.
+
+00:42:28.100 --> 00:42:40.660
+Okay and that worked for the first one here and it worked for the second one and the third one.
+
+00:42:40.660 --> 00:42:45.460
+So we got three out of three on that. So go ahead and take a picture of the
+
+00:42:45.460 --> 00:42:52.420
+testing code here and take a picture of your two overloaded functions with default arguments.
+
+00:42:52.420 --> 00:43:04.420
+Okay so that's it for our exercises today. Now I want to talk a little bit about parameter
+
+00:43:04.420 --> 00:43:13.060
+categories and data flows. You'll need this in programming exam four. So input parameters
+
+00:43:13.620 --> 00:43:22.020
+are the normal type that you have in java and in python. The information flows into your function
+
+00:43:22.020 --> 00:43:30.580
+when you call the function. So the data inside a flows into the square root function here
+
+00:43:30.580 --> 00:43:38.660
+and the return value n flows out of the square root function. Because the information is flowing in
+
+00:43:39.220 --> 00:43:44.900
+I can provide a literal. That's because the parameter for square root
+
+00:43:44.900 --> 00:43:55.300
+gets a copy of what is ever is called to the function. Now output parameters work differently.
+
+00:43:55.300 --> 00:44:03.940
+With output parameters you supply a variable. You pass that variable to the function. The function
+
+00:44:03.940 --> 00:44:12.820
+fills it in and you use it afterwards. So the cn object has a member function called get.
+
+00:44:12.820 --> 00:44:21.380
+Get will read a character but it doesn't return the character from the function. It returns whether
+
+00:44:21.380 --> 00:44:29.700
+it was able to read a character or not. So ch goes into the function empty and it comes out full.
+
+00:44:30.820 --> 00:44:38.260
+Because of that when we have an output parameter we cannot use a literal. We can only use a variable.
+
+00:44:38.260 --> 00:44:47.860
+Now input output parameters are where the data flows both ways. If I have two variables a and b
+
+00:44:47.860 --> 00:44:55.700
+and I call the function swap, a had one value going in and when the function is over it has
+
+00:44:55.700 --> 00:45:02.180
+a different value. So variables a and b are modified when I call the function swap.
+
+00:45:02.180 --> 00:45:12.500
+Now when you look at your functions and you look at a problem you have to decide which way
+
+00:45:12.500 --> 00:45:20.900
+the data is flowing. So for input output parameters and output parameters you will
+
+00:45:20.900 --> 00:45:29.380
+always pass them by reference after the type for all type categories. Now in Doxygen we can add a
+
+00:45:29.380 --> 00:45:39.060
+little specification to the end of the param tag that says it's in out or out. So people reading
+
+00:45:39.060 --> 00:45:44.500
+that will understand that it's an output parameter or an input output parameter.
+
+00:45:46.340 --> 00:45:51.460
+For input parameters when you're calling a function and the data is flowing into the
+
+00:45:51.460 --> 00:45:58.420
+function only and not flowing back out through the same variable the way you declare it depends
+
+00:45:58.420 --> 00:46:07.940
+on the type of input. For library types all library types all class types including string
+
+00:46:07.940 --> 00:46:15.380
+you will pass by const reference. You will never pass by value. We don't do this because it's
+
+00:46:15.380 --> 00:46:24.500
+illegal. We do it for efficiency. It uses less memory and it is faster. For the built-in types
+
+00:46:24.500 --> 00:46:32.180
+that means int, double, char and so forth we'll pass by value. We won't use const or
+
+00:46:32.180 --> 00:46:40.420
+the reference symbol for the built-in type input parameters. Only for the output parameters.
+
+00:46:41.300 --> 00:46:46.980
+Now I have a second. Often you don't know is that an input or output parameter.
+
+00:46:46.980 --> 00:46:50.820
+So let me give you a second checklist. You really should memorize both of these.
+
+00:46:50.820 --> 00:47:00.820
+Is the parameter a primitive or built-in type? Okay in other words is it an int, a char, a double,
+
+00:47:00.820 --> 00:47:10.100
+a bool, one of those. If it is, is the function supposed to change the argument? If it is you
+
+00:47:10.100 --> 00:47:18.100
+pass by reference. So notice that the swap function has a reference parameter for the
+
+00:47:18.100 --> 00:47:27.060
+left-hand side and the right-hand side. All other functions if the function does not change the
+
+00:47:27.060 --> 00:47:32.900
+argument you will always use pass by value. Again no const, no reference, no nothing.
+
+00:47:34.020 --> 00:47:42.180
+For object or library types always use pass by reference and then if the argument is unchanged
+
+00:47:42.180 --> 00:47:51.060
+use a const reference. So again you need to memorize these checklists and in the next
+
+00:47:51.060 --> 00:47:56.820
+lecture we'll do an exercise just to make sure that you understand these concepts.
+
+00:47:57.940 --> 00:48:04.900
+Okay that's it for this lecture. I'll see you next time.
+

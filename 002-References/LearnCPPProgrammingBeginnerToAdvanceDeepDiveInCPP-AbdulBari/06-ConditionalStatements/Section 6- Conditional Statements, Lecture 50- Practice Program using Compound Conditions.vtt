@@ -1,0 +1,457 @@
+WEBVTT
+
+0
+00:00.190 --> 00:06.480
+So we have already written a program using compound conditional statements let us look at some more
+
+1
+00:06.480 --> 00:10.270
+example programs by using compound conditional statement.
+
+2
+00:10.950 --> 00:16.420
+So here in this video I will take one example and I will show you how to use AND
+
+3
+00:16.470 --> 00:18.040
+I will show you how to use OR.
+
+4
+00:18.750 --> 00:20.290
+So let us take an example.
+
+5
+00:20.550 --> 00:25.710
+Suppose I wanted to take the age of a person and find out whether he is young or not.
+
+6
+00:26.580 --> 00:27.930
+Suppose I'm the program.
+
+7
+00:28.050 --> 00:30.670
+Then what is the input I should know your age.
+
+8
+00:30.780 --> 00:33.080
+Then looking at an age I should say that you are young.
+
+9
+00:33.630 --> 00:36.690
+So what is the condition, what age is a young age.
+
+10
+00:36.690 --> 00:44.630
+So let's say age from 12 starts at young age and last age 50.
+
+11
+00:44.640 --> 00:48.720
+So before 12 he is a child of more than 50.
+
+12
+00:48.750 --> 00:50.550
+Let's say he's an old person.
+
+13
+00:50.550 --> 00:51.450
+Let us take this one.
+
+14
+00:51.450 --> 00:53.860
+So if you want to change its values you can change it.
+
+15
+00:53.880 --> 01:00.960
+I'm taking the example like this so I should check take your age and check that it should be greater than
+
+16
+01:00.960 --> 01:01.550
+equal to 12,
+
+17
+01:01.590 --> 01:04.290
+and less than equal to 50.
+
+18
+01:04.410 --> 01:06.040
+So there are two values I have to check.
+
+19
+01:06.060 --> 01:07.630
+So how to frame the condition.
+
+20
+01:07.710 --> 01:14.360
+See if age is a variable then it should be greater than or equal to 12 so greater than equal to 12
+
+21
+01:14.360 --> 01:14.840
+means
+
+22
+01:14.830 --> 01:21.870
+So if I draw a line for first year to 100 years of age it is 12 years here,
+
+23
+01:21.870 --> 01:23.530
+lets say its 12 years here,
+
+24
+01:23.670 --> 01:25.040
+So it's going in this direction.
+
+25
+01:25.050 --> 01:25.320
+Right.
+
+26
+01:25.650 --> 01:27.270
+And it should stop at 50.
+
+27
+01:27.540 --> 01:28.740
+So let us say 50 year is here.
+
+28
+01:28.800 --> 01:30.410
+So it should stop at 50.
+
+29
+01:30.480 --> 01:33.860
+So it should be greater then 12 and less than 50.
+
+30
+01:33.870 --> 01:43.070
+So here I will write in English that is AND age should be less than 50 or equal to 50.
+
+31
+01:43.110 --> 01:47.080
+So here we use AND, and both the time we have to say age.
+
+32
+01:47.140 --> 01:50.190
+So this is one condition and this is second condition.
+
+33
+01:50.310 --> 01:55.610
+We are joining these two condition using AND so first condition age is greater than equal to zero.
+
+34
+01:55.890 --> 02:00.770
+And second condition that is age is less than equal to 50 and that are join with
+
+35
+02:00.790 --> 02:06.160
+AND. so one idea i will give you here when you are looking for the value that should be within this
+
+36
+02:06.180 --> 02:11.300
+range that is starting from this point and ending at here then it should be between these two means
+
+37
+02:11.310 --> 02:12.540
+you have to use and.
+
+38
+02:13.510 --> 02:14.220
+Right.
+
+39
+02:14.460 --> 02:20.730
+So here already I have a flowchart let us write a program for that first let us look at the flow check
+
+40
+02:21.400 --> 02:27.480
+as a program I should take input from you the input here is age so here input box enter age and read
+
+41
+02:27.570 --> 02:30.450
+then I should check what is the age.
+
+42
+02:30.450 --> 02:41.130
+So here I will write on the condition if age is greater than or equal to twelve and age is less than
+
+43
+02:41.130 --> 02:42.490
+or equal to 50.
+
+44
+02:43.060 --> 02:51.830
+If this is a true then print young otherwise false then not young, print not young and stop. so this is the flowchart
+
+45
+02:52.400 --> 02:53.790
+not looking at the flow chart.
+
+46
+02:53.790 --> 02:54.870
+I will write down the program.
+
+47
+02:55.190 --> 02:58.370
+So let us write the program and see I'm not showing you the algorithm.
+
+48
+02:58.410 --> 02:58.970
+now you can write down the algorithm,
+
+49
+02:58.970 --> 03:03.150
+I have shown you a few algorithms you can follow the same procedure and write down the
+
+50
+03:03.150 --> 03:04.570
+algorithms if at all.
+
+51
+03:04.740 --> 03:10.370
+It requires in your academic. now I guess you are in a position to write algorithms by yourself.
+
+52
+03:10.460 --> 03:15.570
+There is nothing but a simple language is used for writing a program right now let us write a program.
+
+53
+03:15.590 --> 03:20.550
+now for program I'm not writing hash include all those things so it's understood it's there right
+
+54
+03:21.180 --> 03:23.020
+now let us convert this.
+
+55
+03:23.100 --> 03:25.930
+So what does the first thing enter age .
+
+56
+03:25.980 --> 03:31.260
+So it means there is only one variable that is required in this program that is age so I should declare
+
+57
+03:31.650 --> 03:38.730
+age is which type? Integer type, we will not take twelve point five years or twelve
+
+58
+03:38.730 --> 03:41.220
+point seven five years, 12 year or next 13 years.
+
+59
+03:41.250 --> 03:47.630
+So let us take it as integer then here I should give a Cout enter age
+
+60
+03:51.390 --> 04:00.690
+then cin I should read age value ok, now that condition but how right on the same condition in c++
+
+61
+04:01.140 --> 04:09.530
+if age is greater than equal to 12 AND means we have this && symbol then age is less than or equal to
+
+62
+04:09.580 --> 04:15.150
+fifty then here I should print the message cout young
+
+63
+04:18.510 --> 04:29.670
+then else cout not young, see here I have not use of flower brackets I'm not using these flower brackets
+
+64
+04:30.000 --> 04:35.640
+so if you have a single line in the inside if and single line inside else no need of Flower brackets
+
+65
+04:35.730 --> 04:40.890
+otherwise writing flower bracket is a good practice if you don't have more than one statement just
+
+66
+04:40.890 --> 04:43.110
+you have one statement you can skip it.
+
+67
+04:43.290 --> 04:49.440
+So with out flower bracket also you can write and at the end I should write down return zero.
+
+68
+04:49.440 --> 04:52.050
+a common practice in a main function you should write.
+
+69
+04:52.080 --> 04:57.930
+So this is the program so you can type the program and test it, demo is  also given for it and in the
+
+70
+04:57.930 --> 05:02.480
+coding exercise I would be asking you just write down the condition instead of writing a complete program
+
+71
+05:02.870 --> 05:08.150
+just write down the conditions, coding exercise condition part will be left blank so you have to practice
+
+72
+05:08.150 --> 05:14.750
+the condition so just with that you can learn how to write down the conditions let us write one more program
+
+73
+05:15.440 --> 05:25.550
+same example but here let us say we want to know the person this child or old  he should not be young.
+
+74
+05:25.610 --> 05:29.220
+suppose, Example there is some offer going on for children or aged people.
+
+75
+05:29.320 --> 05:29.570
+Right.
+
+76
+05:29.900 --> 05:33.630
+So let us say offer is for children or aged people not for young people.
+
+77
+05:33.680 --> 05:41.330
+So whether he is eligible for that offer or not let us write a condition learn how to write down the
+
+78
+05:41.330 --> 05:47.060
+condition for that then I will write on the program so flowchart will be same only just I have to
+
+79
+05:47.060 --> 05:52.520
+change the messages that is eligible or not eligible so I'll make changes here and then we will discuss
+
+80
+05:52.520 --> 06:00.230
+the next question. so let us frame a condition here, see to be eligible for an offer he should be
+
+81
+06:00.230 --> 06:03.020
+a child or old person but not young people.
+
+82
+06:03.650 --> 06:10.580
+So you have already taken this one that up to two years it is a child from 12 to 50 it is
+
+83
+06:11.000 --> 06:15.260
+young and beyond this it's old age.
+
+84
+06:15.470 --> 06:23.240
+Now in this one we have to see that the age should fall on the side to be a child or on that side to
+
+85
+06:23.240 --> 06:25.220
+be a older person.
+
+86
+06:25.250 --> 06:27.560
+So for these people offer is not there.
+
+87
+06:27.650 --> 06:36.290
+So we have to check that age is on this side if true is a child otherwise age should be on this
+
+88
+06:36.290 --> 06:41.380
+side otherwise means or, so age should be greater than 50.
+
+89
+06:41.420 --> 06:46.730
+So in this we are not looking for the value within the range we are looking for the value that is on
+
+90
+06:46.790 --> 06:48.780
+different sites off range.
+
+91
+06:48.830 --> 06:51.520
+So now OR operator is useful.
+
+92
+06:52.310 --> 06:57.410
+So let us frame the conditions already I have a flowchart here and I made a message that is eligible
+
+93
+06:57.410 --> 07:00.130
+and not eligible just i will write down the condition here.
+
+94
+07:00.170 --> 07:09.540
+So the condition is if age is less than 12 years, so equal to 12 years onwards we are saying he is young
+
+95
+07:09.540 --> 07:10.030
+young.
+
+96
+07:10.930 --> 07:12.650
+OR
+
+97
+07:13.820 --> 07:18.940
+Age is greater than 50.
+
+98
+07:19.220 --> 07:23.510
+If true he is either child or old.
+
+99
+07:23.630 --> 07:29.940
+So this he's eligible or he or she is eligible otherwise not eligible.
+
+100
+07:30.030 --> 07:32.550
+So let us write a program for this one.
+
+101
+07:32.550 --> 07:33.800
+So already we have this.
+
+102
+07:34.020 --> 07:36.660
+So just i have to give a condition and give a message.
+
+103
+07:36.870 --> 07:44.520
+Here I will write the condition if age is less than 12 OR means || we use and age is
+
+104
+07:44.610 --> 07:46.240
+greater than 50.
+
+105
+07:46.350 --> 07:50.520
+Then we will print a message by saying cout eligible
+
+106
+07:52.940 --> 07:58.910
+otherwise means else just have to give a message that is not eligible.
+
+107
+07:59.850 --> 08:04.450
+That's all and off Main function so we'll say a return zero and end.
+
+108
+08:05.790 --> 08:11.190
+That's it so again for this program also there's a coding exercise available you have to write
+
+109
+08:11.190 --> 08:12.910
+on this condition right.
+
+110
+08:12.940 --> 08:17.950
+The condition just it is for practising the condition and there is the demo program available so you can watch
+
+111
+08:17.950 --> 08:24.610
+the program and try the program by yourself and also PDF available and beyond that we have a few more
+
+112
+08:24.700 --> 08:30.450
+coding exercises so where some time conditions is asked and some time you are asked for a complete
+
+113
+08:30.490 --> 08:34.330
+code so I read the coding exercise properly and solve.

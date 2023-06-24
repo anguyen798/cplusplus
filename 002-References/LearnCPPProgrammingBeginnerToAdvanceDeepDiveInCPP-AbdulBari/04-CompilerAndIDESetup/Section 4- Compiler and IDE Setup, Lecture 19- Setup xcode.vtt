@@ -1,0 +1,129 @@
+WEBVTT
+
+0
+00:00.960 --> 00:11.340
+Let us see how to install ex-code on Mac OS operating system see  Go to App Store and inside App Store
+
+1
+00:11.340 --> 00:13.650
+search for ex-code.
+
+2
+00:13.800 --> 00:17.790
+Already I have X code installed on this machine.
+
+3
+00:17.790 --> 00:23.150
+See here is excode options available for updating it.
+
+4
+00:23.490 --> 00:29.190
+So if I have to update I can update it if it is not installed and this button will be for installation
+
+5
+00:29.190 --> 00:30.110
+of excode.
+
+6
+00:30.240 --> 00:33.850
+So you can click on this one and install excode on your machine.
+
+7
+00:34.010 --> 00:38.350
+And the other method of installing excode is goto terminal.
+
+8
+00:38.370 --> 00:43.030
+And at command line say excode-select --install
+
+9
+00:45.730 --> 00:51.340
+see hear the message I'm getting is command line tools are already installed.
+
+10
+00:51.400 --> 00:56.030
+new software update to install updates, so already ex code is available.
+
+11
+00:56.110 --> 01:03.520
+If it is not available then it will install it once it is installed you can start using it excode.
+
+12
+01:03.520 --> 01:04.810
+See here is excode
+
+13
+01:08.730 --> 01:10.660
+create new excode project
+
+14
+01:13.560 --> 01:16.630
+and let it be command line tool.
+
+15
+01:17.370 --> 01:18.630
+Next and here.
+
+16
+01:18.630 --> 01:20.700
+Select the language as a C++.
+
+17
+01:20.700 --> 01:22.790
+There are other languages also available.
+
+18
+01:22.980 --> 01:27.110
+So I'll give the project name as my first.
+
+19
+01:27.110 --> 01:30.570
+I was asking for the destination that this product should be stored.
+
+20
+01:30.600 --> 01:33.720
+So select the destination folder.
+
+21
+01:34.530 --> 01:41.680
+Now the project is created and this is the program file. here already the hello world program is created
+
+22
+01:41.700 --> 01:45.880
+so you can remove the commands and here you can start writing your code.
+
+23
+01:46.840 --> 01:51.390
+So let us run this one and check yeah.
+
+24
+01:51.580 --> 01:54.480
+Here in this window output is displayed.
+
+25
+01:54.610 --> 01:56.870
+So if you want you can remove this panel's
+
+26
+01:59.780 --> 02:04.880
+And here the output is so you  can extend the size of this one.
+
+27
+02:05.300 --> 02:06.610
+So this is the watch window.
+
+28
+02:06.610 --> 02:11.690
+where you can see the contents of the variables if you have any variables in your program and this
+
+29
+02:11.690 --> 02:13.160
+is the output window.
+
+30
+02:13.400 --> 02:16.780
+So you can show and hide the output window from this toolbar.
+
+31
+02:16.790 --> 02:17.330
+That's it.

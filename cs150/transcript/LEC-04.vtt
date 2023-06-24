@@ -1,0 +1,2720 @@
+﻿WEBVTT
+
+00:00:00.000 --> 00:00:07.000
+Hello everyone, this is Steve Gilbert. Welcome to lecture 4 on functions and decisions.
+
+00:00:07.000 --> 00:00:15.000
+This week we're going to start moving away from writing input processing output programs
+
+00:00:15.000 --> 00:00:18.000
+and start moving towards writing functions.
+
+00:00:18.000 --> 00:00:24.000
+Now a function, you remember, is a named piece of code, like square root.
+
+00:00:24.000 --> 00:00:29.000
+You can think of these, though, like mini IPO programs.
+
+00:00:29.000 --> 00:00:33.000
+In other words, they still have input processing and output,
+
+00:00:33.000 --> 00:00:37.000
+but the input processing and output is somewhat different.
+
+00:00:37.000 --> 00:00:39.000
+So here are the major differences.
+
+00:00:39.000 --> 00:00:45.000
+Instead of prompting the user, "Please tell me the number of boxes that you want,"
+
+00:00:45.000 --> 00:00:49.000
+the input is going to come through the parameter list.
+
+00:00:49.000 --> 00:00:54.000
+There's going to be no prompt and then waiting for the user to type input.
+
+00:00:54.000 --> 00:00:58.000
+And then, instead of printing the output on the screen,
+
+00:00:58.000 --> 00:01:03.000
+the output is going to be returned from the function.
+
+00:01:03.000 --> 00:01:07.000
+Now, of course, you can still use functions to create IPO programs.
+
+00:01:07.000 --> 00:01:11.000
+In fact, you're going to do this in one of the homework assignments.
+
+00:01:11.000 --> 00:01:13.000
+You can have regular input and output,
+
+00:01:13.000 --> 00:01:17.000
+but normally, unless we're writing an input and output function,
+
+00:01:17.000 --> 00:01:23.000
+we won't do IO inside the function itself.
+
+00:01:23.000 --> 00:01:27.000
+So let's look at arguments and parameters.
+
+00:01:27.000 --> 00:01:32.000
+Now, most functions require extra information to do their work.
+
+00:01:32.000 --> 00:01:36.000
+In other words, you couldn't just dial up Domino's or Pizza Hut and say,
+
+00:01:36.000 --> 00:01:40.000
+"Send me a pizza," and not give them any extra information.
+
+00:01:40.000 --> 00:01:44.000
+You'd have to tell them who you are, where to send the pizza to,
+
+00:01:44.000 --> 00:01:51.000
+what size pizza you want, what, you know, toppings you want on the pizza, and so forth.
+
+00:01:51.000 --> 00:01:54.000
+And so think of a function like square root.
+
+00:01:54.000 --> 00:01:57.000
+Square root, when you call the square root function,
+
+00:01:57.000 --> 00:02:02.000
+it doesn't stop and say, "Hello, what number would you like the square root on?"
+
+00:02:02.000 --> 00:02:05.000
+It doesn't prompt you for input.
+
+00:02:05.000 --> 00:02:08.000
+It also doesn't print its output on the screen.
+
+00:02:08.000 --> 00:02:15.000
+Instead, square root gets its input through arguments and parameters.
+
+00:02:15.000 --> 00:02:20.000
+Now, we're going to use these two terms in a very specific way.
+
+00:02:20.000 --> 00:02:23.000
+Sometimes they're confused with each other,
+
+00:02:23.000 --> 00:02:27.000
+and many times they're used in different ways.
+
+00:02:27.000 --> 00:02:35.000
+But we're going to refer to arguments as the values that are supplied when a function is called,
+
+00:02:35.000 --> 00:02:41.000
+not the variables that are created when the function is defined.
+
+00:02:41.000 --> 00:02:44.000
+Those we're going to call parameters.
+
+00:02:44.000 --> 00:02:50.000
+So when a function's defined, we're going to declare variables
+
+00:02:50.000 --> 00:02:55.000
+that will be used inside the function to store the value.
+
+00:02:55.000 --> 00:02:58.000
+Now, we have two kinds of functions.
+
+00:02:58.000 --> 00:03:02.000
+We have fruitful functions or void functions.
+
+00:03:02.000 --> 00:03:06.000
+A fruitful function is a function that produces a value.
+
+00:03:06.000 --> 00:03:13.000
+That means we can call a fruitful function as part of an expression, as part of a calculation.
+
+00:03:13.000 --> 00:03:19.000
+A void function, which is also known as a procedure, needs a side effect.
+
+00:03:19.000 --> 00:03:24.000
+A void function would be something that says, you know, print this value.
+
+00:03:24.000 --> 00:03:26.000
+It doesn't return anything.
+
+00:03:26.000 --> 00:03:28.000
+It just does something.
+
+00:03:28.000 --> 00:03:34.000
+So the does something part we call a side effect.
+
+00:03:34.000 --> 00:03:41.000
+Now, we're going to do our first example here, our first exercise.
+
+00:03:41.000 --> 00:03:47.000
+So make sure that you have gone into, got the lecture exercise document,
+
+00:03:47.000 --> 00:03:52.000
+gone to Fridays, got the lecture exercise document,
+
+00:03:52.000 --> 00:03:54.000
+clicked the link for the starter code,
+
+00:03:54.000 --> 00:03:58.000
+and we'll look at this first problem we're going to do here.
+
+00:03:58.000 --> 00:04:04.000
+So here, what we want to do is write a function called last digit.
+
+00:04:04.000 --> 00:04:08.000
+Now, again, unlike the IPO programs we've written before in class,
+
+00:04:08.000 --> 00:04:13.000
+we're not going to prompt the user, what digit do you want to process?
+
+00:04:13.000 --> 00:04:18.000
+We're just going to pass the digit to the function last digit.
+
+00:04:18.000 --> 00:04:27.000
+So if we give last digit a number like 3,572, the last digit in that number is 2,
+
+00:04:27.000 --> 00:04:30.000
+and so that's the value it should return.
+
+00:04:30.000 --> 00:04:32.000
+We also want it to work for negative numbers.
+
+00:04:32.000 --> 00:04:41.000
+For instance, giving last digit -947 should return 7, not -7.
+
+00:04:41.000 --> 00:04:43.000
+You can use one other function here.
+
+00:04:43.000 --> 00:04:47.000
+You can use the abs function in C standard lib.
+
+00:04:47.000 --> 00:04:50.000
+That's the version of abs that works for integers,
+
+00:04:50.000 --> 00:04:54.000
+but no other library functions, and you can't use string.
+
+00:04:54.000 --> 00:04:58.000
+So we couldn't take the substring at the size -1,
+
+00:04:58.000 --> 00:05:04.000
+or the back function to get the integer.
+
+00:05:04.000 --> 00:05:06.000
+So let's look at how we do this.
+
+00:05:06.000 --> 00:05:15.000
+Let's open up in IC4, let's open up A, and let's open up last digit.cpp,
+
+00:05:15.000 --> 00:05:17.000
+and we're going to write our function here.
+
+00:05:17.000 --> 00:05:21.000
+Notice I've included only this one header we can have.
+
+00:05:21.000 --> 00:05:24.000
+So how do we write a function?
+
+00:05:24.000 --> 00:05:30.000
+Well, you always start with - so this is the function we're writing.
+
+00:05:30.000 --> 00:05:33.000
+You always start with first draft skeleton.
+
+00:05:33.000 --> 00:05:36.000
+The name for the skeleton is called a stub.
+
+00:05:36.000 --> 00:05:39.000
+A stub doesn't actually do all of the work.
+
+00:05:39.000 --> 00:05:43.000
+All it does is get the mechanical parts out of the way.
+
+00:05:43.000 --> 00:05:46.000
+The reason you start with this first draft skeleton
+
+00:05:46.000 --> 00:05:51.000
+is because you want to get the, again, the mechanical parts,
+
+00:05:51.000 --> 00:05:55.000
+the part that you can memorize, you want that to be second nature,
+
+00:05:55.000 --> 00:05:57.000
+just like driving a stick shift.
+
+00:05:57.000 --> 00:06:03.000
+You want the shifting and using the clutch and so forth to be second nature.
+
+00:06:03.000 --> 00:06:05.000
+And so that's what a stub is.
+
+00:06:05.000 --> 00:06:09.000
+So here are the six questions we need to ask.
+
+00:06:09.000 --> 00:06:13.000
+We need to ask first what kind of thing the function returns,
+
+00:06:13.000 --> 00:06:15.000
+and write that down first.
+
+00:06:15.000 --> 00:06:19.000
+In this case, last digit is going to return an int.
+
+00:06:19.000 --> 00:06:22.000
+Secondly, we need to put in the name of the function.
+
+00:06:22.000 --> 00:06:26.000
+Now, if we spell last digit with a lowercase d here,
+
+00:06:26.000 --> 00:06:31.000
+it's not going to work, because our testing, or our client program,
+
+00:06:31.000 --> 00:06:36.000
+is going to be calling the last digit function spelled exactly the way that is.
+
+00:06:36.000 --> 00:06:40.000
+Third, we're going to put the input variable declaration,
+
+00:06:40.000 --> 00:06:46.000
+the parameter declaration, inside parentheses following that.
+
+00:06:46.000 --> 00:06:49.000
+And so these three parts, one, two, and three,
+
+00:06:49.000 --> 00:06:52.000
+is going to create the interface for the function,
+
+00:06:52.000 --> 00:06:56.000
+the part that describes it to the compiler.
+
+00:06:56.000 --> 00:07:00.000
+The next part is going to create the body,
+
+00:07:00.000 --> 00:07:03.000
+or the implementation of the function.
+
+00:07:03.000 --> 00:07:07.000
+So you add braces to surround the function body.
+
+00:07:07.000 --> 00:07:13.000
+Then, don't think at all about what the program is going to do.
+
+00:07:13.000 --> 00:07:16.000
+Don't think at all about what the function is supposed to do.
+
+00:07:16.000 --> 00:07:21.000
+Think about what kind of thing it is going to produce.
+
+00:07:21.000 --> 00:07:26.000
+And so create a variable for the output, the result,
+
+00:07:26.000 --> 00:07:31.000
+and initialize it, just a nothing, to an empty value, to zero.
+
+00:07:31.000 --> 00:07:35.000
+Finally, return the result.
+
+00:07:35.000 --> 00:07:39.000
+Then, once you make sure that compiles it and links,
+
+00:07:39.000 --> 00:07:43.000
+you can test the program, and we can go in and complete it.
+
+00:07:43.000 --> 00:07:48.000
+So let's walk through these steps so you can see them together.
+
+00:07:48.000 --> 00:07:51.000
+So here's our function, lastDigit.
+
+00:07:51.000 --> 00:07:55.000
+The first question is, what kind of thing that returns?
+
+00:07:55.000 --> 00:07:59.000
+Well, it returns an int, so you just write that down.
+
+00:07:59.000 --> 00:08:03.000
+Then we put in the name, lastDigit.
+
+00:08:03.000 --> 00:08:05.000
+Then we put in the parameter.
+
+00:08:05.000 --> 00:08:08.000
+Now this is going to take a digit.
+
+00:08:08.000 --> 00:08:12.000
+It's going to be an int, so it's going to take a number.
+
+00:08:12.000 --> 00:08:14.000
+So I'm going to say int number.
+
+00:08:14.000 --> 00:08:18.000
+Notice this is what a parameter declaration looks like.
+
+00:08:18.000 --> 00:08:21.000
+Just like a regular variable declaration,
+
+00:08:21.000 --> 00:08:24.000
+except we don't put a semicolon there.
+
+00:08:24.000 --> 00:08:26.000
+So int number.
+
+00:08:26.000 --> 00:08:29.000
+So we did step one, two, and three.
+
+00:08:29.000 --> 00:08:33.000
+The return type, what comes out, the name of the function,
+
+00:08:33.000 --> 00:08:37.000
+and what goes into the function, the parameter declarations.
+
+00:08:37.000 --> 00:08:42.000
+Step four is to create the implementation, the body.
+
+00:08:42.000 --> 00:08:45.000
+Step five is to create the output.
+
+00:08:45.000 --> 00:08:52.000
+So this is going to be an int.
+
+00:08:52.000 --> 00:08:56.000
+So we're going to create the result.
+
+00:08:56.000 --> 00:08:58.000
+We're going to initialize it to zero.
+
+00:08:58.000 --> 00:09:00.000
+You can do it like that.
+
+00:09:00.000 --> 00:09:02.000
+You can do it like that.
+
+00:09:02.000 --> 00:09:04.000
+Either one of those is fine.
+
+00:09:04.000 --> 00:09:06.000
+What you can't do is that.
+
+00:09:06.000 --> 00:09:09.000
+If you do that, you have a random result.
+
+00:09:09.000 --> 00:09:10.000
+You don't want to do that.
+
+00:09:10.000 --> 00:09:16.000
+So we'll say int result, set it to zero.
+
+00:09:16.000 --> 00:09:23.000
+And then step six, we're going to return the result.
+
+00:09:23.000 --> 00:09:26.000
+Okay, so now we have our skeleton.
+
+00:09:26.000 --> 00:09:29.000
+Let's test the skeleton to make sure it worked.
+
+00:09:29.000 --> 00:09:31.000
+We're going to go over here.
+
+00:09:31.000 --> 00:09:35.000
+We're going to open an integrated folder on A.
+
+00:09:35.000 --> 00:09:40.000
+So now you notice that is switched to A.
+
+00:09:40.000 --> 00:09:47.000
+I'm going to go here and I'm going to do make test.
+
+00:09:47.000 --> 00:09:50.000
+Now you might be unhappy that you've got no points.
+
+00:09:50.000 --> 00:09:52.000
+You should not be.
+
+00:09:52.000 --> 00:09:58.000
+You should not be unhappy because what you've done is you've done all of the mechanical parts.
+
+00:09:58.000 --> 00:10:01.000
+If it didn't compile at this point,
+
+00:10:01.000 --> 00:10:05.000
+you'd know that you'd made some mistake in your stub, in your skeleton.
+
+00:10:05.000 --> 00:10:12.000
+And you could concentrate on getting that right without worrying about what makes the program work.
+
+00:10:12.000 --> 00:10:14.000
+So that's the whole beauty of this.
+
+00:10:14.000 --> 00:10:18.000
+Create the mechanical part first and then do the stub.
+
+00:10:18.000 --> 00:10:23.000
+So at one point you're concentrating on the syntax, getting that right.
+
+00:10:23.000 --> 00:10:29.000
+The second point you're concentrating on figuring out how to get the program to work.
+
+00:10:29.000 --> 00:10:32.000
+So let's think about how we get this program to work.
+
+00:10:32.000 --> 00:10:43.000
+If we have a number, 35, 7, 67, I want the last digit here.
+
+00:10:43.000 --> 00:10:46.000
+How do I get that 7 right there?
+
+00:10:46.000 --> 00:10:52.000
+Well I get the 7 by taking, dividing the number by 10 and getting the remainder.
+
+00:10:52.000 --> 00:10:56.000
+If I divide the number by 10, I get 356.
+
+00:10:56.000 --> 00:11:00.000
+If I get the remainder, I get the 7 that's left over.
+
+00:11:00.000 --> 00:11:11.000
+So I'm just going to set result equals number, remainder, 10.
+
+00:11:11.000 --> 00:11:17.000
+And I'm going to try that again.
+
+00:11:17.000 --> 00:11:21.000
+OK, let's clear the terminal with control L.
+
+00:11:21.000 --> 00:11:25.000
+Let's do make test.
+
+00:11:25.000 --> 00:11:27.000
+Oh, much better, I got 90.
+
+00:11:27.000 --> 00:11:31.000
+But I have one of these tests that is failing here.
+
+00:11:31.000 --> 00:11:33.000
+It's obvious why it's failing.
+
+00:11:33.000 --> 00:11:37.000
+It's failing because I'm getting -7 here.
+
+00:11:37.000 --> 00:11:44.000
+And so remember I told you that we could use this absolute value function for integers from there.
+
+00:11:44.000 --> 00:11:54.000
+And so we're just going to put the absolute value of number, remainder, 10 into the argument there.
+
+00:11:54.000 --> 00:11:59.000
+And we're going to make test once again.
+
+00:11:59.000 --> 00:12:01.000
+And we have 100%.
+
+00:12:01.000 --> 00:12:07.000
+When you're doing this, try to do it step by step as I've just showed you.
+
+00:12:07.000 --> 00:12:13.000
+Don't start at the top and simply try and type out the answer from the beginning and end.
+
+00:12:13.000 --> 00:12:15.000
+Do it in chunks like this.
+
+00:12:15.000 --> 00:12:16.000
+Build the stub.
+
+00:12:16.000 --> 00:12:18.000
+Make sure the mechanics work.
+
+00:12:18.000 --> 00:12:22.000
+Do the simplest thing that will possibly work.
+
+00:12:22.000 --> 00:12:25.000
+Result equals number, remainder, 10.
+
+00:12:25.000 --> 00:12:28.000
+Then fix up the parts that don't work.
+
+00:12:28.000 --> 00:12:30.000
+Do it incrementally.
+
+00:12:30.000 --> 00:12:35.000
+That will really help you.
+
+00:12:35.000 --> 00:12:38.000
+Now let's start talking about decisions.
+
+00:12:38.000 --> 00:12:43.000
+So if you were writing a programming language, what parts do you need?
+
+00:12:43.000 --> 00:12:46.000
+What features are required?
+
+00:12:46.000 --> 00:12:53.000
+So you can write any programming language using three control structures.
+
+00:12:53.000 --> 00:12:59.000
+This is from a paper that was written back in 1966 by Bohm and Jacopini.
+
+00:12:59.000 --> 00:13:07.000
+So we have been writing programs so far using only one control structure - sequence.
+
+00:13:07.000 --> 00:13:14.000
+That means we did our prompt, then our input, then our processing, then our output.
+
+00:13:14.000 --> 00:13:19.000
+The statements were in order - the first, the second, the third, and so forth.
+
+00:13:19.000 --> 00:13:24.000
+So that's what we've been doing with IPO programs.
+
+00:13:24.000 --> 00:13:32.000
+The second kind of sequence, or the second kind of control structure that we're going to work on now, is called selection.
+
+00:13:32.000 --> 00:13:36.000
+That's conditional execution with an if statement.
+
+00:13:36.000 --> 00:13:39.000
+This is also sometimes called branching.
+
+00:13:39.000 --> 00:13:43.000
+And then we're going to move on and look at iteration.
+
+00:13:43.000 --> 00:13:46.000
+That's while looping.
+
+00:13:46.000 --> 00:13:52.000
+So today we're going to start with selection.
+
+00:13:52.000 --> 00:13:56.000
+Now to make a decision, we first have to think about conditions.
+
+00:13:56.000 --> 00:14:03.000
+So decision making in C++ is based on these three foundations.
+
+00:14:03.000 --> 00:14:09.000
+First, the built-in bool type returns true and false.
+
+00:14:09.000 --> 00:14:12.000
+In Java this is called the boolean type.
+
+00:14:12.000 --> 00:14:16.000
+I think in Python it's called bool as well.
+
+00:14:16.000 --> 00:14:23.000
+Second, but in Python the true and false values are capital true and capital false.
+
+00:14:23.000 --> 00:14:27.000
+In Java they're true and false, lowercase, like this.
+
+00:14:27.000 --> 00:14:32.000
+Secondly, we have a group of operators called relational operators.
+
+00:14:32.000 --> 00:14:40.000
+The relational operators compare values of any type, and they produce a boolean result.
+
+00:14:40.000 --> 00:14:43.000
+Or a true/false result.
+
+00:14:43.000 --> 00:14:45.000
+Finally, we have the logical operators.
+
+00:14:45.000 --> 00:14:54.000
+The logical operators operate not on any kind of value, but only on boolean expressions, or true/false expressions.
+
+00:14:54.000 --> 00:14:57.000
+And they combine them or negate them.
+
+00:14:57.000 --> 00:15:07.000
+So the relational operators are operators like less than, greater than, greater than or equal, less than or equal, and equal.
+
+00:15:07.000 --> 00:15:13.000
+And the logical operators are the operators and, and, or, and, not.
+
+00:15:13.000 --> 00:15:25.000
+Now unfortunately, in C++ truthiness is a little bit more flexible than you might expect if you come from Python or if you come from Java.
+
+00:15:25.000 --> 00:15:31.000
+So here's the problem, and I'm going to walk you through several different pitfalls.
+
+00:15:31.000 --> 00:15:39.000
+Now, as with numbers, C++ has implicit bool conversions.
+
+00:15:39.000 --> 00:15:43.000
+Now, Java has implicit numeric conversions.
+
+00:15:43.000 --> 00:15:51.000
+In other words, it will automatically convert an int to a double, and you don't have to write a cast or anything like that.
+
+00:15:51.000 --> 00:15:56.000
+But C++ will convert a number to a true/false value.
+
+00:15:56.000 --> 00:16:00.000
+Something that Java won't do, and Python won't do.
+
+00:16:00.000 --> 00:16:15.000
+So, if you have a number, and if the expression is false, if the number is anything other than zero, it is true.
+
+00:16:15.000 --> 00:16:19.000
+If the number is zero, it's considered false.
+
+00:16:19.000 --> 00:16:27.000
+So numbers and boolean values are implicitly converted.
+
+00:16:27.000 --> 00:16:34.000
+Suppose I have a number, three, or a variable, a, that is a number.
+
+00:16:34.000 --> 00:16:37.000
+And I want to assign that to a bool.
+
+00:16:37.000 --> 00:16:46.000
+Well, if the number was zero, the bool variable will take on the value false.
+
+00:16:46.000 --> 00:16:53.000
+If it's anything other than zero, a negative number or a positive number, it will be true.
+
+00:16:53.000 --> 00:17:00.000
+Now, suppose I then take that bool variable, and I assign it to a number variable.
+
+00:17:00.000 --> 00:17:09.000
+No matter what the number variable originally was, now if the bool was false, the number will be zero.
+
+00:17:09.000 --> 00:17:13.000
+If the bool was true, the number will be one.
+
+00:17:13.000 --> 00:17:20.000
+Now, in Java, if you print out a boolean variable, you'll get true and false.
+
+00:17:20.000 --> 00:17:23.000
+The same thing is not true in C++.
+
+00:17:23.000 --> 00:17:29.000
+In C++, the default is to print out zero and one.
+
+00:17:29.000 --> 00:17:32.000
+Zero for false, one for true.
+
+00:17:32.000 --> 00:17:38.000
+So if I print out a boolean variable, it will print out zero or one.
+
+00:17:38.000 --> 00:17:41.000
+You can change that by using a manipulator.
+
+00:17:41.000 --> 00:17:45.000
+You remember the manipulators we used for fix and set precision?
+
+00:17:45.000 --> 00:17:47.000
+There's a bool alpha manipulator.
+
+00:17:47.000 --> 00:17:53.000
+If you do that, it will use true and false, just like Java does.
+
+00:17:53.000 --> 00:18:00.000
+So what are the pitfalls of this fact that numbers and boolean values are implicitly convertible?
+
+00:18:00.000 --> 00:18:03.000
+Here's the first pitfall, an embedded assignment.
+
+00:18:03.000 --> 00:18:08.000
+In Java, if we wrote this statement, if area equals zero,
+
+00:18:08.000 --> 00:18:15.000
+now notice that I have the assignment operator there, not the equality operator.
+
+00:18:15.000 --> 00:18:20.000
+In Java, Java would say, "Eh, that's not a boolean value.
+
+00:18:20.000 --> 00:18:23.000
+You've made a mistake in your if statement."
+
+00:18:23.000 --> 00:18:28.000
+In C++, it will actually assign zero to area,
+
+00:18:28.000 --> 00:18:33.000
+and then when the if statement tries to go and evaluate, it'll say,
+
+00:18:33.000 --> 00:18:37.000
+"Oh, I don't have a boolean here, but I have a number,
+
+00:18:37.000 --> 00:18:42.000
+and I can convert that number to a boolean, and so this would be false."
+
+00:18:42.000 --> 00:18:47.000
+If you assign a non-zero, then the condition is considered true.
+
+00:18:47.000 --> 00:18:50.000
+Again, you're not told about this problem.
+
+00:18:50.000 --> 00:18:52.000
+There is no warning.
+
+00:18:52.000 --> 00:18:56.000
+Java, of course, will protect you from this, and C# will protect you from this.
+
+00:18:56.000 --> 00:19:02.000
+They'll protect you from this as long as you're not comparing a boolean value to--
+
+00:19:02.000 --> 00:19:10.000
+or a boolean variable to true and false, in which case you'll have the same problem.
+
+00:19:10.000 --> 00:19:12.000
+So here's a question.
+
+00:19:12.000 --> 00:19:13.000
+Let me ask you this.
+
+00:19:13.000 --> 00:19:15.000
+I'll give you a few seconds.
+
+00:19:15.000 --> 00:19:21.000
+Pause the screen and see if you can answer it, and then I'll talk about it.
+
+00:19:21.000 --> 00:19:26.000
+Okay, so if a equals 3, if a equals 4, a is 4, which is weird,
+
+00:19:26.000 --> 00:19:30.000
+because I just set it to 3, else a is not 4.
+
+00:19:30.000 --> 00:19:32.000
+What prints?
+
+00:19:32.000 --> 00:19:34.000
+a.
+
+00:19:34.000 --> 00:19:35.000
+a is 4, weird.
+
+00:19:35.000 --> 00:19:37.000
+b. a is not 4.
+
+00:19:37.000 --> 00:19:38.000
+That's a syntax error.
+
+00:19:38.000 --> 00:19:40.000
+It won't compile.
+
+00:19:40.000 --> 00:19:42.000
+And d. neither one.
+
+00:19:42.000 --> 00:19:51.000
+So pause for a few seconds and then come back, and we'll answer it.
+
+00:19:51.000 --> 00:19:54.000
+Okay, welcome back.
+
+00:19:54.000 --> 00:19:59.000
+So here I have an embedded assignment instead of a comparison.
+
+00:19:59.000 --> 00:20:03.000
+When you read it, it says if a equals 4, of course it's not 4, it's 3,
+
+00:20:03.000 --> 00:20:07.000
+so I'll go into the else and print a is not 4.
+
+00:20:07.000 --> 00:20:13.000
+In fact, this assigns 4 to a, and then because that is nonzero,
+
+00:20:13.000 --> 00:20:16.000
+the if statement considers it true.
+
+00:20:16.000 --> 00:20:20.000
+And so we go into the truth part, and a prints out.
+
+00:20:20.000 --> 00:20:22.000
+a is 4, weird.
+
+00:20:22.000 --> 00:20:32.000
+So one of the pitfalls of convertibility between bools and numbers in C++.
+
+00:20:32.000 --> 00:20:37.000
+Let me show you a couple other conditional pitfalls.
+
+00:20:37.000 --> 00:20:41.000
+When you use the logical operators and and or,
+
+00:20:41.000 --> 00:20:47.000
+it's possible to have both an impossible and an unavoidable condition.
+
+00:20:47.000 --> 00:20:50.000
+The impossible condition is when you use and.
+
+00:20:50.000 --> 00:20:54.000
+And if you use and, in this case,
+
+00:20:54.000 --> 00:21:01.000
+I'm checking to see if a person is between 13 and 65,
+
+00:21:01.000 --> 00:21:03.000
+but in fact that's not what I've written.
+
+00:21:03.000 --> 00:21:05.000
+This is an impossible condition,
+
+00:21:05.000 --> 00:21:14.000
+because the variable age cannot both be less than 13 and greater than 65.
+
+00:21:14.000 --> 00:21:16.000
+It cannot be both of those.
+
+00:21:16.000 --> 00:21:18.000
+Now we use the term and.
+
+00:21:18.000 --> 00:21:22.000
+Make sure that person is under 13 and greater than 65.
+
+00:21:22.000 --> 00:21:25.000
+We wouldn't say that.
+
+00:21:25.000 --> 00:21:31.000
+However, we do use the term and and or kind of interchangeably in our informal speech.
+
+00:21:31.000 --> 00:21:35.000
+And so you need to make sure every time you use and and or
+
+00:21:35.000 --> 00:21:39.000
+that you double check to make sure you have a condition with and
+
+00:21:39.000 --> 00:21:43.000
+that it's possible for all conditions to be true simultaneously.
+
+00:21:43.000 --> 00:21:46.000
+This condition will always be false.
+
+00:21:46.000 --> 00:21:48.000
+It's impossible.
+
+00:21:48.000 --> 00:21:50.000
+Similarly, if you use or,
+
+00:21:50.000 --> 00:21:55.000
+make sure it's possible for all conditions to be false simultaneously.
+
+00:21:55.000 --> 00:21:57.000
+This condition here,
+
+00:21:57.000 --> 00:21:59.000
+when you read it to yourself,
+
+00:21:59.000 --> 00:22:03.000
+if age is greater than 13 or age is less than 65,
+
+00:22:03.000 --> 00:22:05.000
+do something.
+
+00:22:05.000 --> 00:22:09.000
+We read that kind of informally and it makes sense to us.
+
+00:22:09.000 --> 00:22:17.000
+But we don't realize that every age must be either greater than 13 or less than 65.
+
+00:22:17.000 --> 00:22:20.000
+There is no age that doesn't meet that condition.
+
+00:22:20.000 --> 00:22:23.000
+So it's unavoidable.
+
+00:22:23.000 --> 00:22:28.000
+Finally, because of this implicit conversion to Boolean,
+
+00:22:28.000 --> 00:22:35.000
+it's very, very important to remember to always use complete relational expressions in conditions.
+
+00:22:35.000 --> 00:22:37.000
+This is not a syntax error,
+
+00:22:37.000 --> 00:22:43.000
+and it especially bites people who are Python programmers.
+
+00:22:43.000 --> 00:22:49.000
+So we would read this if age is equal to 12 or 13 or 14,
+
+00:22:49.000 --> 00:22:52.000
+and that would make sense to us when we read it.
+
+00:22:52.000 --> 00:22:56.000
+But the compiler reads it if age equals 12,
+
+00:22:56.000 --> 00:22:58.000
+now that's false,
+
+00:22:58.000 --> 00:23:00.000
+or 13.
+
+00:23:00.000 --> 00:23:03.000
+Well, we're not saying age equals equals 13.
+
+00:23:03.000 --> 00:23:05.000
+We're just saying 13.
+
+00:23:05.000 --> 00:23:12.000
+And remember the Boolean operators and and or operate on Boolean expressions.
+
+00:23:12.000 --> 00:23:15.000
+So 13, even though it's a number here,
+
+00:23:15.000 --> 00:23:17.000
+is treated as a Boolean expression.
+
+00:23:17.000 --> 00:23:21.000
+It's not 0, therefore it's true.
+
+00:23:21.000 --> 00:23:26.000
+So this is if false or true, and it's always true.
+
+00:23:26.000 --> 00:23:30.000
+No matter what you do, no matter what value age it has,
+
+00:23:30.000 --> 00:23:35.000
+this expression will always be true.
+
+00:23:35.000 --> 00:23:40.000
+Let me give you another little quick check here.
+
+00:23:40.000 --> 00:23:43.000
+We have a string grade set to C.
+
+00:23:43.000 --> 00:23:47.000
+If grade equals equals A or A plus or A minus,
+
+00:23:47.000 --> 00:23:49.000
+C out got an A.
+
+00:23:49.000 --> 00:23:53.000
+Else if grade equals B or B plus or B minus,
+
+00:23:53.000 --> 00:23:55.000
+C out got a B.
+
+00:23:55.000 --> 00:23:58.000
+Else if grade equals C or C plus or C minus,
+
+00:23:58.000 --> 00:24:00.000
+C out got a C.
+
+00:24:00.000 --> 00:24:04.000
+What prints, assuming we have all the string includes and everything,
+
+00:24:04.000 --> 00:24:09.000
+does it print got an A, got a B, got a C, or a syntax error?
+
+00:24:09.000 --> 00:24:14.000
+So pause the video here, think about it, write down your answer,
+
+00:24:14.000 --> 00:24:22.000
+and when you come back I'll answer it.
+
+00:24:22.000 --> 00:24:24.000
+OK, welcome back.
+
+00:24:24.000 --> 00:24:28.000
+So this is the same problem we just talked about on the last slide.
+
+00:24:28.000 --> 00:24:33.000
+This is a Boolean expression, a relational expression.
+
+00:24:33.000 --> 00:24:38.000
+So grade equals equals A is false.
+
+00:24:38.000 --> 00:24:41.000
+Now the grade is not equal to A plus,
+
+00:24:41.000 --> 00:24:46.000
+but this is not saying if grade equals equals A plus.
+
+00:24:46.000 --> 00:24:48.000
+That is saying true.
+
+00:24:48.000 --> 00:24:51.000
+It's not zero, it's true.
+
+00:24:51.000 --> 00:24:56.000
+And so this is false or true, that whole expression is true,
+
+00:24:56.000 --> 00:25:03.000
+so this will always print out got an A.
+
+00:25:03.000 --> 00:25:08.000
+Let's look at another pitfall with comparison operators.
+
+00:25:08.000 --> 00:25:11.000
+So here I've called the square root function
+
+00:25:11.000 --> 00:25:15.000
+and stored the result in the variable root.
+
+00:25:15.000 --> 00:25:18.000
+Now I'm taking the square root of 2,
+
+00:25:18.000 --> 00:25:21.000
+and so if I multiply root times root,
+
+00:25:21.000 --> 00:25:24.000
+I should get the square of 2,
+
+00:25:24.000 --> 00:25:27.000
+or the square of the square root of 2,
+
+00:25:27.000 --> 00:25:29.000
+or I should get 2.
+
+00:25:29.000 --> 00:25:31.000
+And so this should print out OK.
+
+00:25:31.000 --> 00:25:35.000
+Now this is syntactically comparable,
+
+00:25:35.000 --> 00:25:40.000
+so I can compare this real number to this real number,
+
+00:25:40.000 --> 00:25:46.000
+but if you simply write it down the way you learned it in mathematics,
+
+00:25:46.000 --> 00:25:48.000
+you will get the wrong answer.
+
+00:25:48.000 --> 00:25:51.000
+This will in fact print out back to Math 30,
+
+00:25:51.000 --> 00:25:57.000
+because these answers will not exactly be 2.
+
+00:25:57.000 --> 00:26:00.000
+And so there is no perfect solution.
+
+00:26:00.000 --> 00:26:02.000
+In general, there's no perfect solution,
+
+00:26:02.000 --> 00:26:06.000
+because real numbers are designed to work with very, very small numbers,
+
+00:26:06.000 --> 00:26:08.000
+like a coronavirus,
+
+00:26:08.000 --> 00:26:13.000
+and very, very large numbers, like the distance to far galaxies.
+
+00:26:13.000 --> 00:26:17.000
+And so we cannot just have some simple value
+
+00:26:17.000 --> 00:26:21.000
+and say if it's this close, it's OK.
+
+00:26:21.000 --> 00:26:24.000
+So in general, you have to decide, based on the problem,
+
+00:26:24.000 --> 00:26:26.000
+what's close enough.
+
+00:26:26.000 --> 00:26:29.000
+We call that the epsilon value.
+
+00:26:29.000 --> 00:26:32.000
+So here's a very common one,
+
+00:26:32.000 --> 00:26:41.000
+1e^-14 is about the biggest difference that can be decided between two doubles.
+
+00:26:41.000 --> 00:26:45.000
+Then you take the two numbers, if you want to see if they're equal,
+
+00:26:45.000 --> 00:26:47.000
+root times root,
+
+00:26:47.000 --> 00:26:50.000
+subtract it from 2.0,
+
+00:26:50.000 --> 00:26:53.000
+and take the absolute value of that.
+
+00:26:53.000 --> 00:26:57.000
+And if the absolute value is less than this epsilon value,
+
+00:26:57.000 --> 00:27:01.000
+then the numbers are equivalently equal.
+
+00:27:01.000 --> 00:27:03.000
+Now this might seem like a lot of work,
+
+00:27:03.000 --> 00:27:06.000
+but it's in fact what you have to do.
+
+00:27:06.000 --> 00:27:09.000
+It's not only what you have to do in C++,
+
+00:27:09.000 --> 00:27:12.000
+it's what you have to do in Java and Python as well.
+
+00:27:12.000 --> 00:27:18.000
+You simply cannot compare real numbers using the relational operators
+
+00:27:18.000 --> 00:27:23.000
+and expect to get back a meaningful answer in every single case.
+
+00:27:23.000 --> 00:27:26.000
+So if you care about correctness,
+
+00:27:26.000 --> 00:27:31.000
+you'll make sure that you do this.
+
+00:27:31.000 --> 00:27:36.000
+OK, so that's the Boolean type and some pitfalls with the Boolean type.
+
+00:27:36.000 --> 00:27:40.000
+Let's go ahead and look at selection, so if statements.
+
+00:27:40.000 --> 00:27:44.000
+Why do we want to use if statements in our code?
+
+00:27:44.000 --> 00:27:48.000
+We use selection to control the flow of data.
+
+00:27:48.000 --> 00:27:54.000
+We want to select a particular value or kind of value from a data flow.
+
+00:27:54.000 --> 00:28:01.000
+For instance, we're getting all the transactions from a gas pump.
+
+00:28:01.000 --> 00:28:04.000
+We want to select the debits or the credits.
+
+00:28:04.000 --> 00:28:08.000
+How much do they owe us? How much did they pay us?
+
+00:28:08.000 --> 00:28:10.000
+We do that with an if statement.
+
+00:28:10.000 --> 00:28:12.000
+Now while this data is going by,
+
+00:28:12.000 --> 00:28:17.000
+we may want to selectively update a counter or an accumulator.
+
+00:28:17.000 --> 00:28:21.000
+We're looking at a string, and we want to count the vowels and the consonants.
+
+00:28:21.000 --> 00:28:28.000
+We need to use an if statement to determine which counter to update.
+
+00:28:28.000 --> 00:28:31.000
+We want to reduce root data to correct part of a program
+
+00:28:31.000 --> 00:28:34.000
+in response to user commands or to input.
+
+00:28:34.000 --> 00:28:36.000
+Oh, I got a credit in.
+
+00:28:36.000 --> 00:28:39.000
+I want to send it to the part of the programs that processes a credit.
+
+00:28:39.000 --> 00:28:42.000
+Oh, they checked three on the menu.
+
+00:28:42.000 --> 00:28:47.000
+I want to go to the action that corresponds to three on the menu.
+
+00:28:47.000 --> 00:28:51.000
+And finally, we use selection to error check data.
+
+00:28:51.000 --> 00:28:55.000
+If the data that comes in is not within the bounds,
+
+00:28:55.000 --> 00:29:00.000
+we would process it to a--we would send it to a place that would correct it.
+
+00:29:00.000 --> 00:29:02.000
+So we'll use error checking.
+
+00:29:02.000 --> 00:29:06.000
+We use selection to control error checking.
+
+00:29:06.000 --> 00:29:13.000
+The important thing to realize about this is that selection produces information.
+
+00:29:13.000 --> 00:29:18.000
+Selection is back to our old friend input, processing, and output.
+
+00:29:18.000 --> 00:29:21.000
+When you come to a selection statement,
+
+00:29:21.000 --> 00:29:25.000
+you have raw information before the selection statement--
+
+00:29:25.000 --> 00:29:28.000
+raw data before the selection statement.
+
+00:29:28.000 --> 00:29:31.000
+After the selection statement, things have changed.
+
+00:29:31.000 --> 00:29:33.000
+You know some more information.
+
+00:29:33.000 --> 00:29:36.000
+You know that I've found one more vowel
+
+00:29:36.000 --> 00:29:41.000
+or that I've added something to the amount that the user has paid.
+
+00:29:41.000 --> 00:29:46.000
+So selection produces information just like an IPO program.
+
+00:29:46.000 --> 00:29:55.000
+Input, processing, and output is the basic function that all computing is based on.
+
+00:29:55.000 --> 00:30:00.000
+Okay, so let's look at the six selection structures we have in C++.
+
+00:30:00.000 --> 00:30:03.000
+We have one-way independent if statements.
+
+00:30:03.000 --> 00:30:08.000
+So if this is true, do that or then do that.
+
+00:30:08.000 --> 00:30:12.000
+We have two-way or either/or actions.
+
+00:30:12.000 --> 00:30:18.000
+So this is--if this is true, do that; otherwise or else, do that.
+
+00:30:18.000 --> 00:30:22.000
+We have sequential dependent if statements.
+
+00:30:22.000 --> 00:30:29.000
+So if this is true, do that; else, if this is true, do that;
+
+00:30:29.000 --> 00:30:33.000
+else, if neither of those are true, do the third thing.
+
+00:30:33.000 --> 00:30:37.000
+We have nested or leveled decisions.
+
+00:30:37.000 --> 00:30:43.000
+If A is true and if B is true, do something;
+
+00:30:43.000 --> 00:30:47.000
+else, if A is true and B is false, do something else;
+
+00:30:47.000 --> 00:30:52.000
+else, if A is false and B is true, do something;
+
+00:30:52.000 --> 00:30:57.000
+else, if A is false and B is false, do something else.
+
+00:30:57.000 --> 00:31:00.000
+Nested or leveled decision making.
+
+00:31:00.000 --> 00:31:03.000
+We have labeled integral tests.
+
+00:31:03.000 --> 00:31:08.000
+This is called the switch structure.
+
+00:31:08.000 --> 00:31:12.000
+And finally, we have a selection expression.
+
+00:31:12.000 --> 00:31:14.000
+This is called the conditional operator.
+
+00:31:14.000 --> 00:31:16.000
+So we do a test.
+
+00:31:16.000 --> 00:31:20.000
+If the test is true, this value is assigned to val.
+
+00:31:20.000 --> 00:31:25.000
+If the test is false, this value is assigned to val.
+
+00:31:25.000 --> 00:31:31.000
+Now, in looking at these six kinds of selection structures,
+
+00:31:31.000 --> 00:31:34.000
+you have to understand that they're not all designed
+
+00:31:34.000 --> 00:31:36.000
+to do exactly the same thing.
+
+00:31:36.000 --> 00:31:43.000
+We have a rubric to decide which one is the right one to use.
+
+00:31:43.000 --> 00:31:46.000
+The first rubric is we want to make sure that
+
+00:31:46.000 --> 00:31:49.000
+whichever selection structure we use,
+
+00:31:49.000 --> 00:31:51.000
+it produces the correct output.
+
+00:31:51.000 --> 00:31:57.000
+That's kind of the non...we can't argue with that.
+
+00:31:57.000 --> 00:32:00.000
+It has to produce the correct output.
+
+00:32:00.000 --> 00:32:03.000
+The second thing we want to do is we want to make sure
+
+00:32:03.000 --> 00:32:06.000
+that whichever selection structure we use,
+
+00:32:06.000 --> 00:32:09.000
+that the code we produce is understandable
+
+00:32:09.000 --> 00:32:13.000
+and it's maintainable, meaning when you come back to it,
+
+00:32:13.000 --> 00:32:17.000
+you can change it and the code still works correctly.
+
+00:32:17.000 --> 00:32:20.000
+You can understand it and maintain it.
+
+00:32:20.000 --> 00:32:25.000
+Thirdly, we want to make sure we use the correct semantics.
+
+00:32:25.000 --> 00:32:28.000
+Each of these statements says something
+
+00:32:28.000 --> 00:32:32.000
+to a programmer who understands programming.
+
+00:32:32.000 --> 00:32:36.000
+And so it's like learning an idiom in a new language.
+
+00:32:36.000 --> 00:32:39.000
+If you're speaking French, there are idioms
+
+00:32:39.000 --> 00:32:41.000
+that are French idioms.
+
+00:32:41.000 --> 00:32:44.000
+You want to learn the idioms so when you say them,
+
+00:32:44.000 --> 00:32:47.000
+the French speakers will understand you.
+
+00:32:47.000 --> 00:32:49.000
+The same way with programming.
+
+00:32:49.000 --> 00:32:52.000
+If you use a one-way independent if statement,
+
+00:32:52.000 --> 00:32:55.000
+you may get all of your code correct.
+
+00:32:55.000 --> 00:32:58.000
+It may be understandable and maintainable,
+
+00:32:58.000 --> 00:33:01.000
+but it's not saying what you think it's saying,
+
+00:33:01.000 --> 00:33:04.000
+even if it produces the correct output.
+
+00:33:04.000 --> 00:33:07.000
+So using the correct semantics means using
+
+00:33:07.000 --> 00:33:11.000
+the correct kind of selection structure
+
+00:33:11.000 --> 00:33:14.000
+for the situation you're in.
+
+00:33:14.000 --> 00:33:17.000
+And only then, after we've done those three,
+
+00:33:17.000 --> 00:33:20.000
+do we want to fall back and think about,
+
+00:33:20.000 --> 00:33:23.000
+"Oh, I want to make sure that this code is efficient
+
+00:33:23.000 --> 00:33:26.000
+as it possibly could be."
+
+00:33:26.000 --> 00:33:35.000
+Okay, so let's look at which one is the correct one
+
+00:33:35.000 --> 00:33:38.000
+to use in each situation.
+
+00:33:38.000 --> 00:33:41.000
+Imagine that you're writing the code that is going to process
+
+00:33:41.000 --> 00:33:44.000
+this dialog box over here.
+
+00:33:44.000 --> 00:33:47.000
+Notice it has these check boxes.
+
+00:33:47.000 --> 00:33:50.000
+These check boxes mean that I could select one
+
+00:33:50.000 --> 00:33:53.000
+or all of them or none of them.
+
+00:33:53.000 --> 00:33:56.000
+So the decisions and what happens
+
+00:33:56.000 --> 00:34:01.000
+based on that decision is truly independent.
+
+00:34:01.000 --> 00:34:04.000
+When this happens, the only way to write these,
+
+00:34:04.000 --> 00:34:07.000
+you can't use if/else, you can't use if/else/if,
+
+00:34:07.000 --> 00:34:10.000
+you must use independent ifs.
+
+00:34:10.000 --> 00:34:13.000
+So if the startup task pane is checked,
+
+00:34:13.000 --> 00:34:16.000
+we're going to do whatever action is required for that.
+
+00:34:16.000 --> 00:34:19.000
+That has nothing to do with whether
+
+00:34:19.000 --> 00:34:22.000
+the layout was checked
+
+00:34:22.000 --> 00:34:25.000
+or any of the other ones were checked.
+
+00:34:25.000 --> 00:34:29.000
+And so independent ifs are the correct way to do this.
+
+00:34:29.000 --> 00:34:32.000
+This is called the "guarded action" idiom.
+
+00:34:32.000 --> 00:34:35.000
+In other words, we're only doing the action
+
+00:34:35.000 --> 00:34:38.000
+if we pass the test at the start of the action.
+
+00:34:38.000 --> 00:34:41.000
+The test condition is guarding
+
+00:34:41.000 --> 00:34:44.000
+the action that we're doing.
+
+00:34:44.000 --> 00:34:47.000
+This is the only case
+
+00:34:47.000 --> 00:34:50.000
+that you should ever use independent ifs.
+
+00:34:50.000 --> 00:34:53.000
+If this situation is not true,
+
+00:34:53.000 --> 00:34:56.000
+using independent ifs is the wrong
+
+00:34:56.000 --> 00:34:59.000
+semantics for that case.
+
+00:34:59.000 --> 00:35:02.000
+So let's look at another one.
+
+00:35:02.000 --> 00:35:05.000
+And beginning programmers, they learn the if statement
+
+00:35:05.000 --> 00:35:08.000
+and they try and use the if statement,
+
+00:35:08.000 --> 00:35:11.000
+the independent if statement, for everything.
+
+00:35:11.000 --> 00:35:14.000
+What happens if you have an either/or decision
+
+00:35:14.000 --> 00:35:17.000
+or a two-way branch?
+
+00:35:17.000 --> 00:35:20.000
+For this, we want to use the
+
+00:35:20.000 --> 00:35:23.000
+else statement. The reason we want to use
+
+00:35:23.000 --> 00:35:26.000
+the else statement is because it covers all
+
+00:35:26.000 --> 00:35:29.000
+possibilities. In other words, for
+
+00:35:29.000 --> 00:35:32.000
+every possible input, you want to put it
+
+00:35:32.000 --> 00:35:35.000
+in bucket A or bucket B.
+
+00:35:35.000 --> 00:35:38.000
+If you try doing this with
+
+00:35:38.000 --> 00:35:41.000
+independent if statements, you will
+
+00:35:41.000 --> 00:35:44.000
+make a mistake when you write the second if statement
+
+00:35:44.000 --> 00:35:47.000
+eventually. And that mistake will
+
+00:35:47.000 --> 00:35:50.000
+either allow you to skip some inputs
+
+00:35:50.000 --> 00:35:53.000
+or it will allow you to put an input
+
+00:35:53.000 --> 00:35:56.000
+in both buckets, which you don't want
+
+00:35:56.000 --> 00:35:59.000
+to do. So think of the situation of
+
+00:35:59.000 --> 00:36:02.000
+paying someone overtime
+
+00:36:02.000 --> 00:36:05.000
+when they get... or paying time
+
+00:36:05.000 --> 00:36:08.000
+and a half when someone gets overtime, more than
+
+00:36:08.000 --> 00:36:11.000
+40 hours a week. If you do it with
+
+00:36:11.000 --> 00:36:14.000
+independent if statements, you're likely to write
+
+00:36:14.000 --> 00:36:17.000
+if hours is less than 40,
+
+00:36:17.000 --> 00:36:20.000
+pay them normal time.
+
+00:36:20.000 --> 00:36:23.000
+Else... or if hours is greater than 40,
+
+00:36:23.000 --> 00:36:26.000
+pay them overtime.
+
+00:36:26.000 --> 00:36:29.000
+Well, you've just skipped the people whose hours were exactly
+
+00:36:29.000 --> 00:36:32.000
+40. If you go back and you realize
+
+00:36:32.000 --> 00:36:35.000
+you've skipped some people,
+
+00:36:35.000 --> 00:36:38.000
+if hours less than or equal
+
+00:36:38.000 --> 00:36:41.000
+to 40, pay them normally. If hours
+
+00:36:41.000 --> 00:36:44.000
+greater or equal to 40, pay them overtime.
+
+00:36:44.000 --> 00:36:47.000
+You've just paid the overtime people twice.
+
+00:36:47.000 --> 00:36:50.000
+So again, if you use if/else,
+
+00:36:50.000 --> 00:36:53.000
+someone will either be in the normal bucket
+
+00:36:53.000 --> 00:36:56.000
+or the overtime bucket, and they will never be
+
+00:36:56.000 --> 00:36:59.000
+in both buckets. And so it will
+
+00:36:59.000 --> 00:37:02.000
+skip you, it will avoid
+
+00:37:02.000 --> 00:37:05.000
+you doing situations where that problem occurs.
+
+00:37:05.000 --> 00:37:08.000
+So let's do an exercise. This is called
+
+00:37:08.000 --> 00:37:11.000
+the double sum exercise.
+
+00:37:11.000 --> 00:37:14.000
+Let's go back to our code space. I need to restart
+
+00:37:14.000 --> 00:37:17.000
+my code space because it stopped while I was
+
+00:37:17.000 --> 00:37:20.000
+talking to you guys.
+
+00:37:20.000 --> 00:37:23.000
+Let's see how long this
+
+00:37:23.000 --> 00:37:26.000
+takes to do it.
+
+00:37:26.000 --> 00:37:29.000
+[silence]
+
+00:37:29.000 --> 00:37:41.000
+Okay, we were in last digit,
+
+00:37:41.000 --> 00:37:44.000
+so I'm going to close last digit. We're going to
+
+00:37:44.000 --> 00:37:47.000
+go into B, and we're going to do
+
+00:37:47.000 --> 00:37:50.000
+the double sum problem.
+
+00:37:50.000 --> 00:37:53.000
+So let's look
+
+00:37:53.000 --> 00:37:56.000
+at the problem here.
+
+00:37:56.000 --> 00:37:59.000
+We're going to write a function, which
+
+00:37:59.000 --> 00:38:02.000
+given two int arguments, returns a sum
+
+00:38:02.000 --> 00:38:05.000
+unless the two values are the same, we're going to return
+
+00:38:05.000 --> 00:38:08.000
+double the sum.
+
+00:38:08.000 --> 00:38:11.000
+Okay, so let's put our
+
+00:38:11.000 --> 00:38:14.000
+name on this one.
+
+00:38:14.000 --> 00:38:17.000
+So this
+
+00:38:17.000 --> 00:38:20.000
+is going to take two int arguments,
+
+00:38:20.000 --> 00:38:23.000
+so it's going to return an int.
+
+00:38:23.000 --> 00:38:26.000
+Its name is double sum.
+
+00:38:26.000 --> 00:38:29.000
+It's going to take two parameters,
+
+00:38:29.000 --> 00:38:32.000
+so int a and
+
+00:38:32.000 --> 00:38:35.000
+int b.
+
+00:38:35.000 --> 00:38:38.000
+We're going to put the body on it.
+
+00:38:38.000 --> 00:38:41.000
+We're going to create the result.
+
+00:38:41.000 --> 00:38:44.000
+[typing]
+
+00:38:44.000 --> 00:38:47.000
+And we're going to return the result.
+
+00:38:47.000 --> 00:38:50.000
+[typing]
+
+00:38:50.000 --> 00:38:53.000
+And we're going to try it out to make sure we got it
+
+00:38:53.000 --> 00:38:56.000
+correctly mechanically working.
+
+00:38:56.000 --> 00:38:59.000
+So, right click, open a new integrated terminal.
+
+00:38:59.000 --> 00:39:02.000
+Do make
+
+00:39:02.000 --> 00:39:05.000
+test.
+
+00:39:05.000 --> 00:39:08.000
+And it compiles
+
+00:39:08.000 --> 00:39:11.000
+and runs correctly.
+
+00:39:11.000 --> 00:39:14.000
+So we know we've got the mechanical parts.
+
+00:39:14.000 --> 00:39:17.000
+Okay, so we want to say
+
+00:39:17.000 --> 00:39:20.000
+two things here.
+
+00:39:20.000 --> 00:39:23.000
+So if
+
+00:39:23.000 --> 00:39:26.000
+a
+
+00:39:26.000 --> 00:39:29.000
+is equal to b
+
+00:39:29.000 --> 00:39:32.000
+I'm going to
+
+00:39:32.000 --> 00:39:35.000
+set the result equal to
+
+00:39:35.000 --> 00:39:38.000
+two times a plus b.
+
+00:39:38.000 --> 00:39:41.000
+Else
+
+00:39:41.000 --> 00:39:44.000
+I'm going to set the result
+
+00:39:44.000 --> 00:39:47.000
+equal to a plus b.
+
+00:39:47.000 --> 00:39:50.000
+Okay, so
+
+00:39:50.000 --> 00:39:53.000
+this is relatively
+
+00:39:53.000 --> 00:39:56.000
+straightforward.
+
+00:39:56.000 --> 00:39:59.000
+It uses the correct semantics, if and else.
+
+00:39:59.000 --> 00:40:02.000
+In other words, something a
+
+00:40:02.000 --> 00:40:05.000
+either is equal to b or it's not equal to b.
+
+00:40:05.000 --> 00:40:08.000
+And it's going to
+
+00:40:08.000 --> 00:40:11.000
+go into one of these or the other.
+
+00:40:11.000 --> 00:40:14.000
+So if we look back to our
+
+00:40:14.000 --> 00:40:17.000
+four
+
+00:40:17.000 --> 00:40:20.000
+rubric that we were looking at
+
+00:40:20.000 --> 00:40:23.000
+to see if we've done it correctly.
+
+00:40:23.000 --> 00:40:26.000
+We've seen that it produces the correct result.
+
+00:40:26.000 --> 00:40:29.000
+And of course I'm going to check here to make sure it does produce the correct result.
+
+00:40:29.000 --> 00:40:32.000
+So I'm going to do make test.
+
+00:40:32.000 --> 00:40:35.000
+And yay,
+
+00:40:35.000 --> 00:40:38.000
+we have 100%.
+
+00:40:38.000 --> 00:40:41.000
+So it's pretty
+
+00:40:41.000 --> 00:40:44.000
+understandable with if else.
+
+00:40:44.000 --> 00:40:47.000
+I can see what's happening.
+
+00:40:47.000 --> 00:40:50.000
+It's semantically correct. It's an either or decision.
+
+00:40:50.000 --> 00:40:53.000
+It's not quite as efficient as I wanted.
+
+00:40:53.000 --> 00:40:56.000
+So we could come back here, even though we have it done
+
+00:40:56.000 --> 00:40:59.000
+correct and we're happy with it.
+
+00:40:59.000 --> 00:41:02.000
+We might come back and say, you know, I don't like the fact that I'm calculating
+
+00:41:02.000 --> 00:41:05.000
+a plus b twice.
+
+00:41:05.000 --> 00:41:08.000
+I'm calculating a plus b twice.
+
+00:41:08.000 --> 00:41:11.000
+And we could change that by
+
+00:41:11.000 --> 00:41:14.000
+simply taking our initial result
+
+00:41:14.000 --> 00:41:17.000
+and putting in a plus b.
+
+00:41:17.000 --> 00:41:20.000
+Now we can
+
+00:41:20.000 --> 00:41:23.000
+get rid of this else part all together.
+
+00:41:23.000 --> 00:41:26.000
+Now I still
+
+00:41:26.000 --> 00:41:29.000
+have an either or condition.
+
+00:41:29.000 --> 00:41:32.000
+This is my else condition
+
+00:41:32.000 --> 00:41:35.000
+and this is my if condition.
+
+00:41:35.000 --> 00:41:38.000
+And so I don't have to say a plus b again.
+
+00:41:38.000 --> 00:41:41.000
+I can say two times result like that.
+
+00:41:41.000 --> 00:41:44.000
+So this is the initial value.
+
+00:41:44.000 --> 00:41:47.000
+This is still an alternative action
+
+00:41:47.000 --> 00:41:50.000
+even though I'm not using the else statement.
+
+00:41:50.000 --> 00:41:53.000
+And it's somewhat more efficient.
+
+00:41:53.000 --> 00:41:56.000
+Right? Somewhat more efficient.
+
+00:41:56.000 --> 00:41:59.000
+It still has a slightly
+
+00:41:59.000 --> 00:42:02.000
+it still has a slight chance
+
+00:42:02.000 --> 00:42:05.000
+of error though. Remember our second
+
+00:42:05.000 --> 00:42:08.000
+thing was to make sure it's maintainable.
+
+00:42:08.000 --> 00:42:11.000
+What would that second chance of error be?
+
+00:42:11.000 --> 00:42:14.000
+Well, because I'm using equals equals here, I'm
+
+00:42:14.000 --> 00:42:17.000
+susceptible to doing that.
+
+00:42:17.000 --> 00:42:20.000
+And if I do that, of course,
+
+00:42:20.000 --> 00:42:23.000
+I break the first rule. Oh, actually I have the
+
+00:42:23.000 --> 00:42:26.000
+warning set up so that
+
+00:42:26.000 --> 00:42:29.000
+this will actually catch that.
+
+00:42:29.000 --> 00:42:32.000
+As in C++ normally
+
+00:42:32.000 --> 00:42:35.000
+it wouldn't catch that. So I have an extra warning set up
+
+00:42:35.000 --> 00:42:38.000
+w error parenthesis
+
+00:42:38.000 --> 00:42:41.000
+to catch that.
+
+00:42:41.000 --> 00:42:44.000
+However, it's possible we couldn't catch that.
+
+00:42:44.000 --> 00:42:47.000
+Right? It's possible we couldn't catch that.
+
+00:42:47.000 --> 00:42:50.000
+And so
+
+00:42:50.000 --> 00:42:53.000
+we might want to do something else.
+
+00:42:53.000 --> 00:42:56.000
+We might want to write this if a not equal to b
+
+00:42:56.000 --> 00:42:59.000
+result equals
+
+00:42:59.000 --> 00:43:02.000
+a plus b
+
+00:43:02.000 --> 00:43:05.000
+and then do the else part.
+
+00:43:05.000 --> 00:43:08.000
+So I'm going to put that back the way I had it.
+
+00:43:08.000 --> 00:43:11.000
+And I'm just going to rely
+
+00:43:11.000 --> 00:43:14.000
+on the fact that my compiler here is catching that
+
+00:43:14.000 --> 00:43:17.000
+so I don't have to worry about it.
+
+00:43:17.000 --> 00:43:20.000
+OK,
+
+00:43:20.000 --> 00:43:23.000
+let's go on to our next
+
+00:43:23.000 --> 00:43:26.000
+kind of decision statement.
+
+00:43:26.000 --> 00:43:29.000
+Our next kind of selection statement.
+
+00:43:29.000 --> 00:43:32.000
+Multiway interdependent tests.
+
+00:43:32.000 --> 00:43:35.000
+Now remember I said you should not
+
+00:43:35.000 --> 00:43:38.000
+use if for
+
+00:43:38.000 --> 00:43:41.000
+anything other than independent tests.
+
+00:43:41.000 --> 00:43:44.000
+And in this case we have an
+
+00:43:44.000 --> 00:43:47.000
+interdependent test. So if
+
+00:43:47.000 --> 00:43:50.000
+percent greater than one
+
+00:43:50.000 --> 00:43:53.000
+we get out of range. If percent is less than one we set
+
+00:43:53.000 --> 00:43:56.000
+the result to a. If percent is less than ninety
+
+00:43:56.000 --> 00:43:59.000
+we set the result to b. Set the result to c.
+
+00:43:59.000 --> 00:44:02.000
+We set our result to 65. We're going to
+
+00:44:02.000 --> 00:44:05.000
+set the result to d because this is true.
+
+00:44:05.000 --> 00:44:08.000
+This one is false so we won't change it to f.
+
+00:44:08.000 --> 00:44:11.000
+This one is also false so we won't change it
+
+00:44:11.000 --> 00:44:14.000
+out of range. So we'll set the result to 65.
+
+00:44:14.000 --> 00:44:17.000
+However, the test order
+
+00:44:17.000 --> 00:44:20.000
+is significant. So notice I've just
+
+00:44:20.000 --> 00:44:23.000
+changed the order of these two tests.
+
+00:44:23.000 --> 00:44:26.000
+I've done 90 then 70 then 80.
+
+00:44:26.000 --> 00:44:29.000
+And so this time
+
+00:44:29.000 --> 00:44:32.000
+65 is less than 90 so I get a b.
+
+00:44:32.000 --> 00:44:35.000
+65 is less than 70 so I get a d.
+
+00:44:35.000 --> 00:44:38.000
+65 is less than 80
+
+00:44:38.000 --> 00:44:41.000
+so I overwrite that d with a c
+
+00:44:41.000 --> 00:44:44.000
+and I end up with a c out of this. Now you might be
+
+00:44:44.000 --> 00:44:47.000
+happy about the fact that I've done this
+
+00:44:47.000 --> 00:44:50.000
+but we've broken our first most important
+
+00:44:50.000 --> 00:44:53.000
+rubric rule. The output
+
+00:44:53.000 --> 00:44:56.000
+is not correct.
+
+00:44:56.000 --> 00:44:59.000
+So this is not the correct way
+
+00:44:59.000 --> 00:45:02.000
+to write interdependent tests.
+
+00:45:02.000 --> 00:45:05.000
+If one test depends on the result
+
+00:45:05.000 --> 00:45:08.000
+of both of the tests that came before it or after it
+
+00:45:08.000 --> 00:45:11.000
+you have, are not supposed to use
+
+00:45:11.000 --> 00:45:14.000
+independent if statements.
+
+00:45:14.000 --> 00:45:17.000
+Instead, when only one
+
+00:45:17.000 --> 00:45:20.000
+condition can be true, then you should
+
+00:45:20.000 --> 00:45:23.000
+use if, else if,
+
+00:45:23.000 --> 00:45:26.000
+else if, else if. These are
+
+00:45:26.000 --> 00:45:29.000
+called ladder style if, else if statements.
+
+00:45:29.000 --> 00:45:32.000
+They're ladder style because you can read down
+
+00:45:32.000 --> 00:45:35.000
+them like the rungs of a ladder and you can
+
+00:45:35.000 --> 00:45:38.000
+look at each condition and pick out the one
+
+00:45:38.000 --> 00:45:41.000
+condition that could possibly
+
+00:45:41.000 --> 00:45:44.000
+be true. And so this is
+
+00:45:44.000 --> 00:45:47.000
+a program that is checking and turning
+
+00:45:47.000 --> 00:45:50.000
+a number, "and," into a
+
+00:45:50.000 --> 00:45:53.000
+word. One, two, three,
+
+00:45:53.000 --> 00:45:56.000
+four billion, two hundred, and so forth.
+
+00:45:56.000 --> 00:45:59.000
+So this is obviously correct.
+
+00:45:59.000 --> 00:46:02.000
+The order matters, so you have to be
+
+00:46:02.000 --> 00:46:05.000
+more careful. In other words,
+
+00:46:05.000 --> 00:46:08.000
+because only one of them can be correct, you have to
+
+00:46:08.000 --> 00:46:11.000
+make sure that you select kind of
+
+00:46:11.000 --> 00:46:14.000
+from the left as the problems come in.
+
+00:46:14.000 --> 00:46:17.000
+It's semantically correct. It says there will only
+
+00:46:17.000 --> 00:46:20.000
+be one output, whereas the previous one
+
+00:46:20.000 --> 00:46:23.000
+was not semantically correct. It's efficient
+
+00:46:23.000 --> 00:46:26.000
+once the answer is found, there
+
+00:46:26.000 --> 00:46:29.000
+is no more checking.
+
+00:46:29.000 --> 00:46:32.000
+There is no more checking.
+
+00:46:32.000 --> 00:46:35.000
+So let's go ahead and do that. This will be our
+
+00:46:35.000 --> 00:46:38.000
+last exercise here. And we're going to use these
+
+00:46:38.000 --> 00:46:41.000
+sequential if statements to check
+
+00:46:41.000 --> 00:46:44.000
+on some dates for the
+
+00:46:44.000 --> 00:46:47.000
+four seasons problem. So this is part
+
+00:46:47.000 --> 00:46:50.000
+C.
+
+00:46:50.000 --> 00:46:53.000
+So let me open four seasons. Let me
+
+00:46:53.000 --> 00:46:56.000
+close that dash shell there.
+
+00:46:56.000 --> 00:46:59.000
+Close that dash shell. And let's put our name
+
+00:46:59.000 --> 00:47:02.000
+on the top of it.
+
+00:47:02.000 --> 00:47:08.000
+And let's look at the problem for four seasons.
+
+00:47:08.000 --> 00:47:11.000
+We're going to write a function named
+
+00:47:11.000 --> 00:47:14.000
+season. We're given two integer arguments
+
+00:47:14.000 --> 00:47:17.000
+representing a month and a day.
+
+00:47:17.000 --> 00:47:20.000
+And we're going to
+
+00:47:20.000 --> 00:47:23.000
+return the season for that month and day.
+
+00:47:23.000 --> 00:47:26.000
+Assume that months are specified as an
+
+00:47:26.000 --> 00:47:29.000
+integer between 1 and 12, 1 for January,
+
+00:47:29.000 --> 00:47:32.000
+2 for February. And the day is specified between
+
+00:47:32.000 --> 00:47:35.000
+1 and 31.
+
+00:47:35.000 --> 00:47:38.000
+So we can write the skeleton.
+
+00:47:38.000 --> 00:47:41.000
+So string
+
+00:47:41.000 --> 00:47:44.000
+season
+
+00:47:44.000 --> 00:47:47.000
+int month
+
+00:47:47.000 --> 00:47:50.000
+int day
+
+00:47:50.000 --> 00:47:53.000
+string result
+
+00:47:53.000 --> 00:47:56.000
+Now,
+
+00:47:56.000 --> 00:47:59.000
+when we wrote
+
+00:47:59.000 --> 00:48:02.000
+the, when we had a result
+
+00:48:02.000 --> 00:48:05.000
+that was an integer, we had to give it
+
+00:48:05.000 --> 00:48:08.000
+a starting value. With the string
+
+00:48:08.000 --> 00:48:11.000
+type, because it's a class type, we do not.
+
+00:48:11.000 --> 00:48:14.000
+This will be the empty string.
+
+00:48:14.000 --> 00:48:17.000
+So you don't need to write string result
+
+00:48:17.000 --> 00:48:20.000
+equals quote quote. As a matter of fact,
+
+00:48:20.000 --> 00:48:23.000
+you shouldn't do that.
+
+00:48:23.000 --> 00:48:26.000
+That actually does, requires the compiler
+
+00:48:26.000 --> 00:48:29.000
+or the run time to do some extra work.
+
+00:48:29.000 --> 00:48:32.000
+And we're going to return our result.
+
+00:48:32.000 --> 00:48:35.000
+I'm going to open a shell here.
+
+00:48:35.000 --> 00:48:43.000
+And I'm going to make sure that this
+
+00:48:43.000 --> 00:48:46.000
+compiles and runs.
+
+00:48:46.000 --> 00:48:49.000
+So I'm going to do make test.
+
+00:48:49.000 --> 00:48:52.000
+OK, so you can see that again I got
+
+00:48:52.000 --> 00:48:55.000
+zero, but I don't care about that. All I care about
+
+00:48:55.000 --> 00:48:58.000
+is the fact that this runs.
+
+00:48:58.000 --> 00:49:01.000
+So here, now let's go look at
+
+00:49:01.000 --> 00:49:04.000
+the conditions we want.
+
+00:49:04.000 --> 00:49:07.000
+So we have, are going to return
+
+00:49:07.000 --> 00:49:10.000
+winter, spring, summer, fall
+
+00:49:10.000 --> 00:49:13.000
+or invalid. So we have
+
+00:49:13.000 --> 00:49:16.000
+five possible outputs.
+
+00:49:16.000 --> 00:49:19.000
+So we can go ahead and write the skeleton for that.
+
+00:49:19.000 --> 00:49:22.000
+If something
+
+00:49:22.000 --> 00:49:25.000
+we're going to set
+
+00:49:25.000 --> 00:49:28.000
+the result to that.
+
+00:49:28.000 --> 00:49:31.000
+Else if something else.
+
+00:49:31.000 --> 00:49:34.000
+We're going to set the result to something else.
+
+00:49:34.000 --> 00:49:37.000
+Else if something else.
+
+00:49:37.000 --> 00:49:40.000
+So one, two, three.
+
+00:49:40.000 --> 00:49:43.000
+Else if something else.
+
+00:49:43.000 --> 00:49:46.000
+Four. And
+
+00:49:46.000 --> 00:49:49.000
+if it's none of those, it must be this one
+
+00:49:49.000 --> 00:49:52.000
+down here.
+
+00:49:52.000 --> 00:49:55.000
+OK, so this is the basic structure for
+
+00:49:55.000 --> 00:49:58.000
+an if, else, if.
+
+00:49:58.000 --> 00:50:01.000
+You notice how it looks just like a ladder here
+
+00:50:01.000 --> 00:50:04.000
+that we could climb down. So which of these
+
+00:50:04.000 --> 00:50:07.000
+cases should we handle first?
+
+00:50:07.000 --> 00:50:10.000
+Which of these cases should we handle first?
+
+00:50:10.000 --> 00:50:13.000
+Generally, if there is a
+
+00:50:13.000 --> 00:50:16.000
+error case, you want to handle that first.
+
+00:50:16.000 --> 00:50:19.000
+That means in all the other
+
+00:50:19.000 --> 00:50:22.000
+if statements, you don't have to worry about
+
+00:50:22.000 --> 00:50:25.000
+if the date is valid. So we're going to set
+
+00:50:25.000 --> 00:50:28.000
+the result to invalid here.
+
+00:50:28.000 --> 00:50:31.000
+And for all the rest of these,
+
+00:50:31.000 --> 00:50:34.000
+we're just going to set them to the
+
+00:50:34.000 --> 00:50:37.000
+so this is going to be winter.
+
+00:50:37.000 --> 00:50:40.000
+Spring.
+
+00:50:40.000 --> 00:50:43.000
+Summer.
+
+00:50:43.000 --> 00:50:46.000
+Winter.
+
+00:50:46.000 --> 00:50:49.000
+Spring.
+
+00:50:49.000 --> 00:50:52.000
+Summer.
+
+00:50:52.000 --> 00:50:55.000
+Winter.
+
+00:50:55.000 --> 00:50:58.000
+Summer.
+
+00:50:58.000 --> 00:51:01.000
+And fall.
+
+00:51:01.000 --> 00:51:04.000
+Summer.
+
+00:51:04.000 --> 00:51:07.000
+Sorry.
+
+00:51:07.000 --> 00:51:10.000
+And fall.
+
+00:51:10.000 --> 00:51:13.000
+The nice thing is fall is done.
+
+00:51:13.000 --> 00:51:16.000
+OK, so let's start way back up at
+
+00:51:16.000 --> 00:51:19.000
+the
+
+00:51:19.000 --> 00:51:22.000
+the next one.
+
+00:51:22.000 --> 00:51:25.000
+So let's start our way back up at
+
+00:51:25.000 --> 00:51:28.000
+start our way back up at
+
+00:51:28.000 --> 00:51:31.000
+invalid.
+
+00:51:31.000 --> 00:51:34.000
+So what does it take for a day to be invalid?
+
+00:51:34.000 --> 00:51:37.000
+So we don't have to validate
+
+00:51:37.000 --> 00:51:40.000
+each day to check each year's.
+
+00:51:40.000 --> 00:51:43.000
+But a month of 13 or -1 or a day
+
+00:51:43.000 --> 00:51:46.000
+less than
+
+00:51:46.000 --> 00:51:49.000
+1 or 31
+
+00:51:49.000 --> 00:51:52.000
+would not pass. So basically we have four conditions
+
+00:51:52.000 --> 00:51:55.000
+here. So if
+
+00:51:55.000 --> 00:51:58.000
+month less than 1 or
+
+00:51:58.000 --> 00:52:01.000
+month greater than 12
+
+00:52:01.000 --> 00:52:04.000
+or day less than 1
+
+00:52:04.000 --> 00:52:07.000
+or day
+
+00:52:07.000 --> 00:52:10.000
+greater than 31
+
+00:52:10.000 --> 00:52:13.000
+we know that the day is invalid.
+
+00:52:13.000 --> 00:52:16.000
+We know the day is invalid.
+
+00:52:16.000 --> 00:52:19.000
+So now in all the rest of these I know that the
+
+00:52:19.000 --> 00:52:22.000
+month is valid. So let's look at winter.
+
+00:52:22.000 --> 00:52:25.000
+So if the date
+
+00:52:25.000 --> 00:52:28.000
+falls between 12/16
+
+00:52:28.000 --> 00:52:31.000
+and 13/15
+
+00:52:31.000 --> 00:52:34.000
+so 12/16 is going to
+
+00:52:34.000 --> 00:52:37.000
+be the first day of winter, December 16th
+
+00:52:37.000 --> 00:52:40.000
+and 3/15 is going to be
+
+00:52:40.000 --> 00:52:43.000
+the last day of winter.
+
+00:52:43.000 --> 00:52:46.000
+So we're going to say if
+
+00:52:46.000 --> 00:52:49.000
+month
+
+00:52:49.000 --> 00:52:52.000
+equals 12
+
+00:52:52.000 --> 00:52:55.000
+and
+
+00:52:55.000 --> 00:52:58.000
+the day is greater than 15
+
+00:52:58.000 --> 00:53:01.000
+or
+
+00:53:01.000 --> 00:53:04.000
+if the month is January
+
+00:53:04.000 --> 00:53:07.000
+it's winter, if it's February it's winter,
+
+00:53:07.000 --> 00:53:10.000
+if it's before March 10th. So month
+
+00:53:10.000 --> 00:53:13.000
+less than 3
+
+00:53:13.000 --> 00:53:16.000
+or
+
+00:53:16.000 --> 00:53:19.000
+the month equals
+
+00:53:19.000 --> 00:53:22.000
+3 and day less
+
+00:53:22.000 --> 00:53:25.000
+than or equal to 15 we're in
+
+00:53:25.000 --> 00:53:28.000
+winter. Now when I get down
+
+00:53:28.000 --> 00:53:31.000
+to this next one I have removed
+
+00:53:31.000 --> 00:53:34.000
+all of the invalid dates. I've removed
+
+00:53:34.000 --> 00:53:37.000
+all the winter dates and so I don't have to do
+
+00:53:37.000 --> 00:53:40.000
+any of this checking anymore.
+
+00:53:40.000 --> 00:53:43.000
+All I have to say is
+
+00:53:43.000 --> 00:53:46.000
+if the month
+
+00:53:46.000 --> 00:53:49.000
+is less than 6
+
+00:53:49.000 --> 00:53:52.000
+or
+
+00:53:52.000 --> 00:53:55.000
+the month is 6
+
+00:53:55.000 --> 00:53:58.000
+and the day is less
+
+00:53:58.000 --> 00:54:01.000
+than or equal to 15.
+
+00:54:01.000 --> 00:54:04.000
+Why don't I have to check to see if the
+
+00:54:04.000 --> 00:54:07.000
+month is less than 3? Why don't I have to
+
+00:54:07.000 --> 00:54:10.000
+check for January, February and the early days of
+
+00:54:10.000 --> 00:54:13.000
+March because I already handled them here.
+
+00:54:13.000 --> 00:54:16.000
+They could not get down to this if statement. I've already
+
+00:54:16.000 --> 00:54:19.000
+taken them out for spring.
+
+00:54:19.000 --> 00:54:22.000
+Similarly for summer
+
+00:54:22.000 --> 00:54:25.000
+if
+
+00:54:25.000 --> 00:54:28.000
+the month is
+
+00:54:28.000 --> 00:54:31.000
+less than 9, it's before
+
+00:54:31.000 --> 00:54:34.000
+September or
+
+00:54:34.000 --> 00:54:37.000
+the month equals 9 and the day is
+
+00:54:37.000 --> 00:54:40.000
+less than or equal to 15.
+
+00:54:40.000 --> 00:54:43.000
+Again I'm in summer. For the else one I don't even
+
+00:54:43.000 --> 00:54:46.000
+have to worry about anything. Anything that's left
+
+00:54:46.000 --> 00:54:49.000
+must be fall.
+
+00:54:49.000 --> 00:54:52.000
+So this is how we do
+
+00:54:52.000 --> 00:54:55.000
+sequential if statements.
+
+00:54:55.000 --> 00:54:58.000
+Let's try it out and see if we got it right.
+
+00:54:58.000 --> 00:55:01.000
+I may have made a mistake.
+
+00:55:01.000 --> 00:55:04.000
+So we'll do make test.
+
+00:55:04.000 --> 00:55:07.000
+I didn't make a mistake. We got 100% on that.
+
+00:55:07.000 --> 00:55:10.000
+So you have everything here you need
+
+00:55:10.000 --> 00:55:13.000
+to take your screenshots
+
+00:55:13.000 --> 00:55:16.000
+and I will see you
+
+00:55:16.000 --> 00:55:19.000
+for lecture 5.
+
+00:55:19.000 --> 00:55:22.000
+.
+

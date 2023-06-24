@@ -1,0 +1,561 @@
+WEBVTT
+
+0
+00:00.090 --> 00:06.080
+The topic in this video is else if ladder already in the previous video we have seen nested if.
+
+1
+00:06.110 --> 00:09.800
+so that extension of that nested if  is else if ladder.
+
+2
+00:10.170 --> 00:13.000
+So if you have more than one nested if
+
+3
+00:13.230 --> 00:19.510
+If then nested if is there again it's nesting if is there then it can be easily framed like a else
+
+4
+00:19.530 --> 00:20.290
+if ladder.
+
+5
+00:20.310 --> 00:27.240
+That is very easy for writing otherwise but many nested IF will create confusion for a programmer and
+
+6
+00:27.240 --> 00:29.610
+even the code will not be easily readable.
+
+7
+00:30.300 --> 00:33.050
+So let us see how you can frame
+
+8
+00:33.130 --> 00:37.460
+else if ladder for nested if so here is the skeleton given here.
+
+9
+00:37.860 --> 00:39.020
+Let us see this.
+
+10
+00:39.090 --> 00:44.850
+This is if condition, if true then, these are the flower bracket something whatever has to be
+
+11
+00:44.850 --> 00:46.580
+executed should be here.
+
+12
+00:46.680 --> 00:48.930
+Then else this is the else of this if
+
+13
+00:48.930 --> 00:55.060
+and inside this else again that is if statement.
+
+14
+00:55.200 --> 00:59.980
+So then you have if the very first statement as if I said that you can read here also.
+
+15
+01:00.090 --> 01:03.900
+So actually this is else separate if separate right.
+
+16
+01:04.290 --> 01:08.320
+So instead of writing it as a nested, I have written it along with else.
+
+17
+01:08.340 --> 01:09.990
+So yes you can write like this.
+
+18
+01:10.110 --> 01:12.120
+So that's call as
+
+19
+01:12.200 --> 01:14.750
+else if ladder. then if,
+
+20
+01:16.190 --> 01:17.990
+This is the block, and 
+
+21
+01:18.100 --> 01:18.790
+For this if
+
+22
+01:18.800 --> 01:23.880
+this is the else,  yes that's what you should know, then this
+
+23
+01:23.920 --> 01:25.780
+If this is the else,
+
+24
+01:25.950 --> 01:27.830
+So this else belongs to last
+
+25
+01:27.830 --> 01:31.930
+If. so if I showed the skeleton for this one it looks like this.
+
+26
+01:31.960 --> 01:36.350
+If, it's just a rough sketch I'm giving you, then inside that Else is there.
+
+27
+01:36.380 --> 01:37.300
+This is else.
+
+28
+01:37.630 --> 01:43.790
+Then again if is there,  then for if, else is there I'm not writing it properly just giving
+
+29
+01:43.790 --> 01:44.600
+you the skeleton.
+
+30
+01:44.620 --> 01:50.420
+then inside this again if is there and it's own else is there.
+
+31
+01:50.810 --> 01:52.630
+So this is how the body.
+
+32
+01:52.670 --> 01:57.920
+So this is if inside else they again if-else is there, in else again if else is there.
+
+33
+01:57.980 --> 02:01.090
+So if you write like this it looks very congested.
+
+34
+02:01.280 --> 02:02.600
+So this is better.
+
+35
+02:02.600 --> 02:04.060
+This like a ladder.
+
+36
+02:04.100 --> 02:06.770
+So from here we can climb down down down.
+
+37
+02:06.790 --> 02:07.090
+so
+
+38
+02:07.370 --> 02:09.310
+that's why it is called as the 
+
+39
+02:09.440 --> 02:10.600
+else-if ladder
+
+40
+02:11.100 --> 02:14.900
+Now let us write a program using this else if ladder.
+
+41
+02:15.740 --> 02:17.360
+So what is the program, i will explain you.
+
+42
+02:17.390 --> 02:25.510
+The problem is we will take a day number and will display day name will take a day number and display day
+
+43
+02:25.850 --> 02:28.450
+name means if day number is one.
+
+44
+02:28.490 --> 02:30.770
+Then we will say first a day off a week is Sunday right.
+
+45
+02:31.120 --> 02:34.290
+So Sunday if it is two we will say Tuesday.
+
+46
+02:34.340 --> 02:38.970
+If it is the three will say Wednesday like that I will write on the program code.
+
+47
+02:39.320 --> 02:43.280
+So far that already I have main function written here.
+
+48
+02:43.290 --> 02:44.910
+day variable is already there.
+
+49
+02:44.930 --> 02:45.570
+Enter day number
+
+50
+02:45.590 --> 02:48.790
+is there, then reading day, now here
+
+51
+02:48.800 --> 02:50.530
+I will write down conditional statements.
+
+52
+02:50.560 --> 02:51.830
+Remove this and write down.
+
+53
+02:52.200 --> 03:00.550
+If day is equal to one this has to be is exactly equal to one so equal the symbol is use.
+
+54
+03:00.710 --> 03:04.100
+Then here I will say cout Monday.
+
+55
+03:04.220 --> 03:09.440
+So in short I will write 'mon' and here endl means go to the next line.
+
+56
+03:09.470 --> 03:11.820
+So if  at all you require you can write that endl.
+
+57
+03:12.220 --> 03:14.290
+Otherwise you can skip it.
+
+58
+03:14.390 --> 03:17.610
+We are going to just play one day right not all days.
+
+59
+03:17.670 --> 03:22.930
+Then if day is not one, else then what
+
+60
+03:23.300 --> 03:32.310
+Again if, if day is equal to 2 then here I will print it is Tuesday.
+
+61
+03:32.390 --> 03:35.710
+So just I will write Tuesday.
+
+62
+03:35.890 --> 03:36.720
+That's all.
+
+63
+03:36.920 --> 03:43.030
+endl if you want you write down for the new line then if it is not a two also then else
+
+64
+03:43.490 --> 03:55.220
+If day is equal to 3 then hear cout wednesday. like this
+
+65
+03:55.250 --> 03:56.860
+We can go on writing.
+
+66
+03:56.900 --> 04:02.610
+At last we can write one else because this is continued and at last, last else.
+
+67
+04:02.840 --> 04:05.360
+Now for 1-7
+
+68
+04:05.380 --> 04:09.220
+I'll be writing the cases else we can say invalid day no.
+
+69
+04:09.380 --> 04:09.980
+At last.
+
+70
+04:09.980 --> 04:15.830
+See this is the I am writing continuation part so continue for three i have written, for four five six seven.
+
+71
+04:15.830 --> 04:20.930
+All you have to write on then after that cout invalid day
+
+72
+04:21.710 --> 04:23.510
+So this is the program.
+
+73
+04:23.600 --> 04:24.950
+One important thing.
+
+74
+04:25.760 --> 04:26.920
+How it works.
+
+75
+04:26.940 --> 04:28.090
+That we have to understand.
+
+76
+04:28.280 --> 04:32.080
+So that will help us to understand the next topic. how it works?
+
+77
+04:32.140 --> 04:34.850
+Let us see. if I give a day number one.
+
+78
+04:35.060 --> 04:37.460
+So it will come here and check.
+
+79
+04:37.460 --> 04:38.250
+It is days 1.
+
+80
+04:38.270 --> 04:39.180
+Yes true
+
+81
+04:39.230 --> 04:40.700
+So it will print Monday.
+
+82
+04:40.700 --> 04:42.310
+So it will not go into this.
+
+83
+04:42.380 --> 04:48.470
+else means it will not enter into all these things because this is the outermost else all these things
+
+84
+04:48.470 --> 04:49.750
+are inside this else right.
+
+85
+04:50.480 --> 04:52.160
+So it will not enter inside.
+
+86
+04:52.310 --> 04:53.390
+So just check this one.
+
+87
+04:53.390 --> 04:54.020
+It is true.
+
+88
+04:54.020 --> 04:55.970
+There is enough.
+
+89
+04:55.970 --> 05:01.670
+Next if you give the number as three then listen carefully.
+
+90
+05:01.880 --> 05:02.830
+It will check first.
+
+91
+05:02.840 --> 05:04.220
+Here you have given three right.
+
+92
+05:04.300 --> 05:04.800
+Three.
+
+93
+05:04.880 --> 05:06.890
+Next line is it 3
+
+94
+05:06.890 --> 05:08.250
+no go to
+
+95
+05:08.260 --> 05:08.980
+else
+
+96
+05:09.200 --> 05:10.130
+Is it three.
+
+97
+05:10.220 --> 05:10.760
+No.
+
+98
+05:10.760 --> 05:11.000
+goto else
+
+99
+05:11.000 --> 05:12.860
+is it a three?
+
+100
+05:13.190 --> 05:14.220
+Yes three.
+
+101
+05:14.330 --> 05:16.070
+So it will print Wednesday.
+
+102
+05:16.160 --> 05:19.370
+Then after that it will not go in the remaining else part.
+
+103
+05:19.370 --> 05:20.030
+For how many.
+
+104
+05:20.060 --> 05:24.050
+so how many if it has checked, one two three.
+
+105
+05:24.050 --> 05:29.830
+So after checking three if conditional statements we have found out that is Wednesday.
+
+106
+05:30.500 --> 05:32.680
+So work is more.
+
+107
+05:33.050 --> 05:35.280
+So it should directly goto to 3 and say wednesday.
+
+108
+05:35.310 --> 05:39.680
+No it's not go directly that it will check this one and this one and this one.
+
+109
+05:39.680 --> 05:46.180
+It means if I gave day number as 7 Yes it will check all seven conditions.
+
+110
+05:46.460 --> 05:52.240
+If I give invalid number then after checking 7 conditions it will say invalid number.
+
+111
+05:52.460 --> 05:53.770
+So this is too much.
+
+112
+05:53.840 --> 05:56.760
+It has to compare make compare a lot of conditions.
+
+113
+05:56.870 --> 06:01.370
+Yes in this  else if ladder it has to check all the conditions.
+
+114
+06:01.370 --> 06:03.730
+If your condition is lying at last.
+
+115
+06:03.740 --> 06:08.240
+So if I say how much time it takes means no. of comparision
+
+116
+06:08.240 --> 06:12.520
+If your number is bigger than more conditions will be checked.
+
+117
+06:12.800 --> 06:18.260
+If you get a smaller day number then few conditions will be checked.
+
+118
+06:18.480 --> 06:19.150
+All right.
+
+119
+06:19.460 --> 06:21.410
+So this is all we have studied about it.
+
+120
+06:21.500 --> 06:24.140
+OK so we have seen how it works.
+
+121
+06:24.200 --> 06:29.600
+So from this we can understand the number of comparisions are dependent on the value that you're giving
+
+122
+06:30.430 --> 06:31.300
+right.
+
+123
+06:31.340 --> 06:33.110
+So that's all in this topic.
+
+124
+06:33.110 --> 06:39.170
+So you can write down this program and you can test it so already there is a demo available and also coding
+
+125
+06:39.170 --> 06:39.870
+exercise is there for this one
+
+126
+06:39.870 --> 06:42.030
+for this one for this one.
+
+127
+06:42.140 --> 06:44.700
+So you have to write on these conditional statements.
+
+128
+06:44.710 --> 06:45.030
+OK.
+
+129
+06:45.050 --> 06:47.420
+These conditional statement if all these things.
+
+130
+06:47.510 --> 06:50.220
+So the same thing you can practice it in coding exercise.
+
+131
+06:50.360 --> 06:53.870
+And apart from this for other things are also given.
+
+132
+06:53.870 --> 06:57.330
+So you read question and you read the description of an exercise.
+
+133
+06:57.320 --> 06:59.990
+You can easily understand it and you solve that one also.
+
+134
+07:00.380 --> 07:05.780
+So that will give you confidence of writing your own code and for the same you can write on the program
+
+135
+07:05.810 --> 07:12.280
+by yourself also, then in the next video in the next topic.
+
+136
+07:12.370 --> 07:19.540
+Will find how is it possible to directly go on day number three without checking these two and directly
+
+137
+07:19.540 --> 07:23.400
+going on day number four without checking all other conditions.
+
+138
+07:23.410 --> 07:28.880
+So we will see that we will see a faster method in the upcoming topic.
+
+139
+07:28.910 --> 07:30.010
+That's all in this video.

@@ -1,0 +1,409 @@
+WEBVTT
+
+0
+00:02.660 --> 00:07.320
+So the previous video we have learned how computer works there I have told you that computer works on
+
+1
+00:07.320 --> 00:14.240
+binary system that is zeros and ones or on and off but we understand decimal number system.
+
+2
+00:14.520 --> 00:20.200
+And also I told you that the code so that its numbers can be used codes for giving instruction or
+
+3
+00:20.210 --> 00:22.290
+data or message.
+
+4
+00:22.900 --> 00:28.310
+See I'm just going to give the introduction to the number system but there some topic details, how their
+
+5
+00:28.320 --> 00:31.950
+conversion from octal to binary and so many conversions of it.
+
+6
+00:32.520 --> 00:37.710
+If you want to learn that it's mostly required in academics if you want to learn that there is a
+
+7
+00:37.710 --> 00:43.170
+section called miscellaneous you have to go to that section and study in detail about the conversion.
+
+8
+00:43.170 --> 00:48.330
+So the videos are available there. Here and this video, just I don't want to waste your time I don't want
+
+9
+00:48.330 --> 00:49.500
+to go in detail right now.
+
+10
+00:49.800 --> 00:51.400
+So just I'll give you introduction to
+
+11
+00:51.420 --> 00:52.090
+Number system.
+
+12
+00:52.110 --> 00:58.400
+So let us look at. See basically we use decimal system in decimal the pictures
+
+13
+00:58.500 --> 01:07.760
+or figures are symbols are from 0 from 9 total 10 symbols we have. then computer works on
+
+14
+01:07.760 --> 01:08.690
+zeros and ones.
+
+15
+01:08.720 --> 01:10.910
+So how many symbols only two symbols.
+
+16
+01:11.030 --> 01:17.950
+So binary number system have only two symbols 0 and 1 that's all see one thing I'll tell you once
+
+17
+01:17.950 --> 01:24.590
+we have finished with the last symbol after nine we used a combination of symbols we write .
+
+18
+01:24.640 --> 01:30.950
+Ten, after that we write 10. 10 means to zero and one we are combining one and zero.
+
+19
+01:31.000 --> 01:32.180
+So this place has one.
+
+20
+01:32.290 --> 01:35.110
+The next place again will start from zero one two three.
+
+21
+01:35.980 --> 01:37.820
+So we have finished with the symbol.
+
+22
+01:37.840 --> 01:40.020
+So that's why we're taking combination of symbol.
+
+23
+01:40.360 --> 01:46.470
+So same way we have only o and 1, then what is the next number , it is is 1 0.
+
+24
+01:46.480 --> 01:49.510
+We have to take the combination.
+
+25
+01:49.510 --> 01:53.670
+So don't read it as 10, read it as a 1 0 in binary form.
+
+26
+01:54.070 --> 01:54.780
+That's it.
+
+27
+01:54.790 --> 01:56.100
+So I have some numbers here.
+
+28
+01:56.110 --> 02:04.360
+Just look at them zero in binary former 0, 1 is 1, 2 is 1 0, 3 is 1 1, 4 is 1 0 0, 5 is 1 0 1.
+
+29
+02:04.360 --> 02:11.280
+So on ,up to 16 I have written. if you want to be strong in the concepts of programming you want to
+
+30
+02:11.300 --> 02:16.220
+study it in detail very minor things you should know these numbers.
+
+31
+02:16.510 --> 02:21.460
+So some of them you should remember some of them should be quickly able to convert them so that I have
+
+32
+02:21.460 --> 02:25.210
+explained in miscellaneous videos that you can learn it next.
+
+33
+02:25.960 --> 02:26.690
+What is this.
+
+34
+02:26.770 --> 02:31.590
+octa and hexa, remembering a number in 0 0 1 1 1.
+
+35
+02:31.630 --> 02:33.400
+its too tough
+
+36
+02:33.430 --> 02:34.890
+We need a simple method.
+
+37
+02:34.990 --> 02:42.370
+So what people have done to make this a simple octal is introduce so you can take three digits of a
+
+38
+02:42.400 --> 02:49.420
+binary number and convert it to octal. no even this also less so they have introduced hexadecimal
+
+39
+02:49.930 --> 02:54.630
+means six plus 10 hexadecimal total 16.
+
+40
+02:55.420 --> 02:56.560
+So 0 to 9.
+
+41
+02:56.710 --> 03:03.750
+Then after that for10 English Alphabet A which is used that b c d e f last.
+
+42
+03:03.880 --> 03:04.430
+So there are
+
+43
+03:04.430 --> 03:07.850
+Total 16 digits in this one,  figures in this one,
+
+44
+03:07.840 --> 03:09.230
+symbols in this one.
+
+45
+03:09.490 --> 03:16.870
+Then after that we take combination 1 0, so how to convert this into this one this to octal
+
+46
+03:16.900 --> 03:18.170
+binary to hexa
+
+47
+03:18.400 --> 03:20.460
+Everything is there you can study it.
+
+48
+03:20.980 --> 03:26.440
+But in this video I'll just show you conversion from the decimal to binary then binary back Back to decimal 
+
+49
+03:26.500 --> 03:28.430
+just to give you the idea.
+
+50
+03:28.480 --> 03:29.890
+So let us take an example.
+
+51
+03:30.070 --> 03:33.490
+I have a number decimal number base 10 means it is decimal number.
+
+52
+03:33.520 --> 03:35.440
+So this is bas 10 and this is base 8.
+
+53
+03:35.440 --> 03:43.030
+This is Base 2 and this is base 16 so we write 10 here because 25 can be there in Octal also hexa also
+
+54
+03:43.210 --> 03:48.370
+which one it is? Now to show that we will say decimal as ten.
+
+55
+03:48.400 --> 03:50.440
+then how to convert into binary.
+
+56
+03:50.440 --> 03:58.620
+So the method is we'd find out successively divided by two to get the binary form two ones twoes, two twoes
+
+57
+03:58.930 --> 04:11.320
+So 2*12=24 reminder is 1, 2* 6=12 reminder is 0 and 2*3=  6 remainder 0, 2 *1=2 remainder 
+
+58
+04:11.310 --> 04:12.250
+is 1.
+
+59
+04:12.390 --> 04:13.800
+So we take remainder here.
+
+60
+04:13.810 --> 04:18.160
+We don't play decimal 2*0 times 0.
+
+61
+04:18.260 --> 04:19.330
+Remainder is 1.
+
+62
+04:19.330 --> 04:21.820
+So take the digits from bottom to up.
+
+63
+04:21.910 --> 04:27.220
+So the digit side 1 1 0 0 1--- 1 1 0 0 1.
+
+64
+04:27.220 --> 04:34.840
+This is the binary form. so this is how a decimal number is converted into binary. Then a binary back
+
+65
+04:34.840 --> 04:35.910
+to the decimal.
+
+66
+04:35.920 --> 04:37.630
+Let us see the procedure.
+
+67
+04:37.630 --> 04:45.020
+If I take the same number and convert into decimal form so take the number in the boxes one two
+
+68
+04:45.050 --> 04:46.030
+three four five.
+
+69
+04:46.360 --> 04:49.450
+So I need five boxes.
+
+70
+04:49.450 --> 04:50.550
+Then write this number.
+
+71
+04:50.550 --> 04:53.530
+1 1 0 0 1.
+
+72
+04:53.660 --> 05:01.650
+Then, at this bottom, write from right side 2 power 0, 2 power 1, 2 power 2, two power 3, 2 power 4
+
+73
+05:01.750 --> 05:02.970
+4.
+
+74
+05:03.850 --> 05:13.750
+Now 1 * 2^4 + 1*2^3 +0*2^2+0*2^1+1*2^0
+
+75
+05:13.750 --> 05:16.020
+...
+
+76
+05:16.060 --> 05:20.330
+This is how much 16 + 8
+
+77
+05:20.410 --> 05:25.360
++0, (multiplied by anything is 0 only 0 multiplied by anything is 0)
+
+78
+05:25.360 --> 05:30.400
+This is 1 for how many this is twenty four plus 1 So this is twenty five.
+
+79
+05:30.400 --> 05:32.070
+So we got this in twenty five.
+
+80
+05:32.070 --> 05:34.700
+That is no. system decimal system.
+
+81
+05:35.080 --> 05:36.840
+So this how the conversion is done.
+
+82
+05:37.240 --> 05:37.930
+So that's it.
+
+83
+05:37.930 --> 05:39.310
+This is sufficient.
+
+84
+05:39.310 --> 05:45.010
+I have shown you the decimal number in binary and binary back to decimal so like this procedure are
+
+85
+05:45.010 --> 05:48.610
+used for converting them using pen and paper.
+
+86
+05:48.610 --> 05:54.290
+Now electronic circuitry internally handle these things. right? For humans.
+
+87
+05:54.340 --> 05:58.990
+We follow this conversion methods to understand how it is represented in binary form.
+
+88
+05:59.560 --> 06:03.640
+So knowing no. system will definitely help you right.
+
+89
+06:03.790 --> 06:08.830
+Give you detailed understanding but associated with some other subjects are also there.
+
+90
+06:08.860 --> 06:11.400
+So in other subjects it will be very helpful.
+
+91
+06:11.540 --> 06:12.130
+Right.
+
+92
+06:12.310 --> 06:13.860
+That's all about no system.
+
+93
+06:13.960 --> 06:17.360
+See the coming video based on the concept only right.
+
+94
+06:17.600 --> 06:20.510
+So you have to be calm and follow each and every video.
+
+95
+06:20.510 --> 06:24.970
+If you are beginner then don't skip any video right.
+
+96
+06:24.980 --> 06:29.870
+I'm not going to directly start showing you how to write on the program. first you should have some
+
+97
+06:29.870 --> 06:30.520
+basics.
+
+98
+06:30.560 --> 06:35.570
+If you're learning programming for the first time study all these, watch all this video and you will be
+
+99
+06:35.570 --> 06:37.700
+prepared for understanding programming.
+
+100
+06:38.130 --> 06:38.870
+All right.
+
+101
+06:39.860 --> 06:40.940
+So watch the next video.

@@ -1,0 +1,269 @@
+WEBVTT
+
+0
+00:00.420 --> 00:09.420
+Let us write our first program in C++ Here I'll start Xcode,  create a new project in Xcode and
+
+1
+00:09.520 --> 00:13.750
+select this option that command line tool.
+
+2
+00:13.950 --> 00:19.020
+Then you have to mention some project name that is first is the project name and the language selected
+
+3
+00:19.030 --> 00:20.790
+is C++.
+
+4
+00:20.790 --> 00:26.960
+There are other options also available to select C++ then next.
+
+5
+00:27.030 --> 00:32.820
+So where is supposed to created that so you can set the path here wherever you want to create your project
+
+6
+00:33.620 --> 00:36.370
+say create.
+
+7
+00:36.470 --> 00:43.030
+Here are the project files so click on main.cpp you can see that readymade code is given.
+
+8
+00:43.020 --> 00:48.340
+So it has already generated a piece of code that is executable code.
+
+9
+00:48.360 --> 00:57.710
+Here are a few comments here  i will remove them i will  remove these panels here.
+
+10
+00:57.810 --> 00:59.490
+See this command line arguments.
+
+11
+00:59.500 --> 01:01.510
+These are optional in C++.
+
+12
+01:01.500 --> 01:06.720
+I would just remove these command line arguments, we will study about these After some time.
+
+13
+01:06.790 --> 01:12.520
+So here is readily available the hello world program I run this.
+
+14
+01:12.550 --> 01:14.700
+Let us see what you get.
+
+15
+01:15.150 --> 01:16.670
+Here's an output window.
+
+16
+01:17.100 --> 01:17.600
+Yeah.
+
+17
+01:17.620 --> 01:18.700
+Hello world.
+
+18
+01:18.910 --> 01:20.840
+The output is given here.
+
+19
+01:24.740 --> 01:29.440
+Here a std scope resolution is used for accessing C out.
+
+20
+01:29.450 --> 01:38.910
+So instead of this we can also mention 'using namespace' using namespace std.
+
+21
+01:38.910 --> 01:51.110
+No I don't have to use a std for using C out object let us run this and check once again that's it.
+
+22
+01:51.170 --> 01:52.040
+So that is working.
+
+23
+01:55.150 --> 01:58.940
+the same program I will just modify for adding two numbers.
+
+24
+01:58.960 --> 02:04.210
+I'll remove these lines and I will write on the code here for adding two numbers.
+
+25
+02:04.210 --> 02:09.720
+I'll declare a few variables in digit A B and C..
+
+26
+02:09.850 --> 02:12.070
+So you can see there's a pronting here .
+
+27
+02:12.100 --> 02:17.640
+If there is an error in the statements, cout
+
+28
+02:21.410 --> 02:43.840
+enter two numbers, then cin a and B then, C assign a plus b, c out sum is and give some space and c.
+
+29
+02:44.520 --> 02:50.070
+So this a program for picking two numbers from keyboard and adding them and displaying the result.
+
+30
+02:50.340 --> 02:53.370
+So these two lines are for taking input from the user.
+
+31
+02:53.370 --> 02:58.710
+These two lines are interactive as it is giving a message to the user informing him to give two numbers
+
+32
+02:59.400 --> 03:03.620
+then adding two numbers and finding sum and displaying sum here.
+
+33
+03:04.380 --> 03:07.020
+Let's run this.
+
+34
+03:07.740 --> 03:13.710
+Now here is a message enter two numbers,  10 and 30.
+
+35
+03:13.740 --> 03:16.780
+Now here the sum is 40.
+
+36
+03:17.430 --> 03:18.560
+I should write endl.
+
+37
+03:18.570 --> 03:25.840
+So that last message should come in the next line endl then let me answer.
+
+38
+03:30.150 --> 03:33.220
+enter two numbers 10 and 30.
+
+39
+03:33.220 --> 03:37.300
+So now this program ended with the exit code zero that is coming in the next line.
+
+40
+03:37.300 --> 03:39.240
+So some is 40.
+
+41
+03:39.940 --> 03:41.320
+That's it.
+
+42
+03:41.320 --> 03:47.200
+So let me modify the same program and make it as a program for taking the user name and displaying
+
+43
+03:47.320 --> 03:49.010
+a welcome message.
+
+44
+03:49.090 --> 03:57.520
+So a string ever built in class available in C++ library that is a std iostream and we can access in
+
+45
+03:57.540 --> 03:58.430
+the name space.
+
+46
+03:58.460 --> 04:03.790
+The std here will give a message cout "may I know you name"
+
+47
+04:08.940 --> 04:12.020
+then cin 'name'.
+
+48
+04:12.080 --> 04:14.230
+So str is a variable name.
+
+49
+04:14.360 --> 04:16.130
+Then cout.
+
+50
+04:17.740 --> 04:20.890
+'Hello' a space here.
+
+51
+04:20.900 --> 04:31.100
+So that space is there in between hello and name of a user. i will run the program.
+
+52
+04:31.410 --> 04:33.960
+May I know your name.
+
+53
+04:33.980 --> 04:36.850
+Let's say the name is John.
+
+54
+04:37.420 --> 04:41.140
+So "hello John" its working.
+
+55
+04:42.140 --> 04:44.230
+I run it once more.
+
+56
+04:44.390 --> 04:47.330
+I'll give the name sai kumar.
+
+57
+04:47.380 --> 04:48.960
+Let us see what happens.
+
+58
+04:51.300 --> 04:57.100
+its giving just sai he's not giving the other name because the name is having two words here.
+
+59
+04:57.280 --> 04:59.290
+It's really only one word.
+
+60
+04:59.650 --> 05:07.790
+If you want to read all the words entered in a string then the right method is there is a function
+
+61
+05:07.810 --> 05:18.970
+available called Get line, get line takes input stream that is cin and next is string variable, string
+
+62
+05:18.970 --> 05:20.290
+object.
+
+63
+05:20.290 --> 05:25.670
+Now let us read it using getline this is the method for an entire line from the keyboard.
+
+64
+05:29.340 --> 05:38.760
+"May I know your name" so 'Sai Kumar' now i got a full name Sai Kumar  that's it.
+
+65
+05:39.100 --> 05:44.860
+So this is a way you can access the strings whenever required is a biuld in object available in C++
+
+66
+05:45.210 --> 05:46.480
+and is very useful object.

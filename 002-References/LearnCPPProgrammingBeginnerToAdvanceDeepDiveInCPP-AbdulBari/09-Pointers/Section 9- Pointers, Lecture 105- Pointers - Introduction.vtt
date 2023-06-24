@@ -1,0 +1,325 @@
+WEBVTT
+
+0
+00:00.340 --> 00:04.190
+Pointers are the types of variables in C++.
+
+1
+00:04.260 --> 00:10.640
+These are also there in C language, so similar thing is there in C++.
+
+2
+00:10.740 --> 00:12.090
+So what is the pointer.
+
+3
+00:12.340 --> 00:18.420
+pointer is a variable which is used for storing the address of data.
+
+4
+00:18.420 --> 00:23.750
+Based on this I will categorize variables of two types.
+
+5
+00:23.930 --> 00:36.040
+One is data variable and it is used for storing data and next is address variable.
+
+6
+00:36.120 --> 00:39.460
+This is used for storing adress.
+
+7
+00:39.570 --> 00:43.520
+So now we have two types of variables: data Variable  and address variable.
+
+8
+00:43.950 --> 00:52.410
+So let us see if I am declaring a variable like say X and I'm storing value 10 so it is a integer
+
+9
+00:52.410 --> 00:58.120
+type variable X having value ten that is for storing data and it's a data variable.
+
+10
+00:59.460 --> 01:04.710
+and you know well that when we declare the variables it will occupy some memory depending on the size of the
+
+11
+01:04.710 --> 01:05.280
+integer.
+
+12
+01:05.580 --> 01:10.180
+So for our discussion we assume that the integer takes just two bytes of memory.
+
+13
+01:10.230 --> 01:17.810
+So let us say 2c bytes  and assume that the adresses are 200 and 201.
+
+14
+01:18.000 --> 01:21.070
+Actually the compiler that we are using that is taking 4 bytes.
+
+15
+01:21.090 --> 01:25.110
+But if we take four bytes in the discussion it will be too long.
+
+16
+01:25.140 --> 01:29.650
+So that's why I'm limiting our discussion as integer takes two bytes.
+
+17
+01:29.850 --> 01:30.270
+Now,
+
+18
+01:30.360 --> 01:32.160
+How do you declare a address variable.
+
+19
+01:32.160 --> 01:38.010
+So I will declare a variable with the main P usually pointers are  declared with name P so that we can easily
+
+20
+01:38.010 --> 01:40.960
+identify that  this is a pointer.
+
+21
+01:41.370 --> 01:42.150
+Just P, No
+
+22
+01:42.150 --> 01:43.760
+It will become a data variable again.
+
+23
+01:43.770 --> 01:45.520
+So how to differentiate that no
+
+24
+01:45.540 --> 01:46.550
+This is for adress.
+
+25
+01:46.550 --> 01:50.640
+So it should be preffix with star.
+
+26
+01:51.450 --> 01:57.360
+So this is a address variable so it cannot store the data but it can store the address of the data.
+
+27
+01:57.690 --> 02:00.280
+So as this is a variable, this is occupying two bytes.
+
+28
+02:00.310 --> 02:04.890
+So pointer is also a variable so it will also occupy some bytes.
+
+29
+02:04.910 --> 02:08.380
+So we assume that this also occupies two bytes.
+
+30
+02:08.430 --> 02:11.340
+Let us say that adresses are  300 and 301.
+
+31
+02:12.390 --> 02:16.710
+So this also taking two bytes of memory.
+
+32
+02:16.880 --> 02:23.750
+Now if I say P assign &X so what is the adress of x 200.
+
+33
+02:23.760 --> 02:25.830
+So that 200 will be stored in P.
+
+34
+02:26.010 --> 02:28.400
+So here it will be 200.
+
+35
+02:28.410 --> 02:36.330
+So it will be pointing on X. It is having the adress of X. It's not having data but having the address
+
+36
+02:36.420 --> 02:43.160
+of X so tht's how it's the address variable and it is pointing on X showing the location of x.
+
+37
+02:43.160 --> 02:44.970
+So that's why you call it as pointer.
+
+38
+02:45.460 --> 02:49.790
+Now let us see the syntax see if I write *P.
+
+39
+02:49.820 --> 02:57.210
+this the declaration of address variable, that's a pointer and this is initialization of a pointer
+
+40
+02:57.200 --> 02:57.720
+variable.
+
+41
+02:58.050 --> 03:01.290
+So I will  removed this I will hadd ave some display statements here.
+
+42
+03:01.290 --> 03:02.250
+Let us see.
+
+43
+03:02.340 --> 03:10.100
+I will say cout x.  so x is containing 10 so ten will be displayed.
+
+44
+03:10.590 --> 03:18.430
+Then I will say Cout &X so it means adress of x that is 200
+
+45
+03:18.630 --> 03:20.820
+So 200 will be displayed.
+
+46
+03:20.820 --> 03:29.210
+Then I will say Cout P, now what it will be displaying see, as I said X so it was displaying the content
+
+47
+03:29.220 --> 03:36.150
+inside X so same way and I say P It will be showing the contents of P that is two hundred yes two hundred
+
+48
+03:36.160 --> 03:37.000
+will be displayed.
+
+49
+03:37.320 --> 03:47.010
+can i say cout &P address of P is 300 will be displayed. now the final and the important
+
+50
+03:47.010 --> 03:52.430
+one that is Cout star
+
+51
+03:52.690 --> 04:00.750
+P what happens this will be displaying the data where P is pointing, so P iS pointing at 200 at that list.
+
+52
+04:00.870 --> 04:02.090
+10 is there, so 10.
+
+53
+04:02.700 --> 04:09.940
+So this is called as d differenceing or accessing the data where P is pointing so this is astrick or star
+
+54
+04:10.230 --> 04:12.040
+So far pointers syntax
+
+55
+04:12.060 --> 04:14.400
+There are three statements that are important.
+
+56
+04:14.400 --> 04:22.430
+First one is this line this is declaration and this is initialization and this is dereferencing , i will write down
+
+57
+04:22.440 --> 04:24.030
+first three lines here
+
+58
+04:27.100 --> 04:34.630
+declaration of a pointer as lift this item from normal variables that is what write stopped in front
+
+59
+04:34.630 --> 04:38.920
+of a variable name whatever the name you want you can give it, then next is
+
+60
+04:42.490 --> 04:43.600
+initialization.
+
+61
+04:43.600 --> 04:51.370
+So we write P assigned any variable name. if you already have existing variable so you can use this one
+
+62
+04:52.270 --> 04:53.170
+then next is
+
+63
+04:58.340 --> 05:02.070
+dereferencing so *P.
+
+64
+05:02.300 --> 05:09.560
+I have used this with cout  *P so this *P is called as a dereferencing.
+
+65
+05:09.890 --> 05:12.590
+So these are the three important things that you should know about.
+
+66
+05:12.620 --> 05:18.550
+The pointer people find this a little confusing but let us clearly see there are three things that
+
+67
+05:18.550 --> 05:21.790
+are related to A pointer, how to declare it.
+
+68
+05:21.860 --> 05:23.030
+Star should be there.
+
+69
+05:23.140 --> 05:25.710
+when you are initializing star should not be there.
+
+70
+05:25.730 --> 05:30.080
+when you  are dereferencing, it means where ever the point is pointing you are going to that location
+
+71
+05:30.080 --> 05:34.760
+to location and accessing the data, pointer is refering here.
+
+72
+05:34.910 --> 05:37.940
+Derefering means going to that location and taking the data.
+
+73
+05:38.240 --> 05:42.280
+So if you are doing that then also you have to use a star.
+
+74
+05:42.800 --> 05:48.550
+Then there are other operations also like pointer arithmetic is also there, we will see that in the coming
+
+75
+05:48.560 --> 05:49.780
+videos.
+
+76
+05:49.790 --> 05:55.200
+So what we learn here is how to declare  a pointer and how to use a pointer, how to derefer 
+
+77
+05:55.210 --> 05:55.840
+it
+
+78
+05:56.030 --> 05:57.770
+We have done this.
+
+79
+05:57.840 --> 06:01.840
+Next topic we will see what is the purpose of pointer.
+
+80
+06:01.880 --> 06:03.700
+What does the use of pointer.

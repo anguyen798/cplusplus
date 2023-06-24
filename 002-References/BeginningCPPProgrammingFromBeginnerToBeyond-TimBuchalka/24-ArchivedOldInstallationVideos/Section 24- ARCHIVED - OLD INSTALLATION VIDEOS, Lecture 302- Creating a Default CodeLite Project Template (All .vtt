@@ -1,0 +1,313 @@
+WEBVTT
+
+00:05.390 --> 00:10.190
+In this video, we'll go over the steps necessary to create our own custom project template.
+
+00:10.790 --> 00:15.470
+The idea here is that we can create our own project templates, and when we create our projects, we
+
+00:15.470 --> 00:17.630
+can use this template as the starting point.
+
+00:17.900 --> 00:21.590
+That way we'll have a proper main CPP file.
+
+00:21.620 --> 00:23.370
+We'll have all our switches set.
+
+00:23.390 --> 00:25.000
+We'll have our environment set.
+
+00:25.010 --> 00:26.160
+All right, so let's get started.
+
+00:26.180 --> 00:28.670
+First thing you need to do is open up a workspace.
+
+00:28.670 --> 00:32.120
+I've got a workspace already open, already created, I should say.
+
+00:32.120 --> 00:32.990
+I'm going to open it now.
+
+00:32.990 --> 00:34.460
+I'm going to say open workspace.
+
+00:34.460 --> 00:38.570
+If you don't have a workspace at all, you could just say file new workspace.
+
+00:38.660 --> 00:40.550
+So I'll open the workspace that I've got.
+
+00:40.550 --> 00:43.590
+It's on my desktop and it's called CP workspace.
+
+00:43.590 --> 00:44.630
+So I'll open that.
+
+00:46.250 --> 00:48.710
+And the first thing you want to do is you want to add a project.
+
+00:48.710 --> 00:53.810
+So you want to right click on your workspace and say New, new project.
+
+00:55.190 --> 00:59.180
+Now here you've got the new project Wizard and you've got different examples.
+
+00:59.180 --> 01:04.130
+You can create gooey applications, console applications, you can have user templates and so forth.
+
+01:04.130 --> 01:12.050
+What we want to do is we want to use the simple executable plus plus template that comes with code light,
+
+01:12.470 --> 01:14.030
+and we want to tweak that our own way.
+
+01:14.030 --> 01:18.320
+And then what we want to do is we want to create our own template and here that we can choose and we
+
+01:18.320 --> 01:22.310
+could put it in console or we can put it here in user templates, we could put it wherever we'd like.
+
+01:22.700 --> 01:22.910
+Okay.
+
+01:22.940 --> 01:25.070
+But before we do that, we need to create a project.
+
+01:25.070 --> 01:25.850
+So let's do that.
+
+01:25.850 --> 01:32.510
+I'm going to select console and let's use the G plus plus simple executable console template press next.
+
+01:34.040 --> 01:34.850
+The project name.
+
+01:34.850 --> 01:35.910
+It doesn't really matter.
+
+01:35.930 --> 01:42.290
+I'll just say sample since we're going to save it as a template anyway and I'll select next.
+
+01:43.100 --> 01:45.590
+We want to make sure our compilers are set up correctly.
+
+01:49.520 --> 01:53.660
+Here I'm using min gw and the GDB debugger select finish.
+
+01:54.870 --> 01:56.940
+And that creates our project.
+
+01:56.940 --> 02:01.770
+You can see here's the source file and here's the CP file, which is really C code and not C++ code.
+
+02:01.770 --> 02:03.120
+But we'll fix all this in a minute.
+
+02:03.210 --> 02:10.080
+So first thing we want to do is we want to get rid of this and let's write a simple C++ program, same
+
+02:10.080 --> 02:11.340
+one we've been writing all along.
+
+02:11.340 --> 02:18.180
+So we'll say include IO stream, we'll include IO streams since we're going to probably use it in most
+
+02:18.180 --> 02:22.350
+of the projects that we write, then we have our main function.
+
+02:24.490 --> 02:30.520
+And again it's int main open closed friends and then an open curly which will be automatically closed
+
+02:30.520 --> 02:30.940
+by code.
+
+02:30.940 --> 02:40.600
+Like here we can indent in by just pressing tab and we could say STD two colons see out and then the
+
+02:40.600 --> 02:47.770
+insertion operator followed by the string hello world and you can type anything you like here for hello
+
+02:47.770 --> 02:52.180
+world and we'll do also an STD two colons and del.
+
+02:52.420 --> 02:58.990
+This prints a new line that way when we display hello world the cursor will go to the next line on the
+
+02:58.990 --> 03:02.330
+console and then finally we'll just return zero like we always do.
+
+03:02.350 --> 03:03.040
+That's it.
+
+03:03.430 --> 03:06.820
+I'm going to save this so that press control is here.
+
+03:06.820 --> 03:08.350
+So I've just done that and saved it.
+
+03:09.250 --> 03:11.130
+Now we'll set some compiler settings.
+
+03:11.170 --> 03:14.290
+We'll do this the one time, then we'll save it as a project template.
+
+03:14.470 --> 03:21.160
+So let's go to the sample project, the actual project name, and we'll right click go down to settings.
+
+03:22.750 --> 03:27.190
+Global settings and we want to make sure we've got those two compiler options set.
+
+03:27.190 --> 03:29.620
+So we're going to right click on those three little dots here on the button.
+
+03:29.620 --> 03:34.990
+You want to select that button and click, and we want to make sure that we've got our all warnings
+
+03:34.990 --> 03:38.890
+enabled on and our C++ 14 standard on.
+
+03:39.850 --> 03:40.240
+Press.
+
+03:40.240 --> 03:40.810
+Okay.
+
+03:42.410 --> 03:50.060
+Then you want to come to us as code completion and select that and select enable C++ 14 Standard Apply.
+
+03:51.660 --> 03:52.560
+And that's it.
+
+03:52.770 --> 03:59.850
+Now, what we can do is we can come to the project again, right click and say Save as template.
+
+04:00.480 --> 04:01.620
+So I'll select that.
+
+04:02.610 --> 04:04.640
+And what's the project name?
+
+04:04.650 --> 04:05.940
+This could be anything we want.
+
+04:05.970 --> 04:13.770
+We could just say frank template or template for course or any name you like rather than that.
+
+04:13.770 --> 04:18.810
+I'm just going to say Frank, let's see G plus.
+
+04:18.810 --> 04:19.470
+Plus.
+
+04:20.760 --> 04:21.750
+Console.
+
+04:25.170 --> 04:25.680
+Template.
+
+04:25.680 --> 04:31.500
+I think it's pretty picky about spaces, so I'm just going to use those dashes and it is a console application.
+
+04:32.130 --> 04:34.980
+If you leave it as console, it'll be in the console group.
+
+04:35.100 --> 04:38.130
+I'm actually going to change that to user template.
+
+04:39.460 --> 04:41.410
+And then you can give any description you want.
+
+04:43.380 --> 04:45.390
+I'll just say Frank's console template.
+
+04:48.210 --> 04:48.780
+That's it.
+
+04:48.810 --> 04:49.290
+I'll select.
+
+04:49.290 --> 04:49.800
+Okay.
+
+04:50.400 --> 04:52.530
+And now we've got a new template that's stored.
+
+04:52.530 --> 04:58.320
+So if I go back to my workspace and I want to create a new project now, we close all this up, I'm
+
+04:58.320 --> 05:01.260
+going to right click and say New project.
+
+05:02.160 --> 05:07.080
+And now you can go down to your templates and go down to your user templates right here.
+
+05:07.650 --> 05:10.560
+And you should see that one we just created right here.
+
+05:11.160 --> 05:12.720
+So we can just select that.
+
+05:13.140 --> 05:22.350
+Next, I'll just say project one, select next, keep the defaults for the compilers and finish.
+
+05:23.220 --> 05:29.970
+At this point you can double click here to make that project, the active project and we'll look at
+
+05:29.970 --> 05:30.870
+the main CP.
+
+05:30.900 --> 05:33.570
+You can see it's the main CP that we just typed.
+
+05:34.320 --> 05:39.720
+Also, if you right click on the project and you go down to the settings, you can see a code completion
+
+05:39.720 --> 05:44.790
+is C++ 14 and the global settings have the appropriate compiler flags that we need.
+
+05:45.730 --> 05:46.540
+That's it.
+
+05:46.600 --> 05:48.010
+We'll test this real quick.
+
+05:49.250 --> 05:51.860
+That's run, build and execute.
+
+05:52.880 --> 05:54.050
+And Hello World.
+
+05:54.320 --> 05:54.770
+That's it.
+
+05:54.770 --> 05:56.590
+So now you've got a project, you're all set up.
+
+05:56.600 --> 05:58.560
+You can create as many of these as you like.
+
+05:58.580 --> 06:00.440
+Tweak the settings as far as you like.
+
+06:00.830 --> 06:04.280
+It's really up to you to decide what you want to do with the project templates.
+
+06:04.280 --> 06:06.650
+But for this course include IO stream.
+
+06:06.650 --> 06:07.810
+Give yourself a main.
+
+06:07.820 --> 06:11.450
+You may or may not want this line right here since you know you're probably going to get rid of it anyway
+
+06:11.450 --> 06:12.800
+when we start writing other code.
+
+06:12.800 --> 06:16.040
+But at a minimum do something like that.
+
+06:16.490 --> 06:19.220
+When you create a new project, you'll be ready to start coding.

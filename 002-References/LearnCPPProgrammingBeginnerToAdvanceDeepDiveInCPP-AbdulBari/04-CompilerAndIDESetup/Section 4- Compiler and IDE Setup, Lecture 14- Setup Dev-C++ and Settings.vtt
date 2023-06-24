@@ -1,0 +1,262 @@
+WEBVTT
+
+00:00.780 --> 00:08.640
+In this video, I will show you how to download Def C++, how to set it up and how to use it.
+
+00:09.300 --> 00:13.410
+So this is an ID I use for writing C++ program.
+
+00:13.740 --> 00:21.350
+Most of the students use Def C++, so let us learn how to download and set up.
+
+00:21.360 --> 00:31.920
+So open Google Chrome and Google Chrome search for download def C++ with min g w.
+
+00:32.580 --> 00:33.570
+So already there.
+
+00:33.570 --> 00:35.070
+I have searched for it already.
+
+00:35.160 --> 00:37.740
+So this is the thing that you have to type.
+
+00:37.800 --> 00:44.990
+Just note down, make sure you are searching for the same thing, same string download dev c++ with
+
+00:45.060 --> 00:48.390
+min gw min GW is a compiler.
+
+00:48.390 --> 00:56.310
+So when you download dev C++ it's an ID along with that compiler will also get downloaded and installed
+
+00:56.310 --> 00:57.270
+on your machine.
+
+00:57.540 --> 00:59.250
+So just hit enter.
+
+01:01.260 --> 01:03.180
+Then you'll find various links.
+
+01:03.270 --> 01:08.250
+Click on the first link that is from SourceForge Dot Net.
+
+01:08.490 --> 01:10.410
+So click on this one.
+
+01:11.100 --> 01:16.440
+Now here we are on a download page on SourceForge website.
+
+01:16.740 --> 01:18.960
+Click on this green button.
+
+01:19.440 --> 01:20.380
+You can read it.
+
+01:20.400 --> 01:22.320
+Download latest version.
+
+01:22.380 --> 01:25.140
+Def C++ 5.11.
+
+01:25.330 --> 01:28.680
+EDM cc 4.99.2.
+
+01:28.680 --> 01:29.580
+Setup dot x.
+
+01:30.000 --> 01:32.250
+Make sure you have reached the same link.
+
+01:32.280 --> 01:32.790
+Right.
+
+01:32.820 --> 01:35.670
+You should read it and check you are on the same link.
+
+01:36.090 --> 01:37.200
+Click on this one.
+
+01:38.000 --> 01:44.960
+It will start downloading after downloading install dev C++.
+
+01:50.790 --> 01:51.420
+Okay.
+
+02:09.500 --> 02:11.300
+It has finished installation.
+
+02:11.900 --> 02:20.330
+If I show you the folder where dev C++ is installed, this is in C and program files.
+
+02:21.310 --> 02:23.020
+And here is CP.
+
+02:23.050 --> 02:30.550
+So you can see that there is also install min GW that is GMU compiler for Windows.
+
+02:30.550 --> 02:33.130
+This is a minimal compiler for Windows.
+
+02:33.550 --> 02:35.500
+Let us start dev C++.
+
+02:36.330 --> 02:40.010
+So English language selected the next then.
+
+02:40.020 --> 02:40.560
+Okay.
+
+02:40.950 --> 02:41.660
+Yes.
+
+02:41.670 --> 02:43.680
+Def C++ is ready now.
+
+02:43.920 --> 02:49.560
+Before we start using it, we have to make some important settings and these settings we have to do
+
+02:49.560 --> 02:50.540
+only once.
+
+02:50.550 --> 02:52.860
+So let me show you what settings we have to do.
+
+02:53.340 --> 02:55.620
+Go to the menu and the menu.
+
+02:55.680 --> 03:04.200
+You'll find tools on the top, then select compiler options and here few tabs are there.
+
+03:04.200 --> 03:05.490
+That is the general tab.
+
+03:05.490 --> 03:08.610
+Inside this mention hyphen g.
+
+03:09.600 --> 03:14.340
+This will allow the compiler or the debugger to debug the program.
+
+03:14.580 --> 03:19.620
+So there's a flag for the compiler which will allow the debugger to debug the program.
+
+03:19.620 --> 03:20.970
+So what is debugging and all?
+
+03:21.000 --> 03:23.070
+We will see it later in the next videos.
+
+03:23.880 --> 03:29.490
+You have to mention this hyphen G or minus G, then go to another tab.
+
+03:29.490 --> 03:30.900
+That is programs.
+
+03:34.490 --> 03:35.930
+Here, you'll find Jesus.
+
+03:35.960 --> 03:38.690
+So for that Jesus wrote X is given.
+
+03:38.810 --> 03:47.660
+And this compiler by default it will be C++ 98 version, but will be using the features of C++ 11.
+
+03:47.660 --> 03:49.510
+That is that is the later version.
+
+03:49.520 --> 03:53.660
+So to use C++ 11, we have to mention here.
+
+03:53.750 --> 03:58.490
+So this is what you are supposed to write, hyphen STD.
+
+03:58.520 --> 04:00.270
+That is minus STD.
+
+04:00.290 --> 04:05.900
+You can delete as then equal to C++ 11.
+
+04:07.310 --> 04:10.320
+Then do the same thing in the next field.
+
+04:10.340 --> 04:15.980
+Also write C++ 11, HDC, C++ 11.
+
+04:17.810 --> 04:20.180
+It can be kept a lot small C++.
+
+04:20.540 --> 04:22.010
+That doesn't make difference.
+
+04:22.400 --> 04:27.830
+By mentioning this now, the ID will be using C++ 11 compiler.
+
+04:28.730 --> 04:34.020
+Now we are using the in our course will be we will be using the features of C++ 11 also.
+
+04:34.040 --> 04:37.700
+So if this is not mentioned, those features will not work.
+
+04:38.120 --> 04:42.290
+So this is the very important thing that you have to do in the settings.
+
+04:42.560 --> 04:43.640
+Now we are ready.
+
+04:43.640 --> 04:47.150
+Just say, okay, now the settings are done.
+
+04:47.900 --> 04:52.880
+Now we are ready to do any project or write over C++ programs.
+
+04:53.840 --> 04:56.930
+So let me show you how to create a new project.
+
+04:59.410 --> 05:00.940
+Say a new project.
+
+05:01.860 --> 05:04.260
+And Select Console application.
+
+05:04.680 --> 05:07.410
+Let the project name as my first.
+
+05:10.170 --> 05:12.240
+And it should be created in documents.
+
+05:13.140 --> 05:14.610
+Now the project is ready.
+
+05:15.060 --> 05:17.850
+This is main door zip file inside the project.
+
+05:17.850 --> 05:19.980
+So here, I'll just give a message.
+
+05:20.340 --> 05:21.600
+Hello world.
+
+05:22.050 --> 05:22.890
+And.
+
+05:23.280 --> 05:28.520
+And they should use namespace for code as well as.
+
+05:28.530 --> 05:34.740
+And then let us build the project and execute.
+
+05:35.520 --> 05:37.290
+Now Helloworld has appeared.
+
+05:38.040 --> 05:39.090
+So that's all.
+
+05:39.120 --> 05:42.720
+This is how you can open a new project for every program or application.
+
+05:42.720 --> 05:45.870
+You can start a new project or else for practicing in the same project.
+
+05:45.870 --> 05:50.190
+You can go on writing new code there and you can recompile and run it.

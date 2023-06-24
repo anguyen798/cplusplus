@@ -1,0 +1,393 @@
+WEBVTT
+
+0
+00:00.670 --> 00:04.390
+Let me see how to  dynamically allocate memory from the heap using pointers.
+
+1
+00:04.410 --> 00:15.880
+So if I say integer star P then pointer will be created and assign new int of size 5.
+
+2
+00:15.900 --> 00:18.560
+So an array of size 5 will be created in heap.
+
+3
+00:18.580 --> 00:22.870
+then if I want to store some elements I can store them P of zero.
+
+4
+00:23.130 --> 00:26.630
+Assign 12 and P[1].
+
+5
+00:26.910 --> 00:32.280
+Assign 13 in this way I can store some elements.
+
+6
+00:32.280 --> 00:35.980
+Then if I want I can display the elements also that is P of one,
+
+7
+00:36.000 --> 00:38.360
+I can access it just like an array.
+
+8
+00:38.880 --> 00:47.890
+And also I will say endl, and if  I don't want P then I should not make P assign null.
+
+9
+00:48.300 --> 00:51.120
+If I make this then the pointer will no more be pointing.
+
+10
+00:51.120 --> 00:52.920
+on This dynamic memory.
+
+11
+00:52.920 --> 01:02.130
+So instead of this first of all I should delete this array then I should make pointer as null. an done more suggestion is
+
+12
+01:02.370 --> 01:03.780
+in modern C++.
+
+13
+01:03.780 --> 01:06.050
+Don't use n u l l, null.
+
+14
+01:06.150 --> 01:08.210
+But use  nullptr.
+
+15
+01:08.310 --> 01:09.540
+Null pointer.
+
+16
+01:09.540 --> 01:12.630
+So this is buildin literal that is meant only for the pointer.
+
+17
+01:12.630 --> 01:17.290
+So if you want to make a pointer as null then use this literal.
+
+18
+01:17.820 --> 01:21.350
+So this is how you can create an array in a heap.
+
+19
+01:21.360 --> 01:26.220
+Let us see what is the benefit of having a array in heap.
+
+20
+01:26.290 --> 01:34.290
+Suppose I'm declaring an array of type Integer of size 10 in my program then as long as my program is
+
+21
+01:34.290 --> 01:40.660
+running this array will remain of size 10 only this array  cannot be changed later on and cannot
+
+22
+01:40.680 --> 01:46.710
+say that I want an array of size 20 there is no  syntax available in C++ for changing the size
+
+23
+01:46.710 --> 01:49.620
+of a existing Array.
+
+24
+01:49.750 --> 01:56.000
+Then the problem is if I directly create an array in my program of some size and give it to the user
+
+25
+01:56.010 --> 02:01.980
+then user maybe having different number of elements if they are more than 10 then it will be difficult
+
+26
+02:01.980 --> 02:04.320
+for the user to use my program.
+
+27
+02:04.320 --> 02:11.230
+I want to create an array depending on the number of elements user it is going to store in an array.
+
+28
+02:12.120 --> 02:23.470
+So for that I will take size from the user, i will say cout Enter number of elements that he is going to enter.
+
+29
+02:23.850 --> 02:31.500
+Then I will read size. then later I will create an array of this size.
+
+30
+02:31.890 --> 02:37.060
+So OK this is also good, now my program will be creating an array, that
+
+31
+02:37.110 --> 02:40.040
+Depends on the requirements of the user.
+
+32
+02:40.070 --> 02:49.950
+Let us confirm the size of an array here and use size of operator for a and also.
+
+33
+02:50.010 --> 02:53.040
+endl, let's run this program and see
+
+34
+02:58.110 --> 03:01.070
+now here the program was asking enter the number of elements.
+
+35
+03:01.080 --> 03:06.660
+I will say I want 20 elements now.
+
+36
+03:06.700 --> 03:10.610
+Size of, it has displayed the size of an array 80.
+
+37
+03:10.720 --> 03:17.020
+reason it is of type integer, array I'm creating of type integer so it is 20x4  so
+
+38
+03:17.020 --> 03:20.560
+that is 80 bytes.
+
+39
+03:20.750 --> 03:24.480
+again I am trying for different size.
+
+40
+03:24.520 --> 03:27.170
+I will give the size as 5.
+
+41
+03:27.280 --> 03:32.160
+Not this time an array size is 20 bytes because 5x4 is 20.
+
+42
+03:32.260 --> 03:38.890
+So it is creating an array of size only 5 integers so that is 20 bytes so now the problem is solved.
+
+43
+03:39.250 --> 03:44.760
+Whenever the user uses my program he will give the number of elements and that size array is created.
+
+44
+03:45.010 --> 03:51.250
+as a  C++ allows dynamic declarations So this is possible for taking the size from the user and
+
+45
+03:51.250 --> 03:53.250
+creating this array, now
+
+46
+03:53.260 --> 03:56.210
+Basically this is created inside stack.
+
+47
+03:56.350 --> 03:58.690
+And here we are taking the size of an array.
+
+48
+03:58.690 --> 04:00.940
+Then we are creating it inside the stack.
+
+49
+04:00.940 --> 04:09.640
+So this is good, but again afterwards again I want to change suppose size as 35.
+
+50
+04:09.760 --> 04:15.080
+Then I say I want to create and change the size of array  to new size.
+
+51
+04:15.190 --> 04:18.550
+So there is no syntax available for changing the size.
+
+52
+04:18.550 --> 04:19.750
+I cannot change it at all.
+
+53
+04:19.750 --> 04:21.020
+There is no syntax.
+
+54
+04:21.100 --> 04:30.070
+So once an array is created within a program of some size then it cannot be modified and this arrays are created
+
+55
+04:30.070 --> 04:31.300
+inside stack.
+
+56
+04:31.380 --> 04:35.490
+suppose I want to modify the size of an array as and when required.
+
+57
+04:35.570 --> 04:40.130
+I may be taking some size and again I am reducing the size or increasing the size of an array.
+
+58
+04:40.260 --> 04:43.020
+Then I want to dynamic array inside heap.
+
+59
+04:43.090 --> 04:45.560
+So let us see how we can do this here.
+
+60
+04:45.560 --> 04:47.440
+I'm already asking for the number of elements.
+
+61
+04:47.440 --> 04:56.640
+That is I'm taking the size of then I will take a pointer and create an array I will say new integer of size.
+
+62
+04:56.790 --> 04:59.500
+Now I even get an array of a given size.
+
+63
+04:59.590 --> 05:09.640
+Then after using it for some time again I can ask cout enter new size so I can ask for size again and
+
+64
+05:09.640 --> 05:11.860
+cin I will take size.
+
+65
+05:11.920 --> 05:14.430
+Then I want to modify the size of this  P.
+
+66
+05:14.440 --> 05:17.900
+right now the size of the P is whatever it is given initially.
+
+67
+05:17.910 --> 05:27.130
+Now I wanted to modify it so I can take the size again and I will say P assign in new int of size again.
+
+68
+05:27.220 --> 05:34.770
+So it means I can create a new Array again inside heap with a different size and assign it to P..
+
+69
+05:34.780 --> 05:37.640
+Initially it was created for a given size.
+
+70
+05:37.640 --> 05:41.990
+Then later a new size was given an array of newsize will be created.
+
+71
+05:42.250 --> 05:44.670
+So I'll make it simple instead of doing it like this.
+
+72
+05:44.680 --> 05:52.690
+I'll show you in a simple way that Suppose I will take a point and create a new array of size 20.
+
+73
+05:52.750 --> 05:57.400
+Now this is an array created with some size that size 20 in heap.
+
+74
+05:57.430 --> 06:04.690
+Now later on in the program if I want a new array of of larger size that is int of size 40 I can
+
+75
+06:04.690 --> 06:05.680
+create it.
+
+76
+06:05.680 --> 06:12.280
+So now the array of size 40 will be created in heap and same pointer P will be pointing.
+
+77
+06:12.280 --> 06:19.560
+Now here if I access P like if I say P of I then I can take it from zero to 19 and here if I say
+
+78
+06:19.570 --> 06:25.220
+P of i then I can take P of I from zero to 39.
+
+79
+06:25.390 --> 06:29.350
+So tho the size of an array is creator, with the same pointer
+
+80
+06:29.380 --> 06:31.560
+I have created a larger size array.
+
+81
+06:31.630 --> 06:37.400
+So this is the benefit of having array inside heap or dynamically creating the memory.
+
+82
+06:37.480 --> 06:43.840
+But one more important point is here already I was having an array of size 20, then later on
+
+83
+06:43.840 --> 06:49.910
+I'm creating a new array of larger size that is 40 then what will happen to this existing array.
+
+84
+06:49.930 --> 06:55.490
+So before changing pointer P to point on the New array I should delete P
+
+85
+06:58.570 --> 07:01.590
+and then create an array of larger size.
+
+86
+07:01.630 --> 07:06.580
+So this is a good practice otherwise this will lead to a memory leak.
+
+87
+07:06.580 --> 07:12.610
+So this is a array of size 20, then later a new array of size 40 is created.
+
+88
+07:12.720 --> 07:14.260
+And this is no more in use.
+
+89
+07:14.300 --> 07:16.980
+Before that we will delete it and use it.
+
+90
+07:17.140 --> 07:23.050
+So having array inside the heap with the help of pointers is that pointers remains same.
+
+91
+07:23.140 --> 07:28.280
+And that pointer can be pointing to any size of memory maybe one time 20 size of array 
+
+92
+07:28.300 --> 07:33.990
+Then later on 40 size of array, This is the flexibility that we get with the help of Heap.
+
+93
+07:34.090 --> 07:41.830
+So our programs can become more dynamic and during their runtime they can change the sizes of the memory
+
+94
+07:41.850 --> 07:48.060
+or they can make the pointer point on different size memory So we will be using this further
+
+95
+07:48.060 --> 07:48.930
+in our program.
+
+96
+07:48.930 --> 07:51.610
+This is just the introduction about the heap memory.
+
+97
+07:51.750 --> 07:54.930
+Later on you will see a lot about heap memory and the pointers.

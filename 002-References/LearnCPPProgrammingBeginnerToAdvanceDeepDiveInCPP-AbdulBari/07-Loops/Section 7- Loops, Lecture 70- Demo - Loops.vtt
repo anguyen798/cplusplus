@@ -1,0 +1,409 @@
+WEBVTT
+
+0
+00:00.560 --> 00:06.990
+LET us see different types of loops, first loop that I will show you is while loop.
+
+1
+00:07.180 --> 00:12.120
+And here one is given then cout
+
+2
+00:15.320 --> 00:16.200
+hello.
+
+3
+00:16.700 --> 00:22.120
+Now here this loop will repeat as long as this condition is true.
+
+4
+00:22.490 --> 00:26.100
+All that I have given one so this'll be always true.
+
+5
+00:26.240 --> 00:29.500
+So it means this will enter into infinite loop.
+
+6
+00:29.660 --> 00:37.940
+Let us see this continuously displaying hello hello go on displaying hello. even I am unable to
+
+7
+00:37.940 --> 00:40.120
+scroll up so it's go on displaying
+
+8
+00:40.130 --> 00:40.680
+Hello.
+
+9
+00:40.850 --> 00:45.790
+This has entered into infinite loop so as this is always true.
+
+10
+00:45.920 --> 00:47.940
+So this is in finite loop.
+
+11
+00:48.260 --> 00:50.530
+See these many times it has displayed.
+
+12
+00:50.540 --> 01:00.090
+Hello I'm scrolling here on this window, so many times I had to stop this program forcibly because it
+
+13
+01:00.090 --> 01:01.260
+was not terminating.
+
+14
+01:01.260 --> 01:09.070
+It is in finite loop now instead of that I want to run it for some number of times like I will declare
+
+15
+01:09.090 --> 01:12.180
+some variable integer i
+
+16
+01:12.490 --> 01:14.270
+And that is assigned to zero.
+
+17
+01:14.520 --> 01:16.840
+No I want to say while.
+
+18
+01:16.890 --> 01:18.640
+I less than 10.
+
+19
+01:18.990 --> 01:21.360
+OK as long as I use less than 10.
+
+20
+01:21.360 --> 01:22.650
+It should display Hello.
+
+21
+01:23.070 --> 01:24.050
+Let us run and see
+
+22
+01:26.940 --> 01:28.490
+see more than 10 times.
+
+23
+01:28.550 --> 01:32.150
+It's going on repeating again it is infinite.
+
+24
+01:32.270 --> 01:33.660
+It's not stopping.
+
+25
+01:33.860 --> 01:36.970
+I should stop forcibly here by clicking here.
+
+26
+01:37.090 --> 01:38.660
+I have stopped it.
+
+27
+01:38.660 --> 01:39.890
+Why it is not stopping.
+
+28
+01:39.890 --> 01:40.880
+What is the reason.
+
+29
+01:40.880 --> 01:42.480
+See I value 0.
+
+30
+01:42.530 --> 01:45.910
+I is less than 10 yes always zero is less than 10.
+
+31
+01:46.060 --> 01:47.040
+Going on printing.
+
+32
+01:47.050 --> 01:47.600
+Hello.
+
+33
+01:48.020 --> 01:52.330
+So what I should do I should modify so that it reaches a 10.
+
+34
+01:52.340 --> 01:54.840
+So for that purpose I will write.
+
+35
+01:54.890 --> 01:55.730
+i Plus plus.
+
+36
+01:56.150 --> 02:00.150
+Yes now it will print hello for 10 times.
+
+37
+02:00.170 --> 02:01.680
+I start from zero.
+
+38
+02:01.880 --> 02:06.170
+I will stop at ten and it will continue till 9.
+
+39
+02:06.370 --> 02:07.400
+Let us run this
+
+40
+02:10.500 --> 02:11.180
+yeah.
+
+41
+02:11.580 --> 02:14.460
+No it has printed just hello 10 times.
+
+42
+02:14.640 --> 02:18.330
+So the point that we have learned here is whatever the condition is written here.
+
+43
+02:18.330 --> 02:23.850
+That must become false at some point otherwise it enters into infinite loop.
+
+44
+02:23.920 --> 02:33.380
+Debug this program and show you so for that I'll put break point here and I will run the program.
+
+45
+02:33.900 --> 02:38.890
+Now here you can see that value of i is double three two three four.
+
+46
+02:39.060 --> 02:43.470
+So that is some garbage number and it has dropped at this point I will press
+
+47
+02:43.510 --> 02:45.790
+F7 function F 7.
+
+48
+02:45.990 --> 02:50.570
+Now I is zero here if you can see this  i is zero.
+
+49
+02:51.090 --> 03:00.270
+And I is less than 10 so it will enter insidet and print hello then I plus plus it's not yet executed.
+
+50
+03:00.290 --> 03:01.010
+F7.
+
+51
+03:01.010 --> 03:06.910
+Now I became one and it has jumped on to this one and it is less than 10.
+
+52
+03:06.980 --> 03:08.290
+Press f7.
+
+53
+03:09.980 --> 03:19.770
+Now I pluss Plus I becomes two I is changing to two, then  I become three, i is four.
+
+54
+03:20.000 --> 03:23.260
+So you can check the value of I that is 4.
+
+55
+03:23.810 --> 03:26.320
+Then go on repeating it.
+
+56
+03:26.360 --> 03:33.070
+I am repeating it by pressing f7 function F 7 so I's 8 now.
+
+57
+03:33.260 --> 03:37.790
+And I is 9 and now I value is 9.
+
+58
+03:37.790 --> 03:46.090
+You can check here I value is 9 and it is the showing here in the watch window and then I became 10
+
+59
+03:46.370 --> 03:48.640
+and then this not less than 10.
+
+60
+03:48.670 --> 03:50.210
+So it will come up.
+
+61
+03:50.740 --> 03:51.190
+That's it.
+
+62
+03:51.190 --> 03:58.410
+So in this way with the help of debugger you can see every statement How it is executing.
+
+63
+03:58.480 --> 04:07.360
+So this is while loop I'll remove the break point delete break point same thing I can do it using do
+
+64
+04:07.360 --> 04:08.640
+while loop also.
+
+65
+04:08.800 --> 04:16.540
+I will remove this and say do and here I will  say i is less than ten and semi-colon and
+
+66
+04:16.540 --> 04:20.470
+also after hello let us give slash n enter a new line.
+
+67
+04:20.470 --> 04:23.070
+Now let us run the program and see.
+
+68
+04:23.830 --> 04:32.760
+Yes it is spending hello for 10 times. is a really 10 times? what I will do is before.
+
+69
+04:32.770 --> 04:33.340
+Hello.
+
+70
+04:33.390 --> 04:39.210
+I will print the value of i also and I'll give some space before.
+
+71
+04:39.220 --> 04:40.000
+Hello.
+
+72
+04:40.310 --> 04:42.400
+Let us run it again.
+
+73
+04:44.810 --> 04:52.920
+Yes it is from zero to 9 so it is 10 times it is printing Hello.
+
+74
+04:52.980 --> 04:56.600
+So the same program can be written using the do while loop also.
+
+75
+04:56.610 --> 04:58.890
+Now let me show you for loop.
+
+76
+04:59.610 --> 05:01.740
+Same thing right.
+
+77
+05:01.770 --> 05:10.980
+Same thing i will write, for integer I assign 0 and I is less than 10 I plus plus
+
+78
+05:14.450 --> 05:16.190
+I have already decleared I there.
+
+79
+05:16.200 --> 05:18.060
+So I should remove i from here.
+
+80
+05:18.240 --> 05:22.420
+So inside the for loop only is declare, here I will say cout.
+
+81
+05:23.290 --> 05:31.870
+Then here I will say cout I then space hello and slash.
+
+82
+05:32.340 --> 05:41.520
+It's the same thing see inside for loop this declaration and initialization and the condition that we were
+
+83
+05:41.520 --> 05:45.550
+using in while and Increment and that we were using inside.
+
+84
+05:45.660 --> 05:46.900
+while and do while.
+
+85
+05:47.070 --> 05:53.490
+That all came in a single line because I is used as a counter so all the things related to a counter
+
+86
+05:53.490 --> 05:56.360
+are done in a single bracket.
+
+87
+05:56.400 --> 06:00.000
+So this is easy for reading and everything is at one place.
+
+88
+06:00.120 --> 06:03.620
+Let us run the program and see what happens.
+
+89
+06:04.040 --> 06:04.940
+Yeah is printing hello.
+
+90
+06:04.950 --> 06:09.330
+Hello from zero to nine so total 10 times it is printing Hello.
+
+91
+06:09.600 --> 06:16.950
+Let us put a break point and run the program, so now i will  go on pressing F 7.
+
+92
+06:16.950 --> 06:25.770
+So you can see that it is displaying one by one and I begin four and five six seven.
+
+93
+06:25.920 --> 06:29.310
+So it will not show these as seperate step.
+
+94
+06:29.310 --> 06:35.170
+It will show it as a single line only after printing hello it will go to this for loop line.
+
+95
+06:35.380 --> 06:41.970
+And in this it will increment the value and then check the condition then it will come inside now
+
+96
+06:41.970 --> 06:52.380
+the value of i is seven then eight then printed and then nine and printed and not ten.
+
+97
+06:52.380 --> 06:53.710
+It has stopped.
+
+98
+06:53.730 --> 06:56.300
+So when I became 10 and it had stopped.
+
+99
+06:56.310 --> 07:01.140
+So the same piece of code I have shown you using while loop and for loop and do while loop.
+
+100
+07:01.200 --> 07:04.340
+So it can be done using all three loops.
+
+101
+07:04.350 --> 07:08.010
+So try this one sample program you can try it on your computer.

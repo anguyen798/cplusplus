@@ -1,0 +1,993 @@
+WEBVTT
+
+0
+00:00.080 --> 00:06.930
+In this video we learn about expressions. expressions are nothing but the formulas. the formulas that
+
+1
+00:06.930 --> 00:10.400
+we learn in mathematics, how to write them in program.
+
+2
+00:10.410 --> 00:15.540
+We will learn this. see after knowing date types and the variables this is the very first thing that you
+
+3
+00:15.540 --> 00:17.190
+should learn.
+
+4
+00:17.250 --> 00:22.950
+You should be able to perfectly write down the formula  so that it gets correct results, that is important
+
+5
+00:23.330 --> 00:26.930
+so for  writing any formula in the form of expression in our program.
+
+6
+00:26.940 --> 00:28.450
+What are the things that you should know.
+
+7
+00:28.830 --> 00:30.540
+Let us learn. see
+
+8
+00:30.570 --> 00:34.410
+We have already studied about arithmetic operators in the previous video.
+
+9
+00:34.770 --> 00:40.080
+So those arithmetic operators are addition subtraction multiplication division and mod. 
+
+10
+00:40.080 --> 00:40.500
+Along with that.
+
+11
+00:40.500 --> 00:42.840
+I have also taken brackets here.
+
+12
+00:42.840 --> 00:50.190
+Now there is something called precedence of operator precedence means the priority weightage, higher weightage
+
+13
+00:50.200 --> 00:50.860
+age.
+
+14
+00:50.940 --> 00:52.640
+So that is higher or lower.
+
+15
+00:52.740 --> 00:54.420
+Precedence of operators.
+
+16
+00:54.510 --> 00:57.060
+We are not looking at all the operators in C++.
+
+17
+00:57.060 --> 00:58.530
+We are looking at only a few.
+
+18
+00:58.530 --> 01:00.900
+So I have to make them in the form of a table.
+
+19
+01:00.960 --> 01:06.300
+Assume that the precedence of this one is one and the precedence for multiplication division and mod
+
+20
+01:06.300 --> 01:09.340
+For all of them is 2 and this bracket is
+
+21
+01:09.370 --> 01:09.970
+3.
+
+22
+01:09.990 --> 01:16.320
+So these numbers the shows that brackets are having highest precedence an addition subtraction is having
+
+23
+01:16.320 --> 01:19.930
+lower precedence among arithmetic operators.
+
+24
+01:20.280 --> 01:23.630
+Know how these precedence effect, let us understand that.
+
+25
+01:23.960 --> 01:28.380
+So I will simply write on one formula then, I will show you, I will write the formula here
+
+26
+01:28.380 --> 01:37.760
+Suppose I am saying x assign with a plus b multiplied by  c minus d slash e.
+
+27
+01:37.920 --> 01:39.690
+This is the formula I have written.
+
+28
+01:39.990 --> 01:44.340
+Now in this formula which operator gets executed first.
+
+29
+01:44.790 --> 01:49.150
+Let us learn this so that actually depends on precedence of operator.
+
+30
+01:49.470 --> 01:54.720
+So how many operations I have used here addition subtraction multiplication division four operations
+
+31
+01:54.730 --> 01:55.800
+I have used here.
+
+32
+01:55.830 --> 02:00.240
+Now who is having higher precedence multiplication and division not having higher precedence.
+
+33
+02:00.510 --> 02:05.290
+So in this expression both are there, multiplication is also there division is also there.
+
+34
+02:05.460 --> 02:11.640
+Then which one will get executed first C from the left hand side it will get left to right 
+
+35
+02:11.640 --> 02:14.580
+it will take so the first one executed is this one.
+
+36
+02:15.000 --> 02:16.530
+And next is this one.
+
+37
+02:17.070 --> 02:18.700
+So first it will multiply.
+
+38
+02:18.960 --> 02:20.160
+Then it will divide.
+
+39
+02:20.250 --> 02:27.540
+It means who will get multiplied B and C will get multiplied right then D divided by E.
+
+40
+02:27.870 --> 02:30.070
+So this is how they are executed.
+
+41
+02:30.170 --> 02:34.950
+Then after that the Lower precedence is for addition and subtraction.
+
+42
+02:35.100 --> 02:36.030
+they get executed.
+
+43
+02:36.060 --> 02:36.950
+So we have both.
+
+44
+02:37.110 --> 02:38.990
+Which one will get executed first.
+
+45
+02:39.000 --> 02:40.580
+So again left to right.
+
+46
+02:40.590 --> 02:45.210
+See this left to right is actually called as associativity, so the associated is with
+
+47
+02:45.210 --> 02:51.390
+Left to Right. we will learn about associativity some other time so left to right is the associativity.
+
+48
+02:51.510 --> 02:54.950
+So first this one gets executed then this one.
+
+49
+02:55.020 --> 03:02.040
+So this addition this will add what a with the result of b and c because already they are multiplied
+
+50
+03:02.040 --> 03:08.250
+already we have the result then this will subtract what 4th one, this the
+
+51
+03:08.250 --> 03:10.970
+whole left hand side and the right hand side.
+
+52
+03:11.040 --> 03:13.040
+This is already done, addition is done.
+
+53
+03:13.170 --> 03:15.150
+So this whole thing and then this one.
+
+54
+03:15.240 --> 03:20.550
+So this is how depending on the precedence the operation are performed.
+
+55
+03:20.620 --> 03:26.530
+Next suppose you wanted in some other way. what? you wanted
+
+56
+03:26.520 --> 03:29.620
+That a plus b should be done first.
+
+57
+03:29.640 --> 03:33.510
+Then it should be multiplied by C then it should not be written like this.
+
+58
+03:33.510 --> 03:35.050
+Let us see how to do that.
+
+59
+03:35.170 --> 03:37.670
+C Again I will write down this expression.
+
+60
+03:37.740 --> 03:43.040
+A plus B multiplied by C minus d slash e.
+
+61
+03:43.330 --> 03:47.740
+Suppose in this one I don't want b to be multiplied with c I want a plus b to be multiplied.
+
+62
+03:47.760 --> 03:53.890
+now in this case because the precedence of this one is Lower.
+
+63
+03:54.000 --> 04:01.090
+I have to increase this precedence by including in brackets so include this in bracket so that's how we 
+
+64
+04:01.120 --> 04:06.450
+use precedence now you see who is having highest precedence in the expression.
+
+65
+04:06.450 --> 04:07.960
+This bracket is having.
+
+66
+04:08.010 --> 04:11.280
+So whatever it is there in the bracket that will get executed first.
+
+67
+04:11.640 --> 04:16.100
+Similarly I don't want this d to be divided by E.
+
+68
+04:16.200 --> 04:20.730
+I want this C minus d   to be divided by e then put it in the bracket.
+
+69
+04:20.740 --> 04:24.230
+Now it will be perfect, as per you want.
+
+70
+04:24.240 --> 04:30.330
+How the result you want you have to put them in the brackets so bracket is a very powerful tool for writing
+
+71
+04:30.420 --> 04:31.210
+expression.
+
+72
+04:31.530 --> 04:38.150
+So if you know how the precedence and you want them to be executed according to precedence it's okay.
+
+73
+04:38.190 --> 04:42.250
+No you want to change it then you can change it by imposing brackets.
+
+74
+04:42.270 --> 04:44.050
+So this is there in mathematics also.
+
+75
+04:44.220 --> 04:49.290
+Same thing is used here now for learning this one for practicing this one.
+
+76
+04:49.290 --> 04:51.360
+I have taken some formulas.
+
+77
+04:51.410 --> 04:56.910
+I will show how to convert  this formulas in expressions of C++ program.
+
+78
+04:56.990 --> 04:59.870
+then later we will be writing programs on this one also.
+
+79
+05:00.440 --> 05:06.390
+So let us write on expression for the formulas. let us look at the formula see the first formula is
+
+80
+05:06.830 --> 05:08.420
+area of triangle.
+
+81
+05:08.730 --> 05:15.890
+You should be knowing the formula is half into base and  height how to write this in C++ program.
+
+82
+05:15.930 --> 05:25.320
+If you are using this formula so that expressions should be written like this a is assignment with half
+
+83
+05:25.350 --> 05:26.910
+you cannot write like this.
+
+84
+05:26.910 --> 05:33.360
+C If I write half then division means that slash then two.
+
+85
+05:33.810 --> 05:40.240
+So you know this is integer, 1 and two, both are integer and 1 divided by 2  is 0.
+
+86
+05:40.410 --> 05:42.050
+So you cannot write like this.
+
+87
+05:42.090 --> 05:42.920
+This would be wrong.
+
+88
+05:43.110 --> 05:52.650
+So the first thing we learn then next first write base into height, so base into height where is into sign?.
+
+89
+05:52.700 --> 05:58.230
+In mathematics we understand that if nothing is there in between multiplication is there but in C++ program
+
+90
+05:58.260 --> 05:59.670
+you cannot leave it like that.
+
+91
+05:59.670 --> 06:07.020
+You have to write down into * (multiplication) base * height is written first then this thing if you
+
+92
+06:07.020 --> 06:09.150
+want to you can enclose in bracket if you want.
+
+93
+06:09.170 --> 06:12.810
+Otherwise no need because after that division will be done.
+
+94
+06:12.810 --> 06:16.510
+So this is the perfect formula base into height.
+
+95
+06:16.530 --> 06:18.200
+whole divided by two.
+
+96
+06:19.260 --> 06:25.800
+If you say no, as per the formula that is one by two I want to write down that first then write like
+
+97
+06:25.800 --> 06:27.200
+this right.
+
+98
+06:27.210 --> 06:34.610
+Point five point five then multiplied by base in to height.
+
+99
+06:34.950 --> 06:38.370
+So point five multiplied by Base into height.
+
+100
+06:38.360 --> 06:39.330
+This will be perfect.
+
+101
+06:39.660 --> 06:44.250
+But remember as this is written float then the result will be float.
+
+102
+06:44.250 --> 06:50.400
+So you must have this variable as float and here also after dividing it by 2 you may be getting float
+
+103
+06:50.400 --> 06:55.830
+results so you have to declare this area as float. how to convert this into program we will be learning it
+
+104
+06:56.130 --> 07:02.020
+but little bit idea I will give you they must have these variables in the our program a b and h.
+
+105
+07:02.040 --> 07:07.000
+We should be knowing what is b and h then we can use this formula to cal. a, so we will write a 
+
+106
+07:07.000 --> 07:10.190
+program for this one afterwards in the coming videos.
+
+107
+07:10.230 --> 07:12.440
+Now let us move on to the next formula.
+
+108
+07:12.510 --> 07:16.770
+See the next formula is perimeter of a rectangle.
+
+109
+07:17.560 --> 07:23.760
+p is 2 into a plus b means 2 into length into breadth. so how to write down this one
+
+110
+07:25.350 --> 07:34.080
+I will remove this. p is a perimeter. perimeter assign 2 into l plus b, into, see in mathematics again.
+
+111
+07:34.100 --> 07:42.570
+We don't write into but here you must write in to lenght into breadth see if I don't give brackets.
+
+112
+07:42.590 --> 07:44.270
+Then what happens.
+
+113
+07:44.270 --> 07:46.820
+see in mathematics also we write bracket .
+
+114
+07:46.970 --> 07:49.610
+So here if I don't give, then what will happen?
+
+115
+07:49.700 --> 07:56.610
+It will be multiplied two into length and only length is multiplied by two and then B is added.
+
+116
+07:56.660 --> 08:01.070
+Actually the formula is l and b should be added then it should be multiplied by 2.
+
+117
+08:01.250 --> 08:04.250
+Or else you multiply both of them with the two.
+
+118
+08:04.270 --> 08:05.360
+So this is better.
+
+119
+08:05.420 --> 08:09.250
+So I should write down this in the bracket right.
+
+120
+08:09.440 --> 08:14.360
+If you write in the bracket then they are added first because who is having higher precedence, brackets are
+
+121
+08:14.390 --> 08:17.370
+having higher precedence or this addition will be done first.
+
+122
+08:17.510 --> 08:21.280
+Whatever it is then the bracket that is done first then it is multiplied by 2.
+
+123
+08:21.530 --> 08:22.910
+Now the next formula.
+
+124
+08:22.970 --> 08:23.980
+Sum of n terms.
+
+125
+08:23.980 --> 08:24.560
+...
+
+126
+08:24.560 --> 08:25.560
+That is sum of first natural no.s
+
+127
+08:25.580 --> 08:30.610
+that is s is equal to n into n plus 1 by 2.
+
+128
+08:30.610 --> 08:31.920
+how to write down this one
+
+129
+08:31.970 --> 08:41.000
+Let us write it sum s assign n into n plus one by two, we know very well now n plus one .
+
+130
+08:41.000 --> 08:45.800
+This must be in brackets right first n plus one should be done then it should be multiplied with n
+
+131
+08:46.310 --> 08:47.670
+then by two.
+
+132
+08:47.670 --> 08:54.250
+This is how we write in mathematics but in C++ program you have to use this symbol. slash to.
+
+133
+08:54.710 --> 08:56.710
+So does the simple one.
+
+134
+08:56.710 --> 09:03.090
+And here s assign n into n plus one by two.
+
+135
+09:03.240 --> 09:09.830
+Now the next formula nth term of A.P series that is for arithmetic progression series if you know the
+
+136
+09:10.190 --> 09:16.220
+first term and the common difference then you can find nth term of ap series
+
+137
+09:16.220 --> 09:17.320
+so that is the formula.
+
+138
+09:17.360 --> 09:19.780
+t=a+(n-1)d
+
+139
+09:19.850 --> 09:29.750
+Let us write it in the form of expression t assign a plus a plus n minus one this one inside
+
+140
+09:29.790 --> 09:32.540
+bracket into D.
+
+141
+09:32.540 --> 09:38.830
+This is the formula now coming to the next formula root of quadratic equation.
+
+142
+09:38.840 --> 09:40.310
+This is little lengthy formula.
+
+143
+09:40.730 --> 09:41.900
+Let us write it.
+
+144
+09:42.080 --> 09:50.390
+see fr assigned  minus B okay minus B only one root I'm taking it is plus or minus.
+
+145
+09:50.450 --> 09:57.260
+So we will take just plus the square root of B squared minus four AC B squared.
+
+146
+09:57.260 --> 09:58.400
+How do you write B squared.
+
+147
+09:58.860 --> 10:02.210
+So there is no symbol for square or power.
+
+148
+10:02.210 --> 10:05.720
+Symbol is not that in C++ but that is a function of a level.
+
+149
+10:05.780 --> 10:10.750
+I'll show you afterwards so I will write B squared as B into B.
+
+150
+10:10.830 --> 10:21.940
+so write B into B right then minus 4 into a into c.
+
+151
+10:21.960 --> 10:24.860
+Yes this is perfect.
+
+152
+10:24.860 --> 10:29.050
+Now this whole thing has to be in square root.
+
+153
+10:29.090 --> 10:30.870
+How do you find Square root.
+
+154
+10:30.990 --> 10:32.230
+see for square root
+
+155
+10:32.270 --> 10:38.690
+There is a header file available in C++ which is having square root function and that header file name
+
+156
+10:38.780 --> 10:40.460
+as Cmath.
+
+157
+10:40.520 --> 10:53.370
+So you can see hash include cMath  or else you can also write harsh include Math.h  whatever
+
+158
+10:53.390 --> 10:54.120
+one you like.
+
+159
+10:54.120 --> 10:55.190
+You can use it.
+
+160
+10:55.210 --> 10:56.440
+This is in C++.
+
+161
+10:56.440 --> 11:02.740
+This was there in C language so you can use the c like things in C++ also if you want you can write this
+
+162
+11:02.870 --> 11:05.240
+or cmath is a better option.
+
+163
+11:05.290 --> 11:13.290
+So that header file that library is having all the mathematical functions like Square root, log exponent
+
+164
+11:13.400 --> 11:21.220
+cos, sin rsin rcos rtan by various function power function various functions are available
+
+165
+11:21.290 --> 11:25.690
+who can use those mathematical functions in your program.
+
+166
+11:25.690 --> 11:30.280
+Now knowing about those functions slowly you can learn about them at once you don't have to learn all
+
+167
+11:30.280 --> 11:33.700
+of them so slowly as in when we are using we'll be learning about them.
+
+168
+11:34.000 --> 11:40.180
+But right now we want just square root  so there is a function called sqrt in short for square root
+
+169
+11:40.480 --> 11:43.760
+so that we have to perform up on this whole thing right.
+
+170
+11:43.780 --> 11:44.800
+This whole thing.
+
+171
+11:44.800 --> 11:47.520
+So this whole thing should be written inside the square root function.
+
+172
+11:47.540 --> 11:49.160
+So I'll just make a space for this.
+
+173
+11:49.420 --> 11:52.230
+So this was r assigned minus B plus.
+
+174
+11:52.420 --> 11:54.490
+This is sqrt.
+
+175
+11:54.580 --> 11:55.830
+This is a function.
+
+176
+11:55.990 --> 11:59.230
+sqrt function. so this is a function
+
+177
+11:59.440 --> 12:06.290
+So square root will be performed on this entire thing and the result will be added that this minus B.
+
+178
+12:06.370 --> 12:15.900
+Now the last thing remaining divided by two way divided by two Now the interesting thing a.
+
+179
+12:16.200 --> 12:19.300
+So shall I write in to a yes.
+
+180
+12:19.300 --> 12:19.740
+This is
+
+181
+12:19.740 --> 12:21.060
+because it is 2 into a
+
+182
+12:21.090 --> 12:25.620
+This is two into a.
+
+183
+12:25.690 --> 12:32.930
+This will be wrong, why, this entire thing should be divided by two right.
+
+184
+12:33.150 --> 12:39.640
+But if you read this I'll just highlight sqrt result will be divided by two
+
+185
+12:39.660 --> 12:40.770
+...
+
+186
+12:40.860 --> 12:43.010
+We want everything should be divided by two.
+
+187
+12:43.120 --> 12:45.430
+Okay put the bracket here also.
+
+188
+12:45.510 --> 12:47.640
+So put the bracket here also.
+
+189
+12:47.640 --> 12:48.720
+This is perfect.
+
+190
+12:48.780 --> 12:55.240
+The next one this whole thing is divided by two then multiplied by a no.
+
+191
+12:55.260 --> 13:01.990
+It should be divided by a also so that 2, a should be in bracket.
+
+192
+13:02.010 --> 13:05.030
+So these two should be multiplied and the result.
+
+193
+13:05.070 --> 13:09.220
+This  result should divide this entire thing.
+
+194
+13:09.240 --> 13:10.630
+This is perfect.
+
+195
+13:10.800 --> 13:16.800
+If I don't give that bracket then it will be taken as into a, a will be come this side.
+
+196
+13:17.130 --> 13:22.920
+So we don't want into a this a should be in the denominator only so that must be in the bracket.
+
+197
+13:22.940 --> 13:24.150
+Otherwise we get wrong.
+
+198
+13:24.150 --> 13:27.050
+this what you have to be careful.
+
+199
+13:27.880 --> 13:33.630
+Now we have done enough examples, how to write expression, now the same expressions we
+
+200
+13:33.630 --> 13:35.320
+will use them in the program.
+
+201
+13:35.620 --> 13:42.350
+So in the following videos will find the program on each of these formulas then one last formula.
+
+202
+13:42.420 --> 13:49.640
+This one that is speed that is initial speed can be calculated as final velocity square minus
+
+203
+13:49.680 --> 13:53.150
+initial velocity squared by two into acceleration.
+
+204
+13:53.160 --> 13:57.560
+So here v square and u squared is used so I can write.
+
+205
+13:57.560 --> 13:59.560
+V into v or u into u.
+
+206
+13:59.760 --> 14:02.130
+Otherwise I can use a power function.
+
+207
+14:02.130 --> 14:11.220
+So let us use that both the methods we will follow, first method  speed s is assigned v into v ok
+
+208
+14:11.220 --> 14:13.060
+v into v, minus
+
+209
+14:13.150 --> 14:20.630
+u into u, now one thing Do I have to put this in bracket.
+
+210
+14:20.640 --> 14:26.580
+No need because who is having higher precedence multiplication than multiplication that afterwards subtraction
+
+211
+14:26.600 --> 14:27.920
+so it will be perfect.
+
+212
+14:28.620 --> 14:31.910
+If you want to put it in brackets that is very good right.
+
+213
+14:32.580 --> 14:34.110
+So because of laziness.
+
+214
+14:34.110 --> 14:38.850
+People don't write brackets properly so if you write everything in brackets that is perfect but too
+
+215
+14:38.850 --> 14:45.810
+many brackets will make it difficult to read also that is that the reason next by 2a should be
+
+216
+14:45.810 --> 14:48.360
+done by 2 A.
+
+217
+14:48.450 --> 14:50.010
+Again you're on the same problem.
+
+218
+14:50.010 --> 14:51.940
+So we cannot write just 2a.
+
+219
+14:51.960 --> 14:55.960
+We have to write two into a. ok now we are at the same problem What is that.
+
+220
+14:56.100 --> 15:05.490
+This a will come in multiplication this whole thing divided by 2 into a into a  means a will come in numerator.
+
+221
+15:05.670 --> 15:10.830
+No this by 2 should be done on the entire thing so this must be in the bracket First of all.
+
+222
+15:11.290 --> 15:13.250
+And this is in denominator.
+
+223
+15:13.260 --> 15:14.850
+So this should also be in the brackets.
+
+224
+15:14.860 --> 15:16.030
+If they are not in the bracket.
+
+225
+15:16.040 --> 15:18.160
+Then you get wrong results.
+
+226
+15:18.410 --> 15:19.900
+The next one more method we have.
+
+227
+15:20.370 --> 15:27.600
+I told you that you can use power function so use power function pow is the function v comma
+
+228
+15:27.620 --> 15:28.130
+two.
+
+229
+15:28.170 --> 15:32.390
+This is V square minus pow function.
+
+230
+15:32.490 --> 15:34.120
+u ,2 .
+
+231
+15:34.200 --> 15:35.080
+This is a
+
+232
+15:35.160 --> 15:42.570
+u square then, this whole thing should be divided by two as well as with a multiplied with it.
+
+233
+15:42.750 --> 15:43.980
+So that should be in brackett.
+
+234
+15:45.670 --> 15:47.850
+So this is how you can write down the formulas.
+
+235
+15:47.890 --> 15:50.170
+We have seen various example formulas.
+
+236
+15:50.260 --> 15:55.890
+We have just seen how to write on the expression from the formula then how to use it in the program
+
+237
+15:55.900 --> 16:00.430
+how to build up a complete program that we will learn in following videos.
+
+238
+16:00.430 --> 16:07.880
+From here onwards make sure whenever you find any formula converted it into C++ expression.
+
+239
+16:07.930 --> 16:12.340
+So this needs a little practice but this needs little practice.
+
+240
+16:12.340 --> 16:13.990
+Don't think that you have learned once.
+
+241
+16:13.990 --> 16:15.610
+Now you can do it every time.
+
+242
+16:15.610 --> 16:16.120
+No.
+
+243
+16:16.230 --> 16:19.370
+where ever you find formula write it in C++.
+
+244
+16:19.390 --> 16:25.560
+OK now next video we will write on the programs using these formulas.
+
+245
+16:25.610 --> 16:30.910
+So for each I would write a program and show you then we will learn how to convert these things into
+
+246
+16:30.910 --> 16:31.900
+a complete program.
+
+247
+16:32.740 --> 16:34.270
+So that's all in this video.

@@ -1,0 +1,133 @@
+WEBVTT
+
+00:00:05.400 --> 00:00:09.600
+In this section of the course, we'll learn about exception handling in c++.
+
+00:00:10.500 --> 00:00:13.100
+Exception handling is definitely not a beginner topic,
+
+00:00:13.100 --> 00:00:16.700
+but I wanted to cover the basics so that you can understand exception handling
+
+00:00:16.700 --> 00:00:20.250
+and be able to move on to more advanced features in exception handling
+
+00:00:20.250 --> 00:00:21.850
+as you learn more c++.
+
+00:00:22.850 --> 00:00:27.750
+We'll talk about what an exception is as well as how we can handle exceptions in c++.
+
+00:00:27.900 --> 00:00:31.260
+Then we'll look at a simple program that has a divide by 0 error,
+
+00:00:31.260 --> 00:00:34.360
+and we'll add exception handling to it so that we can handle that error.
+
+00:00:35.260 --> 00:00:37.860
+Once we understand the basics of exception handling,
+
+00:00:37.860 --> 00:00:41.560
+we'll create a function that throws an exception when something goes wrong within it.
+
+00:00:41.560 --> 00:00:44.220
+And we'll see how to throw an exception from that function,
+
+00:00:44.220 --> 00:00:48.220
+and also learn how to catch the exception outside the function and deal with it.
+
+00:00:48.880 --> 00:00:51.180
+Obviously, when something goes wrong in a program,
+
+00:00:51.180 --> 00:00:54.430
+the normal flow of control of that program cannot continue
+
+00:00:54.430 --> 00:00:55.930
+as if nothing has happened.
+
+00:00:55.930 --> 00:00:58.930
+So it's very important to understand how exception handling
+
+00:00:58.930 --> 00:01:01.290
+affects the flow of control of your program.
+
+00:01:01.290 --> 00:01:04.090
+Specifically, we'll learn about stack unwinding.
+
+00:01:04.090 --> 00:01:06.590
+What it is, and how c++ uses it.
+
+00:01:06.990 --> 00:01:09.190
+Then we'll create our own exception classes
+
+00:01:09.190 --> 00:01:13.180
+so that we have complete control over the exception types that we throw and handle.
+
+00:01:13.970 --> 00:01:18.850
+Finally, we'll look at the standard exception class hierarchy provided by c++,
+
+00:01:18.850 --> 00:01:22.510
+and we'll look at the types of exceptions that are already defined in c++.
+
+00:01:22.510 --> 00:01:25.310
+Let me finish off this section overview with a few thoughts.
+
+00:01:25.310 --> 00:01:29.110
+Writing exception safe code in c++ is extremely difficult,
+
+00:01:29.470 --> 00:01:31.470
+and it's beyond the scope of this course.
+
+00:01:31.700 --> 00:01:35.950
+In this section, I want to introduce you to the basic concepts, the syntax
+
+00:01:36.150 --> 00:01:38.810
+and the behavior of c++ exception handling.
+
+00:01:38.810 --> 00:01:42.310
+There are several schools of thought when using c++ exception handling.
+
+00:01:42.810 --> 00:01:46.410
+One is that it should only be used for extremely exceptional conditions,
+
+00:01:46.410 --> 00:01:48.970
+conditions that would prevent your program from continuing.
+
+00:01:49.960 --> 00:01:51.620
+Another is that it should never be used.
+
+00:01:52.120 --> 00:01:54.320
+And then somewhere in the middle is the school of thought that it should
+
+00:01:54.320 --> 00:01:57.320
+always be used even for not so exceptional situations
+
+00:01:57.820 --> 00:02:01.140
+and then of course there's all sorts of opinion in between all of these.
+
+00:02:01.740 --> 00:02:05.240
+I've worked with c++ code where each of these scenarios was used,
+
+00:02:05.240 --> 00:02:07.600
+and they all have advantages and disadvantages.
+
+00:02:08.000 --> 00:02:11.400
+It really all comes down to how you define what an exception is.
+
+00:02:12.400 --> 00:02:16.200
+This section of the course will present a few c++ exception handling
+
+00:02:16.200 --> 00:02:17.500
+best practices.
+
+00:02:17.500 --> 00:02:21.490
+But it's very difficult to establish these best practices in c++ because
+
+00:02:21.490 --> 00:02:24.850
+when and how to use c++ exception handling
+
+00:02:24.850 --> 00:02:26.730
+is such a hotly debated topic.
+
+00:02:27.330 --> 00:02:31.330
+Okay. So let's see what exception handling is all about.

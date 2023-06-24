@@ -1,0 +1,1225 @@
+WEBVTT
+
+00:00:05.360 --> 00:00:08.885
+In this video, we'll learn
+what polymorphism is and how it
+
+00:00:08.940 --> 00:00:12.190
+can help us better develop our
+object-oriented applications.
+
+00:00:13.349 --> 00:00:16.999
+Polymorphism is a fundamental part
+of object-oriented programming.
+
+00:00:17.770 --> 00:00:21.230
+There are several types of
+polymorphism in c++, and we've
+
+00:00:21.230 --> 00:00:24.310
+already learned about two of them
+when we overloaded functions and
+
+00:00:24.310 --> 00:00:25.700
+when we overloaded operators.
+
+00:00:26.630 --> 00:00:29.760
+These are considered forms
+of compile-time polymorphism.
+
+00:00:30.320 --> 00:00:34.709
+You might see the terms compile time,
+early binding and static binding.
+
+00:00:35.139 --> 00:00:36.750
+These terms all mean the same thing.
+
+00:00:36.950 --> 00:00:39.620
+They simply mean before
+the program executes.
+
+00:00:40.050 --> 00:00:42.650
+In other words, something
+the compiler takes care of
+
+00:00:42.750 --> 00:00:44.290
+way before the program runs.
+
+00:00:44.300 --> 00:00:50.429
+Runtime, late binding and dynamic
+binding all refer to the association
+
+00:00:50.610 --> 00:00:54.719
+of what the programmer wants
+to do with how to do it but at
+
+00:00:55.110 --> 00:00:56.670
+runtime as the program executes.
+
+00:00:57.560 --> 00:01:00.760
+We'll see some examples in a few
+slides that will make this very clear.
+
+00:01:01.980 --> 00:01:05.899
+Polymorphism allows us to think more
+abstractly when we write programs.
+
+00:01:06.240 --> 00:01:10.579
+We can think deposit or print or
+draw instead of thinking in specific
+
+00:01:10.580 --> 00:01:12.770
+versions of deposit, print and draw.
+
+00:01:13.290 --> 00:01:17.120
+So I can simply think deposit
+a 1000 dollars to this account.
+
+00:01:17.700 --> 00:01:20.120
+And I don't have to worry
+about what kind of count it is.
+
+00:01:20.470 --> 00:01:24.370
+I'll be sure that the correct deposit
+function will be called depending
+
+00:01:24.370 --> 00:01:25.910
+on what type of account I have.
+
+00:01:26.139 --> 00:01:27.910
+And this is all determined at Runtime.
+
+00:01:28.359 --> 00:01:31.890
+In c++ the default type of
+binding is static binding.
+
+00:01:32.310 --> 00:01:36.020
+This makes sense since c++ is
+all about efficiency and static
+
+00:01:36.020 --> 00:01:40.280
+binding is done before runtime so
+programs can be as fast as possible.
+
+00:01:41.010 --> 00:01:44.940
+However, sometimes we want to
+defer decisions until run time.
+
+00:01:45.549 --> 00:01:50.189
+In c++ we can opt into this behavior
+by using base class pointers
+
+00:01:50.189 --> 00:01:53.990
+or references and declaring our
+functions as virtual functions.
+
+00:01:54.619 --> 00:01:57.710
+We'll see the details and syntax
+of this later in this section.
+
+00:01:58.080 --> 00:02:02.710
+But first, let's look at the types of
+polymorphism that c++ provides so that
+
+00:02:02.740 --> 00:02:04.690
+we can put this section in context.
+
+00:02:06.539 --> 00:02:09.729
+Here's a simple chart that shows
+the types of polymorphism in c++.
+
+00:02:11.080 --> 00:02:14.720
+There are two types of polymorphism,
+compile-time and runtime.
+
+00:02:15.510 --> 00:02:18.780
+Compile-time polymorphism includes
+what we've already learned in
+
+00:02:18.780 --> 00:02:21.710
+this course, function overloading
+and operator overloading.
+
+00:02:22.440 --> 00:02:25.640
+We also have runtime polymorphism,
+and that's what this section
+
+00:02:25.640 --> 00:02:27.030
+of the course will focus on.
+
+00:02:27.550 --> 00:02:31.390
+We achieve runtime polymorphism
+by overriding functions and
+
+00:02:31.390 --> 00:02:35.329
+using inheritance, using virtual
+functions and then having base
+
+00:02:35.330 --> 00:02:36.939
+class pointers and references.
+
+00:02:37.730 --> 00:02:40.510
+I think the best way to
+understand dynamic polymorphism
+
+00:02:40.639 --> 00:02:42.120
+is to use a simple example.
+
+00:02:45.049 --> 00:02:49.380
+First, let's look at a non-polymorphic
+example that uses static binding.
+
+00:02:50.179 --> 00:02:53.030
+In this case, we have an
+account hierarchy using public
+
+00:02:53.030 --> 00:02:55.729
+inheritance as you can see on
+the right side of the slide.
+
+00:02:56.549 --> 00:02:59.619
+We'll assume that every type of
+account class has its own version
+
+00:02:59.619 --> 00:03:02.750
+of the withdraw method and each
+withdraw method is different
+
+00:03:02.920 --> 00:03:04.310
+depending on the type of account.
+
+00:03:05.010 --> 00:03:07.850
+So let's create four objects,
+one for each type of account
+
+00:03:07.880 --> 00:03:09.269
+and call their withdraw methods.
+
+00:03:09.920 --> 00:03:15.199
+When we call account a's
+withdraw method, it will
+
+00:03:15.230 --> 00:03:16.600
+call accounts withdraw.
+
+00:03:17.079 --> 00:03:19.690
+This makes sense since
+a is an account object.
+
+00:03:20.380 --> 00:03:23.210
+The compiler knows this and
+binds this method call at
+
+00:03:23.280 --> 00:03:24.410
+compile-time or statically.
+
+00:03:26.080 --> 00:03:28.850
+The same applies to objects b c and d.
+
+00:03:29.400 --> 00:03:32.449
+In each case, the compiler is
+binding the calls to withdraw
+
+00:03:32.710 --> 00:03:35.729
+based on the information that it
+has about the objects when they
+
+00:03:35.730 --> 00:03:37.129
+were declared in the source code.
+
+00:03:37.650 --> 00:03:41.950
+So b withdrawal calls savings
+withdraw, c withdraw calls
+
+00:03:42.070 --> 00:03:45.540
+checking withdraw, and d
+withdraw calls trust withdraw.
+
+00:03:46.080 --> 00:03:47.049
+So far so good.
+
+00:03:47.259 --> 00:03:49.049
+It's what we've done
+and what we expect.
+
+00:03:49.469 --> 00:03:51.510
+But now let's take a
+look at the pointer p.
+
+00:03:52.660 --> 00:03:54.800
+P is a pointer to an account object.
+
+00:03:55.080 --> 00:03:57.579
+So p contains the address
+of an account object.
+
+00:03:58.430 --> 00:04:01.190
+Now we create a trust account
+dynamically on the heap and
+
+00:04:01.190 --> 00:04:02.510
+assign its address to p.
+
+00:04:03.130 --> 00:04:04.030
+Is this legal?
+
+00:04:04.710 --> 00:04:08.779
+Sure, p can hold addresses of
+accounts and trust is an account.
+
+00:04:09.049 --> 00:04:10.829
+The inheritance hierarchy tells us so.
+
+00:04:11.670 --> 00:04:14.010
+So what happens when we call
+the withdrawal method for
+
+00:04:14.010 --> 00:04:15.620
+the object pointed to by p?
+
+00:04:16.070 --> 00:04:20.070
+Well, we're using static binding
+by default so the compiler doesn't
+
+00:04:20.089 --> 00:04:23.450
+really know what type of account
+object p is pointing to at runtime.
+
+00:04:23.460 --> 00:04:24.530
+It doesn't really care.
+
+00:04:25.049 --> 00:04:28.029
+All it knows is that p is
+pointing to an account.
+
+00:04:28.420 --> 00:04:30.610
+So it will call the
+account withdraw method.
+
+00:04:31.300 --> 00:04:33.360
+This is probably not what we expected.
+
+00:04:33.670 --> 00:04:36.430
+It certainly isn't what we
+wanted since we want the trust
+
+00:04:36.480 --> 00:04:39.590
+object on the heap to use
+its own version of withdraw.
+
+00:04:40.469 --> 00:04:42.919
+Please be sure that you
+understand this simple example
+
+00:04:43.070 --> 00:04:46.360
+since it's fundamental to
+understanding dynamic polymorphism.
+
+00:04:46.809 --> 00:04:51.090
+Remember, all the compiler knows is
+that p is a pointer to an account
+
+00:04:51.320 --> 00:04:54.320
+so it will bind the withdraw
+method to the account classes
+
+00:04:54.330 --> 00:04:55.900
+withdraw method at compile time.
+
+00:04:56.300 --> 00:04:59.400
+Let's see another problem with
+static binding in the same context.
+
+00:05:01.340 --> 00:05:03.680
+In this example, we have
+the same class hierarchy.
+
+00:05:04.020 --> 00:05:07.169
+And let's suppose that each
+account class has its own version
+
+00:05:07.170 --> 00:05:11.000
+of a display method that displays
+account information based on
+
+00:05:11.000 --> 00:05:12.270
+the type of account we have.
+
+00:05:12.980 --> 00:05:18.159
+So let's create a simple c++ function
+called display account, and it expects
+
+00:05:18.179 --> 00:05:19.940
+a reference to an account object.
+
+00:05:20.830 --> 00:05:25.239
+Since all our derived classes
+are accounts, we can pass any of
+
+00:05:25.240 --> 00:05:28.840
+them into this function, and this
+function will call the display method
+
+00:05:28.840 --> 00:05:30.430
+for the account object passed in.
+
+00:05:31.310 --> 00:05:36.340
+So you can see that the code creates
+four objects: a b c and d, one for
+
+00:05:36.360 --> 00:05:40.250
+each type of account and then it calls
+display account and passes in each
+
+00:05:40.250 --> 00:05:41.660
+of these objects to the function.
+
+00:05:42.609 --> 00:05:45.010
+The behavior you get from
+the display account function
+
+00:05:45.250 --> 00:05:46.770
+may not be what you expect.
+
+00:05:47.210 --> 00:05:50.750
+But by default c++ is doing
+exactly what it's supposed
+
+00:05:50.760 --> 00:05:52.490
+to do, static binding.
+
+00:05:53.120 --> 00:05:57.360
+When the compiler sees the call
+to acc.display in the display
+
+00:05:57.360 --> 00:06:01.030
+account function, it will bind
+the call to accounts display.
+
+00:06:02.060 --> 00:06:05.320
+So accounts display method will
+be called regardless of what
+
+00:06:05.350 --> 00:06:08.859
+object was passed in, and our
+display will only display whatever
+
+00:06:08.860 --> 00:06:10.249
+is in the account part of us.
+
+00:06:10.990 --> 00:06:14.849
+There is a way for c++ to ask the
+account object being passed in,
+
+00:06:15.200 --> 00:06:16.750
+hey, what kind of account are you.
+
+00:06:17.190 --> 00:06:20.230
+And then depending on that, we can
+have if else statements that call
+
+00:06:20.230 --> 00:06:21.820
+the appropriate display methods.
+
+00:06:22.310 --> 00:06:25.630
+That's bad coding practice, and
+it also makes us program less
+
+00:06:25.670 --> 00:06:29.069
+abstractly since then we've got to
+figure out what kind of object we've
+
+00:06:29.070 --> 00:06:31.000
+got and then call its functions.
+
+00:06:31.330 --> 00:06:32.270
+There's a better way.
+
+00:06:32.679 --> 00:06:34.870
+That's where runtime
+polymorphism comes in.
+
+00:06:35.340 --> 00:06:39.790
+Let's see how this same example works
+with runtime or dynamic polymorphism.
+
+00:06:41.890 --> 00:06:45.010
+Now let's see the same example
+using polymorphic functions.
+
+00:06:45.830 --> 00:06:49.739
+Here we see the same account class
+hierarchy except that this time we've
+
+00:06:49.780 --> 00:06:52.140
+opted into runtime polymorphism.
+
+00:06:52.850 --> 00:06:55.670
+We'll see how in a few videos,
+but notice that the withdraw
+
+00:06:55.700 --> 00:06:58.740
+methods in the class diagram
+are now virtual functions.
+
+00:06:59.730 --> 00:07:03.090
+This allows us to use runtime
+polymorphism when using base
+
+00:07:03.090 --> 00:07:04.669
+class pointers or references.
+
+00:07:05.719 --> 00:07:07.559
+Let's look at the same
+example as before.
+
+00:07:07.860 --> 00:07:11.289
+Notice that the four count
+objects: a b c and d, have
+
+00:07:11.289 --> 00:07:12.760
+exactly the same behavior.
+
+00:07:13.000 --> 00:07:16.640
+Since we're not using base class
+pointers or references, these
+
+00:07:16.640 --> 00:07:19.810
+examples are all statically
+bound just like before.
+
+00:07:20.809 --> 00:07:22.929
+But now let's look at the pointer p.
+
+00:07:23.790 --> 00:07:26.470
+In this case, when we call the
+withdraw method of the object
+
+00:07:26.580 --> 00:07:30.219
+pointed to by p, the trust
+withdraw method will be called.
+
+00:07:30.910 --> 00:07:32.619
+That's what we want
+and that's pretty cool.
+
+00:07:33.050 --> 00:07:37.260
+The idea of using virtual functions
+tells the compiler not to bind the
+
+00:07:37.260 --> 00:07:41.330
+calling compile time but instead
+defer the binding to runtime.
+
+00:07:42.200 --> 00:07:45.509
+And at runtime, a check will
+occur to see exactly what p
+
+00:07:45.509 --> 00:07:49.100
+is pointing to and then that
+object's method will be called.
+
+00:07:49.389 --> 00:07:52.210
+In this case, the
+trust withdraw method.
+
+00:07:52.870 --> 00:07:54.130
+Let's see the other example.
+
+00:07:56.380 --> 00:08:00.349
+Again, now we have virtual display
+functions in our account class.
+
+00:08:00.780 --> 00:08:03.800
+So whenever we use a pointer
+or a reference to a base
+
+00:08:03.800 --> 00:08:07.670
+class, the binding is done at
+runtime, not at compile time.
+
+00:08:08.370 --> 00:08:11.950
+So now we create four objects:
+a b c and d, each as a
+
+00:08:11.950 --> 00:08:13.070
+different type of account.
+
+00:08:13.840 --> 00:08:16.960
+Now when we pass these objects
+to the display account function,
+
+00:08:17.219 --> 00:08:22.190
+the binding of acc.display will
+take place at runtime and call
+
+00:08:22.190 --> 00:08:25.430
+the display method based on the
+type of object being passed in.
+
+00:08:25.890 --> 00:08:28.120
+That's pretty cool and
+very, very powerful.
+
+00:08:28.880 --> 00:08:32.500
+I can now write functions, methods
+and data structures that use
+
+00:08:32.500 --> 00:08:36.770
+pointers and references to base class
+objects, and I know that the correct
+
+00:08:36.820 --> 00:08:38.320
+methods will be called at runtime.
+
+00:08:38.860 --> 00:08:41.280
+Remember, that account class
+hierarchy we did in the last
+
+00:08:41.289 --> 00:08:44.759
+sections challenge, it used static
+binding since we hadn't learned
+
+00:08:44.769 --> 00:08:46.676
+about dynamic polymorphism yet.
+
+00:08:46.676 --> 00:08:49.380
+Remember, all those utility
+functions that we wrote, that
+
+00:08:49.380 --> 00:08:50.630
+were all pretty much the same.
+
+00:08:51.240 --> 00:08:53.370
+Now we could write just one
+version, and they'll work with
+
+00:08:53.370 --> 00:08:56.180
+all the account types once we
+convert that account hierarchy
+
+00:08:56.410 --> 00:08:57.910
+to use polymorphic functions.
+
+00:08:58.720 --> 00:08:59.420
+Fantastic.
+
+00:08:59.630 --> 00:09:02.100
+In the next video we'll go
+over how we can use base class
+
+00:09:02.110 --> 00:09:03.859
+pointers in a little more detail.
+
+00:09:05.340 --> 00:09:08.609
+Before we do the next video,
+let's go over here to the IDE
+
+00:09:08.610 --> 00:09:09.850
+and walk through this problem.
+
+00:09:10.050 --> 00:09:12.260
+This is the same problem we
+had with the account class.
+
+00:09:12.559 --> 00:09:15.150
+And what I'm doing here I'm just
+creating a base and a derived class
+
+00:09:15.150 --> 00:09:18.410
+to absolutely show you and walk
+you through what's going on here.
+
+00:09:18.900 --> 00:09:24.430
+I'm in the section 16 workspace
+in the problem project so.
+
+00:09:24.430 --> 00:09:25.130
+What have I got?
+
+00:09:25.170 --> 00:09:28.710
+Well, you can see here it's can't
+get much simpler than this hierarchy.
+
+00:09:29.030 --> 00:09:33.049
+I've got a base class right
+here, and it's got one public
+
+00:09:33.049 --> 00:09:34.479
+method called say hello.
+
+00:09:35.020 --> 00:09:35.570
+That's all.
+
+00:09:35.770 --> 00:09:37.700
+And all it says is
+hello I'm a base class.
+
+00:09:38.300 --> 00:09:41.910
+Then I've got a derived class,
+that's derived publicly from base.
+
+00:09:42.480 --> 00:09:47.099
+And it's got the same method
+void say hello, but it says
+
+00:09:47.219 --> 00:09:49.379
+hello I'm a derived class object.
+
+00:09:50.650 --> 00:09:51.430
+That's it.
+
+00:09:51.570 --> 00:09:53.490
+Then I've got this function
+right here that I've written.
+
+00:09:53.500 --> 00:09:56.640
+This is not a member function, this
+is just a regular c++ function.
+
+00:09:56.640 --> 00:10:02.250
+It's called greetings, and it
+expects a base object by reference.
+
+00:10:02.429 --> 00:10:04.680
+Now remember, a derived is a base.
+
+00:10:04.700 --> 00:10:07.570
+So I can pass in either a
+derived object or a base
+
+00:10:07.570 --> 00:10:08.690
+object to this function.
+
+00:10:09.230 --> 00:10:11.970
+And this function is simply
+going to say greetings, and then
+
+00:10:11.970 --> 00:10:15.189
+it's going to call the specific
+objects say hello method.
+
+00:10:16.020 --> 00:10:17.220
+So what do we expect here?
+
+00:10:17.480 --> 00:10:20.350
+Well, the idea would be that if I
+have a derived object and i pass
+
+00:10:20.350 --> 00:10:23.790
+it into this function right here,
+I'd say greetings and then hello
+
+00:10:23.790 --> 00:10:26.650
+I'm a derived class object, but
+that's not what happens because
+
+00:10:26.830 --> 00:10:28.050
+we're doing static binding.
+
+00:10:28.350 --> 00:10:29.849
+So let's walk through this example.
+
+00:10:29.859 --> 00:10:32.750
+It's really important that you
+understand the static binding
+
+00:10:32.750 --> 00:10:36.020
+version before we start talking
+about the dynamic binding version.
+
+00:10:37.160 --> 00:10:37.810
+Here's my main.
+
+00:10:38.050 --> 00:10:41.220
+Let's create a base object,
+we'll call it b, and we'll
+
+00:10:41.220 --> 00:10:42.870
+simply call b.say hello.
+
+00:10:44.799 --> 00:10:45.889
+What do we expect here?
+
+00:10:45.969 --> 00:10:47.619
+Exactly what you would think, right.
+
+00:10:47.900 --> 00:10:51.340
+Let me just scroll up just a
+little bit, and I'm the compiler.
+
+00:10:52.010 --> 00:10:53.220
+I'm looking in here.
+
+00:10:54.270 --> 00:10:57.650
+There is no virtual -- we haven't
+really talked about virtual yet, but
+
+00:10:57.650 --> 00:11:02.239
+you'll see the word virtual in here
+when we buy into dynamic polymorphism.
+
+00:11:02.480 --> 00:11:04.429
+So the compiler sees
+this class hierarchy.
+
+00:11:04.609 --> 00:11:07.420
+It doesn't see anything virtual
+so there's not going to be
+
+00:11:07.480 --> 00:11:09.730
+any dynamic polymorphism here.
+
+00:11:09.730 --> 00:11:11.900
+It knows that it needs to
+bind everything statically.
+
+00:11:11.900 --> 00:11:14.380
+And also, we're not coming
+at this with a base pointer.
+
+00:11:14.380 --> 00:11:17.170
+We have to have a base pointer, and
+we'll talk a little bit about base
+
+00:11:17.170 --> 00:11:19.030
+pointer more in the next video.
+
+00:11:19.030 --> 00:11:21.270
+So this is really simple
+for the compiler, right.
+
+00:11:21.670 --> 00:11:23.390
+B.say hello okay.
+
+00:11:23.390 --> 00:11:25.880
+Which say hello method do I bind?
+
+00:11:25.900 --> 00:11:26.740
+This guy, right here.
+
+00:11:27.120 --> 00:11:27.770
+How does it know?
+
+00:11:27.770 --> 00:11:29.590
+Well, b is a base.
+
+00:11:30.080 --> 00:11:32.399
+That's all the compiler
+knows is this right here.
+
+00:11:32.679 --> 00:11:33.690
+So that's what it's using.
+
+00:11:33.950 --> 00:11:36.530
+And that's just going to say
+hello I'm a base class object.
+
+00:11:37.000 --> 00:11:40.159
+And let's do the same thing before we
+run it, we'll do it again, and we'll
+
+00:11:40.160 --> 00:11:42.420
+do it this time for a derived object.
+
+00:11:42.790 --> 00:11:45.869
+So let's do that, we'll say derived d.
+
+00:11:47.110 --> 00:11:52.310
+And we'll say d.say hello
+again, same exact thing happens.
+
+00:11:52.540 --> 00:11:56.880
+The compiler knows that d
+is a type of derived, right.
+
+00:11:56.880 --> 00:11:58.070
+Its type is derived.
+
+00:11:58.379 --> 00:12:01.790
+So in this case, it's going to
+bind this method right here.
+
+00:12:02.820 --> 00:12:04.480
+Again, there's no pointers.
+
+00:12:04.520 --> 00:12:08.450
+When there's no pointers and no
+virtual methods, everything is static.
+
+00:12:08.740 --> 00:12:12.880
+So if we run this, what we expect
+is we expect this say hello to
+
+00:12:12.880 --> 00:12:16.835
+say hi I'm a base class object and
+this say hello here on line 29 to
+
+00:12:16.840 --> 00:12:18.530
+say hi I'm a derived class object.
+
+00:12:18.750 --> 00:12:19.580
+So let's run that.
+
+00:12:20.670 --> 00:12:24.080
+And there's the output, hello
+I'm a base class object and
+
+00:12:24.080 --> 00:12:27.010
+hello I'm a derived class
+object, exactly as we expect.
+
+00:12:28.280 --> 00:12:31.930
+Okay, so now let's run into some
+of the the issues that we'll run
+
+00:12:31.930 --> 00:12:36.020
+into when we start using base
+class pointers and references.
+
+00:12:36.240 --> 00:12:38.089
+Why don't we do this
+function first right here.
+
+00:12:38.949 --> 00:12:40.919
+So suppose that I want
+to call that function.
+
+00:12:40.919 --> 00:12:42.899
+Remember, this is a
+regular c++ function.
+
+00:12:43.129 --> 00:12:46.659
+I'm going to call greetings, and
+I'll pass in the base class to it.
+
+00:12:47.229 --> 00:12:49.439
+I can do that because b is a base.
+
+00:12:49.999 --> 00:12:51.499
+And then I'm going to call it again.
+
+00:12:51.899 --> 00:12:53.049
+And I'm going to pass in d.
+
+00:12:53.049 --> 00:12:57.210
+I can do that because a
+derived is a base, right.
+
+00:12:57.210 --> 00:12:59.280
+That's what my inheritance
+hierarchy is doing for me.
+
+00:12:59.680 --> 00:13:04.710
+So what I expect here would be for
+the b to say greetings hello I'm
+
+00:13:04.710 --> 00:13:08.080
+a bass and the d to say greetings
+hello I'm a derived, but that's
+
+00:13:08.080 --> 00:13:10.689
+not what happens because we've
+got static binding going on.
+
+00:13:10.879 --> 00:13:13.599
+So let's run this, and
+you'll see the problem.
+
+00:13:15.280 --> 00:13:17.459
+There you go, you can see
+that right there those two
+
+00:13:17.460 --> 00:13:18.430
+greetings is right here.
+
+00:13:18.450 --> 00:13:20.520
+There's the output
+greetings, hello I'm a bass.
+
+00:13:20.540 --> 00:13:23.270
+And then greetings, hello I'm
+a bass again even though I'm
+
+00:13:23.270 --> 00:13:24.760
+passing or derived into it.
+
+00:13:25.520 --> 00:13:28.530
+And we know now that the reason
+that this is happening is I'll
+
+00:13:28.539 --> 00:13:31.060
+scroll up just a little bit
+is right here is the problem.
+
+00:13:32.470 --> 00:13:34.770
+We're not using dynamic polymorphism.
+
+00:13:34.920 --> 00:13:37.910
+And as far as the compiler
+is concerned, obj is
+
+00:13:37.910 --> 00:13:39.110
+a reference to a base.
+
+00:13:39.110 --> 00:13:39.980
+That's all it knows.
+
+00:13:40.000 --> 00:13:41.040
+That's all it cares about.
+
+00:13:41.320 --> 00:13:48.340
+So right here that will always
+bind to base say hello, and that's
+
+00:13:48.340 --> 00:13:49.760
+why we're seeing that behavior.
+
+00:13:51.500 --> 00:13:55.120
+Okay, the same thing happens
+when we've got a base pointer.
+
+00:13:56.550 --> 00:13:57.889
+And let's do that really quickly.
+
+00:13:58.200 --> 00:14:01.160
+So suppose we have a pointer,
+and we'll just call it ptr.
+
+00:14:01.850 --> 00:14:05.820
+And in this case, ptr is a
+pointer to a base object,
+
+00:14:05.820 --> 00:14:07.150
+right, an object of that type.
+
+00:14:07.510 --> 00:14:09.240
+And we can say new derived.
+
+00:14:10.770 --> 00:14:13.490
+Now this sometimes confuses
+students, but this makes perfect
+
+00:14:13.490 --> 00:14:16.699
+sense, right, because think about
+it sometimes you think about the
+
+00:14:16.710 --> 00:14:17.980
+hierarchy, you get all confused.
+
+00:14:17.990 --> 00:14:19.600
+Think about what this really says.
+
+00:14:19.950 --> 00:14:26.339
+This really says that ptr can hold
+the address of any base object, right.
+
+00:14:26.740 --> 00:14:29.640
+Well derived is a base object.
+
+00:14:30.170 --> 00:14:32.710
+A derived is a base that's what
+the inheritance is telling me.
+
+00:14:32.710 --> 00:14:35.810
+So what happens here is here's ptr.
+
+00:14:37.090 --> 00:14:41.829
+Here is my derived object that
+I'm creating on the heap, right.
+
+00:14:41.869 --> 00:14:43.780
+And there's really nothing in
+there right now because there's
+
+00:14:43.780 --> 00:14:47.790
+no attributes or anything, but
+this guy is pointing here, and
+
+00:14:47.790 --> 00:14:50.900
+that's okay because this is a base.
+
+00:14:51.920 --> 00:14:53.609
+So that's valid.
+
+00:14:53.610 --> 00:14:55.080
+The compiler is happy about that.
+
+00:14:55.980 --> 00:15:01.930
+But the problem comes in now
+when I try to call ptr say hello.
+
+00:15:04.030 --> 00:15:07.760
+We've got no dynamic polymorphism,
+no polymorphic functions.
+
+00:15:07.900 --> 00:15:11.319
+So what's going to happen
+is the compiler sees ptr
+
+00:15:11.319 --> 00:15:13.009
+is a pointer to a base.
+
+00:15:13.070 --> 00:15:13.990
+It's all it knows.
+
+00:15:14.000 --> 00:15:18.889
+So it's going to bind this
+to base hello, always.
+
+00:15:22.410 --> 00:15:24.470
+So we'll always bind
+that to base say hello.
+
+00:15:25.200 --> 00:15:28.020
+And again, this is
+probably not what we want.
+
+00:15:28.070 --> 00:15:32.486
+We want dynamic polymorphism to
+figure out what I'm pointing to at
+
+00:15:32.486 --> 00:15:34.220
+runtime and call that appropriately.
+
+00:15:34.359 --> 00:15:36.420
+So let's run this one last time.
+
+00:15:37.280 --> 00:15:40.060
+And let's see if we
+get a run here, we do.
+
+00:15:40.590 --> 00:15:41.220
+So here we go.
+
+00:15:41.220 --> 00:15:42.520
+Let's walk through this one more time.
+
+00:15:42.520 --> 00:15:45.010
+Here's b.say hello, hello on the base.
+
+00:15:45.400 --> 00:15:47.610
+There's d.say hello,
+hello I'm a drive.
+
+00:15:47.620 --> 00:15:49.030
+That's all using static binding.
+
+00:15:49.030 --> 00:15:50.050
+That's perfectly fine.
+
+00:15:50.610 --> 00:15:53.810
+Now here I'm passing in a b and
+a d to this method greetings.
+
+00:15:54.299 --> 00:15:57.339
+In both cases, the compiler
+doesn't know anything except that
+
+00:15:57.340 --> 00:16:00.630
+that's a base, so it's binding
+it to the say hello right here
+
+00:16:01.170 --> 00:16:03.270
+on line 21 of the base class.
+
+00:16:03.940 --> 00:16:07.689
+And then here's my pointer, and I'm
+calling say hello through the pointer.
+
+00:16:07.740 --> 00:16:10.360
+Again, even though I'm
+pointing to a derived object
+
+00:16:10.379 --> 00:16:11.530
+the compiler doesn't care.
+
+00:16:12.129 --> 00:16:14.940
+This is not being deferred to
+runtime so the compiler is binding
+
+00:16:14.940 --> 00:16:17.079
+it right now at compile time.
+
+00:16:18.000 --> 00:16:21.800
+Okay, this also -- you don't have
+to use raw pointers for this.
+
+00:16:21.800 --> 00:16:24.170
+We haven't talked about smart
+pointers yet but we will.
+
+00:16:24.580 --> 00:16:29.569
+And suppose I include memory that's
+where the smart pointers live.
+
+00:16:30.520 --> 00:16:33.400
+And I could scroll down here, and
+I could say something -- like let
+
+00:16:33.400 --> 00:16:37.570
+me just close this up a little, I
+could say something like a std unique
+
+00:16:37.570 --> 00:16:46.639
+pointer, and we can have a unique
+pointer to a base, and we can call
+
+00:16:46.639 --> 00:16:53.900
+this ptr1, and then we could call make
+unique, which creates that pointer and
+
+00:16:53.900 --> 00:16:55.939
+the pointer is a derived this time.
+
+00:16:57.550 --> 00:16:59.600
+And we'll just empty
+constructor right here.
+
+00:16:59.679 --> 00:17:03.370
+So that'll create a smart pointer this
+-- we'll talk about smart pointers later.
+
+00:17:03.710 --> 00:17:07.210
+And then we could just say
+ptr1, and we can call the say
+
+00:17:07.210 --> 00:17:08.720
+hello method there, right.
+
+00:17:08.720 --> 00:17:11.080
+Now obviously we've
+got a pointer here so.
+
+00:17:11.080 --> 00:17:14.650
+We really should free or delete
+that pointer just so we are
+
+00:17:14.929 --> 00:17:16.920
+consistent with best practices here.
+
+00:17:17.290 --> 00:17:19.149
+We don't have to delete
+smart pointers, they
+
+00:17:19.210 --> 00:17:20.340
+take care of themselves.
+
+00:17:20.569 --> 00:17:25.290
+So if we run this, you can see that
+even with a smart pointer, there's
+
+00:17:25.290 --> 00:17:29.090
+a regular pointer, there's a smart
+pointer, they're both being statically
+
+00:17:29.120 --> 00:17:30.460
+bound, just like you would expect.
+
+00:17:31.430 --> 00:17:33.670
+All right, so in the next video,
+we'll talk about this base
+
+00:17:33.670 --> 00:17:35.990
+class pointer and see a little
+bit more about how that works.

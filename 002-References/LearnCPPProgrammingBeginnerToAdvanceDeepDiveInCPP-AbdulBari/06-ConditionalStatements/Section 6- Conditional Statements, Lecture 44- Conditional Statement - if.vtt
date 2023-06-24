@@ -1,0 +1,341 @@
+WEBVTT
+
+0
+00:00.650 --> 00:00.840
+Yeah.
+
+1
+00:00.840 --> 00:05.000
+This is the start of a new section in the section you'll be learning about conditional statements.
+
+2
+00:05.010 --> 00:06.860
+We learn what our conditional statement.
+
+3
+00:06.990 --> 00:10.490
+What are the ways of writing them and will use them in various programs.
+
+4
+00:10.500 --> 00:13.430
+So we'll will see a lot of examples up on conditional statements.
+
+5
+00:14.430 --> 00:16.590
+So let us start with the conditional statement.
+
+6
+00:16.590 --> 00:18.660
+What is a conditional statement.
+
+7
+00:18.670 --> 00:23.550
+see in daily life we come across conditional processing at various places.
+
+8
+00:23.550 --> 00:29.710
+For example if you're logging on any website then you have to give your user I.D. and password.
+
+9
+00:29.910 --> 00:32.890
+If it is a valid then you are allowed to enter in.
+
+10
+00:33.090 --> 00:34.380
+Otherwise you have not allowed.
+
+11
+00:34.770 --> 00:42.720
+So if-else second one for example if suppose there is a sale going on in any shop then if you make a bill
+
+12
+00:42.780 --> 00:46.480
+of some amount let us say thousand bucks then you will get a discount.
+
+13
+00:46.510 --> 00:48.040
+Otherwise no discount.
+
+14
+00:48.060 --> 00:50.750
+So if Bill is more 1000 then you'll get a discount.
+
+15
+00:50.770 --> 00:51.830
+Otherwise no discount.
+
+16
+00:52.260 --> 00:55.350
+So normal Billing will be done.
+
+17
+00:55.830 --> 01:02.190
+If you got marks that are passing marks that is greater than this much then you are pass.
+
+18
+01:02.190 --> 01:08.010
+Otherwise you are fail so like this there are many places where we use is and else conditional statement.
+
+19
+01:08.160 --> 01:11.380
+So the same thing in computation views condition statement.
+
+20
+01:11.970 --> 01:16.950
+So let us see how to write a conditional statement in C++ and how they work.
+
+21
+01:17.080 --> 01:23.840
+See this is a skeleton of C++ conditional statement if and this is the condition.
+
+22
+01:23.890 --> 01:26.000
+And this is block of if flower bracket.
+
+23
+01:26.040 --> 01:29.490
+Else block of else, if this condition given here.
+
+24
+01:29.490 --> 01:38.350
+If it is true then this block will be executed, if it is a false then this block will be executed.
+
+25
+01:38.430 --> 01:44.960
+So depending on the result of the condition if block is executed or else block is executed.
+
+26
+01:45.000 --> 01:48.720
+how to write condition we will see afterwards now the same thing.
+
+27
+01:48.720 --> 01:56.100
+The flow off of this one is shown here using a piece of flowchart right so flowchart is here like starting
+
+28
+01:56.100 --> 01:57.170
+and ending point leave it.
+
+29
+01:57.300 --> 01:59.040
+Only the part that is dealing with.
+
+30
+01:59.280 --> 02:01.640
+If a conditional statement has shown here.
+
+31
+02:02.040 --> 02:08.040
+This is used for checking the condition if the condition is true then this block of statements will
+
+32
+02:08.040 --> 02:08.770
+be executed.
+
+33
+02:08.790 --> 02:14.760
+Then it will continue further if the condition is false then it will branch into this direction and
+
+34
+02:14.760 --> 02:17.720
+it will execute this block and then continue further.
+
+35
+02:17.940 --> 02:19.920
+So the rest of the processing is common.
+
+36
+02:19.920 --> 02:27.630
+This is a conditional if true this one else false that one, so this showing the flow off control in case
+
+37
+02:27.630 --> 02:36.640
+of if and else. so this is the syntax of conditional statement and here writing if and then else, else is optional.
+
+38
+02:36.690 --> 02:37.340
+...
+
+39
+02:37.470 --> 02:40.210
+If you want to write else write it or other wise you can write if
+
+40
+02:40.260 --> 02:42.650
+If also. else nothing
+
+41
+02:42.930 --> 02:44.560
+So this is optional.
+
+42
+02:44.630 --> 02:44.930
+Now
+
+43
+02:44.930 --> 02:47.920
+Next thing we will learn what is this true and false.
+
+44
+02:47.920 --> 02:50.220
+Then after that I'll show you condition.
+
+45
+02:50.220 --> 02:51.360
+True and False.
+
+46
+02:51.360 --> 03:01.070
+see In C++ programming false means zero false means zero and true any other value is true.
+
+47
+03:01.110 --> 03:09.080
+So usually we say that one means true actually not just one any other number any other number numeric
+
+48
+03:09.090 --> 03:12.590
+right, integer type not floating point integer type.
+
+49
+03:12.720 --> 03:18.090
+Any other value is treated as true only it will check it for the zero and false otherwise true.
+
+50
+03:18.120 --> 03:22.590
+So it means instead of one if I write ten then also it is true minus 10.
+
+51
+03:22.590 --> 03:24.280
+Then also true minus 2.
+
+52
+03:24.300 --> 03:27.760
+Then also true what is the no. you take it is true.
+
+53
+03:27.750 --> 03:36.830
+So even you can write true and false like this are also you can use 0 and 1 in C++.
+
+54
+03:37.030 --> 03:43.440
+Now next thing we will learn how to write on this condition ambitions are written using a relational
+
+55
+03:43.510 --> 03:47.100
+operate does relational operators.
+
+56
+03:47.130 --> 03:48.880
+So what are relational operators.
+
+57
+03:48.990 --> 03:54.570
+Less than less than equal to greater than greater than equal to equal to.
+
+58
+03:54.670 --> 04:02.730
+So for equal to we have this symbol double assignments symbol and not exclamation equal to not
+
+59
+04:02.730 --> 04:03.710
+equal to.
+
+60
+04:03.750 --> 04:06.040
+These are relational operators.
+
+61
+04:06.090 --> 04:14.280
+We write conditional statements using relational operators and also logical operators so logical operators.
+
+62
+04:14.280 --> 04:15.770
+I would not show them now.
+
+63
+04:15.810 --> 04:20.440
+I will cover them in another video. now what this relational operator are?
+
+64
+04:20.600 --> 04:25.210
+These are used for comparing the values on either side.
+
+65
+04:25.250 --> 04:35.840
+See for example if I write a less than B suppose the value of a is 10 and the value of  b is 15 then
+
+66
+04:35.840 --> 04:37.450
+what will be the result of this.
+
+67
+04:37.490 --> 04:41.660
+A less than B yes a is less than b so it is true.
+
+68
+04:41.930 --> 04:46.190
+So this gives the result true or false.
+
+69
+04:46.190 --> 04:53.180
+So it gives actually true or false means 1 or  0 it will not give any other number but it gives one or
+
+70
+04:53.180 --> 04:56.870
+zero. all these operators gives the result
+
+71
+04:57.290 --> 05:00.920
+Either true or false, right see,
+
+72
+05:00.950 --> 05:12.030
+Suppose I have a as 15 and b as 15 if I write it as a is equals to B then what is the result.
+
+73
+05:12.230 --> 05:13.670
+The result is true.
+
+74
+05:13.810 --> 05:18.130
+And if I say a is not equal to B then what is the result.
+
+75
+05:18.230 --> 05:21.720
+Actually they are equal so the result is false means.
+
+76
+05:21.830 --> 05:24.670
+This is one and this is zero.
+
+77
+05:24.680 --> 05:32.150
+If I say it a is less than or equal to B if it is not less but it is equal so the result is true.
+
+78
+05:32.690 --> 05:35.310
+So this is how it gives the result.
+
+79
+05:35.600 --> 05:40.550
+So remember the important point the relational operators give their result either in true or false that
+
+80
+05:40.550 --> 05:44.770
+is 1 or 0 , 0 or 1.
+
+81
+05:44.810 --> 05:49.580
+More about this how to use them we will write down the example programs and we will learn more about this
+
+82
+05:49.580 --> 05:50.100
+one.
+
+83
+05:50.150 --> 05:54.050
+So this video was just the introduction to conditional statements.
+
+84
+05:54.140 --> 05:59.200
+So the next video we will write on the program using this conditional statement and relational operators.

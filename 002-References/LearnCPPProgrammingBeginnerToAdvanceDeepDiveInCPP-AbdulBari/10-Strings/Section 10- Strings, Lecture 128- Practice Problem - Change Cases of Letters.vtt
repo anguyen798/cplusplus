@@ -1,0 +1,475 @@
+WEBVTT
+
+00:00.620 --> 00:05.960
+Our next challenge is to convert a uppercase string into lowercase.
+
+00:05.960 --> 00:12.770
+So uppercase to lowercase here already I have a string and string is welcome all in uppercase.
+
+00:13.340 --> 00:16.430
+We have to convert this string into lowercase.
+
+00:16.430 --> 00:17.840
+So what is the procedure?
+
+00:17.840 --> 00:18.920
+How we can do this?
+
+00:18.920 --> 00:19.400
+Fun.
+
+00:19.640 --> 00:25.190
+So for this, we should be able to scan through this string character by character.
+
+00:25.200 --> 00:29.680
+We should be able to go through each and every character so that we can do it using for loop.
+
+00:29.690 --> 00:33.890
+Already we have seen it in the previous challenge or in some of the videos.
+
+00:35.560 --> 00:39.130
+Now how to convert a letter from uppercase to lowercase.
+
+00:39.130 --> 00:50.380
+So for this, if you know the ASCII code of capital, a uppercase is 65 and lowercase A is 97.
+
+00:51.530 --> 00:55.810
+And if you take the difference, it is -32.
+
+00:55.820 --> 01:03.710
+If I subtract all the difference is 32 means if a letter is in uppercase by adding 32, we can convert
+
+01:03.710 --> 01:09.320
+it into lowercase and if it is a lowercase, we can change it to uppercase.
+
+01:09.320 --> 01:12.410
+So the characters are stored as a numeric value.
+
+01:12.440 --> 01:16.520
+We can add a 32 or subtract 32 from the characters.
+
+01:17.150 --> 01:23.510
+So all these letters can be converted into lowercase by adding 32 to each of these characters.
+
+01:23.720 --> 01:26.480
+For that, we have to scan for all these characters.
+
+01:26.480 --> 01:30.170
+So by using a four loop, which we have already seen.
+
+01:31.610 --> 01:33.770
+We can scan through this string.
+
+01:33.800 --> 01:34.370
+Right.
+
+01:34.700 --> 01:36.620
+Start off, I.
+
+01:37.510 --> 01:39.400
+We can stop at null character.
+
+01:39.400 --> 01:42.250
+So I will not write this one so you can do it.
+
+01:42.820 --> 01:46.810
+And for every style of I, we should modify it.
+
+01:47.840 --> 01:49.730
+By adding 32.
+
+01:50.180 --> 01:55.950
+If everything is in uppercase, it should be converted into lowercase by adding 32.
+
+01:55.970 --> 01:57.950
+So this is how it can be converted.
+
+01:58.430 --> 01:59.420
+Now, one more thing.
+
+02:00.280 --> 02:07.090
+Whether all these letters are in uppercase only, we are sure that these are all in uppercase.
+
+02:07.120 --> 02:11.110
+If we are not sure, then it should check whether it is an uppercase or not.
+
+02:11.590 --> 02:19.810
+So the range of uppercase is 65 to 90, starts from 65 and ends at 19.
+
+02:19.810 --> 02:26.750
+So you should make sure that if a letter is having its ASCII code in between these two range values,
+
+02:26.750 --> 02:32.380
+the range of values, then only it is uppercase, then you can convert it into lowercase.
+
+02:32.740 --> 02:38.980
+But here, as an example, we will take everything in the case and simply we will convert it.
+
+02:39.370 --> 02:44.050
+If you are taking different cases, then you should make sure that you check the range.
+
+02:44.050 --> 02:44.940
+So that's it.
+
+02:44.950 --> 02:49.450
+This is a simple procedure, so you can pause the video and write the complete program.
+
+02:49.450 --> 02:53.590
+If you've got any mistakes and if you want help, you can continue playing this video.
+
+02:53.680 --> 02:56.080
+You will find the solution followed by this one.
+
+02:56.740 --> 02:58.480
+So pause the video and try it.
+
+02:59.080 --> 03:00.640
+So here is the solution.
+
+03:00.640 --> 03:06.100
+Already I have written a piece of code here, so a string is already declared here.
+
+03:06.100 --> 03:12.760
+Now let us scan through this by using a for loop and modify all the characters.
+
+03:12.760 --> 03:23.470
+So while Star of IE is not equal to null character, that is slash zero and I press plus and every time
+
+03:23.470 --> 03:25.810
+I have to say star of I.
+
+03:26.790 --> 03:29.790
+In that whatever the store of I is.
+
+03:30.420 --> 03:33.900
+AD 32 So the letters will be changed.
+
+03:34.660 --> 03:35.230
+So that's it.
+
+03:35.230 --> 03:39.790
+So if you remember the previous program there, we were counting, but now we are modifying a string
+
+03:40.390 --> 03:41.590
+outside the for loop.
+
+03:41.620 --> 03:43.270
+I will print this one.
+
+03:43.270 --> 03:46.960
+See out SDR as well as NL.
+
+03:47.560 --> 03:48.670
+Let us run this.
+
+03:50.380 --> 03:52.750
+Yes it is converted into lowercase.
+
+03:52.750 --> 03:55.210
+So this is things converted into lowercase.
+
+03:56.440 --> 03:58.570
+So I have done it using followup.
+
+03:58.960 --> 03:59.860
+Now one more thing.
+
+03:59.860 --> 04:04.150
+I'll change one of the letter to lowercase c.
+
+04:04.150 --> 04:04.900
+Welcome.
+
+04:04.900 --> 04:08.440
+So I will make it in small and lowercase m.
+
+04:08.560 --> 04:10.330
+Now here I'm not checking anything.
+
+04:10.330 --> 04:16.120
+I'm simply converting into lowercase by adding 32, so it will simply add a 32.
+
+04:16.120 --> 04:17.680
+So this is what it will become.
+
+04:17.680 --> 04:18.370
+I don't know.
+
+04:18.400 --> 04:22.330
+I'll run and show you and will become something else.
+
+04:24.130 --> 04:24.910
+Yes.
+
+04:26.980 --> 04:32.740
+Some junkie character already was in lowercase, so 32 is added to it.
+
+04:32.740 --> 04:35.260
+So it has gone beyond the range of characters.
+
+04:35.260 --> 04:38.740
+So it's showing some Jun character so well.
+
+04:38.900 --> 04:39.270
+Well.
+
+04:39.280 --> 04:42.280
+Go is shown and then a character then is shown.
+
+04:42.730 --> 04:46.430
+So you have to make sure that whether everything is in capital letters or not.
+
+04:46.450 --> 04:49.090
+So for that, I can add one condition here.
+
+04:49.480 --> 04:55.810
+If Star of I is greater than or equal to 65.
+
+04:56.650 --> 05:02.260
+And still I should be less than or equal to 90.
+
+05:02.560 --> 05:04.510
+Then only modify this.
+
+05:04.510 --> 05:06.220
+Otherwise don't modify.
+
+05:06.250 --> 05:09.400
+So I will use braces brackets.
+
+05:11.330 --> 05:12.920
+I will use brackets.
+
+05:14.540 --> 05:14.790
+Jim.
+
+05:15.020 --> 05:16.510
+Now this is inside.
+
+05:16.520 --> 05:20.120
+So this will be perform only if letter is in uppercase.
+
+05:20.840 --> 05:22.370
+So I will get a perfect string.
+
+05:22.370 --> 05:23.230
+So welcome.
+
+05:23.240 --> 05:23.760
+Yes.
+
+05:23.780 --> 05:28.400
+Already something was in lowercase, so I'm checking the condition and modifying it.
+
+05:29.540 --> 05:30.230
+So that's it.
+
+05:30.240 --> 05:31.790
+So try this on your machine.
+
+05:31.790 --> 05:33.320
+Write the program and check it.
+
+05:34.040 --> 05:39.350
+Now, our next challenge is similar to the previous one, but here everything we have to convert it
+
+05:39.350 --> 05:40.840
+into uppercase.
+
+05:40.850 --> 05:41.650
+Here, the string.
+
+05:41.660 --> 05:45.620
+What I have taken is having mixed cases as well as numeric values.
+
+05:45.620 --> 05:46.370
+Also there.
+
+05:46.460 --> 05:51.110
+C is in lowercase and C is also lowercase and M is lowercase.
+
+05:51.500 --> 05:51.860
+Right.
+
+05:51.860 --> 05:52.940
+And there is a number.
+
+05:53.570 --> 05:57.590
+So I have to check whether a letter is already in uppercase.
+
+05:57.590 --> 05:58.970
+So don't change it.
+
+05:59.210 --> 06:02.420
+If it is in lowercase, then change it to uppercase.
+
+06:02.540 --> 06:04.880
+And if it is a number, then don't do anything.
+
+06:04.880 --> 06:11.420
+Let it be a number only, so don't modify it so we know how to change the case by adding or subtracting.
+
+06:11.420 --> 06:11.900
+32.
+
+06:11.900 --> 06:12.470
+Right.
+
+06:12.470 --> 06:15.110
+So here is already in capital letter.
+
+06:15.110 --> 06:15.940
+That is uppercase.
+
+06:15.950 --> 06:16.550
+Leave it.
+
+06:16.760 --> 06:18.260
+This is a lowercase.
+
+06:18.260 --> 06:22.910
+So from this if you subtract 32, then it will become uppercase.
+
+06:22.910 --> 06:24.100
+So this is the case.
+
+06:24.110 --> 06:25.160
+Leave it lowercase.
+
+06:25.160 --> 06:25.880
+Change it.
+
+06:26.150 --> 06:27.350
+So don't change.
+
+06:27.350 --> 06:27.920
+Change.
+
+06:27.920 --> 06:28.790
+Don't change.
+
+06:28.970 --> 06:29.840
+Now here.
+
+06:29.870 --> 06:31.130
+This is out of the range.
+
+06:31.130 --> 06:32.900
+It's neither lowercase nor uppercase.
+
+06:32.900 --> 06:33.950
+So don't touch it.
+
+06:33.980 --> 06:34.910
+Don't change it.
+
+06:35.570 --> 06:42.200
+So this is how you have to check whether it is lowercase or uppercase as well as if it is a number.
+
+06:42.200 --> 06:43.220
+We don't have to do anything.
+
+06:43.220 --> 06:43.400
+So.
+
+06:44.090 --> 06:45.860
+So you have to change lowercase.
+
+06:45.860 --> 06:48.710
+So check for lowercase and change it.
+
+06:48.740 --> 06:50.960
+If it is uppercase, you don't have to touch it.
+
+06:50.960 --> 06:55.790
+And if it is any other alphabet, any other symbol, then also you don't have to change it.
+
+06:56.150 --> 06:57.680
+So it's a very simple code.
+
+06:57.950 --> 07:03.890
+You have to scan through a string and if any lowercase is found, just change it so you can try this
+
+07:03.890 --> 07:05.150
+program by yourself.
+
+07:05.810 --> 07:07.460
+So post the video and do it.
+
+07:08.590 --> 07:10.930
+So after the video, I'll give a solution.
+
+07:11.750 --> 07:12.050
+Yeah.
+
+07:12.050 --> 07:13.390
+Let us write the program now.
+
+07:13.400 --> 07:15.680
+See, I have a string already taken here.
+
+07:15.680 --> 07:17.390
+This is having mixed cases.
+
+07:17.390 --> 07:21.440
+So as I told you all, we have to just modify this lowercase.
+
+07:21.560 --> 07:23.480
+We don't have to touch any other thing.
+
+07:23.480 --> 07:26.810
+So it is a simple program, just like a previous example.
+
+07:26.810 --> 07:37.100
+So we will scan, throw this array for integer assign I assign zero and str of I as not equal to null
+
+07:37.100 --> 07:37.970
+character.
+
+07:38.970 --> 07:41.130
+That A-plus plus.
+
+07:42.300 --> 07:44.490
+Now inside this, we have to check a condition.
+
+07:44.490 --> 07:46.410
+If it is a lowercase, then change it.
+
+07:46.560 --> 07:48.420
+So if it is a lower case.
+
+07:48.870 --> 07:51.300
+So the steer of I.
+
+07:52.650 --> 07:59.010
+If it is greater than or equal to 97 and store of I.
+
+08:00.500 --> 08:02.120
+Less than or equal to.
+
+08:02.150 --> 08:05.660
+So what is the last value in the range?
+
+08:05.690 --> 08:06.920
+It is 122.
+
+08:08.940 --> 08:10.960
+Now stratify.
+
+08:11.340 --> 08:16.380
+We should subtract 32 so we can also do it like this minus assign.
+
+08:17.320 --> 08:22.210
+32, so 32 will be subtracted and stored in str or off itself.
+
+08:22.780 --> 08:27.760
+Now after this saves out str and nl.
+
+08:30.730 --> 08:37.600
+Yes, everything is converted into uppercase and number seven remains as it is.
+
+08:37.600 --> 08:43.100
+So we are only changing lowercase alphabets to uppercase, that's all.
+
+08:43.120 --> 08:47.170
+So it's a simple solution so you can try this program.

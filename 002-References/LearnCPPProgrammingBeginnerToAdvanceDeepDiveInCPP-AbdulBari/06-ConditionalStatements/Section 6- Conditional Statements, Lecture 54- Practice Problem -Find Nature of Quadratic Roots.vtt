@@ -1,0 +1,405 @@
+WEBVTT
+
+0
+00:00.850 --> 00:05.950
+So we have learned about nested if statements so we will use that in the program.
+
+1
+00:05.950 --> 00:08.330
+So one example program is here.
+
+2
+00:08.560 --> 00:16.030
+This is to check the nature of the roots of quadratic equation first i will explain what does it mean
+
+3
+00:16.180 --> 00:25.660
+and then I'll show you a program using nested if, see here I have got a quadratic equation, a equation whose
+
+4
+00:25.700 --> 00:31.360
+degree is two is called as quadratic X squared plus X plus nothing.
+
+5
+00:31.370 --> 00:36.750
+That is 1 So a X square plus b x plus c is equal to zero.
+
+6
+00:36.860 --> 00:39.800
+If it is zero equal to zero then you can find the roots.
+
+7
+00:40.070 --> 00:43.820
+So then only it is called as equation that is quadratic equation.
+
+8
+00:43.820 --> 00:48.990
+We already learned in the previous videos but again i am repeating it. then roots,
+
+9
+00:49.000 --> 00:50.440
+What is the formula.
+
+10
+00:50.480 --> 00:52.340
+every student knows this one.
+
+11
+00:52.340 --> 00:58.620
+The formula is minus B plus or minus square root of  minus b square  minus 4 a c by 2 a is the formula.
+
+12
+00:58.910 --> 01:05.440
+Now if you know the values of ABC you can substitute them here and you can get the root, and for getting
+
+13
+01:05.450 --> 01:06.400
+the root.
+
+14
+01:06.470 --> 01:09.000
+Another time we take minus we get another root.
+
+15
+01:09.140 --> 01:12.530
+So actually we get two routes right because this is quadratic.
+
+16
+01:12.590 --> 01:15.200
+So two values of X are possible.
+
+17
+01:15.200 --> 01:25.490
+No let us come to the point see inside this root if B square minus four AC is becoming 0 or if this
+
+18
+01:25.490 --> 01:33.830
+whole thing is a zero then what happens minus B plus zero or minus B minus zero.
+
+19
+01:33.980 --> 01:41.460
+It's the same thing only, so zero has no value if b squared minus 4 a c as he has became zero zero has
+
+20
+01:41.460 --> 01:42.420
+no value.
+
+21
+01:42.420 --> 01:43.280
+Whether you take.
+
+22
+01:43.280 --> 01:48.910
+Plus or minus you get the same answer, what is  that minus b by the 2 you get the same answer
+
+23
+01:49.350 --> 01:50.310
+minus b by 2a.
+
+24
+01:50.340 --> 01:51.890
+So that value is zero.
+
+25
+01:51.900 --> 01:56.820
+So this means if you take both the roots, both the roots are same only because if you take plus zero
+
+26
+01:56.830 --> 02:00.190
+also you get the same answer minus zero also same answer.
+
+27
+02:00.300 --> 02:02.830
+So it looks like this minus B plus zero.
+
+28
+02:02.850 --> 02:08.550
+By 2 a or minus B minus zero by 2a. see zero has no value.
+
+29
+02:08.550 --> 02:14.350
+So both the roots are same only, so both the routes will be equal means this B squared minus four
+
+30
+02:14.370 --> 02:16.970
+AC for it is zero then would that also be equal.
+
+31
+02:17.160 --> 02:25.840
+that's it.  then, one more time if that B square minus 4ac is than zero, let's say
+
+32
+02:25.890 --> 02:29.010
+Example Let's say we got minus five.
+
+33
+02:29.070 --> 02:31.290
+Do you know the root of minus five.
+
+34
+02:31.290 --> 02:33.920
+No we cannot find the route of minus five.
+
+35
+02:33.930 --> 02:36.580
+So it means we cannot know the routes.
+
+36
+02:36.660 --> 02:40.310
+Then what do you call if you have a root to another minus one.
+
+37
+02:40.350 --> 02:42.760
+We send them what is imaginary imaginary.
+
+38
+02:42.780 --> 02:47.940
+We don't know the answer so we cannot find the roots so we learn two things.
+
+39
+02:47.970 --> 02:55.140
+If that portion is zero, roots are same only. if that portion is negative we cannot find routes if it is
+
+40
+02:55.140 --> 02:59.620
+positive then we have two routes and they are not saying they are different.
+
+41
+03:00.060 --> 03:02.230
+So that's what look at this now.
+
+42
+03:02.280 --> 03:04.410
+Look at this now discriminant.
+
+43
+03:04.530 --> 03:07.810
+So this b square minus 4ac means discriminant.
+
+44
+03:07.890 --> 03:15.180
+Let us say d,now that d is zero means roots are real and equal
+
+45
+03:15.540 --> 03:22.530
+That's what I said they are equal and if d is greater than zero means they are real but they
+
+46
+03:22.530 --> 03:25.310
+are not equal they will be different. third one,
+
+47
+03:25.590 --> 03:29.490
+If d is less than zero means they are not real they are imaginary.
+
+48
+03:30.300 --> 03:37.120
+So if you have any quadratic equations, there are three different natures of quadratic equation roots of quadratic
+
+49
+03:37.120 --> 03:39.460
+equation they may be real and equal.
+
+50
+03:39.550 --> 03:41.620
+they may be real and unequal.
+
+51
+03:41.740 --> 03:44.010
+They may be imaginary.
+
+52
+03:44.010 --> 03:48.000
+So if else then if else, like this we have a case here.
+
+53
+03:48.030 --> 03:53.120
+So we have to do nested if so let us write on the program directly.
+
+54
+03:53.220 --> 04:00.060
+So here inside the program I have variable for ABCD and the roots also ABC for the coefficient
+
+55
+04:00.060 --> 04:06.820
+of this quadratic equation on ABC, and these for discriminant and root 1 and 2 for finding 2 roots.
+
+56
+04:06.890 --> 04:13.180
+Now already I have taken the ABC 3 values then here first out discriminant.
+
+57
+04:13.320 --> 04:14.930
+So let us find our discriminant.
+
+58
+04:14.980 --> 04:24.210
+d is assigned with B square that is b*b minus 4aC that is 4*a*c we got the
+
+59
+04:24.220 --> 04:25.460
+discriminant
+
+60
+04:25.920 --> 04:26.620
+Next.
+
+61
+04:26.670 --> 04:29.600
+No I have to write if and else, first one.
+
+62
+04:29.760 --> 04:38.310
+If this  D is equal to zero, means roots are equal and real.
+
+63
+04:38.400 --> 04:41.540
+So I will give a message C out.
+
+64
+04:41.650 --> 04:45.210
+roots are real and equal.
+
+65
+04:45.300 --> 04:49.120
+roots are real and equal I will finish writing.
+
+66
+04:49.510 --> 04:52.020
+Then after this I want to display roots also.
+
+67
+04:52.020 --> 04:53.840
+That is minus B by 2a.
+
+68
+04:53.850 --> 04:57.230
+So here next line, see here
+
+69
+04:57.240 --> 04:58.410
+After this I should write endl
+
+70
+04:58.410 --> 05:01.130
+And then what there is no space overlaid here.
+
+71
+05:01.140 --> 05:05.210
+You can even write and then in the beginning of the display part also.
+
+72
+05:05.260 --> 05:11.670
+Show endl, what I should display when the roos are equal minus B by 2a so directly i will write
+
+73
+05:11.670 --> 05:20.500
+down here minus B divided by two in two A and this should be in the bracket and this entire thing also
+
+74
+05:20.510 --> 05:21.380
+if it is in brackets.
+
+75
+05:21.390 --> 05:22.790
+That's better.
+
+76
+05:22.920 --> 05:28.130
+So this entire result you get, roots are real and equal.
+
+77
+05:28.300 --> 05:33.950
+then you get the result.  it is single value because they are equal.
+
+78
+05:34.250 --> 05:36.890
+This is inside if d is equal to zero.
+
+79
+05:38.420 --> 05:42.710
+If d is not zero then what it could be, greater than zero, less than zero.
+
+80
+05:42.920 --> 05:47.310
+So let us write for, greater than zero. else,
+
+81
+05:47.690 --> 05:56.330
+So here itself I can write on if d the greater than zero, actually I can write flower bracket inside the
+
+82
+05:56.330 --> 06:02.510
+bracket also I can write because just after else I have if so I can make it here itself.
+
+83
+06:02.690 --> 06:10.340
+Then if d is greater than zero then I will cout the roots are real and unequal so I will write down this one
+
+84
+06:10.340 --> 06:13.520
+roots are real and unequal.
+
+85
+06:13.700 --> 06:20.210
+Then I will display both the roots so first is endl, I will display them in a new line.
+
+86
+06:20.210 --> 06:33.710
+Then first roots is minus B plus sqrt of d then this whole thing divided by 
+
+87
+06:33.940 --> 06:35.000
+2*a
+
+88
+06:35.180 --> 06:38.510
+This is one result then again, Cout
+
+89
+06:40.220 --> 06:46.040
+And endl, this whole thing as it is just right minus here.
+
+90
+06:46.670 --> 06:52.340
+so this is for positive and this for negative I don't have to write on this completely already.
+
+91
+06:52.340 --> 06:58.040
+We have done that in the previous video in the beginning videos so that same forum that you can write
+
+92
+06:58.040 --> 07:02.360
+on here like the at last at last.
+
+93
+07:02.590 --> 07:09.230
+else means if this is not equal, this is not the creator then else.
+
+94
+07:09.230 --> 07:16.900
+So here else I have only single statement so say cout, imaginary.
+
+95
+07:16.900 --> 07:19.220
+scribling  here because there is no space.
+
+96
+07:19.400 --> 07:22.530
+So you can understand this, it is imaginary.
+
+97
+07:23.210 --> 07:25.490
+So I guess you have understood how to write on this one.
+
+98
+07:25.520 --> 07:29.360
+So write a program by yourself and also there is a demo available.
+
+99
+07:29.360 --> 07:34.690
+This is for displaying the nature of the roots as well as you are displaying the roots.
+
+100
+07:35.480 --> 07:36.560
+So that's all in this video.

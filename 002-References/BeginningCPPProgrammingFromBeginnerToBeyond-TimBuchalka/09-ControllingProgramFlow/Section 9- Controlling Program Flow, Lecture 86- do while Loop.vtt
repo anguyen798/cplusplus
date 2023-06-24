@@ -1,0 +1,959 @@
+WEBVTT
+
+00:00:05.530 --> 00:00:09.230
+In this video, we'll look at the
+last looping construct in c++.
+
+00:00:09.389 --> 00:00:11.100
+It's hard to do while loop.
+
+00:00:11.710 --> 00:00:14.800
+The do while loop begins with
+the do keyword followed by block
+
+00:00:14.800 --> 00:00:17.940
+statement than the wild keyword
+followed by the loop control
+
+00:00:17.940 --> 00:00:19.279
+expression in parentheses.
+
+00:00:19.880 --> 00:00:22.910
+Notice that you need a semicolon at
+the end of the do while statement.
+
+00:00:23.490 --> 00:00:26.629
+In a do while loop, you execute
+the body of the loop while
+
+00:00:26.630 --> 00:00:29.369
+the conditional expression is
+true, pretty straightforward.
+
+00:00:29.960 --> 00:00:33.900
+Note that the condition is checked at
+the end of each iteration that makes
+
+00:00:33.900 --> 00:00:35.970
+the do while loop a post-test loop.
+
+00:00:36.600 --> 00:00:38.930
+It also means that you're
+guaranteed that the loop body
+
+00:00:38.930 --> 00:00:40.570
+will execute at least once.
+
+00:00:41.060 --> 00:00:43.210
+This comes in very
+handy in many cases.
+
+00:00:43.230 --> 00:00:45.970
+We don't have to force our
+way into the loop like we had
+
+00:00:45.970 --> 00:00:46.909
+to do with the while loop.
+
+00:00:47.860 --> 00:00:51.099
+Let's see an example of using the
+do while loop for input validation.
+
+00:00:53.600 --> 00:00:57.510
+In this example, we execute the body
+of the loop then test a condition.
+
+00:00:58.050 --> 00:01:01.130
+So we asked to use it for a
+number between 1 and 5, and
+
+00:01:01.130 --> 00:01:02.580
+assign it to the variable number.
+
+00:01:03.160 --> 00:01:05.569
+Then we test to see if
+number is out of range.
+
+00:01:05.849 --> 00:01:07.509
+If it is, then we loop again.
+
+00:01:07.880 --> 00:01:09.890
+If it is in range, then
+the loop terminates.
+
+00:01:10.119 --> 00:01:12.760
+You can see how much cleaner
+the logic is in this case.
+
+00:01:13.850 --> 00:01:16.540
+Also, let me talk for a minute
+about the variable number.
+
+00:01:17.060 --> 00:01:19.510
+Notice how we declared
+it outside the loop body.
+
+00:01:20.039 --> 00:01:23.049
+Since number is used in the while
+loops condition expression at
+
+00:01:23.099 --> 00:01:26.299
+the bottom, it cannot be declared
+within the body of the loop.
+
+00:01:26.429 --> 00:01:28.210
+If you do so, you'll
+get a compiler error.
+
+00:01:29.570 --> 00:01:32.770
+In this example, we're declaring
+selection as a character type.
+
+00:01:33.200 --> 00:01:35.640
+It's outside the loop because
+we're using it in the loop
+
+00:01:35.640 --> 00:01:36.710
+condition at the bottom.
+
+00:01:37.270 --> 00:01:38.270
+So let's look at the loop.
+
+00:01:38.740 --> 00:01:41.350
+I always start reading loops at
+their conditional expression.
+
+00:01:41.550 --> 00:01:44.589
+In this case, we know We're
+looping while the selection is
+
+00:01:44.610 --> 00:01:46.489
+a lowercase and uppercase y.
+
+00:01:47.199 --> 00:01:50.100
+If the selection is any other
+character, the loop terminates.
+
+00:01:50.910 --> 00:01:52.710
+Now let's see what's
+going on in the loop body.
+
+00:01:53.490 --> 00:01:57.170
+We see we have 2 doubles with an
+height declared and initialized to 0.
+
+00:01:57.860 --> 00:01:59.820
+And we asked to use her
+for these values and read
+
+00:01:59.820 --> 00:02:00.750
+them in from the keyboard.
+
+00:02:01.530 --> 00:02:04.149
+Then were calculating the product
+of the width and the height
+
+00:02:04.500 --> 00:02:07.440
+and initializing another double
+named area with that result.
+
+00:02:08.240 --> 00:02:11.060
+We display the area to the
+user, and then we asked if
+
+00:02:11.060 --> 00:02:12.230
+they want to calculate another.
+
+00:02:12.930 --> 00:02:15.340
+Note that we have executed
+that first generation of
+
+00:02:15.340 --> 00:02:16.660
+the loop unconditionally.
+
+00:02:16.990 --> 00:02:19.800
+That means we always execute
+this loop at least once.
+
+00:02:20.110 --> 00:02:23.220
+This makes sense in this case since I
+want to be able to calculate the area.
+
+00:02:24.199 --> 00:02:27.360
+Now we ask the user if they want to
+calculate another, and we read the
+
+00:02:27.360 --> 00:02:29.230
+response into the selection variable.
+
+00:02:29.960 --> 00:02:32.190
+Then we test this variable
+in the loop condition.
+
+00:02:32.320 --> 00:02:35.920
+If they entered a lowercase
+or an uppercase y, we perform
+
+00:02:35.920 --> 00:02:38.769
+another iteration of a loop
+and calculate another area.
+
+00:02:39.130 --> 00:02:42.720
+If they answer anything else, the
+loop terminates and we display thanks.
+
+00:02:43.740 --> 00:02:45.960
+The choice between a while
+loop in a do while loop is
+
+00:02:46.060 --> 00:02:47.310
+it always crystal clear.
+
+00:02:47.640 --> 00:02:50.979
+However, if you know that you must
+perform at least one iteration of the
+
+00:02:50.980 --> 00:02:54.980
+loop, then you should consider the do
+while loop as your first alternative.
+
+00:02:55.719 --> 00:02:58.579
+Let's head over to the IDE, and
+we'll see how we can use a do loop
+
+00:02:58.680 --> 00:03:00.339
+to do a real simple menu system.
+
+00:03:02.040 --> 00:03:05.070
+Okay, so I'm in the IDE, and
+let me share an example of the
+
+00:03:05.070 --> 00:03:06.670
+application we're going to build.
+
+00:03:07.730 --> 00:03:11.959
+I'll run it now, and you can see it's
+a simple menu-driven application.
+
+00:03:11.960 --> 00:03:14.199
+There's the menu, press 1, 2, 3 or Q.
+
+00:03:14.290 --> 00:03:15.610
+If you press 1., you do this.
+
+00:03:15.610 --> 00:03:16.930
+If you press 2, you do that.
+
+00:03:17.379 --> 00:03:19.000
+If you press 3, you do something else.
+
+00:03:19.530 --> 00:03:21.880
+Obviously these selections
+could do any kind of behavior
+
+00:03:21.880 --> 00:03:23.100
+depending on your application.
+
+00:03:23.320 --> 00:03:26.570
+So in this case, I enter
+selection, I press number 1.
+
+00:03:27.840 --> 00:03:30.200
+And it says you chose 1, doing this.
+
+00:03:30.469 --> 00:03:31.370
+If I press 2.
+
+00:03:32.610 --> 00:03:34.630
+It says you chose 2, doing that.
+
+00:03:34.680 --> 00:03:35.580
+I'll press 3.
+
+00:03:36.520 --> 00:03:38.070
+You chose 3, doing something else.
+
+00:03:38.790 --> 00:03:43.140
+Obviously, if I press a lowercase q or
+an uppercase q to quit, but anything
+
+00:03:43.140 --> 00:03:44.760
+else should give me an illegal entry.
+
+00:03:44.959 --> 00:03:49.718
+So let's say I pressed 4, it says
+your unknown option, try again.
+
+00:03:49.718 --> 00:03:52.228
+Let's say I I pressed Pete.
+
+00:03:52.228 --> 00:03:54.700
+Again, unknown option, try again.
+
+00:03:54.980 --> 00:03:59.620
+The only valid choices will be 1,
+2, 3 in lowercase or uppercase Q.
+
+00:03:59.920 --> 00:04:04.510
+So now if I type of Q, the program
+terminates and says goodbye.
+
+00:04:05.530 --> 00:04:07.020
+Okay, so that's what
+we're going to build.
+
+00:04:07.190 --> 00:04:10.089
+And in the section challenge at the
+end of the section, you're going
+
+00:04:10.090 --> 00:04:13.850
+to be using this kind of logic to
+build a more complex application.
+
+00:04:14.360 --> 00:04:15.570
+All right, so let's start.
+
+00:04:16.589 --> 00:04:17.430
+Where do we start?
+
+00:04:17.680 --> 00:04:21.270
+Well, we know we need to display
+a menu at least one time,
+
+00:04:21.279 --> 00:04:23.979
+right because the user has
+just like Q or x or whatever
+
+00:04:23.980 --> 00:04:25.850
+we choose is the exit criteria.
+
+00:04:26.280 --> 00:04:28.309
+So that's a good choice
+for a do while loop.
+
+00:04:28.719 --> 00:04:33.500
+So basically, we're doing the do
+part which is display the menu while
+
+00:04:33.580 --> 00:04:35.140
+they haven't quit, makes sense.
+
+00:04:35.150 --> 00:04:36.460
+So that's what we're going to build.
+
+00:04:36.650 --> 00:04:39.749
+Obviously, we need a
+character variable, and
+
+00:04:39.750 --> 00:04:40.880
+I'll just call it selection.
+
+00:04:41.849 --> 00:04:45.659
+And whatever the user types in will be
+stored into that character variable.
+
+00:04:46.830 --> 00:04:48.740
+Now let's do the do logic here.
+
+00:04:49.080 --> 00:04:50.250
+We've got a do loop.
+
+00:04:51.890 --> 00:04:57.069
+And we want to do the body of the
+loop while a condition is true.
+
+00:04:57.620 --> 00:04:58.920
+Now what is that condition?
+
+00:04:58.920 --> 00:05:01.380
+Well, we want to loop as
+long as they haven't typed
+
+00:05:01.380 --> 00:05:02.820
+a lower or an uppercase q.
+
+00:05:03.059 --> 00:05:07.500
+So we can do something like
+while selection is not equal
+
+00:05:07.500 --> 00:05:14.680
+to a lowercase q and selection
+is not equal to an uppercase q.
+
+00:05:15.990 --> 00:05:19.299
+Okay, if you were thinking or
+here, that would not be right
+
+00:05:19.299 --> 00:05:21.710
+and you would test your code and
+see that that doesn't work right.
+
+00:05:22.510 --> 00:05:24.850
+So let's just write a real
+simple test here before we
+
+00:05:24.889 --> 00:05:26.280
+even bother with anything else.
+
+00:05:26.690 --> 00:05:30.930
+Let's just say cin selection.
+
+00:05:32.040 --> 00:05:33.550
+No, man, you know promptly no nut.
+
+00:05:33.580 --> 00:05:36.849
+We're just going to grab a bunch of
+characters here and see what happens.
+
+00:05:37.820 --> 00:05:38.789
+So let's run that.
+
+00:05:40.490 --> 00:05:43.020
+Okay, let's type in an a.
+
+00:05:43.440 --> 00:05:45.809
+We loop up q, we stopped.
+
+00:05:46.359 --> 00:05:46.580
+Cool.
+
+00:05:46.580 --> 00:05:47.390
+That's what we want.
+
+00:05:47.440 --> 00:05:48.300
+Let's try that again.
+
+00:05:50.300 --> 00:05:51.180
+A 1, we loop.
+
+00:05:51.190 --> 00:05:51.900
+A 2, we loop.
+
+00:05:51.910 --> 00:05:52.710
+A 3, we loop.
+
+00:05:52.710 --> 00:05:53.809
+A 4, we loop, again.
+
+00:05:53.820 --> 00:05:56.020
+The only time we should stop
+is when we get an lowercase
+
+00:05:56.020 --> 00:05:58.400
+or an uppercase q, we stop.
+
+00:05:58.400 --> 00:06:00.110
+So our logic is correct here.
+
+00:06:01.020 --> 00:06:03.799
+Now what we can do as we can
+actually prompt the user.
+
+00:06:04.630 --> 00:06:09.220
+And with the menu, we can say
+cout, and let's just use put a
+
+00:06:09.220 --> 00:06:11.640
+new line at the beginning, so it
+gives us a new line every time.
+
+00:06:11.640 --> 00:06:13.529
+We do a dash of characters here.
+
+00:06:15.820 --> 00:06:17.630
+And will do that.
+
+00:06:18.180 --> 00:06:19.960
+And then we'll give
+them the menu option.
+
+00:06:19.960 --> 00:06:20.659
+So you can press 1.
+
+00:06:21.860 --> 00:06:23.710
+And if you press 1,
+I'll go through this.
+
+00:06:23.710 --> 00:06:27.780
+Obviously, this would be add a
+record or delete a record or do
+
+00:06:27.780 --> 00:06:29.769
+something in the real application.
+
+00:06:30.920 --> 00:06:32.040
+So that would be that.
+
+00:06:34.190 --> 00:06:36.510
+And I'm just going to copy
+this and paste it to save a
+
+00:06:36.510 --> 00:06:43.169
+little time here, so number 1.
+
+00:06:43.700 --> 00:06:45.839
+Number 2 would be do that.
+
+00:06:48.130 --> 00:06:52.409
+Number 3, eruptions will
+be do something else.
+
+00:06:55.260 --> 00:07:01.310
+And then finally, we can say Q or or
+x or whatever letter you like to quit.
+
+00:07:04.410 --> 00:07:05.160
+Perfect.
+
+00:07:05.389 --> 00:07:08.640
+And we'll give them one more
+little prompt here that says.
+
+00:07:10.109 --> 00:07:12.100
+and we'll put a new line in
+front just a separate,
+
+00:07:12.100 --> 00:07:13.630
+we'll say enter your selection.
+
+00:07:16.500 --> 00:07:19.480
+A colon, no endline here, so
+that looks nicer for them.
+
+00:07:20.370 --> 00:07:22.660
+And then we can put the selection,
+right at the selection, right.
+
+00:07:22.660 --> 00:07:25.319
+So let's run this and that
+we should see a menu show up.
+
+00:07:26.580 --> 00:07:27.419
+And there you go.
+
+00:07:27.520 --> 00:07:28.320
+Do this, do that.
+
+00:07:28.330 --> 00:07:29.600
+Do something else or quit.
+
+00:07:29.799 --> 00:07:33.800
+So if I press 1, we stay in the
+loop, and we display the menu again.
+
+00:07:34.440 --> 00:07:36.460
+Same thing with 2, same thing with 3.
+
+00:07:37.910 --> 00:07:40.890
+4 gives us the same issue
+cuz we haven't checked for
+
+00:07:40.890 --> 00:07:42.069
+anything, this illegal, right.
+
+00:07:42.570 --> 00:07:44.330
+5P whatever.
+
+00:07:44.360 --> 00:07:45.810
+Now whenever I temper Q.
+
+00:07:46.750 --> 00:07:47.490
+I stopped.
+
+00:07:47.820 --> 00:07:51.310
+So what I need to do now
+is decide what do user has
+
+00:07:51.310 --> 00:07:52.719
+typed in and what to do?
+
+00:07:53.260 --> 00:07:54.430
+Okay, how do I do that?
+
+00:07:54.440 --> 00:07:56.630
+Well, it's a lot of choices here.
+
+00:07:57.389 --> 00:07:59.280
+We've got literals here.
+
+00:07:59.280 --> 00:08:00.489
+We got 1 the 2 the 3.
+
+00:08:00.490 --> 00:08:01.430
+These are character literal
+
+00:08:01.430 --> 00:08:04.640
+So we could certainly use a switch
+statement really, really easily.
+
+00:08:04.859 --> 00:08:07.580
+What I want to do is I'm going
+to use an if else if ladder here.
+
+00:08:07.750 --> 00:08:11.690
+Again, I encourage you to do this with
+a switch statement with all kinds of
+
+00:08:11.700 --> 00:08:13.280
+logic that we can play around with it.
+
+00:08:13.420 --> 00:08:14.299
+So let's do this.
+
+00:08:14.299 --> 00:08:20.419
+Let's say if the selection that the
+user entered is the character 1.
+
+00:08:20.420 --> 00:08:23.180
+Remember, this is a character,
+so we need the single quotes.
+
+00:08:24.010 --> 00:08:27.890
+So if the user entered
+the 1, we simply want to
+
+00:08:27.890 --> 00:08:29.710
+say something like cout.
+
+00:08:30.710 --> 00:08:39.429
+Let's see "You choose 1 which was do
+this or let's just say doing this.
+
+00:08:42.380 --> 00:08:43.539
+Put endline at the end.
+
+00:08:45.160 --> 00:08:47.980
+Else and we don't need
+block statements here.
+
+00:08:47.980 --> 00:08:50.970
+We could certainly use them and
+makes it easier to modify our code.
+
+00:08:51.150 --> 00:08:53.550
+But I wanted to try to keep as
+much on the screen as I can.
+
+00:08:54.230 --> 00:08:59.490
+So else if the selection is a
+2.,
+
+00:09:01.290 --> 00:09:02.790
+then what we want to do here.
+
+00:09:02.790 --> 00:09:04.770
+And again, I'll just copy
+and paste this to save a
+
+00:09:04.770 --> 00:09:05.870
+little bit of typing time.
+
+00:09:08.179 --> 00:09:11.880
+Then you spell that correctly.
+
+00:09:12.670 --> 00:09:18.449
+That's better you chose
+2, which was doing that.
+
+00:09:23.050 --> 00:09:26.839
+Else and remember your
+indentation they could.
+
+00:09:26.860 --> 00:09:30.089
+Make sure the indentations correct as
+it adds to the readability big time.
+
+00:09:30.740 --> 00:09:42.190
+So if the selection is equal to
+3, then in this case, you chose
+
+00:09:42.310 --> 00:09:45.750
+3, which was doing something else.
+
+00:09:50.200 --> 00:09:51.939
+So now what where we at.
+
+00:09:52.719 --> 00:09:58.680
+Let's worry about the unknown option
+as the bottom else of this condition.
+
+00:09:59.220 --> 00:10:03.199
+So if nothing else matches, then
+we're going to say, sorry try again.
+
+00:10:03.809 --> 00:10:06.216
+But in this case, if you
+really think about this 1, 2,
+
+00:10:06.240 --> 00:10:10.260
+3 and Q are all valid, right.
+
+00:10:10.279 --> 00:10:11.750
+So let's deal with Q.
+
+00:10:12.260 --> 00:10:22.559
+I'll say else if selection is
+equal to a q or another sit here.
+
+00:10:22.559 --> 00:10:26.439
+We need an or where I lis10 to
+while we need to demand or selection
+
+00:10:27.770 --> 00:10:29.579
+is equal to or lowercase q.
+
+00:10:30.609 --> 00:10:34.000
+Then 'in this case really only
+want to say is goodbye because
+
+00:10:34.080 --> 00:10:34.839
+the loops is going to fail.
+
+00:10:34.840 --> 00:10:36.260
+I'm going to be out
+of here in a minute.
+
+00:10:38.740 --> 00:10:40.880
+Okay, so that takes care of that case.
+
+00:10:42.610 --> 00:10:43.560
+So what's left.
+
+00:10:44.210 --> 00:10:45.319
+This else to here.
+
+00:10:46.430 --> 00:10:47.760
+So what just happened?
+
+00:10:47.760 --> 00:10:49.110
+Well, it's not a 1.
+
+00:10:49.130 --> 00:10:49.870
+It's not a 2.
+
+00:10:49.870 --> 00:10:50.570
+It's not a 3.
+
+00:10:50.570 --> 00:10:51.220
+It's not a q.
+
+00:10:51.370 --> 00:10:53.980
+It's got to be something that I
+don't know and I really don't care.
+
+00:10:53.980 --> 00:10:55.100
+It's something that's illegal.
+
+00:10:55.210 --> 00:10:57.640
+So this case we'll just say cout.
+
+00:10:59.110 --> 00:11:01.170
+Let's say something
+like unknown option.
+
+00:11:01.259 --> 00:11:05.080
+You spell that right
+and maybe try again.
+
+00:11:08.100 --> 00:11:09.450
+We could do something like that.
+
+00:11:12.740 --> 00:11:15.050
+Let me clear the space up and
+let's walk through this and make
+
+00:11:15.050 --> 00:11:16.280
+sure we're not missing anything.
+
+00:11:16.559 --> 00:11:19.500
+We've got our selection variable
+declared that's important.
+
+00:11:20.040 --> 00:11:21.059
+We're in the do loop.
+
+00:11:21.530 --> 00:11:24.709
+We're going to execute this
+code immediately, right.
+
+00:11:24.740 --> 00:11:26.939
+This is unconditional the
+first time in we're in.
+
+00:11:27.460 --> 00:11:29.270
+So we're displaying the
+menu, and we're reading the
+
+00:11:29.270 --> 00:11:30.390
+selection from the user.
+
+00:11:31.000 --> 00:11:35.260
+If the user selects 1,
+you chose 1 doing this.
+
+00:11:35.280 --> 00:11:37.800
+And let's say we're out
+of this if else if ladder.
+
+00:11:38.589 --> 00:11:39.930
+We test down here.
+
+00:11:41.219 --> 00:11:44.700
+And we loop while the selection
+is not lowercase or uppercase q.
+
+00:11:45.950 --> 00:11:47.080
+We come back up.
+
+00:11:47.240 --> 00:11:49.900
+We display the menu
+again if they typed a 3.
+
+00:11:50.309 --> 00:11:53.170
+We execute this code right
+here, and we keep looping.
+
+00:11:54.200 --> 00:11:56.360
+If they type Q, what do we do?
+
+00:11:56.360 --> 00:11:57.689
+We simply say goodbye.
+
+00:11:58.010 --> 00:12:01.490
+And then this condition
+Fires at the end, it'll
+
+00:12:01.490 --> 00:12:02.680
+stay longer out of the loop.
+
+00:12:03.950 --> 00:12:06.660
+If none of these are true,
+we just say unknown option.
+
+00:12:06.680 --> 00:12:07.680
+I don't know you've entered.
+
+00:12:08.770 --> 00:12:10.069
+Okay, so let's try this.
+
+00:12:10.080 --> 00:12:13.750
+And again, I'm in the section 9
+workspace in the do while project.
+
+00:12:14.240 --> 00:12:15.459
+So let's build and run.
+
+00:12:18.789 --> 00:12:20.640
+And we got to clean compile and run.
+
+00:12:20.770 --> 00:12:24.610
+So let's try this, press 1, do this.
+
+00:12:24.710 --> 00:12:26.180
+You chose 1 doing this.
+
+00:12:26.180 --> 00:12:27.880
+Exactly what we want 2.
+
+00:12:28.940 --> 00:12:30.550
+You chose 2 doing that.
+
+00:12:31.590 --> 00:12:34.659
+3, you chose 3 doing something else.
+
+00:12:35.230 --> 00:12:38.449
+Let's say we pressed 4,
+unknown option, try again.
+
+00:12:38.450 --> 00:12:40.490
+But notice how we don't
+get out of the loop.
+
+00:12:40.770 --> 00:12:42.160
+We don't want to get
+out of the loop, right?
+
+00:12:42.160 --> 00:12:45.170
+We're going to ask them to
+enter Q if they want to get out.
+
+00:12:45.520 --> 00:12:48.139
+So at this point, we can
+press an uppercase q.
+
+00:12:48.880 --> 00:12:49.989
+And there it is.
+
+00:12:49.990 --> 00:12:51.609
+Goodbye and the program's finished.
+
+00:12:53.010 --> 00:12:53.240
+Okay.
+
+00:12:53.490 --> 00:12:58.900
+Really, really common use case is
+this idea of menu-driven programs.
+
+00:12:59.470 --> 00:13:02.540
+You want to display that
+menu the first time, ask
+
+00:13:02.580 --> 00:13:04.109
+the user for this election.
+
+00:13:04.530 --> 00:13:09.100
+And basically, using if else
+if ladder here or switch
+
+00:13:09.100 --> 00:13:10.160
+statement would work here.
+
+00:13:10.520 --> 00:13:12.900
+I'll try re-reading this program
+using a switch statement.
+
+00:13:12.900 --> 00:13:14.590
+You'll see it's pretty
+easy to do as well as.
+
+00:13:14.590 --> 00:13:16.190
+Same logic really.
+
+00:13:16.350 --> 00:13:17.890
+Okay, so that's pretty much it.
+
+00:13:17.910 --> 00:13:21.579
+In the challenge exercise at the end
+of the section, we're actually going
+
+00:13:21.580 --> 00:13:23.370
+to do stuff when the user presses 1.
+
+00:13:23.380 --> 00:13:24.780
+We're going to use a vector.
+
+00:13:24.780 --> 00:13:27.259
+You'll be adding things to
+the vector and displaying the
+
+00:13:27.259 --> 00:13:30.249
+vector elements and so forth,
+depending on what they choose.
+
+00:13:30.600 --> 00:13:32.200
+Okay, so that's the end of this video.
+
+00:13:32.250 --> 00:13:36.310
+I encourage you, like I said, walk
+through this and we getting change it
+
+00:13:36.310 --> 00:13:40.260
+and change this and see why it doesn't
+work, understand that that's really,
+
+00:13:40.260 --> 00:13:42.330
+really important. That's a very common mistake.
+
+00:13:42.719 --> 00:13:44.170
+All right, I'll see
+you in the next video.

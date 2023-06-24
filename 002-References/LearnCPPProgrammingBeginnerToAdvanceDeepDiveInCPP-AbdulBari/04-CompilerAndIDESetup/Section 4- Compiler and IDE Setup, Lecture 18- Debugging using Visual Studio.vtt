@@ -1,0 +1,295 @@
+WEBVTT
+
+00:02.010 --> 00:04.020
+Debugging and Visual Studio.
+
+00:04.890 --> 00:11.790
+C Debugging is the process of executing the program line by line and tracing the program.
+
+00:12.540 --> 00:16.980
+So tracing will help us to find out any bugs in the program.
+
+00:17.310 --> 00:23.820
+A program if a program is executing but not giving perfect results, then there may be something gone
+
+00:23.820 --> 00:25.230
+wrong in the program.
+
+00:25.500 --> 00:30.060
+To find out that mistake, we have to trace the program and check it.
+
+00:30.180 --> 00:32.940
+So for tracing debugger will help us.
+
+00:33.540 --> 00:35.130
+So how to do debugging?
+
+00:35.130 --> 00:40.830
+We will see here you don't have to do any special settings for debugging, so it's very easy.
+
+00:40.830 --> 00:42.330
+And Visual Studio.
+
+00:42.750 --> 00:44.730
+I'll show you how to do debugging.
+
+00:44.730 --> 00:47.700
+So already I have one program written here.
+
+00:47.820 --> 00:53.420
+This program is already available for finding the sum of all the elements in an array.
+
+00:53.430 --> 00:57.390
+So I have some array of elements and the program will find the.
+
+00:58.320 --> 01:00.420
+Addition of all these elements.
+
+01:00.930 --> 01:02.730
+So let us do debugging.
+
+01:02.970 --> 01:08.100
+So for debugging, you have to set some breakpoint in any statement in the program.
+
+01:09.060 --> 01:13.350
+So till the breakpoint, the program will execute normally and it will stop there.
+
+01:13.410 --> 01:15.260
+Then you can trace it line by line.
+
+01:15.270 --> 01:16.410
+So I'll put a breakpoint on.
+
+01:16.410 --> 01:19.740
+The first line itself was first instruction itself.
+
+01:20.250 --> 01:25.230
+So the method of putting a breakpoint is on the left hand side that is before the line number.
+
+01:25.230 --> 01:27.510
+And this gray area just click.
+
+01:28.020 --> 01:30.810
+So it will insert a breakpoint.
+
+01:30.810 --> 01:32.850
+And if you want to remove, just click it again.
+
+01:32.850 --> 01:33.870
+It will be gone.
+
+01:34.380 --> 01:36.560
+So it is just like toggling on and off.
+
+01:36.570 --> 01:37.970
+So just click it once.
+
+01:37.980 --> 01:38.480
+That's it.
+
+01:38.490 --> 01:39.510
+We got a breakpoint.
+
+01:40.290 --> 01:43.140
+You can have more than one breakpoints also in the program.
+
+01:43.140 --> 01:47.910
+So if the program is very lengthy, you may require that so you can have multiple breakpoint.
+
+01:47.920 --> 01:51.030
+So here I have first statement as a breakpoint.
+
+01:51.300 --> 01:55.530
+Now let us run, go to debug and say start debugging.
+
+01:55.530 --> 01:58.800
+So for that you can press F5 also.
+
+01:59.340 --> 02:00.900
+So just click on this one.
+
+02:01.230 --> 02:02.880
+It is on the first line.
+
+02:03.980 --> 02:05.050
+Yes, it is already.
+
+02:05.060 --> 02:10.820
+So you can see that till this line some variable is declared, but the line is not yet executed.
+
+02:10.820 --> 02:12.500
+So here is a watch window.
+
+02:13.040 --> 02:14.450
+Here is the watch window.
+
+02:14.480 --> 02:17.720
+It will automatically pop up and here you can find some.
+
+02:17.720 --> 02:21.050
+And just having garbage value means it's not yet initialized.
+
+02:21.140 --> 02:24.200
+So this variable, this line is about to be executed, right?
+
+02:24.200 --> 02:29.180
+So if I take the cursor also it is showing that the value in sum is some garbage value.
+
+02:30.200 --> 02:31.850
+Now let's execute this line.
+
+02:31.850 --> 02:37.610
+So for that, what I have to press, just go to debug and here you can find the statements like step
+
+02:37.610 --> 02:45.710
+into, step over or step out so you can follow F ten for step over.
+
+02:45.740 --> 02:50.840
+If it is a function and you want to go inside that function, then you can say step into.
+
+02:51.290 --> 02:58.280
+So for this symbol program F ten is okay, so you can press F ten, so come back and press F ten.
+
+02:58.490 --> 03:00.020
+So I'm pressing F ten.
+
+03:01.280 --> 03:01.940
+Yes.
+
+03:01.940 --> 03:06.350
+Now you can see that variable sum is already created and it is initialized to zero.
+
+03:06.350 --> 03:10.220
+If I move the cursor here, it shows value as zero and in the watch window.
+
+03:10.220 --> 03:15.690
+Now you can see a new variable, A which is having garbage values now, right?
+
+03:15.770 --> 03:19.640
+It's not yet initialized because this line is about to be executed.
+
+03:19.640 --> 03:20.900
+It's not yet executed.
+
+03:21.170 --> 03:28.010
+If I press F to F ten again, then now you can see that this A is initialized with these values.
+
+03:28.010 --> 03:32.420
+So here in the watch window, you can see two, four, six, seven, nine.
+
+03:32.420 --> 03:37.700
+All these values, these values are there in an array, even in the watch window.
+
+03:37.700 --> 03:40.490
+I can expand and see the values here.
+
+03:40.490 --> 03:44.630
+So all these values are present here right now.
+
+03:44.630 --> 03:46.640
+It's about to enter into the for loop.
+
+03:46.910 --> 03:53.330
+You have to observe this watch window how the value of X is taking these elements from A and they are
+
+03:53.330 --> 03:54.650
+getting added to sum.
+
+03:54.650 --> 03:57.260
+So the values are two, four, six, seven, nine.
+
+03:57.260 --> 03:59.840
+So I'll keep on pressing f ten.
+
+04:02.760 --> 04:07.860
+Now you can see X is also defined now and its value is two now.
+
+04:07.860 --> 04:15.540
+An X is some assign some plus x, so now two is added to sum and this is displayed.
+
+04:15.540 --> 04:17.160
+Two is displayed on the screen.
+
+04:17.160 --> 04:20.340
+So if you want to see that window, just you can click here.
+
+04:20.490 --> 04:25.140
+Now you can see that two is displayed here in the console window.
+
+04:25.830 --> 04:29.010
+Now again f ten now continue.
+
+04:29.280 --> 04:34.380
+Now X is gone because it has again finished the for loop now again about to start the fall of once again.
+
+04:34.380 --> 04:36.510
+So X is not there in the watch window here.
+
+04:36.510 --> 04:43.110
+You can see now if I press again f ten now X is there again and it's having value four.
+
+04:43.110 --> 04:50.190
+So if I keep the cursor on x, you can find values for and keep the cursor on sum the value is two.
+
+04:50.190 --> 04:54.150
+Now when this statement is executed, now sum becomes six.
+
+04:54.150 --> 04:56.070
+So that is two plus four is six.
+
+04:56.490 --> 04:58.470
+Now it will print four also.
+
+04:58.470 --> 05:06.330
+Then again, next value is taken, X becomes six and sum becomes 12, x becomes seven and sum becomes
+
+05:06.330 --> 05:07.170
+19.
+
+05:08.270 --> 05:12.740
+Then X becomes nine and Sum becomes 28.
+
+05:12.980 --> 05:16.580
+And that's all it has came out of the loop this time.
+
+05:17.180 --> 05:18.830
+Now print that some.
+
+05:19.400 --> 05:21.860
+So that's all program ends.
+
+05:22.490 --> 05:28.430
+So if I see this control that is console window, I can see all the values that are printed and also
+
+05:28.430 --> 05:29.600
+some is printed here.
+
+05:30.500 --> 05:32.750
+So this is how you can debug the programs.
+
+05:33.110 --> 05:38.290
+So whenever you want to understand the working of a program and you want to see it's working clearly.
+
+05:38.300 --> 05:44.540
+So I suggest you follow this debugging process so that it will give you a clear idea about the working
+
+05:44.540 --> 05:45.440
+of a program.
+
+05:45.980 --> 05:46.430
+So what?
+
+05:46.430 --> 05:51.080
+All the concepts you are learning, you can check them how the things are happening with the help of
+
+05:51.080 --> 05:51.650
+debugger.
+
+05:52.610 --> 05:59.060
+So debugger is a very powerful tool for learning also and also developing applications for removing
+
+05:59.060 --> 05:59.840
+bugs.
+
+06:00.260 --> 06:01.790
+So that's all in this video.

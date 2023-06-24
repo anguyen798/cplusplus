@@ -1,0 +1,91 @@
+WEBVTT
+
+00:05.330 --> 00:07.760
+Welcome to this bonus section for the course.
+
+00:08.330 --> 00:13.910
+In this section of the course, I'll go through the steps needed to use Microsoft Visual Studio code
+
+00:13.910 --> 00:19.250
+or VS Code for short with C++ and with the projects used in this course.
+
+00:20.200 --> 00:24.490
+Vsco has become a very popular ID over the past few years.
+
+00:24.940 --> 00:28.740
+It's a microsoft product that's free, built on open source.
+
+00:28.750 --> 00:35.410
+It's cross-platform and supports Windows Mac OS ten and Linux, and it's also cross language.
+
+00:35.410 --> 00:41.230
+It supports C++, Java, Python, JavaScript, and many, many other programming languages.
+
+00:41.620 --> 00:44.380
+It's fast, it's small, and it's very powerful.
+
+00:44.770 --> 00:49.450
+It's also very extensible via extensions that we can install and customize.
+
+00:50.220 --> 00:51.660
+So is it easy to use?
+
+00:51.690 --> 00:52.690
+Yes and no.
+
+00:52.710 --> 00:54.510
+It's easy to use once you set it up.
+
+00:54.870 --> 00:59.430
+And that's the purpose of this section, to walk you through the setup for C plus.
+
+00:59.430 --> 01:04.470
+Plus, you'll see a lot of different ways to set up Visual Studio code out on the Internet.
+
+01:04.890 --> 01:07.080
+Some of them are okay, some of them are not okay.
+
+01:07.080 --> 01:10.260
+Some of them use a lot of extensions unnecessarily.
+
+01:10.260 --> 01:16.770
+I'm going to keep it as barebones as I can so that we can we can get up and running with C++ and VS
+
+01:16.770 --> 01:17.880
+code pretty quickly.
+
+01:18.900 --> 01:23.590
+So what we'll do in this section is we'll go through the procedure needed to install and configure VTS
+
+01:23.610 --> 01:25.530
+code so that it works with plus.
+
+01:26.790 --> 01:32.610
+Well then set up a folder structure so that we can organize our projects and let us easily work with
+
+01:32.610 --> 01:33.990
+multiple projects.
+
+01:34.530 --> 01:41.460
+Then I'll show you how to build, run and debug your own C++ programs as well as the projects provided
+
+01:41.460 --> 01:43.290
+with the source code for this course.
+
+01:43.290 --> 01:45.060
+All in Visual Studio code.
+
+01:45.570 --> 01:50.090
+Now this section contains videos for Windows Mac OS ten and Linux.
+
+01:50.100 --> 01:55.800
+You'll most likely just watch the videos that pertain to your specific operating system, but feel free
+
+01:55.800 --> 01:57.090
+to watch them all if you like.
+
+01:57.990 --> 01:59.160
+So let's get started.
+
+01:59.190 --> 02:02.340
+First up, let's get started with Microsoft Windows.

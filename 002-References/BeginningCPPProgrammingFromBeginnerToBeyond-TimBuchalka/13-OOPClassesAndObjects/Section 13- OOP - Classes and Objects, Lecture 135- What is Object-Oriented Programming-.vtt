@@ -1,0 +1,688 @@
+WEBVTT
+
+00:00:05.490 --> 00:00:07.930
+In this video, we'll talk a
+bit about what object-oriented
+
+00:00:07.930 --> 00:00:09.340
+programming is all about.
+
+00:00:10.080 --> 00:00:13.420
+But before we do that, let's
+review procedural programming
+
+00:00:13.469 --> 00:00:14.590
+and its limitations.
+
+00:00:16.779 --> 00:00:19.320
+Procedural programming is pretty
+much what we've been doing up
+
+00:00:19.320 --> 00:00:20.560
+to this point in the course.
+
+00:00:21.600 --> 00:00:24.410
+The focus of procedural
+programming is the function.
+
+00:00:25.070 --> 00:00:29.070
+We modularize our programs by creating
+many functions that each specify a
+
+00:00:29.070 --> 00:00:31.090
+process or action in the program.
+
+00:00:31.299 --> 00:00:34.750
+So procedural programs are
+basically a collection of functions.
+
+00:00:35.850 --> 00:00:39.740
+In procedural programming, we declare
+our data separate from the functions.
+
+00:00:40.130 --> 00:00:43.670
+And then wherever we need to function
+to process or use our data, we
+
+00:00:43.670 --> 00:00:45.360
+pass in the data to the function.
+
+00:00:46.150 --> 00:00:48.669
+If you recall our challenge
+from section 11, that's
+
+00:00:48.670 --> 00:00:49.800
+exactly what we did.
+
+00:00:50.690 --> 00:00:53.249
+There's absolutely nothing wrong
+with procedural programming.
+
+00:00:53.650 --> 00:00:56.630
+And in many cases, you have to
+use it since not all languages
+
+00:00:56.630 --> 00:00:58.450
+support object-oriented features.
+
+00:00:59.240 --> 00:01:02.420
+Procedural programming is also
+fairly easy to learn since we're
+
+00:01:02.440 --> 00:01:06.179
+pretty good at breaking up a task
+into subtasks, which is exactly what
+
+00:01:06.179 --> 00:01:07.800
+procedural programming is all about.
+
+00:01:08.370 --> 00:01:11.139
+However, procedural programming
+has some limitations.
+
+00:01:12.910 --> 00:01:15.720
+One of the limitations with
+procedural programming is that
+
+00:01:15.720 --> 00:01:18.260
+the functions need to know
+about the structure of the data.
+
+00:01:18.930 --> 00:01:20.560
+This may not sound like a big deal.
+
+00:01:20.660 --> 00:01:24.009
+But suppose we have a program with
+hundreds of functions and many of
+
+00:01:24.009 --> 00:01:27.249
+those functions expect a specific
+data structure as an argument.
+
+00:01:28.230 --> 00:01:31.560
+If the structure or format for
+that data structure being passed
+
+00:01:31.560 --> 00:01:34.870
+around changes, then this would
+affect many many functions.
+
+00:01:35.290 --> 00:01:37.649
+These functions might even
+have to be modified to handle
+
+00:01:37.650 --> 00:01:38.870
+the new format of the data.
+
+00:01:39.710 --> 00:01:42.060
+This could have a ripple effect
+in the program and the amount
+
+00:01:42.060 --> 00:01:45.199
+of effort needed to change and
+then test all of the updated
+
+00:01:45.200 --> 00:01:47.190
+functions could be substantial.
+
+00:01:48.139 --> 00:01:51.610
+I've worked on very, very large
+projects where the decision was
+
+00:01:51.610 --> 00:01:55.640
+made not to upgrade a data structure
+because the changes needed in the rest
+
+00:01:55.640 --> 00:01:59.330
+of the program would be too expensive
+in programmer and testing time.
+
+00:02:00.590 --> 00:02:03.009
+The real limitations to
+procedural programming really
+
+00:02:03.009 --> 00:02:06.269
+begin to show as programs
+become larger and more complex.
+
+00:02:08.079 --> 00:02:11.410
+As procedural programs get larger
+and larger, they become more
+
+00:02:11.410 --> 00:02:14.549
+difficult to understand since the
+number of connections in the program
+
+00:02:14.820 --> 00:02:16.809
+becomes very hard to trace by hand.
+
+00:02:17.559 --> 00:02:21.040
+This leads to problem maintaining
+the software, extending the program
+
+00:02:21.040 --> 00:02:22.540
+and finding and fixing bugs.
+
+00:02:23.459 --> 00:02:26.930
+Also, reusing functions and data
+structures that we wrote for one
+
+00:02:26.930 --> 00:02:31.560
+program in another program becomes
+much more difficult since after time
+
+00:02:31.560 --> 00:02:34.749
+we end up with code whose behavior
+isn't that easy to visualize.
+
+00:02:35.860 --> 00:02:39.090
+Finally, the code becomes more
+fragile and easier to break.
+
+00:02:39.580 --> 00:02:41.479
+That means that when we
+add new functionality or
+
+00:02:41.480 --> 00:02:45.600
+fix a bug, the chances of
+introducing another bug is high.
+
+00:02:46.330 --> 00:02:48.080
+This happens more often
+than you would think.
+
+00:02:48.220 --> 00:02:51.299
+And it happens more in large
+procedural programs than it happens
+
+00:02:51.300 --> 00:02:53.100
+in large object-oriented programs.
+
+00:02:53.910 --> 00:02:56.400
+Okay, so now let's talk about
+some of the principal features
+
+00:02:56.400 --> 00:02:57.959
+of object-oriented programming.
+
+00:03:00.039 --> 00:03:02.250
+So what is object-oriented
+programming all about?
+
+00:03:02.970 --> 00:03:05.380
+In this video, I'm
+focusing on object-oriented
+
+00:03:05.380 --> 00:03:06.920
+programming and its benefits.
+
+00:03:07.600 --> 00:03:11.000
+We can also have object-oriented
+analysis, object-oriented design,
+
+00:03:11.030 --> 00:03:12.789
+object-oriented testing and so forth.
+
+00:03:13.750 --> 00:03:17.279
+Object-oriented is all about
+modeling your software in
+
+00:03:17.279 --> 00:03:19.250
+terms of classes and objects.
+
+00:03:20.010 --> 00:03:22.930
+There's some new jargon to learn
+along the way, but it's not so bad.
+
+00:03:23.230 --> 00:03:25.140
+Don't worry if it all
+doesn't click right away.
+
+00:03:25.140 --> 00:03:28.200
+We'll be using this new terminology
+a lot in the rest of the course.
+
+00:03:29.429 --> 00:03:32.399
+These classes and objects
+model real-world entities
+
+00:03:32.400 --> 00:03:33.540
+in your problem domain.
+
+00:03:33.900 --> 00:03:38.079
+So if you're writing an application
+that allows users to store, edit
+
+00:03:38.100 --> 00:03:42.940
+and manipulate images, like iphoto
+on a mac or photos on a PC, then
+
+00:03:42.940 --> 00:03:46.950
+your classes might be album, photo,
+slideshow, location and so forth.
+
+00:03:48.009 --> 00:03:50.919
+If you're modeling a student
+enrollment system, your classes
+
+00:03:50.920 --> 00:03:53.200
+might be student, course, professor.
+
+00:03:53.289 --> 00:03:54.220
+You get the idea.
+
+00:03:54.770 --> 00:03:56.960
+Why is this such a big deal,
+and how is it different
+
+00:03:56.960 --> 00:03:58.160
+from procedural programming?
+
+00:03:58.740 --> 00:04:01.120
+Well, first, let's talk about
+why it's such a big deal.
+
+00:04:01.510 --> 00:04:02.900
+It's all about abstraction.
+
+00:04:03.300 --> 00:04:06.579
+As our programs grow more and
+more complex, we need ways
+
+00:04:06.590 --> 00:04:07.999
+to deal with the complexity.
+
+00:04:08.780 --> 00:04:11.440
+Classes and objects are
+one way to do just that.
+
+00:04:12.059 --> 00:04:15.380
+Now rather than thinking in terms
+of first name, last name, student
+
+00:04:15.380 --> 00:04:19.380
+ID, credit hours and so forth, we
+can think in terms of student,
+
+00:04:20.000 --> 00:04:22.030
+and all that detail comes along with it.
+
+00:04:22.469 --> 00:04:26.759
+Not only that, but operations like
+register, drop course, add course and
+
+00:04:26.759 --> 00:04:29.149
+so forth, also come along with it.
+
+00:04:29.809 --> 00:04:33.950
+So if Frank is an object and it was
+created from the student class, I
+
+00:04:33.950 --> 00:04:37.810
+can send a message to Frank and ask
+Frank if he's registered this term.
+
+00:04:38.770 --> 00:04:41.699
+This is very different from
+procedural programming where
+
+00:04:41.700 --> 00:04:43.930
+I would have a function that
+would tell me if the student is
+
+00:04:43.930 --> 00:04:47.330
+registered and then I would have
+to pass a student to that function.
+
+00:04:48.260 --> 00:04:50.630
+You might ask so what it
+still works in procedural
+
+00:04:50.630 --> 00:04:52.440
+programming, and you'd be correct.
+
+00:04:52.840 --> 00:04:55.460
+But now the function needs to
+know how to determine if the
+
+00:04:55.460 --> 00:04:56.759
+student is currently registered.
+
+00:04:57.690 --> 00:05:00.750
+If this business logic changes,
+then we need to figure out
+
+00:05:00.750 --> 00:05:03.759
+everywhere in the program that knows
+this so we can update the code.
+
+00:05:04.289 --> 00:05:07.510
+In the object-oriented solution,
+only the student class knows
+
+00:05:07.510 --> 00:05:10.530
+this, so a precise change
+is all that's necessary.
+
+00:05:12.760 --> 00:05:16.430
+The fact that objects contain
+data and operations that work on
+
+00:05:16.430 --> 00:05:18.240
+that data is called encapsulation.
+
+00:05:19.150 --> 00:05:22.619
+And it's an extension of the abstract
+data type in computer science.
+
+00:05:22.969 --> 00:05:26.110
+Now the data and the operations
+are together in the class where
+
+00:05:26.110 --> 00:05:29.180
+they belong and not spread
+across many functions each
+
+00:05:29.200 --> 00:05:30.760
+passing and receiving data.
+
+00:05:30.770 --> 00:05:35.250
+Encapsulation is another mechanism
+used by object-oriented programming
+
+00:05:35.410 --> 00:05:36.990
+to help us deal with complexity.
+
+00:05:38.870 --> 00:05:42.570
+We can take the idea of encapsulation
+even further with information hiding.
+
+00:05:43.210 --> 00:05:46.770
+Object-oriented programming allows
+us to hide implementation-specific
+
+00:05:46.800 --> 00:05:50.470
+logic in a class so that it's
+available only within the class.
+
+00:05:51.120 --> 00:05:54.680
+This is a super powerful concept
+since it allows us to provide
+
+00:05:54.680 --> 00:05:58.090
+a public interface to the
+class and hide everything else.
+
+00:05:58.740 --> 00:06:01.610
+Now we know that the user of
+the class can't mess with the
+
+00:06:01.610 --> 00:06:04.739
+implementation-specific code since
+they never knew about it in the
+
+00:06:04.750 --> 00:06:06.320
+first place, that's pretty cool.
+
+00:06:07.110 --> 00:06:10.650
+This makes the code easier to
+maintain, debug and extend.
+
+00:06:12.130 --> 00:06:15.339
+Object-oriented programming
+is also all about reusability.
+
+00:06:15.710 --> 00:06:18.920
+Reusability is defined in terms
+of using something from this
+
+00:06:18.939 --> 00:06:20.640
+program in another program.
+
+00:06:21.260 --> 00:06:24.570
+Since classes are pretty much
+encapsulated units of data and
+
+00:06:24.570 --> 00:06:28.719
+operations reusing them in other
+applications is much easier.
+
+00:06:29.090 --> 00:06:32.340
+And since the class has already been
+tested, we get that benefit as well.
+
+00:06:32.849 --> 00:06:35.829
+This leads to faster development
+and better quality software.
+
+00:06:36.820 --> 00:06:39.200
+Finally, you've probably
+heard about inheritance.
+
+00:06:39.200 --> 00:06:42.970
+Inheritance allows us to create
+a new class based on an existing
+
+00:06:42.970 --> 00:06:46.900
+class by only adding or modifying
+the elements that we need to be
+
+00:06:46.900 --> 00:06:48.310
+able to create our new class.
+
+00:06:48.700 --> 00:06:51.449
+For example, suppose we
+have an account class that
+
+00:06:51.450 --> 00:06:52.989
+models a basic bank account.
+
+00:06:53.420 --> 00:06:56.730
+So it has a balance and the regular
+withdraw and deposit methods.
+
+00:06:57.510 --> 00:07:00.510
+Now suppose we have the need for
+a special trust account class.
+
+00:07:00.780 --> 00:07:04.199
+And our business logic says that
+this type of account is limited
+
+00:07:04.200 --> 00:07:08.449
+to three withdrawals per year and
+each withdrawal can't exceed 10%
+
+00:07:08.450 --> 00:07:09.710
+of the current account balance.
+
+00:07:10.600 --> 00:07:14.410
+We could add this logic to the account
+class that we already have and have
+
+00:07:14.410 --> 00:07:17.890
+an enumeration or some other kind
+of discriminant that determines what
+
+00:07:17.890 --> 00:07:22.190
+type of account we have and then
+execute the appropriate if else logic.
+
+00:07:23.020 --> 00:07:24.099
+Sure, that works.
+
+00:07:24.190 --> 00:07:27.490
+But what if we expect lots of
+variations to that account class,
+
+00:07:27.520 --> 00:07:30.419
+like a money market account,
+a CD account and so forth.
+
+00:07:30.920 --> 00:07:34.299
+And each one of them has its
+own business logic, not only for
+
+00:07:34.300 --> 00:07:36.010
+withdrawal, but also for deposit.
+
+00:07:36.820 --> 00:07:39.930
+And some accounts change fees and
+others produced interest income.
+
+00:07:39.940 --> 00:07:40.880
+You get the idea.
+
+00:07:41.240 --> 00:07:43.880
+This could quickly make that
+simple account class that we
+
+00:07:43.880 --> 00:07:47.280
+started out with, a beast that
+no programmer wants to deal with.
+
+00:07:48.000 --> 00:07:51.740
+In this case, we can derive our
+new class from the existing account
+
+00:07:51.750 --> 00:07:56.219
+class and add the appropriate
+behavior in the new class without
+
+00:07:56.220 --> 00:07:58.140
+modifying the original class at all.
+
+00:07:58.840 --> 00:08:03.139
+This leads to reusability as well
+as polymorphic classes, since all
+
+00:08:03.139 --> 00:08:06.780
+the derived classes we created
+are in fact still accounts.
+
+00:08:07.150 --> 00:08:10.500
+We'll learn more about the power of
+polymorphism later in this section.
+
+00:08:11.310 --> 00:08:13.410
+So oo sounds pretty amazing, right.
+
+00:08:13.660 --> 00:08:17.150
+Well while oo can certainly help us
+develop large programs that are easier
+
+00:08:17.150 --> 00:08:21.939
+to maintain, test, debug and reuse
+components from, it's not a panacea.
+
+00:08:22.590 --> 00:08:26.170
+Oo won't make bad code better,
+it will likely make it worse.
+
+00:08:26.530 --> 00:08:30.120
+Also, oo is not suitable for
+every application, and not
+
+00:08:30.120 --> 00:08:32.220
+everything decomposes into a class.
+
+00:08:32.710 --> 00:08:35.499
+There are sometimes non-functional
+requirements that horizontally
+
+00:08:35.500 --> 00:08:38.650
+cross-cut a system, and these
+tend to add tangled code
+
+00:08:38.650 --> 00:08:40.059
+within existing classes.
+
+00:08:40.900 --> 00:08:43.590
+Remember, if you have a small
+program that won't be around for
+
+00:08:43.590 --> 00:08:46.599
+any significant amount of time,
+maybe it's an internal program
+
+00:08:46.600 --> 00:08:49.810
+that you're using to automate
+something, then object-oriented
+
+00:08:49.810 --> 00:08:51.230
+programming might be overkill.
+
+00:08:51.599 --> 00:08:54.990
+A simple procedural or scripting
+program may be perfectly appropriate.
+
+00:08:56.210 --> 00:08:59.080
+Generally, object-oriented
+programming has a steeper learning
+
+00:08:59.080 --> 00:09:00.719
+curve than procedural programming.
+
+00:09:01.359 --> 00:09:04.950
+C++, in particular, is considered
+one of the most difficult
+
+00:09:04.950 --> 00:09:06.430
+programming languages to learn.
+
+00:09:07.130 --> 00:09:09.930
+Also, there are many
+object-oriented languages out there.
+
+00:09:10.200 --> 00:09:12.920
+And while they all support
+classes and objects and so forth,
+
+00:09:13.240 --> 00:09:15.860
+the way that they support them
+can be quite different not only
+
+00:09:15.860 --> 00:09:18.040
+syntactically but also in behavior.
+
+00:09:19.070 --> 00:09:22.260
+As mentioned in the beginning of
+this video, it usually takes more
+
+00:09:22.260 --> 00:09:25.390
+upfront design time in order to
+write an object-oriented program.
+
+00:09:25.860 --> 00:09:29.080
+In fact, large object-oriented
+programs sometimes go through
+
+00:09:29.080 --> 00:09:30.710
+significant upfront design.
+
+00:09:31.940 --> 00:09:35.539
+Finally, object-oriented programs
+tend to be larger in size than
+
+00:09:35.539 --> 00:09:38.900
+non-object-oriented programs and
+can sometimes be slower and more
+
+00:09:38.900 --> 00:09:42.220
+complex since there's so much
+more going on behind the scenes.
+
+00:09:43.020 --> 00:09:45.740
+This can be especially true
+with object-oriented languages
+
+00:09:45.740 --> 00:09:47.069
+that use a virtual machine.
+
+00:09:47.559 --> 00:09:50.970
+However, the great news is that
+among object-oriented languages,
+
+00:09:51.080 --> 00:09:54.259
+c++ is probably the most
+efficient language out there.

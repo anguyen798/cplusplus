@@ -1,0 +1,1074 @@
+WEBVTT
+
+00:00:05.830 --> 00:00:09.250
+In this video, we'll go over some
+examples of using c-style strings.
+
+00:00:09.969 --> 00:00:11.990
+First thing you'll notice
+is I'm including cstring.
+
+00:00:13.360 --> 00:00:16.419
+I need to include that header file
+for the c-style string functions.
+
+00:00:16.639 --> 00:00:19.530
+And I'm also including cctype
+that's because I'm going to
+
+00:00:19.530 --> 00:00:22.250
+use some of the character-based
+functions in this example.
+
+00:00:23.190 --> 00:00:26.760
+Okay, so I'm using namespace
+standard, and I've declared four
+
+00:00:26.760 --> 00:00:30.400
+c-style string variables, which are
+really just arrays of characters.
+
+00:00:30.869 --> 00:00:34.580
+On lines 9 through 12, first name,
+last name, full name and temp.
+
+00:00:34.840 --> 00:00:37.593
+And I've made them to be
+pretty big: 20, 20, 50 and 50.
+
+00:00:37.650 --> 00:00:41.070
+That should allow us to put stuff in
+there without exceeding the bounds.
+
+00:00:41.400 --> 00:00:44.330
+Okay, so the first thing
+we'll do is notice here
+
+00:00:44.340 --> 00:00:46.120
+first name is uninitialized.
+
+00:00:46.190 --> 00:00:48.190
+They're actually all uninitialized.
+
+00:00:48.650 --> 00:00:50.150
+Let's display first name.
+
+00:00:50.160 --> 00:00:53.360
+This is a real problem because
+we've never initialized that array.
+
+00:00:53.629 --> 00:00:56.250
+So it's very likely we're
+going to get garbage.
+
+00:00:56.260 --> 00:00:57.330
+So let's run this.
+
+00:00:57.970 --> 00:01:00.682
+And by the way, I'm in the
+section 10 workspace in the
+
+00:01:00.780 --> 00:01:02.530
+c-style strings project.
+
+00:01:02.769 --> 00:01:03.710
+So let me run this.
+
+00:01:04.780 --> 00:01:07.300
+And there you can see the
+garbage right up here
+
+00:01:07.600 --> 00:01:09.060
+and see it right in there.
+
+00:01:10.440 --> 00:01:12.589
+What displays is who knows, right.
+
+00:01:12.590 --> 00:01:14.869
+Whatever characters happen
+to be in those locations.
+
+00:01:15.230 --> 00:01:17.389
+You might get lucky, and the
+null character might be in
+
+00:01:17.390 --> 00:01:19.950
+the first location in which
+case nothing will print.
+
+00:01:20.340 --> 00:01:22.689
+But more often than not
+you'll get garbage like this.
+
+00:01:22.950 --> 00:01:24.309
+And this is a real common sin.
+
+00:01:24.349 --> 00:01:26.939
+And whether you're displaying to
+the console or inside a window in
+
+00:01:26.940 --> 00:01:30.710
+Microsoft windows or x window, and you
+see something that displays like that
+
+00:01:30.719 --> 00:01:34.390
+on a button or up here on a title
+bar or something, that's a classic
+
+00:01:34.390 --> 00:01:36.140
+symptom of uninitialized string.
+
+00:01:36.540 --> 00:01:38.140
+Let me comment that out.
+
+00:01:38.460 --> 00:01:40.160
+We don't want uninitialized strings.
+
+00:01:40.480 --> 00:01:44.500
+Now obviously, we'd want to
+initialize these guys just like
+
+00:01:44.500 --> 00:01:46.450
+that or to a string if we want.
+
+00:01:46.459 --> 00:01:49.600
+So let me just go ahead and
+initialize all of them, which
+
+00:01:49.600 --> 00:01:50.960
+is really the best practice.
+
+00:01:53.490 --> 00:01:55.110
+Okay, so now they're all initialized.
+
+00:01:55.720 --> 00:01:58.670
+So the first thing we'll do is
+I'll uncomment these lines here.
+
+00:02:00.690 --> 00:02:01.720
+And this is nothing
+
+00:02:01.720 --> 00:02:03.820
+we haven't seen before. Pretty
+straightforward, right.
+
+00:02:03.960 --> 00:02:07.469
+Enter your first name and we're
+using the extraction operator to read
+
+00:02:07.469 --> 00:02:11.380
+our first name into that variable
+first name, which is the array.
+
+00:02:11.630 --> 00:02:14.400
+So whatever I type in, I'm just going
+to use my name in these examples.
+
+00:02:14.830 --> 00:02:17.000
+Frank will be stored into first name.
+
+00:02:17.150 --> 00:02:21.369
+It'll be f-r-a-n-k, and then the
+null character will automatically
+
+00:02:21.420 --> 00:02:22.699
+be put in there for us.
+
+00:02:23.099 --> 00:02:24.319
+Same thing with last name.
+
+00:02:24.600 --> 00:02:26.670
+Okay, so again, nothing
+we haven't seen before.
+
+00:02:27.070 --> 00:02:29.020
+Now here, let's talk
+about these two lines.
+
+00:02:29.780 --> 00:02:32.230
+In this case, let me grab
+my marker real quick.
+
+00:02:32.230 --> 00:02:35.310
+In this case, we're
+saying hello first name.
+
+00:02:35.820 --> 00:02:39.830
+Now this will be replaced
+with the value of first name.
+
+00:02:39.990 --> 00:02:41.399
+What's the value of first name.
+
+00:02:41.400 --> 00:02:43.170
+Well, at this point i
+have Frank in there.
+
+00:02:44.860 --> 00:02:47.680
+And remember, this is 20 big here.
+
+00:02:47.960 --> 00:02:50.560
+But in this case, let's just say I've
+got that that's the null character.
+
+00:02:50.900 --> 00:02:53.070
+So how do we determine
+the value of first name.
+
+00:02:53.070 --> 00:02:54.270
+Well, we start here.
+
+00:02:55.320 --> 00:02:56.540
+Do we see a null, no.
+
+00:02:57.290 --> 00:02:57.899
+We move over.
+
+00:02:57.900 --> 00:02:58.979
+Do we see a null, no.
+
+00:02:58.979 --> 00:03:00.980
+And we keep going
+until we see that null.
+
+00:03:01.280 --> 00:03:03.970
+At that point, that's what's returned.
+
+00:03:04.240 --> 00:03:05.670
+So this will display Frank.
+
+00:03:05.690 --> 00:03:07.650
+That's really what's going
+on when we're displaying
+
+00:03:07.660 --> 00:03:08.989
+these c-style variables.
+
+00:03:09.439 --> 00:03:12.490
+So it's going to say hello
+Frank your first name has.
+
+00:03:12.960 --> 00:03:15.909
+And then we see this function
+right here the strlen or
+
+00:03:15.910 --> 00:03:17.079
+the string length function.
+
+00:03:18.029 --> 00:03:20.740
+A function is nothing more
+than a request for somebody
+
+00:03:20.740 --> 00:03:21.850
+else to do something for you.
+
+00:03:21.850 --> 00:03:24.730
+And we'll write functions really
+soon i think in the next section.
+
+00:03:25.120 --> 00:03:29.030
+So in this case, I'm calling the
+strlen function I'm passing in
+
+00:03:29.040 --> 00:03:30.730
+that array of characters Frank.
+
+00:03:31.340 --> 00:03:33.299
+So what's it going to do? It's
+going to do the same thing
+
+00:03:33.299 --> 00:03:34.649
+we just did here, right.
+
+00:03:34.949 --> 00:03:38.340
+Let me clean this up a little bit,
+and we'll walk through this again.
+
+00:03:38.600 --> 00:03:40.940
+So in this case, how does
+the string length determine
+
+00:03:40.940 --> 00:03:42.090
+the length of that name.
+
+00:03:42.090 --> 00:03:43.680
+Well, you start here.
+
+00:03:44.420 --> 00:03:45.480
+Is that a null, no.
+
+00:03:45.760 --> 00:03:46.530
+That's one.
+
+00:03:46.530 --> 00:03:47.600
+Is that a null, no.
+
+00:03:47.639 --> 00:03:48.600
+That's two.
+
+00:03:48.830 --> 00:03:50.010
+How about this guy, nope.
+
+00:03:50.170 --> 00:03:51.030
+That's three.
+
+00:03:51.190 --> 00:03:52.740
+The n, nope.
+
+00:03:53.049 --> 00:03:54.770
+The k, that's five.
+
+00:03:55.160 --> 00:03:56.200
+Now we see the null.
+
+00:03:56.450 --> 00:03:57.519
+The length is five.
+
+00:03:57.990 --> 00:03:59.640
+That's what's being returned here.
+
+00:04:00.470 --> 00:04:03.380
+Now strlen doesn't return an integer.
+
+00:04:03.410 --> 00:04:05.490
+It doesn't really return
+an unsigned integer.
+
+00:04:05.719 --> 00:04:08.179
+It returns a type called size t.
+
+00:04:08.440 --> 00:04:10.800
+And I haven't talked about
+that yet but I'm going to now.
+
+00:04:11.510 --> 00:04:15.270
+Size t really is an unsigned integer.
+
+00:04:15.270 --> 00:04:16.700
+It could be an unsigned long.
+
+00:04:16.899 --> 00:04:19.840
+You really don't know what
+it is based on your system,
+
+00:04:19.860 --> 00:04:20.820
+that's the whole point.
+
+00:04:21.070 --> 00:04:24.910
+We really should be using size
+t because regardless of what
+
+00:04:24.910 --> 00:04:26.430
+system you're on, this will work.
+
+00:04:26.960 --> 00:04:29.129
+You can be sure it will
+be unsigned though, right.
+
+00:04:29.129 --> 00:04:33.060
+Because it doesn't make sense to
+have negative sizes for strings or
+
+00:04:33.070 --> 00:04:36.750
+negative sizes for loop variables
+and things like that typically.
+
+00:04:37.060 --> 00:04:39.830
+So from this point forward,
+I'm going to start using
+
+00:04:39.830 --> 00:04:42.670
+size t where appropriate
+rather than enter unsigned.
+
+00:04:43.240 --> 00:04:44.719
+It's the more correct way of doing it.
+
+00:04:45.200 --> 00:04:46.939
+Okay, so that'll return 5.
+
+00:04:46.940 --> 00:04:50.609
+So this will display hello Frank
+your first name has five characters.
+
+00:04:51.320 --> 00:04:52.719
+And your last name, same idea.
+
+00:04:53.100 --> 00:04:54.620
+It'll print out my last name here.
+
+00:04:54.640 --> 00:04:59.050
+And my last name has 11 characters,
+so it should display 11 characters.
+
+00:04:59.250 --> 00:05:01.359
+Okay, so let's run this example.
+
+00:05:04.320 --> 00:05:09.230
+My first name is Frank, and I'll
+put in my last name Mitropoulos.
+
+00:05:10.480 --> 00:05:13.539
+And it says hello Frank your
+first name has five characters and
+
+00:05:13.540 --> 00:05:16.920
+your last name Mitropoulos has 11
+characters, exactly what we expect.
+
+00:05:17.290 --> 00:05:21.609
+Now everything I'm talking
+about in this video is totally
+
+00:05:21.610 --> 00:05:24.150
+dependent on that guy right there.
+
+00:05:24.520 --> 00:05:27.580
+If for whatever reason those
+null characters or that null
+
+00:05:27.590 --> 00:05:30.480
+character is not there, you can
+imagine, right, we're going to
+
+00:05:30.480 --> 00:05:33.330
+keep counting until we hit one
+which way maybe you know a 1000
+
+00:05:33.870 --> 00:05:35.740
+characters down the line in memory.
+
+00:05:36.849 --> 00:05:39.159
+Typically, you don't have to
+worry about it when you use
+
+00:05:39.160 --> 00:05:44.020
+these functions, strlen, cin,
+strcat, like we see down here.
+
+00:05:44.360 --> 00:05:45.570
+They handle that for you.
+
+00:05:45.880 --> 00:05:48.020
+But if you're working with
+strings on your own and you're
+
+00:05:48.020 --> 00:05:50.900
+processing characters and moving
+characters around, you've got
+
+00:05:50.900 --> 00:05:53.379
+to be aware that you need to
+null terminate your strings.
+
+00:05:53.380 --> 00:05:54.920
+Otherwise, you're going
+to run into problems.
+
+00:05:55.280 --> 00:05:57.000
+All right, let me clear
+this up real quick.
+
+00:05:57.370 --> 00:06:00.110
+And let's do another
+example down here.
+
+00:06:01.690 --> 00:06:05.050
+I'll uncomment this piece of code out
+and we'll talk about that real quick.
+
+00:06:05.440 --> 00:06:07.240
+So what do we have now.
+
+00:06:07.250 --> 00:06:09.640
+Well, we have Frank
+in first name, right.
+
+00:06:10.070 --> 00:06:11.460
+So first name is Frank.
+
+00:06:11.610 --> 00:06:13.089
+I just typed it in.
+
+00:06:13.099 --> 00:06:14.869
+And I'll type it in again
+in the next example.
+
+00:06:15.110 --> 00:06:18.319
+What we're doing here is we're copying
+using the string copy function.
+
+00:06:18.650 --> 00:06:20.859
+We're copying first name to full name.
+
+00:06:20.860 --> 00:06:21.940
+This is the way it works.
+
+00:06:21.940 --> 00:06:25.060
+It's going from this right
+argument to the left one,
+
+00:06:25.360 --> 00:06:26.180
+not the other way around.
+
+00:06:26.180 --> 00:06:28.120
+This is confusing
+sometimes for students.
+
+00:06:28.460 --> 00:06:30.630
+So I'm copying first
+name into full name.
+
+00:06:30.900 --> 00:06:32.950
+So again, here was first name.
+
+00:06:33.190 --> 00:06:34.330
+And it had Frank in it.
+
+00:06:35.670 --> 00:06:38.289
+And over here is full name.
+
+00:06:38.290 --> 00:06:41.630
+Again, this is first name,
+and this is full name.
+
+00:06:43.140 --> 00:06:43.980
+How does it copy.
+
+00:06:44.220 --> 00:06:46.129
+Well, one character at a
+time it's going to copy the
+
+00:06:46.179 --> 00:06:48.580
+F the R the A the N the K.
+
+00:06:48.960 --> 00:06:51.380
+And it's going to keep copying
+until it hits that null character.
+
+00:06:51.389 --> 00:06:53.960
+At that point, it copies the
+null character and it stops.
+
+00:06:54.320 --> 00:06:58.550
+Okay, so at this point full
+name will have Frank followed
+
+00:06:58.550 --> 00:06:59.520
+by the null character.
+
+00:07:00.380 --> 00:07:03.609
+The strcat function is
+the concatenate function.
+
+00:07:04.170 --> 00:07:06.909
+In this case what I'm doing
+is I'm adding a space.
+
+00:07:06.950 --> 00:07:09.079
+You can see the space right
+there in double quotes.
+
+00:07:09.460 --> 00:07:11.950
+I'm adding the space to full name.
+
+00:07:12.209 --> 00:07:15.409
+So now it's putting a
+space here, right in there.
+
+00:07:15.410 --> 00:07:17.349
+And then it's putting
+the null character.
+
+00:07:17.650 --> 00:07:21.229
+So at this point, that's going
+to be Frank followed by a space.
+
+00:07:21.260 --> 00:07:23.570
+I'll just use that underscore
+to denote the space.
+
+00:07:24.460 --> 00:07:25.870
+Then I'm doing another string cat.
+
+00:07:26.559 --> 00:07:28.149
+And what I'm doing now
+is I'm concatenating.
+
+00:07:29.180 --> 00:07:30.840
+Again, this goes this way.
+
+00:07:31.100 --> 00:07:33.860
+I'm concatenating the
+last name to a full name.
+
+00:07:34.050 --> 00:07:36.159
+So now I'm putting
+in my last name here.
+
+00:07:36.790 --> 00:07:40.049
+And it will also put in the
+null character at the end.
+
+00:07:40.469 --> 00:07:41.720
+And then I'm just displaying it.
+
+00:07:41.950 --> 00:07:43.940
+Okay, so notice what we're doing here.
+
+00:07:43.940 --> 00:07:47.110
+What we're doing is we're
+basically building up full name
+
+00:07:47.240 --> 00:07:50.850
+from first name and last name
+using strcat or string cat.
+
+00:07:51.900 --> 00:07:52.800
+Let's run this.
+
+00:07:53.440 --> 00:07:57.250
+And what I'll do here is I'll
+say again my first name is Frank
+
+00:07:57.250 --> 00:07:59.770
+and my last name is Mitropoulos.
+
+00:08:00.480 --> 00:08:01.989
+Hello Frank all that's the same.
+
+00:08:01.990 --> 00:08:04.940
+And then it says here your
+full name is Frank Mitropoulos.
+
+00:08:04.940 --> 00:08:09.659
+Notice how it concatenated the Frank
+the space and the Mitropoulos into one.
+
+00:08:10.260 --> 00:08:12.440
+So full name now contains that string.
+
+00:08:13.180 --> 00:08:14.610
+Okay, so let's do another example.
+
+00:08:14.610 --> 00:08:17.410
+I'm going to comment all of this
+out so we're fresh every time.
+
+00:08:17.960 --> 00:08:22.010
+And in this example, here this
+is an example that shows you
+
+00:08:22.010 --> 00:08:25.950
+one of the behaviors of the
+cin extraction operator here.
+
+00:08:26.570 --> 00:08:29.720
+What I'm doing here is I'm
+prompting the user me this case
+
+00:08:29.720 --> 00:08:31.799
+for my full name and I'm going
+to enter the full name and I'm
+
+00:08:31.799 --> 00:08:32.960
+going to display the full name.
+
+00:08:33.289 --> 00:08:35.240
+Okay, so let me run that.
+
+00:08:36.009 --> 00:08:38.790
+And I'm just going to say my
+full name is Frank Mitropoulos.
+
+00:08:40.049 --> 00:08:44.090
+But now when I try to display my
+full name, notice I only get Frank.
+
+00:08:44.880 --> 00:08:47.700
+That's the normal behavior
+for that extraction operator.
+
+00:08:48.040 --> 00:08:52.750
+It's read again f-r-a-n-k space
+that's a whitespace, so it stops.
+
+00:08:52.800 --> 00:08:53.330
+That's it.
+
+00:08:53.910 --> 00:08:57.339
+Okay, sometimes you want to
+be able to read the entire
+
+00:08:57.339 --> 00:08:59.120
+name, right, the whole line.
+
+00:08:59.359 --> 00:09:01.810
+So this is what we'll do in
+these next few lines here.
+
+00:09:03.200 --> 00:09:05.670
+In this case, again, I'm
+prompting enter your full name.
+
+00:09:06.010 --> 00:09:08.660
+But now I'm using
+cin's getline function.
+
+00:09:09.910 --> 00:09:12.320
+This works again with c-style strings.
+
+00:09:12.540 --> 00:09:15.490
+So in this case, I'm providing
+the name of that c-style
+
+00:09:15.490 --> 00:09:18.960
+string, that array name here
+is full name and a limit.
+
+00:09:19.040 --> 00:09:21.480
+This is how many characters
+maximum you're going to read.
+
+00:09:21.730 --> 00:09:23.560
+So I'm saying cin getline.
+
+00:09:23.630 --> 00:09:27.690
+So this will stop either at
+50 if you reach the max or
+
+00:09:27.690 --> 00:09:29.150
+when the user presses enter.
+
+00:09:29.450 --> 00:09:32.080
+So in this case, it's going
+to read the whole name, right.
+
+00:09:32.270 --> 00:09:33.490
+So let me run that again.
+
+00:09:34.719 --> 00:09:38.910
+And I'll say Frank Mitropoulos
+again and press enter. You can
+
+00:09:38.910 --> 00:09:42.090
+see that the full name now is
+the first name and the last name.
+
+00:09:42.210 --> 00:09:43.750
+So it's reading the entire line.
+
+00:09:45.599 --> 00:09:47.760
+Now let me do a couple
+of more examples.
+
+00:09:47.760 --> 00:09:49.610
+Let's do a comparison example here.
+
+00:09:50.299 --> 00:09:52.980
+In this case, remember,
+full name will have my full
+
+00:09:52.980 --> 00:09:54.370
+name in it Frank Mitropoulos.
+
+00:09:54.469 --> 00:09:56.960
+And when I'm doing that
+I'm copying that to temp.
+
+00:09:57.400 --> 00:09:59.560
+Temp if you recall, I'll
+scroll up real quick.
+
+00:09:59.980 --> 00:10:04.460
+Temp is another array of characters,
+pretty big and that's 50 size.
+
+00:10:04.460 --> 00:10:05.940
+So my name will
+definitely fit in there.
+
+00:10:06.210 --> 00:10:08.669
+And when I say big size,
+my name will fit in there.
+
+00:10:08.670 --> 00:10:11.089
+That's one of the things you always
+have to worry about when you're
+
+00:10:11.090 --> 00:10:12.379
+working with c-style strings.
+
+00:10:12.379 --> 00:10:14.949
+You've always got to be sure
+that you've got enough storage.
+
+00:10:14.950 --> 00:10:16.959
+If you don't have enough storage,
+you're going to have a problem
+
+00:10:16.960 --> 00:10:19.660
+because you're going to run over
+the bounds and probably clobber some
+
+00:10:19.660 --> 00:10:21.390
+other memory location with something.
+
+00:10:21.639 --> 00:10:25.459
+Okay, so again, let's assume that
+I've typed in my name and now I'm
+
+00:10:25.459 --> 00:10:28.090
+going to copy my name to temp.
+
+00:10:28.930 --> 00:10:30.299
+Then I want to compare those two.
+
+00:10:30.340 --> 00:10:32.360
+They should be the same,
+right because I just copied
+
+00:10:32.360 --> 00:10:33.440
+it to another variable name.
+
+00:10:33.690 --> 00:10:35.800
+Well, we can use the
+string compare function.
+
+00:10:36.700 --> 00:10:39.120
+We pass in the two strings
+that we want to compare, in
+
+00:10:39.120 --> 00:10:40.650
+this case, temp and full name.
+
+00:10:41.719 --> 00:10:44.449
+And if we get back a 0 that
+means that they're the same.
+
+00:10:44.780 --> 00:10:47.570
+If we don't get back a 0, that
+means they're not the same.
+
+00:10:47.869 --> 00:10:50.600
+So in this example, I
+expect to get back a 0.
+
+00:10:51.080 --> 00:10:54.730
+So let me run this real quick,
+and I'll type in my full name.
+
+00:10:58.610 --> 00:11:01.779
+They are the same Frank Mitropoulos
+and Frank Mitropoulos are the same
+
+00:11:01.780 --> 00:11:02.949
+because it's the same string.
+
+00:11:03.160 --> 00:11:04.560
+So I did get back to 0.
+
+00:11:04.820 --> 00:11:08.720
+Okay, so now let's modify that string
+and then we'll compare it again.
+
+00:11:09.050 --> 00:11:11.405
+So what we'll do this time
+we'll use a for loop, and I'll
+
+00:11:11.520 --> 00:11:13.110
+uncomment this code out real quick.
+
+00:11:13.740 --> 00:11:17.150
+And you'll notice what we're doing
+we're going from I equals 0 and notice
+
+00:11:17.150 --> 00:11:21.240
+I'm using size t here instead of into
+or unsigned, this is the better way to
+
+00:11:21.240 --> 00:11:22.869
+do it, the more correct way to do it.
+
+00:11:23.119 --> 00:11:28.000
+So I'm going from I equals
+0, while I is less than the
+
+00:11:28.000 --> 00:11:29.980
+string length of the full name.
+
+00:11:30.620 --> 00:11:32.690
+Again, string length is
+going to return however many
+
+00:11:32.690 --> 00:11:33.599
+characters are in there.
+
+00:11:33.820 --> 00:11:36.200
+I want to be sure I'm going less
+than that because remember we're
+
+00:11:36.200 --> 00:11:38.740
+going from 0 to the size minus one.
+
+00:11:39.420 --> 00:11:41.540
+And I'm incrementing
+I by one each time.
+
+00:11:42.209 --> 00:11:44.080
+Then I'm using one of
+the character functions.
+
+00:11:44.360 --> 00:11:46.330
+I'm saying full name sub I.
+
+00:11:46.340 --> 00:11:48.240
+That's the specific character, right.
+
+00:11:48.240 --> 00:11:50.810
+So it's going to be f
+r a n k and so forth.
+
+00:11:51.139 --> 00:11:53.359
+If it's an alpha
+character, right, a letter.
+
+00:11:53.969 --> 00:11:57.919
+Then I'm going to convert that
+letter to uppercase and put
+
+00:11:57.920 --> 00:11:59.129
+it right back where it was.
+
+00:11:59.400 --> 00:12:01.790
+So now my name will
+be all capitalized.
+
+00:12:01.880 --> 00:12:03.340
+Okay, so let's run that.
+
+00:12:04.880 --> 00:12:08.820
+And I'll type in my name with
+mixed upper and lowercase.
+
+00:12:09.840 --> 00:12:12.259
+You can see here that it compared
+them and they're the same.
+
+00:12:12.580 --> 00:12:17.050
+And now my name is all uppercase
+because I used the two upper function.
+
+00:12:18.090 --> 00:12:19.880
+So now let's compare those two now.
+
+00:12:19.940 --> 00:12:22.590
+Obviously, they're not the
+same, right because I just made
+
+00:12:22.590 --> 00:12:24.000
+one a little bit different.
+
+00:12:24.010 --> 00:12:25.390
+So let's do this.
+
+00:12:26.080 --> 00:12:28.050
+Let's comment all of this
+out and walk through it.
+
+00:12:28.580 --> 00:12:29.800
+And so what's going on here.
+
+00:12:29.800 --> 00:12:32.020
+I'm comparing temp and full name.
+
+00:12:32.219 --> 00:12:34.059
+They're not the same anymore, right.
+
+00:12:34.109 --> 00:12:37.350
+Full name is now all
+uppercase and temp is not.
+
+00:12:37.730 --> 00:12:39.750
+So I'm going to compare them,
+and it's going to say are they
+
+00:12:39.750 --> 00:12:40.790
+the same are they different.
+
+00:12:40.900 --> 00:12:44.089
+Now that I expect this to be different
+because this will not be equal to 0.
+
+00:12:45.150 --> 00:12:46.980
+So what - how does this work with the 0.
+
+00:12:47.270 --> 00:12:50.420
+Well, if the two strings are
+the same and that's character by
+
+00:12:50.420 --> 00:12:54.500
+character lexically, the string
+compare function will return a 0.
+
+00:12:55.220 --> 00:12:57.650
+Otherwise, it'll return a
+negative number or a positive
+
+00:12:57.650 --> 00:13:01.430
+number depending on which of
+the string is larger, right.
+
+00:13:01.620 --> 00:13:04.819
+So in this case, I'm comparing them
+temp and full name and then full name
+
+00:13:04.820 --> 00:13:06.309
+and temp so you can see the result.
+
+00:13:06.520 --> 00:13:08.079
+So let's run this.
+
+00:13:08.549 --> 00:13:13.400
+So again, I'll use my
+name and press enter.
+
+00:13:14.290 --> 00:13:17.040
+So as you can see, the two
+strings are now different.
+
+00:13:18.020 --> 00:13:20.780
+And the string compare
+function will return 0 if
+
+00:13:20.780 --> 00:13:22.110
+the two strings are the same.
+
+00:13:22.330 --> 00:13:24.940
+You can see here that we're
+comparing two different strings.
+
+00:13:25.240 --> 00:13:28.649
+It returns less than 0 if the first
+string lexically comes before the
+
+00:13:28.650 --> 00:13:32.930
+second string or return greater
+than 0 if the first string lexically
+
+00:13:32.950 --> 00:13:34.520
+comes after the second string.
+
+00:13:35.310 --> 00:13:37.610
+Okay, so that completes this video.
+
+00:13:38.030 --> 00:13:40.420
+This gives you a little bit of
+insight as how to use c-style
+
+00:13:40.420 --> 00:13:41.679
+strings and their functions.
+
+00:13:41.860 --> 00:13:44.450
+What we'll do next is we'll
+talk about c++ strings.

@@ -1,0 +1,157 @@
+WEBVTT
+
+00:00:05.660 --> 00:00:09.320
+In this section of the course, we'll go over the control structures
+
+00:00:09.320 --> 00:00:12.620
+that allow you to control the flow of execution in your program.
+
+00:00:13.420 --> 00:00:16.300
+So far you've learned how to write programs that run sequentially
+
+00:00:16.300 --> 00:00:19.000
+that is one statement followed by another and so forth.
+
+00:00:19.550 --> 00:00:21.910
+You can solve many problems using sequence.
+
+00:00:21.910 --> 00:00:25.510
+But now is when we really take advantage of the power of programming.
+
+00:00:25.910 --> 00:00:29.910
+In this section, we'll go over the selection and iteration control structures
+
+00:00:29.910 --> 00:00:31.210
+in c++.
+
+00:00:31.810 --> 00:00:34.810
+Selection control structures allow you to make decisions
+
+00:00:34.810 --> 00:00:36.910
+and execute parts of your program
+
+00:00:36.910 --> 00:00:39.910
+only when certain conditions are true or false.
+
+00:00:39.910 --> 00:00:43.610
+This is so powerful and opens up a world of programming power.
+
+00:00:44.270 --> 00:00:46.570
+After we learn about the selection constructs,
+
+00:00:46.570 --> 00:00:49.070
+we'll learn about the iteration control structures.
+
+00:00:49.570 --> 00:00:53.170
+These are the constructs that let us loop and repeat parts of our program.
+
+00:00:54.270 --> 00:00:58.170
+So we have these three basic programming building blocks: sequence,
+
+00:00:58.170 --> 00:00:59.770
+selection and iteration.
+
+00:01:00.370 --> 00:01:04.570
+With sequence, selection and iteration, we can implement any algorithm,
+
+00:01:05.170 --> 00:01:09.370
+Let me repeat that: with sequence, selection and iteration,
+
+00:01:09.370 --> 00:01:12.370
+we can implement any algorithm. That's amazing.
+
+00:01:13.030 --> 00:01:15.830
+Let's see some of the c++ selection statements.
+
+00:01:17.230 --> 00:01:21.530
+The main selection powerhouse in most programming languages is the if statement.
+
+00:01:22.330 --> 00:01:24.690
+If a condition is true, then you do something.
+
+00:01:25.290 --> 00:01:30.090
+We can also add the failing condition to an if statement and get the if else statement.
+
+00:01:30.790 --> 00:01:33.590
+In this case, if a condition is true, you do something.
+
+00:01:33.790 --> 00:01:36.190
+And if the condition is false, you do something else.
+
+00:01:36.550 --> 00:01:39.350
+So you're basically making a simple binary decision.
+
+00:01:40.650 --> 00:01:43.650
+We can also nest if statements one inside the other.
+
+00:01:43.950 --> 00:01:47.550
+For example, if my favorite football team is playing today,
+
+00:01:47.550 --> 00:01:50.350
+then if the game is on now then record it.
+
+00:01:51.510 --> 00:01:54.310
+Sometimes if statements get pretty long and complex.
+
+00:01:54.310 --> 00:01:57.310
+So c++ has a switch statement that has some benefits
+
+00:01:57.310 --> 00:01:59.910
+when we're comparing integer-based discrete elements.
+
+00:02:00.910 --> 00:02:04.910
+Finally, c++ has a really neat operator called the conditional operator.
+
+00:02:04.910 --> 00:02:08.310
+That's basically an if else statement wrapped up in an operator.
+
+00:02:08.970 --> 00:02:12.570
+We'll go over all of these selection control flow constructs in detail.
+
+00:02:12.870 --> 00:02:15.870
+Then we'll look at the iteration or looping constructs.
+
+00:02:16.170 --> 00:02:20.070
+C++ has three basic looping constructs: the for loop,
+
+00:02:20.070 --> 00:02:22.070
+the while loop and the do while loop.
+
+00:02:23.270 --> 00:02:25.470
+There's also a range based for loop,
+
+00:02:25.470 --> 00:02:30.070
+that's great to use with ranges of items and collections of items like arrays and vectors.
+
+00:02:30.730 --> 00:02:33.530
+We can control how many times we loop in many ways.
+
+00:02:33.530 --> 00:02:37.930
+The continuum break statements allow us to re-loop and break out of loops whenever we want.
+
+00:02:38.530 --> 00:02:40.730
+Finally, we'll talk about the infinite loop.
+
+00:02:41.090 --> 00:02:44.750
+That's a loop that loops forever. Well, at least until we break out of it.
+
+00:02:45.300 --> 00:02:46.600
+And nested loops.
+
+00:02:46.600 --> 00:02:50.720
+These are loops within loops that are great for working with multi-dimensional structures,
+
+00:02:50.720 --> 00:02:52.720
+like two-dimensional arrays or vectors.
+
+00:02:53.320 --> 00:02:57.320
+Everything you've learned up to this point will now be used with these control structures.
+
+00:02:57.320 --> 00:03:00.620
+Variable declarations, assignment testing for equality,
+
+00:03:00.620 --> 00:03:02.940
+relational and logical operators and more.
+
+00:03:03.440 --> 00:03:05.940
+Let's get started and learn these powerful constructs.

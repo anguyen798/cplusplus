@@ -1,0 +1,213 @@
+WEBVTT
+
+0
+00:00.410 --> 00:08.350
+Let us look at the example for short circuit for that I'm picking variables A as 10 and b as 5.
+
+1
+00:08.520 --> 00:22.800
+And also I as  5 here i will write a conditional statement if is a greater than B and plus plus I is less
+
+2
+00:22.800 --> 00:24.710
+than or equal to B.
+
+3
+00:24.810 --> 00:34.750
+Now inside this I won't do anything then outside this one I will say display I.
+
+4
+00:34.810 --> 00:40.270
+So what happens here is if A is greater than B is this condition is true here.
+
+5
+00:40.270 --> 00:42.590
+The compound statement is made using.
+
+6
+00:42.620 --> 00:45.970
+And so both of these conditions must be true.
+
+7
+00:45.970 --> 00:51.420
+This must be true as well as this condition must be true then only it will be true.
+
+8
+00:52.420 --> 00:57.710
+But if this condition is true it will also check whether this is also true or not.
+
+9
+00:58.270 --> 00:59.810
+So it will increment I.
+
+10
+00:59.970 --> 01:01.690
+Let us check i is 5 here
+
+11
+01:01.720 --> 01:04.990
+It should display 6.
+
+12
+01:05.190 --> 01:11.460
+I'm running the program Yeah I got the answer as 6.
+
+13
+01:12.280 --> 01:16.410
+If I had this condition other way that is A less than B.
+
+14
+01:16.490 --> 01:19.060
+Actually if you see A is 10 and B is a 5.
+
+15
+01:19.050 --> 01:20.650
+So A's not less than B.
+
+16
+01:20.650 --> 01:25.500
+So this part of condition will be false as this is false.
+
+17
+01:25.500 --> 01:31.680
+It doesn't have to check the next part of a condition that is true or false because here and is used
+
+18
+01:31.730 --> 01:39.190
+if this side is false then entire result will be false because even if this is true also the result 
+
+19
+01:39.190 --> 01:42.950
+is going to be false && means both the conditions must be true.
+
+20
+01:43.180 --> 01:46.120
+But as this is false so it doesn't have to check the next one.
+
+21
+01:46.120 --> 01:47.830
+It directly say false.
+
+22
+01:47.830 --> 01:50.710
+So i plus Plus will not be done.
+
+23
+01:50.770 --> 01:52.090
+and i remains 5.
+
+24
+01:52.160 --> 01:53.060
+Let us check this
+
+25
+01:56.810 --> 01:57.290
+here.
+
+26
+01:57.350 --> 02:02.330
+Output is 5 you can see that the result it has shown here is 5 mins.
+
+27
+02:02.380 --> 02:06.190
+I is not incrementing this I plus plus if not done
+
+28
+02:09.640 --> 02:11.850
+let us try with OR statement.
+
+29
+02:11.920 --> 02:19.570
+If I write OR here and right now this A is less than b so the first condition will be false A is not less
+
+30
+02:19.570 --> 02:23.940
+than B. so  it will try to check the second condition whether that is true or not.
+
+31
+02:24.130 --> 02:31.030
+Because if this is false also and this is true then the result will be true because here OR is used
+
+32
+02:31.330 --> 02:32.200
+or means
+
+33
+02:32.240 --> 02:39.040
+Any one of these two conditions must be, either this one or this one, must be true if it is false then
+
+34
+02:39.040 --> 02:42.780
+it will try to check for this condition so it will perform plus plus.
+
+35
+02:42.860 --> 02:44.140
+I checked this
+
+36
+02:48.580 --> 02:48.880
+yeah.
+
+37
+02:48.880 --> 02:51.890
+The result is six.
+
+38
+02:51.940 --> 02:58.360
+If I tried to change the condition if A> B and yes it is really > B so this condition
+
+39
+02:58.360 --> 03:00.780
+will be true if this condition is true.
+
+40
+03:00.780 --> 03:07.270
+Doesn't have to check the second condition because for OR if anyone of the condition is true it is sufficient
+
+41
+03:07.270 --> 03:10.470
+to say that the result of this condition is true.
+
+42
+03:10.750 --> 03:15.410
+So this is true it will not check this one so I plus Plus is not done.
+
+43
+03:15.550 --> 03:17.180
+I remains five only.
+
+44
+03:17.530 --> 03:20.300
+Let us run this and see.
+
+45
+03:21.640 --> 03:23.470
+Yes I remains five.
+
+46
+03:23.680 --> 03:26.620
+So outside conditional statement I have written cout
+
+47
+03:26.640 --> 03:29.040
+So which is giving me the new value of i.
+
+48
+03:29.080 --> 03:30.750
+If it is updated.
+
+49
+03:31.520 --> 03:37.300
+That's all you should be very careful when using increment and decrement operation in the conditional statements
+
+50
+03:37.710 --> 03:43.650
+because if these statements are not executed we may get different results.
+
+51
+03:44.350 --> 03:48.460
+So a short circuit is supported by most of the programming languages.
+
+52
+03:49.180 --> 03:51.010
+You can try this by yourself.

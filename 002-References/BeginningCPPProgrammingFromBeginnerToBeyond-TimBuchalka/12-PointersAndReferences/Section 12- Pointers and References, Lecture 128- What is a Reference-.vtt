@@ -1,0 +1,648 @@
+WEBVTT
+
+00:00:05.290 --> 00:00:07.279
+In this video, we'll learn
+more about references.
+
+00:00:07.730 --> 00:00:11.080
+We've already seen how useful
+references can be when used
+
+00:00:11.080 --> 00:00:12.340
+as function parameters.
+
+00:00:12.500 --> 00:00:14.840
+We learned about that in the
+functions section of the course.
+
+00:00:15.520 --> 00:00:17.990
+Although a reference may sound
+similar to a pointer, they're
+
+00:00:17.990 --> 00:00:19.180
+actually very different.
+
+00:00:19.650 --> 00:00:21.730
+A reference is an
+alias for a variable.
+
+00:00:22.040 --> 00:00:24.260
+So whenever you use the
+reference, you're actually
+
+00:00:24.260 --> 00:00:25.980
+using the variable it refers to.
+
+00:00:26.790 --> 00:00:30.029
+References must always be initialized
+to a variable when you declare
+
+00:00:30.030 --> 00:00:31.640
+them, and they can never be null.
+
+00:00:32.380 --> 00:00:35.620
+Once you initialize a reference,
+you can't change it so that's an
+
+00:00:35.629 --> 00:00:36.959
+alias for a different variable.
+
+00:00:37.710 --> 00:00:41.480
+As mentioned earlier, references are
+great to use as function parameters.
+
+00:00:42.170 --> 00:00:45.610
+When you first start out in c++,
+you might find it useful to think
+
+00:00:45.610 --> 00:00:48.830
+of a reference as a constant
+pointer that's automatically
+
+00:00:48.830 --> 00:00:50.249
+de-referenced when you use it.
+
+00:00:51.200 --> 00:00:53.839
+We've already seen using
+references as function parameters,
+
+00:00:54.010 --> 00:00:55.360
+so let's see some other uses.
+
+00:00:58.010 --> 00:01:01.210
+References are often used
+in range-based for loops to
+
+00:01:01.220 --> 00:01:03.969
+access collection elements
+inside each iteration.
+
+00:01:04.519 --> 00:01:08.249
+Here's an example of a range-based
+for loop that does not use references.
+
+00:01:08.710 --> 00:01:13.280
+In this case, we have a vector of c++
+string objects named stooges, and it's
+
+00:01:13.280 --> 00:01:15.020
+initialized to Larry Moe and Curly.
+
+00:01:15.830 --> 00:01:18.900
+Then we use a range-based for loop
+to iterate through the vector.
+
+00:01:19.260 --> 00:01:22.500
+At each iteration, we assign
+Funny to each vector element.
+
+00:01:23.270 --> 00:01:25.899
+Then we have another range-based
+for loop that displays the
+
+00:01:25.900 --> 00:01:27.629
+contents of the stooges vector.
+
+00:01:28.090 --> 00:01:30.250
+Notice the output, nothing changed.
+
+00:01:30.410 --> 00:01:32.950
+We didn't change the vector at
+all, even though we assigned
+
+00:01:32.950 --> 00:01:34.360
+funny to each element in the loop.
+
+00:01:35.090 --> 00:01:35.960
+So what's going on.
+
+00:01:36.210 --> 00:01:39.180
+The problem is that the str
+variable name in the first loop
+
+00:01:39.190 --> 00:01:42.270
+is a copy for each of the vector
+elements as we loop through them.
+
+00:01:42.849 --> 00:01:45.880
+So we're setting the copy to
+funny, but we're never changing
+
+00:01:45.889 --> 00:01:47.550
+the actual elements in the vector.
+
+00:01:48.190 --> 00:01:50.230
+Now let's see how we can
+use references to actually
+
+00:01:50.240 --> 00:01:51.550
+change the vector elements.
+
+00:01:53.280 --> 00:01:56.800
+Here we have the same example,
+except that the str variable in
+
+00:01:56.800 --> 00:01:58.440
+the first loop is now a reference.
+
+00:01:59.130 --> 00:02:03.059
+In this case, a reference to
+each of the c++ string objects.
+
+00:02:04.059 --> 00:02:08.940
+Now str is an alias for those objects,
+and when we assign Funny to str, we're
+
+00:02:08.960 --> 00:02:10.919
+actually changing the vector elements.
+
+00:02:11.760 --> 00:02:14.940
+You can see now that when we display
+the vector, the elements in the vector
+
+00:02:14.950 --> 00:02:16.720
+have all indeed changed to funny.
+
+00:02:19.599 --> 00:02:22.700
+Notice what happens if we add
+the const qualifier to the loop
+
+00:02:22.700 --> 00:02:23.980
+variable in the first loop.
+
+00:02:24.760 --> 00:02:28.310
+Now we're preventing any change to
+the data in the vector because the
+
+00:02:28.310 --> 00:02:29.950
+compiler marks it as read-only.
+
+00:02:30.400 --> 00:02:32.499
+So this code now gives
+us a compiler error.
+
+00:02:32.650 --> 00:02:34.819
+This is not what we want
+since we really do want to
+
+00:02:34.820 --> 00:02:36.240
+modify the vector elements.
+
+00:02:36.480 --> 00:02:38.670
+But you can see that the
+compiler is doing exactly
+
+00:02:38.670 --> 00:02:39.779
+what you're asking it to do.
+
+00:02:40.029 --> 00:02:43.269
+It makes sense for us to use the
+const qualifier in the second
+
+00:02:43.270 --> 00:02:45.830
+loop, the loop that actually
+displays the vector elements.
+
+00:02:46.650 --> 00:02:50.860
+Also by using a reference, we're not
+incurring the cost of copying each
+
+00:02:50.900 --> 00:02:52.660
+vector element in each loop iteration.
+
+00:02:54.349 --> 00:02:57.610
+So in this case, it makes sense
+to use the const qualifier for the
+
+00:02:57.610 --> 00:03:00.990
+reference str in the loop when we're
+displaying the vector elements.
+
+00:03:01.410 --> 00:03:04.700
+So any attempt to change them
+would probably be a mistake so we
+
+00:03:04.700 --> 00:03:07.519
+can have the compiler help us out
+by making the reference const.
+
+00:03:07.970 --> 00:03:11.440
+Now any attempt to change the vector
+element results in a compiler error.
+
+00:03:12.030 --> 00:03:14.739
+Unless you have a specific
+reason to copy elements in
+
+00:03:14.740 --> 00:03:17.609
+range-based for loops, you
+should use reference variables
+
+00:03:17.609 --> 00:03:19.019
+to make your code more efficient.
+
+00:03:19.830 --> 00:03:21.870
+And if you aren't going to
+modify the collection elements,
+
+00:03:22.040 --> 00:03:23.340
+make the reference const.
+
+00:03:24.650 --> 00:03:27.500
+Rather than go over everything we
+already covered regarding using
+
+00:03:27.500 --> 00:03:30.529
+references as function parameters,
+please refer to the section
+
+00:03:30.530 --> 00:03:33.930
+11 videos and examples where
+I go over the use of reference
+
+00:03:33.930 --> 00:03:35.870
+parameters in functions in detail.
+
+00:03:36.049 --> 00:03:39.640
+We'll head over to the IDE now and see
+some of these examples in live code.
+
+00:03:40.790 --> 00:03:41.990
+Okay, so I'm in the IDE.
+
+00:03:41.990 --> 00:03:45.070
+I'm in the section 12 workspace
+in the references project.
+
+00:03:45.900 --> 00:03:49.960
+And this is about as simple an example
+as I can come up with for references.
+
+00:03:50.809 --> 00:03:55.724
+So here I've got an integer called
+num, and I'm initializing it to 100.
+
+00:03:55.840 --> 00:03:59.540
+And I've got a reference called ref
+that I'm initializing it to num.
+
+00:03:59.850 --> 00:04:01.709
+So ref is an alias to num.
+
+00:04:02.030 --> 00:04:04.440
+So if i display num,
+I'm going to get a 100.
+
+00:04:04.780 --> 00:04:07.049
+If I display ref, I'm
+going to get a 100.
+
+00:04:07.570 --> 00:04:08.430
+They're aliases.
+
+00:04:08.900 --> 00:04:11.429
+In this case, the reference
+is an alias to the num.
+
+00:04:12.020 --> 00:04:15.810
+Okay, so notice no
+de-referencing, nothing.
+
+00:04:15.810 --> 00:04:18.540
+Just use it straight as
+is, and it's automatically
+
+00:04:18.540 --> 00:04:19.430
+going to be de-referenced.
+
+00:04:19.430 --> 00:04:21.649
+Behind the scenes, it's
+basically a pointer.
+
+00:04:21.660 --> 00:04:23.400
+That's how it's implemented
+behind the scenes.
+
+00:04:23.800 --> 00:04:25.709
+But all that's been
+abstracted away for you.
+
+00:04:26.170 --> 00:04:28.969
+So in this case, here,
+I'm changing num to 200.
+
+00:04:29.549 --> 00:04:32.740
+So I'm going straight to the
+variable and changing it to 200.
+
+00:04:33.040 --> 00:04:35.400
+So when I display num,
+I'm going to get 200.
+
+00:04:35.730 --> 00:04:38.270
+And when I display the reference,
+it's an alias to the number.
+
+00:04:38.840 --> 00:04:40.420
+Again, I'm going to get 200.
+
+00:04:40.920 --> 00:04:44.020
+Here, I'm changing num, but I'm
+changing it through the reference.
+
+00:04:44.290 --> 00:04:45.630
+So I'm setting it to 300.
+
+00:04:46.080 --> 00:04:47.879
+Again, they're aliases.
+
+00:04:47.889 --> 00:04:49.310
+So that's what you get.
+
+00:04:49.790 --> 00:04:52.109
+Hopefully, that's pretty
+easy to understand I think.
+
+00:04:52.450 --> 00:04:55.170
+Now let's do another example
+that's based on the example
+
+00:04:55.170 --> 00:04:56.350
+that I did on the slides.
+
+00:04:56.400 --> 00:05:00.150
+But before we do that, let's
+run this, so I'll build and run.
+
+00:05:00.799 --> 00:05:05.390
+And you can see 100 100 200 200
+300 300, just what we expected.
+
+00:05:06.410 --> 00:05:09.640
+Okay, so now let's do an example
+of using reference parameters
+
+00:05:09.680 --> 00:05:12.479
+inside range-based for loops,
+just like we did in the slides.
+
+00:05:12.850 --> 00:05:16.599
+So let me clear that, and I'll
+scroll up just a little bit, and I'll
+
+00:05:16.660 --> 00:05:19.599
+uncomment out this code right here.
+
+00:05:19.820 --> 00:05:23.589
+Okay, this is the code that
+worked on the vector of strings.
+
+00:05:23.799 --> 00:05:24.709
+So here's where we're at.
+
+00:05:24.740 --> 00:05:29.700
+We've got a vector of string objects
+right here on line 29, called
+
+00:05:29.700 --> 00:05:32.380
+stooges, and we're initializing
+it to Larry Moe and Curly.
+
+00:05:33.190 --> 00:05:35.020
+Then I've got a range-based for loop.
+
+00:05:35.110 --> 00:05:38.050
+Now remember, the auto,
+that's the compiler figure
+
+00:05:38.050 --> 00:05:39.789
+out what the type of str is.
+
+00:05:40.590 --> 00:05:43.520
+In this case, the collection is
+stooges and it's a vector of string.
+
+00:05:43.520 --> 00:05:46.120
+So str will be a string
+at each iteration.
+
+00:05:46.120 --> 00:05:49.070
+And then what we're doing is
+we're saying str is funny.
+
+00:05:49.760 --> 00:05:53.840
+So the idea is that or the what
+the programmer intended to do
+
+00:05:53.840 --> 00:05:57.059
+was to change Larry Moe and
+Curly to funny funny funny.
+
+00:05:57.389 --> 00:05:58.429
+Okay, but it doesn't work.
+
+00:05:58.850 --> 00:06:02.789
+The reason it doesn't work
+is because str is a copy.
+
+00:06:03.090 --> 00:06:06.180
+So each time in, we're making
+a copy of Larry, a copy of
+
+00:06:06.180 --> 00:06:07.480
+Moe and a copy of Curly.
+
+00:06:07.740 --> 00:06:11.130
+So sure, we're changing the copy
+to funny, but we're not changing
+
+00:06:11.139 --> 00:06:12.880
+any of these actuals to funny.
+
+00:06:13.009 --> 00:06:16.620
+So what we can do is and if you
+notice we have a simple loop
+
+00:06:16.620 --> 00:06:17.869
+here that just displays them.
+
+00:06:17.869 --> 00:06:19.880
+And when we run this in a
+second, you'll see that this
+
+00:06:19.880 --> 00:06:21.450
+will display Larry Moe and Curly.
+
+00:06:21.820 --> 00:06:24.790
+Okay, so no changes at all,
+just like we saw in the slides.
+
+00:06:26.240 --> 00:06:29.430
+In this next example, what we're
+doing is we're using a reference here.
+
+00:06:29.430 --> 00:06:30.760
+You can see the ampersand.
+
+00:06:31.380 --> 00:06:36.940
+So at each iteration of the loop, str
+will be a reference to the actual.
+
+00:06:37.340 --> 00:06:41.360
+So now that str is going to be an
+alias for each one of these guys
+
+00:06:41.970 --> 00:06:43.560
+at each iteration of the loop.
+
+00:06:43.840 --> 00:06:47.969
+So when we say str is funny, now
+we're really replacing Larry Moe
+
+00:06:47.969 --> 00:06:49.800
+and Curly with funny funny funny.
+
+00:06:50.059 --> 00:06:54.069
+So when we come over here and display,
+we're going to see funny funny funny.
+
+00:06:54.879 --> 00:06:57.150
+Okay, so we'll run that in a second.
+
+00:06:57.150 --> 00:07:00.560
+But the other thing we wanted
+to say was in this example here,
+
+00:07:01.230 --> 00:07:05.400
+I'm displaying those three string
+objects that are in the vector.
+
+00:07:06.599 --> 00:07:08.969
+But in this case, I'm
+making copies of them.
+
+00:07:09.469 --> 00:07:12.590
+There's no danger in changing them,
+right because I've got a copy of them.
+
+00:07:12.590 --> 00:07:16.140
+So if I do change them like I did
+here, I'm only changing the copy.
+
+00:07:16.710 --> 00:07:18.140
+But I'm making copies.
+
+00:07:18.180 --> 00:07:19.720
+So that's pretty inefficient.
+
+00:07:19.740 --> 00:07:22.730
+In this case, those string objects
+are -- they're pretty efficient.
+
+00:07:22.740 --> 00:07:27.579
+But it could be some user-defined
+type where making a copy of
+
+00:07:27.580 --> 00:07:28.800
+it could be pretty expensive.
+
+00:07:28.930 --> 00:07:31.710
+You're allocating space, and you're
+making a copy let's say a couple
+
+00:07:31.710 --> 00:07:33.530
+hundred by 1000 bytes or something.
+
+00:07:33.830 --> 00:07:36.160
+So it could be very very
+expensive operation.
+
+00:07:36.870 --> 00:07:41.669
+In this case, we want to pass that in
+by reference, like we're doing here.
+
+00:07:42.750 --> 00:07:46.139
+And -- but the danger with that
+is that now we can change the
+
+00:07:46.139 --> 00:07:47.469
+elements, right, which we don't want.
+
+00:07:47.779 --> 00:07:50.330
+So that's why we use the const.
+
+00:07:50.340 --> 00:07:55.099
+So this gives us the protection of
+making those elements read-only, but
+
+00:07:55.100 --> 00:07:57.820
+it also allows them not to be copied.
+
+00:07:57.830 --> 00:08:00.310
+In this case, we're just going
+to create aliases to them.
+
+00:08:00.570 --> 00:08:03.809
+So very efficient and pretty safe
+because we can't change them.
+
+00:08:04.559 --> 00:08:05.879
+Okay, so hopefully that makes sense.
+
+00:08:05.910 --> 00:08:08.420
+Let me run this real quick.
+
+00:08:10.070 --> 00:08:12.070
+And you could see the first
+time through, and I'll move
+
+00:08:12.070 --> 00:08:12.950
+this slightly over here.
+
+00:08:13.390 --> 00:08:16.090
+We've got Larry Moe and Curly.
+
+00:08:16.090 --> 00:08:17.279
+So we didn't change a thing.
+
+00:08:17.450 --> 00:08:18.960
+We expected funny funny funny.
+
+00:08:18.980 --> 00:08:20.239
+We got Larry Moe and Curly.
+
+00:08:21.130 --> 00:08:24.910
+Now when we're using a reference,
+we do indeed change the actual.
+
+00:08:24.930 --> 00:08:26.560
+So now we see funny funny funny.
+
+00:08:27.770 --> 00:08:31.490
+Okay, so give that a try, play
+around with these, try to create a
+
+00:08:31.490 --> 00:08:34.260
+reference to a pointer and see if
+you can figure out how that works.
+
+00:08:34.980 --> 00:08:37.380
+All right, so that's pretty
+much it for references.
+
+00:08:37.380 --> 00:08:41.320
+Remember, I covered how to use
+reference parameters and how to pass
+
+00:08:41.320 --> 00:08:43.370
+references to functions in section 11.
+
+00:08:43.370 --> 00:08:47.399
+There's a whole section there on
+using reference parameters and
+
+00:08:47.399 --> 00:08:48.909
+when you use const and so forth.
+
+00:08:49.200 --> 00:08:50.470
+So I'll see you in the next video.

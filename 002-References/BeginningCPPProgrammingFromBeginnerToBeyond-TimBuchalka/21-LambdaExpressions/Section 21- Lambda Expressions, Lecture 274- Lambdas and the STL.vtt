@@ -1,0 +1,1021 @@
+WEBVTT
+
+00:05.290 --> 00:10.180
+Now that we've seen how to implement both stateless and stateful lambdas, let's take a look at more
+
+00:10.180 --> 00:11.230
+ways to use them.
+
+00:11.970 --> 00:17.040
+The most predominant use of lambdas is in conjunction with the standard template algorithms library
+
+00:17.070 --> 00:19.200
+as either a predicate or operator.
+
+00:19.410 --> 00:24.090
+Remember, a predicate is just a function that takes several arguments and returns a boolean.
+
+00:24.540 --> 00:30.060
+Alternatively, an operator is a function that takes several arguments and applies some operation to
+
+00:30.060 --> 00:30.420
+them.
+
+00:31.640 --> 00:36.560
+When using lambdas with the SQL Algorithms Library, you'll often hear them referred to as either urinary
+
+00:36.560 --> 00:39.980
+binary predicates or urinary binary operations.
+
+00:40.310 --> 00:45.650
+This simply refers to whether the lambda will act as a predicate or as an operator, and how many parameters
+
+00:45.650 --> 00:46.700
+the lambda requires.
+
+00:46.700 --> 00:49.100
+Urinary meaning one in binary meaning to.
+
+00:49.740 --> 00:53.670
+We've already seen lots of examples that use lambdas with the SQL algorithms.
+
+00:53.670 --> 00:58.920
+We've seen examples in this section and we also saw examples in the SQL section of the course.
+
+00:59.580 --> 01:04.050
+Now that we've got the jargon down, let's take a look at a few more examples of how to use lambdas
+
+01:04.050 --> 01:06.090
+with a few more SQL algorithms.
+
+01:11.740 --> 01:12.070
+Okay.
+
+01:12.070 --> 01:14.350
+So then let's go through some examples in the ID.
+
+01:14.380 --> 01:21.040
+You can see here that I'm in the Section 21 workspace and I'm in the SQL Underscore Lambdas Project.
+
+01:21.730 --> 01:23.260
+I've already gone ahead and built and run it.
+
+01:23.260 --> 01:29.230
+You can see the run out here on the right side and let's go over the includes I o stream vector algorithm
+
+01:29.230 --> 01:31.090
+and I'm also including numeric.
+
+01:31.090 --> 01:35.620
+This is for a function called iota, which is pretty handy little function that I haven't covered.
+
+01:35.620 --> 01:37.870
+So I thought I would throw it in just so you could learn it.
+
+01:37.870 --> 01:41.440
+The algorithms that I'm going to be using in here are pretty straightforward ones.
+
+01:41.440 --> 01:42.670
+There are a lot more of them.
+
+01:42.670 --> 01:47.170
+As I said, please see your CPP reference website.
+
+01:47.200 --> 01:50.380
+It's got documentation on all the SQL algorithms.
+
+01:50.380 --> 01:54.130
+Again, this video is not about the algorithms, it's about using lambdas with them.
+
+01:54.130 --> 01:55.330
+Let's go over some examples.
+
+01:55.330 --> 02:00.310
+I've got, I think seven tests that will run and I'll walk through them just like I have before the
+
+02:00.310 --> 02:02.050
+first one we've already seen before.
+
+02:02.050 --> 02:06.460
+It's for each and I've included this as well as sort in this video.
+
+02:06.550 --> 02:10.120
+In case somebody jumps straight into this video and they haven't seen them before, they can see them
+
+02:10.120 --> 02:12.190
+here for the first time and I'll walk through them again.
+
+02:12.190 --> 02:14.110
+Okay, so let's start with test one.
+
+02:14.110 --> 02:17.860
+You can see test one's output is right up here in test one.
+
+02:17.860 --> 02:20.560
+What we've got is we're going over the for each algorithm.
+
+02:20.560 --> 02:24.700
+Now I've already covered the for each algorithm a couple of times in this section as well as in the
+
+02:24.700 --> 02:25.300
+course.
+
+02:25.300 --> 02:29.800
+It's a very handy algorithm that lets you iterate over a container in the standard template library.
+
+02:29.800 --> 02:31.540
+So it's not modifying.
+
+02:31.540 --> 02:33.370
+So we're not going to modify anything in the container.
+
+02:33.370 --> 02:36.160
+It just basically processes each element, if you will.
+
+02:36.430 --> 02:42.640
+In this case, I've got nums, which is a vector of five integers, and I've initialized it to ten,
+
+02:42.640 --> 02:44.140
+20, 30, 40, 50.
+
+02:44.140 --> 02:48.310
+And then what we're going to do is we're going to call for each from the beginning to the end.
+
+02:48.310 --> 02:50.380
+So we're going to cover the entire container.
+
+02:50.380 --> 02:54.760
+We don't have to we can only loop once or twice or three or four elements, whatever we want.
+
+02:54.760 --> 02:58.150
+But in this case, I'm iterating over the entire vector.
+
+02:58.150 --> 03:05.110
+And what's going to happen is for each element in that vector, it will be passed into this lambda and
+
+03:05.350 --> 03:06.310
+we're not doing that right.
+
+03:06.310 --> 03:07.930
+The for each algorithm is doing that.
+
+03:07.930 --> 03:12.820
+And then we just use this lambda as an operator here, not a predicate, it's just a regular operator.
+
+03:12.820 --> 03:14.020
+We just do some stuff.
+
+03:14.020 --> 03:15.910
+So in this case we're just displaying.
+
+03:16.180 --> 03:18.520
+So it's going to iterate past those guys in notice.
+
+03:18.520 --> 03:19.600
+There's no capture.
+
+03:19.600 --> 03:25.120
+We only have that one parameter which we need because for each is giving it to us and it's just going
+
+03:25.120 --> 03:27.190
+to display ten, 20, 30, 40, 50.
+
+03:27.190 --> 03:32.560
+So this is a really, really simple example of using a lambda with one of the algorithms in the standard
+
+03:32.560 --> 03:35.530
+template library, a very handy algorithm as well.
+
+03:35.560 --> 03:38.170
+I'm using, it's here, but this can be a container of anything.
+
+03:38.710 --> 03:42.820
+OC So let's take a look at a different one that we probably haven't seen before.
+
+03:43.060 --> 03:50.650
+This one is called is permutation, this one is called is permutation and it's also non modifying.
+
+03:50.650 --> 03:56.500
+In this case I'm using triangles, so it tests whether two triangles are equivalent and we defining
+
+03:56.500 --> 04:01.390
+a triangle being equivalent as a triangle is a vector of three points in any order.
+
+04:01.390 --> 04:05.680
+So regardless of the order, if two triangles contain those same three points, they're equivalent.
+
+04:05.680 --> 04:07.480
+So pretty simple definition.
+
+04:07.480 --> 04:10.630
+So before we use the algorithm, let's take a look at what we've done.
+
+04:10.630 --> 04:12.490
+Let me scroll up just a little bit here.
+
+04:12.490 --> 04:16.330
+So here's test two and you can see test choose output right over here.
+
+04:17.290 --> 04:21.880
+And I've got a structure that I've defined called Point, which is just an X Y attribute.
+
+04:22.210 --> 04:26.110
+And then I'm going to create four points .1. to .3.4.
+
+04:26.440 --> 04:29.020
+And based on this points, I'm going to create a triangle.
+
+04:29.020 --> 04:39.280
+So a triangle is a vector of points, three points triangle one is 0.1.2.3 triangle two is 0.2.3.1.
+
+04:39.280 --> 04:42.160
+And then triangle four includes that 0.4 here.
+
+04:42.160 --> 04:48.300
+So according to our definition, these two are equivalent because we can change the order, right?
+
+04:48.400 --> 04:50.560
+I think everybody understands what a permutation is.
+
+04:50.560 --> 04:53.260
+We're just kind of mixing these things up in different orders.
+
+04:53.260 --> 04:58.000
+Eventually we can commute one of these and get one of those because we've got one, two, three in both
+
+04:58.000 --> 04:58.570
+of them.
+
+04:58.570 --> 05:04.180
+However, triangle three is not equivalent because that 0.4 doesn't exist in either triangle one or
+
+05:04.180 --> 05:04.990
+triangle two.
+
+05:04.990 --> 05:07.030
+And again, the important thing is the lambda here.
+
+05:07.030 --> 05:10.570
+So I'm going to call stood is permutation.
+
+05:10.660 --> 05:16.420
+I'm going to pass in triangle one, begin triangle one, and that's going from the beginning to the
+
+05:16.420 --> 05:17.530
+end of this vector.
+
+05:17.530 --> 05:20.050
+And then I'm passing in triangle to begin.
+
+05:20.440 --> 05:22.570
+Let me spread this out just a little so you can see it.
+
+05:22.570 --> 05:27.460
+So we are also expecting two points now the stood is permutation function.
+
+05:27.610 --> 05:28.750
+That's what it's doing.
+
+05:28.750 --> 05:33.850
+It's passing those two points into us and it's up to us to compare them however we like.
+
+05:33.850 --> 05:39.190
+So we're getting the left hand side and the right hand side and it's using the operator equal to compare.
+
+05:39.190 --> 05:44.350
+So what's going to happen is I'm going to compare my left hand sides X to my right hand side sex and
+
+05:44.350 --> 05:46.840
+the left hand sides Y to the right hand side y.
+
+05:46.840 --> 05:48.550
+So our points are equivalent.
+
+05:48.550 --> 05:55.870
+So when we call is permutation and we get a permutation that matches one of those, we've got an equivalence
+
+05:55.870 --> 05:57.130
+and that's pretty much it.
+
+05:57.130 --> 06:01.480
+So we're using that in the if statement and if they're equivalent, we're just displaying that.
+
+06:01.480 --> 06:03.190
+If they're not equivalent, we're displaying that.
+
+06:03.190 --> 06:08.620
+And you can see from this test case right here, that triangle one and triangle two are equivalent.
+
+06:08.620 --> 06:11.110
+And that's exactly what's being displayed right over here.
+
+06:11.290 --> 06:14.740
+Let me move this back because I think everybody sees what's going on now.
+
+06:15.070 --> 06:20.070
+In the other example down here, I'm using triangle one and triangle three.
+
+06:20.080 --> 06:22.600
+Now, remember, a triangle three has that fourth point in there.
+
+06:22.600 --> 06:24.490
+So it's not going to be equivalent.
+
+06:24.490 --> 06:26.350
+And that's exactly what happens right here.
+
+06:26.410 --> 06:27.370
+We've got triangle one.
+
+06:27.370 --> 06:28.690
+Triangle three is not equivalent.
+
+06:28.690 --> 06:32.470
+So again, just another example of passing in a lambda here.
+
+06:32.470 --> 06:37.480
+This lambda does not capture and it expects two parameters in this case.
+
+06:37.480 --> 06:40.960
+This is a predicate, lambda, because it's returning a true false value.
+
+06:40.990 --> 06:41.260
+All right.
+
+06:41.260 --> 06:43.540
+So let's move on to test three.
+
+06:43.570 --> 06:46.630
+In test three, I'm using the transform algorithm.
+
+06:46.630 --> 06:48.790
+This is a modifying operation.
+
+06:48.790 --> 06:54.520
+And if you recall in the previous examples, we created that Lambda Bonus where we awarded bonus points
+
+06:54.520 --> 06:56.140
+to test scores and so forth.
+
+06:56.140 --> 06:58.990
+Well, we're going to do the same thing, except we're going to use to transform.
+
+06:58.990 --> 07:00.220
+So let's do it.
+
+07:00.250 --> 07:07.810
+We've got test scores and it is a vector of integers and those are my test scores 93, 88, 75, 68,
+
+07:07.810 --> 07:08.710
+65.
+
+07:08.710 --> 07:14.410
+And these are the bonus points that I want to add to each one of those test scores right away.
+
+07:14.410 --> 07:16.180
+You know, we've got a local variable here.
+
+07:16.180 --> 07:18.820
+If we're going to use that in the lambda, we need to capture it.
+
+07:19.330 --> 07:21.670
+So that's what we're going to do in this example.
+
+07:21.670 --> 07:25.510
+We are going to transform that container.
+
+07:25.930 --> 07:28.300
+Test scores begin, test scores don't end.
+
+07:28.300 --> 07:33.790
+So we're doing the entire container and we're going to start writing back the information at test scores
+
+07:34.120 --> 07:34.690
+again.
+
+07:34.720 --> 07:38.800
+So we're going to start from here and we're going to start updating from here as well.
+
+07:38.830 --> 07:41.380
+We're capturing bonus points by value.
+
+07:41.380 --> 07:43.150
+That's this guy right here.
+
+07:43.150 --> 07:46.060
+So we're going to capture those bonus points by value.
+
+07:46.090 --> 07:52.300
+And then it stood transform is going to pass into the lambda each one of those scores as it iterates
+
+07:52.300 --> 07:52.870
+over it.
+
+07:53.110 --> 07:58.120
+So those scores will be passed into here 93, then 88 and 75 and so forth.
+
+07:58.120 --> 08:03.790
+So what we're doing now is we're returning score plus equals five in this case.
+
+08:04.180 --> 08:09.370
+So what we're going to do is we're going to increment each one of those test scores by five points.
+
+08:09.520 --> 08:11.890
+So let's take a look at the output right over here.
+
+08:11.890 --> 08:12.490
+Right here.
+
+08:12.490 --> 08:19.930
+You can see I'm in test three and you can see right there that we've gone from 93 to 98, from 88 to
+
+08:19.930 --> 08:21.520
+93 and so forth.
+
+08:21.520 --> 08:24.910
+So we've added five points to each one of those scores.
+
+08:24.910 --> 08:27.430
+I just used a range based for loop here.
+
+08:27.430 --> 08:29.560
+I could have used the for each algorithm as well.
+
+08:29.560 --> 08:31.420
+I'll leave that up to you guys to decide.
+
+08:32.350 --> 08:34.720
+Okay, so let's take a look at test four.
+
+08:34.930 --> 08:39.730
+I've got a vector of integers called nums and you can see I've initialized it here to one, two, three,
+
+08:39.730 --> 08:40.570
+four, five.
+
+08:40.570 --> 08:45.580
+Now what we're going to do is we're going to remove the even numbers from that vector.
+
+08:45.610 --> 08:48.640
+Then once we remove them, we're going to erase them.
+
+08:49.030 --> 08:55.270
+So what we're doing here is first we're calling remove if and we're telling remove if that we want to
+
+08:55.270 --> 08:59.170
+iterate over the entire container numbers from beginning to end.
+
+08:59.410 --> 09:05.830
+And what remove if we'll do is it will pass in each one of those values from that container into this
+
+09:05.830 --> 09:06.460
+lambda.
+
+09:06.790 --> 09:10.990
+This is a predicate lambda and we're returning true for whatever we want to delete.
+
+09:10.990 --> 09:14.590
+So in this case we're returning true for all even numbers.
+
+09:14.590 --> 09:20.800
+So two and four are what we want to eventually erase, which right now we're just removing.
+
+09:20.800 --> 09:25.690
+What happens is it puts those numbers at the end and sets the end to it.
+
+09:25.690 --> 09:32.770
+So now we're telling nums dot erase to erase what it returned and use nums end as the new end.
+
+09:32.770 --> 09:35.020
+So it's basically going to chop off those numbers.
+
+09:35.020 --> 09:40.720
+And then when we display our updated numbers, you can see right there, one, three and five.
+
+09:40.720 --> 09:43.660
+So again, another example of using a predicate, lambda.
+
+09:43.660 --> 09:48.860
+This is using the erase remove idiom, which is a very common idiom in the SQL.
+
+09:48.970 --> 09:49.100
+Okay.
+
+09:49.150 --> 09:51.730
+So let's move on to test five and test five.
+
+09:51.730 --> 09:55.990
+I'm using that same person class that I've used throughout this section.
+
+09:55.990 --> 09:57.160
+So it's right here.
+
+09:57.160 --> 10:01.630
+You can see it's that person class with our overloaded insertion operator.
+
+10:01.630 --> 10:05.500
+We've got our name, our age and a bunch of constructors and getters and setters.
+
+10:05.500 --> 10:09.490
+So you can refer to the previous videos where I explained this in a little bit more detail.
+
+10:09.760 --> 10:11.860
+So what we're going to do now is we're going to sort it now.
+
+10:11.860 --> 10:13.750
+You seen this before in the previous video.
+
+10:13.750 --> 10:19.780
+I just wanted to include it again, just to be complete because somebody may jump into this video and
+
+10:19.780 --> 10:21.300
+not have any idea how it works.
+
+10:21.300 --> 10:24.010
+So now, you know, so in this case, really easy.
+
+10:24.010 --> 10:29.410
+I've created three person objects, person one, person two in person three, you can see them right
+
+10:29.410 --> 10:29.920
+here.
+
+10:29.920 --> 10:31.360
+They're emo and curly.
+
+10:31.900 --> 10:36.940
+Then I've created a person vector and I've just created it using person one, two and three.
+
+10:36.940 --> 10:39.610
+I've initialized it to those person objects.
+
+10:40.180 --> 10:41.380
+This is just another way to do it.
+
+10:41.380 --> 10:44.440
+I believe I've done it in the other videos, just using Move.
+
+10:50.860 --> 10:55.480
+And then we're going to cost sort and we're going to tell students sort that we want to sort that people
+
+10:55.480 --> 10:57.370
+vector from begin to end.
+
+10:57.730 --> 11:03.190
+And I want it to pass me pairs of persons where that I need to compare.
+
+11:03.340 --> 11:09.670
+So it's going to send to me two person objects, one on the left, one on the right, and we're using
+
+11:09.670 --> 11:13.680
+the less than operator to compare those two, and we're going to compare by name.
+
+11:13.690 --> 11:19.600
+So in this case, you can see we're just comparing by name and we're sorting in increasing alphabetical
+
+11:19.600 --> 11:21.490
+order and then we're displaying these.
+
+11:21.490 --> 11:25.780
+So what's going to happen is right here, Curly Larry and Moe CLM, right?
+
+11:25.780 --> 11:27.790
+So it's in alphabetical order.
+
+11:28.030 --> 11:35.590
+So in this case, if we wanted to display the people in that vector by age and in descending order,
+
+11:35.590 --> 11:40.390
+then we would just have to say left hand side get age greater than right hand side get h and it will
+
+11:40.390 --> 11:41.260
+display.
+
+11:42.130 --> 11:48.670
+Moe, Curly and Larry in that order 30, 25, 18 and descending age, really powerful stuff.
+
+11:48.670 --> 11:53.980
+All we're doing is changing that lambda, changing that predicate lambda to do what we need.
+
+11:53.980 --> 11:56.050
+It's our functional requirements.
+
+11:56.260 --> 12:01.480
+If we have to sort by name ascending or by descending, it's really, really easy to do.
+
+12:02.890 --> 12:03.340
+All right.
+
+12:03.340 --> 12:06.270
+So let's let's move on to another one that's a little bit different.
+
+12:06.280 --> 12:10.600
+In this case, I've written a function and that function is called in between.
+
+12:11.050 --> 12:17.890
+That function expects a vector of numbers, integers in this case, and I'm passing that in by const
+
+12:17.890 --> 12:19.540
+ref a start value.
+
+12:19.540 --> 12:26.860
+In an end value, it's going to decide whether all the numbers in that vector are between that start
+
+12:26.860 --> 12:29.110
+value and that end value inclusive.
+
+12:30.240 --> 12:33.270
+One to use the stood all of algorithm.
+
+12:33.270 --> 12:38.070
+It's a non modifying algorithm and what it does is it tests whether all the elements contained within
+
+12:38.070 --> 12:41.280
+the sequence satisfy the condition in the lambda.
+
+12:41.760 --> 12:44.130
+So in this case I'm assuming that they don't.
+
+12:44.130 --> 12:47.310
+So I'm just initializing this result boolean to false.
+
+12:47.310 --> 12:53.820
+And then I'm saying result equals stood all of where do I want to start?
+
+12:53.820 --> 12:59.550
+I want to start at nums dot begin and I want to go all the way to nums dot n so again, the entire container
+
+12:59.850 --> 13:01.770
+I need start value and end value.
+
+13:01.770 --> 13:03.300
+So I need to capture those guys.
+
+13:03.300 --> 13:06.210
+And that's what's happening right here in the capture list.
+
+13:07.000 --> 13:11.170
+I need to know what they are to be able to use them in my lambda right in here.
+
+13:12.310 --> 13:16.750
+And withstood all of is going to do is for each element in that container.
+
+13:16.750 --> 13:18.460
+It's going to pass it into this lambda.
+
+13:18.910 --> 13:20.980
+And all I'm going to do is I'm going to say return.
+
+13:21.070 --> 13:23.260
+The value is between star value and end value.
+
+13:23.260 --> 13:25.060
+That's what that logic is saying right here.
+
+13:25.060 --> 13:26.170
+I'm going to return result.
+
+13:26.860 --> 13:29.650
+So really straightforward, really powerful, too.
+
+13:29.740 --> 13:31.990
+We don't have to deal with any of this ourselves.
+
+13:31.990 --> 13:33.600
+We just here is test six.
+
+13:33.610 --> 13:39.550
+Let me scroll this up a little bit as well so you can see the test six output right up here and here's
+
+13:39.550 --> 13:40.060
+test six.
+
+13:40.060 --> 13:44.230
+I'm setting student alpha just so I can display true false rather than zero one.
+
+13:44.590 --> 13:49.150
+So I'm starting with a vector of ten integers called num.
+
+13:49.150 --> 13:54.520
+I'm using perrins here, not curlies, so I'm not initializing the first element of that vector to ten.
+
+13:54.520 --> 14:00.100
+I'm creating a vector of ten elements and then I'm using that iota function which is in the numeric
+
+14:00.100 --> 14:00.850
+library.
+
+14:00.850 --> 14:06.190
+And what it does, it goes from nums dot begin to num start end and I'm providing one.
+
+14:06.190 --> 14:11.200
+So basically what it's going to do is it's going to set the values in those ten integers to one, two,
+
+14:11.200 --> 14:13.390
+three, four, five all the way to ten.
+
+14:13.750 --> 14:18.970
+If I'd have started this at ten and here it would go from ten, 11 to 12 and so forth.
+
+14:18.970 --> 14:24.370
+Really handy way assigned values to an existing container in incrementing order.
+
+14:25.270 --> 14:30.940
+So I'm displaying that and you can see right there that's exactly what I owed has done one through ten,
+
+14:31.570 --> 14:33.220
+so I'm going to call in between.
+
+14:33.220 --> 14:35.800
+That's my function that I wrote up here.
+
+14:35.860 --> 14:39.490
+I'm going to pass in the vector, I'm going to pass in the start in the end.
+
+14:39.580 --> 14:45.790
+And what it's going to do is going to check to see if every element in that container is between 50
+
+14:45.790 --> 14:46.570
+and 60.
+
+14:46.690 --> 14:48.220
+Well, that's not true, right?
+
+14:48.220 --> 14:53.200
+Because the container contains one through ten, so they're not all between 50 and 60.
+
+14:53.200 --> 14:55.300
+In fact, none of them are between 50 and 60.
+
+14:55.300 --> 14:57.850
+So that's going to return false in this case.
+
+14:57.850 --> 15:00.490
+I'm going to check to see if the numbers are between one and ten.
+
+15:00.490 --> 15:02.710
+Well, they are each returning.
+
+15:02.710 --> 15:03.340
+True.
+
+15:03.370 --> 15:07.780
+And in this case, I want to check to see if the numbers are between five and seven.
+
+15:07.810 --> 15:08.710
+Of course they're not.
+
+15:08.710 --> 15:10.510
+So that returns false as well.
+
+15:10.690 --> 15:11.050
+Okay.
+
+15:11.050 --> 15:14.200
+So then finally, we're at the last test here, test seven.
+
+15:14.200 --> 15:16.930
+And this was a little bit more complicated, but it's pretty cool.
+
+15:16.930 --> 15:23.800
+We have a class called Password Validator and it contains an attribute called Restricted Symbol.
+
+15:23.800 --> 15:27.430
+And in this case, this is a single character that's the dollar sign.
+
+15:27.430 --> 15:31.000
+So basically passwords cannot have dollar signs in them.
+
+15:31.780 --> 15:37.330
+Then I've got a method called is valid, so we're going to pass in a password and this method is going
+
+15:37.330 --> 15:43.450
+to tell us whether it's a valid well, it is valid if it doesn't contain that one symbol in this example.
+
+15:43.630 --> 15:50.590
+So what this is going to do, it's going to check all of the characters in the password and be sure
+
+15:50.590 --> 15:53.410
+that none of them are the dollar sign right now.
+
+15:53.410 --> 15:58.540
+We could write loops and we could do all kinds of stuff to do this ourselves, but why not use the algorithm?
+
+15:58.540 --> 16:00.460
+All of so let's do that.
+
+16:00.460 --> 16:03.400
+I'm checking password from begin to end.
+
+16:03.400 --> 16:06.760
+Password is a string, so it's basically a container of characters.
+
+16:07.060 --> 16:15.370
+And again, I'm using all of I need to capture this object because I need access to that guy right there.
+
+16:15.370 --> 16:16.480
+Restricted symbol.
+
+16:16.480 --> 16:19.120
+So remember, we're capturing the object here.
+
+16:19.120 --> 16:23.620
+The pointer all of will pass in each character of the password into this lambda.
+
+16:23.620 --> 16:30.550
+So now we have everything we need and this will return character not equal to restricted symbol.
+
+16:31.570 --> 16:36.280
+So this if the character is not equal to the restricted symbol, we've got a valid password.
+
+16:36.280 --> 16:38.700
+And that has to happen for all of the characters.
+
+16:38.710 --> 16:41.500
+If any of those fail, it's going to return.
+
+16:41.500 --> 16:42.140
+False.
+
+16:42.160 --> 16:42.970
+Pretty cool.
+
+16:42.970 --> 16:44.500
+So let's see how we would use it.
+
+16:44.500 --> 16:47.950
+I've got another example down here that I'll go over in a second, but let's take a look at the all
+
+16:47.950 --> 16:50.010
+of and how we would use it right there.
+
+16:50.020 --> 16:54.130
+So we've got a password we're creating called Hollywood one with a dollar sign again.
+
+16:54.130 --> 16:56.950
+So this is an invalid password because of that guy.
+
+16:58.190 --> 17:02.840
+Now I'm instantiating my password validator and I'm just simply calling.
+
+17:02.840 --> 17:06.200
+PV one is valid and I'm passing the password into it.
+
+17:06.740 --> 17:07.330
+That's it.
+
+17:07.340 --> 17:08.300
+Simple as that.
+
+17:08.660 --> 17:09.680
+It's going to return.
+
+17:09.680 --> 17:11.270
+True if the password is valid.
+
+17:11.270 --> 17:13.010
+False if it's invalid.
+
+17:13.040 --> 17:18.500
+Well, in this case, we know that that password is not valid because it has the dollar sign in it.
+
+17:19.280 --> 17:25.640
+If we change the password to just Hollywood one and execute this code, it will display is valid.
+
+17:27.060 --> 17:27.300
+Okay.
+
+17:27.300 --> 17:28.410
+So hopefully that makes sense.
+
+17:28.950 --> 17:30.180
+You can see what's happening.
+
+17:30.180 --> 17:31.230
+It's pretty easy.
+
+17:31.650 --> 17:37.410
+We've got characters coming in from that password string and we're comparing them to that restricted
+
+17:37.410 --> 17:39.630
+symbol we need to capture.
+
+17:39.900 --> 17:44.520
+We need to capture the at this point or otherwise, we won't have access to restricted symbol.
+
+17:45.210 --> 17:46.740
+Let's take a look at another example.
+
+17:47.340 --> 17:49.080
+This is very, very similar.
+
+17:49.110 --> 17:51.060
+This is password validator, too.
+
+17:51.090 --> 17:55.530
+The big difference here is I don't have a single character of restricted symbols.
+
+17:55.560 --> 17:57.810
+I've got a vector of restricted symbols.
+
+17:57.810 --> 18:00.240
+So in this case, I've got a vector of characters.
+
+18:00.240 --> 18:03.840
+The bang, the dollar and the plus symbol are all restricted.
+
+18:03.840 --> 18:05.670
+That would make it an invalid password.
+
+18:05.910 --> 18:09.180
+It changes our logic a little bit, but you can see the power here.
+
+18:09.210 --> 18:12.750
+I've still got my is valid method that expects that password.
+
+18:13.020 --> 18:17.190
+But what's going to happen now is I'm going to use all of and none of together.
+
+18:17.640 --> 18:18.750
+Now that's pretty cool.
+
+18:19.290 --> 18:20.530
+So let me show you how that works.
+
+18:20.550 --> 18:24.780
+So you could walk through this really carefully, but basically what it's doing, it's making sure that
+
+18:24.780 --> 18:28.890
+all of the characters in the password are not restricted.
+
+18:28.890 --> 18:32.630
+And in order to do that, we're using stood all of and stood none of.
+
+18:32.670 --> 18:38.520
+So again, what we're doing is we're making sure that all of the characters in the password have none
+
+18:38.520 --> 18:40.260
+of the restricted symbols in them.
+
+18:40.260 --> 18:45.870
+And if we run this example, we've got C++ rocks that has a bunch of illegal characters in it, right?
+
+18:45.880 --> 18:47.360
+It's got the plus and the bang.
+
+18:47.370 --> 18:52.790
+So we're initializing PV two and we're checking whether it's valid password or not.
+
+18:52.800 --> 18:56.490
+Well, it's not valid because it's got the pluses and the bang.
+
+18:57.310 --> 18:59.190
+In this case, we've got a single bang.
+
+18:59.200 --> 19:00.700
+That's also not valid.
+
+19:01.210 --> 19:04.430
+And then in this case, we have none of those characters.
+
+19:04.450 --> 19:06.220
+Therefore, the password is valid.
+
+19:07.840 --> 19:13.720
+In this video, we've seen some common SQL algorithms and how to use lambdas with them, but it's important
+
+19:13.720 --> 19:16.150
+to note that this in no way covers them all.
+
+19:16.450 --> 19:21.820
+There are many, many algorithms in the SQL Algorithms Library that use lambdas, and as we saw with
+
+19:21.820 --> 19:26.620
+the class password validator too, they can even be used in conjunction with one another.
+
+19:27.190 --> 19:31.270
+It would be impossible to cover them all, but hopefully this gives you a good understanding of why
+
+19:31.270 --> 19:34.060
+lambdas are so important and their patterns of use.
+
+19:34.690 --> 19:36.130
+Learn the SQL algorithms.
+
+19:36.130 --> 19:37.690
+They'll become your best friends.
+
+19:37.720 --> 19:43.180
+Also, if you're a competitive programmer, consider using the SQL algorithms before you code your own
+
+19:43.180 --> 19:43.960
+solution.
+
+19:45.010 --> 19:45.370
+Okay.
+
+19:45.370 --> 19:47.410
+So that wraps up this section on Lambdas.
+
+19:47.410 --> 19:49.180
+I hope you find this section useful.

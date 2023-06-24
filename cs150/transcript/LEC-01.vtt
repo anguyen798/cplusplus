@@ -1,0 +1,2006 @@
+﻿WEBVTT
+
+00:00:00.000 --> 00:00:09.000
+Hello everyone, my name is Steve Gilbert and this is chapter one in your course reader on C++ mechanics.
+
+00:00:09.000 --> 00:00:15.000
+In today's lecture we're going to talk about how do you actually create a C++ program?
+
+00:00:15.000 --> 00:00:19.000
+What are the mechanical steps you need to go through?
+
+00:00:19.000 --> 00:00:25.000
+Now in 1970, when Ken Thompson and Dennis Ritchie created Unix,
+
+00:00:25.000 --> 00:00:32.000
+Dennis Ritchie and Brian Curnahan also wrote a book to introduce the world to the C programming language.
+
+00:00:32.000 --> 00:00:39.000
+In the book they wrote this, "The only way to learn a new programming language is to write programs for it.
+
+00:00:39.000 --> 00:00:45.000
+The first program to write is the same for all languages. Print the words 'Hello World'."
+
+00:00:45.000 --> 00:00:52.000
+Now you've probably heard of this, a Hello World program. This is where this statement comes from.
+
+00:00:52.000 --> 00:01:00.000
+Now to go on to write. This is a big hurdle. To leap over it you have to be able to create the program text somewhere.
+
+00:01:00.000 --> 00:01:05.000
+Compile it, load it, run it, and find out where your output went.
+
+00:01:05.000 --> 00:01:08.000
+That's what we're going to cover today.
+
+00:01:08.000 --> 00:01:12.000
+He goes on to say, I think a little tongue in cheek,
+
+00:01:12.000 --> 00:01:18.000
+"With these mechanical details mastered, everything else is comparatively easy."
+
+00:01:18.000 --> 00:01:24.000
+Now that's not exactly true. All of these mechanical details are necessary,
+
+00:01:24.000 --> 00:01:29.000
+but they're not going to be sufficient for you to write good C++ programs.
+
+00:01:29.000 --> 00:01:34.000
+But it is important that you learn how to do them and make them so they're second nature.
+
+00:01:34.000 --> 00:01:40.000
+So we're going to start. Here's Dennis Ritchie's C version of Hello World.
+
+00:01:40.000 --> 00:01:47.000
+We're going to create a C++ version and take our inspiration from the movie The Princess Bride.
+
+00:01:47.000 --> 00:01:53.000
+"Hello, my name is Inigo Montoya. You killed my father. Prepare to die."
+
+00:01:53.000 --> 00:02:02.000
+So we're not simply going to write one line. We're going to write one, two, three, four, five lines to output.
+
+00:02:02.000 --> 00:02:04.000
+So how do we do that?
+
+00:02:04.000 --> 00:02:11.000
+Well first, what we need to do is we need to write the C++ instruction somewhere.
+
+00:02:11.000 --> 00:02:13.000
+This is called source code.
+
+00:02:13.000 --> 00:02:18.000
+Now if you look at my little illustration on the right of this slide, you'll see that it says C code.
+
+00:02:18.000 --> 00:02:22.000
+But it could be C code or C++ code or any kind of code.
+
+00:02:22.000 --> 00:02:33.000
+So the basic idea behind a high-level language is that we write source code in high-level or human-like languages.
+
+00:02:33.000 --> 00:02:39.000
+And then we take those languages and we convert them into a language the computer understands,
+
+00:02:39.000 --> 00:02:43.000
+a mechanical or binary language.
+
+00:02:43.000 --> 00:02:49.000
+Now for C++, we're going to write our code using the extension .cpp.
+
+00:02:49.000 --> 00:02:56.000
+This is not really required for C++ like it is for Java with the .java extension.
+
+00:02:56.000 --> 00:03:07.000
+But we're going to follow this convention, .cpp for C++ files, .c for C language files, .h for header files.
+
+00:03:07.000 --> 00:03:15.000
+Now to convert our code, we need to use what's called a driver program.
+
+00:03:15.000 --> 00:03:18.000
+Now frequently this will be called a compiler.
+
+00:03:18.000 --> 00:03:20.000
+It's not actually a compiler.
+
+00:03:20.000 --> 00:03:22.000
+It's a series of programs.
+
+00:03:22.000 --> 00:03:26.000
+And we have one program that kind of orchestrates that.
+
+00:03:26.000 --> 00:03:35.000
+And each of these different compilers or drivers have a series of programs that they work with.
+
+00:03:35.000 --> 00:03:39.000
+And that series of programs we call a tool chain.
+
+00:03:39.000 --> 00:03:43.000
+So Clang is one tool chain.
+
+00:03:43.000 --> 00:03:46.000
+GCC is another tool chain.
+
+00:03:46.000 --> 00:03:49.000
+Visual C++ is another tool chain.
+
+00:03:49.000 --> 00:03:53.000
+And their driver programs are named similarly.
+
+00:03:53.000 --> 00:04:01.000
+So Clang++ is the driver for the Clang tool chain, the one that's native to Mac OS.
+
+00:04:01.000 --> 00:04:11.000
+C++ is the native driver for the GCC tool chain, the GNU compiler collection.
+
+00:04:11.000 --> 00:04:17.000
+Cl is the driver for the Visual C++ compiler.
+
+00:04:17.000 --> 00:04:23.000
+So what this driver does is it starts up these different programs.
+
+00:04:23.000 --> 00:04:26.000
+The first program it starts is called the preprocessor.
+
+00:04:26.000 --> 00:04:33.000
+What the preprocessor does is it reads through your source code and it replaces certain statements.
+
+00:04:33.000 --> 00:04:40.000
+These are called preprocessor directives with the code that it intends to make a change to.
+
+00:04:40.000 --> 00:04:48.000
+Mostly that's including header files in C++ and C and expanding macros.
+
+00:04:48.000 --> 00:04:54.000
+Now when that's done, the preprocessed source code, what we call a translation unit,
+
+00:04:54.000 --> 00:04:58.000
+can either be saved to disk, if you see in the picture over there,
+
+00:04:58.000 --> 00:05:05.000
+those are usually saved in a file called a .i file or a .ii, standing for intermediate code,
+
+00:05:05.000 --> 00:05:10.000
+or it can just be saved in memory, which is the normal case.
+
+00:05:10.000 --> 00:05:12.000
+It's just stored in memory.
+
+00:05:12.000 --> 00:05:18.000
+And then that output, the preprocessor output, is passed on to the next step,
+
+00:05:18.000 --> 00:05:22.000
+which is called the compiler proper.
+
+00:05:22.000 --> 00:05:28.000
+Again, most of us informally call Clang or GCC the compiler,
+
+00:05:28.000 --> 00:05:33.000
+but again it's a driver that drives these different subprograms.
+
+00:05:33.000 --> 00:05:36.000
+Now the compiler actually has two phases.
+
+00:05:36.000 --> 00:05:42.000
+Sometimes it's called C1 and C2, and those are actually different programs.
+
+00:05:42.000 --> 00:05:50.000
+The first part of the compiler is to parse the code, to make sense of your source code.
+
+00:05:50.000 --> 00:05:53.000
+Is it formed correctly?
+
+00:05:53.000 --> 00:05:58.000
+It finds syntax errors, like errors where you've made a typo, you forgot a comma,
+
+00:05:58.000 --> 00:06:01.000
+you've made a mistake in the grammar.
+
+00:06:01.000 --> 00:06:05.000
+It finds declaration errors, you've used names in your code
+
+00:06:05.000 --> 00:06:08.000
+and you haven't told the compiler what they mean.
+
+00:06:08.000 --> 00:06:10.000
+And it finds type errors.
+
+00:06:10.000 --> 00:06:14.000
+You may perhaps write a code that's syntactically correct,
+
+00:06:14.000 --> 00:06:19.000
+but you're trying to put the wrong kind of value in the wrong kind of variable.
+
+00:06:19.000 --> 00:06:25.000
+All of those are discovered before we can actually generate any code.
+
+00:06:25.000 --> 00:06:30.000
+This is the parsing phase, or phase one, of the compiler.
+
+00:06:30.000 --> 00:06:34.000
+The second phase of the compiler is to take the output,
+
+00:06:34.000 --> 00:06:39.000
+it's usually called a syntax tree or a parsing tree,
+
+00:06:39.000 --> 00:06:45.000
+take the output of this first phase and pass it through a code generator.
+
+00:06:45.000 --> 00:06:49.000
+And the code generator produces some kind of intermediate language.
+
+00:06:49.000 --> 00:06:55.000
+On the tool chain we're going to be using, GCC, it produces assembly language.
+
+00:06:55.000 --> 00:07:00.000
+On other tool chains, I believe Plang, it may produce some kind of intermediate code
+
+00:07:00.000 --> 00:07:04.000
+that is closer perhaps to Java's byte code.
+
+00:07:04.000 --> 00:07:07.000
+But it produces some kind of intermediate code,
+
+00:07:07.000 --> 00:07:12.000
+not code that the computer can actually run.
+
+00:07:12.000 --> 00:07:15.000
+And, again, if you look at the picture on the right,
+
+00:07:15.000 --> 00:07:19.000
+you'll see that that code can be saved in a file,
+
+00:07:19.000 --> 00:07:27.000
+a .asm file for assembly or a .s file, which is what GCC uses.
+
+00:07:27.000 --> 00:07:33.000
+Now, once we've produced a human-readable form of the machine language
+
+00:07:33.000 --> 00:07:35.000
+that the compiler understands,
+
+00:07:35.000 --> 00:07:38.000
+we actually have to turn that into machine language.
+
+00:07:38.000 --> 00:07:40.000
+And that's the assembly phase.
+
+00:07:40.000 --> 00:07:42.000
+It uses something called the assembler.
+
+00:07:42.000 --> 00:07:46.000
+And this produces an output that is pure binary code.
+
+00:07:46.000 --> 00:07:49.000
+It is no longer human-readable.
+
+00:07:49.000 --> 00:07:54.000
+It doesn't use the symbols that we use for reading and writing.
+
+00:07:54.000 --> 00:07:58.000
+So the assembler takes this assembly language
+
+00:07:58.000 --> 00:08:01.000
+and it produces native machine code.
+
+00:08:01.000 --> 00:08:03.000
+And, again, depending on your tool chain,
+
+00:08:03.000 --> 00:08:09.000
+if you're using Microsoft's CL tool chain, it will produce a .obj file.
+
+00:08:09.000 --> 00:08:13.000
+For both Clang and G++, it produces a .o file.
+
+00:08:13.000 --> 00:08:15.000
+Again, as the picture shows,
+
+00:08:15.000 --> 00:08:19.000
+we can actually skip saving those intermediate files
+
+00:08:19.000 --> 00:08:25.000
+and go directly from memory to memory again.
+
+00:08:25.000 --> 00:08:29.000
+Now, the last part is something that you aren't familiar with in Java.
+
+00:08:29.000 --> 00:08:32.000
+This is called linking.
+
+00:08:32.000 --> 00:08:37.000
+So in Java, this happens when you run your program.
+
+00:08:37.000 --> 00:08:41.000
+When you run your program, the linking happens at run time.
+
+00:08:41.000 --> 00:08:44.000
+In C++, we do it before that.
+
+00:08:44.000 --> 00:08:46.000
+We do it when we build our code.
+
+00:08:46.000 --> 00:08:49.000
+And this whole process, the picture on the right,
+
+00:08:49.000 --> 00:08:52.000
+is called building your executable,
+
+00:08:52.000 --> 00:08:58.000
+turning your source code into an executable program.
+
+00:08:58.000 --> 00:09:05.000
+Now, your object code can actually be understood by the CPU on your computer.
+
+00:09:05.000 --> 00:09:07.000
+It is native object code.
+
+00:09:07.000 --> 00:09:11.000
+However, to get it into memory, we have to load it.
+
+00:09:11.000 --> 00:09:17.000
+And to load it, we're going to need some startup code to be combined with it.
+
+00:09:17.000 --> 00:09:21.000
+So the linker combines that startup code with your object code
+
+00:09:21.000 --> 00:09:26.000
+plus any kind of library features that you have used.
+
+00:09:26.000 --> 00:09:30.000
+So it links those library features, those library functions,
+
+00:09:30.000 --> 00:09:36.000
+those library classes, those library objects into your executable.
+
+00:09:36.000 --> 00:09:42.000
+So it becomes part of your executable along with your object code.
+
+00:09:42.000 --> 00:09:44.000
+As I mentioned, Java does the same thing,
+
+00:09:44.000 --> 00:09:47.000
+but it does it when your program runs.
+
+00:09:47.000 --> 00:09:50.000
+When you type in Java, it actually looks out on disk,
+
+00:09:50.000 --> 00:09:54.000
+finds the library code, combines it in memory,
+
+00:09:54.000 --> 00:09:59.000
+and produces the executable thing that runs.
+
+00:09:59.000 --> 00:10:02.000
+Now, with the executable machine code,
+
+00:10:02.000 --> 00:10:06.000
+you run it by running it on your computer.
+
+00:10:06.000 --> 00:10:08.000
+Now, this is a little different than Java.
+
+00:10:08.000 --> 00:10:16.000
+In Java, we run a hypervisor or a virtual machine, the program Java,
+
+00:10:16.000 --> 00:10:19.000
+the Java virtual machine.
+
+00:10:19.000 --> 00:10:22.000
+In C++, we do not.
+
+00:10:22.000 --> 00:10:27.000
+The operating system actually loads your native machine code into memory,
+
+00:10:27.000 --> 00:10:33.000
+and it's run by the CPU on your computer.
+
+00:10:33.000 --> 00:10:35.000
+So that's the process.
+
+00:10:35.000 --> 00:10:38.000
+Let's go ahead and look at each of those steps.
+
+00:10:38.000 --> 00:10:42.000
+Now, in fact, as we go on in the semester,
+
+00:10:42.000 --> 00:10:45.000
+we will kind of ignore each of these steps.
+
+00:10:45.000 --> 00:10:48.000
+But it's important when you start out to realize that each of these things
+
+00:10:48.000 --> 00:10:50.000
+is happening.
+
+00:10:50.000 --> 00:10:53.000
+It will be important later when you write code,
+
+00:10:53.000 --> 00:10:59.000
+because the compiler will give you error messages that give you a hint about
+
+00:10:59.000 --> 00:11:06.000
+which part of the process failed.
+
+00:11:06.000 --> 00:11:13.000
+Okay, so the simplest C++ program has one function named main.
+
+00:11:13.000 --> 00:11:17.000
+Now, you're probably familiar with that with Java, public static void main.
+
+00:11:17.000 --> 00:11:20.000
+It follows the same purpose.
+
+00:11:20.000 --> 00:11:23.000
+So in Java, you have a function called main.
+
+00:11:23.000 --> 00:11:27.000
+In C++, you have a function called main.
+
+00:11:27.000 --> 00:11:31.000
+The syntax for the main function, again, is the entry point.
+
+00:11:31.000 --> 00:11:37.000
+It's called by the startup code when you load your program.
+
+00:11:37.000 --> 00:11:41.000
+That startup code was added by the linker, as we saw in the last slide,
+
+00:11:41.000 --> 00:11:45.000
+to initialize the memory in your computer, set aside space,
+
+00:11:45.000 --> 00:11:47.000
+set up the machine registers correctly,
+
+00:11:47.000 --> 00:11:53.000
+and just then turn everything over to the CPU so it can start working.
+
+00:11:53.000 --> 00:11:57.000
+Now, in your homework, you're going to find out that we are not going to have
+
+00:11:57.000 --> 00:11:59.000
+a main function.
+
+00:11:59.000 --> 00:12:03.000
+That's because I've put the main function inside a library,
+
+00:12:03.000 --> 00:12:06.000
+and it's going to call a second function called run.
+
+00:12:06.000 --> 00:12:10.000
+But I just don't want you to be confused when you start working your homework
+
+00:12:10.000 --> 00:12:13.000
+and see that there is no main function.
+
+00:12:13.000 --> 00:12:15.000
+There actually is a main function.
+
+00:12:15.000 --> 00:12:18.000
+So let's create our main function here.
+
+00:12:18.000 --> 00:12:20.000
+Let's look at the syntax for it.
+
+00:12:20.000 --> 00:12:23.000
+So the first part is going to be these words main.
+
+00:12:23.000 --> 00:12:26.000
+So that's probably simpler, you notice.
+
+00:12:26.000 --> 00:12:28.000
+It doesn't say public static void.
+
+00:12:28.000 --> 00:12:32.000
+It's just the main.
+
+00:12:32.000 --> 00:12:38.000
+What this means is this tells us what the function returns.
+
+00:12:38.000 --> 00:12:42.000
+That tells us the output.
+
+00:12:42.000 --> 00:12:47.000
+So the kind of value produced by the function is the int.
+
+00:12:47.000 --> 00:12:49.000
+The name of the function is main.
+
+00:12:49.000 --> 00:12:54.000
+If we were to spell it with a capital M, it would still compile,
+
+00:12:54.000 --> 00:12:57.000
+but the linker wouldn't find it when it tried to call it
+
+00:12:57.000 --> 00:13:00.000
+because the linker is calling this main with lowercase.
+
+00:13:00.000 --> 00:13:04.000
+So the functions are case sensitive.
+
+00:13:04.000 --> 00:13:09.000
+Thirdly, if we passed any arguments, if we had any information we wanted to pass
+
+00:13:09.000 --> 00:13:14.000
+in the main, we would pass any arguments inside this,
+
+00:13:14.000 --> 00:13:18.000
+what's called a parameter list or argument list.
+
+00:13:18.000 --> 00:13:22.000
+Here we don't have any, and so we don't need it.
+
+00:13:22.000 --> 00:13:26.000
+The implementation, so this is called the interface of the function,
+
+00:13:26.000 --> 00:13:31.000
+the part that tells the compiler what kinds of things go into the function,
+
+00:13:31.000 --> 00:13:33.000
+what the name of the function is,
+
+00:13:33.000 --> 00:13:36.000
+and what kind of things go out of the function.
+
+00:13:36.000 --> 00:13:40.000
+The implementation is where the code is actually generated.
+
+00:13:40.000 --> 00:13:45.000
+This is put between a set of braces, which mean the same thing they do in Java.
+
+00:13:45.000 --> 00:13:49.000
+It means begin this section of code and end this section of code.
+
+00:13:49.000 --> 00:13:53.000
+Another name for these set of braces is a block.
+
+00:13:53.000 --> 00:13:58.000
+So a function body or the implementation is a block.
+
+00:13:58.000 --> 00:14:02.000
+So let's look back at our code here.
+
+00:14:02.000 --> 00:14:05.000
+And here is our block.
+
+00:14:05.000 --> 00:14:08.000
+Let's look at how we would compile that.
+
+00:14:08.000 --> 00:14:12.000
+I'm going to start just by compiling it with G++.
+
+00:14:12.000 --> 00:14:18.000
+I'm going to say G++ hello.cpp.
+
+00:14:18.000 --> 00:14:23.000
+If I don't get any errors, that means it worked correctly.
+
+00:14:23.000 --> 00:14:27.000
+So this compiles and runs correctly.
+
+00:14:27.000 --> 00:14:31.000
+In Unix, this is Unix here,
+
+00:14:31.000 --> 00:14:36.000
+and in Unix we would run it by typing the name of the output program.
+
+00:14:36.000 --> 00:14:39.000
+Remember what Dennis Ritchie wrote.
+
+00:14:39.000 --> 00:14:43.000
+You have to figure out where your output went.
+
+00:14:43.000 --> 00:14:47.000
+So where did my program go when I compiled it?
+
+00:14:47.000 --> 00:14:51.000
+If we type in LS, which stands for list,
+
+00:14:51.000 --> 00:14:54.000
+we can see we have two files here,
+
+00:14:54.000 --> 00:14:57.000
+hello.cpp, the one I created,
+
+00:14:57.000 --> 00:15:00.000
+and something called a.out.
+
+00:15:00.000 --> 00:15:05.000
+That is an old name that stands for assembly output.
+
+00:15:05.000 --> 00:15:14.000
+And so I can run that program by typing in ./a.out.
+
+00:15:14.000 --> 00:15:17.000
+And of course I have no code inside there,
+
+00:15:17.000 --> 00:15:22.000
+but in fact that program did something.
+
+00:15:22.000 --> 00:15:25.000
+What it did was it printed out
+
+00:15:25.000 --> 00:15:30.000
+or it returned to the operating system an integer.
+
+00:15:30.000 --> 00:15:32.000
+And you might think, what integer?
+
+00:15:32.000 --> 00:15:36.000
+Well, in fact, every function, like Java,
+
+00:15:36.000 --> 00:15:39.000
+if it says it has to return a value,
+
+00:15:39.000 --> 00:15:41.000
+it has to return a value.
+
+00:15:41.000 --> 00:15:45.000
+The main function in C++ is a little special though,
+
+00:15:45.000 --> 00:15:49.000
+because it will return a value if you don't return a value.
+
+00:15:49.000 --> 00:15:52.000
+The default value it returns is this.
+
+00:15:52.000 --> 00:15:57.000
+So this is implicitly written in every C++ program,
+
+00:15:57.000 --> 00:15:59.000
+return zero.
+
+00:15:59.000 --> 00:16:03.000
+And zero signifies to the operating system
+
+00:16:03.000 --> 00:16:06.000
+that there was no problem.
+
+00:16:06.000 --> 00:16:08.000
+Now we might be able to,
+
+00:16:08.000 --> 00:16:11.000
+I'm going to see if I remember this,
+
+00:16:11.000 --> 00:16:14.000
+because I don't seem with my video to have any way to pause this,
+
+00:16:14.000 --> 00:16:16.000
+which is kind of unfortunate.
+
+00:16:16.000 --> 00:16:21.000
+I'm going to see if I can echo.
+
+00:16:21.000 --> 00:16:24.000
+Yes, that is echoing the return value
+
+00:16:24.000 --> 00:16:27.000
+from the last program written.
+
+00:16:27.000 --> 00:16:29.000
+And notice it returns zero.
+
+00:16:29.000 --> 00:16:33.000
+So many times you'll see the return zero put in there explicitly.
+
+00:16:33.000 --> 00:16:38.000
+You don't have to put that in.
+
+00:16:38.000 --> 00:16:46.000
+So now let's see what we want to do to print out our "Hello, world!"
+
+00:16:46.000 --> 00:16:51.000
+So if this was Python, we'd use a function called print.
+
+00:16:51.000 --> 00:16:56.000
+And so I would write print, "Hello, print.
+
+00:16:56.000 --> 00:16:59.000
+My name is print Inigo Montoyo,"
+
+00:16:59.000 --> 00:17:02.000
+although I'd use my own name, of course.
+
+00:17:02.000 --> 00:17:04.000
+This is built into the language.
+
+00:17:04.000 --> 00:17:07.000
+You don't have to add anything special to do this into Python.
+
+00:17:07.000 --> 00:17:10.000
+It's part of the Python language itself.
+
+00:17:10.000 --> 00:17:12.000
+I can have multiple arguments.
+
+00:17:12.000 --> 00:17:21.000
+I can say print, "Hello, space," or a comma, "My name is," and so forth.
+
+00:17:21.000 --> 00:17:23.000
+And it would add a new line.
+
+00:17:23.000 --> 00:17:25.000
+I wouldn't need to have a semicolon after it.
+
+00:17:25.000 --> 00:17:31.000
+So in Python, it would look like this.
+
+00:17:31.000 --> 00:17:50.000
+I could write print, "Hello, my name is," and so forth.
+
+00:17:50.000 --> 00:17:52.000
+So I could put all of those things in there.
+
+00:17:52.000 --> 00:18:00.000
+It would be built into the language, and I wouldn't need to put a semicolon in it.
+
+00:18:00.000 --> 00:18:03.000
+Most of you are probably more familiar with Java, however.
+
+00:18:03.000 --> 00:18:09.000
+And in Java, what we need to do is we use the system.out.print method.
+
+00:18:09.000 --> 00:18:12.000
+And so that is not part of the language.
+
+00:18:12.000 --> 00:18:16.000
+It's part of the standard library that comes with Java.
+
+00:18:16.000 --> 00:18:20.000
+However, it's available to every Java program.
+
+00:18:20.000 --> 00:18:22.000
+We say it's auto-loaded.
+
+00:18:22.000 --> 00:18:30.000
+Java automatically loads part of the standard library whenever you run a program.
+
+00:18:30.000 --> 00:18:31.000
+You can have a single argument.
+
+00:18:31.000 --> 00:18:36.000
+So in Java, I would have to write that somewhat like this.
+
+00:18:36.000 --> 00:18:51.000
+I'd have to write system.out.println, "Hello," system.out.println,
+
+00:18:51.000 --> 00:18:56.000
+"My name is," and so forth.
+
+00:18:56.000 --> 00:19:01.000
+Now you notice with Java, I've had to add a semicolon at the end.
+
+00:19:01.000 --> 00:19:05.000
+And I've had to use println instead of print.
+
+00:19:05.000 --> 00:19:12.000
+If I used the print method, I would have to manually add in a new line or use println.
+
+00:19:12.000 --> 00:19:16.000
+For C++, we don't use a function.
+
+00:19:16.000 --> 00:19:18.000
+We don't use a method.
+
+00:19:18.000 --> 00:19:24.000
+Instead, we use an object and an operator, an insertion operator.
+
+00:19:24.000 --> 00:19:28.000
+And so this, like Java, is not part of the language.
+
+00:19:28.000 --> 00:19:30.000
+It's in the library.
+
+00:19:30.000 --> 00:19:34.000
+Unlike Java, it's not auto-loaded.
+
+00:19:34.000 --> 00:19:39.000
+Unlike Java, it's in something called a namespace.
+
+00:19:39.000 --> 00:19:42.000
+So you can have multiple arguments.
+
+00:19:42.000 --> 00:19:44.000
+You can have multiple operators.
+
+00:19:44.000 --> 00:19:47.000
+But you do need a semicolon.
+
+00:19:47.000 --> 00:19:55.000
+If you want a new line, you have to manually add a new line with the new line escape sequence or endl.
+
+00:19:55.000 --> 00:19:58.000
+So this is how we do it in C++.
+
+00:19:58.000 --> 00:20:07.000
+Again, that doesn't work for -- this doesn't work for -- we can't put Java inside here.
+
+00:20:07.000 --> 00:20:09.000
+We're in C++.
+
+00:20:09.000 --> 00:20:16.000
+So we'd say cl, "Hello."
+
+00:20:16.000 --> 00:20:19.000
+We manually put in a new line.
+
+00:20:19.000 --> 00:20:27.000
+"Cout my name is" -- or we could use the endl.
+
+00:20:27.000 --> 00:20:32.000
+And notice I have multiple arguments.
+
+00:20:32.000 --> 00:20:39.000
+And for each argument, I need an operator that sends my argument to the output object.
+
+00:20:39.000 --> 00:20:43.000
+Now, this is called cout, not "cout."
+
+00:20:43.000 --> 00:20:46.000
+And cout stands for "character output."
+
+00:20:46.000 --> 00:20:51.000
+So we're going to send this out as characters.
+
+00:20:51.000 --> 00:20:58.000
+I'm going to put "cout Steven Gilbert" instead of that.
+
+00:20:58.000 --> 00:21:00.000
+You can put in your own name.
+
+00:21:00.000 --> 00:21:08.000
+I can also put a new line in the middle of a sentence like that if I want, like I've done before.
+
+00:21:08.000 --> 00:21:36.000
+And I don't need -- I can put in -- I can put this on multiple lines so you can have multiple arguments.
+
+00:21:36.000 --> 00:21:38.000
+And that's the end of the sentence.
+
+00:21:38.000 --> 00:21:41.000
+So notice this is one statement.
+
+00:21:41.000 --> 00:21:50.000
+I have multiple arguments, multiple operators, and all of them are sending the output to cout.
+
+00:21:50.000 --> 00:21:52.000
+This is one statement.
+
+00:21:52.000 --> 00:21:56.000
+The statement ends with the semicolon.
+
+00:21:56.000 --> 00:22:06.000
+And here is our C++ version of "Hello, world!"
+
+00:22:06.000 --> 00:22:14.000
+Now, in Python, I said that it was a function called print.
+
+00:22:14.000 --> 00:22:18.000
+So a function -- C++ has functions.
+
+00:22:18.000 --> 00:22:23.000
+Function is a named piece of code that may take arguments and returns a value
+
+00:22:23.000 --> 00:22:25.000
+or may carry out an action.
+
+00:22:25.000 --> 00:22:28.000
+So square root is a function.
+
+00:22:28.000 --> 00:22:33.000
+Notice that we pass arguments to it and we get back a value.
+
+00:22:33.000 --> 00:22:36.000
+We pass arguments to it and we get back a value.
+
+00:22:36.000 --> 00:22:39.000
+Now notice Python has functions.
+
+00:22:39.000 --> 00:22:41.000
+C++ has functions.
+
+00:22:41.000 --> 00:22:44.000
+Java does not really have functions.
+
+00:22:44.000 --> 00:22:48.000
+Java instead has a method.
+
+00:22:48.000 --> 00:22:52.000
+In C++ we call these member functions.
+
+00:22:52.000 --> 00:22:58.000
+Now a function, like square root, is not associated with an object or a class.
+
+00:22:58.000 --> 00:23:03.000
+A member function or a method is defined in a class,
+
+00:23:03.000 --> 00:23:12.000
+and a member function takes an implicit or invisible reference to an object as its first argument.
+
+00:23:12.000 --> 00:23:17.000
+So notice if we had a string named str in Java,
+
+00:23:17.000 --> 00:23:21.000
+we'd call it by writing str.length.
+
+00:23:21.000 --> 00:23:26.000
+We wouldn't call it by calling length and passing str to it.
+
+00:23:26.000 --> 00:23:33.000
+That's because str is invisibly passed as a first argument here inside the function.
+
+00:23:33.000 --> 00:23:35.000
+It's a parameter called this.
+
+00:23:35.000 --> 00:23:40.000
+And so we use the same thing in C++.
+
+00:23:40.000 --> 00:23:48.000
+If we have member functions, we call them by using this dot notation, str.length,
+
+00:23:48.000 --> 00:23:55.000
+which means call length and pass str as the invisible first argument.
+
+00:23:55.000 --> 00:23:58.000
+Finally we have operators.
+
+00:23:58.000 --> 00:24:02.000
+Again, we have these in both Python and we have them in C++.
+
+00:24:02.000 --> 00:24:04.000
+We do not have them in Java.
+
+00:24:04.000 --> 00:24:11.000
+And an overloaded operator is simply a function that has a special name.
+
+00:24:11.000 --> 00:24:18.000
+We call that function not by using function call notation or method call notation,
+
+00:24:18.000 --> 00:24:22.000
+but operator infix notation.
+
+00:24:22.000 --> 00:24:26.000
+So when I write cout, arrow, arrow, hello,
+
+00:24:26.000 --> 00:24:33.000
+what I'm doing is I'm calling a function called operator output or operator arrow, arrow,
+
+00:24:33.000 --> 00:24:38.000
+and I'm passing the left-hand side of this expression
+
+00:24:38.000 --> 00:24:43.000
+and the right-hand side of that expression as two arguments.
+
+00:24:43.000 --> 00:24:48.000
+So if you think of an infix expression, a plus b,
+
+00:24:48.000 --> 00:24:55.000
+a is the left-hand side, b is the right-hand side, plus is the operator.
+
+00:24:55.000 --> 00:24:58.000
+This is the left-hand side, cout.
+
+00:24:58.000 --> 00:25:02.000
+This is the operator and this is the right-hand side.
+
+00:25:02.000 --> 00:25:09.000
+And those are implemented in C++ by writing a special function called operator
+
+00:25:09.000 --> 00:25:14.000
+with the name of the operator that's used.
+
+00:25:14.000 --> 00:25:18.000
+Okay, so let's go on and look.
+
+00:25:18.000 --> 00:25:22.000
+So let's compile our program again.
+
+00:25:22.000 --> 00:25:26.000
+Now that I've done that, let me go ahead and do it again
+
+00:25:26.000 --> 00:25:29.000
+and see if I can get this to print hello.
+
+00:25:29.000 --> 00:25:35.000
+So I'm going to go g++ hello.cpp
+
+00:25:35.000 --> 00:25:39.000
+and instead I get a whole bunch of errors.
+
+00:25:39.000 --> 00:25:42.000
+Notice that it didn't work.
+
+00:25:42.000 --> 00:25:45.000
+These are all syntax errors.
+
+00:25:45.000 --> 00:25:48.000
+Notice it gave me some suggested alternatives.
+
+00:25:48.000 --> 00:25:51.000
+Those usually are meaningless.
+
+00:25:51.000 --> 00:25:54.000
+And so when you get errors like this,
+
+00:25:54.000 --> 00:25:59.000
+what you want to do is you want to find the first error and fix that.
+
+00:25:59.000 --> 00:26:03.000
+Cout was not declared in that scope.
+
+00:26:03.000 --> 00:26:05.000
+So what does that mean?
+
+00:26:05.000 --> 00:26:08.000
+What have I forgotten in my code here?
+
+00:26:08.000 --> 00:26:11.000
+What have I done wrong?
+
+00:26:11.000 --> 00:26:17.000
+So as I mentioned, input and output, the cout object, the endl object,
+
+00:26:17.000 --> 00:26:20.000
+are not part of the language.
+
+00:26:20.000 --> 00:26:24.000
+They are part of the standard C++ library.
+
+00:26:24.000 --> 00:26:28.000
+Just like system.out is not part of the Java language.
+
+00:26:28.000 --> 00:26:31.000
+It's part of the Java library.
+
+00:26:31.000 --> 00:26:35.000
+However, in Java, when you run a program,
+
+00:26:35.000 --> 00:26:40.000
+it automatically includes part of the library,
+
+00:26:40.000 --> 00:26:44.000
+what's called the java.lang package,
+
+00:26:44.000 --> 00:26:48.000
+and that includes string and system.out and so forth.
+
+00:26:48.000 --> 00:26:51.000
+In C++, that's not true at all.
+
+00:26:51.000 --> 00:26:58.000
+In C++, it's our job to make sure we include everything that we use.
+
+00:26:58.000 --> 00:27:03.000
+So we use a library feature by including the header.
+
+00:27:03.000 --> 00:27:08.000
+And so the header we want to include is named Iostream.
+
+00:27:08.000 --> 00:27:12.000
+That will insert the declarations and the definitions from the standard
+
+00:27:12.000 --> 00:27:17.000
+library Iostream header into our code.
+
+00:27:17.000 --> 00:27:20.000
+We'll see in a few moments how that works.
+
+00:27:20.000 --> 00:27:25.000
+Now, there are actually more than 70 of these headers in C++11,
+
+00:27:25.000 --> 00:27:29.000
+and so you're going to need to learn some of them by heart.
+
+00:27:29.000 --> 00:27:34.000
+Otherwise, you're going to look up by looking up the documentation.
+
+00:27:34.000 --> 00:27:40.000
+So lines that start with a pound sign are not processed by the main compiler.
+
+00:27:40.000 --> 00:27:44.000
+They are processed and removed by the preprocessor.
+
+00:27:44.000 --> 00:27:50.000
+These are called preprocessor directives or preprocessor instructions.
+
+00:27:50.000 --> 00:27:55.000
+So in this case, the include will be replaced with the actual text of the
+
+00:27:55.000 --> 00:27:57.000
+header file.
+
+00:27:57.000 --> 00:28:00.000
+Okay, now I'm not going to do this one right now.
+
+00:28:00.000 --> 00:28:03.000
+We're going to come back and do that one in a moment.
+
+00:28:03.000 --> 00:28:04.000
+Okay?
+
+00:28:04.000 --> 00:28:10.000
+So I want to add in the include.
+
+00:28:10.000 --> 00:28:16.000
+So I'm going to say include Iostream.
+
+00:28:16.000 --> 00:28:18.000
+So the Iostream goes in brackets.
+
+00:28:18.000 --> 00:28:20.000
+You notice how your editor will help you there
+
+00:28:20.000 --> 00:28:23.000
+and show you the different code.
+
+00:28:23.000 --> 00:28:27.000
+And we'll come down here with the terminal window.
+
+00:28:27.000 --> 00:28:32.000
+If you type in control and L, you can clear the whole terminal window.
+
+00:28:32.000 --> 00:28:39.000
+And so we're going to type in just -- oops, hit the wrong key again -- G++
+
+00:28:39.000 --> 00:28:43.000
+hello.cpp.
+
+00:28:43.000 --> 00:28:48.000
+Notice we get some errors that are similar but slightly different,
+
+00:28:48.000 --> 00:28:50.000
+slightly different, right?
+
+00:28:50.000 --> 00:28:54.000
+So, again, the first error, CL was not declared in this scope.
+
+00:28:54.000 --> 00:28:58.000
+But notice the alternative here is slightly different.
+
+00:28:58.000 --> 00:29:05.000
+It no longer says that we have -- thinks we should put in an enum.
+
+00:29:05.000 --> 00:29:14.000
+It says, "Oh, you notice in Iostream.61.18, standard CL was declared there.
+
+00:29:14.000 --> 00:29:18.000
+Did you mean to be using that standard CL?"
+
+00:29:18.000 --> 00:29:21.000
+And, in fact, we do.
+
+00:29:21.000 --> 00:29:23.000
+So that is the next step.
+
+00:29:23.000 --> 00:29:32.000
+We need to look at -- hold on, I'm trying to get my thing over here.
+
+00:29:32.000 --> 00:29:35.000
+I'm going to look at the preprocessed source code in a second.
+
+00:29:35.000 --> 00:29:41.000
+So in C++, we have something that there's nothing similar to in Java
+
+00:29:41.000 --> 00:29:45.000
+except the math class.
+
+00:29:45.000 --> 00:29:51.000
+So a namespace is a group of related classes and functions.
+
+00:29:51.000 --> 00:29:57.000
+And the math class in Java is very similar to that.
+
+00:29:57.000 --> 00:30:01.000
+You know that scanner object in the Java util package?
+
+00:30:01.000 --> 00:30:04.000
+What you do is you create a scanner.
+
+00:30:04.000 --> 00:30:08.000
+Scanner in equals new scanner system in.
+
+00:30:08.000 --> 00:30:12.000
+You use a class to create an object.
+
+00:30:12.000 --> 00:30:15.000
+With things in the math class, you don't.
+
+00:30:15.000 --> 00:30:20.000
+Matter of fact, it's impossible for you to create a math object.
+
+00:30:20.000 --> 00:30:28.000
+Instead, the math class simply acts as a container to contain groups of functions,
+
+00:30:28.000 --> 00:30:32.000
+static functions they're called in the math class,
+
+00:30:32.000 --> 00:30:36.000
+like math.square root and math.pal.
+
+00:30:36.000 --> 00:30:42.000
+So namespaces do the same job in C++.
+
+00:30:42.000 --> 00:30:48.000
+A namespace groups together similar kinds of functions.
+
+00:30:48.000 --> 00:30:57.000
+And all of the functions in the standard C++ library are in the namespace called std.
+
+00:30:57.000 --> 00:31:05.000
+Now because std has bad meanings,
+
+00:31:05.000 --> 00:31:09.000
+bad -- I can't think of the word I'm thinking of --
+
+00:31:09.000 --> 00:31:14.000
+we generally pronounce it the standard namespace,
+
+00:31:14.000 --> 00:31:17.000
+rather than spelling out the words.
+
+00:31:17.000 --> 00:31:23.000
+So to use the namespace, we can do three things.
+
+00:31:23.000 --> 00:31:27.000
+First, we can explicitly qualify each object.
+
+00:31:27.000 --> 00:31:31.000
+Now you can do the same thing in Java.
+
+00:31:31.000 --> 00:31:43.000
+In Java, instead of writing import Java.util scanner at the top of your program,
+
+00:31:43.000 --> 00:31:51.000
+you can write Java.util scanner in equals new Java.util scanner.
+
+00:31:51.000 --> 00:31:54.000
+And you never need to use the import statement.
+
+00:31:54.000 --> 00:32:00.000
+In other words, you can explicitly qualify each of the names in the class.
+
+00:32:00.000 --> 00:32:02.000
+And we can do the same thing.
+
+00:32:02.000 --> 00:32:06.000
+We can explicitly qualify the name of the function.
+
+00:32:06.000 --> 00:32:09.000
+Here I've done that with square root by saying,
+
+00:32:09.000 --> 00:32:14.000
+I want to call the square root function that's in the standard namespace.
+
+00:32:14.000 --> 00:32:17.000
+Now in Java, when we do that, we use a dot.
+
+00:32:17.000 --> 00:32:21.000
+So Java.util dot scanner.
+
+00:32:21.000 --> 00:32:30.000
+In C++, if we have the same classes, we'd write Java colon colon util colon colon scanner
+
+00:32:30.000 --> 00:32:39.000
+to say that the scanner was in the util package, which is in the Java package.
+
+00:32:39.000 --> 00:32:44.000
+So this is called the scope resolution operator, colon colon.
+
+00:32:44.000 --> 00:32:50.000
+And it's used when we mean that something exists inside of something else.
+
+00:32:50.000 --> 00:32:54.000
+So here we're saying the square root exists in the standard namespace.
+
+00:32:54.000 --> 00:32:58.000
+Many C++ programmers like this style.
+
+00:32:58.000 --> 00:33:00.000
+It's very, very common.
+
+00:33:00.000 --> 00:33:06.000
+I know at UCI they do all of their C++ programming using this style.
+
+00:33:06.000 --> 00:33:08.000
+I think it's a little wordy.
+
+00:33:08.000 --> 00:33:12.000
+And so there are two options for that.
+
+00:33:12.000 --> 00:33:25.000
+Just like you can write import Java util dot star or import Java util dot scanner,
+
+00:33:25.000 --> 00:33:32.000
+we can do something similar by saying at the top, using standard square root.
+
+00:33:32.000 --> 00:33:38.000
+When I do that, in my code, I only have to use the name square root.
+
+00:33:38.000 --> 00:33:44.000
+Notice I haven't imported any other name from the standard namespace, just square root.
+
+00:33:44.000 --> 00:33:48.000
+This is called a using declaration.
+
+00:33:48.000 --> 00:33:51.000
+Similarly, I can import everything.
+
+00:33:51.000 --> 00:33:58.000
+I can do the import Java util dot star, all the names inside there.
+
+00:33:58.000 --> 00:34:03.000
+And so we can use a using directive using namespace standard.
+
+00:34:03.000 --> 00:34:07.000
+Now, there are certain places where we cannot do this.
+
+00:34:07.000 --> 00:34:17.000
+But for C++ single file implementation files, this is perfectly legal.
+
+00:34:17.000 --> 00:34:22.000
+So I'm going to go back to my C++ program, and I'm going to add that statement in.
+
+00:34:22.000 --> 00:34:30.000
+So using namespace standard.
+
+00:34:30.000 --> 00:34:40.000
+I'm going to try once more. I'm going to go ahead and erase this code here.
+
+00:34:40.000 --> 00:34:50.000
+And I'm going to do -- again, every time I clear that, G++ hello.cpp.
+
+00:34:50.000 --> 00:34:56.000
+Now, the fact that I don't get any error messages here means that it compiled correctly.
+
+00:34:56.000 --> 00:35:02.000
+I can run it. You remember our output is named a out.
+
+00:35:02.000 --> 00:35:08.000
+And there you have my output, just like it appears on the screen.
+
+00:35:08.000 --> 00:35:13.000
+Now, I want to look a little bit more at each of the steps that we just did.
+
+00:35:13.000 --> 00:35:17.000
+I just typed in G++ hello.cpp.
+
+00:35:17.000 --> 00:35:27.000
+And as it did that, it happily did all of the steps and didn't save anything to disk.
+
+00:35:27.000 --> 00:35:35.000
+For our in-class exercise, what I want to do is I want to look at --
+
+00:35:35.000 --> 00:35:42.000
+I'm going to go and open the in-class exercise, click the link for the starter form,
+
+00:35:42.000 --> 00:35:50.000
+make a copy of the document in my own Google Drive.
+
+00:35:50.000 --> 00:35:56.000
+Okay, I want to look at each of these steps in the hello program.
+
+00:35:56.000 --> 00:36:03.000
+The first step I want to look at is the step for the intermediate code.
+
+00:36:03.000 --> 00:36:08.000
+And so instead of just saying G++ hello.cpp,
+
+00:36:08.000 --> 00:36:15.000
+what I'm going to do is I'm going to say G++ -e.
+
+00:36:15.000 --> 00:36:20.000
+Now, this is called a flag. It's telling the driver, I only want to do part of this.
+
+00:36:20.000 --> 00:36:23.000
+So I don't know why it's -e.
+
+00:36:23.000 --> 00:36:26.000
+So I'm going to say hello.cpp.
+
+00:36:26.000 --> 00:36:31.000
+And then I'm going to do a -o. I know that stands for output.
+
+00:36:31.000 --> 00:36:36.000
+I'm going to say hello.ii.
+
+00:36:36.000 --> 00:36:42.000
+So I'm going to save just one part of this.
+
+00:36:42.000 --> 00:36:49.000
+I'm not going to run the compiler phase. I'm just going to run the preprocessor phase.
+
+00:36:49.000 --> 00:36:56.000
+Then I'm going to go over here and look, and I'm going to see that I have a new file called hello.ii.
+
+00:36:56.000 --> 00:36:59.000
+So I'm going to go ahead and open that.
+
+00:36:59.000 --> 00:37:11.000
+And you'll see that this is the code that was actually inside the iostreams.header.
+
+00:37:11.000 --> 00:37:19.000
+And you'll see, in fact, that it's about 30,000 lines long.
+
+00:37:19.000 --> 00:37:23.000
+So I'm going to take a little screenshot of part of that.
+
+00:37:23.000 --> 00:37:30.000
+And I'm on Windows, so I'm going to do that by holding down my Windows key, Shift and S.
+
+00:37:30.000 --> 00:37:38.000
+And I'm just going to drag a little thing through that.
+
+00:37:38.000 --> 00:37:45.000
+And then I'm going to go over to my document here.
+
+00:37:45.000 --> 00:37:53.000
+And I'm going to paste a screenshot of the fact that I can look at the preprocessed source code.
+
+00:37:53.000 --> 00:37:58.000
+I can look at the preprocessed source code.
+
+00:37:58.000 --> 00:38:03.000
+That was the exercise we skipped earlier.
+
+00:38:03.000 --> 00:38:09.000
+Now, I want to take that preprocessed source code.
+
+00:38:09.000 --> 00:38:12.000
+So I'm going to type something slightly different than what I have here.
+
+00:38:12.000 --> 00:38:17.000
+But notice I have another flag here. I have -S.
+
+00:38:17.000 --> 00:38:22.000
+This is going to do the parsing and the code generation phase.
+
+00:38:22.000 --> 00:38:29.000
+So let me bring my code over here.
+
+00:38:29.000 --> 00:38:33.000
+So I'm going to go over here. Actually, I'm going to leave that one open.
+
+00:38:33.000 --> 00:38:40.000
+I'm going to say g++ -S.
+
+00:38:40.000 --> 00:38:46.000
+Here I'm not going to say hello.cpp. I'm just going to say hello.ii.
+
+00:38:46.000 --> 00:38:53.000
+I'm actually going to take this as input, my intermediate code, and I'm going to produce another file.
+
+00:38:53.000 --> 00:38:57.000
+Now watch the file tree on the left when I do that.
+
+00:38:57.000 --> 00:39:00.000
+Notice that it produces another file here.
+
+00:39:00.000 --> 00:39:05.000
+If you open that up, you'll notice that this code, again, is human readable.
+
+00:39:05.000 --> 00:39:09.000
+We can actually look at the code and see what it says.
+
+00:39:09.000 --> 00:39:17.000
+But this is code for the processor I'm working on, a 64-bit Windows processor.
+
+00:39:17.000 --> 00:39:22.000
+So I'm going to take my next screenshot, again, Windows Shift-S.
+
+00:39:22.000 --> 00:39:26.000
+If you're on the Mac, you'd use the Mac ones to do that.
+
+00:39:26.000 --> 00:39:32.000
+I'm going to take a picture of some of the code there.
+
+00:39:32.000 --> 00:39:35.000
+And I'm going to go over to my exercise document.
+
+00:39:35.000 --> 00:39:55.000
+And I'm going to turn the translation unit into assembly and paste in a screenshot of that.
+
+00:39:55.000 --> 00:40:02.000
+So we've just converted the preprocessed translation unit into assembly language.
+
+00:40:02.000 --> 00:40:08.000
+Step three is I'm going to take that assembly language and convert it into machine code.
+
+00:40:08.000 --> 00:40:15.000
+Again, my driver, G++, is going to run another program.
+
+00:40:15.000 --> 00:40:20.000
+So I'm going to type in here G++-c.
+
+00:40:20.000 --> 00:40:22.000
+Now, e and s were uppercase.
+
+00:40:22.000 --> 00:40:24.000
+This c is lowercase.
+
+00:40:24.000 --> 00:40:32.000
+I'm going to do hello.s because that's my input.
+
+00:40:32.000 --> 00:40:39.000
+And it is going to, again, produce another piece of output over here, hello.o.
+
+00:40:39.000 --> 00:40:40.000
+Try and clink that.
+
+00:40:40.000 --> 00:40:42.000
+It says it's binary data.
+
+00:40:42.000 --> 00:40:44.000
+It can't be displayed.
+
+00:40:44.000 --> 00:40:46.000
+So this has all been human readable.
+
+00:40:46.000 --> 00:40:49.000
+Now it's binary data.
+
+00:40:49.000 --> 00:40:53.000
+So we have to run another program to show that binary data.
+
+00:40:53.000 --> 00:41:00.000
+And so that program is called xxd.
+
+00:41:00.000 --> 00:41:07.000
+And I'm going to say hello.o.
+
+00:41:07.000 --> 00:41:11.000
+xxd stands for hex dump.
+
+00:41:11.000 --> 00:41:18.000
+And this shows us in binary the version of our code.
+
+00:41:18.000 --> 00:41:22.000
+So these are the instructions in binary.
+
+00:41:22.000 --> 00:41:28.000
+Now, some of them you can recognize over here showing you the parts that are English and so forth.
+
+00:41:28.000 --> 00:41:33.000
+And so I'm going to go ahead and shoot a screenshot of that.
+
+00:41:33.000 --> 00:41:43.000
+Shift-s.
+
+00:41:43.000 --> 00:41:48.000
+And I'm going to paste that where it wants the next one.
+
+00:41:48.000 --> 00:41:56.000
+So this is my object code.
+
+00:41:56.000 --> 00:42:00.000
+Now I want to take that object code.
+
+00:42:00.000 --> 00:42:04.000
+Let me go back to the slides here.
+
+00:42:04.000 --> 00:42:07.000
+So that converts our assembly language into object code.
+
+00:42:07.000 --> 00:42:14.000
+And xxd hello.o lets us see the object code.
+
+00:42:14.000 --> 00:42:21.000
+Now I want to link that object code with some startup code to produce an executable.
+
+00:42:21.000 --> 00:42:24.000
+So this I'm going to say g++.
+
+00:42:24.000 --> 00:42:27.000
+My input is going to be hello.o.
+
+00:42:27.000 --> 00:42:31.000
+And my output is going to be the executable hello.
+
+00:42:31.000 --> 00:42:41.000
+Now in Unix we generally don't name the executables exe.
+
+00:42:41.000 --> 00:42:45.000
+And so I have the object file over here.
+
+00:42:45.000 --> 00:42:48.000
+I'm going to clear this a little bit.
+
+00:42:48.000 --> 00:42:50.000
+Control-L.
+
+00:42:50.000 --> 00:42:55.000
+I'm going to click there so I don't get the weird screen thing showing up.
+
+00:42:55.000 --> 00:43:00.000
+I'm going to say g++ hello.o.
+
+00:43:00.000 --> 00:43:02.000
+That's my input.
+
+00:43:02.000 --> 00:43:08.000
+And my output is going to be hello.
+
+00:43:08.000 --> 00:43:11.000
+So notice this time I don't have any flag.
+
+00:43:11.000 --> 00:43:15.000
+I'm just taking the object file as input producing output.
+
+00:43:15.000 --> 00:43:21.000
+And you notice it produced a new file over there called hello.
+
+00:43:21.000 --> 00:43:23.000
+Now that's the output of the linker.
+
+00:43:23.000 --> 00:43:25.000
+That's executable code.
+
+00:43:25.000 --> 00:43:30.000
+Again, in Unix we usually don't name files with an extension that are executable.
+
+00:43:30.000 --> 00:43:38.000
+If we look inside the -- if we use the Unix shell and we looked inside the terminal,
+
+00:43:38.000 --> 00:43:44.000
+we used ls, which is the instruction for displaying things.
+
+00:43:44.000 --> 00:43:49.000
+Notice we have hello here in green with a star after it,
+
+00:43:49.000 --> 00:43:53.000
+which means that that is executable.
+
+00:43:53.000 --> 00:43:56.000
+How do we run the program in Unix?
+
+00:43:56.000 --> 00:44:00.000
+We run the program in Unix by simply using its name.
+
+00:44:00.000 --> 00:44:03.000
+We simply use its name.
+
+00:44:03.000 --> 00:44:08.000
+So we could run this program by simply typing hello.
+
+00:44:08.000 --> 00:44:11.000
+But in Windows that would work fine.
+
+00:44:11.000 --> 00:44:16.000
+If we do that, it's going to say, "I'm sorry, hello isn't found."
+
+00:44:16.000 --> 00:44:28.000
+So we have to type in ./, which means make the current directory part of the executable path.
+
+00:44:28.000 --> 00:44:32.000
+And so hello.
+
+00:44:32.000 --> 00:44:33.000
+So there's my program.
+
+00:44:33.000 --> 00:44:41.000
+So when you see that ./, you're just saying run this program in the current working directory I'm inside.
+
+00:44:41.000 --> 00:44:48.000
+That's all the ./ in front of it means.
+
+00:44:48.000 --> 00:44:54.000
+So let me go back to my things.
+
+00:44:54.000 --> 00:44:56.000
+So we turned it into object code.
+
+00:44:56.000 --> 00:45:00.000
+So let's look at hello again, by the way, now that I've turned it into object code.
+
+00:45:00.000 --> 00:45:06.000
+Let's look at xxd hello, not hello.o.
+
+00:45:06.000 --> 00:45:09.000
+Notice it still looks like object code.
+
+00:45:09.000 --> 00:45:18.000
+But if we looked at the front of it -- I'm going to go to the very front up here.
+
+00:45:18.000 --> 00:45:27.000
+Well, actually, if you look through it, you would see a lot of additional stuff that wasn't in the original.
+
+00:45:27.000 --> 00:45:29.000
+This additional stuff is the library code.
+
+00:45:29.000 --> 00:45:36.000
+Notice this is from glibcxx3.4, libc2.25.
+
+00:45:36.000 --> 00:45:41.000
+And so that's where it's getting the cout object from that.
+
+00:45:41.000 --> 00:45:47.000
+So here's the cout object, which is linked into our code.
+
+00:45:47.000 --> 00:45:55.000
+So I'm going to take that screenshot, control-F-S.
+
+00:45:55.000 --> 00:46:06.000
+And I'm going to go in and put that inside there.
+
+00:46:06.000 --> 00:46:11.000
+And again, we wouldn't have seen this in the object code, which is right here.
+
+00:46:11.000 --> 00:46:13.000
+And I just ran my program.
+
+00:46:13.000 --> 00:46:24.000
+I'm going to do it again so I can --
+
+00:46:24.000 --> 00:46:34.000
+I'm going to shoot a screenshot of that.
+
+00:46:34.000 --> 00:46:41.000
+And I'm going to go in and paste in my screenshot there.
+
+00:46:41.000 --> 00:46:44.000
+And finally, I'm going to do one last screenshot here.
+
+00:46:44.000 --> 00:46:51.000
+I'm going to take a picture of my source code.
+
+00:46:51.000 --> 00:47:01.000
+Okay, again, Windows-Shift-S.
+
+00:47:01.000 --> 00:47:10.000
+And I'm going to put that inside there.
+
+00:47:10.000 --> 00:47:17.000
+Okay, so once you've got that copy, what you'll want to do is go to your exercise.
+
+00:47:17.000 --> 00:47:20.000
+You will have clicked the start assignment.
+
+00:47:20.000 --> 00:47:26.000
+On the start assignment, you will then go ahead and submit it by either uploading the file,
+
+00:47:26.000 --> 00:47:31.000
+or in my case I saved it into Google Drive.
+
+00:47:31.000 --> 00:47:34.000
+And I actually don't know if this works.
+
+00:47:34.000 --> 00:47:43.000
+I haven't done it before, so I'm going to try it here.
+
+00:47:43.000 --> 00:47:47.000
+I'm going to select the file.
+
+00:47:47.000 --> 00:47:53.000
+And this looks like the one I've just done, doesn't it?
+
+00:47:53.000 --> 00:47:59.000
+Today, I'm going to add that.
+
+00:47:59.000 --> 00:48:04.000
+I'm going to attach that.
+
+00:48:04.000 --> 00:48:07.000
+Okay, that actually looked like kind of a lot of work.
+
+00:48:07.000 --> 00:48:20.000
+What you can do instead of that is you can do just file, download, download it as PDF or open document.
+
+00:48:20.000 --> 00:48:25.000
+I usually do PDF.
+
+00:48:25.000 --> 00:48:30.000
+Then open that.
+
+00:48:30.000 --> 00:48:31.000
+I actually can't see where that is.
+
+00:48:31.000 --> 00:48:35.000
+That's in my downloads folder over here.
+
+00:48:35.000 --> 00:48:37.000
+Copy of LEC01.
+
+00:48:37.000 --> 00:48:41.000
+You might want to change the name on it, put your name on it, and so forth.
+
+00:48:41.000 --> 00:48:49.000
+And then you can go up here and you can just do file, upload, upload file, choose file.
+
+00:48:49.000 --> 00:48:55.000
+Here's my copy of Lecture 1, open, and then submit the assignment.
+
+00:48:55.000 --> 00:48:58.000
+So either one of those will work fine.
+
+00:48:58.000 --> 00:49:02.000
+And I get the nice confetti that I have actually attempted it.
+
+00:49:02.000 --> 00:49:11.000
+You can also do new attempt as much as you want.
+
+00:49:11.000 --> 00:49:16.000
+Okay, so I want to talk a little bit about different kinds of errors before I finish up here.
+
+00:49:16.000 --> 00:49:22.000
+So compiler errors are the ones that are discovered during the parsing phase.
+
+00:49:22.000 --> 00:49:28.000
+So if you try and put the wrong value in a variable, you'll get a type error.
+
+00:49:28.000 --> 00:49:34.000
+If you forget a semicolon, you forget a closing quote, you put the braces in the wrong place.
+
+00:49:34.000 --> 00:49:37.000
+You'll get a syntax or a grammar error.
+
+00:49:37.000 --> 00:49:44.000
+The one that's most difficult for students coming to C++ are declaration errors.
+
+00:49:44.000 --> 00:49:47.000
+C++ doesn't know your name.
+
+00:49:47.000 --> 00:49:54.000
+And so you saw that when I used perfectly legal code, but I forgot to include the I/O stream
+
+00:49:54.000 --> 00:49:58.000
+or I forgot to include using namespace standard.
+
+00:49:58.000 --> 00:50:01.000
+So these are called declaration errors.
+
+00:50:01.000 --> 00:50:06.000
+And your code will not compile if you have any of these errors.
+
+00:50:06.000 --> 00:50:13.000
+Now it's possible that you could have an error, but your code would compile,
+
+00:50:13.000 --> 00:50:15.000
+but in fact it would not run.
+
+00:50:15.000 --> 00:50:18.000
+So let me show you another program.
+
+00:50:18.000 --> 00:50:23.000
+Well, I've still got my sandbox up over here.
+
+00:50:23.000 --> 00:50:33.000
+I'm going to create another program called temp.cpp.
+
+00:50:33.000 --> 00:50:44.000
+In here I'm going to put in all the stuff I need, include I/O stream, using namespace standard,
+
+00:50:44.000 --> 00:50:51.000
+and main, notice I've capitalized main here.
+
+00:50:51.000 --> 00:51:00.000
+Let's see, hello, and I'll return zero, or I could leave off the return zero.
+
+00:51:00.000 --> 00:51:05.000
+So all of us realize that this should compile.
+
+00:51:05.000 --> 00:51:08.000
+So I'm going to do control L, select here.
+
+00:51:08.000 --> 00:51:13.000
+I'm going to do G++ dash C.
+
+00:51:13.000 --> 00:51:21.000
+Dash C just means compile it.
+
+00:51:21.000 --> 00:51:27.000
+So notice I don't get any syntax or compiler time errors at that point.
+
+00:51:27.000 --> 00:51:37.000
+However, if I try and build this, now you can simply do make temp
+
+00:51:37.000 --> 00:51:41.000
+and not have to go through all the steps we went through.
+
+00:51:41.000 --> 00:51:44.000
+So notice I got this set of weird errors.
+
+00:51:44.000 --> 00:51:53.000
+The bottom error here says linker error, command failed with exit code one.
+
+00:51:53.000 --> 00:52:00.000
+So here is the part I'm going to explain what this means.
+
+00:52:00.000 --> 00:52:06.000
+In function underscore start, undefined reference to main.
+
+00:52:06.000 --> 00:52:09.000
+Well, what is function underscore start?
+
+00:52:09.000 --> 00:52:15.000
+That is part of what the linker code added as startup code.
+
+00:52:15.000 --> 00:52:19.000
+And so that is actually the first part of every executable,
+
+00:52:19.000 --> 00:52:23.000
+and it calls the function named main.
+
+00:52:23.000 --> 00:52:30.000
+So notice these errors that don't have any -- this one happily says it's a linker error.
+
+00:52:30.000 --> 00:52:32.000
+Most of them will not say it's a linker error,
+
+00:52:32.000 --> 00:52:36.000
+but they will be errors that look like this.
+
+00:52:36.000 --> 00:52:41.000
+Frequently they will refer to LD or something like that.
+
+00:52:41.000 --> 00:52:47.000
+This sandbox seems to use the Clang toolkit for doing the linking.
+
+00:52:47.000 --> 00:52:52.000
+Ours will use the G++, which will say LD, and it won't say linker.
+
+00:52:52.000 --> 00:52:57.000
+So these are linker errors, errors that don't happen at compile time.
+
+00:52:57.000 --> 00:53:02.000
+You can't find the reference to refer to in the compiled files and so forth.
+
+00:53:02.000 --> 00:53:07.000
+So missing main, trying to compile a program that requires separate files
+
+00:53:07.000 --> 00:53:12.000
+and you didn't include one file, you have declared a function,
+
+00:53:12.000 --> 00:53:14.000
+but you didn't define the function.
+
+00:53:14.000 --> 00:53:18.000
+All of those are discovered during the linking phase.
+
+00:53:18.000 --> 00:53:23.000
+Again, the only reason we're pointing this out here is because your compiler will
+
+00:53:23.000 --> 00:53:25.000
+give you back different kinds of error messages,
+
+00:53:25.000 --> 00:53:29.000
+and they will not exactly explain what happens.
+
+00:53:29.000 --> 00:53:33.000
+The third type of error is called undefined behavior.
+
+00:53:33.000 --> 00:53:38.000
+Java went to great lengths to eliminate undefined behavior,
+
+00:53:38.000 --> 00:53:43.000
+although in Java you could still have a logic error.
+
+00:53:43.000 --> 00:53:47.000
+You could have an error where your program produced the wrong output.
+
+00:53:47.000 --> 00:53:55.000
+In C++ we can have something that runs, might produce the right output,
+
+00:53:55.000 --> 00:53:57.000
+but it still has undefined error.
+
+00:53:57.000 --> 00:54:02.000
+Undefined error is you're using a feature in the language that may work
+
+00:54:02.000 --> 00:54:07.000
+occasionally but only runs accidentally.
+
+00:54:07.000 --> 00:54:11.000
+So, for instance, using a name without a correct header.
+
+00:54:11.000 --> 00:54:16.000
+It may work on compiler A, but it won't work on compiler B.
+
+00:54:16.000 --> 00:54:20.000
+It is an error, even if your compiler will accept it.
+
+00:54:20.000 --> 00:54:24.000
+It is still an error.
+
+00:54:24.000 --> 00:54:27.000
+Okay, well that's it for Chapter 1.
+
+00:54:27.000 --> 00:54:31.000
+I'll see you back next time for Chapter 2.
+

@@ -1,0 +1,977 @@
+﻿WEBVTT
+
+00:00:00.000 --> 00:00:10.000
+Hello everyone, this is Steve Gilbert. Welcome to lecture 20, where we're going to talk about arrays, pointers, and algorithms.
+
+00:00:10.000 --> 00:00:20.000
+So let's talk about pointers and arrays. The array name represents the address of the first element.
+
+00:00:20.000 --> 00:00:30.000
+So in the array ar here, ar is really not a separate variable, it's just the address of 1.
+
+00:00:30.000 --> 00:00:40.000
+I can store that address into a pointer like this. So I can say i_ptr = the address of ar sub 0.
+
+00:00:40.000 --> 00:00:50.000
+However, since the array name is the address of the first element, I can also say i_ptr = ar. That's much easier.
+
+00:00:50.000 --> 00:01:00.000
+It's not ok to take the address of that address. So i_ptr = the address of ar is not ok.
+
+00:01:00.000 --> 00:01:12.000
+Now, i_ptr does not need to point to the first element. If I want to point it to the second element, I can say i_ptr = the address of ar sub 1.
+
+00:01:12.000 --> 00:01:19.000
+However, while I can change what's in this pointer variable, I cannot change what's in ar.
+
+00:01:19.000 --> 00:01:26.000
+So I cannot say ar = i_ptr and have ar now change so it's pointing to the second element.
+
+00:01:26.000 --> 00:01:36.000
+So ar is like a constant pointer to the first element of the array.
+
+00:01:36.000 --> 00:01:41.000
+So think of an array name as a pointer literal.
+
+00:01:41.000 --> 00:01:49.000
+Now, you can access elements using the subscript operator. So here's array ar sub 0.
+
+00:01:49.000 --> 00:01:52.000
+We call this array notation.
+
+00:01:52.000 --> 00:02:01.000
+With a pointer, we can access it using the indirection operator. This is called pointer notation. So see out *ipointer.
+
+00:02:01.000 --> 00:02:11.000
+However, that's just convention. In fact, you can use both the subscript operator and the indirection operator indiscriminately.
+
+00:02:11.000 --> 00:02:17.000
+So on ar, if I wanted to print out the first element, I could say *ar.
+
+00:02:17.000 --> 00:02:25.000
+On my pointer, *ipointer p, if I wanted to print out the element it's pointing at, I could say pointer sub 0.
+
+00:02:25.000 --> 00:02:34.000
+That's because all address expressions simply combine an address and an offset.
+
+00:02:34.000 --> 00:02:45.000
+So address bracket offset means the same as add the offset to the address and dereference it.
+
+00:02:45.000 --> 00:02:52.000
+So these two expressions are entirely identical.
+
+00:02:52.000 --> 00:02:57.000
+Now, given this, so I have an array ar, 1, 2, 3, 4, 5.
+
+00:02:57.000 --> 00:03:03.000
+I have an int n and an int m, 1 and 2.
+
+00:03:03.000 --> 00:03:07.000
+If I say ar sub 3, it gets me the value 4.
+
+00:03:07.000 --> 00:03:12.000
+ar sub 0, ar sub 1, ar sub 2, ar sub 3.
+
+00:03:12.000 --> 00:03:16.000
+This is array notation and I'm using literals.
+
+00:03:16.000 --> 00:03:22.000
+If I add ar plus 3, that gives me a new address.
+
+00:03:22.000 --> 00:03:30.000
+So ar is pointing here, ar plus 1 is pointing there, ar plus 2 is pointing there, and ar plus 3 is pointing there.
+
+00:03:30.000 --> 00:03:37.000
+And I dereference that pointer, or that address, using address arithmetic, I still get the 4.
+
+00:03:37.000 --> 00:03:47.000
+I could use ar plus 3, again so I've taken the pointer ar, which is pointing to 1, moved it 1, 2, and 3.
+
+00:03:47.000 --> 00:03:49.000
+I've offset it by 3.
+
+00:03:49.000 --> 00:03:54.000
+And then, instead of dereferencing it, I could subscript it at 0.
+
+00:03:54.000 --> 00:03:57.000
+So the element at that 0 dereference it.
+
+00:03:57.000 --> 00:04:03.000
+I could do ar plus 1, ar pointing to the 1, ar plus 1 pointing to the 2.
+
+00:04:03.000 --> 00:04:12.000
+And then I could substripe it with m. That means add 1, 2 to the address and dereference it.
+
+00:04:12.000 --> 00:04:18.000
+So all of these things, all of these expressions, would give me this value 4.
+
+00:04:18.000 --> 00:04:26.000
+So subscripting and pointer notation are just two ways to do the same thing.
+
+00:04:26.000 --> 00:04:33.000
+So when I say I pointer plus 1, this is a pointer plus an integer expression.
+
+00:04:33.000 --> 00:04:38.000
+This is an address expression. You know if you add an integer and a double, you get back a double?
+
+00:04:38.000 --> 00:04:42.000
+If you add a pointer and an integer, you get back a pointer.
+
+00:04:42.000 --> 00:04:48.000
+The int in this case represents an offset, but not a byte offset.
+
+00:04:48.000 --> 00:04:52.000
+It doesn't mean go forward one byte from I pointer.
+
+00:04:52.000 --> 00:04:55.000
+It means go forward one element.
+
+00:04:55.000 --> 00:05:00.000
+What's an element? The element is the number of bytes based on the element's type.
+
+00:05:00.000 --> 00:05:08.000
+So if I pointer is an int, generally this is going to be the same as taking this address and adding 4 to that address
+
+00:05:08.000 --> 00:05:11.000
+because we're adding the size of one int.
+
+00:05:11.000 --> 00:05:14.000
+So here's some equivalent expressions.
+
+00:05:14.000 --> 00:05:18.000
+ar, of course, is the address of ar sub 0.
+
+00:05:18.000 --> 00:05:23.000
+ar plus 1 is the address of ar sub 1.
+
+00:05:23.000 --> 00:05:28.000
+star ar plus 1 is equal to ar sub 1
+
+00:05:28.000 --> 00:05:36.000
+and star ar plus 1 is equal to ar sub 0 plus 1.
+
+00:05:36.000 --> 00:05:40.000
+Now, since the array names are constant, they can't be changed,
+
+00:05:40.000 --> 00:05:44.000
+but a pointer that points to an array element may be changed.
+
+00:05:44.000 --> 00:05:51.000
+This is really important when you're using the plus plus and minus minus operators.
+
+00:05:51.000 --> 00:05:56.000
+Remember that these operators are right associative.
+
+00:05:56.000 --> 00:06:06.000
+That means that when we increment a pointer, the operator that's to the right is going to happen first.
+
+00:06:06.000 --> 00:06:12.000
+So assume that we have an array 10 and a pointer that points to that array.
+
+00:06:12.000 --> 00:06:17.000
+If I do this, star ar plus plus, that's illegal.
+
+00:06:17.000 --> 00:06:24.000
+In other words, I can't apply the plus plus to the ar because ar is an array.
+
+00:06:24.000 --> 00:06:28.000
+Star i pointer plus plus is fine.
+
+00:06:28.000 --> 00:06:35.000
+That means it's right associative, so we increment first and then dereference.
+
+00:06:35.000 --> 00:06:38.000
+Now, because this is post increment, however,
+
+00:06:38.000 --> 00:06:46.000
+the value of this expression, i pointer plus plus, is what pointer was pointing to before it was changed.
+
+00:06:46.000 --> 00:06:54.000
+So this moves the pointer, returns the old pointer, and that old pointer is then dereferenced.
+
+00:06:54.000 --> 00:06:58.000
+This also is fine. Here we're incrementing the pointer,
+
+00:06:58.000 --> 00:07:06.000
+and now we're returning the new pointer and we're dereferencing it.
+
+00:07:06.000 --> 00:07:15.000
+OK, let's look at arrays, functions, and pass by address.
+
+00:07:15.000 --> 00:07:21.000
+Now, arrays are passed to functions by address, not by reference.
+
+00:07:21.000 --> 00:07:25.000
+It's similar to pass by reference, but it's a little bit different.
+
+00:07:25.000 --> 00:07:32.000
+So here is a function called sum that takes an array a and a size.
+
+00:07:32.000 --> 00:07:38.000
+Remember, when we call a function, we have to pass the size because we don't copy that.
+
+00:07:38.000 --> 00:07:43.000
+Now, the parameter a here is really a pointer.
+
+00:07:43.000 --> 00:07:50.000
+It's a pointer that's initialized with the address of the first element in the array when the array is called.
+
+00:07:50.000 --> 00:07:54.000
+And we can write it like that with the empty brackets. That's perfectly fine.
+
+00:07:54.000 --> 00:07:59.000
+That kind of tells the people who see the parameter that you're expecting to see an array there.
+
+00:07:59.000 --> 00:08:05.000
+Or it can be written the way you'd write a regular pointer, int star a.
+
+00:08:05.000 --> 00:08:08.000
+Both of those are perfectly fine.
+
+00:08:08.000 --> 00:08:13.000
+And this is the only place these two notations are interchangeable,
+
+00:08:13.000 --> 00:08:17.000
+when you have a parameter that's pointing to an array.
+
+00:08:17.000 --> 00:08:23.000
+Unlike a vector, you cannot pass an array by value.
+
+00:08:23.000 --> 00:08:26.000
+You cannot pass an array by value.
+
+00:08:26.000 --> 00:08:31.000
+So we're going to look at this. I think it's useful to see this visually.
+
+00:08:31.000 --> 00:08:35.000
+So I'm going to run a...
+
+00:08:35.000 --> 00:08:39.000
+I'm going to try and run a thing. Let's see if this will pop up.
+
+00:08:39.000 --> 00:08:47.000
+Yes, it popped up. I'm going to bring this over here and maximize it over here.
+
+00:08:47.000 --> 00:08:52.000
+So here's a little function where I create an array. I'm going to go to the first here.
+
+00:08:52.000 --> 00:09:04.000
+I create an array. When I initialize it, it's initialized on the stack to 1, 2, 3, 4, 5.
+
+00:09:04.000 --> 00:09:13.000
+Now I'm going to call this function sum. You notice that it takes an argument, an array, a, and the length.
+
+00:09:13.000 --> 00:09:17.000
+And it's simply going to loop through that array and sum the element.
+
+00:09:17.000 --> 00:09:21.000
+So watch what happens when I call sum.
+
+00:09:21.000 --> 00:09:25.000
+So we have to create what's called a stack frame.
+
+00:09:25.000 --> 00:09:32.000
+Notice that the parameter a is a pointer to const.
+
+00:09:32.000 --> 00:09:39.000
+And so a is a pointer, length is a size t, result is a local variable.
+
+00:09:39.000 --> 00:09:42.000
+And these of course are all created on the stack.
+
+00:09:42.000 --> 00:09:49.000
+Now as we go through, notice that a is pointed to that array.
+
+00:09:49.000 --> 00:09:53.000
+So we haven't passed the array, we've passed the pointer.
+
+00:09:53.000 --> 00:10:01.000
+And as we loop through here, it goes through and just adds the values.
+
+00:10:01.000 --> 00:10:03.000
+And finally it's going to return the result.
+
+00:10:03.000 --> 00:10:07.000
+We're going to print the result 15 out here when we're done.
+
+00:10:07.000 --> 00:10:13.000
+And that stack frame is going to be destroyed.
+
+00:10:13.000 --> 00:10:17.000
+So the effect of doing that is similar to pass by reference.
+
+00:10:17.000 --> 00:10:23.000
+And so we always, but notice we don't use the ampersand with the array parameter at all.
+
+00:10:23.000 --> 00:10:27.000
+Again, don't get confused with that.
+
+00:10:27.000 --> 00:10:32.000
+Now if the array is not changed, like we did in our sum function,
+
+00:10:32.000 --> 00:10:37.000
+then make sure you put the const in front of the parameter.
+
+00:10:37.000 --> 00:10:43.000
+If you don't put the const, then we cannot pass a constant array to the function,
+
+00:10:43.000 --> 00:10:48.000
+which is something we'd want to do for summing.
+
+00:10:48.000 --> 00:10:53.000
+Okay, we're going to finish up by looking at some essential algorithms.
+
+00:10:53.000 --> 00:10:57.000
+Common algorithms are similar to vector.
+
+00:10:57.000 --> 00:11:00.000
+Of course we have to deal differently with the size problem, right?
+
+00:11:00.000 --> 00:11:05.000
+We can't simply write one and get the size out of the argument.
+
+00:11:05.000 --> 00:11:12.000
+Also, since there's no range checking, we have to spend extra care to make sure we're doing it correct.
+
+00:11:12.000 --> 00:11:24.000
+So let's do three or four algorithm exercises similar to the ones we did before.
+
+00:11:24.000 --> 00:11:28.000
+So our first one is we're going to count for a particular condition.
+
+00:11:28.000 --> 00:11:33.000
+So let's go over to our handout here.
+
+00:11:33.000 --> 00:11:38.000
+So our first exercise, we're going to write two array counting functions, count evens and word founds.
+
+00:11:38.000 --> 00:11:43.000
+Once you've written the stubs for minimal functions, then build using make test.
+
+00:11:43.000 --> 00:11:47.000
+Once you can build, then you complete the bodies for each function.
+
+00:11:47.000 --> 00:11:50.000
+So let's go over here.
+
+00:11:50.000 --> 00:11:58.000
+This is going to be in 20A in our IC folder.
+
+00:11:58.000 --> 00:12:09.000
+So here's counting.cpp.
+
+00:12:09.000 --> 00:12:16.000
+We're going to write our two functions here, count evens.
+
+00:12:16.000 --> 00:12:25.000
+So that's going to return the count of even numbers, so int count evens.
+
+00:12:25.000 --> 00:12:33.000
+Numbers is an array of int, so const int numbers, bracket bracket.
+
+00:12:33.000 --> 00:12:39.000
+And length is the size of the array. I'll use size T.
+
+00:12:39.000 --> 00:12:48.000
+And we're going to create the result, so int sum.
+
+00:12:48.000 --> 00:12:52.000
+And I'm going to return that sum.
+
+00:12:52.000 --> 00:13:01.000
+Let me call it actually count because it's count even.
+
+00:13:01.000 --> 00:13:03.000
+Okay, we're doing the stub first.
+
+00:13:03.000 --> 00:13:07.000
+Okay, our second function is word found.
+
+00:13:07.000 --> 00:13:11.000
+It's going to return the number of times that word is found in the array strings.
+
+00:13:11.000 --> 00:13:14.000
+So strings is an array of string to be searched.
+
+00:13:14.000 --> 00:13:19.000
+It's going to return an int, words found.
+
+00:13:19.000 --> 00:13:29.000
+And so an array of strings, so const string bracket bracket strings.
+
+00:13:29.000 --> 00:13:34.000
+So strings is the name of the array.
+
+00:13:34.000 --> 00:13:42.000
+And word is a string, so it's a const string reference word.
+
+00:13:42.000 --> 00:13:47.000
+So notice how I used the reference here on the individual string,
+
+00:13:47.000 --> 00:13:53.000
+but I don't use the reference here at all.
+
+00:13:53.000 --> 00:14:00.000
+Okay, so let's say int found is zero and return found.
+
+00:14:00.000 --> 00:14:07.000
+So now we have a good stub. Let's create a folder here.
+
+00:14:07.000 --> 00:14:12.000
+Let's try it, make test.
+
+00:14:12.000 --> 00:14:16.000
+Now we know that it compiles. No.
+
+00:14:16.000 --> 00:14:21.000
+Okay, so this is a problem with people who come from Java.
+
+00:14:21.000 --> 00:14:24.000
+In Java we could write the array like that.
+
+00:14:24.000 --> 00:14:31.000
+In C++, remember that the brackets need to go after the name of the variable,
+
+00:14:31.000 --> 00:14:34.000
+not after the name of the type.
+
+00:14:34.000 --> 00:14:37.000
+And I actually haven't programmed Java for a couple years,
+
+00:14:37.000 --> 00:14:47.000
+and I still constantly make that mistake.
+
+00:14:47.000 --> 00:14:58.000
+Okay, words found.
+
+00:14:58.000 --> 00:15:05.000
+Okay, so that means I, so this is a linker error, words found,
+
+00:15:05.000 --> 00:15:24.000
+that means me think I spelled the name wrong. No.
+
+00:15:24.000 --> 00:15:28.000
+Hmm, okay. Let's look at these.
+
+00:15:28.000 --> 00:15:38.000
+I passed only two parameters, forgot the third parameter.
+
+00:15:38.000 --> 00:15:43.000
+Okay, let's try that again.
+
+00:15:43.000 --> 00:15:46.000
+Make test.
+
+00:15:46.000 --> 00:15:49.000
+Okay, and our code compiles now correctly.
+
+00:15:49.000 --> 00:15:53.000
+So we have the stub correct.
+
+00:15:53.000 --> 00:15:56.000
+Okay, so now let's go over algorithm for counting.
+
+00:15:56.000 --> 00:16:01.000
+It's the same as it was for vectors.
+
+00:16:01.000 --> 00:16:06.000
+Create a variable to hold the counter.
+
+00:16:06.000 --> 00:16:13.000
+So I'm counting over here the number of even numbers found in the array.
+
+00:16:13.000 --> 00:16:24.000
+We'll use four, size p, i, equals zero, i less than len.
+
+00:16:24.000 --> 00:16:29.000
+Notice I don't have to get len out of size like I would with a vector.
+
+00:16:29.000 --> 00:16:45.000
+Plus plus i, and if numbers sub i, remainder two is zero,
+
+00:16:45.000 --> 00:16:52.000
+then we're going to increase our counter, count plus plus.
+
+00:16:52.000 --> 00:16:58.000
+Okay, let's try that before we go on to the next one.
+
+00:16:58.000 --> 00:17:02.000
+So let's do make test.
+
+00:17:02.000 --> 00:17:10.000
+And some of these are not working.
+
+00:17:10.000 --> 00:17:12.000
+Actually, none of those are working.
+
+00:17:12.000 --> 00:17:15.000
+Oh yeah, count evens is working now.
+
+00:17:15.000 --> 00:17:19.000
+I was looking up earlier in the test.
+
+00:17:19.000 --> 00:17:24.000
+Count evens is working.
+
+00:17:24.000 --> 00:17:36.000
+Alright, let's just clear that.
+
+00:17:36.000 --> 00:17:37.000
+So that is working.
+
+00:17:37.000 --> 00:17:43.000
+I'm not sure why this -- I'm not sure why that's printing twice like that.
+
+00:17:43.000 --> 00:17:49.000
+That's kind of strange.
+
+00:17:49.000 --> 00:17:52.000
+Okay, and let's do words found.
+
+00:17:52.000 --> 00:17:54.000
+So we'll do the same thing.
+
+00:17:54.000 --> 00:18:15.000
+Four, size p, i, equals zero, i less than len, plus plus i, if strings sub i equals word.
+
+00:18:15.000 --> 00:18:26.000
+And we found another one, found plus plus, and we're going to return found.
+
+00:18:26.000 --> 00:18:33.000
+Okay, so the algorithm is not hard, just the different mechanics for --
+
+00:18:33.000 --> 00:18:35.000
+so we have 100% now.
+
+00:18:35.000 --> 00:18:39.000
+The different mechanics for working with an array are different.
+
+00:18:39.000 --> 00:18:40.000
+Okay, so we did counting.
+
+00:18:40.000 --> 00:18:44.000
+Now let's go ahead and do accumulating.
+
+00:18:44.000 --> 00:18:50.000
+So we're going to do adding, our second one here.
+
+00:18:50.000 --> 00:18:55.000
+So on adding, we're going to write the function sum13,
+
+00:18:55.000 --> 00:19:01.000
+and I'm going to assume I'm going to kill both these terminals here.
+
+00:19:01.000 --> 00:19:03.000
+And I'm going to kill that.
+
+00:19:03.000 --> 00:19:07.000
+I'm going to go to b.
+
+00:19:07.000 --> 00:19:12.000
+And I'm going to put my id on here.
+
+00:19:12.000 --> 00:19:16.000
+And here's the instructions for the function.
+
+00:19:16.000 --> 00:19:22.000
+Add the numbers in the array, except the number 13 and the numbers immediately following don't count.
+
+00:19:22.000 --> 00:19:29.000
+So it's an integer array, so my sum is going to be an int, sum13.
+
+00:19:29.000 --> 00:19:35.000
+It's going to take a const int numbers, bracket, bracket.
+
+00:19:35.000 --> 00:19:44.000
+Now remember we could write this as this way, but still work exactly the same way.
+
+00:19:44.000 --> 00:19:54.000
+And size t, len, and int sum is zero.
+
+00:19:54.000 --> 00:19:56.000
+Return sum.
+
+00:19:56.000 --> 00:19:57.000
+And we got the stub.
+
+00:19:57.000 --> 00:20:02.000
+We probably should make sure we have a terminal here.
+
+00:20:02.000 --> 00:20:06.000
+And do make test on it.
+
+00:20:06.000 --> 00:20:14.000
+So our stub works okay.
+
+00:20:14.000 --> 00:20:18.000
+And so let's look at the algorithm for adding.
+
+00:20:18.000 --> 00:20:21.000
+Again we go through each element in the array.
+
+00:20:21.000 --> 00:20:28.000
+For size t, i equals zero, i less than len, plus plus i.
+
+00:20:28.000 --> 00:20:46.000
+And if numbers sub i is not equal to 13, then we want to add it.
+
+00:20:46.000 --> 00:20:55.000
+Let's say sum plus equals, not plus plus, sum plus equals numbers sub i.
+
+00:20:55.000 --> 00:21:00.000
+Now what if it is equal to 13? Do we want to do anything?
+
+00:21:00.000 --> 00:21:04.000
+Well we don't want to add it, but we need to skip the next one.
+
+00:21:04.000 --> 00:21:13.000
+So I'm going to need to have another plus plus i here, so I skip that number immediately following.
+
+00:21:13.000 --> 00:21:18.000
+So I don't print that.
+
+00:21:18.000 --> 00:21:21.000
+Okay, so now let's try it once again.
+
+00:21:21.000 --> 00:21:23.000
+Make test.
+
+00:21:23.000 --> 00:21:29.000
+And now we have 100% of it.
+
+00:21:29.000 --> 00:21:41.000
+The third algorithm we want is we want to find the extreme values, the largest and the smallest ones.
+
+00:21:41.000 --> 00:21:49.000
+So let's close that terminal. Let's close adding.
+
+00:21:49.000 --> 00:21:58.000
+Let's go to extreme.
+
+00:21:58.000 --> 00:22:01.000
+Here we're going to write the function big diff.
+
+00:22:01.000 --> 00:22:07.000
+So we're going to print the difference between the smallest and largest elements in numbers.
+
+00:22:07.000 --> 00:22:10.000
+So the difference is going to be an int.
+
+00:22:10.000 --> 00:22:14.000
+Function is named big diff.
+
+00:22:14.000 --> 00:22:27.000
+And it's going to take const int numbers, it's an array, and size p len.
+
+00:22:27.000 --> 00:22:35.000
+And so rather than creating a result here, what we're going to do is walk through the algorithm for finding the largest and smallest.
+
+00:22:35.000 --> 00:22:45.000
+So int largest equals numbers sub zero.
+
+00:22:45.000 --> 00:22:51.000
+Int smallest equals numbers sub zero.
+
+00:22:51.000 --> 00:23:00.000
+So the largest and smallest are the first element in the array.
+
+00:23:00.000 --> 00:23:04.000
+Now we're going to look through the rest of the elements.
+
+00:23:04.000 --> 00:23:09.000
+So we're going to print for size p i equals, we've already looked at zero, right?
+
+00:23:09.000 --> 00:23:16.000
+One, i less than len, plus plus i.
+
+00:23:16.000 --> 00:23:26.000
+And now for each number we're going to see if the number we have here at numbers sub i is greater than the largest or smaller than the smallest.
+
+00:23:26.000 --> 00:23:37.000
+So if numbers sub i is greater than the largest, then the largest is numbers sub i.
+
+00:23:37.000 --> 00:23:41.000
+We're changing largest.
+
+00:23:41.000 --> 00:23:56.000
+And if numbers sub i is less than the smallest, then the smallest equals numbers sub i.
+
+00:23:56.000 --> 00:23:59.000
+Now could both of these be true?
+
+00:23:59.000 --> 00:24:01.000
+No, both of those couldn't be true.
+
+00:24:01.000 --> 00:24:09.000
+As long as we have a value of smallest and largest, then both of these couldn't be true.
+
+00:24:09.000 --> 00:24:11.000
+Okay, now we're done.
+
+00:24:11.000 --> 00:24:17.000
+And so we need to figure out what we're going to return, the difference between the largest and smallest.
+
+00:24:17.000 --> 00:24:26.000
+And so we're going to say return largest minus smallest.
+
+00:24:26.000 --> 00:24:32.000
+We don't need the absolute value because that will always be zero or greater.
+
+00:24:32.000 --> 00:24:36.000
+Zero or greater.
+
+00:24:36.000 --> 00:24:45.000
+Okay, let's open a shell on that and try it out.
+
+00:24:45.000 --> 00:24:49.000
+Make test.
+
+00:24:49.000 --> 00:24:52.000
+Alright, that's good.
+
+00:24:52.000 --> 00:24:57.000
+Now we're going to test out one more thing here.
+
+00:24:57.000 --> 00:25:00.000
+And that is returning an array.
+
+00:25:00.000 --> 00:25:04.000
+So you can't return a local array, unlike a vector.
+
+00:25:04.000 --> 00:25:12.000
+However, the effect of pass by address is exactly the same as pass by reference.
+
+00:25:12.000 --> 00:25:17.000
+And so you can use that to create array output parameters.
+
+00:25:17.000 --> 00:25:19.000
+So here's an example.
+
+00:25:19.000 --> 00:25:23.000
+We want to use a loop to fill an array with a value.
+
+00:25:23.000 --> 00:25:27.000
+You can't just write a function that returns an array.
+
+00:25:27.000 --> 00:25:30.000
+So what you have to do is you have to pass the array in.
+
+00:25:30.000 --> 00:25:33.000
+Notice we're missing the const in front of it.
+
+00:25:33.000 --> 00:25:37.000
+It says this is either an input/output or an output parameter.
+
+00:25:37.000 --> 00:25:42.000
+And this is going to fill this entire array with this value.
+
+00:25:42.000 --> 00:25:48.000
+So notice while length is not equal to zero, that's a shorthand way to say that.
+
+00:25:48.000 --> 00:25:55.000
+A and then minus minus len, because len of course is going to be beyond the last index.
+
+00:25:55.000 --> 00:26:01.000
+So that's going to put it to the last index equals value.
+
+00:26:01.000 --> 00:26:05.000
+Now len is shorter, but it isn't yet zero yet.
+
+00:26:05.000 --> 00:26:11.000
+When len is one, minus minus len is going to say a sub zero equals value.
+
+00:26:11.000 --> 00:26:13.000
+We'll come over here.
+
+00:26:13.000 --> 00:26:15.000
+While len, len is zero. That's false.
+
+00:26:15.000 --> 00:26:19.000
+And the loop will end.
+
+00:26:19.000 --> 00:26:22.000
+Okay, so let's do our last exercise here.
+
+00:26:22.000 --> 00:26:28.000
+Output.cpp
+
+00:26:28.000 --> 00:26:32.000
+Let's close that shell. Let's close that.
+
+00:26:32.000 --> 00:26:36.000
+Let's go into D.
+
+00:26:36.000 --> 00:26:42.000
+And put our ID on this.
+
+00:26:42.000 --> 00:26:46.000
+So here we're going to write a void function, a procedure.
+
+00:26:46.000 --> 00:26:50.000
+So void ten run.
+
+00:26:50.000 --> 00:26:53.000
+It's going to take an array, numbers.
+
+00:26:53.000 --> 00:26:58.000
+So int numbers, that is modified in the function.
+
+00:26:58.000 --> 00:27:01.000
+Notice I didn't do constant numbers.
+
+00:27:01.000 --> 00:27:04.000
+Size, p, len.
+
+00:27:04.000 --> 00:27:07.000
+Void functions are really easy to stub.
+
+00:27:07.000 --> 00:27:10.000
+So we can go ahead and create a shell on that now.
+
+00:27:10.000 --> 00:27:13.000
+Open it in the integrated terminal.
+
+00:27:13.000 --> 00:27:15.000
+I do make test.
+
+00:27:15.000 --> 00:27:17.000
+And you can see that it runs.
+
+00:27:17.000 --> 00:27:22.000
+It doesn't give us the correct answer, of course.
+
+00:27:22.000 --> 00:27:24.000
+So here's our algorithm.
+
+00:27:24.000 --> 00:27:27.000
+We want to look at the numbers, and for each multiple of ten,
+
+00:27:27.000 --> 00:27:31.000
+change all the values following it to be that multiple of ten,
+
+00:27:31.000 --> 00:27:35.000
+until encountering another multiple of ten.
+
+00:27:35.000 --> 00:27:39.000
+So here's the first one. Two, multiple of ten, don't do anything to it.
+
+00:27:39.000 --> 00:27:42.000
+Ten, multiple of ten, remember it.
+
+00:27:42.000 --> 00:27:45.000
+Three, not a multiple of ten, change it to ten.
+
+00:27:45.000 --> 00:27:48.000
+Four, not a multiple of ten, change it to ten.
+
+00:27:48.000 --> 00:27:51.000
+Twenty, another multiple of ten, remember it.
+
+00:27:51.000 --> 00:27:56.000
+Five, change it to twenty.
+
+00:27:56.000 --> 00:28:11.000
+So for this, we're going to do for size, p, i equals zero, i less than len, plus plus i.
+
+00:28:11.000 --> 00:28:21.000
+If numbers sub i, remainder ten equals zero.
+
+00:28:21.000 --> 00:28:23.000
+So that's a multiple of ten, right?
+
+00:28:23.000 --> 00:28:25.000
+It's evenly divisible by ten.
+
+00:28:25.000 --> 00:28:36.000
+If that's true, what we want to do is remember it.
+
+00:28:36.000 --> 00:28:51.000
+If that's false, we want to store remembered value in numbers sub i.
+
+00:28:51.000 --> 00:28:53.000
+So how do I remember something?
+
+00:28:53.000 --> 00:28:57.000
+I remember something by storing it in a variable.
+
+00:28:57.000 --> 00:29:09.000
+So let's say int remembered equals zero.
+
+00:29:09.000 --> 00:29:13.000
+Alright, yeah, let's just say int remembered equals zero.
+
+00:29:13.000 --> 00:29:25.000
+So if that's the case, we're going to say remembered equals numbers sub i.
+
+00:29:25.000 --> 00:29:28.000
+And now we're going to store the remembered value in numbers sub i.
+
+00:29:28.000 --> 00:29:37.000
+So numbers sub i equals remembered.
+
+00:29:37.000 --> 00:29:40.000
+Okay, let's try it and see if that works.
+
+00:29:40.000 --> 00:29:45.000
+It kind of looks like it should work.
+
+00:29:45.000 --> 00:29:50.000
+Let's move this over here so we can see the whole test.
+
+00:29:50.000 --> 00:29:53.000
+Make test.
+
+00:29:53.000 --> 00:29:55.000
+Oh, I got 50%.
+
+00:29:55.000 --> 00:30:00.000
+So let's look at what's expected here.
+
+00:30:00.000 --> 00:30:08.000
+So ten run gives me two, ten, ten, ten, twenty, twenty.
+
+00:30:08.000 --> 00:30:12.000
+So I'm expected to ten, ten, twenty, twenty.
+
+00:30:12.000 --> 00:30:16.000
+So this is what it's expected to be out of that.
+
+00:30:16.000 --> 00:30:20.000
+But I found zero ten, ten, ten, twenty, twenty.
+
+00:30:20.000 --> 00:30:24.000
+So it looks like this first number is not a multiple of ten.
+
+00:30:24.000 --> 00:30:28.000
+And I replace it with the remembered value.
+
+00:30:28.000 --> 00:30:32.000
+And my remembered value here is zero.
+
+00:30:32.000 --> 00:30:40.000
+So it looks like this store the remembered value only works if I've already seen a multiple of ten.
+
+00:30:40.000 --> 00:30:47.000
+So we could create a flag in there and say, you know, yes, I saw a multiple of ten and set it.
+
+00:30:47.000 --> 00:31:03.000
+Or we could use a special flag value like that and then say, if remembered is not equal to minus one,
+
+00:31:03.000 --> 00:31:13.000
+then numbers of i equals remembered.
+
+00:31:13.000 --> 00:31:21.000
+So we have to handle the case, we have to make sure that we're not doing anything until we've already seen one already.
+
+00:31:21.000 --> 00:31:26.000
+When we do that, we should go from 50% to 100% now.
+
+00:31:26.000 --> 00:31:34.000
+All of them should work.
+
+00:31:34.000 --> 00:31:41.000
+Alright, folks, it looks like that is all we have today.
+
+00:31:41.000 --> 00:31:47.000
+When you come back, I'll see you in the next lecture in lecture 21.
+

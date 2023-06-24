@@ -1,0 +1,727 @@
+WEBVTT
+
+00:00:05.300 --> 00:00:09.800
+In this video, we'll look at the syntax for accessing individual array elements.
+
+00:00:10.300 --> 00:00:13.400
+The syntax is probably very much like what you expected.
+
+00:00:13.400 --> 00:00:16.100
+We use the name of the array followed by square brackets
+
+00:00:16.100 --> 00:00:20.300
+with the index of the array element we want inside the square brackets.
+
+00:00:20.800 --> 00:00:23.600
+This is called array subscripting. For example,
+
+00:00:23.600 --> 00:00:27.200
+test score sub 1 refers to the element at index 1
+
+00:00:27.200 --> 00:00:30.700
+in the test scores array. In the code example at the bottom,
+
+00:00:30.700 --> 00:00:34.400
+you can see that we've declared the test scores array of five integers
+
+00:00:34.400 --> 00:00:35.900
+and initialize those integers.
+
+00:00:36.400 --> 00:00:40.600
+Then we have five output statements that each displays one of those array elements.
+
+00:00:41.100 --> 00:00:44.700
+Remember, that array subscripting or indexing starts at 0.
+
+00:00:44.700 --> 00:00:47.580
+So the first element of an array is at index 0.
+
+00:00:48.350 --> 00:00:51.610
+We use the same syntax for storing values in array elements.
+
+00:00:51.610 --> 00:00:52.910
+In this example,
+
+00:00:52.910 --> 00:00:57.110
+we're getting input from the user via the console and updating the individual array elements
+
+00:00:57.110 --> 00:00:59.110
+from index 0 to 4.
+
+00:00:59.810 --> 00:01:02.470
+We could then display them as we did in the previous slide.
+
+00:01:03.770 --> 00:01:06.770
+We'll talk about assignment statements in an upcoming section.
+
+00:01:06.770 --> 00:01:11.330
+But here you can see that I'm assigning 90 to the first element of the test scores array.
+
+00:01:11.330 --> 00:01:13.330
+Notice that the syntax is the same.
+
+00:01:13.990 --> 00:01:16.190
+That pretty much covers the basics of arrays,
+
+00:01:16.190 --> 00:01:19.490
+but you might be wondering how all this works behind the scenes, let's see.
+
+00:01:21.090 --> 00:01:25.080
+In c++ the name of the array represents the location
+
+00:01:25.080 --> 00:01:28.180
+or address in memory of the first element in the array
+
+00:01:28.180 --> 00:01:30.480
+that is the element with index 0.
+
+00:01:31.080 --> 00:01:34.280
+When we access an array element using the subscript operator
+
+00:01:34.280 --> 00:01:38.180
+and provide an index in the square brackets, the compiler knows
+
+00:01:38.180 --> 00:01:41.780
+that you want the element that is at that offset from the beginning of the array.
+
+00:01:42.900 --> 00:01:46.000
+So all the compiler has to do is a pretty simple calculation.
+
+00:01:46.000 --> 00:01:48.700
+For example, if you want the element at index two,
+
+00:01:48.700 --> 00:01:52.800
+all the compiler has to do is go two integers away from the beginning of the array
+
+00:01:52.800 --> 00:01:56.000
+and there it is or two doubles or two whatever's.
+
+00:01:56.000 --> 00:01:58.800
+The compiler uses the size of operator
+
+00:01:58.800 --> 00:02:00.800
+to determine where the element will be.
+
+00:02:01.400 --> 00:02:04.900
+This is one reason why raw arrays in c++ are so efficient.
+
+00:02:05.300 --> 00:02:08.600
+But remember, there is no bounds checking.
+
+00:02:08.600 --> 00:02:12.480
+So be careful, if you have an array of five integers and you ask the compiler for the integer at the
+
+00:02:12.480 --> 00:02:15.780
+tenth index, it will gladly do the calculation
+
+00:02:15.780 --> 00:02:18.380
+and give you whatever happens to be at that location.
+
+00:02:18.380 --> 00:02:22.380
+It's your responsibility to be sure that you're within the bounds of the array.
+
+00:02:22.740 --> 00:02:26.540
+Now let's head over to CodeLite and use what we learned and write some code with arrays.
+
+00:02:28.340 --> 00:02:30.140
+Okay. So now I'm in CodeLite.
+
+00:02:30.140 --> 00:02:34.020
+And I'm in the section 7 workspace and the arrays project,
+
+00:02:34.020 --> 00:02:36.020
+and here's my main cpp file.
+
+00:02:36.020 --> 00:02:38.720
+What I've done is I've created some examples where I'm
+
+00:02:38.720 --> 00:02:41.080
+declaring and initializing some arrays.
+
+00:02:41.080 --> 00:02:45.580
+I'm accessing array elements, I'm reading from them, storing values in them and so forth.
+
+00:02:45.980 --> 00:02:49.640
+And that way we can go through this step by step so you can really understand what's going on.
+
+00:02:49.640 --> 00:02:53.540
+I've also commented a bunch of this out and what I'll do is I'll uncomment as I go
+
+00:02:53.540 --> 00:02:55.240
+and we'll build on this little by little.
+
+00:02:55.240 --> 00:02:58.440
+So the first thing we're doing here is I'm creating
+
+00:02:58.440 --> 00:03:00.040
+an array right here
+
+00:03:00.040 --> 00:03:01.040
+named vowels.
+
+00:03:01.040 --> 00:03:04.340
+That's the name of my array vowels. And you'll notice that right in those
+
+00:03:04.340 --> 00:03:06.940
+square brackets, I'm not providing any information.
+
+00:03:06.940 --> 00:03:09.140
+So what I'm telling the compiler is hey,
+
+00:03:09.140 --> 00:03:12.040
+you figure out how big this is based on the initializer.
+
+00:03:12.040 --> 00:03:16.340
+Okay. So in this case I've got five characters that I'm initializing this to.
+
+00:03:16.340 --> 00:03:20.840
+So the array will be size five, so what's going to happen is I'll have an array
+
+00:03:20.840 --> 00:03:23.200
+of five characters
+
+00:03:23.400 --> 00:03:26.600
+and I'm initializing them to a, e, i, o and u.
+
+00:03:28.100 --> 00:03:31.900
+Right, the name of this array is vowels. So I can treat it as such,
+
+00:03:31.900 --> 00:03:34.780
+and it's indexed from 0 to 4.
+
+00:03:35.180 --> 00:03:37.980
+Remember, there is no 5 here.
+
+00:03:37.980 --> 00:03:39.480
+So don't let that confuse you.
+
+00:03:40.380 --> 00:03:44.380
+Fine now, in this case, I'm saying the first vowel is and
+
+00:03:44.380 --> 00:03:47.680
+I'm using an output statement and I'm grabbing vowel sub zero.
+
+00:03:47.680 --> 00:03:50.280
+Well, that's this guy right there. That's the little a.
+
+00:03:50.280 --> 00:03:52.280
+So I expect this to print out the little a.
+
+00:03:53.280 --> 00:03:55.480
+In this case, I'm using vowel sub four,
+
+00:03:55.480 --> 00:03:58.080
+which is the little u right here, the lowercase u.
+
+00:03:58.960 --> 00:04:00.960
+Right so let's run this and see what we get.
+
+00:04:00.960 --> 00:04:05.170
+So what I'm going to do is I'm pressing ctrl F5 to build and run.
+
+00:04:06.070 --> 00:04:10.060
+And the output is the first vowel is a, and I'll move this over here so you can see.
+
+00:04:10.960 --> 00:04:15.160
+The first vowel is a lowercase a, the last vowel is the lowercase u., exactly what we expect.
+
+00:04:16.460 --> 00:04:17.820
+Now what would happen,
+
+00:04:17.820 --> 00:04:20.020
+let me clear this real quick, what would happen if
+
+00:04:20.820 --> 00:04:23.520
+I try to read from the console
+
+00:04:23.820 --> 00:04:27.180
+and I want to store whatever character I read into
+
+00:04:27.780 --> 00:04:29.780
+vowels sub 5.
+
+00:04:32.380 --> 00:04:36.880
+Recall, there is no vowel sub 5, right. It goes 0 1 2 3 4.
+
+00:04:37.430 --> 00:04:40.030
+What happens here really depends on a lot of things.
+
+00:04:40.430 --> 00:04:44.830
+Obviously, I'm going to read a character and store it in a location that's not part of the array,
+
+00:04:44.830 --> 00:04:47.190
+so there could be something important there.
+
+00:04:47.190 --> 00:04:50.490
+and I just blew it away. My program will likely crash
+
+00:04:50.490 --> 00:04:52.850
+depending on what operating system you're on and
+
+00:04:52.850 --> 00:04:55.650
+what you're running. Your crash may look different from mine.
+
+00:04:55.650 --> 00:04:59.750
+So let me run this and hopefully, it'll crash. It may not, you never really know with this.
+
+00:05:00.950 --> 00:05:05.310
+Okay. There's first vowel is little a, second vowel is lowercase u.
+
+00:05:05.310 --> 00:05:08.710
+Now I'm going to read. So I'm going to type in, let's say, capital A.
+
+00:05:09.610 --> 00:05:13.190
+And when I press enter, that's my crash.
+
+00:05:13.190 --> 00:05:16.190
+Hopefully, you can see that it says arrays.exe has stopped working,
+
+00:05:16.690 --> 00:05:20.690
+close program depending on again what operating system you're working on it may look different.
+
+00:05:20.690 --> 00:05:24.690
+But in this case, this is a good thing. My program crashed. I'm able to fix it.
+
+00:05:25.490 --> 00:05:27.790
+And obviously, what happened here was,
+
+00:05:28.590 --> 00:05:33.190
+and I'll comment this out and I'll leave it commented out so it won't keep crashing. Oops let me do that again.
+
+00:05:34.690 --> 00:05:38.190
+And I'll write something like "out of bounds"
+
+00:05:40.190 --> 00:05:43.190
+that way when you download in the example you'll know what's going on.
+
+00:05:43.690 --> 00:05:46.290
+Right, I'll say "don't do this"
+
+00:05:47.290 --> 00:05:48.890
+but be very careful with that.
+
+00:05:49.590 --> 00:05:53.090
+Okay. So that gives you an idea of what happens. It could be a pretty serious problem,
+
+00:05:53.090 --> 00:05:56.590
+and the real problem is that it may not happen every time.
+
+00:05:57.250 --> 00:06:00.550
+You may clobber some information that's just not even important.
+
+00:06:01.050 --> 00:06:03.550
+But you may clobber some information that's real important.
+
+00:06:04.150 --> 00:06:07.450
+Okay, so let's move on. In this example here,
+
+00:06:08.250 --> 00:06:11.050
+let me uncomment this code, and I'll walk you through it.
+
+00:06:11.050 --> 00:06:14.750
+In this example here, I'm doing something very similar. I'm creating
+
+00:06:14.750 --> 00:06:15.650
+an array
+
+00:06:15.650 --> 00:06:16.550
+called hi_temps,
+
+00:06:16.550 --> 00:06:19.890
+and you can see that the name of the array is right there: hi_temps.
+
+00:06:19.890 --> 00:06:24.140
+Again, I'm not providing the size of the array because I'm letting the compiler figure it out
+
+00:06:24.140 --> 00:06:28.140
+based on my initializer list. There are 1, 2, 3, 4
+
+00:06:29.440 --> 00:06:33.140
+initializers. So I was going to create an array of four doubles,
+
+00:06:33.140 --> 00:06:35.340
+the first one being 90.1,
+
+00:06:35.340 --> 00:06:38.140
+then second one being 89.8 and so forth.
+
+00:06:38.140 --> 00:06:41.740
+Here I'm saying print out hi_temps sub zero,
+
+00:06:41.890 --> 00:06:46.490
+right. Remember, this would be 0, 1, 2 and 3.
+
+00:06:46.490 --> 00:06:49.090
+So in this case, this will print out 90.1.
+
+00:06:50.290 --> 00:06:53.790
+Now I'm saying hi_temp sub zero is 100.7.
+
+00:06:53.790 --> 00:06:57.390
+So what I just did was I just changed the 90.1
+
+00:06:57.390 --> 00:06:58.990
+to 100.7.
+
+00:07:00.090 --> 00:07:03.990
+This is an assignment statement. We're going to talk a lot about assignment set statements in an
+
+00:07:03.990 --> 00:07:07.990
+upcoming section, but they're really really straightforward when you see them like this.
+
+00:07:07.990 --> 00:07:11.590
+All it says is move this guy into that guy.
+
+00:07:12.390 --> 00:07:14.990
+Okay, so that's what we're doing is we're just overriding
+
+00:07:14.990 --> 00:07:18.990
+that 98.1 to 100.7. And then when I display it,
+
+00:07:18.990 --> 00:07:21.290
+it's going to display 100.7
+
+00:07:21.540 --> 00:07:25.140
+now. Okay so what I expect here is the first time I output
+
+00:07:25.640 --> 00:07:27.740
+that guy it's going to give me 90.1,
+
+00:07:27.740 --> 00:07:29.740
+now I'm going to get 100.7.
+
+00:07:29.740 --> 00:07:32.440
+So let's try this out and see if that's exactly what we get.
+
+00:07:33.740 --> 00:07:37.400
+We build and run. The first high temperature is 90.1.
+
+00:07:37.400 --> 00:07:39.900
+The first high temperature is now 100.7.
+
+00:07:40.600 --> 00:07:45.000
+So here you can see some examples of declaring, initializing
+
+00:07:45.000 --> 00:07:47.300
+and accessing array elements.
+
+00:07:48.000 --> 00:07:51.500
+Now here's another example here and I'm going to comment this out as well.
+
+00:07:53.000 --> 00:07:54.600
+In this case right here,
+
+00:07:55.400 --> 00:07:58.280
+what I've done is I've asked the compiler again
+
+00:07:58.280 --> 00:08:01.940
+to give me an array of five integers and call it test scores.
+
+00:08:02.440 --> 00:08:05.440
+What's happening here is I'm getting an array of five integers,
+
+00:08:08.840 --> 00:08:11.540
+just like that, it's called test scores.
+
+00:08:14.320 --> 00:08:17.920
+Again, they're indexed from 0, 1, 2, 3 and 4.
+
+00:08:18.820 --> 00:08:23.120
+However, I never initialized them. So what you have in here is junk
+
+00:08:24.420 --> 00:08:25.570
+or garbage memory.
+
+00:08:25.570 --> 00:08:30.070
+Whatever happens to be in there, whatever bit pattern happens to be in there is still in there.
+
+00:08:30.070 --> 00:08:32.870
+So what this code right here is doing is it's displaying
+
+00:08:32.870 --> 00:08:34.870
+each one of those array elements.
+
+00:08:34.870 --> 00:08:38.970
+It's starting at the the element at index 0 and going all the way through the element
+
+00:08:38.970 --> 00:08:39.870
+index 4.
+
+00:08:39.870 --> 00:08:41.870
+This is what we'll do later on with looping.
+
+00:08:42.070 --> 00:08:45.670
+We can do all this in one statement with looping, and we'll learn how to do that a little bit later.
+
+00:08:46.170 --> 00:08:49.270
+Now when I do this, I'm expecting junk.
+
+00:08:49.270 --> 00:08:53.570
+I have no idea what's in those cells so I don't know what's going to print out. So let's try it and see.
+
+00:08:55.070 --> 00:08:58.870
+And you can see the junk right here 4199136
+
+00:08:58.870 --> 00:09:01.200
+and so forth. There's a 0 in there.
+
+00:09:01.200 --> 00:09:05.600
+The point is you cannot rely on those values. You really don't know what's in there. Okay.
+
+00:09:05.600 --> 00:09:10.200
+So what do we do? Well, we can just put a couple of
+
+00:09:10.200 --> 00:09:12.200
+curly braces there in the initializer,
+
+00:09:12.200 --> 00:09:15.860
+that will initialize everything to 0. So if I run this again,
+
+00:09:16.960 --> 00:09:20.860
+I expect to see all 0s, I do. That's exactly what I want.
+
+00:09:20.860 --> 00:09:22.410
+Always initialize your arrays.
+
+00:09:22.410 --> 00:09:26.610
+Never assume that they've got any value in there until you put the value in yourself.
+
+00:09:27.010 --> 00:09:30.670
+I could also put a hardcoded 0 in there and I'll have the same effect.
+
+00:09:30.670 --> 00:09:34.920
+But what if I do a 100, this is this piece that confuses beginning programmers sometimes.
+
+00:09:35.220 --> 00:09:38.420
+You may think that it's going to put 100 in all of those elements.
+
+00:09:38.420 --> 00:09:41.420
+But that's not the case. Let me run it and you'll see what happens.
+
+00:09:42.120 --> 00:09:45.720
+You see that it put 100 in the first element and then the rest are 0-ed out.
+
+00:09:46.320 --> 00:09:49.420
+That's the behavior when you put in less initializers than you have,
+
+00:09:49.420 --> 00:09:51.520
+so much now if I put a 90 here,
+
+00:09:52.120 --> 00:09:56.020
+then what's going to happen is it's going to set this element right here.
+
+00:09:57.520 --> 00:10:00.420
+It's going to set this element right here to 100.
+
+00:10:01.620 --> 00:10:04.420
+This element to 90 and then 0, 0, 0.
+
+00:10:04.970 --> 00:10:08.870
+Okay. So that's the behavior when you provide less than the size of the array
+
+00:10:08.870 --> 00:10:10.770
+as far as initializers are concerned.
+
+00:10:10.770 --> 00:10:12.770
+So again, I'll run this real quick,
+
+00:10:17.270 --> 00:10:20.370
+and what you'll see is 100, 90, 0, 0, 0.
+
+00:10:20.370 --> 00:10:23.370
+Let me clear this screen real quick. In this case,
+
+00:10:24.730 --> 00:10:28.980
+what I'm doing here is I'm reading integers from the console
+
+00:10:28.980 --> 00:10:32.780
+and storing them into those array elements from 0 to 4.
+
+00:10:33.440 --> 00:10:36.840
+So whatever was in here before is going to be removed now.
+
+00:10:36.840 --> 00:10:40.540
+So I'm going to initialize this to 100. Let's just go straight down by 10,
+
+00:10:40.940 --> 00:10:42.940
+70 and 60.
+
+00:10:43.340 --> 00:10:47.040
+So 100, 90, 80, 70, 60 is how I'm initializing these two.
+
+00:10:47.040 --> 00:10:50.540
+I have a 5 here. I don't really need that 5 there. I could just
+
+00:10:50.540 --> 00:10:54.340
+get rid of it like that. I did it before so you can see how it initializes 0s,
+
+00:10:54.340 --> 00:10:56.440
+so I'll just get rid of that 5 right there.
+
+00:10:56.440 --> 00:11:00.140
+It's still going to create an array of five integers and initialize them to
+
+00:11:00.140 --> 00:11:02.440
+190, 80, 70 and 60.
+
+00:11:02.440 --> 00:11:05.440
+Now what I'm going to do is I'm just going to enter different numbers and then
+
+00:11:05.440 --> 00:11:08.440
+we'll display those new numbers right here with this code,
+
+00:11:08.440 --> 00:11:12.140
+which is the same code as we used before. Okay. So let's do that real quick.
+
+00:11:12.540 --> 00:11:13.540
+We'll build and run.
+
+00:11:14.840 --> 00:11:17.940
+So there's our original array 100, 90, 80, 70, 60.
+
+00:11:17.940 --> 00:11:21.540
+So suppose I want to go now 10, 20, 30,
+
+00:11:21.940 --> 00:11:23.540
+40 and 50.
+
+00:11:24.200 --> 00:11:27.800
+And I print them out. Now you can see that arrays of 0 is 10
+
+00:11:28.100 --> 00:11:32.300
+and the next one is 20, 30, 40 and 50. So you can see that those values are
+
+00:11:32.300 --> 00:11:34.900
+read from the console and stored in the array.
+
+00:11:35.500 --> 00:11:36.860
+The last thing we'll do is
+
+00:11:37.760 --> 00:11:40.760
+this may give you a little bit of a different effect than you thought.
+
+00:11:40.760 --> 00:11:44.360
+Suppose that I want to output just the name of the array.
+
+00:11:44.360 --> 00:11:46.160
+Now you'll notice test scores right here,
+
+00:11:46.160 --> 00:11:49.460
+I'm not saying test scores sub 0 or test score sub 1.
+
+00:11:49.460 --> 00:11:51.060
+I'm just saying test scores.
+
+00:11:51.460 --> 00:11:53.760
+Let's run this and then I'll show you
+
+00:11:53.760 --> 00:11:57.060
+exactly what's going on when we come back. So I'm going to run this.
+
+00:11:58.660 --> 00:12:01.160
+And again let's just enter those scores again
+
+00:12:03.860 --> 00:12:06.360
+and notice what happens here.
+
+00:12:06.360 --> 00:12:10.760
+It says: "Notice what the value of the array name is". You get some hexadecimal number.
+
+00:12:11.460 --> 00:12:16.060
+That number is actually the memory address or the storage location
+
+00:12:16.060 --> 00:12:18.050
+where the array is located.
+
+00:12:18.950 --> 00:12:22.550
+This is the way that c++ works or the arrays, the name of the array
+
+00:12:22.550 --> 00:12:24.450
+is the location of the array.
+
+00:12:24.450 --> 00:12:28.440
+Now that's a strange number to write. So I'll just use a 1000 for it, that way we can
+
+00:12:28.440 --> 00:12:31.430
+make it a little bit easier to explain.
+
+00:12:31.430 --> 00:12:35.090
+So let's take a look at how this works. I've created that array,
+
+00:12:35.090 --> 00:12:38.090
+right, test scores. And test scores is
+
+00:12:39.290 --> 00:12:41.290
+5 integers just like we saw before.
+
+00:12:42.190 --> 00:12:45.690
+Again, indexed 0, 1, 2, 3  and 4.
+
+00:12:46.090 --> 00:12:47.890
+This is called test scores.
+
+00:12:49.590 --> 00:12:53.890
+Now when I say test scores, what's it going to do?
+
+00:12:53.890 --> 00:12:56.490
+Well, it's going to take the address of that variable.
+
+00:12:56.490 --> 00:12:59.790
+That variable is an address. So let's say that the address is 1,000.
+
+00:13:00.690 --> 00:13:04.990
+And then this address is 1,004, assuming that we have four byte integers.
+
+00:13:04.990 --> 00:13:08.490
+and this is a 1008, this is a 1012 and so forth.
+
+00:13:10.790 --> 00:13:12.790
+What prints out here will be 1000.
+
+00:13:13.590 --> 00:13:17.990
+And the calculation that c++ is doing that we mentioned in the slides.
+
+00:13:17.990 --> 00:13:22.190
+So for example, when I say test scores sub 1 as I'm saying here,
+
+00:13:22.390 --> 00:13:26.290
+what it's going to do is it's going to take test scores which is a 1000
+
+00:13:27.290 --> 00:13:32.090
+and it's going to add one integer to it or in other words go one integer away from it.
+
+00:13:32.090 --> 00:13:34.090
+An integer is 4 bytes.
+
+00:13:34.090 --> 00:13:37.590
+There you go. That's the address. That's the calculation it's doing.
+
+00:13:38.390 --> 00:13:41.390
+This is why when test score sub-5 is referenced.
+
+00:13:41.750 --> 00:13:45.740
+It's going to do the calculation and come up with that number right there
+
+00:13:46.100 --> 00:13:48.800
+and it's going to try to put to work with this guy.
+
+00:13:48.800 --> 00:13:51.800
+Well, this guy's not part of the array, right? The array ends here.
+
+00:13:51.800 --> 00:13:55.600
+But there's no real boundaries around the array. It's not like protected or anything.
+
+00:13:55.600 --> 00:13:58.700
+So in this case, something is going to change
+
+00:13:58.700 --> 00:14:01.400
+and it may be a bad thing. You might crash your program.
+
+00:14:02.400 --> 00:14:06.390
+Okay. So hopefully, this example helps you understand a little bit about
+
+00:14:06.590 --> 00:14:09.990
+the syntax of arrays, how to initialize them, how to use them and a little bit more
+
+00:14:09.990 --> 00:14:13.490
+about how they're laid out in memory and some of the issues that you can have with them.

@@ -1,0 +1,328 @@
+WEBVTT
+
+00:04.900 --> 00:10.450
+In this video, I'll show you how to set up and use the Integrated Debugger in Visual Studio code.
+
+00:10.450 --> 00:15.370
+So for this example, I'm going to use Project two and I'm just going to make one little change right
+
+00:15.370 --> 00:15.520
+here.
+
+00:15.520 --> 00:20.860
+I'm going to initialize that number to 100 just so we can see it in the debugger in a minute.
+
+00:21.130 --> 00:23.260
+So let's create this.
+
+00:23.260 --> 00:27.490
+What we're going to do is we're going to create a launch JSON configuration file.
+
+00:27.850 --> 00:31.870
+First order of business is click on one of the main CP files.
+
+00:31.870 --> 00:34.720
+Since I'm using Project two, that's the one I'm going to select.
+
+00:34.720 --> 00:40.690
+So you can click on that file and then you're going to come up to run add configuration.
+
+00:42.290 --> 00:45.050
+And it's going to ask you again, what's your environment?
+
+00:45.080 --> 00:50.900
+We're going to always be using C++, GDB, WL, DB, so that's what I'm going to select.
+
+00:51.680 --> 00:56.270
+And again, I'm using GW 64 G plus plus.
+
+00:56.270 --> 00:57.890
+I'm going to select this guy right here.
+
+01:01.730 --> 01:03.490
+And we're going to come over here.
+
+01:03.500 --> 01:04.250
+Don't worry about this.
+
+01:04.250 --> 01:08.150
+You can just click that little red square right here and get out of here.
+
+01:08.720 --> 01:13.130
+The important thing is and we can come back over here as well to explore, just to clean this up a little
+
+01:13.130 --> 01:13.570
+bit.
+
+01:13.580 --> 01:19.490
+So the important thing is it has created a launch JSON file for us, and this is the one that's right
+
+01:19.490 --> 01:22.490
+here in the editor and this is the one that we're going to configure.
+
+01:22.490 --> 01:25.040
+And the configuration here is pretty easy.
+
+01:25.940 --> 01:30.400
+There's just one entry we need to change this one here in line 14, which is CW.
+
+01:30.680 --> 01:32.600
+That's our current working directory.
+
+01:32.630 --> 01:40.130
+What we're going to do is we're going to replace this with file name, and this time we're going to
+
+01:40.130 --> 01:42.590
+grab the dollar sign of the curlies as well.
+
+01:43.040 --> 01:45.230
+So we're going to put that right in there like that.
+
+01:45.440 --> 01:45.980
+That's it.
+
+01:45.980 --> 01:46.900
+So we're done with that.
+
+01:46.910 --> 01:49.280
+We can close up our launch JSON.
+
+01:49.760 --> 01:52.880
+Now what we're going to do is we want to debug this program.
+
+01:52.880 --> 01:56.870
+So in order to debug the program, we need some breakpoints.
+
+01:56.870 --> 02:02.930
+We need to tell the C++ debugger where to stop because otherwise it's just going to run the program.
+
+02:02.930 --> 02:08.150
+So it's got to stop so that we can examine variables, we can look at our logic, and we can step through
+
+02:08.150 --> 02:14.600
+the code one line at a time so that we can follow our logic and find mistakes or verify that what we
+
+02:14.600 --> 02:15.530
+did was correct.
+
+02:15.530 --> 02:17.000
+So let's do that.
+
+02:17.000 --> 02:18.920
+We can do this a couple of different ways.
+
+02:18.920 --> 02:25.190
+First of all, make sure that we've got this selected main step in whatever project we want to debug.
+
+02:25.220 --> 02:30.680
+In this case, we're debugging project two, so make sure your default is selected main DHCP.
+
+02:30.710 --> 02:32.450
+Then we can come up here to run.
+
+02:32.450 --> 02:33.830
+Start debugging.
+
+02:35.030 --> 02:41.660
+Or we can come over here on the left side here again, select main app and click that bug right there.
+
+02:41.900 --> 02:42.830
+Run and debug.
+
+02:42.830 --> 02:44.030
+That's what I'm going to do.
+
+02:44.740 --> 02:48.070
+And now what we need to do is we need to add a breakpoint to our code.
+
+02:48.070 --> 02:52.810
+And you can see over here in the gutter here, I'm sliding through and you can see that red dot coming
+
+02:52.810 --> 02:53.040
+around.
+
+02:53.050 --> 02:53.950
+That's a breakpoint.
+
+02:53.950 --> 02:58.210
+So if I want to put the breakpoint right about there, it'll light up.
+
+02:58.210 --> 03:02.080
+It'll also show up down here that says we've got a breakpoint.
+
+03:02.560 --> 03:08.800
+Visual Studio code has a little glitch sometimes where it captures breakpoints from a lot of the projects.
+
+03:09.130 --> 03:10.450
+Just the one you're working with.
+
+03:10.450 --> 03:16.210
+And an easy way to deal with that is just to before you start debugging, just come over here and click
+
+03:16.210 --> 03:17.290
+that X right there.
+
+03:17.290 --> 03:21.460
+That'll clear up all the breakpoints everywhere, and then you can just set the breakpoint where you
+
+03:21.460 --> 03:21.880
+want.
+
+03:21.880 --> 03:23.980
+So I'm going to set the breakpoint again right there.
+
+03:24.460 --> 03:26.890
+So now that we've done that, we're going to run the program.
+
+03:26.890 --> 03:32.140
+And what we can do is we can come up here and click on that little green arrow and you'll see what happens.
+
+03:32.140 --> 03:34.240
+The debugger comes into play.
+
+03:34.330 --> 03:36.340
+A lot of things seem to happen all at once.
+
+03:36.340 --> 03:42.130
+We've got this little menu bar right here, this bar of icons that allows us to step through our code
+
+03:42.130 --> 03:46.360
+one line at a time, stop the code, we run the code and so forth.
+
+03:46.360 --> 03:51.910
+We also have this variables window that popped up over here on the left, and this is showing the values
+
+03:51.910 --> 03:53.050
+of our local variables.
+
+03:53.050 --> 03:53.920
+Look at NUM.
+
+03:53.920 --> 03:57.130
+It's initialized to 100, so it shows up right over here.
+
+03:58.060 --> 04:03.720
+Also we can use our cursor and just hover over here and you can see its values 100.
+
+04:03.730 --> 04:09.190
+So it lets us inspect the value of that variable as we're running the code, which is really neat.
+
+04:09.220 --> 04:13.420
+So right here, this is the other line that shows you where I'm at in the program.
+
+04:13.630 --> 04:17.590
+So you can see that yellow bar shows us exactly where our program is.
+
+04:17.590 --> 04:19.720
+This line has not executed yet.
+
+04:19.960 --> 04:24.370
+So if we want to execute it, we can come over here and step over it or step into it.
+
+04:24.370 --> 04:26.640
+And we'll talk about all this in the course.
+
+04:26.680 --> 04:31.180
+And in this case, I want to step over it and notice the output came out down here.
+
+04:31.180 --> 04:32.600
+So that's the line we're at.
+
+04:32.620 --> 04:36.430
+So I'm going to step over it again and now we're going to get the input from the user.
+
+04:36.430 --> 04:38.410
+So let's say I type in 1200.
+
+04:39.370 --> 04:44.620
+Now, as soon as I press enter, that 1200 will be red into num, right?
+
+04:44.620 --> 04:46.680
+So my variables should change.
+
+04:46.700 --> 04:51.840
+I'm going to press enter and now notice that number up here is 1200 and I can also hover over.
+
+04:51.910 --> 04:53.570
+I'm over here and it's 100.
+
+04:53.590 --> 04:56.850
+So this is a really, really powerful feature debugger.
+
+04:56.860 --> 04:58.510
+The are are great.
+
+04:58.510 --> 04:59.410
+We use them all the time.
+
+04:59.410 --> 05:00.340
+We don't overuse them.
+
+05:00.340 --> 05:05.110
+If it's a really simple program and you've got simple logic and you can test your code easily, then
+
+05:05.110 --> 05:07.270
+there's real there's no real need to debug it.
+
+05:07.270 --> 05:11.890
+But sometimes it comes in really handy when we're trying to figure out a problem or looking at some
+
+05:11.890 --> 05:15.550
+really complex logic that we want to walk through step by step.
+
+05:15.670 --> 05:16.640
+So that's it.
+
+05:16.660 --> 05:21.520
+Now, if we want to stop the program, we could just click that little red box right here to stop.
+
+05:22.270 --> 05:27.340
+If we want to just continue full blast and skip all the breakpoints, we can click that little arrow
+
+05:27.340 --> 05:28.000
+right here.
+
+05:28.720 --> 05:32.290
+Or we could just click another few times until the program ends.
+
+05:32.440 --> 05:35.920
+And let me just stop it here so you can see what that looks like.
+
+05:35.920 --> 05:36.760
+So I stop it.
+
+05:38.120 --> 05:38.290
+Right.
+
+05:38.330 --> 05:39.320
+So now it's on notice.
+
+05:39.320 --> 05:41.270
+It's changed back to blue down here.
+
+05:41.360 --> 05:43.220
+And I can come back to my.
+
+05:44.200 --> 05:46.420
+Explorer and I can see everything that I'm doing.
+
+05:46.420 --> 05:47.320
+So there you go.
+
+05:47.320 --> 05:49.090
+That's how the debugger works.
+
+05:49.090 --> 05:54.070
+In the next video, what I'm going to do is I'm going to show you how to use Visual Studio code with
+
+05:54.070 --> 05:56.740
+the source code that I've provided for the course.
+
+05:56.740 --> 06:02.740
+The source code that I provided for the course is in the format of code light projects, but that's
+
+06:02.740 --> 06:03.040
+okay.
+
+06:03.070 --> 06:07.510
+The work in Visual Studio code as well, and I'll show you exactly how to use them in the next video.

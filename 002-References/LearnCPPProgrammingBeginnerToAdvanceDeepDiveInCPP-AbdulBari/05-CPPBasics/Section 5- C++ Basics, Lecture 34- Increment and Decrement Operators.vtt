@@ -1,0 +1,501 @@
+WEBVTT
+
+0
+00:00.620 --> 00:04.430
+Now the next topic incremental decrement operators.
+
+1
+00:04.460 --> 00:08.610
+These are most commonly use operators in C++ programming.
+
+2
+00:08.630 --> 00:13.180
+So in this video you'll understand what are these operators and what is their use.
+
+3
+00:13.190 --> 00:17.800
+We will learn about this and also after this video we will have a demonstration.
+
+4
+00:17.810 --> 00:20.660
+So let us look at the operators, see here
+
+5
+00:20.660 --> 00:22.700
+There are two types of operators.
+
+6
+00:22.700 --> 00:26.560
+One is increment operator and second one is decrement  operator.
+
+7
+00:26.860 --> 00:30.080
+And then again in increment decrement  again there are two types.
+
+8
+00:30.080 --> 00:32.240
+One is pre-increment.
+
+9
+00:32.240 --> 00:36.530
+Second is post increment and likewise pre decrement  and post decrement. 
+
+10
+00:36.600 --> 00:41.600
+So lets understand what are all these and how they work. for explanation,
+
+11
+00:41.600 --> 00:49.520
+I have taken one example here see I have a variable i, i is already having value 5 then I have written
+
+12
+00:49.520 --> 00:50.870
+this type of statement.
+
+13
+00:50.870 --> 00:53.300
+So this type of statement you are already familiar with it.
+
+14
+00:53.360 --> 00:54.430
+What does it mean.
+
+15
+00:54.440 --> 00:59.710
+This means that in the value of i, that is 5 add 1.
+
+16
+00:59.750 --> 01:08.960
+So make it six total will be 6 and store this 6 in i, so with this value of i will increase by one
+
+17
+01:09.320 --> 01:11.000
+increment by 1.
+
+18
+01:11.300 --> 01:18.950
+The same statement even I can write like this by using compound assignment operator I plus assign one.
+
+19
+01:18.950 --> 01:24.970
+So suppose I value is a five then plus one it becomes a six and six is stored in i.
+
+20
+01:25.550 --> 01:28.670
+So instead of writing I assign i plus one.
+
+21
+01:28.790 --> 01:34.680
+I can also write I plus assign one this we have learned in the previous video.
+
+22
+01:34.790 --> 01:40.550
+Now we have increment Operator instead of that so let us see what is the use.
+
+23
+01:40.550 --> 01:45.110
+See here i is five then plus one it becomes six then plus one.
+
+24
+01:45.110 --> 01:46.340
+It will become seven.
+
+25
+01:46.430 --> 01:50.080
+So by adding one every time we can go on increment it.
+
+26
+01:50.090 --> 01:55.910
+What is the use of such variable why you want to increment it,  see this type of variables are mostly useful
+
+27
+01:55.910 --> 02:03.270
+for counting like if you count you will say first 1 then plus 1 you will say 2 then plus 1 you'll say
+
+28
+02:03.320 --> 02:05.390
+3 plus 1 you say 4.
+
+29
+02:05.480 --> 02:09.650
+So for counting purposes you'll have to go on adding 1 to the number.
+
+30
+02:09.650 --> 02:14.300
+So it will be go on increasing by 1 every time so it helps for counting.
+
+31
+02:14.300 --> 02:19.800
+So yes this type of operation that is incrementing by 1 is more common in programming where
+
+32
+02:19.800 --> 02:21.120
+we have to count.
+
+33
+02:21.170 --> 02:24.430
+So here I is just like a counter.
+
+34
+02:24.440 --> 02:27.800
+So right now I is a 5 then plus 1 it becomes 6.
+
+35
+02:27.800 --> 02:29.420
+So if you want to count from the beginning.
+
+36
+02:29.420 --> 02:34.730
+start i from 0 onwards 0 then 1 then 2 then 3 and so on.
+
+37
+02:35.240 --> 02:42.020
+So as I said  this counting is more common in programming that is the reason C++ has introduced increment
+
+38
+02:42.110 --> 02:42.590
+operator.
+
+39
+02:42.890 --> 02:46.920
+So instead of writing it like this or this we can write
+
+40
+02:46.960 --> 02:51.350
+I plus plus this also means the same thing.
+
+41
+02:51.530 --> 02:54.240
+This is same as these two statement here.
+
+42
+02:54.470 --> 02:59.670
+You are adding one here you are adding one and this also means adding one.
+
+43
+02:59.720 --> 03:02.900
+Once you get used to then it looks very simple.
+
+44
+03:02.900 --> 03:05.630
+That plus plus means increase the value by one.
+
+45
+03:06.500 --> 03:13.520
+So this is more commonly useful in loops where we will perform repeated statements or repeatedly we
+
+46
+03:13.520 --> 03:17.650
+go on incrementing it so it behaves like a counter.
+
+47
+03:17.690 --> 03:22.360
+Now I will show you what is the difference between pre-increment and post increment.
+
+48
+03:22.460 --> 03:27.230
+So once you understand this I don't have to explain this one you can understand by yourself.
+
+49
+03:27.230 --> 03:28.510
+Now let us see the difference.
+
+50
+03:28.510 --> 03:31.860
+I will remove this and I will take a different example and show you.
+
+51
+03:32.540 --> 03:36.850
+So here I have an example let us understand pre-increment and post increment.
+
+52
+03:36.950 --> 03:45.910
+I have a variable X having value five then if I say X plus plus then X becomes 6.
+
+53
+03:45.980 --> 03:50.890
+Even if I say plus plus X then also X becomes 6.
+
+54
+03:51.020 --> 03:57.800
+weather I write like this or like this both have same meaning either pre increment or post increment
+
+55
+03:57.830 --> 04:02.660
+whatever the statement may be, the result is same.
+
+56
+04:02.750 --> 04:05.070
+Then what is the difference between pre and post.
+
+57
+04:05.110 --> 04:07.300
+So let us see just remove this thing.
+
+58
+04:07.300 --> 04:08.670
+These are not there, now.
+
+59
+04:08.720 --> 04:10.350
+Again X is 5.
+
+60
+04:10.460 --> 04:17.650
+So if I say y assign with plus plus X right now X is 5.
+
+61
+04:17.690 --> 04:19.310
+Okay assuming these are not there.
+
+62
+04:19.340 --> 04:19.620
+Okay.
+
+63
+04:19.620 --> 04:20.230
+Remove them.
+
+64
+04:20.630 --> 04:24.230
+So y assigned plus plus X means what.
+
+65
+04:24.260 --> 04:26.090
+There are two operations here.
+
+66
+04:26.240 --> 04:32.220
+One is increment other one this assignment so which has to be done first.
+
+67
+04:32.270 --> 04:34.700
+So first increment has to be done.
+
+68
+04:34.700 --> 04:36.260
+This operation has to be done.
+
+69
+04:36.440 --> 04:38.880
+Then second this operation has to be done.
+
+70
+04:38.960 --> 04:42.070
+So first increment is done. increment is done means 
+
+71
+04:42.170 --> 04:44.230
+This X becomes 6.
+
+72
+04:44.240 --> 04:47.750
+So this becomes 6 and 6 is a stored in y.
+
+73
+04:48.050 --> 04:55.410
+So after this if you print the result then X is also 6 and Y is also 6.
+
+74
+04:55.430 --> 05:00.610
+So this means first increment value then assign it to y.
+
+75
+05:00.630 --> 05:04.980
+This is the meaning now what does it mean by post increment.
+
+76
+05:05.260 --> 05:07.720
+So I'll write down the same thing again.
+
+77
+05:07.720 --> 05:09.570
+Let us say X is the five only right.
+
+78
+05:09.580 --> 05:09.790
+Now.
+
+79
+05:09.880 --> 05:10.270
+Okay.
+
+80
+05:10.280 --> 05:13.450
+Don't take it as six, freshly again it is 5.
+
+81
+05:13.840 --> 05:20.640
+So then if I write y assign x plus plus then there are two operations here.
+
+82
+05:20.800 --> 05:24.280
+Assignment and increment so which has to be done first.
+
+83
+05:24.400 --> 05:25.110
+So first.
+
+84
+05:25.120 --> 05:26.510
+This has to be done.
+
+85
+05:26.760 --> 05:28.570
+Then this has to be done.
+
+86
+05:28.570 --> 05:29.520
+Second one.
+
+87
+05:29.560 --> 05:32.800
+So it means the value of x is assigned to y first.
+
+88
+05:32.800 --> 05:34.030
+So what is x right now.
+
+89
+05:34.060 --> 05:36.300
+Five so y becomes five.
+
+90
+05:37.000 --> 05:41.810
+Then x plus plus X becomes six afterwards X becomes 6.
+
+91
+05:41.830 --> 05:44.230
+So this will be the result of this statement.
+
+92
+05:44.230 --> 05:48.710
+So here two operations were there for first this was performed and this one then here,
+
+93
+05:48.760 --> 05:51.180
+First assignment is performed then this one.
+
+94
+05:51.460 --> 05:54.010
+What does it mean pre increment means.
+
+95
+05:54.070 --> 06:01.510
+First increment it  then use the variable and post increment means first use the variable in the
+
+96
+06:01.510 --> 06:03.820
+assignment and then increment it.
+
+97
+06:04.000 --> 06:05.430
+I'll show you one more example.
+
+98
+06:05.520 --> 06:12.580
+See suppose I have some more variables like X, y is also there having value 10 and Z is also
+
+99
+06:12.580 --> 06:12.790
+there.
+
+100
+06:12.820 --> 06:23.500
+So if I say Z assign X plus plus multiplied by Y so actually X and Y has to be multiplied but X should
+
+101
+06:23.500 --> 06:24.690
+also be incremented.
+
+102
+06:25.600 --> 06:28.100
+So first increment is done or afterwards is it done?
+
+103
+06:28.200 --> 06:32.430
+It has done afterward so first which operations perform multiplication.
+
+104
+06:32.440 --> 06:43.020
+So what is the value of x 5 into 10 so this 50 is stored in Z and then X becomes 6 x will become 6.
+
+105
+06:43.030 --> 06:50.440
+So after this the result will be X is 6 and the y is 10 only it is not being modified and the Z becomes
+
+106
+06:50.560 --> 06:52.300
+50, that's the result.
+
+107
+06:53.170 --> 06:59.580
+And if I'm using pre increment here if I say plus plus X then what happens.
+
+108
+06:59.590 --> 07:06.870
+So first of all this X will increment and X becomes six and then multiplied by Y that is 10 and the result
+
+109
+07:06.930 --> 07:09.210
+60 is stored in Z.
+
+110
+07:09.430 --> 07:16.420
+So the result is this one and this one and Z will be having value sixty because first the value
+
+111
+07:16.420 --> 07:20.530
+of x is incremented then later used in the expression.
+
+112
+07:20.530 --> 07:24.350
+This is the difference between pre-increment and post increment.
+
+113
+07:24.490 --> 07:29.190
+So depending on your requirement you should know which one you want in a particular formula or an
+
+114
+07:29.200 --> 07:34.840
+expression and you should use that one and when you are using independently, once again I will show
+
+115
+07:34.840 --> 07:40.660
+you if you write just X plus plus  or vice versa they have same effect but if you use it along
+
+116
+07:40.660 --> 07:46.140
+with the some other variables then they have different meaning that's all about pre and post increment
+
+117
+07:46.180 --> 07:47.590
+increment are different.
+
+118
+07:47.590 --> 07:51.120
+So this increment and decrement operate as you will know them right now.
+
+119
+07:51.220 --> 07:53.840
+So we'll use them at many places right.
+
+120
+07:53.890 --> 07:59.550
+So we don't have to see any example programs on this one right now but there is a coding exercise available
+
+121
+07:59.560 --> 08:00.130
+...
+
+122
+08:00.130 --> 08:05.830
+So you complete that coding exercise and also demonstration of these operators is given in the next
+
+123
+08:05.830 --> 08:06.460
+video.
+
+124
+08:07.300 --> 08:09.880
+So that's all about increment and Decrement  operators.

@@ -1,0 +1,1208 @@
+WEBVTT
+
+00:00:05.340 --> 00:00:08.530
+In this video, we'll learn how
+to define our own functions.
+
+00:00:09.190 --> 00:00:11.690
+Function definitions
+have four main parts.
+
+00:00:12.219 --> 00:00:14.739
+We'll look at the syntax of
+functions in the next slide.
+
+00:00:14.940 --> 00:00:16.929
+But for now, let's look
+at what these parts are.
+
+00:00:17.580 --> 00:00:19.060
+The function has to have a name.
+
+00:00:19.400 --> 00:00:21.520
+The name of the function
+follows the same rules we
+
+00:00:21.520 --> 00:00:22.850
+use for naming variables.
+
+00:00:23.630 --> 00:00:26.110
+Function names should be
+meaningful and provide the reader
+
+00:00:26.110 --> 00:00:27.440
+the intent of the function.
+
+00:00:27.759 --> 00:00:31.200
+For example, a function called
+func1 and another function
+
+00:00:31.200 --> 00:00:34.819
+called func2 may be okay when
+teaching functions in my slides.
+
+00:00:35.109 --> 00:00:37.950
+But what if I read some production
+code with function names like that.
+
+00:00:38.200 --> 00:00:41.290
+I'd have no idea what these functions
+are doing based on those names.
+
+00:00:41.850 --> 00:00:43.860
+Functions perform operations.
+
+00:00:43.930 --> 00:00:47.219
+So usually, you see function
+names as verb or verb phrases.
+
+00:00:47.380 --> 00:00:50.070
+This isn't always the case, but
+it's a good habit to get into.
+
+00:00:51.009 --> 00:00:53.529
+The second part of a function
+is the parameter list.
+
+00:00:53.739 --> 00:00:56.210
+This is the list of variables
+that the function expects
+
+00:00:56.210 --> 00:00:57.230
+from you when you call it.
+
+00:00:57.700 --> 00:01:00.820
+For example, if you're
+calling a function that adds 2 integers,
+
+00:01:00.990 --> 00:01:03.199
+then the 2 integers
+are in the parameter list.
+
+00:01:03.660 --> 00:01:06.149
+Sometimes functions don't
+need any parameters at all.
+
+00:01:06.300 --> 00:01:09.559
+Suppose I have a function that
+simply displays hello or a function
+
+00:01:09.559 --> 00:01:11.589
+that returns a system time to me.
+
+00:01:11.830 --> 00:01:14.720
+These functions can be called
+with an empty parameter list.
+
+00:01:15.560 --> 00:01:18.170
+All functions have the ability
+to return information to
+
+00:01:18.170 --> 00:01:19.350
+the caller of the function.
+
+00:01:19.870 --> 00:01:22.759
+In order to return information,
+we must specify the type
+
+00:01:22.760 --> 00:01:23.890
+of that information.
+
+00:01:24.039 --> 00:01:26.970
+So I might return a Boolean or an
+integer or a double or a string.
+
+00:01:27.789 --> 00:01:30.179
+Also it's possible that a
+function returns nothing.
+
+00:01:30.500 --> 00:01:33.180
+For example, if I need a
+function to just display hello,
+
+00:01:33.500 --> 00:01:35.930
+I really don't expect anything
+back from that function.
+
+00:01:36.260 --> 00:01:39.899
+In this case, we say that the
+return type is the keyword void.
+
+00:01:40.450 --> 00:01:42.189
+Finally, functions have bodies.
+
+00:01:42.360 --> 00:01:45.820
+These are statements to be executed
+and they're enclosed in curly braces.
+
+00:01:46.170 --> 00:01:48.690
+You've already seen an example
+of this in the main function.
+
+00:01:49.270 --> 00:01:52.580
+So as you can see, a function
+definition is pretty logical, the
+
+00:01:52.580 --> 00:01:56.100
+name of the function, what it expects,
+what it returns and what it does.
+
+00:01:56.730 --> 00:01:59.049
+Let's see how this
+looks in c++ syntax.
+
+00:02:01.940 --> 00:02:04.050
+Here, we have a simple
+function definition.
+
+00:02:04.299 --> 00:02:07.339
+Notice the name of the function
+is function underscore name.
+
+00:02:07.720 --> 00:02:10.970
+And after the function name, we
+have open and closed parentheses.
+
+00:02:11.410 --> 00:02:13.770
+In this case, this function
+expects no parameters.
+
+00:02:13.870 --> 00:02:16.030
+So there's nothing
+inside the parentheses.
+
+00:02:16.770 --> 00:02:18.399
+This function returns an integer.
+
+00:02:18.509 --> 00:02:21.859
+We specify that by providing
+the type of the return value
+
+00:02:21.860 --> 00:02:23.249
+before the function name.
+
+00:02:23.829 --> 00:02:26.410
+Finally, we have the body of
+the function, which consists of
+
+00:02:26.410 --> 00:02:28.170
+statements inside curly braces.
+
+00:02:28.710 --> 00:02:31.140
+You can see that this is
+the same syntax as we've
+
+00:02:31.140 --> 00:02:32.320
+used in our main function.
+
+00:02:32.950 --> 00:02:35.930
+Of course, we can have functions
+that return nothing expect
+
+00:02:35.930 --> 00:02:37.430
+many parameters and so forth.
+
+00:02:37.730 --> 00:02:40.510
+The syntax for all of them
+is very regular and exactly
+
+00:02:40.510 --> 00:02:41.620
+what you would expect.
+
+00:02:41.779 --> 00:02:42.920
+Let's see another one.
+
+00:02:44.800 --> 00:02:47.580
+In this case, we have the same
+function named function name.
+
+00:02:48.110 --> 00:02:50.680
+But this time it expects
+exactly one parameter.
+
+00:02:51.000 --> 00:02:53.970
+That parameter is an integer
+type and it's available for us to
+
+00:02:53.970 --> 00:02:55.370
+use in the body of the function.
+
+00:02:57.620 --> 00:03:00.840
+In this example, we have a function
+that returns nothing when called.
+
+00:03:01.250 --> 00:03:04.800
+In this case, we provide the keyword
+void before the function name.
+
+00:03:05.050 --> 00:03:07.640
+This tells the compiler that
+there is no return type.
+
+00:03:09.059 --> 00:03:12.410
+With void functions, we can still have
+simple return statements in the body
+
+00:03:12.410 --> 00:03:15.699
+of the function, but they're totally
+optional and not often written.
+
+00:03:16.529 --> 00:03:19.520
+If there is no return statement,
+it's understood that the function
+
+00:03:19.530 --> 00:03:23.470
+returns after the last statement
+is executed, pretty simple syntax.
+
+00:03:23.890 --> 00:03:24.990
+Let's look at one more.
+
+00:03:27.130 --> 00:03:30.089
+In this example, we see a function
+definition for function name
+
+00:03:30.090 --> 00:03:31.710
+that expects multiple parameters.
+
+00:03:32.150 --> 00:03:35.229
+In this case, the function
+expects two parameters: an
+
+00:03:35.240 --> 00:03:37.220
+integer and a standard string.
+
+00:03:38.220 --> 00:03:41.790
+When the function is called, these
+two parameters must be provided
+
+00:03:41.790 --> 00:03:45.049
+as arguments in the same order as
+specified in the parameter list.
+
+00:03:48.200 --> 00:03:50.410
+Suppose we're going to write
+a function that displays hello
+
+00:03:50.420 --> 00:03:53.650
+followed by an endline every
+time it's called, we could easily
+
+00:03:53.650 --> 00:03:55.300
+define that function as follows.
+
+00:03:55.670 --> 00:03:57.180
+The function name is say hello.
+
+00:03:57.450 --> 00:04:00.630
+It expects no parameters
+and returns nothing in.
+
+00:04:00.630 --> 00:04:02.829
+The body of the function,
+we have an output statement
+
+00:04:02.849 --> 00:04:04.309
+that just displays hello.
+
+00:04:05.010 --> 00:04:08.390
+Notice that in this case, there is
+no return statement required since
+
+00:04:08.390 --> 00:04:09.950
+the function doesn't return anything.
+
+00:04:12.279 --> 00:04:15.410
+Once the say hello function is
+defined, we can call it from
+
+00:04:15.410 --> 00:04:17.000
+main or from any other function.
+
+00:04:18.209 --> 00:04:21.580
+In this example, you see the
+function say hello defined above
+
+00:04:21.899 --> 00:04:24.909
+and you also see that it's being
+called by the main function below.
+
+00:04:25.330 --> 00:04:26.950
+This program will display hello.
+
+00:04:29.480 --> 00:04:33.030
+In this example, we're calling the
+say hello function 10 times inside
+
+00:04:33.030 --> 00:04:34.570
+a for loop in the main function.
+
+00:04:34.930 --> 00:04:37.729
+This will display hello
+10 times once per line.
+
+00:04:40.790 --> 00:04:43.250
+Of course, we can define as
+many functions as we need
+
+00:04:43.250 --> 00:04:46.060
+in our applications to help
+modularize our program.
+
+00:04:46.660 --> 00:04:49.560
+In this case, I'm defining
+3 functions: say world,
+
+00:04:49.620 --> 00:04:50.919
+say hello and main.
+
+00:04:51.580 --> 00:04:54.060
+Execution always begins
+with the main function.
+
+00:04:54.330 --> 00:04:56.500
+So in this case, main calls say hello.
+
+00:04:56.700 --> 00:04:58.170
+So we execute say hello.
+
+00:04:58.480 --> 00:05:00.200
+And we display hello to the console.
+
+00:05:01.139 --> 00:05:05.010
+But then say hello calls say
+world and we display world.
+
+00:05:05.320 --> 00:05:07.950
+So this program displays
+hello world to the console.
+
+00:05:12.070 --> 00:05:15.260
+Here's the same example with some
+other output statements sprinkled in.
+
+00:05:15.980 --> 00:05:18.670
+Again, execution always
+begins with the main function.
+
+00:05:18.870 --> 00:05:21.089
+So in this case, main calls say hello.
+
+00:05:21.290 --> 00:05:22.759
+So we execute say hello.
+
+00:05:22.959 --> 00:05:25.190
+Remember that when say hello
+is finished, we need to
+
+00:05:25.190 --> 00:05:26.500
+complete the code in main.
+
+00:05:27.230 --> 00:05:31.130
+So we display hello to the console
+then say hello calls say world.
+
+00:05:31.560 --> 00:05:34.559
+And when say world is done, we
+complete the code and say hello.
+
+00:05:35.099 --> 00:05:38.459
+So we execute say world and it
+displays world to the console,
+
+00:05:38.630 --> 00:05:42.170
+followed by bye from say world then we
+go back to where we left off and say
+
+00:05:42.170 --> 00:05:44.560
+hello and execute bye from say hello.
+
+00:05:45.080 --> 00:05:47.960
+Then we go back to where we left
+off in main and execute bye from
+
+00:05:47.960 --> 00:05:49.910
+main and our program terminates.
+
+00:05:50.370 --> 00:05:53.080
+You can walk through this code and
+you'll see exactly what's happening.
+
+00:05:54.820 --> 00:05:57.460
+There is one caveat about
+function definitions.
+
+00:05:57.969 --> 00:06:01.790
+The compiler must know the function
+details that is the function
+
+00:06:01.790 --> 00:06:05.640
+name, the parameters and so forth
+before the function is called.
+
+00:06:06.440 --> 00:06:08.030
+So look at this simple example.
+
+00:06:08.320 --> 00:06:10.160
+I'm calling say hello in main.
+
+00:06:10.620 --> 00:06:13.830
+But the compiler hasn't seen
+the definition of say hello yet.
+
+00:06:14.740 --> 00:06:18.250
+In this case, you'll get a compiler
+error telling you that say hello
+
+00:06:18.250 --> 00:06:20.039
+has not been declared in this scope.
+
+00:06:20.570 --> 00:06:22.910
+We'll talk about how to solve
+this issue with function
+
+00:06:22.910 --> 00:06:24.380
+prototypes in the next video.
+
+00:06:24.620 --> 00:06:28.350
+But before we do that, let's head over
+to the IDE and write a few functions.
+
+00:06:29.990 --> 00:06:33.950
+Okay, so I'm in the IDE, I'm in
+the section 11 workspace in the
+
+00:06:33.960 --> 00:06:35.979
+function definitions project.
+
+00:06:36.850 --> 00:06:40.030
+What I want to do here is I want to
+write a program that calculates the
+
+00:06:40.030 --> 00:06:44.490
+area of a circle on the volume of a
+cylinder, pretty easy calculations.
+
+00:06:44.679 --> 00:06:47.710
+But I want to break everything up
+into functions that we define, we
+
+00:06:47.710 --> 00:06:49.580
+create our own user-defined functions.
+
+00:06:49.580 --> 00:06:51.780
+And this is what I want
+my main to look like.
+
+00:06:52.309 --> 00:06:56.140
+Two simple function calls: area of
+the circle, volume of the cylinder.
+
+00:06:56.220 --> 00:06:57.090
+That's it.
+
+00:06:57.100 --> 00:07:00.210
+Now within those functions, we can
+prompt the user to enter the radius,
+
+00:07:00.210 --> 00:07:01.520
+the height, whatever else we need.
+
+00:07:01.960 --> 00:07:03.640
+Okay, so let's get started.
+
+00:07:03.650 --> 00:07:07.070
+Let's write that area
+circle function first.
+
+00:07:07.520 --> 00:07:10.259
+Now in this case, I don't want to
+pass anything into the function or
+
+00:07:10.260 --> 00:07:11.819
+return anything from the function.
+
+00:07:12.150 --> 00:07:14.560
+This function is simply going
+to ask the user to cut to
+
+00:07:14.560 --> 00:07:15.930
+enter the radius of the circle.
+
+00:07:16.370 --> 00:07:19.470
+It's going to call another function
+that will actually calculate the
+
+00:07:19.470 --> 00:07:21.300
+area, and it'll print the result.
+
+00:07:21.849 --> 00:07:23.369
+Okay, so let's write that function.
+
+00:07:23.750 --> 00:07:25.950
+We'll start with void
+since it returns nothing.
+
+00:07:26.230 --> 00:07:28.400
+And the name of the function
+is area of the circle.
+
+00:07:30.469 --> 00:07:31.010
+That's it.
+
+00:07:31.090 --> 00:07:33.880
+Simple as that, nothing in the
+parameter list right now because
+
+00:07:33.880 --> 00:07:36.289
+we're not passing anything in,
+as you can see here in the call.
+
+00:07:36.840 --> 00:07:37.850
+Okay, so what do we need?
+
+00:07:37.860 --> 00:07:40.620
+Well, we need to ask the user for
+the radius of the circle, right.
+
+00:07:40.620 --> 00:07:42.870
+So we need a variable here.
+
+00:07:42.870 --> 00:07:46.609
+And we'll just call it
+radius, and double is perfect.
+
+00:07:47.490 --> 00:07:52.370
+We'll initialize it to 0, and we'll
+say, we'll prompt the user and
+
+00:07:52.370 --> 00:07:53.659
+put a new line at the beginning.
+
+00:07:54.120 --> 00:07:58.010
+We'll just say enter the
+radius of the circle.
+
+00:08:01.440 --> 00:08:02.320
+That's it.
+
+00:08:02.530 --> 00:08:06.300
+And we'll read the input into
+the variable we just created.
+
+00:08:07.360 --> 00:08:09.270
+You can see this pattern
+happening over and over
+
+00:08:09.270 --> 00:08:10.370
+again, it's pretty standard.
+
+00:08:11.050 --> 00:08:12.390
+Okay, now what do I want to do.
+
+00:08:12.630 --> 00:08:14.400
+Well, now I want to call
+another function that
+
+00:08:14.400 --> 00:08:16.039
+actually calculates the area.
+
+00:08:16.830 --> 00:08:21.140
+That function -- again, remember, the
+area for a circle is pi r squared.
+
+00:08:21.620 --> 00:08:25.799
+That function needs to know the
+radius in order to calculate the area.
+
+00:08:26.090 --> 00:08:27.960
+Let's write the function call first.
+
+00:08:28.330 --> 00:08:33.210
+We'll say something like cout,
+and we'll do something like
+
+00:08:33.230 --> 00:08:41.490
+again the area of a circle with
+radius whatever they typed in,
+
+00:08:42.919 --> 00:08:44.520
+which was radius in this case.
+
+00:08:45.450 --> 00:08:50.700
+And then we'll say
+is, now what do we do.
+
+00:08:50.790 --> 00:08:53.839
+Now we need to call a function
+that actually calculates that
+
+00:08:53.849 --> 00:08:56.370
+area gives me back the double
+that I can display here.
+
+00:08:56.650 --> 00:09:00.469
+Okay, so let's call that
+function calc area circle.
+
+00:09:01.340 --> 00:09:07.290
+And that function expects
+the radius, right.
+
+00:09:07.540 --> 00:09:09.270
+And then we'll print
+a new line at the end.
+
+00:09:12.200 --> 00:09:13.800
+And really that's it
+for this function.
+
+00:09:13.800 --> 00:09:15.830
+Let me clean that space
+up right here, right.
+
+00:09:15.940 --> 00:09:19.040
+So now we need to write the other
+function, this function right
+
+00:09:19.040 --> 00:09:20.630
+here, calc area of the circle.
+
+00:09:21.470 --> 00:09:24.229
+Obviously, we need to return
+something from that function, right.
+
+00:09:24.270 --> 00:09:26.140
+The function's calculating the area.
+
+00:09:26.140 --> 00:09:29.290
+So it needs to return something to
+me so that I can display it here.
+
+00:09:29.559 --> 00:09:31.469
+So in this case, I want
+to return a double.
+
+00:09:31.469 --> 00:09:33.870
+And let's call it calc
+area of the circle.
+
+00:09:34.520 --> 00:09:39.760
+And what does it expect, it expects
+the radius, which is a double.
+
+00:09:42.920 --> 00:09:46.310
+What does it do now, it just returns
+pi r squared, right, simple as that.
+
+00:09:46.599 --> 00:09:48.010
+But we haven't defined pi.
+
+00:09:48.120 --> 00:09:49.130
+Let's define it up here.
+
+00:09:49.130 --> 00:09:52.620
+We'll say const double pi
+
+00:09:52.620 --> 00:09:57.320
+and we'll set it to 3.14159,
+
+00:09:57.320 --> 00:09:59.120
+that's close enough for this example.
+
+00:10:00.480 --> 00:10:01.270
+So there's my pi.
+
+00:10:01.270 --> 00:10:02.800
+It's constant, which is what we want.
+
+00:10:02.800 --> 00:10:04.290
+We don't want to be changing pi.
+
+00:10:05.259 --> 00:10:09.190
+And in the function body here,
+all we need to do really is to say
+
+00:10:09.190 --> 00:10:14.370
+return pi times the radius squared.
+
+00:10:15.260 --> 00:10:19.390
+We could use the pow function or we
+could just say radius times radius,
+
+00:10:20.370 --> 00:10:21.640
+which is what I'll do right here.
+
+00:10:22.910 --> 00:10:24.550
+That's it. That should do it.
+
+00:10:24.550 --> 00:10:25.380
+Let's walk through this.
+
+00:10:25.410 --> 00:10:26.920
+We call area of the circle
+
+00:10:27.920 --> 00:10:30.309
+transfers control over to this function.
+
+00:10:30.309 --> 00:10:33.870
+We have a radius variable right
+here, we're asking the user to enter
+
+00:10:33.870 --> 00:10:37.110
+the radius of the circle, we're
+reading it and then we're passing
+
+00:10:37.110 --> 00:10:40.739
+that value into this function,
+calculate the area of the circle.
+
+00:10:41.160 --> 00:10:43.530
+And it's going to calculate the
+area of the circle and return
+
+00:10:43.540 --> 00:10:46.500
+that value back to me, which I'm
+going to print right in here.
+
+00:10:46.709 --> 00:10:49.370
+Now I could store that into
+a variable, do anything
+
+00:10:49.370 --> 00:10:50.360
+I want with it, right.
+
+00:10:50.510 --> 00:10:55.710
+So let's run this and
+test it out, oops.
+
+00:10:55.750 --> 00:10:58.620
+Let me comment .volume of the cylinder
+because we haven't written that one
+
+00:10:58.620 --> 00:10:59.769
+yet, that's the next one, right.
+
+00:11:00.090 --> 00:11:02.850
+So the radius of the circle 12.5.
+
+00:11:03.530 --> 00:11:07.910
+It says here the area of a circle
+with radius 12.5 is 490.873.
+
+00:11:08.270 --> 00:11:11.010
+Okay, obviously, we'd want to test
+that to make sure that that's correct.
+
+00:11:12.400 --> 00:11:14.439
+And that's pretty much it, right.
+
+00:11:14.510 --> 00:11:15.510
+Pretty straightforward.
+
+00:11:15.599 --> 00:11:16.890
+Now let's write this one right here.
+
+00:11:16.890 --> 00:11:18.290
+The volume of a cylinder.
+
+00:11:19.130 --> 00:11:21.280
+Well, how do you calculate
+the volume of a cylinder.
+
+00:11:21.660 --> 00:11:25.149
+Well, the volume of a cylinder
+is pi r squared times the
+
+00:11:25.150 --> 00:11:26.390
+height of the cylinder, right.
+
+00:11:26.590 --> 00:11:27.890
+And I'm not using any units here.
+
+00:11:27.890 --> 00:11:30.700
+You can think of this as inches
+or centimeters or meters or
+
+00:11:30.700 --> 00:11:32.690
+whatever you like, it doesn't
+really matter too much.
+
+00:11:32.849 --> 00:11:36.390
+So we need to write this
+volume cylinder function.
+
+00:11:37.110 --> 00:11:40.039
+This is going to be very similar
+to the area circle function, right.
+
+00:11:40.039 --> 00:11:42.099
+It's just going to prompt the
+user for some information.
+
+00:11:42.309 --> 00:11:45.410
+In this case, it's going to prompt the
+user for the radius of the cylinder
+
+00:11:45.430 --> 00:11:46.720
+and the height of the cylinder.
+
+00:11:47.000 --> 00:11:48.190
+So let's write it.
+
+00:11:48.220 --> 00:11:52.550
+We'll say void volume of a cylinder.
+
+00:11:53.950 --> 00:11:56.620
+And the reason that that's popping
+up in the completion is because I had
+
+00:11:56.620 --> 00:11:59.710
+that in there before and I guess it
+remembered, which is kind of handy.
+
+00:11:59.980 --> 00:12:02.060
+All right, so we need the
+radius of the cylinder.
+
+00:12:03.920 --> 00:12:05.410
+And we'll initialize that to 0.
+
+00:12:05.410 --> 00:12:07.780
+And we also need the
+height of the cylinder.
+
+00:12:09.200 --> 00:12:10.829
+We'll initialize that to 0 as well.
+
+00:12:11.490 --> 00:12:13.960
+All right, so let's ask the user.
+
+00:12:13.960 --> 00:12:17.660
+Let me just copy and paste this
+to save a little typing time.
+
+00:12:19.410 --> 00:12:22.150
+So what is the radius of
+the cylinder in this case.
+
+00:12:24.140 --> 00:12:26.020
+And we'll read that into radius.
+
+00:12:29.000 --> 00:12:33.200
+Perfect. And then what we'll do here is we'll
+copy these guys as well,
+
+00:12:36.500 --> 00:12:39.040
+and we'll ask them for the height of the cylinder,
+
+00:12:41.740 --> 00:12:43.040
+enter the height of the cylinder.
+
+00:12:43.040 --> 00:12:44.760
+We'll read that into
+the height variable.
+
+00:12:44.760 --> 00:12:46.920
+All right, so now we've
+got everything we need.
+
+00:12:47.210 --> 00:12:48.170
+So what do we do now.
+
+00:12:48.700 --> 00:12:50.910
+Well, let's do the
+output statement, right.
+
+00:12:50.910 --> 00:13:03.260
+We'll say cout, and we'll say the
+volume of a cylinder with radius, and
+
+00:13:03.260 --> 00:13:05.770
+we'll provide the radius value here.
+
+00:13:06.929 --> 00:13:12.460
+And then we'll say something
+like and height and we'll
+
+00:13:12.600 --> 00:13:13.740
+output the height here.
+
+00:13:15.070 --> 00:13:19.790
+And finally, we'll just say
+just like before is, now we
+
+00:13:19.790 --> 00:13:22.330
+need to call a function which
+we haven't written yet, right.
+
+00:13:22.349 --> 00:13:27.709
+So let's call it calc
+volume of the cylinder.
+
+00:13:28.619 --> 00:13:29.840
+We'll write that function in a minute.
+
+00:13:29.879 --> 00:13:31.030
+Now what do we pass into it.
+
+00:13:31.050 --> 00:13:34.240
+Well, we need to pass in
+the radius and the height.
+
+00:13:34.880 --> 00:13:37.000
+It doesn't matter what order you
+put it in, but that's the way you
+
+00:13:37.000 --> 00:13:38.240
+have to provide the variables.
+
+00:13:38.250 --> 00:13:41.410
+So I could have said height radius
+and just sent in the correct ones.
+
+00:13:41.610 --> 00:13:44.079
+So in this case, I'm going to
+write that so it expects a radius
+
+00:13:44.080 --> 00:13:46.819
+first and then the height, and
+then we'll print a new line
+
+00:13:46.820 --> 00:13:49.000
+at the end, and that'll be it.
+
+00:13:50.770 --> 00:13:53.089
+Okay, so that's where we're
+at with this function.
+
+00:13:53.730 --> 00:13:56.580
+It's finished now, so let me clean
+up some of this space right here.
+
+00:13:58.530 --> 00:14:01.640
+Now what we need to do is write
+that function, calc volume cylinder.
+
+00:14:02.080 --> 00:14:02.950
+So let's do that.
+
+00:14:02.969 --> 00:14:04.350
+And we'll do it right here.
+
+00:14:05.619 --> 00:14:09.980
+We'll say -- actually we'll do it
+a couple lines up right under the
+
+00:14:09.980 --> 00:14:11.580
+other calculation, right here.
+
+00:14:11.850 --> 00:14:16.390
+So we'll say double because
+it returns a double, calc
+
+00:14:16.390 --> 00:14:17.570
+volume over the cylinder.
+
+00:14:18.020 --> 00:14:21.029
+It expects the radius,
+which is a double.
+
+00:14:22.719 --> 00:14:27.260
+And it expects the height,
+which is also a double, right.
+
+00:14:27.300 --> 00:14:28.490
+So in this case, what do we do?
+
+00:14:28.500 --> 00:14:38.240
+We return pi radius
+squared times the height.
+
+00:14:39.960 --> 00:14:41.910
+And that gives us the
+volume of the cylinder.
+
+00:14:42.629 --> 00:14:43.990
+That should do it.
+
+00:14:44.990 --> 00:14:48.180
+Calling volume cylinder now, so we'll
+do it 2 times now, we'll get the
+
+00:14:48.180 --> 00:14:51.620
+area of the circle, which let's say
+it's -- again, let's just say 10.
+
+00:14:52.670 --> 00:14:53.490
+And that's correct.
+
+00:14:53.520 --> 00:14:54.610
+That's what we expect, right.
+
+00:14:54.660 --> 00:14:55.800
+Pi times 100.
+
+00:14:56.219 --> 00:14:59.370
+So what's the radius of
+the cylinder this time?
+
+00:14:59.370 --> 00:15:00.269
+Well, let's say it's 12.1.
+
+00:15:00.660 --> 00:15:01.420
+And what's the height?
+
+00:15:01.420 --> 00:15:04.329
+Let's say it's a really
+tall cylinder, 25.2.
+
+00:15:05.360 --> 00:15:09.759
+So the volume of the cylinder with
+radius 12.1 and height 25.2 is
+
+00:15:09.990 --> 00:15:13.749
+11.591, and we just need to put a
+little space after the is there.
+
+00:15:15.049 --> 00:15:17.500
+Okay, now there's one thing that we
+could do to make this a little better.
+
+00:15:17.779 --> 00:15:22.260
+You'll notice that this calculation
+right here pi r squared, we're
+
+00:15:22.260 --> 00:15:23.670
+doing it again right here.
+
+00:15:24.000 --> 00:15:26.500
+So what we could do is we
+could refactor this code
+
+00:15:26.500 --> 00:15:27.640
+just so it's a little better.
+
+00:15:28.099 --> 00:15:33.310
+And we could say return and we could
+do we can calculate the area of the
+
+00:15:33.310 --> 00:15:37.900
+circle and pass in the radius to it
+and then multiply that by the height.
+
+00:15:38.670 --> 00:15:40.530
+That way we're reusing that function.
+
+00:15:41.410 --> 00:15:43.150
+Okay, so hopefully, you can
+see what's going on here.
+
+00:15:43.160 --> 00:15:48.439
+The volume of a cylinder is
+the area's -- the area of
+
+00:15:48.440 --> 00:15:50.010
+the circle times its height.
+
+00:15:50.290 --> 00:15:53.390
+So we may as well just call
+that function to do it for us.
+
+00:15:53.390 --> 00:15:54.700
+You can see the repeated code.
+
+00:15:55.850 --> 00:15:56.770
+Okay, so there you go.
+
+00:15:56.770 --> 00:15:57.250
+That's it.
+
+00:15:57.280 --> 00:16:00.170
+We've created -- and let me run that
+again just to be sure that we're
+
+00:16:00.170 --> 00:16:04.920
+working correctly, see 12.1, so what's
+the radius of the cylinder, 10.2.
+
+00:16:05.460 --> 00:16:09.200
+And let's say it's
+30.1., and there we go.
+
+00:16:11.539 --> 00:16:12.319
+Okay, so that's it.
+
+00:16:12.340 --> 00:16:14.460
+You can see how really
+straightforward it is.
+
+00:16:14.460 --> 00:16:16.390
+And the nice thing about
+this is when you read your
+
+00:16:16.390 --> 00:16:17.689
+code, you can see your main.
+
+00:16:17.870 --> 00:16:19.490
+It's really easy to follow, right.
+
+00:16:19.720 --> 00:16:22.130
+Before in our main, we had
+all of this stuff in there.
+
+00:16:22.420 --> 00:16:24.690
+Now we're just seeing area
+of the circle, oh okay.
+
+00:16:24.860 --> 00:16:27.230
+And remember, I can call
+these as many times as I want.
+
+00:16:27.589 --> 00:16:29.869
+In this case, it's going
+to ask me two times.
+
+00:16:29.869 --> 00:16:30.729
+I could put them in loops.
+
+00:16:30.730 --> 00:16:31.599
+I can do anything I want.
+
+00:16:31.850 --> 00:16:33.170
+So what's the radius of a circle?
+
+00:16:33.490 --> 00:16:34.780
+10.1.
+
+00:16:34.780 --> 00:16:39.079
+Okay, it's asking me again as I
+called it again, 10.2 this time.
+
+00:16:39.790 --> 00:16:41.660
+Then it goes to the
+radius of the cylinder.
+
+00:16:44.290 --> 00:16:45.199
+Okay, so that's it.
+
+00:16:45.210 --> 00:16:46.600
+That finishes off this video.
+
+00:16:46.830 --> 00:16:50.079
+You can see how easy it is to
+create these user-defined functions.
+
+00:16:50.450 --> 00:16:51.800
+And this is really what you want.
+
+00:16:51.820 --> 00:16:54.830
+You want your program to be
+modularized and have these small,
+
+00:16:55.030 --> 00:16:58.460
+well-defined units that do what
+you'd want it to do and just do
+
+00:16:58.460 --> 00:16:59.750
+one thing really, really well.

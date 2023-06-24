@@ -1,0 +1,1141 @@
+WEBVTT
+
+00:07.620 --> 00:13.590
+In this video, we'll look at some of the motivating factors that led to the inclusion of lamb expressions
+
+00:13.590 --> 00:15.090
+in C++ 11.
+
+00:16.320 --> 00:19.380
+Lambdas were a tremendous addition to C++.
+
+00:19.560 --> 00:26.400
+Prior to C++ 11, we mainly used function objects and function pointers when we needed custom behavior
+
+00:26.400 --> 00:29.760
+with the standard template library and also with our own code.
+
+00:30.330 --> 00:35.280
+Function objects were used mostly with the standard template library and function pointers were used
+
+00:35.280 --> 00:36.900
+more often as callbacks.
+
+00:37.420 --> 00:38.970
+Okay, so what's the problem?
+
+00:39.000 --> 00:45.390
+Well, one of the problems is that we often ended up writing many short functions that control algorithms.
+
+00:45.600 --> 00:51.870
+And in the case of the STL, these small functions were encapsulated in small classes to produce functional
+
+00:51.870 --> 00:52.560
+objects.
+
+00:52.590 --> 00:54.480
+Now that's okay and it works.
+
+00:54.480 --> 00:59.520
+But many times the classes and the functions are defined far away from when they're used.
+
+00:59.520 --> 01:03.480
+And this can lead to problems with modifying, maintaining and testing our code.
+
+01:04.080 --> 01:09.780
+In addition, the compiler is not so good at optimizing the functions when they're not defined in line.
+
+01:09.960 --> 01:11.280
+Let's see an example.
+
+01:13.940 --> 01:18.080
+In this example, we'll create a class that will serve to provide function objects.
+
+01:18.380 --> 01:22.370
+We'll see a couple of examples in these slides as well as when we go to the ID.
+
+01:22.490 --> 01:25.730
+Now, these classes all have the same type of structure.
+
+01:25.790 --> 01:28.760
+They might have attributes, constructors and so forth.
+
+01:28.760 --> 01:32.930
+But the most important thing to have is an overloaded function call operator.
+
+01:33.170 --> 01:36.770
+That's those open and closed persons that you see next to the operator.
+
+01:37.610 --> 01:39.770
+You can see them in bold in the slide.
+
+01:39.800 --> 01:46.010
+Whenever this operator is used, the function associated with it is called for an object of any multiplier
+
+01:46.010 --> 01:46.520
+type.
+
+01:47.000 --> 01:52.670
+So in this example, we initialize multiplier objects with an integer and we store that in the num attribute.
+
+01:52.820 --> 01:59.210
+Then when we call the overloaded function operator with a multiplier object, we multiply the past in
+
+01:59.210 --> 02:02.150
+integer n by num and we return the result.
+
+02:02.180 --> 02:07.460
+It's pretty simple, and these classes tend to be small, but depending on our application we might
+
+02:07.460 --> 02:09.560
+end up with many variants of them.
+
+02:09.740 --> 02:11.690
+So how do you use these classes?
+
+02:13.990 --> 02:16.150
+Let's see an example with the steel.
+
+02:17.380 --> 02:23.020
+Let's assume that we have that multiplier class that we just defined, and we have a vector called VEC,
+
+02:23.020 --> 02:26.440
+which is a vector of integers initialized to one, two, three and four.
+
+02:26.740 --> 02:29.620
+So let's create a function object from the multiplier class.
+
+02:29.620 --> 02:31.540
+We'll call it mult multi.
+
+02:31.960 --> 02:37.210
+When we call the overloaded function call operator on this object, it will return whatever integer
+
+02:37.210 --> 02:39.670
+we pass into it multiplied by ten.
+
+02:40.660 --> 02:46.010
+So we can call the SQL algorithm transform and provide the iterator for the vector.
+
+02:46.030 --> 02:52.870
+What this does is it starts at vector begin and ends at vector end and it starts writing back or transforming
+
+02:52.870 --> 02:54.730
+the elements in vector from the beginning.
+
+02:54.730 --> 02:55.450
+That's it.
+
+02:55.570 --> 02:58.120
+But now what do we do to transform that vector?
+
+02:58.120 --> 03:00.190
+Well, that's where the function object comes in.
+
+03:00.190 --> 03:06.940
+We iterate through the vector and we pass in each integer we see into mult when we're done.
+
+03:06.940 --> 03:11.170
+Vec now has been transformed to ten, 20, 30 and 40.
+
+03:13.790 --> 03:16.550
+Now we don't have to create a name multiplier object.
+
+03:16.550 --> 03:19.190
+We can simply create an unnamed multiplier object.
+
+03:19.190 --> 03:22.310
+As you can see here in bold, we get the same behavior.
+
+03:22.340 --> 03:23.920
+So what's wrong with all of this?
+
+03:23.930 --> 03:24.970
+Well, nothing, really.
+
+03:24.980 --> 03:29.960
+It just becomes tedious to read all these classes, each with the specific behavior in the overloaded
+
+03:29.960 --> 03:31.190
+function call operator.
+
+03:31.340 --> 03:35.420
+And sometimes it's not so obvious what they're doing when you're looking at the existing code.
+
+03:37.770 --> 03:43.950
+Here's another example using a template class to create a generic display, and we can use this with
+
+03:43.950 --> 03:47.490
+functional objects of any type that overload the insertion operator.
+
+03:47.880 --> 03:50.070
+Notice that we have no attributes in this class.
+
+03:50.070 --> 03:55.770
+All we're doing is overloading the function call operator to display a t object to see out.
+
+03:56.070 --> 03:58.170
+So how can we use this class template?
+
+03:58.170 --> 03:59.610
+It's actually pretty easy.
+
+04:01.450 --> 04:04.890
+Let's create two functional objects from the display or template class.
+
+04:04.900 --> 04:10.390
+The first will display integers and we'll call it D one and the second will display stud strings and
+
+04:10.390 --> 04:11.560
+we'll call it DX two.
+
+04:12.100 --> 04:15.190
+Notice how we provide the type and the template parameters.
+
+04:15.700 --> 04:19.510
+We cannot use these function objects just as we would use functions.
+
+04:19.510 --> 04:25.810
+We can call DX one and pass in 100 as an argument and we can call DX two with Frank as the argument.
+
+04:26.570 --> 04:31.970
+Behind the scenes, the overloaded function call operator is called and we display the appropriate result.
+
+04:32.000 --> 04:37.550
+Now this example really shows clearly the DX one and DX two are objects, but we're using them like
+
+04:37.550 --> 04:40.760
+functions and that's the reason they're called function objects.
+
+04:40.760 --> 04:43.610
+But using them as in this example isn't all that useful.
+
+04:43.610 --> 04:44.780
+So let's see a better way.
+
+04:47.920 --> 04:53.590
+In this example we have one is a vector of the integers one, two, three, four and five and vec two
+
+04:53.620 --> 04:54.940
+is a vector of strings.
+
+04:54.940 --> 04:56.230
+Larry, moe and curly.
+
+04:57.300 --> 05:01.920
+Now we use stood for each to display each of the elements provided by the iterator.
+
+05:02.040 --> 05:06.750
+In the first example, we instantiate a display of iNts anonymously.
+
+05:07.110 --> 05:09.270
+Notice the function call operator at the end.
+
+05:09.300 --> 05:12.060
+That's important because we need to instantiate an object.
+
+05:12.540 --> 05:18.270
+In the second example, we use D one, which we created in the previous slide and in the last example
+
+05:18.270 --> 05:19.380
+we use DD to.
+
+05:20.110 --> 05:25.150
+So now these functional objects display all the elements in the vector, and we only had to write the
+
+05:25.150 --> 05:27.760
+class once since we wrote it as a generic template.
+
+05:27.790 --> 05:32.350
+That's pretty cool and it works great, but I think using lambda expressions is even cooler.
+
+05:32.380 --> 05:33.850
+Let me show you what that looks like.
+
+05:37.220 --> 05:40.100
+So now let's do the same thing with Lambda Expressions.
+
+05:40.490 --> 05:43.610
+Note that all the code we need to do this is on this slide.
+
+05:43.610 --> 05:44.960
+We don't need anything else.
+
+05:44.960 --> 05:48.680
+We don't need that display or template class or the function objects.
+
+05:48.680 --> 05:49.850
+DX one and dx two.
+
+05:51.040 --> 05:54.280
+We do have the same two vectors vec one and vec two.
+
+05:54.310 --> 05:57.590
+Now in the for each we don't pass in a function object.
+
+05:57.610 --> 06:00.040
+Instead we use a lambda expression.
+
+06:00.100 --> 06:03.040
+Don't worry about the syntax of the lambda expression right now.
+
+06:03.040 --> 06:04.930
+We'll go over that in detail soon.
+
+06:04.930 --> 06:09.400
+But do notice that all the behavior we want is exactly where we want it.
+
+06:09.400 --> 06:11.860
+Right in line in the call to forage.
+
+06:12.100 --> 06:17.440
+So in this case, we're just displaying the data, but we can easily modify our lambda to do whatever
+
+06:17.440 --> 06:18.490
+we want them to.
+
+06:18.880 --> 06:23.830
+This makes the code more readable, easier to test, easier to debug, and more maintainable.
+
+06:24.220 --> 06:27.640
+Also, the compiler can more easily optimize this code.
+
+06:29.000 --> 06:31.430
+So lambdas replace function objects, right.
+
+06:31.730 --> 06:32.530
+Yes.
+
+06:32.540 --> 06:35.090
+And we write less code and more focused code, right?
+
+06:35.120 --> 06:35.870
+Yes.
+
+06:36.050 --> 06:38.720
+So we never have to use function objects again, right?
+
+06:38.990 --> 06:39.740
+Wrong.
+
+06:40.130 --> 06:45.890
+Best practice with lambda expressions is to use them when the amount of code is a statement or a few
+
+06:45.890 --> 06:46.720
+statements.
+
+06:46.730 --> 06:51.200
+If you have more complex code, you should consider using a function object.
+
+06:52.230 --> 06:58.140
+One other benefit of a lambda expression is that the compiler creates a closure object from the lambda
+
+06:58.140 --> 06:58.920
+expression.
+
+06:58.950 --> 07:03.570
+This means that we can gain access to the environment in which the lambda exists.
+
+07:03.600 --> 07:06.810
+This is super powerful and we'll see how it works pretty soon.
+
+07:07.320 --> 07:12.480
+So why did I spend time talking about functional objects if we can mostly replace them with lambdas?
+
+07:12.510 --> 07:18.690
+Well, it's because the compiler generates unnamed functional objects behind the scenes from the lambda
+
+07:18.690 --> 07:19.620
+expressions.
+
+07:19.620 --> 07:21.600
+And now you understand how they work.
+
+07:21.990 --> 07:22.410
+Great.
+
+07:22.410 --> 07:25.500
+So let's head over to the ID and we'll see some of this in live code.
+
+07:26.560 --> 07:26.860
+Okay.
+
+07:26.860 --> 07:32.950
+So I'm back in the ID, I'm in the Section 21 workspace and I'm in the Function Objects project.
+
+07:33.860 --> 07:36.810
+And this project does a little bit of what we just did on the slides.
+
+07:36.830 --> 07:40.940
+It's really straightforward, but I really want to go over it to make sure that you understand function
+
+07:40.940 --> 07:43.350
+objects, function objects.
+
+07:43.370 --> 07:48.770
+I've seen a lot of beginning C++ programmers really not understand these, and I think it's all about
+
+07:48.770 --> 07:51.920
+that operator, that function call operator right here.
+
+07:52.190 --> 07:55.310
+I don't know why it's just an operator just because it looks like a function.
+
+07:55.310 --> 07:56.300
+Don't let it freak you out.
+
+07:56.300 --> 08:00.710
+It's just an operator, just like the insertion or the extraction or a plus or minus.
+
+08:00.710 --> 08:01.340
+That's it.
+
+08:01.430 --> 08:05.570
+It's just the way it's used is a little different, but it should be very, very straightforward and
+
+08:05.570 --> 08:08.600
+hopefully intuitive after this demo here.
+
+08:08.630 --> 08:09.000
+Okay.
+
+08:09.020 --> 08:13.100
+So what we've got here is we've got three classes.
+
+08:13.520 --> 08:14.510
+These two are structures.
+
+08:14.510 --> 08:17.480
+This one down here is a class multiplier, which I'll get to in a second.
+
+08:17.480 --> 08:18.990
+I'll just keep it closed for now.
+
+08:19.010 --> 08:22.910
+So what I'm doing here is I'm creating this structure right here.
+
+08:23.510 --> 08:29.570
+It's called Square Factor, and all it does is that it overloads the function call operator right there.
+
+08:29.570 --> 08:30.200
+That's it.
+
+08:30.200 --> 08:31.340
+That's all it's doing.
+
+08:31.970 --> 08:34.880
+By doing that, you can not create function objects.
+
+08:34.880 --> 08:37.100
+And I'll show you exactly how that works in a second.
+
+08:37.100 --> 08:43.760
+So I'm overloading that operator and it expects an integer, and when I get that integer, I'm simply
+
+08:43.760 --> 08:45.080
+displaying the square.
+
+08:45.080 --> 08:45.470
+That's it.
+
+08:45.470 --> 08:46.550
+I'm not changing anything.
+
+08:46.550 --> 08:48.770
+I'm only displaying output only.
+
+08:48.960 --> 08:50.690
+Okay, so that went straight forward.
+
+08:50.690 --> 08:57.980
+And then I've got a template class here that expects my template parameter T and in this case it's called
+
+08:57.980 --> 08:58.850
+disk player.
+
+08:58.880 --> 09:01.490
+Again, I'm overloading that operator.
+
+09:01.490 --> 09:03.230
+Write the function call operator.
+
+09:03.230 --> 09:05.420
+It expects a T, whatever that is.
+
+09:05.420 --> 09:05.960
+Could be in it.
+
+09:05.960 --> 09:08.000
+It could be a string, it could be just about anything.
+
+09:08.000 --> 09:10.940
+And all I'm doing again is outputting the data.
+
+09:11.090 --> 09:16.970
+So in this case, we have to make sure that we are overloading that insertion operator with whatever
+
+09:16.970 --> 09:20.990
+type we're using, I'm only going to be using instant strings, so I know it's going to work just fine
+
+09:20.990 --> 09:21.500
+with them.
+
+09:21.860 --> 09:23.270
+Okay, so let's go over main.
+
+09:23.270 --> 09:24.950
+Here is my test one.
+
+09:24.950 --> 09:27.890
+You can see the output right up here on the right.
+
+09:27.950 --> 09:32.930
+And what I'm doing is I'm creating an object and that object's name is square.
+
+09:33.230 --> 09:34.880
+It's type is square function.
+
+09:34.880 --> 09:36.940
+It's one of these guys, right?
+
+09:36.950 --> 09:40.550
+The only thing I can do with that object is call this function call operator.
+
+09:40.550 --> 09:40.940
+That's it.
+
+09:40.940 --> 09:41.900
+There's nothing else to do.
+
+09:41.900 --> 09:44.450
+There's no attributes, there's no other methods.
+
+09:44.450 --> 09:47.480
+So this is about as simple a function object as you can get.
+
+09:47.480 --> 09:52.490
+So now, once I have square, I can say square and pass in a four.
+
+09:52.520 --> 09:55.550
+Now, this looks exactly like a function call, doesn't it?
+
+09:55.640 --> 09:57.170
+And that's the whole point.
+
+09:57.710 --> 10:02.420
+What's really happening behind the scenes is, remember, this square is not a function, it's an object.
+
+10:02.420 --> 10:08.300
+So what's really happening behind the scenes is that we're calling squares dot operator function call
+
+10:08.420 --> 10:10.100
+and I'm passing in the four.
+
+10:11.260 --> 10:12.330
+Well, hopefully that's clear.
+
+10:12.330 --> 10:14.550
+It's really important that you understand this piece right here.
+
+10:14.550 --> 10:20.490
+This is about a simple and example as I can come up with, because remember, lambdas are converted
+
+10:20.490 --> 10:22.920
+into these functional objects behind the scenes.
+
+10:22.920 --> 10:27.180
+So in this case, we display a 16 and you can see the 16 displaying right here.
+
+10:27.660 --> 10:30.780
+In this case, I'm creating two function objects.
+
+10:30.780 --> 10:33.240
+One is called D one, the other one is called DD two.
+
+10:33.240 --> 10:37.710
+I'm using this template class to do it, so I need to pass in my template parameter.
+
+10:37.710 --> 10:42.420
+So this one dd one will display ints dd two will display std strings.
+
+10:42.810 --> 10:44.610
+All we're doing here is outputting the data.
+
+10:44.610 --> 10:45.930
+So it's going to be really simple.
+
+10:45.930 --> 10:52.410
+We call DD one with 100, DD two with Frank and we get right out here, 100 and Frank again.
+
+10:52.410 --> 10:54.540
+These guys look just like function calls, right?
+
+10:54.540 --> 10:55.260
+But they're not.
+
+10:55.260 --> 10:56.490
+They're function objects.
+
+10:56.490 --> 11:04.110
+What's happening is d one operator function call operator 100 DD two operator using the function call
+
+11:04.110 --> 11:05.910
+operator again, we're passing in the string.
+
+11:06.810 --> 11:11.820
+So again, that's about as simple an example as I can come up with that really drives home the point
+
+11:11.820 --> 11:12.240
+here.
+
+11:12.240 --> 11:13.710
+They look like function calls.
+
+11:13.710 --> 11:15.360
+They're not they're function objects.
+
+11:15.810 --> 11:18.060
+All right, so let's move on to test two.
+
+11:19.500 --> 11:25.440
+And what we'll do here is we'll use these function objects with our standard template algorithms.
+
+11:25.440 --> 11:27.690
+So here is my test two right here.
+
+11:27.690 --> 11:30.060
+And you can see the output beginning up here on the right.
+
+11:30.990 --> 11:33.920
+All I'm doing is creating vec one as an integer vector.
+
+11:33.990 --> 11:39.140
+One, two, three, four, five and VEC two is a vector of strings, Larry, Moe and Curly.
+
+11:39.150 --> 11:40.470
+That's what we're going to work with.
+
+11:40.470 --> 11:45.150
+And what we're going to do now is we're going to use the for each algorithm right here.
+
+11:46.020 --> 11:48.330
+Remember, it's an algorithm, so it needs an iterator.
+
+11:48.330 --> 11:48.990
+Here's the iterator.
+
+11:48.990 --> 11:51.600
+I'm going to go from the beginning to the end of vector one.
+
+11:51.600 --> 11:53.310
+That's one, two, three, four, five.
+
+11:53.310 --> 11:59.790
+And at each iteration, the algorithm will pass in whatever the element is in that collection.
+
+11:59.790 --> 11:59.940
+Right?
+
+11:59.940 --> 12:03.450
+And that container, which is an integer, it's going to pass it into square.
+
+12:03.630 --> 12:06.510
+So just like we did here, that's what's going to happen behind the scenes.
+
+12:07.170 --> 12:11.430
+So it's going to pass in the one, the two, the three, the four and the five in that order.
+
+12:11.520 --> 12:17.040
+And all we're doing with this func to right here with this function object is displaying.
+
+12:17.040 --> 12:20.400
+So it's going to display the square of each of the numbers passed into it.
+
+12:20.400 --> 12:23.760
+149 1625 you can see the output right there.
+
+12:23.760 --> 12:27.390
+This does not change the vector, we're only displaying the vector.
+
+12:28.710 --> 12:31.740
+So here we're going to display what we just did.
+
+12:31.740 --> 12:34.380
+And actually this this one is that guy right there.
+
+12:34.920 --> 12:35.120
+Right?
+
+12:35.160 --> 12:36.930
+This this does no display right there.
+
+12:36.930 --> 12:42.090
+So here for each again vec one begin to vec one end called dx one.
+
+12:42.090 --> 12:44.350
+What's dx one will dx one is that display.
+
+12:44.430 --> 12:47.190
+All it does is output the value passed into it.
+
+12:47.190 --> 12:51.420
+So it's going to be passed in one, two, three, four, five and it's going to display them right here.
+
+12:52.080 --> 12:57.330
+You can see it right there in this case, a little bit different.
+
+12:57.330 --> 13:01.860
+What I'm doing is I'm using the for each and here I'm using vector two, which is Larry, Moe and Curly.
+
+13:01.860 --> 13:07.230
+I'm going from the beginning to the end and I'm creating a display or object right there.
+
+13:07.620 --> 13:08.730
+I'm doing that in place.
+
+13:08.730 --> 13:12.870
+I'm not naming it like I did DX one, DX two so I'm just calling display.
+
+13:13.380 --> 13:17.940
+I'm using the template parameter stood string and notice right here, those are important because that's
+
+13:17.940 --> 13:19.350
+what instantiating it.
+
+13:19.350 --> 13:22.410
+That's not the function call operator, that's a constructor.
+
+13:22.410 --> 13:24.300
+So that's creating that object.
+
+13:24.390 --> 13:27.750
+So now I've got a display or object that can display strings.
+
+13:27.750 --> 13:32.310
+I'll loop through the vector using the algorithm every time it's going to pass in an integer and it's
+
+13:32.310 --> 13:36.540
+going to display Larry, Moe and Curly that's right there.
+
+13:38.100 --> 13:42.870
+And then down here we're doing the same thing, except we're using the DX to function object, which
+
+13:42.870 --> 13:44.250
+is the one we created earlier.
+
+13:44.340 --> 13:46.110
+And it does exactly the same thing.
+
+13:46.110 --> 13:47.880
+It just prints out Larry, Moe and Curly.
+
+13:48.660 --> 13:56.400
+So now let's go on to test three and we're right here on line 62.
+
+13:57.600 --> 14:00.690
+So what we're doing again now, this time we're going to use lambdas.
+
+14:00.690 --> 14:06.150
+So all the stuff we just wrote up top, all those template classes and that square function, all that
+
+14:06.150 --> 14:07.740
+stuff, we're not using any of that now.
+
+14:07.740 --> 14:09.450
+We're doing it all using lambdas.
+
+14:09.450 --> 14:15.750
+So this code right here is all self contained, it needs nothing else, which is kind of cool.
+
+14:15.810 --> 14:21.750
+So right here we're using for each and we're going from vector one beginning vector one end.
+
+14:21.750 --> 14:23.580
+And here's my lambda expression.
+
+14:23.580 --> 14:26.070
+It starts here with those square brackets like that.
+
+14:26.070 --> 14:30.900
+We'll get used to that syntax in a second and I'll talk about the syntax in detail in the next video.
+
+14:30.930 --> 14:32.550
+I just wanted to show you what it looked like.
+
+14:32.610 --> 14:34.560
+And Lambda ends right there.
+
+14:34.560 --> 14:40.500
+So now what's going to happen is the for each algorithm will send in an integer right in here to the
+
+14:40.500 --> 14:43.890
+lambda and it's x and all we're doing is just displaying X squared.
+
+14:43.890 --> 14:48.240
+We're not changing x, we're not changing the vector, we're simply displaying the elements.
+
+14:48.240 --> 14:50.150
+The same thing we did with the display.
+
+14:51.210 --> 14:52.500
+So that's it.
+
+14:52.500 --> 14:57.660
+What's going to happen is it's going to print out one four, nine, 16, 25 and you can see that right
+
+14:57.660 --> 14:58.980
+here in test three.
+
+14:59.820 --> 15:01.470
+Remember, we haven't changed the vector.
+
+15:02.280 --> 15:07.620
+Now, if we wanted to take each one of those integers that's being passed into the lambda and multiply
+
+15:07.620 --> 15:09.900
+it by ten, we could just do that right there.
+
+15:09.900 --> 15:12.360
+So you hopefully you can see how clear this is.
+
+15:12.750 --> 15:14.310
+It may not be clear the first time you see it.
+
+15:14.310 --> 15:18.150
+I remember the first time I saw Lambdas and I've used them in other languages as well.
+
+15:18.540 --> 15:22.890
+The syntax is always a little tricky at the beginning, but after a little bit it becomes second nature.
+
+15:22.890 --> 15:28.500
+So what's going to happen is the for each will pass in each integer as x to the lambda expression.
+
+15:28.500 --> 15:32.370
+In all this lambda expression it is doing is multiplying it by ten and displaying it.
+
+15:32.370 --> 15:32.970
+That's it.
+
+15:32.970 --> 15:34.140
+It's not changing anything.
+
+15:34.140 --> 15:36.510
+It's just multiplying it by ten and displaying it.
+
+15:36.510 --> 15:40.080
+So in this case, we're going to get ten, 20, 30, 40 and 50.
+
+15:40.110 --> 15:42.750
+Here we're just displaying X.
+
+15:42.760 --> 15:46.830
+You can see how we're displaying one, two, three, four and five, which tells you that that vector
+
+15:46.830 --> 15:48.090
+was never changed.
+
+15:48.090 --> 15:49.260
+And that was the whole point.
+
+15:50.040 --> 15:55.260
+And then in the last example, we're using Vector now, which is a vector of strings.
+
+15:55.470 --> 16:00.570
+Notice the parameter that's being passed into the lambda is a stood string now instead of an int.
+
+16:00.570 --> 16:02.910
+We did the int up here, we did the string here.
+
+16:03.000 --> 16:07.050
+This is really nice that you can code what you want right in here.
+
+16:07.050 --> 16:08.490
+This is what I want to do.
+
+16:09.030 --> 16:10.200
+I'm coding it right in there.
+
+16:10.200 --> 16:11.280
+That's all I need to do.
+
+16:11.280 --> 16:15.810
+I don't need to look through my source files to figure out where my function, my function, object
+
+16:15.810 --> 16:17.310
+class is or anything like that.
+
+16:17.310 --> 16:21.420
+It's right in here, right in place, which is kind of cool in this case.
+
+16:21.420 --> 16:24.300
+I'm just displaying Larry, Moe and Curly and you can see them right there.
+
+16:25.680 --> 16:25.980
+All right.
+
+16:25.980 --> 16:27.540
+So now let's do the last one.
+
+16:27.540 --> 16:30.330
+And in order to do the last one, we're using this multiplier.
+
+16:30.490 --> 16:30.790
+Last.
+
+16:30.800 --> 16:32.800
+Let me scroll up and I'll show you that.
+
+16:32.800 --> 16:35.540
+So this one's a little bit more complex, but not much.
+
+16:35.560 --> 16:37.960
+This is the same one we did on the slides here.
+
+16:37.960 --> 16:42.460
+I've got a class and it's got a private attribute right here called NUM.
+
+16:43.180 --> 16:45.250
+It's got a constructor right here.
+
+16:45.250 --> 16:51.940
+You can see the user passes in an RN and all we're doing is assigning end to that attribute right there.
+
+16:51.940 --> 16:52.570
+That's it.
+
+16:52.570 --> 16:57.850
+We're just setting that instance variable and to notice right here, we're overloading the function
+
+16:57.850 --> 16:58.750
+call operator.
+
+16:58.750 --> 17:02.620
+That's what makes it a function object when we create function objects from this class.
+
+17:02.770 --> 17:09.340
+Okay, best practice is when you've got variables or attributes in here and you don't want them change.
+
+17:09.340 --> 17:11.020
+Make sure you put constant here.
+
+17:11.830 --> 17:12.430
+So that's it.
+
+17:12.430 --> 17:17.770
+So every time you call the function call operator on, multiply your objects, it's going to take in
+
+17:17.770 --> 17:21.910
+whatever you pass in which is n and multiply it by whatever we set num to.
+
+17:21.940 --> 17:23.110
+That's all it's doing.
+
+17:23.350 --> 17:25.120
+It's a real, real simple multiplier.
+
+17:25.690 --> 17:30.100
+All right, so now let's go down to my test for right here.
+
+17:30.100 --> 17:34.810
+You can see right on line 75 is where it begins and the output is right over here.
+
+17:35.200 --> 17:40.570
+I'm creating a function object right here called mult and I'm passing in 100 to it.
+
+17:40.780 --> 17:44.950
+So remember, I could just simply pass anything into that.
+
+17:44.950 --> 17:46.590
+Now we're using the function call operator.
+
+17:46.750 --> 17:49.180
+Whatever I pass in, it's going to multiply it by 100.
+
+17:49.180 --> 17:54.220
+If I wanted to multiply it by 30, I'd create another function object mult one and pass it to 30 to
+
+17:54.220 --> 17:55.030
+it for example.
+
+17:55.420 --> 17:57.010
+So let's see what the how this works.
+
+17:57.110 --> 18:03.050
+I'm assigning one, two, three, four to my vector one and now I'm going to use to transform steward
+
+18:03.130 --> 18:04.990
+transform does change the vector.
+
+18:04.990 --> 18:06.190
+So it's a little bit different.
+
+18:06.430 --> 18:10.810
+I think we used it once or twice in the steel section, but I'll go over it real quick.
+
+18:10.810 --> 18:12.340
+So here's to transform.
+
+18:12.340 --> 18:16.840
+It wants where to start, where to end and where to start making changes.
+
+18:16.840 --> 18:18.850
+That's why you have these three iterations here.
+
+18:18.850 --> 18:20.320
+So we have where to start.
+
+18:20.320 --> 18:22.360
+I'm going to start at vector one begin.
+
+18:22.780 --> 18:25.240
+I'm going to end at vector one's end.
+
+18:25.480 --> 18:29.620
+Basically, I'm going to iterate through the entire vector one, which is again, one, two, three,
+
+18:29.620 --> 18:33.220
+four and I'm going to start making changes in VEC one begin.
+
+18:33.220 --> 18:35.590
+So it's going to start making changes here and here and here and here.
+
+18:35.590 --> 18:36.640
+It's going to change all of them.
+
+18:36.820 --> 18:37.960
+And what's it changing?
+
+18:37.960 --> 18:40.960
+Well, it's using that object.
+
+18:40.960 --> 18:45.070
+So what's going to happen is it's going to go through vector one, it's going to grab the one and it's
+
+18:45.070 --> 18:46.480
+going to pass it into moult.
+
+18:46.480 --> 18:47.740
+What's it going to do?
+
+18:47.770 --> 18:53.230
+It's going to take that guy and multiply it by 100 and it's going to stick it back into the vector one's
+
+18:53.230 --> 18:53.920
+position.
+
+18:53.950 --> 18:55.030
+So it's going to make that 100.
+
+18:55.030 --> 18:57.250
+It's actually going to transform the vector.
+
+18:57.550 --> 19:01.600
+And so when we're done with this, we're just going to display it.
+
+19:01.600 --> 19:04.780
+And you can see the display right here, 102 hundred, 301 hundred.
+
+19:04.780 --> 19:06.910
+It actually changed that vector.
+
+19:06.910 --> 19:08.380
+And then let's do it again.
+
+19:08.380 --> 19:10.780
+What we're doing here is we're resetting that vector.
+
+19:10.780 --> 19:12.100
+One, two, one, two, three, four.
+
+19:12.110 --> 19:14.080
+And I'm just assigning one, two, three, four to it.
+
+19:14.080 --> 19:17.500
+And what we're going to do now is we're going to do exactly the same thing, except we're not going
+
+19:17.500 --> 19:18.990
+to use the function object molt.
+
+19:19.000 --> 19:20.530
+We're just going to do it in a lambda.
+
+19:20.530 --> 19:21.910
+Here's my lambda.
+
+19:23.620 --> 19:29.830
+I'm using you to transform again starting at the beginning, going to the end of week one and start
+
+19:29.830 --> 19:32.380
+transforming from the beginning of VEC one.
+
+19:32.380 --> 19:38.620
+So every time I get an integer, all I'm going to do is return that integer times 100 and it's going
+
+19:38.620 --> 19:40.420
+to be stored back into that vector.
+
+19:40.420 --> 19:41.950
+It's going to transform the vector.
+
+19:41.950 --> 19:47.380
+And now when I use my for each again and notice over here when we did the for each, we use that display
+
+19:47.380 --> 19:48.550
+or function object.
+
+19:48.640 --> 19:53.050
+This time we're using another lambda that just due to displaying all we're doing is just outputting
+
+19:53.050 --> 19:55.000
+x, simple as that.
+
+19:55.000 --> 19:57.880
+And when we do that you'll get exactly the same result.
+
+19:57.880 --> 19:59.590
+102 hundred and 304 hundred.
+
+20:00.770 --> 20:04.870
+So this gives you a little bit of a taste for function objects and lambdas in the next video.
+
+20:04.880 --> 20:07.520
+What we'll do is we'll take this syntax right here.
+
+20:07.700 --> 20:09.440
+This is actually all you need to remember.
+
+20:09.440 --> 20:11.060
+Square brackets that.
+
+20:12.680 --> 20:13.210
+That's it.
+
+20:13.220 --> 20:14.710
+That's that's the lambda.
+
+20:15.290 --> 20:16.460
+And you can see the syntax.
+
+20:16.460 --> 20:17.420
+There's my capsule list.
+
+20:17.420 --> 20:19.100
+This is where my parameters come in.
+
+20:19.100 --> 20:20.260
+There's my code.
+
+20:20.270 --> 20:22.340
+Now, there's a couple of other bits that you can throw in here.
+
+20:22.340 --> 20:23.060
+You could do that.
+
+20:23.060 --> 20:27.290
+You can throw some keywords in there and we'll talk about all of that in the next video when we go over
+
+20:27.290 --> 20:29.810
+the structure of the expression in detail.
+
+20:30.140 --> 20:31.100
+So I'll see you there.

@@ -1,0 +1,244 @@
+WEBVTT
+
+00:05.070 --> 00:05.790
+Hello everyone.
+
+00:05.790 --> 00:11.600
+In this video I am going to download and install Visual Studio code on Linux.
+
+00:11.610 --> 00:16.140
+In this case I am running Ubuntu 20.0 for Ltsc.
+
+00:16.170 --> 00:22.770
+As you can see up here on the left top corner, Visual Studio code is available for lots of Linux distributions.
+
+00:22.770 --> 00:25.350
+So first order of business.
+
+00:25.350 --> 00:26.040
+Absolutely.
+
+00:26.040 --> 00:30.300
+Be sure that your compiler toolchain has already been installed and it's working.
+
+00:30.300 --> 00:33.150
+You can check that by opening up a terminal session.
+
+00:34.790 --> 00:38.420
+And just typing G plus plus dash dash version.
+
+00:39.200 --> 00:45.170
+And you should get some sort of display message that says G plus plus was a version number and so forth.
+
+00:45.560 --> 00:49.910
+If you get an error here, double check that your compiler is installed.
+
+00:50.120 --> 00:55.280
+Go back to section two of the course and refer to the videos there where I show you how to install your
+
+00:55.280 --> 00:57.110
+compiler toolchain on Linux.
+
+00:57.320 --> 01:00.230
+So I'm assuming that that's installed and it's all good to go.
+
+01:00.260 --> 01:04.130
+The next step is to actually install Visual Studio code.
+
+01:04.160 --> 01:11.090
+Open up your favorite browser and head over to code Visual Studio and you'll see a page that looks like
+
+01:11.090 --> 01:11.660
+this.
+
+01:12.050 --> 01:16.880
+There are lots of distributions of Visual Studio code for Linux, so if you click over here on the download
+
+01:16.880 --> 01:17.450
+button.
+
+01:19.240 --> 01:25.000
+You can see we've got for debian ubuntu, red hat, fedora, all kinds of different distributions.
+
+01:25.030 --> 01:27.340
+What I'm going to do is I'm going to make it really easy on myself.
+
+01:27.340 --> 01:31.990
+I'm assuming that if you know Linux and if you're working with Linux, you know how to use package managers,
+
+01:31.990 --> 01:33.460
+you know how to install software.
+
+01:33.460 --> 01:35.680
+So what I'm going to do is I'll make it really easy on myself.
+
+01:35.680 --> 01:37.270
+I'm going to select the Snap store.
+
+01:38.060 --> 01:41.900
+That's going to take me another page where I could just click install over here on the right top with
+
+01:41.900 --> 01:42.830
+this green button.
+
+01:43.670 --> 01:45.080
+And I've got a couple of choices.
+
+01:45.080 --> 01:50.570
+I can view it in my desktop store, which is this guy right there, my ubuntu software or I can install
+
+01:50.570 --> 01:51.380
+snap if you like.
+
+01:51.380 --> 01:53.330
+If you don't have snap installed, you can install it.
+
+01:53.330 --> 01:55.250
+So I'm just going to view it in the desktop store.
+
+01:56.330 --> 01:59.390
+I'm going to choose my application which is the Ubuntu store.
+
+01:59.420 --> 02:01.160
+You can use Snap store if you want.
+
+02:01.280 --> 02:04.970
+I'll just open the link and that's going to take me right here.
+
+02:05.390 --> 02:07.820
+Let me minimize my browser window.
+
+02:07.820 --> 02:12.080
+I don't need it anymore and now I'm just going to install just going to click install.
+
+02:12.080 --> 02:13.640
+You put in my password.
+
+02:15.070 --> 02:15.520
+And that's it.
+
+02:15.550 --> 02:17.540
+Now it's installing Visual Studio code.
+
+02:17.560 --> 02:18.240
+It's done.
+
+02:18.250 --> 02:21.460
+So what I need to do now is basically just close up this window.
+
+02:22.500 --> 02:23.100
+And run it.
+
+02:23.110 --> 02:27.870
+So let me go down here and you should see Visual Studio code installed now.
+
+02:28.050 --> 02:29.370
+There it is right here.
+
+02:29.370 --> 02:30.360
+Click on that.
+
+02:30.510 --> 02:34.800
+And when Visual Studio first loads up, you'll get a screen that looks something like this.
+
+02:34.920 --> 02:39.780
+It's a getting started page with some information about opening files and so forth, and we'll do that
+
+02:39.780 --> 02:40.470
+in a little bit.
+
+02:40.470 --> 02:46.140
+But before we do that, we need to install an extension, the C++ extension, which will allow Visual
+
+02:46.140 --> 02:48.600
+Studio code to work with C++.
+
+02:48.600 --> 02:53.430
+So what we want to do is we want to come over here on the left and select these icons, this icon right
+
+02:53.430 --> 02:54.450
+here, extensions.
+
+02:54.450 --> 02:57.660
+You want to select that, and now you're going to get a bunch of choices.
+
+02:57.660 --> 03:02.790
+You can see that the installed extensions are zero as I haven't installed anything, I've just installed
+
+03:02.790 --> 03:04.830
+Visual Studio code fresh out of the box.
+
+03:04.830 --> 03:07.050
+So there are no extensions installed.
+
+03:07.050 --> 03:13.140
+The one we want to install is this one right here, the C C++ extension from Microsoft.
+
+03:13.170 --> 03:14.760
+It should be under popular.
+
+03:14.760 --> 03:19.050
+If you don't see it, you can type C++ in the search box and press enter.
+
+03:19.850 --> 03:21.130
+And then you'll see it right away.
+
+03:21.140 --> 03:25.970
+So if you just select that this is the one you'll know because it's this big circle with some purple,
+
+03:25.970 --> 03:31.580
+white and black and it says C, C plus, plus Microsoft with just over 20 million downloads at the time
+
+03:31.580 --> 03:32.610
+of this recording.
+
+03:32.630 --> 03:33.770
+That's the one we want.
+
+03:33.800 --> 03:38.930
+We want to select, install, and you'll see the installation proceed down here on the right.
+
+03:39.590 --> 03:40.760
+Once it's finished.
+
+03:40.760 --> 03:42.170
+We are good to go.
+
+03:42.740 --> 03:44.540
+So just give it a few minutes to finish.
+
+03:44.540 --> 03:45.320
+Don't interrupt it.
+
+03:45.320 --> 03:46.580
+Just let it do its thing.
+
+03:49.600 --> 03:49.990
+Okay.
+
+03:49.990 --> 03:50.890
+So it's done.
+
+03:51.040 --> 03:52.450
+We'll close this up.
+
+03:53.680 --> 03:56.290
+And we will go back here to explore.
+
+03:56.950 --> 03:58.210
+And we're good to go.
+
+03:58.360 --> 04:01.420
+So the next thing we're going to do is we're going to create a folder.
+
+04:01.420 --> 04:06.670
+And inside that folder, we're going to create a project which is going to include a real simple C++
+
+04:06.670 --> 04:13.750
+program that will allow us to configure Visual Studio code so that we'll build, run and debug that
+
+04:13.750 --> 04:14.170
+file.
+
+04:14.170 --> 04:16.060
+So I'll see you in the next video to do that.

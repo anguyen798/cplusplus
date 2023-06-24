@@ -1,0 +1,526 @@
+WEBVTT
+
+00:00:05.300 --> 00:00:08.900
+In this video, we'll learn about constructors and destructors.
+
+00:00:09.500 --> 00:00:12.500
+Constructors are special member methods that are invoked
+
+00:00:12.500 --> 00:00:14.100
+during object creation.
+
+00:00:14.100 --> 00:00:16.100
+They're commonly used for initialization
+
+00:00:16.700 --> 00:00:20.600
+constructors are easy to recognize since they have the same name as the class.
+
+00:00:20.600 --> 00:00:25.400
+Constructors do not specify a return type and like other methods they can be overloaded.
+
+00:00:25.400 --> 00:00:28.400
+Let's see how we can declare constructors for the player class.
+
+00:00:29.200 --> 00:00:32.500
+In this slide, we have the player class that we've defined previously,
+
+00:00:32.500 --> 00:00:35.700
+but we want to concentrate specifically on the constructors.
+
+00:00:36.300 --> 00:00:41.690
+In this example, we have three overloaded constructors in the public section of the class declaration.
+
+00:00:42.240 --> 00:00:45.140
+Notice that the constructors have the same name as the class
+
+00:00:45.140 --> 00:00:47.040
+and they don't specify a return type.
+
+00:00:47.940 --> 00:00:51.940
+The first constructor is a no args constructor and expects no arguments.
+
+00:00:52.600 --> 00:00:56.700
+The second constructor expects a single standard string object as an argument,
+
+00:00:57.360 --> 00:00:59.760
+and the third constructor expects three arguments:
+
+00:00:59.760 --> 00:01:03.760
+a standard string and two integers that represent health and xp.
+
+00:01:04.560 --> 00:01:08.160
+Overloading constructors is very common in c++ classes
+
+00:01:08.160 --> 00:01:11.260
+and really gives you a lot of flexibility when initializing objects.
+
+00:01:12.140 --> 00:01:14.740
+Now let's see some constructors for the account class.
+
+00:01:15.640 --> 00:01:19.140
+In this slide, we can see the declaration for the account class.
+
+00:01:19.140 --> 00:01:23.040
+Notice that we have four overloaded constructors in the public section of the class.
+
+00:01:23.640 --> 00:01:26.240
+The first constructor is the no args constructor.
+
+00:01:26.640 --> 00:01:29.240
+The second constructor expects two arguments:
+
+00:01:29.240 --> 00:01:33.840
+a string representing the account name and a double representing the account balance.
+
+00:01:33.840 --> 00:01:38.440
+The third constructor expects just a string, and the last constructor just to double.
+
+00:01:38.940 --> 00:01:42.540
+We'll get into much more detail about constructors in the next several videos,
+
+00:01:42.540 --> 00:01:44.200
+but let's see what a destructor is.
+
+00:01:46.560 --> 00:01:50.560
+Destructors are also special member methods that have the same name as the class.
+
+00:01:50.760 --> 00:01:54.060
+However, destructors have a tilde preceding their name.
+
+00:01:55.050 --> 00:01:59.650
+Destructors are invoked automatically by c++ when an object is destroyed,
+
+00:01:59.650 --> 00:02:03.980
+and it's a great place to release memory, closed files and free up any other resources.
+
+00:02:04.970 --> 00:02:07.870
+It makes no sense to allow overloaded destructors
+
+00:02:07.870 --> 00:02:11.470
+since the destructor is called automatically by c++.
+
+00:02:11.470 --> 00:02:15.870
+If there were multiple destructors, then c++ would have to determine which one to call
+
+00:02:15.870 --> 00:02:17.170
+so that's not an option.
+
+00:02:18.160 --> 00:02:21.660
+So you can only specify one destructor per class
+
+00:02:21.660 --> 00:02:24.960
+and that destructor has no return type and no parameters.
+
+00:02:26.060 --> 00:02:29.060
+Let's see how a destructor would be declared for the player class.
+
+00:02:30.420 --> 00:02:33.780
+Here is the declaration for the player class as we've seen before.
+
+00:02:33.780 --> 00:02:38.280
+Notice that the last declaration is the declaration for the class destructor.
+
+00:02:38.280 --> 00:02:41.880
+It has the same name as the class, and it's preceded by a tilde.
+
+00:02:41.880 --> 00:02:44.080
+It has no return type and no parameters.
+
+00:02:44.680 --> 00:02:49.080
+This destructor will be called automatically when a local object goes out of scope
+
+00:02:49.080 --> 00:02:51.280
+or when we delete a pointer to an object.
+
+00:02:52.640 --> 00:02:57.140
+As you would expect, the destructor for the account class is declared exactly the same way
+
+00:02:57.140 --> 00:02:58.640
+except that the name is account.
+
+00:02:59.740 --> 00:03:02.740
+So how and when are constructors and destructors called.
+
+00:03:03.040 --> 00:03:04.700
+Here's a very simple example.
+
+00:03:04.700 --> 00:03:07.600
+In the code block, we're creating four player objects.
+
+00:03:07.900 --> 00:03:10.260
+The first player object is called slayer
+
+00:03:10.260 --> 00:03:15.160
+since no initialization information is provided,the no args constructor is called.
+
+00:03:15.820 --> 00:03:18.020
+The second player object is called Frank,
+
+00:03:18.020 --> 00:03:21.620
+and we're providing a string and two integers during initialization.
+
+00:03:21.980 --> 00:03:26.180
+This means that the constructor that expects a string and two integers will be called.
+
+00:03:26.540 --> 00:03:30.440
+The third and fourth objects will be initialized using the overloaded constructor
+
+00:03:30.440 --> 00:03:32.440
+that expects a single string object.
+
+00:03:33.340 --> 00:03:37.340
+Note that all of these objects are local objects and they'll be created on the stack.
+
+00:03:37.640 --> 00:03:39.640
+We can use them as we would any object.
+
+00:03:40.040 --> 00:03:43.040
+But then when the block ends, these objects go out of scope
+
+00:03:43.040 --> 00:03:45.400
+and their destructors will be called automatically.
+
+00:03:45.760 --> 00:03:48.760
+So in this case all four destructors will be called.
+
+00:03:48.760 --> 00:03:53.660
+And whatever code we provide in, the destructors will be executed before the objects are destroyed.
+
+00:03:54.960 --> 00:03:58.320
+In the case of enemy, we have a pointer to a player object
+
+00:03:58.320 --> 00:04:02.320
+and we use the constructor that expects a string and two integers to initialize it.
+
+00:04:02.620 --> 00:04:05.520
+We'll use it. Then when we're done, we delete it.
+
+00:04:05.520 --> 00:04:08.020
+This will call the enemy object's destructor.
+
+00:04:08.380 --> 00:04:11.580
+If you provide no constructors and no destructor,
+
+00:04:11.580 --> 00:04:15.180
+c++ will automatically provide a default constructor
+
+00:04:15.180 --> 00:04:17.480
+and a default destructor that are empty.
+
+00:04:17.980 --> 00:04:21.970
+Okay. So I'm back in the IDE. And I'm in the section 13 workspace
+
+00:04:21.970 --> 00:04:24.970
+in the ConstructorsAndDestructors project.
+
+00:04:25.270 --> 00:04:28.070
+What I've done here is I've taken the player class
+
+00:04:28.070 --> 00:04:31.730
+and I've written some constructors for it just like we did in the slides
+
+00:04:31.730 --> 00:04:33.530
+except I've implemented them.
+
+00:04:33.530 --> 00:04:38.330
+And they really don't do any initialization. We'll learn how to do that properly in the next few videos.
+
+00:04:38.330 --> 00:04:42.630
+They simply do an output statement that say which constructor is being called.
+
+00:04:42.630 --> 00:04:44.630
+So let me show you what I've got going on here.
+
+00:04:44.630 --> 00:04:49.130
+We've got the player class, just like we had before, and we've got these
+
+00:04:49.130 --> 00:04:53.130
+private attributes here name, health and xp, again just like we had before.
+
+00:04:53.130 --> 00:04:54.730
+I've created a method right here,
+
+00:04:55.130 --> 00:04:58.730
+called set name that simply sets the name of the player to whatever's being
+
+00:04:58.730 --> 00:05:00.330
+passed in here in name val.
+
+00:05:00.330 --> 00:05:04.730
+The reason we're doing that is so that we can see which objects are being destroyed by name
+
+00:05:04.730 --> 00:05:06.330
+and it will be really easy to follow.
+
+00:05:06.830 --> 00:05:10.130
+Then we've got our three overloaded constructors here.
+
+00:05:10.130 --> 00:05:13.790
+You can see that they've got the same name as the class that's their constructors.
+
+00:05:14.290 --> 00:05:17.490
+They're overloaded, so we've got three of them with three different signatures.
+
+00:05:17.490 --> 00:05:18.790
+This first one
+
+00:05:19.150 --> 00:05:23.750
+will be called when there is no information provided for initialization.
+
+00:05:23.750 --> 00:05:26.850
+And all it's going to do is just say no args constructor called, that's it.
+
+00:05:26.850 --> 00:05:31.750
+It's not going to do any initialization or anything. As I said, we'll learn how to do that in the next few videos.
+
+00:05:32.250 --> 00:05:35.050
+This constructor expects a single string
+
+00:05:35.050 --> 00:05:37.610
+and it will just say string arg constructor called.
+
+00:05:37.610 --> 00:05:40.970
+And then the last constructor expects a string, health and xp.
+
+00:05:40.970 --> 00:05:43.970
+And it will simply display three args constructor called.
+
+00:05:43.970 --> 00:05:48.170
+Okay. Then when the object is destroyed, this destructor down here gets called.
+
+00:05:48.170 --> 00:05:52.670
+Notice it's the same name as the class with that tilde right in front, that's very important.
+
+00:05:52.670 --> 00:05:55.270
+No return type and nothing in here.
+
+00:05:56.150 --> 00:05:59.050
+And that's simply going to say destructor called for name.
+
+00:05:59.050 --> 00:06:02.250
+So it'll say destructor called for Hero, for Frank, for slayer
+
+00:06:02.250 --> 00:06:06.550
+whatever the name of the object is that we can see the order in which this stuff is happening.
+
+00:06:06.910 --> 00:06:09.210
+Okay. So that's it. Pretty straightforward.
+
+00:06:09.210 --> 00:06:11.110
+And what I want to do now is
+
+00:06:11.770 --> 00:06:14.570
+I've got my main and I've got some breakpoints in here.
+
+00:06:14.570 --> 00:06:16.870
+I've established these blocks.
+
+00:06:16.870 --> 00:06:20.470
+Now the idea behind these little blocks here is normally you wouldn't write code like this.
+
+00:06:20.470 --> 00:06:24.130
+But it's important because this slayer object right here
+
+00:06:24.730 --> 00:06:27.530
+is within the scope of this block.
+
+00:06:27.530 --> 00:06:31.190
+So when it goes out of scope, the destructor will be called automatically.
+
+00:06:31.190 --> 00:06:34.850
+So I'm forcing that issue here, so that you can see how this works.
+
+00:06:34.850 --> 00:06:37.850
+So what I'm doing is that I'm doing the slayer.
+
+00:06:37.850 --> 00:06:41.750
+I'm creating some other players. And let's let's just debug this. We'll walk through it
+
+00:06:41.750 --> 00:06:45.410
+so you can see exactly what's happening. So I'll start the debugger.
+
+00:06:46.600 --> 00:06:50.500
+And I'll put the output window over here on the right so that we can see our output.
+
+00:06:52.100 --> 00:06:55.760
+Okay. Perfect. So now we're on line 37, that's where we're starting.
+
+00:06:56.160 --> 00:06:58.760
+And what we're doing is we're creating slayer.
+
+00:06:58.760 --> 00:07:03.560
+Slayer is a player object. It's local to this block.It's going to be created on the stack.
+
+00:07:04.160 --> 00:07:05.960
+So I'm going to select next.
+
+00:07:06.460 --> 00:07:10.560
+Notice that I'm creating it with no information so what's going to happen here is the no
+
+00:07:10.560 --> 00:07:14.160
+args constructor will be called, and that's what we expect to display up here.
+
+00:07:14.160 --> 00:07:18.060
+So let me scroll up a little bit here, and let's do that. Let's go next,
+
+00:07:18.210 --> 00:07:21.410
+you can see the no args constructor just got called
+
+00:07:21.410 --> 00:07:23.770
+that object has now been created.
+
+00:07:23.770 --> 00:07:28.070
+I want to set the name for that object to slayer, so I'll execute that line.
+
+00:07:28.870 --> 00:07:32.470
+Now that object goes out of scope. We're done with this block.
+
+00:07:32.470 --> 00:07:36.070
+So the object needs to be destroyed since it's no longer needed.
+
+00:07:36.370 --> 00:07:37.730
+The way that happens is
+
+00:07:37.730 --> 00:07:41.030
+a destructor will be called right before the object is destroyed.
+
+00:07:41.030 --> 00:07:45.530
+So I expect this destructor right here to be called and say destructor called for slayer.
+
+00:07:45.890 --> 00:07:49.990
+So let's see that exactly what happened,
+
+00:07:49.990 --> 00:07:53.350
+destructor called for slayer. Now we've got another block here.
+
+00:07:53.350 --> 00:07:57.340
+And what we're doing here is we're creating three player objects Frank,
+
+00:07:57.340 --> 00:07:58.940
+Hero and villain.
+
+00:07:59.240 --> 00:08:03.840
+In the case of Frank, it's a no args constructor, right. I'm not providing any information.
+
+00:08:04.090 --> 00:08:06.490
+In the place of Hero, it's a single string.
+
+00:08:06.490 --> 00:08:10.990
+And in the case of villain, I've got the string and the two integers. So I expect this to say
+
+00:08:10.990 --> 00:08:13.350
+that the no argus constructor has been called,
+
+00:08:13.350 --> 00:08:15.910
+then the single string arg constructor has been called,
+
+00:08:15.910 --> 00:08:18.770
+and then the 3rd constructor has been called. Okay.
+
+00:08:18.770 --> 00:08:22.370
+But what's interesting about this is not so much that. That's pretty intuitive.
+
+00:08:22.370 --> 00:08:26.360
+It's the way that the destructors are called. So let's walk through this little block here.
+
+00:08:26.360 --> 00:08:30.560
+So the first thing we expect is Frank to be created with no args.
+
+00:08:30.560 --> 00:08:34.160
+And there it is, no args constructor. I'm going to set the name to Frank.
+
+00:08:35.040 --> 00:08:37.740
+Hero will be called with a single string constructor,
+
+00:08:38.370 --> 00:08:41.370
+so you can see that that correct constructor's being called here.
+
+00:08:42.030 --> 00:08:46.130
+I've set the name to Hero and now villain with the three args constructor.
+
+00:08:48.030 --> 00:08:52.260
+Now once I execute this set name method that sets the name for villain,
+
+00:08:52.260 --> 00:08:54.460
+we're out of the block, right.
+
+00:08:54.460 --> 00:08:57.460
+So these objects are not out of scope, they need to be destroyed.
+
+00:08:57.460 --> 00:09:02.450
+What's interesting is, notice the order that we created them in we created them as Frank,
+
+00:09:02.650 --> 00:09:07.320
+Hero and villain. And you'll see the order of destruction is the reverse order.
+
+00:09:07.320 --> 00:09:08.620
+So let's walk through this.
+
+00:09:09.420 --> 00:09:12.020
+We just called the destructor for villain.
+
+00:09:12.020 --> 00:09:16.320
+Now we're going to call the destructor for Hero, and finally, for Frank.
+
+00:09:16.320 --> 00:09:18.920
+So you can see that when objects go out of scope,
+
+00:09:18.920 --> 00:09:23.320
+the destructors are called in the order reverse order in which they were created.
+
+00:09:24.920 --> 00:09:28.380
+Finally, down here we've got some pointers to player objects.
+
+00:09:28.380 --> 00:09:30.040
+In this case, enemy is a new player.
+
+00:09:30.040 --> 00:09:33.400
+Again, I'm providing no initialization here.
+
+00:09:33.400 --> 00:09:37.400
+So it's going to call the no args constructor. So let's do that real quick.
+
+00:09:38.000 --> 00:09:42.600
+No args constructor call just like we expect. I'm going to set that name to enemy.
+
+00:09:44.260 --> 00:09:46.560
+Now here I've got a level boss object,
+
+00:09:46.560 --> 00:09:49.920
+which is really -- I've got a level boss pointer rather to an object,
+
+00:09:49.920 --> 00:09:53.420
+and I'm creating it using the three r constructor right here
+
+00:09:53.420 --> 00:09:57.080
+the string and the two integers. So that's the constructor that I expect to be called.
+
+00:09:57.980 --> 00:10:01.280
+And that's exactly what happens, three args constructor called.
+
+00:10:01.280 --> 00:10:03.280
+I'm going to set that name to level boss.
+
+00:10:03.940 --> 00:10:07.940
+Now I want to delete those objects that were created dynamically on the heap.
+
+00:10:07.940 --> 00:10:10.940
+In this case, I can explicitly delete them
+
+00:10:10.940 --> 00:10:14.240
+and the destructors will be called. So in this case, we expect
+
+00:10:14.240 --> 00:10:16.240
+the enemy destructor to be called
+
+00:10:17.120 --> 00:10:19.480
+and then the level boss destructor to be called.
+
+00:10:20.380 --> 00:10:22.980
+So that's it. In the next video, what we'll do is
+
+00:10:22.980 --> 00:10:25.080
+we'll learn about default constructors,
+
+00:10:25.080 --> 00:10:28.680
+and we'll learn how to really initialize things correctly and efficiently.

@@ -1,0 +1,472 @@
+WEBVTT
+
+00:02.490 --> 00:04.620
+Let's write a few programs on arrays.
+
+00:04.650 --> 00:10.560
+I will take one array of size ten and I will store some numbers.
+
+00:10.560 --> 00:19.990
+And this one are two, four, six, eight, 12, three, five, nine.
+
+00:20.100 --> 00:24.420
+Now, the first program, I will find the sum of all these elements.
+
+00:24.420 --> 00:29.250
+So for that I will declare one variable sum which is initialized to zero.
+
+00:29.820 --> 00:37.050
+Now I have to iterate through all these elements one by one and every element I should add it to sum.
+
+00:37.050 --> 00:42.900
+So one of the loop that will take me through all these elements as a for loop for is nine zero.
+
+00:43.020 --> 00:51.180
+And I is less than and I is less than ten I plus plus.
+
+00:51.180 --> 00:58.170
+So every time sum assign that sum plus a of I.
+
+00:58.410 --> 01:01.920
+So this will be storing the element in sum.
+
+01:03.270 --> 01:07.740
+So this will be adding an element with the sum and storing the result in sum.
+
+01:07.740 --> 01:13.200
+So I don't have to give the brackets also because as a simple statement in a loop, then simply I will
+
+01:13.200 --> 01:27.360
+right see out sum of all elements is sum and then let us run and see.
+
+01:34.320 --> 01:34.730
+Yeah.
+
+01:34.740 --> 01:37.350
+Sum of all elements is 67.
+
+01:37.350 --> 01:40.410
+So if you add all these, you will get 67.
+
+01:40.860 --> 01:41.700
+So that's it.
+
+01:41.700 --> 01:45.570
+There's a program for finding the sum of all the elements in an array.
+
+01:45.990 --> 01:49.200
+Now you have another loop that is called as for each loop.
+
+01:49.200 --> 01:52.200
+So I'll just try this with that for each loop.
+
+01:52.200 --> 02:01.050
+So index from a so here I will say X, so let's run and see.
+
+02:01.050 --> 02:07.860
+I have just changed this with x, so x will be taking the values like two, then four, then six and
+
+02:07.860 --> 02:08.640
+so on.
+
+02:08.640 --> 02:12.690
+And every element is added to sum and the result is stored in sum.
+
+02:13.080 --> 02:15.060
+Let us run the program and see.
+
+02:17.420 --> 02:17.780
+Yeah.
+
+02:17.780 --> 02:19.880
+Same 67 I got.
+
+02:20.030 --> 02:22.610
+Now, here, you remember that?
+
+02:23.690 --> 02:28.130
+And here, if you remember, instead of writing end, I can also write auto.
+
+02:28.160 --> 02:34.360
+This X will automatically become of type integer because we are taking the elements from an array.
+
+02:34.910 --> 02:36.230
+Let us run this and see.
+
+02:36.230 --> 02:37.520
+It's not a syntax error.
+
+02:37.520 --> 02:38.300
+It's running.
+
+02:39.830 --> 02:42.650
+Perfectly and the answer is 67.
+
+02:42.650 --> 02:48.620
+So I can use for a loop or even I can use for each loop for finding the sum.
+
+02:49.760 --> 02:56.210
+Now let me modify the same program for finding the maximum of all these elements.
+
+02:56.540 --> 03:01.310
+So the maximum element you can see that it's two l so I want to find out that maximum element.
+
+03:01.310 --> 03:08.390
+So for that I should already have one variable max which should have the very smallest value of type
+
+03:08.390 --> 03:08.930
+integer.
+
+03:08.930 --> 03:13.430
+So there is a constant available that is int min.
+
+03:13.850 --> 03:16.400
+So I should have a smallest number with my self.
+
+03:16.400 --> 03:20.730
+And here inside this for loop I'll use brackets.
+
+03:20.750 --> 03:22.400
+Now if.
+
+03:23.670 --> 03:31.650
+X is greater than max c here I have taken our smallest integer inside max.
+
+03:31.650 --> 03:37.710
+So if I get even a single value that is greater than minimum integer, that will be taken in max.
+
+03:37.710 --> 03:42.780
+So what I do is if X is greater than Max, then I will store that X in the max.
+
+03:42.780 --> 03:44.370
+So Max assign x.
+
+03:44.790 --> 03:45.560
+That's it.
+
+03:45.570 --> 03:50.130
+I wanted only one line under this F so even I can avoid this bracket.
+
+03:50.130 --> 03:52.650
+So now let me display the results.
+
+03:54.660 --> 03:55.580
+See out.
+
+03:56.010 --> 03:58.020
+Maximum number is.
+
+04:05.050 --> 04:10.970
+Max and Angel let us run the program.
+
+04:10.990 --> 04:12.010
+I should get done, sir.
+
+04:12.040 --> 04:12.810
+12.
+
+04:16.570 --> 04:17.170
+Yes.
+
+04:17.170 --> 04:18.760
+I got done so 12th.
+
+04:23.120 --> 04:26.470
+Let me show you the reason why I'm taking in the men.
+
+04:26.480 --> 04:27.970
+That is minimum of integers.
+
+04:27.980 --> 04:29.330
+Some students think that.
+
+04:29.330 --> 04:30.990
+Why can't we take just zero?
+
+04:31.010 --> 04:36.470
+So I'll just take zero, and I will make all these numbers as negative.
+
+04:40.210 --> 04:41.320
+Now tell me.
+
+04:43.330 --> 04:45.670
+Now, check here, which is the largest number.
+
+04:45.670 --> 04:48.190
+So the largest number is minus two.
+
+04:48.430 --> 04:51.270
+All numbers are less than minus two.
+
+04:51.280 --> 04:53.850
+But here I have taken the initial value as zero.
+
+04:53.860 --> 04:56.320
+Let us run and see what answer I'll get.
+
+04:56.560 --> 05:02.200
+See, the answer is zero because the maximum number was we have taken it as zero and that zero remains
+
+05:02.200 --> 05:02.860
+as it is.
+
+05:02.860 --> 05:06.280
+None of these numbers are greater than max.
+
+05:06.280 --> 05:07.960
+So this condition never met.
+
+05:07.960 --> 05:10.600
+So the value of max is never change.
+
+05:10.960 --> 05:17.980
+So if you want to consider positive numbers as well as negative numbers, then go for minimum integer
+
+05:17.980 --> 05:18.490
+value.
+
+05:18.490 --> 05:22.120
+INT min is a built in constant in C++.
+
+05:22.120 --> 05:31.060
+So you can use this for getting the minimum integer number that is -21, 47, 48, 36 and 48.
+
+05:33.550 --> 05:34.330
+That's it.
+
+05:34.360 --> 05:40.210
+So now let me change quickly the program for finding the minimum of all these numbers so you can see
+
+05:40.210 --> 05:42.610
+that the minimum for all these numbers is minus two.
+
+05:42.610 --> 05:44.080
+L So I want that one.
+
+05:44.080 --> 05:49.660
+So I'll change the variable name to min and wherever it appears I'll just change it to min.
+
+05:50.740 --> 05:59.980
+Now what is the other change I have to do after making this l as min this condition I have to change.
+
+05:59.980 --> 06:07.120
+If x is less than min then change min to x and here instead of minimum integer, I should take it as
+
+06:07.120 --> 06:08.680
+a max integer.
+
+06:08.950 --> 06:10.030
+Let us run and see.
+
+06:10.030 --> 06:14.260
+I should get the answer as minus two L because that is the smallest element in the list.
+
+06:17.030 --> 06:17.540
+Yes.
+
+06:17.540 --> 06:18.440
+Minus two or less.
+
+06:18.440 --> 06:25.100
+Dancer So this the smallest element that is there in the array if I remove negative numbers and make
+
+06:25.100 --> 06:26.330
+them as positive.
+
+06:34.260 --> 06:37.230
+Now one of the number, I'll make it as minus three.
+
+06:37.230 --> 06:39.380
+So I should get the answer as minus three.
+
+06:39.390 --> 06:40.440
+Let us run this.
+
+06:42.880 --> 06:43.480
+Yes.
+
+06:43.480 --> 06:46.390
+The minimum number in an area is three.
+
+06:46.810 --> 06:47.700
+So that's it.
+
+06:47.710 --> 06:54.310
+These are the programs for finding the maximum of the list of elements in an and minimum of all the
+
+06:54.310 --> 06:55.500
+elements in an array.
+
+06:55.510 --> 07:04.170
+And also we have seen how to find some novel, modify this program for searching an element in a hurry
+
+07:04.180 --> 07:05.170
+that is list.
+
+07:06.220 --> 07:08.230
+So I'll use a linear search.
+
+07:08.230 --> 07:11.500
+So I'll remove all these things, let the array be as it is.
+
+07:11.500 --> 07:14.380
+Then I have to search for a key element.
+
+07:14.380 --> 07:19.000
+So I will take one more variable key, then I will ask our input.
+
+07:19.000 --> 07:20.320
+That is enter.
+
+07:20.350 --> 07:26.110
+A key to search allows the user from the keyboard.
+
+07:26.110 --> 07:29.050
+I will take the input, the key value.
+
+07:29.440 --> 07:35.140
+Now I will search for this key value inside this array so I can use for loop.
+
+07:35.140 --> 07:41.020
+I can use for each loop, any one thing I can use and even I can use a VI loop so I will use for loop
+
+07:41.020 --> 07:44.590
+here integer i assign zero is less than.
+
+07:46.520 --> 07:47.020
+No.
+
+07:50.700 --> 07:55.680
+Now here I can use for loop or for each loop, but actually I want the index.
+
+07:55.680 --> 07:57.870
+Suppose I'm searching for 12 then 12.
+
+07:57.870 --> 08:01.900
+Is that index 012, three, four.
+
+08:01.920 --> 08:03.420
+So results index four.
+
+08:03.450 --> 08:05.490
+So I want the index of that element.
+
+08:05.490 --> 08:07.380
+So I cannot use for each loop.
+
+08:07.380 --> 08:10.170
+For each loop doesn't work based on indices.
+
+08:10.170 --> 08:14.640
+So I have to use for loop here integer I assign zero.
+
+08:15.800 --> 08:18.010
+And I is less than ten.
+
+08:18.020 --> 08:26.060
+I plus plus every time I have to check whether that key element is equal to the element in an array
+
+08:26.060 --> 08:27.290
+at the present index.
+
+08:27.290 --> 08:34.430
+I if so then I will say see out element found add.
+
+08:34.520 --> 08:35.930
+I want the index.
+
+08:35.960 --> 08:36.410
+Right.
+
+08:36.410 --> 08:38.870
+So I will say a it is found at index.
+
+08:38.870 --> 08:42.680
+I then this I will give it in brackets.
+
+08:44.240 --> 08:48.890
+Now once it is found that index I then what I should do, I should stop the program.
+
+08:48.890 --> 08:50.750
+So I will say just exit zero.
+
+08:50.750 --> 08:52.550
+So this will terminate my program.
+
+08:52.550 --> 08:54.470
+I should not continue for that at all.
+
+08:55.280 --> 08:58.550
+If I have came out of the for loop means the element is not found.
+
+08:58.580 --> 09:04.310
+And here I can say element or say key element.
+
+09:07.690 --> 09:10.540
+Element not found.
+
+09:11.200 --> 09:15.220
+So if I have finished the loop, then it means the element is not found.
+
+09:15.250 --> 09:17.770
+Otherwise the limit is there in an array.
+
+09:17.800 --> 09:22.240
+It is found here and I can display the index here.
+
+09:22.240 --> 09:23.850
+I am displaying an index.
+
+09:23.860 --> 09:25.240
+Then it will exit.
+
+09:26.680 --> 09:28.000
+Let us run and see.
+
+09:28.510 --> 09:30.520
+Oh, typing mistake in enter.
+
+09:30.520 --> 09:32.230
+Enter a key for search.
+
+09:32.230 --> 09:38.560
+So I'll give the search here to L so you can see that the index I got is for I'll run once again.
+
+09:41.770 --> 09:42.520
+Here.
+
+09:42.520 --> 09:46.080
+I'll give and tell when it is found.
+
+09:46.090 --> 09:48.510
+I'll give it as end.
+
+09:48.550 --> 09:54.590
+L So I get a space and I'll.
+
+09:59.130 --> 10:00.580
+Enter the search key values.
+
+10:00.660 --> 10:02.580
+I will give the c key value as 11.
+
+10:02.580 --> 10:04.500
+So it is found at index nine.
+
+10:04.680 --> 10:07.440
+I'll run once again now.
+
+10:07.440 --> 10:09.600
+I'll give the element as a 31.
+
+10:09.600 --> 10:11.730
+So the key element not found.
+
+10:11.730 --> 10:14.430
+So it has checked everything and it has came out.
+
+10:16.290 --> 10:17.160
+That's it.
+
+10:17.190 --> 10:23.340
+You can try this program by yourself and also try to debug the program and see how it is working.

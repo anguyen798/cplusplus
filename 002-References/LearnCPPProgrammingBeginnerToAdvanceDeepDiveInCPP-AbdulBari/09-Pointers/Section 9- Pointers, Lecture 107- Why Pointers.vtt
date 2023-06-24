@@ -1,0 +1,245 @@
+WEBVTT
+
+0
+00:00.370 --> 00:00.690
+Now
+
+1
+00:00.810 --> 00:02.980
+Let us see what is the use of pointers.
+
+2
+00:03.020 --> 00:06.220
+Why does C, C++ languages have a pointers.
+
+3
+00:06.230 --> 00:08.200
+What is the purpose of pointers.
+
+4
+00:08.210 --> 00:14.260
+So I'm giving you a complete picture of the reason why we have pointers.
+
+5
+00:14.260 --> 00:15.920
+Let us see.
+
+6
+00:15.990 --> 00:21.200
+See already we know that a memory is divided into three sections when the program is executing.
+
+7
+00:21.210 --> 00:24.320
+Suppose you have your program that is your main function.
+
+8
+00:24.510 --> 00:29.900
+Then whatever you have written in this main function that gets converted into machine code and when you are running
+
+9
+00:29.910 --> 00:35.620
+it that the main function will be coded in the main function.
+
+10
+00:35.630 --> 00:38.000
+So I'm just taking Main function.
+
+11
+00:38.000 --> 00:43.370
+Now your program may be having a lot of other function but just say Main is a program main function
+
+12
+00:43.370 --> 00:44.010
+is a program.
+
+13
+00:44.080 --> 00:44.850
+OK.
+
+14
+00:44.920 --> 00:45.850
+Resume this.
+
+15
+00:46.070 --> 00:52.360
+Now this is a program actually this program that is there in code section so that program can access
+
+16
+00:52.370 --> 01:01.600
+which part of memory it can access the same code section or it can access stack.
+
+17
+01:01.790 --> 01:09.200
+These are the two places it can directly access and it cannot access any other thing in your entire computer
+
+18
+01:09.200 --> 01:10.110
+system.
+
+19
+01:10.160 --> 01:15.830
+So programming makes a policy that it will not access any other thing directly except code section
+
+20
+01:15.840 --> 01:23.330
+itself or stack whatever it is that inside the code section or the stack program can directly access
+
+21
+01:23.330 --> 01:23.570
+it.
+
+22
+01:24.080 --> 01:30.430
+This one thing then there is one more thing that is heap, can the  program directly access this heap.
+
+23
+01:30.500 --> 01:36.310
+no it cannot access it, then how  it can access the heap, indirectly it can access.
+
+24
+01:36.310 --> 01:42.320
+if suppose you have a pointer and that pointer can have the address of some memory in the heap.
+
+25
+01:42.590 --> 01:47.870
+So this point will help the main function of the program to access the heap area.
+
+26
+01:47.960 --> 01:53.530
+So program can access the stack from the stack you get a pointer, and go to the heap then it will
+
+27
+01:53.530 --> 01:54.960
+access heap.
+
+28
+01:55.310 --> 01:56.420
+Yes that's it.
+
+29
+01:56.570 --> 02:02.960
+So programming can access heap only using pointers indirectly.
+
+30
+02:03.170 --> 02:07.700
+So what is the use of pointer now, it is for accessing heap memory.
+
+31
+02:07.700 --> 02:10.600
+This is one reason then there are more.
+
+32
+02:10.630 --> 02:15.150
+Suppose you have a file on a disk.
+
+33
+02:15.340 --> 02:16.340
+A file is there.
+
+34
+02:16.340 --> 02:17.210
+On disk.
+
+35
+02:17.300 --> 02:19.430
+How this file can be accessed by a program.
+
+36
+02:19.430 --> 02:21.140
+Can it directly access.
+
+37
+02:21.290 --> 02:21.880
+No.
+
+38
+02:21.910 --> 02:25.210
+Again it can access it indirectly with the help of a pointer.
+
+39
+02:25.250 --> 02:27.140
+It needs a point out for accessing it.
+
+40
+02:27.260 --> 02:35.210
+file, we use file pointers for accessing files then if there is network connection how a program can access a
+
+41
+02:35.210 --> 02:37.810
+network connection using a pointer again.
+
+42
+02:37.970 --> 02:46.230
+If there is a keyboard and mouse or monitor all these things or a printer.
+
+43
+02:46.400 --> 02:53.510
+All of these things can be accessed by a program indirectly not directly but with the help both pointers
+
+44
+02:53.870 --> 02:56.450
+see accessing keyboard or moniter.
+
+45
+02:56.520 --> 03:02.960
+We don't do identically we will see and see also those objects internally use pointers for accessing
+
+46
+03:02.960 --> 03:08.430
+them so the concluding point is program a program can directly access.
+
+47
+03:08.450 --> 03:12.970
+directly means what, by with the help of address it directly go there and get the data.
+
+48
+03:13.100 --> 03:13.960
+Only two places.
+
+49
+03:13.970 --> 03:17.930
+What are those code section and the contents inside stack.
+
+50
+03:17.960 --> 03:19.520
+What about the rest of the things.
+
+51
+03:19.670 --> 03:27.770
+All can be accessed only using pointer so pointer is not just for one single purpose, pointer is useful
+
+52
+03:27.770 --> 03:34.880
+for accessing various things in your computer system, where as little bit, i will tell about  Java and C sharp languages
+
+53
+03:34.910 --> 03:41.270
+in these languages there are no pointers so they don't allow you to access these devices, through your 
+
+54
+03:41.360 --> 03:50.270
+program, you cannot access them at all. you have to access them through JVM only our through common language
+
+55
+03:50.270 --> 03:54.740
+of run time in C sharp or dot net so you can not directly access them.
+
+56
+03:54.740 --> 04:01.250
+So there is no system programming possible using java and c sharp but I as c language in C++ language
+
+57
+04:01.260 --> 04:06.200
+have  pointers so they allow us to access all the devices so we can do system programming.
+
+58
+04:06.320 --> 04:10.960
+We can develop even operating system so we can develop the device drivers. only
+
+59
+04:10.970 --> 04:18.310
+The reason is we have pointers all right, so we will be looking at a few usages of pointers.
+
+60
+04:18.380 --> 04:22.140
+in our next video let us look at how we can access heap using pointers.

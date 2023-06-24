@@ -1,0 +1,221 @@
+WEBVTT
+
+0
+00:00.240 --> 00:05.940
+In this video we will see how to display some patterns on the screen using Nested for loop
+
+1
+00:05.940 --> 00:07.670
+already in the previous video I have shown you one pattern.
+
+2
+00:07.710 --> 00:13.200
+Now in this video I will show you two patterns that are sufficient for making various type of patterns.
+
+3
+00:13.230 --> 00:15.080
+So first one is this fun.
+
+4
+00:15.450 --> 00:16.770
+I want to draw astricks.
+
+5
+00:16.800 --> 00:22.830
+I don't want to box just I want to display astricks so I'm comparing them with i&j values.
+
+6
+00:23.010 --> 00:25.580
+OK so I want to display astricks.
+
+7
+00:25.860 --> 00:29.230
+So these two nested for loop,
+
+8
+00:29.740 --> 00:37.980
+will give us all these values of box like 0 0 0 1 0 2 0 3 1 0 1 1 1 2 1 3 2 0  so on.
+
+9
+00:38.220 --> 00:41.660
+So I get all those locations right.
+
+10
+00:41.760 --> 00:43.690
+We get all the values of  i&j.
+
+11
+00:43.770 --> 00:46.400
+We don't want to print a star every time.
+
+12
+00:46.520 --> 00:52.590
+Then when we want to print star, we want to print only these places then how to recognize how to identify
+
+13
+00:52.590 --> 00:53.580
+these places.
+
+14
+00:53.640 --> 00:55.790
+Soi and j should help us.
+
+15
+00:55.950 --> 00:56.700
+Let us check.
+
+16
+00:56.790 --> 01:09.410
+i& j,  this one, 00 this one 10, i is 1  j is 0, i is 1 j is 1  OK, I is 2 j is 0,i is 2 j is 1, i is 2 j is 2,
+
+17
+01:09.410 --> 01:14.550
+so here if you observe I is greater than J right.
+
+18
+01:14.640 --> 01:16.430
+Greater than or equal to j.
+
+19
+01:16.590 --> 01:24.610
+And this empty places if you observe I is  zero j is a three I is zero and j is 2 so there J is Greater
+
+20
+01:24.660 --> 01:31.110
+so when I have to bring this one if I is a greater than or equal to J print star otherwise don't print
+
+21
+01:31.110 --> 01:31.520
+star.
+
+22
+01:31.770 --> 01:37.020
+So here I have already explained you this nested for loop endl also  already i have explained
+
+23
+01:37.260 --> 01:48.000
+so just I have to write on something here if I is greater than or equal to j then see out star this
+
+24
+01:48.000 --> 01:52.980
+is how star is displayed. we want star  side by side only, no need of spaces if you want
+
+25
+01:52.990 --> 01:55.290
+spaces then you can give a gap here.
+
+26
+01:55.410 --> 01:57.730
+So just one space gap then give codes.
+
+27
+01:57.870 --> 02:03.740
+So it will give a gap in between the stars so we get this shape that's all.
+
+28
+02:03.880 --> 02:09.310
+So right down this inside the main function you have to declare this i and j  values, variables you have
+
+29
+02:09.310 --> 02:14.710
+to declare than just inside the main function you write on  this code and it will run and you'll get this
+
+30
+02:14.800 --> 02:16.570
+output on the screen.
+
+31
+02:16.990 --> 02:19.950
+Now next I'll show you one more pattern in this video.
+
+32
+02:21.430 --> 02:25.690
+Yeah another pattern. see this pattern I want. 
+
+33
+02:25.750 --> 02:28.460
+So in this pattern if you observe stars are there.
+
+34
+02:28.580 --> 02:36.240
+Okay no problem then space then stars are there, then again two spaces and stars are there 
+
+35
+02:36.330 --> 02:42.240
+I should give spaces now star I have to print as well as the spaces, if I don't give a spaces this
+
+36
+02:42.240 --> 02:44.290
+start will come in the beginning right.
+
+37
+02:44.370 --> 02:50.210
+If you print it will print it in the corner of a screen if you see the screen like this then four stars are there
+
+38
+02:50.250 --> 02:56.160
+ok 4 stars are printed.  then next i need a space then only  I should get a  star
+
+39
+02:56.280 --> 03:03.110
+if I don't give space then this is Stars will start from here I want space so space and star so when to print
+
+40
+03:03.120 --> 03:13.770
+space and when to print star so look at the spaces here 1 0 2 0 2 1 0 see diagonal means i and j are  equal
+
+41
+03:14.050 --> 03:20.550
+and this lower diagonal part, this the lower triangular park I is greater than J 
+
+42
+03:20.880 --> 03:25.100
+in the diagonal I & j are equal. so whenI is greater than J.
+
+43
+03:25.100 --> 03:30.240
+We should give space otherwise give star, so it's simple.
+
+44
+03:30.240 --> 03:39.630
+Now here I should write if I is greater than J then cout space so give quotes and gives space then
+
+45
+03:40.290 --> 03:47.340
+else what i should print, star so I don't want to give space in between this stars.
+
+46
+03:47.760 --> 03:50.760
+So this is for this space and this is for star,
+
+47
+03:51.240 --> 03:58.710
+If I is greater than j as this portion right here I is equal to j then here I is less then G here
+
+48
+03:58.710 --> 04:00.560
+I is than J, i is less than J.
+
+49
+04:00.710 --> 04:05.970
+Then here I is greater than j  space then i Is equal to J sar.
+
+50
+04:05.970 --> 04:12.360
+So this is how spaces and stars will give you that pattern. that's all in this video in the next video
+
+51
+04:12.360 --> 04:17.750
+I'll show you one more pattern on a small example i will take and I will show you, so with this you can draw
+
+52
+04:17.760 --> 04:19.780
+various other patterns as you like.
+
+53
+04:20.250 --> 04:23.580
+So you try this, write a program and check it by yourself.
+
+54
+04:23.580 --> 04:26.750
+I have just written for loop so inside main function you write them and run it.

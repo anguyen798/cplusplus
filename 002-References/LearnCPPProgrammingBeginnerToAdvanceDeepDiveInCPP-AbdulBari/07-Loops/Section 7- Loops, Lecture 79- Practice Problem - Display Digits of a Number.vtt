@@ -1,0 +1,509 @@
+WEBVTT
+
+0
+00:00.630 --> 00:07.260
+In this video we will learn about displaying the digits of a number from reverse.
+
+1
+00:08.160 --> 00:14.250
+If any number is given then we are going to display the digits now compared to the previous topics.
+
+2
+00:14.250 --> 00:17.150
+Previous videos if you see there is a change in the procedure.
+
+3
+00:17.160 --> 00:18.780
+Little change in the procedure.
+
+4
+00:18.890 --> 00:25.510
+And based on this procedure we are going to see a couple of problems on this one so let us start the
+
+5
+00:25.510 --> 00:30.020
+topic see there is a number here 1 7 2 4.
+
+6
+00:30.060 --> 00:33.960
+We want to display 4 2 7 1.
+
+7
+00:34.860 --> 00:36.760
+So how to change it.
+
+8
+00:36.760 --> 00:38.190
+How to get the values from there.
+
+9
+00:38.620 --> 00:45.130
+So we should get the value 4 separately two separately 7 and 1 each digit we want separately.
+
+10
+00:45.130 --> 00:46.340
+How do we get the digits.
+
+11
+00:46.340 --> 00:51.370
+Let us see see the number is 1 7 2 4.
+
+12
+00:51.370 --> 00:53.450
+I want to get the last digit.
+
+13
+00:53.530 --> 00:56.030
+How we can get the last digit.
+
+14
+00:56.140 --> 01:01.620
+So if I take mod by ten you get the last digit.
+
+15
+01:02.040 --> 01:03.670
+So remember this, this logic.
+
+16
+01:03.670 --> 01:04.450
+You remember this.
+
+17
+01:04.470 --> 01:07.150
+This procedure,  if any number is there.
+
+18
+01:07.290 --> 01:15.300
+You perform mod 1 7 2 4 mod 10 this number gets divided about 10 and the remainder is 4.
+
+19
+01:15.300 --> 01:20.260
+So this gives the remainder four that so you can get a digit.
+
+20
+01:20.320 --> 01:21.930
+How are you going to get two.
+
+21
+01:22.170 --> 01:24.780
+So you can't get two now right.
+
+22
+01:24.780 --> 01:31.020
+If you're mod by 100 you'll get 24 you will not get two for getting that two let us make two as
+
+23
+01:31.020 --> 01:32.280
+the last digit.
+
+24
+01:32.370 --> 01:36.460
+How to Make two as a last digit remove four, how to remove four.
+
+25
+01:37.530 --> 01:45.700
+1 7 2 4 divided by 10 divided by ten is 1 7 2. 4.
+
+26
+01:45.700 --> 01:53.130
+No no integer division you remember integer division will truncate that decimal part and it gives
+
+27
+01:53.310 --> 01:55.180
+1 7 2.
+
+28
+01:56.010 --> 01:56.940
+That's it.
+
+29
+01:56.940 --> 02:02.800
+So now the number has reduced to one hundred and seventy two it was one thousand seven hundred twenty 
+
+30
+02:02.830 --> 02:03.090
+four.
+
+31
+02:03.100 --> 02:05.220
+No it is one hundred and seventy two.
+
+32
+02:05.280 --> 02:07.060
+So you have two at the last.
+
+33
+02:07.620 --> 02:10.930
+How to get two again mod by 10.
+
+34
+02:11.010 --> 02:15.430
+again  od by 10 again the number of will be reduced when you divide it by 10.
+
+35
+02:15.540 --> 02:18.330
+So this way we can take out the digits one by one.
+
+36
+02:18.330 --> 02:23.300
+So yes that procedure I have shown here this is the basic idea I gave you.
+
+37
+02:23.310 --> 02:25.980
+No let us do it as a procedure let us do it.
+
+38
+02:26.400 --> 02:28.650
+This is a no.
+
+39
+02:28.680 --> 02:34.070
+How do get four, perform n mod ten and take it as a remainder.
+
+40
+02:34.290 --> 02:39.130
+So this is a remainder, remainder is four right. first time remainder is 4.
+
+41
+02:39.300 --> 02:46.350
+How did you get this 172 change the number to 172 so divide the number by 10 and make it as a number
+
+42
+02:46.350 --> 02:47.440
+only again.
+
+43
+02:47.460 --> 02:48.790
+Again no.
+
+44
+02:48.810 --> 02:56.940
+Now in the next step it is 172 mod by ten, we get last digit 2 then divide the number 172 by
+
+45
+02:57.210 --> 03:05.370
+by ten so it becomes seventeen then in the next step seventeen mod ten seven seventeen divided
+
+46
+03:05.370 --> 03:08.890
+by ten= one the next step.
+
+47
+03:08.890 --> 03:11.660
+That one is carried, that one mod 10
+
+48
+03:11.690 --> 03:17.820
+it is one, one divided by 10, 0 times, the remainder is one.
+
+49
+03:17.950 --> 03:21.700
+Then divide one by 10 0 times 0.
+
+50
+03:21.760 --> 03:23.540
+Now this became zero stop.
+
+51
+03:23.830 --> 03:25.980
+So next step if you see the number is zero.
+
+52
+03:26.050 --> 03:26.690
+So stop.
+
+53
+03:27.520 --> 03:33.190
+So this is how we can perform the steps repeatedly and we can get the digits from the end of a number
+
+54
+03:33.190 --> 03:35.250
+from the right hand side of a number.
+
+55
+03:35.560 --> 03:40.090
+And we can display them, just we want digits right from right side or left side.
+
+56
+03:40.090 --> 03:41.430
+Doesn't matter which want digits.
+
+57
+03:41.470 --> 03:45.470
+So we got the digits that are 4 2 7 1.
+
+58
+03:45.570 --> 03:46.460
+That's it.
+
+59
+03:46.490 --> 03:48.410
+Let us see the flow chart for that one.
+
+60
+03:48.420 --> 03:51.340
+Already I have a flow chart flow chart starts.
+
+61
+03:51.350 --> 03:52.340
+Let us take a number.
+
+62
+03:52.610 --> 03:54.960
+Let us see them what is 1 7 2 4.
+
+63
+03:55.080 --> 03:58.640
+this is repeating.
+
+64
+03:58.640 --> 04:02.880
+So this is using a loop, using a loop, which loop we will see afterwards.
+
+65
+04:03.350 --> 04:09.260
+If n is a greater than 0 yes we have to stop, run and  become 0 so if n is greater than zero
+
+66
+04:09.520 --> 04:09.980
+if
+
+67
+04:10.000 --> 04:12.610
+True there are two things you have to do.
+
+68
+04:12.720 --> 04:20.450
+take mod as a remainder,  divide the number by 10 reduce it by removing larger digit reduce
+
+69
+04:20.510 --> 04:20.970
+this one.
+
+70
+04:21.530 --> 04:28.520
+Then these numbers we want to print them. so print them, after printing  continue again check if the number
+
+71
+04:28.520 --> 04:32.950
+is greater than zero again perform these two again and again continue continue.
+
+72
+04:33.050 --> 04:33.760
+How long.
+
+73
+04:33.830 --> 04:37.590
+As long as n is  greater than zero when to stop? when n becomes zero.
+
+74
+04:37.940 --> 04:41.870
+So if n has became zero means it's not a greater than zero falls.
+
+75
+04:41.870 --> 04:43.470
+So stop.
+
+76
+04:43.480 --> 04:44.450
+This is the procedure.
+
+77
+04:44.450 --> 04:48.850
+So this is how we can mod and divide and print.
+
+78
+04:49.100 --> 04:52.220
+So these are steps we have to write three steps are there in a loop.
+
+79
+04:52.220 --> 04:54.780
+These are the processing part and this is the printing part.
+
+80
+04:54.830 --> 04:58.730
+so output so these three steps are there inside a loop.
+
+81
+04:58.720 --> 05:03.120
+Right now is it using for loop.
+
+82
+05:03.260 --> 05:10.190
+We have already seen few programs previously in the previous videos there I was there counter was there
+
+83
+05:10.430 --> 05:11.360
+is there any content.
+
+84
+05:11.780 --> 05:13.380
+No no.
+
+85
+05:13.580 --> 05:15.900
+can i write using for loop also? yes.
+
+86
+05:16.070 --> 05:16.970
+Shall I write.
+
+87
+05:16.970 --> 05:17.270
+No.
+
+88
+05:17.300 --> 05:18.670
+Don't write it.
+
+89
+05:18.810 --> 05:19.300
+for means
+
+90
+05:19.310 --> 05:21.930
+If you have the number of times then use it it's better.
+
+91
+05:22.360 --> 05:24.680
+So how to write this one while or do while.
+
+92
+05:24.930 --> 05:28.840
+So okay I will use while loop, let us write it using while loop.
+
+93
+05:28.910 --> 05:36.290
+So start take one no. read a number, is already there, how many variables are required n and r
+
+94
+05:36.470 --> 05:37.700
+only two variables required.
+
+95
+05:38.140 --> 05:42.520
+n and r then this is the beginning of the loop condition is there.
+
+96
+05:42.530 --> 05:44.660
+So what is the condition while.
+
+97
+05:46.100 --> 05:47.480
+n is greater than zero.
+
+98
+05:47.870 --> 05:48.690
+OK.
+
+99
+05:48.830 --> 05:50.620
+If I write > 0 what to do.
+
+100
+05:50.630 --> 05:53.630
+Find out remainder and divide that number by 10.
+
+101
+05:53.630 --> 06:01.430
+Find out the remainder n mod 10 and divide the number by ten and divided by ten then what
+
+102
+06:01.430 --> 06:02.010
+to do.
+
+103
+06:02.130 --> 06:02.780
+Print that r.
+
+104
+06:02.840 --> 06:05.300
+so I will use a c out
+
+105
+06:08.120 --> 06:14.970
+and after this I give endl so that every digit comes in the next line so I should get the o/p like these
+
+106
+06:14.990 --> 06:17.900
+this 4 first then two then 7 then 1.
+
+107
+06:18.020 --> 06:22.090
+Then after this close again it goes to while.
+
+108
+06:22.340 --> 06:27.850
+So close this loop then there is nothing after that to close the program.
+
+109
+06:27.860 --> 06:36.110
+So here you have to write return zero you know it well, this is the program for displaying the digits of a
+
+110
+06:36.110 --> 06:38.720
+number from reverse.
+
+111
+06:38.720 --> 06:40.230
+So this is the program.
+
+112
+06:40.280 --> 06:45.110
+There is a coding exercise available for this one complete that and also demo is there so
+
+113
+06:45.110 --> 06:50.630
+can watch that demo and  write the program by yourself on your P.C. like a complete program and check
+
+114
+06:50.630 --> 06:50.840
+it.
+
+115
+06:50.930 --> 06:52.530
+So is the basics of programming.
+
+116
+06:52.670 --> 06:57.980
+If you are used to this one, if you are good in this one then you can solve new problems by yourself.
+
+117
+06:57.980 --> 06:59.740
+New programs you can write down right.
+
+118
+07:00.080 --> 07:02.360
+And not just one time if possible.
+
+119
+07:02.360 --> 07:07.820
+I write this program more than one time so that you could be able to write it without taking any help.
+
+120
+07:07.850 --> 07:13.310
+You should be able to write the program by yourself so this doesn't come just by one time so do it again
+
+121
+07:13.310 --> 07:14.470
+and again right.
+
+122
+07:14.530 --> 07:16.760
+So whenever you are free, you try the program.
+
+123
+07:17.000 --> 07:23.480
+So if you want to learn programming you have to spend more time in practice. now in the next video.
+
+124
+07:23.480 --> 07:28.920
+The topic will be using same procedure so I will not remove this.
+
+125
+07:29.000 --> 07:30.370
+It will be as it is.
+
+126
+07:30.410 --> 07:33.220
+So let us look at our next program and next video.

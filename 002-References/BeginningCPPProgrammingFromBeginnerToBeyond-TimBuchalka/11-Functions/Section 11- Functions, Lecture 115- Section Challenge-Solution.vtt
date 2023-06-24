@@ -1,0 +1,1210 @@
+WEBVTT
+
+00:00:05.470 --> 00:00:06.880
+Hello, everyone. Welcome back.
+
+00:00:06.880 --> 00:00:10.430
+This is the solution to
+the section 11 challenge.
+
+00:00:10.800 --> 00:00:14.360
+And I'm in the section 11 workspace
+and the challenge solution project.
+
+00:00:14.910 --> 00:00:18.190
+I'd like to go over one possible
+solution to this project.
+
+00:00:18.890 --> 00:00:21.919
+This is a solution that
+I've done, very modular, 
+
+00:00:21.930 --> 00:00:23.210
+all the functions are there.
+
+00:00:23.210 --> 00:00:23.950
+they're all small,
+
+00:00:23.950 --> 00:00:25.570
+they do one thing,
+and they do them well.
+
+00:00:25.950 --> 00:00:27.500
+So let's go through this.
+
+00:00:27.500 --> 00:00:28.869
+Let's look at our main first.
+
+00:00:28.869 --> 00:00:30.050
+Let's start there.
+
+00:00:30.070 --> 00:00:32.710
+Main defines numbers, which
+is the vector of integers,
+
+00:00:33.110 --> 00:00:34.279
+just like we've had before.
+
+00:00:34.730 --> 00:00:37.880
+And it's got a character variable
+called selection, that's where
+
+00:00:37.880 --> 00:00:40.900
+the user is going to type in their
+selection, their menu selection.
+
+00:00:41.330 --> 00:00:42.580
+Now we've got our do loop.
+
+00:00:42.870 --> 00:00:45.079
+Our do loop, now there's -- I've
+folded the code here.
+
+00:00:45.080 --> 00:00:47.220
+There's obviously more code here
+in the switch statement, but
+
+00:00:47.250 --> 00:00:50.359
+I'm just going to show you the
+overall structure of this loop.
+
+00:00:50.769 --> 00:00:54.029
+So here we're doing
+do display the menu.
+
+00:00:54.879 --> 00:00:57.590
+Notice that now we're calling
+a function to display the menu.
+
+00:00:58.269 --> 00:01:00.760
+Then I'm going to get the
+selection from the user.
+
+00:01:00.760 --> 00:01:03.680
+So whatever they type in, I'm
+going to store in selection.
+
+00:01:04.300 --> 00:01:07.260
+But I'm not just going to store it in
+selection, I want to make it uppercase
+
+00:01:07.289 --> 00:01:08.770
+and then store it in selection.
+
+00:01:09.080 --> 00:01:11.589
+That way I don't have to check
+for lowercase and uppercase every
+
+00:01:11.590 --> 00:01:13.360
+time I check for a selection.
+
+00:01:14.390 --> 00:01:17.040
+And I want to do this loop
+while the selection is not
+
+00:01:17.040 --> 00:01:18.430
+equal to an uppercase q.
+
+00:01:19.060 --> 00:01:20.600
+Okay, so that's pretty much it.
+
+00:01:20.880 --> 00:01:23.869
+Now let's take a look at
+our display menu function.
+
+00:01:24.170 --> 00:01:25.470
+And it's right down here.
+
+00:01:26.210 --> 00:01:27.720
+And I'll expand it right now.
+
+00:01:27.720 --> 00:01:30.319
+And you can see that that's
+the function display menu.
+
+00:01:30.660 --> 00:01:32.910
+And all it is is the output
+statements, just like we
+
+00:01:32.910 --> 00:01:34.390
+had before inside the main.
+
+00:01:34.710 --> 00:01:37.040
+So in this case whenever I
+need to display the menu, I
+
+00:01:37.040 --> 00:01:40.550
+can call this function and
+I'm doing that exactly here.
+
+00:01:42.300 --> 00:01:45.000
+Okay, now let's take a look
+at the get selection function.
+
+00:01:45.690 --> 00:01:48.400
+Here's the get selection function,
+and you can see the name of
+
+00:01:48.430 --> 00:01:49.840
+the function is get selection.
+
+00:01:49.870 --> 00:01:52.380
+It expects nothing but it
+does return a character.
+
+00:01:52.940 --> 00:01:55.640
+So in this case, I'm defining
+another character variable in here.
+
+00:01:55.640 --> 00:01:58.649
+Remember, this variable here
+is local to this function.
+
+00:01:59.020 --> 00:02:01.889
+I'm simply reading from the
+keyboard their selection.
+
+00:02:02.509 --> 00:02:05.539
+And I'm converting it to
+uppercase and returning it.
+
+00:02:06.610 --> 00:02:07.790
+Okay, so that's that one.
+
+00:02:08.039 --> 00:02:10.230
+So at this point, I've
+displayed the menu.
+
+00:02:10.520 --> 00:02:14.400
+And remember, the menu has at the very
+bottom of the menu, enter your choice.
+
+00:02:14.400 --> 00:02:17.550
+So I don't really need to prompt the
+user for anything, it's already there.
+
+00:02:17.860 --> 00:02:20.729
+So I'm displaying the menu.
+
+00:02:21.009 --> 00:02:23.490
+I'm getting their selection,
+and selection will now contain
+
+00:02:23.490 --> 00:02:24.970
+an uppercase character.
+
+00:02:26.050 --> 00:02:27.050
+Okay, perfect.
+
+00:02:27.170 --> 00:02:30.359
+So now we're going to switch
+off of that character.
+
+00:02:30.660 --> 00:02:33.060
+And let me expand the
+switch statement here.
+
+00:02:33.570 --> 00:02:37.350
+So in this case, if the selection
+is a p, I'm going to call a
+
+00:02:37.350 --> 00:02:38.980
+function called handle display.
+
+00:02:39.009 --> 00:02:41.989
+Because remember, p is to print
+out all the integers in the vector.
+
+00:02:42.690 --> 00:02:44.980
+And I'm going to pass in
+the vector to that function.
+
+00:02:45.820 --> 00:02:47.960
+If it's an a, I'm going
+to do a handle add.
+
+00:02:49.260 --> 00:02:52.460
+M is handle mean, s is
+handle smallest, l is handled
+
+00:02:52.469 --> 00:02:54.680
+largest, q is handle quit.
+
+00:02:54.980 --> 00:02:57.009
+In default, I'm just going
+to handle an unknown.
+
+00:02:57.900 --> 00:03:01.820
+So you can see now that the logic in
+main is exactly like it was before
+
+00:03:02.130 --> 00:03:03.610
+except we're calling functions.
+
+00:03:03.610 --> 00:03:05.640
+We don't have all that
+code written in here.
+
+00:03:06.580 --> 00:03:09.719
+Also this allows us to
+think modularly, right.
+
+00:03:09.910 --> 00:03:12.560
+Now I've got functions
+doing those defined tasks.
+
+00:03:12.560 --> 00:03:15.049
+So again, it's that boss
+worker analogy at work
+
+00:03:15.049 --> 00:03:16.049
+here, it's perfect for that.
+
+00:03:16.250 --> 00:03:17.989
+Let's take a look at handle display.
+
+00:03:18.570 --> 00:03:20.460
+So in this case, so
+the user selects p.
+
+00:03:20.640 --> 00:03:23.200
+Notice I don't have to check
+uppercase and lowercase anymore
+
+00:03:23.200 --> 00:03:26.030
+because the get selection function
+already made everything uppercase.
+
+00:03:27.120 --> 00:03:29.529
+So I'm going to call handle
+display, and I'm going to
+
+00:03:29.530 --> 00:03:30.779
+pass in the vector to it.
+
+00:03:30.790 --> 00:03:32.930
+Because obviously, it needs
+to display the vector.
+
+00:03:33.200 --> 00:03:35.880
+Let's come over here to
+handle display, and you can
+
+00:03:35.880 --> 00:03:37.180
+see the function right here.
+
+00:03:37.560 --> 00:03:41.535
+Now notice handle display, it expects
+a vector, and I'm passing that
+
+00:03:41.600 --> 00:03:46.969
+vector in by reference and const,
+just as we've spoken about before.
+
+00:03:47.280 --> 00:03:49.959
+This handle -- this display
+method really has no business
+
+00:03:49.960 --> 00:03:51.079
+changing that vector.
+
+00:03:51.349 --> 00:03:54.800
+So I'm not going to even take the
+chance that it will, I'm passing it.
+
+00:03:54.890 --> 00:03:57.820
+By reference so, I don't
+have to copy it and const.
+
+00:03:58.080 --> 00:03:59.210
+So let's take a look at that.
+
+00:04:00.560 --> 00:04:02.350
+All right, so we've
+got our vector here.
+
+00:04:02.690 --> 00:04:05.500
+So I'm checking to see if
+the size of the vector is 0.
+
+00:04:05.509 --> 00:04:08.619
+In which case, it's empty, and
+I'm displaying the list is empty.
+
+00:04:09.460 --> 00:04:12.149
+Otherwise, I'm calling a
+function called display the list.
+
+00:04:12.150 --> 00:04:14.480
+And I'm passing in that
+vector, the same vector I got,
+
+00:04:14.480 --> 00:04:15.690
+I'm passing to the function.
+
+00:04:16.290 --> 00:04:19.180
+I could have looped in
+here and displayed the list
+
+00:04:19.180 --> 00:04:20.300
+right in here of course.
+
+00:04:20.670 --> 00:04:23.719
+But I decided to create another
+function because you know we
+
+00:04:23.719 --> 00:04:26.359
+could tweak the behavior of
+what the display looks like.
+
+00:04:26.580 --> 00:04:29.280
+And I don't want all that
+code in here unnecessarily.
+
+00:04:29.730 --> 00:04:31.680
+So let's take a look at display list.
+
+00:04:31.680 --> 00:04:32.920
+It's toward the bottom.
+
+00:04:32.920 --> 00:04:34.190
+I'm going to scroll down here.
+
+00:04:34.240 --> 00:04:36.060
+There's the display list
+function right here.
+
+00:04:36.300 --> 00:04:39.590
+Again, it expects the same vector
+that was sent to the function prior.
+
+00:04:40.170 --> 00:04:43.990
+And now if you look at the code, it's
+going to print out a left bracket.
+
+00:04:44.549 --> 00:04:47.219
+Then it's going to loop through
+that vector and print out
+
+00:04:47.250 --> 00:04:48.650
+each number, just like before.
+
+00:04:48.809 --> 00:04:52.370
+But you can see that this
+list displays just the list.
+
+00:04:52.380 --> 00:04:52.980
+That's all it does.
+
+00:04:52.980 --> 00:04:55.669
+And whenever I need to display
+a list of integers, I could just
+
+00:04:55.670 --> 00:04:57.150
+send it right into this function.
+
+00:04:58.420 --> 00:04:59.880
+Okay, so that's display list.
+
+00:04:59.910 --> 00:05:01.000
+I'll scroll back up.
+
+00:05:03.009 --> 00:05:04.920
+And let's talk about handle add.
+
+00:05:06.150 --> 00:05:08.810
+So now we're here handle
+add, it's another function.
+
+00:05:09.590 --> 00:05:12.960
+Whenever the user presses a, they want
+to add a number to the list, right.
+
+00:05:13.660 --> 00:05:17.019
+So I want to call handle add and I
+want to pass the list, the vector.
+
+00:05:17.429 --> 00:05:19.200
+So let's see the handle add method.
+
+00:05:19.639 --> 00:05:22.769
+I'll scroll down slightly, and
+we'll see handle add is right here.
+
+00:05:23.109 --> 00:05:26.630
+Now notice that in this case,
+I'm still passing the vector
+
+00:05:26.630 --> 00:05:28.970
+by reference because I want to
+add an integer to it, right.
+
+00:05:28.970 --> 00:05:32.090
+So I need to have the
+reference to it but not const
+
+00:05:32.130 --> 00:05:33.600
+because I need to change it.
+
+00:05:33.600 --> 00:05:36.169
+I need to ask the user for an
+integer and store it in the vector.
+
+00:05:36.500 --> 00:05:37.570
+So let's look for that code.
+
+00:05:38.389 --> 00:05:39.650
+We're doing everything right in here.
+
+00:05:39.650 --> 00:05:41.949
+We're saying there's an
+integer called num to add.
+
+00:05:41.949 --> 00:05:45.750
+Remember your scope rules here that
+integer is local to this function.
+
+00:05:46.970 --> 00:05:49.789
+I'm asking the user to enter
+an integer to add to the list.
+
+00:05:50.270 --> 00:05:52.590
+I'm getting that integer
+from them from the keyboard.
+
+00:05:52.920 --> 00:05:55.429
+And then I'm simply calling the
+pushback method of the vector
+
+00:05:55.429 --> 00:05:58.590
+class with the number to add
+and displaying the message.
+
+00:05:59.039 --> 00:05:59.990
+That's it.
+
+00:06:00.440 --> 00:06:01.540
+Really, really easy.
+
+00:06:02.100 --> 00:06:04.219
+Okay, so let me go
+back up to the main.
+
+00:06:04.290 --> 00:06:07.140
+And let's see handle
+mean, how does that work?
+
+00:06:07.560 --> 00:06:10.950
+Well, we'll go to the handle mean
+function, which is right here.
+
+00:06:12.190 --> 00:06:16.529
+Again, it expects a reference
+to a vector and it's constant.
+
+00:06:16.529 --> 00:06:19.340
+I don't want my handle
+mean modifying the vector.
+
+00:06:20.710 --> 00:06:21.400
+So what do we do?
+
+00:06:21.470 --> 00:06:23.340
+We check to see if
+the vector is empty.
+
+00:06:23.590 --> 00:06:26.769
+If it is, we just say unable to
+calculate the mean the list is empty.
+
+00:06:27.559 --> 00:06:31.789
+Otherwise, we call calculate
+mean, and we pass in the vector.
+
+00:06:32.420 --> 00:06:35.020
+It's going to return a
+double to me which I'm going
+
+00:06:35.020 --> 00:06:36.200
+to display right in here.
+
+00:06:36.990 --> 00:06:39.780
+So it's going to say the mean
+is whatever number I get back.
+
+00:06:40.170 --> 00:06:41.810
+All right, so let's take
+a look at calculate me.
+
+00:06:41.920 --> 00:06:42.979
+And I'll scroll down here.
+
+00:06:45.070 --> 00:06:48.650
+This is calculate mean, notice
+again, it's the same vector, same
+
+00:06:48.650 --> 00:06:51.400
+syntax here by reference constant.
+
+00:06:53.230 --> 00:06:54.210
+There's my total.
+
+00:06:54.470 --> 00:06:57.940
+I'm looping through those numbers,
+adding them all up to total.
+
+00:06:58.360 --> 00:07:01.360
+And then I'm casting one of these to
+a double and dividing by the size.
+
+00:07:01.360 --> 00:07:02.870
+Exactly like we had before.
+
+00:07:03.070 --> 00:07:06.710
+It's pretty much the same code that
+we had in the prior challenge, the
+
+00:07:06.710 --> 00:07:10.119
+section nine challenge except we're
+breaking it up into modules here.
+
+00:07:10.660 --> 00:07:11.550
+So that's it.
+
+00:07:11.699 --> 00:07:12.890
+That's calculate mean.
+
+00:07:13.340 --> 00:07:15.730
+And I think you can see where
+we're going with the rest of this.
+
+00:07:15.980 --> 00:07:21.340
+Here is let me close up handle mean,
+we've got handle smallest, handle
+
+00:07:21.340 --> 00:07:23.170
+largest work exactly the same way.
+
+00:07:23.509 --> 00:07:26.570
+And then handle quit and
+handle unknown, we're really
+
+00:07:26.570 --> 00:07:27.889
+doing very little in there.
+
+00:07:27.889 --> 00:07:30.330
+But I decided to make them
+functions because you never know
+
+00:07:30.370 --> 00:07:31.540
+what you need to do in there.
+
+00:07:31.820 --> 00:07:34.020
+I mean suppose you're working
+with files and the user quits
+
+00:07:34.020 --> 00:07:36.220
+and you want to you know
+close up files and so forth.
+
+00:07:36.790 --> 00:07:39.049
+I'd like to do that in a function
+and not here in the main.
+
+00:07:39.280 --> 00:07:41.819
+I want to keep my main
+really, really simple, easy
+
+00:07:41.820 --> 00:07:42.900
+to read and straightforward.
+
+00:07:43.330 --> 00:07:45.909
+So my handle quit kind
+of looks like this.
+
+00:07:46.190 --> 00:07:49.650
+Right here, you can see handle quit,
+it's all it's saying is goodbye.
+
+00:07:50.710 --> 00:07:55.360
+And my handle unknown is saying
+unknown selection, I guess
+
+00:07:55.530 --> 00:07:58.610
+I should spell that right,
+unknown selection try again.
+
+00:08:00.240 --> 00:08:02.710
+Okay, so that's pretty
+much the solution.
+
+00:08:03.160 --> 00:08:05.670
+I've got -- let me scroll up to
+the top, and I've got all the
+
+00:08:05.670 --> 00:08:08.780
+function prototypes at the top. So
+there are my function prototypes
+
+00:08:08.780 --> 00:08:11.260
+here the prototypes for displaying
+the menu and getting the user
+
+00:08:11.260 --> 00:08:14.670
+selection, display the menu
+expects nothing, returns nothing.
+
+00:08:15.309 --> 00:08:17.789
+Git selection expects
+nothing, returns a character.
+
+00:08:17.789 --> 00:08:20.789
+Then I've got my menu
+handling function prototypes.
+
+00:08:21.130 --> 00:08:24.739
+Notice that all of them expect
+a reference to the vector that's
+
+00:08:24.740 --> 00:08:28.850
+constant except handle add because
+handle add needs to change the
+
+00:08:28.850 --> 00:08:30.220
+vector, so it can't be constant.
+
+00:08:31.070 --> 00:08:32.800
+Then I've got handle
+quit, handle unknown.
+
+00:08:33.060 --> 00:08:35.409
+And then I've got the functions
+that actually do the work right the
+
+00:08:35.409 --> 00:08:37.410
+display list, displays the list.
+
+00:08:37.410 --> 00:08:41.410
+Calculate mean, give me the vector, I'll give you
+back the double that's the mean.
+
+00:08:41.650 --> 00:08:43.979
+Get smallest, same idea.
+
+00:08:44.360 --> 00:08:46.729
+Get larger, same idea except
+we're returning an integer.
+
+00:08:47.880 --> 00:08:49.650
+Okay, so what do we want to do?
+
+00:08:49.660 --> 00:08:51.920
+Let's let's modify this
+program a little bit.
+
+00:08:51.940 --> 00:08:53.760
+Let's add some functionality to it.
+
+00:08:54.590 --> 00:08:57.279
+Suppose the user wants to
+see if a specific integer
+
+00:08:57.299 --> 00:08:59.080
+is in the list or not.
+
+00:08:59.410 --> 00:09:00.930
+Okay, so how do we do that?
+
+00:09:01.220 --> 00:09:03.120
+Well, there's a couple
+of things we need to do.
+
+00:09:03.170 --> 00:09:05.890
+Obviously, we need to do some
+function prototyping here.
+
+00:09:06.030 --> 00:09:07.130
+So let's do that.
+
+00:09:07.370 --> 00:09:10.129
+Let's put it right under
+here, under handle largest.
+
+00:09:10.530 --> 00:09:13.720
+We'll say void, how
+about just handle find?
+
+00:09:15.910 --> 00:09:18.830
+We're going to find an
+integer in that vector, right.
+
+00:09:18.830 --> 00:09:21.280
+It's not going to change the
+vector, but I still need the vector.
+
+00:09:21.440 --> 00:09:26.340
+So I'm going to say const a vector
+of integers, and I want it by
+
+00:09:26.340 --> 00:09:28.000
+reference and we'll use the v.
+
+00:09:28.000 --> 00:09:30.330
+Again, we don't have to use the
+parameter names in here, but
+
+00:09:30.330 --> 00:09:31.609
+I'm going to just use the v.
+
+00:09:31.870 --> 00:09:33.380
+So that's my handle find.
+
+00:09:33.550 --> 00:09:37.209
+Okay, now here we need to
+know -- so here we need a
+
+00:09:37.210 --> 00:09:39.200
+function that's actually going
+to do the finding, right.
+
+00:09:39.430 --> 00:09:41.670
+And it's going to return
+a Boolean, true or false.
+
+00:09:41.680 --> 00:09:43.770
+I really don't want to know
+how many times it's there.
+
+00:09:43.950 --> 00:09:45.680
+You could certainly write
+a function like that.
+
+00:09:46.080 --> 00:09:47.429
+But let's just call it find.
+
+00:09:48.849 --> 00:09:50.029
+And what does it expect?
+
+00:09:50.030 --> 00:09:52.979
+Well, it expects that vector
+to look through, right.
+
+00:09:53.750 --> 00:09:57.660
+And again, it's a vector of
+integers, and it's by reference.
+
+00:09:58.140 --> 00:09:59.410
+And what else does it expect?
+
+00:09:59.410 --> 00:10:01.640
+Well, it expects the integer
+that you're looking for.
+
+00:10:01.940 --> 00:10:04.329
+So in this case, let's
+just call it target.
+
+00:10:05.360 --> 00:10:06.710
+That's the integer I'm looking for.
+
+00:10:07.349 --> 00:10:08.640
+So those are my prototypes.
+
+00:10:09.089 --> 00:10:12.560
+But before we even get to those
+prototypes, let's fix up the menu so
+
+00:10:12.560 --> 00:10:15.700
+that it displays that - that f, right.
+
+00:10:15.700 --> 00:10:17.420
+So I'm going to go
+down to display menu.
+
+00:10:18.140 --> 00:10:22.249
+And right after display largest
+I'm just going to say cout.
+
+00:10:23.509 --> 00:10:29.310
+And we'll put an f in there,
+and we'll say find a number.
+
+00:10:32.430 --> 00:10:33.920
+All right, so that should display now.
+
+00:10:35.750 --> 00:10:36.480
+Now what do we do?
+
+00:10:36.740 --> 00:10:40.800
+Well, we need to handle
+that case in main, right.
+
+00:10:40.809 --> 00:10:42.939
+So we'll do it right after
+the largest right here.
+
+00:10:43.230 --> 00:10:46.869
+So we'll say case f in this case
+and we don't have to worry about
+
+00:10:46.869 --> 00:10:49.770
+the lower case because it's going
+to be converted to an upper case.
+
+00:10:50.360 --> 00:10:52.220
+And we'll say handle find.
+
+00:10:53.010 --> 00:10:54.310
+And we've got numbers.
+
+00:10:56.639 --> 00:10:57.980
+All right, perfect.
+
+00:10:58.400 --> 00:11:01.139
+So now what we need to do is
+we need to write these two
+
+00:11:01.139 --> 00:11:02.369
+functions that we prototype.
+
+00:11:02.370 --> 00:11:05.940
+We need to write handle find
+and we need to write the
+
+00:11:05.940 --> 00:11:07.060
+find function, these two.
+
+00:11:07.260 --> 00:11:09.490
+So let's do handle find first.
+
+00:11:10.560 --> 00:11:14.830
+And we'll put it right at the bottom
+of the handle functions, right
+
+00:11:14.830 --> 00:11:16.240
+here right after handle largest.
+
+00:11:16.770 --> 00:11:18.780
+And we could write a comment
+in here, but I'm not going to
+
+00:11:18.780 --> 00:11:20.060
+right now just to save time.
+
+00:11:20.340 --> 00:11:21.570
+So there's my handle find.
+
+00:11:22.559 --> 00:11:24.889
+Okay, now what does the handle
+find function have to do?
+
+00:11:24.890 --> 00:11:28.700
+Well, it has to ask the user to enter
+the integer they want to find, right.
+
+00:11:29.040 --> 00:11:30.620
+So let's just call it target.
+
+00:11:32.800 --> 00:11:34.430
+And we'll initialize it to 0.
+
+00:11:34.430 --> 00:11:38.910
+And we'll just say something
+like cout, enter the number
+
+00:11:38.910 --> 00:11:43.330
+to find or to search for
+whatever you want to call it.
+
+00:11:44.980 --> 00:11:47.540
+And we'll read that into target.
+
+00:11:50.400 --> 00:11:51.529
+Okay, now what do we do?
+
+00:11:51.540 --> 00:11:54.009
+Well, we've got that function
+we still need to write the find
+
+00:11:54.009 --> 00:11:55.439
+function that returns a Boolean.
+
+00:11:55.880 --> 00:11:57.080
+So we're going to use that right
+
+00:11:57.080 --> 00:11:59.990
+now without even writing it because
+we know what it looks like. We
+
+00:11:59.990 --> 00:12:01.420
+wrote the prototype for it, right.
+
+00:12:01.469 --> 00:12:08.310
+So I'm going to say if find,
+and I'm going to pass into
+
+00:12:08.310 --> 00:12:10.020
+it the vector and the target.
+
+00:12:13.720 --> 00:12:15.529
+Let me get rid of some of
+those parens, that's it.
+
+00:12:15.889 --> 00:12:20.130
+So if find that target and
+this vector returns true,
+
+00:12:20.670 --> 00:12:22.130
+then the integer's in there.
+
+00:12:23.570 --> 00:12:30.489
+So we could just write
+something like target was
+
+00:12:30.490 --> 00:12:37.440
+found, else target wasn't found.
+
+00:12:52.129 --> 00:12:54.339
+And I'll put some new lines
+at the end, some endlines.
+
+00:12:57.630 --> 00:12:59.430
+That's pretty much
+handles that function.
+
+00:12:59.710 --> 00:13:01.800
+So what do we have left to implement?
+
+00:13:02.000 --> 00:13:05.089
+Well, we need to implement -- let
+me scroll up a little bit here.
+
+00:13:05.349 --> 00:13:07.720
+We need to implement this
+function, right here, the one
+
+00:13:07.720 --> 00:13:09.390
+that returns the true false value.
+
+00:13:10.180 --> 00:13:12.360
+And I'm going to put that all
+the way at the bottom with all
+
+00:13:12.360 --> 00:13:14.500
+my other good functions that
+doing that are doing work.
+
+00:13:14.950 --> 00:13:16.930
+Do it right after it
+gets smallest right here.
+
+00:13:18.380 --> 00:13:19.780
+Let's write it right here.
+
+00:13:20.350 --> 00:13:21.949
+And there's the prototype, right.
+
+00:13:22.300 --> 00:13:23.459
+So what am I going to do here?
+
+00:13:23.460 --> 00:13:26.139
+Well, I'm going to loop
+through the vector and compare
+
+00:13:26.139 --> 00:13:28.380
+each element to the target.
+
+00:13:28.889 --> 00:13:30.169
+If it's there, I'm out.
+
+00:13:30.209 --> 00:13:31.970
+If it's not, I keep looping.
+
+00:13:31.970 --> 00:13:34.420
+And if I get to the end,
+I never found it, right.
+
+00:13:34.640 --> 00:13:40.890
+So we can do something like for,
+again, auto num for each element
+
+00:13:40.890 --> 00:13:42.330
+through the loop will be called num.
+
+00:13:42.820 --> 00:13:44.770
+And there's my collection, the vector.
+
+00:13:45.059 --> 00:13:50.100
+And we'll just say if num is
+equal to my target,
+
+00:13:51.870 --> 00:13:54.470
+then I'm done. I found it.
+
+00:13:54.600 --> 00:13:55.710
+I'm going to return true.
+
+00:13:56.090 --> 00:13:58.569
+Now if we get all the way to the end
+of the loop, we don't want to put
+
+00:13:58.570 --> 00:14:00.060
+this here, you want to put this here.
+
+00:14:00.389 --> 00:14:04.029
+We'll just simply say
+return false, right.
+
+00:14:04.029 --> 00:14:04.980
+We never found it.
+
+00:14:05.889 --> 00:14:07.189
+So let's run this.
+
+00:14:09.480 --> 00:14:12.310
+Okay, we've got an error that says
+number was not declared in this
+
+00:14:12.310 --> 00:14:15.180
+scope because it should be numbers.
+
+00:14:15.730 --> 00:14:18.130
+All right, hopefully, you see that
+error right there, which is the typo.
+
+00:14:19.340 --> 00:14:22.600
+And let's try it again.
+
+00:14:23.459 --> 00:14:24.280
+There's our run.
+
+00:14:24.370 --> 00:14:25.780
+Here you see the f in the menu
+
+00:14:25.890 --> 00:14:28.130
+now so let's find a number.
+
+00:14:28.130 --> 00:14:29.210
+Let's find a 100.
+
+00:14:29.680 --> 00:14:31.360
+Notice how it asks me
+for the number to find.
+
+00:14:31.360 --> 00:14:32.790
+Now the list is empty, right.
+
+00:14:32.790 --> 00:14:33.819
+So I should not find it.
+
+00:14:35.340 --> 00:14:37.140
+100 was not found, goodbye.
+
+00:14:37.150 --> 00:14:37.700
+What happened.
+
+00:14:38.429 --> 00:14:39.420
+That's an error, right.
+
+00:14:39.780 --> 00:14:41.359
+I should have never printed goodbye.
+
+00:14:41.959 --> 00:14:43.370
+Let's quit and see what's going on.
+
+00:14:46.270 --> 00:14:49.630
+Need a break statement, that's
+why we need to test our code,
+
+00:14:50.240 --> 00:14:51.310
+forgot the break statement.
+
+00:14:51.310 --> 00:14:54.580
+Remember, with the switch it goes to
+the next one, so handle quit fired.
+
+00:14:55.690 --> 00:14:56.890
+Let's try this one more time.
+
+00:14:57.819 --> 00:14:59.170
+Okay, so let's find 100.
+
+00:15:00.059 --> 00:15:01.310
+100 was not found.
+
+00:15:01.750 --> 00:15:02.579
+We get the menu again.
+
+00:15:03.139 --> 00:15:05.759
+Let's add 100.
+
+00:15:06.729 --> 00:15:09.490
+And let's look for it again.
+So I'm pressing f for find.
+
+00:15:09.600 --> 00:15:10.710
+Let's find 100.
+
+00:15:11.270 --> 00:15:12.800
+Now it says 100 was found.
+
+00:15:13.429 --> 00:15:14.579
+And let's print the numbers.
+
+00:15:16.219 --> 00:15:17.219
+There you go, 100.
+
+00:15:17.879 --> 00:15:21.160
+So we've modularized our system
+into a series of functions.
+
+00:15:21.710 --> 00:15:24.970
+We easily added a new behavior
+to this which is the find.
+
+00:15:25.290 --> 00:15:29.670
+And you can see now the code is
+longer, for sure, because you will
+
+00:15:29.670 --> 00:15:31.429
+also have a lot of comments in here.
+
+00:15:31.790 --> 00:15:36.140
+But you've got these really
+well-defined logical functions
+
+00:15:36.540 --> 00:15:38.319
+that are much easier to debug now.
+
+00:15:38.320 --> 00:15:40.700
+If there's something wrong, you
+can come in here and tweak it.
+
+00:15:40.940 --> 00:15:44.000
+You can also extend the
+behavior of the add rather
+
+00:15:44.000 --> 00:15:45.640
+than having just one big main.
+
+00:15:45.640 --> 00:15:48.129
+And if you make any changes,
+you're going to put all your
+
+00:15:48.130 --> 00:15:51.269
+logic in there and that main
+gets out of control very quickly.
+
+00:15:51.620 --> 00:15:54.800
+Okay, so hopefully, your solution
+it's probably going to be different
+
+00:15:54.800 --> 00:15:56.530
+from mine, and that's perfectly fine.
+
+00:15:57.090 --> 00:15:58.400
+Hopefully, it worked out okay.
+
+00:15:58.400 --> 00:16:01.230
+And if you have any comments on it,
+please leave them in the course forum.

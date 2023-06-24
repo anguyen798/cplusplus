@@ -1,0 +1,1345 @@
+WEBVTT
+
+00:00:07.510 --> 00:00:10.219
+In this video, we'll see how
+we can nest if statements
+
+00:00:10.219 --> 00:00:11.879
+within other if statements.
+
+00:00:12.929 --> 00:00:16.819
+Many times the logic we need to use
+in order to solve problems is more
+
+00:00:16.820 --> 00:00:19.060
+complex than just an if else decision.
+
+00:00:19.830 --> 00:00:22.090
+Many times we need
+several layers of logic.
+
+00:00:22.580 --> 00:00:26.960
+Since an if or if else statement is
+a statement, then we can use it in
+
+00:00:26.960 --> 00:00:29.390
+c++ anywhere a statement is legal.
+
+00:00:30.050 --> 00:00:32.890
+So in this case, we can replace
+the statement part of the if
+
+00:00:32.890 --> 00:00:36.099
+statement with an entire if
+else statement if we want.
+
+00:00:37.269 --> 00:00:39.510
+That's exactly what
+this example shows.
+
+00:00:39.850 --> 00:00:41.150
+Notice the indentation.
+
+00:00:41.220 --> 00:00:43.100
+It becomes even more important now.
+
+00:00:44.240 --> 00:00:47.680
+In this case, we can test multiple
+complex conditions easily.
+
+00:00:48.179 --> 00:00:50.160
+So we evaluate expression1.
+
+00:00:50.349 --> 00:00:52.379
+And if it's false, we skip everything.
+
+00:00:53.199 --> 00:00:56.030
+But if it's true, then
+we test expression2.
+
+00:00:56.700 --> 00:00:58.890
+And if it's true, we
+execute statement1.
+
+00:00:59.630 --> 00:01:01.880
+If it's false, we execute statement2.
+
+00:01:02.720 --> 00:01:06.129
+We can continue by including if
+or if else statements as we need.
+
+00:01:07.450 --> 00:01:10.040
+Notice that we have two
+ifs and only one else.
+
+00:01:10.730 --> 00:01:13.860
+In computer science, this is
+called the dangling else problem.
+
+00:01:14.320 --> 00:01:17.080
+And every programming language
+has to decide how to handle it.
+
+00:01:18.800 --> 00:01:22.139
+The problem is which if
+does that else belong to.
+
+00:01:22.950 --> 00:01:26.390
+In c++, an else belongs
+to the closest if.
+
+00:01:27.039 --> 00:01:30.300
+Of course, we can use block statements
+to achieve any logic we want.
+
+00:01:30.790 --> 00:01:31.880
+Let's see another example.
+
+00:01:34.170 --> 00:01:38.540
+In this example, we check
+if score is greater than 90.
+
+00:01:39.080 --> 00:01:42.229
+If it is not, then we skip down
+to the bottom output statement,
+
+00:01:42.229 --> 00:01:44.089
+and we display sorry no a.
+
+00:01:45.370 --> 00:01:48.600
+If the score is greater than
+90, then we check the nested if
+
+00:01:48.600 --> 00:01:51.860
+statement condition and check
+if score is greater than 95.
+
+00:01:52.540 --> 00:01:54.530
+If it is then we display an A+.
+
+00:01:54.710 --> 00:01:56.270
+If it's not, we display an A.
+
+00:01:58.520 --> 00:02:01.499
+In this slide, we can see a flowchart
+that visually shows the flow of
+
+00:02:01.500 --> 00:02:03.900
+control for the logic in this example.
+
+00:02:04.650 --> 00:02:08.070
+Notice the first condition is
+checked, score greater than 90.
+
+00:02:08.570 --> 00:02:11.060
+That's the expression in the
+first diamond on the left.
+
+00:02:11.830 --> 00:02:15.510
+If true, then we test the condition
+in the nested if statement,
+
+00:02:15.630 --> 00:02:17.090
+which is on the true branch.
+
+00:02:17.800 --> 00:02:20.530
+Of course, we can also use
+block statements as required
+
+00:02:20.750 --> 00:02:22.650
+to execute multiple statements.
+
+00:02:24.109 --> 00:02:26.740
+In this example, we're
+checking if Frank's score is
+
+00:02:26.760 --> 00:02:28.060
+not equal to bill's score.
+
+00:02:29.020 --> 00:02:31.800
+If this fails that means
+that their scores are equal.
+
+00:02:31.930 --> 00:02:34.970
+So we go to the else statement
+and display looks like a tie.
+
+00:02:36.429 --> 00:02:39.690
+If their scores are not equal,
+then we check the condition
+
+00:02:39.690 --> 00:02:40.739
+the nested if statement.
+
+00:02:40.789 --> 00:02:44.679
+And if Frank's score is greater than
+bill score, we display Frank wins.
+
+00:02:44.940 --> 00:02:46.829
+Otherwise, we display bill wins.
+
+00:02:47.770 --> 00:02:51.030
+In these examples, the nested
+if has been in the true section
+
+00:02:51.030 --> 00:02:52.250
+of the if else statement.
+
+00:02:52.940 --> 00:02:55.659
+We can have nested if statements
+in the else section as well.
+
+00:02:56.200 --> 00:02:59.630
+Let's go to the IDE and see some
+examples of nested if statements.
+
+00:03:01.620 --> 00:03:06.610
+Okay, what I want to do next is I
+want to open up the grades project
+
+00:03:06.610 --> 00:03:09.610
+within the section 9 workspace again.
+
+00:03:15.810 --> 00:03:17.580
+In this case, the main is empty.
+
+00:03:17.580 --> 00:03:20.030
+And I'm just going to get rid
+of this piece right here just to
+
+00:03:20.030 --> 00:03:21.359
+print out a new line at the end.
+
+00:03:22.190 --> 00:03:26.030
+Okay, so what we're going to do
+here is this program is going
+
+00:03:26.030 --> 00:03:29.510
+to ask the user for the score
+on an exam between 0 and 100.
+
+00:03:29.900 --> 00:03:32.400
+And we're going to tell them the
+letter grade, similar to what we
+
+00:03:32.400 --> 00:03:35.750
+did in the slides but we want to
+validate to make sure that what they
+
+00:03:35.750 --> 00:03:38.140
+entered is actually between 0 and 100.
+
+00:03:38.140 --> 00:03:41.970
+And if it isn't, we're going to
+tell them sorry, you need -- the
+
+00:03:41.970 --> 00:03:43.510
+number you entered is out of range.
+
+00:03:44.190 --> 00:03:51.769
+Also once we determine the student's
+grade, we'll tell them your grade
+
+00:03:51.820 --> 00:03:54.489
+is your letter grade A B C D F.
+
+00:03:54.520 --> 00:03:57.359
+And if they get an F we'll, tell them
+sorry you have to repeat the class.
+
+00:03:57.940 --> 00:04:00.430
+Okay, so let's start here.
+
+00:04:00.580 --> 00:04:03.079
+First off, we need a
+couple of variables.
+
+00:04:03.719 --> 00:04:07.640
+Let's just use one called score that's
+what we're going to ask the user for.
+
+00:04:08.099 --> 00:04:09.130
+And we'll cout.
+
+00:04:09.309 --> 00:04:11.600
+Let's do the input, output
+part really quickly.
+
+00:04:12.129 --> 00:04:15.960
+We'll just say enter
+your score on the exam.
+
+00:04:19.160 --> 00:04:22.509
+And we'll actually put 0 to 100
+here, so they know what the range is.
+
+00:04:25.360 --> 00:04:28.090
+And we'll grab the input into score.
+
+00:04:29.010 --> 00:04:30.690
+Okay, so now we've got what we want.
+
+00:04:31.070 --> 00:04:33.680
+We also would like to have a
+variable called letter grade.
+
+00:04:33.740 --> 00:04:35.669
+And what we're going to do
+is we're going to assign A B
+
+00:04:35.670 --> 00:04:37.590
+C D or F into that variable.
+
+00:04:38.210 --> 00:04:40.740
+We can simply use a character
+variable that'll be fine.
+
+00:04:40.740 --> 00:04:43.930
+So I'm just going to say
+char letter grade,
+
+00:04:46.120 --> 00:04:48.880
+and we'll just initialize it to 0.
+
+00:04:49.860 --> 00:04:53.820
+Okay, so now first thing we need to
+do is we need to validate that score.
+
+00:04:53.840 --> 00:04:56.849
+We need to make sure that the
+score is between 0 and a 100.
+
+00:04:57.240 --> 00:04:58.930
+So we'll use a simple
+if statement here.
+
+00:04:58.980 --> 00:05:04.870
+So we'll say if the score is greater
+than or equal to 0, and the score
+
+00:05:06.059 --> 00:05:07.890
+is less than or equal to 100.
+
+00:05:09.720 --> 00:05:12.630
+I'll use a block here, we need
+to do the true part, right.
+
+00:05:12.630 --> 00:05:14.770
+This is where we need to
+calculate their grade.
+
+00:05:15.440 --> 00:05:20.960
+But if it's not, then right
+here we want to say else, and
+
+00:05:20.960 --> 00:05:22.280
+I'll do another block statement.
+
+00:05:22.280 --> 00:05:32.430
+And in this case, what we want
+to say is sorry, we'll say sorry,
+
+00:05:33.809 --> 00:05:36.320
+and we'll tell them that the
+number they entered
+
+00:05:38.800 --> 00:05:41.060
+is not in range, something real simple.
+
+00:05:43.490 --> 00:05:46.599
+When we learn about looping in a
+couple of videos from now, we'll be
+
+00:05:46.600 --> 00:05:48.050
+able to ask them to enter it again.
+
+00:05:48.440 --> 00:05:50.300
+But in this case, this will be fine.
+
+00:05:52.260 --> 00:05:53.910
+And let's test this.
+
+00:05:53.920 --> 00:05:58.219
+A lot of times when we test
+our code you see there's
+
+00:05:58.230 --> 00:05:59.399
+nothing in here right now.
+
+00:05:59.690 --> 00:06:04.500
+So we just do something like
+this, and we expect to see
+
+00:06:04.500 --> 00:06:07.980
+that output in the positive
+case, right, in the true case.
+
+00:06:08.430 --> 00:06:10.780
+We're going to write code in there
+to actually calculate the grade,
+
+00:06:10.780 --> 00:06:12.890
+but it's good to test as you go.
+
+00:06:13.570 --> 00:06:15.509
+Don't write all your code,
+all at once and then try
+
+00:06:15.509 --> 00:06:16.569
+to test it all at the end.
+
+00:06:16.570 --> 00:06:19.390
+Just test as you go, and
+you'll be much better off so.
+
+00:06:19.680 --> 00:06:21.200
+Let's try this. Let's run this.
+
+00:06:22.299 --> 00:06:24.370
+We got an error here, sorry.
+
+00:06:25.430 --> 00:06:27.030
+Num it's score.
+
+00:06:27.360 --> 00:06:27.900
+There we go.
+
+00:06:28.020 --> 00:06:31.589
+So there we go.
+
+00:06:31.670 --> 00:06:32.990
+Enter your score on the exam.
+
+00:06:33.509 --> 00:06:36.170
+Let's enter something valid, like 70.
+
+00:06:36.449 --> 00:06:38.130
+We should get the x's displayed.
+
+00:06:38.480 --> 00:06:39.090
+There they are.
+
+00:06:39.090 --> 00:06:39.970
+So we're good here.
+
+00:06:40.510 --> 00:06:44.180
+And let's run it one more
+time, and let's type in 120.
+
+00:06:44.920 --> 00:06:46.610
+Sorry, 120 is not in range.
+
+00:06:46.630 --> 00:06:50.839
+And let's try something
+like negative 1.
+
+00:06:50.839 --> 00:06:52.310
+Sorry, negative 1 is not in range.
+
+00:06:52.370 --> 00:06:54.710
+Cool. So our logic seems to be right.
+
+00:06:55.140 --> 00:06:59.460
+Now what we need to do is write
+the logic in this piece right here.
+
+00:06:59.460 --> 00:07:02.630
+That's actually
+calculating their grade.
+
+00:07:03.280 --> 00:07:06.310
+All right, so what we can do
+here is we can write the if
+
+00:07:06.639 --> 00:07:08.549
+else if else if type code.
+
+00:07:09.190 --> 00:07:12.400
+When I learned this stuff a long time
+ago that was called an if else ladder.
+
+00:07:12.860 --> 00:07:15.440
+I haven't heard that term in a long
+time but it makes kind of sense
+
+00:07:15.440 --> 00:07:16.950
+because it does look like a ladder.
+
+00:07:17.270 --> 00:07:19.230
+So what we'll do here is
+we'll say we'll use that same
+
+00:07:19.230 --> 00:07:21.465
+grading scale 90, 80, 70, 60.
+
+00:07:21.520 --> 00:07:26.390
+We'll say if the score is
+greater than 90 and I'm not
+
+00:07:26.390 --> 00:07:30.209
+going to use blocks here just to
+save some space on the screen.
+
+00:07:30.510 --> 00:07:35.440
+We'll save the letter grade,
+and we'll assign an a to it.
+
+00:07:35.440 --> 00:07:39.380
+Now notice that's a character so those
+are single quotes not double quotes.
+
+00:07:40.050 --> 00:07:45.919
+So we've got that then we'll say
+else, if score is greater than 80.
+
+00:07:48.230 --> 00:07:54.700
+We'll say that our grade
+is a B again single quotes,
+
+00:07:54.700 --> 00:07:56.090
+don't forget the semicolon.
+
+00:07:57.130 --> 00:08:02.339
+Else if you get the idea we're just
+walking right down that ladder.
+
+00:08:04.250 --> 00:08:10.289
+If it's greater than 70, then the
+letter grade in this case is a C.
+
+00:08:13.650 --> 00:08:14.430
+A couple more.
+
+00:08:15.710 --> 00:08:25.940
+Else if the score is greater than
+60, then the letter grade is a D.
+
+00:08:28.810 --> 00:08:31.979
+And finally, there's our
+catch-all else in which case
+
+00:08:31.980 --> 00:08:33.180
+their letter grade is an F.
+
+00:08:38.320 --> 00:08:39.650
+Okay, let's try that out.
+
+00:08:39.669 --> 00:08:41.909
+Let's run this, and we'll
+test it with a few numbers.
+
+00:08:44.279 --> 00:08:45.920
+And I said greater than 90.
+
+00:08:46.010 --> 00:08:48.840
+I probably should have said greater
+than or equal to 90 but it's all good.
+
+00:08:49.370 --> 00:08:50.090
+So we'll say 91.
+
+00:08:50.559 --> 00:08:51.560
+That's definitely an A.
+
+00:08:53.530 --> 00:08:55.709
+We never printed it
+out, so let's do that.
+
+00:08:57.089 --> 00:08:58.319
+This is why we test, right.
+
+00:08:58.559 --> 00:09:06.670
+Cout your grade is and we'll
+just display letter grade here,
+
+00:09:09.690 --> 00:09:10.870
+put an endline at the end.
+
+00:09:13.660 --> 00:09:17.329
+Okay, now remember, I'm going to
+put this here and fix that B to a C.
+
+00:09:18.430 --> 00:09:21.189
+This will execute no matter what.
+
+00:09:21.360 --> 00:09:22.990
+So this if statement will execute.
+
+00:09:23.070 --> 00:09:25.780
+One of those letters will be
+assigned, and then we display it here.
+
+00:09:26.579 --> 00:09:27.670
+All right, let's try that again.
+
+00:09:27.670 --> 00:09:30.880
+So in this case, we got a
+91, that should be an A.
+
+00:09:31.480 --> 00:09:32.439
+Your grade is an A.
+
+00:09:33.099 --> 00:09:34.729
+The 81 should be a B.
+
+00:09:36.330 --> 00:09:36.820
+It is.
+
+00:09:36.889 --> 00:09:41.630
+Let's do about a 50, which is
+definitely an F, and here we go.
+
+00:09:42.910 --> 00:09:46.520
+Okay, obviously, you would test this
+a little better, but for the sake
+
+00:09:46.520 --> 00:09:47.839
+of time, I'm not going to do that.
+
+00:09:48.300 --> 00:09:51.780
+The last thing we want to do is
+right here, we want to tell them
+
+00:09:51.920 --> 00:09:53.690
+did they pass or did they fail.
+
+00:09:54.369 --> 00:09:57.140
+Well, the only way you can
+fail in this example is if
+
+00:09:57.140 --> 00:09:58.470
+your letter grade is an F.
+
+00:09:59.150 --> 00:10:01.380
+So there's no sense in
+checking the score again.
+
+00:10:01.410 --> 00:10:02.910
+We've already got the letter grade.
+
+00:10:02.970 --> 00:10:09.950
+So I'm simply going to say if the
+letter grade is equal to an F.
+
+00:10:09.950 --> 00:10:12.600
+Remember, double equal sign
+not a single equal sign.
+
+00:10:13.150 --> 00:10:22.159
+If that's the case, cout sorry,
+you must repeat this class.
+
+00:10:28.059 --> 00:10:30.660
+Okay, otherwise, you passed.
+
+00:10:39.440 --> 00:10:39.930
+Congrats.
+
+00:10:39.950 --> 00:10:42.570
+That's a passing grade or whatever
+you want to enter in here.
+
+00:10:44.330 --> 00:10:46.359
+All right, so that should
+do it let's go through this
+
+00:10:46.359 --> 00:10:47.480
+real quick one more time.
+
+00:10:47.510 --> 00:10:49.000
+We've got their score here.
+
+00:10:49.290 --> 00:10:51.319
+We're prompting for the
+score, we're reading it in.
+
+00:10:52.350 --> 00:10:55.770
+If the score is within
+range, we do the calculation.
+
+00:10:55.770 --> 00:10:59.030
+If it's not within range, we're
+down here, and we're out right away.
+
+00:10:59.030 --> 00:11:00.570
+Sorry, the score's out of range.
+
+00:11:01.009 --> 00:11:02.390
+Let me clean that up a little bit.
+
+00:11:03.009 --> 00:11:05.150
+If the score is within
+range, then we're going to
+
+00:11:05.150 --> 00:11:06.600
+use this if else ladder.
+
+00:11:06.960 --> 00:11:08.840
+And if it's greater
+than 90, it's an A.
+
+00:11:08.860 --> 00:11:10.000
+Greater than 8 is a B we're.
+
+00:11:10.000 --> 00:11:11.430
+Going to walk all the way down.
+
+00:11:11.460 --> 00:11:15.709
+You know what let me put equal
+signs here because it's bugging me.
+
+00:11:20.549 --> 00:11:22.720
+That way it matches the
+slides that I gave you.
+
+00:11:22.920 --> 00:11:24.150
+Okay, so that's a little better.
+
+00:11:24.250 --> 00:11:26.460
+So now if it's greater than
+equal to 90, you get the A
+
+00:11:26.460 --> 00:11:27.510
+and all the way through the F.
+
+00:11:27.560 --> 00:11:30.209
+Then when we're here your
+grade is your letter grade.
+
+00:11:30.220 --> 00:11:33.730
+And then we check to see if an F is
+just an F, you must repeat the class.
+
+00:11:33.950 --> 00:11:36.990
+Okay, let's run this now with
+a couple of uh test cases.
+
+00:11:37.630 --> 00:11:39.400
+Suppose you got your 90 now.
+
+00:11:39.400 --> 00:11:41.699
+It should be an A because we have
+the greater than or equal to.
+
+00:11:42.180 --> 00:11:43.510
+Your grade is an A, congrats.
+
+00:11:44.580 --> 00:11:50.760
+If your grade is a 59, your
+grade is an f, sorry you
+
+00:11:50.760 --> 00:11:51.930
+must repeat this class.
+
+00:11:52.240 --> 00:11:53.059
+Okay, so there you go.
+
+00:11:53.059 --> 00:11:57.059
+That's a simple example of
+using the if else if and the
+
+00:11:57.059 --> 00:11:58.550
+if else statements together.
+
+00:11:59.690 --> 00:12:05.170
+On the next example, we're going
+to open up the shipping project
+
+00:12:05.330 --> 00:12:07.450
+in the section 9 workspace.
+
+00:12:11.790 --> 00:12:16.349
+So we're in the shipping project
+of the section 9 workspace.
+
+00:12:17.170 --> 00:12:20.080
+And I've gone ahead and started
+this little example, just
+
+00:12:20.080 --> 00:12:21.300
+so we'll save a little time.
+
+00:12:21.770 --> 00:12:23.340
+And what we're doing
+here is, we're doing.
+
+00:12:23.350 --> 00:12:25.579
+We're using a shipping
+cost calculator.
+
+00:12:26.000 --> 00:12:29.509
+We're going to ask the user for
+the package dimension in inches
+
+00:12:29.809 --> 00:12:32.450
+and the package dimensions would
+be length, width and height.
+
+00:12:32.960 --> 00:12:34.400
+And they're all integers.
+
+00:12:34.609 --> 00:12:38.400
+The dimension must be 10 inches
+or less for each dimension.
+
+00:12:38.410 --> 00:12:39.750
+Otherwise, we can't ship it.
+
+00:12:40.600 --> 00:12:43.380
+The base cost for shipping
+is two dollars and 50 cents.
+
+00:12:43.810 --> 00:12:47.270
+And if the package volume is
+greater than 100 cubic inches,
+
+00:12:47.300 --> 00:12:49.060
+there's a 10% surcharge.
+
+00:12:49.429 --> 00:12:52.319
+If the package volume is
+greater than 500 cubic inches,
+
+00:12:52.580 --> 00:12:54.729
+there's a 25% surcharge.
+
+00:12:55.090 --> 00:12:58.800
+Okay, so I started this already,
+and I've got some variables set up.
+
+00:12:58.800 --> 00:13:00.420
+And let me talk about
+them really quickly.
+
+00:13:00.420 --> 00:13:02.769
+We've got obviously, we need the
+length the width and the height.
+
+00:13:03.090 --> 00:13:04.900
+That's what the user
+is going to enter.
+
+00:13:05.759 --> 00:13:09.349
+And we've got the base cost
+which is a double at $2.50.
+
+00:13:09.349 --> 00:13:10.549
+So I've initialized that.
+
+00:13:11.160 --> 00:13:13.860
+Then we've got a couple
+of other constants here.
+
+00:13:14.220 --> 00:13:15.939
+One, the tier one threshold.
+
+00:13:15.950 --> 00:13:16.940
+That's the volume.
+
+00:13:17.110 --> 00:13:21.550
+So again, if you exceed 100
+cubic inches, that kicks in.
+
+00:13:21.960 --> 00:13:25.349
+And we've got the tier 2
+threshold to be 500 cubic inches.
+
+00:13:25.360 --> 00:13:27.089
+So I've defined those as constants.
+
+00:13:27.860 --> 00:13:30.809
+The maximum dimension for
+any length is 10 inches.
+
+00:13:31.760 --> 00:13:34.190
+And I've got the tier
+1 surcharge at 10%.
+
+00:13:34.190 --> 00:13:37.170
+And the tier 2 surcharge at 25%.
+
+00:13:37.570 --> 00:13:38.699
+So that's pretty much it.
+
+00:13:38.700 --> 00:13:41.360
+I've got all these constants
+and variables declared
+
+00:13:41.550 --> 00:13:42.650
+so that I can use them.
+
+00:13:43.410 --> 00:13:46.770
+All right, I also have another integer
+here called the package volume,
+
+00:13:46.770 --> 00:13:48.430
+which obviously we need to calculate.
+
+00:13:48.770 --> 00:13:50.810
+So this is where we're at.
+
+00:13:50.940 --> 00:13:53.300
+Hello, welcome to the
+package cost calculator.
+
+00:13:53.340 --> 00:13:57.370
+Enter the length, width and height of
+the package separated by spaces, and
+
+00:13:57.370 --> 00:14:02.189
+we've just read the length, the width
+and the height into these variables.
+
+00:14:03.349 --> 00:14:07.210
+Now we need to do our logic for
+the calculation of the package.
+
+00:14:07.500 --> 00:14:10.209
+First thing we should do
+is, let's make sure that
+
+00:14:10.210 --> 00:14:11.690
+the package is valid, right.
+
+00:14:11.690 --> 00:14:13.290
+Otherwise, there's nothing to do.
+
+00:14:13.610 --> 00:14:19.820
+So what we can do here is we can
+say if the length of the package is
+
+00:14:20.650 --> 00:14:28.570
+greater than the maximum dimensions,
+right, the max dimension length,
+
+00:14:28.620 --> 00:14:36.880
+which is 10 for everything or
+the width is greater than the
+
+00:14:36.880 --> 00:14:44.839
+max dimension or the height is
+greater than max dimension, right.
+
+00:14:44.840 --> 00:14:49.410
+If any one of those is greater
+than the maximum allowed
+
+00:14:49.440 --> 00:14:53.129
+dimension for any one side,
+we really have nothing to do.
+
+00:14:53.139 --> 00:14:53.940
+We're done.
+
+00:14:53.960 --> 00:14:57.660
+So in this case, what we want to
+do here is we want to say cout
+
+00:14:59.139 --> 00:15:03.120
+sorry package rejected or something like that,
+
+00:15:04.920 --> 00:15:08.920
+dimensions exceeded.
+
+00:15:12.500 --> 00:15:15.300
+Okay? Or some message that tells
+them what's going on.
+
+00:15:17.869 --> 00:15:20.030
+Okay, so that takes care of that.
+
+00:15:20.590 --> 00:15:22.520
+Now here's the else part, right.
+
+00:15:22.530 --> 00:15:25.319
+And we may as well put this in a
+block because we never know when
+
+00:15:25.320 --> 00:15:26.420
+you're going to add code to this.
+
+00:15:26.420 --> 00:15:29.660
+So I'll put a curly
+here and a curly here.
+
+00:15:30.309 --> 00:15:33.450
+Now I can add code in there easily.
+
+00:15:33.870 --> 00:15:35.500
+So that's my if part.
+
+00:15:35.500 --> 00:15:37.600
+This is when the package
+has been rejected.
+
+00:15:37.990 --> 00:15:43.120
+The else part is now where we're
+going to do all our calculations.
+
+00:15:43.120 --> 00:15:48.430
+So again, I'm going to do cout and do
+a quick test to make sure that we're
+
+00:15:48.430 --> 00:15:50.580
+compiling and everything looks good.
+
+00:15:50.960 --> 00:15:52.840
+So I'm going to run this.
+
+00:15:54.299 --> 00:15:56.610
+And I'm running the old
+project, let me double click on
+
+00:15:56.610 --> 00:15:58.830
+shipping, and let's try that.
+
+00:16:01.050 --> 00:16:02.080
+Enter the length, width.
+
+00:16:02.160 --> 00:16:04.320
+Okay, so let's say
+I'm exceeding, right.
+
+00:16:04.320 --> 00:16:09.609
+So I'm going to say
+12, 8 and 12, 5 and 3.
+
+00:16:09.610 --> 00:16:10.939
+So the 12 should be over.
+
+00:16:11.280 --> 00:16:13.670
+Sorry package rejected,
+dimension exceeded.
+
+00:16:13.680 --> 00:16:14.290
+That's good.
+
+00:16:14.810 --> 00:16:17.020
+We could do test cases for
+all three of them, right.
+
+00:16:17.020 --> 00:16:18.840
+I'm not going to just
+to save a little time.
+
+00:16:19.330 --> 00:16:22.760
+And in this case, 6,
+7 and 8, that's valid.
+
+00:16:23.110 --> 00:16:26.209
+And we print out the three x's, and
+we're ready to do our calculation.
+
+00:16:26.620 --> 00:16:31.550
+Okay, so let me get rid of that
+statement that I just did and that
+
+00:16:31.550 --> 00:16:32.950
+hello world down here at the bottom.
+
+00:16:33.550 --> 00:16:37.020
+All right, so now in here, what
+we need to do is our calculations.
+
+00:16:37.210 --> 00:16:41.080
+So we need to know what
+the package cost is, right.
+
+00:16:41.080 --> 00:16:42.410
+So we need to have a double in here.
+
+00:16:42.410 --> 00:16:44.839
+We can do that right inside
+the block because the only time
+
+00:16:44.839 --> 00:16:47.910
+we're going to use it is if we're
+going to do some calculation.
+
+00:16:48.199 --> 00:16:53.005
+So in this case, I could just
+say package cost and I can
+
+00:16:53.060 --> 00:16:54.750
+just initialize that to 0.
+
+00:16:56.950 --> 00:16:58.769
+And how about the package volume.
+
+00:16:58.840 --> 00:17:00.680
+Again, I could have defined
+that in here as well but
+
+00:17:00.680 --> 00:17:02.020
+it's already defined outside.
+
+00:17:02.450 --> 00:17:08.910
+The package volume is the
+length * the width * the height.
+
+00:17:10.990 --> 00:17:14.790
+Okay, so now we've got our package
+volume here is being calculated as
+
+00:17:14.809 --> 00:17:16.640
+the product of those three dimensions.
+
+00:17:18.589 --> 00:17:24.079
+And we may as well say that
+the package cost is the
+
+00:17:24.079 --> 00:17:25.390
+base cost, right, right now.
+
+00:17:25.390 --> 00:17:26.820
+We could start with that.
+
+00:17:26.839 --> 00:17:31.250
+It's always going to be $2.50
+plus perhaps some surcharge.
+
+00:17:32.250 --> 00:17:33.370
+Okay, so that's where we're at.
+
+00:17:33.370 --> 00:17:34.260
+So far so good.
+
+00:17:34.830 --> 00:17:37.230
+Now we need to do these
+checks for the package volume
+
+00:17:37.230 --> 00:17:38.590
+exceeding those thresholds.
+
+00:17:38.910 --> 00:17:42.080
+What we want to do first is,
+we want to check the the tier 2
+
+00:17:42.080 --> 00:17:43.699
+threshold because it's the highest.
+
+00:17:43.980 --> 00:17:49.720
+So what we want to do here is we
+want to say if the package volume is
+
+00:17:49.720 --> 00:17:52.500
+greater than the tier 2 threshold.
+
+00:17:54.210 --> 00:18:03.490
+If that's the case, then the
+package cost plus equals, we're
+
+00:18:03.490 --> 00:18:10.580
+incrementing that by the package
+cost * the tier 2 surcharge.
+
+00:18:13.030 --> 00:18:15.910
+Remember, we're incrementing the
+left-hand side by the right-hand side.
+
+00:18:16.270 --> 00:18:18.749
+And we could put a
+debug statement in here.
+
+00:18:18.780 --> 00:18:25.210
+Again, it's very common to do that,
+just saying adding tier 2 surcharge.
+
+00:18:25.210 --> 00:18:27.710
+We can get rid of these
+when we ship the code.
+
+00:18:27.710 --> 00:18:30.410
+But it's nice to have them in here.
+
+00:18:30.410 --> 00:18:32.240
+Soon I'll teach you how
+to use a debugger,
+
+00:18:32.240 --> 00:18:34.000
+which makes this even easier.
+
+00:18:34.680 --> 00:18:37.900
+Okay, so if this is not the
+case, then we can say else if.
+
+00:18:40.770 --> 00:18:46.300
+The package volume exceeds
+the tier 1 threshold.
+
+00:18:50.980 --> 00:18:54.879
+And if that's the case, we
+can basically just copy this.
+
+00:18:57.500 --> 00:18:58.540
+And I'll paste it in here.
+
+00:18:59.500 --> 00:19:03.729
+In this case, the package cost is the
+plus equals package cost * the tier
+
+00:19:03.729 --> 00:19:08.500
+1 surcharge, and we can just change
+that statement right here to do that.
+
+00:19:10.719 --> 00:19:12.499
+Okay, so we're really done.
+
+00:19:12.809 --> 00:19:17.410
+What we need to do now is say
+cout the volume, we'll give
+
+00:19:17.410 --> 00:19:18.760
+the user some information.
+
+00:19:20.670 --> 00:19:27.989
+The volume of your package
+is and we'll display the
+
+00:19:27.990 --> 00:19:29.839
+volume, package volume.
+
+00:19:29.849 --> 00:19:35.290
+We have an endline here.
+
+00:19:36.030 --> 00:19:37.940
+And then we'll just tell them
+how much it's going to cost
+
+00:19:38.139 --> 00:19:39.330
+that's really what they want.
+
+00:19:42.440 --> 00:19:46.969
+Your package will cost,
+we'll put a dollar sign here.
+
+00:19:50.959 --> 00:19:52.990
+And I believe it was package cost.
+
+00:19:53.130 --> 00:20:02.029
+There it is, to ship
+and that should do it.
+
+00:20:02.070 --> 00:20:05.190
+Let me clean up some of this
+white space, and we'll run this.
+
+00:20:05.190 --> 00:20:08.189
+And then we'll do one more
+little thing before we go.
+
+00:20:08.879 --> 00:20:12.380
+And let's see tier one
+surcharge I spelled it wrong.
+
+00:20:12.380 --> 00:20:14.580
+I should need an
+underscore right there.
+
+00:20:17.380 --> 00:20:20.610
+And that way you can see
+some of these errors. Perfect.
+
+00:20:20.610 --> 00:20:23.210
+So let's say 5 5 and 5.
+
+00:20:24.410 --> 00:20:28.610
+I'm adding a tier 1 surcharge because
+the volume is greater than 100.
+
+00:20:28.610 --> 00:20:30.020
+You can see here's 125.
+
+00:20:30.020 --> 00:20:32.750
+So the package will cost 275 to ship.
+
+00:20:33.450 --> 00:20:35.670
+Let's make it a little
+bit bigger the package.
+
+00:20:36.320 --> 00:20:38.984
+Let's say it's 8 x 8 x 8.
+
+00:20:39.360 --> 00:20:41.869
+In this case, I'm adding
+a tier 2 surcharge.
+
+00:20:42.570 --> 00:20:44.659
+The package volume is 512.
+
+00:20:45.190 --> 00:20:48.419
+And it's gonna cost $3.12 to ship.
+
+00:20:49.440 --> 00:20:52.690
+Okay, Now you'll notice
+this 3.125 displays.
+
+00:20:52.990 --> 00:20:56.200
+I'll show you how to set that a
+little bit later in the course.
+
+00:20:56.280 --> 00:20:58.510
+But for now, I'll just show you
+how to do it really quickly.
+
+00:20:58.559 --> 00:21:06.330
+If you come up to the includes
+and you include io manip, that's
+
+00:21:06.370 --> 00:21:08.240
+the input output manipulators.
+
+00:21:09.320 --> 00:21:13.950
+And then right before you start
+printing the dollar amounts or
+
+00:21:13.950 --> 00:21:16.670
+actually anyway you can put this
+anywhere you could just say cout
+
+00:21:17.309 --> 00:21:25.030
+fixed followed by set precision
+to two decimals after the package.
+
+00:21:25.250 --> 00:21:32.029
+This is that just prints
+dollars nicely so.
+
+00:21:32.030 --> 00:21:32.920
+If we run this.
+
+00:21:33.969 --> 00:21:38.170
+Again, let's try that
+again, we'll do 8, 7 and 9.
+
+00:21:38.750 --> 00:21:41.700
+You can see it prints
+it out nicely, $3.12.
+
+00:21:41.860 --> 00:21:44.620
+And again, I'll talk about those
+manipulators a little bit later on.
+
+00:21:44.620 --> 00:21:47.059
+It just helps us look at
+our code a little nicer.
+
+00:21:47.809 --> 00:21:48.740
+All right, so there you go.
+
+00:21:48.740 --> 00:21:51.750
+There's some logic for
+shipping this package.
+
+00:21:51.750 --> 00:21:53.150
+We've got an if else statement.
+
+00:21:53.150 --> 00:21:55.580
+We've got an if else if statement.
+
+00:21:56.790 --> 00:21:58.490
+And hopefully, this logic makes sense.
+
+00:21:58.520 --> 00:22:02.010
+Again, build these programs, one
+step at a time testing as you go.

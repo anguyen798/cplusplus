@@ -1,0 +1,1024 @@
+WEBVTT
+
+00:00:05.460 --> 00:00:06.710
+Hello, welcome back.
+
+00:00:06.750 --> 00:00:09.519
+I hope you enjoyed the challenge
+and I hope it was successful.
+
+00:00:10.420 --> 00:00:13.170
+In this video, I'd like to
+go over that challenge and
+
+00:00:13.179 --> 00:00:14.560
+give you one solution to it.
+
+00:00:14.860 --> 00:00:19.299
+So I'm in the section 9 workspace
+in the challenge solution project.
+
+00:00:20.259 --> 00:00:22.610
+In your case, you're going to have
+this solution already, but we'll
+
+00:00:22.610 --> 00:00:23.820
+work through it together here.
+
+00:00:24.380 --> 00:00:25.550
+So let's say where are we.
+
+00:00:25.800 --> 00:00:28.330
+Well, we need some
+sort of data structure.
+
+00:00:28.349 --> 00:00:31.960
+We need a list, we need a collection
+that the user can type integers
+
+00:00:31.980 --> 00:00:33.300
+and we can store it into, right.
+
+00:00:33.530 --> 00:00:35.140
+So in this case, we're
+going to use a vector.
+
+00:00:35.140 --> 00:00:36.930
+It's the only one we know
+right now, and it's a really
+
+00:00:36.930 --> 00:00:38.470
+easy and logical one to use.
+
+00:00:38.650 --> 00:00:41.460
+So in order to use a vector,
+we need to include vector.
+
+00:00:42.130 --> 00:00:43.340
+So I'll do that right now.
+
+00:00:44.340 --> 00:00:47.729
+And obviously, we need to declare
+a vector that's going to hold
+
+00:00:47.730 --> 00:00:51.230
+the numbers and we also need to
+declare a character that's where
+
+00:00:51.230 --> 00:00:53.450
+we're going to store whatever
+they typed on the keyboard.
+
+00:00:53.680 --> 00:00:56.120
+So let's declare those
+2 variables right now.
+
+00:00:56.780 --> 00:00:58.860
+We could call this
+vector whatever we like.
+
+00:00:58.920 --> 00:01:00.310
+I'll just call it vector.
+
+00:01:00.550 --> 00:01:02.180
+Remember, it's a vector of integers.
+
+00:01:02.250 --> 00:01:03.550
+And I'll call it numbers.
+
+00:01:04.120 --> 00:01:05.820
+We could call it data. You could call it whatever you like.
+
+00:01:05.830 --> 00:01:07.410
+And I'm initializing it to empty.
+
+00:01:07.410 --> 00:01:10.229
+And then I've got a character,
+which I'll call selection.
+
+00:01:10.889 --> 00:01:12.720
+And I'll also initialize
+that to empty.
+
+00:01:12.850 --> 00:01:14.470
+What we're going to do is
+we're going to read the user's
+
+00:01:14.470 --> 00:01:16.120
+choice into that variable.
+
+00:01:16.820 --> 00:01:19.190
+Okay, so where are we now.
+
+00:01:19.330 --> 00:01:20.690
+Remember, what we're going
+to do is we're going to
+
+00:01:20.690 --> 00:01:22.450
+display the menu to the user.
+
+00:01:22.590 --> 00:01:26.160
+We're going to ask them for a choice,
+depending on what they choose.
+
+00:01:26.170 --> 00:01:27.379
+We'll do something or other.
+
+00:01:27.839 --> 00:01:30.780
+And then at the end of this do
+loop, we want to keep looping
+
+00:01:30.789 --> 00:01:33.910
+while they haven't pressed q, right
+either uppercase or lowercase.
+
+00:01:34.270 --> 00:01:35.780
+So let's write that logic first.
+
+00:01:35.790 --> 00:01:37.070
+Let's start with baby steps.
+
+00:01:37.450 --> 00:01:43.920
+Here's the do loop, and
+then we want to do while the
+
+00:01:43.929 --> 00:01:47.649
+selection is not equal to.
+
+00:01:47.980 --> 00:01:50.289
+Remember, in this case, they
+can type in an upper case
+
+00:01:50.300 --> 00:01:51.540
+or a lowercase q, right.
+
+00:01:51.770 --> 00:01:53.970
+So while it's not
+equal to a lowercase q.
+
+00:01:54.430 --> 00:01:57.410
+And again, those are characters,
+so make sure they're single quotes
+
+00:01:57.410 --> 00:02:03.219
+not double quotes and the selection
+is not equal to an uppercase q.
+
+00:02:04.090 --> 00:02:06.950
+There's a semicolon here at the
+end of this while loop right
+
+00:02:06.990 --> 00:02:08.400
+there, this do while loop.
+
+00:02:09.180 --> 00:02:10.750
+That should take care of our logic.
+
+00:02:10.780 --> 00:02:13.589
+Now what we want to do in
+here is we want to display
+
+00:02:13.590 --> 00:02:15.690
+that menu right, right away.
+
+00:02:15.690 --> 00:02:17.829
+That's the first thing we
+want to do unconditionally.
+
+00:02:18.860 --> 00:02:22.169
+So what I'm going to do is I'm
+going to copy and paste my menu
+
+00:02:22.170 --> 00:02:24.779
+code right here which is just
+a bunch of output statements.
+
+00:02:25.779 --> 00:02:27.390
+And we're reading the selection.
+
+00:02:27.410 --> 00:02:29.000
+So we can test this right now.
+
+00:02:29.320 --> 00:02:31.980
+We're going to display print a
+number, add a number, all the menu
+
+00:02:31.980 --> 00:02:33.470
+choices that you saw in the demo.
+
+00:02:34.090 --> 00:02:36.670
+And then we're going to ask them to
+enter a choice, and we're going to
+
+00:02:36.670 --> 00:02:40.210
+read that choice into selection, which
+is that character variable right here.
+
+00:02:40.680 --> 00:02:41.900
+So what do I expect here.
+
+00:02:42.190 --> 00:02:45.549
+Well, I expect that if the
+user types lower or uppercase
+
+00:02:45.560 --> 00:02:47.160
+q, the program will end.
+
+00:02:47.400 --> 00:02:50.870
+If they type anything else, we
+should display the menu again
+
+00:02:50.870 --> 00:02:54.250
+and again and again, asking for
+enter another choice, right.
+
+00:02:54.250 --> 00:02:55.089
+So let's try that.
+
+00:02:55.429 --> 00:02:56.590
+We'll build and run.
+
+00:02:57.910 --> 00:03:00.169
+And there's the menu, print
+numbers, add a number,
+
+00:03:00.180 --> 00:03:01.560
+display number and so forth.
+
+00:03:01.760 --> 00:03:05.260
+So let's say we enter p,
+we get the menu again.
+
+00:03:05.270 --> 00:03:07.290
+Uppercase p same thing.
+
+00:03:07.620 --> 00:03:11.600
+A 1, a 3, a 5, it
+doesn't matter, anything.
+
+00:03:12.099 --> 00:03:15.579
+Now what we're really interested in
+is we want the program to quit when
+
+00:03:15.580 --> 00:03:17.590
+I press both qs, upper and lower.
+
+00:03:17.820 --> 00:03:21.210
+So I'm going to press
+lowercase q, program stops.
+
+00:03:21.240 --> 00:03:21.880
+Perfect.
+
+00:03:21.970 --> 00:03:27.220
+I'm going to test this again with
+an uppercase q, program stops again.
+
+00:03:27.330 --> 00:03:27.850
+Perfect.
+
+00:03:28.170 --> 00:03:30.700
+Make sure you test both of
+them because a lot of times.
+
+00:03:30.980 --> 00:03:32.469
+I've seen typos like this.
+
+00:03:33.509 --> 00:03:36.660
+And the little test with a lowercase
+q, and it quits correctly but
+
+00:03:36.660 --> 00:03:37.989
+then the uppercase q doesn't work.
+
+00:03:38.170 --> 00:03:40.650
+So make sure that you test
+everything really well.
+
+00:03:41.860 --> 00:03:43.730
+Now this is where we're at right here.
+
+00:03:43.850 --> 00:03:47.230
+We know the user has
+selected something, right.
+
+00:03:47.290 --> 00:03:48.459
+So what do we need here.
+
+00:03:48.540 --> 00:03:50.170
+Well, we need some selection logic.
+
+00:03:50.190 --> 00:03:53.789
+We need to say well if you picked
+p, I want to do some stuff.
+
+00:03:54.059 --> 00:03:56.030
+If you picked a, I want
+to do something else.
+
+00:03:56.330 --> 00:03:57.220
+We have a choice.
+
+00:03:57.920 --> 00:04:02.130
+We could use a switch statement
+really easily because these are
+
+00:04:02.130 --> 00:04:03.460
+going to be character literals.
+
+00:04:03.630 --> 00:04:05.180
+This is a character so.
+
+00:04:05.180 --> 00:04:08.849
+I could do a switch off of
+selection and they say case p, p
+
+00:04:08.870 --> 00:04:12.989
+cast case a, a case m and m and by
+that i mean uppercase lowercase.
+
+00:04:13.810 --> 00:04:14.609
+And that'll be fine.
+
+00:04:15.060 --> 00:04:17.909
+What I'm going to do is I'm
+going to use an if else if ladder
+
+00:04:18.120 --> 00:04:21.469
+because it's usually what you'll
+see out there in this kind of
+
+00:04:21.469 --> 00:04:23.420
+example over the case statement.
+
+00:04:23.730 --> 00:04:25.810
+Okay, so let's try that.
+
+00:04:25.910 --> 00:04:27.760
+First thing, let's
+deal with the print.
+
+00:04:28.279 --> 00:04:30.600
+So we've got the selection here.
+
+00:04:30.970 --> 00:04:37.460
+So here I want to say if the
+selection is equal to, let's say,
+
+00:04:37.460 --> 00:04:43.880
+an uppercase p or the selection
+is equal to a lowercase p.
+
+00:04:46.379 --> 00:04:49.230
+And I'm going to do a block
+statement here because I'm going
+
+00:04:49.230 --> 00:04:50.490
+to write some extra code here.
+
+00:04:51.200 --> 00:04:52.419
+So that's where we're at.
+
+00:04:52.420 --> 00:04:55.640
+If the user typed the p whether
+it's upper or lower case we're going
+
+00:04:55.640 --> 00:04:57.179
+to execute this code right here.
+
+00:04:57.610 --> 00:05:00.880
+What does this code say, print
+all the numbers in the list.
+
+00:05:00.929 --> 00:05:02.900
+What's my list numbers right here.
+
+00:05:03.620 --> 00:05:07.099
+What's the best way to do that
+range based for loop, no question.
+
+00:05:07.110 --> 00:05:08.060
+Really, really easy.
+
+00:05:09.080 --> 00:05:11.010
+There's one thing we need
+to take care of though.
+
+00:05:11.220 --> 00:05:15.819
+If that list is empty, we need
+to tell the user list is empty.
+
+00:05:16.520 --> 00:05:19.170
+We can do that now or we can
+do it in an else statement.
+
+00:05:19.210 --> 00:05:21.240
+I'm going to do it right
+now so I'm going to say
+
+00:05:21.540 --> 00:05:22.779
+remember indent right here.
+
+00:05:22.809 --> 00:05:28.640
+I'm going to say if numbers
+is the vector.size is the
+
+00:05:28.640 --> 00:05:30.219
+method that returns the size.
+
+00:05:30.880 --> 00:05:35.729
+If that returns a 0, what's going
+on, the list is empty, right.
+
+00:05:35.740 --> 00:05:37.080
+So I'm just going to say cout.
+
+00:05:37.340 --> 00:05:41.470
+And again, indent under
+the if cout, the 2 square
+
+00:05:41.470 --> 00:05:42.740
+brackets with nothing in it.
+
+00:05:42.990 --> 00:05:45.370
+And then I'll just say list is empty.
+
+00:05:46.810 --> 00:05:51.490
+That's it, endline and
+that's the if part.
+
+00:05:51.940 --> 00:05:53.640
+Now what about the else part.
+
+00:05:53.700 --> 00:05:55.970
+The else part's going to have a
+few more statements than this.
+
+00:05:55.980 --> 00:05:59.479
+So I'm just going to say else and
+then again a block statement here.
+
+00:06:00.630 --> 00:06:05.530
+I could have said if numbers.size
+is not equal to 0, and then put
+
+00:06:05.530 --> 00:06:09.300
+this code up here and then the l
+sort of in the empty part, both
+
+00:06:09.300 --> 00:06:13.219
+ways are absolutely perfectly
+logical, and they're both correct
+
+00:06:14.080 --> 00:06:15.530
+But in this case right now I'm here.
+
+00:06:15.530 --> 00:06:20.365
+So when am I in here I'm in here when
+the the size is not equal to 0, right.
+
+00:06:20.490 --> 00:06:23.180
+In other words, there
+is stuff in that vector.
+
+00:06:23.530 --> 00:06:25.280
+So what I want to do
+now is print it out.
+
+00:06:25.280 --> 00:06:27.579
+I want to print it out on a
+nice way with those brackets.
+
+00:06:27.580 --> 00:06:32.319
+So I'm just going to say cout and
+I'm going to print out that left
+
+00:06:32.320 --> 00:06:36.849
+bracket followed by a space, no
+end line because I want to print
+
+00:06:36.859 --> 00:06:37.930
+the numbers right next to it.
+
+00:06:38.270 --> 00:06:42.080
+And then I want to close
+it off with an end bracket.
+
+00:06:44.099 --> 00:06:46.709
+Now what I want to do here in
+the middle is print out those
+
+00:06:46.710 --> 00:06:49.340
+numbers, one after the other
+with a space between them.
+
+00:06:49.809 --> 00:06:53.220
+How do I do that, what's the best way
+to do that a range based for loop.
+
+00:06:53.340 --> 00:06:58.620
+So let's do that for auto,
+I'll call the variable num,
+
+00:06:59.340 --> 00:07:00.900
+and the collection is numbers.
+
+00:07:04.429 --> 00:07:06.880
+And what do I do for each
+one of those, display it.
+
+00:07:07.480 --> 00:07:11.849
+Cout num followed by a space.
+
+00:07:16.169 --> 00:07:16.990
+That should do it.
+
+00:07:17.660 --> 00:07:22.949
+Okay, now right here, I definitely
+want to do an endline that
+
+00:07:22.950 --> 00:07:24.349
+will take me to the next line.
+
+00:07:24.610 --> 00:07:27.280
+Now let me clean this up so we can
+see the structure a little better.
+
+00:07:28.440 --> 00:07:30.980
+And I'll get rid of
+this space as well.
+
+00:07:31.320 --> 00:07:32.410
+So look what's going on here.
+
+00:07:32.410 --> 00:07:33.600
+We entered a selection.
+
+00:07:34.120 --> 00:07:37.969
+The selection is p so the user wants
+to print out all those elements.
+
+00:07:38.490 --> 00:07:42.809
+We know that there is either nothing
+in the list in which case we do this.
+
+00:07:43.349 --> 00:07:45.399
+Otherwise, we print out all
+the numbers in the list.
+
+00:07:45.429 --> 00:07:48.190
+Right now the list is empty the first
+time I do this because I haven't
+
+00:07:48.190 --> 00:07:49.520
+been able to add anything right.
+
+00:07:49.770 --> 00:07:55.180
+So we'll run it, and, when I select
+p, it should say list is empty.
+
+00:07:56.010 --> 00:07:56.599
+There it is.
+
+00:07:56.660 --> 00:07:59.099
+The list is empty then I get the
+menu again, that's important.
+
+00:07:59.340 --> 00:08:00.079
+I'm going to quit.
+
+00:08:01.290 --> 00:08:04.280
+Now let's test this with a list that's
+not empty what we'll do is we'll
+
+00:08:04.280 --> 00:08:09.440
+just come right up here and just put
+some stuff in there, 1 2 3 4, right.
+
+00:08:09.710 --> 00:08:11.270
+The list is definitely not empty now.
+
+00:08:11.270 --> 00:08:17.229
+So we'll run this and we
+expect to get 1 2 3 4 right
+
+00:08:17.229 --> 00:08:18.570
+in the brackets, perfect.
+
+00:08:18.580 --> 00:08:20.740
+So looks like our print is done.
+
+00:08:21.330 --> 00:08:25.590
+I'll quit, and we'll
+move on to the next one.
+
+00:08:25.920 --> 00:08:26.720
+Now we're here.
+
+00:08:28.400 --> 00:08:29.469
+It wasn't p.
+
+00:08:29.790 --> 00:08:31.440
+Let's assume that it wasn't p, right.
+
+00:08:31.700 --> 00:08:35.099
+So what we'll do is we'll
+create the else if ladder here.
+
+00:08:35.110 --> 00:08:45.840
+So I'll say else if the selection
+is an a uppercase or the
+
+00:08:45.850 --> 00:08:53.129
+selection is a lowercase a, then
+we want to worry about adding
+
+00:08:53.130 --> 00:08:54.540
+something to the list, right.
+
+00:08:54.540 --> 00:08:56.350
+So I've got my block statement here.
+
+00:08:57.130 --> 00:08:58.120
+So what do I do here.
+
+00:08:58.120 --> 00:09:02.520
+Well, I need to ask the user to enter
+a number and then add it to my vector.
+
+00:09:03.440 --> 00:09:05.130
+So I need a variable, int.
+
+00:09:05.250 --> 00:09:06.720
+Let's call it num to add.
+
+00:09:07.920 --> 00:09:09.960
+That's what we're going
+to read the number into.
+
+00:09:10.530 --> 00:09:16.470
+We'll initialize it to 0, and we'll
+say we'll output to the user enter
+
+00:09:16.470 --> 00:09:19.380
+an integer to add to the list.
+
+00:09:20.810 --> 00:09:21.850
+Something like that.
+
+00:09:24.210 --> 00:09:27.560
+And what we'll do is we'll
+read it into num to add.
+
+00:09:29.340 --> 00:09:31.370
+So now we've got the
+number that we want to add.
+
+00:09:31.400 --> 00:09:34.380
+What do we want to add it
+to, the vector numbers.
+
+00:09:34.719 --> 00:09:40.570
+How do you do that,
+numbers.pushback, right.
+
+00:09:40.570 --> 00:09:42.800
+We're going to push it to the back
+of the vector,
+
+00:09:42.800 --> 00:09:45.570
+and we're going to push num to add, just like that.
+
+00:09:47.349 --> 00:09:49.430
+And then we're going to tell the
+user we've added their number.
+
+00:09:49.469 --> 00:09:54.169
+So I'll just say something
+let's see out num to add.
+
+00:09:54.730 --> 00:09:57.319
+Let's say just simple added.
+
+00:09:59.430 --> 00:10:00.770
+And we'll put an endline here.
+
+00:10:02.809 --> 00:10:03.940
+That looks pretty good.
+
+00:10:03.940 --> 00:10:05.399
+We can test that out as well.
+
+00:10:05.630 --> 00:10:07.980
+What I'll do is I'll come
+up here and I'll initialize
+
+00:10:08.000 --> 00:10:09.270
+that vector again to empty.
+
+00:10:09.270 --> 00:10:10.930
+We'll get rid of that
+test right there.
+
+00:10:13.650 --> 00:10:16.329
+So there we go.
+
+00:10:16.330 --> 00:10:17.560
+The vector is empty again.
+
+00:10:17.570 --> 00:10:21.930
+We'll run this, and
+let's add we'll press a.
+
+00:10:23.020 --> 00:10:24.980
+Enter an integer to add
+to the list, perfect.
+
+00:10:25.000 --> 00:10:26.369
+We'll type in an integer 10.
+
+00:10:26.700 --> 00:10:29.589
+We're reading that into num
+to add now and pushing it
+
+00:10:29.840 --> 00:10:31.330
+to the back of the vector.
+
+00:10:32.110 --> 00:10:33.680
+It says here 10 added.
+
+00:10:34.260 --> 00:10:37.220
+Now if we print the numbers again
+with the p option, we should
+
+00:10:37.220 --> 00:10:38.430
+see a list with a 10 in it.
+
+00:10:39.849 --> 00:10:40.279
+Awesome.
+
+00:10:40.389 --> 00:10:41.500
+That's exactly what we have.
+
+00:10:41.500 --> 00:10:42.380
+Let's add a 20.
+
+00:10:44.639 --> 00:10:45.660
+And we'll print it again.
+
+00:10:47.000 --> 00:10:49.112
+Now we've got a 10 and a 20.
+
+00:10:49.300 --> 00:10:50.740
+Exactly like what we expected.
+
+00:10:51.910 --> 00:10:53.209
+Okay, we'll press q to quit.
+
+00:10:53.470 --> 00:10:56.150
+So we're working our way
+down these options here.
+
+00:10:56.429 --> 00:10:58.870
+The next one would be
+m to display the mean.
+
+00:10:59.500 --> 00:11:00.670
+So let's do that.
+
+00:11:00.849 --> 00:11:02.190
+Again, we'll say else.
+
+00:11:02.549 --> 00:11:07.060
+Remember, that's that else if else
+ladder else if the selection is
+
+00:11:07.090 --> 00:11:13.650
+equal to a capital m character
+or the selection is equal to
+
+00:11:13.650 --> 00:11:15.189
+the lowercase m character.
+
+00:11:15.690 --> 00:11:18.280
+In this case, I want a block
+statement and in here is where
+
+00:11:18.280 --> 00:11:19.540
+we're going to calculate the mean.
+
+00:11:20.340 --> 00:11:23.649
+Okay, just like we did before in some
+of the other examples that we've done.
+
+00:11:23.879 --> 00:11:25.169
+How do you calculate a mean.
+
+00:11:25.590 --> 00:11:27.560
+Well, we need a running total, right.
+
+00:11:28.250 --> 00:11:30.260
+We add them all up and we
+divide by the size of how
+
+00:11:30.260 --> 00:11:31.250
+many elements are there.
+
+00:11:31.670 --> 00:11:34.380
+But we need to be
+careful of one thing.
+
+00:11:34.639 --> 00:11:38.520
+We have to be sure that the
+vector is not empty, right.
+
+00:11:38.839 --> 00:11:40.409
+So we'll do this test again.
+
+00:11:40.410 --> 00:11:52.550
+So we'll say if numbers.size is equal
+to 0, we'll simply say cout, and we
+
+00:11:52.550 --> 00:11:55.720
+could do this in a block statement
+but I'll just use a single statement.
+
+00:11:56.380 --> 00:12:02.510
+We'll say unable to calculate mean,
+no data or something like that.
+
+00:12:06.280 --> 00:12:07.880
+And we'll finish it
+off with an endline.
+
+00:12:07.920 --> 00:12:10.980
+Now we've got our else
+statement in a block.
+
+00:12:11.300 --> 00:12:13.430
+We need to do more
+than one thing here.
+
+00:12:13.960 --> 00:12:16.350
+So now the only time we're
+ever going to be in here
+
+00:12:16.359 --> 00:12:18.270
+is if there is data, right.
+
+00:12:18.279 --> 00:12:19.660
+There's stuff in the vector.
+
+00:12:19.660 --> 00:12:20.860
+There are integers in there.
+
+00:12:20.980 --> 00:12:24.017
+So what do we do, we need to
+calculate, add them all up.
+
+00:12:24.190 --> 00:12:28.339
+So let's create a variable called
+total, and it's an integer is fine.
+
+00:12:29.660 --> 00:12:32.710
+And now what do we do, so we
+loop through that vector again,
+
+00:12:32.710 --> 00:12:34.429
+and we total up all the numbers.
+
+00:12:34.910 --> 00:12:37.270
+So let's use another range
+base for loop, that's
+
+00:12:37.620 --> 00:12:38.959
+perfect for this situation.
+
+00:12:40.570 --> 00:12:43.830
+Let's say num and the
+collection again is numbers.
+
+00:12:44.590 --> 00:12:49.140
+And what do we do at each iteration,
+we just say total equals total
+
+00:12:49.200 --> 00:12:53.249
+plus that number, perfect.
+
+00:12:53.289 --> 00:12:55.020
+Now we're out of that loop.
+
+00:12:55.660 --> 00:12:56.890
+Remember, don't indent here.
+
+00:12:56.890 --> 00:12:59.610
+We're going here because we don't
+have a block statement there.
+
+00:12:59.650 --> 00:13:04.739
+And now we just simply
+say cout the mean, let me
+
+00:13:04.889 --> 00:13:07.100
+clean that up the mean is.
+
+00:13:08.520 --> 00:13:10.419
+And what we can do here
+is we can actually do the
+
+00:13:10.420 --> 00:13:11.909
+calculation right in line.
+
+00:13:12.199 --> 00:13:18.930
+We could just say total divided by
+numbers.size which is the amount
+
+00:13:19.040 --> 00:13:26.240
+of data in that vector, endline.
+
+00:13:26.240 --> 00:13:29.689
+Okay, now that's almost correct
+but it's not quite correct.
+
+00:13:29.719 --> 00:13:30.770
+There's a little error here.
+
+00:13:31.090 --> 00:13:34.830
+And if you remember what it is,
+we've got an integer total being
+
+00:13:34.830 --> 00:13:36.290
+divided by an integer size.
+
+00:13:36.290 --> 00:13:37.920
+So we're going to do
+integer division here.
+
+00:13:38.220 --> 00:13:40.790
+So this is where a good
+test case comes in handy.
+
+00:13:41.059 --> 00:13:48.439
+Let's run this, and let's type in,
+let's add a 1 and we'll add a 2.
+
+00:13:49.830 --> 00:13:52.625
+Let's print our list, 1 and 2.
+
+00:13:52.960 --> 00:13:56.400
+Let's take the mean, we
+expect 1.5, we get a 1.
+
+00:13:57.250 --> 00:14:00.549
+That's because we're doing integer
+division instead of double division.
+
+00:14:00.830 --> 00:14:02.409
+So let me quit here.
+
+00:14:03.860 --> 00:14:07.620
+We need to provide a static cast
+here of one of these 2 guys.
+
+00:14:07.630 --> 00:14:17.140
+So we'll just do this so we'll stay
+static_cast to a double and of total.
+
+00:14:19.730 --> 00:14:20.200
+That's it.
+
+00:14:20.210 --> 00:14:21.299
+We'll run this again.
+
+00:14:24.239 --> 00:14:25.130
+Let's add a number one.
+
+00:14:26.080 --> 00:14:27.300
+Let's add another number 2.
+
+00:14:28.620 --> 00:14:31.640
+Print them out, make sure we have the
+one and the 2 in there, yes we do.
+
+00:14:32.000 --> 00:14:32.829
+Let's take the mean.
+
+00:14:32.830 --> 00:14:34.279
+Now we expect 1.5.
+
+00:14:35.110 --> 00:14:36.640
+Now we've got 1.5.
+
+00:14:38.200 --> 00:14:41.170
+Okay, so the 2 pieces left are
+smallest and largest and this
+
+00:14:41.170 --> 00:14:42.380
+video is getting a little long.
+
+00:14:42.469 --> 00:14:43.550
+So I'm going to stop this here.
+
+00:14:43.550 --> 00:14:46.900
+And I'll join you in the next video
+where we'll do the last few pieces.

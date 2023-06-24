@@ -1,0 +1,55 @@
+WEBVTT
+
+00:00:05.500 --> 00:00:09.300
+Programming isn't just about getting in front of a computer and writing code.
+
+00:00:09.800 --> 00:00:14.200
+There are syntax and rules to follow best practices and lots of thought involved.
+
+00:00:14.860 --> 00:00:17.010
+We also have to learn how to handle errors and know
+
+00:00:17.010 --> 00:00:19.310
+what they mean and how to fix them and more.
+
+00:00:19.560 --> 00:00:23.660
+So we've included quizzes at the end of most of the sections in this course.
+
+00:00:24.360 --> 00:00:28.860
+The quizzes are for you to see how well you can apply the concepts presented in each section
+
+00:00:28.860 --> 00:00:31.060
+and to reinforce the material presented.
+
+00:00:31.760 --> 00:00:34.260
+Some questions are easy and some are more difficult.
+
+00:00:34.460 --> 00:00:38.660
+I urge you to go through the quizzes. I think you'll find them challenging but still fun.
+
+00:00:39.320 --> 00:00:41.120
+Each quiz has 10 questions,
+
+00:00:41.120 --> 00:00:44.000
+and they're multiple choice and fill in the blank type questions.
+
+00:00:44.700 --> 00:00:46.850
+The quizzes are more concept-oriented,
+
+00:00:46.850 --> 00:00:50.050
+where the section challenge exercises are more code-oriented.
+
+00:00:50.600 --> 00:00:54.200
+But sometimes the quiz questions may ask you about a specific piece of code
+
+00:00:54.200 --> 00:00:55.800
+and what you think it displays.
+
+00:00:56.400 --> 00:00:59.700
+I hope you find the quizzes as well as the challenge exercises
+
+00:00:59.700 --> 00:01:03.580
+useful for your learning experience. Okay, Frank, enough talk.
+
+00:01:03.580 --> 00:01:05.580
+Let's get started learning c++.

@@ -1,0 +1,265 @@
+WEBVTT
+
+00:00:05.250 --> 00:00:06.910
+Hello, everyone, and welcome back.
+
+00:00:07.610 --> 00:00:11.310
+In this video, I'm going to show you how to use the source code files
+
+00:00:11.310 --> 00:00:12.710
+that are provided for you.
+
+00:00:13.370 --> 00:00:17.370
+What I've done is I've provided source code for all the examples
+
+00:00:17.370 --> 00:00:19.470
+and challenges in this course.
+
+00:00:20.020 --> 00:00:23.320
+And they're all located in the last section of the course.
+
+00:00:23.320 --> 00:00:25.820
+So if you scroll down to your course content,
+
+00:00:26.120 --> 00:00:29.320
+you'll see in the last section and I said the last section
+
+00:00:29.320 --> 00:00:32.320
+that's where it's at now but the course could evolve over time.
+
+00:00:32.320 --> 00:00:35.120
+But you need to search for something that says source code,
+
+00:00:35.120 --> 00:00:37.920
+it'll typically be in the last section of the course.
+
+00:00:37.920 --> 00:00:41.520
+So you can see here section 21 as of this recording
+
+00:00:41.520 --> 00:00:44.620
+has extra information source code and other stuff.
+
+00:00:44.620 --> 00:00:47.920
+So right here you can see the source code for all the sections.
+
+00:00:47.920 --> 00:00:50.520
+I've clicked on that. And this is what you're going to see.
+
+00:00:50.520 --> 00:00:54.520
+Now these are links to the workspace files, and they've been zipped up or
+
+00:00:54.520 --> 00:00:55.420
+compressed.
+
+00:00:55.780 --> 00:00:59.780
+And what you can do is you can click on them and download them and then extract them
+
+00:00:59.780 --> 00:01:02.080
+and use them within CodeLight on your end.
+
+00:01:02.080 --> 00:01:03.780
+So I'm going to show you how to do that.
+
+00:01:03.780 --> 00:01:08.280
+So suppose that I'm on section 4 and I want to download the section 4 source code.
+
+00:01:08.940 --> 00:01:12.140
+You can come over here to the source code for all sections,
+
+00:01:12.140 --> 00:01:16.140
+then you can click right on here on source code section 4 getting started.
+
+00:01:16.140 --> 00:01:19.640
+And I'm going to do that now, and that will download a zip file.
+
+00:01:21.240 --> 00:01:24.600
+And you can see the zip file being downloaded right over here,
+
+00:01:24.600 --> 00:01:27.480
+and it's going to be downloaded to my downloads directory.
+
+00:01:27.480 --> 00:01:29.840
+So I'm going to close up my browser for a moment.
+
+00:01:30.340 --> 00:01:32.140
+And here I'm in CodeLight.
+
+00:01:32.800 --> 00:01:35.800
+What I want to do now is at first I want to extract
+
+00:01:35.800 --> 00:01:38.100
+what I just downloaded or unzip it
+
+00:01:38.100 --> 00:01:42.400
+so that I can have access to those files and then I want to open it up in CodeLite.
+
+00:01:42.400 --> 00:01:45.800
+So let's do that. I'm going to go to my downloads,
+
+00:01:47.300 --> 00:01:49.900
+and there's the zip file that I just downloaded.
+
+00:01:49.900 --> 00:01:54.300
+Now I'm doing this on windows. The process is exactly the same on mac or Linux.
+
+00:01:55.000 --> 00:01:56.660
+So there's my section 4.
+
+00:01:56.660 --> 00:02:00.560
+This is a compressed file, the zip file. So I need to extract it
+
+00:02:00.560 --> 00:02:02.160
+so I can right click on it
+
+00:02:03.660 --> 00:02:04.860
+and extract all.
+
+00:02:05.520 --> 00:02:08.290
+Now you can see the name that Udemy puts on this,
+
+00:02:08.290 --> 00:02:12.390
+section 4 getting started source code and all that. That's really long. We don't really need all that
+
+00:02:12.390 --> 00:02:15.890
+because the section names are already in the zip files.
+
+00:02:15.890 --> 00:02:19.190
+So we could just put it wherever we want. So I'm going to remove that,
+
+00:02:19.990 --> 00:02:22.990
+and I'm just going to leave downloads, just like it is like that.
+
+00:02:23.980 --> 00:02:25.980
+Okay. So I'm going to click extract,
+
+00:02:27.680 --> 00:02:30.560
+and that's going to extract the section 4,
+
+00:02:30.560 --> 00:02:33.560
+create a sections 4 folder you can see it right here.
+
+00:02:33.560 --> 00:02:36.560
+And if I double click that, there you go.
+
+00:02:36.560 --> 00:02:39.360
+Each one of these folders is a project
+
+00:02:39.360 --> 00:02:43.360
+and this section4.workspace file that's the one that we need
+
+00:02:43.360 --> 00:02:47.350
+to open in CodeLite. So I'm going to do that now. I'm going to close this up,
+
+00:02:48.850 --> 00:02:52.350
+and I'm going to go to CodeLight and open a workspace.
+
+00:02:52.350 --> 00:02:55.050
+If you already have a workspace open,
+
+00:02:55.050 --> 00:02:58.650
+you need to close the workspace. You can come up here to workspace
+
+00:02:58.650 --> 00:03:02.650
+and close workspace. You can't open a workspace if there's already one open.
+
+00:03:02.650 --> 00:03:06.450
+So make sure you close it. Okay. So I'm going to open a workspace,
+
+00:03:06.450 --> 00:03:09.350
+and I'm going to navigate over to downloads
+
+00:03:10.010 --> 00:03:13.010
+to section 4, right here the one I just unzipped and
+
+00:03:13.710 --> 00:03:17.210
+select section4.workspace right here.
+
+00:03:17.870 --> 00:03:21.670
+Now when I select open, you'll see the workspace and all of its projects
+
+00:03:21.670 --> 00:03:25.670
+show up over here on the left side here on the workspace view. So I'm going to do that right now
+
+00:03:27.370 --> 00:03:29.070
+and there we go, we're done.
+
+00:03:29.070 --> 00:03:32.370
+There's section 4 workspace and these are all the projects
+
+00:03:32.370 --> 00:03:36.070
+within that workspace. Notice that first program
+
+00:03:36.070 --> 00:03:39.960
+is bold and italicized that means that that's the active project,
+
+00:03:39.960 --> 00:03:42.460
+that's the one that will be built and run by default.
+
+00:03:42.860 --> 00:03:45.860
+Okay. So let's look at the source code for that first project.
+
+00:03:46.010 --> 00:03:49.510
+I'm going to look for my main.cpp file. I'm going to double click it,
+
+00:03:49.870 --> 00:03:53.570
+and there's the source code. So now I just want to be able to run this.
+
+00:03:53.570 --> 00:03:56.770
+So I'm going to come up to build and I can select
+
+00:03:56.770 --> 00:04:00.070
+build and run project. I would really encourage you to rebuild
+
+00:04:00.070 --> 00:04:02.670
+the project anytime you download any kind of project
+
+00:04:02.670 --> 00:04:05.170
+from a website or from the internet in this case.
+
+00:04:05.170 --> 00:04:09.070
+It's a good idea to rebuild it. So I'm going to rebuild the project,
+
+00:04:10.670 --> 00:04:14.770
+and you can see down here. I got zero error, zero warning. So we've got a clean build.
+
+00:04:14.770 --> 00:04:17.970
+It's possible that at this point when you build your project,
+
+00:04:17.970 --> 00:04:22.170
+a little window will pop up and say what compiler do you want to use?
+
+00:04:22.170 --> 00:04:25.830
+This is going to be true in Linux and mac for sure.
+
+00:04:25.830 --> 00:04:29.490
+In that case, pick the GCC compiler that's the one you're using.
+
+00:04:29.790 --> 00:04:33.790
+So if you get that pop-up, you pick the compiler you want, and you're good to go.
+
+00:04:33.790 --> 00:04:37.470
+Now that we've built this, we can run it. So I'm going to select run.
+
+00:04:39.470 --> 00:04:43.130
+I'll execute or I could build and execute again. It doesn't really matter.
+
+00:04:43.430 --> 00:04:46.930
+And there you go, enter your favorite number between 100,
+
+00:04:46.930 --> 00:04:51.530
+I'll enter 40, press enter, amazing. That's my favorite number too.
+
+00:04:51.780 --> 00:04:54.780
+Press any key to continue. Our program ran correctly,
+
+00:04:54.780 --> 00:04:59.480
+and this is the process that you'll use for all of the sections.
+
+00:04:59.980 --> 00:05:01.780
+So that's it. Pretty straightforward.
+
+00:05:01.780 --> 00:05:04.380
+That's the process that you'll use to be able to access
+
+00:05:04.380 --> 00:05:06.380
+the source code that's in the courses.

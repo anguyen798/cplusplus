@@ -1,0 +1,606 @@
+WEBVTT
+
+0
+00:00.670 --> 00:09.330
+In this video we will learn about logical operators. logical operators are useful for writing compound conditional
+
+1
+00:09.330 --> 00:14.760
+statements so already in the previous video we have learned about conditional statements, conditions we
+
+2
+00:14.760 --> 00:20.460
+can define some condition for writing conditional statement we use a relational operator that is less
+
+3
+00:20.460 --> 00:25.770
+than data than, not equal to for whatever the operator finds we can use these operators for writing the
+
+4
+00:25.770 --> 00:29.780
+condition so we have written some program in the previous video.
+
+5
+00:29.880 --> 00:32.310
+Now if I have more than one conditions.
+
+6
+00:32.340 --> 00:39.270
+How to join them suppose i have two conditions that is X is less than y as well as I have
+
+7
+00:39.270 --> 00:41.680
+one more condition that is X is less than Z.
+
+8
+00:41.860 --> 00:46.530
+So x y z are some variables I want to combine these two conditions.
+
+9
+00:46.680 --> 00:48.260
+What is the method of combining them.
+
+10
+00:48.270 --> 00:52.430
+So if I combine then that will be called as compound conditional statement.
+
+11
+00:52.560 --> 00:59.920
+So that compound conditional statement can be form using logical operators that are AND OR  and NOT
+
+12
+01:00.110 --> 01:04.920
+is used for negating the statement means if it is true then it will become false or vice versa
+
+13
+01:04.920 --> 01:10.830
+AND, OR are used for making a compound conditional statement.
+
+14
+01:10.830 --> 01:13.500
+So these operations are interesting.
+
+15
+01:13.800 --> 01:23.310
+These are logical for AND in C++ symbol is && and OR it is || you will find it on keyboard
+
+16
+01:23.310 --> 01:26.030
+find it on the keyboard somewhere near in enter key.
+
+17
+01:26.060 --> 01:29.730
+You will find this, you have to hold shift for this one so there is a pipe.
+
+18
+01:29.730 --> 01:33.320
+So these are the operators for AND OR.
+
+19
+01:33.930 --> 01:35.280
+Now how they work.
+
+20
+01:35.370 --> 01:37.500
+If I use AND how it works.
+
+21
+01:37.530 --> 01:38.860
+See it is logical.
+
+22
+01:38.910 --> 01:45.610
+So that depends upon its truth values so that we will see using a truth table.
+
+23
+01:46.200 --> 01:50.830
+So first let us look at AND if I take an example from daily life.
+
+24
+01:50.860 --> 01:51.930
+See when we talk.
+
+25
+01:52.030 --> 01:54.920
+we use this word and for joining.
+
+26
+01:54.920 --> 01:57.090
+Two sentences right.
+
+27
+01:57.270 --> 02:00.190
+So what is the meaning of that and.
+
+28
+02:00.330 --> 02:05.400
+even though we are joining two statements or sentences but and place what roll.
+
+29
+02:05.580 --> 02:07.430
+So let us observe that clearly.
+
+30
+02:07.890 --> 02:11.510
+So I take one example through that I will explain you what does it mean by
+
+31
+02:11.580 --> 02:21.080
+And. see if I say that I'm wearing black t shirt and a cap.
+
+32
+02:22.480 --> 02:24.650
+So I have combined two statements.
+
+33
+02:24.790 --> 02:31.480
+So let me elaborate once again I'm wearing black t shirt and I am wearing a cap.
+
+34
+02:31.810 --> 02:34.240
+So those statements are that I have joined them.
+
+35
+02:34.390 --> 02:38.250
+And so now you tell me what I said just now.
+
+36
+02:38.260 --> 02:39.550
+Is it true.
+
+37
+02:39.550 --> 02:40.860
+Is it true.
+
+38
+02:40.900 --> 02:42.210
+Let us check it.
+
+39
+02:42.360 --> 02:45.020
+t-shirt this is 1st statement.
+
+40
+02:45.070 --> 02:51.210
+I'm not writing a full sentence, I'm wearing t shirt then Next one is I'm wearing cap.
+
+41
+02:51.240 --> 02:53.780
+Now these two are two different sentences right.
+
+42
+02:53.920 --> 03:02.860
+Next I will combine these two by using and so t-shirt is one statement and I will write that word
+
+43
+03:02.890 --> 03:10.510
+and instead of using operator so that in C++ you have to use operators but then this is gap.
+
+44
+03:10.530 --> 03:19.160
+Now I have two statements these two statements, now look at this I'm wearing t shirt, true.
+
+45
+03:19.520 --> 03:23.430
+Suppose I'm wearing cap then also
+true
+
+46
+03:23.520 --> 03:31.960
+Then if I say I'm wearing a t shirt and am wearing cap will the complete statement be true or false
+
+47
+03:32.440 --> 03:33.080
+it will be true.
+
+48
+03:33.100 --> 03:35.270
+If I'm wearing a cap it's true.
+
+49
+03:37.330 --> 03:39.780
+Second one I'm wearing t shirt.
+
+50
+03:39.940 --> 03:42.970
+Yes but I'm not wearing cap false.
+
+51
+03:43.660 --> 03:49.930
+If I say I'm wearing cap if you see I'm not wearing cap which is false so t shirt is true but cap is false
+
+52
+03:49.950 --> 03:51.550
+so not complete statement.
+
+53
+03:51.550 --> 03:58.780
+I'm waiting t shirt and I'm wearing cap so the complete sentences is wrong it's false so this will be
+
+54
+03:58.780 --> 04:00.250
+false.
+
+55
+04:00.790 --> 04:03.870
+The next one I'm wearing t shirt.
+
+56
+04:03.940 --> 04:08.920
+suppose i'm not wearing t shirt I'm wearing some other thing like a blazer or shirt then my statement will
+
+57
+04:08.920 --> 04:09.970
+be false.
+
+58
+04:10.160 --> 04:12.160
+I suppose I'm reading cap.
+
+59
+04:12.700 --> 04:15.140
+If you find me I'm reading cap now.
+
+60
+04:15.640 --> 04:22.540
+If I say that I'm wearing t shirt and I'm wearing cap so one off my sentence is true.
+
+61
+04:22.600 --> 04:23.170
+Which one.
+
+62
+04:23.170 --> 04:25.690
+The cap one is true but the t shirt one is false.
+
+63
+04:25.690 --> 04:31.790
+So in that way the complete sentence is false though one of them is true but the other one is false
+
+64
+04:31.790 --> 04:33.310
+so the complete statement is false.
+
+65
+04:33.340 --> 04:34.970
+So this would be false.
+
+66
+04:34.990 --> 04:41.170
+Then last one I'm not wearing t shirt even I'm not wearing cap but I am saying that I'm wearing t shirt
+
+67
+04:41.250 --> 04:42.640
+and I'm wearing cap.
+
+68
+04:42.700 --> 04:43.810
+Both are false.
+
+69
+04:43.840 --> 04:45.880
+So then also my statement is false.
+
+70
+04:47.650 --> 04:52.410
+This is the truth table it is called as a truth table.
+
+71
+04:52.990 --> 04:59.050
+So truth table for AND for AND operation I have written and here.
+
+72
+04:59.170 --> 05:00.610
+So this is truth table for that.
+
+73
+05:01.090 --> 05:08.290
+So now we can understand when AND will be true if both those statements are true then only it will
+
+74
+05:08.290 --> 05:14.610
+be true if any one this statement is false then the result of and is false so for preparing
+
+75
+05:14.700 --> 05:18.060
+both conditional statements when you are joining these two.
+
+76
+05:18.230 --> 05:23.860
+And if you are writing and in between them then if this is a true one this is also true.
+
+77
+05:23.860 --> 05:29.530
+then only the entire statement will be true if any one of the statement is false then the resultof
+
+78
+05:29.620 --> 05:31.170
+and is false.
+
+79
+05:31.210 --> 05:33.580
+So this is true but this is false If suppose.
+
+80
+05:33.580 --> 05:40.930
+Then the result is false. this logical operation works on boolean value so that is true and false only
+
+81
+05:41.110 --> 05:46.780
+right and the result is again true or false they should be very much clear for you right. now,
+
+82
+05:46.840 --> 05:48.750
+Next we will see OR operation.
+
+83
+05:48.760 --> 05:54.130
+So for OR operation I will use these two only and I will just change this one I remove this and
+
+84
+05:54.130 --> 05:57.430
+I'll make a table for OR. yes it's ready for or now.
+
+85
+05:57.430 --> 06:03.700
+Now I have two statement I'm wearing t shirt I'm wearing cap next let me read it out.
+
+86
+06:04.240 --> 06:07.980
+I'm wearing t shirt or I'm wearing gap.
+
+87
+06:08.140 --> 06:14.440
+These are two statements I have them with or, or means either this or that.
+
+88
+06:14.600 --> 06:18.330
+yes the word or now gives the clear meaning right.
+
+89
+06:18.460 --> 06:22.210
+This or that, AND this also and that also.
+
+90
+06:22.500 --> 06:25.110
+Both, but or means this or that.
+
+91
+06:25.180 --> 06:25.650
+Right.
+
+92
+06:25.720 --> 06:27.150
+So let us see how it works.
+
+93
+06:27.160 --> 06:32.200
+So I will take these examples and show you if both the statements are true.
+
+94
+06:32.200 --> 06:35.770
+Suppose I'm getting a cap so I'm wearing a t shirt true.
+
+95
+06:36.160 --> 06:37.510
+I'm wearing cap too.
+
+96
+06:37.510 --> 06:38.230
+Both are true.
+
+97
+06:38.230 --> 06:39.400
+So my statement is true.
+
+98
+06:39.520 --> 06:41.840
+Yes this is true.
+
+99
+06:41.840 --> 06:43.970
+Now second one I'm wearing a t shirt.
+
+100
+06:43.990 --> 06:50.460
+Yes I'm getting t shirt true that I'm wearing cap I'm not wearing cap it's false it's false.
+
+101
+06:50.470 --> 06:52.240
+Now let me complete the statement.
+
+102
+06:52.240 --> 06:56.280
+I'm wearing t shirt or I'm wearing cap so or means.
+
+103
+06:56.290 --> 06:58.600
+This one is true right t shirt is true.
+
+104
+06:59.230 --> 07:00.630
+So this is true.
+
+105
+07:01.210 --> 07:05.770
+So in case of or this is true now let us come to the second one next one.
+
+106
+07:05.780 --> 07:07.640
+third one see false.
+
+107
+07:07.720 --> 07:08.910
+I'm not wearing T-shirts suppose.
+
+108
+07:09.130 --> 07:10.210
+But I'm wearing cap.
+
+109
+07:10.330 --> 07:17.290
+So if I tell the statement that I'm wearing t shirt or I'm wearing cap so if I'm not wearing t shirt
+
+110
+07:17.320 --> 07:20.480
+but I'm getting cap then my statement is true because they said OR.
+
+111
+07:20.890 --> 07:23.980
+So this is true next.
+
+112
+07:23.980 --> 07:24.630
+Last one.
+
+113
+07:24.670 --> 07:25.510
+What are false.
+
+114
+07:25.510 --> 07:30.820
+I'm neither wearing t shirt nor wearing a cap but I am sayingthat I'm wearing t shirt or am wearing
+
+115
+07:30.820 --> 07:31.180
+cap.
+
+116
+07:31.540 --> 07:32.880
+So none of them is true.
+
+117
+07:32.920 --> 07:40.210
+Suppose none of them is true then this is false this is the truth table for or.
+
+118
+07:40.300 --> 07:46.310
+How to remember this one if any one of them is a true it will be true this is true so it is true this
+
+119
+07:46.310 --> 07:46.770
+is true.
+
+120
+07:46.790 --> 07:55.790
+So this is true both are false then false so the difference between AND and OR is in and if one is
+
+121
+07:55.790 --> 07:57.800
+false everything is false.
+
+122
+07:59.320 --> 08:02.000
+In or if one is true everything is true.
+
+123
+08:02.320 --> 08:10.360
+this way you can remember it so it means in this one if I write OR right in C++ programming if i write or if this is
+
+124
+08:10.360 --> 08:13.750
+true and this is false then also that is true.
+
+125
+08:14.260 --> 08:16.100
+And even if this is false.
+
+126
+08:16.220 --> 08:21.350
+And this is true then also those are true if both are true theen also that is true and when
+
+127
+08:21.350 --> 08:25.840
+it could be false if  both the conditions are false then it will be false.
+
+128
+08:25.870 --> 08:32.230
+So this is how logical operators are useful for combining conditions mostly students get confused here in
+
+129
+08:32.230 --> 08:32.890
+the beginning.
+
+130
+08:33.040 --> 08:40.090
+That right two conditions they write a comma or they leave blank no conditional statement, two conditional statement
+
+131
+08:40.090 --> 08:44.940
+using relational operators that are joint using logical operators.
+
+132
+08:45.270 --> 08:50.620
+Then one last thing I have to show you that is NOT so I'll just remove this table and I show you not
+
+133
+08:51.560 --> 08:58.300
+so the last operator that is not not is used for negating a statement negating means if it is true it will
+
+134
+08:58.300 --> 09:00.580
+become false if it is false it will become true.
+
+135
+09:00.610 --> 09:07.700
+So if suppose I'm wearing t shirt if it is true then not of that one means not I'm wearing t shirts.
+
+136
+09:07.720 --> 09:10.070
+So really I'm wearing a t shirt right.
+
+137
+09:10.080 --> 09:12.500
+True but not means it is false.
+
+138
+09:12.550 --> 09:15.950
+Not getting t shirt so it is false.
+
+139
+09:16.000 --> 09:25.310
+Next I'm wearing t shirt, suppose false I'm not wearing t shirt but I said that I'm wearing t shirt I'm
+
+140
+09:25.320 --> 09:30.060
+wearing t shirt now if you make not off that statement means not wearing.
+
+141
+09:30.060 --> 09:30.660
+That is true.
+
+142
+09:30.840 --> 09:33.130
+So it will be true.
+
+143
+09:33.210 --> 09:38.310
+So if your statement is a true then the negation will become false and if it is a false then the negation
+
+144
+09:38.310 --> 09:39.740
+will become true.
+
+145
+09:39.750 --> 09:41.040
+This is very useful.
+
+146
+09:41.040 --> 09:46.910
+So it looks simple and right now it may look useless but it is very useful. where it is useful.
+
+147
+09:46.920 --> 09:49.330
+I'm show you in some other topic.
+
+148
+09:49.710 --> 09:52.660
+So that's all about these logical operators.
+
+149
+09:52.740 --> 09:56.310
+These are used for writing compound conditional statement.
+
+150
+09:56.310 --> 10:00.840
+We will see how to use them in the next video I will write a program and show you.

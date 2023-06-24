@@ -1,0 +1,433 @@
+WEBVTT
+
+00:00:05.360 --> 00:00:10.260
+In this last section of the course, we'll talk about custom deleters for smart pointers.
+
+00:00:11.060 --> 00:00:13.660
+This isn't something you're likely to see very often,
+
+00:00:13.660 --> 00:00:18.560
+but I wanted to cover it for completeness since they are a feature that c++ smart pointers support.
+
+00:00:19.360 --> 00:00:21.910
+Sometimes when we destroy a smart pointer,
+
+00:00:21.910 --> 00:00:24.900
+we need more than to just destroy the object on the heap.
+
+00:00:25.200 --> 00:00:29.200
+Sometimes when we use pointers to see structures from c frameworks,
+
+00:00:29.200 --> 00:00:32.060
+we have to provide a specialized way of destroying them
+
+00:00:32.060 --> 00:00:34.420
+since in many cases they don't have destructors.
+
+00:00:35.020 --> 00:00:39.020
+As I said, these are special use cases that you won't run into very often.
+
+00:00:40.010 --> 00:00:43.910
+But if you do, the c++ smart pointers allow you to provide custom deleters
+
+00:00:43.910 --> 00:00:46.410
+that will be called when the smart pointer is destroyed.
+
+00:00:47.210 --> 00:00:50.610
+If you use custom deleters, you can't use make shared or make unique
+
+00:00:50.610 --> 00:00:52.810
+when you create your smart pointer objects
+
+00:00:52.810 --> 00:00:56.810
+since we need to provide our custom deleter and these functions don't support that.
+
+00:00:57.470 --> 00:01:00.720
+The idea is that if you need a specialized way to delete your objects,
+
+00:01:00.720 --> 00:01:03.320
+you probably need a specialized way to create them too.
+
+00:01:04.420 --> 00:01:06.920
+There are lots of ways to provide custom deleters.
+
+00:01:06.920 --> 00:01:11.520
+I'll show you two ways in these slides. First, using a function and then using a lambda.
+
+00:01:12.880 --> 00:01:16.180
+In the case of a function, we write our deleter function
+
+00:01:16.180 --> 00:01:19.380
+that will be called automatically when the smart pointer will be deleted.
+
+00:01:19.880 --> 00:01:22.580
+This function will be provided with a raw pointer
+
+00:01:22.580 --> 00:01:25.460
+to the managed object that the smart pointer is referencing.
+
+00:01:26.340 --> 00:01:29.940
+Then in this function you do whatever you need to do to relinquish your resources.
+
+00:01:30.140 --> 00:01:32.740
+In this example, I'm simply deleting the raw pointer.
+
+00:01:33.100 --> 00:01:36.350
+That's it. So now when you declare your smart pointer,
+
+00:01:36.350 --> 00:01:38.550
+you provide your deleter function.
+
+00:01:39.210 --> 00:01:41.510
+In this case, I'm declaring ptr
+
+00:01:41.510 --> 00:01:43.610
+as a shared pointer to some class.
+
+00:01:44.210 --> 00:01:45.570
+And in the initializer,
+
+00:01:45.570 --> 00:01:48.070
+I'm creating the managed object using new
+
+00:01:48.070 --> 00:01:51.670
+but then I'm also passing in the name of my custom deleter function.
+
+00:01:52.570 --> 00:01:56.570
+That's it. Now when the pointer is destroyed, it will call my deleter.
+
+00:01:57.120 --> 00:02:01.370
+Let's see a real code example using the test class that we've been using in this section.
+
+00:02:04.770 --> 00:02:08.770
+So here we're creating a deleter function that will be passed in a raw pointer.
+
+00:02:08.970 --> 00:02:11.970
+In this case, it's a raw pointer to a test object
+
+00:02:12.370 --> 00:02:16.570
+and that pointer is the pointer that the smart pointer is managing.
+
+00:02:17.120 --> 00:02:20.420
+In this function, I'm simply displaying in my custom deleter,
+
+00:02:20.720 --> 00:02:23.320
+and then I'm deleting the raw pointer that was passed to me.
+
+00:02:23.320 --> 00:02:23.980
+That's it.
+
+00:02:24.380 --> 00:02:27.180
+Now when I create the smart pointer object, in this case,
+
+00:02:27.180 --> 00:02:31.980
+ptr as a shared pointer, I pass in my deleter in the initialization list.
+
+00:02:31.980 --> 00:02:35.880
+It's as simple as that. This will also work for unique pointers.
+
+00:02:38.080 --> 00:02:40.580
+Now let's see how this works using a lambda expression.
+
+00:02:41.180 --> 00:02:43.780
+We haven't seen lambda expressions in this course
+
+00:02:43.780 --> 00:02:46.380
+since they're more of an intermediate c++ topic.
+
+00:02:47.180 --> 00:02:49.880
+If there's interest in learning more about lambda expressions,
+
+00:02:49.880 --> 00:02:52.180
+please let me know and I'll add a section to the course.
+
+00:02:52.780 --> 00:02:55.780
+In a nutshell, a lambda is an anonymous function
+
+00:02:55.780 --> 00:03:00.580
+that is a function that has no name and can be defined in line right where you expect to use it.
+
+00:03:01.380 --> 00:03:04.280
+There's a lot more to lambdas, but you can see in this example
+
+00:03:04.280 --> 00:03:06.940
+that the function name parameter has been replaced
+
+00:03:06.940 --> 00:03:11.930
+with a code block that looks very similar to what we originally wrote in the my deleter function.
+
+00:03:12.830 --> 00:03:14.830
+The syntax might look a little odd.
+
+00:03:14.830 --> 00:03:18.490
+But now this code will execute whenever the pointer object is destroyed.
+
+00:03:18.490 --> 00:03:19.490
+That's pretty cool.
+
+00:03:19.990 --> 00:03:24.390
+We define right where we will use it and not need to write another function and have to worry about it.
+
+00:03:25.190 --> 00:03:27.790
+Well, that completes the section on smart pointers.
+
+00:03:27.790 --> 00:03:30.390
+I hope you can see how powerful smart pointers are.
+
+00:03:30.890 --> 00:03:34.790
+There are many opinions as to what types of smart pointers you should use when.
+
+00:03:34.790 --> 00:03:36.790
+And the answer is usually, it depends.
+
+00:03:37.390 --> 00:03:40.590
+I would encourage you to use unique pointers as often as you can
+
+00:03:40.590 --> 00:03:43.190
+since they're simple, efficient and in most cases
+
+00:03:43.190 --> 00:03:46.090
+they're drop-ins for many of the common pointer use cases.
+
+00:03:46.750 --> 00:03:48.150
+Then use shared pointers
+
+00:03:48.150 --> 00:03:52.150
+when you have more complex object management semantics, involving shared ownership.
+
+00:03:53.400 --> 00:03:57.000
+In the next video, we'll do a simple challenge that uses a unique pointer
+
+00:03:57.000 --> 00:03:59.560
+to a vector of shared pointers. It should be fun.
+
+00:04:01.000 --> 00:04:04.500
+Okay. So I'm back in the IDE. I'm in the section 17 workspace
+
+00:04:04.500 --> 00:04:06.700
+in the CustomDeleters project.
+
+00:04:07.500 --> 00:04:09.860
+And in this project what we'll do is we'll write a couple of
+
+00:04:09.860 --> 00:04:14.520
+different ways to have our custom deleters being called.
+
+00:04:14.520 --> 00:04:18.020
+And it's really, really straightforward let's do the function one first.
+
+00:04:18.020 --> 00:04:22.020
+We've got the same test class that we've been using throughout this section.
+
+00:04:22.020 --> 00:04:25.680
+You've seen it before, so it should be pretty easy to understand what's going on there.
+
+00:04:25.680 --> 00:04:29.480
+And now what we want to do is we want to create our own deleter that will be called
+
+00:04:29.480 --> 00:04:33.140
+when our objects are deleted. This is it right here.
+
+00:04:33.540 --> 00:04:38.040
+This name can be anything you like. I just call it my deleter. It has to return void.
+
+00:04:38.340 --> 00:04:41.800
+And what what's being passed into here is the raw pointer
+
+00:04:41.800 --> 00:04:43.160
+that's being managed.
+
+00:04:43.160 --> 00:04:47.360
+So in other words, if I've got a shared pointer to a test object on the heap,
+
+00:04:47.360 --> 00:04:50.260
+we're going to get a pointer to that test, and it's going to be the raw pointer.
+
+00:04:50.260 --> 00:04:51.620
+If this was an account,
+
+00:04:51.620 --> 00:04:54.980
+we'd get a pointer to an account object, again, a raw pointer.
+
+00:04:54.980 --> 00:04:58.970
+So that's the raw pointer. That's being wrapped by that shared pointer.
+
+00:04:58.970 --> 00:05:03.070
+Okay. So what are we doing here. Well, this is going to be called with that pointer.
+
+00:05:03.070 --> 00:05:07.670
+We can do whatever we like. In this case, I'm just going to say using my custom function deleter.
+
+00:05:07.870 --> 00:05:10.670
+And then I'm actually going to delete that pointer, right.
+
+00:05:10.670 --> 00:05:13.570
+I mean the whole point is for me to delete that storage.
+
+00:05:13.570 --> 00:05:17.870
+Now this gets much more complicated when you've got raw pointers to c structures
+
+00:05:17.870 --> 00:05:19.870
+that are used in c frameworks, which --
+
+00:05:19.870 --> 00:05:23.170
+they don't have destructors. You've really got to manage that memory yourself.
+
+00:05:23.170 --> 00:05:27.320
+And this is a nice way to do it and still be able to use unique pointers and shared pointers
+
+00:05:27.320 --> 00:05:28.220
+and so forth.
+
+00:05:28.220 --> 00:05:31.620
+So what do we do now. Well, now we can create our pointers.
+
+00:05:31.620 --> 00:05:36.020
+It's called ptr1, and it's a shared pointer to a test object.
+
+00:05:36.020 --> 00:05:37.920
+Remember, the test objects on the heap.
+
+00:05:37.920 --> 00:05:42.020
+We have to use new here to do this. We can't use make shared.
+
+00:05:42.020 --> 00:05:44.020
+And what we do is we pass in
+
+00:05:44.020 --> 00:05:47.680
+the regular information that we're used to, right, to create that object on the heap.
+
+00:05:47.680 --> 00:05:50.880
+And then we pass in the name of our deleter.
+
+00:05:50.880 --> 00:05:54.080
+In this case, it's my deleter. You can see it's the same name.
+
+00:05:54.080 --> 00:05:56.440
+You don't have to put address of in front.
+
+00:05:56.440 --> 00:05:59.200
+You -- it doesn't hurt if you do, but that's not necessary.
+
+00:05:59.200 --> 00:06:03.200
+The name of a function already defaults to the location of the function.
+
+00:06:03.200 --> 00:06:07.700
+So in this case, what's going to happen behind the scenes is that when this pointer
+
+00:06:08.200 --> 00:06:11.560
+is delete -- when this pointer is deleted and it has to clean up the memory,
+
+00:06:11.560 --> 00:06:14.060
+it's going to call this function to do it.
+
+00:06:14.420 --> 00:06:16.620
+And you can have complete control of how you do it.
+
+00:06:16.980 --> 00:06:21.340
+So that's the function method. The second way is using a lambda expression.
+
+00:06:21.340 --> 00:06:25.340
+And what you'll see here is you can see our output statement and our delete.
+
+00:06:25.340 --> 00:06:27.940
+And you can see here our output statement our delete.
+
+00:06:27.940 --> 00:06:31.820
+The only difference is that it's being wrapped up in this construct right here.
+
+00:06:31.820 --> 00:06:35.620
+And this is called a lambda expression, which creates a closure object.
+
+00:06:35.620 --> 00:06:39.220
+And what's going to happen is when it's time to delete this
+
+00:06:39.220 --> 00:06:40.920
+rather than call a function,
+
+00:06:40.920 --> 00:06:43.280
+this code right in here executes.
+
+00:06:43.280 --> 00:06:48.180
+So this is real nice because you can write your code exactly where it's going to be used,
+
+00:06:48.180 --> 00:06:49.280
+not somewhere else.
+
+00:06:49.280 --> 00:06:51.780
+Obviously, this function could be anywhere.
+
+00:06:51.780 --> 00:06:54.780
+But this is all right here. It's real nice. So when you're reading this,
+
+00:06:54.780 --> 00:06:57.980
+you can see exactly what's going to happen, right. And it's right there,
+
+00:06:57.980 --> 00:07:00.580
+rather than having to find a function to see what it does.
+
+00:07:00.980 --> 00:07:03.380
+And that's it. There's two different ways to do it.
+
+00:07:03.380 --> 00:07:07.980
+If we run this now. And actually, you know what -- let me change this to a 1000 here so we can see the difference.
+
+00:07:09.340 --> 00:07:13.140
+So what's going to happen here is we're -- and notice I've created this block right here.
+
+00:07:13.140 --> 00:07:16.140
+This is just an artificial scope here so that we can see
+
+00:07:16.140 --> 00:07:20.140
+that this ptr-1 will be deleted right here, right. It'll be destroyed,
+
+00:07:20.140 --> 00:07:22.440
+and ptr2 will be destroyed right here.
+
+00:07:22.440 --> 00:07:23.430
+So we expect
+
+00:07:23.430 --> 00:07:27.130
+ptr-1 to live inside this block and ptr2 inside this block,
+
+00:07:27.130 --> 00:07:30.730
+that way you can really see them, and we can really see these deleters being called.
+
+00:07:30.730 --> 00:07:33.530
+So let's execute this. And we'll build and run.
+
+00:07:35.520 --> 00:07:38.520
+And you can see right here, let me move this over here just a little bit,
+
+00:07:38.520 --> 00:07:41.020
+this is this block right here. You can see that
+
+00:07:41.020 --> 00:07:43.380
+we're constructing that test object with 100.
+
+00:07:43.380 --> 00:07:46.880
+And then we're using our custom function the leader, right. That's you can see that,
+
+00:07:46.880 --> 00:07:50.240
+that output statement is displaying. We're deleting the pointer,
+
+00:07:50.240 --> 00:07:53.240
+and then we're calling the destructor. Same thing here.
+
+00:07:53.240 --> 00:07:57.240
+We're calling the test constructor with a 1000. Then we're using our custom lambda deleter,
+
+00:07:57.240 --> 00:08:01.600
+which is this line right here. And we're destroying our pointer as well there,
+
+00:08:01.600 --> 00:08:03.300
+and then we're calling the test destructor.
+
+00:08:03.800 --> 00:08:06.460
+So there you go. Real simple example of using
+
+00:08:06.460 --> 00:08:08.760
+custom deleters. You don't often need these,
+
+00:08:08.760 --> 00:08:11.760
+but it's nice to know that they're there, and they're pretty easy to use actually.

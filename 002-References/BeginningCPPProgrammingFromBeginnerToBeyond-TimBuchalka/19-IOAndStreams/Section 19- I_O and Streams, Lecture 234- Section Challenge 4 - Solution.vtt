@@ -1,0 +1,202 @@
+WEBVTT
+
+00:00:05.360 --> 00:00:09.660
+Hello. Welcome to the section 19 challenge 4 solution video.
+
+00:00:10.160 --> 00:00:15.150
+I'm in the section 19 workspace in the challenge_4_solution project.
+
+00:00:15.510 --> 00:00:19.210
+And here's the solution to this project. It's pretty straightforward.
+
+00:00:19.210 --> 00:00:23.570
+We're going to do it a couple different ways, like I said. One, we'll put line numbers on every line,
+
+00:00:23.570 --> 00:00:28.170
+and then we'll modify it a little bit so that we're only putting line numbers on lines that actually have text.
+
+00:00:28.170 --> 00:00:33.050
+So we've got our includes. We're including iostream, fstream iomanip and string.
+
+00:00:33.250 --> 00:00:36.950
+And we're creating our input stream right here, our input file,
+
+00:00:36.950 --> 00:00:39.150
+which is romeoandjuliet.text.
+
+00:00:39.550 --> 00:00:42.800
+And of course, it's in my parent directory because again I'm in CodeLite.
+
+00:00:42.800 --> 00:00:45.800
+I'm creating an output file stream where we're going to create
+
+00:00:45.800 --> 00:00:48.050
+a copy of this file with line numbers,
+
+00:00:48.050 --> 00:00:51.410
+and I just called it romeoandjuliet_out.txt.
+
+00:00:51.960 --> 00:00:55.760
+I'm opening both files. And I'm double checking that they're both open
+
+00:00:55.760 --> 00:01:00.360
+for reading and writing. If they're not, I provide an error, just like we've seen before.
+
+00:01:00.760 --> 00:01:03.420
+Here I've got a line which is a std string.
+
+00:01:03.780 --> 00:01:07.280
+And I've got a counter for the line numbers, and I've initialized it to 0,
+
+00:01:07.680 --> 00:01:08.680
+pretty simple.
+
+00:01:08.680 --> 00:01:10.680
+That's it. Now I'm going to start processing the file.
+
+00:01:10.680 --> 00:01:13.680
+I'm going to use getline because I want to read a whole line at a time.
+
+00:01:13.680 --> 00:01:17.230
+I'm using getline, and I'm reading a line from infile.
+
+00:01:17.730 --> 00:01:20.390
+What I'm doing is no matter what if it's successful,
+
+00:01:20.390 --> 00:01:22.990
+I'm I'm
+
+00:01:22.990 --> 00:01:27.490
+And I'm simply displaying line number, left justified and a width of 7
+
+00:01:27.490 --> 00:01:29.040
+that gives me a nice formatted
+
+00:01:29.040 --> 00:01:32.540
+area on the left side of the file that's got all the line numbers in there
+
+00:01:32.540 --> 00:01:33.840
+and then line,
+
+00:01:34.340 --> 00:01:38.000
+which should also be left justified against that eighth position, basically.
+
+00:01:38.000 --> 00:01:42.200
+That's it. Then I display copy complete, close both files, and we're done.
+
+00:01:42.200 --> 00:01:43.560
+So if we run this
+
+00:01:44.860 --> 00:01:49.060
+copy complete, we can go to our project and open up the folder.
+
+00:01:49.660 --> 00:01:54.260
+And we should have a romeoandjuliet_out, which we do right here, I'll double click on that.
+
+00:01:54.260 --> 00:01:58.760
+And there you go. You can see everything's lined up nicely with line numbers on the left-hand side.
+
+00:01:59.860 --> 00:02:03.960
+Okay. Now what I said earlier was I -- this kind of bugs me
+
+00:02:04.260 --> 00:02:07.760
+all these line numbers on these blank lines. So i don't want that.
+
+00:02:07.760 --> 00:02:10.560
+Let's just do another version of this program that gets rid of those.
+
+00:02:11.060 --> 00:02:12.760
+So that's what we'll do next.
+
+00:02:12.760 --> 00:02:15.750
+What we'll do is we need the logic right in here.
+
+00:02:15.750 --> 00:02:18.750
+Basically, what we want to do is we want to do this
+
+00:02:19.150 --> 00:02:22.470
+only if the line is not empty, right.
+
+00:02:22.470 --> 00:02:27.670
+So let's put an if statement in here. We'll say if the line we just read is empty,
+
+00:02:29.270 --> 00:02:32.630
+then what do we want to do, then we just want to write to the file.
+
+00:02:32.630 --> 00:02:36.290
+We still need to write the blank line to the file. So we'll just say infile --
+
+00:02:36.290 --> 00:02:38.490
+sorry, not infile, outfile
+
+00:02:39.490 --> 00:02:41.490
+and we'll write an endline.
+
+00:02:43.490 --> 00:02:45.990
+That's it. Then we'll have an else statement here.
+
+00:02:47.490 --> 00:02:49.090
+And we'll wrap all of this up
+
+00:02:50.290 --> 00:02:54.170
+inside that else. And we'll just indent it over.
+
+00:02:57.470 --> 00:03:01.470
+Okay. That's it. So now we're only displaying a new line.
+
+00:03:01.470 --> 00:03:03.830
+We're not displaying text because there is no text, right.
+
+00:03:03.830 --> 00:03:07.490
+We're not displaying a line number because we don't want to display a line number on an empty line.
+
+00:03:07.490 --> 00:03:11.990
+And if it is not an empty line, then we're going to treat it as normal.
+
+00:03:11.990 --> 00:03:15.290
+We're going to increment the line number and display it. So let's run that.
+
+00:03:17.690 --> 00:03:19.690
+And let's take a look at the output again.
+
+00:03:24.240 --> 00:03:25.840
+And that's pretty much what I wanted,
+
+00:03:26.240 --> 00:03:30.540
+right. All the blank lines are still displayed, but they are not
+
+00:03:30.940 --> 00:03:31.740
+numbered.
+
+00:03:33.340 --> 00:03:36.140
+And that's it. I hope your challenge was fun.
+
+00:03:36.140 --> 00:03:38.640
+And I hope you basically got the same kind of solution.
+
+00:03:39.040 --> 00:03:42.640
+There's a lot of different ways that you can modify this program.
+
+00:03:42.640 --> 00:03:44.940
+If you had any and want to share, please post on the forums.
+
+00:03:45.440 --> 00:03:47.240
+So that's it for this video.
+
+00:03:47.240 --> 00:03:50.440
+There are a couple videos left in this section. The next one is going to be
+
+00:03:50.440 --> 00:03:52.440
+about using string streams,
+
+00:03:53.100 --> 00:03:56.200
+which allows us to use our own in-memory strings
+
+00:03:56.200 --> 00:03:58.000
+as streams which is pretty cool.
+
+00:03:58.000 --> 00:04:00.250
+And we will address input validation,
+
+00:04:00.250 --> 00:04:02.910
+which is a question that's come up a bunch of times in the forums.

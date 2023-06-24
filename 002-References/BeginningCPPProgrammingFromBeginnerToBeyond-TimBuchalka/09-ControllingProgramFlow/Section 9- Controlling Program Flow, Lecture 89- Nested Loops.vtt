@@ -1,0 +1,1386 @@
+WEBVTT
+
+00:00:05.560 --> 00:00:08.209
+In this video, we'll go
+over using nested loops.
+
+00:00:09.250 --> 00:00:12.579
+Just like we nested if statements
+one inside the other, the same
+
+00:00:12.580 --> 00:00:14.509
+technique can be used to nest loops.
+
+00:00:15.139 --> 00:00:17.720
+We can nest loops as many
+levels deep as we need.
+
+00:00:18.279 --> 00:00:21.220
+I'll be using just 2 levels in
+the examples I'll show you that
+
+00:00:21.220 --> 00:00:22.779
+is one loop inside another.
+
+00:00:23.620 --> 00:00:26.350
+Nested loops have many uses, but
+they're especially useful for
+
+00:00:26.350 --> 00:00:31.500
+multi-dimensional structures, like
+2D 3D arrays and 2D and 3D vectors.
+
+00:00:32.719 --> 00:00:35.920
+When we talk about nested loops,
+it's common to refer to the loops as
+
+00:00:35.920 --> 00:00:37.890
+the outer loop and the inner loop.
+
+00:00:37.890 --> 00:00:39.050
+Let's see some examples.
+
+00:00:41.320 --> 00:00:43.660
+Here's a pretty generic
+example of a nested loop.
+
+00:00:43.940 --> 00:00:47.209
+In this case, we have a for loop
+with another for loop within it.
+
+00:00:47.870 --> 00:00:51.839
+The outer loop is incrementing
+outer valve from 1 to 2 by 1.
+
+00:00:53.190 --> 00:00:57.370
+The inner loop is incrementing
+inner vowel from 1 to 3 by 1.
+
+00:00:59.269 --> 00:01:00.170
+Notice the output.
+
+00:01:00.440 --> 00:01:03.559
+The integer to the left of
+the comma is the outer val.
+
+00:01:03.800 --> 00:01:06.669
+And the integer to the right
+of the comma is the inner val.
+
+00:01:07.039 --> 00:01:11.920
+Notice how inner val increments from
+1 to 3 while outer val remains at 1.
+
+00:01:12.230 --> 00:01:15.339
+Then outer val increments to
+2, and we do it all over again.
+
+00:01:15.900 --> 00:01:19.850
+You can think of this as the outer
+loop iterating 2 times and each time
+
+00:01:19.860 --> 00:01:21.400
+the inner loop iterates 3 times.
+
+00:01:21.789 --> 00:01:25.410
+That's why we say that the inner loop
+loops faster than the outer loop.
+
+00:01:25.520 --> 00:01:26.750
+Let's see another example.
+
+00:01:28.539 --> 00:01:31.749
+In this example, we can take advantage
+of a nested loop to display the
+
+00:01:31.749 --> 00:01:34.029
+multiplication table from 1 to 10.
+
+00:01:34.669 --> 00:01:38.444
+A nested loop is perfect
+since we want 1 x 1, 1 x 2,
+
+00:01:38.444 --> 00:01:40.940
+1 x 3, all the way to 1 x 10.
+
+00:01:41.400 --> 00:01:44.740
+Then we want to do 2 x
+1, 2 x 2 and so forth.
+
+00:01:45.530 --> 00:01:49.679
+So we want an outer loop iterating
+from 1 to 10 and an inner loop
+
+00:01:49.720 --> 00:01:51.270
+also iterating from 1 to 10.
+
+00:01:51.270 --> 00:01:55.330
+And the body of the inner loop
+simply multiplies the outer loops
+
+00:01:55.350 --> 00:01:57.619
+variables x the inner loops variable.
+
+00:01:58.250 --> 00:02:00.289
+Notice the output statement
+after the inner loop that
+
+00:02:00.300 --> 00:02:01.880
+displays a line of dashes.
+
+00:02:02.200 --> 00:02:04.960
+This executes each time
+the inner loop completes.
+
+00:02:06.279 --> 00:02:09.460
+We'll execute this loop in the IDE
+in a minute so you can see it work.
+
+00:02:10.070 --> 00:02:13.090
+Let's see an example of a
+nested loop using a 2D array.
+
+00:02:14.720 --> 00:02:16.700
+In this example, we have
+a 2-dimensional array
+
+00:02:16.700 --> 00:02:18.000
+of integers named grid.
+
+00:02:18.410 --> 00:02:20.820
+Grid has 5 rows and 3 columns.
+
+00:02:21.610 --> 00:02:24.780
+Suppose we want to assign 1000
+to each element in the grid.
+
+00:02:25.080 --> 00:02:27.520
+We can do this easily
+with nested for loops.
+
+00:02:28.210 --> 00:02:32.720
+The outer loop iterates for
+rows 0 to 4 inclusive, and the
+
+00:02:32.730 --> 00:02:36.709
+inner loop iterates the columns
+for each from 1 to 2 inclusive.
+
+00:02:37.219 --> 00:02:39.919
+Then in the body of the
+loop we simply assign 1000
+
+00:02:40.160 --> 00:02:41.989
+to grid sub-row sub-column.
+
+00:02:42.949 --> 00:02:45.450
+Notice I'm using block statements
+for the body of these loops.
+
+00:02:45.480 --> 00:02:48.920
+I didn't have to here, but it's
+good practice to do so since it
+
+00:02:48.950 --> 00:02:50.859
+makes adding code later much easier.
+
+00:02:51.610 --> 00:02:55.229
+Now that we've initialized the grid
+values to a 1000, we can use a similar
+
+00:02:55.230 --> 00:02:57.100
+nested loop to display the values.
+
+00:02:58.350 --> 00:03:01.170
+In this example, we're assuming
+that grid has been initialized
+
+00:03:01.170 --> 00:03:02.290
+as in the previous slide.
+
+00:03:03.000 --> 00:03:06.239
+At each iteration of the inner,
+loop we display the element at grid
+
+00:03:06.240 --> 00:03:09.060
+sub-row, sub-column followed by space.
+
+00:03:09.110 --> 00:03:11.530
+So we're displaying these
+elements across the screen.
+
+00:03:12.290 --> 00:03:15.340
+When we complete the inner loop,
+we print a new line and then
+
+00:03:15.380 --> 00:03:16.889
+execute the outer loop again.
+
+00:03:17.859 --> 00:03:20.709
+You can see the pattern is the
+same as with initialization.
+
+00:03:20.970 --> 00:03:22.990
+This is a very common
+pattern for working with
+
+00:03:22.990 --> 00:03:24.420
+multi-dimensional structures.
+
+00:03:24.910 --> 00:03:27.220
+Let's see how we can use
+nested loops with vectors.
+
+00:03:28.410 --> 00:03:32.470
+In this final example, we declare
+a vector of vector of integer.
+
+00:03:32.870 --> 00:03:36.850
+So we have a vector whose elements
+are vectors of integers, very
+
+00:03:36.850 --> 00:03:39.812
+similar to a 2D array of integers
+with the advantage of vectors.
+
+00:03:39.812 --> 00:03:44.380
+With a vector of vectors, we
+can allow each vector within the
+
+00:03:44.460 --> 00:03:47.109
+vector 2D to be of different size.
+
+00:03:47.509 --> 00:03:49.970
+In this case, we have
+3 vectors of vectors.
+
+00:03:50.270 --> 00:03:52.990
+And each of those vectors
+is a vector of integers.
+
+00:03:53.410 --> 00:03:54.750
+I know it sounds complicated.
+
+00:03:54.750 --> 00:03:56.940
+But if you look at the example,
+it should be pretty clear.
+
+00:03:57.180 --> 00:04:00.170
+The first vector has
+3 integers: 1 2 3.
+
+00:04:00.530 --> 00:04:03.920
+The second vector has 4
+integers: 10 20 30 40.
+
+00:04:04.400 --> 00:04:08.960
+The third vector has 5 integers:
+100 200 300 400 and 500.
+
+00:04:09.900 --> 00:04:14.050
+If we wanted to display the contents
+of vector 2D, we could do it easily
+
+00:04:14.160 --> 00:04:16.419
+with nested range-based for loops.
+
+00:04:16.800 --> 00:04:19.769
+And if we use the auto keyword
+to allow the compiler to deduce
+
+00:04:19.769 --> 00:04:22.680
+the type of each loop element,
+it makes it dead simple.
+
+00:04:23.400 --> 00:04:26.840
+Notice the outer loop in this
+case, the compiler deduces vect
+
+00:04:26.870 --> 00:04:28.400
+to be a vector of integers.
+
+00:04:29.340 --> 00:04:32.150
+And in the inner loop, it
+reduces val to be an integer.
+
+00:04:33.390 --> 00:04:35.920
+In the body of the inner
+loop, we simply display the
+
+00:04:35.920 --> 00:04:37.609
+value followed by a space.
+
+00:04:38.520 --> 00:04:41.659
+As we did in the previous example, we
+display a new line after we're done
+
+00:04:41.660 --> 00:04:43.490
+displaying the inner vector values.
+
+00:04:44.429 --> 00:04:46.909
+You can see how little code
+and how simple the code is.
+
+00:04:47.330 --> 00:04:49.910
+You can see the output from this
+loop at the right on the screen.
+
+00:04:50.600 --> 00:04:54.390
+In these examples I've used 4 loops
+within 4 loops, but you can use any
+
+00:04:54.390 --> 00:04:58.110
+combination of loops within any other
+loop to achieve your desired behavior.
+
+00:04:58.520 --> 00:05:01.240
+Let's head over to CodeLite and
+see some of these examples live.
+
+00:05:02.990 --> 00:05:05.049
+Okay, so I'm in the CodeLite IDE.
+
+00:05:05.090 --> 00:05:08.300
+I mean it's still in the section
+9 workspace, and I'm in the
+
+00:05:08.300 --> 00:05:10.190
+multiplication table project.
+
+00:05:10.730 --> 00:05:14.550
+This is the piece of code that
+executes and displays a multiplication
+
+00:05:14.550 --> 00:05:16.599
+table for up to 10 x 10.
+
+00:05:16.889 --> 00:05:19.909
+So let's go over this really
+carefully because this is a
+
+00:05:19.910 --> 00:05:21.849
+classic example of a nested loop.
+
+00:05:22.490 --> 00:05:25.520
+Notice we've got the 2 for
+loops, 1 within the other.
+
+00:05:26.260 --> 00:05:30.340
+And the outer loop is
+looping on the num1 variable.
+
+00:05:31.070 --> 00:05:34.020
+The inner loop is looping
+on the num2 variable.
+
+00:05:36.219 --> 00:05:37.930
+So we're going to
+start the outer loop.
+
+00:05:38.219 --> 00:05:41.200
+And we're going to assign right here
+we're going to initialize num1 to 1.
+
+00:05:42.270 --> 00:05:45.530
+And now we check is num1 less
+than or equal to 10, it is.
+
+00:05:45.800 --> 00:05:47.670
+So we go into the body of the loop.
+
+00:05:47.740 --> 00:05:49.780
+Well, the body of this
+loop is another loop.
+
+00:05:50.350 --> 00:05:53.919
+And in this case, we're
+initializing num2 to 1 right here.
+
+00:05:55.509 --> 00:05:58.600
+And we check is num2 less
+than or equal to 10, it is.
+
+00:05:58.859 --> 00:06:01.640
+So we execute the body of
+the inner loop, which is this
+
+00:06:01.700 --> 00:06:02.900
+output statement right here.
+
+00:06:03.650 --> 00:06:06.030
+So what we do here is we
+display num1, which is 1.
+
+00:06:07.370 --> 00:06:10.369
+We display the *, string right there.
+
+00:06:10.700 --> 00:06:12.349
+We display num2 which is 1.
+
+00:06:12.880 --> 00:06:14.660
+We display that equal sign right here.
+
+00:06:15.130 --> 00:06:18.009
+And then we multiply num1
+num2, that gives us 1.
+
+00:06:18.059 --> 00:06:19.159
+And we display that value.
+
+00:06:21.000 --> 00:06:21.840
+That's it.
+
+00:06:21.950 --> 00:06:24.400
+We display a new line,
+and now we loop again.
+
+00:06:24.740 --> 00:06:26.240
+So we come back up to the loop.
+
+00:06:26.809 --> 00:06:27.830
+We do the increment.
+
+00:06:27.840 --> 00:06:29.560
+So now num2 is 2.
+
+00:06:31.349 --> 00:06:34.859
+We check is num2 less than
+or equal to 10, it is.
+
+00:06:35.190 --> 00:06:36.980
+Execute the body of the loop again.
+
+00:06:37.389 --> 00:06:40.120
+This time through we've got
+num1 is still 1 right here.
+
+00:06:41.810 --> 00:06:46.740
+Num2 is now 2, and we display
+the output and so forth.
+
+00:06:46.830 --> 00:06:52.510
+So we're going to do this until
+we get to 1 x 10 equals 10.
+
+00:06:53.459 --> 00:06:54.710
+And num1 will still be 1.
+
+00:06:55.070 --> 00:06:56.750
+At this point, num2 is 10.
+
+00:06:57.570 --> 00:06:59.340
+Now we're going to
+increment num2 to 11.
+
+00:07:01.460 --> 00:07:03.870
+We come over here, and we
+check is num2 less than
+
+00:07:03.870 --> 00:07:04.969
+or equal to 10, it's not.
+
+00:07:04.969 --> 00:07:05.860
+So we fail.
+
+00:07:06.450 --> 00:07:07.969
+Now we terminate the inner loop.
+
+00:07:08.349 --> 00:07:11.249
+We execute this statement right
+here so it's going to display
+
+00:07:11.250 --> 00:07:12.620
+a bunch of dashed lines here.
+
+00:07:13.550 --> 00:07:16.530
+And then remember, we're
+still inside the outer loops.
+
+00:07:16.530 --> 00:07:20.190
+We have to go back out to the
+outer loop and do the increment.
+
+00:07:20.500 --> 00:07:25.560
+So now num1 becomes 2, is 2
+less than or equal to 10, yes.
+
+00:07:25.610 --> 00:07:27.340
+We go back into the inner loop again.
+
+00:07:27.570 --> 00:07:30.850
+So think of this as here's your
+outer loop, and it's looping.
+
+00:07:31.150 --> 00:07:33.880
+And each time it loops, you're
+going to do the inner loop 10 times.
+
+00:07:34.280 --> 00:07:36.360
+Then you're going to go back out,
+outer loop, and you're going to
+
+00:07:36.360 --> 00:07:38.109
+do the inner loop again 10 times.
+
+00:07:38.780 --> 00:07:41.570
+Okay, my art is not pretty, but
+hopefully, you will understand
+
+00:07:41.759 --> 00:07:43.250
+what I'm talking about. All right, so
+
+00:07:43.260 --> 00:07:45.090
+that's what's really going on here.
+
+00:07:45.259 --> 00:07:48.039
+Let me clear this and run it
+so you can see this in action.
+
+00:07:48.819 --> 00:07:51.240
+So there's the output.
+
+00:07:51.240 --> 00:07:52.150
+Let me scroll up.
+
+00:07:54.240 --> 00:07:57.610
+So you can see here 1 x 1 is
+1, 1 x 2 is 2 and so forth.
+
+00:07:57.990 --> 00:08:00.829
+Notice in this case, let me
+move this just over here so
+
+00:08:00.889 --> 00:08:02.040
+you can see the variables.
+
+00:08:02.190 --> 00:08:05.600
+Over here, this left 1 is num1.
+
+00:08:06.340 --> 00:08:09.860
+And then you can see that
+num2 is looping faster.
+
+00:08:09.870 --> 00:08:12.990
+That's why we say the inner loop
+loops faster than the outer loop.
+
+00:08:14.320 --> 00:08:18.029
+We go through all 10 of them, then
+we display the dashed line, and then
+
+00:08:18.150 --> 00:08:19.839
+we go back out to the outer loop.
+
+00:08:19.860 --> 00:08:24.360
+Now num1 is 2 and then 3 and
+then all the way to the bottom
+
+00:08:24.370 --> 00:08:26.859
+where we end up with the 10s.
+
+00:08:26.859 --> 00:08:28.610
+And we end up with 10 x 10.
+
+00:08:28.610 --> 00:08:30.670
+At this point, the outer loop fails.
+
+00:08:30.710 --> 00:08:31.790
+And we're done.
+
+00:08:32.849 --> 00:08:34.569
+Okay, so hopefully that makes sense.
+
+00:08:34.929 --> 00:08:38.289
+And what we'll do next is
+we'll do an example that's a
+
+00:08:38.289 --> 00:08:39.500
+little bit more complicated.
+
+00:08:39.500 --> 00:08:42.000
+We'll actually grab some user
+input, we'll grab some numbers
+
+00:08:42.029 --> 00:08:45.500
+put them in a vector and display a
+histogram based on those numbers.
+
+00:08:48.310 --> 00:08:53.810
+Okay, so I'll close this, and I
+will open up the histogram project.
+
+00:08:53.820 --> 00:08:56.119
+I'll double click on that to
+make it the active project.
+
+00:08:56.770 --> 00:08:58.060
+Right now there's not much in here.
+
+00:08:58.060 --> 00:09:00.919
+It's just a really, really
+simple basic main that does
+
+00:09:00.920 --> 00:09:02.199
+nothing just prints a new line.
+
+00:09:03.190 --> 00:09:04.310
+So what do we want to do here.
+
+00:09:04.470 --> 00:09:07.640
+We want to ask the user how
+many data items they have.
+
+00:09:08.270 --> 00:09:09.249
+Let's say they type 6.
+
+00:09:09.249 --> 00:09:13.050
+Then we ask them for each one of those
+data items, which is just an integer.
+
+00:09:13.590 --> 00:09:16.189
+And then when we're finished
+with that, we'll output all that
+
+00:09:16.190 --> 00:09:17.729
+information using a histogram.
+
+00:09:17.920 --> 00:09:19.250
+So that's pretty straightforward.
+
+00:09:19.650 --> 00:09:22.069
+We need to ask the user
+how many items they've got.
+
+00:09:22.070 --> 00:09:24.830
+So let's create an integer
+variable there, called num items.
+
+00:09:26.200 --> 00:09:27.819
+And we'll just initialize that to 0.
+
+00:09:28.389 --> 00:09:32.050
+And then we'll ask them
+how many items do you have.
+
+00:09:34.230 --> 00:09:35.360
+Let's say data items.
+
+00:09:42.620 --> 00:09:47.540
+Okay, and we'll read that
+integer into num items.
+
+00:09:47.679 --> 00:09:50.249
+So now we know how many
+data items they have.
+
+00:09:50.759 --> 00:09:53.850
+What we want to do next
+is loop that many times.
+
+00:09:53.850 --> 00:09:56.560
+So if I've got 5 data items,
+well, I want you to ask me 5
+
+00:09:56.570 --> 00:09:58.199
+times to enter those that data.
+
+00:09:58.250 --> 00:10:02.530
+So it's really makes sense to use a
+for loop here because we know exactly
+
+00:10:02.530 --> 00:10:04.069
+how many times we want to iterate.
+
+00:10:04.469 --> 00:10:06.909
+We also need to store this
+information somewhere, right.
+
+00:10:06.910 --> 00:10:09.819
+So all that information they type
+in, we'd like to store it somewhere.
+
+00:10:10.609 --> 00:10:14.030
+Since we really don't know what number
+they're going to type in, an array
+
+00:10:14.040 --> 00:10:17.600
+would not be a good idea here because
+you don't know how big to make it.
+
+00:10:17.600 --> 00:10:20.369
+You'd have to make it really big just
+to be sure that everything will fit.
+
+00:10:20.500 --> 00:10:21.460
+So we'll use a vector.
+
+00:10:21.900 --> 00:10:24.110
+First thing we'll do is
+we'll include vector here.
+
+00:10:29.320 --> 00:10:30.490
+So we're good to go there.
+
+00:10:30.700 --> 00:10:32.949
+And let's declare
+the vector right now.
+
+00:10:32.990 --> 00:10:35.320
+We'll call it vector of
+integers in this case.
+
+00:10:36.470 --> 00:10:38.400
+And let's just call the data
+because that's what it is.
+
+00:10:38.400 --> 00:10:40.369
+And we'll initialize
+the vector it's empty.
+
+00:10:41.730 --> 00:10:44.699
+All right, remember, a vector
+is a dynamic data structure so
+
+00:10:44.700 --> 00:10:47.229
+we'll be able to read data from
+the user and put it into that
+
+00:10:47.230 --> 00:10:49.110
+vector using its pushback method.
+
+00:10:50.100 --> 00:10:51.280
+So let's loop.
+
+00:10:52.290 --> 00:10:53.570
+How many times are we going to loop?
+
+00:10:53.590 --> 00:10:57.890
+We're going to loop from 1 to
+that number they enter, right.
+
+00:10:57.890 --> 00:10:58.740
+So if they enter 10.
+
+00:10:58.740 --> 00:10:59.964
+We're going to go from 1 to 10.
+
+00:10:59.964 --> 00:11:01.510
+And we're going to grab 10 data items.
+
+00:11:01.520 --> 00:11:02.750
+So let's do that right now.
+
+00:11:02.759 --> 00:11:07.850
+4 int I, we'll use I and we'll
+initialize I to 1 because
+
+00:11:07.850 --> 00:11:09.140
+we want to start here at 1.
+
+00:11:09.860 --> 00:11:13.210
+and I want to loop while I
+is less than or equal to the
+
+00:11:13.210 --> 00:11:16.669
+number of items that they
+want to enter into the vector.
+
+00:11:18.009 --> 00:11:20.949
+And I will increment I by 1 each time.
+
+00:11:20.960 --> 00:11:22.579
+Now I'm going to use a
+block statement here.
+
+00:11:24.750 --> 00:11:26.280
+Now what do you think
+is going on in here.
+
+00:11:26.410 --> 00:11:29.070
+Well, I need to ask them
+for the data, right.
+
+00:11:30.130 --> 00:11:32.210
+I'm going to loop let's
+say I typed in 10 items.
+
+00:11:32.220 --> 00:11:33.800
+This is going to loop 10 times.
+
+00:11:34.030 --> 00:11:37.439
+So we need somewhere to read
+the data into that sounds
+
+00:11:37.440 --> 00:11:38.360
+like an integer to me.
+
+00:11:38.400 --> 00:11:39.610
+So we'll say data item.
+
+00:11:40.430 --> 00:11:41.939
+We'll initialize that to 0.
+
+00:11:42.369 --> 00:11:49.110
+And then we'll just say cout you
+know enter data item and we may
+
+00:11:49.130 --> 00:11:51.610
+as well tell them which 1 it is
+because we know it right it's I.
+
+00:11:54.090 --> 00:11:55.070
+We do something like that.
+
+00:11:55.070 --> 00:11:56.750
+We'll put a colon so
+it looks nice for them.
+
+00:11:58.529 --> 00:12:01.410
+So this will say enter data
+item 1, enter data item 2.
+
+00:12:01.430 --> 00:12:03.450
+All the way up to whatever
+they decided they wanted.
+
+00:12:04.090 --> 00:12:08.580
+What we'll do now is we'll read that
+integer that they type in into that
+
+00:12:08.580 --> 00:12:12.450
+data item variable we just created.
+
+00:12:14.090 --> 00:12:15.060
+So we've got the data.
+
+00:12:15.080 --> 00:12:15.610
+What do we do.
+
+00:12:15.670 --> 00:12:17.510
+We need to put it
+into that vector now.
+
+00:12:17.590 --> 00:12:18.499
+Remember, how to do that.
+
+00:12:18.640 --> 00:12:19.880
+The vector's name is data.
+
+00:12:20.730 --> 00:12:25.880
+So we say data.pushback, and we
+push that data item in there.
+
+00:12:25.880 --> 00:12:28.470
+So it's going to put the data
+item in the back of the vector.
+
+00:12:29.960 --> 00:12:30.910
+That's it.
+
+00:12:30.940 --> 00:12:31.990
+That's pretty straightforward.
+
+00:12:31.990 --> 00:12:37.100
+So at this point, now what we've
+got is a vector that contains
+
+00:12:37.110 --> 00:12:38.319
+whatever data they typed in.
+
+00:12:38.320 --> 00:12:42.210
+So if they typed in 5 integers,
+that vector has 5 integers in there.
+
+00:12:42.710 --> 00:12:45.920
+So what do we want to do now, well,
+we want to display the histogram.
+
+00:12:46.059 --> 00:12:48.260
+But before we do that, let's
+just display the data and
+
+00:12:48.260 --> 00:12:49.339
+make sure we have it, right.
+
+00:12:49.340 --> 00:12:50.819
+It's always good to test as you go.
+
+00:12:50.960 --> 00:12:51.730
+So let's do that.
+
+00:12:51.740 --> 00:12:59.290
+We'll say 4, we'll use a range-based
+for loop here, auto val, that's the
+
+00:12:59.290 --> 00:13:01.750
+value, and the collection is data.
+
+00:13:04.980 --> 00:13:08.589
+Okay, so for each element in
+that data collection, let's
+
+00:13:08.589 --> 00:13:10.260
+just output it now just to test.
+
+00:13:14.160 --> 00:13:14.939
+Okay, that's it.
+
+00:13:14.970 --> 00:13:15.609
+Let's run this.
+
+00:13:18.220 --> 00:13:19.900
+How many data items do you have.
+
+00:13:19.970 --> 00:13:21.620
+Well, I have 5 data items.
+
+00:13:22.570 --> 00:13:26.600
+Enter data item 1 10 to 20.
+
+00:13:26.630 --> 00:13:30.590
+Let's just put them in 10s that way
+we know what we're getting 30 40,
+
+00:13:30.600 --> 00:13:32.360
+it should ask me 1 more time 50.
+
+00:13:32.710 --> 00:13:33.699
+Now it should be done.
+
+00:13:34.220 --> 00:13:36.040
+And I'm displaying the data items.
+
+00:13:36.260 --> 00:13:37.340
+So everything's looking good.
+
+00:13:37.340 --> 00:13:40.839
+Let's run it again with 3 data items.
+
+00:13:41.170 --> 00:13:46.390
+Let's put a 1000 in here, let's put a
+10 in there, let's put a 1200 in here.
+
+00:13:46.959 --> 00:13:48.460
+1000, 10, 1200.
+
+00:13:48.510 --> 00:13:50.910
+Perfect. So that's exactly what's
+going on right now is
+
+00:13:50.910 --> 00:13:51.770
+right where we want to be.
+
+00:13:52.130 --> 00:13:55.430
+How many items do you have, and enter
+data for each one of those values.
+
+00:13:55.790 --> 00:13:56.040
+Good.
+
+00:13:56.360 --> 00:13:59.859
+So it's always a good idea to test
+as you go because it just makes life
+
+00:13:59.889 --> 00:14:02.659
+much, much easier to test as you
+go rather than trying to test this
+
+00:14:02.690 --> 00:14:04.260
+big monolithic thing at the end.
+
+00:14:04.580 --> 00:14:08.383
+All right, so let me just do
+a quick statement here and
+
+00:14:08.383 --> 00:14:10.569
+I'll put a new line in the end
+just to give a little space.
+
+00:14:10.570 --> 00:14:13.630
+I'm just going to say
+displaying histogram.
+
+00:14:18.719 --> 00:14:23.599
+Now what we need to do is pretty
+much what we did here right except
+
+00:14:24.240 --> 00:14:27.200
+we don't want to display the
+value, we want to display a dash
+
+00:14:27.320 --> 00:14:28.730
+for each one of those values.
+
+00:14:28.730 --> 00:14:31.770
+So for example if the value is
+10, we want to display 10 dashes.
+
+00:14:32.010 --> 00:14:34.230
+If the value is 100,
+we'll display 100 dashes.
+
+00:14:34.450 --> 00:14:35.900
+That's what a histogram looks like.
+
+00:14:36.160 --> 00:14:38.059
+So how do I do that.
+
+00:14:38.090 --> 00:14:40.539
+Well, I need to have
+another loop in here.
+
+00:14:40.690 --> 00:14:42.339
+And I'm just going to
+get rid of that right.
+
+00:14:42.340 --> 00:14:44.910
+Now so we still have this
+loop right here, it's looping
+
+00:14:44.910 --> 00:14:46.030
+through the collection.
+
+00:14:46.880 --> 00:14:47.970
+So how what do I do here.
+
+00:14:47.970 --> 00:14:50.422
+Well, I know how many times
+I need to loop, right.
+
+00:14:50.422 --> 00:14:51.759
+I need to loop val time.
+
+00:14:51.760 --> 00:14:53.110
+So a for loop is good.
+
+00:14:53.130 --> 00:14:54.539
+We can use any loop we want really.
+
+00:14:54.540 --> 00:14:56.470
+But let's use a for loop
+because it's really simple.
+
+00:14:56.559 --> 00:15:01.349
+So we're going to say for
+int and let's use I again.
+
+00:15:01.950 --> 00:15:05.250
+And we're going to start at 1,
+and we're going to loop while
+
+00:15:05.330 --> 00:15:07.750
+I is less than or equal to val.
+
+00:15:08.710 --> 00:15:10.209
+That's the number we just read.
+
+00:15:12.980 --> 00:15:14.659
+Okay, now what.
+
+00:15:14.780 --> 00:15:18.100
+Well, the increment is by 1,
+we need to increment by 1.
+
+00:15:18.109 --> 00:15:19.560
+So that's my inner loop.
+
+00:15:20.010 --> 00:15:21.270
+What do I want to do in here.
+
+00:15:21.440 --> 00:15:22.920
+All I want to do is just type a dash.
+
+00:15:24.940 --> 00:15:26.400
+And we'll use dashes for a reason.
+
+00:15:26.429 --> 00:15:29.130
+You could use an asterisk, but I'm
+going to use an asterisk in a second.
+
+00:15:29.639 --> 00:15:30.290
+That's it.
+
+00:15:30.380 --> 00:15:38.670
+So if the... let me fix that typo... if the user typed in 5
+integers and the first 1 is 6
+
+00:15:39.210 --> 00:15:41.030
+then val is going to be 6.
+
+00:15:41.050 --> 00:15:43.440
+And we're going to loop 6
+times displaying 6 dashes.
+
+00:15:43.440 --> 00:15:45.879
+If the next one is 12, we're
+going to display 12 dashes.
+
+00:15:46.730 --> 00:15:49.910
+After we're done displaying those
+dashes, we need to display a new line.
+
+00:15:49.940 --> 00:15:52.410
+Otherwise, everything's just going
+to go right across the screen.
+
+00:15:52.420 --> 00:15:55.360
+So I'm just going to
+say end line right here.
+
+00:15:56.200 --> 00:16:00.050
+And we need to close off this -- let's
+do that for loop right here on a
+
+00:16:00.050 --> 00:16:03.970
+block as well since we're probably
+going to add a little bit more code.
+
+00:16:04.420 --> 00:16:05.699
+Okay, so that's where we're at now.
+
+00:16:05.700 --> 00:16:06.890
+You can see pretty straightforward.
+
+00:16:07.000 --> 00:16:07.830
+Let's run this.
+
+00:16:09.870 --> 00:16:15.030
+And I forgot a semicolon right
+there so I put that in there.
+
+00:16:17.910 --> 00:16:19.410
+Okay, how many items do you have.
+
+00:16:19.420 --> 00:16:21.219
+Let's just start simple, 3 items.
+
+00:16:22.599 --> 00:16:23.860
+What's the first data item.
+
+00:16:24.400 --> 00:16:28.670
+5 10 15.
+
+00:16:28.670 --> 00:16:33.970
+What I expect now is 3 rows: one
+with 5 dashes, one with 10 dashes
+
+00:16:33.970 --> 00:16:35.390
+and one with fifteen dashes.
+
+00:16:37.000 --> 00:16:37.390
+Awesome.
+
+00:16:37.390 --> 00:16:38.040
+That's what we've got.
+
+00:16:38.050 --> 00:16:43.819
+Displaying histogram 1 2 3 4 5
+dashes, 10 dashes, 15 dashes.
+
+00:16:44.540 --> 00:16:47.290
+You see that, that was pretty simple,
+and it's pretty powerful too because
+
+00:16:47.290 --> 00:16:50.189
+we've got dynamic data structure
+that's growing as we need it.
+
+00:16:50.480 --> 00:16:53.260
+Let's run this one more time
+with a little bit more data.
+
+00:16:53.700 --> 00:16:58.469
+Let's say I have 10 data items and
+I've got a 10 34 and I'm just going
+
+00:16:58.469 --> 00:17:05.339
+to put some really any numbers in
+here 7, I don't want to do a 90,
+
+00:17:05.619 --> 00:17:12.839
+let's do a 30, let's do a 50 and let's
+do a 1 and a 2 down at the bottom.
+
+00:17:13.690 --> 00:17:14.849
+Okay, so there we go.
+
+00:17:14.849 --> 00:17:15.890
+There's my histogram.
+
+00:17:15.900 --> 00:17:19.399
+You can see the last two should be 1
+And 2 and they are right here 1 and 2.
+
+00:17:20.650 --> 00:17:22.329
+And you could count them if you like.
+
+00:17:22.329 --> 00:17:23.370
+But I think they're correct.
+
+00:17:23.379 --> 00:17:25.680
+Obviously, you would want to count
+them if you were going to test them
+
+00:17:25.880 --> 00:17:27.349
+to be sure that everything is correct.
+
+00:17:27.500 --> 00:17:29.730
+So there's my histogram,
+pretty straightforward.
+
+00:17:30.010 --> 00:17:32.350
+This is kind of hard to see
+though I mean how many dashes
+
+00:17:32.350 --> 00:17:33.650
+are here, I can't really tell.
+
+00:17:33.889 --> 00:17:38.320
+So why don't we say that every fifth
+dash, let's display an asterisk
+
+00:17:38.330 --> 00:17:40.490
+instead that'll make it easier to see.
+
+00:17:40.869 --> 00:17:42.290
+Okay, so how do we do that.
+
+00:17:42.560 --> 00:17:47.379
+We're right in here, so what could do
+is we could modify this code slightly.
+
+00:17:47.380 --> 00:17:52.920
+We could say if that specific I
+my counting variable, right, mod
+
+00:17:52.929 --> 00:17:57.620
+5 is equal to 0, so if that means
+I'm on a fifth number, right.
+
+00:17:58.250 --> 00:18:02.150
+In this case, I want
+to display an asterisk.
+
+00:18:05.060 --> 00:18:08.429
+Otherwise, so I need an else here.
+
+00:18:08.950 --> 00:18:11.560
+I just want to display the dash.
+
+00:18:12.469 --> 00:18:14.049
+And let me indent this correctly.
+
+00:18:14.240 --> 00:18:14.829
+There we go.
+
+00:18:15.420 --> 00:18:17.389
+So notice the indentation here.
+
+00:18:17.389 --> 00:18:18.349
+It's really important.
+
+00:18:18.760 --> 00:18:21.850
+If you look at that piece of code
+right there, you can see that
+
+00:18:21.850 --> 00:18:24.590
+I have a for loop and I've got
+another for loop nested within it.
+
+00:18:25.080 --> 00:18:27.240
+And that for loop has
+an if else statement.
+
+00:18:27.240 --> 00:18:30.709
+So every time that loop executes,
+I'm executing that if else statement.
+
+00:18:31.309 --> 00:18:35.979
+Okay, so you can see the structure of
+the code by just looking at the code.
+
+00:18:36.440 --> 00:18:37.720
+You don't have to
+try to figure it out.
+
+00:18:37.720 --> 00:18:41.330
+If everything here was indented
+to the left flush here, it'd be
+
+00:18:41.330 --> 00:18:42.790
+really hard to see the structure.
+
+00:18:42.950 --> 00:18:46.969
+So let's run this and see -- okay,
+let's say I've got 10 data items and
+
+00:18:46.969 --> 00:19:00.460
+I've got 34 32 24 5 10 and just some
+other numbers that I can put in and
+
+00:19:00.460 --> 00:19:02.470
+let's do 2 and 1 again at the end.
+
+00:19:03.420 --> 00:19:03.990
+There we go.
+
+00:19:04.150 --> 00:19:07.710
+So now you can see that
+every fifth number is being
+
+00:19:07.710 --> 00:19:08.879
+displayed with an asterisk.
+
+00:19:08.879 --> 00:19:10.860
+So in this case it's really
+easy I can tell that's 10.
+
+00:19:11.500 --> 00:19:12.479
+I can tell that's 19.
+
+00:19:13.320 --> 00:19:16.730
+I can tell that's 5 10
+15 20 25 34 and so forth.
+
+00:19:16.880 --> 00:19:19.320
+So it makes it much easier
+to interpret the data.
+
+00:19:20.010 --> 00:19:24.639
+Here's a really easy simple
+example of using a nested loop.
+
+00:19:25.309 --> 00:19:28.430
+In this case, the 4 4 makes
+sense because we know how far
+
+00:19:28.430 --> 00:19:30.899
+we're going but we could easily
+rewrite this with whiles or
+
+00:19:30.900 --> 00:19:32.320
+do whiles or anything we like.
+
+00:19:32.690 --> 00:19:35.750
+Remember, at the end of the day,
+a loop is a loop is a loop, right.
+
+00:19:35.920 --> 00:19:37.370
+So they all do the same thing.
+
+00:19:37.370 --> 00:19:38.170
+They all iterate.
+
+00:19:38.170 --> 00:19:41.380
+It's just a matter of trying to choose
+the right one for the application.
+
+00:19:41.690 --> 00:19:42.980
+So hope that helps.
+
+00:19:43.480 --> 00:19:45.659
+These kinds of examples are
+going to be really useful in the
+
+00:19:45.660 --> 00:19:47.430
+challenge exercise which is next.

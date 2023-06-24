@@ -1,0 +1,439 @@
+WEBVTT
+
+00:00:05.500 --> 00:00:07.700
+As you start overloading constructors,
+
+00:00:07.700 --> 00:00:12.600
+you often notice that the code used to initialize objects in these constructors is very similar.
+
+00:00:12.600 --> 00:00:16.800
+Many times only the initialization values of the data members is what changes.
+
+00:00:17.000 --> 00:00:20.500
+One common source of program errors is duplicated code.
+
+00:00:20.500 --> 00:00:24.000
+So we want to minimize the amount of duplicated code in our programs.
+
+00:00:24.700 --> 00:00:27.800
+C++ allows us to use delegating constructors.
+
+00:00:28.400 --> 00:00:32.300
+The idea is that we can now call another constructor of the same class
+
+00:00:32.300 --> 00:00:34.600
+in the initialization list of constructor.
+
+00:00:35.800 --> 00:00:39.900
+The syntax is really simple. After the parameter list, we write a colon
+
+00:00:39.900 --> 00:00:43.200
+and then we follow it with the call to the constructor we wish to call.
+
+00:00:43.800 --> 00:00:46.100
+Let's see an example with the player class.
+
+00:00:46.900 --> 00:00:50.500
+Here's the declaration of the player class, as we've used previously.
+
+00:00:51.000 --> 00:00:53.200
+We've got the three overloaded constructors.
+
+00:00:54.800 --> 00:00:58.700
+And here's the code for the overloaded constructors using initialization lists.
+
+00:00:59.200 --> 00:01:02.200
+Notice how similar the initialization lists are.
+
+00:01:02.700 --> 00:01:06.600
+In this example, the only differences are the values used for initialization.
+
+00:01:07.000 --> 00:01:10.300
+Rather than write these initializer lists over and over in our code,
+
+00:01:10.300 --> 00:01:14.900
+we can simply delegate initialization to another constructor. Let me show you how.
+
+00:01:16.800 --> 00:01:20.900
+In this example, the first constructor is the three argument constructor,
+
+00:01:20.900 --> 00:01:24.500
+and we use a constructor initialization list as we did previously.
+
+00:01:25.700 --> 00:01:28.200
+But when we define the no args constructor,
+
+00:01:28.200 --> 00:01:31.200
+instead of writing another very similar initialization list,
+
+00:01:31.200 --> 00:01:35.300
+we simply call the three args constructor with the initialization data we need.
+
+00:01:35.960 --> 00:01:38.660
+We call the constructor by providing the constructor name,
+
+00:01:38.660 --> 00:01:42.660
+which is the same name as the class followed by the arguments to the constructor.
+
+00:01:43.650 --> 00:01:47.150
+In this case the no args constructor is the delegating constructor
+
+00:01:47.150 --> 00:01:50.750
+since it delegates object initialization to another constructor.
+
+00:01:51.630 --> 00:01:53.630
+In the last example, we do the same thing,
+
+00:01:53.630 --> 00:01:58.390
+but we delegate to the three arg constructor and provide name val 0 and 0 as arguments.
+
+00:01:59.050 --> 00:02:02.850
+It's important to note that this only works in the initialization list.
+
+00:02:03.350 --> 00:02:07.350
+You can't call the other constructors from the body in the delegating constructors.
+
+00:02:07.850 --> 00:02:11.850
+Also, you can't delegate to another constructor and provide initialization values
+
+00:02:11.850 --> 00:02:12.850
+to class members.
+
+00:02:13.650 --> 00:02:18.150
+Let's update the player class in the IDE to support delegating constructors now.
+
+00:02:19.400 --> 00:02:23.400
+Okay. So we're back in the IDE, and I'm in section 13 workspace
+
+00:02:23.900 --> 00:02:26.900
+in the DelegatingConstructors project.
+
+00:02:28.100 --> 00:02:30.460
+So what we've got here is the player class again.
+
+00:02:30.460 --> 00:02:33.660
+And we've got our same three overloaded constructors.
+
+00:02:33.660 --> 00:02:37.160
+And what we've got down here from line 21 all the way down to line 32
+
+00:02:37.960 --> 00:02:42.660
+are our implemented constructors using constructor initialization lists.
+
+00:02:43.960 --> 00:02:47.620
+As you can see, a lot of this is very duplicated.
+
+00:02:48.280 --> 00:02:50.940
+So what we're going to do is we're going to refactor this.
+
+00:02:50.940 --> 00:02:53.600
+So that instead of using constructor initialization list,
+
+00:02:53.600 --> 00:02:55.800
+we're going to use delegating constructors.
+
+00:02:55.800 --> 00:02:59.500
+Now what we want to do is, we want to delegate everything in this example
+
+00:02:59.500 --> 00:03:01.800
+to this 3 args constructor.
+
+00:03:02.600 --> 00:03:04.460
+So what can we do? Well,
+
+00:03:04.460 --> 00:03:08.660
+what we can do is we can replace that initializer list with
+
+00:03:09.660 --> 00:03:12.260
+a delegation. So we can simply say player,
+
+00:03:12.860 --> 00:03:16.960
+and we'll say none and 0 comma 0.
+
+00:03:16.960 --> 00:03:17.560
+Okay.
+
+00:03:17.920 --> 00:03:19.720
+So let me delete the rest of this,
+
+00:03:21.220 --> 00:03:26.210
+and that's basically it so what's going to happen here is, let me replace that parenthesis with a curly.
+
+00:03:28.810 --> 00:03:32.610
+So what's gonna happen here is we're gonna call the constructor
+
+00:03:32.610 --> 00:03:36.110
+from this constructor, that's the whole idea of delegating constructors.
+
+00:03:36.110 --> 00:03:39.710
+This no args constructor is the delegating constructor now.
+
+00:03:39.710 --> 00:03:42.370
+So what we're going to do is we're going to call the player constructor
+
+00:03:42.370 --> 00:03:45.170
+that has those three arguments, which is this guy right here,
+
+00:03:45.170 --> 00:03:47.170
+the one with the initialization list.
+
+00:03:47.170 --> 00:03:51.170
+So this guy's really going to do all the work for all of these constructors.
+
+00:03:51.170 --> 00:03:53.170
+We're simply just going to delegate the work to it.
+
+00:03:54.370 --> 00:03:57.730
+We'll do the same thing here. We'll call player,
+
+00:03:57.730 --> 00:04:01.930
+and we'll put that's in name val and 0 comma 0. Again,
+
+00:04:03.030 --> 00:04:07.030
+and I'll delete the rest of this. And I think i put a parenthesis again,
+
+00:04:07.910 --> 00:04:09.910
+so I'll replace that with a curly here.
+
+00:04:12.110 --> 00:04:15.610
+And there we go. So in this case, we're calling
+
+00:04:15.610 --> 00:04:20.600
+the same idea. We're calling this three arg constructor from here.
+
+00:04:21.800 --> 00:04:24.680
+Now let's put some output statements in here just to see
+
+00:04:24.680 --> 00:04:27.670
+exactly how this works in the chaining that takes place.
+
+00:04:27.670 --> 00:04:30.270
+So what I'm going to do in the body of this constructor here,
+
+00:04:30.870 --> 00:04:33.170
+I'm simply going to say cout,
+
+00:04:33.170 --> 00:04:36.470
+and I'm going to say no args constructor.
+
+00:04:36.830 --> 00:04:37.730
+That's this one.
+
+00:04:41.090 --> 00:04:42.750
+And we'll have an endline.
+
+00:04:42.750 --> 00:04:46.850
+And then what I'm going to do is I'm just going to copy and paste that one line of code
+
+00:04:46.850 --> 00:04:49.350
+into each one of these constructor bodies here.
+
+00:04:52.600 --> 00:04:56.500
+And in this case, this is the one arg constructor
+
+00:04:56.500 --> 00:04:57.860
+just expects the one string,
+
+00:04:58.660 --> 00:05:01.160
+and this guy here expects all three.
+
+00:05:03.820 --> 00:05:05.370
+So I'll just write three arg.
+
+00:05:07.570 --> 00:05:10.570
+And that's one arg. Okay.
+
+00:05:10.570 --> 00:05:14.570
+So that's it. Now we've got our constructors implemented. We're using delegation
+
+00:05:14.570 --> 00:05:15.870
+here in this context,
+
+00:05:15.870 --> 00:05:17.770
+and we'll just run our main now.
+
+00:05:17.770 --> 00:05:21.770
+The idea here is the same -- we're going to create the same objects as we did before we've got
+
+00:05:21.770 --> 00:05:22.650
+a an empty,
+
+00:05:22.650 --> 00:05:24.450
+which is a player object,
+
+00:05:24.450 --> 00:05:28.550
+and that's going to use the no argus constructor, right, because I'm not supplying any information.
+
+00:05:28.550 --> 00:05:29.910
+So it's going to come up here.
+
+00:05:30.460 --> 00:05:31.900
+And then rather than
+
+00:05:31.900 --> 00:05:36.700
+initializing here, we're just simply going to delegate the construction of this object
+
+00:05:37.060 --> 00:05:40.060
+to the constructor that expects three args, this guy.
+
+00:05:40.360 --> 00:05:42.060
+Okay. So that's what we're gonna do
+
+00:05:42.060 --> 00:05:46.660
+and what we'll do is we'll put breaks on all of these constructors so we can see when they're being called.
+
+00:05:47.020 --> 00:05:49.020
+And we'll also put a break right there.
+
+00:05:49.680 --> 00:05:51.680
+And let's step through this.
+
+00:05:54.180 --> 00:05:58.380
+And let's see we've got an error, I'm missing a terminating character.
+
+00:05:58.380 --> 00:06:02.980
+Okay. I probably have that all set now. Let's try that again. Okay.
+
+00:06:06.480 --> 00:06:09.480
+So let me put the output window over here so we can see it.
+
+00:06:10.780 --> 00:06:13.660
+And we'll walk through this. And remember, when we're in the constructors,
+
+00:06:13.660 --> 00:06:17.760
+we're going to use the this keyword which is really a pointer to the object that I'm creating.
+
+00:06:17.760 --> 00:06:20.360
+And like i said, I'll talk about that a little bit later in the course.
+
+00:06:20.960 --> 00:06:22.660
+So we're right here on line 38.
+
+00:06:23.260 --> 00:06:25.360
+We want to create that empty
+
+00:06:25.360 --> 00:06:29.560
+object right here. So it's going to call this no args constructor. So let's step through it.
+
+00:06:30.360 --> 00:06:32.560
+You can see I'm right here now.
+
+00:06:32.560 --> 00:06:36.560
+Now what we expect is we don't expect this one line of code to execute in the body.
+
+00:06:36.560 --> 00:06:38.760
+What we expect is to be thrown down here,
+
+00:06:39.460 --> 00:06:42.460
+right, because that's what I'm doing, I'm delegating. So I'm gonna --
+
+00:06:43.160 --> 00:06:45.760
+there we go. Now we're at line 32.
+
+00:06:45.760 --> 00:06:49.860
+This initializer list is going to execute and initialize my object.
+
+00:06:51.460 --> 00:06:53.460
+That's done. If I look at this,
+
+00:06:54.120 --> 00:06:58.420
+you'll be able to see none 0 0, which is exactly what I expected.
+
+00:06:58.920 --> 00:07:03.120
+Now I execute the body of this constructor, so this is going to say three args constructor.
+
+00:07:05.000 --> 00:07:09.100
+And I spelled constructor wrong but that's okay. I'll fix it when I save the files.
+
+00:07:09.100 --> 00:07:11.660
+So three args constructor just executed.
+
+00:07:11.660 --> 00:07:15.660
+Now I'm not done I need to come back to the constructor that called it.
+
+00:07:15.660 --> 00:07:19.860
+And I'm going to execute this this body right here, no argus constructor. So let's do that.
+
+00:07:19.860 --> 00:07:22.160
+See we're back now to line 23,
+
+00:07:22.410 --> 00:07:25.400
+and we execute that one line.
+
+00:07:25.400 --> 00:07:27.760
+So you can see here that the no args constructor
+
+00:07:27.760 --> 00:07:31.060
+called the three args constructor which is exactly what we expected.
+
+00:07:32.500 --> 00:07:34.800
+Okay. So now let's do this this one right here.
+
+00:07:34.800 --> 00:07:38.100
+I'm creating the frank object, and I'm calling that one arg constructor,
+
+00:07:38.100 --> 00:07:41.400
+this one right here that expects a string. So let's step through it.
+
+00:07:41.950 --> 00:07:43.950
+There I am at the initializer.
+
+00:07:46.250 --> 00:07:49.450
+I'm delegating to the same one here the player
+
+00:07:49.450 --> 00:07:51.450
+constructor that has the three arguments.
+
+00:07:52.350 --> 00:07:56.450
+It's initialized. Now I'm going to print out three args constructor again.
+
+00:07:57.110 --> 00:08:01.610
+Now when I come back here, I still need to execute the body of this constructor,
+
+00:08:02.160 --> 00:08:06.160
+which I do here. So in this case, the top case, the no args constructor
+
+00:08:06.160 --> 00:08:08.060
+called the three args constructor.
+
+00:08:08.060 --> 00:08:12.060
+In this case right now, the one arg constructor called the three args constructor.
+
+00:08:12.360 --> 00:08:16.660
+Okay. Now we'll basically do this last one right here, the villain.
+
+00:08:16.660 --> 00:08:20.960
+And for this one, we're just doing this guy directly. We're just running this constructor right here.
+
+00:08:20.960 --> 00:08:25.060
+It's going to initialize those three values and simply print out three args constructor.
+
+00:08:26.960 --> 00:08:28.960
+And there's the output, and we're done.
+
+00:08:29.840 --> 00:08:34.140
+Okay. So that's an example of delegating constructors. It's pretty straightforward.
+
+00:08:34.500 --> 00:08:37.600
+Many times, you'll have an example. That's really, really simple like this.
+
+00:08:37.600 --> 00:08:41.260
+And this example will simplify even further in the next video
+
+00:08:41.260 --> 00:08:42.960
+where we'll use default parameters.
+
+00:08:43.460 --> 00:08:46.560
+But you can always find a way to use these delegating constructors,
+
+00:08:46.560 --> 00:08:49.920
+and they're very very handy to use. The nice thing about this
+
+00:08:49.920 --> 00:08:53.220
+is whatever my initializer is here, and if I've got to run some code.
+
+00:08:53.220 --> 00:08:56.820
+Remember that if this guy delegates to this guy,
+
+00:08:56.820 --> 00:08:58.820
+both those bodies are going to be executed.

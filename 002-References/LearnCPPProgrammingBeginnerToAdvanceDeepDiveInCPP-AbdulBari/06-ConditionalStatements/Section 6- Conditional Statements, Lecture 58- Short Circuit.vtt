@@ -1,0 +1,133 @@
+WEBVTT
+
+0
+00:00.480 --> 00:03.250
+Short circuit let us see.
+
+1
+00:03.250 --> 00:16.350
+See if I'm writing a condition A greater than B and A greater than C, logical oppression used is &.
+
+2
+00:16.380 --> 00:21.890
+Let us understand what a short circuit see AND will be true if both are true.
+
+3
+00:21.900 --> 00:25.030
+If anyone is false then entire result is false.
+
+4
+00:25.060 --> 00:29.880
+Suppose this A is not a greater than B that is a 3 and B is a 5.
+
+5
+00:29.940 --> 00:36.440
+So this would be false and if this is false this condition will not be checked.
+
+6
+00:36.660 --> 00:38.030
+That condition will not be checked.
+
+7
+00:38.040 --> 00:42.350
+So this is called us short circuit and the same way.
+
+8
+00:42.420 --> 00:51.170
+If I write A greater than B, OR A greater than C, now it is combined with OR, so when OR will be true?
+
+9
+00:51.540 --> 00:54.240
+if any one of the condition is true then it will be true.
+
+10
+00:54.240 --> 00:59.420
+So If suppose this is five and this is two and then this condition would be true.
+
+11
+00:59.490 --> 01:04.620
+And once this is true it will not check this condition because one condition should be true that is
+
+12
+01:04.620 --> 01:05.410
+sufficient.
+
+13
+01:05.430 --> 01:07.460
+No it will check the rest if it is checked also.
+
+14
+01:07.530 --> 01:08.880
+The result is true only.
+
+15
+01:10.050 --> 01:16.140
+So this mechanism done by the compiler is short circuit.
+
+16
+01:16.140 --> 01:24.630
+I will take one example and show you if I have three variables  A is five and B is seven and C is three
+
+17
+01:30.460 --> 01:32.440
+and I is five.
+
+18
+01:34.410 --> 01:48.630
+If I say if A greater than B and plus plus i less than B. Now let us see, this is five and this is
+
+19
+01:48.630 --> 01:49.420
+7.
+
+20
+01:49.440 --> 01:51.340
+So this is false.
+
+21
+01:51.390 --> 01:52.280
+This is false.
+
+22
+01:52.710 --> 01:55.080
+So it will not check this condition.
+
+23
+01:55.080 --> 02:03.180
+after this if I print Cout i then what may be the value of i when this is not performed.
+
+24
+02:03.180 --> 02:07.910
+So plus plus i will not be done so i remains 5 only and the result will be 5.
+
+25
+02:09.290 --> 02:17.270
+If suppose A is  15 then it will check this condition 15 greater than 7 Yes.
+
+26
+02:17.360 --> 02:23.970
+It is true then it comes here and it will also check the condition, so while checking the condition
+
+27
+02:23.970 --> 02:25.110
+it will perform plus plus.
+
+28
+02:25.140 --> 02:30.900
+So this becomes six and whatever the result is six is less than seven so it will bring the value of
+
+29
+02:30.980 --> 02:31.490
+i
+
+30
+02:31.590 --> 02:32.900
+That is six.
+
+31
+02:32.950 --> 02:38.490
+So the point here is that in the second part of the conditional statement never use increment or decrement
+
+32
+02:38.490 --> 02:41.360
+operator  they may get executed or they may not get excecuted

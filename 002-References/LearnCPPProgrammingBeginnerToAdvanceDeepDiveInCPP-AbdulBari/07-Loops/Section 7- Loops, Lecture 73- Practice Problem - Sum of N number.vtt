@@ -1,0 +1,485 @@
+WEBVTT
+
+0
+00:00.720 --> 00:08.250
+In this video we write a program for finding the sum of first natural numbers.
+
+1
+00:08.250 --> 00:10.560
+First of all, i will explain what does it mean.
+
+2
+00:10.590 --> 00:12.190
+What is the problem.
+
+3
+00:12.240 --> 00:17.310
+Then I'll explain to you how we can take an approach how we can design a procedure for it.
+
+4
+00:17.310 --> 00:18.640
+Then we will see the flow chart.
+
+5
+00:18.650 --> 00:19.980
+I have already written it.
+
+6
+00:20.040 --> 00:21.170
+Then we will write the program.
+
+7
+00:21.750 --> 00:25.610
+So let us understand what is sum of First n natural number.
+
+8
+00:25.620 --> 00:27.770
+See the natural numbers starts from 1 onwards.
+
+9
+00:27.780 --> 00:34.800
+So 1 2 3 4 5 6 7 8 9 up to 9 means 1- 9 First 9 natural numbers.
+
+10
+00:34.800 --> 00:35.850
+I want to find the sum.
+
+11
+00:36.600 --> 00:39.230
+So id I add all of them it is 45.
+
+12
+00:39.450 --> 00:41.520
+So there is a direct formula for this one.
+
+13
+00:41.520 --> 00:47.450
+That is the formula is n into n plus one by 2 in one of the video we have seen this one right.
+
+14
+00:47.820 --> 00:52.900
+So this is sum of the first n national numbers but here we don't want to use the formula.
+
+15
+00:53.100 --> 00:56.370
+We want to use a loop and write this one.
+
+16
+00:56.370 --> 01:00.740
+So we want to add the numbers one by one by ourselves and do it.
+
+17
+01:00.870 --> 01:02.740
+So you want to do it using loop.
+
+18
+01:02.850 --> 01:05.210
+So first you do it using pen and paper.
+
+19
+01:05.250 --> 01:11.250
+First you do it on paper, directly you cannot write the program directly you cannot, unless and until
+
+20
+01:11.250 --> 01:13.590
+you have already seen it already you know it.
+
+21
+01:13.710 --> 01:18.270
+Then you can type it but first time when you are solving a problem, this is a basic problem.
+
+22
+01:18.270 --> 01:20.680
+Do it on paper do some paperwork.
+
+23
+01:20.730 --> 01:23.070
+So how these numbers can be added.
+
+24
+01:23.220 --> 01:27.230
+So I have done the paper work here so I'll explain this one first.
+
+25
+01:27.270 --> 01:28.150
+Number one.
+
+26
+01:28.520 --> 01:28.880
+OK.
+
+27
+01:28.890 --> 01:29.870
+One is I.
+
+28
+01:30.000 --> 01:31.540
+One is added With what initially.
+
+29
+01:31.560 --> 01:31.910
+Okay.
+
+30
+01:31.980 --> 01:33.220
+Let it be zero.
+
+31
+01:33.270 --> 01:34.300
+We got one.
+
+32
+01:34.410 --> 01:35.640
+The next number is 2.
+
+33
+01:36.210 --> 01:38.190
+So this in this one we are having two.
+
+34
+01:38.190 --> 01:40.440
+We got three the next number is three.
+
+35
+01:40.440 --> 01:45.360
+So in this three in this three we will add three we get the result six then in the sixth we will
+
+36
+01:45.420 --> 01:50.490
+add four we get 10 and this at 10 we will add five we get 15 so on.
+
+37
+01:50.490 --> 01:57.540
+So it means we have to go on accumulating this number or adding this number to something so that we
+
+38
+01:57.540 --> 01:59.520
+are going on getting the sum in the next number.
+
+39
+02:00.120 --> 02:04.180
+And we have the big the numbers from 1 2 3 4 5 up to the given number 9.
+
+40
+02:04.200 --> 02:06.210
+We want 9 up to 9 we have 2.
+
+41
+02:06.630 --> 02:10.160
+So this is looking like a counter that we have seen in the previous video.
+
+42
+02:10.200 --> 02:10.800
+Yes.
+
+43
+02:10.800 --> 02:18.420
+So I can take it as i and initially i started from 1 then this I is getting added to something
+
+44
+02:18.420 --> 02:19.080
+every time.
+
+45
+02:19.200 --> 02:23.440
+So for that I will take one more thing that is sum and initially zero.
+
+46
+02:23.760 --> 02:25.650
+So what is this sum.
+
+47
+02:26.100 --> 02:30.160
+And in that what is I did I make does it.
+
+48
+02:30.180 --> 02:35.290
+And then when the result is  stored see this two are added
+
+49
+02:35.400 --> 02:37.780
+And this result is taken again in the next step.
+
+50
+02:38.010 --> 02:42.750
+So this result should go into sum only sum was initially zero then sum became one then sum
+
+51
+02:42.750 --> 02:45.230
+became three, sum became six so on.
+
+52
+02:45.290 --> 02:46.670
+So it is getting added to sum.
+
+53
+02:46.680 --> 02:53.240
+So I should write like this sum assign some plus I .
+
+54
+02:53.490 --> 02:59.000
+that's it, so that  statement I got, from this data from the observation we got that statement.
+
+55
+02:59.070 --> 03:00.510
+Now you are learning right.
+
+56
+03:00.660 --> 03:05.870
+So the next time when you have similar problems some other thing then you can figure out this one.
+
+57
+03:06.000 --> 03:10.050
+So you should first put the values on paper then you can observe this one.
+
+58
+03:10.050 --> 03:16.260
+So now we got the idea that we have to take I, I should be increasing by 1 every time and it should reach
+
+59
+03:16.290 --> 03:20.850
+up to I N that is 9 and every dime that I should be added to sum.
+
+60
+03:21.810 --> 03:24.350
+So what are the repeating steps.
+
+61
+03:24.360 --> 03:30.030
+Take I added and increase I added increase I added increment i added.
+
+62
+03:30.150 --> 03:31.630
+So these are the steps.
+
+63
+03:31.800 --> 03:33.560
+So already you have written a flow chart here.
+
+64
+03:33.690 --> 03:35.750
+Let us study that flow chart.
+
+65
+03:35.960 --> 03:37.930
+Start take a number then.
+
+66
+03:38.280 --> 03:40.790
+Initially I is one and sum is zero.
+
+67
+03:40.800 --> 03:42.480
+This is one and this is zero.
+
+68
+03:42.560 --> 03:46.650
+Then if I use less than equal to n we have to add till this number right.
+
+69
+03:46.980 --> 03:54.270
+If it is true then we have to do two things first add then later on increment i, first add then increment
+
+70
+03:54.270 --> 03:56.280
+see  first is this column.
+
+71
+03:56.280 --> 03:59.470
+Second this this column may not matter it doesn't matter.
+
+72
+03:59.470 --> 04:04.900
+whatever the column is but who is executing first this one, addition has done first then I
+
+73
+04:04.920 --> 04:11.540
+is increasing, additions is done first then increase then again repeat again repeat as long as condition
+
+74
+04:11.540 --> 04:16.670
+is true if the condition is false we the sum put in some and stop.
+
+75
+04:17.190 --> 04:22.560
+So this is the procedure now we have a flowchart looking at a flow chart we will write a program.
+
+76
+04:22.680 --> 04:29.040
+So already you have written a few useful statements I have N and I and sum look at the variables we
+
+77
+04:29.040 --> 04:33.500
+need and I and some we need three variables.
+
+78
+04:33.630 --> 04:35.310
+So I have taken three variables.
+
+79
+04:35.310 --> 04:42.390
+First of all we should read n so already i have finished it and I should start from one end, sum in zero
+
+80
+04:42.570 --> 04:46.440
+sum I have made it as zero I should start from one.
+
+81
+04:46.470 --> 04:51.030
+This is one thing then next is condition and I is incresed
+
+82
+04:51.180 --> 05:00.700
+So these three things together is for loop. Yes I can write a loop for I assign one i is less equal
+
+83
+05:00.700 --> 05:06.700
+to n I plus plus say this statement is finished.
+
+84
+05:06.700 --> 05:12.040
+Condition is finished and this is finished now what is remaining inside the loop only this statement
+
+85
+05:12.040 --> 05:13.510
+is remaining inside the loop.
+
+86
+05:13.510 --> 05:19.150
+So let us write on that statement inside the loop some assign some plus i
+
+87
+05:22.530 --> 05:26.410
+than, once it is out of the loop we have to print sum.
+
+88
+05:26.670 --> 05:34.650
+So i will give a message here sum of first  natural number is sum of n numbers is in short I am
+
+89
+05:34.650 --> 05:45.150
+writing is I got a  sum in this variable sum, then return 0 OK return 0 and end of main function
+
+90
+05:45.800 --> 05:46.580
+that's it.
+
+91
+05:46.890 --> 05:52.140
+So that flowchart is converted into a program now few more thing i want show you instead of using for loop
+
+92
+05:52.140 --> 05:58.160
+loop if you say no I will use a while loop you can write while loop also but it is better because for
+
+93
+05:58.170 --> 06:04.340
+loop you can understand that I is starting from 1 and stopping at n you can clearly understand that
+
+94
+06:04.570 --> 06:11.280
+other wise you can change it to for loop  also I will show how to change it and one more time this  sum assign
+
+95
+06:11.290 --> 06:14.600
+sum +I,  this is there.
+
+96
+06:14.610 --> 06:16.780
+So sum is on the right hand side also.
+
+97
+06:16.890 --> 06:23.100
+So already we have seen compound that is arithmetic operator, assignment operator so we can
+
+98
+06:23.100 --> 06:27.900
+use that one here so compound assignment operator we can use. sum plus assign i.
+
+99
+06:27.960 --> 06:34.560
+I already have discussed about this one so you can use this not instead for loop if you want to use while 
+
+100
+06:34.560 --> 06:41.480
+loop then, one thing I have to do here is I should take i as one here only, means before this I should
+
+101
+06:41.500 --> 06:49.120
+right then instead of for I will write while in here, then what is the condition as long as i is less than n
+
+102
+06:49.120 --> 06:56.310
+then what about I plus plus inside the loop I have to do it so inside the for there are three
+
+103
+06:56.310 --> 07:04.050
+things I will write them here once again I assigned one and i is  less equal to n I plus plus see this
+
+104
+07:04.050 --> 07:08.030
+portion is gone here and this is as it is.
+
+105
+07:08.130 --> 07:11.220
+And this plus plus is inside the loop.
+
+106
+07:11.320 --> 07:14.050
+So this is using while loop right.
+
+107
+07:14.380 --> 07:18.760
+So the same thing you can do it using while loop also even you can do it using dowhile loop also.
+
+108
+07:19.480 --> 07:26.830
+So what I have to say here is that you can use any loop you want but for means you should use when you
+
+109
+07:26.830 --> 07:32.950
+know the number of times of reputation, while when you don't want a number of times of repetition. it is
+
+110
+07:32.950 --> 07:33.720
+readable.
+
+111
+07:34.010 --> 07:38.160
+if anybody's reading he can understand that and that's it.
+
+112
+07:39.190 --> 07:40.480
+So that's all in this video.
+
+113
+07:41.080 --> 07:45.880
+So there is a coding exercise available level for this one you finish that coding exercise and also
+
+114
+07:46.060 --> 07:49.000
+a write up program by your self, in encoding exercise.
+
+115
+07:49.000 --> 07:50.430
+You have to write down this portion.
+
+116
+07:51.100 --> 07:53.230
+So using for loop you have to find the sum right.
+
+117
+07:53.230 --> 07:55.450
+You don't have to  the input like this.
+
+118
+07:55.510 --> 07:58.970
+So if you read the coding exercise description you can understand it.
+
+119
+07:59.410 --> 08:03.400
+do the coding excersice to say that and also write this complete program by yourself.
+
+120
+08:03.930 --> 08:04.440
+That's all.

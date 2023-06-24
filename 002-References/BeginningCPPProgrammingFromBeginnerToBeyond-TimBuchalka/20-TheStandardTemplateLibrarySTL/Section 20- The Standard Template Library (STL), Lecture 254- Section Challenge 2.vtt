@@ -1,0 +1,873 @@
+WEBVTT
+
+00:00:05.390 --> 00:00:08.789
+Hello, and welcome to the
+section 20 second challenge.
+
+00:00:09.139 --> 00:00:13.010
+This challenge is all about using
+a std list, a doubly linked list.
+
+00:00:13.690 --> 00:00:15.629
+What we're going to do in
+this challenge is we're
+
+00:00:15.630 --> 00:00:16.930
+going to simulate a playlist.
+
+00:00:17.930 --> 00:00:20.939
+So imagine you've got a CD and you
+want to put it in your car, you
+
+00:00:20.940 --> 00:00:23.369
+want to play it and move to the
+next song and the previous song
+
+00:00:23.369 --> 00:00:24.490
+and the beginning and so forth.
+
+00:00:25.090 --> 00:00:26.950
+We're also going to be
+able to add songs to this.
+
+00:00:26.950 --> 00:00:28.550
+So that's the idea here.
+
+00:00:28.550 --> 00:00:32.240
+And we're going to model
+that playlist using a doubly
+
+00:00:32.240 --> 00:00:33.920
+linked list of song objects.
+
+00:00:34.190 --> 00:00:36.690
+So I'm in the section 20 workspace.
+
+00:00:36.980 --> 00:00:39.099
+And here is the challenge
+2 project, and then there's
+
+00:00:39.100 --> 00:00:42.090
+the challenge 2 solution
+project, which has my solution.
+
+00:00:42.470 --> 00:00:43.840
+And I'll go over that
+in the next video.
+
+00:00:44.230 --> 00:00:46.019
+So let's talk about this
+challenge a little bit.
+
+00:00:46.679 --> 00:00:49.660
+The idea here is that you want to learn
+how to use a std list, and that's what
+
+00:00:49.660 --> 00:00:50.849
+we're going to use in this challenge.
+
+00:00:51.150 --> 00:00:53.180
+We want to create a
+menu-driven application.
+
+00:00:53.190 --> 00:00:55.310
+This would be really cool to
+do graphically, but we haven't
+
+00:00:55.310 --> 00:00:56.310
+learned how to do that stuff.
+
+00:00:56.330 --> 00:00:59.200
+So what we want to do is we want
+to simulate the user selecting the
+
+00:00:59.200 --> 00:01:02.120
+first song in the playlist and then
+going to the next, the previous,
+
+00:01:02.130 --> 00:01:05.399
+playing forward and backwards
+through the playlist, simple as that.
+
+00:01:06.050 --> 00:01:08.830
+We're also going to allow users
+to add new songs to the playlist.
+
+00:01:09.130 --> 00:01:11.949
+And every time we add a new song,
+it's going to be added prior
+
+00:01:11.949 --> 00:01:13.439
+to the currently playing song.
+
+00:01:13.640 --> 00:01:15.280
+Okay, so here's the menu.
+
+00:01:15.590 --> 00:01:17.590
+And I've got a sample run
+coming over here on the right.
+
+00:01:17.590 --> 00:01:21.000
+And I'll go to that in just a second,
+but here's the menu, play the first
+
+00:01:21.000 --> 00:01:24.590
+song, play the next song, play the
+previous song, add and play a new
+
+00:01:24.590 --> 00:01:27.680
+song at the current location, and
+then just list the current playlist,
+
+00:01:27.960 --> 00:01:31.149
+and that'll list the playlists or,
+in other words, the songs that are
+
+00:01:31.150 --> 00:01:35.740
+out there, and it will also list the
+currently playing song, and q to quit.
+
+00:01:36.480 --> 00:01:37.060
+So that's it.
+
+00:01:37.090 --> 00:01:37.830
+It's real simple.
+
+00:01:38.030 --> 00:01:42.620
+The available playlist is modeled
+as a list of song objects.
+
+00:01:43.120 --> 00:01:45.929
+I'll provide the song class, and
+I'll go over that in just a second.
+
+00:01:46.440 --> 00:01:49.309
+And these are the songs that I
+put in the playlist just default.
+
+00:01:49.310 --> 00:01:51.480
+I just grabbed a bunch of
+them from the pop charts.
+
+00:01:52.010 --> 00:01:54.789
+You can change these to whatever you
+like or just put song one, song two,
+
+00:01:54.790 --> 00:01:56.190
+song three to keep track of them.
+
+00:01:56.580 --> 00:01:58.489
+I got kind of bored
+doing song one song two.
+
+00:01:58.490 --> 00:02:00.010
+I wanted to see some real song names.
+
+00:02:00.010 --> 00:02:01.339
+So here they are.
+
+00:02:01.549 --> 00:02:05.140
+Drake Camilla Cabello and
+Maroon 5 Imagine Dragons,
+
+00:02:05.140 --> 00:02:06.430
+a bunch of popular songs.
+
+00:02:06.670 --> 00:02:07.510
+That's it.
+
+00:02:07.640 --> 00:02:10.320
+So let me go over the run first.
+
+00:02:10.320 --> 00:02:12.960
+And then what I'll do is I'll go over
+the sample code that I'm giving you.
+
+00:02:13.450 --> 00:02:15.660
+Over here on the right, you
+can see the program running.
+
+00:02:16.030 --> 00:02:18.829
+The first run it just displays
+the playlist right here.
+
+00:02:18.829 --> 00:02:19.870
+That's the playlist.
+
+00:02:20.190 --> 00:02:23.839
+So you can see these songs right
+here are showing up right here.
+
+00:02:24.150 --> 00:02:27.840
+And the current song that's playing
+is the one by Drake, which is
+
+00:02:27.840 --> 00:02:30.190
+the first song in the playlist,
+you can see it right up here.
+
+00:02:30.620 --> 00:02:33.079
+So by default, that's
+that's our starting point.
+
+00:02:33.389 --> 00:02:36.089
+When we first run the program,
+the first song will be playing.
+
+00:02:36.490 --> 00:02:38.249
+Imagine you're putting
+a CD in your car.
+
+00:02:38.839 --> 00:02:42.400
+Here's the menu, play the first song.
+
+00:02:42.400 --> 00:02:45.970
+So anytime you press f, it's going
+to jump to Drake's song and play it.
+
+00:02:46.520 --> 00:02:49.090
+Next obviously, it's pretty
+straightforward what's happening.
+
+00:02:49.330 --> 00:02:51.770
+If I'm playing Drake's song
+and I press next, then it's
+
+00:02:51.770 --> 00:02:52.790
+going to go to Camilla's song.
+
+00:02:52.790 --> 00:02:58.460
+And if I press next again, The Weekend, Zedd, Maroon
+5 Imagine Dragons and so forth.
+
+00:02:58.760 --> 00:03:02.770
+Now since we have a doubly linked
+list, these songs are modeled
+
+00:03:03.100 --> 00:03:04.850
+as doubly linked lists, right.
+
+00:03:05.350 --> 00:03:07.070
+You've got your links
+coming back and forth.
+
+00:03:07.500 --> 00:03:13.053
+And then I've got something called
+current song and that's an iterator,
+
+00:03:13.120 --> 00:03:15.940
+that is pointing to the current song.
+
+00:03:16.320 --> 00:03:18.870
+So when you press next, all we're
+doing is we're moving the iterator
+
+00:03:18.870 --> 00:03:20.170
+over here and then press again.
+
+00:03:20.390 --> 00:03:21.790
+Next, we're going to move it over here.
+
+00:03:22.060 --> 00:03:24.560
+Now what's going to be interesting
+is if I'm right here at the
+
+00:03:24.560 --> 00:03:27.950
+first and I press previous I
+want to wrap around to here.
+
+00:03:28.380 --> 00:03:31.640
+And if I'm over here and I press
+next I want to wrap around to here.
+
+00:03:31.799 --> 00:03:33.619
+So I always want to
+be in that playlist.
+
+00:03:34.430 --> 00:03:37.480
+Okay, so let's walk
+through this little demo.
+
+00:03:38.210 --> 00:03:40.890
+Right now when we first start
+the program, you can see
+
+00:03:40.890 --> 00:03:43.920
+the playlist and you can see
+that Drake's song is playing.
+
+00:03:44.240 --> 00:03:46.120
+That's the very first
+song in the playlist.
+
+00:03:46.400 --> 00:03:53.909
+If I press n or next, it says playing
+next song and it says now it's playing
+
+00:03:54.199 --> 00:03:58.029
+the Camilo Cabello song, which is this
+guy right here, never be the same.
+
+00:03:58.650 --> 00:04:02.760
+If I press next again, and I'm
+going to scroll up so you can
+
+00:04:02.800 --> 00:04:05.009
+always have this in context here.
+
+00:04:05.440 --> 00:04:08.879
+Now it's playing the "pray for me"
+song, which is the third song.
+
+00:04:09.200 --> 00:04:10.619
+I'll press next again.
+
+00:04:11.270 --> 00:04:12.430
+Now it's playing "the middle".
+
+00:04:13.000 --> 00:04:16.140
+When I press next again, it should
+be "wait" and then "whatever it takes".
+
+00:04:16.370 --> 00:04:17.710
+So I'll press next again.
+
+00:04:18.410 --> 00:04:20.189
+Wait is playing by Maroon 5.
+
+00:04:20.200 --> 00:04:24.860
+One more time and now "whatever it
+takes" my Imagine Dragons is playing.
+
+00:04:25.259 --> 00:04:26.679
+Now I'm at the end of my playlist.
+
+00:04:27.320 --> 00:04:31.460
+If I press next again, I want it to
+wrap around back to the Drake song.
+
+00:04:31.710 --> 00:04:32.500
+So let's do that.
+
+00:04:32.510 --> 00:04:38.234
+I'll press n, and you could see
+that -- let me scroll that up, you can
+
+00:04:38.309 --> 00:04:40.200
+see that Drake's song is now playing.
+
+00:04:40.490 --> 00:04:43.830
+Now if I'm here at the beginning
+and I press p for previous, it
+
+00:04:43.830 --> 00:04:46.519
+should wrap around back down
+to the Imagine Dragon song.
+
+00:04:46.520 --> 00:04:48.159
+So I'll press p for previous.
+
+00:04:49.339 --> 00:04:50.830
+Now I'm right here.
+
+00:04:51.030 --> 00:04:53.330
+I'm right at the end here,
+Imagine Dragons is playing.
+
+00:04:54.200 --> 00:04:56.210
+Let me move that up for you so
+you can see a little better.
+
+00:04:57.090 --> 00:04:58.890
+Okay, so that's it.
+
+00:04:59.150 --> 00:05:03.900
+Now, of course, if I press
+previous here, it's going
+
+00:05:03.900 --> 00:05:05.480
+to go to the Maroon 5 song.
+
+00:05:05.480 --> 00:05:07.120
+And you can see it's
+just a linked list.
+
+00:05:07.120 --> 00:05:09.430
+And I'm able to go around
+it, which is pretty cool.
+
+00:05:10.510 --> 00:05:14.789
+If at any point you can press l
+and that'll list what's currently
+
+00:05:14.790 --> 00:05:19.359
+happening, so you can see the playlist
+right here that hasn't changed because
+
+00:05:19.389 --> 00:05:20.870
+we haven't modified it at all but
+
+00:05:20.880 --> 00:05:22.600
+you can see the playlist right here.
+
+00:05:23.789 --> 00:05:26.530
+And the current song
+is the Maroon 5 song.
+
+00:05:26.950 --> 00:05:29.330
+So anytime you want some
+information, you press l.
+
+00:05:30.100 --> 00:05:31.700
+All right, so now let's
+get to the good stuff.
+
+00:05:31.710 --> 00:05:32.789
+Let's add a song.
+
+00:05:33.190 --> 00:05:36.510
+I'm going to scroll up
+just a little bit okay.
+
+00:05:36.540 --> 00:05:37.630
+Now I'm going to press a.
+
+00:05:38.090 --> 00:05:43.009
+And when I press a, it says
+adding and playing a new song.
+
+00:05:43.119 --> 00:05:44.939
+Cool, so what's the
+song name I want to add.
+
+00:05:44.939 --> 00:05:46.329
+Let's say I want to add "Imagine".
+
+00:05:47.939 --> 00:05:49.929
+Who's the artist, it's the Beatles.
+
+00:05:51.519 --> 00:05:53.849
+What's my rating for the
+song, I'll give it a five.
+
+00:05:54.459 --> 00:05:58.759
+Now when I press enter, that song
+will be added before the current song.
+
+00:05:58.769 --> 00:06:00.630
+And if you remember the
+current song was "Wait".
+
+00:06:01.370 --> 00:06:02.710
+That's the one that's
+currently playing.
+
+00:06:02.950 --> 00:06:07.580
+So "Imagine" will be added
+between "The Middle" and "Wait".
+
+00:06:08.460 --> 00:06:10.989
+So I'll press enter and it will
+play. It'll be the current song.
+
+00:06:11.020 --> 00:06:13.630
+So I'm going to press enter
+and you can see now it's
+
+00:06:13.660 --> 00:06:15.210
+playing Imagine by the Beatles.
+
+00:06:15.500 --> 00:06:18.940
+And if I list -- let me scroll up a
+little bit, if i list my playlist now,
+
+00:06:19.449 --> 00:06:21.730
+you can see that Imagine is right here.
+
+00:06:21.990 --> 00:06:25.260
+Let me mark that for you with my
+pen. You can see that Imagine is
+
+00:06:25.260 --> 00:06:29.929
+right here now and it's between Wait
+and The Middle, just what I wanted.
+
+00:06:30.410 --> 00:06:33.540
+Now suppose I want to press f and
+I want to go to the first song,
+
+00:06:33.710 --> 00:06:35.899
+so we're going to go here to the
+Drake song and then I want to
+
+00:06:35.899 --> 00:06:37.440
+insert a new song before that.
+
+00:06:37.480 --> 00:06:38.490
+So let's do that now.
+
+00:06:39.100 --> 00:06:41.060
+So the first thing I'll do
+is, let me clear this real
+
+00:06:41.060 --> 00:06:42.520
+quick, and I'll scroll up.
+
+00:06:43.880 --> 00:06:46.589
+So I'm going to go to the first
+song, which is the Drake song.
+
+00:06:46.589 --> 00:06:48.150
+I'm going to press f right here.
+
+00:06:49.340 --> 00:06:50.619
+I'm playing Drake's song.
+
+00:06:50.830 --> 00:06:52.270
+And now I want to add another song.
+
+00:06:52.270 --> 00:06:58.702
+So let's add what's the song's name,
+let's say it's New York, and let's
+
+00:06:58.702 --> 00:07:00.730
+say that this is Frank Sinatra.
+
+00:07:02.160 --> 00:07:03.240
+And I'll give it a five.
+
+00:07:03.240 --> 00:07:04.390
+I'm giving everybody fives.
+
+00:07:05.030 --> 00:07:07.199
+That's it. Now it's playing New York.
+
+00:07:07.200 --> 00:07:08.589
+Remember, we were at the beginning.
+
+00:07:08.830 --> 00:07:13.610
+So if I display my playlist, you
+can see that New York has now been
+
+00:07:13.680 --> 00:07:15.220
+added at the beginning of the list.
+
+00:07:16.230 --> 00:07:18.030
+And it's playing right
+here current song New York.
+
+00:07:18.210 --> 00:07:19.430
+That's it. That's the program.
+
+00:07:19.430 --> 00:07:20.640
+You press q to quit.
+
+00:07:21.380 --> 00:07:24.039
+Now there's a couple of interesting
+things here that you can extend once
+
+00:07:24.040 --> 00:07:25.920
+you get this basic functionality going.
+
+00:07:26.250 --> 00:07:29.359
+Notice that in my menu, I have no
+way to play the last song in the
+
+00:07:29.359 --> 00:07:32.440
+list or the ending song in the
+list, you could certainly add that.
+
+00:07:33.330 --> 00:07:36.800
+You could add a whole bunch of other
+things you can save this to file.
+
+00:07:36.800 --> 00:07:38.850
+You can read this
+information from a file.
+
+00:07:39.059 --> 00:07:41.739
+So you can extend this program
+in a bunch of different ways.
+
+00:07:42.059 --> 00:07:44.650
+Okay, so now let me show you
+the source code that I'm giving you
+
+00:07:45.250 --> 00:07:46.780
+and that is right in here.
+
+00:07:47.570 --> 00:07:50.049
+I've gone ahead and included
+the include files that
+
+00:07:50.050 --> 00:07:50.810
+you're going to need.
+
+00:07:51.180 --> 00:07:54.630
+And let me show you what
+the song class looks like.
+
+00:07:54.630 --> 00:07:55.950
+It's a real simple class.
+
+00:07:56.760 --> 00:08:00.059
+Obviously, this is what we're
+modeling, the name of the song,
+
+00:08:00.500 --> 00:08:03.500
+the artist and the rating, which
+is an integer in this case.
+
+00:08:03.559 --> 00:08:08.490
+I have a friend function here, which
+is my overloaded insertion operator.
+
+00:08:08.490 --> 00:08:10.870
+So that can display this kind
+of stuff over here real easy.
+
+00:08:12.010 --> 00:08:13.740
+I've got a default constructor.
+
+00:08:14.290 --> 00:08:17.719
+I've got an overloaded constructor
+here that allows me to create whatever
+
+00:08:17.719 --> 00:08:19.870
+I need using name artist and rating.
+
+00:08:20.400 --> 00:08:22.849
+Then I've got some getters that I
+don't even think I'm using the getters,
+
+00:08:22.850 --> 00:08:24.020
+but I put them in there anyway.
+
+00:08:24.510 --> 00:08:28.030
+Now the most important thing we need
+to do here is -- and it's not so
+
+00:08:28.030 --> 00:08:31.030
+important in this program, but it's
+just best practice to always do.
+
+00:08:31.660 --> 00:08:35.719
+We need to overload these
+operators, the less than operator
+
+00:08:35.719 --> 00:08:37.100
+and the equality operator.
+
+00:08:37.450 --> 00:08:41.669
+Those are the only 2 operators that
+we must overload if we're going to use
+
+00:08:41.730 --> 00:08:45.000
+our own custom classes with the stl.
+
+00:08:45.630 --> 00:08:49.450
+So in this case, less than
+just -- I'm defining less than as
+
+00:08:49.740 --> 00:08:52.950
+this -- name of this song is less
+than the name of the other song.
+
+00:08:53.509 --> 00:08:55.010
+And the same thing with equality.
+
+00:08:55.010 --> 00:08:57.680
+If the 2 names are the same,
+then I'm considering them equal.
+
+00:08:58.580 --> 00:09:00.449
+Okay, so that's that.
+
+00:09:01.350 --> 00:09:03.860
+Here I'm overloading the insertion
+operator, as I mentioned.
+
+00:09:04.320 --> 00:09:07.400
+I'm giving you the code for the display
+menu, which is really, really easy.
+
+00:09:08.240 --> 00:09:10.870
+And then I've got a couple of methods
+here or functions, I should say,
+
+00:09:10.870 --> 00:09:12.099
+that you're going to implement.
+
+00:09:12.110 --> 00:09:13.609
+One is play the current song.
+
+00:09:13.609 --> 00:09:18.030
+And all this does is it
+does this right here. Here
+
+00:09:18.030 --> 00:09:21.560
+we go. So I just went
+forward, it says playing.
+
+00:09:22.110 --> 00:09:23.090
+And the song that's playing.
+
+00:09:23.090 --> 00:09:24.450
+That's all. It just displays that.
+
+00:09:24.790 --> 00:09:27.210
+And the song that's being
+played is passed into it.
+
+00:09:27.220 --> 00:09:28.790
+So that's a really one-liner, right.
+
+00:09:29.110 --> 00:09:31.990
+You basically just have to
+output that to an upward stream.
+
+00:09:32.929 --> 00:09:33.700
+Display playlist.
+
+00:09:35.049 --> 00:09:37.880
+Here, we're getting the entire
+playlist and the current song.
+
+00:09:37.880 --> 00:09:40.310
+And this is the one that you're
+going to call from the list
+
+00:09:40.570 --> 00:09:43.210
+functionality it's just going
+to display all those songs.
+
+00:09:43.440 --> 00:09:45.540
+So in this case, we're going
+to see something like this
+
+00:09:45.540 --> 00:09:49.990
+right here, all that good
+information is going to display.
+
+00:09:51.060 --> 00:09:53.049
+Okay, and now here's the main.
+
+00:09:54.350 --> 00:09:55.700
+Probably just what you expect.
+
+00:09:55.700 --> 00:09:56.310
+Here's my playlist.
+
+00:09:57.550 --> 00:10:00.810
+That's my object, and it
+is a list of song objects.
+
+00:10:00.860 --> 00:10:02.679
+And I'm initializing it right here.
+
+00:10:02.750 --> 00:10:03.430
+So that's done.
+
+00:10:03.910 --> 00:10:06.379
+And I'm setting my current song.
+
+00:10:06.380 --> 00:10:08.500
+This is the most important piece here.
+
+00:10:08.889 --> 00:10:10.410
+That object right there.
+
+00:10:10.410 --> 00:10:14.930
+That current song is an iterator
+to that's pointing to some
+
+00:10:14.950 --> 00:10:16.290
+object in that in this playlist.
+
+00:10:17.460 --> 00:10:19.270
+And I'm setting it to the
+beginning of the list.
+
+00:10:19.270 --> 00:10:20.619
+I'm setting it right to there.
+
+00:10:20.620 --> 00:10:22.040
+It's going to start right there.
+
+00:10:23.040 --> 00:10:27.120
+From that point on, it's your logic to
+display the menu, get the input from
+
+00:10:27.120 --> 00:10:29.330
+the user depending on what they select.
+
+00:10:29.600 --> 00:10:31.740
+This is the guy that you're
+going to have to increment or
+
+00:10:31.750 --> 00:10:34.530
+decrement depending on how you
+want to walk across this list.
+
+00:10:35.490 --> 00:10:37.160
+That's it, have fun.
+
+00:10:37.410 --> 00:10:40.370
+Get the basic functionality
+working before you extend it.
+
+00:10:40.370 --> 00:10:42.799
+And then you can extend it like,
+I said a bunch of different ways.
+
+00:10:43.049 --> 00:10:47.259
+You can go to the go to the end, go
+to the beginning, save it to a file.
+
+00:10:47.260 --> 00:10:48.239
+So next time you run this.
+
+00:10:48.240 --> 00:10:49.619
+You can just load the information.
+
+00:10:49.630 --> 00:10:51.160
+The song information from the file.
+
+00:10:51.420 --> 00:10:54.189
+Because remember, as it is now
+every time I add a new song to the
+
+00:10:54.190 --> 00:10:56.380
+playlist, it's not being persisted.
+
+00:10:56.380 --> 00:10:58.540
+So the next time I run this,
+it's not going to be there.
+
+00:10:58.990 --> 00:11:01.829
+So it'd be kind of nice to be able to
+save that and then load it up again.
+
+00:11:02.799 --> 00:11:03.740
+Okay, so that's it.
+
+00:11:03.830 --> 00:11:06.290
+Have fun, it's a nice
+little challenge project.
+
+00:11:06.490 --> 00:11:08.189
+It's simpler than you would think.
+
+00:11:08.720 --> 00:11:15.039
+Think iterators, think stl, don't
+think about Is and Js and looping
+
+00:11:15.040 --> 00:11:16.320
+variables and things like that.
+
+00:11:16.340 --> 00:11:18.199
+Let the stl do the work for you.
+
+00:11:18.700 --> 00:11:21.390
+All right, have fun, and I'll see
+you in the next solution video.

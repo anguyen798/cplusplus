@@ -1,0 +1,838 @@
+WEBVTT
+
+00:00:05.660 --> 00:00:07.390
+So how do function calls work.
+
+00:00:08.240 --> 00:00:10.720
+Functions use an area in
+memory called the 'function
+
+00:00:10.760 --> 00:00:12.490
+call stack' or program stack.
+
+00:00:13.250 --> 00:00:16.509
+A stack is analogous to a stack
+of books or a stack of dishes.
+
+00:00:16.799 --> 00:00:19.870
+If you place a book on top of the
+stack, then you must remove that
+
+00:00:19.870 --> 00:00:21.560
+book before removing any others.
+
+00:00:22.040 --> 00:00:26.119
+This is referred to as
+last in first out or LIFO.
+
+00:00:27.220 --> 00:00:30.649
+Stacks also use the terms push
+when you put an item on top of the
+
+00:00:30.650 --> 00:00:34.020
+stack and pop when you remove an
+item from the top of the stack.
+
+00:00:34.379 --> 00:00:38.320
+In the case of a c++ program,
+these items are called stack
+
+00:00:38.320 --> 00:00:40.110
+frames or activation records.
+
+00:00:40.750 --> 00:00:43.589
+All it is, is a collection of
+information that represents
+
+00:00:43.590 --> 00:00:44.730
+an active function.
+
+00:00:45.320 --> 00:00:47.930
+So this is where parameters
+are stored, local variables,
+
+00:00:47.930 --> 00:00:49.309
+the return address and more.
+
+00:00:49.960 --> 00:00:53.700
+Each time a function is called, an
+activation record is created, and
+
+00:00:53.700 --> 00:00:55.339
+it's pushed onto the call stack.
+
+00:00:55.960 --> 00:00:59.420
+When the function terminates, we
+pop its activation record off the
+
+00:00:59.420 --> 00:01:02.649
+call stack, and now the top of the
+stack is the function that just
+
+00:01:02.650 --> 00:01:04.220
+called the one we just popped off.
+
+00:01:04.660 --> 00:01:06.940
+The call stack works in
+a very orderly manner.
+
+00:01:07.280 --> 00:01:09.939
+You can't jump into or out
+of the middle of the stack.
+
+00:01:09.960 --> 00:01:11.840
+You must follow the lifo rules.
+
+00:01:12.830 --> 00:01:15.900
+Also remember that the call
+stack is finite in size.
+
+00:01:16.130 --> 00:01:19.119
+If you activate too many functions
+on the call stack, then it's
+
+00:01:19.140 --> 00:01:21.149
+possible to run out of stack space.
+
+00:01:21.710 --> 00:01:24.470
+This results in a stack
+overflow error, which is usually
+
+00:01:24.470 --> 00:01:26.880
+an unrecoverable error and
+your program will terminate.
+
+00:01:27.280 --> 00:01:29.449
+The best way to understand
+how function calls work
+
+00:01:29.480 --> 00:01:30.700
+is to show you visually.
+
+00:01:30.830 --> 00:01:31.690
+Let's do that now.
+
+00:01:33.010 --> 00:01:36.679
+In order to understand how function
+calls work, we really need to
+
+00:01:36.680 --> 00:01:38.140
+understand how memory is laid out.
+
+00:01:38.960 --> 00:01:41.980
+Here, let's say that this is
+the memory for our program.
+
+00:01:42.920 --> 00:01:44.410
+It's divided into segments.
+
+00:01:44.410 --> 00:01:46.200
+So here, we've got the code area.
+
+00:01:47.449 --> 00:01:48.890
+This is where the code resides.
+
+00:01:49.230 --> 00:01:52.450
+Then we've got an area for static
+variables or for global variables.
+
+00:01:52.460 --> 00:01:54.110
+That's where they're
+stored right here.
+
+00:01:55.800 --> 00:01:57.990
+And here's the area for the stack.
+
+00:01:58.059 --> 00:01:59.710
+This is the function call stack.
+
+00:01:59.710 --> 00:02:02.590
+And this is what we're really
+concerned about in this video.
+
+00:02:03.000 --> 00:02:05.470
+So this is the area I'm going
+to concentrate on in this video.
+
+00:02:05.650 --> 00:02:07.480
+Then we've got another area
+in memory here called the
+
+00:02:07.480 --> 00:02:09.130
+heap or the free store.
+
+00:02:10.070 --> 00:02:13.170
+We'll talk a lot about this area
+when we talk about pointers and
+
+00:02:13.170 --> 00:02:17.150
+dynamic memory allocation. So in
+this video, keep in mind that what
+
+00:02:17.150 --> 00:02:20.429
+I'm talking about is this area right
+here, that's the function call stack.
+
+00:02:20.849 --> 00:02:23.950
+So when we call functions and they
+finish and they pop off the stack,
+
+00:02:23.950 --> 00:02:26.680
+this is what we're talking about,
+this area in memory right here.
+
+00:02:30.360 --> 00:02:31.600
+Okay, so I'm in the IDE.
+
+00:02:31.600 --> 00:02:36.320
+And I'm in the section 11 workspace in
+the how function calls work project.
+
+00:02:37.030 --> 00:02:39.250
+And I've got a real simple example
+here that I'm going to walk
+
+00:02:39.259 --> 00:02:41.080
+through in detail in a second.
+
+00:02:41.629 --> 00:02:44.210
+But before I do that, let's
+concentrate and look at
+
+00:02:44.320 --> 00:02:47.170
+what typically happens when
+one function calls another.
+
+00:02:47.480 --> 00:02:51.250
+So I've written it out here, and this
+is not the only way to achieve this.
+
+00:02:51.389 --> 00:02:53.339
+There's a lot of different
+ways to get to the same end.
+
+00:02:53.830 --> 00:02:55.200
+But this is what typically happens.
+
+00:02:55.200 --> 00:02:59.250
+So suppose I have a main and that
+main calls a function called func1.
+
+00:02:59.480 --> 00:03:00.530
+That's what's happening here.
+
+00:03:00.530 --> 00:03:02.179
+I've got main and it's calling func1.
+
+00:03:02.750 --> 00:03:04.910
+Okay, and what happens?
+
+00:03:04.910 --> 00:03:08.220
+Well, main pushes space on the stack.
+
+00:03:08.230 --> 00:03:09.799
+Remember, everything here
+is based on the stack.
+
+00:03:09.809 --> 00:03:13.040
+For the return value that
+function func1 is going to
+
+00:03:13.040 --> 00:03:14.269
+return something to main.
+
+00:03:14.509 --> 00:03:17.879
+Main is the one that needs to get that
+result once that function is done.
+
+00:03:18.690 --> 00:03:20.550
+We need to push space for
+the parameters that are
+
+00:03:20.550 --> 00:03:21.620
+being passed in if any.
+
+00:03:21.620 --> 00:03:23.710
+In this case, we've got
+two right here x and y.
+
+00:03:24.520 --> 00:03:26.280
+And we need to push
+the return address.
+
+00:03:26.559 --> 00:03:29.970
+That's important because function1
+needs to know where to come back to.
+
+00:03:30.830 --> 00:03:33.640
+Then we transfer control
+over to function1, which is
+
+00:03:33.640 --> 00:03:36.229
+basically an assembly language
+instruction called jump.
+
+00:03:36.270 --> 00:03:38.650
+You just jump over there, and
+you're you're off and running,
+
+00:03:38.650 --> 00:03:39.900
+so control is transferred.
+
+00:03:40.510 --> 00:03:43.859
+Now on function1 side, it
+pushes the address of the
+
+00:03:43.860 --> 00:03:45.499
+previous activation record.
+
+00:03:45.740 --> 00:03:47.670
+That's basically
+moving a stack pointer.
+
+00:03:47.670 --> 00:03:49.499
+That way you know where
+the top of the stack is.
+
+00:03:49.820 --> 00:03:52.670
+You push any register values
+that need to be restored.
+
+00:03:53.549 --> 00:03:55.560
+Then you perform the
+code in function1.
+
+00:03:56.190 --> 00:03:58.820
+When the code is finished, you
+restore the register values that
+
+00:03:58.820 --> 00:04:00.440
+way main is where it was before.
+
+00:04:00.830 --> 00:04:04.169
+You restore the previous activation
+record, right, you basically pop
+
+00:04:04.170 --> 00:04:05.540
+all this stuff off the stack.
+
+00:04:05.990 --> 00:04:08.769
+You store any function result
+where main wants it, you can
+
+00:04:08.770 --> 00:04:10.180
+see main gave you the address.
+
+00:04:10.680 --> 00:04:12.900
+And you transfer control back to main.
+
+00:04:12.900 --> 00:04:16.440
+So you jump back to that return
+address that main pushed.
+
+00:04:17.649 --> 00:04:20.380
+On main side now, remember,
+function1 is now done.
+
+00:04:20.760 --> 00:04:22.860
+So main knows where the
+parameters are, and it knows
+
+00:04:22.860 --> 00:04:24.019
+where the return values are.
+
+00:04:24.020 --> 00:04:27.650
+So it needs to pop that information
+off the stack to clear up the stack
+
+00:04:27.880 --> 00:04:30.150
+and also grab those values if it can.
+
+00:04:30.580 --> 00:04:32.770
+Okay, so this is the general flow.
+
+00:04:33.300 --> 00:04:35.669
+We're not going to cover
+all the details here.
+
+00:04:35.790 --> 00:04:38.020
+I'm more interested in
+the parameter side of it.
+
+00:04:38.099 --> 00:04:41.440
+So what I'm going to do is I'm going
+to walk through this example, and I'll
+
+00:04:41.440 --> 00:04:43.370
+draw a function call stack over here.
+
+00:04:43.610 --> 00:04:46.420
+And we'll go through it in detail,
+so you can see exactly what's going
+
+00:04:46.420 --> 00:04:48.299
+on from the parameter perspective.
+
+00:04:48.299 --> 00:04:51.280
+I'm not going to worry about stack
+pointers and static links and
+
+00:04:51.280 --> 00:04:54.190
+dynamic links and all the stuff
+that's on an activation record.
+
+00:04:54.480 --> 00:04:57.659
+But more generally, let's worry
+about the parameter passing so you
+
+00:04:57.660 --> 00:05:00.363
+can really understand what's going
+on because it's important that you
+
+00:05:00.440 --> 00:05:03.670
+understand this, especially when
+we learn about recursion later on.
+
+00:05:06.039 --> 00:05:07.980
+Okay, so let's walk
+through this example.
+
+00:05:09.040 --> 00:05:11.180
+Program execution starts at domain.
+
+00:05:11.540 --> 00:05:13.920
+So main is going to be activated.
+
+00:05:13.920 --> 00:05:16.539
+It's got a function activation
+record because it is a function.
+
+00:05:16.540 --> 00:05:19.290
+So let's assume here main
+is on the stack already.
+
+00:05:19.750 --> 00:05:24.280
+And main has an x, it's
+got a y and it's got a z.
+
+00:05:24.280 --> 00:05:26.469
+So we need space for
+those local variables.
+
+00:05:26.820 --> 00:05:30.580
+You can see x is initialized
+to 10, y is initialized to
+
+00:05:30.590 --> 00:05:34.040
+20 and z is 0, in this case.
+
+00:05:35.210 --> 00:05:38.520
+Okay, so now main is right here,
+we're executing this piece of
+
+00:05:38.540 --> 00:05:41.729
+code, z equals function1 with x y.
+
+00:05:42.059 --> 00:05:43.590
+So we're calling function1.
+
+00:05:43.730 --> 00:05:46.500
+So what happens is main
+stops what it's doing.
+
+00:05:47.030 --> 00:05:48.850
+It allocates space for x y.
+
+00:05:48.850 --> 00:05:50.450
+And I'm just going
+do this conceptually.
+
+00:05:50.450 --> 00:05:54.210
+So we don't waste a lot of
+time dealing with the stack
+
+00:05:54.210 --> 00:05:55.189
+and pointers and things.
+
+00:05:55.190 --> 00:05:59.029
+But let's suppose that at
+this point, we get -- we're
+
+00:05:59.029 --> 00:06:03.060
+going to push an activation
+record on here for function1.
+
+00:06:03.730 --> 00:06:06.050
+And this is a little different
+from the example I showed you
+
+00:06:06.050 --> 00:06:08.090
+that i just walked through but
+it's a little easier to draw.
+
+00:06:08.309 --> 00:06:09.800
+So this is where we're at.
+
+00:06:10.170 --> 00:06:11.349
+So now we're at function1.
+
+00:06:13.780 --> 00:06:20.670
+Function1 is now on the stack, and
+we need space for a, b, and result.
+
+00:06:21.340 --> 00:06:26.120
+Okay, so let's say we've got a,
+we've got b and we've got result.
+
+00:06:28.139 --> 00:06:29.930
+We're doing pass by value here.
+
+00:06:30.240 --> 00:06:37.050
+So what's going to happen is the
+x hooks up with the a and the
+
+00:06:37.070 --> 00:06:38.890
+y hooks up with the b, right?
+
+00:06:38.910 --> 00:06:41.780
+There's your actual formal
+correspondence here.
+
+00:06:42.070 --> 00:06:47.129
+So x is 10 and that
+goes copied into the a.
+
+00:06:48.090 --> 00:06:49.570
+Y is 20, in this case.
+
+00:06:49.580 --> 00:06:51.230
+So we're going to copy that to the b.
+
+00:06:52.309 --> 00:06:54.039
+Okay, so this is where
+we're at right now.
+
+00:06:54.650 --> 00:06:57.130
+Now let me clear a
+little bit of this up.
+
+00:06:58.720 --> 00:06:59.820
+All right, so that's
+where we're at now.
+
+00:06:59.850 --> 00:07:03.060
+Now we start executing
+this function, function1.
+
+00:07:03.480 --> 00:07:05.310
+So it's going to add a and b.
+
+00:07:05.490 --> 00:07:07.429
+Okay, so that would be 20 plus 10.
+
+00:07:07.450 --> 00:07:08.640
+So this gives me a 30.
+
+00:07:09.929 --> 00:07:13.140
+And it's going to store that
+value into result right here.
+
+00:07:13.470 --> 00:07:15.099
+So now result gets a 30.
+
+00:07:15.970 --> 00:07:18.580
+Originally result was 0, right,
+because I zeroed it out here.
+
+00:07:18.580 --> 00:07:20.390
+I didn't write it on here
+but you get the idea here.
+
+00:07:21.730 --> 00:07:27.510
+Now we're going to call function2, and
+we're going to pass in result a and b.
+
+00:07:28.379 --> 00:07:31.510
+Okay, so again, let's stop
+what we're doing here.
+
+00:07:31.510 --> 00:07:33.219
+We need to come back
+and finish this code.
+
+00:07:33.450 --> 00:07:37.770
+So we're here, and now
+we're activating function2.
+
+00:07:39.349 --> 00:07:41.900
+And all along those stack
+pointers are moving along here.
+
+00:07:41.900 --> 00:07:44.100
+This is the part that I'm not
+going to worry about drawing here.
+
+00:07:44.450 --> 00:07:46.599
+Okay, so now we're in function2.
+
+00:07:46.750 --> 00:07:49.250
+We need space for x y and z.
+
+00:07:49.439 --> 00:07:51.620
+But notice x is a reference parameter.
+
+00:07:51.730 --> 00:07:53.290
+Okay, so we'll have to deal with that.
+
+00:07:53.380 --> 00:07:55.210
+So we've got x y and z.
+
+00:07:55.210 --> 00:07:59.059
+All right, so let's do x y and z.
+
+00:08:00.710 --> 00:08:02.369
+All right, let's do y and z first.
+
+00:08:02.559 --> 00:08:04.290
+We're going to pass those by value.
+
+00:08:04.900 --> 00:08:06.129
+What is y and z.
+
+00:08:06.139 --> 00:08:07.094
+Well, we've got 3 here.
+
+00:08:07.190 --> 00:08:11.600
+We've got result, which is
+corresponding to x, a corresponds
+
+00:08:11.600 --> 00:08:13.740
+to y and b corresponds to z, right.
+
+00:08:13.990 --> 00:08:16.150
+So y gets the value of a.
+
+00:08:16.540 --> 00:08:19.150
+The value of a was 10,
+so y is going to get 10.
+
+00:08:20.380 --> 00:08:22.199
+And z gets the value of b.
+
+00:08:22.379 --> 00:08:25.330
+So b was 20, z is going to be 20.
+
+00:08:26.360 --> 00:08:29.390
+Okay, now let's talk about
+that reference parameter.
+
+00:08:29.770 --> 00:08:32.060
+Remember, when we talked about
+reference parameters, we said
+
+00:08:32.060 --> 00:08:33.740
+that there were aliases, right.
+
+00:08:33.880 --> 00:08:37.519
+So in this case, x is an
+alias for result right here.
+
+00:08:38.710 --> 00:08:41.550
+So x is an alias for result.
+
+00:08:42.139 --> 00:08:47.420
+So any changes I make to x, result
+will be updated, right, because
+
+00:08:47.420 --> 00:08:50.130
+that's the whole idea, that's the
+whole point of pass by reference.
+
+00:08:51.030 --> 00:08:52.640
+Now we start executing this code.
+
+00:08:53.509 --> 00:08:58.920
+The code says x equals
+x plus y plus z.
+
+00:08:59.400 --> 00:09:01.110
+That's what that means right there.
+
+00:09:01.400 --> 00:09:05.936
+Okay, so we've got y and z
+here, which are 10 and 20.
+
+00:09:05.940 --> 00:09:07.390
+So this becomes 10 plus 20.
+
+00:09:09.370 --> 00:09:10.330
+And then what's x.
+
+00:09:10.360 --> 00:09:13.570
+Well, x is a reference to result.
+
+00:09:13.950 --> 00:09:14.839
+Result is 30.
+
+00:09:15.389 --> 00:09:19.040
+So we're going to grab the 30
+and add those two together.
+
+00:09:19.050 --> 00:09:20.020
+That gives us 60.
+
+00:09:20.480 --> 00:09:22.510
+So now we're going to say x equals 60.
+
+00:09:22.510 --> 00:09:24.810
+Well, again, x is an alias for result.
+
+00:09:25.040 --> 00:09:28.030
+So what we're doing is we're
+updating that guy to 60 right here.
+
+00:09:29.500 --> 00:09:31.700
+Okay, now function2 is done.
+
+00:09:31.929 --> 00:09:34.339
+So what happens, it gets
+popped off the stack.
+
+00:09:34.680 --> 00:09:35.420
+So let's do that.
+
+00:09:35.750 --> 00:09:37.830
+So function2 is now gone from here.
+
+00:09:37.910 --> 00:09:38.810
+All that's gone.
+
+00:09:39.520 --> 00:09:40.890
+I'm back in function1.
+
+00:09:41.320 --> 00:09:43.170
+Well, where did function1 leave off.
+
+00:09:43.660 --> 00:09:45.150
+It left off right here.
+
+00:09:45.550 --> 00:09:47.200
+We're back from the function call now.
+
+00:09:47.360 --> 00:09:48.999
+So it needs to return result.
+
+00:09:49.469 --> 00:09:50.759
+What's result 60.
+
+00:09:50.960 --> 00:09:54.280
+Where is it going to return
+result two? Right here.
+
+00:09:54.330 --> 00:09:58.330
+Remember, result right there is
+the result of that function call.
+
+00:09:59.480 --> 00:10:03.510
+So what I'm going to do here is I'm
+basically going to say z equals 60.
+
+00:10:05.450 --> 00:10:06.860
+So that's what's happening here.
+
+00:10:08.450 --> 00:10:10.110
+I'm popping off the stack now.
+
+00:10:11.609 --> 00:10:13.069
+So function1 is done.
+
+00:10:14.710 --> 00:10:15.860
+All this is gone.
+
+00:10:16.400 --> 00:10:20.630
+I'm back to main, and all main
+has to do is that one output
+
+00:10:20.630 --> 00:10:24.629
+statement right here, which
+displays z, and z is now 60.
+
+00:10:25.200 --> 00:10:26.400
+And the program's done.
+
+00:10:27.059 --> 00:10:30.319
+Okay, so this gives you an
+idea of conceptually what's
+
+00:10:30.320 --> 00:10:31.810
+going on with function calling.
+
+00:10:32.200 --> 00:10:35.720
+Now I skipped a lot of these
+steps here on purpose, because
+
+00:10:35.720 --> 00:10:37.850
+there's a lot to draw and it
+gets really, really cluttered.
+
+00:10:38.190 --> 00:10:42.030
+But think about all this
+as function call overhead.
+
+00:10:42.380 --> 00:10:44.689
+You really don't have to
+worry about pushing registers
+
+00:10:44.690 --> 00:10:46.360
+and transferring control.
+
+00:10:46.369 --> 00:10:48.129
+All that's done for
+you by the compiler.
+
+00:10:48.590 --> 00:10:51.170
+But there is a certain amount
+of function call overhead here.
+
+00:10:51.510 --> 00:10:54.830
+So let's run this program and
+see that we indeed get a 60.
+
+00:10:55.510 --> 00:10:56.749
+And there it is, there's the result.
+
+00:10:56.749 --> 00:10:57.860
+Your 60.
+
+00:10:59.170 --> 00:11:00.370
+Okay, so hopefully, this works.
+
+00:11:00.389 --> 00:11:02.580
+We'll do this again when
+we talk about recursion.
+
+00:11:03.270 --> 00:11:06.260
+That's when a function calls a function
+calls a function calls itself.
+
+00:11:07.000 --> 00:11:09.550
+So it's really important to
+understand what's going on
+
+00:11:09.830 --> 00:11:11.180
+with the stack call frame.
+
+00:11:11.180 --> 00:11:14.189
+So we really know what's what's being
+passed and what's being returned.
+
+00:11:14.510 --> 00:11:17.340
+And you can see here that if we
+don't have a way to unwind to get
+
+00:11:17.340 --> 00:11:21.319
+back to where we were, we could just
+really just run out of memory right
+
+00:11:21.320 --> 00:11:22.650
+and get a stack overflow error.

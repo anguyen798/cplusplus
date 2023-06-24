@@ -1,0 +1,526 @@
+WEBVTT
+
+0
+00:00.360 --> 00:03.500
+Let us write a program for reversing a number.
+
+1
+00:04.950 --> 00:11.010
+If a number is given we want to reverse that number not just displaying we want to reverse of that number
+
+2
+00:11.040 --> 00:12.840
+as a number a single number.
+
+3
+00:12.840 --> 00:18.130
+Let's suppose if the number is 153 we want the reverse of that that is three hundred and fifty one.
+
+4
+00:18.480 --> 00:19.780
+How we can do that.
+
+5
+00:19.860 --> 00:21.210
+Let us get the basic idea.
+
+6
+00:21.750 --> 00:22.710
+How do you do that.
+
+7
+00:22.710 --> 00:28.370
+The procedure is similar to the previous video where we have check Armstrong and take out digits, same thing
+
+8
+00:28.910 --> 00:30.560
+but a little different.
+
+9
+00:30.570 --> 00:31.590
+So what is the idea.
+
+10
+00:31.590 --> 00:33.630
+Let us get the basic idea here first.
+
+11
+00:33.750 --> 00:36.360
+See we already know how to pick out the digits.
+
+12
+00:36.420 --> 00:38.290
+So First of all  i got 3.
+
+13
+00:38.820 --> 00:40.510
+Next time I will get five.
+
+14
+00:40.620 --> 00:46.600
+How to make this three and five together as 35.
+
+15
+00:46.890 --> 00:49.170
+If I add them they will become eight.
+
+16
+00:49.170 --> 00:55.580
+I want to make 35, how to make  35 multiplied three by ten a nine to five.
+
+17
+00:55.980 --> 00:57.770
+So this will become how much.
+
+18
+00:57.780 --> 00:58.730
+Thirty five.
+
+19
+00:58.910 --> 01:01.690
+Yes then no I have thirty five.
+
+20
+01:01.740 --> 01:04.870
+How do I make it as one last digit when i get 1.
+
+21
+01:04.920 --> 01:07.200
+So how to make it as a three hundred and fifty one.
+
+22
+01:07.710 --> 01:12.770
+So if you want to add a digit at the last of a current number multiplied by ten then add 1.
+
+23
+01:13.060 --> 01:15.930
+So multiply it by ten and add one.
+
+24
+01:16.020 --> 01:18.430
+So this is 350 plus one.
+
+25
+01:18.450 --> 01:20.510
+Three hundred and fifty one.
+
+26
+01:20.770 --> 01:22.670
+Then how that first three was added.
+
+27
+01:22.890 --> 01:26.080
+So this was zero into ten plus three.
+
+28
+01:26.130 --> 01:27.170
+That was three.
+
+29
+01:27.210 --> 01:34.530
+So you can see that every digit you take out multiply it by ten and add it right multiply a no.  and 
+
+30
+01:34.630 --> 01:36.050
+add it.
+
+31
+01:36.080 --> 01:40.400
+So this procedure if you repeat digit by digit you get the reverse of a number.
+
+32
+01:41.120 --> 01:44.980
+So already i have number, you know how to take out the digits right.
+
+33
+01:45.010 --> 01:49.230
+We already know, this is the same logic we have to take mod and divide the number.
+
+34
+01:49.250 --> 01:53.020
+Now digits we are getting 3 5 1, how to make it as a number.
+
+35
+01:53.300 --> 01:57.520
+So for this we need one more variable, let us say 'reverse'
+and it is zero
+
+36
+01:57.590 --> 02:05.290
+So first time  0 X 10 + 3 = 3 second time three into 10 plus five.
+
+37
+02:05.320 --> 02:06.390
+That's 35.
+
+38
+02:06.860 --> 02:08.660
+Third time thirty five into
+
+39
+02:08.750 --> 02:13.520
+10 Plus 1 is 351.
+
+40
+02:13.880 --> 02:17.680
+So this we are adding every time so present number is multiplied by 10.
+
+41
+02:17.690 --> 02:19.040
+And this is added.
+
+42
+02:19.040 --> 02:21.560
+So what is the statement here.
+
+43
+02:21.580 --> 02:29.750
+reverse is equals to reverse into 10 plus, 3 5 1 3 5 1.
+
+44
+02:29.750 --> 02:31.850
+What is that? r.
+
+45
+02:32.630 --> 02:33.740
+That's it.
+
+46
+02:33.770 --> 02:39.320
+If you perform these steps then in 'rev' we get the reverse of a number.
+
+47
+02:39.450 --> 02:42.410
+So already we know the whole procedure just one statement extra.
+
+48
+02:42.410 --> 02:45.190
+We are writing to form a reverse of the number.
+
+49
+02:45.950 --> 02:51.050
+Now let us write the program, so for that let us look at the flow chart. so flow chart is same.
+
+50
+02:51.290 --> 02:57.140
+I have added a extra line see if you this flow chart is same as the amstrong number flow chart there
+
+51
+02:57.140 --> 03:03.800
+I was adding the cubes of their digits now i am multiplying remainder reverse with  10 then adding
+
+52
+03:03.800 --> 03:04.140
+remainder
+
+53
+03:04.220 --> 03:09.940
+So this extra line I have done and at the end, I don't have to check anything just I'm printing printing reverse
+
+54
+03:09.990 --> 03:10.690
+off a number.
+
+55
+03:11.030 --> 03:12.840
+So the loop is also same.
+
+56
+03:12.920 --> 03:15.220
+Everything is same. now here,
+
+57
+03:15.230 --> 03:18.200
+I don't need sum I need reverse of a number.
+
+58
+03:18.290 --> 03:28.810
+Initially 0. then here a reverse of anumber is the reverse of the number into 10 plus r. at the end of the loop
+
+59
+03:28.820 --> 03:31.070
+a loop will get a reverse of a number.
+
+60
+03:32.420 --> 03:43.390
+So say reverse number is REV, we are getting it that's all. return zero.
+
+61
+03:43.430 --> 03:51.840
+end of the main function. this the same program just one line has change and it has became a new program.
+
+62
+03:51.900 --> 03:52.280
+See.
+
+63
+03:52.280 --> 03:57.140
+Again I'm telling you you are learning logic or the procedure so that you're learning right.
+
+64
+03:57.170 --> 04:01.100
+That's the first time next time we forget a similar thing then you can solve it.
+
+65
+04:01.650 --> 04:02.340
+OK.
+
+66
+04:02.420 --> 04:04.990
+So you must practice this one as much as possible.
+
+67
+04:05.300 --> 04:06.740
+So that's all with this program.
+
+68
+04:06.740 --> 04:10.210
+So you have to write this program and demo is also available.
+
+69
+04:10.730 --> 04:16.730
+Now next thing there are some coding excersices i will explain you about that you can solve them.
+
+70
+04:16.730 --> 04:19.580
+So i will remove this and I'll explain about it.
+
+71
+04:20.420 --> 04:21.890
+Yes look at this.
+
+72
+04:21.890 --> 04:22.880
+This is a number.
+
+73
+04:23.120 --> 04:25.730
+If i reverse it I'll get the same number.
+
+74
+04:25.910 --> 04:32.930
+So if reverse of a number is the same as the original number then we call it as a palindrome.
+
+75
+04:33.110 --> 04:36.470
+It is called as palindrome if you reverse this one.
+
+76
+04:36.470 --> 04:38.910
+This will be 1 2 2 1.
+
+77
+04:39.110 --> 04:40.040
+Same thing.
+
+78
+04:40.070 --> 04:45.720
+The reverse is also same so reverse is same as original number then it is called s palindrome.
+
+79
+04:46.010 --> 04:46.430
+That's all.
+
+80
+04:47.150 --> 04:52.510
+So you have to write a program or the coding exercises you have to write, where you have to check weather the
+
+81
+04:52.510 --> 04:54.250
+a number is palindrome or not.
+
+82
+04:54.260 --> 05:02.160
+How do you check first of all reverse it reversing logic is there, same procedure we get the number in
+
+83
+05:03.140 --> 05:08.330
+rev, then check it with n what mind one thing n will become zero.
+
+84
+05:08.360 --> 05:08.860
+Right.
+
+85
+05:08.900 --> 05:11.690
+We are going on dividing until n becomes zero.
+
+86
+05:11.690 --> 05:12.710
+So n will becomes zero.
+
+87
+05:12.710 --> 05:18.950
+So for that you should have 1 more variable m and you should store that m into N. see
+
+88
+05:18.950 --> 05:21.200
+This was for previous one, I did not remove it.
+
+89
+05:21.290 --> 05:29.050
+So m assign n you must do it then at the last outside loop you should check whether M and rev are same
+
+90
+05:29.050 --> 05:31.790
+if there are same it's a palindrome.
+
+91
+05:32.540 --> 05:38.550
+So this is what do you have to do as a coding excersice reversing you know just checking if it is the same
+
+92
+05:38.880 --> 05:43.920
+if it is same, then say it's a palindrome, otherwise not a palindrome.
+
+93
+05:44.720 --> 05:45.220
+this is about
+
+94
+05:45.220 --> 05:46.220
+palindrome i told you.
+
+95
+05:46.260 --> 05:47.720
+That is a coding excercise
+
+96
+05:47.900 --> 05:49.680
+Now there is one more coding excercise
+
+97
+05:49.690 --> 05:54.230
+I'll explain youabout that one also. my next coding exercise,
+
+98
+05:54.230 --> 06:01.700
+If a number is given like one hundred and fourty five you have to display our number in the words
+
+99
+06:02.850 --> 06:05.880
+one four five.
+
+100
+06:06.030 --> 06:13.530
+So the output should be one four five.
+
+101
+06:13.530 --> 06:19.570
+Display a number in words how to do this.
+
+102
+06:19.830 --> 06:23.580
+We want each and every digit then for 1.
+
+103
+06:23.580 --> 06:25.480
+We can display one.
+
+104
+06:25.500 --> 06:25.770
+All right.
+
+105
+06:25.770 --> 06:28.780
+For 4 we can display, if it is 1 we can display one.
+
+106
+06:28.780 --> 06:33.750
+so already we have seen in such case how to display the digits and words so the same procedure you can
+
+107
+06:33.750 --> 06:34.490
+use here.
+
+108
+06:34.560 --> 06:37.170
+But we want the digits 1 4 to 5.
+
+109
+06:37.180 --> 06:41.870
+How we can get the digits one seperate four separate five separate so reverse a number.
+
+110
+06:42.150 --> 06:47.020
+You can get the digits so take out the digits, but if I take out the digit I'll get 5 first.
+
+111
+06:47.280 --> 06:48.170
+I want one.
+
+112
+06:48.320 --> 06:50.770
+So that it reverse the number first.
+
+113
+06:50.880 --> 06:53.730
+So it will become 541.
+
+114
+06:53.760 --> 06:55.350
+Now take out the digits again.
+
+115
+06:55.560 --> 06:57.930
+So this logic reversing.
+
+116
+06:57.930 --> 06:59.610
+Again it has to be extended again.
+
+117
+06:59.610 --> 07:01.480
+Again you have to do a similar thing.
+
+118
+07:01.490 --> 07:02.300
+Take out the digit.
+
+119
+07:02.310 --> 07:03.340
+Now you get 1, one.
+
+120
+07:03.380 --> 07:07.320
+next 4 say four, then 5
+
+121
+07:07.320 --> 07:17.650
+Say five. so you have a coding exercise for displaying a number printing a number in words.
+
+122
+07:17.730 --> 07:20.310
+So you have to do it two times reverse it.
+
+123
+07:20.340 --> 07:23.250
+Then again take out the digits so thats all about this procedure.
+
+124
+07:23.280 --> 07:28.800
+So based on taking out the digital of a number one by one we have learned various things that we have
+
+125
+07:28.800 --> 07:29.620
+seen.
+
+126
+07:29.630 --> 07:35.280
+reverse displaying a number Armstrong Number, palindrome or not reversing a number displaying a number in
+
+127
+07:35.610 --> 07:36.510
+words.
+
+128
+07:36.510 --> 07:38.470
+So these are the various things that we can do.
+
+129
+07:38.610 --> 07:44.520
+Once you know how to pick out the digits of a number so that all, practise this programs and do the
+
+130
+07:44.520 --> 07:48.960
+coding exercise, do the programs also by yourself that's all in this video.

@@ -1,0 +1,508 @@
+WEBVTT
+
+00:04.940 --> 00:08.960
+In this video, we'll run and configure code light on Mac OS ten.
+
+00:09.050 --> 00:12.640
+Now we've already installed the compiler tools and we've installed code light.
+
+00:12.650 --> 00:19.040
+So let's run code light, we'll come up to spotlight, search and type code light and double click on
+
+00:19.040 --> 00:19.820
+the icon.
+
+00:25.250 --> 00:26.600
+We'll allow it to run.
+
+00:32.360 --> 00:35.560
+Now the first time that code light runs, a couple of things will happen.
+
+00:35.570 --> 00:39.800
+You'll get this small code light window show up and then you'll get a setup wizard.
+
+00:40.970 --> 00:42.740
+We can just leave that window smallest.
+
+00:42.770 --> 00:44.120
+We'll make it larger in a minute.
+
+00:44.120 --> 00:45.830
+It's not really going to get in our way right now.
+
+00:45.850 --> 00:48.170
+It's important is that we run this setup wizard.
+
+00:48.320 --> 00:56.270
+If the setup wizard does not start, come up to code lights menu and go up to help and then run the
+
+00:56.270 --> 00:58.760
+setup wizard and run it manually.
+
+00:59.390 --> 01:01.100
+But here in this case, it did pop up.
+
+01:01.100 --> 01:02.600
+So let's select next.
+
+01:05.780 --> 01:11.480
+Code Light uses a bunch of plug ins to allow support for PHP and Node and other technologies.
+
+01:11.480 --> 01:12.680
+We don't really want all that.
+
+01:12.680 --> 01:14.930
+We only want the C++ plug ins.
+
+01:15.020 --> 01:17.300
+The rest are just going to clutter up our interface.
+
+01:17.300 --> 01:23.720
+So what we can do here is we can press clear and then just toggle the C++ plugins that way.
+
+01:23.720 --> 01:27.020
+Only some of these will show up, which is exactly what we want.
+
+01:27.020 --> 01:30.800
+We just want to concentrate on C++, Select next.
+
+01:32.270 --> 01:35.510
+Now we can scan our computer for any installed compilers.
+
+01:35.510 --> 01:42.920
+We can press this button here and you can see it's found DCC Clang and across DCC we're going to use
+
+01:42.920 --> 01:43.790
+GCC.
+
+01:43.820 --> 01:48.440
+They're really the same, but we'll use GCC here and press next.
+
+01:49.160 --> 01:51.950
+Now the customization of the theme is really up to you.
+
+01:51.950 --> 01:53.480
+This is your personal preference.
+
+01:53.480 --> 01:59.210
+The monarchy dark theme is real nice and easy on the eyes, but it doesn't show up too well on video.
+
+01:59.210 --> 02:04.280
+So I'm going to select the classic Eclipse theme and select next.
+
+02:05.030 --> 02:07.730
+We'll keep these defaults and press finish.
+
+02:09.740 --> 02:13.130
+Now, what we can do here is we can say save and exit.
+
+02:13.130 --> 02:16.490
+You want to be sure that you save so we can save the changes we've made
+
+02:19.850 --> 02:21.710
+and we can run code light again.
+
+02:31.070 --> 02:33.230
+So this time I want to make this window nice and big
+
+02:35.870 --> 02:38.690
+and we've got a couple of options that we still need to configure.
+
+02:38.690 --> 02:41.240
+But before we do that, we need to create a workspace.
+
+02:41.900 --> 02:49.460
+You can create a workspace by clicking this button here or by coming up to file new workspace.
+
+02:49.460 --> 02:50.990
+Either place works fine.
+
+02:51.140 --> 02:57.230
+A workplace is just an area where we can have our C++ projects, so we can have multiple projects in
+
+02:57.230 --> 02:58.040
+a workspace.
+
+02:58.040 --> 03:03.200
+So I'm going to select new workspace, and the workspace name could be anything you like.
+
+03:03.320 --> 03:05.720
+I'm going to say keep workspace.
+
+03:07.340 --> 03:10.040
+Don't use any spaces here, just keep it all together.
+
+03:10.490 --> 03:15.650
+And I want to create the workspace under a separate directory so I can keep my files organized.
+
+03:15.680 --> 03:16.760
+I'll select, okay.
+
+03:17.570 --> 03:20.930
+And you can see that it's created the workspace over here on the left pane.
+
+03:21.440 --> 03:30.020
+Now we need to create a C++ project so you can right click on that and select new project, or you can
+
+03:30.020 --> 03:33.620
+select the workspace and then come up to file new project.
+
+03:33.620 --> 03:38.150
+Either way, now we've got some options.
+
+03:38.510 --> 03:46.160
+We're going to create console project and simple executable G plus plus right here.
+
+03:46.850 --> 03:53.450
+And that's the compiler we're going to use and we'll select next the project name again.
+
+03:53.450 --> 03:54.890
+Don't use any spaces here.
+
+03:54.890 --> 03:58.490
+Just create your name, the name for your project, whatever you like.
+
+03:59.420 --> 04:03.710
+I'm again, I'm going to create a separate directory for each project and I'll select next.
+
+04:06.050 --> 04:11.370
+As far as the compiler, we want to use the GCC compiler, but the debugger, we don't want to use the
+
+04:11.390 --> 04:14.300
+new debugger, we want to use the LTB debugger.
+
+04:14.300 --> 04:15.530
+That's the Apple debugger.
+
+04:16.100 --> 04:17.330
+We'll select finish.
+
+04:18.020 --> 04:22.550
+And you can see over here on the left that we've created a project called Test one and it's got a source
+
+04:22.550 --> 04:25.640
+directory and it's got a file there called Main CP.
+
+04:25.670 --> 04:29.840
+Now before we run that file, there's a couple of things that we need to set up.
+
+04:30.020 --> 04:37.430
+First click on the project in this case, test one right click and then come down to settings and select
+
+04:37.430 --> 04:37.910
+that.
+
+04:39.140 --> 04:45.680
+Then down here toward the bottom where you see global settings come up to compiler options and select
+
+04:45.680 --> 04:46.760
+the right side.
+
+04:46.760 --> 04:49.520
+And then you'll see this little button right here with the three dots.
+
+04:49.520 --> 04:50.480
+Select that.
+
+04:51.350 --> 04:54.620
+And what we want to do here is we want to check a couple of options.
+
+04:54.840 --> 05:01.250
+We scroll all the way up and I want to select enable all compiler warnings wall and I want to enable
+
+05:01.280 --> 05:03.200
+C++ 14 features.
+
+05:03.200 --> 05:04.460
+That's the latest standard.
+
+05:04.460 --> 05:06.050
+That's modern C++.
+
+05:06.050 --> 05:11.540
+I want to make sure that that's enabled and this guy doesn't come on, but you can see that it is there
+
+05:11.540 --> 05:13.550
+something sometimes it doesn't check on.
+
+05:13.970 --> 05:15.680
+You can see that the command line is correct.
+
+05:15.680 --> 05:16.610
+So just click.
+
+05:16.610 --> 05:19.460
+Okay, I'll apply and click.
+
+05:19.460 --> 05:20.690
+Okay, perfect.
+
+05:20.690 --> 05:27.380
+Now go to the workspace, select it right click on it and come down to workspace settings.
+
+05:28.670 --> 05:35.450
+And you'll see we have environment and code completion, select code completion and check the Enable
+
+05:35.450 --> 05:37.400
+C++ 14 standard.
+
+05:38.390 --> 05:41.450
+The Integrated Development Environments use code completion.
+
+05:41.450 --> 05:45.350
+They try to figure out what you're typing and what you want to do and where you want to go and really
+
+05:45.350 --> 05:46.940
+help you out with suggestions.
+
+05:46.940 --> 05:51.710
+In this case, we're simply telling code light to use the C++ 14 standard.
+
+05:51.710 --> 05:54.350
+For those suggestions, I'll click.
+
+05:54.350 --> 05:57.140
+Okay, and that's it for the setup.
+
+05:57.470 --> 06:00.860
+Now let's modify this C++ file and run it.
+
+06:01.790 --> 06:03.260
+Let's double click on that.
+
+06:03.680 --> 06:06.440
+And that font is really small.
+
+06:06.440 --> 06:09.980
+So what I'm going to do is I'm going to make it a little larger so it shows up better on the video.
+
+06:09.980 --> 06:11.990
+Most likely you won't have to touch it at all.
+
+06:11.990 --> 06:20.390
+But I'm just going to come to settings, colors and fonts, and I'll set the font to, let's say 18
+
+06:23.210 --> 06:27.110
+and I'll apply that and that should be much more readable.
+
+06:27.890 --> 06:29.630
+Okay, so now let's modify this file.
+
+06:29.630 --> 06:31.820
+This is actually C code, not C++ code.
+
+06:31.820 --> 06:39.320
+So let's get rid of all this and we'll type a simple C++ program that will test our installation during
+
+06:39.320 --> 06:39.890
+this course.
+
+06:39.890 --> 06:45.230
+I will go in detail through the anatomy of a C++ program, and everything that I'll be typing here will
+
+06:45.230 --> 06:46.010
+be explained.
+
+06:46.010 --> 06:50.480
+But for now, just follow along, type along to make sure we've got a clean install.
+
+06:50.480 --> 06:57.230
+So the first thing you want to do is going to type pound include and we want to put IO stream in angled
+
+06:57.230 --> 07:04.190
+brackets and press enter then int space main left and right paren.
+
+07:05.000 --> 07:10.640
+Then we want to open up a left curly and you can see that the IDE has closed it for me.
+
+07:11.030 --> 07:17.150
+And then what I want to do here is I just want to say STD two colon side by side, no spaces and then
+
+07:17.150 --> 07:26.600
+see out the insertion operator, which is two less than sines again together with no spaces and anything
+
+07:26.600 --> 07:27.740
+you want to type here as far as.
+
+07:27.740 --> 07:29.690
+Hello testing.
+
+07:30.200 --> 07:35.300
+We want to type a string inside double quotes and a semicolon at the end, and then next line will be
+
+07:35.300 --> 07:35.720
+returned.
+
+07:35.720 --> 07:36.080
+Zero.
+
+07:36.110 --> 07:36.590
+That's it.
+
+07:36.590 --> 07:38.020
+That's the entire program.
+
+07:38.030 --> 07:43.900
+When we run this program, what we want to do is we want to display hello testing to the console.
+
+07:43.910 --> 07:45.140
+That's all it's going to do.
+
+07:45.350 --> 07:46.640
+I'll save this
+
+07:49.280 --> 07:57.800
+under save file at this point on your end, you may want to do view, toggle, minimal view and that'll
+
+07:57.800 --> 07:58.710
+display.
+
+07:58.760 --> 07:59.900
+Let me do that again.
+
+08:01.190 --> 08:04.700
+That will display some buttons and things up here which you might find useful.
+
+08:05.270 --> 08:11.180
+I'm not going to do that because it clutters up the screen and I don't want any distractions when I'm
+
+08:11.180 --> 08:11.960
+teaching the class.
+
+08:11.960 --> 08:13.970
+So I'll toggle that away.
+
+08:14.630 --> 08:19.070
+And what I'll do is, rather than click on the buttons, I'll be really explicit as to let's click on
+
+08:19.070 --> 08:21.620
+Build, Run, Build, Clean, and so forth.
+
+08:21.620 --> 08:23.720
+That way you can see exactly what's going on.
+
+08:23.720 --> 08:27.020
+Once you get familiar with the ID, you can use those buttons.
+
+08:27.590 --> 08:28.100
+That's it.
+
+08:28.100 --> 08:29.060
+So I've saved it.
+
+08:29.060 --> 08:30.590
+Now I want to run this.
+
+08:30.590 --> 08:35.630
+First thing I want to do is I want to go to build and clean the project.
+
+08:35.630 --> 08:40.910
+When we clean a project, we're basically just wiping out everything that's been done in the past except
+
+08:40.910 --> 08:41.750
+the source code.
+
+08:41.750 --> 08:47.390
+So the project is in a state that's ready to go, so I'm just going to clean it and then I'm going to
+
+08:47.390 --> 08:50.180
+come back up to build and I'm going to say Run.
+
+08:51.080 --> 08:55.730
+Now it's going to give me an option that says, Would you like to build the active project before executing
+
+08:55.730 --> 08:56.030
+it?
+
+08:56.060 --> 08:58.580
+Of course I do, because I haven't built it yet in this case.
+
+08:58.580 --> 09:04.370
+So I'm going to select, build and execute and that will compile the program and open up a window.
+
+09:04.370 --> 09:06.350
+And there's the output right there.
+
+09:06.350 --> 09:06.860
+Hello?
+
+09:06.860 --> 09:07.610
+Testing.
+
+09:08.420 --> 09:12.770
+So this terminal window is running the program that I just wrote.
+
+09:13.250 --> 09:13.940
+That's it.
+
+09:13.940 --> 09:15.200
+It's a simple as that.
+
+09:15.770 --> 09:17.360
+Some things could go wrong, though.
+
+09:17.360 --> 09:23.840
+Suppose that you forgot the semicolon here and I'll save it.
+
+09:23.840 --> 09:24.800
+And then I'll do the same.
+
+09:24.800 --> 09:27.920
+I'll do run, build and execute.
+
+09:28.340 --> 09:31.250
+And you can see if I move this window just slightly up.
+
+09:31.250 --> 09:35.000
+You can see that I've got a compiler error and this is what compiler errors look like.
+
+09:35.030 --> 09:39.980
+You see the red text here and it says error expected a semicolon after an expression.
+
+09:40.430 --> 09:44.600
+Also you'll see that little red arrow right here telling you there's just something wrong here.
+
+09:45.200 --> 09:48.140
+And basically what you need to do is put a semicolon there.
+
+09:48.380 --> 09:52.040
+Just type the program really carefully, exactly like I did it.
+
+09:52.040 --> 09:56.150
+You won't have any problems, but you could have things missing like this quote.
+
+09:56.480 --> 09:57.860
+This first quote is missing.
+
+09:57.860 --> 09:59.750
+This you might have three less than signs.
+
+09:59.750 --> 10:02.540
+There's all kinds of little things that could go wrong with the program.
+
+10:02.540 --> 10:10.010
+But if you just be very careful, type it in, save it and come back up to build and run, build and
+
+10:10.010 --> 10:10.460
+execute.
+
+10:10.460 --> 10:14.630
+And you can click on there if you like that we don't have to keep doing it all the time.
+
+10:15.650 --> 10:17.030
+And there's the run.
+
+10:17.660 --> 10:18.200
+That's it.
+
+10:18.200 --> 10:19.280
+We're all set on Mac.
+
+10:19.280 --> 10:24.590
+We've installed the command line tools, we've installed code light, we've configured code light and
+
+10:24.590 --> 10:25.640
+we're good to go.
+
+10:26.000 --> 10:28.040
+Now let's start learning C++.

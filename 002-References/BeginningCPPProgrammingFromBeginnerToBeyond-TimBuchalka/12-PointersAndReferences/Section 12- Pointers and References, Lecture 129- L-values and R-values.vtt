@@ -1,0 +1,275 @@
+WEBVTT
+
+00:00:05.560 --> 00:00:08.320
+Now that we know about references
+and how to use them,
+
+00:00:08.320 --> 00:00:10.660
+let's look at l-values and r-values.
+
+00:00:11.280 --> 00:00:14.100
+L-values into r-values are something
+you don't worry about too much
+
+00:00:14.100 --> 00:00:16.060
+when you're first learning c++.
+
+00:00:16.260 --> 00:00:18.499
+But as you learn more advanced
+features of the language,
+
+00:00:18.500 --> 00:00:19.740
+they become very important.
+
+00:00:20.350 --> 00:00:23.680
+It's important that the fundamentals
+make sense now so that when we
+
+00:00:23.680 --> 00:00:27.929
+move on to topics like c++11,
+r-value references and move
+
+00:00:27.929 --> 00:00:29.760
+semantics, they'll be much clearer.
+
+00:00:30.590 --> 00:00:33.780
+So in this video, we'll do a
+basic introduction to l-values,
+
+00:00:33.849 --> 00:00:36.050
+r-values and l-value references.
+
+00:00:36.580 --> 00:00:37.850
+So let's start with an l-value.
+
+00:00:38.430 --> 00:00:41.340
+An l-value is an object
+that occupies a location in
+
+00:00:41.340 --> 00:00:42.640
+memory and is addressable.
+
+00:00:43.060 --> 00:00:46.260
+So in these examples, x
+and name are l-values.
+
+00:00:46.400 --> 00:00:48.090
+They have names, and
+they're addressable.
+
+00:00:48.480 --> 00:00:51.230
+We know that they're addressable
+since we can use them on the left-hand
+
+00:00:51.230 --> 00:00:52.650
+side of an assignment statement.
+
+00:00:53.500 --> 00:00:55.000
+So what's not an l-value.
+
+00:00:56.200 --> 00:00:59.990
+In these examples, 100 is not
+an l-value because it's not
+
+00:01:00.010 --> 00:01:01.280
+addressable, it's a literal.
+
+00:01:01.820 --> 00:01:04.870
+In fact, the compiler generates
+a compiler error for the 100
+
+00:01:04.900 --> 00:01:07.683
+equals x statement, saying that
+100 is not an assignable l-value.
+
+00:01:07.683 --> 00:01:13.970
+Similarly, in the assignment
+statement 1000 plus 20 equals x,
+
+00:01:15.130 --> 00:01:19.760
+1000 plus 20 produces a temporary
+variable with the value 1020, but
+
+00:01:19.760 --> 00:01:21.340
+that variable is not addressable.
+
+00:01:21.730 --> 00:01:23.300
+So we can't use it as an l-value.
+
+00:01:24.059 --> 00:01:26.780
+In the last assignment
+statement, Frank equals name.
+
+00:01:27.160 --> 00:01:29.959
+Well, Frank is not an l-value
+since it's not addressable.
+
+00:01:30.619 --> 00:01:33.220
+So these examples are of non-l-values.
+
+00:01:33.840 --> 00:01:35.460
+They're, in fact, called r-values.
+
+00:01:35.810 --> 00:01:37.540
+Let's talk a bit about r-values.
+
+00:01:39.450 --> 00:01:41.850
+We can define r-values by exclusion.
+
+00:01:41.950 --> 00:01:44.470
+So anything that's not
+an l-value is an r-value.
+
+00:01:45.150 --> 00:01:48.509
+Usually, r-values on the right-hand
+side of an assignment expression.
+
+00:01:48.920 --> 00:01:53.070
+R-values can also be temporary
+values that the c++ compiler creates.
+
+00:01:54.100 --> 00:01:56.800
+We saw some examples of
+r-values in the previous slide,
+
+00:01:56.809 --> 00:01:57.860
+let's see a few more here.
+
+00:01:58.679 --> 00:02:01.090
+In the first statement,
+100 is an r-value.
+
+00:02:01.679 --> 00:02:05.170
+In the second statement, x plus
+200 will produce a temporary
+
+00:02:05.170 --> 00:02:08.930
+variable and that variable is an
+r-value since it's not addressable.
+
+00:02:09.680 --> 00:02:15.380
+The string literal Frank is also an
+r-value, and max 2030 is an r-value
+
+00:02:15.380 --> 00:02:18.609
+because it returns a result that's
+a temporary and not addressable.
+
+00:02:20.460 --> 00:02:23.659
+R-values can be assigned
+to l-values explicitly.
+
+00:02:24.119 --> 00:02:27.050
+So l-values can appear both
+on the left and right sides
+
+00:02:27.050 --> 00:02:28.160
+of an assignment statement.
+
+00:02:28.950 --> 00:02:31.630
+In this example, we see the first
+assignment statement is using
+
+00:02:31.630 --> 00:02:34.860
+the r-value 100 on the right-hand
+side of the assignment statement.
+
+00:02:34.860 --> 00:02:37.649
+And this will be assigned
+to the l-value y.
+
+00:02:38.500 --> 00:02:42.960
+In the second example, the temporary
+r-value with the sum x plus y
+
+00:02:43.140 --> 00:02:45.230
+will be assigned to the l-value x.
+
+00:02:46.890 --> 00:02:50.870
+Now let's look at references from the
+perspective of l-values and r-values.
+
+00:02:52.190 --> 00:02:55.799
+The references we've used so far
+have all been l-value references.
+
+00:02:56.090 --> 00:02:58.540
+That means that we're
+referring to l-values.
+
+00:02:59.369 --> 00:03:01.640
+In the first reference
+declaration, we're declaring
+
+00:03:01.640 --> 00:03:04.150
+ref1 as a reference to x.
+
+00:03:04.390 --> 00:03:06.100
+Notice that x is an l-value.
+
+00:03:07.040 --> 00:03:10.049
+This makes sense since we are
+an alias for x, and we can
+
+00:03:10.050 --> 00:03:12.770
+use ref1 on the left-hand side
+of an assignment statement
+
+00:03:12.940 --> 00:03:14.530
+since it refers to an l-value.
+
+00:03:15.620 --> 00:03:18.730
+But what happens when we declare
+ref2 as a reference to 100.
+
+00:03:19.060 --> 00:03:22.160
+Well, 100 is an r-value, so
+this isn't allowed, and the
+
+00:03:22.160 --> 00:03:23.680
+compiler will generate an error.
+
+00:03:24.960 --> 00:03:28.320
+The same applies when we pass
+parameters by reference to functions.
+
+00:03:28.800 --> 00:03:31.300
+In this case, we define a
+function square that expects
+
+00:03:31.300 --> 00:03:32.780
+an integer by reference.
+
+00:03:33.780 --> 00:03:36.780
+We have an integer num
+initialized to 10, and then we
+
+00:03:36.780 --> 00:03:38.400
+call square and pass in num.
+
+00:03:38.790 --> 00:03:43.310
+This is fine because n is a reference
+to an l-value and num is an l-value.
+
+00:03:43.990 --> 00:03:47.290
+However, if we pass in the
+literal 5 to the function, we
+
+00:03:47.290 --> 00:03:51.160
+get a compiler error because 5 is
+not an l-value, it's an r-value
+
+00:03:51.660 --> 00:03:53.560
+and we must reference l values.
+
+00:03:54.180 --> 00:03:56.150
+Don't worry if this is
+a bit confusing now.
+
+00:03:56.360 --> 00:03:59.500
+As you'll learn more about c++
+semantics, it'll make more sense,
+
+00:03:59.730 --> 00:04:02.900
+but it's important going forward
+when we talk about move semantics.

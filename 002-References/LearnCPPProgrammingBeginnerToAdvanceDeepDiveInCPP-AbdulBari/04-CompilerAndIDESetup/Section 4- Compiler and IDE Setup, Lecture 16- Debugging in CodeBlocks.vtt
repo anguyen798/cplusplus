@@ -1,0 +1,286 @@
+WEBVTT
+
+00:02.330 --> 00:06.770
+In this video, we will see how to use a debugger in code blocks.
+
+00:09.560 --> 00:16.010
+Debugger is used for tracing the program's execution line by line, we can trace the program to see
+
+00:16.010 --> 00:20.780
+it's working in detail by checking the execution of each line.
+
+00:21.470 --> 00:23.720
+It's also called us tracing the program.
+
+00:25.140 --> 00:32.070
+If there is any error or the program is not giving expected results, we can check the execution of
+
+00:32.070 --> 00:35.490
+the program line by line, and we can catch that error.
+
+00:37.340 --> 00:40.250
+Even for understanding the working of a program.
+
+00:43.570 --> 00:45.520
+We can take the help of debugger.
+
+00:46.550 --> 00:50.000
+I have used a debugger in few programs in my codes.
+
+00:50.150 --> 00:53.870
+So here we will see how to use a debugger.
+
+00:54.740 --> 00:59.270
+For that, I will create a new project and I will write down the program.
+
+01:00.410 --> 01:04.340
+So create a new project and say console application.
+
+01:06.180 --> 01:08.610
+Then this should be C++, right?
+
+01:09.420 --> 01:13.230
+The next here, I will call it as my debug.
+
+01:18.380 --> 01:19.340
+Yes.
+
+01:19.430 --> 01:20.180
+It's ready.
+
+01:20.950 --> 01:25.270
+Now here already I have a program, so I will place the program here directly.
+
+01:26.530 --> 01:27.730
+Here is my program.
+
+01:27.730 --> 01:31.940
+So the program is to find the sum of all the elements in an array.
+
+01:31.960 --> 01:33.760
+These are the elements in an array.
+
+01:34.510 --> 01:40.330
+The program will add all these elements and store the result in sum, by taking one element at a time
+
+01:40.330 --> 01:41.530
+in variable x.
+
+01:41.530 --> 01:43.660
+So this type of programs we will see later.
+
+01:43.660 --> 01:46.720
+But here the purpose is to show you debugging.
+
+01:47.500 --> 01:50.500
+So let us first of all compile the program.
+
+01:50.500 --> 01:53.020
+So go to build and say.
+
+01:54.100 --> 01:55.450
+Build and run.
+
+01:55.630 --> 01:58.300
+So it will compile and build the program and run.
+
+01:58.300 --> 02:00.340
+So I'm getting the result as 25.
+
+02:00.460 --> 02:03.970
+That is sum of all these elements in an early.
+
+02:06.250 --> 02:09.940
+That is one plus two plus five plus eight plus nine is 25.
+
+02:10.900 --> 02:13.210
+Now the program is already combined.
+
+02:13.480 --> 02:15.010
+Now I want to run the debugger.
+
+02:15.040 --> 02:20.530
+So before running the debugger, I should put a breakpoint on any one of the statement.
+
+02:20.530 --> 02:21.730
+So I'll put a breakpoint.
+
+02:21.760 --> 02:26.530
+It's better to put a breakpoint on the beginning statement so we can see that execution of all these
+
+02:26.530 --> 02:27.760
+statements one by one.
+
+02:27.970 --> 02:33.100
+So go on this line eight and right click and say Add breakpoint.
+
+02:33.640 --> 02:35.680
+So here you have to say add breakpoint.
+
+02:35.680 --> 02:40.270
+And then again, right click on this line to delete it.
+
+02:40.270 --> 02:44.620
+Remove the breakpoint so you can remove breakpoint like this.
+
+02:45.040 --> 02:46.480
+So I'll add it once again.
+
+02:46.480 --> 02:47.950
+Say, add breakpoint.
+
+02:48.610 --> 02:50.050
+Now Breakpoint is ready.
+
+02:50.050 --> 02:51.520
+I have to call debugger.
+
+02:51.730 --> 02:55.180
+So go to debug option and say start.
+
+02:56.390 --> 02:56.810
+Right.
+
+02:56.810 --> 02:59.150
+So the option is f eight here.
+
+03:00.080 --> 03:04.760
+Again, if you want to execute line by line, you can use F seven.
+
+03:04.850 --> 03:06.440
+So let us start.
+
+03:06.470 --> 03:11.930
+Debugger is started now if you want to see the contents of the variables, what the values are there
+
+03:11.930 --> 03:14.870
+in the variables you have to add a watch.
+
+03:15.110 --> 03:22.040
+So for getting a watch window, this is the method go to debug menu and inside that select debugging
+
+03:22.040 --> 03:25.040
+windows menu and click on watch us.
+
+03:27.080 --> 03:27.470
+Here.
+
+03:27.470 --> 03:32.330
+I got watches and this is already having variables like some and a.
+
+03:32.420 --> 03:36.170
+So here inside the program you can see some is there and a is there.
+
+03:36.410 --> 03:41.750
+So this a if I open then you can see it is having the values one, two and five, eight, nine.
+
+03:41.750 --> 03:45.530
+So which are already given here, but it is not showing x.
+
+03:45.530 --> 03:51.980
+So if it is not showing any variable, you just can select that variable right click and say watch x
+
+03:52.520 --> 03:55.070
+so it's not available in current context.
+
+03:56.530 --> 04:01.300
+And even if it is not showing other variables like some or a, you can select it.
+
+04:02.200 --> 04:05.410
+Now, before we continue, let us see what this program is doing.
+
+04:05.440 --> 04:11.200
+This program is going to add all these elements and find the sum of all these elements in variable X.
+
+04:11.200 --> 04:17.230
+So X will be taking the values that are present in array a one by one, like one, two, five, eight
+
+04:17.230 --> 04:17.980
+and nine.
+
+04:18.100 --> 04:20.530
+Then it will be going, adding them to sum.
+
+04:20.710 --> 04:28.660
+So here inside the watch, you have to observe how the values of this sum and this X are changing right
+
+04:29.050 --> 04:29.350
+now.
+
+04:29.350 --> 04:30.280
+Let us proceed.
+
+04:30.280 --> 04:32.350
+So I'll execute the next statement.
+
+04:32.350 --> 04:35.500
+I'll press F seven now.
+
+04:38.390 --> 04:42.500
+That is already there and access is still not defined.
+
+04:43.220 --> 04:51.470
+Now you can see that X is having value one here in red, then some is still zero and it is on this 14th
+
+04:51.470 --> 04:54.020
+line where it has not yet added this one.
+
+04:54.050 --> 04:58.220
+Once this line ends, the value of X will be added to sum.
+
+04:58.460 --> 05:01.970
+So if I press f seven, you can see the value of some will be changing.
+
+05:07.720 --> 05:09.130
+If some became one.
+
+05:09.340 --> 05:11.970
+Then again, if I continue X became two.
+
+05:11.980 --> 05:15.670
+So you have to watch in the site, X became two.
+
+05:15.700 --> 05:18.190
+Now next line, the sum becomes three.
+
+05:18.190 --> 05:19.750
+So one plus two, that is three.
+
+05:19.840 --> 05:26.830
+Then sum becomes five and sum becomes eight, x became five and then some became eight.
+
+05:27.400 --> 05:33.220
+Now x is eight and some becomes 16, x is nine, then some becomes 25.
+
+05:33.670 --> 05:35.110
+Now it will come out of the loop.
+
+05:35.110 --> 05:41.560
+So here you can see that the line, this this current line is shown by this arrow here, not responding
+
+05:41.560 --> 05:42.340
+on this one.
+
+05:42.340 --> 05:46.720
+If I press f seven, then the value will be printed and here is the window.
+
+05:46.990 --> 05:50.170
+You can click on this and see the value 25 is printed.
+
+05:52.210 --> 05:53.310
+So that's it.
+
+05:53.320 --> 05:59.830
+This is how you can use a debugger for executing the program line by line and see how it is executing,
+
+05:59.830 --> 06:02.620
+how it is modifying or updating the variables.
+
+06:03.550 --> 06:09.760
+You can take the help of debugger for detailed understanding of execution of program, and also if there
+
+06:09.760 --> 06:13.150
+are any errors, you can trace it and remove the errors.
+
+06:13.930 --> 06:15.400
+So that's all in this video.

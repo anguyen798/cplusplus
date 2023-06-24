@@ -1,0 +1,2822 @@
+﻿WEBVTT
+
+00:00:00.000 --> 00:00:11.640
+Hello folks, this is Steve Gilbert and welcome to lecture 3 on numbers and calculations.
+
+00:00:11.640 --> 00:00:19.520
+Before you start, make sure you've gone into the Thursday tab here on calculations in week
+
+00:00:19.520 --> 00:00:20.600
+1.
+
+00:00:20.600 --> 00:00:23.840
+You've clicked the link for the lecture exercise.
+
+00:00:23.840 --> 00:00:28.960
+When lecture 3 exercise comes up, click the link for the starter form.
+
+00:00:28.960 --> 00:00:36.120
+Make a local copy and make sure you rename it so you can find it later when you get started.
+
+00:00:36.120 --> 00:00:45.560
+Okay, so let's go ahead and talk a little bit more about type concepts.
+
+00:00:45.560 --> 00:00:48.480
+So in the last lecture we talked about variables.
+
+00:00:48.480 --> 00:00:53.880
+A variable is a name storage location that holds a value.
+
+00:00:53.880 --> 00:00:59.920
+Variables and values both have types and types have three characteristics.
+
+00:00:59.920 --> 00:01:07.440
+They have the domain, the operations, and the representation of that type.
+
+00:01:07.440 --> 00:01:12.720
+So the domain simply means all values contained in that type.
+
+00:01:12.720 --> 00:01:17.200
+The domain for the type bool, for instance, is true and false.
+
+00:01:17.200 --> 00:01:20.660
+There are no other values maintained in that type.
+
+00:01:20.660 --> 00:01:26.640
+The domain for the type int is all the whole numbers within the range of the type.
+
+00:01:26.640 --> 00:01:33.520
+So the type for int is roughly plus or minus 2 billion for a 32-bit int or plus or minus
+
+00:01:33.520 --> 00:01:39.000
+127 for an 8-bit int, again depending on the size.
+
+00:01:39.000 --> 00:01:41.680
+So all the values contained in that type.
+
+00:01:41.680 --> 00:01:47.160
+We could not put for an int, for an 8-bit int, we could not put a number that was larger,
+
+00:01:47.160 --> 00:01:51.320
+it would be outside of the domain, and we could not put a number that contained a fractional
+
+00:01:51.320 --> 00:01:53.800
+portion.
+
+00:01:53.800 --> 00:02:00.160
+Now the second thing with a type, so the values that can be contained in the type is the domain.
+
+00:02:00.160 --> 00:02:05.160
+The operations are what you can do with that value.
+
+00:02:05.160 --> 00:02:11.320
+So for the built-in types, these are specified by the C++ language.
+
+00:02:11.320 --> 00:02:19.880
+So for instance, in Java, we can use the remainder operator on the floating point or real number
+
+00:02:19.880 --> 00:02:20.880
+types.
+
+00:02:20.880 --> 00:02:24.240
+In C++ we cannot, the language prohibits that.
+
+00:02:24.240 --> 00:02:29.440
+So the language specifies what operations are available.
+
+00:02:29.440 --> 00:02:37.000
+Now for the library types, like the string type, things that are built into the C++ standard
+
+00:02:37.000 --> 00:02:42.040
+library, those are specified by the language specification.
+
+00:02:42.040 --> 00:02:47.480
+So the language standard and the language specification specifies the operations for
+
+00:02:47.480 --> 00:02:48.720
+that type.
+
+00:02:48.720 --> 00:02:54.760
+Of course, for user-defined types, the operations are defined by the person who wrote the class.
+
+00:02:54.760 --> 00:03:04.100
+Finally, the representation determines what bits, given a block of memory and a particular
+
+00:03:04.100 --> 00:03:08.600
+bit pattern, what does that mean?
+
+00:03:08.600 --> 00:03:15.760
+So if I say "int", how many bytes are required and how are the bits inside that byte interpreted
+
+00:03:15.760 --> 00:03:17.080
+to be an int?
+
+00:03:17.080 --> 00:03:21.400
+The same thing if I say "char" or "double" or whatever.
+
+00:03:21.400 --> 00:03:30.600
+So in C++, unlike Java, the representation, in other words, how the bits are interpreted,
+
+00:03:30.600 --> 00:03:37.640
+and the size, how many bytes are used for each type, differs by implementation.
+
+00:03:37.640 --> 00:03:38.960
+And we'll talk about that.
+
+00:03:38.960 --> 00:03:41.340
+Now why aren't they all the same?
+
+00:03:41.340 --> 00:03:48.520
+Why don't they do the same thing as Java and make a byte type which is 8-bit, a short byte,
+
+00:03:48.520 --> 00:03:52.520
+a short type which is 16-bit, and so forth?
+
+00:03:52.520 --> 00:03:59.440
+That's because different computer hardware is more efficient with different sizes.
+
+00:03:59.440 --> 00:04:07.300
+So this allows C++ to run to the best effect on the hardware you have.
+
+00:04:07.300 --> 00:04:10.760
+So these are the three characteristics that make up a type.
+
+00:04:10.760 --> 00:04:15.600
+We have several categories of types in C++.
+
+00:04:15.600 --> 00:04:20.040
+We have the built-in, primitive, or fundamental types.
+
+00:04:20.040 --> 00:04:22.840
+All of those worlds kind of mean the same thing.
+
+00:04:22.840 --> 00:04:28.760
+The things that are built into the language itself, not the library.
+
+00:04:28.760 --> 00:04:33.640
+That includes things like the integer types, the whole number types, the floating point
+
+00:04:33.640 --> 00:04:39.640
+or real number types, the character types, and the bool type.
+
+00:04:39.640 --> 00:04:43.520
+Now very few of them.
+
+00:04:43.520 --> 00:04:48.520
+With those types, and actually with other types, we can derive new types.
+
+00:04:48.520 --> 00:04:53.100
+So these are called derived types or compound types.
+
+00:04:53.100 --> 00:04:59.520
+So I can take an array, I can take a char, and I can create an array of char.
+
+00:04:59.520 --> 00:05:02.880
+So an array of char is a different type than just char.
+
+00:05:02.880 --> 00:05:06.680
+It's derived from char, but it's a derived type.
+
+00:05:06.680 --> 00:05:09.840
+I can make a pointer to a double.
+
+00:05:09.840 --> 00:05:12.920
+I can make a reference to an integer.
+
+00:05:12.920 --> 00:05:18.560
+So arrays, pointers, and references are not their own independent types.
+
+00:05:18.560 --> 00:05:23.000
+They're based on or derived from other types.
+
+00:05:23.000 --> 00:05:27.480
+Thirdly, we have user-defined types.
+
+00:05:27.480 --> 00:05:30.080
+Types that are created in the library.
+
+00:05:30.080 --> 00:05:33.320
+Types that are created by you, the programmer.
+
+00:05:33.320 --> 00:05:39.120
+Types that interact with the rest of C++ as if they were built-in types.
+
+00:05:39.120 --> 00:05:47.240
+And for these, we have enumerated types, that is, single value, numbered, or scalar types.
+
+00:05:47.240 --> 00:05:49.480
+That's the enum type.
+
+00:05:49.480 --> 00:05:56.080
+We have struct for structured or record data types.
+
+00:05:56.080 --> 00:06:00.720
+And then we have classes for object-oriented programming.
+
+00:06:00.720 --> 00:06:08.160
+Finally, some of these types are used to build the things that are in the standard library.
+
+00:06:08.160 --> 00:06:13.320
+So we refer to these types as library types, even though they're structures or enumerations
+
+00:06:13.320 --> 00:06:15.000
+or classes.
+
+00:06:15.000 --> 00:06:21.600
+So types such as string and vector are not built into the C++ language.
+
+00:06:21.600 --> 00:06:30.440
+Instead they're built into the standard library that comes with C++.
+
+00:06:30.440 --> 00:06:36.320
+Now C++ is what we call statically typed.
+
+00:06:36.320 --> 00:06:43.720
+That means the types of the variables, the types of the functions, are indicated in the
+
+00:06:43.720 --> 00:06:45.520
+source code.
+
+00:06:45.520 --> 00:06:51.920
+And so to show you exactly what that means, I have to kind of compare it to other languages.
+
+00:06:51.920 --> 00:06:57.720
+So Python, for instance, uses what's called dynamic typing.
+
+00:06:57.720 --> 00:07:06.200
+So this is the definition for a function named add that takes two arguments, a and b.
+
+00:07:06.200 --> 00:07:10.380
+What kind of value, if any, does add return?
+
+00:07:10.380 --> 00:07:13.400
+What kind of things are a and b?
+
+00:07:13.400 --> 00:07:17.960
+Well, you don't know when you're writing your code.
+
+00:07:17.960 --> 00:07:21.760
+When you run your code, a will be given a value.
+
+00:07:21.760 --> 00:07:22.920
+It'll be a number.
+
+00:07:22.920 --> 00:07:24.280
+It'll be a string.
+
+00:07:24.280 --> 00:07:27.360
+It'll be a real number, an integer number.
+
+00:07:27.360 --> 00:07:32.520
+Similarly, you don't know until the program runs what the function will return.
+
+00:07:32.520 --> 00:07:34.600
+So this is called dynamic typing.
+
+00:07:34.600 --> 00:07:38.240
+a is not a specific kind of variable.
+
+00:07:38.240 --> 00:07:41.320
+b is not a specific kind of variable.
+
+00:07:41.320 --> 00:07:50.960
+It's given a value when the program runs, and its type is determined at that time.
+
+00:07:50.960 --> 00:07:57.600
+Static typing is what Pascal and Java and C++ use.
+
+00:07:57.600 --> 00:08:04.860
+That is, the types are determined explicitly when we declare or define the variables.
+
+00:08:04.860 --> 00:08:07.560
+So here is a function in C++.
+
+00:08:07.560 --> 00:08:10.480
+It would look very similar in Java.
+
+00:08:10.480 --> 00:08:14.920
+Notice that this specifically says that this function is going to return an integer.
+
+00:08:14.920 --> 00:08:19.280
+Notice the Python version does not say what kind of function that is.
+
+00:08:19.280 --> 00:08:24.660
+It also says that the two arguments, a and b, are both going to be integers.
+
+00:08:24.660 --> 00:08:32.680
+And so the types with static typing are determined when the program is compiled.
+
+00:08:32.680 --> 00:08:38.360
+Now we have a similar term that's often confused, and this is called strong typing.
+
+00:08:38.360 --> 00:08:45.600
+So strong typing means that a variable can only hold one kind of value.
+
+00:08:45.600 --> 00:08:51.600
+And so you might think, well, if I have a double value, and I try and assign, if I have
+
+00:08:51.600 --> 00:08:59.880
+a double variable, and I try and assign, I'm actually going to open up our editor here,
+
+00:08:59.880 --> 00:09:05.480
+and I'm going to just create a new file here.
+
+00:09:05.480 --> 00:09:17.840
+I'll call it example.cpp.
+
+00:09:17.840 --> 00:09:33.720
+And so if I try and create a variable, and that is actually not very big, I'm going to,
+
+00:09:33.720 --> 00:09:38.120
+I'm not quite sure why my font is so small when it's bigger over here.
+
+00:09:38.120 --> 00:09:39.720
+No, I guess it's about the same size.
+
+00:09:39.720 --> 00:09:45.640
+So double x equals 3.
+
+00:09:45.640 --> 00:09:53.920
+Now this works in both C++ and Java, but this is not an example of strong typing, because
+
+00:09:53.920 --> 00:09:58.640
+the value on the right, 3, is a whole number.
+
+00:09:58.640 --> 00:10:04.320
+The value variable on the left, where I'm putting that, is the wrong kind of thing to
+
+00:10:04.320 --> 00:10:05.320
+put it in.
+
+00:10:05.320 --> 00:10:07.360
+This is not an integer.
+
+00:10:07.360 --> 00:10:09.120
+This is an integer.
+
+00:10:09.120 --> 00:10:16.520
+And if we had strong typing only, then this would not compile, because we're trying to
+
+00:10:16.520 --> 00:10:22.160
+put the wrong kind of value in the wrong kind of box, the wrong kind of variable.
+
+00:10:22.160 --> 00:10:32.160
+And so what both Java and C++ do, is they convert this 3 to, behind the scenes, invisibly,
+
+00:10:32.160 --> 00:10:35.160
+a 3.0.
+
+00:10:35.160 --> 00:10:38.040
+And so the 3.0 is what's put inside of that.
+
+00:10:38.040 --> 00:10:45.040
+It's called a promotion, or a widening conversion.
+
+00:10:45.040 --> 00:10:56.960
+Now in Java, if we did this, int y equals 3.15, we would get a syntax error.
+
+00:10:56.960 --> 00:11:05.480
+So that's because this is too big, it's 64 bits, this is a 32 bit bucket, and the bits
+
+00:11:05.480 --> 00:11:13.000
+are arranged in a different pattern, because remember, the value is the set of bits interpreted
+
+00:11:13.000 --> 00:11:14.920
+according to its type.
+
+00:11:14.920 --> 00:11:22.000
+And so the bits that make up 3.15 are not the same as the bits that would go into the
+
+00:11:22.000 --> 00:11:23.000
+integer x.
+
+00:11:23.000 --> 00:11:30.920
+And so in Java, this is illegal, but in C++, it is not illegal.
+
+00:11:30.920 --> 00:11:39.160
+So in C++, we have strong typing, but we have implicit conversions, conversions that are
+
+00:11:39.160 --> 00:11:42.280
+not allowed in other languages.
+
+00:11:42.280 --> 00:11:45.880
+So in C++, this is okay.
+
+00:11:45.880 --> 00:11:54.400
+It's exactly as if we had written, convert this 3.5 to an int, throw away the .5 and
+
+00:11:54.400 --> 00:11:56.000
+store it into a.
+
+00:11:56.000 --> 00:11:58.680
+We won't get any errors.
+
+00:11:58.680 --> 00:12:04.760
+Now because of that, because of the experience people have had with Java and C# in the last
+
+00:12:04.760 --> 00:12:10.800
+10 or 15 years, people have realized that that leads to some kind of errors.
+
+00:12:10.800 --> 00:12:19.600
+And so in C++ now, if we want to make sure that we're doing, if we're not inadvertently
+
+00:12:19.600 --> 00:12:24.680
+losing data, we could do it like this instead of that.
+
+00:12:24.680 --> 00:12:31.360
+We could just put braces around this and now, just like Java would get an error, which is
+
+00:12:31.360 --> 00:12:32.840
+what we expect, right?
+
+00:12:32.840 --> 00:12:37.280
+We would expect this narrowing conversion not to succeed.
+
+00:12:37.280 --> 00:12:45.620
+But in C++, if you use the traditional assignment, these narrowing conversions succeed.
+
+00:12:45.620 --> 00:12:52.800
+So sometimes people complain and say, "No, C++ is not strongly typed because I can put
+
+00:12:52.800 --> 00:12:56.520
+a double inside an int and it didn't tell me I made a mistake."
+
+00:12:56.520 --> 00:13:03.520
+Well, it is strongly typed, but it has these implicit conversions exactly like Java has
+
+00:13:03.520 --> 00:13:08.200
+the implicit conversions, but it will do a narrowing conversion.
+
+00:13:08.200 --> 00:13:12.480
+In other words, losing data, whereas Java will not.
+
+00:13:12.480 --> 00:13:17.600
+And again, if you want to avoid that, which I strongly recommend, what you should do is
+
+00:13:17.600 --> 00:13:24.600
+you should make sure that you use the curly braces when you do the assignment.
+
+00:13:24.600 --> 00:13:30.480
+Okay, so let's go ahead and look at the types now that are built in.
+
+00:13:30.480 --> 00:13:38.040
+So the first type we have, like Java, is a integer, which is a signed whole number.
+
+00:13:38.040 --> 00:13:44.120
+When we say a number is signed, we mean that the number or the variable can represent negative
+
+00:13:44.120 --> 00:13:47.400
+and positive numbers.
+
+00:13:47.400 --> 00:13:52.480
+Now in Java, ints are signed 32-bit whole numbers.
+
+00:13:52.480 --> 00:13:54.960
+In C++, that's not the case.
+
+00:13:54.960 --> 00:14:02.080
+I have worked on C++ compilers where integers were 16 bits, and the largest integer we could
+
+00:14:02.080 --> 00:14:03.080
+have was 32,767.
+
+00:14:03.080 --> 00:14:12.080
+Today, 32 is most common, just like Java, but 16-bit is still used in the microprocessor
+
+00:14:12.080 --> 00:14:16.000
+world, especially for embedded systems.
+
+00:14:16.000 --> 00:14:19.880
+So it must be at least 16 bits, or it can't be an int.
+
+00:14:19.880 --> 00:14:24.120
+That's what the language requires, but it could be 32 bits.
+
+00:14:24.120 --> 00:14:33.200
+In fact, an int could be 64 bits, and I expect to see that soon as processors get larger.
+
+00:14:33.200 --> 00:14:39.920
+We can modify the type int with a modifier that specifies the size.
+
+00:14:39.920 --> 00:14:43.040
+So we can write a long int.
+
+00:14:43.040 --> 00:14:47.960
+We can leave off the word int and use long, just like Java does.
+
+00:14:47.960 --> 00:14:51.320
+That must be at least 32 bits.
+
+00:14:51.320 --> 00:14:55.760
+Now in Java, a long must be 64 bits.
+
+00:14:55.760 --> 00:14:59.040
+Now in C++, that is not the case.
+
+00:14:59.040 --> 00:15:06.840
+And so many platforms, Visual C++ for instance, longs and ints are exactly the same size.
+
+00:15:06.840 --> 00:15:08.840
+They're 32 bits.
+
+00:15:08.840 --> 00:15:17.600
+Shorts, again this is shorthand for short int, but you can just write short if you want,
+
+00:15:17.600 --> 00:15:24.360
+must be at least 16 bits like they are in Java, but they can be 32 bits as well.
+
+00:15:24.360 --> 00:15:30.960
+So it would be possible for ints, longs, and shorts all to be the same size on a given
+
+00:15:30.960 --> 00:15:32.200
+platform.
+
+00:15:32.200 --> 00:15:36.880
+They usually aren't all the same size, but often several of them are.
+
+00:15:36.880 --> 00:15:43.320
+The platform we're going to be using, our Unix platform, is going to have 32 bit ints,
+
+00:15:43.320 --> 00:15:51.320
+64 bit longs, 16 bit shorts, and all platforms now have long, long.
+
+00:15:51.320 --> 00:15:57.520
+This is an extension before C++11, but now all platforms have the ability to do a long,
+
+00:15:57.520 --> 00:16:02.000
+long, which is the equivalent to a long in Java.
+
+00:16:02.000 --> 00:16:08.440
+And again in C++ we can write this as a long, long int.
+
+00:16:08.440 --> 00:16:15.560
+Now with all of these types that specify the size of the bytes, we can also specify how
+
+00:16:15.560 --> 00:16:17.640
+they're interpreted.
+
+00:16:17.640 --> 00:16:24.760
+So you can combine the word unsigned with any of these above to specify that we want
+
+00:16:24.760 --> 00:16:30.520
+to take the whole bit pattern and apply it to positive numbers.
+
+00:16:30.520 --> 00:16:36.680
+So let me just give you a quick example.
+
+00:16:36.680 --> 00:16:48.920
+If I take a 16 bit number, a short, if I write short, I can represent numbers from -32,768
+
+00:16:48.920 --> 00:16:53.200
+to +32,767.
+
+00:16:53.200 --> 00:17:00.120
+The zero is right in the middle of the positive and negative numbers if you put it on a timeline
+
+00:17:00.120 --> 00:17:02.560
+or a number line.
+
+00:17:02.560 --> 00:17:09.740
+If I put unsigned short, I cannot store any negative numbers, but I get twice as many
+
+00:17:09.740 --> 00:17:11.280
+positive numbers.
+
+00:17:11.280 --> 00:17:17.140
+I can store from zero to 65,535 numbers.
+
+00:17:17.140 --> 00:17:21.060
+And it's the same for all the types.
+
+00:17:21.060 --> 00:17:27.520
+Now Java has a byte type to represent an 8 bit signed integers.
+
+00:17:27.520 --> 00:17:36.880
+C++ uses the type char both for characters and for small integers.
+
+00:17:36.880 --> 00:17:41.640
+So for characters, you just use a plain char.
+
+00:17:41.640 --> 00:17:49.920
+For byte integers, you do a signed char if you want the numbers -128 to 127 or you use
+
+00:17:49.920 --> 00:17:56.400
+an unsigned char if you want to represent the numbers 0 to 255.
+
+00:17:56.400 --> 00:18:01.120
+We'll actually use these byte integers later because they're very useful when we process
+
+00:18:01.120 --> 00:18:03.120
+images.
+
+00:18:03.120 --> 00:18:10.360
+C++ has three floating point types, unlike Java, which has only two.
+
+00:18:10.360 --> 00:18:16.280
+Those of you coming from Python are familiar with the type float, but the float in type
+
+00:18:16.280 --> 00:18:20.240
+Python is called a double in Java.
+
+00:18:20.240 --> 00:18:25.960
+Python actually doesn't have the same float type, which is around four bytes long.
+
+00:18:25.960 --> 00:18:29.040
+The double type is typically eight bytes long.
+
+00:18:29.040 --> 00:18:31.480
+The long double may be the same as the double.
+
+00:18:31.480 --> 00:18:36.720
+It is on Visual C++ or it may be larger.
+
+00:18:36.720 --> 00:18:40.100
+So we will not use long double generally.
+
+00:18:40.100 --> 00:18:43.200
+It's not actually that useful in C++.
+
+00:18:43.200 --> 00:18:48.840
+And we will generally not use float unless we happen to use them in an array for images
+
+00:18:48.840 --> 00:18:50.600
+or something like that.
+
+00:18:50.600 --> 00:18:54.240
+So for floating point types, we'll almost always use double.
+
+00:18:54.240 --> 00:18:59.560
+For integer types, we'll almost always use int, unless we need very small integers, in
+
+00:18:59.560 --> 00:19:06.720
+which case we'll use signed or unsigned char.
+
+00:19:06.720 --> 00:19:13.320
+Now literals mean you literally write out a number.
+
+00:19:13.320 --> 00:19:19.420
+When you write out a number, we assume you're working with decimal numbers, that is base
+
+00:19:19.420 --> 00:19:21.480
+10.
+
+00:19:21.480 --> 00:19:29.080
+So with a decimal literal, we can preface it to change the base.
+
+00:19:29.080 --> 00:19:35.520
+So if I start a number with the digit zero, I'm going to assume I'm going to be in base
+
+00:19:35.520 --> 00:19:37.880
+eight or octal.
+
+00:19:37.880 --> 00:19:47.040
+So 073 means three ones in seven eights, not seven tens.
+
+00:19:47.040 --> 00:19:54.720
+If I preface it with 0x, and that x can be capital or lower case, it means I'm assuming
+
+00:19:54.720 --> 00:20:00.840
+that the base is 16 and the number is in hexadecimal.
+
+00:20:00.840 --> 00:20:11.560
+And so 0x73 is not the decimal number 73, it's three ones in seven sixteens.
+
+00:20:11.560 --> 00:20:20.880
+And if I have the, start with the preface 0b, or zero b, not ob, 0b, let's assume that
+
+00:20:20.880 --> 00:20:25.080
+the numbers are binary.
+
+00:20:25.080 --> 00:20:29.240
+Now I can also add a modifier after the literal.
+
+00:20:29.240 --> 00:20:35.120
+If I do a u, this can be upper case or lower case, it's more common to do capital.
+
+00:20:35.120 --> 00:20:39.800
+That means that we want to interpret that number as an unsigned number.
+
+00:20:39.800 --> 00:20:43.640
+If I do an l, it means we want to use long storage.
+
+00:20:43.640 --> 00:20:47.960
+If I do two l's, it means we want to use long, long storage.
+
+00:20:47.960 --> 00:20:54.240
+And of course I can bind the unsigned, which determines how we view the representation
+
+00:20:54.240 --> 00:20:56.320
+with the size modifier.
+
+00:20:56.320 --> 00:21:01.840
+So I could have 123 ULL.
+
+00:21:01.840 --> 00:21:10.400
+C++14, we're using C++17 in this class, also allows you to use the apostrophe to act as
+
+00:21:10.400 --> 00:21:12.960
+a separator for long numbers.
+
+00:21:12.960 --> 00:21:18.200
+So if you have a very large decimal number, we commonly separate out the thousands with
+
+00:21:18.200 --> 00:21:19.400
+a comma.
+
+00:21:19.400 --> 00:21:25.640
+The comma won't work in C++, but you can use the apostrophe so you still get the same visual
+
+00:21:25.640 --> 00:21:29.160
+separation.
+
+00:21:29.160 --> 00:21:36.340
+For floating point literals, you can type them as simply 243 dot.
+
+00:21:36.340 --> 00:21:38.900
+Notice that'll be type double.
+
+00:21:38.900 --> 00:21:44.200
+Notice we don't need a trailing zero for that, but we do need the dot.
+
+00:21:44.200 --> 00:21:47.600
+The literal 234 is of type int.
+
+00:21:47.600 --> 00:21:52.040
+234 point is of type double.
+
+00:21:52.040 --> 00:22:01.040
+If you add an L to the end of your number, like 7.5432L, it's of type long double, the
+
+00:22:01.040 --> 00:22:02.640
+literal.
+
+00:22:02.640 --> 00:22:08.720
+And finally, you can do it in scientific notation here, adding an E with a plus or minus for
+
+00:22:08.720 --> 00:22:10.120
+the exponent.
+
+00:22:10.120 --> 00:22:13.100
+The E can be capitalized or lowercase.
+
+00:22:13.100 --> 00:22:17.640
+This'll be type double, using scientific notation.
+
+00:22:17.640 --> 00:22:21.200
+And if we wanted type float, we would use the letter F.
+
+00:22:21.200 --> 00:22:23.320
+Again, this can be lower or uppercase.
+
+00:22:23.320 --> 00:22:25.600
+I've used uppercase here.
+
+00:22:25.600 --> 00:22:30.880
+You should not use lowercase for the L because people are going to confuse it with a 1.
+
+00:22:30.880 --> 00:22:36.360
+You're going to confuse it with a 1.
+
+00:22:36.360 --> 00:22:46.640
+Now we can actually, since we can use literals to specify a type, and we can use variable
+
+00:22:46.640 --> 00:22:56.200
+names, type names like int or double to declare the type, we can actually use only the literal
+
+00:22:56.200 --> 00:22:59.880
+to infer or deduce the type.
+
+00:22:59.880 --> 00:23:06.360
+When you do that, instead of specifying a type name, you use the keyword auto.
+
+00:23:06.360 --> 00:23:09.040
+And then you don't use braces.
+
+00:23:09.040 --> 00:23:15.800
+And so when I say auto A, notice I haven't specified what kind of thing A is.
+
+00:23:15.800 --> 00:23:20.200
+The compiler comes along and says, "Well, what's going into that?"
+
+00:23:20.200 --> 00:23:27.440
+Well, 23U is an unsigned int, so the type for A would be an unsigned int.
+
+00:23:27.440 --> 00:23:33.400
+Similarly, I've done the same thing for the variable B. I haven't specified that it's
+
+00:23:33.400 --> 00:23:44.080
+a float, but I've written over here that it's type auto, and so it will deduce or infer
+
+00:23:44.080 --> 00:23:47.120
+from the 3F that B is a float.
+
+00:23:47.120 --> 00:23:55.520
+Now a lot of modern C++ experts recommend this style called "almost always auto" or
+
+00:23:55.520 --> 00:24:01.880
+AAA, because first, it eliminates uninitialized variables.
+
+00:24:01.880 --> 00:24:08.080
+If we're going to get the type from the initializer, we don't have to worry about variables.
+
+00:24:08.080 --> 00:24:12.360
+It also improves maintenance.
+
+00:24:12.360 --> 00:24:20.120
+That means if you change the initializer, suppose you had int x = 3, and you came along
+
+00:24:20.120 --> 00:24:26.320
+and you realized, "Oh, you know, that really should start with 3.5," and you forgot to
+
+00:24:26.320 --> 00:24:32.000
+change the int, then your code would be kind of out of sync.
+
+00:24:32.000 --> 00:24:34.360
+You wouldn't get an error message.
+
+00:24:34.360 --> 00:24:40.520
+And so maintenance works easier if you're using always auto, because the types track
+
+00:24:40.520 --> 00:24:43.640
+as the initializers will change.
+
+00:24:43.640 --> 00:24:48.480
+And finally, performance.
+
+00:24:48.480 --> 00:24:57.480
+If you use explicit types, like int B = 3.5F, we have to do an implicit conversion there
+
+00:24:57.480 --> 00:25:01.840
+that wouldn't have to happen if we didn't do that.
+
+00:25:01.840 --> 00:25:05.360
+And so this eliminates these initial conversions.
+
+00:25:05.360 --> 00:25:10.440
+So if you look on the slides, I have some links that you can watch and read several
+
+00:25:10.440 --> 00:25:11.800
+things about here.
+
+00:25:11.800 --> 00:25:20.540
+Watch this video on almost always auto, if you're interested in that.
+
+00:25:20.540 --> 00:25:27.000
+Let's go ahead and do an exercise, and let's go ahead and see if we can do the work of
+
+00:25:27.000 --> 00:25:33.000
+the compiler and infer from the literals what type would be there.
+
+00:25:33.000 --> 00:25:38.320
+Now, of course, if we were using auto, we'd put auto there, but here we're simply going
+
+00:25:38.320 --> 00:25:45.560
+to infer from the compiler what type would go there.
+
+00:25:45.560 --> 00:25:50.720
+So I'm going to make this slightly larger so it's easier to see on the video.
+
+00:25:50.720 --> 00:26:01.720
+So we're going to look at this program, and we're going to provide the correct explicit
+
+00:26:01.720 --> 00:26:06.280
+variable types for each of the variable declarations.
+
+00:26:06.280 --> 00:26:12.520
+You can assume that ints are 32 bits, and that shorts are 16 bits.
+
+00:26:12.520 --> 00:26:17.760
+Now to make this a little trickier, what we want to do is use the smallest legal type
+
+00:26:17.760 --> 00:26:24.760
+that will correctly store the subsequent value.
+
+00:26:24.760 --> 00:26:29.800
+So we're going to take a picture, we're going to click here, we're going to go in and look
+
+00:26:29.800 --> 00:26:35.000
+at this program, I'm going to make this a little larger again so you can see it.
+
+00:26:35.000 --> 00:26:42.640
+So notice I can say auto A equals this, but I instead, in which case it would be an int,
+
+00:26:42.640 --> 00:26:46.320
+right, an unsigned int, .25 is an unsigned int.
+
+00:26:46.320 --> 00:26:53.440
+Instead, what I want to do is think about using the smallest correct explicit type for
+
+00:26:53.440 --> 00:26:54.800
+that.
+
+00:26:54.800 --> 00:27:04.160
+So the question really we're asking is what is the smallest type that will store -25?
+
+00:27:04.160 --> 00:27:08.280
+So an int obviously would, we could put a double inside there, but all of those would
+
+00:27:08.280 --> 00:27:10.200
+need to convert.
+
+00:27:10.200 --> 00:27:16.680
+And so the smallest type is an assigned char.
+
+00:27:16.680 --> 00:27:22.160
+So chars are what we use for values that are 8 bits.
+
+00:27:22.160 --> 00:27:30.360
+An 8 bit assigned char can hold the numbers from -128 to +127.
+
+00:27:30.360 --> 00:27:40.440
+So B, we could put that as assigned char, but 249 is outside the range of assigned char.
+
+00:27:40.440 --> 00:27:44.240
+It's outside the domain, so it wouldn't fit.
+
+00:27:44.240 --> 00:27:48.160
+What if instead though, we made it an unsigned character?
+
+00:27:48.160 --> 00:27:54.160
+If it was an unsigned char or an unsigned byte, it would fit because the value for unsigned
+
+00:27:54.160 --> 00:27:59.680
+bytes is 0 to 255.
+
+00:27:59.680 --> 00:28:03.000
+So this would be an unsigned char.
+
+00:28:03.000 --> 00:28:10.640
+Okay, C obviously is bigger than we can store in assigned char and unsigned char.
+
+00:28:10.640 --> 00:28:14.440
+How about the next larger number, the short?
+
+00:28:14.440 --> 00:28:17.520
+That's 16 bits.
+
+00:28:17.520 --> 00:28:23.000
+Could we store -1725 in that?
+
+00:28:23.000 --> 00:28:27.440
+Well if it was an unsigned number, we could not of course because we can only have positive
+
+00:28:27.440 --> 00:28:28.440
+ones.
+
+00:28:28.440 --> 00:28:30.800
+So how about a signed short?
+
+00:28:30.800 --> 00:28:38.600
+Well with 16 bits, we can store roughly +/- 32,000 and that will certainly fit.
+
+00:28:38.600 --> 00:28:51.040
+So this would be signed short int and with this type, because the default for all of
+
+00:28:51.040 --> 00:28:59.400
+integers is signed, we can leave off the word signed and because with the shorts and longs,
+
+00:28:59.400 --> 00:29:06.200
+you can actually leave off the word int, we could write that simply as a short.
+
+00:29:06.200 --> 00:29:14.640
+Now D obviously won't fit in +/- 32,000 but how about if we make that short unsigned?
+
+00:29:14.640 --> 00:29:22.940
+Well then instead of +/- 32,000, we get 0 to roughly 65,000 and 49,000 would certainly
+
+00:29:22.940 --> 00:29:24.300
+fit in there.
+
+00:29:24.300 --> 00:29:32.780
+So this would be an unsigned short int and again we can leave off the word int if we
+
+00:29:32.780 --> 00:29:38.420
+want.
+
+00:29:38.420 --> 00:29:55.300
+Ok so this number is 2,000,000,252.
+
+00:29:55.300 --> 00:29:58.260
+So obviously that won't fit in a short.
+
+00:29:58.260 --> 00:30:02.100
+Will it fit in an int?
+
+00:30:02.100 --> 00:30:04.860
+Obviously we have a negative number so it has to be signed.
+
+00:30:04.860 --> 00:30:07.060
+It cannot be unsigned.
+
+00:30:07.060 --> 00:30:09.180
+So the default is signed.
+
+00:30:09.180 --> 00:30:12.380
+We only have to put the unsigned keyword in there.
+
+00:30:12.380 --> 00:30:18.260
+We only have to put the signed keyword with chars and if you just want to be pedantic,
+
+00:30:18.260 --> 00:30:20.220
+you can put it inside there.
+
+00:30:20.220 --> 00:30:23.660
+So an integer is 32 bits.
+
+00:30:23.660 --> 00:30:28.460
+That means we can store roughly +/- 2,000,000,000,000 numbers.
+
+00:30:28.460 --> 00:30:31.580
+So this is fine for int.
+
+00:30:31.580 --> 00:30:35.260
+Now for the last three of these, I want to do something slightly different.
+
+00:30:35.260 --> 00:30:44.820
+I want to pretend that I am the compiler and I want to put in what auto would put in here
+
+00:30:44.820 --> 00:30:46.940
+with 3u.
+
+00:30:46.940 --> 00:30:55.100
+And so for 3u, that would be an unsigned int.
+
+00:30:55.100 --> 00:31:03.420
+For -9ll, that would be a signed long long or just long long.
+
+00:31:03.420 --> 00:31:05.460
+And you can put signed long long int.
+
+00:31:05.460 --> 00:31:07.220
+That would be perfectly fine.
+
+00:31:07.220 --> 00:31:09.300
+So long long.
+
+00:31:09.300 --> 00:31:16.020
+And this one is an unsigned long long.
+
+00:31:16.020 --> 00:31:19.140
+For these exercises we are using something called code check.
+
+00:31:19.140 --> 00:31:24.580
+So once you have typed your answer in there, you can go ahead and just click the code check
+
+00:31:24.580 --> 00:31:30.140
+button and it will check it to see if you in fact got it correct.
+
+00:31:30.140 --> 00:31:34.820
+And so now this is telling us that we have the correct values and you are going to take
+
+00:31:34.820 --> 00:31:38.140
+a little picture.
+
+00:31:38.140 --> 00:31:42.420
+And so I am going to actually make this a little smaller here.
+
+00:31:42.420 --> 00:31:44.300
+And I am going to go ahead and take my picture.
+
+00:31:44.300 --> 00:31:51.140
+I am going to do Windows shift S because I am on a Windows machine.
+
+00:31:51.140 --> 00:32:03.180
+I am going to take my picture and I am going to go over to my document here.
+
+00:32:03.180 --> 00:32:10.660
+And for exercise one, I am going to go ahead and paste in those answers.
+
+00:32:10.660 --> 00:32:14.600
+If it gets too big, you can make it smaller so that it fits.
+
+00:32:14.600 --> 00:32:18.100
+We could have actually shot less, shot less for that picture.
+
+00:32:18.100 --> 00:32:23.980
+I shot kind of a lot for that picture.
+
+00:32:23.980 --> 00:32:30.140
+Okay so let's go back to talking about, so that's types and inferred typing.
+
+00:32:30.140 --> 00:32:32.180
+Let's talk about binary numbers.
+
+00:32:32.180 --> 00:32:39.060
+I want to talk about how data is stored internally in these numbers.
+
+00:32:39.060 --> 00:32:43.100
+So internally, all numbers are stored in binary.
+
+00:32:43.100 --> 00:32:45.980
+In other words, base 2.
+
+00:32:45.980 --> 00:32:50.980
+So when we talk about the base of a number, what we are talking about is the number of
+
+00:32:50.980 --> 00:32:57.300
+digits that are used to represent that number in human readable form.
+
+00:32:57.300 --> 00:33:05.220
+When we talk about the base of a number, we are talking about again the human readable
+
+00:33:05.220 --> 00:33:06.620
+form.
+
+00:33:06.620 --> 00:33:09.360
+So base 2 uses two digits.
+
+00:33:09.360 --> 00:33:12.660
+Those digits are 0 and 1.
+
+00:33:12.660 --> 00:33:16.820
+Base 8 or octal uses 8 digits.
+
+00:33:16.820 --> 00:33:23.300
+Those digits are 0, 1, 2, 3, 4, 5, 6, and 7.
+
+00:33:23.300 --> 00:33:27.100
+Base 10 or decimal numbers use 10 digits.
+
+00:33:27.100 --> 00:33:29.820
+The digits are 0 through 9.
+
+00:33:29.820 --> 00:33:35.420
+And base 16 or hexadecimal uses 16 digits.
+
+00:33:35.420 --> 00:33:39.460
+So we use the 10 digits from decimal, 0 through 9.
+
+00:33:39.460 --> 00:33:45.740
+And then we borrow the first six letters, A, B, C, D, E, and F.
+
+00:33:45.740 --> 00:33:52.820
+And so that's how we represent human readable hexadecimal numbers.
+
+00:33:52.820 --> 00:34:01.020
+So let's talk about how we interpret the bits internally, how we convert a number that's
+
+00:34:01.020 --> 00:34:10.220
+written in human readable form, 0, 1, 2, 3, and so forth, to the actual value that's stored
+
+00:34:10.220 --> 00:34:11.540
+in the number.
+
+00:34:11.540 --> 00:34:17.700
+What does it mean when we write out the number 123?
+
+00:34:17.700 --> 00:34:22.020
+Well in base 10, you learned this in grammar school.
+
+00:34:22.020 --> 00:34:33.380
+What we mean by 123 or 123 is simply 1 times the base, let me start at the right here.
+
+00:34:33.380 --> 00:34:37.480
+So whatever the base is, we take it to the 0th power.
+
+00:34:37.480 --> 00:34:41.300
+So any number raised to the 0th power is 1.
+
+00:34:41.300 --> 00:34:44.700
+So that's 3 times 1.
+
+00:34:44.700 --> 00:34:52.060
+Then we take the next digit, 2 times, and this is 10 to the 1st power, or 10.
+
+00:34:52.060 --> 00:35:00.980
+So 2 times 10, plus 1, that's the 3rd digit over here, times 10 to the 2nd power, or 10
+
+00:35:00.980 --> 00:35:03.620
+times 10, or 100.
+
+00:35:03.620 --> 00:35:09.180
+So in grammar school you learned that as this is the 1's place, this is the 10's place,
+
+00:35:09.180 --> 00:35:13.020
+this is the 100's place, the next one would be the 1000's place.
+
+00:35:13.020 --> 00:35:16.660
+But this is what you're really doing under the hood.
+
+00:35:16.660 --> 00:35:23.180
+And if you understand that, then binary numbers, or base 8 numbers, or base 16 numbers are
+
+00:35:23.180 --> 00:35:24.580
+easy.
+
+00:35:24.580 --> 00:35:26.740
+So here is a binary number.
+
+00:35:26.740 --> 00:35:31.340
+Because it's binary, we only have two digits, 0 and 1.
+
+00:35:31.340 --> 00:35:38.220
+And the way we interpret that, the way we get the value out of that, is by taking the
+
+00:35:38.220 --> 00:35:46.380
+base, which is 2, raised to the powers, 2 to the 0, 2 to the 1st, 2 to the 2nd, 2 to
+
+00:35:46.380 --> 00:35:52.020
+the 3rd, 2 to the 4th, and so forth, and simply adding them together.
+
+00:35:52.020 --> 00:36:00.460
+So our right most digit here is 1, and we take 1 times 2 to the power, 2 to the 0th,
+
+00:36:00.460 --> 00:36:02.620
+or 1 times 1.
+
+00:36:02.620 --> 00:36:07.060
+Then 1 times 2 to the 1st, or 1 times 2.
+
+00:36:07.060 --> 00:36:11.340
+Then 0 times 2 to the 3rd, which of course is 0.
+
+00:36:11.340 --> 00:36:14.420
+Then 1 times 2 to the 3rd, which is 8.
+
+00:36:14.420 --> 00:36:17.860
+Then 1 times 2 to the 4th, which is 16.
+
+00:36:17.860 --> 00:36:21.140
+Then 1 times 2 to the 5th, and so forth.
+
+00:36:21.140 --> 00:36:29.540
+And so that is simply 1 plus 2 plus 8 plus 16 plus 32 plus 64, which gives me the same
+
+00:36:29.540 --> 00:36:30.540
+value.
+
+00:36:30.540 --> 00:36:39.060
+So 123 and this binary number are exactly the same value, they're just represented in
+
+00:36:39.060 --> 00:36:41.740
+human different terms.
+
+00:36:41.740 --> 00:36:46.900
+We're representing them at different bases when we write them out.
+
+00:36:46.900 --> 00:36:54.900
+Now we will normally use base 10, but you should know algorithms to convert to these
+
+00:36:54.900 --> 00:36:56.760
+different bases.
+
+00:36:56.760 --> 00:37:02.740
+And so this gives you enough information to figure out how to convert to a different base.
+
+00:37:02.740 --> 00:37:08.100
+In other words, suppose we had this number, and we said it was base 8.
+
+00:37:08.100 --> 00:37:17.180
+Well that would be 8 to the 0th, plus 1 times 8 to the, 8 to the 1st, plus 0 times 8 to
+
+00:37:17.180 --> 00:37:22.260
+the 3rd, 2nd, and then 8 to the 3rd, and so forth.
+
+00:37:22.260 --> 00:37:27.740
+We'll just simply replace these 2 to the 6th, 2 to the 5th, 2 to the 4th, by 8 to the
+
+00:37:27.740 --> 00:37:33.220
+6th, 8 to the 5th, 8 to the 4th, or in base 3, we'll do the same thing.
+
+00:37:33.220 --> 00:37:37.800
+So the conversion is essentially relatively simple.
+
+00:37:37.800 --> 00:37:39.560
+So we're going to do a second exercise.
+
+00:37:39.560 --> 00:37:45.620
+For this one we're going to use our CS50 IDE.
+
+00:37:45.620 --> 00:37:49.080
+I'm going to go close that little thing I just typed there.
+
+00:37:49.080 --> 00:37:57.140
+We're going to do this first exercise, which shows the representation of different values.
+
+00:37:57.140 --> 00:38:04.420
+This is in part B over here, in IC03, and you're going to open up represent.cpp.
+
+00:38:04.420 --> 00:38:09.340
+You don't have to put your name on this, because we're just going to do some exercises and
+
+00:38:09.340 --> 00:38:15.060
+print out what the internal representation of these should be.
+
+00:38:15.060 --> 00:38:19.660
+Now to do that internal representation, what we're going to do is we're going to call a
+
+00:38:19.660 --> 00:38:24.300
+function called 2 bits.
+
+00:38:24.300 --> 00:38:30.460
+To do that, we've included this file called represent.h that has the definition for the
+
+00:38:30.460 --> 00:38:32.260
+2 bits function.
+
+00:38:32.260 --> 00:38:35.500
+Now most of you won't understand this right now.
+
+00:38:35.500 --> 00:38:40.040
+By the end of this semester you will understand this.
+
+00:38:40.040 --> 00:38:46.040
+So we're going to look at that and we're going to print out here what that means for each
+
+00:38:46.040 --> 00:38:48.340
+of those representations.
+
+00:38:48.340 --> 00:38:56.980
+So if I want the representation of the character A, what I'm going to print out is 2 bits,
+
+00:38:56.980 --> 00:39:02.940
+and I'm going to print out the literal character A.
+
+00:39:02.940 --> 00:39:13.800
+Now if I want the literal representation, in other words, what do the bits look like,
+
+00:39:13.800 --> 00:39:20.080
+for the unsigned char B, I'm going to have to make, or the unsigned char 65, I'm going
+
+00:39:20.080 --> 00:39:23.400
+to have to make a variable of that type.
+
+00:39:23.400 --> 00:39:34.520
+So I'm going to say unsigned char B equals 65, and then I'm just going to print out 2
+
+00:39:34.520 --> 00:39:35.520
+bits B.
+
+00:39:35.520 --> 00:39:43.480
+So you notice when I did A, I put the quotes around it, I passed the literal inside here.
+
+00:39:43.480 --> 00:39:46.940
+Here I'm passing in the variable.
+
+00:39:46.940 --> 00:39:55.640
+Ok we've got the short value, so the signed short value, 32768.
+
+00:39:55.640 --> 00:40:08.880
+So I'm going to have short C equals 32768.
+
+00:40:08.880 --> 00:40:14.740
+And I'm going to have unsigned, oh I'll do it between them next time.
+
+00:40:14.740 --> 00:40:17.860
+So let's do two things here.
+
+00:40:17.860 --> 00:40:31.140
+Let's do 2 bits C, and then let's put out a comma and say C equals, or I'll use the
+
+00:40:31.140 --> 00:40:39.500
+arrow, C. Ok?
+
+00:40:39.500 --> 00:40:52.620
+And let's do a D for the unsigned short, so unsigned short D equals 32768, and I'm going
+
+00:40:52.620 --> 00:40:55.180
+to do exactly the same thing I did here.
+
+00:40:55.180 --> 00:41:02.580
+I'm just going to copy that, I'm going to paste it over here, and I'm going to print
+
+00:41:02.580 --> 00:41:19.700
+out D, D, and D. Ok, here we want the int value, 15, so 2 bits 15.
+
+00:41:19.700 --> 00:41:24.460
+Now 15 of course literally is an int.
+
+00:41:24.460 --> 00:41:36.860
+We want the int value minus 15, 2 bits minus 15.
+
+00:41:36.860 --> 00:41:55.900
+We want the float 15F, and the double 15F, or double 15, I'm having a hard time putting
+
+00:41:55.900 --> 00:42:04.620
+my fingers on the right keys, 2 bits 15.0, or just 15 point.
+
+00:42:04.620 --> 00:42:10.660
+If we just did 15 we'd have an integer, if we do 15.0 we have something else, but the
+
+00:42:10.660 --> 00:42:13.220
+float, notice I don't need the floating point.
+
+00:42:13.220 --> 00:42:17.100
+If I put the F on the end of it it knows it's float.
+
+00:42:17.100 --> 00:42:20.220
+I'm going to hope that's right, we'll find out when we compile it.
+
+00:42:20.220 --> 00:42:30.180
+Now then I'm going to do 2 bits, and I'm going to do minus 15.0, because we did minus 15
+
+00:42:30.180 --> 00:42:39.420
+with no point zero, and we got the int minus 15 here, here we have the double minus 15.
+
+00:42:39.420 --> 00:42:46.700
+Now to compile this, we're going to have to right click on the folder that's in, open
+
+00:42:46.700 --> 00:42:52.500
+it in an integrated terminal, and notice that it does the change directory to move us over
+
+00:42:52.500 --> 00:43:03.300
+there, and then I'm simply going to say make run.
+
+00:43:03.300 --> 00:43:07.300
+I had an error, I do need the period on the 15F.
+
+00:43:07.300 --> 00:43:13.940
+I told you the compiler would tell us if we made that mistake, and I did make that mistake,
+
+00:43:13.940 --> 00:43:20.300
+so I'm going to put a period in the 15F.
+
+00:43:20.300 --> 00:43:33.620
+Let's try it again, clear the terminal with control L, and make run.
+
+00:43:33.620 --> 00:43:39.460
+Okay so this is what we talked about originally with types.
+
+00:43:39.460 --> 00:43:45.500
+Notice that the character A, because I said it was a character, represents A. If I printed
+
+00:43:45.500 --> 00:43:51.700
+out the character A, I would get A, and actually let's just do that.
+
+00:43:51.700 --> 00:44:00.500
+Let's go back here and do the same thing like we did for C and D. So I'm going to print
+
+00:44:00.500 --> 00:44:14.460
+out A. And here, I'm going to say, oh actually let's
+
+00:44:14.460 --> 00:44:15.940
+make a variable of that.
+
+00:44:15.940 --> 00:44:37.700
+So char A equals A, and put a semicolon there, and we'll do A, and then we'll print out,
+
+00:44:37.700 --> 00:44:44.980
+comma A is, print out A, and then a new line.
+
+00:44:44.980 --> 00:44:46.900
+And we'll do the same thing to here.
+
+00:44:46.900 --> 00:45:02.660
+We'll add the comma B equals, or B is B, and that will make it a little clearer when we
+
+00:45:02.660 --> 00:45:05.860
+build this and run it again.
+
+00:45:05.860 --> 00:45:15.820
+So let me clear the console and do make run again.
+
+00:45:15.820 --> 00:45:20.820
+Well I didn't like that.
+
+00:45:20.820 --> 00:45:31.900
+I must have made a mistake in my code, which I did.
+
+00:45:31.900 --> 00:45:40.300
+So I'm going to go, oh I said 2 bits 1 instead of 2 bits A.
+
+00:45:40.300 --> 00:45:45.500
+Ok third time, hopefully this is the charm.
+
+00:45:45.500 --> 00:45:51.020
+Ok so notice this bit pattern has a value.
+
+00:45:51.020 --> 00:45:52.340
+What's its value?
+
+00:45:52.340 --> 00:46:00.340
+The letter A. This bit pattern is the unsigned character 65.
+
+00:46:00.340 --> 00:46:05.260
+Now when we print it out it says it's A, but it's really 65.
+
+00:46:05.260 --> 00:46:11.700
+So depending on what we determined it was, notice the value changes.
+
+00:46:11.700 --> 00:46:17.140
+It was our determination that this was an int or a char.
+
+00:46:17.140 --> 00:46:25.820
+So unsigned char 65 and int A have the same value, or have the same bit pattern, but they
+
+00:46:25.820 --> 00:46:32.620
+have a different value because they represent different numbers.
+
+00:46:32.620 --> 00:46:44.700
+If we look at the short 32768, we get this bit pattern, 16 bits, and we have the value
+
+00:46:44.700 --> 00:46:48.980
+32768.
+
+00:46:48.980 --> 00:47:00.340
+If we look at unsigned short 32768, I'm obviously making some kind of mistake here.
+
+00:47:00.340 --> 00:47:03.820
+I'm going to pause this while I correct my mistake.
+
+00:47:03.820 --> 00:47:08.420
+Ok I'm back, I'm sure many of you saw my errors.
+
+00:47:08.420 --> 00:47:31.500
+I said I want the short 32768 and I typed the short 32678, so 768 and 768 and I'm going
+
+00:47:31.500 --> 00:47:43.780
+to print this as an int.
+
+00:47:43.780 --> 00:47:49.180
+Ok so let me try it, I said last time 3 times the charm, we'll hope that 4 times is the
+
+00:47:49.180 --> 00:47:50.180
+charm.
+
+00:47:50.180 --> 00:47:55.500
+So I'm going to do my print.
+
+00:47:55.500 --> 00:48:01.980
+Ok so here we have the character A and the unsigned character 65.
+
+00:48:01.980 --> 00:48:07.860
+If we take that value, this value, and we represent it as a character, it's A. If we
+
+00:48:07.860 --> 00:48:11.820
+represent it as an integer, it's 1.
+
+00:48:11.820 --> 00:48:20.220
+If we take this value and we represent it as a short, notice it won't fit inside a short.
+
+00:48:20.220 --> 00:48:22.740
+It does what we call an overflow.
+
+00:48:22.740 --> 00:48:29.180
+And so the value that's stored in there is -32768.
+
+00:48:29.180 --> 00:48:37.580
+If we store it in an unsigned short, which can store from 0 to 65,000, we can store that
+
+00:48:37.580 --> 00:48:38.740
+value.
+
+00:48:38.740 --> 00:48:43.480
+So this does what we say overflows the domain.
+
+00:48:43.480 --> 00:48:52.380
+If we look at the integer 15, we have this bit pattern, and if we look at the value -15,
+
+00:48:52.380 --> 00:48:58.540
+we get some insight as to how negative and positive numbers are stored differently as
+
+00:48:58.540 --> 00:49:00.860
+to their bit patterns.
+
+00:49:00.860 --> 00:49:07.180
+If we look at the float 15, so here's the integer 15 right here, and here's the float
+
+00:49:07.180 --> 00:49:14.900
+15, notice they're using the same amount of storage, but the bits are arranged entirely
+
+00:49:14.900 --> 00:49:16.420
+differently.
+
+00:49:16.420 --> 00:49:22.940
+In other words, the interpretation of the bits is different just because we said it
+
+00:49:22.940 --> 00:49:24.780
+was a different type.
+
+00:49:24.780 --> 00:49:29.220
+And if you look at the difference between the float and the double, you'll see that
+
+00:49:29.220 --> 00:49:32.120
+they arrange somewhat similarly.
+
+00:49:32.120 --> 00:49:40.060
+You can see the actual data right there for 15 and the data for 15 right there, and the
+
+00:49:40.060 --> 00:49:43.300
+data for 15 right here.
+
+00:49:43.300 --> 00:49:49.020
+You can see that they're somewhat the same, although a little bit differently.
+
+00:49:49.020 --> 00:49:55.900
+And you notice -15 and positive 15, so look at the difference between negative and positive
+
+00:49:55.900 --> 00:50:01.260
+here for integers, the same number, look at the difference between negative and positive
+
+00:50:01.260 --> 00:50:02.580
+for doubles.
+
+00:50:02.580 --> 00:50:04.620
+Only one bit has changed.
+
+00:50:04.620 --> 00:50:09.940
+And so what you can take away from this, I don't expect you to understand this decoding.
+
+00:50:09.940 --> 00:50:18.100
+What I do expect you to understand is that the value is a set of bits interpreted according
+
+00:50:18.100 --> 00:50:19.860
+to its type.
+
+00:50:19.860 --> 00:50:31.780
+The size of each representation of a type is based on the individual platform, the individual
+
+00:50:31.780 --> 00:50:39.900
+implementation, and that we can have two patterns that are exactly the same, but if their type
+
+00:50:39.900 --> 00:50:45.580
+is different, so notice these two patterns are the same, and these two patterns are the
+
+00:50:45.580 --> 00:50:52.540
+same, but because their type was different, their values are different.
+
+00:50:52.540 --> 00:50:59.020
+So the value is the set of bits interpreted according to its type.
+
+00:50:59.020 --> 00:51:05.020
+OK, so that's exercise B. You're going to take a picture of this, and you're going to
+
+00:51:05.020 --> 00:51:16.260
+take a picture of this part here for the in-class exercise.
+
+00:51:16.260 --> 00:51:25.260
+OK, let's go on to the next topic, which is conversions and casts.
+
+00:51:25.260 --> 00:51:35.580
+So C++ automatically converts between types of numbers on initialization or assignment.
+
+00:51:35.580 --> 00:51:37.100
+It does this silently.
+
+00:51:37.100 --> 00:51:39.340
+It doesn't warn you that it's happening.
+
+00:51:39.340 --> 00:51:41.260
+It just does it.
+
+00:51:41.260 --> 00:51:49.340
+So in C++11, we can use the curly braces called list assignment to give you a little bit greater
+
+00:51:49.340 --> 00:51:50.460
+control.
+
+00:51:50.460 --> 00:51:55.380
+So if you had an int variable and you assigned a double to it, maybe the variable should
+
+00:51:55.380 --> 00:51:58.100
+have been a double, but you don't notice.
+
+00:51:58.100 --> 00:52:00.180
+In Java, you'd get an error.
+
+00:52:00.180 --> 00:52:04.700
+In C++, you won't unless you use this list assignment.
+
+00:52:04.700 --> 00:52:10.340
+Now you may get a compiler warning on an error or conversion, but there's no guarantee that
+
+00:52:10.340 --> 00:52:15.180
+that will actually happen because it's not illegal.
+
+00:52:15.180 --> 00:52:21.860
+So if you mean to explicitly convert between different types, you should use what's called
+
+00:52:21.860 --> 00:52:24.540
+a static cast.
+
+00:52:24.540 --> 00:52:31.180
+And see, in Java, you did something similar, simpler, in Python as well, if you wanted
+
+00:52:31.180 --> 00:52:32.620
+to cast.
+
+00:52:32.620 --> 00:52:35.920
+This shows that the conversion is intentional.
+
+00:52:35.920 --> 00:52:46.060
+So for instance, if I want to store the whole part of a number pi, I can assign it to a
+
+00:52:46.060 --> 00:52:50.340
+static underscore cast in angle brackets.
+
+00:52:50.340 --> 00:52:54.220
+I put the type I want to create my temporary of.
+
+00:52:54.220 --> 00:52:59.660
+So I want to convert pi to an int, and I put that in parenthesis here.
+
+00:52:59.660 --> 00:53:04.980
+So this is the syntax for a static cast.
+
+00:53:04.980 --> 00:53:11.580
+Okay, so let's go and look at expressions.
+
+00:53:11.580 --> 00:53:14.720
+Let's go and look at expressions.
+
+00:53:14.720 --> 00:53:18.260
+So an expression is a calculation that produces a value.
+
+00:53:18.260 --> 00:53:21.920
+And to do that, we use operators and operands.
+
+00:53:21.920 --> 00:53:24.660
+These are terms from mathematics.
+
+00:53:24.660 --> 00:53:29.460
+So operands are the data that we operate on.
+
+00:53:29.460 --> 00:53:30.940
+Variables can be literal.
+
+00:53:30.940 --> 00:53:33.380
+So 3 plus 5 is an expression.
+
+00:53:33.380 --> 00:53:37.280
+3 and 5 are literally values.
+
+00:53:37.280 --> 00:53:39.820
+We can say, use variables in expression.
+
+00:53:39.820 --> 00:53:41.140
+A minus 3.
+
+00:53:41.140 --> 00:53:44.420
+A is not a value, but it contains a value.
+
+00:53:44.420 --> 00:53:47.440
+So we can use it in an expression.
+
+00:53:47.440 --> 00:53:49.020
+We can use a function call.
+
+00:53:49.020 --> 00:53:53.980
+So func a is not a value, but it produces a value when I call it.
+
+00:53:53.980 --> 00:53:57.980
+And I can use that in an expression, 2 times func a.
+
+00:53:57.980 --> 00:53:59.740
+And we can have a sub-expression.
+
+00:53:59.740 --> 00:54:03.220
+So a plus 3 produces a value.
+
+00:54:03.220 --> 00:54:04.740
+That's an expression.
+
+00:54:04.740 --> 00:54:14.300
+And I can use that sub-expression as part of the expression a plus 3 times 5.
+
+00:54:14.300 --> 00:54:20.140
+Now, the operators are the plus, the minus, the multiply in this situation.
+
+00:54:20.140 --> 00:54:24.180
+And all of these operators have three characteristics.
+
+00:54:24.180 --> 00:54:26.940
+First is the term arity.
+
+00:54:26.940 --> 00:54:30.660
+Arity simply means how many operands are needed.
+
+00:54:30.660 --> 00:54:38.420
+So 3 plus 5 is called a binary operator because two operands are needed.
+
+00:54:38.420 --> 00:54:44.820
+Minus 5 is a unary operator because only one operand is needed.
+
+00:54:44.820 --> 00:54:48.260
+Finally, we have one operator called the tertiary operator,
+
+00:54:48.260 --> 00:54:52.380
+or the conditional operator, that requires three operands--
+
+00:54:52.380 --> 00:54:57.740
+what the condition is, what the true value is, what the false value is.
+
+00:54:57.740 --> 00:55:01.060
+Secondly, we have what's called precedence.
+
+00:55:01.060 --> 00:55:05.180
+Precedence determines which operators bind more tightly
+
+00:55:05.180 --> 00:55:08.340
+to data than another operator.
+
+00:55:08.340 --> 00:55:17.940
+Now, you probably learned P-E-M-D-A-S, PEMDAS, in algebra.
+
+00:55:17.940 --> 00:55:20.420
+That's not exactly correct here.
+
+00:55:20.420 --> 00:55:22.340
+First, we don't have any E. There's no
+
+00:55:22.340 --> 00:55:24.260
+exponential operator.
+
+00:55:24.260 --> 00:55:27.340
+The P stands for the parenthesis.
+
+00:55:27.340 --> 00:55:34.380
+The M stands for the multiplicative operators, which means multiplication
+
+00:55:34.380 --> 00:55:35.540
+and division.
+
+00:55:35.540 --> 00:55:37.540
+Neither one of them binds more tightly.
+
+00:55:37.540 --> 00:55:39.500
+They're just at the same level.
+
+00:55:39.500 --> 00:55:41.940
+And the last level, the additive operators,
+
+00:55:41.940 --> 00:55:45.740
+includes addition and subtraction.
+
+00:55:45.740 --> 00:55:51.020
+Finally, associativity determines whether we go from right to left or left
+
+00:55:51.020 --> 00:55:52.060
+to right.
+
+00:55:52.060 --> 00:55:54.740
+And this is called the tie-breaking rule.
+
+00:55:54.740 --> 00:55:58.460
+We only use associativity when we have two operators
+
+00:55:58.460 --> 00:56:01.380
+at the same level of precedence.
+
+00:56:01.380 --> 00:56:03.340
+So let's look at an example.
+
+00:56:03.340 --> 00:56:09.500
+Here is an expression-- 7 times 2 divided by 3.
+
+00:56:09.500 --> 00:56:13.900
+So each of these is a binary operator.
+
+00:56:13.900 --> 00:56:19.340
+Notice that multiplication and division have the same level of precedence.
+
+00:56:19.340 --> 00:56:24.460
+So the 2 and 3 bind at the same level as the 7 and 2.
+
+00:56:24.460 --> 00:56:26.580
+So what should we do?
+
+00:56:26.580 --> 00:56:29.380
+Well, we don't have a way to evaluate this.
+
+00:56:29.380 --> 00:56:32.900
+We have to fall back on rule 3, associativity.
+
+00:56:32.900 --> 00:56:37.620
+All binary operators are left associative, meaning
+
+00:56:37.620 --> 00:56:39.660
+we go from the left to the right.
+
+00:56:39.660 --> 00:56:48.500
+So this is 7 by 2 times 2, which is 14, divided by 3, which is 3.
+
+00:56:50.340 --> 00:56:51.140
+3 or 4?
+
+00:56:51.140 --> 00:56:53.180
+4.
+
+00:56:53.180 --> 00:56:53.680
+4.
+
+00:56:53.680 --> 00:57:01.900
+So if it was the other way, if we did the 2 divided by 3,
+
+00:57:01.900 --> 00:57:04.300
+we'd get 0 times 7, which would be 0.
+
+00:57:04.300 --> 00:57:11.820
+Now let's look at the arithmetic operators.
+
+00:57:11.820 --> 00:57:13.700
+We looked at the basic types.
+
+00:57:13.700 --> 00:57:19.620
+We've looked at the vocabulary for calculations.
+
+00:57:19.620 --> 00:57:21.500
+Let's look at the operators.
+
+00:57:21.500 --> 00:57:24.420
+There are five basic arithmetic operators.
+
+00:57:24.420 --> 00:57:29.500
+There is not an operator for exponential, even though there is a math.
+
+00:57:29.500 --> 00:57:32.460
+There is not in C++.
+
+00:57:32.460 --> 00:57:36.380
+Now all five of these don't modify their operands.
+
+00:57:36.380 --> 00:57:42.060
+So you can use all five of these operators with an expression or a literal.
+
+00:57:42.060 --> 00:57:47.140
+So addition and subtraction is the plus and the minus token.
+
+00:57:47.140 --> 00:57:54.180
+These can also be the unary plus and the unary minus operators.
+
+00:57:54.180 --> 00:58:00.700
+So we use the same token depending on the context as to which operator it means.
+
+00:58:00.700 --> 00:58:04.620
+We have multiplication, which is the star, like it is in most programming
+
+00:58:04.620 --> 00:58:10.740
+languages, division, which is the forward slash, and remainder.
+
+00:58:10.740 --> 00:58:15.860
+So these last two require a little bit of explanation.
+
+00:58:15.860 --> 00:58:21.060
+Integer division in C++ works like integer division in Java,
+
+00:58:21.060 --> 00:58:25.380
+but unlike integer division in Python.
+
+00:58:25.380 --> 00:58:29.780
+In Python, when you divide two integers, you get real division.
+
+00:58:29.780 --> 00:58:36.140
+In other words, 2 divided by 3 is 0.666.
+
+00:58:36.140 --> 00:58:44.260
+In Java and C++, 2 divided by 3 is 0.
+
+00:58:44.260 --> 00:58:51.820
+And so look at this little girl standing at the board dividing 80 by 9.
+
+00:58:51.820 --> 00:58:56.580
+We have the thing we're dividing by, the thing we're dividing,
+
+00:58:56.580 --> 00:58:58.540
+the thing we're dividing by.
+
+00:58:58.540 --> 00:59:05.340
+And on the top of this little house, what we've done is we've put the quotient.
+
+00:59:05.340 --> 00:59:11.580
+So 80 divided by 9 in C++ is 8.
+
+00:59:11.580 --> 00:59:15.660
+We discard this 8 down here in the basement.
+
+00:59:15.660 --> 00:59:18.420
+So it's not 8 8 and 8/9.
+
+00:59:18.420 --> 00:59:20.100
+It's just 8.
+
+00:59:20.100 --> 00:59:21.860
+So the quotient's calculated.
+
+00:59:21.860 --> 00:59:24.860
+The remainder is discarded.
+
+00:59:24.860 --> 00:59:26.820
+The result is an integer.
+
+00:59:26.820 --> 00:59:31.580
+So 8 8 and 8/9 is, of course, closer to 9, right?
+
+00:59:31.580 --> 00:59:34.060
+Because 81 would be 9.
+
+00:59:34.060 --> 00:59:37.620
+If we divided 81 by 9, we'd get 9.
+
+00:59:37.620 --> 00:59:39.820
+But it's not rounded up to 9.
+
+00:59:39.820 --> 00:59:43.500
+It's just 8 in that case.
+
+00:59:43.500 --> 00:59:47.020
+If we want the part down here in the basement, the part the little girl is
+
+00:59:47.020 --> 00:59:51.460
+drawing right now, we can use the remainder operator.
+
+00:59:51.460 --> 00:59:57.740
+This percent sign is not the-- this doesn't have anything to do with
+
+00:59:57.740 --> 00:59:59.460
+percents.
+
+00:59:59.460 --> 01:00:03.220
+It also is not exactly the modulus operator.
+
+01:00:03.220 --> 01:00:09.300
+Modulus is a slightly different operation than the remainder.
+
+01:00:09.300 --> 01:00:11.500
+But it's close to that.
+
+01:00:11.500 --> 01:00:15.060
+So 12 remainder 5 is 2.
+
+01:00:15.060 --> 01:00:19.660
+That's because when I divide 12 by 5, I get 2 for the quotient.
+
+01:00:19.660 --> 01:00:21.580
+There are two 5's in 12.
+
+01:00:21.580 --> 01:00:24.500
+But there's 2 left over.
+
+01:00:24.500 --> 01:00:28.580
+So that's the remainder operator.
+
+01:00:28.580 --> 01:00:33.300
+Now, the last operators I want to look at are called side effect operators.
+
+01:00:33.300 --> 01:00:38.660
+And side effect operators include assignment, the shorthand assignment,
+
+01:00:38.660 --> 01:00:42.980
+plus equals, and increment and decrement.
+
+01:00:42.980 --> 01:00:49.820
+So increment and decrement, plus plus and minus minus, those add 1 or
+
+01:00:49.820 --> 01:00:53.660
+subtract 1 to a variable.
+
+01:00:53.660 --> 01:00:59.300
+However, like all expressions, they produce a value.
+
+01:00:59.300 --> 01:01:03.980
+So the secondary side effect is to change the operand.
+
+01:01:03.980 --> 01:01:08.700
+So plus plus a adds 1 to a.
+
+01:01:08.700 --> 01:01:12.620
+Minus minus b subtracts 1 from b.
+
+01:01:12.620 --> 01:01:16.140
+It changes a and b.
+
+01:01:16.140 --> 01:01:23.660
+Thus, because it changes a and b, they only work with modifiable l values.
+
+01:01:23.660 --> 01:01:27.660
+That means you cannot write plus plus 7.
+
+01:01:27.660 --> 01:01:32.420
+Plus plus 7 is not equal to 7 plus 1.
+
+01:01:32.420 --> 01:01:34.500
+Plus plus 7 is illegal.
+
+01:01:34.500 --> 01:01:39.260
+You're trying to change the value 7.
+
+01:01:39.260 --> 01:01:44.180
+So the side effect is always to change 1 or subtract 1
+
+01:01:44.180 --> 01:01:46.780
+from the variable's values.
+
+01:01:46.780 --> 01:01:56.740
+So it's just a simpler way of saying x equals x plus 1, or x equals x minus 1.
+
+01:01:56.740 --> 01:02:03.060
+You can simply say x plus plus, or x minus minus, or plus plus x,
+
+01:02:03.060 --> 01:02:06.500
+or minus minus x.
+
+01:02:06.500 --> 01:02:11.020
+Now, the value of the whole expression, however,
+
+01:02:11.020 --> 01:02:14.900
+depends on where you place the operator.
+
+01:02:14.900 --> 01:02:21.540
+If you put it in front of the variable plus plus a, that changes a.
+
+01:02:21.540 --> 01:02:25.420
+And then it returns the variable that is changed.
+
+01:02:25.420 --> 01:02:33.540
+So plus plus a means change a and return a as the value of the expression.
+
+01:02:33.540 --> 01:02:41.900
+Postfix, writing a plus plus, saves the value that a had before we changed it,
+
+01:02:41.900 --> 01:02:49.340
+changes a, and then returns its own old saved value as a temporary.
+
+01:02:49.340 --> 01:02:52.660
+So let me give you a couple examples, short examples here,
+
+01:02:52.660 --> 01:02:54.380
+so you can see that.
+
+01:02:54.380 --> 01:03:00.220
+I'm going to close represent, and I'm going to open up my example here.
+
+01:03:00.220 --> 01:03:04.660
+And I'm going to just put some simple coding here,
+
+01:03:04.660 --> 01:03:15.980
+include I/O stream using namespace standard int main.
+
+01:03:15.980 --> 01:03:24.300
+So I'm going to say int a equals 6.
+
+01:03:24.300 --> 01:03:30.140
+I'm going to say int b equals a plus plus.
+
+01:03:30.140 --> 01:03:32.620
+And then I'm going to print out a and b.
+
+01:03:32.620 --> 01:03:45.900
+So what would you expect to get out of this?
+
+01:03:45.900 --> 01:03:52.740
+Now, I'm going to have to open up a terminal here on my CS150 folder.
+
+01:03:52.740 --> 01:03:54.980
+And I'm going to have to do make example.
+
+01:03:59.140 --> 01:04:03.380
+So I don't have a make file for it, so I have to use its name of the program.
+
+01:04:03.380 --> 01:04:06.540
+To run it, I have to do ./example.
+
+01:04:06.540 --> 01:04:15.460
+So if you watched in lecture one, if you watched the CS50 video
+
+01:04:15.460 --> 01:04:20.700
+on using the command line, you'll realize how to build and make a program.
+
+01:04:20.700 --> 01:04:25.820
+So when I run example, that prints out 7 and 6.
+
+01:04:25.820 --> 01:04:32.100
+So notice a plus plus changed a to 7.
+
+01:04:32.100 --> 01:04:35.340
+This changed a to 7.
+
+01:04:35.340 --> 01:04:41.260
+However, the value of this expression is the temporary value that a had,
+
+01:04:41.260 --> 01:04:45.700
+and that's what's copied over into b.
+
+01:04:45.700 --> 01:04:51.380
+So notice b is 6, and a is 7 in this example.
+
+01:04:53.100 --> 01:04:59.540
+Now, there are some pitfalls with this.
+
+01:04:59.540 --> 01:05:01.940
+So here are the things to avoid.
+
+01:05:01.940 --> 01:05:04.740
+Notice here, I'm calling a function.
+
+01:05:04.740 --> 01:05:12.340
+I'm passing as an argument n, and then the expression n times n plus plus.
+
+01:05:12.340 --> 01:05:18.700
+Well, the problem here is that n plus plus changes n.
+
+01:05:18.700 --> 01:05:25.540
+So I don't know if the n over here on the left or the n in the middle have the value before
+
+01:05:25.540 --> 01:05:27.620
+or after it's changed.
+
+01:05:27.620 --> 01:05:30.100
+You don't know.
+
+01:05:30.100 --> 01:05:32.100
+Similarly, this.
+
+01:05:32.100 --> 01:05:40.020
+I have an expression with n divided by 2 plus 5 times 1 plus n plus plus.
+
+01:05:40.020 --> 01:05:43.900
+I'm not sure if this n has been changed or not.
+
+01:05:43.900 --> 01:05:47.140
+Now, it doesn't look like it when you look at it.
+
+01:05:47.140 --> 01:05:50.020
+You look at it, and you think, well, obviously it hasn't been changed.
+
+01:05:50.020 --> 01:05:51.060
+It appears after it.
+
+01:05:51.060 --> 01:05:52.660
+It's always left to right.
+
+01:05:52.660 --> 01:05:54.060
+That's not the case.
+
+01:05:54.060 --> 01:05:56.260
+Okay, that is not the case.
+
+01:05:56.260 --> 01:05:57.500
+Okay.
+
+01:05:57.500 --> 01:05:59.700
+Finally, look at that expression.
+
+01:05:59.700 --> 01:06:03.780
+Y equals n plus plus plus n plus plus.
+
+01:06:03.780 --> 01:06:06.420
+Again, you don't know what that means.
+
+01:06:06.420 --> 01:06:08.820
+So some rules to remember.
+
+01:06:08.820 --> 01:06:13.220
+Don't use a variable that's part of more than one argument.
+
+01:06:13.220 --> 01:06:18.580
+Don't use if a variable appears more than once in an expression.
+
+01:06:18.580 --> 01:06:21.180
+N and n plus plus over here.
+
+01:06:21.180 --> 01:06:24.080
+The parenthesis won't help you in this case.
+
+01:06:24.080 --> 01:06:27.580
+You cannot put parenthesis around it to make it safer.
+
+01:06:27.580 --> 01:06:29.820
+It's unsafe.
+
+01:06:29.820 --> 01:06:34.560
+So here, this is an expression, n plus plus plus n plus plus.
+
+01:06:34.560 --> 01:06:39.620
+Don't use if the variable n appears more than once in an expression.
+
+01:06:39.620 --> 01:06:42.580
+This also applies to the assignment operator.
+
+01:06:42.580 --> 01:06:44.700
+In other words, don't write something like this.
+
+01:06:44.700 --> 01:06:47.020
+Y equals y plus plus.
+
+01:06:47.020 --> 01:06:52.300
+Well, y plus plus is the value y had before it changed.
+
+01:06:52.300 --> 01:06:59.760
+So if y was three, that would assign to y three, but this changes y to four.
+
+01:06:59.760 --> 01:07:01.840
+So what does that expression even mean?
+
+01:07:01.840 --> 01:07:03.500
+It's impossible to parse.
+
+01:07:03.500 --> 01:07:06.860
+This is what we call undefined behavior.
+
+01:07:06.860 --> 01:07:13.660
+Now one of my favorite ones is this.
+
+01:07:13.660 --> 01:07:17.740
+So here's a is six.
+
+01:07:17.740 --> 01:07:28.940
+I'm going to print out a plus plus, a plus plus, a plus plus.
+
+01:07:28.940 --> 01:07:31.780
+Again, this is undefined behavior.
+
+01:07:31.780 --> 01:07:35.740
+We're using the same variable and part of this whole expression.
+
+01:07:35.740 --> 01:07:38.060
+This is all one expression.
+
+01:07:38.060 --> 01:07:43.860
+And if we were to run that, I'm going to make example.
+
+01:07:43.860 --> 01:07:52.980
+Okay, so I actually, on our IDE here, we could do this in one of the online IDEs here.
+
+01:07:52.980 --> 01:07:58.780
+In our IDE, I'm actually treating that as an error.
+
+01:07:58.780 --> 01:08:03.300
+I could change this instead of doing make example.
+
+01:08:03.300 --> 01:08:10.580
+I could do g plus plus example dot cpp dot o example.
+
+01:08:10.580 --> 01:08:16.620
+So I'm skipping all of the error checking that I have turned on.
+
+01:08:16.620 --> 01:08:24.100
+And then if I run example, in this case I get six, seven, eight.
+
+01:08:24.100 --> 01:08:26.900
+Many of you would think that's what it will always print.
+
+01:08:26.900 --> 01:08:44.220
+If I do clang plus plus, just another compiler.
+
+01:08:44.220 --> 01:08:48.180
+Clang is not going to let me do that because it has all the warnings turned on.
+
+01:08:48.180 --> 01:08:52.220
+And basically it's telling me that this is undefined.
+
+01:08:52.220 --> 01:08:57.900
+And so I have an online compiler, I've tried it with Visual Studio, C++.
+
+01:08:57.900 --> 01:08:59.900
+It gives me six, six, six.
+
+01:08:59.900 --> 01:09:02.140
+One of them gives me six, seven, eight.
+
+01:09:02.140 --> 01:09:04.060
+You solve a g plus plus.
+
+01:09:04.060 --> 01:09:06.180
+Another one will give me eight, seven, six.
+
+01:09:06.180 --> 01:09:15.820
+So the upshot of all of that is you should not ever, ever do any of these things.
+
+01:09:15.820 --> 01:09:19.620
+These are pitfalls that you're going to need to look out for.
+
+01:09:19.620 --> 01:09:24.820
+Okay, we're going to finish this up with the last part of our exercise.
+
+01:09:24.820 --> 01:09:35.060
+Each time I'm going to try and do a larger problem that puts into practice what we've
+
+01:09:35.060 --> 01:09:37.860
+been talking about and what we've been learning about.
+
+01:09:37.860 --> 01:09:43.580
+We have been working with IPL programs.
+
+01:09:43.580 --> 01:09:52.220
+And so down here we're going to write this basic IPO program.
+
+01:09:52.220 --> 01:09:58.060
+And so we're going to do, this time I'm going to do something a little bit faster.
+
+01:09:58.060 --> 01:10:02.100
+In the last lecture I went through this step by step.
+
+01:10:02.100 --> 01:10:05.500
+This time we're going to do it really, really quickly.
+
+01:10:05.500 --> 01:10:10.780
+So let me bring this over.
+
+01:10:10.780 --> 01:10:12.540
+Let me close example.
+
+01:10:12.540 --> 01:10:19.260
+Let me go down to C. Let's do Mets.cpp.
+
+01:10:19.260 --> 01:10:21.380
+Let's put our name on the top of it.
+
+01:10:21.380 --> 01:10:31.620
+I'm not going to put the date in because I might want to use it another semester.
+
+01:10:31.620 --> 01:10:36.020
+So lecture three.
+
+01:10:36.020 --> 01:10:43.020
+I am going to put my full Canvas ID there.
+
+01:10:43.020 --> 01:10:50.980
+Okay, so I'm going to go to my problem.
+
+01:10:50.980 --> 01:11:00.980
+I'm going to get the instructions out.
+
+01:11:00.980 --> 01:11:05.460
+I'm going to put those inside here.
+
+01:11:05.460 --> 01:11:23.420
+I'm going to convert the comments.
+
+01:11:23.420 --> 01:11:30.020
+I'm going to select that and comment it, slash, and then tab.
+
+01:11:30.020 --> 01:11:34.260
+And I'm going to figure out what the inputs, outputs, and so forth are.
+
+01:11:34.260 --> 01:11:42.140
+So input, I have weight in pounds.
+
+01:11:42.140 --> 01:11:44.420
+This one I'll use snake case.
+
+01:11:44.420 --> 01:11:49.620
+I used camel case in the last one.
+
+01:11:49.620 --> 01:11:58.100
+The number of Mets for an activity and the number of minutes.
+
+01:11:58.100 --> 01:12:15.340
+So three inputs, output, calories, calories, calories, burn.
+
+01:12:15.340 --> 01:12:17.580
+And what's given on this?
+
+01:12:17.580 --> 01:12:35.700
+Well, I'm given one kilogram is 2.2 pounds.
+
+01:12:35.700 --> 01:12:39.860
+I'm given anything else in the problem statement.
+
+01:12:39.860 --> 01:12:45.580
+Oh, I have a conversion formula.
+
+01:12:45.580 --> 01:13:08.660
+Okay, so that's also given.
+
+01:13:08.660 --> 01:13:11.420
+That conversion factor is that.
+
+01:13:11.420 --> 01:13:17.940
+And finally I have my algorithm or processing.
+
+01:13:17.940 --> 01:13:26.100
+And again I was given that in the problem.
+
+01:13:26.100 --> 01:13:31.620
+Although not exactly in the form I want to use.
+
+01:13:31.620 --> 01:13:37.380
+And so I'm going to print that in there.
+
+01:13:37.380 --> 01:13:43.340
+Okay, so I can get rid of this.
+
+01:13:43.340 --> 01:13:45.860
+And we can write our code here.
+
+01:13:45.860 --> 01:13:49.820
+Now what's the first step we're always going to do for the code?
+
+01:13:49.820 --> 01:13:53.780
+The first step is always mock up the output.
+
+01:13:53.780 --> 01:13:58.180
+So I'm going to go copy this code here.
+
+01:13:58.180 --> 01:14:02.940
+What I want the output to look like.
+
+01:14:02.940 --> 01:14:07.140
+I'm going to paste it in there.
+
+01:14:07.140 --> 01:14:08.340
+I'm going to separate it.
+
+01:14:08.340 --> 01:14:22.980
+I'm going to put quotes around it like we did before.
+
+01:14:22.980 --> 01:14:44.140
+The parts that are going to stay the same.
+
+01:14:44.140 --> 01:14:46.700
+And I'm going to put C outs and output operators.
+
+01:14:46.700 --> 01:14:47.700
+So C out.
+
+01:14:47.700 --> 01:15:00.260
+I'll copy that so I can just put it here multiple times.
+
+01:15:00.260 --> 01:15:07.700
+Oops, no that's not right.
+
+01:15:07.700 --> 01:15:10.740
+I have operator there but not that.
+
+01:15:10.740 --> 01:15:30.740
+So 250 and 6 and 90 and output operators here and here.
+
+01:15:30.740 --> 01:15:53.300
+Make them go the right way and an end them.
+
+01:15:53.300 --> 01:16:00.980
+And I'm going to make sure I haven't made any syntax errors and that the output looks
+
+01:16:00.980 --> 01:16:08.020
+pretty much like the code that I copied over there.
+
+01:16:08.020 --> 01:16:15.540
+And so you can see that it in fact does look pretty similar.
+
+01:16:15.540 --> 01:16:17.340
+Okay so that was step one.
+
+01:16:17.340 --> 01:16:23.060
+Our step two is we're going to now add the input, output and processing sections.
+
+01:16:23.060 --> 01:16:28.220
+So here's my input section.
+
+01:16:28.220 --> 01:16:32.220
+Here is my processing section.
+
+01:16:32.220 --> 01:16:37.900
+And here is my output section.
+
+01:16:37.900 --> 01:16:41.140
+So for the input I need variables.
+
+01:16:41.140 --> 01:16:43.620
+So I need my weight in pounds.
+
+01:16:43.620 --> 01:16:48.980
+I need the number of mets for that activity.
+
+01:16:48.980 --> 01:16:51.980
+And then I need the met conversion factor.
+
+01:16:51.980 --> 01:16:55.620
+And then I'm going to send the minutes next exercising.
+
+01:16:55.620 --> 01:16:58.420
+So let's make these first two doubles.
+
+01:16:58.420 --> 01:17:08.580
+So double weight in pounds.
+
+01:17:08.580 --> 01:17:16.780
+And let's do C in weight in pounds.
+
+01:17:16.780 --> 01:17:22.580
+Let's remove this dummy value and the dummy end line there.
+
+01:17:22.580 --> 01:17:24.380
+And I have my first line done.
+
+01:17:24.380 --> 01:17:27.140
+Make sure I spell pounds right.
+
+01:17:27.140 --> 01:17:31.220
+I like the fact that the editor will color that to make sure that I spelled it right
+
+01:17:31.220 --> 01:17:34.700
+and give me a syntax thing.
+
+01:17:34.700 --> 01:17:38.220
+Okay so this is the number of mets for this activity.
+
+01:17:38.220 --> 01:17:45.040
+That might be an int as well but we're multiplying it with this factor times 0.75.
+
+01:17:45.040 --> 01:17:47.180
+So let me make it a double as well.
+
+01:17:47.180 --> 01:17:52.260
+Number of mets and C in mets.
+
+01:17:52.260 --> 01:17:58.460
+And let me remove the dummies here.
+
+01:17:58.460 --> 01:17:59.460
+And minutes.
+
+01:17:59.460 --> 01:18:02.260
+I'm going to go ahead and make this one an integer.
+
+01:18:02.260 --> 01:18:06.860
+So I'll move the dummy to start with.
+
+01:18:06.860 --> 01:18:10.300
+I will have int minutes.
+
+01:18:10.300 --> 01:18:14.900
+C in minutes.
+
+01:18:14.900 --> 01:18:19.500
+Okay so I've got the input part done.
+
+01:18:19.500 --> 01:18:23.760
+Now let's go ahead and do the processing part.
+
+01:18:23.760 --> 01:18:27.700
+So the output is going to be calories.
+
+01:18:27.700 --> 01:18:30.940
+So I'm going to create a double value for that.
+
+01:18:30.940 --> 01:18:38.000
+So double calories equals.
+
+01:18:38.000 --> 01:18:46.820
+And I'm going to put in this formula.
+
+01:18:46.820 --> 01:18:51.300
+And notice the formula isn't exactly in the right format.
+
+01:18:51.300 --> 01:18:54.900
+So this is the formula for calories per minute.
+
+01:18:54.900 --> 01:19:00.960
+And so I want to divide calories by minute.
+
+01:19:00.960 --> 01:19:06.700
+I want to, calories by minute, I want to multiply both sides by the minute to get this.
+
+01:19:06.700 --> 01:19:32.700
+So that would be this factor times mets times, whoops, times weighted kilograms.
+
+01:19:32.700 --> 01:19:37.140
+Times minutes.
+
+01:19:37.140 --> 01:19:39.460
+Alright.
+
+01:19:39.460 --> 01:19:48.020
+In other words if it's calories divided by minutes I need to multiply both sides by minutes
+
+01:19:48.020 --> 01:19:52.580
+to get the minutes on the right hand side.
+
+01:19:52.580 --> 01:19:55.700
+Now we actually don't have these two variables.
+
+01:19:55.700 --> 01:19:58.300
+And factor was given up to us here.
+
+01:19:58.300 --> 01:19:59.620
+It's this value.
+
+01:19:59.620 --> 01:20:02.180
+So I'm going to create a constant for that.
+
+01:20:02.180 --> 01:20:07.340
+So const double k factor equals .0175.
+
+01:20:07.340 --> 01:20:17.220
+So I'm going to replace this factor with k factor.
+
+01:20:17.220 --> 01:20:20.540
+And mets we read inside here.
+
+01:20:20.540 --> 01:20:22.540
+But we don't have weights in kilogram.
+
+01:20:22.540 --> 01:20:29.980
+But I do have another given which is the kilogram.
+
+01:20:29.980 --> 01:20:49.580
+So const double k pounds per kilogram equals 2.2.
+
+01:20:49.580 --> 01:20:53.700
+2.2 pounds per kilogram.
+
+01:20:53.700 --> 01:20:58.700
+And so given that constant I can figure out what the weight in kilograms is.
+
+01:20:58.700 --> 01:21:01.500
+Because here is the weight in pounds.
+
+01:21:01.500 --> 01:21:24.460
+So double weight in kilograms equals weight in pounds.
+
+01:21:24.460 --> 01:21:39.980
+Weight in pounds divided by k pounds per kilogram.
+
+01:21:39.980 --> 01:21:42.940
+Okay so that looks pretty good.
+
+01:21:42.940 --> 01:21:46.020
+We're going to have to test it to make sure it's correct.
+
+01:21:46.020 --> 01:21:52.540
+For the output here we want to put our calories.
+
+01:21:52.540 --> 01:21:55.140
+That's what we want for the output.
+
+01:21:55.140 --> 01:21:59.460
+And we probably want, looks like two decimal places in the output.
+
+01:21:59.460 --> 01:22:05.100
+So I'm going to do cl fix set precision 2.
+
+01:22:05.100 --> 01:22:07.220
+Like I did before.
+
+01:22:07.220 --> 01:22:10.780
+I'm going to make sure I have IOMINIP up here.
+
+01:22:10.780 --> 01:22:14.460
+Which I do.
+
+01:22:14.460 --> 01:22:17.200
+Okay that looks pretty good.
+
+01:22:17.200 --> 01:22:22.780
+So let's go ahead and try it with make run and put in the same input we had before.
+
+01:22:22.780 --> 01:22:26.780
+So make run.
+
+01:22:26.780 --> 01:22:29.580
+So 250 kilograms.
+
+01:22:29.580 --> 01:22:32.140
+Mets for the activity 6.
+
+01:22:32.140 --> 01:22:35.580
+Minutes spent exercising 90.
+
+01:22:35.580 --> 01:22:39.660
+You burned an estimated 1073.86.
+
+01:22:39.660 --> 01:22:41.340
+It looks okay.
+
+01:22:41.340 --> 01:22:43.820
+So let's try it with some different inputs.
+
+01:22:43.820 --> 01:22:48.780
+Let's just do make test.
+
+01:22:48.780 --> 01:22:53.780
+And here I've tested it with the same 256 and 90.
+
+01:22:53.780 --> 01:22:57.860
+Then an input weight of 0.
+
+01:22:57.860 --> 01:23:00.300
+Obviously I'm burning no calories.
+
+01:23:00.300 --> 01:23:02.420
+An input weight of 125 pounds.
+
+01:23:02.420 --> 01:23:06.220
+An input weight of 175 pounds.
+
+01:23:06.220 --> 01:23:10.060
+It shows the different calories that we've burned.
+
+01:23:10.060 --> 01:23:14.980
+So this will be our picture for the test part.
+
+01:23:14.980 --> 01:23:18.220
+And here's the picture for the code part.
+
+01:23:18.220 --> 01:23:23.500
+Again I want you to do more and more of these to get practice doing these kinds of input
+
+01:23:23.500 --> 01:23:25.980
+output processing programs.
+
+01:23:25.980 --> 01:23:30.740
+And to get some practice with calculations.
+
+01:23:30.740 --> 01:23:31.980
+That's it for me today.
+
+01:23:31.980 --> 01:23:34.940
+I'll see you in lecture 4.
+
+01:23:34.940 --> 01:23:36.820
+Thank you.
+

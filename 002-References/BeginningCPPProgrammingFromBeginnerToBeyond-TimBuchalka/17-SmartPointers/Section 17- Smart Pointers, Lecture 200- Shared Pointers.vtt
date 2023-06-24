@@ -1,0 +1,1015 @@
+WEBVTT
+
+00:00:05.360 --> 00:00:07.260
+Next, let's look at the shared pointer.
+
+00:00:07.860 --> 00:00:11.960
+The shared pointer is a smart pointer that provides a shared ownership model
+
+00:00:11.960 --> 00:00:12.960
+of the heap object.
+
+00:00:13.510 --> 00:00:17.510
+So like a unique pointer, a shared pointer points to an object on the heap.
+
+00:00:18.210 --> 00:00:20.510
+However, unlike a unique pointer,
+
+00:00:20.510 --> 00:00:23.810
+that heap object may be shared among many shared pointers.
+
+00:00:24.210 --> 00:00:28.910
+So we can have one heap object referenced by multiple shared pointers that manage it.
+
+00:00:29.160 --> 00:00:32.760
+Unlike unique pointers, shared pointers can be copied and assigned.
+
+00:00:33.120 --> 00:00:36.120
+This is exactly how we make them access the same heap object.
+
+00:00:36.780 --> 00:00:40.180
+For efficiency, shared pointers also support move semantics.
+
+00:00:40.580 --> 00:00:44.180
+While unique pointers can be used to allocate arrays of objects on the heap,
+
+00:00:44.180 --> 00:00:46.780
+shared pointers do not support this by default.
+
+00:00:47.440 --> 00:00:50.800
+So you might be thinking we can have multiple shared pointers
+
+00:00:50.800 --> 00:00:52.800
+all referencing the same heap object,
+
+00:00:53.160 --> 00:00:57.360
+so how do we know when that object needs to be destroyed and that's a great question.
+
+00:00:57.910 --> 00:01:00.210
+There are different ways that this can be accomplished.
+
+00:01:00.210 --> 00:01:04.510
+The most common technique is to use reference counting. The idea is simple.
+
+00:01:04.510 --> 00:01:07.170
+Every time we instantiate a shared pointer object
+
+00:01:07.170 --> 00:01:11.530
+and have it point or reference to the heap object, we increment the counter.
+
+00:01:12.130 --> 00:01:16.490
+This counter simply has the number of shared pointers referencing that heap object.
+
+00:01:16.850 --> 00:01:18.750
+When the reference count becomes 0,
+
+00:01:18.750 --> 00:01:22.750
+then we know nothing is referring to the heap object, and it can be safely destroyed.
+
+00:01:23.350 --> 00:01:25.950
+It's a pretty simple but effective model,
+
+00:01:25.950 --> 00:01:28.310
+but it does introduce some overhead to the process.
+
+00:01:28.670 --> 00:01:32.070
+However, the overhead introduced is in most cases not a big deal
+
+00:01:32.070 --> 00:01:36.950
+compared to the benefits provided by having the system manage these shared objects for us.
+
+00:01:36.950 --> 00:01:39.750
+Let's see how we can declare and use shared pointers.
+
+00:01:40.750 --> 00:01:44.350
+First, we'll see the same technique we used when we created unique pointers.
+
+00:01:44.350 --> 00:01:48.350
+And then we'll see a more efficient technique using the make shared function.
+
+00:01:49.250 --> 00:01:53.050
+Here you can see that we're declaring p1 to be a shared pointer to an integer.
+
+00:01:53.850 --> 00:01:57.500
+We're also initializing it to point to a new integer that we create on the heap
+
+00:01:57.500 --> 00:01:59.800
+and that integer has been initialized to a 100.
+
+00:02:00.700 --> 00:02:03.340
+Now p1 owns the object on the heap.
+
+00:02:03.540 --> 00:02:07.740
+When p1 goes out of scope, the int on the heap will be de-allocated.
+
+00:02:07.740 --> 00:02:11.100
+That is unless other shared pointers are referencing it.
+
+00:02:11.100 --> 00:02:13.700
+You don't need to call delete with a shared pointer.
+
+00:02:14.300 --> 00:02:16.500
+Now as far as using the shared pointer,
+
+00:02:16.500 --> 00:02:19.800
+the syntax is pretty much like a raw pointer or unique pointer.
+
+00:02:20.200 --> 00:02:24.300
+You can see that if we de-reference p1, we get the integer that it points to,
+
+00:02:24.300 --> 00:02:26.600
+in this case, 100, and we display it.
+
+00:02:27.100 --> 00:02:30.100
+We can also modify the integer we're pointing to in a similar manner.
+
+00:02:30.600 --> 00:02:35.100
+In this case, since we only have one shared pointer referencing the integer on the heap,
+
+00:02:35.100 --> 00:02:38.900
+when p1 goes out of scope, the integer will be de-allocated from the heap.
+
+00:02:40.340 --> 00:02:43.140
+Before we see how we can create other shared pointers
+
+00:02:43.140 --> 00:02:45.640
+and have them reference the same heap object,
+
+00:02:45.640 --> 00:02:49.630
+let's look at a very useful method in the shared pointer class called use count.
+
+00:02:50.530 --> 00:02:51.830
+The use count method
+
+00:02:51.830 --> 00:02:56.630
+returns the number of shared pointer objects that are currently referring to the heap object.
+
+00:02:57.430 --> 00:03:01.630
+In this example, we'll have two shared pointers, p1 and p2
+
+00:03:01.630 --> 00:03:04.130
+that both reference the same heap object.
+
+00:03:04.630 --> 00:03:09.130
+So first we declare p1 as a shared pointer that will manage an integer on the heap
+
+00:03:09.130 --> 00:03:11.330
+and we initialize that integer to 100.
+
+00:03:11.330 --> 00:03:15.630
+Now we call the use count method on p1, and we see that it displays one.
+
+00:03:15.630 --> 00:03:18.630
+That's what we expected since p1 is the only shared
+
+00:03:18.630 --> 00:03:20.830
+pointer referencing the integer on the heap.
+
+00:03:21.930 --> 00:03:24.290
+Now we create another shared pointer p2.
+
+00:03:24.650 --> 00:03:28.800
+And we use the copy constructor to initialize it so that it refers to the same
+
+00:03:28.800 --> 00:03:30.300
+object as p1.
+
+00:03:30.450 --> 00:03:33.810
+Now we call the use count on p1 and we display 2
+
+00:03:34.470 --> 00:03:38.470
+since both p1 and p2 are now referencing that same integer.
+
+00:03:38.470 --> 00:03:42.470
+But notice that if we call use count on p2, we'll also see a 2,
+
+00:03:42.470 --> 00:03:46.770
+which makes perfect sense. Now suppose that I call reset on p1.
+
+00:03:47.270 --> 00:03:50.570
+Recall that with a unique pointer, this destroyed the heap object
+
+00:03:50.570 --> 00:03:52.570
+and set the unique pointer to null.
+
+00:03:52.930 --> 00:03:56.920
+However, with shared pointers, this decrements the use count by 1
+
+00:03:56.920 --> 00:03:58.620
+and sets p1 to null.
+
+00:03:58.620 --> 00:04:02.820
+Now the use count for p1 is 0, and the use count for p2 is 1.
+
+00:04:03.320 --> 00:04:07.620
+So just because we reset p1 doesn't mean that we de-allocate the integer on the heap.
+
+00:04:07.820 --> 00:04:10.820
+We can't in this case because p2 is still referring to it.
+
+00:04:11.920 --> 00:04:15.920
+Finally, when p2 goes out of scope, the integer on the heap is de-allocated
+
+00:04:15.920 --> 00:04:17.910
+since it's no longer being referenced.
+
+00:04:18.270 --> 00:04:21.270
+So you can see that reference counting is pretty simple in concept.
+
+00:04:22.370 --> 00:04:26.370
+Of course, shared pointers also allow us to point to user-defined types.
+
+00:04:26.670 --> 00:04:30.570
+In this example, we're creating a shared pointer that will point to an account object,
+
+00:04:30.930 --> 00:04:33.530
+and we initialize it to point to the Larry account.
+
+00:04:34.430 --> 00:04:38.030
+We declare account as the template argument in the shared pointer declaration.
+
+00:04:38.330 --> 00:04:41.030
+What this says is that the shared pointer p1
+
+00:04:41.030 --> 00:04:43.630
+will manage an account object on the heap,
+
+00:04:43.630 --> 00:04:47.290
+and we're creating that account object in the initializer list for p1.
+
+00:04:48.390 --> 00:04:51.050
+Now we can use this pointer as we would a raw pointer.
+
+00:04:51.050 --> 00:04:53.650
+We can dereference it to get the account object
+
+00:04:53.650 --> 00:04:56.450
+as well as access the account object member methods
+
+00:04:56.450 --> 00:04:58.650
+via the member selection or arrow operator.
+
+00:04:59.050 --> 00:05:01.350
+And again, when p1 goes out of scope,
+
+00:05:01.350 --> 00:05:04.810
+the heap storage associated with the account object is de-allocated.
+
+00:05:04.810 --> 00:05:09.410
+As you can see, this code looks exactly the same as the code that we used with the unique pointer.
+
+00:05:10.910 --> 00:05:15.900
+Unlike unique pointers, shared pointers can be copied, assigned and moved.
+
+00:05:16.560 --> 00:05:20.560
+In this example, we create a vector that will contain shared pointers to integers.
+
+00:05:21.560 --> 00:05:25.160
+And we also create ptr, which is a shared pointer to an integer,
+
+00:05:25.160 --> 00:05:28.820
+and it points to an integer on the heap, which been initialized to a 100.
+
+00:05:29.720 --> 00:05:32.920
+We can now push back that shared pointer to the vector.
+
+00:05:32.920 --> 00:05:36.820
+Remember, we couldn't do this with unique pointer since they don't allow copying,
+
+00:05:37.220 --> 00:05:39.220
+but we can do it with shared pointers.
+
+00:05:39.720 --> 00:05:43.720
+Also notice that if we display the use count for pointer, we'll see a 2.
+
+00:05:43.870 --> 00:05:47.230
+This is because that integer on the heap is being referenced from
+
+00:05:47.230 --> 00:05:50.590
+pointer as well as from the shared pointer in the vector.
+
+00:05:51.580 --> 00:05:54.180
+Now when the vector and pointer both go out of scope,
+
+00:05:54.180 --> 00:05:58.180
+we're sure that the last one referring to that integer on the heap will clean it up.
+
+00:05:58.780 --> 00:06:02.980
+There's no need to call delete or to figure out when and from where to call delete.
+
+00:06:03.180 --> 00:06:08.170
+This is a huge deal. It makes writing this kind of code so much easier and less error prone.
+
+00:06:08.720 --> 00:06:11.380
+Now let's see a better way to initialize shared pointers.
+
+00:06:12.370 --> 00:06:16.030
+The make unique function was introduced in c++14,
+
+00:06:16.030 --> 00:06:19.330
+but the make shared function has been around since c++11.
+
+00:06:20.130 --> 00:06:24.530
+The make shared function returns a shared pointer of the specified type
+
+00:06:24.530 --> 00:06:27.410
+and it allows us to pass initialization values
+
+00:06:27.410 --> 00:06:29.710
+into the constructor for the managed object.
+
+00:06:29.710 --> 00:06:32.210
+This is the preferred way to create shared pointers.
+
+00:06:32.210 --> 00:06:34.770
+Not only do we not have to use the new keyword,
+
+00:06:34.770 --> 00:06:38.650
+but the compiler will generate much more efficient code since remember,
+
+00:06:38.650 --> 00:06:41.150
+the compiler has to generate a data structure
+
+00:06:41.150 --> 00:06:44.950
+that holds information about the reference count, the raw pointer,
+
+00:06:44.950 --> 00:06:47.550
+the actual heap object and other data as well.
+
+00:06:48.050 --> 00:06:51.850
+So this creates all of this in one shot when the pointer is initialized.
+
+00:06:51.850 --> 00:06:56.650
+In this example, we create three shared pointers: p1, p2 and p3.
+
+00:06:57.310 --> 00:06:59.560
+P1 is created using make shared.
+
+00:06:59.560 --> 00:07:02.860
+And we reference an integer on the heap, and we initialize it to 100.
+
+00:07:03.110 --> 00:07:06.110
+Now we can create p2 as a shared pointer to an int
+
+00:07:06.110 --> 00:07:09.470
+and use its copy constructor to initialize it to p1.
+
+00:07:09.470 --> 00:07:12.770
+P1 and p2 refer to the same integer on the heap,
+
+00:07:12.770 --> 00:07:14.430
+and its use count will be 2.
+
+00:07:15.230 --> 00:07:19.030
+The third pointer p3 is initialized as empty.
+
+00:07:19.030 --> 00:07:21.630
+So it doesn't point to any shared object yet,
+
+00:07:21.990 --> 00:07:24.240
+but it is initialized, it's null.
+
+00:07:24.240 --> 00:07:29.440
+So there's no chance that we can have an uninitialized or a wild pointer when we use smart pointers.
+
+00:07:29.740 --> 00:07:32.240
+Then we assign p1 to p3.
+
+00:07:32.240 --> 00:07:35.140
+Now p1 also refers to the shared integer,
+
+00:07:35.140 --> 00:07:37.140
+and our use count increases to 3.
+
+00:07:37.640 --> 00:07:40.300
+All three pointers now go out of scope,
+
+00:07:40.300 --> 00:07:43.600
+which shared pointer is responsible for cleaning up the heap storage?
+
+00:07:44.260 --> 00:07:46.460
+Well it's the last one that references it.
+
+00:07:46.460 --> 00:07:49.660
+In this case, it will be p1 since p2 and p3
+
+00:07:49.660 --> 00:07:54.060
+will be destroyed before p1, but the point is that you don't have to worry about it.
+
+00:07:54.860 --> 00:07:59.060
+So now let's head over to the IDE, and we'll see some examples of using shared pointers
+
+00:07:59.060 --> 00:08:00.060
+in live code.
+
+00:08:00.760 --> 00:08:02.120
+Okay. So I'm back in the IDE.
+
+00:08:02.120 --> 00:08:05.620
+I'm in the section 17 workspace in the SharedPointers project.
+
+00:08:06.610 --> 00:08:08.810
+This project has three sections.
+
+00:08:08.810 --> 00:08:12.470
+The first section is all about using a shared pointer to an integer
+
+00:08:12.470 --> 00:08:16.370
+and sharing pointers, so that we can see these reference counts moving up and down.
+
+00:08:16.970 --> 00:08:19.970
+The second section we're going to create test objects now,
+
+00:08:19.970 --> 00:08:22.170
+and then the third section we'll use vectors.
+
+00:08:22.170 --> 00:08:24.170
+So let's start with this section first.
+
+00:08:24.170 --> 00:08:28.070
+And I want to walk through it with the debugger, so you can actually see what's going on.
+
+00:08:28.070 --> 00:08:29.950
+So I'm going to debug this program.
+
+00:08:30.550 --> 00:08:33.150
+Okay. So we're going to start right here on line 31.
+
+00:08:33.150 --> 00:08:37.950
+You can see what we're doing here. We're creating p1 as a shared pointer to an integer,
+
+00:08:38.150 --> 00:08:40.150
+and we're setting that integer to a 100.
+
+00:08:40.150 --> 00:08:41.650
+Now if i step through that,
+
+00:08:43.450 --> 00:08:45.810
+you can see p1 over here I'll refresh,
+
+00:08:45.810 --> 00:08:47.610
+and you can see that p1
+
+00:08:47.610 --> 00:08:49.610
+has a reference count of 1.
+
+00:08:49.610 --> 00:08:53.910
+You can see it right there. I know it's kind of small, but I couldn't make this font any bigger on this window here.
+
+00:08:53.910 --> 00:08:57.210
+So there's the count of 1. So this tells you that p1
+
+00:08:57.210 --> 00:09:00.260
+is pointing to that shared integer, right. And that's the only thing
+
+00:09:00.260 --> 00:09:02.460
+pointing to that shared integer right
+
+00:09:02.460 --> 00:09:06.460
+now. So on line 32, if I display the use count point for that shared pointer,
+
+00:09:06.460 --> 00:09:09.360
+I am going to get 1, so I'll execute that.
+
+00:09:09.360 --> 00:09:12.050
+And you can see up here on the display the use count is 1,
+
+00:09:12.050 --> 00:09:14.250
+which is actually the same thing we're seeing right in here.
+
+00:09:14.750 --> 00:09:18.110
+Okay. So now in line 34, what we're doing is we're creating p2
+
+00:09:18.110 --> 00:09:20.990
+in terms of p1. So that's my copy constructor.
+
+00:09:20.990 --> 00:09:24.490
+Now we're sharing ownership. Remember, this is one of the things that we could not
+
+00:09:24.490 --> 00:09:25.720
+do with unique pointers.
+
+00:09:26.020 --> 00:09:28.220
+So in this case, let me execute that line.
+
+00:09:28.220 --> 00:09:31.020
+And you can see now that p1 and p2
+
+00:09:31.020 --> 00:09:34.820
+are both referring to that same storage. So when I refresh here,
+
+00:09:34.820 --> 00:09:38.120
+you'll see that they both have a reference count of 2 right there.
+
+00:09:39.020 --> 00:09:43.460
+Okay. So again, p1 and p2 are managing that same area in memory.
+
+00:09:43.460 --> 00:09:45.260
+They have co-ownership.
+
+00:09:45.260 --> 00:09:48.760
+So at this point, when I display the use count, we'll see a 2.
+
+00:09:50.060 --> 00:09:52.560
+Now in line 37, I'm resetting p1.
+
+00:09:52.560 --> 00:09:56.060
+What is that going to do? Well, it's going to set p1 to point nowhere.
+
+00:09:56.060 --> 00:09:57.860
+So we're going to have that set to null pointer,
+
+00:09:57.860 --> 00:10:01.760
+and p2's reference count will go down by 1 because now p2
+
+00:10:01.760 --> 00:10:05.120
+is the only shared pointer that owns that memory.
+
+00:10:05.120 --> 00:10:06.620
+So let's execute that line.
+
+00:10:08.220 --> 00:10:13.210
+And let's refresh over here, and you can see now that p1 is a null pointer basically,
+
+00:10:13.460 --> 00:10:14.360
+and p2
+
+00:10:15.360 --> 00:10:17.260
+its reference count went down to 1.
+
+00:10:17.760 --> 00:10:22.020
+So if we display these last two statements, we'll see that p1's use count to 0,
+
+00:10:22.020 --> 00:10:26.620
+and p2's use count is 1. And the program is complete now.
+
+00:10:27.420 --> 00:10:29.020
+Okay. So now let's do part 2.
+
+00:10:30.010 --> 00:10:33.010
+Okay. So now let's execute the second section of this project.
+
+00:10:33.560 --> 00:10:35.960
+You can see the second section starts here on line 41.
+
+00:10:35.960 --> 00:10:38.860
+I've commented out the section one that we just ran.
+
+00:10:38.860 --> 00:10:40.960
+So let me walk through this with the debugger,
+
+00:10:40.960 --> 00:10:43.460
+so we can see what's going on, again, with these reference counts.
+
+00:10:43.860 --> 00:10:48.540
+Okay. So we're here on line 42, and we'll step through that.
+
+00:10:48.540 --> 00:10:52.140
+All that's doing is creating ptr as a variable. It's a shared pointer to a test object,
+
+00:10:52.140 --> 00:10:55.440
+and we're using make shared this time to create that test object.
+
+00:10:55.440 --> 00:11:00.040
+So I'll step through that. And you can see that right now when I refresh my local variables,
+
+00:11:00.040 --> 00:11:03.040
+ptr has a reference count of 1.
+
+00:11:03.040 --> 00:11:07.440
+So we've got one reference to that shared test object on the heap.
+
+00:11:07.840 --> 00:11:11.300
+Now we're going to call this function. And we're going to pass ptr into it.
+
+00:11:11.300 --> 00:11:14.500
+This function expects a shared pointer to a test,
+
+00:11:14.500 --> 00:11:16.100
+and it expects it by value.
+
+00:11:16.100 --> 00:11:19.760
+So what we expect is for it to make a copy of that shared pointer.
+
+00:11:19.760 --> 00:11:22.530
+Remember, we're making a copy of the shared pointer object,
+
+00:11:22.530 --> 00:11:26.530
+not of the test object on the heap. It's important to understand the difference there.
+
+00:11:26.530 --> 00:11:28.030
+So let's walk through this.
+
+00:11:29.430 --> 00:11:33.630
+Now we're in the function. You can see we're right up here on line 23 at the top of the screen.
+
+00:11:33.880 --> 00:11:37.080
+And right now, we've made a copy. So if you look at p,
+
+00:11:37.080 --> 00:11:41.230
+p is a shared pointer to that same test object.So we expect p's use count
+
+00:11:41.230 --> 00:11:43.630
+to be 2 because we just created a copy.
+
+00:11:43.630 --> 00:11:46.930
+So let's take a look at that. And you can see the use count is 2.
+
+00:11:47.230 --> 00:11:49.230
+So now when p goes out of scope in this function,
+
+00:11:49.230 --> 00:11:53.590
+what happens is that the reference count again is reduced. So let's take a look at that.
+
+00:11:53.590 --> 00:11:54.890
+Now we're back here,
+
+00:11:55.290 --> 00:11:57.990
+right back to where we were. We're on line 44.
+
+00:11:57.990 --> 00:12:01.490
+And if I refresh, you can see that ptr now is back down to 1, right.
+
+00:12:01.990 --> 00:12:05.650
+So we temporarily increased that reference count while we were in that
+
+00:12:05.650 --> 00:12:08.010
+function because we just made a copy
+
+00:12:08.010 --> 00:12:10.510
+of something else that's using that same resource.
+
+00:12:10.510 --> 00:12:13.170
+So now we'll print out the use count for ptr,
+
+00:12:13.170 --> 00:12:16.530
+which we expect to be 1, and that's exactly what displays.
+
+00:12:16.530 --> 00:12:19.190
+Now notice what happens. I've created a block here.
+
+00:12:19.190 --> 00:12:22.390
+And then there's another block here. This just establishes scope
+
+00:12:22.390 --> 00:12:25.690
+so that we can see these inner shared pointers going in and out of scope.
+
+00:12:25.690 --> 00:12:28.690
+So in this case, we've got ptr1,
+
+00:12:28.690 --> 00:12:32.690
+and we're creating ptr1 based on ptr. So now we've got
+
+00:12:32.690 --> 00:12:36.690
+ptr and ptr1, both pointing to that shared resource.
+
+00:12:36.690 --> 00:12:38.690
+So let me execute that line.
+
+00:12:38.690 --> 00:12:41.290
+And what we expect now is the use count to be 2.
+
+00:12:41.650 --> 00:12:43.250
+And I'll refresh here.
+
+00:12:43.250 --> 00:12:46.850
+And you can see that the count right there is 2 for both of them,
+
+00:12:46.850 --> 00:12:50.150
+which is exactly what we expect, it will display 2 now
+
+00:12:50.550 --> 00:12:51.950
+right over here on the output.
+
+00:12:52.950 --> 00:12:56.550
+What happens now is we create another block. So we're creating ptr2,
+
+00:12:56.850 --> 00:12:59.450
+also referring to that same test object.
+
+00:12:59.450 --> 00:13:03.350
+So now we've got these three pointers, right. These three shared pointer objects,
+
+00:13:03.350 --> 00:13:06.250
+all referring to the same managed object on the heap.
+
+00:13:06.250 --> 00:13:08.910
+So if i execute this line here on line 49,
+
+00:13:10.510 --> 00:13:15.170
+what we have is we've got ptr, ptr1 and ptr2,
+
+00:13:15.470 --> 00:13:18.970
+all with a reference count of 3 which is exactly as we expect.
+
+00:13:18.970 --> 00:13:21.970
+And we can display that reference count, you can see the 3 right here.
+
+00:13:22.850 --> 00:13:25.850
+Now what we'll do is we'll reset pointer, right.
+
+00:13:25.850 --> 00:13:29.350
+So this pointer right here will be nulled out, which means that,
+
+00:13:29.350 --> 00:13:32.650
+that will become null, and then the reference count for the other two pointers
+
+00:13:32.650 --> 00:13:35.950
+ptr1 and ptr2 will go down to 2
+
+00:13:35.950 --> 00:13:38.210
+since now there's one less shared pointer.
+
+00:13:38.810 --> 00:13:40.810
+So let's execute that line and refresh.
+
+00:13:42.610 --> 00:13:45.910
+And you can see that now ptr is null,
+
+00:13:46.510 --> 00:13:50.810
+ptr1 and ptr2 have a reference count of 2, just as we expect.
+
+00:13:52.210 --> 00:13:55.570
+All right. So now ptr is going to go out of scope right now,
+
+00:13:56.820 --> 00:13:59.720
+and it just did. So now we're going to print out the use count
+
+00:13:59.720 --> 00:14:03.320
+for ptr in this case, which will be 0,
+
+00:14:03.520 --> 00:14:04.880
+right, because we reset it.
+
+00:14:05.980 --> 00:14:09.980
+Okay. So now let's walk through this one more time. And we're right here right now.
+
+00:14:09.980 --> 00:14:14.640
+And let's step through this one more time. We're on this last statement. And what's the use count for ptr?
+
+00:14:14.640 --> 00:14:18.640
+Well, let's refresh here. You can see that ptr's use count is now 0, right.
+
+00:14:18.640 --> 00:14:21.300
+Now it's not referring to any managed object.
+
+00:14:22.000 --> 00:14:24.220
+So that's it. That's part 2.
+
+00:14:24.220 --> 00:14:26.580
+We'll do next is part 3 where we'll create
+
+00:14:26.580 --> 00:14:30.880
+a couple of shared pointers, watch we'll create 3 shared pointers to account objects,
+
+00:14:30.880 --> 00:14:33.480
+and then we'll put them on a vector and print out the vector.
+
+00:14:34.470 --> 00:14:38.070
+Okay. So let's wrap up this video by going over the third section
+
+00:14:38.070 --> 00:14:39.570
+of the shared pointers project.
+
+00:14:39.870 --> 00:14:42.870
+In this case, you can see we're starting on line 58.
+
+00:14:43.270 --> 00:14:46.570
+And what we're doing is we're creating three account pointers,
+
+00:14:46.570 --> 00:14:49.170
+and these are shared pointers to account objects.
+
+00:14:49.170 --> 00:14:52.470
+We're using the same account framework that we've been using all along.
+
+00:14:52.470 --> 00:14:54.830
+This is the one that's using dynamic polymorphism.
+
+00:14:54.830 --> 00:14:57.430
+So we're coming at this with a base class pointer right here.
+
+00:14:57.790 --> 00:15:01.390
+And we're using std make shared here. We're creating a trust account Larry,
+
+00:15:01.390 --> 00:15:05.390
+we're creating a checking account Moe, and we're creating a savings account Curly.
+
+00:15:05.390 --> 00:15:08.390
+So there you go. At this point, we've created three objects.
+
+00:15:08.390 --> 00:15:11.590
+Then what we'll do is we'll take those three shared pointers,
+
+00:15:11.590 --> 00:15:16.250
+and we'll put them in a vector. So notice this vector declaration here.
+
+00:15:16.650 --> 00:15:21.010
+A vector is a vector of shared pointers to account objects, and we'll call it accounts.
+
+00:15:21.410 --> 00:15:24.410
+And we'll simply push back acc 1 2 and 3.
+
+00:15:24.410 --> 00:15:27.310
+Remember, we're not pushing account objects, we're pushing
+
+00:15:27.310 --> 00:15:30.810
+shared pointer objects that point to account objects.
+
+00:15:30.810 --> 00:15:33.310
+And then we'll just loop through that vector and display them.
+
+00:15:33.310 --> 00:15:37.670
+Okay. So let's step through the debugger with this example and see exactly what's happening.
+
+00:15:37.670 --> 00:15:39.670
+Okay so here we are. We're on line 59.
+
+00:15:39.670 --> 00:15:43.330
+What we want to do is we want to create those 3 shared pointers.
+
+00:15:43.330 --> 00:15:47.330
+So let's do that. We'll step through the first one, the second one and the third one.
+
+00:15:47.330 --> 00:15:51.130
+I'll refresh my screen here. And you can see that account one
+
+00:15:51.330 --> 00:15:53.730
+is a shared pointer with a reference count of 1,
+
+00:15:53.980 --> 00:15:58.280
+account two is the same and account three is the same.So each one of them is pointing
+
+00:15:58.280 --> 00:16:01.780
+to its own managed object, right. In one case, it's a trust account,
+
+00:16:02.080 --> 00:16:04.080
+a checking account and a savings account.
+
+00:16:04.440 --> 00:16:07.040
+Now what we're going to do is we're going to instantiate that
+
+00:16:07.040 --> 00:16:09.590
+vector of shared pointers to accounts.
+
+00:16:09.590 --> 00:16:12.390
+And we'll do that right now. I'll step through that one line right now.
+
+00:16:12.890 --> 00:16:15.890
+And there it is. There's nothing in there right now.
+
+00:16:15.890 --> 00:16:20.790
+Now what we want to do is we want to add those three shared pointers to the vector.
+
+00:16:21.190 --> 00:16:24.850
+Remember, acc 1 2 and 3 are shared pointers, they're not accounts,
+
+00:16:24.850 --> 00:16:26.150
+they're not raw pointers.
+
+00:16:26.150 --> 00:16:28.150
+They're shared pointers to accounts.
+
+00:16:28.150 --> 00:16:32.150
+So our vector holds shared pointers to accounts, that's how we declared it.
+
+00:16:32.150 --> 00:16:34.150
+So what's interesting here is remember,
+
+00:16:34.150 --> 00:16:39.050
+these guys right now all acc 1 2 and 3, all have a reference count of 1.
+
+00:16:39.410 --> 00:16:42.720
+But when we add them to the vector, the vector's gonna make a copy.
+
+00:16:43.120 --> 00:16:46.520
+So now we have shared ownership. Acc1
+
+00:16:46.520 --> 00:16:48.720
+shares the ownership with that trust account
+
+00:16:49.120 --> 00:16:53.580
+with accounts, which has a vector that has a copy of that. Okay.
+
+00:16:53.580 --> 00:16:56.910
+So let's walk through this. I'll step three times through this code here.
+
+00:16:57.210 --> 00:16:59.710
+And we've just added all three accounts.
+
+00:16:59.710 --> 00:17:04.310
+I'll refresh. And you can see the actual accounts right here.
+
+00:17:05.310 --> 00:17:09.110
+You can see that it's got three entries, and notice the reference count for them 2.
+
+00:17:09.910 --> 00:17:12.410
+If i look at acc 1 2 and 3,
+
+00:17:12.810 --> 00:17:16.310
+you can see they also have a reference count of 2 because we made copies.
+
+00:17:16.310 --> 00:17:18.110
+So now we've got shared ownership.
+
+00:17:18.110 --> 00:17:20.610
+Again, acc 1 2 and 3
+
+00:17:20.610 --> 00:17:24.410
+have shared ownership to that trust account, checking account, savings account,
+
+00:17:24.410 --> 00:17:25.910
+and so does the vector.
+
+00:17:26.790 --> 00:17:31.090
+Now let's loop through this and display them. So what we're going to do is we're going to use a range-based
+
+00:17:31.090 --> 00:17:35.090
+for loop here, and we're going to iterate over the accounts object, which is that vector.
+
+00:17:35.490 --> 00:17:40.090
+And we're just using const auto here. But remember, the vector is a vector of shared pointers.
+
+00:17:40.240 --> 00:17:43.840
+So this acc variable is going to be a shared pointer.
+
+00:17:44.240 --> 00:17:48.120
+And if we want to display the account, we just dereference the pointer to get to the account.
+
+00:17:48.120 --> 00:17:52.480
+So we expect this to print out the trust account, the checking account and the savings account
+
+00:17:52.480 --> 00:17:55.780
+and the use count as we go. Now the use count should be 2.
+
+00:17:56.030 --> 00:18:00.390
+We're using a reference to a base class, so the dynamic polymorphism will be just fine.
+
+00:18:00.690 --> 00:18:03.190
+So let's walk through this. And you'll see that we've got --
+
+00:18:03.890 --> 00:18:06.390
+right here you can see up here trust account Larry.
+
+00:18:06.640 --> 00:18:10.000
+And let's display the reference count for that, which we expect to be 2,
+
+00:18:10.000 --> 00:18:13.900
+right because acc1 is managing it as well as the vector.
+
+00:18:14.400 --> 00:18:18.300
+Then we'll execute it again. We'll see the second object is the checking account,
+
+00:18:18.300 --> 00:18:20.300
+use count is also 2.
+
+00:18:20.300 --> 00:18:24.200
+And then the last one is the savings account for Curly, and the use count is 2.
+
+00:18:24.200 --> 00:18:27.200
+Now what happens when the vector goes out of scope,
+
+00:18:27.200 --> 00:18:29.300
+what happens when these pointers go out of scope.
+
+00:18:29.300 --> 00:18:32.960
+Well, the vector is going to go out of scope first, so it's going to be destroyed.
+
+00:18:32.960 --> 00:18:37.060
+But the objects that the trust account, checking account and savings account objects on the
+
+00:18:37.060 --> 00:18:38.560
+heap won't be destroyed yet.
+
+00:18:38.560 --> 00:18:42.960
+What will happen is that those shared pointers in the vector will be destroyed,
+
+00:18:42.960 --> 00:18:46.260
+and then the reference counts for those three objects will go down by 1.
+
+00:18:46.560 --> 00:18:49.860
+Then when acc 3 2 and 1 are destroyed,
+
+00:18:49.860 --> 00:18:52.860
+that's when the heap storage will be dynamically de-allocated.
+
+00:18:53.560 --> 00:18:56.220
+And that's it. That's the program. It's done.
+
+00:18:56.220 --> 00:18:58.580
+You can walk through this and use the debugger.
+
+00:18:58.580 --> 00:19:02.580
+You can see the big difference here between using unique pointers and shared pointers.
+
+00:19:02.580 --> 00:19:04.940
+When we had a vector of unique pointers,
+
+00:19:04.940 --> 00:19:08.140
+that vector exclusively owned those resources.
+
+00:19:08.140 --> 00:19:12.040
+Here we're sharing those resources. And the use cases are different obviously.
+
+00:19:12.040 --> 00:19:16.040
+It all depends on what you're trying to accomplish.

@@ -1,0 +1,2687 @@
+﻿WEBVTT
+
+00:00:00.000 --> 00:00:04.300
+Hello again everyone, this is Steve Gilbert.
+
+00:00:04.300 --> 00:00:06.600
+Welcome to Lecture 14, where we're going to talk
+
+00:00:06.600 --> 00:00:10.300
+about exceptions and templates.
+
+00:00:10.300 --> 00:00:13.540
+So in Lecture 13, we talked about assumptions.
+
+00:00:13.540 --> 00:00:18.860
+Assumptions are things that you believe should be true.
+
+00:00:18.860 --> 00:00:23.200
+So when you write a function, you assume certain things
+
+00:00:23.200 --> 00:00:25.140
+about the inputs.
+
+00:00:25.140 --> 00:00:28.500
+When you write a function, you assume certain things
+
+00:00:28.500 --> 00:00:30.000
+about the output.
+
+00:00:30.000 --> 00:00:32.940
+We call those preconditions and postconditions.
+
+00:00:32.940 --> 00:00:37.000
+So a precondition is something that's true about the inputs,
+
+00:00:37.000 --> 00:00:39.740
+and a postcondition is something that should
+
+00:00:39.740 --> 00:00:43.080
+be true about the outputs.
+
+00:00:43.080 --> 00:00:45.500
+Now, when we write these preconditions
+
+00:00:45.500 --> 00:00:48.780
+and postconditions, we use some doxygen tags
+
+00:00:48.780 --> 00:00:52.400
+to document them so that people who call your function
+
+00:00:52.400 --> 00:00:54.720
+know what to expect.
+
+00:00:54.720 --> 00:00:57.700
+So for instance, for the square root function,
+
+00:00:57.700 --> 00:01:04.220
+they should know that n should be greater or equal to 0.
+
+00:01:04.220 --> 00:01:07.580
+In other words, if you pass a negative number to square root,
+
+00:01:07.580 --> 00:01:11.220
+you are not going to get the expected output.
+
+00:01:11.220 --> 00:01:14.580
+The postcondition and the @return tags
+
+00:01:14.580 --> 00:01:17.980
+are going to tell you what you should expect to return.
+
+00:01:17.980 --> 00:01:24.260
+So you can use @return and @post kind of interchangeably
+
+00:01:24.260 --> 00:01:26.540
+to talk about the return value.
+
+00:01:26.540 --> 00:01:28.420
+You'd use things like @exception.
+
+00:01:28.420 --> 00:01:30.100
+Now, you can use @post to tell what
+
+00:01:30.100 --> 00:01:33.780
+should happen if the precondition is violated.
+
+00:01:33.780 --> 00:01:36.580
+So what is @post for square root?
+
+00:01:36.580 --> 00:01:40.700
+Well, @post for square root is it
+
+00:01:40.700 --> 00:01:44.780
+will return not a number in that case
+
+00:01:44.780 --> 00:01:49.940
+if you violate the precondition.
+
+00:01:49.940 --> 00:01:53.940
+So we have five things we can do with a precondition violation.
+
+00:01:53.940 --> 00:01:56.460
+First, we could try and fix it.
+
+00:01:56.460 --> 00:01:58.660
+So think again about square root.
+
+00:01:58.660 --> 00:02:01.500
+If you were writing the square root function,
+
+00:02:01.500 --> 00:02:04.660
+you might decide if you get a negative number,
+
+00:02:04.660 --> 00:02:07.940
+you'll just return 0 in that case.
+
+00:02:07.940 --> 00:02:14.380
+Now, that would fix the problem of getting not a number, which
+
+00:02:14.380 --> 00:02:17.740
+is what they actually do in the square root function.
+
+00:02:17.740 --> 00:02:21.380
+But it wouldn't really return the right answer.
+
+00:02:21.380 --> 00:02:23.620
+In other words, you'd be giving it the wrong answer.
+
+00:02:23.620 --> 00:02:26.700
+The square root of minus 1 is not 0.
+
+00:02:26.700 --> 00:02:30.260
+And so we generally don't want to do that.
+
+00:02:30.260 --> 00:02:31.940
+Although, when you're first programming,
+
+00:02:31.940 --> 00:02:36.260
+frequently you're taught to think about what
+
+00:02:36.260 --> 00:02:37.940
+will happen if this happens.
+
+00:02:37.940 --> 00:02:41.700
+So let's make sure that it doesn't crash and so forth.
+
+00:02:41.700 --> 00:02:44.940
+But we really don't want to do that.
+
+00:02:44.940 --> 00:02:48.900
+Secondly, we can terminate with an error message.
+
+00:02:48.900 --> 00:02:52.940
+So just stop the program when the error occurs
+
+00:02:52.940 --> 00:02:54.780
+and stop.
+
+00:02:54.780 --> 00:02:56.420
+Now, sometimes we want to do that,
+
+00:02:56.420 --> 00:02:58.580
+and sometimes we don't want to do that.
+
+00:02:58.580 --> 00:03:00.580
+For instance, we certainly wouldn't
+
+00:03:00.580 --> 00:03:03.780
+want to do that if someone types in the wrong URL
+
+00:03:03.780 --> 00:03:05.420
+in your web browser.
+
+00:03:05.420 --> 00:03:08.060
+You wouldn't want to terminate and say, sorry,
+
+00:03:08.060 --> 00:03:10.380
+Chrome's decided you've typed in the wrong URL.
+
+00:03:10.380 --> 00:03:14.620
+We're not going to send you to that page.
+
+00:03:14.620 --> 00:03:17.580
+But sometimes that's the right thing to do.
+
+00:03:17.580 --> 00:03:21.100
+If your program discovers an error that's
+
+00:03:21.100 --> 00:03:24.060
+going to propagate further and further and further
+
+00:03:24.060 --> 00:03:26.220
+inside your code-- in other words,
+
+00:03:26.220 --> 00:03:29.900
+if one of the preconditions is violated,
+
+00:03:29.900 --> 00:03:34.740
+the program continuing to run is not really a good idea.
+
+00:03:34.740 --> 00:03:37.820
+And so if the problem is caused by a mistake
+
+00:03:37.820 --> 00:03:41.620
+that you have made in your programming-- in other words,
+
+00:03:41.620 --> 00:03:45.740
+something that you logically believe should be true--
+
+00:03:45.740 --> 00:03:47.100
+you do want to terminate.
+
+00:03:47.100 --> 00:03:50.860
+And I'll talk about how you do that in a second.
+
+00:03:50.860 --> 00:03:53.180
+Thirdly, we could return an error code.
+
+00:03:53.180 --> 00:03:55.020
+And that's kind of what square root does.
+
+00:03:55.020 --> 00:03:58.940
+Square root returns a non-valid number
+
+00:03:58.940 --> 00:04:01.860
+if its precondition is violated.
+
+00:04:01.860 --> 00:04:06.580
+It returns a special number called not a number.
+
+00:04:06.580 --> 00:04:10.980
+You could throw an exception, which allows the programmer
+
+00:04:10.980 --> 00:04:11.740
+to catch it.
+
+00:04:11.740 --> 00:04:15.020
+Now, you can't do anything about what square root returns.
+
+00:04:15.020 --> 00:04:19.700
+But if a function throws an exception, like s2i,
+
+00:04:19.700 --> 00:04:21.980
+you could actually catch it.
+
+00:04:21.980 --> 00:04:26.420
+Or finally, we could ignore the problem altogether
+
+00:04:26.420 --> 00:04:28.740
+and just hope for the best.
+
+00:04:28.740 --> 00:04:31.300
+So we obviously don't want to ignore it.
+
+00:04:31.300 --> 00:04:34.740
+We generally don't want to fix it silently,
+
+00:04:34.740 --> 00:04:37.940
+unless the fix is just immaterial,
+
+00:04:37.940 --> 00:04:40.780
+like for something in the user interface that
+
+00:04:40.780 --> 00:04:42.260
+wouldn't be that big a deal.
+
+00:04:42.260 --> 00:04:47.780
+So that leaves us with these three--
+
+00:04:47.780 --> 00:04:50.180
+terminate with an error message, return an error code,
+
+00:04:50.180 --> 00:04:51.940
+throw an exception.
+
+00:04:51.940 --> 00:04:54.220
+So as I mentioned in the last lecture,
+
+00:04:54.220 --> 00:04:59.060
+if you have a programming error, we
+
+00:04:59.060 --> 00:05:03.380
+want to use a statement called assert, which terminates
+
+00:05:03.380 --> 00:05:07.460
+and tells you what line the error occurred on.
+
+00:05:07.460 --> 00:05:11.340
+So for instance, if I'm writing a function sum
+
+00:05:11.340 --> 00:05:14.860
+between lower and upper, any time
+
+00:05:14.860 --> 00:05:19.500
+that function is called with a lower that
+
+00:05:19.500 --> 00:05:24.500
+is greater than upper, I have an error that won't make sense.
+
+00:05:24.500 --> 00:05:31.140
+Now, if I returned 0 from that-- in other words,
+
+00:05:31.140 --> 00:05:34.420
+if I kind of fixed it silently, or I wrote my algorithm
+
+00:05:34.420 --> 00:05:40.660
+so the function returns 0 when lower was greater than upper--
+
+00:05:40.660 --> 00:05:42.580
+I really have a programming error.
+
+00:05:42.580 --> 00:05:43.940
+And I haven't found that error.
+
+00:05:43.940 --> 00:05:46.540
+In other words, I'm calling the function
+
+00:05:46.540 --> 00:05:50.620
+when lower is greater than upper.
+
+00:05:50.620 --> 00:05:53.300
+And I really kind of didn't want that to happen.
+
+00:05:53.300 --> 00:05:58.700
+So you might decide, this logically can never happen.
+
+00:05:58.700 --> 00:06:01.580
+If I call the function with lower greater than upper,
+
+00:06:01.580 --> 00:06:03.140
+I've made a mistake.
+
+00:06:03.140 --> 00:06:07.900
+And so I would like the program to automatically stop
+
+00:06:07.900 --> 00:06:10.340
+when that occurs and tell me, Steve,
+
+00:06:10.340 --> 00:06:16.660
+you've made a mistake on line 42 in foo.cpp.
+
+00:06:16.660 --> 00:06:19.820
+And so that's what the assert statement does.
+
+00:06:19.820 --> 00:06:22.060
+It allows you to put in statements
+
+00:06:22.060 --> 00:06:24.940
+that enforce the logic that you're
+
+00:06:24.940 --> 00:06:28.460
+trying to put inside your code.
+
+00:06:28.460 --> 00:06:33.060
+Commercial code is literally littered with assertions.
+
+00:06:33.060 --> 00:06:35.360
+One of the nice things about assertions
+
+00:06:35.360 --> 00:06:37.340
+is that when you're developing the code,
+
+00:06:37.340 --> 00:06:39.780
+you can put them in, check your bugs,
+
+00:06:39.780 --> 00:06:41.820
+when you're testing it and running it.
+
+00:06:41.820 --> 00:06:46.220
+And then when you ship your code, you can remove them.
+
+00:06:46.220 --> 00:06:50.260
+So you're not having the overhead of the if statements
+
+00:06:50.260 --> 00:06:52.300
+that the assert statement generates.
+
+00:06:52.300 --> 00:06:59.260
+All right, so let's talk about the other kinds of errors,
+
+00:06:59.260 --> 00:06:59.940
+though--
+
+00:06:59.940 --> 00:07:03.580
+errors that are not caused by you, the programmer,
+
+00:07:03.580 --> 00:07:10.180
+errors caused by exceptional but anticipated circumstances.
+
+00:07:10.180 --> 00:07:13.980
+If you live in the Arctic and you live in an igloo,
+
+00:07:13.980 --> 00:07:17.700
+you should expect that at some time
+
+00:07:17.700 --> 00:07:20.180
+you're going to see a polar bear at your front door.
+
+00:07:20.180 --> 00:07:22.220
+You should anticipate that.
+
+00:07:22.220 --> 00:07:23.540
+It's exceptional.
+
+00:07:23.540 --> 00:07:25.100
+That's not the normal.
+
+00:07:25.100 --> 00:07:27.540
+But you should anticipate it.
+
+00:07:27.540 --> 00:07:30.580
+What kind of things can we anticipate when programming?
+
+00:07:30.580 --> 00:07:34.140
+Well, is the user ever going to type in a file name
+
+00:07:34.140 --> 00:07:35.260
+incorrectly?
+
+00:07:35.260 --> 00:07:36.780
+Sure.
+
+00:07:36.780 --> 00:07:39.020
+Is the disk ever going to be full when
+
+00:07:39.020 --> 00:07:40.340
+you're saving a file?
+
+00:07:40.340 --> 00:07:41.980
+Sure.
+
+00:07:41.980 --> 00:07:46.060
+Now, those kinds of errors, we could just
+
+00:07:46.060 --> 00:07:47.820
+return an error code.
+
+00:07:47.820 --> 00:07:49.740
+But the problem with an error code
+
+00:07:49.740 --> 00:07:55.020
+is the user or the programmer has to check the error code.
+
+00:07:55.020 --> 00:07:57.140
+These are a little more serious.
+
+00:07:57.140 --> 00:07:59.700
+If the disk is full when saving a file,
+
+00:07:59.700 --> 00:08:01.140
+you simply can't go on.
+
+00:08:01.140 --> 00:08:02.780
+You'll lose data.
+
+00:08:02.780 --> 00:08:05.180
+If the user types a file name incorrectly,
+
+00:08:05.180 --> 00:08:07.620
+the program simply won't work.
+
+00:08:07.620 --> 00:08:11.140
+And so an exception is for something
+
+00:08:11.140 --> 00:08:15.420
+that you want to handle and you want to force yourself
+
+00:08:15.420 --> 00:08:18.020
+to handle, or you want to force programmers
+
+00:08:18.020 --> 00:08:22.020
+using your class to handle.
+
+00:08:22.020 --> 00:08:26.980
+This should be handled by throwing an exception.
+
+00:08:26.980 --> 00:08:29.500
+So you all know how functions work.
+
+00:08:29.500 --> 00:08:33.220
+Functions take inputs, they process the inputs,
+
+00:08:33.220 --> 00:08:34.940
+and they produce an output.
+
+00:08:34.940 --> 00:08:37.900
+They return that output.
+
+00:08:37.900 --> 00:08:43.620
+But actually, functions have a second way of returning.
+
+00:08:43.620 --> 00:08:47.980
+So you can think of the return the normal channel,
+
+00:08:47.980 --> 00:08:51.740
+but the exception is a back channel.
+
+00:08:51.740 --> 00:08:57.820
+So we can say, if the program normally works--
+
+00:08:57.820 --> 00:09:01.420
+and let's use the function called s2i.
+
+00:09:01.420 --> 00:09:07.020
+s2i takes a string and returns an integer,
+
+00:09:07.020 --> 00:09:11.100
+just like our parseInt function we're going to write today does.
+
+00:09:11.100 --> 00:09:15.700
+So we're going to write a version of s2i.
+
+00:09:15.700 --> 00:09:18.580
+And if I pass--
+
+00:09:18.580 --> 00:09:21.540
+that stands for string to integer.
+
+00:09:21.540 --> 00:09:27.260
+If I pass the string that contains the character 1,
+
+00:09:27.260 --> 00:09:31.300
+it will convert that string to an integer and return 1.
+
+00:09:31.300 --> 00:09:35.900
+If I pass a string that contains the word 1, the English word
+
+00:09:35.900 --> 00:09:39.780
+1, instead of returning the integer,
+
+00:09:39.780 --> 00:09:45.420
+it returns via this back channel called throwing an exception.
+
+00:09:45.420 --> 00:09:51.500
+And that exception is thrown to the function that handled it.
+
+00:09:51.500 --> 00:09:53.380
+Actually, it's thrown not necessarily
+
+00:09:53.380 --> 00:09:56.660
+to the function that called it, like the return statement is,
+
+00:09:56.660 --> 00:09:58.420
+the statement that called it.
+
+00:09:58.420 --> 00:10:03.460
+It's thrown to the nearest exception handler.
+
+00:10:03.460 --> 00:10:06.300
+So an exception handler is a special kind
+
+00:10:06.300 --> 00:10:11.060
+of block of code that we'll look at shortly.
+
+00:10:11.060 --> 00:10:18.060
+Now, in C++, the throwing an exception looks like this.
+
+00:10:18.060 --> 00:10:21.660
+If I detected an error condition,
+
+00:10:21.660 --> 00:10:24.900
+just throw some object.
+
+00:10:24.900 --> 00:10:28.020
+Now, again, this is similar to a return statement
+
+00:10:28.020 --> 00:10:30.620
+from inside a function, but it doesn't
+
+00:10:30.620 --> 00:10:34.940
+return to the calling function, but to an error handler.
+
+00:10:34.940 --> 00:10:38.020
+If there is no error handler, then it
+
+00:10:38.020 --> 00:10:41.740
+will keep bubbling up to the very main function
+
+00:10:41.740 --> 00:10:43.700
+where it'll find a default handler.
+
+00:10:43.700 --> 00:10:46.860
+And that default handler will terminate the program,
+
+00:10:46.860 --> 00:10:52.260
+and it will look almost exactly like an assertion.
+
+00:10:52.260 --> 00:10:57.180
+Look almost exactly like an assertion.
+
+00:10:57.180 --> 00:11:01.380
+OK, so you might have seen these in Java.
+
+00:11:01.380 --> 00:11:04.380
+You may have had to handle them in Java.
+
+00:11:04.380 --> 00:11:09.140
+And in Java, in C++, any kind of object
+
+00:11:09.140 --> 00:11:11.500
+may be thrown as an exception.
+
+00:11:11.500 --> 00:11:15.260
+Now, Java has a whole class hierarchy
+
+00:11:15.260 --> 00:11:20.260
+of exceptions that are rooted in the class called throwable.
+
+00:11:20.260 --> 00:11:24.660
+Throwable has two subclasses, error and exception.
+
+00:11:24.660 --> 00:11:28.980
+In C++, we could throw an integer
+
+00:11:28.980 --> 00:11:32.900
+if we wanted to catch different kinds of error codes.
+
+00:11:32.900 --> 00:11:36.700
+So you could catch int, and then you
+
+00:11:36.700 --> 00:11:39.140
+could check to see if it's 1, do this.
+
+00:11:39.140 --> 00:11:40.660
+If it's 2, do that.
+
+00:11:40.660 --> 00:11:43.580
+If it's 3, do that, and so forth.
+
+00:11:43.580 --> 00:11:46.500
+You could throw a C++ string.
+
+00:11:46.500 --> 00:11:49.660
+Notice the little s after the double quotes.
+
+00:11:49.660 --> 00:11:53.580
+We could throw a C string as well.
+
+00:11:53.580 --> 00:11:55.380
+That would be a different kinds of things.
+
+00:11:55.380 --> 00:11:58.100
+So we could throw a C++ string.
+
+00:11:58.100 --> 00:12:01.940
+We could throw one of the standard library exception
+
+00:12:01.940 --> 00:12:03.260
+classes.
+
+00:12:03.260 --> 00:12:07.300
+So this is similar to Java with its throwable, runtime
+
+00:12:07.300 --> 00:12:11.380
+exception, index out of bounds exception, and so forth.
+
+00:12:11.380 --> 00:12:13.500
+We could throw an illegal argument
+
+00:12:13.500 --> 00:12:16.340
+and construct an illegal argument object
+
+00:12:16.340 --> 00:12:21.220
+and say that the illegal argument was A.
+
+00:12:21.220 --> 00:12:25.580
+Now, the standard library includes, just like Java,
+
+00:12:25.580 --> 00:12:28.380
+a variety of exception classes.
+
+00:12:28.380 --> 00:12:31.340
+If you want to include those, you have to include a header.
+
+00:12:31.340 --> 00:12:33.220
+They're not automatically included, just
+
+00:12:33.220 --> 00:12:35.820
+like everything in C++.
+
+00:12:35.820 --> 00:12:40.740
+And the most common ones are things like domain error,
+
+00:12:40.740 --> 00:12:44.680
+the parameters outside the valid range, invalid argument,
+
+00:12:44.680 --> 00:12:48.980
+the argument was invalid for some reason, or out of range.
+
+00:12:48.980 --> 00:12:51.580
+The argument's not in expected range.
+
+00:12:51.580 --> 00:12:58.020
+So that's how we throw.
+
+00:12:58.020 --> 00:13:01.820
+That's how we signal from our function
+
+00:13:01.820 --> 00:13:04.180
+that an error has occurred.
+
+00:13:04.180 --> 00:13:06.940
+If we're calling the function, how do we
+
+00:13:06.940 --> 00:13:09.180
+intercept and handle that?
+
+00:13:09.180 --> 00:13:11.320
+And so to intercept and handle exceptions,
+
+00:13:11.320 --> 00:13:16.860
+we do almost the same thing you would do in Java and Python.
+
+00:13:16.860 --> 00:13:22.940
+Python has try, except, I think.
+
+00:13:22.940 --> 00:13:25.500
+Java has try, catch.
+
+00:13:25.500 --> 00:13:30.140
+So you place the code that can fail inside a try block.
+
+00:13:30.140 --> 00:13:35.900
+So we're going to call the function parseInt.
+
+00:13:35.900 --> 00:13:38.020
+We're going to pass it a string.
+
+00:13:38.020 --> 00:13:41.260
+That string may contain the digit 1,
+
+00:13:41.260 --> 00:13:43.820
+but it may also contain the word 1.
+
+00:13:43.820 --> 00:13:48.540
+And if it contains the word 1, rather than setting x
+
+00:13:48.540 --> 00:13:55.020
+to a value at all, what we'll do is we'll throw an exception.
+
+00:13:55.020 --> 00:13:59.060
+And any statements that follow this parseInt
+
+00:13:59.060 --> 00:14:04.580
+will be jumped over until we get to a catch block.
+
+00:14:04.580 --> 00:14:10.980
+So the catch block has to say what kind of exception
+
+00:14:10.980 --> 00:14:12.820
+it's going to throw.
+
+00:14:12.820 --> 00:14:17.740
+Now, this exception, we're going to decide what it throws.
+
+00:14:17.740 --> 00:14:21.980
+So you catch a specific type of exception.
+
+00:14:21.980 --> 00:14:24.860
+You always want to catch it by reference.
+
+00:14:24.860 --> 00:14:28.260
+So in this case, if we say the argument was invalid
+
+00:14:28.260 --> 00:14:33.380
+and we're catching that, we'd say catch invalid argument ref
+
+00:14:33.380 --> 00:14:34.900
+e.
+
+00:14:34.900 --> 00:14:36.820
+And then it would jump.
+
+00:14:36.820 --> 00:14:39.900
+If it failed, it would not do the next statement.
+
+00:14:39.900 --> 00:14:43.660
+It would jump from there to this invalid argument.
+
+00:14:43.660 --> 00:14:44.940
+Let me close Zoom.
+
+00:14:44.940 --> 00:14:50.620
+Keeps popping up, saying it wants me to log in.
+
+00:14:50.620 --> 00:14:53.300
+It would jump from this parseInt when it failed.
+
+00:14:53.300 --> 00:14:55.540
+It wouldn't assign anything to x.
+
+00:14:55.540 --> 00:14:57.980
+And it would jump down here to this catch,
+
+00:14:57.980 --> 00:15:02.220
+see if the exception that was thrown was this type.
+
+00:15:02.220 --> 00:15:05.340
+If it was, it would set the exception argument,
+
+00:15:05.340 --> 00:15:09.060
+and we would go into the exception altogether.
+
+00:15:09.060 --> 00:15:11.740
+So let's try a couple of those exercises,
+
+00:15:11.740 --> 00:15:16.940
+just so you get a feel for try-catch.
+
+00:15:16.940 --> 00:15:24.660
+So these are on part A of our exercises.
+
+00:15:24.660 --> 00:15:27.180
+There's an empty try-catch block here,
+
+00:15:27.180 --> 00:15:28.780
+which will do the catching.
+
+00:15:28.780 --> 00:15:33.460
+But it's up to us to redesign the code to make use of it.
+
+00:15:33.460 --> 00:15:36.340
+Now, there's an imaginary roster of students,
+
+00:15:36.340 --> 00:15:39.100
+which we'll pretend is dynamic, but for the purpose
+
+00:15:39.100 --> 00:15:42.260
+of this exercise, is hard-coded.
+
+00:15:42.260 --> 00:15:44.020
+You'll find the names in the source code.
+
+00:15:44.020 --> 00:15:47.020
+And the roster's implemented as an unordered map.
+
+00:15:47.020 --> 00:15:48.580
+You haven't learned how to use that,
+
+00:15:48.580 --> 00:15:52.380
+but you really don't need to know how to use it for that.
+
+00:15:52.380 --> 00:15:55.420
+When running the program, you're asked to enter a name.
+
+00:15:55.420 --> 00:15:57.580
+After doing so, it will use the map
+
+00:15:57.580 --> 00:16:00.180
+to print out the age of that student.
+
+00:16:00.180 --> 00:16:02.420
+Unfortunately, if the user enters
+
+00:16:02.420 --> 00:16:05.340
+a name that's not on the roster, it
+
+00:16:05.340 --> 00:16:08.540
+is not on the roster, an exception is thrown,
+
+00:16:08.540 --> 00:16:12.060
+which we don't handle, and the program just terminates.
+
+00:16:12.060 --> 00:16:16.300
+So we're going to do two modifications to this.
+
+00:16:16.300 --> 00:16:19.380
+We're going to catch the exception so that it can least
+
+00:16:19.380 --> 00:16:24.660
+exit gracefully, and write out a nice error telling the user
+
+00:16:24.660 --> 00:16:28.100
+that the name they entered doesn't exist.
+
+00:16:28.100 --> 00:16:32.460
+We're going to print the actual name they entered back at them.
+
+00:16:32.460 --> 00:16:36.860
+So let's do this first exercise.
+
+00:16:36.860 --> 00:16:38.860
+So here's our unordered map.
+
+00:16:38.860 --> 00:16:46.340
+So a map simply is a key, like the name here, and the age.
+
+00:16:46.340 --> 00:16:51.060
+So this is mapping a student's names to their ages.
+
+00:16:51.060 --> 00:16:56.180
+So this code is in a bit of a sorry state.
+
+00:16:56.180 --> 00:17:00.340
+If we enter a name inside here, and the name
+
+00:17:00.340 --> 00:17:06.860
+is Fred, which is not on our list, it will, when we do this,
+
+00:17:06.860 --> 00:17:11.820
+this line, student name at, will throw an exception.
+
+00:17:11.820 --> 00:17:14.020
+Will throw an exception.
+
+00:17:14.020 --> 00:17:18.340
+And so this is the try catch that we want to use.
+
+00:17:18.340 --> 00:17:21.860
+That's the necessary syntax.
+
+00:17:21.860 --> 00:17:25.020
+So we are going to throw an error.
+
+00:17:25.020 --> 00:17:27.620
+We're going to put this code.
+
+00:17:27.620 --> 00:17:31.460
+So that part's going to be outside.
+
+00:17:31.460 --> 00:17:33.540
+We're going to write try.
+
+00:17:33.540 --> 00:17:49.020
+And then I'm going to take this line-- actually,
+
+00:17:49.020 --> 00:17:53.420
+let me just copy this part out.
+
+00:17:53.420 --> 00:17:56.460
+So it gave us the syntax here.
+
+00:17:56.460 --> 00:17:58.100
+I'm just going to bring the catch here.
+
+00:17:58.100 --> 00:18:03.340
+And we're going to catch if it's out of range.
+
+00:18:03.340 --> 00:18:16.020
+And let me fix that.
+
+00:18:16.020 --> 00:18:34.100
+And we're going to say, C error, sorry, comma, name
+
+00:18:34.100 --> 00:18:35.380
+was not there.
+
+00:18:35.380 --> 00:18:38.900
+I don't know if that's the correct error message.
+
+00:18:42.980 --> 00:18:46.500
+OK, so notice the code that may fail
+
+00:18:46.500 --> 00:18:49.140
+is placed inside our try block.
+
+00:18:49.140 --> 00:18:50.700
+This code cannot fail.
+
+00:18:50.700 --> 00:18:51.980
+This code cannot fail.
+
+00:18:51.980 --> 00:18:54.140
+It's placed inside a try block.
+
+00:18:54.140 --> 00:18:55.020
+So let's try it.
+
+00:18:55.020 --> 00:19:03.700
+And I left out a set of arrows there.
+
+00:19:03.700 --> 00:19:04.940
+So I had a syntax error.
+
+00:19:12.300 --> 00:19:16.220
+Oops, and I put the arrows in the wrong place.
+
+00:19:16.220 --> 00:19:17.620
+Still had a syntax error.
+
+00:19:17.620 --> 00:19:29.620
+I left off a semicolon.
+
+00:19:29.620 --> 00:19:31.820
+I'm all thumbs today.
+
+00:19:31.820 --> 00:19:39.420
+OK, enter a name, John.
+
+00:19:39.420 --> 00:19:41.900
+John is 16 years old.
+
+00:19:41.900 --> 00:19:46.180
+OK, so yeah, so I didn't have-- so it was sorry, comma,
+
+00:19:46.180 --> 00:19:47.460
+Jake does not exist.
+
+00:19:47.460 --> 00:20:06.100
+So let's look at John.
+
+00:20:06.100 --> 00:20:09.620
+John is found, prints out its name,
+
+00:20:09.620 --> 00:20:11.380
+and then skips over the catch block.
+
+00:20:11.380 --> 00:20:13.940
+Catch block is never executed.
+
+00:20:13.940 --> 00:20:17.900
+Jake throws an exception here.
+
+00:20:17.900 --> 00:20:20.980
+We skip over the name is age years old.
+
+00:20:20.980 --> 00:20:27.220
+We jump from line 24 to line 27, and we print out,
+
+00:20:27.220 --> 00:20:30.100
+sorry, name does not exist.
+
+00:20:30.100 --> 00:20:31.740
+Same thing with Lawrence.
+
+00:20:31.740 --> 00:20:34.540
+Zoltan exists, so that works OK.
+
+00:20:34.540 --> 00:20:37.500
+So this is try, catch.
+
+00:20:37.500 --> 00:20:39.500
+Now let's do the second one.
+
+00:20:39.500 --> 00:20:43.700
+So we want to do it so that the program validates
+
+00:20:43.700 --> 00:20:46.020
+by using the try, catch.
+
+00:20:46.020 --> 00:20:47.860
+Doesn't just print out an error message,
+
+00:20:47.860 --> 00:20:51.460
+and it should do it continuously until they actually
+
+00:20:51.460 --> 00:20:55.060
+enter a valid name.
+
+00:20:55.060 --> 00:20:58.380
+So we don't have to do much difference here.
+
+00:20:58.380 --> 00:21:00.020
+What we're going to do is we're going
+
+00:21:00.020 --> 00:21:05.220
+to need to put all this code inside a do while block.
+
+00:21:05.220 --> 00:21:06.940
+A do while.
+
+00:21:06.940 --> 00:21:15.300
+So do, enter a name.
+
+00:21:29.060 --> 00:21:34.700
+Then we're going to put our try block.
+
+00:21:34.700 --> 00:21:35.200
+Try block.
+
+00:21:35.200 --> 00:21:46.780
+And we'll create a Boolean value.
+
+00:21:46.780 --> 00:21:49.060
+So that's going to have to be created
+
+00:21:49.060 --> 00:21:51.780
+before the do while loop.
+
+00:21:51.780 --> 00:22:04.380
+So Boole equals or done, false.
+
+00:22:04.380 --> 00:22:07.420
+If we succeed and don't throw an exception,
+
+00:22:07.420 --> 00:22:09.380
+we're going to set done equal to true.
+
+00:22:09.380 --> 00:22:19.020
+So now we're going to put in our catch block.
+
+00:22:19.020 --> 00:22:37.620
+And exactly the same code we had before.
+
+00:22:40.620 --> 00:22:53.460
+Here, sorry, name does not exist.
+
+00:22:53.460 --> 00:23:02.420
+And here's the end of our do.
+
+00:23:02.420 --> 00:23:05.660
+And here's the while.
+
+00:23:05.660 --> 00:23:06.160
+Not done.
+
+00:23:08.160 --> 00:23:08.660
+OK.
+
+00:23:08.660 --> 00:23:13.720
+So we're going to continue doing that while it's not done.
+
+00:23:13.720 --> 00:23:17.000
+We're going to enter in a name, print in the name.
+
+00:23:17.000 --> 00:23:18.480
+We're going to try it.
+
+00:23:18.480 --> 00:23:23.200
+If we try it and we succeed, if we get down to line 28,
+
+00:23:23.200 --> 00:23:26.240
+we're going to set done to true.
+
+00:23:26.240 --> 00:23:28.880
+This will fail and we'll be through.
+
+00:23:28.880 --> 00:23:29.760
+So let's try it.
+
+00:23:34.720 --> 00:23:37.040
+So enter name John.
+
+00:23:37.040 --> 00:23:38.360
+That worked fine.
+
+00:23:38.360 --> 00:23:41.680
+We just entered the name, set done to true.
+
+00:23:41.680 --> 00:23:44.120
+We hit our while loop and we're finished.
+
+00:23:44.120 --> 00:23:46.240
+Here we entered a name Jake.
+
+00:23:46.240 --> 00:23:46.800
+Nope.
+
+00:23:46.800 --> 00:23:48.960
+Sorry, name does not exist.
+
+00:23:48.960 --> 00:23:52.000
+It went up and it asked us to enter a name again.
+
+00:23:52.000 --> 00:23:54.760
+Now in this case, the code check doesn't
+
+00:23:54.760 --> 00:23:58.280
+show what it really looks like.
+
+00:23:58.280 --> 00:24:00.520
+So we would not enter Jake, Bill, and Paul.
+
+00:24:00.520 --> 00:24:01.920
+We'd enter Jake.
+
+00:24:01.920 --> 00:24:03.160
+It would say enter a name.
+
+00:24:03.160 --> 00:24:04.600
+We'd enter Bill here.
+
+00:24:04.600 --> 00:24:05.200
+Enter a name.
+
+00:24:05.200 --> 00:24:06.160
+We'd enter Paul.
+
+00:24:06.160 --> 00:24:07.920
+Paul's 31 years old.
+
+00:24:07.920 --> 00:24:10.680
+So notice this just repeats until it
+
+00:24:10.680 --> 00:24:13.640
+gives us the correct answer.
+
+00:24:13.640 --> 00:24:17.560
+It gives us the correct answer.
+
+00:24:17.560 --> 00:24:22.440
+OK, let's actually write some code now.
+
+00:24:22.440 --> 00:24:24.800
+And so go over and open.
+
+00:24:28.320 --> 00:24:34.960
+And open in IC14B, open int helper.h and int helper.cpp.
+
+00:24:34.960 --> 00:24:42.920
+I don't know why it's not letting me open both those.
+
+00:24:42.920 --> 00:24:46.200
+Maybe because I haven't added any code to it.
+
+00:24:46.200 --> 00:24:49.400
+Let me add code to that one and do the cpp.
+
+00:24:49.400 --> 00:24:49.900
+OK.
+
+00:24:49.900 --> 00:25:00.320
+OK, let's open a terminal on that.
+
+00:25:00.320 --> 00:25:07.120
+And then let me close that.
+
+00:25:07.120 --> 00:25:13.760
+OK, so these are the two functions we're going to write.
+
+00:25:13.760 --> 00:25:15.360
+So let's look at those.
+
+00:25:17.280 --> 00:25:24.480
+The first function, parseInt, is going
+
+00:25:24.480 --> 00:25:27.360
+to convert a string to an integer.
+
+00:25:27.360 --> 00:25:30.760
+So int n equals parseInt 42.
+
+00:25:30.760 --> 00:25:35.760
+If it can't succeed, it's going to throw an exception.
+
+00:25:35.760 --> 00:25:40.640
+The second function is going to read an int from the console.
+
+00:25:40.640 --> 00:25:44.040
+So this is int n equals readInt.
+
+00:25:44.040 --> 00:25:45.400
+Enter a number.
+
+00:25:45.400 --> 00:25:47.400
+The prompt is optional.
+
+00:25:47.400 --> 00:25:49.920
+And just like the last problem we did,
+
+00:25:49.920 --> 00:25:54.360
+it's going to keep prompting until integer values are
+
+00:25:54.360 --> 00:25:55.920
+entered.
+
+00:25:55.920 --> 00:25:58.480
+So we're going to start by documenting
+
+00:25:58.480 --> 00:26:01.120
+the functions in the header.
+
+00:26:01.120 --> 00:26:04.280
+Then we're going to have invalid input to parseInt
+
+00:26:04.280 --> 00:26:06.320
+by throwing an exception.
+
+00:26:06.320 --> 00:26:10.440
+And then we're going to validate our logic with assert.
+
+00:26:10.440 --> 00:26:12.920
+Now there's a little bit more information
+
+00:26:12.920 --> 00:26:15.680
+on this in the handout over here.
+
+00:26:15.680 --> 00:26:23.000
+So we're going to include the preconditions, postconditions,
+
+00:26:23.000 --> 00:26:24.360
+and exceptions.
+
+00:26:24.360 --> 00:26:27.200
+We're going to throw an invalid argument with an error message
+
+00:26:27.200 --> 00:26:28.920
+when parseInt fails.
+
+00:26:28.920 --> 00:26:30.900
+We use parseInt in an endless loop
+
+00:26:30.900 --> 00:26:34.320
+and try catch to implement readInt.
+
+00:26:34.320 --> 00:26:37.040
+And we'll use assert to check that we never
+
+00:26:37.040 --> 00:26:40.640
+reach the end of readInt.
+
+00:26:40.640 --> 00:26:43.800
+And I will just test this.
+
+00:26:43.800 --> 00:26:45.440
+I'll break out of my loop to make sure
+
+00:26:45.440 --> 00:26:47.480
+that the assertion works.
+
+00:26:47.480 --> 00:26:50.280
+Make sure that the assertion works.
+
+00:26:50.280 --> 00:26:51.880
+So let's document the function.
+
+00:26:51.880 --> 00:27:02.440
+And so parseInt-- we didn't put this in a namespace.
+
+00:27:02.440 --> 00:27:04.440
+We could have.
+
+00:27:04.440 --> 00:27:12.200
+So converts a string to an integer.
+
+00:27:12.200 --> 00:27:22.040
+At param s-- let me change that to str.
+
+00:27:22.040 --> 00:27:24.160
+I don't like just using single letter names.
+
+00:27:24.160 --> 00:27:40.680
+str is the string-- so str is the string to convert.
+
+00:27:40.680 --> 00:27:46.720
+Let's put in our precondition at pre.
+
+00:27:46.720 --> 00:28:09.400
+At pre, we'll contain valid digits, optional sign.
+
+00:28:09.400 --> 00:28:21.320
+Let's do minus 1, 2, 3 to give the optional sign there.
+
+00:28:21.320 --> 00:28:28.200
+So that tells us the precondition.
+
+00:28:28.200 --> 00:28:30.600
+That says what we assume is going
+
+00:28:30.600 --> 00:28:40.800
+to be true about parseInt at post or at return
+
+00:28:40.800 --> 00:28:41.760
+or at exception.
+
+00:28:41.760 --> 00:28:56.120
+Let's use at exception because that's a valid argument.
+
+00:28:56.120 --> 00:29:18.040
+If invalid argument, if str contains--
+
+00:29:18.040 --> 00:29:28.440
+contains invalid characters.
+
+00:29:28.440 --> 00:29:38.680
+And we might want to put more about what that possibly is.
+
+00:29:38.680 --> 00:29:52.200
+And at return, the integer result.
+
+00:29:52.200 --> 00:29:54.200
+So that's pretty good for the documentation.
+
+00:29:54.200 --> 00:30:07.800
+So readInt-- it's an integer from the console
+
+00:30:07.800 --> 00:30:10.120
+or standard input.
+
+00:30:10.120 --> 00:30:25.480
+At param prompt will be displayed
+
+00:30:25.480 --> 00:30:29.320
+if passed with a colon.
+
+00:30:35.680 --> 00:30:47.520
+OK, at return, and the post condition here
+
+00:30:47.520 --> 00:30:53.960
+is keeps prompting.
+
+00:31:04.680 --> 00:31:06.760
+So there's our documentation.
+
+00:31:06.760 --> 00:31:09.200
+There's our documentation.
+
+00:31:09.200 --> 00:31:10.440
+So let's take this.
+
+00:31:10.440 --> 00:31:18.440
+Let's go over to inhelper.cpp.
+
+00:31:18.440 --> 00:31:20.800
+Let's put your Canvas ID on it.
+
+00:31:20.800 --> 00:31:22.160
+Let's write the functions here.
+
+00:31:22.160 --> 00:31:29.120
+You can leave the docs inside here if you want.
+
+00:31:29.120 --> 00:31:32.400
+You don't have to.
+
+00:31:32.400 --> 00:31:33.720
+Let's put the body on it.
+
+00:31:33.720 --> 00:31:37.280
+Let's stub it.
+
+00:31:37.280 --> 00:31:43.720
+Let's return a value in each case.
+
+00:31:43.720 --> 00:31:49.000
+We're stubbing it, just making a skeleton.
+
+00:31:49.000 --> 00:31:56.120
+Let's go ahead and try it.
+
+00:31:56.120 --> 00:32:07.120
+OK, so number one, we made a syntax error.
+
+00:32:07.120 --> 00:32:11.440
+And that is when we have default arguments,
+
+00:32:11.440 --> 00:32:16.280
+you need to remove them in the implementation.
+
+00:32:16.280 --> 00:32:17.440
+Let's try it again.
+
+00:32:25.440 --> 00:32:29.440
+So parseInt is what's being tested here.
+
+00:32:29.440 --> 00:32:32.960
+parseInt is what's being tested here.
+
+00:32:32.960 --> 00:32:35.280
+So let's actually do something.
+
+00:32:35.280 --> 00:32:39.280
+And parseInt didn't work at all.
+
+00:32:39.280 --> 00:32:43.200
+So let's go over and look at how we get parseInt to work.
+
+00:32:43.200 --> 00:32:48.920
+So what we need to do for parseInt
+
+00:32:48.920 --> 00:32:53.360
+is we need a string stream.
+
+00:32:53.360 --> 00:32:57.360
+So we're going to take a input string stream.
+
+00:32:57.360 --> 00:33:14.760
+And we're going to initialize that with the parameter str.
+
+00:33:14.760 --> 00:33:18.720
+Then we're going to create an int n.
+
+00:33:18.720 --> 00:33:21.560
+And we're going to read into n.
+
+00:33:22.560 --> 00:33:24.840
+OK.
+
+00:33:24.840 --> 00:33:34.240
+Now, if n is not failed--
+
+00:33:34.240 --> 00:33:38.320
+and you can write that as if not n fail.
+
+00:33:38.320 --> 00:33:46.680
+So if not n fail, in other words, if n's still good.
+
+00:33:46.680 --> 00:34:01.680
+And n is at EOF, then we're simply going to return n.
+
+00:34:01.680 --> 00:34:05.000
+This simply means, did we consume everything
+
+00:34:05.000 --> 00:34:07.760
+inside that string?
+
+00:34:07.760 --> 00:34:09.160
+We're at end of file.
+
+00:34:09.160 --> 00:34:10.720
+That's true.
+
+00:34:10.720 --> 00:34:15.600
+This says, well, we didn't read any invalid characters.
+
+00:34:15.600 --> 00:34:18.960
+So if both of those are the case, that's true.
+
+00:34:18.960 --> 00:34:23.520
+Now, it's possible that someone could enter a string like this.
+
+00:34:23.520 --> 00:34:34.440
+So notice that the n will automatically
+
+00:34:34.440 --> 00:34:36.440
+skip this whitespace.
+
+00:34:36.440 --> 00:34:39.480
+But it will still stop right on this character.
+
+00:34:39.480 --> 00:34:41.800
+That means we're not at end of file.
+
+00:34:41.800 --> 00:34:48.600
+And so to fix that, we have to read the whitespace again.
+
+00:34:48.600 --> 00:34:52.760
+So in whitespace.
+
+00:34:52.760 --> 00:34:55.840
+And now we're just going to repeat this statement.
+
+00:34:55.840 --> 00:34:58.760
+Now, I'm sure this kind of bothers you.
+
+00:34:58.760 --> 00:35:01.200
+And it bothers me a lot, too.
+
+00:35:01.200 --> 00:35:07.880
+Because really what I'd like to do is do this.
+
+00:35:07.880 --> 00:35:10.760
+I'd like to read the input and the whitespace all
+
+00:35:10.760 --> 00:35:12.680
+in one statement.
+
+00:35:12.680 --> 00:35:17.040
+That works under the GCC library we're doing.
+
+00:35:17.040 --> 00:35:26.920
+It works on Unix.
+
+00:35:26.920 --> 00:35:29.920
+Again, the GCC library we're using.
+
+00:35:29.920 --> 00:35:36.080
+It works on Windows, the Windows libraries.
+
+00:35:36.080 --> 00:35:38.900
+It doesn't work on the Mac libraries.
+
+00:35:38.900 --> 00:35:42.920
+And actually, since we're not programming this in Mac,
+
+00:35:42.920 --> 00:35:45.920
+I'm just going to use it anyway.
+
+00:35:45.920 --> 00:35:48.040
+On the Mac libraries, unfortunately, it fails.
+
+00:35:48.040 --> 00:35:55.000
+So we're going to read the number.
+
+00:35:55.000 --> 00:35:58.160
+If there's any whitespace, we're going to read it.
+
+00:35:58.160 --> 00:36:01.440
+So this one's going to read OK.
+
+00:36:01.440 --> 00:36:05.960
+This one-- actually, let me comment that out.
+
+00:36:05.960 --> 00:36:13.760
+This one is going to throw an exception.
+
+00:36:13.760 --> 00:36:16.040
+That's what we want to happen.
+
+00:36:16.040 --> 00:36:18.520
+That should throw an exception.
+
+00:36:18.520 --> 00:36:25.200
+And so we're going to throw invalid argument.
+
+00:36:25.200 --> 00:36:44.640
+[TYPING]
+
+00:36:44.640 --> 00:36:45.960
+Or something else like that.
+
+00:36:45.960 --> 00:36:54.800
+Now, let's come down here to run.
+
+00:36:54.800 --> 00:36:58.720
+Let's comment out those first two.
+
+00:36:58.720 --> 00:37:06.280
+And let's just do make run.
+
+00:37:06.280 --> 00:37:06.920
+Make run.
+
+00:37:06.920 --> 00:37:12.040
+So I'm going to pull that right there.
+
+00:37:12.040 --> 00:37:17.320
+I'm going to clean that and do make run.
+
+00:37:17.320 --> 00:37:19.240
+Student testing 125.
+
+00:37:19.240 --> 00:37:20.720
+It works.
+
+00:37:20.720 --> 00:37:26.480
+Now, if we've done everything correctly,
+
+00:37:26.480 --> 00:37:29.640
+this one should throw an exception.
+
+00:37:29.640 --> 00:37:30.600
+So make run.
+
+00:37:30.600 --> 00:37:35.920
+Terminate after throwing an instance
+
+00:37:35.920 --> 00:37:38.600
+of standard invalid argument.
+
+00:37:38.600 --> 00:37:42.040
+5.2 is not an integer.
+
+00:37:42.040 --> 00:37:45.400
+15.2 is not an integer.
+
+00:37:45.400 --> 00:37:46.800
+So that's pretty cool, right?
+
+00:37:46.800 --> 00:37:53.640
+So this is the default handler when we didn't catch anything.
+
+00:37:53.640 --> 00:37:56.240
+In other words, we didn't put this in a try catch.
+
+00:37:56.240 --> 00:37:59.800
+If you don't put it in a try catch, it just terminates.
+
+00:37:59.800 --> 00:38:05.440
+So through an instance of standard invalid argument.
+
+00:38:05.440 --> 00:38:07.680
+Let's comment out that line again.
+
+00:38:07.680 --> 00:38:09.880
+And then let's go to our second one
+
+00:38:09.880 --> 00:38:16.760
+up here, which is read int.
+
+00:38:16.760 --> 00:38:20.560
+So for read int, we're going to prompt the display
+
+00:38:20.560 --> 00:38:23.160
+if it exists.
+
+00:38:23.160 --> 00:38:41.920
+So if not prompt empty.
+
+00:38:41.920 --> 00:38:52.160
+Or you can write it if prompt not equal to quote, quote.
+
+00:38:52.160 --> 00:39:03.160
+This is a little less efficient than-- because prompt empty.
+
+00:39:03.160 --> 00:39:06.360
+Prompt not equal to quote, quote has to first convert
+
+00:39:06.360 --> 00:39:08.320
+the quote, quote into a string.
+
+00:39:08.320 --> 00:39:10.000
+It has to use the relational operator
+
+00:39:10.000 --> 00:39:11.840
+to find if it's not equal.
+
+00:39:11.840 --> 00:39:15.040
+So prompt empty is just going to return true or false
+
+00:39:15.040 --> 00:39:16.400
+immediately.
+
+00:39:16.400 --> 00:39:18.080
+So that's probably a little better.
+
+00:39:18.080 --> 00:39:25.680
+But this probably is easier for people to understand.
+
+00:39:25.680 --> 00:39:28.440
+If the prompt is not empty, we're
+
+00:39:28.440 --> 00:39:32.000
+going to see out the prompt.
+
+00:39:36.000 --> 00:39:57.520
+And if prompt back is not equal to a space,
+
+00:39:57.520 --> 00:40:10.240
+and prompt back is not equal to a colon,
+
+00:40:10.240 --> 00:40:11.240
+let's just say a space.
+
+00:40:11.240 --> 00:40:16.120
+If that's not the case, then I'm going
+
+00:40:16.120 --> 00:40:18.720
+to print out a colon or space.
+
+00:40:18.720 --> 00:40:26.840
+In other words, I want to get the input away from the prompt.
+
+00:40:28.840 --> 00:40:31.200
+OK.
+
+00:40:31.200 --> 00:40:36.040
+Now let's convert the thing.
+
+00:40:36.040 --> 00:40:42.080
+So we're going to say return parsing.
+
+00:40:42.080 --> 00:40:51.400
+Oh, we need to read the value.
+
+00:40:51.400 --> 00:40:53.080
+So string value.
+
+00:40:53.080 --> 00:40:58.560
+Oh, we need to--
+
+00:40:58.560 --> 00:41:01.320
+yeah.
+
+00:41:01.320 --> 00:41:03.120
+Yeah, we're going to use parseInt.
+
+00:41:03.120 --> 00:41:11.200
+We're going to return parseInt.
+
+00:41:11.200 --> 00:41:18.880
+parseInt value.
+
+00:41:20.880 --> 00:41:23.880
+OK.
+
+00:41:23.880 --> 00:41:25.760
+So this is the basic structure.
+
+00:41:25.760 --> 00:41:32.880
+Let's come down here and uncomment these two lines.
+
+00:41:32.880 --> 00:41:39.640
+Let's do make run on it.
+
+00:41:40.000 --> 00:41:40.500
+OK.
+
+00:41:40.500 --> 00:41:52.440
+Enter a number.
+
+00:41:52.440 --> 00:41:55.560
+And notice how it added my colon.
+
+00:41:55.560 --> 00:41:58.280
+So notice my prompt is enter a number.
+
+00:41:58.280 --> 00:42:00.240
+It adds the colon in this space after it
+
+00:42:00.240 --> 00:42:02.240
+and puts my input there.
+
+00:42:02.240 --> 00:42:05.560
+I'll enter 245.
+
+00:42:05.560 --> 00:42:07.920
+And you enter 245.
+
+00:42:07.920 --> 00:42:11.360
+Now let me run it again.
+
+00:42:11.360 --> 00:42:14.000
+2.45.
+
+00:42:14.000 --> 00:42:16.480
+It threw an exception.
+
+00:42:16.480 --> 00:42:22.640
+So we want, if this value is bad,
+
+00:42:22.640 --> 00:42:27.840
+that's going to return-- that's going to throw an exception.
+
+00:42:27.840 --> 00:42:30.480
+So we're going to put this whole thing in an endless loop.
+
+00:42:33.360 --> 00:42:36.360
+File, true.
+
+00:42:36.360 --> 00:42:57.200
+So this will return out of the loop.
+
+00:42:57.200 --> 00:42:58.680
+Then we'll put this part.
+
+00:42:58.680 --> 00:43:06.480
+Enter inside a try.
+
+00:43:06.480 --> 00:43:17.020
+Catch.
+
+00:43:26.320 --> 00:43:29.560
+And I'm not going to print an error message.
+
+00:43:29.560 --> 00:43:30.440
+Oh, maybe I will.
+
+00:43:30.440 --> 00:43:31.880
+Maybe I'll print an error message.
+
+00:43:31.880 --> 00:43:32.380
+OK.
+
+00:43:32.380 --> 00:43:51.880
+I don't know if the testing actually wants this error
+
+00:43:51.880 --> 00:43:53.680
+message.
+
+00:43:53.680 --> 00:43:54.160
+OK.
+
+00:43:54.160 --> 00:43:58.480
+So this is like what we did in the code check exercise.
+
+00:43:58.480 --> 00:44:02.800
+So we have a do while or a while true.
+
+00:44:02.800 --> 00:44:07.040
+And if we can parse the value, we get out.
+
+00:44:07.040 --> 00:44:10.320
+If not, we print out, sorry, that's not an integer.
+
+00:44:10.320 --> 00:44:14.080
+And we go back and prompt for it again.
+
+00:44:14.080 --> 00:44:20.920
+So let's try that now with our run here.
+
+00:44:20.920 --> 00:44:23.960
+So make run.
+
+00:44:23.960 --> 00:44:25.440
+Enter a number, 1.
+
+00:44:25.440 --> 00:44:26.960
+Sorry, 1 is not an integer.
+
+00:44:26.960 --> 00:44:31.520
+Enter a number, 45.2.
+
+00:44:31.520 --> 00:44:33.720
+Sorry, 45.2 is not an integer.
+
+00:44:33.720 --> 00:44:35.320
+75.
+
+00:44:35.320 --> 00:44:37.000
+OK, and we entered 75.
+
+00:44:37.000 --> 00:44:41.800
+Now once we've done that, we can check the parse
+
+00:44:41.800 --> 00:44:44.400
+in here with the testing.
+
+00:44:44.400 --> 00:44:45.120
+So make test.
+
+00:44:50.840 --> 00:44:55.200
+So it works perfectly fine.
+
+00:44:55.200 --> 00:44:57.800
+So up here, you're going to--
+
+00:44:57.800 --> 00:44:59.240
+oh, we want to do one more thing.
+
+00:44:59.240 --> 00:45:00.880
+We want to break out of the loop to see
+
+00:45:00.880 --> 00:45:02.640
+that our assertion works.
+
+00:45:02.640 --> 00:45:04.840
+And we haven't put in an assertion.
+
+00:45:04.840 --> 00:45:08.680
+So an assertion is something that is impossible.
+
+00:45:08.680 --> 00:45:10.400
+So what's impossible?
+
+00:45:10.400 --> 00:45:12.920
+This loop is while true.
+
+00:45:12.920 --> 00:45:17.520
+It's impossible for me to get here.
+
+00:45:17.520 --> 00:45:19.520
+So I'm just going to say assert false.
+
+00:45:19.520 --> 00:45:26.680
+This is saying this is unreachable.
+
+00:45:26.680 --> 00:45:32.880
+That is unreachable.
+
+00:45:32.880 --> 00:45:35.960
+Now what I'm going to do is I'm going
+
+00:45:35.960 --> 00:45:37.960
+to make a mistake in my code.
+
+00:45:37.960 --> 00:45:39.880
+Remember, assertions are determined
+
+00:45:39.880 --> 00:45:42.680
+to catch mistakes in your code.
+
+00:45:42.680 --> 00:45:46.240
+I can say that my intention, my assumption,
+
+00:45:46.240 --> 00:45:50.440
+is that I should never, ever be able to get
+
+00:45:50.440 --> 00:45:51.600
+to this line of code.
+
+00:45:51.600 --> 00:45:53.880
+It's unreachable.
+
+00:45:53.880 --> 00:45:55.320
+It's unreachable.
+
+00:45:55.320 --> 00:46:00.920
+But what if I inadvertently say break?
+
+00:46:00.920 --> 00:46:02.320
+Like that.
+
+00:46:02.320 --> 00:46:07.560
+So this is a piece of error in my code now.
+
+00:46:07.560 --> 00:46:17.800
+And when I do-- let's do make run again.
+
+00:46:17.800 --> 00:46:34.800
+And when I do 1, if I do 42, it works fine.
+
+00:46:34.800 --> 00:46:39.480
+But if I do 1, it throws the exception.
+
+00:46:39.480 --> 00:46:46.600
+But also, I actually had an assertion.
+
+00:46:46.600 --> 00:46:50.160
+So I'd go look at line 55.
+
+00:46:50.160 --> 00:46:54.600
+When I looked at line 55, it would say,
+
+00:46:54.600 --> 00:46:58.760
+oh, this should be unreachable, or this is unreachable.
+
+00:46:58.760 --> 00:47:01.840
+And then I'd look back and try and find my error.
+
+00:47:01.840 --> 00:47:05.680
+I'd see, how did I possibly get to that code?
+
+00:47:05.680 --> 00:47:08.200
+And maybe I'd put it in the debugger or so forth.
+
+00:47:08.200 --> 00:47:12.000
+So I'm going to comment that out.
+
+00:47:12.000 --> 00:47:15.000
+So this is the kind of thing you want to put in your statement.
+
+00:47:15.000 --> 00:47:18.680
+Now, false normally would put some kind of condition.
+
+00:47:18.680 --> 00:47:23.040
+False just means, if you ever get to this line of code,
+
+00:47:23.040 --> 00:47:25.960
+throw the exception, or throw the assertion,
+
+00:47:25.960 --> 00:47:28.520
+trigger the assertion at that point.
+
+00:47:30.360 --> 00:47:34.000
+All right.
+
+00:47:34.000 --> 00:47:37.560
+So those were two good exercises to get you
+
+00:47:37.560 --> 00:47:40.920
+into throwing exceptions.
+
+00:47:40.920 --> 00:47:43.080
+The last topic we're going to talk about today
+
+00:47:43.080 --> 00:47:45.080
+is function templates.
+
+00:47:45.080 --> 00:47:46.480
+So look at this function.
+
+00:47:46.480 --> 00:47:51.080
+So I have a function smaller, takes two integers, a and b,
+
+00:47:51.080 --> 00:47:52.680
+and uses the conditional operator,
+
+00:47:52.680 --> 00:47:55.760
+return the smaller of a or b.
+
+00:47:55.760 --> 00:47:58.400
+So if a is less than b, it returns a.
+
+00:47:58.400 --> 00:48:00.520
+Otherwise, it returns b.
+
+00:48:00.520 --> 00:48:03.760
+Notice this, actually, the algorithm that she uses
+
+00:48:03.760 --> 00:48:09.480
+will return b if they're identical, not a.
+
+00:48:09.480 --> 00:48:11.200
+So perhaps it would have been better
+
+00:48:11.200 --> 00:48:13.920
+if you wanted to return a if it was the smaller.
+
+00:48:13.920 --> 00:48:17.680
+In other words, first or smaller would say a less than
+
+00:48:17.680 --> 00:48:21.800
+or equal to b, return a.
+
+00:48:21.800 --> 00:48:23.380
+What if we want this function, though,
+
+00:48:23.380 --> 00:48:26.200
+to work for something other than an integer?
+
+00:48:26.200 --> 00:48:28.080
+Will it work for a double?
+
+00:48:28.080 --> 00:48:38.440
+In other words, if we called smaller 1.5, 1.75, well,
+
+00:48:38.440 --> 00:48:40.160
+first it would truncate them, right?
+
+00:48:40.160 --> 00:48:43.080
+It wouldn't really work for other types.
+
+00:48:43.080 --> 00:48:48.000
+So if I wanted smaller of 3.5 and 7.5,
+
+00:48:48.000 --> 00:48:50.600
+I'd always get back an int here.
+
+00:48:50.600 --> 00:48:55.360
+If I wanted smaller of zebra and ant, it wouldn't work at all.
+
+00:48:55.360 --> 00:48:57.000
+So how would we fix that?
+
+00:48:57.000 --> 00:48:58.480
+How would we fix it?
+
+00:48:58.480 --> 00:49:01.280
+Well, option one is just write an overloaded function
+
+00:49:01.280 --> 00:49:02.760
+for each type.
+
+00:49:02.760 --> 00:49:06.760
+So here's a smaller for a for double,
+
+00:49:06.760 --> 00:49:08.640
+and here's a smaller for string.
+
+00:49:08.640 --> 00:49:13.440
+And then our main function on the previous page works.
+
+00:49:13.440 --> 00:49:16.320
+The downside, the disadvantage, is
+
+00:49:16.320 --> 00:49:20.040
+that you have to write a new version for each type you want.
+
+00:49:20.040 --> 00:49:24.360
+When the code in the body is exactly the same,
+
+00:49:24.360 --> 00:49:29.080
+both of them say return a less than b, a, b.
+
+00:49:29.080 --> 00:49:31.440
+So it's kind of redundant.
+
+00:49:31.440 --> 00:49:34.320
+That's where function templates come in.
+
+00:49:34.320 --> 00:49:38.360
+So a function template is a set of instructions
+
+00:49:38.360 --> 00:49:43.040
+that tell the compiler how to generate a function when
+
+00:49:43.040 --> 00:49:45.080
+it is called.
+
+00:49:45.080 --> 00:49:49.000
+The functions are only generated if they are called.
+
+00:49:49.000 --> 00:49:52.560
+If we write the template for smaller,
+
+00:49:52.560 --> 00:49:57.560
+and we pass in-- we don't call it with a string,
+
+00:49:57.560 --> 00:50:00.280
+it will never be generated from a string.
+
+00:50:00.280 --> 00:50:02.720
+So here's the template function.
+
+00:50:02.720 --> 00:50:05.600
+Notice first that every template function always
+
+00:50:05.600 --> 00:50:09.880
+starts with template, type name, and then
+
+00:50:09.880 --> 00:50:13.960
+some symbol you're going to use as a placeholder for your type.
+
+00:50:13.960 --> 00:50:15.200
+T is really common.
+
+00:50:15.200 --> 00:50:16.640
+U is really common.
+
+00:50:16.640 --> 00:50:20.880
+But you can use larger names or ones that are more descriptive
+
+00:50:20.880 --> 00:50:22.440
+if you want.
+
+00:50:22.440 --> 00:50:25.560
+So this says the function smaller
+
+00:50:25.560 --> 00:50:30.640
+is going to return a type of whatever type T is.
+
+00:50:30.640 --> 00:50:34.800
+And it's going to take two arguments, a const T ref for a
+
+00:50:34.800 --> 00:50:37.080
+and a const T ref for b.
+
+00:50:37.080 --> 00:50:40.760
+And notice the code in here is exactly the same.
+
+00:50:40.760 --> 00:50:46.240
+Now, templates have to be seen when your code compiles.
+
+00:50:46.240 --> 00:50:48.120
+For that reason, they're generally
+
+00:50:48.120 --> 00:50:49.880
+placed in a header file.
+
+00:50:49.880 --> 00:50:56.320
+They are not pre-compiled like a regular function.
+
+00:50:56.320 --> 00:51:00.680
+Now, there are two ways to call a template function.
+
+00:51:00.680 --> 00:51:02.700
+Or specifically, there are two ways
+
+00:51:02.700 --> 00:51:06.240
+to generate the function from the template.
+
+00:51:06.240 --> 00:51:09.320
+When you call it, you can explicitly specify
+
+00:51:09.320 --> 00:51:13.040
+the type to be used for T. So I could
+
+00:51:13.040 --> 00:51:16.040
+call that function with smaller.
+
+00:51:16.040 --> 00:51:19.920
+And then in angle brackets after the name, I could say string.
+
+00:51:19.920 --> 00:51:24.960
+So generate a smaller function that uses string for T,
+
+00:51:24.960 --> 00:51:28.120
+and then pass in frog and flea.
+
+00:51:28.120 --> 00:51:32.240
+Now, that will write-- when you call the function,
+
+00:51:32.240 --> 00:51:36.280
+it will write a version of smaller
+
+00:51:36.280 --> 00:51:40.600
+that has the T replaced with string here.
+
+00:51:40.600 --> 00:51:42.400
+So it will say string smaller.
+
+00:51:42.400 --> 00:51:47.600
+Const string ref a, const string ref b, return a less than b.
+
+00:51:47.600 --> 00:51:50.000
+It will write that function for you.
+
+00:51:50.000 --> 00:51:53.760
+So that is called a template function.
+
+00:51:53.760 --> 00:51:55.920
+This is a function template.
+
+00:51:55.920 --> 00:51:59.360
+The function that's generated is called a template function.
+
+00:51:59.360 --> 00:52:06.600
+Now, can you simply call it implicitly?
+
+00:52:06.600 --> 00:52:08.600
+Yes, you can.
+
+00:52:08.600 --> 00:52:16.320
+So if I call the function auto n equals smaller 3.46 and 3.45,
+
+00:52:16.320 --> 00:52:20.200
+it will, in fact, give me back 3.45.
+
+00:52:20.200 --> 00:52:22.960
+And that generates this function.
+
+00:52:22.960 --> 00:52:26.320
+Double, remember, replaces the T with double,
+
+00:52:26.320 --> 00:52:29.680
+replaces the a with double, the b with double.
+
+00:52:29.680 --> 00:52:33.720
+And actually, it will replace it with const double ref,
+
+00:52:33.720 --> 00:52:36.140
+const double ref b.
+
+00:52:36.140 --> 00:52:40.440
+The reason we do the const in the template
+
+00:52:40.440 --> 00:52:44.680
+is because we don't know what type T is going to be here.
+
+00:52:44.680 --> 00:52:51.240
+And so we use the const T ref in case it's a library type.
+
+00:52:51.240 --> 00:52:53.480
+It doesn't hurt it if it's a primitive type,
+
+00:52:53.480 --> 00:52:56.120
+although it's not as efficient as it could be.
+
+00:52:56.120 --> 00:53:02.120
+Now, a couple of problems with that.
+
+00:53:02.120 --> 00:53:04.760
+First, the compiler cannot read your mind.
+
+00:53:04.760 --> 00:53:10.680
+What if we said auto s equals smaller frog and flea?
+
+00:53:10.680 --> 00:53:13.960
+If we do this, the compiler is going
+
+00:53:13.960 --> 00:53:20.880
+to deduce type T as a character array instead of string.
+
+00:53:20.880 --> 00:53:23.920
+And the code actually will not work.
+
+00:53:23.920 --> 00:53:26.440
+So notice earlier-- so notice here
+
+00:53:26.440 --> 00:53:31.120
+I'm finding the smaller frog and flea, and it doesn't work.
+
+00:53:31.120 --> 00:53:34.440
+But here, I explicitly said, oh, I
+
+00:53:34.440 --> 00:53:36.960
+want to use string for that type.
+
+00:53:36.960 --> 00:53:39.200
+And it did work.
+
+00:53:39.200 --> 00:53:42.600
+So the compiler can't read your mind.
+
+00:53:42.600 --> 00:53:46.880
+The solution is to either explicitly instantiate it,
+
+00:53:46.880 --> 00:53:50.720
+or you can add an overload of the function.
+
+00:53:50.720 --> 00:53:55.140
+If you write an overloaded non-template function that
+
+00:53:55.140 --> 00:53:58.560
+exactly matches the arguments here,
+
+00:53:58.560 --> 00:54:02.840
+then this version will be used before the other version.
+
+00:54:04.800 --> 00:54:05.300
+OK.
+
+00:54:05.300 --> 00:54:08.160
+A couple more problems with deduction.
+
+00:54:08.160 --> 00:54:10.120
+What happens when we do this?
+
+00:54:10.120 --> 00:54:17.120
+Auto n equals smaller 3.46 and 4.
+
+00:54:17.120 --> 00:54:19.680
+Well, that doesn't even compile.
+
+00:54:19.680 --> 00:54:23.960
+T is supposed to be a double, like argument 1,
+
+00:54:23.960 --> 00:54:26.120
+or an n, like argument 2.
+
+00:54:26.120 --> 00:54:28.160
+And remember, let's look back at the template.
+
+00:54:29.080 --> 00:54:31.960
+We have only one type name here, but two arguments
+
+00:54:31.960 --> 00:54:35.160
+that are type T. So it's going to look at this one and say,
+
+00:54:35.160 --> 00:54:37.160
+oh, no, it's a double.
+
+00:54:37.160 --> 00:54:38.840
+Oh, no, it's an int.
+
+00:54:38.840 --> 00:54:40.200
+It doesn't compile.
+
+00:54:40.200 --> 00:54:41.000
+It doesn't compile.
+
+00:54:41.000 --> 00:54:45.660
+OK.
+
+00:54:45.660 --> 00:54:50.040
+So how do we fix that?
+
+00:54:50.040 --> 00:54:53.120
+Well, you don't have to make every argument the same type
+
+00:54:53.120 --> 00:54:54.120
+parameter.
+
+00:54:54.120 --> 00:54:56.160
+So let's say we have a double.
+
+00:54:56.160 --> 00:54:58.400
+We don't have to make every argument the same type
+
+00:54:58.400 --> 00:54:59.720
+parameter.
+
+00:54:59.720 --> 00:55:00.960
+So I could say template.
+
+00:55:00.960 --> 00:55:04.360
+I could create a type name named T, another type name named
+
+00:55:04.360 --> 00:55:09.760
+U. And in this case, when I called it here,
+
+00:55:09.760 --> 00:55:16.040
+A would be double, or T would be double, and U would be int.
+
+00:55:16.040 --> 00:55:19.080
+Now, which one will it return?
+
+00:55:19.080 --> 00:55:22.720
+Will it return an int or a double?
+
+00:55:22.720 --> 00:55:26.440
+This actually is a little bit problematic.
+
+00:55:26.440 --> 00:55:29.560
+The return type could be either T or U.
+
+00:55:29.560 --> 00:55:35.360
+Starting in C++ 17, we can put auto as the return type here,
+
+00:55:35.360 --> 00:55:39.120
+and it will allow compiler deduction.
+
+00:55:39.120 --> 00:55:40.680
+If you look in your reader, you'll
+
+00:55:40.680 --> 00:55:46.000
+see a version that will work with C++ 11 and 14.
+
+00:55:46.000 --> 00:55:49.440
+This is called a trailing return type.
+
+00:55:49.440 --> 00:55:51.520
+However, this function probably has
+
+00:55:51.520 --> 00:55:58.600
+to decide either return an int or a double in this case.
+
+00:55:58.600 --> 00:56:02.040
+Because in fact, what's going to happen
+
+00:56:02.040 --> 00:56:05.960
+is to see if A is less than B. And if A is an int
+
+00:56:05.960 --> 00:56:11.560
+and B is a double, your computer cannot actually compute this
+
+00:56:11.560 --> 00:56:14.320
+without knowing which of those is a larger.
+
+00:56:14.320 --> 00:56:17.200
+So the larger type will always be the type
+
+00:56:17.200 --> 00:56:21.240
+that's returned in that case.
+
+00:56:21.240 --> 00:56:23.120
+OK, let's do a couple of exercises
+
+00:56:23.120 --> 00:56:28.800
+before we end up this lecture and our hour together.
+
+00:56:28.800 --> 00:56:36.960
+So let me go back to our lecture exercise.
+
+00:56:36.960 --> 00:56:39.160
+And these are some function templates
+
+00:56:39.160 --> 00:56:41.360
+from Purdue University.
+
+00:56:41.360 --> 00:56:46.280
+So we're going to write one function, exchange AB, which
+
+00:56:46.280 --> 00:56:48.760
+has two parameters of the same type.
+
+00:56:48.760 --> 00:56:51.960
+So we only need one template parameter.
+
+00:56:51.960 --> 00:56:54.640
+A function which is instantiated from exchange
+
+00:56:54.640 --> 00:56:58.120
+will exchange or swap these two parameters.
+
+00:56:58.120 --> 00:57:01.760
+And then multiples, sum, x, and n.
+
+00:57:01.760 --> 00:57:03.920
+The first type of parameters will
+
+00:57:03.920 --> 00:57:08.080
+have the type represented by the function template type
+
+00:57:08.080 --> 00:57:13.880
+parameter kind, or T. n will always be int.
+
+00:57:13.880 --> 00:57:15.720
+The return type's void.
+
+00:57:15.720 --> 00:57:18.040
+All parameters are passed by value,
+
+00:57:18.040 --> 00:57:21.200
+except for sum, which is passed by reference.
+
+00:57:21.200 --> 00:57:24.200
+A function instantiated from multiples
+
+00:57:24.200 --> 00:57:32.800
+will compute 1 plus x plus 2x plus 3x and so forth to nx.
+
+00:57:32.800 --> 00:57:35.200
+So let's go ahead and do that, although I don't remember
+
+00:57:35.200 --> 00:57:38.680
+exactly how to solve that.
+
+00:57:38.680 --> 00:57:40.160
+OK, so here's the first one.
+
+00:57:40.160 --> 00:57:47.600
+We're going to exchange A and B. So for the templates,
+
+00:57:47.600 --> 00:57:59.760
+we're going to write template type name T.
+
+00:57:59.760 --> 00:58:03.080
+Looks like exchange doesn't return anything.
+
+00:58:03.080 --> 00:58:17.320
+And so that's going to be T reference A and T reference B.
+
+00:58:17.320 --> 00:58:21.360
+We'll create a temporary T object.
+
+00:58:21.360 --> 00:58:24.800
+So T temp.
+
+00:58:24.800 --> 00:58:37.680
+We'll initialize it with A. We'll say A equals B.
+
+00:58:37.680 --> 00:58:40.960
+We'll say B equals temp.
+
+00:58:40.960 --> 00:58:45.720
+And now we've exchanged the two values.
+
+00:58:47.720 --> 00:58:50.800
+OK, so notice we can do it with ints.
+
+00:58:50.800 --> 00:58:52.480
+We can do it with doubles.
+
+00:58:52.480 --> 00:58:53.520
+We can do it with strings.
+
+00:58:53.520 --> 00:59:08.600
+OK, so sum-- OK, so that is going to take template type
+
+00:59:08.600 --> 00:59:11.280
+name.
+
+00:59:11.280 --> 00:59:13.240
+They want kind for the type here,
+
+00:59:13.240 --> 00:59:15.720
+I think, just to show you that you can use--
+
+00:59:15.720 --> 00:59:33.760
+you don't need to use T. Void and kind reference sum.
+
+00:59:37.920 --> 00:59:46.920
+And kind-- what was the second argument in that?
+
+00:59:46.920 --> 00:59:57.920
+x, kind reference x, or kind x, test by value, and int n.
+
+01:00:03.320 --> 01:00:12.880
+OK, so sum, let's set it to whatever value represents 0,
+
+01:00:12.880 --> 01:00:14.280
+or the empty value.
+
+01:00:14.280 --> 01:00:16.640
+For instance, if we wanted to sum strings,
+
+01:00:16.640 --> 01:00:18.040
+do they do strings here?
+
+01:00:18.040 --> 01:00:20.160
+No, they only do it with numbers,
+
+01:00:20.160 --> 01:00:23.320
+because the expression is going to be 1 over.
+
+01:00:23.320 --> 01:00:28.160
+So we're going to say sum equals 0.
+
+01:00:32.640 --> 01:00:33.640
+Or is it?
+
+01:00:33.640 --> 01:00:37.560
+Let's look at the expression.
+
+01:00:37.560 --> 01:00:44.960
+So sum equals 1 plus x.
+
+01:00:44.960 --> 01:00:55.480
+And it'll be converted to whatever type it is.
+
+01:00:55.480 --> 01:01:01.200
+And then it's going to be x plus 2x plus 3x.
+
+01:01:01.200 --> 01:01:16.480
+So write a loop for int i equals 1, so 1x, i less than
+
+01:01:16.480 --> 01:01:23.400
+or equal to n, because we want nx, i plus plus,
+
+01:01:23.400 --> 01:01:34.240
+sum equals sum plus i times x.
+
+01:01:34.240 --> 01:01:41.840
+And I think that's all we'll have to do.
+
+01:01:41.840 --> 01:01:44.480
+Down here it works, you can see, with doubles.
+
+01:01:44.480 --> 01:01:47.120
+And it works with ints.
+
+01:01:47.120 --> 01:01:48.120
+OK, let's try it.
+
+01:01:53.040 --> 01:01:54.360
+OK, so that worked.
+
+01:01:54.360 --> 01:01:56.920
+Here's swapping two ints, here's swapping two doubles,
+
+01:01:56.920 --> 01:01:59.080
+here's swapping two strings.
+
+01:01:59.080 --> 01:02:01.160
+Here is doing multiples with doubles,
+
+01:02:01.160 --> 01:02:03.720
+here's doing multiples with integers.
+
+01:02:03.720 --> 01:02:16.400
+All righty then, I believe that's all for today.
+
+01:02:16.400 --> 01:02:21.920
+And so we will see you in the next lecture in lecture 15.
+

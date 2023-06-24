@@ -1,0 +1,373 @@
+WEBVTT
+
+00:00.480 --> 00:06.720
+Our next challenge is to check whether a given string is a palindrome or not.
+
+00:07.560 --> 00:08.930
+So first of all, I'll explain.
+
+00:08.970 --> 00:10.470
+What does it mean by palindrome?
+
+00:11.190 --> 00:13.770
+So here a string is, madam.
+
+00:14.400 --> 00:20.970
+So if I reverse this, madam, like here, I will write down madam.
+
+00:21.210 --> 00:23.130
+Now, first, I will write last letter.
+
+00:23.530 --> 00:28.500
+Write this one, then this one A, then D, then a m.
+
+00:28.740 --> 00:30.150
+So it's the same word.
+
+00:30.570 --> 00:33.300
+So reversing a word is giving a same word.
+
+00:33.300 --> 00:36.000
+So then this word is called as palindrome.
+
+00:36.330 --> 00:36.960
+It's the same thing.
+
+00:37.470 --> 00:40.670
+So reverse of a word is same as original word.
+
+00:40.680 --> 00:43.050
+Then it is a palindrome word.
+
+00:43.650 --> 00:45.000
+There are many palindrome words.
+
+00:45.030 --> 00:46.260
+I'll write a few more.
+
+00:47.250 --> 00:50.140
+Little is a palindrome.
+
+00:50.160 --> 00:53.640
+This is name of some product or brand malayalam.
+
+00:54.660 --> 00:55.950
+Malayalam.
+
+00:56.130 --> 00:58.230
+This is a name of one language.
+
+00:58.230 --> 00:59.180
+Indian language.
+
+00:59.190 --> 00:59.980
+If you reverse.
+
+01:00.000 --> 01:01.020
+It's the same thing.
+
+01:01.690 --> 01:03.060
+Name of a person.
+
+01:04.090 --> 01:04.870
+Newton.
+
+01:05.860 --> 01:06.850
+Then reverse it.
+
+01:06.880 --> 01:07.840
+It's the same thing.
+
+01:08.610 --> 01:10.930
+So such words are called us palindrome.
+
+01:10.950 --> 01:14.970
+So we have to find all this, given the string is a palindrome or not.
+
+01:15.660 --> 01:17.910
+So for that, first of all, we should reverse it.
+
+01:18.840 --> 01:22.050
+So I will explain you the procedure, how it can be done.
+
+01:22.060 --> 01:24.420
+Then you have to write down the program by yourself.
+
+01:24.840 --> 01:28.580
+So the first thing, first step, this is a given string.
+
+01:28.590 --> 01:33.230
+Then we need one empty string in which we will reverse copy this string.
+
+01:33.240 --> 01:43.800
+So we should copy this letter first into this empty string, then a, then D, then a, then we have
+
+01:43.800 --> 01:48.570
+to reverse copy it and then also include null character at the end.
+
+01:49.170 --> 01:55.650
+So this is how from by scanning in this direction, you can copy these letters by scanning this array
+
+01:55.650 --> 01:57.510
+in this direction from left to right.
+
+01:57.780 --> 01:59.430
+So this is string is reversed.
+
+01:59.430 --> 02:00.750
+So it is reverse copied.
+
+02:01.260 --> 02:06.570
+Now you have to find out whether these two strings are same so you can compare two strings.
+
+02:06.990 --> 02:11.160
+So there are built in functions for comparing two strings.
+
+02:11.220 --> 02:13.980
+Otherwise you can compare letter by letter.
+
+02:13.980 --> 02:21.300
+And if any letter is found different from corresponding letter, you can just stop and say it's not
+
+02:21.300 --> 02:22.110
+a palindrome.
+
+02:22.320 --> 02:27.660
+Or if you have reached the end of the string for both main string and the reverse string, you have
+
+02:27.660 --> 02:29.340
+reached the null character for both.
+
+02:29.370 --> 02:31.620
+Then you can say they are palindromes.
+
+02:33.550 --> 02:38.830
+So I repeat quickly, first you have to copy this in reverse here and then compare if they are same
+
+02:38.830 --> 02:39.490
+or not.
+
+02:39.910 --> 02:41.250
+Now how to reverse copy.
+
+02:41.260 --> 02:44.050
+So first of all, you should know what is the length of the string.
+
+02:44.050 --> 02:48.970
+So for finding the length you have built in functions or you can find out the length by yourself also.
+
+02:49.210 --> 02:52.990
+So find out the length and the length of the string will be five.
+
+02:53.020 --> 02:56.500
+So you have to start copying the letters from index four onwards.
+
+02:56.500 --> 02:59.980
+Write whatever the length is, minus one onwards, up to zero.
+
+03:00.160 --> 03:03.970
+And here you can scan by taking a from left to right.
+
+03:03.970 --> 03:08.860
+And once you have reached the end here last letter, then also add slash zero.
+
+03:09.310 --> 03:12.820
+So find the length and copy the letters one by one.
+
+03:12.820 --> 03:20.080
+And this a string you can simply call compare function by passing a reverse of a string and it will
+
+03:20.080 --> 03:22.540
+return zero if they are equal.
+
+03:23.590 --> 03:27.130
+So that's all I have given enough idea for solving this problem.
+
+03:27.130 --> 03:29.980
+So you try to write the programme by yourself.
+
+03:30.070 --> 03:34.360
+So pause the video here and solve the programme by yourself.
+
+03:34.720 --> 03:39.220
+If you are unable to solve or if you want help, then you can continue watching this video.
+
+03:39.430 --> 03:43.210
+Now I will show you the programme for checking a string is a palindrome or not.
+
+03:43.690 --> 03:47.310
+Already I have taken a string containing a palindrome that is Madam.
+
+03:47.680 --> 03:53.740
+Now, for storing the reverse of it, I should declare a variable V I'll keep it empty.
+
+03:55.300 --> 04:00.680
+Now I should make sure that the capacity of this RV should be same as this star.
+
+04:00.700 --> 04:04.660
+So for that, I should change its size by calling this size.
+
+04:04.660 --> 04:07.480
+So first of all, I will find out what is the length of this one.
+
+04:08.200 --> 04:09.970
+So I will say end length.
+
+04:09.970 --> 04:12.670
+Assign struct length.
+
+04:13.510 --> 04:13.810
+Here.
+
+04:13.810 --> 04:14.950
+I'm getting a warning.
+
+04:15.100 --> 04:22.870
+So the reason is actually this lent function returns long end survival type cost it as integer and ticket.
+
+04:24.920 --> 04:30.860
+Now for RTV, I should say resize and make sure that the size is equal to land.
+
+04:30.860 --> 04:32.840
+That is same as the length of the str.
+
+04:36.840 --> 04:43.620
+Now I have to scan through this string that is reverse string for copying the content from STR and from
+
+04:43.650 --> 04:44.070
+STR.
+
+04:44.070 --> 04:45.930
+I'll be copying from right hand side.
+
+04:46.380 --> 04:52.170
+So for scanning through I will take a follow an integer I assign zero.
+
+04:52.200 --> 05:00.810
+This is for V and also I need J that is J starts from length minus one and I should continue scanning
+
+05:00.810 --> 05:03.810
+of reverse as long as I is less than length.
+
+05:03.810 --> 05:11.280
+So I less than Len and I should increment and j should be decrement at.
+
+05:12.320 --> 05:15.110
+Not while doing so in reverse of I.
+
+05:15.440 --> 05:18.740
+I should copy the characters from str of J.
+
+05:20.600 --> 05:26.180
+Now this look will reverse copy all the contents of STR to arrive.
+
+05:26.870 --> 05:34.400
+Then at the end I should take a review of length equal to null character.
+
+05:34.430 --> 05:35.900
+That's String Terminator.
+
+05:36.350 --> 05:42.320
+Now before checking palindrome or not, I will see out V and see whether it has reversed or not.
+
+05:45.630 --> 05:51.900
+Yes, it has reversed a string, so I got the same as reverse of str.
+
+05:53.600 --> 05:54.260
+Now.
+
+05:54.470 --> 06:01.430
+As for displaying, I will compare two strains that is RTV is same as STR or not.
+
+06:01.460 --> 06:08.090
+So here I will say str dot compare with RB if you remember compare function.
+
+06:08.090 --> 06:09.950
+I have explained them in one of the video.
+
+06:11.060 --> 06:13.550
+It will return zero if they are equal.
+
+06:13.580 --> 06:17.150
+If it is returning zero, then I will say palindrome.
+
+06:19.320 --> 06:20.490
+Right then.
+
+06:20.490 --> 06:24.510
+And I'll also else I will say not a palindrome.
+
+06:26.220 --> 06:27.450
+Not a palindrome.
+
+06:30.150 --> 06:31.000
+And enter.
+
+06:31.680 --> 06:33.060
+Let us run and see.
+
+06:35.730 --> 06:36.360
+Yes.
+
+06:36.360 --> 06:37.830
+It is showing palindrome.
+
+06:38.280 --> 06:40.230
+Madam is a palindrome.
+
+06:41.070 --> 06:41.820
+That's all.
+
+06:42.150 --> 06:43.410
+Just, like, perfect.
+
+06:43.440 --> 06:44.910
+Let me try a few more.
+
+06:45.870 --> 06:46.620
+What?
+
+06:49.640 --> 06:50.720
+Malayalam.
+
+06:52.880 --> 06:53.480
+Yes.
+
+06:53.480 --> 06:55.790
+It's a palindrome holiday.
+
+06:58.210 --> 07:01.720
+It's not a palindrome, so it's working perfectly.
+
+07:01.870 --> 07:03.200
+I'll give you one more challenge.
+
+07:03.220 --> 07:08.550
+I will take one capital letter and the rest of them small letters.
+
+07:08.560 --> 07:10.030
+Let us see what it will say.
+
+07:11.730 --> 07:12.940
+Not a palindrome.
+
+07:12.960 --> 07:16.110
+Actually, it's a palindrome, but the first letter is capital.
+
+07:16.140 --> 07:21.030
+So when you reverse, it will become a a capital M.
+
+07:21.800 --> 07:23.660
+So that's why these two are not same.
+
+07:24.140 --> 07:26.200
+Now, how to handle this situation?
+
+07:26.210 --> 07:27.430
+You take care of it.
+
+07:27.440 --> 07:29.090
+So there's a new challenge for you.
+
+07:30.220 --> 07:33.190
+Let's all in this video practice this program.

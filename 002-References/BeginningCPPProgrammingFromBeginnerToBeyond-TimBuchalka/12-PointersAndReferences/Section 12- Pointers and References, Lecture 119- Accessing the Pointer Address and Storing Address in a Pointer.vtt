@@ -1,0 +1,1202 @@
+WEBVTT
+
+00:00:05.410 --> 00:00:08.710
+In this video, we'll learn how
+to access the address or location
+
+00:00:08.710 --> 00:00:10.070
+and memory of any variable.
+
+00:00:10.820 --> 00:00:13.010
+We'll also learn how to
+initialize a pointer variable
+
+00:00:13.010 --> 00:00:14.450
+to point to another variable.
+
+00:00:15.480 --> 00:00:19.290
+In c++, we can use the address
+operator, which is the ampersand
+
+00:00:19.300 --> 00:00:20.720
+symbol to the left side of an operand.
+
+00:00:20.720 --> 00:00:24.900
+The address operator is a unary
+operator, and when used in an
+
+00:00:24.900 --> 00:00:27.500
+expression, it evaluates to
+the address of its operand.
+
+00:00:28.630 --> 00:00:31.959
+Of course, the operand must have
+an l value, so it can't be a
+
+00:00:31.960 --> 00:00:35.260
+constant or an expression that
+evaluates to temporary values.
+
+00:00:36.250 --> 00:00:39.030
+In the example code, we
+have a variable num which
+
+00:00:39.030 --> 00:00:41.699
+is a simple integer variable
+that's been initialized to 10.
+
+00:00:42.500 --> 00:00:44.610
+If we display num, then
+we're displaying the
+
+00:00:44.610 --> 00:00:46.430
+contents of num which is 10.
+
+00:00:47.300 --> 00:00:50.580
+If we display the size of num,
+then we're displaying how much
+
+00:00:50.580 --> 00:00:52.279
+storage is allocated by num.
+
+00:00:52.660 --> 00:00:54.680
+In other words, how much
+storage do we need on my
+
+00:00:54.680 --> 00:00:56.489
+machine to store an integer.
+
+00:00:56.710 --> 00:00:58.230
+In this case, it's 4 bytes.
+
+00:00:59.250 --> 00:01:02.860
+Finally, if we display the
+address of num using the address
+
+00:01:02.860 --> 00:01:06.590
+operator, we get a hexadecimal
+number that represents the location
+
+00:01:06.610 --> 00:01:08.250
+in memory of the variable num.
+
+00:01:08.830 --> 00:01:11.229
+A hexadecimal number is
+just a base 16 number.
+
+00:01:11.830 --> 00:01:12.750
+So far so good.
+
+00:01:12.940 --> 00:01:16.730
+You can see that the address operator
+evaluates to exactly what we expect,
+
+00:01:16.780 --> 00:01:18.330
+the address of the variable num.
+
+00:01:19.460 --> 00:01:22.310
+Now let's see these same
+statements with pointer variables.
+
+00:01:24.340 --> 00:01:28.000
+In the first line, we declare p to
+be a pointer to an integer variable.
+
+00:01:28.480 --> 00:01:32.270
+So that means that p can hold values
+that are addresses of integers.
+
+00:01:32.850 --> 00:01:35.640
+Also notice that we didn't
+initialize the pointer p.
+
+00:01:36.600 --> 00:01:39.520
+In the first output statement,
+we're displaying the value of p.
+
+00:01:40.030 --> 00:01:42.560
+The value of p is the
+value that's stored in p.
+
+00:01:42.750 --> 00:01:46.649
+Since we didn't initialize p, we
+have garbage data in p and you
+
+00:01:46.650 --> 00:01:48.229
+can see that address displayed.
+
+00:01:49.340 --> 00:01:51.960
+In the second output statement,
+we're displaying the address
+
+00:01:51.960 --> 00:01:55.160
+of the variable p, since we're
+using the address operator.
+
+00:01:55.680 --> 00:01:58.340
+And in the third statement,
+we display the size of p
+
+00:01:58.340 --> 00:02:00.039
+using the sizeof operator.
+
+00:02:00.889 --> 00:02:04.479
+On my machine, this displays
+a 4, which means that p
+
+00:02:04.490 --> 00:02:06.069
+is 4 bytes of storage.
+
+00:02:06.330 --> 00:02:10.520
+Since p holds addresses, this also
+means that addresses on my machine
+
+00:02:10.810 --> 00:02:12.429
+can be stored in four bytes.
+
+00:02:13.180 --> 00:02:16.130
+On the next line, we
+assign null pointer to p.
+
+00:02:16.590 --> 00:02:19.450
+This sets p to 0, which
+means it's pointing nowhere.
+
+00:02:20.370 --> 00:02:22.809
+Since p is a variable,
+we can change its value.
+
+00:02:23.059 --> 00:02:25.450
+This seems obvious, but it's
+important since when we talk
+
+00:02:25.460 --> 00:02:28.450
+about references in a bit, you'll
+see that you can't change your
+
+00:02:28.450 --> 00:02:30.110
+reference once it's initialized.
+
+00:02:30.940 --> 00:02:34.639
+Finally, in the last output statement,
+we display the value of p again.
+
+00:02:34.790 --> 00:02:37.600
+And this time, we get 0
+because we zeroed it out.
+
+00:02:38.540 --> 00:02:41.570
+I know these examples seem pretty
+simple, but please try them out
+
+00:02:41.570 --> 00:02:44.630
+on your machine and be sure you
+understand these fundamental concepts
+
+00:02:44.820 --> 00:02:46.480
+since everything else builds on them.
+
+00:02:48.190 --> 00:02:50.790
+Here you can see that I'm
+defining five pointer variables
+
+00:02:50.820 --> 00:02:54.540
+p1 through p5 and initialize
+them all to null pointer.
+
+00:02:55.370 --> 00:02:57.690
+Each pointer variable
+points to a different type.
+
+00:02:58.020 --> 00:03:01.230
+So each can hold addresses of
+variables of the type they point to.
+
+00:03:02.170 --> 00:03:05.050
+If we displayed the size of
+each of these pointer variables,
+
+00:03:05.050 --> 00:03:06.390
+what do you think would display?
+
+00:03:07.250 --> 00:03:11.529
+Well, the size of p1 be less than
+the size of p4 because p1 points to
+
+00:03:11.529 --> 00:03:13.629
+an int and p4 to a vector object.
+
+00:03:14.290 --> 00:03:16.829
+If you set 4 for each
+pointer, you'd be right.
+
+00:03:17.379 --> 00:03:20.340
+Based on the previous example,
+all pointers in my program
+
+00:03:20.340 --> 00:03:23.270
+will hold values that can be
+represented in four bytes.
+
+00:03:24.010 --> 00:03:26.620
+An address of an integer and
+an address of a vector and the
+
+00:03:26.620 --> 00:03:30.100
+address of a string all have
+size of four on my machine.
+
+00:03:31.370 --> 00:03:34.650
+There's a big difference between the
+size of the pointer variable itself
+
+00:03:34.670 --> 00:03:36.289
+and the size of what it points to.
+
+00:03:36.790 --> 00:03:40.100
+Again, take your time and make sure
+you understand the difference between
+
+00:03:40.100 --> 00:03:41.770
+a pointer and what it points to.
+
+00:03:42.280 --> 00:03:45.050
+It's very common to think of
+a pointer as what it points
+
+00:03:45.050 --> 00:03:46.500
+to and that's a mistake.
+
+00:03:47.000 --> 00:03:48.880
+A pointer is just a simple variable.
+
+00:03:49.070 --> 00:03:52.370
+What it points to could be simple
+or a very complex structure.
+
+00:03:54.840 --> 00:03:58.809
+When we declare pointers, as we've
+done so far, they're typed pointers.
+
+00:03:59.190 --> 00:04:03.030
+This means that we explicitly declare
+the pointer variable to point to
+
+00:04:03.030 --> 00:04:04.780
+a variable of a specific type.
+
+00:04:05.929 --> 00:04:09.190
+In this example, we're declaring
+an integer score and initializing
+
+00:04:09.190 --> 00:04:13.790
+it to 10 and a double high temp
+and initializing it to 100.7.
+
+00:04:14.840 --> 00:04:17.980
+Then we declare score pointer
+as a pointer to an integer.
+
+00:04:18.860 --> 00:04:19.849
+So far so good.
+
+00:04:20.269 --> 00:04:23.179
+Now we assign the address
+of score to score pointer.
+
+00:04:23.450 --> 00:04:26.869
+The compiler is fine with that
+since score pointer holds addresses
+
+00:04:26.870 --> 00:04:28.750
+of integers and scores an integer.
+
+00:04:29.430 --> 00:04:31.230
+But look at the last
+assignment statement.
+
+00:04:31.800 --> 00:04:35.260
+In this case, we're assigning the
+address of high temp to score pointer.
+
+00:04:36.080 --> 00:04:38.740
+The compiler won't let you do
+this, you'll get a compiler error.
+
+00:04:39.570 --> 00:04:42.720
+You told the compiler that score
+pointer holds addresses of integers
+
+00:04:43.080 --> 00:04:47.249
+but you're asking it to store the
+address of a double, both addresses
+
+00:04:47.250 --> 00:04:50.979
+are four bytes long, so the issue
+isn't the size won't fit, the issue
+
+00:04:50.980 --> 00:04:52.590
+is that there's a type conflict.
+
+00:04:53.350 --> 00:04:56.560
+In c++, we can also have
+untyped void pointers.
+
+00:04:56.730 --> 00:04:59.419
+I'm not going to talk about those
+but they aren't used that much
+
+00:04:59.420 --> 00:05:01.520
+in c++., they're more used in c.
+
+00:05:03.470 --> 00:05:06.920
+Great, so let's review a very simple
+concept but a very important concept.
+
+00:05:07.470 --> 00:05:11.080
+Pointers are variables, so they
+can change pointers can be null
+
+00:05:11.380 --> 00:05:13.280
+and pointers can be uninitialized.
+
+00:05:13.570 --> 00:05:15.599
+That's not usually a good
+idea, but it can happen.
+
+00:05:16.710 --> 00:05:19.300
+The example code shows
+all these options.
+
+00:05:19.630 --> 00:05:22.229
+First, we declare two double
+variables, high and low
+
+00:05:22.230 --> 00:05:23.819
+temp, and we initialize them.
+
+00:05:25.109 --> 00:05:27.599
+Then we declare temp pointer
+as a pointer to a double
+
+00:05:27.600 --> 00:05:28.934
+and we don't initialize it.
+
+00:05:28.950 --> 00:05:30.330
+So it's pointing anywhere.
+
+00:05:31.240 --> 00:05:35.250
+Then we assign the address of high
+temp to 10 pointer, and then we change
+
+00:05:35.250 --> 00:05:38.969
+temp pointer to point somewhere else
+by assigning the address of low temp.
+
+00:05:39.950 --> 00:05:43.250
+Finally, with null out 10 pointer
+by assigning null pointer.
+
+00:05:44.390 --> 00:05:47.150
+We'll come back to these pointer
+properties later when we compare
+
+00:05:47.150 --> 00:05:50.430
+pointers and references, and we'll
+go over some guidelines as when
+
+00:05:50.430 --> 00:05:52.160
+to use pointers versus reference.
+
+00:05:52.570 --> 00:05:56.450
+Let's head over to the IDE now and
+go over these examples in live code.
+
+00:05:56.710 --> 00:05:59.349
+And then in the next video, we'll
+learn how to follow a pointer and get
+
+00:05:59.350 --> 00:06:00.770
+to the data that it's pointing to.
+
+00:06:02.350 --> 00:06:06.070
+Okay, so I'm in the CodeLite IDE,
+and I'm in the section 12 workspace
+
+00:06:06.570 --> 00:06:08.360
+in these simple pointers project.
+
+00:06:09.460 --> 00:06:11.829
+In this project, we're just
+going to go over some real simple
+
+00:06:11.830 --> 00:06:15.159
+examples of declaring pointers,
+looking at the size of pointers,
+
+00:06:15.480 --> 00:06:17.729
+looking at addresses, just so
+you get a really good feel of
+
+00:06:17.729 --> 00:06:19.060
+about what's going on here.
+
+00:06:19.570 --> 00:06:23.500
+First thing you'll notice here is that
+we're declaring num to be an integer,
+
+00:06:23.500 --> 00:06:24.780
+and we're initializing it to 10.
+
+00:06:24.800 --> 00:06:27.280
+That's just a plain
+old integer variable.
+
+00:06:27.280 --> 00:06:28.910
+There's no pointer
+involved here at all.
+
+00:06:29.120 --> 00:06:32.250
+So in this case, I've got a
+variable it's called num, and
+
+00:06:32.250 --> 00:06:33.560
+it exists somewhere in memory.
+
+00:06:33.889 --> 00:06:35.260
+Let's say it's somewhere
+in memory here.
+
+00:06:35.549 --> 00:06:39.310
+Obviously, that memory has to have a
+location, right, we need an address.
+
+00:06:39.540 --> 00:06:41.639
+So let's just say that
+the address is a 1000.
+
+00:06:42.040 --> 00:06:43.660
+I'll use a thousand in these examples.
+
+00:06:43.660 --> 00:06:45.680
+Obviously, it won't be a
+1000 when we display it.
+
+00:06:45.680 --> 00:06:47.370
+But you'll -- it's easier
+to understand this way.
+
+00:06:48.410 --> 00:06:51.929
+So right now it's got a 10 in it
+because we've initialized it, so
+
+00:06:51.929 --> 00:06:53.360
+that's the value of num is 10.
+
+00:06:53.360 --> 00:06:56.920
+So in this case here, i print
+out the value of num is num,
+
+00:06:57.210 --> 00:06:58.540
+which will display a 10.
+
+00:06:59.540 --> 00:07:01.700
+Then I'll ask what's the size of num?
+
+00:07:01.710 --> 00:07:04.539
+What is the size of an
+integer on my machine?
+
+00:07:05.179 --> 00:07:07.609
+This may be different on your
+machine, but on my machine
+
+00:07:07.610 --> 00:07:09.040
+an integer is 4 bytes.
+
+00:07:10.799 --> 00:07:13.430
+And then at the end here, we'll
+say what is the address of num?
+
+00:07:13.430 --> 00:07:16.390
+And this is where the address
+operator comes in, that ampersand
+
+00:07:16.880 --> 00:07:18.460
+right before the variable name.
+
+00:07:19.090 --> 00:07:21.759
+This evaluates to the
+location and memory or the
+
+00:07:21.790 --> 00:07:23.559
+address of that variable.
+
+00:07:23.900 --> 00:07:26.089
+In this case, it would be a
+1000, so it would print the 1000.
+
+00:07:26.440 --> 00:07:28.709
+But obviously, it will print
+something different when I
+
+00:07:28.709 --> 00:07:29.700
+actually run the program.
+
+00:07:29.869 --> 00:07:31.970
+So let's take a look at
+the output from here.
+
+00:07:35.390 --> 00:07:36.539
+Okay, so here's the output.
+
+00:07:36.540 --> 00:07:38.440
+I'll just put this side by
+side, so we can read it.
+
+00:07:38.940 --> 00:07:41.239
+The value of num is 10 that's
+exactly what we expected.
+
+00:07:41.509 --> 00:07:44.230
+And I knew that the size of an
+integer on my machine is 4, on
+
+00:07:44.230 --> 00:07:46.420
+yours it might be 8, it might be 4.
+
+00:07:47.210 --> 00:07:51.390
+And then the address of num is a
+hexadecimal number, so this is the way
+
+00:07:51.390 --> 00:07:53.100
+that addresses are represented in c++.
+
+00:07:53.130 --> 00:07:56.659
+A hex number is just
+a number to base 16.
+
+00:07:57.270 --> 00:08:00.410
+So that's the address of
+that integer variable.
+
+00:08:01.240 --> 00:08:03.399
+Okay, so hopefully, this makes sense.
+
+00:08:03.410 --> 00:08:07.239
+This is the real foundation
+to understanding pointers and
+
+00:08:07.370 --> 00:08:10.520
+is understanding locations
+or addresses of variables, so
+
+00:08:10.760 --> 00:08:11.820
+hopefully this makes sense.
+
+00:08:11.830 --> 00:08:13.320
+So let me clear this out.
+
+00:08:13.360 --> 00:08:15.460
+And then let's do this
+next example here.
+
+00:08:16.540 --> 00:08:20.829
+Here's where we're actually
+declaring a pointer, and we're
+
+00:08:20.830 --> 00:08:22.669
+doing that right here on line 17.
+
+00:08:23.549 --> 00:08:26.610
+We're declaring p to be
+a pointer to an integer.
+
+00:08:26.620 --> 00:08:28.229
+Remember, you read these
+from right to left.
+
+00:08:28.230 --> 00:08:30.430
+So p is a pointer to an integer.
+
+00:08:31.510 --> 00:08:33.260
+What is p, it's a variable.
+
+00:08:33.330 --> 00:08:34.560
+So here's p.
+
+00:08:35.480 --> 00:08:38.839
+It's got storage associated
+with it, and it's got a
+
+00:08:38.839 --> 00:08:40.349
+location associated with it.
+
+00:08:40.669 --> 00:08:43.299
+Let's say that the address
+of p is 2000 this time.
+
+00:08:45.170 --> 00:08:47.870
+What's in p right now,
+I never initialized it.
+
+00:08:47.880 --> 00:08:49.490
+So there's garbage in here.
+
+00:08:49.770 --> 00:08:51.610
+There's a random bit pattern here.
+
+00:08:52.050 --> 00:08:55.339
+And as far as c++ is concerned,
+that random bit pattern is
+
+00:08:55.340 --> 00:08:58.219
+an address, right, because
+pointers hold addresses.
+
+00:08:58.219 --> 00:09:03.510
+So this guy, right now, is
+pointing somewhere who knows where.
+
+00:09:04.000 --> 00:09:05.920
+But it's definitely
+pointing somewhere.
+
+00:09:07.310 --> 00:09:11.049
+So what's the value of p, whatever
+that bit pattern is, we're
+
+00:09:11.050 --> 00:09:12.370
+going get garbage right here.
+
+00:09:13.540 --> 00:09:16.550
+And you can see that the trouble
+or the danger of following that
+
+00:09:16.550 --> 00:09:19.900
+pointer and putting something in
+this address here that could be
+
+00:09:19.900 --> 00:09:22.439
+something pretty important on your
+machine and you just wiped it out.
+
+00:09:22.450 --> 00:09:24.240
+Hopefully, you'll get a
+crash, and you can fix it.
+
+00:09:24.780 --> 00:09:26.710
+Okay, so what's the address of p.
+
+00:09:26.710 --> 00:09:29.319
+Well, the address of p is the
+location where this pointer
+
+00:09:29.320 --> 00:09:31.100
+is stored, in this case 2000.
+
+00:09:32.570 --> 00:09:34.479
+And then what's the size of p?
+
+00:09:35.160 --> 00:09:39.930
+How big or how much storage do I need
+to represent a pointer on my machine?
+
+00:09:40.050 --> 00:09:42.560
+Well, on my machine, it
+happens to be 4 bytes.
+
+00:09:42.840 --> 00:09:44.709
+Again, yours it could be different.
+
+00:09:45.380 --> 00:09:48.339
+So this will print out some
+garbage memory address.
+
+00:09:48.599 --> 00:09:51.870
+Then it'll print out the address
+where this variable is stored
+
+00:09:52.129 --> 00:09:53.464
+and then it should print out a 4.
+
+00:09:53.650 --> 00:09:54.900
+So let's give that a shot.
+
+00:09:58.260 --> 00:10:00.310
+And here you go, I'll
+move it over here as well.
+
+00:10:01.730 --> 00:10:04.119
+The value of p is,
+there's the hex address.
+
+00:10:04.130 --> 00:10:05.640
+That's the garbage address.
+
+00:10:06.559 --> 00:10:10.280
+Okay, then the address of p is at
+this location right here ends ending
+
+00:10:10.280 --> 00:10:13.170
+at 18, and the size of p is 4.
+
+00:10:13.969 --> 00:10:16.870
+Now on line 22, I
+nulled out the pointer.
+
+00:10:16.870 --> 00:10:18.600
+I said p equals null pointer.
+
+00:10:19.160 --> 00:10:21.010
+Null pointer is
+basically addressed to 0.
+
+00:10:21.010 --> 00:10:22.560
+So you're just zeroing
+out the pointer.
+
+00:10:22.870 --> 00:10:26.880
+So if I print out now the value of
+p, I should get back a 0 and I do.
+
+00:10:27.480 --> 00:10:30.199
+What we're doing here is we're
+making this pointer point nowhere,
+
+00:10:30.219 --> 00:10:31.689
+which is real, real important.
+
+00:10:32.800 --> 00:10:34.920
+Okay, so let's do a few more examples.
+
+00:10:35.370 --> 00:10:41.409
+In this case, I'm declaring
+5 pointers, p1 through p5,
+
+00:10:41.559 --> 00:10:42.900
+just like I did in the slides.
+
+00:10:43.009 --> 00:10:45.399
+And all of these pointers are
+pointing to different types.
+
+00:10:45.400 --> 00:10:47.279
+Okay, so and they're all
+nulled out right now.
+
+00:10:47.299 --> 00:10:53.110
+So in the case of p1, p1 has
+stored in memory obviously, right.
+
+00:10:53.110 --> 00:10:55.420
+We need to allocate
+storage for that variable.
+
+00:10:55.920 --> 00:10:57.459
+Right now, it's null.
+
+00:10:57.469 --> 00:11:00.050
+So it's basically pointing nowhere.
+
+00:11:01.290 --> 00:11:06.620
+P2 is also a pointer, and
+we're allocating space for it.
+
+00:11:06.650 --> 00:11:07.719
+It's pointing nowhere.
+
+00:11:08.490 --> 00:11:10.959
+Eventually, P1 will
+point to an integer.
+
+00:11:10.970 --> 00:11:12.850
+P2 will point to a double.
+
+00:11:13.240 --> 00:11:15.399
+P3 will point to unsigned long long.
+
+00:11:15.400 --> 00:11:16.569
+And p4 to a vector.
+
+00:11:16.570 --> 00:11:17.690
+And p5 to a string.
+
+00:11:17.960 --> 00:11:21.939
+So what they're pointing to
+is very different from what.
+
+00:11:21.940 --> 00:11:25.659
+They are they're just pointer
+variables, real primitive types.
+
+00:11:26.109 --> 00:11:28.740
+In this case, what is the size of p1?
+
+00:11:28.740 --> 00:11:33.240
+How much storage do I need to
+represent the address of an integer?
+
+00:11:33.540 --> 00:11:35.540
+It turns out it's 4 bytes.
+
+00:11:36.099 --> 00:11:37.680
+What's the size of p2?
+
+00:11:38.170 --> 00:11:41.310
+How much storage do I need to
+represent the address of a double?
+
+00:11:41.780 --> 00:11:42.960
+Again, it's 4 bytes.
+
+00:11:43.330 --> 00:11:49.220
+On my machine 4 bytes, and I can
+represent any address of any variable.
+
+00:11:49.440 --> 00:11:52.980
+So what you would expect here
+is to print 4 all the way down.
+
+00:11:54.270 --> 00:11:55.580
+Okay, now this is important.
+
+00:11:55.580 --> 00:11:57.670
+It's really important to understand
+the difference between the
+
+00:11:57.670 --> 00:11:59.280
+pointer and what it's pointing to.
+
+00:12:00.400 --> 00:12:01.449
+Let's say we've got p1.
+
+00:12:02.340 --> 00:12:04.850
+Eventually, p1 is going to
+point to an integer, right.
+
+00:12:04.880 --> 00:12:05.920
+That's the whole idea.
+
+00:12:06.830 --> 00:12:11.449
+And p2 will point to a double, so
+we'll have much more storage here.
+
+00:12:12.820 --> 00:12:16.539
+And let's say p4 is over here.
+
+00:12:16.930 --> 00:12:20.199
+P4 will eventually point to a
+vector of string objects so it
+
+00:12:20.200 --> 00:12:24.420
+could be pointing to a vector of
+string objects where this could
+
+00:12:24.430 --> 00:12:30.130
+be Larry Moe and Curly, where
+these guys are all string objects.
+
+00:12:30.330 --> 00:12:33.339
+So you can see the
+pointer itself is simple.
+
+00:12:33.559 --> 00:12:35.069
+The pointer itself is simple.
+
+00:12:35.070 --> 00:12:36.429
+The pointer itself is simple.
+
+00:12:36.430 --> 00:12:37.550
+They're all really simple.
+
+00:12:37.770 --> 00:12:40.920
+What they point to could be very
+simple or it could be pretty
+
+00:12:40.920 --> 00:12:42.390
+complex as you see right here.
+
+00:12:43.730 --> 00:12:46.050
+Okay, so make sure you understand
+the difference between the
+
+00:12:46.050 --> 00:12:49.050
+pointer and what it points
+to, it's really critical.
+
+00:12:49.410 --> 00:12:52.660
+So in this example, if I
+run it, I expect to get
+
+00:12:52.660 --> 00:12:53.969
+4 straight down the line.
+
+00:12:55.119 --> 00:12:58.090
+And there you go, size of p1
+is 4 all the way down the line
+
+00:12:58.090 --> 00:13:01.830
+because all I need is 4 bytes to
+represent any address on my machine.
+
+00:13:02.889 --> 00:13:04.710
+Again, this is very machine-specific.
+
+00:13:04.710 --> 00:13:06.189
+You might have 8 on your machine.
+
+00:13:07.620 --> 00:13:10.209
+Okay, so now let's go through
+one more little example here.
+
+00:13:11.719 --> 00:13:13.890
+All right, so let's walk through
+this before we even run it.
+
+00:13:14.450 --> 00:13:18.820
+In this case, what have I got
+I've got score as an integer,
+
+00:13:18.980 --> 00:13:20.380
+and I'm initializing it to 10.
+
+00:13:20.440 --> 00:13:21.680
+Okay, let's do that over here.
+
+00:13:22.040 --> 00:13:26.670
+Here's score, it's an integer
+and I put a 10 in there.
+
+00:13:27.349 --> 00:13:30.780
+Let's assume that that
+address is a 1000.
+
+00:13:30.790 --> 00:13:32.020
+That's where score lives.
+
+00:13:33.490 --> 00:13:35.940
+Again, it'll be different
+on your machine, for sure.
+
+00:13:35.940 --> 00:13:37.210
+I'm just making that thousand up.
+
+00:13:37.620 --> 00:13:40.079
+Then I've got a double
+called high temperature.
+
+00:13:40.080 --> 00:13:41.939
+Obviously, I need more
+storage for double, right.
+
+00:13:42.410 --> 00:13:43.790
+And this is called high temp.
+
+00:13:45.830 --> 00:13:48.379
+And right now i have a 100.7 in there.
+
+00:13:49.580 --> 00:13:52.010
+And let's say that this
+is an address 2000.
+
+00:13:52.750 --> 00:13:55.579
+Okay, so those are the
+addresses for those variables.
+
+00:13:56.720 --> 00:13:57.740
+Now here's my pointer.
+
+00:13:57.830 --> 00:13:59.670
+It's called score pointer.
+
+00:14:03.120 --> 00:14:05.089
+It's got storage associated with it.
+
+00:14:05.150 --> 00:14:08.210
+Right now, I've nulled it
+out so it's pointing nowhere.
+
+00:14:10.100 --> 00:14:11.210
+So far so good.
+
+00:14:12.140 --> 00:14:13.280
+Now this is what I'm doing here.
+
+00:14:13.290 --> 00:14:16.620
+I'm saying score pointer is
+equal to the address of score.
+
+00:14:16.620 --> 00:14:19.069
+I'm initializing that pointer
+to point somewhere now.
+
+00:14:19.889 --> 00:14:21.370
+What's the address of score?
+
+00:14:21.860 --> 00:14:23.320
+It's right here, 1000.
+
+00:14:24.309 --> 00:14:26.100
+So I'm going to put a 1000 in here.
+
+00:14:26.120 --> 00:14:27.329
+I'm not putting the 10 in here.
+
+00:14:27.330 --> 00:14:28.820
+I'm putting the 1000 in here.
+
+00:14:29.380 --> 00:14:30.610
+That's my pointer.
+
+00:14:31.330 --> 00:14:35.090
+So now score pointer is pointing
+to an integer because it holds
+
+00:14:35.090 --> 00:14:36.540
+the address of an integer.
+
+00:14:37.139 --> 00:14:39.389
+So score pointer is pointing to score.
+
+00:14:39.400 --> 00:14:40.819
+That's what we're doing right here.
+
+00:14:41.699 --> 00:14:43.950
+So now let's display
+what's the value of score?
+
+00:14:43.950 --> 00:14:46.359
+Well, the value of score
+is 10, right, right here.
+
+00:14:46.770 --> 00:14:48.040
+So this should display a 10.
+
+00:14:48.700 --> 00:14:50.140
+What's the address of score?
+
+00:14:50.370 --> 00:14:54.660
+In this example, it's a 100.
+
+00:14:54.660 --> 00:14:56.150
+And what's the value
+of the score pointer?
+
+00:14:57.179 --> 00:14:58.100
+A 1000.
+
+00:14:59.000 --> 00:15:02.600
+And so when we run this now, we're
+definitely going to get a 10 here.
+
+00:15:02.660 --> 00:15:04.620
+And we're going to get
+obviously not a 1000 here.
+
+00:15:04.620 --> 00:15:07.689
+But what's important is that those
+two numbers will be the same, they
+
+00:15:07.690 --> 00:15:11.669
+have to be the same because score
+pointer is pointing to score and
+
+00:15:11.670 --> 00:15:14.230
+score has an address, which is
+the one that's in score pointer.
+
+00:15:14.400 --> 00:15:16.780
+Okay, so when we run this,
+we're expecting, as I said,
+
+00:15:16.780 --> 00:15:19.089
+a 10 and then two memory
+addresses that are the same.
+
+00:15:19.340 --> 00:15:20.530
+So let's give that a try.
+
+00:15:22.620 --> 00:15:25.540
+And this is where we're at, the
+value of score is 10, and then the
+
+00:15:25.540 --> 00:15:30.570
+address of score is, we can see here
+ending in F0, value score pointer F0.
+
+00:15:30.570 --> 00:15:35.400
+So these are the exact same address,
+which is exactly what we expected.
+
+00:15:36.500 --> 00:15:40.590
+And then this last little compiler
+error here, let me show you that so
+
+00:15:40.590 --> 00:15:43.689
+that you can see the compiler and what
+it looks like in case you run into it.
+
+00:15:45.530 --> 00:15:47.230
+This is a pretty common mistake.
+
+00:15:47.349 --> 00:15:51.339
+Actually what happens here is
+we're saying score pointer, right
+
+00:15:51.339 --> 00:15:53.270
+here, points to an integer, right.
+
+00:15:53.270 --> 00:15:54.890
+It holds addresses of integers.
+
+00:15:55.360 --> 00:15:57.740
+But we're trying to put in
+here the address of high temp.
+
+00:15:58.070 --> 00:15:59.230
+High temp is a double.
+
+00:16:00.410 --> 00:16:02.070
+The compiler is going to say sorry.
+
+00:16:02.099 --> 00:16:03.480
+I don't know what
+you're talking about.
+
+00:16:03.730 --> 00:16:06.636
+You're telling me that score
+pointer holds addresses of integers.
+
+00:16:06.636 --> 00:16:08.919
+But now you're trying to
+put the address of a double
+
+00:16:08.920 --> 00:16:10.150
+in there, I can't do that.
+
+00:16:10.930 --> 00:16:13.530
+And let's compile this so you
+can see what the error looks
+
+00:16:13.530 --> 00:16:16.750
+like, and it makes sense, right.
+
+00:16:16.750 --> 00:16:20.520
+It says I cannot convert a pointer to
+a double to a pointer to an integer.
+
+00:16:20.929 --> 00:16:22.519
+Okay, so that gives you some insight.
+
+00:16:22.520 --> 00:16:25.349
+Play around with these examples,
+create some of your own, walk
+
+00:16:25.349 --> 00:16:28.349
+through them, draw like I did,
+so you really understand these
+
+00:16:28.350 --> 00:16:32.230
+connections between the pointer
+variable and what it points to.

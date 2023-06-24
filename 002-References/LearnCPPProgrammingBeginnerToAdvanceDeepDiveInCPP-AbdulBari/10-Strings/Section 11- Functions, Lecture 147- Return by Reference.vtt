@@ -1,0 +1,233 @@
+WEBVTT
+
+0
+00:00.450 --> 00:06.790
+Let us look at return by reference so already I have some sample piece of code available, small function.
+
+1
+00:06.810 --> 00:08.330
+Just look at this one.
+
+2
+00:08.400 --> 00:13.760
+See I have a main function and one variable X having value 10 and I'm calling function fun by passing
+
+3
+00:13.820 --> 00:14.650
+x.
+
+4
+00:14.700 --> 00:17.360
+So this function is taking a integer variable.
+
+5
+00:17.520 --> 00:20.220
+So the value of x will be copied in this one.
+
+6
+00:20.250 --> 00:24.330
+So this is X having value 10
+
+7
+00:25.020 --> 00:26.620
+So this X is copied here.
+
+8
+00:27.000 --> 00:28.790
+So this is a.
+
+9
+00:28.980 --> 00:35.020
+And in this value 10 will be copied and print a so 10 will appear on the screen.
+
+10
+00:35.050 --> 00:38.310
+The line will print A on the screen and return A.
+
+11
+00:38.640 --> 00:39.940
+So that return value.
+
+12
+00:39.990 --> 00:41.290
+I'm not taking it any where.
+
+13
+00:41.410 --> 00:41.790
+Okay.
+
+14
+00:41.810 --> 00:45.950
+It's not necessary that you take the return value of every function.
+
+15
+00:45.990 --> 00:47.010
+This is call by the value.
+
+16
+00:47.760 --> 00:48.850
+Okay.
+
+17
+00:49.020 --> 00:52.630
+I've not yet come to this one just I'm showing you the code first.
+
+18
+00:52.640 --> 00:54.450
+First I am showing you the working of this one.
+
+19
+00:54.480 --> 00:58.320
+Then we will make it as return by reference.
+
+20
+00:58.350 --> 01:05.340
+Let us see, now  you might have seen this one that I can write y assign some function calls so we know
+
+21
+01:05.340 --> 01:09.730
+one thing that when the function return something that return  value we can take it in some variable.
+
+22
+01:11.040 --> 01:17.920
+Yes return result we can take it in some variable so function always comes on the right time side of assignment.
+
+23
+01:18.000 --> 01:22.350
+We don't write them on the left hand side and we know this on the left hand side, we take some variable
+
+24
+01:22.350 --> 01:24.070
+so that it takes that return result.
+
+25
+01:25.230 --> 01:33.480
+But now i will make changes in this one and see what happens, now from here I'm sending x, but this A is not a separate
+
+26
+01:33.480 --> 01:37.350
+variable it's a reference to this X.
+
+27
+01:37.470 --> 01:43.370
+So now what happens is there is no separate A but this itself is a.
+
+28
+01:43.620 --> 01:44.590
+This itself is A.
+
+29
+01:44.760 --> 01:46.650
+So this is called by reference.
+
+30
+01:46.650 --> 01:48.320
+Okay, upto here it's okay.
+
+31
+01:48.420 --> 01:55.750
+Then cout A what it will display, A is what, X only so it will display 10 then return A.
+
+32
+01:55.770 --> 01:56.230
+write.
+
+33
+01:56.340 --> 01:56.970
+&
+
+34
+01:56.990 --> 02:00.440
+it returns not the value of A, What is A.
+
+35
+02:00.440 --> 02:06.950
+It is x only ten, it will not return ten it will return the reference, reference of what same X so when it returns
+
+36
+02:06.950 --> 02:12.230
+here this function becomes nothing but X only this becomes x.
+
+37
+02:12.240 --> 02:13.710
+So this is nothing but X Now.
+
+38
+02:13.950 --> 02:19.590
+We have sent it X to this one it has a use that is printed something and return.
+
+39
+02:19.620 --> 02:21.800
+So what is A reference to x.
+
+40
+02:21.810 --> 02:23.660
+So it is returning X only.
+
+41
+02:23.700 --> 02:25.440
+So this whole thing become X only.
+
+42
+02:25.590 --> 02:28.470
+So I can write here assign twenty five.
+
+43
+02:28.710 --> 02:29.960
+So what happens here.
+
+44
+02:29.970 --> 02:31.300
+This will become twenty five.
+
+45
+02:31.710 --> 02:36.600
+So now you can see here amazing thing here that our function is written on the left hand side.
+
+46
+02:36.720 --> 02:41.480
+And our function is acting as a reference of this variable x.
+
+47
+02:41.550 --> 02:44.460
+This whole thing become X now after this line.
+
+48
+02:44.460 --> 02:48.890
+If I see cout X what value will be printed.
+
+49
+02:48.930 --> 02:50.060
+Twenty five.
+
+50
+02:50.430 --> 02:57.510
+So this is one of the amazing feature of C++ that on the left hand side of assignment that is L value.
+
+51
+02:57.630 --> 02:59.850
+You can make the function as L value.
+
+52
+02:59.850 --> 03:06.510
+Mostly we make the function as R values but you can make it as L value also with the help of written by reference
+
+53
+03:06.510 --> 03:07.600
+by reference.
+
+54
+03:07.660 --> 03:13.800
+And this is useful at some places we will look at them whenever we come across this, we will discuss more
+
+55
+03:13.800 --> 03:16.710
+about them, when ever we are using them.
+
+56
+03:16.860 --> 03:18.890
+Try this program by yourself and check.
+
+57
+03:18.930 --> 03:19.950
+And even I will show you.

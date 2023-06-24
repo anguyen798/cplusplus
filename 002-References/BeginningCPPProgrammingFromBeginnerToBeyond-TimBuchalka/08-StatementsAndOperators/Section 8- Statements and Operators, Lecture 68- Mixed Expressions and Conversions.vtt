@@ -1,0 +1,670 @@
+WEBVTT
+
+00:00:05.500 --> 00:00:08.800
+In this video, we'll learn about mixed type expressions.
+
+00:00:09.460 --> 00:00:12.960
+This is when you have an expression where the operands are of different types.
+
+00:00:13.320 --> 00:00:17.570
+For example, a plus b where a is an integer and b is a double.
+
+00:00:18.560 --> 00:00:23.160
+C++ is very consistent with its application of an operator to operands.
+
+00:00:23.410 --> 00:00:25.610
+The operands must be of the same type.
+
+00:00:27.010 --> 00:00:28.780
+As we'll see in the next few slides,
+
+00:00:28.780 --> 00:00:32.440
+it's very important to understand the rules that c++ uses
+
+00:00:32.440 --> 00:00:36.340
+to ensure that the types are the same since the results of the calculation
+
+00:00:36.340 --> 00:00:39.640
+could be different depending on which operand type is changed.
+
+00:00:40.640 --> 00:00:44.640
+C++ will try to convert one of the operands so it matches the other.
+
+00:00:45.300 --> 00:00:49.900
+In many cases, this happens automatically, and we'll talk about how that works in the next slide.
+
+00:00:51.000 --> 00:00:54.300
+If an automatic conversion or coercion is not possible,
+
+00:00:54.700 --> 00:00:56.300
+then a compiler error will occur.
+
+00:00:56.900 --> 00:00:59.600
+We saw an example of this in the assignment operator video
+
+00:00:59.600 --> 00:01:01.900
+when we tried to assign a string to an integer.
+
+00:01:03.560 --> 00:01:06.260
+In order to understand how these conversions happen,
+
+00:01:06.260 --> 00:01:08.660
+we need to understand higher versus lower types.
+
+00:01:09.360 --> 00:01:10.660
+The idea is simple.
+
+00:01:10.660 --> 00:01:13.860
+The lower types are those types that can hold smaller values
+
+00:01:13.860 --> 00:01:18.000
+and the higher types can hold larger values. So a long double
+
+00:01:18.000 --> 00:01:22.000
+is of higher type than a long and a long is of higher type than an int.
+
+00:01:22.500 --> 00:01:24.800
+The idea is that we can typically convert
+
+00:01:24.800 --> 00:01:27.900
+from a lower type to a larger type automatically
+
+00:01:27.900 --> 00:01:31.500
+since the lower types value will fit into the higher types value
+
+00:01:31.500 --> 00:01:33.300
+but the opposite may not be true.
+
+00:01:34.300 --> 00:01:37.300
+Short and character types are always converted to integers.
+
+00:01:37.850 --> 00:01:39.450
+So let's learn the terminology.
+
+00:01:39.950 --> 00:01:42.940
+A type conversion is also called a coercion
+
+00:01:42.940 --> 00:01:45.240
+since we're coercing one type to another.
+
+00:01:45.440 --> 00:01:49.640
+Sometimes this happens automatically and sometimes we do it ourselves in code.
+
+00:01:50.300 --> 00:01:53.900
+Promotion is when we convert a lower type to a higher type.
+
+00:01:54.400 --> 00:01:57.400
+An example would be when we add an integer and a double.
+
+00:01:57.900 --> 00:02:01.800
+In this case, we promote the integer to a double and then do the calculation.
+
+00:02:02.600 --> 00:02:05.600
+Demotion is when we convert a higher type to a lower type.
+
+00:02:05.960 --> 00:02:09.760
+Suppose we want to store 12.5 into an integer variable.
+
+00:02:09.760 --> 00:02:13.760
+It won't fit. So a demotion happens, and the decimal part of
+
+00:02:13.760 --> 00:02:15.420
+12.5 is truncated,
+
+00:02:15.920 --> 00:02:18.010
+and we're left just with the integer 12.
+
+00:02:18.610 --> 00:02:20.010
+Let's see a few examples.
+
+00:02:21.510 --> 00:02:24.310
+In the first example, we have two different types
+
+00:02:24.710 --> 00:02:25.710
+and an operator.
+
+00:02:26.110 --> 00:02:29.010
+You can think of the operator as the multiplication operator
+
+00:02:29.010 --> 00:02:30.610
+but it applies to any operator.
+
+00:02:31.010 --> 00:02:33.110
+In order to perform the multiplication,
+
+00:02:33.110 --> 00:02:36.310
+the compiler will convert the lower type to the higher type
+
+00:02:36.310 --> 00:02:38.310
+and then perform the multiplication.
+
+00:02:39.310 --> 00:02:42.010
+You can see in the example where we multiply the integer
+
+00:02:42.010 --> 00:02:44.010
+2 and the double 5.2.
+
+00:02:44.990 --> 00:02:48.990
+In this case, we can promote the lower type, which is the integer 2
+
+00:02:48.990 --> 00:02:52.590
+to the double 2.0 and then perform the multiplication.
+
+00:02:53.890 --> 00:02:58.190
+In the second example, we're assigning a value from a higher type to a lower type.
+
+00:02:58.740 --> 00:03:02.540
+In this case, the compiler demotes the higher type to the lower type,
+
+00:03:02.540 --> 00:03:04.140
+potentially losing information.
+
+00:03:05.020 --> 00:03:09.420
+Many compilers will warn you about the possible loss of precision but not all do.
+
+00:03:10.410 --> 00:03:11.410
+In this example,
+
+00:03:11.410 --> 00:03:15.910
+we have num as an integer and we assign a double 100.2 to num.
+
+00:03:16.270 --> 00:03:19.570
+100.2 will be demoted to the integer 100,
+
+00:03:19.570 --> 00:03:21.870
+and 100 will be assigned to num.
+
+00:03:22.770 --> 00:03:24.170
+As mentioned previously,
+
+00:03:24.170 --> 00:03:27.870
+the c++ compiler will try to do automatic coercion when it can.
+
+00:03:27.870 --> 00:03:31.370
+However, as programmers, we can explicitly tell the compiler
+
+00:03:31.370 --> 00:03:34.870
+to cast to a specific type if we wish. Let's see how.
+
+00:03:35.870 --> 00:03:40.470
+So let's talk about how we can tell the compiler to coerce or cast one type to another.
+
+00:03:41.070 --> 00:03:42.430
+Let's walk through this example.
+
+00:03:43.090 --> 00:03:45.090
+You can see we have two integer variables.
+
+00:03:45.490 --> 00:03:48.490
+Think of total amount as a running sum of several numbers
+
+00:03:48.490 --> 00:03:50.590
+and we want to know the average of those numbers.
+
+00:03:51.390 --> 00:03:53.190
+So we need to know how many numbers there are.
+
+00:03:53.190 --> 00:03:56.990
+In this case, this is represented by the integer total number which is 8.
+
+00:03:57.890 --> 00:04:01.880
+The average in this case would be total amount divided by total number,
+
+00:04:01.880 --> 00:04:03.380
+which is 12.5.
+
+00:04:04.180 --> 00:04:06.620
+But since both of these variables are integers,
+
+00:04:06.620 --> 00:04:10.120
+the compiler will do integer division, and the result will be 12.
+
+00:04:10.520 --> 00:04:11.820
+That's not what we want.
+
+00:04:12.520 --> 00:04:15.120
+We could change the type of total amount to double,
+
+00:04:15.520 --> 00:04:19.420
+but we're modeling a running total of integers. So an integer type is more appropriate.
+
+00:04:19.970 --> 00:04:22.970
+The solution is for us to tell the compiler to cast
+
+00:04:22.970 --> 00:04:27.370
+or perform a coercion of total amount from integer to double.
+
+00:04:27.620 --> 00:04:31.220
+The syntax is to use static underscore cast,
+
+00:04:31.220 --> 00:04:34.720
+followed by the type we want to convert to in angle brackets
+
+00:04:35.120 --> 00:04:37.120
+and then the variable name in parentheses.
+
+00:04:37.780 --> 00:04:41.580
+Now one of the operands is a double so the compiler will automatically convert
+
+00:04:41.580 --> 00:04:45.980
+the total number to a double and do double division, which is exactly what we want.
+
+00:04:46.380 --> 00:04:49.380
+Now we get 12.5, which is the result we wanted.
+
+00:04:49.980 --> 00:04:53.780
+Let's head over to CodeLite and write a program that asks the user for three integers
+
+00:04:53.780 --> 00:04:55.280
+and computes their average.
+
+00:04:56.780 --> 00:05:00.680
+Okay. So now I'm in the CodeLite IDE. I'm in the section 8 workspace
+
+00:05:00.980 --> 00:05:03.180
+in the mixed expressions project.
+
+00:05:03.580 --> 00:05:07.480
+So let's write a program here that asks the user to enter three integers.
+
+00:05:07.980 --> 00:05:11.880
+We calculate the sum of those integers, and then we calculate the average of the integers.
+
+00:05:11.880 --> 00:05:14.980
+All right. Then at the end, we'll just display the three integers that were entered,
+
+00:05:14.980 --> 00:05:18.280
+the sum of the integers and the average that we calculated.
+
+00:05:18.280 --> 00:05:20.080
+All right. So let's get started.
+
+00:05:20.080 --> 00:05:22.880
+We have an empty main here,
+
+00:05:22.880 --> 00:05:25.480
+and I'll scroll this up so we have a little bit more room to work.
+
+00:05:25.480 --> 00:05:28.980
+And we know we need a total, right. We need to sum up those three numbers,
+
+00:05:28.980 --> 00:05:31.580
+but we also need to store those three numbers.
+
+00:05:31.580 --> 00:05:35.380
+So let's create those variables first. We'll create a total variable.
+
+00:05:35.780 --> 00:05:39.480
+And again, the names you use could be anything you like and we'll zero that out.
+
+00:05:39.980 --> 00:05:44.310
+And we'll create three variables for the numbers that we're going to enter.
+
+00:05:44.810 --> 00:05:45.910
+We'll call them num1
+
+00:05:46.460 --> 00:05:48.810
+and I could do this and do each one on each line.
+
+00:05:48.810 --> 00:05:51.470
+But what I'm going to do is I'm just going to do them all in one line.
+
+00:05:51.470 --> 00:05:54.070
+So I'm going to say num1 and I'm going to say num2.
+
+00:05:55.070 --> 00:05:57.070
+And finally, I'll say num3.
+
+00:05:57.670 --> 00:05:59.970
+This initializes all three of them to zero.
+
+00:06:00.270 --> 00:06:02.570
+If you don't do it this way
+
+00:06:02.970 --> 00:06:05.770
+or rather if you do it this way and you don't
+
+00:06:05.770 --> 00:06:07.670
+put those initializers there,
+
+00:06:07.670 --> 00:06:10.870
+then num3 will be 0 and num1 and num2 will be undefined.
+
+00:06:10.870 --> 00:06:15.370
+So if you do it this way be certain that each one of them gets its own initializer.
+
+00:06:16.360 --> 00:06:18.960
+So that's it. We've got our three numbers.
+
+00:06:19.760 --> 00:06:22.260
+We've got our total, and
+
+00:06:22.260 --> 00:06:25.860
+we also need a count, right. We're going to have three numbers. We might, as well,
+
+00:06:26.360 --> 00:06:28.660
+define that integer as a const,
+
+00:06:29.760 --> 00:06:33.660
+and we'll call it count. And again, we'll initialize that to three.
+
+00:06:33.660 --> 00:06:36.260
+That way we know we're not going to make any silly mistakes.
+
+00:06:37.160 --> 00:06:39.760
+Great. So let's prompt the user. We'll say cout,
+
+00:06:40.860 --> 00:06:43.860
+and I'll just say "Enter 3 integers
+
+00:06:44.860 --> 00:06:46.520
+separated by spaces"
+
+00:06:46.520 --> 00:06:50.320
+That way they could just type them in on one line. We don't have to do three prompts.
+
+00:06:53.920 --> 00:06:57.420
+And we'll just leave it at that, don't forget the semicolon at the end.
+
+00:06:57.420 --> 00:06:58.920
+We don't need an endline here.
+
+00:06:59.820 --> 00:07:03.220
+Now we're going to read all three integers. So we'll do cin.
+
+00:07:03.220 --> 00:07:06.820
+We'll use the extraction operator num1 and we'll just chain them together
+
+00:07:06.820 --> 00:07:09.020
+num2 and num3.
+
+00:07:10.120 --> 00:07:12.920
+All right. So now we've got all three of our integers.
+
+00:07:12.920 --> 00:07:16.280
+We need to total them up now right. We need to sum them all up,
+
+00:07:16.280 --> 00:07:17.880
+so we've got our total variable.
+
+00:07:18.280 --> 00:07:21.080
+So we'll just say total is num1
+
+00:07:21.080 --> 00:07:23.380
+plus num2 plus num3.
+
+00:07:25.040 --> 00:07:28.340
+All right. So now we've got that. Now obviously, we could have total
+
+00:07:28.590 --> 00:07:29.690
+be a double.
+
+00:07:29.690 --> 00:07:31.690
+But it really makes sense for it to be integers
+
+00:07:31.690 --> 00:07:34.490
+because we're adding up integers so the total should be an integer.
+
+00:07:35.150 --> 00:07:37.050
+So now let's calculate the average.
+
+00:07:37.050 --> 00:07:41.040
+We need a variable to hold that. So it that will be a double,
+
+00:07:41.840 --> 00:07:45.640
+and we'll just call it average. And let's initialize that to 0.0.
+
+00:07:46.040 --> 00:07:49.040
+That way we know we've got a known value in there.
+
+00:07:49.540 --> 00:07:51.740
+Great. So let's do the calculation now.
+
+00:07:52.140 --> 00:07:55.840
+Average and I'm just using some blank lines here just to separate them.
+
+00:07:55.840 --> 00:08:00.140
+Normally, you wouldn't write all these blank lines but I just want to write them so you can really see what's going on.
+
+00:08:00.540 --> 00:08:03.140
+So I'll say average
+
+00:08:04.640 --> 00:08:07.240
+is the total
+
+00:08:08.340 --> 00:08:09.940
+divided by count.
+
+00:08:11.540 --> 00:08:14.540
+That's it. And now we've got our output statements. We'll say,
+
+00:08:15.540 --> 00:08:19.440
+let's just say, something like the three numbers were
+
+00:08:20.540 --> 00:08:23.840
+and we'll display all three numbers here. We'll say num1,
+
+00:08:24.640 --> 00:08:25.940
+we'll put a comma here.
+
+00:08:26.940 --> 00:08:28.540
+We'll say num2,
+
+00:08:30.140 --> 00:08:33.940
+we'll put another comma and finally num3
+
+00:08:34.940 --> 00:08:36.440
+followed by the endline.
+
+00:08:38.640 --> 00:08:40.640
+Next statement we'll say the sum.
+
+00:08:43.840 --> 00:08:47.440
+The sum of the numbers is
+
+00:08:48.800 --> 00:08:51.600
+and obviously that is our total variable.
+
+00:08:51.600 --> 00:08:53.600
+So we'll display total here.
+
+00:08:54.100 --> 00:08:56.900
+And again, we'll follow it by an endline.
+
+00:08:58.000 --> 00:08:59.500
+And then finally, the average.
+
+00:09:00.000 --> 00:09:03.400
+There's my last output statement and we'll just say the average
+
+00:09:05.600 --> 00:09:08.100
+of the numbers is
+
+00:09:09.000 --> 00:09:10.900
+and again average.
+
+00:09:12.000 --> 00:09:13.600
+Okay, so far so good,
+
+00:09:15.100 --> 00:09:16.870
+endline. That's it.
+
+00:09:16.870 --> 00:09:20.670
+Let's compile this and see if we've got any compiler errors that we have to fix.
+
+00:09:23.030 --> 00:09:26.030
+Okay. No compiler errors. It runs so let's run this.
+
+00:09:26.030 --> 00:09:28.730
+Enter three integers separated by spaces.
+
+00:09:29.230 --> 00:09:33.330
+How about 10, 30 and 20
+
+00:09:34.430 --> 00:09:39.420
+right, that's 40, 50, 60. 60 divided by 3 is going to give me 20.
+
+00:09:39.420 --> 00:09:43.420
+So I expect that to be the average. I'll press enter. The output says
+
+00:09:43.780 --> 00:09:46.880
+the three numbers were 10, 30, 20. That's correct.
+
+00:09:46.880 --> 00:09:49.380
+The sum of the numbers is 60, that's correct.
+
+00:09:49.380 --> 00:09:52.280
+The average of the numbers is 20, that's also correct.
+
+00:09:52.280 --> 00:09:56.270
+Okay. One more test case. We'll say 10,
+
+00:09:57.270 --> 00:09:59.070
+20, 15.
+
+00:09:59.730 --> 00:10:01.230
+In this case, we've got
+
+00:10:02.890 --> 00:10:05.490
+45. The average is 15.
+
+00:10:05.990 --> 00:10:10.190
+Good, we're done. No, we're not. Program has a
+
+00:10:10.190 --> 00:10:13.190
+pretty big problem in it and we saw that in the slides.
+
+00:10:13.190 --> 00:10:15.790
+Suppose that I run it again
+
+00:10:15.790 --> 00:10:18.790
+with a different test case, something like 10, 20, 20.
+
+00:10:20.590 --> 00:10:25.090
+In this case, it's 50 divided by 3, which is 16.667.
+
+00:10:25.990 --> 00:10:29.290
+Instead, I'm getting 16 because I'm doing integer division.
+
+00:10:29.890 --> 00:10:32.490
+This is why testing your program is so important.
+
+00:10:33.090 --> 00:10:37.090
+We'll talk about testing as we go through the course, but testing your program is important.
+
+00:10:37.090 --> 00:10:41.990
+And testing involves knowing what the result is before you run your program,
+
+00:10:41.990 --> 00:10:45.390
+right. So in this case have some test cases ready,
+
+00:10:45.390 --> 00:10:49.690
+maybe 0, 0, 0. Something that is divisible evenly by three.
+
+00:10:49.690 --> 00:10:53.050
+Another test case that isn't divisible by three and so forth. Okay
+
+00:10:53.050 --> 00:10:55.850
+so how do we fix this. Well, what we can do is
+
+00:10:55.850 --> 00:11:00.750
+we can cast that guy or this guy either one to a double.
+
+00:11:01.150 --> 00:11:04.150
+Okay, and we'll use the static cast. So we'll say static
+
+00:11:04.850 --> 00:11:05.850
+underscore cast.
+
+00:11:07.150 --> 00:11:10.810
+Then in the angle brackets, we put in the type that we want to cast to.
+
+00:11:10.810 --> 00:11:14.470
+In this case, I want to cast it to a double or convert it to a double.
+
+00:11:15.570 --> 00:11:18.570
+And then we put total inside parentheses.
+
+00:11:20.900 --> 00:11:25.400
+That's it. Now what's going to happen is the compiler will convert total to a double.
+
+00:11:26.200 --> 00:11:29.000
+The compiler will say oh I want to do -- I've got a double and an integer here
+
+00:11:29.000 --> 00:11:31.450
+so I'll convert the integer to a double as well
+
+00:11:31.450 --> 00:11:34.650
+and do double division, which is what we want so
+
+00:11:35.450 --> 00:11:36.350
+let's run this again
+
+00:11:37.010 --> 00:11:39.670
+and let's use that same test case; 10, 20, 20.
+
+00:11:41.970 --> 00:11:44.770
+And now we've got the correct average here.
+
+00:11:45.770 --> 00:11:49.370
+Okay.Now before I finish this video off, in
+
+00:11:49.370 --> 00:11:50.470
+older c code,
+
+00:11:50.970 --> 00:11:53.670
+instead of seeing this static cast here,
+
+00:11:54.270 --> 00:11:56.570
+you might have seen something that looked like this,
+
+00:12:01.570 --> 00:12:03.570
+something like that, then total
+
+00:12:05.970 --> 00:12:08.170
+divided by count or something like that.
+
+00:12:09.070 --> 00:12:11.270
+Okay. This is the old c style cast.
+
+00:12:12.470 --> 00:12:16.770
+The static cast is what we want to be using in modern c++.
+
+00:12:17.270 --> 00:12:21.870
+It's a little bit more restrictive than this kind of cast. This kind of cast just assumes that
+
+00:12:21.870 --> 00:12:24.470
+whatever total is, is going to be converted to a double.
+
+00:12:24.470 --> 00:12:28.670
+The static cast double checks to make sure that it can be converted to a double.
+
+00:12:28.670 --> 00:12:30.870
+So you don't want to do this.
+
+00:12:31.670 --> 00:12:35.870
+I'll just write here it's a comment old style. Just so if you've seen it,
+
+00:12:35.870 --> 00:12:37.170
+you'll know what it's all about.
+
+00:12:37.170 --> 00:12:40.170
+Okay. So that's it. That's the example. Pretty straightforward.
+
+00:12:40.170 --> 00:12:42.970
+We're defining some variables, we're getting some input,
+
+00:12:42.970 --> 00:12:44.770
+we're doing some calculations.
+
+00:12:44.770 --> 00:12:47.670
+And then we're checking that calculation to be sure it's correct.
+
+00:12:47.670 --> 00:12:50.770
+In this case, I've got integer, integer division.
+
+00:12:50.770 --> 00:12:54.130
+I've got to make one of those a double. Otherwise, I'm not going to get the right result.
+
+00:12:54.730 --> 00:12:56.230
+Okay that's it for this video.

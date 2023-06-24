@@ -1,0 +1,184 @@
+WEBVTT
+
+00:00:05.550 --> 00:00:10.150
+In this video, we'll look at the
+continue and break statements in c++.
+
+00:00:10.550 --> 00:00:14.360
+The continue and break statements
+can be used within all of c++ loop
+
+00:00:14.360 --> 00:00:18.460
+constructs to provide more explicit
+control over the loopy behavior.
+
+00:00:19.740 --> 00:00:21.960
+Their behavior is really
+easy to understand.
+
+00:00:22.259 --> 00:00:25.620
+When a continue statement is
+executed in the loop, no further
+
+00:00:25.620 --> 00:00:29.279
+statements in the body of the loop
+or executed and control immediately
+
+00:00:29.280 --> 00:00:32.670
+goes directly to the beginning of
+the loop for the next iteration.
+
+00:00:33.940 --> 00:00:36.549
+So you can think of this as
+skip processing in the rest
+
+00:00:36.550 --> 00:00:38.450
+of this iteration and go to
+the beginning of the loop.
+
+00:00:39.080 --> 00:00:41.960
+In the case of the while loop
+and the for loop, the condition
+
+00:00:41.960 --> 00:00:43.510
+will immediately be tested again.
+
+00:00:44.460 --> 00:00:47.280
+When the brake statement is executed
+in the loop, no further
+
+00:00:47.280 --> 00:00:50.090
+statements in the body are executed
+and the loop is terminated.
+
+00:00:50.320 --> 00:00:53.350
+So controllers transfer to
+the statement immediately
+
+00:00:53.350 --> 00:00:54.180
+following the loop.
+
+00:00:54.900 --> 00:00:58.270
+Let's see an example that uses both
+the continue and break statements.
+
+00:01:00.700 --> 00:01:03.070
+In this example, we have
+a vector of integers.
+
+00:01:03.370 --> 00:01:06.610
+Let's assume that this data comes
+from some sort of device and
+
+00:01:06.610 --> 00:01:08.389
+occasionally we get noise in the data.
+
+00:01:08.880 --> 00:01:11.420
+The noise is represented by the -1.
+
+00:01:11.620 --> 00:01:13.429
+We really don't want
+to process the noise.
+
+00:01:13.430 --> 00:01:14.590
+We want to ignore it.
+
+00:01:14.930 --> 00:01:17.830
+We also need to stop processing
+when we get to stop signal
+
+00:01:17.830 --> 00:01:20.050
+which is represented by -99.
+
+00:01:20.870 --> 00:01:24.070
+In this case, we can use the
+range-based for loop to iterate
+
+00:01:24.070 --> 00:01:25.350
+over all the vector elements.
+
+00:01:25.789 --> 00:01:28.939
+At each iteration, we can
+check if the value is -99
+
+00:01:28.949 --> 00:01:30.290
+in which case we are done.
+
+00:01:30.820 --> 00:01:33.790
+We could set of flag to done and
+handle the done Boolean in the loop
+
+00:01:33.810 --> 00:01:37.600
+condition as we've done before or
+we can simply breakout of the loop.
+
+00:01:38.330 --> 00:01:40.540
+In this case, we're using
+the break statement to break
+
+00:01:40.540 --> 00:01:41.640
+out of the loop completely.
+
+00:01:42.599 --> 00:01:45.949
+In the else if statement, we know
+we haven't seen a negative 99.
+
+00:01:45.969 --> 00:01:48.860
+So we can check from -1,
+that represents noise.
+
+00:01:49.379 --> 00:01:51.030
+If we see it, we can continue.
+
+00:01:51.580 --> 00:01:54.480
+This stops the iteration and control
+goes back to the beginning of the
+
+00:01:54.480 --> 00:01:56.140
+loop in a new iteration begins.
+
+00:01:56.770 --> 00:02:00.290
+Finally if we hit the l statement,
+we know we don't have a -99
+
+00:02:00.290 --> 00:02:03.659
+and we know we don't have a
+-1, so we process that data.
+
+00:02:04.059 --> 00:02:05.490
+In this case, we'll just display it.
+
+00:02:06.270 --> 00:02:08.850
+In this example, we display 1 2 3.
+
+00:02:09.590 --> 00:02:12.570
+Continue and break statements
+are very, very easy to use.
+
+00:02:12.750 --> 00:02:14.250
+However, don't overuse them.
+
+00:02:14.610 --> 00:02:16.310
+I'm obviously exaggerating here.
+
+00:02:16.310 --> 00:02:19.469
+But if you have a loop that has
+10 brakes and 12 continues in its
+
+00:02:19.469 --> 00:02:23.230
+body, that's a very complex piece
+of code to try to understand.
+
+00:02:23.889 --> 00:02:26.760
+The less ways that you can come
+into a loop and out of the loop, the
+
+00:02:26.770 --> 00:02:28.420
+better we can understand and debug it.
+
+00:02:29.050 --> 00:02:31.119
+We'll see the brake statement
+again again when we talk about
+
+00:02:31.130 --> 00:02:32.730
+infinite loops in the next video.

@@ -1,0 +1,481 @@
+WEBVTT
+
+0
+00:00.210 --> 00:04.880
+Let us write a program using conditional statements so the first program that we would like us to find
+
+1
+00:04.880 --> 00:05.980
+the greatest of two number.
+
+2
+00:06.010 --> 00:08.450
+that is a maximum of two numbers.
+
+3
+00:08.440 --> 00:12.940
+Suppose I have two numbers x and y then I have to find out which one is greater.
+
+4
+00:13.420 --> 00:14.600
+So it's very simple.
+
+5
+00:14.670 --> 00:16.480
+I have to check them compare them.
+
+6
+00:16.590 --> 00:19.130
+If x is greater than that values greater.
+
+7
+00:19.560 --> 00:22.640
+If it is not then definitely Y is greater.
+
+8
+00:22.920 --> 00:27.920
+So if and else so I have to just check the condition that is if x is greater than y.
+
+9
+00:28.470 --> 00:32.550
+So for this writing this program will follow the same steps that we have used.
+
+10
+00:32.550 --> 00:38.130
+These are steps in the previous programs also that is taking input processing whatever the processing
+
+11
+00:38.130 --> 00:41.730
+is there then output giving the output.
+
+12
+00:41.730 --> 00:44.370
+So here in our program what is the input.
+
+13
+00:44.490 --> 00:47.550
+So we have these two values as input.
+
+14
+00:47.580 --> 00:47.880
+Right.
+
+15
+00:47.940 --> 00:50.500
+So we have to take the input then process.
+
+16
+00:50.670 --> 00:52.500
+Here we don't have any processing to do.
+
+17
+00:52.500 --> 00:59.700
+Just check the condition then output in output the same values x and y right? either X or Y.
+
+18
+01:00.240 --> 01:03.350
+Let us draw a flow chart then we will write algorithm.
+
+19
+01:03.420 --> 01:05.320
+Then we would like to program focus.
+
+20
+01:05.850 --> 01:08.230
+So first I would draw a flow chart.
+
+21
+01:08.490 --> 01:11.940
+Let us start flowchart starts.
+
+22
+01:11.940 --> 01:13.440
+Then what is the first thing.
+
+23
+01:13.470 --> 01:14.160
+Input Output.
+
+24
+01:14.160 --> 01:15.930
+So I should take two numbers.
+
+25
+01:15.930 --> 01:25.830
+So I should give a message using input output box and say that enter two numbers print and enter two numbers.
+
+26
+01:25.830 --> 01:27.860
+Then I should read the numbers.
+
+27
+01:27.870 --> 01:32.900
+So here I will use variables that are X and Y the next.
+
+28
+01:32.940 --> 01:36.560
+After reading these values I should check which one is greater.
+
+29
+01:36.590 --> 01:38.770
+So which one means, is x greater than y?.
+
+30
+01:38.800 --> 01:43.100
+Then I should check this one so the condition block here.
+
+31
+01:43.170 --> 01:51.870
+If what is the condition x is greater than y if true it will take this direction and if it false It will
+
+32
+01:51.870 --> 01:53.700
+take this dedication right.
+
+33
+01:53.910 --> 01:55.460
+So you can take any direction.
+
+34
+01:55.470 --> 01:56.520
+So here true.
+
+35
+01:56.580 --> 02:01.090
+If it is true then what we have to do here simply we will display the greater number.
+
+36
+02:01.110 --> 02:03.600
+So who is it that if x is greater than x is greater.
+
+37
+02:03.690 --> 02:06.390
+So I should print a message that X is great.
+
+38
+02:06.570 --> 02:15.430
+So here I will directly print max number is or Max is X right.
+
+39
+02:16.190 --> 02:17.590
+Then false.
+
+40
+02:17.670 --> 02:19.650
+If it is false then who is greater.
+
+41
+02:19.890 --> 02:22.620
+y is greater,  so maximum is y.
+
+42
+02:22.830 --> 02:26.860
+So print here Max is y.
+
+43
+02:28.890 --> 02:31.990
+Then after this, this is over, output is over.
+
+44
+02:32.220 --> 02:33.660
+This is itself is output.
+
+45
+02:33.750 --> 02:36.230
+So in this example there is no processing right.
+
+46
+02:36.450 --> 02:41.760
+Then after this end of the flow chart so it will go on stop.
+
+47
+02:41.760 --> 02:47.040
+So from that side also it will come and join this one.
+
+48
+02:47.160 --> 02:52.440
+This is a flow chart for finding greatest or maximum of two numbers.
+
+49
+02:52.440 --> 02:53.580
+Now the same thing.
+
+50
+02:53.580 --> 02:55.510
+I will write it as an algorithm here.
+
+51
+02:55.540 --> 02:57.300
+Then afterwards I will write it as a program.
+
+52
+02:57.510 --> 02:58.940
+So algorithm.
+
+53
+02:59.190 --> 03:00.630
+I will call the algorithm name as max.
+
+54
+03:00.630 --> 03:10.090
+now begin, what I have to do.
+
+55
+03:10.140 --> 03:13.510
+I have already shown you that these things you can directly write it here.
+
+56
+03:13.590 --> 03:16.460
+but  we have if also so we will learn how to read.
+
+57
+03:16.470 --> 03:20.930
+If so let us write down so first print and enter two numbers.
+
+58
+03:21.020 --> 03:34.950
+Okay print Enter two numbers and then read X and Y this is over semicolons you want to give
+
+59
+03:34.950 --> 03:35.780
+or dont give.
+
+60
+03:35.790 --> 03:36.770
+That's up to you.
+
+61
+03:36.810 --> 03:39.510
+This is your own pseudocode right.
+
+62
+03:39.750 --> 03:42.750
+Then afterwards after this if is there.
+
+63
+03:42.740 --> 03:44.700
+So watch this carefully.
+
+64
+03:44.880 --> 03:48.100
+If x is greater than Y.
+
+65
+03:48.270 --> 03:56.620
+X is greater than y then if x is greater then y, as it is I have written and then I have written then also.
+
+66
+03:56.650 --> 03:57.480
+So it's a choice.
+
+67
+03:57.490 --> 04:02.870
+If you dont want to write 'then' you can skip it also but it looks like a English statement.
+
+68
+04:02.950 --> 04:06.420
+If x is greater than y then begin.
+
+69
+04:06.490 --> 04:07.970
+So what is the inside.
+
+70
+04:08.260 --> 04:10.270
+If you have to print this one.
+
+71
+04:10.330 --> 04:17.340
+So print Max is X that's.
+
+72
+04:17.740 --> 04:20.270
+So this is end of if block.
+
+73
+04:20.300 --> 04:22.450
+Now I have to start else block.
+
+74
+04:22.450 --> 04:23.450
+So I need not write end here.
+
+75
+04:23.470 --> 04:28.320
+And here I will write else because it's a part of, continuation of if.
+
+76
+04:28.400 --> 04:28.850
+Right.
+
+77
+04:28.960 --> 04:31.970
+If Then Else, else what  I have to do .
+
+78
+04:31.970 --> 04:37.840
+print Max is y so print Max is y.
+
+79
+04:38.710 --> 04:45.180
+Then after this say end and so from here if has started and if has ended here.
+
+80
+04:45.430 --> 04:47.470
+So inside that only Else is also there.
+
+81
+04:47.470 --> 04:53.230
+So whatever is there before else that comes under if  after else this belonged to the else's block.
+
+82
+04:53.800 --> 04:55.700
+Then after this there's nothing.
+
+83
+04:55.750 --> 04:57.780
+end of a program so simply right.
+
+84
+04:57.970 --> 05:01.480
+end here. that begins and ends here.
+
+85
+05:02.200 --> 05:05.040
+So this is an algorithm written using pseudocode.
+
+86
+05:07.690 --> 05:11.100
+So here in this video we learn one thing how to write if.
+
+87
+05:11.170 --> 05:11.350
+Right.
+
+88
+05:11.610 --> 05:14.150
+And if you want to put the bracket it's a choice.
+
+89
+05:14.740 --> 05:18.610
+It's not C++ in C++ we have to be very strict.
+
+90
+05:18.890 --> 05:24.340
+Now next we will write down a  c++ program for this one so looking at this algorithm I will convert it into a
+
+91
+05:24.340 --> 05:25.330
+c++ program.
+
+92
+05:25.600 --> 05:31.600
+So let us start,  here you know that we have to write down hash include then using namespace and the main
+
+93
+05:31.660 --> 05:33.760
+functions why would you keep it ready.
+
+94
+05:33.760 --> 05:34.800
+So this is ready.
+
+95
+05:34.900 --> 05:40.090
+I have made the main function everything is ready now I have to write down this part that is enter two numbers
+
+96
+05:40.090 --> 05:40.690
+numbers.
+
+97
+05:40.690 --> 05:43.010
+read numbers and display.
+
+98
+05:43.150 --> 05:45.250
+So for this I need two variables.
+
+99
+05:45.250 --> 05:51.670
+So first of all I will declare two variables that is integer X and Y that I should take two number.
+
+100
+05:51.670 --> 05:53.380
+So for that I should give a message.
+
+101
+05:53.380 --> 05:59.830
+So for print I should say C out so c out enter two numbers C out enter 2  numbers.
+
+102
+05:59.890 --> 06:07.720
+The next reading two values cin x and y.
+
+103
+06:07.960 --> 06:10.520
+Now the important part if and else part.
+
+104
+06:10.540 --> 06:14.350
+So I will write on here if and else, if X is greater than Y.
+
+105
+06:14.380 --> 06:20.640
+So watch this how to write it. if  X is greater than y then brackets start.
+
+106
+06:20.650 --> 06:30.340
+So this is true then I should print that X is a great or maximum is X so c out Max is X Max
+
+107
+06:30.430 --> 06:34.870
+is and again insertion operation then x.
+
+108
+06:34.970 --> 06:38.370
+So they move these things.
+
+109
+06:38.440 --> 06:52.110
+This is for if then else again the end of if block then incidents say C out Max is y.
+
+110
+06:52.350 --> 06:56.170
+The end of this one say return zero.
+
+111
+06:56.350 --> 06:57.910
+End of the function.
+
+112
+06:57.910 --> 06:59.740
+So that's the end of Main function.
+
+113
+06:59.770 --> 07:02.740
+So this is how a program looks like I'll remove this.
+
+114
+07:03.430 --> 07:05.530
+So that's all this is the program.
+
+115
+07:05.530 --> 07:10.370
+So there is a coding exercise available for this one do this coding exercise then after that you will find a
+
+116
+07:10.390 --> 07:17.480
+demo for this program you can watch the demo and practice this one on your P.C. on your machine do it
+
+117
+07:17.500 --> 07:18.300
+by yourself.
+
+118
+07:18.730 --> 07:20.850
+So is the first program on conditional statement.
+
+119
+07:21.280 --> 07:25.690
+So further in the coming videos will find more and more programs on conditional statements.

@@ -1,0 +1,106 @@
+WEBVTT
+
+00:00:05.700 --> 00:00:07.900
+Welcome to the section 7 challenge.
+
+00:00:08.300 --> 00:00:12.000
+The purpose of this challenge is not to solve a specific problem
+
+00:00:12.000 --> 00:00:14.600
+but to give you a chance to practice with vectors.
+
+00:00:15.100 --> 00:00:16.700
+We'll declare two vectors,
+
+00:00:16.700 --> 00:00:20.800
+and we'll add these vectors to a two-dimensional vector that we'll declare as well.
+
+00:00:21.300 --> 00:00:23.800
+You'll get a chance to work with the vectors at,
+
+00:00:23.800 --> 00:00:25.800
+pushback and size methods.
+
+00:00:26.300 --> 00:00:28.600
+And you'll also work with a two-dimensional vector.
+
+00:00:29.200 --> 00:00:32.800
+Then at the end of this challenge, I'll ask you to modify a vector element
+
+00:00:32.800 --> 00:00:36.600
+and analyze the effect it has. You might be surprised by the result.
+
+00:00:37.700 --> 00:00:42.000
+Please go through the challenge in order and implement each of the directives in the challenge.
+
+00:00:42.000 --> 00:00:44.300
+Let's go over the details of this challenge together.
+
+00:00:45.900 --> 00:00:50.500
+First, I'd like you to declare two empty vectors of integers named vector1
+
+00:00:50.500 --> 00:00:52.500
+and vector2, respectively.
+
+00:00:52.500 --> 00:00:56.800
+Then add 10 and 20 to vector1 dynamically, using the pushback method.
+
+00:00:57.460 --> 00:00:59.460
+Display those two vector elements,
+
+00:00:59.460 --> 00:01:02.960
+using the at method as well as the size using the size method.
+
+00:01:03.620 --> 00:01:06.620
+Do the same thing for vector2, except we're going to add
+
+00:01:06.620 --> 00:01:08.620
+100 and 200 this time.
+
+00:01:10.120 --> 00:01:14.480
+Then I want you to declare an empty two-dimensional vector called vector2d.
+
+00:01:14.880 --> 00:01:18.540
+Remember, a two-dimensional vector is a vector of vectors.
+
+00:01:19.040 --> 00:01:23.040
+Then I want you to add vector1 to vector2d using pushback,
+
+00:01:23.540 --> 00:01:27.140
+then add vector2 to vector2d using pushback as well.
+
+00:01:27.740 --> 00:01:30.740
+Then display the elements in vector2d using the at method.
+
+00:01:31.640 --> 00:01:34.540
+Now comes the interesting part. I want you to change
+
+00:01:34.540 --> 00:01:38.640
+vector1's first element, using the at0 method.
+
+00:01:38.790 --> 00:01:40.490
+And I want you to change it to a 1000.
+
+00:01:40.490 --> 00:01:43.190
+Then i want you to display the elements in the 2d vector
+
+00:01:43.190 --> 00:01:45.790
+again using the at method, just like you did before.
+
+00:01:46.150 --> 00:01:49.150
+And then finally, display the elements in vector1.
+
+00:01:49.750 --> 00:01:52.550
+Take a look at the results and see if it's what you expected,
+
+00:01:52.550 --> 00:01:54.050
+and see what you think happened.
+
+00:01:54.850 --> 00:01:59.450
+That's it. Good luck, have fun. Once you finish the challenge, extend it any way you wish.
+
+00:01:59.450 --> 00:02:02.450
+Remember, the more you practice, the easier programming becomes.
+
+00:02:02.750 --> 00:02:06.850
+Once you finish the challenge, join me in the next video, and we'll go over my solution.

@@ -1,0 +1,321 @@
+WEBVTT
+
+0
+00:00.150 --> 00:02.070
+Now pointer to a function.
+
+1
+00:02.180 --> 00:05.600
+we know well that we can have  pointer to any data type.
+
+2
+00:05.630 --> 00:09.320
+Any primitive data type, we can have a pointer of type class.
+
+3
+00:09.390 --> 00:11.850
+Can we have a pointer to a function also.
+
+4
+00:11.850 --> 00:12.700
+Yes.
+
+5
+00:12.860 --> 00:14.790
+See already I have one function here.
+
+6
+00:14.790 --> 00:17.490
+The name of the function is display and not returning anything.
+
+7
+00:17.490 --> 00:22.830
+No parameters at that and i it is displaying hello, now from the main function if I have to call this
+
+8
+00:22.830 --> 00:23.430
+function.
+
+9
+00:23.460 --> 00:29.930
+I can simply say display that's all. i can call this one so Hello will be displayed.
+
+10
+00:29.970 --> 00:33.440
+This function is called and hello is displayed and the control returns back.
+
+11
+00:33.490 --> 00:37.170
+We know this, now instead of directly calling the name.
+
+12
+00:37.170 --> 00:39.600
+Can I use a pointer to a function.
+
+13
+00:39.600 --> 00:40.410
+Let us see.
+
+14
+00:40.410 --> 00:47.730
+I will define a pointer to a function and will call it does FP then how it should be, written type is void
+
+15
+00:47.730 --> 00:48.630
+write void.
+
+16
+00:48.710 --> 00:52.000
+Void, any parameters,  no parameters.
+
+17
+00:52.020 --> 00:57.390
+So this is the method of declaring a pointer to a function and when you declared a pointer to a function
+
+18
+00:57.390 --> 01:02.320
+it must be inside the brackets otherwise it will not be a pointer to a function.
+
+19
+01:02.460 --> 01:05.490
+It must be enclosed in a bracket, the next
+
+20
+01:05.880 --> 01:10.760
+This is a declaration of a pointer then FP assigned display.
+
+21
+01:10.920 --> 01:16.680
+Now this will be assigning name of a function to this point.
+
+22
+01:16.710 --> 01:20.360
+So the address of that function will be stored in this pointer.
+
+23
+01:20.400 --> 01:27.420
+This is initialization so it means this is a declaration of a pointer and this is initialization of
+
+24
+01:27.420 --> 01:28.870
+a pointer.
+
+25
+01:28.870 --> 01:34.560
+and now  how to call this, so the same way again start fp in brackets.
+
+26
+01:34.560 --> 01:37.590
+Then as there are no parameters just empty.
+
+27
+01:37.590 --> 01:39.430
+Now this is a function call.
+
+28
+01:39.720 --> 01:40.790
+this is a function.
+
+29
+01:41.940 --> 01:48.720
+So declaration of a pointer initialization and function call, for declaration only in place for
+
+30
+01:48.750 --> 01:49.710
+function name.
+
+31
+01:49.710 --> 01:51.020
+You have to write down the pointer.
+
+32
+01:51.060 --> 01:55.310
+Everything should be same when you're declared a pointer to a function.
+
+33
+01:55.320 --> 02:00.330
+Everything should be same as the signature of a prototype of a function except the function name you
+
+34
+02:00.330 --> 02:02.200
+should have pointer in brackets.
+
+35
+02:02.220 --> 02:05.330
+Then initialization directly function name, then calling.
+
+36
+02:05.340 --> 02:08.570
+Give the function pointer name and give the brackets.
+
+37
+02:08.610 --> 02:10.110
+If the parameters pass them.
+
+38
+02:10.250 --> 02:14.760
+That's all that's how a pointer can be assigned to a function.
+
+39
+02:14.820 --> 02:15.970
+I'll show you more on this.
+
+40
+02:16.160 --> 02:17.980
+Let us see suppose
+
+41
+02:18.000 --> 02:24.830
+I have a function called Max which is taking two integers x and y.
+
+42
+02:25.450 --> 02:30.090
+And this is returning X greater than y.
+
+43
+02:30.420 --> 02:38.310
+return X otherwise y, then I have one more function that is named as min and which takes 2 argumens 
+
+44
+02:38.420 --> 02:40.620
+X and Y.
+
+45
+02:40.910 --> 02:48.020
+And it will return if x is less than y it returns X otherwise y.
+
+46
+02:49.210 --> 02:50.960
+Now you have two functions.
+
+47
+02:50.970 --> 02:55.470
+this is for finding maximum of two integer that is for finding minimum of two integers.
+
+48
+02:55.470 --> 02:59.300
+I will take the prototype int instead of Max.
+
+49
+02:59.310 --> 03:03.200
+I will say fp instead of max and then 2 integers
+
+50
+03:03.300 --> 03:05.340
+So just take int int.
+
+51
+03:05.400 --> 03:10.860
+Don't take any parameter name , dont give the argument name x and y just int, int
+
+52
+03:10.980 --> 03:12.900
+This is the declaration of a function.
+
+53
+03:12.910 --> 03:15.560
+Now FP assign the max.
+
+54
+03:15.720 --> 03:18.680
+So this is assigned to Max, now call
+
+55
+03:18.690 --> 03:24.680
+Star FP by passing 10, 5 so which function will be born.
+
+56
+03:24.840 --> 03:28.680
+Max is called Max is called.
+
+57
+03:28.680 --> 03:29.910
+Max function is called.
+
+58
+03:30.360 --> 03:37.260
+So if I see the signature of the prototype of max and min are saying so is it possible that the next
+
+59
+03:37.260 --> 03:40.330
+line the next movement I can see FP assigned min.
+
+60
+03:41.220 --> 03:43.410
+Yes I can say like this also.
+
+61
+03:43.410 --> 03:47.620
+Then if what happens if I say FP 10,5.
+
+62
+03:47.700 --> 03:48.930
+What would happen.
+
+63
+03:48.930 --> 03:50.640
+Which function is called here.
+
+64
+03:50.640 --> 03:52.090
+Here the max was called.
+
+65
+03:52.110 --> 03:56.100
+Now the pointer is pointing the min function so min functions will be called.
+
+66
+03:56.400 --> 03:59.480
+So here Min is called.
+
+67
+03:59.590 --> 04:00.690
+That's it.
+
+68
+04:00.690 --> 04:05.670
+So if I remove this and show you just look at the code simply look at the code.
+
+69
+04:05.670 --> 04:12.720
+See this line and this line, here max assign, here min is assign but what about these two
+
+70
+04:12.720 --> 04:19.630
+lines they are same, they are same but here max function  is called, here min function is called
+
+71
+04:20.010 --> 04:25.290
+different functions are called because the pointer is pointing on different functions.
+
+72
+04:25.290 --> 04:30.490
+So this is same name different functions different operations.
+
+73
+04:30.540 --> 04:32.280
+So this is just like polymorphism.
+
+74
+04:33.000 --> 04:38.470
+Yes yes in function overwriting internally.
+
+75
+04:38.520 --> 04:47.310
+Function pointer are used for achieving a runtime polymorphism using function overwriting.
+
+76
+04:47.310 --> 04:54.900
+So this means that one function pointer can point on any function which is having same signature.
+
+77
+04:54.960 --> 05:00.940
+Yes a function pointer can point on all those functions which are having same signature.
+
+78
+05:01.120 --> 05:05.770
+So let us write this code and check, so that's all bout function pointers.
+
+79
+05:05.800 --> 05:07.440
+Let us write on the code and check.

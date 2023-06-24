@@ -1,0 +1,904 @@
+WEBVTT
+
+00:00:05.320 --> 00:00:08.980
+In this video, we'll learn a little
+bit more about c++ scope rules.
+
+00:00:09.599 --> 00:00:14.070
+C++ uses scope rules to determine when
+and where an identifier can be used.
+
+00:00:14.730 --> 00:00:17.786
+It uses static or lexical
+scoping, which means that
+
+00:00:17.786 --> 00:00:20.580
+the scope is determined the
+same way you read a program.
+
+00:00:21.450 --> 00:00:25.010
+C++ has two main scopes,
+local scope and global scope.
+
+00:00:27.960 --> 00:00:31.830
+Local or block scope refers to the
+visibility of an identifier that's
+
+00:00:31.830 --> 00:00:36.140
+been declared in a block that is a
+set of open or closed curly braces.
+
+00:00:36.680 --> 00:00:39.030
+Function parameters
+also have block scope.
+
+00:00:39.620 --> 00:00:42.810
+These identifiers are visible within
+the block in which they're declared.
+
+00:00:43.390 --> 00:00:45.299
+I talked about this earlier
+in the course, but it's
+
+00:00:45.300 --> 00:00:47.760
+important to understand it
+in the context of functions.
+
+00:00:48.610 --> 00:00:50.779
+When a function is called,
+you can think of the
+
+00:00:50.780 --> 00:00:52.480
+function as being activated.
+
+00:00:52.820 --> 00:00:55.680
+And the function parameters
+are bound to storage.
+
+00:00:56.280 --> 00:00:59.880
+They become alive, and their lifetime
+is while the function is executing.
+
+00:01:00.350 --> 00:01:03.519
+Once the function completes,
+the function is deactivated,
+
+00:01:03.519 --> 00:01:05.899
+and these variables and
+parameters are no longer alive.
+
+00:01:06.570 --> 00:01:09.229
+That doesn't mean that they're
+somehow marked as unavailable.
+
+00:01:09.400 --> 00:01:12.119
+It simply means that the compiler
+doesn't recognize them any
+
+00:01:12.170 --> 00:01:15.710
+longer, and the storage they were
+bound to will likely be reused.
+
+00:01:16.740 --> 00:01:19.720
+That means that the values
+of local variables are not
+
+00:01:19.770 --> 00:01:21.670
+preserved between function calls.
+
+00:01:22.389 --> 00:01:26.110
+If we have nested blocks, then
+statements in the inner blocks can
+
+00:01:26.110 --> 00:01:29.970
+see identifiers declared in the outer
+blocks, but outer blocks cannot see
+
+00:01:29.970 --> 00:01:31.780
+variables defined in the inner blocks.
+
+00:01:34.580 --> 00:01:37.380
+However, there is one type
+of variable whose value is
+
+00:01:37.410 --> 00:01:39.229
+preserved between function calls.
+
+00:01:39.730 --> 00:01:41.660
+This is a static local variable.
+
+00:01:42.150 --> 00:01:45.000
+It's a variable whose lifetime
+is the lifetime of the program,
+
+00:01:45.420 --> 00:01:48.270
+but it's only visible to the
+statements in the function body.
+
+00:01:48.840 --> 00:01:51.600
+These variables can come in very
+handy when you need to know a
+
+00:01:51.600 --> 00:01:55.350
+previous value in a function without
+having to pass it in all the time.
+
+00:01:56.150 --> 00:01:58.870
+Static local variables
+are only initialized once.
+
+00:01:59.050 --> 00:02:02.464
+If no initializer is
+provided, they're set to 0.
+
+00:02:03.340 --> 00:02:06.610
+Identifiers with global scope
+are identifiers that are declared
+
+00:02:06.640 --> 00:02:08.440
+outside of any function or class.
+
+00:02:09.100 --> 00:02:11.890
+These identifiers are visible
+to all parts of the program
+
+00:02:11.890 --> 00:02:13.370
+following their declaration.
+
+00:02:14.080 --> 00:02:17.110
+Best practice with identifiers
+with global scope is that it's
+
+00:02:17.130 --> 00:02:21.250
+okay to use global constants, but
+global variables should be avoided.
+
+00:02:21.740 --> 00:02:23.950
+Let's see scope rules
+in action in the IDE.
+
+00:02:25.000 --> 00:02:29.390
+Okay, so now I'm in the CodeLite IDE,
+and I'm in the section 11 workspace
+
+00:02:29.920 --> 00:02:31.710
+in the scope example project.
+
+00:02:32.330 --> 00:02:36.019
+And here I've got an example program
+that just exercises a few of the scope
+
+00:02:36.020 --> 00:02:37.490
+rules, and I'll walk through them.
+
+00:02:37.540 --> 00:02:39.090
+They're very straightforward.
+
+00:02:39.130 --> 00:02:42.500
+The nice thing about languages like
+c++ and other languages that use
+
+00:02:42.540 --> 00:02:47.230
+static scoping is that the scoping is
+lexical, so it's as you read the code.
+
+00:02:47.230 --> 00:02:50.609
+It's not something that's happening
+at run time on the call stack.
+
+00:02:50.950 --> 00:02:53.379
+Languages that use dynamic
+scoping rules are a little
+
+00:02:53.380 --> 00:02:54.879
+harder to follow in this sense.
+
+00:02:55.030 --> 00:02:56.740
+So let's take a look
+at this example here.
+
+00:02:57.120 --> 00:02:58.190
+I've got my main.
+
+00:02:58.430 --> 00:03:00.920
+And I've got two local
+variables defined in main.
+
+00:03:00.930 --> 00:03:04.850
+They're local two main because
+they're defined inside those brackets.
+
+00:03:05.070 --> 00:03:06.489
+Okay, that's really important.
+
+00:03:07.340 --> 00:03:09.730
+So what's the scoping deal all about?
+
+00:03:09.740 --> 00:03:13.659
+Well, when I use a variable name,
+for example, I'm using num here,
+
+00:03:14.150 --> 00:03:15.830
+which num am I talking about?
+
+00:03:15.860 --> 00:03:17.360
+That's what scope is all about.
+
+00:03:18.039 --> 00:03:19.690
+And the rule is really very simple.
+
+00:03:19.710 --> 00:03:24.679
+First, you look inside your own scope,
+inside your local scope so here's
+
+00:03:24.680 --> 00:03:26.829
+num I'm using it, which one is it.
+
+00:03:26.840 --> 00:03:29.510
+Well, look inside your scope here.
+
+00:03:29.950 --> 00:03:32.839
+And you'll see, it's this
+one right here, right.
+
+00:03:32.910 --> 00:03:35.689
+That's the closest one within
+the scope that you're in.
+
+00:03:35.879 --> 00:03:37.820
+So this is going to print 100.
+
+00:03:39.300 --> 00:03:41.630
+Now block statements,
+just like we had here.
+
+00:03:41.700 --> 00:03:43.990
+Block statements create
+a new level of scope.
+
+00:03:44.520 --> 00:03:46.519
+And we're going to see this
+again when we use classes.
+
+00:03:46.710 --> 00:03:50.150
+So every time that you create a block,
+you've got a new level of scope.
+
+00:03:50.429 --> 00:03:52.489
+So notice here I'm
+declaring num again.
+
+00:03:52.609 --> 00:03:53.899
+This is a different num now.
+
+00:03:53.900 --> 00:03:55.630
+I'm using the same name on purpose.
+
+00:03:56.230 --> 00:03:59.299
+So now when I use it here
+in the output statement.
+
+00:03:59.570 --> 00:04:01.119
+Which num am I talking about?
+
+00:04:01.120 --> 00:04:03.540
+Am I talking about this
+one here on line 36?
+
+00:04:03.540 --> 00:04:05.810
+Or am I talking about
+the one on line 42?
+
+00:04:05.900 --> 00:04:08.690
+Well, you look in your
+closest scope first, right.
+
+00:04:08.730 --> 00:04:10.200
+You look for a local variable.
+
+00:04:10.400 --> 00:04:14.510
+So this num here refers to this num
+right here, that's the variable.
+
+00:04:14.740 --> 00:04:16.459
+So this is going to display 200.
+
+00:04:18.120 --> 00:04:20.300
+What about this one here, num1.
+
+00:04:20.829 --> 00:04:24.450
+The rule again that you
+follow look inside here first.
+
+00:04:24.780 --> 00:04:26.870
+Do you see a num1 declared in here.
+
+00:04:26.950 --> 00:04:27.840
+No, you don't.
+
+00:04:27.929 --> 00:04:30.129
+Then you look out to your outer scope.
+
+00:04:30.279 --> 00:04:31.470
+There it is, right here.
+
+00:04:31.900 --> 00:04:35.349
+So that's the one I'm using
+and that'll display 500.
+
+00:04:38.400 --> 00:04:39.920
+Okay, hopefully, that makes sense.
+
+00:04:39.960 --> 00:04:40.769
+Now here we go.
+
+00:04:40.780 --> 00:04:42.180
+We're using num again.
+
+00:04:42.210 --> 00:04:43.319
+But now we've got two nums.
+
+00:04:43.330 --> 00:04:46.020
+We've got the num here on line
+36 and we've got the num here
+
+00:04:46.020 --> 00:04:48.419
+on line 42, which one do we use?
+
+00:04:48.670 --> 00:04:52.160
+Well, you look in your level
+of scope, your local variable.
+
+00:04:52.180 --> 00:04:54.340
+You can't look into another block.
+
+00:04:54.670 --> 00:04:57.900
+You notice how this block here
+could see out, so we could see num1.
+
+00:04:58.849 --> 00:04:59.959
+That's perfectly normal.
+
+00:04:59.969 --> 00:05:03.190
+First you look in your local
+scope then you look outwards.
+
+00:05:03.509 --> 00:05:04.830
+You don't look inwards.
+
+00:05:05.160 --> 00:05:10.210
+Okay, so this num refers to
+this guy right here, on line 36.
+
+00:05:10.230 --> 00:05:12.710
+So this is going to
+display 100 as well.
+
+00:05:14.160 --> 00:05:16.070
+We'll go through a few
+more examples down here.
+
+00:05:16.110 --> 00:05:17.240
+But let's run this one first.
+
+00:05:17.250 --> 00:05:20.939
+We're expecting 100 200 500 and 100.
+
+00:05:21.320 --> 00:05:23.179
+So let me run this example.
+
+00:05:24.760 --> 00:05:28.310
+And here we go, 100 200 500 and 100.
+
+00:05:28.460 --> 00:05:29.570
+Just what we expected.
+
+00:05:30.650 --> 00:05:34.370
+When you read about scope in books
+and on websites and tutorials,
+
+00:05:34.599 --> 00:05:37.890
+it's really complicated when
+you first learn about it, local,
+
+00:05:37.890 --> 00:05:39.629
+non-local, global and all this stuff.
+
+00:05:40.070 --> 00:05:42.080
+But conceptually, it's
+pretty straightforward.
+
+00:05:42.090 --> 00:05:45.290
+First you look local, then you
+look out, out, out as far as you
+
+00:05:45.290 --> 00:05:46.500
+need to go until you find it.
+
+00:05:46.790 --> 00:05:49.390
+If you don't find, it you have
+a compiler error, for sure.
+
+00:05:49.940 --> 00:05:51.780
+All right, so let's
+look at this one here.
+
+00:05:52.520 --> 00:05:55.260
+I'm calling a function
+called local example.
+
+00:05:55.260 --> 00:05:56.340
+And I'm passing in a 10.
+
+00:05:56.860 --> 00:05:58.650
+And let me show you what
+that function looks like.
+
+00:05:58.650 --> 00:06:01.159
+It's right here, let
+me expand it a little.
+
+00:06:02.620 --> 00:06:04.469
+So I'm calling this with a 10.
+
+00:06:04.470 --> 00:06:06.440
+So I'm passing in a 10 by value.
+
+00:06:06.440 --> 00:06:09.319
+So this x right here
+will be a 10, right.
+
+00:06:09.380 --> 00:06:11.530
+I'm going to copy the 10.
+
+00:06:11.530 --> 00:06:13.539
+I've got a num variable right here.
+
+00:06:13.749 --> 00:06:15.530
+And I'm initializing it to a 1000.
+
+00:06:15.969 --> 00:06:18.240
+So my output statement is using num.
+
+00:06:18.440 --> 00:06:19.719
+Which num am I using?
+
+00:06:19.940 --> 00:06:21.370
+Well, I've got two choices, right.
+
+00:06:21.420 --> 00:06:24.260
+I can use this one on line 20,
+or I can use this one on line 11.
+
+00:06:25.520 --> 00:06:27.390
+I always use the local variable.
+
+00:06:27.590 --> 00:06:30.360
+In this case, I'm going to
+use this one, on line 20.
+
+00:06:30.440 --> 00:06:32.280
+So this is going to display a 1000.
+
+00:06:34.440 --> 00:06:36.539
+Then I'm setting num equal to x.
+
+00:06:36.580 --> 00:06:37.950
+Okay, X is 10.
+
+00:06:38.430 --> 00:06:39.990
+Which num am I talking about?
+
+00:06:40.260 --> 00:06:42.750
+I'm talking about
+this num again, right.
+
+00:06:42.910 --> 00:06:44.620
+So I'm going to set this to 10.
+
+00:06:46.120 --> 00:06:49.400
+And I'm going to display
+num, which is again the 10.
+
+00:06:49.620 --> 00:06:52.620
+So this will display a 1000 and 10.
+
+00:06:53.150 --> 00:06:57.460
+Notice that I can't use num1 here
+because it's not within the scope,
+
+00:06:57.520 --> 00:06:59.190
+that was defined inside main.
+
+00:06:59.920 --> 00:07:02.810
+Okay, so if I run this,
+I expect 1000 and ten.
+
+00:07:03.530 --> 00:07:04.619
+And let's try that out.
+
+00:07:08.740 --> 00:07:11.660
+And here you go, local number is a
+1000 and then local number is 10.
+
+00:07:12.820 --> 00:07:15.970
+Suppose I call this again
+but I pass in a 20 into it.
+
+00:07:17.480 --> 00:07:18.890
+Okay, what do you think
+is going to happen?
+
+00:07:18.920 --> 00:07:20.490
+Well, let's go back here again.
+
+00:07:20.860 --> 00:07:22.920
+In this case, I'm passing in a 20.
+
+00:07:23.800 --> 00:07:25.389
+So x is going to get the 20.
+
+00:07:26.520 --> 00:07:28.089
+I'm initializing this to a 1000.
+
+00:07:28.119 --> 00:07:31.330
+Every time I call this function, that
+num will be initialized to a 1000.
+
+00:07:31.330 --> 00:07:33.470
+So in this case, there's num.
+
+00:07:33.540 --> 00:07:35.340
+I'm using this one right here again.
+
+00:07:35.500 --> 00:07:37.010
+So this will display a 1000.
+
+00:07:38.240 --> 00:07:40.660
+Now I'm setting that
+same variable to 20.
+
+00:07:41.250 --> 00:07:42.590
+And then I'm displaying it right here.
+
+00:07:42.590 --> 00:07:45.160
+So this is going to
+display a 1000 and 20.
+
+00:07:45.839 --> 00:07:49.160
+Okay, so it's the same idea,
+and it's pretty straightforward.
+
+00:07:49.160 --> 00:07:50.120
+Let me run this.
+
+00:07:50.680 --> 00:07:52.176
+So we thought we saw a 1000 and 10.
+
+00:07:52.176 --> 00:07:53.930
+Now we're see a 1000 and 20.
+
+00:07:55.670 --> 00:07:58.580
+Okay, so now let's look at an
+example of a global variable.
+
+00:08:00.469 --> 00:08:02.979
+You'll notice that way up here
+at the top of the program.
+
+00:08:03.389 --> 00:08:04.430
+I want to scroll all the way up.
+
+00:08:04.449 --> 00:08:07.180
+Let me close that function
+and expand this one.
+
+00:08:08.390 --> 00:08:09.660
+This is what we've got right here.
+
+00:08:09.660 --> 00:08:13.510
+We've got a global variable
+called num right here on line 11.
+
+00:08:14.659 --> 00:08:17.210
+And I'm initializing that
+global variable to 300.
+
+00:08:17.230 --> 00:08:18.689
+How do I know it's a global variable?
+
+00:08:19.090 --> 00:08:21.010
+It's not declared inside any function.
+
+00:08:21.010 --> 00:08:22.730
+It's not declared inside any class.
+
+00:08:22.760 --> 00:08:24.349
+It's just sitting there
+all on its own right.
+
+00:08:24.370 --> 00:08:26.210
+This is global to the entire program.
+
+00:08:26.880 --> 00:08:29.310
+So in this case, I'm
+calling global example.
+
+00:08:29.960 --> 00:08:31.670
+And which number do I use?
+
+00:08:31.700 --> 00:08:32.990
+Well, what's the first thing you do?
+
+00:08:33.030 --> 00:08:33.940
+You look in here.
+
+00:08:34.590 --> 00:08:37.580
+Is there a variable called
+num defined in here?
+
+00:08:37.630 --> 00:08:38.620
+No, there isn't.
+
+00:08:38.679 --> 00:08:39.940
+Then you look outward.
+
+00:08:40.559 --> 00:08:41.449
+And there it is.
+
+00:08:41.940 --> 00:08:43.500
+So this displays 300.
+
+00:08:45.360 --> 00:08:47.150
+Then I take num, and
+I multiply it by 2.
+
+00:08:48.350 --> 00:08:49.079
+Okay, which num?
+
+00:08:49.660 --> 00:08:50.120
+Same one.
+
+00:08:50.380 --> 00:08:52.050
+So this will now become 600.
+
+00:08:53.189 --> 00:08:54.960
+And I'm going to display 600.
+
+00:08:56.790 --> 00:08:58.360
+Okay, now what if I call
+this function again.
+
+00:08:58.360 --> 00:08:59.899
+And I'll call it twice in the main.
+
+00:08:59.900 --> 00:09:01.010
+What if I call it again.
+
+00:09:01.010 --> 00:09:04.610
+Well, the next time I call it,
+this variable still has 600 in it.
+
+00:09:04.610 --> 00:09:05.689
+It's a global variable.
+
+00:09:05.910 --> 00:09:09.780
+So the next time I call it, we look
+at num, num is 600 which I display.
+
+00:09:11.639 --> 00:09:12.779
+I multiply it by 2.
+
+00:09:12.780 --> 00:09:14.509
+Okay, so that's 1200 now.
+
+00:09:15.750 --> 00:09:17.199
+And then I display it again.
+
+00:09:17.590 --> 00:09:19.030
+So it's 1200 this time.
+
+00:09:19.550 --> 00:09:22.750
+Notice the global variable does not
+get reinitialized every time, it
+
+00:09:22.750 --> 00:09:25.880
+only gets initialized that one time
+when you're -- actually before main
+
+00:09:25.880 --> 00:09:27.410
+is even called, that's initialized.
+
+00:09:27.630 --> 00:09:31.850
+So here we're going to end up with
+300 600 and then 600 and 1200.
+
+00:09:32.480 --> 00:09:37.250
+So let me uncomment that one line out
+so we can call this twice, right here.
+
+00:09:39.460 --> 00:09:41.830
+And let's run that, and
+you can see here we've got
+
+00:09:41.830 --> 00:09:44.300
+300 600 and then 600 1200.
+
+00:09:44.790 --> 00:09:45.780
+Just what we'd expect.
+
+00:09:46.920 --> 00:09:49.700
+All right, so let's look
+at one more example here is
+
+00:09:49.700 --> 00:09:51.080
+the static local example.
+
+00:09:51.080 --> 00:09:52.180
+And I'll scroll up.
+
+00:09:52.820 --> 00:09:53.909
+Let me close that down.
+
+00:09:55.459 --> 00:09:57.650
+Now we mentioned what
+a static variable was.
+
+00:09:58.340 --> 00:10:02.900
+A static variable is a variable
+that is defined locally.
+
+00:10:03.090 --> 00:10:05.129
+In this case, this is a
+static local variable.
+
+00:10:05.309 --> 00:10:08.380
+So num is visible in here.
+
+00:10:09.160 --> 00:10:11.870
+But because we're using the
+static qualifier, what that
+
+00:10:11.870 --> 00:10:16.190
+means is that this num variable
+will be initialized to 5000.
+
+00:10:16.340 --> 00:10:18.090
+The first time this
+function is called.
+
+00:10:18.540 --> 00:10:20.920
+After that, it retains
+its previous value.
+
+00:10:21.280 --> 00:10:23.969
+Real different from the example
+we saw in local value which it
+
+00:10:24.030 --> 00:10:25.480
+got reinitialized every time.
+
+00:10:26.170 --> 00:10:29.549
+So let's say I call static
+local example the first time.
+
+00:10:30.000 --> 00:10:33.319
+We're initializing num to 5000.
+
+00:10:34.640 --> 00:10:35.910
+That only happens once.
+
+00:10:36.420 --> 00:10:37.320
+Then I'm using it.
+
+00:10:37.340 --> 00:10:40.790
+Which one, again I'm looking
+inside local scope first.
+
+00:10:40.910 --> 00:10:42.870
+So that's going to display 5000 here.
+
+00:10:44.210 --> 00:10:46.010
+Then I'm incrementing num by a 1000.
+
+00:10:46.230 --> 00:10:49.110
+Okay, now it's 6000.
+
+00:10:50.480 --> 00:10:51.880
+And then I'm displaying it again.
+
+00:10:51.890 --> 00:10:53.010
+Well, now it's 6000.
+
+00:10:55.060 --> 00:10:57.260
+Now suppose I call static local again.
+
+00:10:57.700 --> 00:10:59.889
+Since this has already
+been initialized, it won't
+
+00:10:59.900 --> 00:11:01.060
+be initialized again.
+
+00:11:01.120 --> 00:11:02.989
+And it's going to retain
+its previous values.
+
+00:11:03.000 --> 00:11:05.459
+So it's 6000 right now, here it is.
+
+00:11:05.990 --> 00:11:08.390
+So if I display, it I'm
+going to get a 6000.
+
+00:11:08.960 --> 00:11:12.540
+And then I'm going to increment it
+again by a 1000 and display it again.
+
+00:11:12.540 --> 00:11:13.750
+So I'm going to get 7000.
+
+00:11:14.580 --> 00:11:17.870
+And when I run this a third time,
+I'll end up with the 7000 I started
+
+00:11:17.870 --> 00:11:20.809
+with and the 8000 that I end up with.
+
+00:11:21.530 --> 00:11:23.380
+So as you can see it's
+pretty straightforward.
+
+00:11:23.609 --> 00:11:27.229
+This is a real useful concept, the
+concept of static local variables
+
+00:11:27.230 --> 00:11:31.439
+because you've got a number or
+a variable in this case that
+
+00:11:31.450 --> 00:11:34.390
+behaves like a global variable,
+right, because it's retaining its
+
+00:11:34.390 --> 00:11:37.000
+value, but its scope is local.
+
+00:11:37.270 --> 00:11:40.060
+So you don't have the same problems
+that you have with global variables,
+
+00:11:40.199 --> 00:11:42.890
+which means that they're visible
+throughout the program and any
+
+00:11:42.900 --> 00:11:44.140
+piece of code could change it.
+
+00:11:44.590 --> 00:11:49.449
+In this case, if this number variable
+right here gets a really strange value
+
+00:11:49.490 --> 00:11:52.469
+the only place they could have gotten
+it from was inside this function.
+
+00:11:52.469 --> 00:11:54.000
+And you know exactly where to look.
+
+00:11:54.429 --> 00:11:55.799
+So that wraps up scope.
+
+00:11:56.420 --> 00:11:57.810
+It's a pretty simple concept.
+
+00:11:57.839 --> 00:12:02.739
+And it's -- again, think -- look local
+first then look out then look out then
+
+00:12:02.740 --> 00:12:04.750
+look out until you hit global scope.
+
+00:12:05.290 --> 00:12:08.560
+If you don't find that variable there,
+then you've got a compiler error.

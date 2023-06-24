@@ -1,0 +1,436 @@
+WEBVTT
+
+00:05.290 --> 00:13.490
+In this video we'll use the command line tools to compile and run our C++ programs on the Windows platform.
+
+00:13.490 --> 00:17.260
+Now obviously we need some sort of editor to type in our code.
+
+00:17.300 --> 00:21.930
+I'm just going to use Notepad which is built into Windows and it's really really easy to use.
+
+00:22.130 --> 00:23.060
+Couple of things first.
+
+00:23.120 --> 00:28.250
+I've created a folder on my desktop called C.P. projects in there.
+
+00:28.400 --> 00:34.400
+There's another folder called Project 1 inside Project 1 is where we're going to put our C++ file our
+
+00:34.400 --> 00:35.350
+source code.
+
+00:35.360 --> 00:36.850
+Now there's nothing in there right now.
+
+00:36.920 --> 00:40.530
+I just wanted to show you where I'm going to be putting everything.
+
+00:40.590 --> 00:43.360
+OK so the first thing I want to do is I just want to open up Notepad
+
+00:46.650 --> 00:52.200
+and as you know Notepad is just a real simple text editor and I want to type in my C++ program right
+
+00:52.200 --> 00:53.170
+into this textedit.
+
+00:53.190 --> 00:56.680
+I'm just going to make a little bit smaller and open up another window in a moment.
+
+00:56.730 --> 01:00.340
+So let's type in that main program that we should probably know by heart now.
+
+01:00.600 --> 01:03.630
+So I'm going to say include IO stream
+
+01:07.200 --> 01:09.280
+that I'm going to say int main.
+
+01:09.570 --> 01:11.710
+Open and close parentheses.
+
+01:11.910 --> 01:13.350
+Open curly bracket.
+
+01:13.430 --> 01:15.660
+I'll close the curly bracket at the bottom.
+
+01:15.660 --> 01:19.980
+Remember this is not an integrated development environment so it's not really getting help me with syntax
+
+01:19.980 --> 01:23.840
+or with you no closing open brackets automatically and so forth.
+
+01:24.690 --> 01:30.270
+I'll indent over a couple of spaces and I'll say c d to Kolins C out
+
+01:33.250 --> 01:35.160
+to less than signs next to each other.
+
+01:35.170 --> 01:42.000
+Which is the insertion operator and will say hello Windows command line.
+
+01:43.470 --> 01:47.640
+It will close the string then we can also print a new line at the end.
+
+01:47.700 --> 01:50.140
+That's all just say CD.
+
+01:50.290 --> 01:57.080
+Colin Colin E and D L semi-colon that are just print a new line the precursor to the next line in the
+
+01:57.080 --> 01:58.840
+output.
+
+01:59.090 --> 02:00.440
+Here will say return 0.
+
+02:00.470 --> 02:04.700
+Like we always do and then we just clean this up a little bit.
+
+02:04.820 --> 02:06.720
+That's it we're done.
+
+02:06.920 --> 02:13.010
+We don't need to save that program into that CPV projects projects one folder that I mentioned a minute
+
+02:13.010 --> 02:13.700
+ago.
+
+02:14.210 --> 02:18.830
+At this point you have to be a little careful because notepad works with text files so it's going to
+
+02:18.830 --> 02:20.300
+use to fix the extensions.
+
+02:20.300 --> 02:28.640
+We don't want to see extensions we want p extension so I'm going to go to File Save As and then I'm
+
+02:28.640 --> 02:30.520
+going to go to my desktop.
+
+02:30.800 --> 02:37.640
+My C-p projects and my project one folder Lolas here was this file named stardate text that's what I
+
+02:37.640 --> 02:38.310
+don't want.
+
+02:38.420 --> 02:43.930
+So I want to save as file type or just say all files that gets rid of the extension.
+
+02:43.960 --> 02:50.800
+Now we could just Semaine that C-p that's going to save my file as main data.
+
+02:50.940 --> 03:00.050
+And I'm going to save it so if I go to my directory structure now you'll see I have C.P projects projects
+
+03:00.230 --> 03:03.040
+Project 1 and there's my main.
+
+03:03.110 --> 03:06.980
+Now we need to compile and run this the way we do that and I'm going to leave this window open on here
+
+03:07.130 --> 03:08.120
+on the left for a moment.
+
+03:08.270 --> 03:13.460
+The way we do that is with the command shell or a command prompt and all you need to do is just run
+
+03:13.460 --> 03:17.420
+command and you'll see where it says command prompt.
+
+03:18.170 --> 03:19.020
+That's what we want to do.
+
+03:19.010 --> 03:22.850
+We'll just press enter and run it and we get this window here and I'm just going to move it over here
+
+03:22.850 --> 03:23.570
+on the right.
+
+03:23.570 --> 03:27.360
+That way it's nice and big.
+
+03:27.930 --> 03:31.970
+I notice first of all I'm in the wrong directory when the users Frank directory.
+
+03:32.000 --> 03:37.920
+I want to be in that folder that I created so we can use the CD command to change directory.
+
+03:37.970 --> 03:43.600
+This case I want to change directory to desktop and press enter.
+
+03:43.960 --> 03:46.290
+And now you can see that I'm at the desktop.
+
+03:46.430 --> 03:51.560
+They don't want to change into CPP projects and you can press tab and it will autocomplete for you someone
+
+03:51.560 --> 03:58.650
+to press tab or to say CPV projects and then I want to go into project one.
+
+03:58.660 --> 04:03.580
+There we go there and see if I want to see what's in that folder or just have Deodhar for directory
+
+04:03.580 --> 04:08.390
+listing and you could see right there is my main TPP.
+
+04:08.770 --> 04:13.870
+At this point I want to compile the way we compile is and then make this a little bit bigger so the
+
+04:13.870 --> 04:15.640
+whole line will fit on here.
+
+04:15.730 --> 04:20.950
+We want to use the C++ compiler the GWC plus plus compiler that I'm assuming is already installed.
+
+04:20.950 --> 04:27.460
+We need to have that compiler installed plus plus that's the compiler.
+
+04:27.460 --> 04:38.010
+Now we need to have those options Dasch w capital W all that turns your warnings on then s t d equals
+
+04:38.160 --> 04:47.920
+sorry dash as to the equals C plus plus 14 that's using the C plus plus version 14 standard and then
+
+04:47.980 --> 04:53.940
+the file we want to compile which in this case is main CPB that's it.
+
+04:53.940 --> 04:59.810
+Now when I do this if there are no errors it's going to create an executive file called a doc xes.
+
+04:59.820 --> 05:04.130
+So let's do that then we get a clean compile member.
+
+05:04.140 --> 05:05.140
+No news is good news.
+
+05:05.140 --> 05:09.680
+So no messages that's a good thing and we'll do Deodhar again.
+
+05:09.770 --> 05:11.050
+You can see right here we have a file.
+
+05:11.190 --> 05:13.080
+A dot see that's our executive.
+
+05:13.090 --> 05:15.210
+I can run it by just typing.
+
+05:16.150 --> 05:22.110
+And it says hello Windows command line which is exactly what our program is supposed to do if you want
+
+05:22.110 --> 05:24.580
+a different name for the output.
+
+05:24.600 --> 05:27.340
+We could just put another option on the command line.
+
+05:27.510 --> 05:31.350
+And what I'm doing here now is I'm pressing the up arrow and it's going to go back through everything
+
+05:31.380 --> 05:34.050
+I typed that went off to type everything again.
+
+05:34.320 --> 05:37.530
+So we can go up or down you see up and down arrows.
+
+05:38.040 --> 05:43.640
+So what I'm doing here is same thing I'm saying call my compiler turn on all warnings use to see post
+
+05:43.640 --> 05:44.970
+plus 14 standard.
+
+05:45.120 --> 05:49.450
+Compile this file right your main C.P and then you can use the dash.
+
+05:49.500 --> 05:52.340
+Little o lowercase O.
+
+05:52.350 --> 05:55.130
+And then the name of the file that you want to create the executive.
+
+05:55.130 --> 06:01.830
+So let's say you want main got the X-C or whatever you like press enter and let me clear the screen
+
+06:01.830 --> 06:05.820
+you can clear with CLX and I'll do it and the directory listing.
+
+06:05.820 --> 06:13.100
+So now you can see I have an ADHD X-Sea and a main body X-C and I can simply run man that say this is
+
+06:13.100 --> 06:14.530
+really really straightforward.
+
+06:14.600 --> 06:20.030
+If you have issues with IDS if you have issues with hardware resources that you can't run an idea you
+
+06:20.060 --> 06:21.760
+just don't like ideas.
+
+06:21.950 --> 06:26.630
+You could certainly run C++ programs this way.
+
+06:26.630 --> 06:36.050
+One thing to remember here when you type your program into an editor such as Notepad you may have syntax
+
+06:36.050 --> 06:36.680
+errors.
+
+06:36.920 --> 06:41.480
+So the way syntax errors will show up and let me get rid of that semi-colon there.
+
+06:41.510 --> 06:42.530
+Now if I just say
+
+06:45.200 --> 06:46.340
+compile again.
+
+06:46.460 --> 06:48.190
+Notice I got a clean compile.
+
+06:48.230 --> 06:51.610
+How can that be I took off a semicolon that shouldn't compile.
+
+06:51.620 --> 06:53.210
+I forgot to save it.
+
+06:53.450 --> 06:58.280
+You've got to be sure to save one of the things that the IDs do as they kind of do that automatically
+
+06:58.280 --> 07:02.870
+for you so you don't have to think about it but when you're working in a workflow like this you've got
+
+07:02.870 --> 07:08.030
+to be sure that whenever you edit your file you come up to a file save or control less.
+
+07:08.120 --> 07:12.820
+Now you can compile again and there's your air.
+
+07:12.840 --> 07:15.830
+So this is the way that you would work in this environment.
+
+07:15.840 --> 07:19.950
+Obviously since it's not an integrated development environment it's not going to get a little arrow
+
+07:19.950 --> 07:24.000
+here that says red and shows you where the error was because he thinks that two separate programs that
+
+07:24.000 --> 07:25.490
+really aren't talking to one another.
+
+07:25.800 --> 07:31.650
+But there's the air you can fix your error if you make another error let's say you forgot this quote
+
+07:31.650 --> 07:32.720
+mark right here.
+
+07:32.740 --> 07:39.720
+Again I'm saving the program I just did a control S and I can compile again and it says warning missing
+
+07:39.720 --> 07:41.550
+terminating quote character.
+
+07:41.550 --> 07:43.130
+OK you can fix that.
+
+07:45.270 --> 07:50.440
+I'll save again and compile one more time.
+
+07:50.460 --> 07:51.520
+We've got a clean compile.
+
+07:51.540 --> 07:52.250
+We run main.
+
+07:52.260 --> 07:55.060
+We get the output OK.
+
+07:55.080 --> 07:55.800
+That's great.
+
+07:55.800 --> 07:57.390
+So that's pretty much what there is to it.
+
+07:57.390 --> 07:58.320
+It's not a big deal.
+
+07:58.440 --> 08:05.340
+Obviously if you type G plus plus and this is a normal message right here fatal error no input files
+
+08:05.350 --> 08:07.110
+it's you know it's asking me what you want to compile.
+
+08:07.110 --> 08:12.210
+You haven't told me what you want but if you get a program not found error then go back to the installation
+
+08:12.210 --> 08:17.490
+video from GW that I created and make sure that your path is set correctly because what's happening
+
+08:17.610 --> 08:21.870
+is that Windows can't find C++.
+
+08:22.000 --> 08:23.760
+OK so that takes care of Notepad.
+
+08:23.760 --> 08:27.260
+Now there's another editor out there and I'm going to close this real quick.
+
+08:27.360 --> 08:32.010
+There's another editor that's free it's called notepad plus plus and I've installed it on the system
+
+08:32.010 --> 08:37.330
+on my computer here and you can see it's right here notepad plus plus on Precentor.
+
+08:37.410 --> 08:39.500
+This is a programmer's editor.
+
+08:39.570 --> 08:48.630
+And let me open the file I had a previous one opened all up it up and you can see file open you know
+
+08:48.630 --> 08:50.430
+and open that C++ right here.
+
+08:50.430 --> 08:51.940
+There you go.
+
+08:52.100 --> 08:57.590
+So you can see that this is doing syntax highlighting it's doing code filtering it's got line numbers.
+
+08:57.590 --> 09:02.120
+This is a programmer's editor and again it's called notepad plus plus it's absolutely free.
+
+09:02.120 --> 09:02.830
+You can install.
+
+09:02.830 --> 09:06.340
+You could do a google search and install it on your system.
+
+09:06.530 --> 09:12.320
+Again it's not an I.D. but it's a more advanced programmer's editor which is really really nice.
+
+09:12.320 --> 09:16.910
+And it's actually it's a lot nicer than Notepad Notepad was never intended to write code with but you
+
+09:16.910 --> 09:18.800
+can certainly write code with it.
+
+09:18.950 --> 09:26.150
+I'd recommend you use something like Notepad or bracket's or atom or one of the paid ones like sublime.
+
+09:26.150 --> 09:29.570
+There's a lot of really good text editors out there that you can find.
+
+09:29.960 --> 09:32.050
+OK so that wraps up this video.
+
+09:32.180 --> 09:37.100
+As you can see if you've got issues with an idea or if you've got issues with hardware resources don't
+
+09:37.100 --> 09:38.390
+let that stop you.
+
+09:38.390 --> 09:42.650
+You can still learn C++ and you can still get your programs to compile and run really easily.

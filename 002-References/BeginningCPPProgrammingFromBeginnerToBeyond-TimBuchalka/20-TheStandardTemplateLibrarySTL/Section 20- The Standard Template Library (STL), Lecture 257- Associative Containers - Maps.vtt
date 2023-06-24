@@ -1,0 +1,1089 @@
+WEBVTT
+
+00:00:05.580 --> 00:00:08.590
+In this video, we'll learn
+about the STL map containers.
+
+00:00:09.559 --> 00:00:11.709
+These are also associative containers.
+
+00:00:12.190 --> 00:00:14.890
+They're collections of
+stored objects that allow for
+
+00:00:14.890 --> 00:00:16.689
+fast retrieval using a key.
+
+00:00:17.869 --> 00:00:20.209
+The STL provides both sets and maps.
+
+00:00:20.210 --> 00:00:22.080
+We saw sets in the last video.
+
+00:00:22.300 --> 00:00:24.050
+In this video, we'll learn about maps.
+
+00:00:25.110 --> 00:00:28.700
+The STL has four types of
+map containers, the map, the
+
+00:00:28.750 --> 00:00:32.409
+unordered-map, the multimap
+and the unordered-multimap.
+
+00:00:33.170 --> 00:00:36.689
+We'll focus mainly on the map since
+it's the one that's most often used.
+
+00:00:40.760 --> 00:00:43.949
+In order to use the map, you
+must include the map header file.
+
+00:00:44.690 --> 00:00:48.190
+The map is like a dictionary where
+we have a key, a word in the case
+
+00:00:48.190 --> 00:00:52.309
+of a dictionary and an associated
+value, which would be its definition.
+
+00:00:53.150 --> 00:00:57.949
+Maps store their elements as key value
+pairs using the stood pair objects.
+
+00:00:58.740 --> 00:01:02.860
+The elements in the map are ordered by
+key, and no duplicate keys are allowed.
+
+00:01:03.330 --> 00:01:07.420
+We can directly access an element
+in the map using that key and
+
+00:01:07.429 --> 00:01:08.859
+all iterators are available.
+
+00:01:11.090 --> 00:01:13.149
+Let's initialize a few map objects.
+
+00:01:13.570 --> 00:01:17.380
+In the first example in this
+slide, I declare m1 as a map of
+
+00:01:17.380 --> 00:01:19.850
+string-integer, key-value pairs.
+
+00:01:20.360 --> 00:01:22.630
+The key is the string and
+the value is the integer.
+
+00:01:23.030 --> 00:01:27.840
+Then I initialize m1 with two key
+value pairs, Larry, 18 and“ Moe, 25.
+
+00:01:27.840 --> 00:01:34.440
+In the second example, I declare
+m2 as a map of string-string key
+
+00:01:34.440 --> 00:01:39.460
+value pairs, and I'm initializing
+it to Bob, Butcher, Anne, Baker,
+
+00:01:39.570 --> 00:01:41.069
+George, Candlestick maker.
+
+00:01:43.330 --> 00:01:46.550
+We'll use the map m in this slide
+for the next several examples.
+
+00:01:47.760 --> 00:01:50.759
+The size method returns the number
+of elements that are in the map,
+
+00:01:51.160 --> 00:01:54.550
+3, in this case, and max-size
+will tell us the maximum number
+
+00:01:54.550 --> 00:01:56.230
+of elements the map can contain.
+
+00:01:56.599 --> 00:01:58.990
+Maps have no concept of front or back.
+
+00:01:59.240 --> 00:02:01.610
+We'll see how we can add
+elements in the next slide.
+
+00:02:04.270 --> 00:02:06.470
+So, let's see how we can
+insert elements into a map.
+
+00:02:06.860 --> 00:02:08.360
+We can use the insert method.
+
+00:02:08.780 --> 00:02:12.799
+Remember, maps consist of stood
+pair objects where the first
+
+00:02:12.840 --> 00:02:16.179
+attribute is the key and the
+second attribute is the value.
+
+00:02:16.580 --> 00:02:21.060
+We can create p1 as a stood pair
+object of type string-string and
+
+00:02:21.139 --> 00:02:23.099
+initialize it to James Mechanic.
+
+00:02:23.410 --> 00:02:25.890
+James is the key,
+mechanic is the value.
+
+00:02:26.340 --> 00:02:31.060
+We can then insert p1 into the map
+m, since m is a map of string-string
+
+00:02:31.070 --> 00:02:32.840
+key value pairs, pretty easy!
+
+00:02:33.429 --> 00:02:37.489
+We can also use the stood make-pair
+function to make it even easier for
+
+00:02:37.490 --> 00:02:39.460
+us to create those key value pairs.
+
+00:02:39.690 --> 00:02:41.419
+And we can insert them
+right into the map.
+
+00:02:42.480 --> 00:02:44.680
+You can see in the last
+example how easy it is.
+
+00:02:44.690 --> 00:02:48.570
+In this case, we're adding the key
+value pair, Roger, Ranger to the map.
+
+00:02:50.080 --> 00:02:52.839
+So, let's see another way, we
+can insert elements into the map.
+
+00:02:53.320 --> 00:02:56.969
+We can use the subscript
+operator and the dot-at method
+
+00:02:56.980 --> 00:02:58.649
+to make the syntax pretty easy.
+
+00:02:59.000 --> 00:03:03.180
+Suppose I want to insert the Frank
+Teacher, key value pair into the map m.
+
+00:03:03.900 --> 00:03:08.010
+I can provide the key Frank in this
+case inside the square brackets
+
+00:03:08.280 --> 00:03:09.720
+and assign the value to it.
+
+00:03:10.300 --> 00:03:14.269
+This will insert the key value pair
+into the map m if it doesn't exist.
+
+00:03:14.650 --> 00:03:18.070
+I can also modify existing
+map values in the same way
+
+00:03:18.299 --> 00:03:20.079
+and the syntax is dead simple.
+
+00:03:20.350 --> 00:03:23.950
+If I wanted to change the value
+associated with the key Frank from
+
+00:03:23.970 --> 00:03:28.290
+teacher to instructor, I can simply
+use the subscript operator to do it.
+
+00:03:28.599 --> 00:03:31.840
+The dot-at method does the same
+thing with different syntax of
+
+00:03:31.840 --> 00:03:34.979
+course but it will throw an exception
+if the key is not in the map.
+
+00:03:36.619 --> 00:03:41.500
+We can also erase elements in
+a map very easily m.erase and
+
+00:03:41.500 --> 00:03:45.240
+we’ll erase the key value pair
+whose key is Anne from the map.
+
+00:03:45.500 --> 00:03:49.039
+We can also use the find method to
+get an iterator to a maps element.
+
+00:03:49.620 --> 00:03:53.200
+As with the set for efficiency,
+use the member method, find, not
+
+00:03:53.200 --> 00:03:54.980
+the find in the algorithm library.
+
+00:03:55.310 --> 00:03:58.630
+In the second example, I'm
+finding the key, Bob, in the map.
+
+00:03:59.390 --> 00:04:02.920
+If I get back an iterator, that's
+not pointing to the end of the map.
+
+00:04:03.250 --> 00:04:04.560
+Then I found the matching element.
+
+00:04:05.140 --> 00:04:07.480
+If I wanted to erase that
+element, I can simply call
+
+00:04:07.509 --> 00:04:09.939
+m.erase and pass in the iterator.
+
+00:04:09.939 --> 00:04:13.070
+In the last example, that's
+exactly what I'm doing.
+
+00:04:13.460 --> 00:04:15.820
+I'm looking for the key
+George in the map, and if
+
+00:04:15.820 --> 00:04:17.260
+it's in there, I'm erasing it.
+
+00:04:18.980 --> 00:04:22.180
+Finally, we can use the count method
+the same way we did with sets.
+
+00:04:22.429 --> 00:04:25.250
+It's an easy way to see if
+an element exists in the map.
+
+00:04:25.900 --> 00:04:30.120
+If it does exist, count will return 1,
+and if it doesn't, count will return 0.
+
+00:04:31.139 --> 00:04:34.850
+As we've seen with all the STL
+containers, the clear method removes
+
+00:04:34.880 --> 00:04:38.479
+all elements from the map, and the
+empty method returns true if the
+
+00:04:38.480 --> 00:04:40.600
+map is empty, faults otherwise.
+
+00:04:41.040 --> 00:04:43.360
+Well, that's a quick
+summary of the map class.
+
+00:04:43.460 --> 00:04:46.469
+As I mentioned previously
+with all the STL components,
+
+00:04:46.480 --> 00:04:47.900
+there's much more to learn.
+
+00:04:48.270 --> 00:04:51.340
+Please, become familiar with
+the basics and then take your
+
+00:04:51.340 --> 00:04:54.580
+learning to the next level by
+studying the STL documentation.
+
+00:04:54.910 --> 00:04:57.789
+Let's see some of the other map
+containers provided by the STL.
+
+00:04:59.799 --> 00:05:03.229
+The multimap class is also
+defined in the map header file.
+
+00:05:03.870 --> 00:05:09.020
+A multi-map is a map that's ordered by
+key but does allow duplicate elements.
+
+00:05:09.220 --> 00:05:10.890
+All iterators are
+available to the multimap.
+
+00:05:12.550 --> 00:05:15.720
+The unordered-map is in the
+unordered map header file.
+
+00:05:16.400 --> 00:05:18.080
+The unordered-map is a
+map that's unordered.
+
+00:05:18.200 --> 00:05:20.789
+Unordered-maps do not
+allow reverse iterators.
+
+00:05:22.850 --> 00:05:27.120
+The last type of map provided by
+the STL is the unordered-multimap.
+
+00:05:27.670 --> 00:05:32.270
+The unordered multi-map does not order
+elements and it does allow duplicates,
+
+00:05:32.820 --> 00:05:34.859
+again no reverse iterators are allowed.
+
+00:05:35.610 --> 00:05:38.369
+These maps are very powerful
+and pretty easy to use.
+
+00:05:38.679 --> 00:05:42.000
+Let's head over to the IDE, and we'll
+see some examples of using the map.
+
+00:05:43.240 --> 00:05:44.650
+Okay, so I'm back in the IDE.
+
+00:05:44.650 --> 00:05:48.349
+I'm in the section 20
+workspace in the map project.
+
+00:05:49.230 --> 00:05:52.719
+And what I'd like to do is go over
+a couple of map examples, and one in
+
+00:05:52.740 --> 00:05:55.929
+particular that I think is going to
+help you out a lot with the challenge
+
+00:05:55.929 --> 00:05:57.229
+that's coming up in the next video.
+
+00:05:57.910 --> 00:06:02.200
+So, let's start with test one,
+and there's only, I think,
+
+00:06:02.310 --> 00:06:03.659
+two tests in this example.
+
+00:06:03.680 --> 00:06:05.770
+Test one's a little long but
+we'll go through it slowly.
+
+00:06:06.210 --> 00:06:09.040
+And then what we'll do is we'll
+talk about display function I wrote.
+
+00:06:09.400 --> 00:06:13.620
+Okay, so we're here in test
+one, and what I've got here is
+
+00:06:13.620 --> 00:06:18.766
+I've defined m to be a map of
+string, integer key value pairs.
+
+00:06:18.766 --> 00:06:27.340
+The string is the key and
+the integer is the value.
+
+00:06:29.080 --> 00:06:31.310
+These guys can be just about anything.
+
+00:06:31.900 --> 00:06:34.949
+I'm just going to use strings for the
+key because they're really easy to
+
+00:06:34.949 --> 00:06:39.140
+understand, but those keys can actually
+be our own custom objects as well.
+
+00:06:39.140 --> 00:06:41.840
+And the value can be
+more complicated as well.
+
+00:06:41.840 --> 00:06:45.219
+What we're going to do is, in the next
+test, what we're going to do is we're
+
+00:06:45.220 --> 00:06:49.570
+going to have the key be a string
+and the value be a set of integers.
+
+00:06:50.059 --> 00:06:52.899
+So, again you can build these
+things up to get really complicated
+
+00:06:52.900 --> 00:06:54.400
+and very, very, very powerful.
+
+00:06:54.750 --> 00:06:59.770
+So, again m is a map of string,
+integer key value pairs.
+
+00:07:00.130 --> 00:07:02.000
+Here are my pairs right here.
+
+00:07:02.400 --> 00:07:05.880
+These are not person objects, I don't
+even have a person class in this demo.
+
+00:07:06.179 --> 00:07:09.770
+So, there's the string, Larry
+and there's the value in the
+
+00:07:09.770 --> 00:07:12.570
+integer 3, Moe 1, Curly 2.
+
+00:07:12.910 --> 00:07:13.800
+What this means?
+
+00:07:13.820 --> 00:07:14.530
+Who knows?
+
+00:07:14.700 --> 00:07:18.260
+You're just associating a string
+with an integer, it could be how many
+
+00:07:18.260 --> 00:07:19.880
+times Larry went to the movies today.
+
+00:07:19.890 --> 00:07:21.730
+It could be just about anything, okay.
+
+00:07:22.020 --> 00:07:25.989
+Then I'm displaying m, and you
+can see that right up here.
+
+00:07:26.570 --> 00:07:29.539
+It's displaying Curly
+2, Larry 3, Moe 1.
+
+00:07:29.770 --> 00:07:33.320
+Now look at the ordering there,
+it's ordering by key, and the
+
+00:07:33.320 --> 00:07:35.070
+key in this case is the string.
+
+00:07:35.490 --> 00:07:38.650
+So, you’re going to get Curly,
+first, Larry, second, Moe third.
+
+00:07:38.650 --> 00:07:41.630
+It's using string order, perfect!
+
+00:07:41.870 --> 00:07:46.589
+Now let's add Anna, 10 to that map m.
+
+00:07:47.590 --> 00:07:50.220
+Remember what we're doing
+is we're adding stood pairs.
+
+00:07:50.300 --> 00:07:55.539
+So in this case, we're creating a stood
+pair object right here, and it's got
+
+00:07:55.540 --> 00:07:57.940
+to be of the same key value pair types.
+
+00:07:57.940 --> 00:07:58.859
+It's got to be string.
+
+00:07:58.859 --> 00:08:00.170
+Int, it can't be anything else.
+
+00:08:00.380 --> 00:08:02.300
+Or I can't insert it
+into this map here.
+
+00:08:02.640 --> 00:08:07.750
+So, in this case, there's my key,
+there's my value, I'm creating a pair.
+
+00:08:08.560 --> 00:08:11.850
+And I'm inserting that pair into
+m and then I'm displaying m.
+
+00:08:12.100 --> 00:08:14.730
+So, when you see that next display
+statement here, you can see
+
+00:08:14.760 --> 00:08:16.839
+Anna is in there now with a 10.
+
+00:08:17.230 --> 00:08:19.749
+And Anna is at the beginning
+of the list because it's
+
+00:08:19.750 --> 00:08:21.379
+being sorted by the key.
+
+00:08:21.790 --> 00:08:23.920
+Now there's a handy little
+function called make-pair
+
+00:08:23.920 --> 00:08:25.270
+that makes this really easy.
+
+00:08:25.790 --> 00:08:29.690
+So, we can insert, call make-pair,
+it's going to create that stood
+
+00:08:29.690 --> 00:08:33.949
+pair for us, and it's going to
+be, the key is Joe the value is 5.
+
+00:08:34.770 --> 00:08:38.260
+So, that'll automatically do kind of
+what we did up here without all the
+
+00:08:38.520 --> 00:08:39.940
+template parameters, or any of that.
+
+00:08:40.109 --> 00:08:41.159
+It'll figure it all out.
+
+00:08:41.469 --> 00:08:45.520
+So, in this case, it's going to
+make the pair Joe 5 and insert that
+
+00:08:45.650 --> 00:08:48.840
+into the map, and then we're going
+to display the map right here.
+
+00:08:49.240 --> 00:08:53.610
+And you can see that Joe 5 is now
+in the map, pretty easy, right!
+
+00:08:54.740 --> 00:08:56.700
+Now here, this is really easy here.
+
+00:08:57.120 --> 00:09:01.199
+In this case, I'm saying m,
+and I'm providing the key.
+
+00:09:01.250 --> 00:09:06.280
+This is the key inside the subscripts,
+so what it's going to do is it's
+
+00:09:06.280 --> 00:09:09.110
+going to insert, Frank isn't in
+there right now, it's going to insert
+
+00:09:09.580 --> 00:09:14.040
+the key value pair Frank 18 into
+the map using this syntax, which
+
+00:09:14.040 --> 00:09:15.620
+is really, really, easy to read.
+
+00:09:16.080 --> 00:09:20.950
+And then I'm displaying it, and you can
+see right here that there is Frank 18.
+
+00:09:21.670 --> 00:09:25.949
+Now what's really cool is if I wanted
+to change the value associated with
+
+00:09:25.950 --> 00:09:28.449
+the key Frank, right now it's 18.
+
+00:09:28.639 --> 00:09:32.339
+Suppose I wanted to add 10 to
+it, all I have to say is give
+
+00:09:32.360 --> 00:09:35.889
+me the value for that key in the
+map, that's what I'm doing here.
+
+00:09:36.320 --> 00:09:37.400
+And add 10 to it.
+
+00:09:37.520 --> 00:09:38.365
+Display it again.
+
+00:09:38.365 --> 00:09:43.150
+So, now you can see that
+Frank is 28 right here, right!
+
+00:09:43.150 --> 00:09:44.790
+So, I've added 10 to the 18.
+
+00:09:45.120 --> 00:09:46.000
+Pretty cool!
+
+00:09:46.190 --> 00:09:50.130
+Let me clear this and scroll up just a
+little bit, do a couple more examples.
+
+00:09:50.799 --> 00:09:52.249
+Let's do this one right here.
+
+00:09:53.740 --> 00:09:58.420
+All I want to do here is erase
+Frank from the map, I'm just
+
+00:09:58.430 --> 00:10:00.079
+providing the key right here.
+
+00:10:00.650 --> 00:10:04.580
+Remember, this is all key based,
+so in this case, m.erase Frank, and
+
+00:10:04.580 --> 00:10:06.199
+then I'm displaying the map again.
+
+00:10:06.550 --> 00:10:10.009
+You can see the output right
+here on this line, Frank is gone.
+
+00:10:10.549 --> 00:10:13.500
+Frank was here, it was
+28, and now it's gone.
+
+00:10:14.590 --> 00:10:17.650
+And then we can call the count methods
+here just, so you see how those run.
+
+00:10:18.720 --> 00:10:22.040
+I'm displaying the count for Joe, how
+many times does joe appear in the map?
+
+00:10:22.050 --> 00:10:23.990
+Well, it's either there,
+or it's not there.
+
+00:10:23.990 --> 00:10:28.590
+In this case, Joe is there, so
+we're getting back a 1 and Frank
+
+00:10:28.590 --> 00:10:31.140
+is no longer there, because I
+just deleted Frank right here.
+
+00:10:31.620 --> 00:10:34.920
+So, I should get back a 0 and that's
+exactly what I get back right here.
+
+00:10:36.240 --> 00:10:39.500
+And then what we can do is we can
+call the find method, remember
+
+00:10:39.500 --> 00:10:43.709
+this is defined method for the
+map class not these the find
+
+00:10:43.710 --> 00:10:45.120
+method in the algorithm’s library.
+
+00:10:45.309 --> 00:10:48.229
+So, I want to find Larry in this map m.
+
+00:10:48.889 --> 00:10:53.970
+I'm going to get back an iterator,
+that iterator is an iterator not to
+
+00:10:53.970 --> 00:11:00.910
+Larry, not to Larry's value which
+is 3 but to the stood pair, so if
+
+00:11:00.910 --> 00:11:04.300
+I get back an iterator and I'm not
+at the end, then I've got a pair.
+
+00:11:04.740 --> 00:11:07.949
+So, I can access the first
+element in the pair and the second
+
+00:11:07.960 --> 00:11:09.850
+element of the pair, makes sense.
+
+00:11:09.870 --> 00:11:13.589
+The first element is the key
+the second element is the value.
+
+00:11:14.429 --> 00:11:18.149
+So, this right here will display
+Larry, this right here will display
+
+00:11:18.219 --> 00:11:22.160
+3, and that's what's happening
+right here, found Larry 3.
+
+00:11:23.029 --> 00:11:25.810
+Then of course we're clearing
+the map and displaying the map.
+
+00:11:25.810 --> 00:11:27.350
+And now we've got an
+empty map right here.
+
+00:11:27.350 --> 00:11:31.040
+Okay, so go through these slowly, you
+can play them with your own, you can,
+
+00:11:31.770 --> 00:11:33.870
+you know modify this and learn from it.
+
+00:11:34.420 --> 00:11:38.699
+Let's take a look at test two, and
+we're here in test two, you can
+
+00:11:38.719 --> 00:11:41.710
+see the output actually, let me
+scroll that up as well, perfect.
+
+00:11:41.710 --> 00:11:45.170
+You can see that test two's
+output is right over here
+
+00:11:45.170 --> 00:11:46.340
+on the right in the console.
+
+00:11:47.180 --> 00:11:49.315
+Now this one's a little bit
+more complicated, so let's
+
+00:11:49.400 --> 00:11:50.380
+go through this slowly.
+
+00:11:50.929 --> 00:11:54.699
+I've got a map, it's called grades.
+
+00:11:55.320 --> 00:12:03.090
+And it's a map of string is the key
+and the value is a set of integers.
+
+00:12:03.290 --> 00:12:07.400
+So, in this case, grades is a
+map, the key is a string, and
+
+00:12:07.400 --> 00:12:09.170
+the value is a set of integers.
+
+00:12:09.620 --> 00:12:15.820
+So, I can have values in there like
+Frank is the key, and I could have a
+
+00:12:15.820 --> 00:12:18.990
+set of integers 10, 20, 30, let's say.
+
+00:12:21.080 --> 00:12:21.770
+Makes sense!
+
+00:12:22.140 --> 00:12:23.070
+So, this is pretty cool.
+
+00:12:23.070 --> 00:12:27.289
+So, in this case, let's say that
+I'm trying to model the top three
+
+00:12:27.290 --> 00:12:29.259
+grades that Frank got this semester.
+
+00:12:29.750 --> 00:12:31.450
+Remember we can't have
+duplicates in here, so we're
+
+00:12:31.450 --> 00:12:33.179
+just having the three grades.
+
+00:12:33.370 --> 00:12:36.060
+So, what we're doing is we're
+saying the key is Frank, right!
+
+00:12:36.090 --> 00:12:40.599
+That way I can identify that that
+key value pair, once I have that,
+
+00:12:40.890 --> 00:12:43.229
+I can get the value part of it.
+
+00:12:43.530 --> 00:12:47.370
+It's a set of integers and then I
+can process the set of integers, so
+
+00:12:47.370 --> 00:12:49.409
+that's what we're doing here, right.
+
+00:12:49.410 --> 00:12:50.650
+So, let's go through this again.
+
+00:12:51.020 --> 00:12:57.199
+Here is key value, here's the
+key, here's the key, here's
+
+00:12:57.200 --> 00:12:59.300
+the key, there's the value.
+
+00:12:59.300 --> 00:13:01.160
+It's a set of two integers.
+
+00:13:01.440 --> 00:13:02.809
+Here's a set of one integer.
+
+00:13:02.820 --> 00:13:04.579
+Here's a set of three integers.
+
+00:13:05.340 --> 00:13:07.550
+And then what I'm doing is
+I'm just displaying grades.
+
+00:13:07.550 --> 00:13:10.899
+And I'll show you how that display
+function works in a minute, but you can
+
+00:13:10.900 --> 00:13:12.990
+see I'm displaying grades right here.
+
+00:13:14.500 --> 00:13:19.589
+And it's ordering rather by
+the key which is a string.
+
+00:13:19.940 --> 00:13:23.039
+So, Curly 80, 90, 100, there it is.
+
+00:13:23.559 --> 00:13:27.640
+Larry 90, 100, and Moe .
+
+00:13:27.640 --> 00:13:33.180
+Now suppose I want to insert 95
+into that set of integers for Larry.
+
+00:13:33.920 --> 00:13:37.390
+I can get Larry right here,
+that's going to return a
+
+00:13:37.400 --> 00:13:41.429
+reference to that element, and
+I can insert 95 into its value.
+
+00:13:41.740 --> 00:13:45.689
+Well, remember, its value is a set, so
+I'm actually inserting 95 into that set
+
+00:13:45.690 --> 00:13:50.970
+of integers, so now you can see that
+Larry originally was 100 and 90, now
+
+00:13:50.970 --> 00:13:55.590
+Larry is 90, 95, and a 100 right here.
+
+00:13:57.440 --> 00:14:00.079
+Right, so I just added
+that 95 right in here.
+
+00:14:00.320 --> 00:14:03.080
+And remember that set of
+integers is ordered as well,
+
+00:14:03.080 --> 00:14:04.720
+so we get that benefit as well.
+
+00:14:04.980 --> 00:14:07.730
+So, we've got the map is
+ordered, and the set within
+
+00:14:07.730 --> 00:14:09.270
+the map is ordered as well.
+
+00:14:09.280 --> 00:14:13.680
+Alright. so, my last example here is let's
+say that we want to find Moe.
+
+00:14:14.500 --> 00:14:15.720
+So, let's look for Moe.
+
+00:14:15.720 --> 00:14:17.890
+We're going to get back
+in iterator, right.
+
+00:14:17.940 --> 00:14:20.600
+If that iterator is not
+at the end, then I found
+
+00:14:20.610 --> 00:14:22.029
+Moe, well, Moe is in there.
+
+00:14:22.029 --> 00:14:23.700
+I know he's in there,
+he's right over here.
+
+00:14:24.449 --> 00:14:29.480
+So, now what I want to do is using
+the iterator, I want to access
+
+00:14:29.530 --> 00:14:31.150
+the second attribute, right.
+
+00:14:31.150 --> 00:14:34.570
+Remember the first is the key, I
+know what the key is, it's Moe.
+
+00:14:35.290 --> 00:14:38.959
+What I want is the second attribute
+which is the set of integers, and I
+
+00:14:38.959 --> 00:14:40.640
+want to insert a thousand in there.
+
+00:14:41.129 --> 00:14:45.070
+So, it's similar to this example
+right here except that in this
+
+00:14:45.070 --> 00:14:46.550
+case, we're using an iterator.
+
+00:14:46.570 --> 00:14:48.870
+So, I'm going to insert a
+thousand into the set of
+
+00:14:49.480 --> 00:14:50.960
+integers associated with Moe.
+
+00:14:51.130 --> 00:14:54.459
+Remember Moe is the key, the
+set of integers is the value.
+
+00:14:55.070 --> 00:14:57.830
+And you can see right
+there is the 1000.
+
+00:14:59.199 --> 00:15:00.780
+And that's where I'm
+displaying the grades.
+
+00:15:00.980 --> 00:15:03.780
+Now let me show you
+the display function.
+
+00:15:04.520 --> 00:15:06.699
+There's actually two
+display functions I've got.
+
+00:15:07.840 --> 00:15:11.669
+This one right here which is
+a template function that's
+
+00:15:11.670 --> 00:15:13.470
+just displaying any two types.
+
+00:15:13.490 --> 00:15:16.170
+This is the one that's really
+being called in this case.
+
+00:15:16.430 --> 00:15:21.600
+So again, in this case, I might
+be getting my, it's a map right.
+
+00:15:21.600 --> 00:15:23.630
+It's a map of key value pairs.
+
+00:15:23.880 --> 00:15:26.470
+The key is this guy right
+here that could be Curly.
+
+00:15:28.620 --> 00:15:33.389
+And the value is the set of integers
+associated with Curly, so that could be
+
+00:15:33.389 --> 00:15:37.820
+the set 80, 90, and 100 in this case.
+
+00:15:39.740 --> 00:15:42.150
+So, that's the information I'm
+getting, what I have to do is
+
+00:15:42.150 --> 00:15:43.890
+display it out nicely like this.
+
+00:15:44.160 --> 00:15:47.349
+So, the first thing I'm doing, I'm
+just displaying that little the left
+
+00:15:47.349 --> 00:15:49.010
+bracket which is this guy right here.
+
+00:15:50.270 --> 00:15:56.500
+Then for each element, each
+element, I called it in that map.
+
+00:15:57.670 --> 00:16:02.380
+The first item is the key, so that's
+Curly, that's Larry, that's Moe.
+
+00:16:03.150 --> 00:16:06.189
+And then each time I get one
+of those what I'm doing is here
+
+00:16:06.190 --> 00:16:09.250
+I'm iterating over the second
+which is the set of integers.
+
+00:16:10.209 --> 00:16:10.900
+Makes sense!
+
+00:16:11.250 --> 00:16:17.080
+So, remember the outer loop here is
+iterating over Curly, Larry, Moe.
+
+00:16:17.330 --> 00:16:19.939
+And then each time I have one of
+those I'm iterating over their
+
+00:16:19.960 --> 00:16:21.830
+values, the set right here.
+
+00:16:22.099 --> 00:16:24.449
+So, that's just displaying
+that information nicely.
+
+00:16:26.190 --> 00:16:29.699
+I know this may be a little confusing
+if you sit down and walk through
+
+00:16:29.699 --> 00:16:31.260
+it, it'll be really clear I hope.
+
+00:16:31.720 --> 00:16:34.090
+In the next video, we're going
+to do a challenge where we're
+
+00:16:34.090 --> 00:16:36.870
+going to use something that's
+almost exactly like this.
+
+00:16:36.870 --> 00:16:41.140
+We're going to use a map where
+the string is the key and we have
+
+00:16:41.140 --> 00:16:43.210
+a set of integers as the value.
+
+00:16:43.490 --> 00:16:45.790
+And what we're going to do is
+we're going to grab words from a
+
+00:16:45.830 --> 00:16:49.040
+document, and we're going to figure
+out how many times they occur.
+
+00:16:49.040 --> 00:16:52.190
+And then we're going to figure out how
+many times, what lines they occur on.
+
+00:16:52.190 --> 00:16:53.329
+So, it's going to be pretty fun.
+
+00:16:53.570 --> 00:16:55.120
+So, I'll see you in the next video.

@@ -1,0 +1,902 @@
+WEBVTT
+
+00:00:05.730 --> 00:00:06.420
+Welcome back.
+
+00:00:06.420 --> 00:00:09.459
+I hope you enjoyed
+the cipher challenge.
+
+00:00:09.500 --> 00:00:11.200
+And I hope you were
+successful with it.
+
+00:00:11.590 --> 00:00:13.500
+And I hope you extended
+it even further.
+
+00:00:13.500 --> 00:00:16.090
+If you did, post it on the
+forum, share what you did.
+
+00:00:16.100 --> 00:00:17.270
+That's pretty fun stuff.
+
+00:00:17.719 --> 00:00:19.000
+Okay, so what do we need?
+
+00:00:19.450 --> 00:00:22.900
+First thing we need to do is ask the
+user to enter a secret message, right.
+
+00:00:23.160 --> 00:00:24.270
+So let's do that first.
+
+00:00:24.310 --> 00:00:27.029
+Let's knock that out before we
+even start writing any other code.
+
+00:00:27.270 --> 00:00:30.509
+So we need a string object,
+and we can call that string
+
+00:00:30.509 --> 00:00:31.800
+object secret message.
+
+00:00:33.530 --> 00:00:34.674
+And we'll initialize it.
+
+00:00:34.809 --> 00:00:37.360
+That's what the user
+is going to type in.
+
+00:00:37.770 --> 00:00:42.520
+Okay, so I'm going to say
+cout, enter a secret message.
+
+00:00:45.429 --> 00:00:47.050
+And we'll leave it, just like that.
+
+00:00:48.639 --> 00:00:52.450
+And let me fix that typo and
+you know what let me just
+
+00:00:52.450 --> 00:00:55.670
+put -- let me use proper English
+here enter your secret message.
+
+00:00:56.550 --> 00:00:59.309
+Now the user is going to enter their
+message, and we need to read it.
+
+00:01:00.110 --> 00:01:02.000
+It's potentially more than one word.
+
+00:01:02.010 --> 00:01:04.789
+So we can't just use cin
+an extraction operator.
+
+00:01:04.969 --> 00:01:06.050
+We're going to use getline.
+
+00:01:06.700 --> 00:01:10.189
+And I want to get a line of
+text from cin, and I want to
+
+00:01:10.190 --> 00:01:11.550
+store it in secret message.
+
+00:01:11.550 --> 00:01:19.200
+Okay, so now at this point, secret
+message that string object will
+
+00:01:19.200 --> 00:01:20.960
+contain whatever the user typed in.
+
+00:01:21.450 --> 00:01:22.330
+Perfect.
+
+00:01:22.610 --> 00:01:25.520
+So we want to encrypt that string.
+
+00:01:26.080 --> 00:01:28.609
+Well, I need to store the
+encrypted message somewhere, right.
+
+00:01:28.619 --> 00:01:32.100
+So let's create another string object,
+and we'll call it encrypted message.
+
+00:01:34.280 --> 00:01:35.740
+And we'll initialize that as well.
+
+00:01:36.570 --> 00:01:40.029
+That's going to hold the encrypted
+message once we finish encrypting it.
+
+00:01:40.030 --> 00:01:41.999
+But at this point,
+it's just simply empty.
+
+00:01:42.380 --> 00:01:45.140
+So we'll do a little output
+statement here just so we
+
+00:01:45.140 --> 00:01:46.450
+can see some processing.
+
+00:01:46.980 --> 00:01:50.140
+And we'll say something
+like encrypting message.
+
+00:01:54.140 --> 00:01:55.580
+And we'll put an endline at the end.
+
+00:01:56.139 --> 00:01:58.350
+All right, so now we start to process.
+
+00:01:58.740 --> 00:01:59.670
+What do we need to do?
+
+00:02:00.050 --> 00:02:03.010
+Well, there's a lot of
+different ways to do this.
+
+00:02:03.349 --> 00:02:05.130
+There's the easy way, the harder way.
+
+00:02:05.469 --> 00:02:07.160
+Let's talk about the harder way first.
+
+00:02:07.570 --> 00:02:09.460
+Suppose that the message is Frank.
+
+00:02:10.100 --> 00:02:11.370
+That's the secret message.
+
+00:02:12.820 --> 00:02:16.040
+Well, I need to iterate
+through that string.
+
+00:02:16.070 --> 00:02:18.720
+Obviously, I need to look at
+the f the r the a the n the k.
+
+00:02:18.720 --> 00:02:20.540
+I've got to do that no matter
+what because I've got to look
+
+00:02:20.540 --> 00:02:21.769
+at every single character.
+
+00:02:22.209 --> 00:02:25.690
+Well, what I could do is I could read
+the first character that's the f.
+
+00:02:26.270 --> 00:02:30.360
+Then I can loop through this
+array here, looking for that f.
+
+00:02:30.370 --> 00:02:33.910
+And when I find it, I need to
+know what position it's in.
+
+00:02:33.910 --> 00:02:36.240
+So I could have a counter
+that's counting up, right.
+
+00:02:36.670 --> 00:02:39.470
+So that when I start at 0 and
+then I go the next one, next
+
+00:02:39.470 --> 00:02:41.819
+one eventually, it's going to
+find it and I've got a position.
+
+00:02:42.320 --> 00:02:43.060
+That's the hard way.
+
+00:02:44.150 --> 00:02:45.500
+That's not the way I want to do it.
+
+00:02:45.530 --> 00:02:48.850
+Remember, the string class has
+a method in it called find.
+
+00:02:49.670 --> 00:02:54.339
+So if I want to find that character f,
+it's going to return the position of
+
+00:02:54.360 --> 00:02:58.010
+f or it's going to return no position.
+
+00:02:59.440 --> 00:03:00.959
+That's really all I care about.
+
+00:03:01.520 --> 00:03:03.280
+Okay, so that's the way
+I'm going to solve this
+
+00:03:03.280 --> 00:03:05.750
+problem, less code is better.
+
+00:03:06.080 --> 00:03:07.810
+So let's solve this.
+
+00:03:08.170 --> 00:03:10.270
+So right here, we're about
+to encrypt the message.
+
+00:03:10.910 --> 00:03:13.440
+Now we need to iterate
+through the secret message
+
+00:03:13.440 --> 00:03:14.550
+one character at a time.
+
+00:03:14.580 --> 00:03:16.679
+So I'm going to use a
+range-based for loop here.
+
+00:03:16.680 --> 00:03:17.729
+It's perfect for this.
+
+00:03:17.889 --> 00:03:23.600
+So I'm going to say for, every
+character c in my secret message.
+
+00:03:25.710 --> 00:03:28.520
+So now in the loop, I have
+access to c, which represents
+
+00:03:28.520 --> 00:03:31.679
+the current character I'm looking
+at in my secret message, right.
+
+00:03:32.130 --> 00:03:36.479
+So I'm going to call the find
+method in the alphabet string.
+
+00:03:36.479 --> 00:03:40.930
+I'm going to ask the alphabet
+string to find c, right.
+
+00:03:40.930 --> 00:03:45.190
+So if c is f, it's going to find that
+lowercase f and return its position.
+
+00:03:45.520 --> 00:03:49.800
+Now that position's type is size
+t, just like we mentioned before.
+
+00:03:50.380 --> 00:03:53.489
+That's an unsigned integer that's
+really dependent on your platform.
+
+00:03:53.490 --> 00:03:54.520
+This will work everywhere.
+
+00:03:54.990 --> 00:03:56.090
+We'll call it position.
+
+00:03:57.790 --> 00:04:02.470
+And I'm going to ask the alphabet
+string or the alphabet object to
+
+00:04:02.470 --> 00:04:07.609
+find that character in itself.
+
+00:04:08.299 --> 00:04:10.030
+If it finds it, we're good.
+
+00:04:10.030 --> 00:04:12.739
+We're going to substitute it
+with the equivalent character
+
+00:04:12.739 --> 00:04:14.100
+at the same position and key.
+
+00:04:14.470 --> 00:04:18.120
+If it doesn't find it, then we're just
+going to process that character as is.
+
+00:04:18.149 --> 00:04:19.549
+It's not one of these.
+
+00:04:19.990 --> 00:04:21.440
+So I'm not going to substitute it.
+
+00:04:21.440 --> 00:04:22.510
+I'm just going to use it.
+
+00:04:23.309 --> 00:04:24.330
+All right, so what do we need?
+
+00:04:24.330 --> 00:04:25.079
+We need an if statement.
+
+00:04:25.080 --> 00:04:27.520
+We're going to say if the position
+
+00:04:30.420 --> 00:04:32.420
+is not equal to
+
+00:04:34.120 --> 00:04:39.289
+no position, what does that mean,
+that means we found it, right.
+
+00:04:40.349 --> 00:04:41.400
+Let's do the else.
+
+00:04:42.440 --> 00:04:45.430
+And I'll just use a block else in
+case we need to add some code later.
+
+00:04:46.150 --> 00:04:48.400
+Now if we didn't find it
+in here, we're not going to
+
+00:04:48.430 --> 00:04:50.890
+substitute, we're just going to
+use the character as is, right.
+
+00:04:51.130 --> 00:04:57.060
+So I'm going to say encrypted message
++ = plus equals c, just add the character
+
+00:04:57.139 --> 00:04:58.840
+as is to the encrypted message.
+
+00:04:58.860 --> 00:05:00.830
+We're not going to substitute it.
+
+00:05:01.860 --> 00:05:03.700
+Now what if we do
+need to substitute it.
+
+00:05:03.750 --> 00:05:04.810
+Let's go back here again.
+
+00:05:05.760 --> 00:05:07.729
+We need a new character, right.
+
+00:05:07.730 --> 00:05:09.410
+We need the character in the key.
+
+00:05:09.650 --> 00:05:14.510
+So let's create a variable
+called new character.
+
+00:05:15.650 --> 00:05:21.810
+And we can initialize this variable
+to the character in the string at
+
+00:05:21.810 --> 00:05:23.550
+that position, the key string, right.
+
+00:05:23.719 --> 00:05:25.299
+So we have position already.
+
+00:05:26.020 --> 00:05:31.050
+So we can ask -- again, we can
+ask the key string to give us
+
+00:05:31.070 --> 00:05:33.320
+the variable at that position.
+
+00:05:35.870 --> 00:05:38.560
+And we can initialize it to that.
+
+00:05:39.460 --> 00:05:42.129
+So now we've got the new character
+that we want to substitute.
+
+00:05:42.129 --> 00:05:42.820
+And what do we do?
+
+00:05:43.210 --> 00:05:48.140
+We simply say encrypted message
++ = plus equals new character.
+
+00:05:50.260 --> 00:05:50.880
+That's it.
+
+00:05:50.910 --> 00:05:52.670
+That should be all the code we need.
+
+00:05:53.540 --> 00:06:02.160
+Now let's just output the encrypted
+message, so the encrypted message
+
+00:06:02.180 --> 00:06:07.539
+would be the encrypted message, right.
+
+00:06:07.560 --> 00:06:08.240
+So let's run this.
+
+00:06:08.240 --> 00:06:09.209
+This is the first half.
+
+00:06:09.220 --> 00:06:10.659
+This is just the encryption side.
+
+00:06:10.860 --> 00:06:13.839
+But you can see the code is
+really easy to understand
+
+00:06:13.840 --> 00:06:15.020
+very straightforward.
+
+00:06:15.420 --> 00:06:19.960
+So let's run it, and
+let's say this is a test.
+
+00:06:20.790 --> 00:06:22.719
+And that's the encrypted
+message right there.
+
+00:06:23.219 --> 00:06:25.150
+Okay, now let's get -- let's
+do a simple test case.
+
+00:06:25.150 --> 00:06:28.739
+We know that we're going
+to replace the lowercase a,
+
+00:06:28.750 --> 00:06:29.980
+you can see it right here.
+
+00:06:31.490 --> 00:06:32.669
+Let me use my pen real quick.
+
+00:06:32.960 --> 00:06:34.969
+You can see that we're going
+to replace the lowercase
+
+00:06:35.010 --> 00:06:38.210
+a with an uppercase x.
+
+00:06:38.900 --> 00:06:42.409
+And it's obviously the
+capital z with an r.
+
+00:06:42.580 --> 00:06:48.250
+So a good test case would
+be a a a z z z and we expect
+
+00:06:48.259 --> 00:06:52.220
+back x x x r r r, right.
+
+00:06:52.230 --> 00:06:53.010
+That's the encrypted.
+
+00:06:53.010 --> 00:06:53.819
+So let's try that out.
+
+00:06:54.160 --> 00:06:57.929
+So we'll do three lowercase
+a's and three uppercase z's.
+
+00:07:01.380 --> 00:07:03.130
+A a a z z z.
+
+00:07:03.460 --> 00:07:10.020
+And as I said, what we expect back
+is x x x lower case three r's.
+
+00:07:10.020 --> 00:07:11.439
+That's exactly what we want.
+
+00:07:11.660 --> 00:07:13.810
+Okay, so it looks like
+we're in the ballpark.
+
+00:07:13.850 --> 00:07:16.490
+Obviously, you would have to
+test a lot better than this.
+
+00:07:16.510 --> 00:07:19.590
+But that's a good example of
+a simple test case that tells
+
+00:07:19.590 --> 00:07:20.859
+you you're definitely on track.
+
+00:07:21.179 --> 00:07:22.390
+I'll erase this.
+
+00:07:22.920 --> 00:07:24.200
+And let's try a couple more.
+
+00:07:24.580 --> 00:07:30.549
+Let's try meet me at Bill's house.
+
+00:07:31.470 --> 00:07:33.730
+Now in this case, you see
+we have an apostrophe.
+
+00:07:34.330 --> 00:07:36.280
+We're not going to handle
+that apostrophe, right.
+
+00:07:36.280 --> 00:07:37.320
+We're not substituting.
+
+00:07:37.320 --> 00:07:39.000
+So we're just going
+to print it out as is.
+
+00:07:39.000 --> 00:07:42.240
+So I expect to see that
+apostrophe in the encrypted
+
+00:07:42.240 --> 00:07:44.039
+string in the same position.
+
+00:07:44.639 --> 00:07:47.129
+So you can see here,
+there it is right there.
+
+00:07:48.260 --> 00:07:49.299
+So that's correct.
+
+00:07:50.770 --> 00:07:52.610
+All right, so that's
+the encrypted message.
+
+00:07:52.630 --> 00:07:54.659
+Now let's decrypt the message.
+
+00:07:55.870 --> 00:07:56.859
+Same idea, right.
+
+00:07:56.860 --> 00:07:58.029
+We're just going the other way.
+
+00:07:58.320 --> 00:08:02.540
+We need a string object
+for the decrypted message.
+
+00:08:06.450 --> 00:08:08.719
+And we'll initialize that
+to an empty string as well.
+
+00:08:09.340 --> 00:08:13.265
+We'll say cout, let's do
+another new line here, and
+
+00:08:13.265 --> 00:08:17.739
+we'll say decrypting message.
+
+00:08:23.500 --> 00:08:25.930
+All right, so now let's do the code again.
+
+00:08:26.120 --> 00:08:27.230
+What are we doing this time?
+
+00:08:27.230 --> 00:08:31.520
+Well, this time we're looping
+through the encrypted message, right,
+
+00:08:31.880 --> 00:08:35.440
+grabbing those characters, finding
+them in the key and substituting
+
+00:08:35.440 --> 00:08:36.909
+them back in the alphabet.
+
+00:08:37.429 --> 00:08:38.280
+All right, so let's do it.
+
+00:08:38.280 --> 00:08:41.129
+It's the same exact idea except
+we're going backwards here.
+
+00:08:41.389 --> 00:08:48.490
+So for every character, let's call it
+c in the encrypted message this time.
+
+00:08:52.480 --> 00:08:55.389
+For every character in there,
+we're doing exactly the same thing.
+
+00:08:55.389 --> 00:09:02.890
+The position is we're going to ask the
+key this time to find that character.
+
+00:09:04.630 --> 00:09:10.770
+And then if the position is
+not equal to no position,
+
+00:09:13.690 --> 00:09:16.810
+then we found it, right.
+
+00:09:17.209 --> 00:09:21.400
+The else part means just
+handle it as is, so let's
+
+00:09:21.400 --> 00:09:22.619
+handle that part really easy.
+
+00:09:22.850 --> 00:09:26.069
+So this time we're going to save
+this to the decrypted message, right.
+
+00:09:26.730 --> 00:09:28.840
+So decrypted
+message + = plus equals c.
+
+00:09:30.509 --> 00:09:32.150
+In this case, we did find it.
+
+00:09:32.150 --> 00:09:35.069
+So we want to get a new character
+again, just like we did before.
+
+00:09:35.469 --> 00:09:36.489
+Here's my new character.
+
+00:09:36.489 --> 00:09:40.140
+And I want to initialize it
+to this time not the key but
+
+00:09:42.890 --> 00:09:44.280
+the alphabets .at position.
+
+00:09:45.590 --> 00:09:49.260
+So give me the character at the same
+position but in the alphabet string.
+
+00:09:49.599 --> 00:09:51.270
+And I'll initialize it to that.
+
+00:09:51.270 --> 00:09:56.560
+And then here, we'll just say
+decrypted message + = plus
+
+00:09:56.730 --> 00:09:58.350
+equals new char.
+
+00:10:01.570 --> 00:10:03.069
+Awesome. That's it.
+
+00:10:03.150 --> 00:10:05.410
+Our string should be
+decrypted at this point.
+
+00:10:06.190 --> 00:10:12.320
+And what we'll do here is we'll
+just say cout, put another new line
+
+00:10:12.320 --> 00:10:17.209
+here in front, decrypted message.
+
+00:10:17.210 --> 00:10:18.760
+And I'll fix that typo in a second.
+
+00:10:20.170 --> 00:10:23.329
+In this case, it would be decrypted
+message, followed by a new line.
+
+00:10:30.460 --> 00:10:32.030
+Okay, let's try this out.
+
+00:10:33.010 --> 00:10:35.020
+Hopefully, we get back what
+we started with, right.
+
+00:10:35.080 --> 00:10:36.660
+So enter your secret message.
+
+00:10:36.670 --> 00:10:38.750
+This is a test.
+
+00:10:39.670 --> 00:10:41.440
+I'm decrypt -- I'm encrypting first.
+
+00:10:41.450 --> 00:10:43.340
+That's the encrypted
+message right here.
+
+00:10:43.860 --> 00:10:46.839
+Then I'm decrypting, and I'm
+getting back this is a test.
+
+00:10:46.879 --> 00:10:47.640
+Perfect.
+
+00:10:48.609 --> 00:10:49.790
+Let's try a couple more.
+
+00:10:51.820 --> 00:11:01.260
+Meet me at Bill's house
+at, let's say, 12:30 p.m.
+
+00:11:01.770 --> 00:11:03.880
+Okay, this is a good test
+case because well, maybe
+
+00:11:03.880 --> 00:11:05.199
+Nil's house, not Bill's house.
+
+00:11:05.520 --> 00:11:06.850
+Meet me at Nil's house.
+
+00:11:06.920 --> 00:11:08.339
+You see we have an apostrophe.
+
+00:11:08.740 --> 00:11:12.390
+We have the 1 the 2, the
+colon and the 3 and the 0.
+
+00:11:12.410 --> 00:11:14.610
+We're not handling those
+since they're not letters.
+
+00:11:14.889 --> 00:11:18.829
+So we should see those characters
+as is in the encrypted string.
+
+00:11:18.980 --> 00:11:19.799
+So let's try that.
+
+00:11:20.480 --> 00:11:22.109
+There you go. There's the apostrophe.
+
+00:11:22.440 --> 00:11:25.290
+There's the 12, the colon,
+the 30, just as we expected.
+
+00:11:25.290 --> 00:11:28.180
+And then when we decrypt the
+message, we get back meet me
+
+00:11:28.180 --> 00:11:30.140
+at Nil's house at 12:30 p.m.
+
+00:11:30.630 --> 00:11:33.260
+Okay, now suppose we wanted to
+make this a little better -- not
+
+00:11:33.260 --> 00:11:34.459
+a lot better, but a little better.
+
+00:11:35.080 --> 00:11:37.300
+Let's deal with those spaces, right.
+
+00:11:37.770 --> 00:11:39.550
+I want to fill up those
+spaces with something.
+
+00:11:39.780 --> 00:11:42.870
+So what we could do is we could
+come up here to my alphabet.
+
+00:11:43.220 --> 00:11:45.490
+And I can insert a space
+right at the beginning.
+
+00:11:45.960 --> 00:11:47.230
+That's a space character.
+
+00:11:48.070 --> 00:11:50.650
+Now what am i going to replace the
+space character with,
+
+00:11:51.000 --> 00:11:52.729
+anything I want that's not already in here.
+
+00:11:52.730 --> 00:11:55.990
+Let's say one of those
+characters, a left bracket.
+
+00:11:57.460 --> 00:11:58.160
+That's fine.
+
+00:11:58.160 --> 00:12:00.319
+But now we've got to deal
+with the left bracket, right.
+
+00:12:00.389 --> 00:12:02.150
+So let's put the left bracket up here.
+
+00:12:03.070 --> 00:12:06.380
+And we're going to replace that with
+a space because we've got to go both
+
+00:12:06.380 --> 00:12:08.770
+ways or it's not going to work, right.
+
+00:12:08.800 --> 00:12:10.169
+So now we're going to handle spaces.
+
+00:12:10.190 --> 00:12:12.370
+At least, we'll fill
+up all that void space.
+
+00:12:12.380 --> 00:12:13.329
+So let's try to run it.
+
+00:12:14.250 --> 00:12:17.340
+And we'll do something
+like this is a test.
+
+00:12:18.150 --> 00:12:21.220
+And you can see now, it's sticking
+those square brackets in there.
+
+00:12:21.700 --> 00:12:23.890
+So it makes it look a little
+more jumbled up at least.
+
+00:12:24.450 --> 00:12:27.650
+Obviously, this is so easy to break
+and then the decrypted message
+
+00:12:27.650 --> 00:12:29.140
+is still correct, this is a test.
+
+00:12:29.990 --> 00:12:31.439
+There's a lot of
+things you can do here.
+
+00:12:31.440 --> 00:12:35.559
+There's some real famous ciphers
+that are substitution ciphers, like
+
+00:12:35.559 --> 00:12:39.069
+the keyword cipher and the caesar
+cipher that you can play around with.
+
+00:12:39.640 --> 00:12:41.030
+You can use random numbers.
+
+00:12:41.030 --> 00:12:44.410
+We'll talk about generating random
+numbers so that maybe the first
+
+00:12:44.420 --> 00:12:47.000
+time you see a space you replace
+it with something the second time
+
+00:12:47.000 --> 00:12:49.599
+you replace it with something else
+that would just make it a little bit
+
+00:12:49.599 --> 00:12:51.510
+more interesting and hard to break.
+
+00:12:51.530 --> 00:12:52.840
+But there you go.
+
+00:12:53.070 --> 00:12:58.810
+This is an example of using
+c++'s string class, very easy.
+
+00:12:58.850 --> 00:13:00.060
+I mean, there's no counting.
+
+00:13:00.060 --> 00:13:02.880
+There's no checking to
+make sure that things fit.
+
+00:13:03.309 --> 00:13:04.890
+It's handling everything for me.
+
+00:13:05.639 --> 00:13:07.560
+All right, so hopefully
+your solution is similar.
+
+00:13:08.410 --> 00:13:09.910
+If it's not, you can
+learn from this one.
+
+00:13:09.910 --> 00:13:11.836
+And if you've got a great
+solution, you can share it
+
+00:13:11.836 --> 00:13:12.709
+with the rest of the class.
+
+00:13:13.910 --> 00:13:15.160
+I'll see you in the next video.

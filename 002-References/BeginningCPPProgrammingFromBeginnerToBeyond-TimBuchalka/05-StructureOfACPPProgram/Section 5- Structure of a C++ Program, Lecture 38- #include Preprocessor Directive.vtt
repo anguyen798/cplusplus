@@ -1,0 +1,115 @@
+WEBVTT
+
+00:00:05.500 --> 00:00:09.600
+This video we'll briefly go over the C++ pre-processor
+
+00:00:09.600 --> 00:00:11.600
+and pre-processor directives.
+
+00:00:12.100 --> 00:00:14.100
+What is the C++ pre-processor?
+
+00:00:14.600 --> 00:00:17.100
+The C++ preprocessor is a program
+
+00:00:17.100 --> 00:00:21.100
+that processes your source code before the compiler sees it.
+
+00:00:21.900 --> 00:00:26.300
+The C++ pre-processor first strips all the comments from the source file
+
+00:00:26.600 --> 00:00:29.300
+and replaces each comment with a single space.
+
+00:00:30.100 --> 00:00:33.400
+Then it looks for pre-processor directives and executes them.
+
+00:00:33.700 --> 00:00:37.900
+Pre-processor directors are lines in the source code that begin with a pound
+
+00:00:37.900 --> 00:00:39.200
+or hashtag symbol.
+
+00:00:39.800 --> 00:00:44.100
+As you can see in this slide, there are quite a few pre-processor directives available.
+
+00:00:44.700 --> 00:00:48.100
+The most commonly used pre-processor directive is the include directive.
+
+00:00:48.600 --> 00:00:51.000
+When the preprocessor sees this directive,
+
+00:00:51.000 --> 00:00:53.300
+it replaces the pound include line
+
+00:00:53.300 --> 00:00:55.200
+with the file that it's referring to
+
+00:00:55.200 --> 00:00:58.200
+that it recursively processes that file as well.
+
+00:00:58.600 --> 00:01:01.600
+So by the time the compiler sees the source code,
+
+00:01:01.600 --> 00:01:05.500
+all comments are stripped out and all preprocessor directives have been
+
+00:01:05.500 --> 00:01:07.000
+processed and removed.
+
+00:01:08.100 --> 00:01:12.290
+Preprocessor directives have commonly used to conditionally compile code.
+
+00:01:12.290 --> 00:01:16.090
+For example, suppose you only want to compile a portion of your source code
+
+00:01:16.090 --> 00:01:18.090
+if you're on the windows operating system.
+
+00:01:18.090 --> 00:01:20.990
+In this case, you would use a pre-processor directive
+
+00:01:20.990 --> 00:01:23.490
+to test to see if you are on windows
+
+00:01:23.490 --> 00:01:26.590
+and then perhaps includes some windows-specific libraries.
+
+00:01:27.090 --> 00:01:31.190
+If you're not on windows, then maybe you want to include some macOS 10 libraries
+
+00:01:31.190 --> 00:01:34.690
+or use the error directive to abort the compile with an error message.
+
+00:01:35.490 --> 00:01:38.690
+Conditional compilation is beyond the scope of this course,
+
+00:01:38.690 --> 00:01:42.290
+but we'll use several preprocessor directives as we move on in the course.
+
+00:01:42.690 --> 00:01:45.490
+One final note that's very important to understand.
+
+00:01:45.490 --> 00:01:49.690
+The C++ preprocessor does not understand C++.
+
+00:01:50.050 --> 00:01:53.350
+Let me say that again, the C++ pre-processor
+
+00:01:53.350 --> 00:01:55.550
+does not understand C++.
+
+00:01:55.950 --> 00:02:00.150
+It simply follows the preprocessor directives and gets the source code
+
+00:02:00.150 --> 00:02:01.550
+ready for the compiler.
+
+00:02:02.050 --> 00:02:05.250
+The compiler is the program that does understand C++.
+
+00:02:05.750 --> 00:02:09.350
+Okay. That wraps up this video. In the next video, we'll talk about comments
+
+00:02:09.350 --> 00:02:10.650
+and C++.

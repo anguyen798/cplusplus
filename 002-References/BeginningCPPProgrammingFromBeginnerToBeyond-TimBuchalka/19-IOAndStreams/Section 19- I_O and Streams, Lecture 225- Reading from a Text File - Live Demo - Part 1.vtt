@@ -1,0 +1,688 @@
+WEBVTT
+
+00:00:05.300 --> 00:00:09.300
+In this video, we'll go over some examples of reading text files.
+
+00:00:09.800 --> 00:00:14.790
+So I'm in the section 19 workspace, and I'm in the ReadFile_1 project.
+
+00:00:15.390 --> 00:00:19.090
+And right now I've got nothing in here. The only thing I've done is I've included iostream,
+
+00:00:19.090 --> 00:00:23.490
+and I've included fstream. We obviously need to include fstream to work with files.
+
+00:00:24.150 --> 00:00:25.050
+That's all I've got.
+
+00:00:25.050 --> 00:00:29.550
+Here is my project. You can see it's open and the file that I'm going to read is not there yet.
+
+00:00:29.550 --> 00:00:31.250
+I wanted to show you how to create it.
+
+00:00:31.250 --> 00:00:34.350
+First thing we want to do is let's write the code to open the file then it
+
+00:00:34.350 --> 00:00:37.010
+will obviously fail because the file is not there.
+
+00:00:37.010 --> 00:00:40.010
+And then we'll put the file in there, and we'll read it. Okay. So
+
+00:00:41.010 --> 00:00:43.770
+first thing we need to do is we need to create an input file stream,
+
+00:00:44.470 --> 00:00:47.470
+and we'll just call it infile, just like we've done in the slides.
+
+00:00:48.270 --> 00:00:50.380
+And I'll initialize it on the next line,
+
+00:00:50.380 --> 00:00:54.380
+I'll open it on the next line that way you can see that kind of syntax. So we'll say infile
+
+00:00:54.630 --> 00:00:57.830
+.open. And here we give it a file name.
+
+00:00:57.830 --> 00:01:03.020
+Now this is the part that's pretty operating system-specific. It's IDE-specific.
+
+00:01:03.900 --> 00:01:07.500
+If you're in windows, you might be tempted to do this kind of thing
+
+00:01:07.800 --> 00:01:10.100
+c:\
+
+00:01:10.100 --> 00:01:13.100
+and then some directory and then some other directory maybe
+
+00:01:13.900 --> 00:01:15.400
+followed by some
+
+00:01:16.200 --> 00:01:18.800
+test.text or something like that, right.
+
+00:01:18.800 --> 00:01:20.800
+That's the way that windows
+
+00:01:20.800 --> 00:01:23.680
+file names look. The problem with this is
+
+00:01:23.680 --> 00:01:27.880
+you remember that character literal that starts with a slash,
+
+00:01:27.880 --> 00:01:31.380
+that won't work because that right there becomes a character.
+
+00:01:31.380 --> 00:01:33.680
+So we want to do if you do it this way,
+
+00:01:33.680 --> 00:01:37.040
+you want to use two slashes. Don't forget that's really, really important.
+
+00:01:37.540 --> 00:01:40.900
+You would want to use two slashes everywhere if you're on windows.
+
+00:01:40.900 --> 00:01:45.500
+Now if you're on mac or UNIX or some other operating system,
+
+00:01:45.500 --> 00:01:49.500
+then you really don't do that. You kind of just you know slash
+
+00:01:49.500 --> 00:01:53.050
+forward slash forward slash directory names to the file.
+
+00:01:53.050 --> 00:01:57.250
+Now the good thing about this is even if you're on windows, you can still use this slash.
+
+00:01:57.650 --> 00:02:02.010
+And behind the scenes, it'll be mapped to the proper one. So that's what I would recommend you do.
+
+00:02:02.010 --> 00:02:05.810
+I would not recommend that you do anything like c colon or d colon
+
+00:02:05.810 --> 00:02:09.410
+because that really, really ties your code to your computer.
+
+00:02:09.410 --> 00:02:12.610
+So, for example, if you're trying to open a file in
+
+00:02:12.610 --> 00:02:16.270
+c colon slash Frank slash test.
+
+00:02:16.770 --> 00:02:19.370
+And then someone else tries to run this program,
+
+00:02:19.370 --> 00:02:23.360
+unless they've got a Frank directory, it's not going to work. That file won't be there.
+
+00:02:23.360 --> 00:02:26.560
+So the best thing to do is just to do something like that.
+
+00:02:26.560 --> 00:02:30.710
+That way it'll look in the current directory, no matter what computer system you're on.
+
+00:02:30.710 --> 00:02:34.810
+Now this is where the IDE issues come in, and I'll talk about that a little bit. For now,
+
+00:02:34.810 --> 00:02:39.110
+let me just leave that, just like that I want to open a file called test.txt.
+
+00:02:39.360 --> 00:02:43.160
+It doesn't exist yet here, as you can see, but we'll worry about that a little bit.
+
+00:02:43.660 --> 00:02:45.460
+So we're trying to open that here.
+
+00:02:45.460 --> 00:02:49.660
+The next thing we need to do is we need to see if it was open. So let's say if
+
+00:02:50.320 --> 00:02:51.820
+not infile.
+
+00:02:53.020 --> 00:02:57.480
+And remember, here we could say -- we could have said if not infile.is open,
+
+00:02:58.980 --> 00:03:02.280
+like that, either one will work.
+
+00:03:02.280 --> 00:03:03.640
+This is the style I like.
+
+00:03:03.640 --> 00:03:07.640
+And that's the one I've been using a long time, and I'll keep using it. So if not infile.
+
+00:03:08.140 --> 00:03:13.130
+That means we could not open this. Okay. So in this case, we're just going to say std cerr,
+
+00:03:13.530 --> 00:03:16.530
+we're going to display an error message that says
+
+00:03:19.730 --> 00:03:23.090
+opening file, let's say, just something real simple like that.
+
+00:03:26.450 --> 00:03:29.950
+What do we do here, I want to get out of here. I've got nothing else to do.
+
+00:03:29.950 --> 00:03:33.250
+I need this file to run my program. So I've got a couple of options.
+
+00:03:33.250 --> 00:03:37.250
+I can say return anything other than 0. 0 means the program completed
+
+00:03:37.250 --> 00:03:40.550
+successfully. I could return a 1. I could return a negative 1.
+
+00:03:40.550 --> 00:03:43.540
+It really depends on what number you're looking for.
+
+00:03:43.540 --> 00:03:45.340
+That means I couldn't find a file.
+
+00:03:45.340 --> 00:03:47.700
+So we could -- I'm just going to say return 1.
+
+00:03:47.700 --> 00:03:51.600
+Sometimes you'll see code that looks like this. It says exit 1
+
+00:03:51.900 --> 00:03:53.800
+or more properly std exit.
+
+00:03:55.350 --> 00:03:58.230
+And in this case, that calls a function named exit,
+
+00:03:58.230 --> 00:04:00.230
+that closes up certain things and
+
+00:04:00.230 --> 00:04:02.530
+destroys static variables and things.
+
+00:04:02.530 --> 00:04:06.080
+But right now, I'm just going to simply return 1 if
+
+00:04:06.080 --> 00:04:10.980
+I having some sort of problem opening the file. Now if I get beyond this piece right here,
+
+00:04:10.980 --> 00:04:15.340
+I've got the file, it's good to go. So I'm just going to say std cout
+
+00:04:16.440 --> 00:04:20.430
+file is good to go, I'm ready to read from it.
+
+00:04:23.530 --> 00:04:27.780
+That's it. That's the program. This will fail when I run it. So let's try it.
+
+00:04:28.280 --> 00:04:29.580
+I'm going to build and run.
+
+00:04:30.130 --> 00:04:34.130
+And it says problem opening file, how come, because the file's not there.
+
+00:04:34.680 --> 00:04:39.670
+Okay. So let's create the file. What I'll do is I'll come in here into my project.
+
+00:04:39.670 --> 00:04:41.670
+And I'm going to click on the source directory.
+
+00:04:41.670 --> 00:04:45.030
+This is what I would recommend that you do. Whatever files you create,
+
+00:04:45.030 --> 00:04:49.130
+create them in the same directory where your .cpp files are.
+
+00:04:49.330 --> 00:04:52.930
+Okay. So in this case, I'm going to put it right where my main cpp file is.
+
+00:04:52.930 --> 00:04:54.930
+I'm going to right click on that source folder,
+
+00:04:55.480 --> 00:05:00.080
+and I'm going to select add new file. You could also do it from up here, add new file.
+
+00:05:00.080 --> 00:05:03.280
+And then I'm going to select any file and just give it a name.
+
+00:05:03.280 --> 00:05:06.280
+And I'm going to give it this name, right here, test.txt.
+
+00:05:06.280 --> 00:05:09.580
+So I'm going to say test.txt.
+
+00:05:10.130 --> 00:05:11.630
+I'm going to press enter.
+
+00:05:12.090 --> 00:05:15.390
+And now you can see that test.txt file right here,
+
+00:05:15.690 --> 00:05:18.690
+and I can type some data into there and I will in a moment.
+
+00:05:19.190 --> 00:05:21.550
+So now I've got the file. So now let's run it.
+
+00:05:22.650 --> 00:05:24.950
+Still a problem opening file, how come.
+
+00:05:25.350 --> 00:05:27.600
+Well, this is where the IDEs are all different.
+
+00:05:27.600 --> 00:05:31.600
+If I open this file up right, this project up right here, I'm going to right click on it,
+
+00:05:31.600 --> 00:05:36.200
+and I'm going to say open the containing folder just so I can open it up and explore here and look at it.
+
+00:05:36.450 --> 00:05:38.450
+Let me move it over from my other monitor.
+
+00:05:39.150 --> 00:05:43.350
+You can see that here's my c++ source file right here, my cpp file
+
+00:05:43.350 --> 00:05:44.350
+right there.
+
+00:05:45.710 --> 00:05:49.480
+And here is that test.txt file I just created, right.
+
+00:05:49.480 --> 00:05:51.480
+But the executable's not here.
+
+00:05:51.880 --> 00:05:55.680
+The .exe file is not here. It's in debug.
+
+00:05:56.780 --> 00:06:00.880
+It's right here. That's my exe file, the application.
+
+00:06:01.430 --> 00:06:05.430
+So when it runs, it's looking for that txt file in here,
+
+00:06:05.830 --> 00:06:09.630
+and it's not finding it. That's why with CodeLite
+
+00:06:09.880 --> 00:06:12.080
+we have to do something like this,
+
+00:06:12.380 --> 00:06:16.580
+dot dot slash. So in other words I'm in debug, I need to go one
+
+00:06:16.580 --> 00:06:18.780
+level above, one directory above me.
+
+00:06:19.280 --> 00:06:20.880
+Now if I try to run this,
+
+00:06:21.980 --> 00:06:23.980
+file is good to go, it found it.
+
+00:06:24.380 --> 00:06:28.530
+Usually, this is what you want to do. Most IDEs will work this way,
+
+00:06:28.530 --> 00:06:29.890
+CodeLite does not.
+
+00:06:30.440 --> 00:06:33.140
+I believe code blocks and visual studio will
+
+00:06:33.140 --> 00:06:36.140
+all work if you just type in the file name just like that.
+
+00:06:36.140 --> 00:06:38.140
+And then what you do is when you create your file,
+
+00:06:38.140 --> 00:06:41.500
+you create it where your cpp file is, and it'll find it.
+
+00:06:41.500 --> 00:06:45.600
+Depending on what IDE you're using, you're just going to have to play around with it until you get it
+
+00:06:45.600 --> 00:06:47.150
+and it opens it and then you're good to go.
+
+00:06:47.150 --> 00:06:50.450
+Okay. XCode. If you're using XCode,
+
+00:06:50.450 --> 00:06:54.650
+we'll talk about that in the video at the end because XCode is a little a little bit different.
+
+00:06:55.150 --> 00:06:59.250
+C line, it'll just a regular test.txt will also work.
+
+00:06:59.550 --> 00:07:01.050
+Okay. So that's it.
+
+00:07:01.050 --> 00:07:05.150
+So now we've got a file, we're able to open it. So that's perfect. That's the first step, right.
+
+00:07:05.150 --> 00:07:08.650
+We can't open it, we can't read it. So I'm going to get rid of this.
+
+00:07:08.650 --> 00:07:12.450
+File is good to go statement. I really don't want to say that again because I've got it.
+
+00:07:12.950 --> 00:07:16.830
+Now what i want to do is I just want to read some information from that file.
+
+00:07:16.830 --> 00:07:21.130
+So let's put something in there. I'm going to go into t test txt,
+
+00:07:21.130 --> 00:07:24.130
+and it's just the text file. So I'm going to say hello.
+
+00:07:26.330 --> 00:07:30.930
+That's it. I'm going to -- I just saved it just now and I'm going to go back to main cpp,
+
+00:07:31.730 --> 00:07:35.530
+and I'll create these variables up here, just so they're all in one place.
+
+00:07:35.530 --> 00:07:39.530
+So let's create std string, and let's just call it line,
+
+00:07:40.330 --> 00:07:43.630
+just any variable name will do. And down here,
+
+00:07:43.630 --> 00:07:44.930
+what I want to do is,
+
+00:07:45.430 --> 00:07:49.330
+remember, when we had cin, we would say cin into line.
+
+00:07:49.830 --> 00:07:53.830
+Well, it's the same thing except we're not reading from cin, we're reading from infile.
+
+00:07:55.330 --> 00:07:59.320
+So what that'll do is it'll read one string,
+
+00:07:59.570 --> 00:08:03.570
+right. It's going to remember the way the extraction operator works. It'll stop at a space
+
+00:08:03.570 --> 00:08:07.170
+or an end of file, it'll stop as soon as it sees some white space.
+
+00:08:07.370 --> 00:08:10.470
+Now we should have that string in line, and we could just simply
+
+00:08:11.130 --> 00:08:12.130
+display it
+
+00:08:16.280 --> 00:08:19.940
+right to the console. Okay. So let me go through this again before I run it.
+
+00:08:19.940 --> 00:08:23.600
+I'm opening the file, I'm testing to be sure that it's open.
+
+00:08:23.600 --> 00:08:26.960
+If it's not open, I'm displaying problem opening file and I'm out of here.
+
+00:08:27.320 --> 00:08:31.620
+Otherwise, I'm reading from the file into line. Line is a string,
+
+00:08:32.020 --> 00:08:34.220
+and then I'm displaying whatever i just read.
+
+00:08:34.220 --> 00:08:37.020
+Remember, the file contains hello, so that's what I should see,
+
+00:08:37.790 --> 00:08:39.790
+right. So let's give it a run.
+
+00:08:41.780 --> 00:08:45.580
+There's hello. So that came from that text file.
+
+00:08:46.480 --> 00:08:50.280
+Okay. So now what we'll do is, let's read a couple of other things in here.
+
+00:08:50.280 --> 00:08:54.780
+So I'm going to have an int. We'll, call it num, and we'll have a double.
+
+00:08:55.080 --> 00:08:58.740
+And let's just call it total, just like we did in the slides. So now
+
+00:08:58.740 --> 00:09:01.240
+what we'll do is we'll modify that file here,
+
+00:09:01.240 --> 00:09:04.800
+so that it's got a string, an int and a double. It's already got a string.
+
+00:09:05.300 --> 00:09:08.600
+So we'll give it an int, and let's give it a double,
+
+00:09:11.300 --> 00:09:13.660
+200.345.
+
+00:09:13.660 --> 00:09:18.020
+So that's my file. It's got a string, an int and a double. Okay. So now we'll come down here.
+
+00:09:18.680 --> 00:09:22.780
+And what we'll do is we can read the string, and we could do this in separate lines,
+
+00:09:22.780 --> 00:09:25.880
+we could just do it all in one. I'm just going to do it all in one to save a little time.
+
+00:09:25.880 --> 00:09:29.540
+So I'm going to read the string, then I'm going to read the integer,
+
+00:09:29.540 --> 00:09:31.540
+and then I'm going to read the total.
+
+00:09:32.640 --> 00:09:37.630
+And what I'm going to do here is I'm going to display the line. I'll just display them in three lines.
+
+00:09:38.730 --> 00:09:42.630
+I'll copy that one. So here we're displaying the line,
+
+00:09:42.630 --> 00:09:44.130
+here we're displaying the num.
+
+00:09:44.680 --> 00:09:48.680
+And then finally, we'll be displaying the total down here.
+
+00:09:50.880 --> 00:09:54.540
+Okay. So all we've done now is rather than just read hello, we're reading
+
+00:09:54.540 --> 00:09:56.900
+hello the integer and the double.
+
+00:09:56.900 --> 00:10:00.900
+And when I run this, I should get three pieces of information displaying.
+
+00:10:00.900 --> 00:10:05.100
+There they are. Hello 100 and 200.345.
+
+00:10:05.600 --> 00:10:09.600
+Pretty cool. And if we modify this file to look like this,
+
+00:10:13.480 --> 00:10:17.040
+this will still work, right, because we're using that extraction operator,
+
+00:10:17.040 --> 00:10:19.500
+and it's going to stop right here when it sees a white space,
+
+00:10:19.500 --> 00:10:22.160
+and it's going to stop right here when it sees a white space.
+
+00:10:22.160 --> 00:10:25.820
+So we're pretty flexible as far as the format of this file.
+
+00:10:25.820 --> 00:10:29.320
+So if I run this again, you can see I still got those numbers right there.
+
+00:10:31.320 --> 00:10:33.980
+Okay. So that takes care of that example.
+
+00:10:33.980 --> 00:10:38.240
+And what I'll do next is we'll go to read file two, and we'll do exactly the same thing except we'll
+
+00:10:38.240 --> 00:10:42.840
+create more data here, and we'll read these inside a loop.Okay. So I'll be right back to do that.
+
+00:10:43.200 --> 00:10:45.400
+And actually, before we go to the next example,
+
+00:10:45.400 --> 00:10:49.500
+I forgot to close the file. So I wanted to be sure that you know that we need to close this file.
+
+00:10:49.500 --> 00:10:53.600
+So I'm just going to do infile.close. Okay. That's very very important.
+
+00:10:53.600 --> 00:10:57.480
+I got carried away with showing you how to read, I forgot the simple things to close the file,
+
+00:10:57.480 --> 00:10:59.480
+so make sure you close the file at the end.
+
+00:11:00.480 --> 00:11:06.470
+Okay. So I've switched over to section 19 workspace ReadFile_2 project.
+
+00:11:06.970 --> 00:11:10.970
+Okay. So what we want to do now is rather than just read those three data items,
+
+00:11:10.970 --> 00:11:13.730
+we want to continuously read three data items.
+
+00:11:13.730 --> 00:11:15.730
+And let me show you what I did to the test file.
+
+00:11:16.610 --> 00:11:19.960
+Now we've got Frank 100 and a double;
+
+00:11:19.960 --> 00:11:23.460
+Larry, an integer and a double; Moe, an integer and a double and so forth.
+
+00:11:23.460 --> 00:11:28.120
+So what i want to do is rather than just read the one line, I want to read as many lines as they're there.
+
+00:11:28.620 --> 00:11:32.280
+So we'll need to do this in some sort of loop, right. So we're going to use a while loop.
+
+00:11:32.280 --> 00:11:35.880
+And let me go back to my main, and I'll show you what's happening here.
+
+00:11:35.880 --> 00:11:39.180
+Everything else is exactly the same. I have included
+
+00:11:39.180 --> 00:11:42.980
+iomanip here just because I want to display those guys out at the end in a little bit of a
+
+00:11:42.980 --> 00:11:46.280
+formatted column, that way you can see it a little better.
+
+00:11:46.280 --> 00:11:49.880
+So I'm just displaying line num and total a little bit formatted.
+
+00:11:49.880 --> 00:11:52.480
+So here I've opened the file, and I've checked that it's open.
+
+00:11:52.920 --> 00:11:57.320
+I'm assuming it's open right here. Otherwise, I can't get here because the return 1 would kick me out.
+
+00:11:57.320 --> 00:12:00.680
+So what do I want to do. Well, I want to have some sort of while loop here.
+
+00:12:00.680 --> 00:12:05.280
+I want to loop while not
+
+00:12:05.280 --> 00:12:09.160
+infile.end
+
+00:12:09.160 --> 00:12:11.660
+of file eof, and that's a function.
+
+00:12:12.460 --> 00:12:14.560
+That will return true if it's end to file
+
+00:12:14.560 --> 00:12:18.120
+or no not true if it's not the end of file. And what I want to do in there
+
+00:12:18.120 --> 00:12:22.920
+is basically display this. But first, I want to read the input, right.
+
+00:12:22.920 --> 00:12:25.120
+So again, I'm reading from infile.
+
+00:12:25.620 --> 00:12:28.620
+And first, I'm reading the line
+
+00:12:29.610 --> 00:12:33.210
+actually should be name, right. But we'll just keep the name line, the num,
+
+00:12:33.210 --> 00:12:35.210
+which is the int and the total.
+
+00:12:36.090 --> 00:12:39.890
+And that should do it. So again, while we're not at the end of the file,
+
+00:12:39.890 --> 00:12:44.120
+we're reading three items, displaying them, looping back up,
+
+00:12:44.120 --> 00:12:47.480
+reading another three items, displaying them and so forth. Then when we're done,
+
+00:12:47.480 --> 00:12:50.730
+this time I remember to close the file. Okay. So let's run this.
+
+00:12:52.830 --> 00:12:55.930
+And when it runs, that's the information you get. You get Frank
+
+00:12:55.930 --> 00:12:59.730
+Larry Moe Curly, and you get the integers and the doubles here nicely formatted
+
+00:12:59.730 --> 00:13:02.230
+because I'm using the setw manipulator.
+
+00:13:02.430 --> 00:13:07.130
+So we can do that with end to file, but we can also do that by putting that
+
+00:13:07.130 --> 00:13:09.830
+this statement right here right inside the while.
+
+00:13:09.830 --> 00:13:12.490
+So what we can do is we can refactor this a little bit.
+
+00:13:13.490 --> 00:13:17.590
+And what we'll do is we'll put this statement right in there, I'll just move it up here,
+
+00:13:17.590 --> 00:13:18.580
+just like that.
+
+00:13:21.280 --> 00:13:24.380
+All right. So now this is a little different.
+
+00:13:24.380 --> 00:13:27.880
+You have to wrap your head around this a little bit. So there's my infile,
+
+00:13:27.880 --> 00:13:29.760
+and I'm reading those three items.
+
+00:13:29.760 --> 00:13:33.960
+If I hit enter file, if anything fails, if I've got illegal data anything,
+
+00:13:33.960 --> 00:13:37.260
+this will fail. And the while loop will fail and I'm out of here.
+
+00:13:37.260 --> 00:13:40.700
+If I'm able to read all those three items, remember, this is using formatted
+
+00:13:40.700 --> 00:13:43.360
+input because I'm using those extraction operators.
+
+00:13:43.360 --> 00:13:46.360
+So that's it. It'll read them and then I'll display them.
+
+00:13:46.360 --> 00:13:49.720
+So if i run this, I should get exactly the same output as before,
+
+00:13:50.270 --> 00:13:51.260
+and there it is.
+
+00:13:52.510 --> 00:13:55.710
+Okay. Cool so now in the next video --
+
+00:13:55.710 --> 00:13:57.810
+this one's getting a little bit long, so I'll cut it off here.
+
+00:13:57.810 --> 00:14:00.710
+In the next video what we'll do is we'll read one of Shakespeare's poems
+
+00:14:00.710 --> 00:14:03.310
+line by line and display it out to the console.

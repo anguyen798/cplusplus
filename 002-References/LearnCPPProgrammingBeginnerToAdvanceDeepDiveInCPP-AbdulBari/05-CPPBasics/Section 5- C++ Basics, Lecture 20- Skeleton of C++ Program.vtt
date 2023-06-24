@@ -1,0 +1,509 @@
+WEBVTT
+
+0
+00:00.770 --> 00:06.790
+In the previous section we have already learned how to download and install the compiler and the ide
+
+1
+00:06.810 --> 00:09.900
+required for developing c++ program.
+
+2
+00:09.900 --> 00:14.970
+Hope you're ready with the setup if you're not ready i suggest you go back to the previous section
+
+3
+00:15.450 --> 00:20.330
+and watch the videos and get the environment ready on your P.C..
+
+4
+00:21.120 --> 00:28.070
+in this video I'm going to show you the skeleton or the basic programs of C++ in the following video
+
+5
+00:28.070 --> 00:29.270
+you will find a demo.
+
+6
+00:29.280 --> 00:32.790
+How to start a new project and how to develop the first program.
+
+7
+00:33.690 --> 00:39.090
+So here first of all let us start with the skeleton of a C++ program.
+
+8
+00:39.110 --> 00:42.850
+See this is a skeleton already i have kept it ready here.
+
+9
+00:42.990 --> 00:44.370
+You have to start a new project.
+
+10
+00:44.370 --> 00:48.100
+Let us say the project name is first and the program.
+
+11
+00:48.100 --> 00:49.630
+First.cpp 
+
+12
+00:49.740 --> 00:54.280
+So you have to start this one the inside that this is what you have to get done.
+
+13
+00:54.360 --> 00:57.980
+So every c++ program basically looks like this.
+
+14
+00:58.020 --> 01:00.520
+So let us understand what are these elements.
+
+15
+01:00.570 --> 01:02.200
+So I'll start from this point.
+
+16
+01:02.220 --> 01:05.640
+See this is the starting point of the C++ program.
+
+17
+01:05.640 --> 01:07.670
+Main function.
+
+18
+01:07.820 --> 01:10.970
+This is main and their own brackets are there for the function.
+
+19
+01:10.970 --> 01:15.090
+The main function is the starting point of C++ program.
+
+20
+01:15.330 --> 01:16.800
+Then what does this int.
+
+21
+01:16.950 --> 01:20.270
+This is called as a return type of a function.
+
+22
+01:20.330 --> 01:25.830
+We will be learning about the return types and on afterwards but right now as a formality you have to
+
+23
+01:25.830 --> 01:33.720
+write it always and when you have written int their at this place then you have to write return zero at
+
+24
+01:33.720 --> 01:35.560
+the end of the main function.
+
+25
+01:35.910 --> 01:42.740
+And this is the body of a main function back that is the opening flower bracket and closing flower bracket. Now
+
+26
+01:42.850 --> 01:44.270
+what all you have to write on.
+
+27
+01:44.280 --> 01:49.830
+You have to write it here inside the body of main function.
+
+28
+01:49.830 --> 01:52.140
+Then what does it mean by this #include.
+
+29
+01:52.470 --> 01:53.740
+I'll explain it.
+
+30
+01:53.850 --> 01:58.720
+So first of all I will write something here inside the main function and show you.
+
+31
+01:58.830 --> 02:05.460
+So here as a first program I want to give a welcome message so I will write Hello world.
+
+32
+02:05.700 --> 02:09.960
+So I want this program to print on the screen hello world.
+
+33
+02:09.990 --> 02:11.580
+when I run the program.
+
+34
+02:12.150 --> 02:14.920
+So how to print something on the screen. so for
+
+35
+02:14.910 --> 02:19.920
+printing anything on the monitor that is on the screen from your c++ program.
+
+36
+02:19.980 --> 02:31.600
+There is a built in object available in C++ that is C out C means console, out that is console out so
+
+37
+02:31.600 --> 02:34.510
+monitor is treated as a console.
+
+38
+02:34.510 --> 02:41.860
+That is output console then there is something that is keyboard that is useful for taking input right.
+
+39
+02:42.100 --> 02:44.930
+So does this input console.
+
+40
+02:45.060 --> 02:55.780
+So it means for that there is C in Yes c out for monitor console out, C in that console in for keyboard
+
+41
+02:55.820 --> 02:57.790
+that is taking any input from the keyboard.
+
+42
+02:58.570 --> 03:01.810
+So let us use the c out and print something on the monitor.
+
+43
+03:02.050 --> 03:04.330
+So as I said we will be printing Hello.
+
+44
+03:04.350 --> 03:04.970
+World.
+
+45
+03:05.050 --> 03:07.870
+So we have to use this two angular brackets.
+
+46
+03:07.870 --> 03:13.470
+This is called as insertion operator insertion operator.
+
+47
+03:13.720 --> 03:17.530
+We have to use this one for printing anything.
+
+48
+03:17.530 --> 03:21.030
+Then here inside the double quotes I will say hello
+
+49
+03:21.060 --> 03:21.720
+World.
+
+50
+03:22.240 --> 03:24.700
+So what ever the messages that you have to print.
+
+51
+03:24.700 --> 03:26.740
+You have to give it in double quotes.
+
+52
+03:27.100 --> 03:30.040
+So this is a string or a message.
+
+53
+03:30.040 --> 03:31.780
+It's a string or a message.
+
+54
+03:31.810 --> 03:33.610
+This is given to C out.
+
+55
+03:33.730 --> 03:35.490
+So it will be printed on the monitor.
+
+56
+03:35.740 --> 03:37.160
+So when you run the program.
+
+57
+03:37.210 --> 03:39.710
+Hello world will appear here .
+
+58
+03:39.870 --> 03:47.750
+hello world will appear here, so Cout is a object used for printing anything on the monitor.
+
+59
+03:48.590 --> 03:54.790
+And if you see this double less than symbol, two less than symbols both are on the keyboard you will find
+
+60
+03:54.790 --> 03:56.600
+less than symbol for two times.
+
+61
+03:56.740 --> 04:01.000
+So that is acting as a insertion operator if you'll feel it.
+
+62
+04:01.180 --> 04:04.930
+It looks like as if inserting this one in Cout.
+
+63
+04:05.090 --> 04:08.920
+So once I inserted it would appear on a monitor.
+
+64
+04:09.190 --> 04:11.400
+It gives the feeling that you are inserting something.
+
+65
+04:11.410 --> 04:13.740
+So that's why it is called as insertion object.
+
+66
+04:14.440 --> 04:21.290
+So this how we can print now next thing where the cout came from ?
+
+67
+04:21.340 --> 04:24.520
+We know that for every C++ program we should write down
+
+68
+04:24.520 --> 04:29.130
+Int, main, flower bracket, close and return then whatever we are writing here.
+
+69
+04:29.180 --> 04:34.180
+where this C out came from? the C out object as well as C in object.
+
+70
+04:34.180 --> 04:42.220
+These are present inside this iostream header file so actually this is a library.
+
+71
+04:42.220 --> 04:49.450
+Library will contain the collection off of build in objects or functions that a programmer can use and
+
+72
+04:49.570 --> 04:51.250
+easily write the program.
+
+73
+04:51.250 --> 04:54.090
+This is provided by C++ compiler.
+
+74
+04:54.120 --> 04:56.930
+When we install the compiler you will get the libraries.
+
+75
+04:57.010 --> 05:02.410
+So there are many libraries we will learn about them slowly so whatever your requirement is depending
+
+76
+05:02.410 --> 05:07.270
+on that you can include the library in your program so everything from the library will be attached
+
+77
+05:07.270 --> 05:09.210
+to your program and you can use it.
+
+78
+05:10.090 --> 05:12.330
+So cout is present in this library.
+
+79
+05:12.340 --> 05:20.080
+That is iostream library for including that one we include bytes name or bytes header file so in
+
+80
+05:20.120 --> 05:24.830
+some compilers even you have to write down iostream.h right.
+
+81
+05:25.090 --> 05:33.510
+If this doesn't work in your compiler then you write iostream.h or else  just iostream now.
+
+82
+05:33.540 --> 05:36.930
+I will remove these things and I'll explain a few more things about this one.
+
+83
+05:38.750 --> 05:40.640
+The cout as it is present there.
+
+84
+05:40.650 --> 05:42.000
+We cannot use it directly.
+
+85
+05:42.000 --> 05:48.720
+We have to write down namespace so I have to write a std double column.
+
+86
+05:48.720 --> 05:50.420
+The symbol you will find on the keyboard.
+
+87
+05:50.430 --> 05:54.210
+You hit it for two times so this is Scope resolution.
+
+88
+05:54.210 --> 05:55.070
+Colon and colon.
+
+89
+05:55.080 --> 05:56.270
+That is double colon.
+
+90
+05:56.280 --> 06:04.050
+This is called us scope resolution so the correct method is right down std scope resolution and cout and
+
+91
+06:04.050 --> 06:04.860
+whatever you want.
+
+92
+06:04.890 --> 06:08.650
+If this is how we use that cout object.
+
+93
+06:08.760 --> 06:10.400
+Now this is a perfect program.
+
+94
+06:10.740 --> 06:13.990
+If you run it you will get hello world on the screen.
+
+95
+06:14.910 --> 06:20.100
+Now one more thing if you're writing a very lengthy program or bigger program and you have to use 
+
+96
+06:20.100 --> 06:26.280
+cout many times then instead of writing it like this there is another way of doing this using that
+
+97
+06:26.450 --> 06:36.150
+C out as well as cin object. the other method is, here we can write using namespace, using namespace
+
+98
+06:37.020 --> 06:39.370
+and this namespace std.
+
+99
+06:40.050 --> 06:45.240
+So when we say that we are using this namespace we don't have to see this one.
+
+100
+06:45.240 --> 06:51.240
+We can directly write cout it  means that we are using that namespace means whatever it is there inside
+
+101
+06:51.240 --> 06:52.980
+that namespace we are using it.
+
+102
+06:53.170 --> 06:54.950
+And what does it mean by namespace.
+
+103
+06:55.000 --> 07:01.140
+See all the build in things available in this header that is library are grouped under one name
+
+104
+07:01.260 --> 07:09.040
+that is STD so for using that we have to say using namespace name. now more about namespace.
+
+105
+07:09.040 --> 07:11.980
+We will learn in this course we will find our topic.
+
+106
+07:11.980 --> 07:17.590
+There is a video available is a separate topic so everything about namespaces are discussed at their
+
+107
+07:18.960 --> 07:19.900
+writing.
+
+108
+07:19.900 --> 07:26.340
+STD here is better than saying that we are using namespace because we are not using everything from
+
+109
+07:26.340 --> 07:27.060
+the namespace.
+
+110
+07:27.060 --> 07:28.220
+We want just Cout.
+
+111
+07:28.470 --> 07:31.390
+So writing a std colon and cout is better.
+
+112
+07:31.620 --> 07:39.030
+But it is easy for the beginners to just write cout so I may be using cout many times but on the top
+
+113
+07:39.030 --> 07:45.420
+I will writing namespace and here I will write cout just cout so that's all it is the first
+
+114
+07:45.420 --> 07:46.130
+program.
+
+115
+07:46.170 --> 07:51.330
+Let us quickly look at the things that we have leaned see we have learned that every C program will have
+
+116
+07:51.330 --> 07:55.170
+a main function main function should write integer and as it is done.
+
+117
+07:55.170 --> 07:59.210
+So here we should write return zero then inside the flower backets.
+
+118
+07:59.220 --> 08:01.780
+That is body whatever you want you can write on here.
+
+119
+08:02.040 --> 08:07.290
+So in my program I am just displaying it. so for that COUT is an object that is already available.
+
+120
+08:07.300 --> 08:10.200
+I'm using it for printing something on the screen.
+
+121
+08:10.380 --> 08:15.920
+The cout is present in the header file so I should include the header file and this header file
+
+122
+08:15.920 --> 08:21.210
+is having this namespace so I should also use that namespace just including the header file is not
+
+123
+08:21.210 --> 08:21.650
+sufficient.
+
+124
+08:21.660 --> 08:24.120
+You have to use that namespace inside that one.
+
+125
+08:24.480 --> 08:29.230
+If you don't want to use it then you can write on STD scope resolution here.
+
+126
+08:29.330 --> 08:33.630
+Then the next you I will show you some simple programs of C++.

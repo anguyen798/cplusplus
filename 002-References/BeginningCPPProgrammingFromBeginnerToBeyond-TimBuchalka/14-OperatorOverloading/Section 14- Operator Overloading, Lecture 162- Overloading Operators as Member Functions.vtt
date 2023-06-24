@@ -1,0 +1,1231 @@
+WEBVTT
+
+00:00:05.390 --> 00:00:08.600
+Welcome back, so we've learned
+how to overload the copy and
+
+00:00:08.600 --> 00:00:09.930
+move assignment operators.
+
+00:00:10.360 --> 00:00:13.970
+Now let's look at some of the other
+operators that c++ lets us overload.
+
+00:00:14.670 --> 00:00:18.519
+C++ allows us to overload
+operators as member methods or
+
+00:00:18.520 --> 00:00:20.510
+as global non-member functions.
+
+00:00:20.880 --> 00:00:23.890
+In this video we'll use member
+methods to overload operators.
+
+00:00:24.220 --> 00:00:26.740
+And in the next video, we'll
+overload the same operators
+
+00:00:26.740 --> 00:00:28.009
+using global functions.
+
+00:00:28.679 --> 00:00:30.519
+So let's start with unary operators.
+
+00:00:30.859 --> 00:00:32.470
+Unary operators work on one operand.
+
+00:00:33.599 --> 00:00:37.619
+Those operators include the
+increment, decrement, unary negation
+
+00:00:37.809 --> 00:00:39.590
+and the bang or not operator.
+
+00:00:40.269 --> 00:00:42.669
+Notice the basic method
+declaration in bold.
+
+00:00:43.040 --> 00:00:46.210
+In the case that we have to return
+a new object from the method, we'll
+
+00:00:46.210 --> 00:00:47.910
+return the new object by value.
+
+00:00:48.700 --> 00:00:52.390
+Also notice that unary member
+methods have an empty parameter list.
+
+00:00:52.650 --> 00:00:54.990
+This is because the object
+we're working with is referred
+
+00:00:55.010 --> 00:00:56.310
+to by the this pointer.
+
+00:00:57.180 --> 00:01:00.020
+So here you can see the prototypes
+for the unary operators.
+
+00:01:00.190 --> 00:01:02.990
+If we wanted them to work with
+our hypothetical number class.
+
+00:01:03.679 --> 00:01:06.960
+Also notice that we can overload
+both the pre and post decrement
+
+00:01:07.240 --> 00:01:08.479
+and increment operators.
+
+00:01:08.520 --> 00:01:11.919
+C++ simply provides an int that
+isn't used in the parameters
+
+00:01:11.920 --> 00:01:12.950
+for the post increment.
+
+00:01:13.050 --> 00:01:15.420
+At the bottom of the slide, you
+can see how we can use the unary
+
+00:01:15.610 --> 00:01:19.250
+operators as we do with the built-in
+types and what methods are being
+
+00:01:19.250 --> 00:01:20.679
+called in the comment section.
+
+00:01:22.630 --> 00:01:25.890
+Suppose we wanted to overload
+the unary minus operator to
+
+00:01:25.890 --> 00:01:28.690
+work with our my string class,
+and we want to make the string
+
+00:01:28.690 --> 00:01:30.319
+lower case whenever it's used.
+
+00:01:30.440 --> 00:01:33.990
+So we can create a my string
+object named Larry1 with the
+
+00:01:33.990 --> 00:01:36.170
+initializer string uppercase Larry.
+
+00:01:37.210 --> 00:01:40.440
+Then we can use the unary
+minus operator on Larry1 and
+
+00:01:40.440 --> 00:01:41.559
+store the result in Larry2.
+
+00:01:42.650 --> 00:01:45.709
+Now Larry1 will still contain
+the uppercase Larry string,
+
+00:01:46.129 --> 00:01:48.740
+but Larry2 will contain
+the lowercase Larry string.
+
+00:01:49.160 --> 00:01:52.630
+This is a simple example of unary
+operator overloading using member
+
+00:01:52.630 --> 00:01:55.690
+methods, however, the question
+is whether this makes sense.
+
+00:01:56.010 --> 00:01:58.509
+We're programmers we can
+make anything happen in code.
+
+00:01:58.929 --> 00:02:01.800
+Does it make sense for the
+unary minus operator to mean
+
+00:02:01.809 --> 00:02:03.220
+make the string lower case?
+
+00:02:03.679 --> 00:02:06.509
+It depends on the context of
+the application and the design.
+
+00:02:07.220 --> 00:02:10.890
+Personally, I'd prefer a method
+named lowercase or lowercase or too
+
+00:02:10.890 --> 00:02:13.079
+lower since that's very explicit.
+
+00:02:13.380 --> 00:02:15.469
+But this might make
+sense in another design.
+
+00:02:15.650 --> 00:02:16.929
+Let's see how the code might look.
+
+00:02:19.049 --> 00:02:21.700
+Here's the code for
+overloading the unary minus
+
+00:02:21.809 --> 00:02:23.349
+to make a string lower case.
+
+00:02:23.959 --> 00:02:25.100
+Notice the method header.
+
+00:02:25.440 --> 00:02:27.769
+We're returning a new object
+that will be the lowercase
+
+00:02:28.530 --> 00:02:30.230
+copy of the existing object.
+
+00:02:30.830 --> 00:02:32.870
+We're overloading the operator minus.
+
+00:02:33.260 --> 00:02:35.410
+We expect no parameters
+to this method.
+
+00:02:35.740 --> 00:02:39.250
+And it's a const method since we don't
+want to modify the current object.
+
+00:02:39.410 --> 00:02:41.509
+We want to create a
+new object based on it.
+
+00:02:42.150 --> 00:02:44.790
+So the first thing we do is
+allocate space for an area in
+
+00:02:44.790 --> 00:02:48.010
+memory on the heap where we
+want to store the lowercase copy
+
+00:02:48.190 --> 00:02:49.750
+of the current object string.
+
+00:02:50.620 --> 00:02:54.110
+Then we use the stood string copy
+function to copy the string over.
+
+00:02:54.559 --> 00:02:57.399
+Then we simply loop through
+the characters in the copy and
+
+00:02:57.400 --> 00:03:00.570
+convert each character to its
+lowercase equivalent, using
+
+00:03:00.570 --> 00:03:04.019
+the character function to lower
+in the cc type header file.
+
+00:03:05.050 --> 00:03:08.440
+Once we have the buffer lower
+case, then we construct a temporary
+
+00:03:08.440 --> 00:03:11.829
+mystring object using this
+lowercase string as the initializer.
+
+00:03:12.340 --> 00:03:15.350
+Finally, we delete the buffer we
+created in this method so we don't
+
+00:03:15.360 --> 00:03:18.869
+leak memory and we return the
+newly created lowercase object.
+
+00:03:19.730 --> 00:03:22.619
+We could certainly write more
+optimized code here, but I wrote this
+
+00:03:22.620 --> 00:03:24.549
+method to show each step explicitly.
+
+00:03:25.010 --> 00:03:27.403
+So that's the general pattern
+for overloading a unary
+
+00:03:27.559 --> 00:03:28.980
+operator using a member method.
+
+00:03:29.480 --> 00:03:32.020
+Now let's see how we can
+implement some binary operators
+
+00:03:32.080 --> 00:03:33.609
+also using member methods.
+
+00:03:35.709 --> 00:03:38.260
+As we know binary operators
+are applied to two operands.
+
+00:03:39.140 --> 00:03:42.090
+These operators include addition,
+multiplication, division the
+
+00:03:42.100 --> 00:03:43.810
+equality operators and many more.
+
+00:03:44.730 --> 00:03:47.970
+The pattern for overloading these
+operators is very similar to the way
+
+00:03:47.970 --> 00:03:51.889
+we overloaded unary operators except
+that now we have a single parameter
+
+00:03:51.889 --> 00:03:53.249
+in the method parameter list.
+
+00:03:53.980 --> 00:03:57.640
+I've named this parameter RHS,
+which stands for right-hand side.
+
+00:03:58.040 --> 00:04:01.360
+That way it's very clear that RHS
+refers to the parameter on the
+
+00:04:01.360 --> 00:04:03.019
+right-hand side of the operator.
+
+00:04:03.019 --> 00:04:06.350
+And the this pointer points
+to the object on the left-hand
+
+00:04:06.350 --> 00:04:07.260
+side of the operator.
+
+00:04:08.179 --> 00:04:10.810
+Notice the overloaded addition
+and subtraction operators
+
+00:04:11.000 --> 00:04:14.600
+return the newly created sum
+or difference objects by value.
+
+00:04:15.570 --> 00:04:18.390
+Also notice that the equality
+operators return Boolean
+
+00:04:18.390 --> 00:04:21.190
+values which makes sense since
+they're comparing things.
+
+00:04:22.029 --> 00:04:25.109
+You can see in the bottom of the slide
+how these operators might be used
+
+00:04:25.110 --> 00:04:26.830
+in our hypothetical number class.
+
+00:04:27.620 --> 00:04:29.450
+Now let's see how we can
+implement the equality
+
+00:04:29.450 --> 00:04:31.410
+operator in the mystring class.
+
+00:04:32.910 --> 00:04:36.440
+In the case of my string objects,
+we want to compare the strings
+
+00:04:36.440 --> 00:04:37.510
+to see if they're the same.
+
+00:04:37.970 --> 00:04:39.410
+We don't want to compare the pointers.
+
+00:04:39.410 --> 00:04:42.299
+Instead, we want to compare the
+strings that the pointers point to.
+
+00:04:43.170 --> 00:04:46.320
+Rather than write all the code
+ourselves, we can use the stood
+
+00:04:46.320 --> 00:04:50.250
+string compare function in the c
+string header file, which compares
+
+00:04:50.260 --> 00:04:52.280
+c-style strings exactly as we need.
+
+00:04:52.960 --> 00:04:55.910
+When we call that function with
+two c-style strings, it will
+
+00:04:55.910 --> 00:04:58.079
+return 0 if the strings are equal.
+
+00:04:58.710 --> 00:05:01.219
+So this method becomes
+almost trivial to implement.
+
+00:05:01.710 --> 00:05:06.359
+We compare str from this object to
+scr from the right-hand side object.
+
+00:05:06.700 --> 00:05:10.230
+And if the result is 0, we return
+true, otherwise we return false.
+
+00:05:10.510 --> 00:05:11.310
+That's it.
+
+00:05:11.550 --> 00:05:16.119
+Now we can write code like if
+s1 equals s2 to compare two
+
+00:05:16.120 --> 00:05:17.669
+mystring objects for equality.
+
+00:05:18.540 --> 00:05:20.570
+What if we wanted to write
+an overloaded equality
+
+00:05:20.570 --> 00:05:22.030
+operator for the player class.
+
+00:05:22.590 --> 00:05:24.950
+Well, we'd have to decide
+what we want to compare.
+
+00:05:25.250 --> 00:05:28.030
+Are we comparing the names
+of two objects or the health
+
+00:05:28.030 --> 00:05:29.530
+or the xp or everything.
+
+00:05:30.130 --> 00:05:32.830
+This would be an important decision
+and the programmers using the
+
+00:05:32.830 --> 00:05:35.950
+player class would have to be
+clear as to what's being compared
+
+00:05:36.070 --> 00:05:37.589
+so they can use it correctly.
+
+00:05:38.380 --> 00:05:40.950
+Now let's wrap up these slides
+by overloading the addition
+
+00:05:40.969 --> 00:05:42.800
+operator for the mystring class.
+
+00:05:43.270 --> 00:05:46.120
+Suppose we wanted to overload
+the binary plus operator for
+
+00:05:46.120 --> 00:05:49.280
+the mystring class so that it
+concatenates the strings from
+
+00:05:49.280 --> 00:05:52.820
+the left-hand side and right
+hand-side objects into a new object.
+
+00:05:53.650 --> 00:05:56.069
+Then we could use this
+as in the example code.
+
+00:05:56.559 --> 00:05:59.979
+First, we can create my string
+objects Larry and Moe and Stooges.
+
+00:06:00.580 --> 00:06:03.590
+Then we can write a statement
+like Larry plus Stooges which
+
+00:06:03.590 --> 00:06:05.320
+will concatenate the string Larry.
+
+00:06:05.630 --> 00:06:07.900
+And the string and stooges
+to create a new string.
+
+00:06:08.190 --> 00:06:09.940
+Larry is one of the three stooges.
+
+00:06:11.000 --> 00:06:14.329
+Notice that we can also use c style
+strings on the right-hand side.
+
+00:06:14.650 --> 00:06:17.659
+This is because we have a
+mystring constructor that can
+
+00:06:17.660 --> 00:06:20.320
+construct mystring objects
+from a c-style string.
+
+00:06:20.480 --> 00:06:21.240
+That's pretty cool.
+
+00:06:22.090 --> 00:06:25.440
+The only limitation to overloading
+operators as member functions
+
+00:06:25.750 --> 00:06:29.420
+is that the object on the
+left-hand side must be an object
+
+00:06:29.420 --> 00:06:30.610
+of the class you're using.
+
+00:06:31.150 --> 00:06:34.210
+For example, the last statement
+in this slide won't compile
+
+00:06:34.210 --> 00:06:37.960
+since the left-hand side operand
+is not a my string object.
+
+00:06:38.340 --> 00:06:40.849
+We can get this to work in the
+next video when we implement
+
+00:06:40.880 --> 00:06:42.900
+operators as non-member functions.
+
+00:06:43.360 --> 00:06:45.800
+Okay, so let's take a look
+at the code for this method.
+
+00:06:47.370 --> 00:06:49.410
+It's probably exactly
+as you would expect.
+
+00:06:49.660 --> 00:06:53.010
+We allocate a character buffer
+large enough for both of the strings
+
+00:06:53.289 --> 00:06:55.239
+plus one for the string terminator.
+
+00:06:55.790 --> 00:06:57.700
+Then we allocate this
+buffer on the heap.
+
+00:06:58.200 --> 00:07:02.370
+First, we copy over the left side
+string with std string copy, and
+
+00:07:02.370 --> 00:07:05.529
+then we concatenate the right
+side string with std string cat.
+
+00:07:06.370 --> 00:07:09.299
+We create the new object that will
+contain the concatenated string
+
+00:07:09.309 --> 00:07:11.189
+using the buffer as the initializer.
+
+00:07:11.770 --> 00:07:14.169
+And then finally, we
+de-allocate the local buffer
+
+00:07:14.210 --> 00:07:15.580
+area so we don't leak memory.
+
+00:07:15.800 --> 00:07:18.190
+And then, we return the newly
+created object by value.
+
+00:07:18.660 --> 00:07:20.710
+You can see that first
+this looks complicated.
+
+00:07:20.710 --> 00:07:23.930
+But the more you do it patterns
+evolve that are very very similar.
+
+00:07:24.360 --> 00:07:27.419
+Great, so let's head over to the IDE and
+implement these operators for the
+
+00:07:27.420 --> 00:07:29.380
+my string class as member methods.
+
+00:07:30.719 --> 00:07:32.570
+Okay, so I'm back, and I'm in the IDE.
+
+00:07:32.920 --> 00:07:38.630
+I'm in the section 14 workspace in
+the mystream-operator-methods project.
+
+00:07:38.880 --> 00:07:41.260
+In this project, what we're going
+to do is we're going to overload
+
+00:07:41.480 --> 00:07:44.799
+three operators as member methods.
+
+00:07:45.070 --> 00:07:48.960
+And the ones we're going to
+overload are right here the equality
+
+00:07:48.960 --> 00:07:52.400
+operator that allows us to compare
+two objects as we can see here.
+
+00:07:52.920 --> 00:07:57.019
+The negation operator, the unary
+minus operator, which in our
+
+00:07:57.020 --> 00:08:00.510
+case we're going to make whatever
+string we want to negate lowercase.
+
+00:08:01.110 --> 00:08:04.539
+And finally, the concatenation
+operator that'll take two string
+
+00:08:04.539 --> 00:08:07.649
+objects and make a bigger string
+object from it that contains
+
+00:08:07.650 --> 00:08:10.280
+those two strings put together,
+just like we've done before
+
+00:08:10.450 --> 00:08:12.229
+using the regular string class.
+
+00:08:12.560 --> 00:08:16.849
+And you can see we can extend this
+so we can have Moe plus blank plus
+
+00:08:16.849 --> 00:08:20.390
+Larry plus blank plus Curly, and
+this is a c-style string right here.
+
+00:08:20.630 --> 00:08:21.920
+So it'll be pretty flexible.
+
+00:08:22.650 --> 00:08:24.169
+Okay, so why don't we start.
+
+00:08:24.380 --> 00:08:27.240
+We're going to implement
+them as member methods.
+
+00:08:27.410 --> 00:08:32.359
+So let's go to our header file, and
+create our method prototypes here.
+
+00:08:32.889 --> 00:08:36.789
+In the case of the concatenation and
+the unary minus where we're going
+
+00:08:36.789 --> 00:08:40.510
+to make things lower case, we're
+going to return mystring objects.
+
+00:08:40.750 --> 00:08:44.720
+So we'll create a mystring object, and
+it's going to be returned by value we
+
+00:08:44.720 --> 00:08:46.200
+want to create a new object, right.
+
+00:08:46.410 --> 00:08:49.170
+We're going to take those two
+strings, make a new one, return it.
+
+00:08:49.440 --> 00:08:51.740
+We're going to take that one
+string, make it lower case
+
+00:08:51.740 --> 00:08:52.980
+into a new one, return it.
+
+00:08:53.280 --> 00:08:55.830
+We're not going to change anything
+that we've got going on already.
+
+00:08:56.190 --> 00:08:59.860
+So let's do the operator
+minus first okay.
+
+00:09:00.080 --> 00:09:01.699
+So it's going to be the operator.
+
+00:09:01.699 --> 00:09:05.740
+We're overloading, again, is
+operator followed by the operator we
+
+00:09:05.740 --> 00:09:07.449
+want, which is minus in this case.
+
+00:09:07.930 --> 00:09:10.080
+And what are we going to be
+passing into this, nothing.
+
+00:09:10.670 --> 00:09:12.180
+That's a unary operator.
+
+00:09:12.190 --> 00:09:15.280
+So we've already got what we need
+into the left side of the dot.
+
+00:09:15.759 --> 00:09:18.490
+It's important to understand that
+when we're overloading operators
+
+00:09:18.490 --> 00:09:23.170
+as member methods unary operators
+take no parameters, binary operators
+
+00:09:23.170 --> 00:09:27.250
+take one parameter because this is
+already a parameter on the left side.
+
+00:09:27.990 --> 00:09:29.389
+And we want this to be const.
+
+00:09:30.159 --> 00:09:35.390
+And this will mean, let's say, make
+lowercase version of the string.
+
+00:09:37.000 --> 00:09:41.180
+All right, now let's do the
+concatenation operator.
+
+00:09:41.340 --> 00:09:42.760
+This is a binary operator.
+
+00:09:42.760 --> 00:09:46.769
+So we need one parameter in this
+parameter list, and that parameter
+
+00:09:46.770 --> 00:09:51.219
+will be const mystring reference,
+and we'll call it right-hand side.
+
+00:09:51.630 --> 00:09:54.780
+Important that it's const because we
+really don't want to mess with that.
+
+00:09:57.910 --> 00:10:00.969
+And then the last one is
+the equality operator.
+
+00:10:01.200 --> 00:10:03.400
+It will return a Boolean,
+a true false value.
+
+00:10:03.969 --> 00:10:07.849
+And it will be operator,
+two equal signs.
+
+00:10:08.520 --> 00:10:09.570
+It's binary.
+
+00:10:09.630 --> 00:10:15.510
+So it's going to expect a const
+mystring reference, right-hand
+
+00:10:15.510 --> 00:10:19.150
+side and we want this to
+be a const method as well.
+
+00:10:19.510 --> 00:10:22.019
+So I don't want to change anything.
+
+00:10:22.230 --> 00:10:24.050
+Actually, I want this
+one to be const as well.
+
+00:10:25.090 --> 00:10:25.740
+That's it.
+
+00:10:25.840 --> 00:10:27.379
+So those are the three prototypes.
+
+00:10:27.630 --> 00:10:30.720
+Now what we'll do is we'll
+go to the mystring cpp file,
+
+00:10:30.820 --> 00:10:33.689
+our implementation file, and
+we'll implement those methods.
+
+00:10:33.700 --> 00:10:34.670
+So let's do that now.
+
+00:10:36.260 --> 00:10:39.079
+Okay, so I'm going to put them
+right here right after the
+
+00:10:39.090 --> 00:10:40.779
+overloaded assignment operators.
+
+00:10:41.900 --> 00:10:46.210
+And why don't we start with the
+overloaded equality operator.
+
+00:10:46.359 --> 00:10:48.000
+So that one is, again, bool.
+
+00:10:48.330 --> 00:10:49.310
+It returns a Boolean.
+
+00:10:50.200 --> 00:10:54.950
+It's part of mystring class, the
+name is operator, two equal signs.
+
+00:10:55.390 --> 00:11:00.479
+And it expects on the right side a
+mystring reference to a constant.
+
+00:11:00.940 --> 00:11:04.299
+We'll call it RHS, and the
+method is a const method as well.
+
+00:11:05.070 --> 00:11:06.290
+Okay, so what do we do here?
+
+00:11:06.290 --> 00:11:08.569
+Well, we want to compare
+those two strings, right.
+
+00:11:08.810 --> 00:11:12.110
+The string in this and the
+string and right-hand side.
+
+00:11:12.390 --> 00:11:16.240
+So all we really need to do is just
+simply say return, and then we can
+
+00:11:16.270 --> 00:11:21.630
+call std string compare, which is
+a c-string function that compares
+
+00:11:21.630 --> 00:11:23.280
+two c-strings is which we've got.
+
+00:11:23.619 --> 00:11:25.300
+So str is one of them.
+
+00:11:25.690 --> 00:11:27.990
+And right-hand side dot
+str is the other one.
+
+00:11:29.040 --> 00:11:32.240
+And if that returns 0, we'll
+return the value there.
+
+00:11:33.830 --> 00:11:35.770
+Okay, so simple as that.
+
+00:11:35.889 --> 00:11:37.600
+We could use an if else
+statement if we like.
+
+00:11:37.600 --> 00:11:38.800
+But this works just as well.
+
+00:11:38.980 --> 00:11:43.870
+So that takes care of that, and
+this will be, let's see, equality.
+
+00:11:45.140 --> 00:11:48.670
+Now let's do make lowercase.
+
+00:11:52.320 --> 00:11:56.120
+And in this case, we're returning
+mystring object by value.
+
+00:11:56.799 --> 00:11:58.459
+It's part of the mystring class.
+
+00:11:58.480 --> 00:12:02.410
+There's my scope resolution
+operator, and it's operator minus
+
+00:12:03.340 --> 00:12:07.650
+nothing in the parameter list
+because it's a unary operator.
+
+00:12:08.349 --> 00:12:11.410
+And it's const because we don't want
+to change our current object again.
+
+00:12:11.710 --> 00:12:12.810
+Now what do we have to do here.
+
+00:12:12.820 --> 00:12:16.169
+Remember, we need to make a copy
+of whatever is in the current
+
+00:12:16.170 --> 00:12:20.310
+object, make that lowercase, and
+then create a new object from it.
+
+00:12:20.800 --> 00:12:23.370
+I need to allocate space
+to create that copy so
+
+00:12:23.370 --> 00:12:24.540
+that I can make lowercase.
+
+00:12:24.540 --> 00:12:27.349
+I don't want to change the
+object because I can't right.
+
+00:12:27.340 --> 00:12:29.400
+I don't want to. It's a const method.
+
+00:12:29.639 --> 00:12:30.379
+So what do we do.
+
+00:12:30.570 --> 00:12:33.360
+Well, let's create a temporary
+area and memory called
+
+00:12:33.370 --> 00:12:38.150
+buff, and we'll create a new
+array of characters there.
+
+00:12:38.400 --> 00:12:39.949
+And how big is that going to be.
+
+00:12:40.210 --> 00:12:46.984
+Well, it's going to be as big as the
+length of the string in str plus 1.
+
+00:12:48.090 --> 00:12:51.830
+And again, we're using std string
+length here, given that string.
+
+00:12:51.830 --> 00:12:54.900
+So if it's frank, I'm going
+to get back 5, allocate 1.
+
+00:12:54.910 --> 00:12:59.000
+This is a brand new pointer to an area
+on the heap that I just allocated.
+
+00:12:59.220 --> 00:13:00.630
+It's local to this function.
+
+00:13:00.810 --> 00:13:02.950
+So when we're finished with
+function, we need to get rid
+
+00:13:02.950 --> 00:13:04.560
+of that and de-allocate it.
+
+00:13:05.000 --> 00:13:05.930
+So now what do I do.
+
+00:13:06.190 --> 00:13:13.520
+Well, at this point I need to copy
+the string that's in str to buff.
+
+00:13:16.710 --> 00:13:18.800
+Okay, now we've got a
+copy of that string.
+
+00:13:18.800 --> 00:13:21.530
+So what we can do now is we
+can just simply loop through
+
+00:13:21.530 --> 00:13:25.279
+that, and set I equal to 0.
+
+00:13:25.309 --> 00:13:35.090
+And we can go while I is less than,
+let's say, the string length of str
+
+00:13:35.090 --> 00:13:36.680
+or the string length of buff actually.
+
+00:13:37.590 --> 00:13:39.020
+So they're both the same right now.
+
+00:13:42.130 --> 00:13:43.129
+And we're going to go by one.
+
+00:13:44.670 --> 00:13:47.780
+That's it. And now inside the loop, what
+we want to do is we just simply
+
+00:13:47.780 --> 00:13:52.380
+want to say buff sub I equals the
+lowercase version of it, right.
+
+00:13:52.390 --> 00:13:56.550
+So std, and we're going to do
+to lower which is a function
+
+00:13:56.580 --> 00:13:59.439
+in the cc type header file.
+
+00:14:00.490 --> 00:14:03.649
+So we'll say to lower and
+to lower what, well, the
+
+00:14:03.650 --> 00:14:06.339
+character itself buffs by.
+
+00:14:09.000 --> 00:14:10.410
+That's it. Now we've got what we need.
+
+00:14:10.440 --> 00:14:14.055
+Buff now contains a copy of
+that original string and then
+
+00:14:14.120 --> 00:14:15.640
+we just made it lowercase.
+
+00:14:15.889 --> 00:14:17.090
+So what do we want to do now.
+
+00:14:17.270 --> 00:14:20.780
+I want to create a new object, the
+temporary object right on the stack
+
+00:14:20.780 --> 00:14:23.100
+here based on that information.
+
+00:14:23.100 --> 00:14:24.429
+So I'm going to say my string.
+
+00:14:24.429 --> 00:14:28.319
+We'll just call it temp, and
+we'll initialize it from buff.
+
+00:14:28.660 --> 00:14:32.260
+Now we want to return temp,
+and then we'll be done.
+
+00:14:32.270 --> 00:14:35.360
+But there's one thing we need to do
+and it's really easy to forget and
+
+00:14:35.370 --> 00:14:38.690
+it's -- this is one of the benefits
+of using smart pointers, which we'll
+
+00:14:38.690 --> 00:14:40.190
+talk about later on in the course.
+
+00:14:40.740 --> 00:14:43.430
+Right here I allocated
+this area in memory.
+
+00:14:43.880 --> 00:14:45.410
+I've used it right here.
+
+00:14:45.550 --> 00:14:46.260
+I'm done with it.
+
+00:14:46.280 --> 00:14:48.130
+I need to de-allocate that space.
+
+00:14:48.150 --> 00:14:49.370
+Otherwise I'll leak that memory.
+
+00:14:49.580 --> 00:14:52.929
+So I want to be sure that
+right here I delete buff.
+
+00:14:55.130 --> 00:14:55.939
+And that's it.
+
+00:14:55.960 --> 00:14:57.019
+That takes care of that.
+
+00:14:57.519 --> 00:15:01.610
+And then the last method is
+the concatenate method, which,
+
+00:15:01.610 --> 00:15:03.070
+again, is really straightforward.
+
+00:15:03.300 --> 00:15:04.949
+We're going to create
+a new string from it.
+
+00:15:05.220 --> 00:15:08.330
+So by value, it's a mystring method.
+
+00:15:08.440 --> 00:15:10.250
+We'll call it operator plus.
+
+00:15:11.360 --> 00:15:13.420
+And it expects something on
+the right-hand side, which
+
+00:15:13.420 --> 00:15:14.670
+is mystring
+
+00:15:17.290 --> 00:15:19.990
+by reference. We'll call it RHS, as usual.
+
+00:15:19.990 --> 00:15:21.990
+And it's a const method as well.
+
+00:15:24.590 --> 00:15:26.590
+That's it. So what do we do here.
+
+00:15:26.590 --> 00:15:27.920
+Well, same idea here, right.
+
+00:15:27.920 --> 00:15:32.209
+I just need to allocate an
+area in memory for characters.
+
+00:15:32.329 --> 00:15:33.410
+We'll call it buff again.
+
+00:15:33.819 --> 00:15:36.920
+And how big is this going to be.
+
+00:15:36.920 --> 00:15:40.020
+Well, this needs to be since we're
+concatenating, it has to be the length
+
+00:15:40.040 --> 00:15:44.370
+of this string plus the length of
+the right-hand side string plus 1.
+
+00:15:44.710 --> 00:15:45.699
+So that's all we're going to do.
+
+00:15:45.710 --> 00:15:48.829
+We're just going to
+say new char, how many.
+
+00:15:50.160 --> 00:16:00.829
+Well, the length of str plus
+the length of right-hand
+
+00:16:00.829 --> 00:16:03.430
+side's str plus 1.
+
+00:16:06.000 --> 00:16:08.630
+That allocates the storage
+on the heap that I need.
+
+00:16:09.380 --> 00:16:12.709
+At this point, I need to copy the
+first string and then concatenate
+
+00:16:12.810 --> 00:16:15.360
+the second string to it so I can
+build the bigger string from it.
+
+00:16:15.670 --> 00:16:22.530
+So we'll say std string copy
+into buff from the left-hand
+
+00:16:22.530 --> 00:16:23.580
+side string which is str.
+
+00:16:24.910 --> 00:16:30.129
+Then we'll do a std string cat
+to concatenate again into buff
+
+00:16:30.930 --> 00:16:32.870
+from the right-hand sides str.
+
+00:16:34.580 --> 00:16:37.370
+Perfect. So what we've done now is
+we've just copied one string
+
+00:16:37.370 --> 00:16:38.849
+and concatenated the other.
+
+00:16:39.540 --> 00:16:42.489
+At this point, we've got the
+information we need in buff
+
+00:16:42.500 --> 00:16:45.310
+to create that new temporary
+object that I'm going to return.
+
+00:16:45.509 --> 00:16:46.949
+Same thing we did up here.
+
+00:16:47.039 --> 00:16:48.490
+So we'll build that object.
+
+00:16:48.490 --> 00:16:52.390
+We'll call it temp, and we'll
+build it with the buff information.
+
+00:16:53.610 --> 00:16:54.800
+Remember, delete buff.
+
+00:16:54.820 --> 00:16:55.690
+We're done with it now.
+
+00:16:57.340 --> 00:17:02.280
+And return that temporary object.
+
+00:17:03.640 --> 00:17:06.069
+So that's it. We should be done
+unless there's any typo.
+
+00:17:06.069 --> 00:17:07.280
+So let's compile and run.
+
+00:17:08.440 --> 00:17:11.900
+And you can see here we've got
+a copy constructor being used.
+
+00:17:11.900 --> 00:17:13.680
+Larry is 5, Moe is 3.
+
+00:17:13.680 --> 00:17:19.389
+We got back false and true,
+exactly what we expected.
+
+00:17:19.410 --> 00:17:22.969
+We get Larry uppercase,
+Larry lowercase l.
+
+00:17:23.230 --> 00:17:25.920
+Then we have Moe and Larry,
+Moe, Larry and Curly.
+
+00:17:25.990 --> 00:17:27.089
+So everything looks great.
+
+00:17:27.790 --> 00:17:28.630
+All right, so there you go.
+
+00:17:28.630 --> 00:17:31.590
+That's an example of implementing
+these three overloaded
+
+00:17:31.590 --> 00:17:33.530
+operators as member methods.
+
+00:17:33.530 --> 00:17:35.720
+You'll get a lot more chance
+to practice this when we get
+
+00:17:35.740 --> 00:17:37.549
+into the challenge exercise.
+
+00:17:38.290 --> 00:17:41.400
+What we'll do in the next video is
+we'll do the same three operators, but
+
+00:17:41.400 --> 00:17:43.450
+we'll do them as non-member functions.

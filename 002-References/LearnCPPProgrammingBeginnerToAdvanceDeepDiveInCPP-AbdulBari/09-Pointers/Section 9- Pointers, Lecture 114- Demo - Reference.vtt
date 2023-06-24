@@ -1,0 +1,129 @@
+WEBVTT
+
+0
+00:00.140 --> 00:01.920
+Let us look at a reference.
+
+1
+00:01.920 --> 00:06.680
+Suppose I have a variable then for the same variable.
+
+2
+00:06.720 --> 00:12.220
+I can also declare a reference that is a references  declared with & symbol.
+
+3
+00:12.540 --> 00:16.800
+Now this Y is a reference to X..
+
+4
+00:16.810 --> 00:27.570
+Now if I say Cout x value of x will be displayed then if I say Y plus plus the value of x will increment
+
+5
+00:27.910 --> 00:32.260
+and even if I say X plus plus then the value of x is incremented.
+
+6
+00:32.340 --> 00:38.770
+Now again if I say cout x here I mean incrementing value Y as well as value X..
+
+7
+00:38.820 --> 00:43.560
+It means the same thing so the same value of x would be incremented twice and then I should get the answer
+
+8
+00:43.560 --> 00:45.080
+as 12 here.
+
+9
+00:45.390 --> 00:49.480
+So this X is incremented with a name Y.
+
+10
+00:49.690 --> 00:57.710
+Let us run and see, see the first time the value of x is  10 and next the value of x is 12
+
+11
+00:57.720 --> 00:59.970
+now let us see one more thing I will say.
+
+12
+00:59.970 --> 01:07.650
+cout address of X and with some space I will display, address of y
+
+13
+01:10.450 --> 01:11.900
+let's run this and see.
+
+14
+01:12.140 --> 01:17.950
+So you can see that the address of variable x and y both are same.
+
+15
+01:17.980 --> 01:20.320
+So Y is not another variable.
+
+16
+01:20.380 --> 01:26.620
+It is just another name of same variable x so both are having same address.
+
+17
+01:26.620 --> 01:30.420
+So it means Y is also the same thing so Y doesn't consume any memory.
+
+18
+01:30.610 --> 01:34.900
+It's not declared just like a variable.
+
+19
+01:34.900 --> 01:41.080
+Now one more thing I'm will show you see I cannot just declare a reference without initializing it.
+
+20
+01:41.340 --> 01:44.710
+It's an error declaration of a reference variable y requires
+
+21
+01:44.800 --> 01:47.660
+I got an error message and initializer.
+
+22
+01:47.710 --> 01:51.400
+So a reference must be initialized whenever it is declared.
+
+23
+01:51.400 --> 02:00.400
+So I must assign some variable name and even later on if I have supposed one more variable b with value
+
+24
+02:00.400 --> 02:00.970
+20.
+
+25
+02:00.970 --> 02:06.540
+Now I cannot say that this is y I want to assign it to B.
+
+26
+02:06.550 --> 02:12.150
+I cannot do this so this will be actually storing the value of b in Y.
+
+27
+02:12.520 --> 02:16.690
+Instead of changing a reference so I cannot say like this also.
+
+28
+02:17.060 --> 02:25.180
+See I got message that expression is not assignable So that's how  one reference is created for some
+
+29
+02:25.180 --> 02:25.740
+variable.
+
+30
+02:25.750 --> 02:27.350
+It cannot be changed at all.
+
+31
+02:28.850 --> 02:31.000
+So that's it, it's about reference.

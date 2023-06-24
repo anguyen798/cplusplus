@@ -1,0 +1,213 @@
+WEBVTT
+
+0
+00:01.920 --> 00:06.300
+et us see conditional statements if is a conditional statement
+
+1
+00:09.300 --> 00:14.370
+here I should mention the condition if the condition is true then this block will be executed.
+
+2
+00:14.640 --> 00:21.510
+I will write C out Hello new line.
+
+3
+00:21.660 --> 00:29.610
+Now I must mention a conditional statement here he is giving an error message that expected expression.
+
+4
+00:29.640 --> 00:34.230
+So I will the write one let us see what happens.
+
+5
+00:34.240 --> 00:35.990
+I run the program.
+
+6
+00:36.210 --> 00:36.630
+Hello.
+
+7
+00:36.630 --> 00:38.270
+Is displayed here.
+
+8
+00:38.880 --> 00:44.320
+If I write as  0 .
+
+9
+00:44.370 --> 00:53.030
+It is false see here I got a warning that code will never be executed.
+
+10
+00:53.820 --> 00:59.830
+Silence by adding parentheses to  mark code as explicitly dead.
+
+11
+01:00.390 --> 01:09.300
+But still I will run because this is the warning program will compile and run.
+
+12
+01:09.370 --> 01:14.500
+It's working and has displayed hello It means minus 10 is taken as true.
+
+13
+01:15.160 --> 01:17.880
+I can use this keyword true also.
+
+14
+01:18.370 --> 01:19.190
+Now let us.
+
+15
+01:19.270 --> 01:21.250
+add else block to this one
+
+16
+01:25.230 --> 01:25.880
+here.
+
+17
+01:25.910 --> 01:29.430
+I will display a message cout bye
+
+18
+01:33.480 --> 01:36.630
+endl let us run this and see
+
+19
+01:39.750 --> 01:45.660
+only hello is displayed and here I am getting a warning that this code is not reachable, never executed
+
+20
+01:45.690 --> 01:48.850
+because I have mentioned true here so always it will enter in.
+
+21
+01:48.900 --> 01:53.940
+If block it will not enter into else block and instead of true.
+
+22
+01:53.940 --> 02:00.840
+If I write false here then still I get a warning that this blog will not be executed at all.
+
+23
+02:00.840 --> 02:05.710
+This block will be executed any way I can run and see what happens.
+
+24
+02:05.730 --> 02:07.730
+It will go in the else block and display.
+
+25
+02:07.740 --> 02:08.490
+Bye.
+
+26
+02:08.670 --> 02:18.060
+Yeah it is displaying bye here so I can use constant values like 0 or 1 or any other number for true
+
+27
+02:18.390 --> 02:22.250
+or I can write keywords like true or false.
+
+28
+02:24.730 --> 02:29.580
+Let us write a program to take the roll number from the keyboard and check whether that number is valid
+
+29
+02:29.580 --> 02:30.110
+or not.
+
+30
+02:30.210 --> 02:35.880
+So for that I will declare a variable called Roll and cout
+
+31
+02:36.870 --> 02:40.320
+enter your roll number
+
+32
+02:44.330 --> 02:49.740
+cin roll
+
+33
+02:49.770 --> 02:58.280
+Here we check if rule number is less than 1 number cannot be zero.
+
+34
+02:58.280 --> 03:02.000
+Mostly all numbers start from 1 only if it is less than 1.
+
+35
+03:02.090 --> 03:09.410
+Then we will say say cout invalid roll number
+
+36
+03:13.840 --> 03:25.920
+else cout valid roll no.
+
+37
+03:26.360 --> 03:30.530
+So the common thing found mostly in like on any Web site.
+
+38
+03:30.530 --> 03:32.670
+If you are registering they us ask for email.
+
+39
+03:32.870 --> 03:35.330
+They will check whether your email is right or not.
+
+40
+03:35.490 --> 03:37.160
+they will ask age or date of birth.
+
+41
+03:37.160 --> 03:43.660
+But if you enter a future date then they will say it will give a message that your data is invalid
+
+42
+03:44.570 --> 03:46.430
+so that the called as validation.
+
+43
+03:46.430 --> 03:48.260
+So this is like a validation code.
+
+44
+03:48.260 --> 03:52.890
+So after taking a roll no. i am just checking weather the roll number is valid or not.
+
+45
+03:52.910 --> 03:59.510
+So roll no. cannot be less than 1 so that's what I am checking if it is less than onc say a valid otherwise
+
+46
+03:59.510 --> 04:02.390
+valid Let's run and see the program
+
+47
+04:06.470 --> 04:10.370
+enter your roll number minus one invalid number.
+
+48
+04:10.370 --> 04:12.950
+Here is a message invalid roll no.
+
+49
+04:18.040 --> 04:21.280
+two enter, valid roll no.
+
+50
+04:22.210 --> 04:26.070
+There's a valid number that's it.
+
+51
+04:26.110 --> 04:29.740
+So you can try this program on your computer.
+
+52
+04:30.750 --> 04:33.820
+I suggest you do try this program by yourself.

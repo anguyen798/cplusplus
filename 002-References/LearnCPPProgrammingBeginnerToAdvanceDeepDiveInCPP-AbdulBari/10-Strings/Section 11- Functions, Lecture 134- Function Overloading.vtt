@@ -1,0 +1,381 @@
+WEBVTT
+
+0
+00:00.230 --> 00:03.750
+in this video let us talk about function over-loading.
+
+1
+00:03.960 --> 00:05.300
+What is function
+
+2
+00:05.300 --> 00:06.690
+overloading?
+
+3
+00:06.870 --> 00:13.370
+You can write more than one functions with the same name but a different argument list.
+
+4
+00:14.050 --> 00:21.830
+Let us see how. I will first write main function.
+
+5
+00:22.130 --> 00:28.910
+And here I will take some variables.
+
+6
+00:28.930 --> 00:32.040
+Now I want to have one function called add.
+
+7
+00:32.150 --> 00:38.620
+which will add two numbers A and B and return the result, that i will take it in  C.so i will write down this
+
+8
+00:38.620 --> 00:42.500
+function. integer add
+
+9
+00:43.240 --> 00:47.580
+which takes two integers x and integer y.
+
+10
+00:48.320 --> 00:56.200
+Now here I don't have to declare any variable simply I will write return x plus y, that's it.
+
+11
+00:56.210 --> 01:01.840
+It's a simple function, so yes that add function when I call, a will be copied in X and B will be
+
+12
+01:01.860 --> 01:06.120
+copied in Y and it will add these two other numbers and the result that comes in C Okay.
+
+13
+01:06.260 --> 01:08.970
+This is fine. now I want to write one more function here.
+
+14
+01:08.980 --> 01:15.970
+So I will declare one more variable here D, then I will say add A, B,C.
+
+15
+01:15.970 --> 01:16.480
+….
+
+16
+01:16.480 --> 01:24.240
+and store the result in D, i want to add the values of A and B and whatever I got it in C and the
+
+17
+01:24.240 --> 01:25.580
+result should be in D.
+
+18
+01:25.600 --> 01:27.020
+So do I have this function.
+
+19
+01:27.020 --> 01:28.410
+We're just taking three integers.
+
+20
+01:28.420 --> 01:30.910
+No that is taking two Int.
+
+21
+01:30.940 --> 01:33.720
+So let us write one function, integer
+
+22
+01:33.880 --> 01:35.410
+What should be the name.
+
+23
+01:35.480 --> 01:38.260
+same name, can i use same name, yes.
+
+24
+01:38.770 --> 01:46.770
+Actually if you look at C language and there you cannot have more than one functions with the same name.
+
+25
+01:46.870 --> 01:54.500
+But here in C++ you can have more than one functions with the same name but a different argument list.
+
+26
+01:54.550 --> 01:59.580
+So what other different arguments here, see this was taking in the x and y, 2 integers.
+
+27
+01:59.590 --> 02:04.540
+But this is taking three integers. yes they are different, these two functions are different.
+
+28
+02:05.440 --> 02:08.910
+So you can have two different functions but different parameters.
+
+29
+02:08.920 --> 02:15.180
+So when you call this it will be calling first function, when you call this it will be calling second function.
+
+30
+02:15.400 --> 02:21.670
+So C++ compiler can differentiate between two functions o this is called Overloading
+
+31
+02:21.850 --> 02:25.450
+of a function that is function Overloading.
+
+32
+02:25.540 --> 02:29.080
+So we are taking extra work from same name.
+
+33
+02:29.260 --> 02:35.220
+So the benefit here is that you don't have to think of new names every time because that is also adding.
+
+34
+02:35.350 --> 02:36.730
+This is also adding.
+
+35
+02:36.730 --> 02:38.650
+So I don't have a different name.
+
+36
+02:38.650 --> 02:42.130
+I don't have to say add to add three.
+
+37
+02:42.130 --> 02:46.120
+I don't have to take different names, so that is the benefit we are getting now.
+
+38
+02:46.120 --> 02:47.760
+One more example I'll show you.
+
+39
+02:47.770 --> 03:05.490
+I have float numbers I= 2.5F and J=3.5F and k now k assign add i, j.
+
+40
+03:05.500 --> 03:08.900
+I'm having add function which is taking float.
+
+41
+03:08.920 --> 03:09.820
+Do I have it.
+
+42
+03:09.820 --> 03:10.510
+No.
+
+43
+03:10.510 --> 03:12.280
+Can I write such a function.
+
+44
+03:12.280 --> 03:14.370
+Let me write here  it in small space.
+
+45
+03:14.380 --> 03:21.110
+I'll just seperate it so float add which is taking two floats.
+
+46
+03:21.130 --> 03:24.980
+Float x and float y.
+
+47
+03:25.030 --> 03:25.780
+.
+
+48
+03:26.440 --> 03:28.090
+And this is returning
+
+49
+03:30.730 --> 03:32.040
+x plus Y.
+
+50
+03:32.590 --> 03:33.620
+Yes.
+
+51
+03:33.730 --> 03:34.780
+I will seperate this also.
+
+52
+03:35.410 --> 03:38.740
+So now I have one more function which is  taking two floats.
+
+53
+03:38.810 --> 03:42.300
+it is taking 2 parameters, this was also taking two parameters
+
+54
+03:42.340 --> 03:44.500
+These are two same functions?
+
+55
+03:44.500 --> 03:47.270
+No these two are different functions.
+
+56
+03:47.290 --> 03:51.370
+These two are different functions so how you can say these functions are different.
+
+57
+03:51.370 --> 03:59.390
+No. of parameters are same but the data type is different, float float, int int, here data type is same
+
+58
+03:59.470 --> 04:01.680
+But the no. of parameters are different, two
+
+59
+04:01.810 --> 04:04.460
+And this is having three so that's it.
+
+60
+04:04.600 --> 04:12.550
+In C++ two functions are set to be different if they have same name but different parameters list.
+
+61
+04:12.700 --> 04:19.690
+How the parameters list can be different either the data  type of the parameter or the number of parameters.
+
+62
+04:19.960 --> 04:25.270
+So the benefit is that it is easy for writing the programs and you don't have to remember too many
+
+63
+04:25.270 --> 04:26.590
+function names.
+
+64
+04:26.620 --> 04:30.140
+when you say add  you can just give name as add, it may be taking float 
+
+65
+04:30.140 --> 04:34.540
+Also it may be taking int also it may be taking multiple int also
+
+66
+04:34.570 --> 04:37.020
+It helps a lot to a programmer.
+
+67
+04:37.070 --> 04:43.590
+Let me show you some list of function declarations where you can check which is a valid or invalid.
+
+68
+04:43.600 --> 04:48.250
+Let me write a few function declarations and see which are valid  or invalid so I will write down one
+
+69
+04:48.250 --> 04:57.030
+function which name is Max and it is takinng two int and return type as integer.
+
+70
+04:57.370 --> 05:02.260
+Yes I can have one more function with the same name and taking float.
+
+71
+05:02.300 --> 05:08.080
+I'm also one more taking float and return type is float.
+
+72
+05:08.110 --> 05:09.670
+Are these two different functions.
+
+73
+05:09.670 --> 05:13.530
+Yes because there parameters  list is different data type is different.
+
+74
+05:13.720 --> 05:17.560
+can I have a max function which is taking 3 integers
+
+75
+05:21.040 --> 05:22.180
+and returning integer.
+
+76
+05:22.570 --> 05:26.440
+Yes it is different from this one because their data type is different and it's different from this
+
+77
+05:26.440 --> 05:30.980
+one because the number of arguments are different, two int and three integers.
+
+78
+05:31.000 --> 05:34.100
+now i will write one more Max function.
+
+79
+05:34.360 --> 05:35.250
+int 
+
+80
+05:35.710 --> 05:39.130
+And int two integers but returning float.
+
+81
+05:39.790 --> 05:46.610
+So this is matching with this, the data types of the parameters are same and the number of bottom of
+
+82
+05:46.640 --> 05:49.630
+are so same but a return type is different.
+
+83
+05:50.110 --> 05:52.280
+So are they different.
+
+84
+05:52.300 --> 05:52.870
+No.
+
+85
+05:53.110 --> 05:53.620
+No.
+
+86
+05:53.620 --> 05:56.770
+Does this is the name conflict, this is the same function.
+
+87
+05:56.770 --> 06:03.790
+So return type is never considered in function Overloading if the function names and parameters are exactly
+
+88
+06:03.790 --> 06:04.490
+same.
+
+89
+06:04.570 --> 06:06.460
+But their return type is  different means.
+
+90
+06:06.460 --> 06:07.910
+They are not overloaded.
+
+91
+06:08.020 --> 06:09.460
+It's a name conflict.
+
+92
+06:09.460 --> 06:12.830
+It's a name conflict  means you are redefining a same function again.
+
+93
+06:14.470 --> 06:16.480
+So that's all about function Overloading.
+
+94
+06:16.510 --> 06:18.850
+I will show you practically how it looks.

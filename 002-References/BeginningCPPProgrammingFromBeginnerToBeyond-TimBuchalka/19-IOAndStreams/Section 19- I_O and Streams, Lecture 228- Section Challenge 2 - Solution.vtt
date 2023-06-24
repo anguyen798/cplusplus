@@ -1,0 +1,361 @@
+WEBVTT
+
+00:00:05.300 --> 00:00:08.800
+Welcome back to the section 19 challenge 2 solution.
+
+00:00:08.800 --> 00:00:10.800
+I hope you had fun doing that challenge.
+
+00:00:10.800 --> 00:00:15.500
+It was pretty nice and you've got a lot of different ways that you can tweak it and extend it to make it your own.
+
+00:00:15.500 --> 00:00:20.890
+So I'm in the section 19 workspace in the challenge_2_solution project.
+
+00:00:21.090 --> 00:00:23.550
+And I wrote some functions to solve this.
+
+00:00:23.550 --> 00:00:27.050
+But first, I just want to go through the logic in the main so you can see that it's
+
+00:00:27.050 --> 00:00:30.410
+really dead simple and the functions that I wrote make it even simpler.
+
+00:00:30.410 --> 00:00:32.410
+So let's just start here at the top
+
+00:00:32.410 --> 00:00:36.210
+and we'll walk through this. I've got an input file stream called infile,
+
+00:00:36.210 --> 00:00:38.810
+that's what I'm going to use to read the responses file.
+
+00:00:39.310 --> 00:00:41.610
+I've got a string for the answer key.
+
+00:00:41.610 --> 00:00:45.810
+And I've got a string for the student name and the student responses that I'm going to read
+
+00:00:45.810 --> 00:00:48.310
+in each iteration of the file read.
+
+00:00:48.310 --> 00:00:50.810
+Okay. Then I've got a running sum
+
+00:00:50.810 --> 00:00:54.370
+and a total number of students that we're going to use to calculate the average score.
+
+00:00:54.870 --> 00:00:58.870
+Okay. Pretty simple. So let me scroll up just a little bit here.
+
+00:00:59.870 --> 00:01:02.670
+And here's my program pretty much.
+
+00:01:02.670 --> 00:01:06.670
+I'm opening the input file right here responses.txt.
+
+00:01:06.870 --> 00:01:10.230
+Notice again that the dot dot slash is because I'm in CodeLite.
+
+00:01:10.230 --> 00:01:14.530
+If you're in another IDE, you'll probably have to do the same thing or just use responses
+
+00:01:14.530 --> 00:01:16.730
+.text it's totally up to the IDE.
+
+00:01:17.330 --> 00:01:21.830
+If we can't open that file, we display problem opening file and we're out of here just like before.
+
+00:01:22.080 --> 00:01:26.940
+And then the very first thing I'm going to do right here I'm reading that first line in the file,
+
+00:01:26.940 --> 00:01:30.240
+right, or the first string in the file which is the answer key.
+
+00:01:31.340 --> 00:01:37.330
+That's it. I'm reading it from infile, storing it in an answer key, so that will be that abcde
+
+00:01:38.230 --> 00:01:41.230
+string. Then I'm going to print the header,
+
+00:01:41.630 --> 00:01:43.930
+which just displays student
+
+00:01:44.830 --> 00:01:46.130
+and score
+
+00:01:46.830 --> 00:01:50.930
+with a bunch of dashes underneath it. So that's a function that I'm using to print the header.
+
+00:01:51.530 --> 00:01:55.530
+And then I've got the logic of my loop right here. So I'm saying while
+
+00:01:55.890 --> 00:01:59.250
+read from infile, the name and the response pair.
+
+00:02:00.400 --> 00:02:04.300
+If anything and those two are strings that I declared up top, I just showed them to you a minute ago.
+
+00:02:04.850 --> 00:02:07.750
+If anything it all goes wrong here, if we hit under file,
+
+00:02:07.750 --> 00:02:12.350
+if we have a bad read, if we've got bad data, this will fail and I'm out of here.
+
+00:02:12.350 --> 00:02:15.850
+Okay. But if we don't, now we've got name and response
+
+00:02:15.850 --> 00:02:20.650
+contain the strings for, for example, Frank and Frank's response.
+
+00:02:20.900 --> 00:02:24.900
+We increment the total number of students because we need to do that to calculate the average.
+
+00:02:24.900 --> 00:02:29.300
+And then I'm going to call a function called process response. I'm going to pass into it
+
+00:02:29.550 --> 00:02:34.050
+the response and the answer key. And it's going to return an integer with the score.
+
+00:02:34.350 --> 00:02:35.750
+So it'll return
+
+00:02:35.750 --> 00:02:38.980
+012345 in this case because that's you can get them all wrong or
+
+00:02:38.980 --> 00:02:42.340
+you can get them all right or everything in between.
+
+00:02:43.240 --> 00:02:47.230
+That's it. I add the score to my running sum of scores.
+
+00:02:47.230 --> 00:02:49.590
+And then I call print student.
+
+00:02:49.590 --> 00:02:54.190
+I'm going to call that each time. So I'm going to print the student's name. So right here, it'll say Frank,
+
+00:02:54.990 --> 00:02:56.590
+and Frank got a 5.
+
+00:02:57.290 --> 00:03:01.440
+Then I loop and I do it again. Okay. So I'm going to clear this screen real quick.
+
+00:03:01.440 --> 00:03:04.440
+Then at the very end, I just calculate the average.
+
+00:03:04.440 --> 00:03:07.140
+I'm going to be sure that I don't do a division by 0 error.
+
+00:03:07.140 --> 00:03:10.940
+So if the total number of students is not equal to 0, I'm going to do the division.
+
+00:03:10.940 --> 00:03:14.140
+And I'm doing the static cast that you guys have seen before here.
+
+00:03:14.140 --> 00:03:16.800
+So I need to make one of these a double.
+
+00:03:17.600 --> 00:03:19.600
+And at the end, I print the footer.
+
+00:03:19.600 --> 00:03:23.900
+And in order to print the footer, it doesn't know what the average score is. So I'm sending it to it.
+
+00:03:24.560 --> 00:03:26.360
+I close the file, and I'm done.
+
+00:03:26.360 --> 00:03:29.720
+Okay. So you can see the logic is really straightforward, right.
+
+00:03:29.720 --> 00:03:31.710
+You can see here I'm opening the file.
+
+00:03:31.710 --> 00:03:35.310
+I'm making sure it's open. I'm closing the file down here.
+
+00:03:35.310 --> 00:03:38.610
+I'm reading from the file right here and here as well.
+
+00:03:38.970 --> 00:03:42.670
+And the rest is just the processing that I need to solve this specific problem.
+
+00:03:43.660 --> 00:03:47.160
+Okay. So now let's take a look at these methods. I'll scroll up a little bit.
+
+00:03:49.060 --> 00:03:51.560
+And let's start with the print header method,
+
+00:03:52.060 --> 00:03:55.720
+pretty straightforward, right, just a bunch of print statements to cout.
+
+00:03:55.720 --> 00:04:00.160
+And what I'm doing here is I'm displaying the student, I'm displaying the score.
+
+00:04:00.710 --> 00:04:05.310
+And I'm using the set w manipulator here and left to just line them up nicely.
+
+00:04:05.860 --> 00:04:08.960
+I could have used constants for 15 and 5 and 20,
+
+00:04:08.960 --> 00:04:11.460
+but I chose not to with such a simple little program,
+
+00:04:11.460 --> 00:04:14.660
+and then I'm using setfill to display the little dashed line.
+
+00:04:15.060 --> 00:04:19.420
+That's it. I've setfill back to space just in case somebody else needs it.
+
+00:04:19.420 --> 00:04:22.980
+I don't want to have them display dashes. The footer
+
+00:04:23.530 --> 00:04:25.890
+is passed in the average score,
+
+00:04:25.890 --> 00:04:29.190
+and it just displays the footer. Really, really straightforward again.
+
+00:04:29.850 --> 00:04:33.550
+Okay. Now I probably should have used the set precision and set fixed
+
+00:04:33.550 --> 00:04:37.650
+one here, but I'm using it here. So it's it's persistent, but
+
+00:04:37.650 --> 00:04:40.650
+good practice is to put it in here as well, right about here.
+
+00:04:40.650 --> 00:04:44.050
+That way if someone changed it and then this function got called,
+
+00:04:44.050 --> 00:04:45.410
+you'll set it the way you want it.
+
+00:04:45.910 --> 00:04:48.610
+And then the last one is the print student
+
+00:04:48.610 --> 00:04:52.910
+where I pass in the student's name and the student score and I just display them,
+
+00:04:53.460 --> 00:04:57.860
+just like we've done before. So these are just these handy little functions.
+
+00:04:58.060 --> 00:05:01.420
+And the reason we're using these functions is so we don't clutter up our main.
+
+00:05:01.420 --> 00:05:04.410
+And this is just a lot of code a lot of noise really
+
+00:05:04.410 --> 00:05:08.710
+because it's just all about -- I mean all I'm doing here is displaying student, displaying score.
+
+00:05:08.710 --> 00:05:12.380
+But you've got all this other stuff around it with the manipulators I need to set
+
+00:05:12.380 --> 00:05:15.480
+widths and I need to do left and I need to write precisions.
+
+00:05:15.480 --> 00:05:17.980
+And it just really clutters up the logic in the main.
+
+00:05:17.980 --> 00:05:19.530
+So you really want to
+
+00:05:19.530 --> 00:05:23.430
+extract that out and modularize it out into a function get it out of the way.
+
+00:05:23.430 --> 00:05:26.200
+And out of sight, out of mind, it's abstraction.
+
+00:05:26.200 --> 00:05:28.860
+I just call footer whenever I need it and pass it on average.
+
+00:05:28.860 --> 00:05:31.360
+I just call print header, and that's it, real simple.
+
+00:05:32.160 --> 00:05:36.160
+And then the last thing is that function that actually calculates the number, right.
+
+00:05:36.760 --> 00:05:39.010
+So that's process response right here.
+
+00:05:39.010 --> 00:05:42.010
+So we're passing in the student's response, which was a string that
+
+00:05:42.010 --> 00:05:44.810
+could be like abcxx or whatever it is.
+
+00:05:45.210 --> 00:05:48.710
+And the answer key, which in this case was abcde.
+
+00:05:50.210 --> 00:05:54.570
+And we're setting the score to 0. We're assuming they haven't gotten anything right.
+
+00:05:54.570 --> 00:05:59.340
+And all we're doing is we're looping one character at a time through that answer key.
+
+00:06:00.000 --> 00:06:03.360
+And we're comparing the answer key at I
+
+00:06:03.360 --> 00:06:07.760
+to the response of the student at I. If they're the same, we're bumping up the score.
+
+00:06:08.520 --> 00:06:11.920
+We're doing that throughout, so we're going to check this guy with this guy
+
+00:06:11.920 --> 00:06:14.420
+and then this guy with this guy and so forth.
+
+00:06:14.820 --> 00:06:16.420
+When we're done, we'll return the score.
+
+00:06:17.220 --> 00:06:20.020
+So that's it. That's the solution or that's one solution.
+
+00:06:20.020 --> 00:06:23.220
+You may have your own solution. If it's -- you think it's cool,
+
+00:06:23.220 --> 00:06:25.920
+post it on the forum. And if we run this,
+
+00:06:27.920 --> 00:06:30.910
+that's what we get, just what we expect.
+
+00:06:31.160 --> 00:06:34.360
+Students Frank Larry Moe Curly and Michael, their scores
+
+00:06:34.360 --> 00:06:38.160
+and then the average score 3.6. And the nice thing about this solution,
+
+00:06:38.160 --> 00:06:40.040
+I think, is this right here.
+
+00:06:40.440 --> 00:06:42.640
+I mean I'm looking at the code right here,
+
+00:06:43.190 --> 00:06:45.790
+which is really doing most of the work well this first
+
+00:06:45.790 --> 00:06:50.490
+one as well, which is reading the key. So this this piece of code right here.
+
+00:06:50.740 --> 00:06:54.540
+This is really what's doing it all. And when you read it, it's really, really easy to read.
+
+00:06:54.540 --> 00:06:57.200
+I'm reading the answer key, I'm printing the header
+
+00:06:57.200 --> 00:07:01.500
+while I'm grabbing those pairs. I'm processing the response.
+
+00:07:01.500 --> 00:07:05.300
+I'm printing each student, and then I'm calculating the average and printing it in the footer.
+
+00:07:06.100 --> 00:07:09.900
+So looking at this, it's really easy to understand it, to debug it.
+
+00:07:10.400 --> 00:07:14.000
+And that's it. That's the challenge. I hope you had fun with it. I hope you extended it.
+
+00:07:14.360 --> 00:07:18.360
+And there's another challenge coming up right after this one.

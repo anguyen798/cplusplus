@@ -1,0 +1,379 @@
+WEBVTT
+
+00:00:05.500 --> 00:00:08.500
+In this video, we're going to talk about comments in source code.
+
+00:00:08.800 --> 00:00:12.900
+Now comments apply to just about every programming language out there.
+
+00:00:13.100 --> 00:00:17.300
+C++ has two kinds of comments. But before we talk about those comments,
+
+00:00:17.300 --> 00:00:19.900
+let's talk about what comments are in general.
+
+00:00:19.900 --> 00:00:24.500
+Comments are programmer readable explanations in the source code.
+
+00:00:24.500 --> 00:00:27.860
+Explanations, notes, annotations,
+
+00:00:27.860 --> 00:00:31.160
+anything that adds meaning to what the program is doing.
+
+00:00:31.660 --> 00:00:34.260
+One thing that's very important to understand is that
+
+00:00:34.260 --> 00:00:37.060
+the comments never make it to the compiler.
+
+00:00:37.060 --> 00:00:41.160
+In c++, the preprocessor strips out the comments so that the
+
+00:00:41.160 --> 00:00:42.860
+compiler never sees them.
+
+00:00:42.860 --> 00:00:46.760
+It may sound kind of weird right we're writing something that the compiler is never going to see.
+
+00:00:46.760 --> 00:00:48.760
+That's the whole point. This is human readable.
+
+00:00:49.010 --> 00:00:52.410
+This is for the next programmer that's coming down the pipe or
+
+00:00:52.410 --> 00:00:55.410
+for yourself when you have to go back and modify code.
+
+00:00:55.410 --> 00:00:58.610
+You can leave comments in the code explaining what you did and
+
+00:00:58.610 --> 00:01:02.810
+why you did. C++ has two styles of comments. The first one is
+
+00:01:02.810 --> 00:01:05.810
+just a single line comment and I'll show you what that looks like.
+
+00:01:05.810 --> 00:01:08.910
+It's basically two forward slashes side by side
+
+00:01:08.910 --> 00:01:12.810
+and then everything after that until the end of the line will be ignored.
+
+00:01:12.810 --> 00:01:14.110
+So this is a comment
+
+00:01:16.310 --> 00:01:18.210
+and the compiler will never see that comment.
+
+00:01:18.210 --> 00:01:22.010
+That's only for your eyes only or for the eyes of programmers coming after you.
+
+00:01:22.510 --> 00:01:24.110
+So that's a single line comment.
+
+00:01:24.110 --> 00:01:28.610
+Typically, you see these comments done like this or you may see them for example here,
+
+00:01:28.610 --> 00:01:31.910
+right after this variable declaration here for favorite number.
+
+00:01:31.910 --> 00:01:35.610
+We could do something like //. This is where
+
+00:01:36.610 --> 00:01:40.210
+my favorite number is stored or something like that.
+
+00:01:41.310 --> 00:01:43.510
+That's kind of a silly comment, and I'll talk more about
+
+00:01:44.170 --> 00:01:45.570
+using these things wisely.
+
+00:01:45.570 --> 00:01:48.870
+The compiler is never going to see this because the preprocessor
+
+00:01:48.870 --> 00:01:52.770
+will see the comment and strip it out and just replace it with a single space.
+
+00:01:53.270 --> 00:01:56.870
+Okay. So that's one style of comment. That's a single line comment.
+
+00:01:56.870 --> 00:01:59.670
+The other kind of comment is a multi-line comment.
+
+00:01:59.670 --> 00:02:03.570
+And that's a /, again a forward slash followed by an asterisk
+
+00:02:04.070 --> 00:02:08.510
+and then an asterisk followed by a forward slash.
+
+00:02:08.510 --> 00:02:12.910
+So everything between those two elements is a comment and will be ignored.
+
+00:02:13.310 --> 00:02:14.510
+So this could be --
+
+00:02:16.110 --> 00:02:20.210
+this one spreads across lines, so this could be a multiple line
+
+00:02:21.010 --> 00:02:22.510
+comment, like that.
+
+00:02:23.110 --> 00:02:26.770
+Do anything you like. And again, it's totally free form.
+
+00:02:26.770 --> 00:02:30.760
+You can make it look however you want you could indent you could do anything you want here.
+
+00:02:30.760 --> 00:02:33.860
+Everything in here will be ignored.
+
+00:02:33.860 --> 00:02:37.160
+Okay. So now let's talk a little bit more about these comments and
+
+00:02:37.160 --> 00:02:39.160
+what makes sense, what doesn't make sense.
+
+00:02:39.460 --> 00:02:42.460
+The idea behind programming is literate programming.
+
+00:02:42.460 --> 00:02:45.660
+Basically, your code should be self-documenting.
+
+00:02:46.360 --> 00:02:50.560
+Does that mean we don't write comments? Well, no. So you want to be sure that what you write
+
+00:02:50.920 --> 00:02:53.320
+makes sense. In this case,
+
+00:02:54.120 --> 00:02:57.680
+here's my code. Here's my main and that's the block of code that I've written.
+
+00:02:57.680 --> 00:03:01.180
+This is pretty self-explanatory. I mean, I'll leave this comment in here I'll
+
+00:03:01.180 --> 00:03:02.680
+fix that typo here.
+
+00:03:02.680 --> 00:03:06.180
+But there's an integer called favorite number.
+
+00:03:06.180 --> 00:03:07.380
+You're outputting
+
+00:03:08.040 --> 00:03:12.540
+to the console enter a number you're reading from the console and you're printing out some stuff.
+
+00:03:12.540 --> 00:03:16.940
+This code doesn't need any commenting. It's very, very clear what it's doing.
+
+00:03:17.240 --> 00:03:20.800
+That's not always the case. Sometimes code is very complicated.
+
+00:03:20.800 --> 00:03:22.800
+It's using some complex algorithms.
+
+00:03:22.800 --> 00:03:26.790
+Maybe you're using some really clever efficiency
+
+00:03:26.790 --> 00:03:30.890
+tweak to make it run faster, but it makes it less obvious what it's doing.
+
+00:03:30.890 --> 00:03:34.390
+Those are good examples of where you should use comments.
+
+00:03:34.390 --> 00:03:37.590
+Don't comment the obvious. For example, right here,
+
+00:03:37.590 --> 00:03:39.590
+you don't want to say return zero.
+
+00:03:40.290 --> 00:03:44.790
+That's silly. I mean I know I want to return zero i just set it in the code.
+
+00:03:44.790 --> 00:03:47.890
+So those kinds of comments you really don't want to use
+
+00:03:48.390 --> 00:03:51.650
+also if you're adding a and b you don't want to put a comment that says
+
+00:03:51.650 --> 00:03:55.450
+you know adding a and b, it's pretty obvious from a plus b what you're doing.
+
+00:03:55.450 --> 00:03:58.450
+So you really want to explain more complicated code.
+
+00:03:58.450 --> 00:04:01.950
+You also want to keep the style of the comments consistent.
+
+00:04:01.950 --> 00:04:03.250
+So for example,
+
+00:04:03.650 --> 00:04:06.650
+I will have this line comment here which goes toward the end of the line.
+
+00:04:06.900 --> 00:04:10.100
+Over here, I really don't want to do the other style comment
+
+00:04:13.550 --> 00:04:16.450
+and do something like that. You want to keep your style consistent.
+
+00:04:16.450 --> 00:04:20.950
+Now the multi-line comments are often seen at the top of files.
+
+00:04:20.950 --> 00:04:23.950
+So I'll do this, and
+
+00:04:23.950 --> 00:04:26.550
+in this case CodeLite kind of helps me out a little bit,
+
+00:04:27.050 --> 00:04:30.850
+but I'll do that. So many times, you'll see code that looks like this.
+
+00:04:31.510 --> 00:04:35.610
+You'll see a bunch of asterisks on top and then you'll see a bunch of asterisks down here,
+
+00:04:35.610 --> 00:04:36.970
+creating like a little header block.
+
+00:04:37.770 --> 00:04:41.370
+Now notice, I've got a beginning comment here and the end of the comment here.
+
+00:04:41.370 --> 00:04:45.030
+Everything in here will be ignored, but in here you'll see stuff like author,
+
+00:04:47.730 --> 00:04:51.430
+and I'll say Frank, dates things like that
+
+00:04:52.230 --> 00:04:56.230
+copyrights license information. A lot of that is very commonly seen
+
+00:04:56.230 --> 00:04:59.730
+in a multi-line comment at the top of the source file.
+
+00:04:59.730 --> 00:05:03.930
+Another good example of a good comment would be suppose that inside this function
+
+00:05:03.930 --> 00:05:07.230
+I'm doing some kind of algorithm and I've tweaked the algorithm.
+
+00:05:07.530 --> 00:05:09.530
+So I could do something like using
+
+00:05:10.330 --> 00:05:11.830
+a modified
+
+00:05:13.830 --> 00:05:16.130
+version of Dijkstra's algorithm, let's say,
+
+00:05:22.130 --> 00:05:24.930
+to improve space efficiency or anything,
+
+00:05:27.230 --> 00:05:28.480
+something like that.
+
+00:05:28.480 --> 00:05:32.250
+Now the programmer coming after you understands that you're using Dijkstra's algorithm
+
+00:05:32.250 --> 00:05:33.650
+and you've modified it somewhat.
+
+00:05:33.650 --> 00:05:36.250
+Dijkstra's algorithm is a very well understood algorithm.
+
+00:05:36.250 --> 00:05:39.250
+So you've tweaked it somehow to improve space efficiency.
+
+00:05:39.250 --> 00:05:43.550
+Maybe in the body of that algorithm, you can comment what exactly you've done.
+
+00:05:44.150 --> 00:05:48.550
+Okay. So that's an example of a good comment. So again, don't comment the obvious.
+
+00:05:48.550 --> 00:05:52.350
+Good commenting doesn't justify bad code obviously.
+
+00:05:52.350 --> 00:05:56.450
+You don't want to write really bad code and then put a good comment in there saying something silly.
+
+00:05:56.850 --> 00:06:00.650
+One of the dangers with comments is that many times
+
+00:06:01.250 --> 00:06:03.850
+programmers use comments as version control.
+
+00:06:03.850 --> 00:06:06.350
+So up here, you'll see something like,
+
+00:06:06.350 --> 00:06:10.150
+let's say, 11/11/2017.
+
+00:06:10.950 --> 00:06:15.050
+And you'll see something like Frank fixed bug
+
+00:06:15.450 --> 00:06:17.450
+in something.
+
+00:06:19.050 --> 00:06:23.250
+And then another programmer will come across 11/13/2017.
+
+00:06:23.250 --> 00:06:26.550
+Maybe it's Joe, and Joe added
+
+00:06:27.050 --> 00:06:28.550
+function to do something.
+
+00:06:29.550 --> 00:06:30.950
+That's not a good idea.
+
+00:06:30.950 --> 00:06:35.500
+If you want to use versioning use version control. Use something like subversion or git,
+
+00:06:35.500 --> 00:06:37.500
+don't write your versioning here.
+
+00:06:37.900 --> 00:06:41.560
+The problem with this is some programmers will do it some programmers won't.
+
+00:06:41.560 --> 00:06:45.460
+And this really won't be reflective of all the changes that actually occurred in the file.
+
+00:06:45.460 --> 00:06:49.720
+Okay. So again don't - you don't do this this is not a good idea.
+
+00:06:49.720 --> 00:06:51.720
+Use a real version control system.
+
+00:06:52.820 --> 00:06:56.820
+Finally, if you go back and modify code,
+
+00:06:56.820 --> 00:07:00.920
+make sure you look at the comments and modify the comments if necessary.
+
+00:07:00.920 --> 00:07:04.320
+There's nothing worse than a programmer looking at some code and seeing
+
+00:07:04.320 --> 00:07:06.120
+a comment that looks like this.
+
+00:07:06.120 --> 00:07:10.220
+And then you look at the code, and it doesn't look anything like Dijkstra's because
+
+00:07:10.220 --> 00:07:13.720
+another programmer changed it to something else and didn't change the comment.
+
+00:07:13.720 --> 00:07:17.420
+So it's real important that you keep your comments and your code in sync
+
+00:07:17.420 --> 00:07:18.420
+as you go along.
+
+00:07:19.220 --> 00:07:23.320
+Okay. That's pretty much it for comments. In the next video,
+
+00:07:23.320 --> 00:07:27.420
+we'll talk about the main function itself, and talk a little bit about what's going on there.
+
+00:07:31.420 --> 00:07:35.420
+s

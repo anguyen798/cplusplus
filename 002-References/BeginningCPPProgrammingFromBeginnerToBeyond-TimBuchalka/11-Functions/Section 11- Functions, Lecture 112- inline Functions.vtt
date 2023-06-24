@@ -1,0 +1,110 @@
+WEBVTT
+
+00:00:05.510 --> 00:00:08.180
+As we saw in the previous
+video, function calls have a
+
+00:00:08.180 --> 00:00:09.270
+certain amount of overhead.
+
+00:00:10.030 --> 00:00:12.980
+We need to create an activation
+record, push it on the stack,
+
+00:00:12.990 --> 00:00:16.349
+deal with parameters, pop off the
+activation record when the function
+
+00:00:16.350 --> 00:00:19.600
+terminates and deal with the
+return addresses and return values.
+
+00:00:20.150 --> 00:00:22.260
+Although all of this can
+happen very quickly and
+
+00:00:22.260 --> 00:00:23.880
+efficiently, it still happens.
+
+00:00:24.430 --> 00:00:27.820
+Sometimes we have a very simple
+function and the function call
+
+00:00:27.820 --> 00:00:30.969
+overhead might be greater than the
+time spent executing the function.
+
+00:00:31.619 --> 00:00:34.450
+In cases such as these, we
+can suggest to the compiler
+
+00:00:34.450 --> 00:00:36.049
+that it generate inline code.
+
+00:00:36.680 --> 00:00:40.100
+Inline code is basically inline
+assembly code that avoids
+
+00:00:40.100 --> 00:00:41.410
+the function call overhead.
+
+00:00:42.330 --> 00:00:44.040
+Inline code is generally faster.
+
+00:00:44.309 --> 00:00:47.370
+But if you inline a function many
+times, then you're duplicating
+
+00:00:47.370 --> 00:00:51.050
+function code in many places and
+it could lead to larger binaries.
+
+00:00:51.719 --> 00:00:54.959
+That said, compilers are
+so sophisticated now that
+
+00:00:54.970 --> 00:00:57.490
+they'll likely inline code
+even without your suggestion.
+
+00:00:58.400 --> 00:01:00.070
+Let's see what an inline
+function looks like.
+
+00:01:01.050 --> 00:01:03.410
+Here you can see the syntax
+for an inline function.
+
+00:01:03.750 --> 00:01:07.490
+We simply precede the function
+return type with the keyword inline.
+
+00:01:07.920 --> 00:01:11.739
+Inline functions are usually declared
+in header or .h files since the
+
+00:01:11.740 --> 00:01:14.770
+definition must be available to
+every source file that uses it.
+
+00:01:15.460 --> 00:01:18.300
+As mentioned earlier, compilers
+are so good now that most will
+
+00:01:18.300 --> 00:01:21.370
+make short functions like this
+inline anyway even if you don't
+
+00:01:21.370 --> 00:01:22.800
+provide the inline keyword.
+
+00:01:23.480 --> 00:01:26.100
+Don't worry too much about asking
+the compiler to inline your
+
+00:01:26.100 --> 00:01:29.190
+functions, but now you know what
+inline functions are in case you
+
+00:01:29.190 --> 00:01:31.049
+see them in c++ code out there.

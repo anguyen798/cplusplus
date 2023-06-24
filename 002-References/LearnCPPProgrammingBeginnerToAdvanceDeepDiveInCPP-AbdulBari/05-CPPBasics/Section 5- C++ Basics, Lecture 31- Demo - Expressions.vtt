@@ -1,0 +1,406 @@
+WEBVTT
+
+0
+00:00.660 --> 00:04.070
+Let us write a program for finding the area of a
+circle.
+
+1
+00:04.140 --> 00:15.130
+So for that i will take a float variables that is a radius of a circle and area of a circle.
+
+2
+00:15.190 --> 00:17.650
+Now let Us take the input.
+
+3
+00:17.650 --> 00:34.870
+What is the radius "enter radius" then cin "read radius r" then find out area. area is 3.1425f
+
+4
+00:34.870 --> 00:45.640
+is a float value multiplied by a radius and again radius that is radius square then cout
+
+5
+00:48.970 --> 00:54.060
+"area is" Area variable.
+
+6
+00:54.790 --> 00:58.150
+endl. let us run the program and see
+
+7
+01:01.370 --> 01:06.580
+enter radius. he is asking for radius.
+
+8
+01:06.580 --> 01:08.140
+I'll give the radius as 7
+
+9
+01:11.250 --> 01:14.650
+says 153.98.
+
+10
+01:15.350 --> 01:23.750
+Instead of taking a float value even I can say 22 divided by seven.
+
+11
+01:23.990 --> 01:25.980
+But this will give integers.
+
+12
+01:26.120 --> 01:29.580
+Let us try and see what will be the result.
+
+13
+01:33.620 --> 01:37.990
+7 is 147.
+
+14
+01:38.150 --> 01:45.250
+Actually it should be exact value should be 154 but it is giving 147 because this is not taking a 
+
+15
+01:45.260 --> 01:46.310
+float value.
+
+16
+01:46.400 --> 01:50.200
+This is giving 22 divided by seven.
+
+17
+01:50.240 --> 01:52.720
+This gives only three.
+
+18
+01:53.540 --> 01:57.930
+I want a float value so one method is I can make this number as flawed.
+
+19
+01:58.100 --> 02:01.190
+So the  22 divided by a seven seven is float value.
+
+20
+02:01.190 --> 02:03.530
+So it will give a float result multiplied by as well.
+
+21
+02:03.540 --> 02:05.450
+Will give me a float result.
+
+22
+02:05.450 --> 02:06.890
+Let's check what happens
+
+23
+02:10.360 --> 02:12.660
+radius is 7.
+
+24
+02:13.050 --> 02:13.580
+Yes.
+
+25
+02:13.590 --> 02:17.130
+Now it is giving exact as well that is 154.
+
+26
+02:17.810 --> 02:20.580
+That the way instead of making it as point zero.
+
+27
+02:20.580 --> 02:27.480
+I can also write float in front of this and let us check now again.
+
+28
+02:29.160 --> 02:32.050
+Seven, 154.
+
+29
+02:32.220 --> 02:34.030
+See if I don't write seven.
+
+30
+02:34.050 --> 02:36.450
+It was taking 22 divided by seven.
+
+31
+02:36.450 --> 02:38.230
+So it will divide for three time.
+
+32
+02:38.230 --> 02:40.100
+So it was taking just three.
+
+33
+02:40.200 --> 02:44.950
+So the decimal part was removed decimal part was truncated.
+
+34
+02:45.150 --> 02:51.030
+So by converting into flooat we are getting correct result instead of 22 or 7 if i write .
+
+35
+02:51.040 --> 02:53.730
+Three Point 1 4 to 5.
+
+36
+02:53.730 --> 02:55.900
+So it is up to 4 digits only.
+
+37
+02:55.920 --> 02:59.940
+So I'm not getting the exact Result  instead of  154
+
+38
+03:03.190 --> 03:09.870
+I'm getting one fifty three point nine.
+
+39
+03:09.910 --> 03:13.240
+So that said it depends what type of values you are using in an expression.
+
+40
+03:13.240 --> 03:15.030
+The result will depend on that.
+
+41
+03:15.040 --> 03:17.110
+So you have to be careful with this one.
+
+42
+03:17.110 --> 03:20.710
+These are the basic blocks of our program.
+
+43
+03:20.740 --> 03:23.960
+So if the expressions are perfect than the results will be perfect
+
+44
+03:29.820 --> 03:34.000
+Let us write a program for finding the roots of a quadratic equation.
+
+45
+03:34.150 --> 03:37.730
+So I will take coefficients that is a b and c.
+
+46
+03:37.810 --> 03:42.360
+I'm taking these as integer and float type of root.
+
+47
+03:42.360 --> 03:47.880
+So that is root1 and root 2.
+
+48
+03:47.890 --> 03:49.800
+Now let's take input.
+
+49
+03:49.850 --> 03:50.420
+Enter
+
+50
+03:54.100 --> 04:06.180
+three values that is coefficients then cin  read a b and c.
+
+51
+04:06.670 --> 04:09.640
+Now how to find the root is root of 1 is
+
+52
+04:13.610 --> 04:28.120
+minus B plus sqrt of b into B minus 4 into a into c
+
+53
+04:31.600 --> 04:35.780
+then this is divided by two into a.
+
+54
+04:36.070 --> 04:40.610
+So this to a it should be dividing the entire numerator.
+
+55
+04:40.810 --> 04:43.460
+So all those things will come in numerical.
+
+56
+04:43.630 --> 04:46.480
+Now this is the perfect expression.
+
+57
+04:46.670 --> 04:48.500
+Now same way I will find out
+
+58
+04:51.350 --> 04:52.810
+second root also.
+
+59
+04:53.000 --> 04:56.140
+And the second root is with minus one.
+
+60
+04:56.150 --> 04:59.330
+Now let us see what the error message I am getting here.
+
+61
+04:59.330 --> 05:03.560
+The error message I am getting here is use of undeclared identifier.
+
+62
+05:03.610 --> 05:04.460
+indentifier ie 'sqrt'
+
+63
+05:04.520 --> 05:07.110
+So far that I should include.
+
+64
+05:09.750 --> 05:18.240
+Math.h this function is present in my library now that the error message is gone and here I will
+
+65
+05:18.240 --> 05:31.290
+say cout root one and some space between them and then are root two an endl
+
+66
+05:34.080 --> 05:37.220
+so you have to be very careful about writing the expression pattern.
+
+67
+05:37.240 --> 05:39.300
+This is very important.
+
+68
+05:39.300 --> 05:40.620
+So what do you want.
+
+69
+05:40.620 --> 05:41.610
+Based on that.
+
+70
+05:41.610 --> 05:45.600
+Be careful that you are writing their expressions so you get the correct answer.
+
+71
+05:45.870 --> 05:50.480
+First you should know what you want and you should make sure that you have written the expression perfectly
+
+72
+05:50.490 --> 05:52.740
+to get the required answer.
+
+73
+05:53.130 --> 06:04.460
+Let's run this and see give the values where we get the equal roots, a value is four B value is 8 and C value is
+
+74
+06:04.470 --> 06:05.980
+of 4 again.
+
+75
+06:05.980 --> 06:11.480
+Now the result is minus one minus one for the roots are equal.
+
+76
+06:11.920 --> 06:12.700
+So that's it.
+
+77
+06:12.820 --> 06:19.910
+So there's a simple program for finding the roots of quadratic equation.
+
+78
+06:20.210 --> 06:25.490
+Now let us write a program for finding the speed of the initial velocity.
+
+79
+06:25.490 --> 06:33.680
+That is u and final velocity that is v and  acceleration as a and the speed I may get it as float value
+
+80
+06:33.710 --> 06:36.200
+so I will declare it as float.
+
+81
+06:36.720 --> 06:40.250
+Then cout enter.
+
+82
+06:40.580 --> 06:47.000
+So I should mention initial final velocity and acceleration so I'll just say three numbers, enter three
+
+83
+06:47.000 --> 06:49.650
+numbers then cin.
+
+84
+06:49.760 --> 06:55.900
+I will read the values that is U and V and A.
+
+85
+06:55.970 --> 06:57.800
+Now for calculating speed.
+
+86
+06:57.800 --> 07:03.850
+The formula is v square that is v into V minus.
+
+87
+07:03.860 --> 07:10.250
+u square that is u into u divided by 2 into a.
+
+88
+07:10.820 --> 07:13.940
+No this will be wrong because 2 a.
+
+89
+07:14.060 --> 07:20.480
+Everything is in denominator so they should be enclosed in brackets and this entire thing is in numerators
+
+90
+07:20.480 --> 07:22.930
+so it should divide the whole value.
+
+91
+07:22.940 --> 07:25.460
+That is v square minus u Square.
+
+92
+07:25.460 --> 07:27.390
+Now this is perfect.
+
+93
+07:28.220 --> 07:30.040
+And finally we will cout
+
+94
+07:32.750 --> 07:34.040
+speed is
+
+95
+07:37.240 --> 07:40.550
+the value that is we got in variable speed
+
+96
+07:47.770 --> 07:56.760
+initial velocity is 10 and the final velocity is 40 and the acceleration is 3.
+
+97
+07:57.480 --> 08:01.810
+So speed is 250.
+
+98
+08:01.870 --> 08:03.820
+Thats it these are a few simple programs.
+
+99
+08:03.820 --> 08:06.040
+More programs will be given  in exercise.
+
+100
+08:06.070 --> 08:09.880
+You solve them and practice the programs.

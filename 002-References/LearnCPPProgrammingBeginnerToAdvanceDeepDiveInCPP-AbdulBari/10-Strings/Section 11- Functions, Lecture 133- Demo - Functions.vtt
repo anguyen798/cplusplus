@@ -1,0 +1,397 @@
+WEBVTT
+
+0
+00:00.810 --> 00:05.800
+let us Learn how to write functions I'm writing a function here.
+
+1
+00:05.850 --> 00:12.310
+void display this will just displays some message.
+
+2
+00:12.450 --> 00:14.000
+cout
+
+3
+00:14.820 --> 00:15.810
+Hello.
+
+4
+00:16.950 --> 00:17.910
+That's it.
+
+5
+00:17.910 --> 00:25.970
+Now from Main Function I will call this display function.
+
+6
+00:26.050 --> 00:32.800
+Let us run this.
+
+7
+00:32.900 --> 00:33.700
+I got a message.
+
+8
+00:33.710 --> 00:34.430
+Hello here
+
+9
+00:38.470 --> 00:39.760
+Let me debugged this
+
+10
+00:44.670 --> 00:45.180
+now
+
+11
+00:45.180 --> 00:47.100
+Is that the start of the main function
+
+12
+00:51.520 --> 00:58.750
+f7 is taking me to the function display and after displaying hello it will come out.
+
+13
+00:59.130 --> 01:02.380
+It is back to the main function.
+
+14
+01:02.380 --> 01:10.000
+So this shows that when you call a function the control will transfer to the function here and again
+
+15
+01:10.090 --> 01:17.410
+after completing of a function it will return back to the main function or calling function.
+
+16
+01:17.410 --> 01:23.570
+see this function is not returning anything so its return type is void and it is not  taking any parameter
+
+17
+01:23.610 --> 01:32.290
+let us write few more functions and see, I will write a function for taking two float numbers and adding
+
+18
+01:32.290 --> 01:34.640
+them and returning the result.
+
+19
+01:34.720 --> 01:36.250
+So this is float.
+
+20
+01:36.420 --> 01:47.380
+add is a function name and float X and float y this whole line is called as a prototype of a function
+
+21
+01:47.470 --> 01:52.560
+or header of a function or a signature of a function.
+
+22
+01:52.920 --> 01:55.780
+I will write down the body that is implementation of a function.
+
+23
+01:55.780 --> 02:01.220
+So here I will take one temporary variable then z assign x+y.
+
+24
+02:01.280 --> 02:09.260
+and return z, so this will add
+
+25
+02:09.270 --> 02:11.780
+X and y values and store the result in Z.
+
+26
+02:11.820 --> 02:14.220
+And then it will return the value of z.
+
+27
+02:14.490 --> 02:17.600
+So here in the main function I want to call that add function.
+
+28
+02:17.600 --> 02:27.960
+So here also I will declare variables x assign  3.5 and Y assigns 7.9 and also
+
+29
+02:27.960 --> 02:29.030
+Z.
+
+30
+02:29.090 --> 02:35.130
+See one thing to observe here is this function is having variables X Y Z and in the main function
+
+31
+02:35.130 --> 02:37.000
+also I am taking X Y Z.
+
+32
+02:37.230 --> 02:38.190
+Is it allowed.
+
+33
+02:38.370 --> 02:40.590
+Yes it is valid.
+
+34
+02:40.650 --> 02:47.580
+This belongs to main function and these belongs to add functions so two different functions can have variables
+
+35
+02:47.940 --> 02:52.460
+with the same names but they will be belonging to different functions.
+
+36
+02:52.710 --> 02:57.570
+So here I will say z assign add sending x and y.
+
+37
+02:57.660 --> 03:05.330
+So the value of x and Y from main function will be copied in X and Y of ADD function.
+
+38
+03:05.400 --> 03:08.140
+Then after this I will display that as Z.
+
+39
+03:08.220 --> 03:16.590
+And also I will say endl, then let us run this and see, here I got  result that is ten point two.
+
+40
+03:16.590 --> 03:18.210
+Now let me debug and show you.
+
+41
+03:18.210 --> 03:26.020
+I'll put a break point here and I will run the program, so it is on the declaration statement because I
+
+42
+03:26.020 --> 03:28.520
+have put a breakpoint here.
+
+43
+03:28.600 --> 03:33.160
+Now if I press f7 then it will go to the next line that is add.
+
+44
+03:33.440 --> 03:40.010
+And you can see here inside the watch window the values of x is what the value I have given and Y 
+
+45
+03:40.040 --> 03:42.150
+is 7.9.
+
+46
+03:42.460 --> 03:44.090
+it's some value what I have given.
+
+47
+03:44.090 --> 03:46.670
+So it's not exactly the same value.
+
+48
+03:46.770 --> 03:47.330
+That's it.
+
+49
+03:47.350 --> 03:52.740
+So internally in the memory the value will not be represent as it is whatever it is given because it
+
+50
+03:52.740 --> 03:53.870
+is float type.
+
+51
+03:54.070 --> 03:59.440
+You know how to float numbers are stored they are stored in the form of mantissa and exponent so it
+
+52
+03:59.440 --> 04:02.110
+will not be exact value.
+
+53
+04:02.770 --> 04:06.470
+Now z is not having any value and it is zero, it is having zero.
+
+54
+04:06.490 --> 04:12.560
+We did not yet received the result and here inside the watch window it is showing x y z.
+
+55
+04:12.550 --> 04:17.280
+3 variables,  now i will press f7 again.
+
+56
+04:17.390 --> 04:20.720
+No it has entered here and it is inside add function.
+
+57
+04:20.720 --> 04:24.030
+So now you can see inside the watch window there are three variables x.
+
+58
+04:24.040 --> 04:29.370
+y z.  and these variables belong to add function.
+
+59
+04:29.380 --> 04:32.040
+So here you can see that Z is having some value.
+
+60
+04:32.050 --> 04:38.080
+Some garbage is there inside Z because it does not initialize X as having the value which
+
+61
+04:38.080 --> 04:41.520
+we have sent and Y is also having the value what we have sent.
+
+62
+04:41.800 --> 04:48.910
+No pressing f7 will get the value of Z and we got the result of z and returns.
+
+63
+04:48.980 --> 04:51.850
+It is on the statement return z, the control.
+
+64
+04:51.850 --> 04:56.850
+Will come back to the calling function that is a main function, so it's back into the same line.
+
+65
+04:56.920 --> 05:04.570
+If I press f7 see now the value of Z is not yet change it is back to this line the value of Z is 
+
+66
+05:04.570 --> 05:05.140
+yet changed.
+
+67
+05:05.140 --> 05:13.690
+If I press f7 now that the result is brought into Z  variable so Z variable, we can see that it is having
+
+68
+05:13.690 --> 05:14.350
+that result.
+
+69
+05:14.350 --> 05:20.780
+Now that was sent from this function. and now it's about display on this line.
+
+70
+05:20.780 --> 05:21.730
+Press f7.
+
+71
+05:21.780 --> 05:26.210
+It will display here you can see that ten point two is displayed here.
+
+72
+05:27.030 --> 05:27.990
+So that's it.
+
+73
+05:27.990 --> 05:35.700
+So this is how the function calls are made and how the control transfer to the function and return back
+
+74
+05:35.700 --> 05:36.960
+to the calling function.
+
+75
+05:36.960 --> 05:38.660
+We have seen this one.
+
+76
+05:39.060 --> 05:44.610
+I will write one more function for taking three numbers and finding the maximum of three numbers so I will take
+
+77
+05:44.610 --> 05:47.200
+integer type numbers and the function name.
+
+78
+05:47.200 --> 05:56.130
+I will  call it as  maximand integer a, integer b, integer C so that is
+
+79
+06:00.210 --> 06:01.770
+...
+
+80
+06:01.980 --> 06:11.410
+so it's taking three variables then the logic you know already that if a  is greater than B as well as
+
+81
+06:11.810 --> 06:25.650
+A is  greater than c then a return, else  if B is greater than c then return  the greatest number
+
+82
+06:25.650 --> 06:32.260
+it will be B so return B, else return C.
+
+83
+06:32.550 --> 06:33.710
+So I have written the logic.
+
+84
+06:33.710 --> 06:37.200
+this is a simple logic for finding the maximum of three numbers.
+
+85
+06:37.200 --> 06:43.670
+So here also in main function I will make changes and I will declare four variables integer.
+
+86
+06:43.720 --> 06:45.640
+x assign 10. y assign 15
+
+87
+06:45.670 --> 06:54.150
+z assign 5.
+
+88
+06:54.310 --> 06:57.200
+And also I would take one variable for getting the result.
+
+89
+06:57.390 --> 07:08.730
+So then R  assign maxim off x,y, z
+
+90
+07:08.940 --> 07:18.750
+Now the result will be in r so I will cout r and also endl, so from here I am calling this function
+
+91
+07:18.750 --> 07:24.660
+maxim and this is the maxim function and it will take three  values whatever the x and y values what
+
+92
+07:24.660 --> 07:30.440
+I'm sending that will be copied in ABC respectively then it will find out the greatest for three numbers.
+
+93
+07:30.490 --> 07:35.290
+weather a greater or B is greater is greater or cis greater which ever is greater will return the result.
+
+94
+07:35.330 --> 07:37.980
+Let us run and and see what value I get.
+
+95
+07:38.010 --> 07:39.230
+I should get value 15.
+
+96
+07:39.240 --> 07:46.390
+Yes I got the answer 15 So this is for finding maximum of three numbers.
+
+97
+07:46.440 --> 07:49.020
+So in this way you can write various functions.
+
+98
+07:49.020 --> 07:54.400
+I'll be giving you some challenges so you can solve those problems.

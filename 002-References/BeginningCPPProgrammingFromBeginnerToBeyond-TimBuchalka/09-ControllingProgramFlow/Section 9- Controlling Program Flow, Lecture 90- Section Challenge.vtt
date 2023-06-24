@@ -1,0 +1,480 @@
+WEBVTT
+
+00:00:05.720 --> 00:00:08.150
+Okay, so welcome to the
+section 9 challenge.
+
+00:00:08.690 --> 00:00:11.100
+This challenge puts together
+just about everything we've
+
+00:00:11.100 --> 00:00:12.440
+learned to solve a problem.
+
+00:00:13.170 --> 00:00:16.379
+I mean the section 9 workspace
+under the challenge project.
+
+00:00:16.940 --> 00:00:19.710
+There's also a challenge solution
+project, which includes my
+
+00:00:19.710 --> 00:00:22.060
+solution which I'll cover in
+the video right after this one.
+
+00:00:22.300 --> 00:00:24.230
+Let's talk about the challenge
+and then I'll give you a
+
+00:00:24.240 --> 00:00:25.980
+demo of the running solution.
+
+00:00:26.740 --> 00:00:29.720
+This challenge is about using a
+collection or a list of integers
+
+00:00:29.780 --> 00:00:32.390
+and allowing the user to select
+a few options from the menu.
+
+00:00:33.000 --> 00:00:37.699
+So here's the menu,
+p-a-m-s-l-q are the selections.
+
+00:00:38.020 --> 00:00:40.980
+If the user presses p, you
+print the elements of the list.
+
+00:00:41.360 --> 00:00:44.670
+If they press a, you add a number
+to the list, which you ask them for.
+
+00:00:45.300 --> 00:00:48.360
+If they press m, you display the
+mean of the numbers in the list.
+
+00:00:48.820 --> 00:00:51.239
+S and l, the smallest number
+and the largest number.
+
+00:00:51.240 --> 00:00:53.229
+And of course, if they
+press q, you quit.
+
+00:00:54.039 --> 00:00:57.300
+Now anything else, you should tell
+them invalid choice and so forth.
+
+00:00:57.300 --> 00:00:58.569
+Okay, just like we've been doing.
+
+00:00:58.580 --> 00:01:01.040
+So let's go over a little
+bit more of the detail here.
+
+00:01:02.040 --> 00:01:04.579
+We're only accepting valid
+choices from the user, both
+
+00:01:04.580 --> 00:01:07.129
+uppercase and lowercase
+selections should be allowed.
+
+00:01:07.630 --> 00:01:10.179
+And if they enter an illegal
+choice, you should say unknown
+
+00:01:10.180 --> 00:01:13.190
+selection, please try again,
+and then redisplay that menu.
+
+00:01:13.540 --> 00:01:18.170
+Okay, If the user enters a
+upper or lowercase p, we display
+
+00:01:18.190 --> 00:01:19.710
+all the elements of the list.
+
+00:01:19.710 --> 00:01:21.280
+Remember, this is a list of integers.
+
+00:01:21.559 --> 00:01:24.369
+If the list is empty, you should
+just display two square brackets
+
+00:01:24.370 --> 00:01:25.919
+and then say the list is empty.
+
+00:01:26.370 --> 00:01:29.539
+If the list is not empty, then all
+the list elements, all the integers in
+
+00:01:29.539 --> 00:01:33.399
+that list should be displayed inside
+square brackets separated by spaces.
+
+00:01:33.560 --> 00:01:37.830
+So in this case, the list has
+the integers 1 2 3 4 and 5., and
+
+00:01:38.110 --> 00:01:39.320
+this is how we'll display them.
+
+00:01:40.039 --> 00:01:43.980
+If the user enters an uppercase
+or lowercase a, then you'll prompt
+
+00:01:43.980 --> 00:01:46.669
+them for a number to add to the
+list in which case you add it.
+
+00:01:47.209 --> 00:01:50.020
+And then you display whatever
+number they entered added.
+
+00:01:50.870 --> 00:01:51.160
+Okay.
+
+00:01:51.160 --> 00:01:53.210
+It's okay to have duplicate
+entries in the list.
+
+00:01:53.590 --> 00:01:55.710
+And the last couple are
+pretty straightforward.
+
+00:01:55.710 --> 00:02:00.290
+If they press m upper or lower
+case, you basically iterate
+
+00:02:00.309 --> 00:02:02.889
+through that list and calculate
+the average of the list or the
+
+00:02:02.889 --> 00:02:04.819
+mean of the list and display that.
+
+00:02:05.539 --> 00:02:08.600
+If the list is empty, obviously
+you can't calculate the means,
+
+00:02:08.610 --> 00:02:11.400
+you simply display unable to
+calculate the mean no data.
+
+00:02:12.520 --> 00:02:16.870
+For s, again upper or lower
+case, you basically iterate
+
+00:02:16.880 --> 00:02:19.800
+through the list and find the
+smallest integer in that list.
+
+00:02:20.080 --> 00:02:21.829
+And that's what you
+display back to the user.
+
+00:02:22.369 --> 00:02:25.970
+So in this case, if the list
+contains 2 4 5 1, you'll display
+
+00:02:25.970 --> 00:02:27.220
+the smallest number as one.
+
+00:02:27.590 --> 00:02:30.230
+If the list is empty, you should
+display unable to determine
+
+00:02:30.230 --> 00:02:32.720
+the smallest number because
+obviously the list is empty.
+
+00:02:32.970 --> 00:02:35.060
+L works the same way except
+you're looking for the
+
+00:02:35.060 --> 00:02:36.280
+largest element in the list.
+
+00:02:36.969 --> 00:02:40.829
+When they press q, you say goodbye,
+and the program terminates.
+
+00:02:41.789 --> 00:02:43.640
+Okay, so that's the challenge.
+
+00:02:44.370 --> 00:02:48.340
+Before you begin, write out the steps
+you need to take and decide you know
+
+00:02:48.340 --> 00:02:49.550
+what order you should do them in.
+
+00:02:49.740 --> 00:02:50.640
+Think about the loops.
+
+00:02:50.640 --> 00:02:50.930
+You know.
+
+00:02:50.930 --> 00:02:53.680
+You need loops you know your if
+statements or switch statements.
+
+00:02:53.980 --> 00:02:55.909
+Think about what the
+best way to do this is.
+
+00:02:56.940 --> 00:03:00.939
+Start small, build little pieces,
+test those little pieces and then
+
+00:03:01.010 --> 00:03:02.680
+add as you go and test as you go.
+
+00:03:02.680 --> 00:03:04.300
+One big hint, use a vector.
+
+00:03:04.300 --> 00:03:05.850
+I mean don't use an array here.
+
+00:03:05.850 --> 00:03:09.460
+Use a vector, I should be
+pretty obvious because we want this to grow dynamically.
+
+00:03:09.460 --> 00:03:10.660
+A couple of more things.
+
+00:03:10.660 --> 00:03:13.930
+You could add functionality once
+you finish this basic challenge
+
+00:03:13.930 --> 00:03:15.630
+to search for a number in the list.
+
+00:03:15.630 --> 00:03:19.830
+And if it's found, how many times did
+it occur, maybe it's not in the list.
+
+00:03:20.290 --> 00:03:23.060
+The vector class has a
+.clear method that you can
+
+00:03:23.060 --> 00:03:24.260
+call to clear out the list.
+
+00:03:24.500 --> 00:03:26.480
+So maybe you want to you know
+have an option for the user to
+
+00:03:26.510 --> 00:03:27.750
+delete everything in the list.
+
+00:03:28.740 --> 00:03:31.010
+Maybe you want to not
+allow duplicate entries.
+
+00:03:31.010 --> 00:03:34.420
+So if I press to enter the
+number 5, you'll let me enter it.
+
+00:03:34.670 --> 00:03:37.550
+If I want to enter it again, you'll
+say sorry it's already in the list.
+
+00:03:37.800 --> 00:03:39.250
+So come up with your own ideas.
+
+00:03:39.520 --> 00:03:41.650
+It's really all about
+learning and practice.
+
+00:03:41.670 --> 00:03:44.260
+Okay, so let me give you
+a sample run of this.
+
+00:03:45.469 --> 00:03:46.400
+So here's the menu.
+
+00:03:46.580 --> 00:03:50.970
+As you can see p is print, a is
+add, m is mean, s is smallest,
+
+00:03:51.009 --> 00:03:52.850
+l is largest and q is quit.
+
+00:03:53.420 --> 00:03:54.580
+Let's do the obvious one.
+
+00:03:54.590 --> 00:03:56.720
+First, let's press q, we're out.
+
+00:03:56.750 --> 00:03:57.660
+It says goodbye.
+
+00:03:57.700 --> 00:03:58.769
+Our program is over.
+
+00:03:58.860 --> 00:04:03.249
+Okay, so let me run it again, and
+let's print the numbers in the list.
+
+00:04:03.270 --> 00:04:04.330
+Right now the list is empty.
+
+00:04:04.330 --> 00:04:05.280
+So if i press p.
+
+00:04:06.070 --> 00:04:10.779
+And again, it could be uppercase or
+lowercase, you get the two square
+
+00:04:10.779 --> 00:04:12.309
+brackets and the list is empty.
+
+00:04:13.010 --> 00:04:13.980
+Now I want to add a number.
+
+00:04:13.980 --> 00:04:14.760
+I'll press a.
+
+00:04:16.029 --> 00:04:20.120
+Let's say I want to add the number
+10 to the list, 10 is added.
+
+00:04:21.010 --> 00:04:23.920
+And let's say I want to add another
+number, so I'll press a again and I
+
+00:04:23.920 --> 00:04:25.440
+want to add negative 10 this time.
+
+00:04:26.710 --> 00:04:27.920
+So we've added negative 10.
+
+00:04:28.410 --> 00:04:30.619
+If I want to print the
+numbers again, I'll press p.
+
+00:04:31.620 --> 00:04:33.969
+And there's my list
+10 and negative 10.
+
+00:04:33.970 --> 00:04:40.090
+I'll add a couple of more, so
+let's add 100 and let's add 500.
+
+00:04:41.020 --> 00:04:42.900
+And we'll display the
+list again with a p.
+
+00:04:43.870 --> 00:04:47.789
+And now we've got 10, negative 10 100
+and 500, just like what we thought.
+
+00:04:48.160 --> 00:04:50.250
+Display the mean of the
+numbers, we'll press m.
+
+00:04:51.220 --> 00:04:53.080
+In this case, the mean is 150.
+
+00:04:53.330 --> 00:04:54.460
+Let's add another number.
+
+00:04:54.460 --> 00:04:57.720
+Let's add three and do the mean again.
+
+00:04:58.730 --> 00:05:01.300
+You know notice it's 120.6,
+so the mean should be a
+
+00:05:01.309 --> 00:05:02.969
+double, not an integer.
+
+00:05:03.849 --> 00:05:06.059
+Finally, we'll do let
+me print the list again.
+
+00:05:06.330 --> 00:05:10.940
+We've got 10 negative 10, 100 503,
+the smallest should be negative
+
+00:05:10.940 --> 00:05:12.760
+10 and the largest should be 500.
+
+00:05:12.770 --> 00:05:13.890
+So let's test that out.
+
+00:05:14.200 --> 00:05:15.659
+I'll press s for the smallest.
+
+00:05:16.570 --> 00:05:18.140
+The smallest number is -10.
+
+00:05:18.630 --> 00:05:21.709
+And I'll press l for the
+largest, the largest number is
+
+00:05:21.710 --> 00:05:23.390
+500, exactly what we expect.
+
+00:05:24.049 --> 00:05:29.950
+And of course if the user types in 1,
+unknown selection please try again or
+
+00:05:29.950 --> 00:05:35.820
+if they press o if they press anything
+that's not one of these letters, we
+
+00:05:35.820 --> 00:05:39.369
+tell them unknown selection redisplay
+the menu and grab the input from them.
+
+00:05:39.370 --> 00:05:41.809
+Again, press q to quit.
+
+00:05:42.650 --> 00:05:43.030
+That's it.
+
+00:05:43.050 --> 00:05:44.010
+That's the challenge.
+
+00:05:44.220 --> 00:05:47.120
+As I said, this can be a tricky
+little challenge to do because
+
+00:05:47.120 --> 00:05:48.349
+you've got a lot of things going on.
+
+00:05:48.350 --> 00:05:50.999
+You've got loops and loops
+within loops and if statements
+
+00:05:51.000 --> 00:05:54.599
+and maybe switch statements and
+maybe do loops maybe while loops.
+
+00:05:54.599 --> 00:05:56.479
+It's really up to you to
+decide how to solve it.
+
+00:05:57.080 --> 00:05:57.850
+Give it a shot.
+
+00:05:58.500 --> 00:06:01.500
+Don't be discouraged if it takes you
+more than a few attempts to get it.
+
+00:06:01.530 --> 00:06:02.659
+That's pretty normal.
+
+00:06:03.060 --> 00:06:04.140
+I'll see you in the next video.
+
+00:06:04.170 --> 00:06:07.160
+We'll go over my solution to it
+or at least one solution to it.
+
+00:06:07.340 --> 00:06:08.260
+All right, good luck.

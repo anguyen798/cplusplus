@@ -1,0 +1,103 @@
+WEBVTT
+
+00:05.230 --> 00:07.660
+Welcome to this bonus section for the course.
+
+00:08.260 --> 00:15.040
+In this section, we'll learn about the basics of C++ enumerations, also known as enumerated data types
+
+00:15.040 --> 00:16.060
+or in nums.
+
+00:17.320 --> 00:22.270
+Please note that there are some concepts, constructs and techniques that I will use in this section
+
+00:22.270 --> 00:26.740
+of the course that you may not have learned yet, depending on how much of the course you've completed.
+
+00:27.250 --> 00:30.910
+For example, I'll use the statements which statements?
+
+00:30.910 --> 00:35.290
+The range based for loop vectors, functions and overloaded operators.
+
+00:35.470 --> 00:37.380
+All of these are covered in the course.
+
+00:37.390 --> 00:42.340
+If you haven't already completed those sections of the course, I strongly urge you to complete those
+
+00:42.340 --> 00:44.470
+sections before you do this one.
+
+00:44.710 --> 00:48.490
+For your reference, vectors are covered in sections seven and 20.
+
+00:48.760 --> 00:50.920
+Functions are covered in section 11.
+
+00:50.920 --> 00:53.050
+Strings are covered in section ten.
+
+00:53.260 --> 01:00.340
+Control structures such as the if else switch and range based for loop are covered in section nine and
+
+01:00.340 --> 01:03.040
+operator overloading is covered in section 14.
+
+01:05.560 --> 01:10.330
+Enumerated types were first introduced in 1970 in the Pascal programming language.
+
+01:10.600 --> 01:16.360
+Since their creation, almost every other language has adopted enumerated data types of some form.
+
+01:17.080 --> 01:20.710
+Later, the C programming language introduced the enum keyword.
+
+01:20.710 --> 01:27.100
+So in C++, enumerated types were inherited from C and extended in C++ 11 and four.
+
+01:27.280 --> 01:29.180
+So what's an enumerated type?
+
+01:29.200 --> 01:35.410
+Well, in short, an enumerated type provides a useful way to store a set of named integral constants
+
+01:35.410 --> 01:37.210
+known as enumerators.
+
+01:37.390 --> 01:41.170
+In order to fully understand the enumerations, we need to take a closer look.
+
+01:41.200 --> 01:47.200
+First, we'll see what motivated the creation of enumerated data types and see how they became so popular.
+
+01:47.230 --> 01:52.300
+Next, we'll look at the syntax of a C++ enumeration and go through every part of it.
+
+01:52.420 --> 01:56.470
+Well then see the difference between scoped and scoped enumerations.
+
+01:56.740 --> 02:02.650
+UN scoped enumerations require no name qualification, so they're visible throughout the scope in which
+
+02:02.650 --> 02:04.270
+the enumeration is defined.
+
+02:04.360 --> 02:10.540
+Scoped enumerators do require a name qualification and so they can be accessed only using the scope
+
+02:10.540 --> 02:11.830
+resolution operator.
+
+02:11.980 --> 02:17.170
+Finally, we'll head over to the ID and see some of the most common uses of enumerations.
+
+02:17.560 --> 02:22.270
+Before we get started, remember I'm only covering the basics of C++ enumerations.
+
+02:22.300 --> 02:27.730
+Now let's head over to the next video to see what motivated the creation of enumerated data types and
+
+02:27.730 --> 02:29.350
+how they're used in C++.

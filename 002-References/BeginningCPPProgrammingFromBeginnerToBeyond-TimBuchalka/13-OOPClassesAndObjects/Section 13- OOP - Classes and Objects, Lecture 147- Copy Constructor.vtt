@@ -1,0 +1,877 @@
+WEBVTT
+
+00:00:05.300 --> 00:00:08.900
+In this video, we'll learn about the c++ copy constructor.
+
+00:00:09.670 --> 00:00:13.670
+When objects are copied, c++ must be able to create a new
+
+00:00:13.670 --> 00:00:15.670
+object from an existing object.
+
+00:00:15.670 --> 00:00:19.270
+In order to do this, it uses something called a copy constructor.
+
+00:00:20.070 --> 00:00:24.270
+There are several use cases where a copy constructor is used. For example,
+
+00:00:24.520 --> 00:00:29.120
+if we pass an object by value to a function or method as a parameter,
+
+00:00:29.120 --> 00:00:31.320
+then we need to make a copy of that object.
+
+00:00:31.920 --> 00:00:35.720
+The same is true when we return an object by value from a function or method.
+
+00:00:36.520 --> 00:00:38.320
+And the last common use case
+
+00:00:38.320 --> 00:00:42.820
+is when we want to construct a new object based on an existing object of the same class.
+
+00:00:43.720 --> 00:00:46.930
+C++ must provide a way to accomplish this copying.
+
+00:00:46.930 --> 00:00:49.430
+So c++ plus uses a copy constructor.
+
+00:00:49.930 --> 00:00:52.130
+We can provide our own copy constructor
+
+00:00:52.130 --> 00:00:55.630
+and we can define exactly the semantics we need for object copying.
+
+00:00:56.030 --> 00:00:58.030
+But if we don't provide a copy constructor,
+
+00:00:58.030 --> 00:01:01.330
+the c++ plus compiler will provide a compiler generated one.
+
+00:01:02.630 --> 00:01:05.130
+Let's look at some of the use cases in more detail
+
+00:01:05.130 --> 00:01:08.130
+so you can see exactly when an object copy is required.
+
+00:01:10.010 --> 00:01:14.810
+The first use case is when we pass an object to a function or method by value.
+
+00:01:15.310 --> 00:01:19.510
+Remember, the default mode of passing data in c++ plus is by value,
+
+00:01:19.510 --> 00:01:20.870
+which means a copy is made.
+
+00:01:21.420 --> 00:01:25.020
+So in this example, we have hero which is a player object.
+
+00:01:25.020 --> 00:01:29.520
+And then we have a display player function that expects a player object by value.
+
+00:01:30.020 --> 00:01:33.020
+So when we call this function and pass in hero,
+
+00:01:33.020 --> 00:01:37.680
+the function parameter p will be created and it will be created as a copy of hero,
+
+00:01:38.180 --> 00:01:39.780
+using the copy constructor.
+
+00:01:40.380 --> 00:01:43.680
+Notice that p is local to the display player function.
+
+00:01:43.680 --> 00:01:46.980
+So when p goes out of scope, the destructor will be called as well.
+
+00:01:49.180 --> 00:01:52.840
+In this use case we have an enemy object which is a player.
+
+00:01:52.840 --> 00:01:55.440
+We also have a function create super enemy
+
+00:01:55.440 --> 00:01:57.800
+that creates and returns a player object.
+
+00:01:57.800 --> 00:02:01.700
+Notice that the player object and enemy is created in the function
+
+00:02:01.700 --> 00:02:03.300
+and then returned from this function.
+
+00:02:03.800 --> 00:02:06.300
+Since we're returning an enemy by value.
+
+00:02:06.300 --> 00:02:10.800
+A copy of the enemy object is made by the copy constructor.
+
+00:02:12.100 --> 00:02:15.800
+The last use case we'll look at is when we want to explicitly create a new object
+
+00:02:15.800 --> 00:02:19.800
+from an existing object. In this example we have a hero object,
+
+00:02:19.800 --> 00:02:23.800
+and we want to create another object called another hero based on hero.
+
+00:02:24.000 --> 00:02:27.200
+In this case, a copy is made using the copy constructor.
+
+00:02:28.850 --> 00:02:31.850
+So now you can see where copy constructors are used.
+
+00:02:31.850 --> 00:02:33.350
+Now let's see what they do.
+
+00:02:34.150 --> 00:02:37.450
+If you don't provide a copy constructor, c++ will generate
+
+00:02:37.450 --> 00:02:41.050
+a default copy constructor that will do member-wise copy.
+
+00:02:41.550 --> 00:02:45.550
+That means that it'll go through the class attributes and copy them from the source object
+
+00:02:45.550 --> 00:02:46.850
+to the target object.
+
+00:02:47.450 --> 00:02:51.250
+For attributes that are objects then their copy constructors will be called.
+
+00:02:52.150 --> 00:02:56.750
+In many cases, this is perfectly fine and the default copy constructor is all you need.
+
+00:02:57.050 --> 00:03:01.050
+But if you're using raw pointers, then only the pointer will be copied, not the data
+
+00:03:01.050 --> 00:03:02.170
+that it's pointing to.
+
+00:03:02.670 --> 00:03:06.670
+This is referred to as a shallow copy rather than a deep copy.
+
+00:03:07.270 --> 00:03:10.710
+I'll defer shallow versus deep copying until the next video
+
+00:03:10.710 --> 00:03:12.710
+where we'll look at a specific example.
+
+00:03:13.210 --> 00:03:16.090
+So best practice with copy constructors are
+
+00:03:16.090 --> 00:03:19.340
+always providing user-defined copy constructor
+
+00:03:19.340 --> 00:03:20.940
+if you're using raw pointers.
+
+00:03:21.930 --> 00:03:25.630
+Always implement the copy constructor with a const reference parameter.
+
+00:03:26.180 --> 00:03:29.480
+Use the standard template library classes as member attributes
+
+00:03:29.480 --> 00:03:31.590
+they already provide copy constructors.
+
+00:03:32.470 --> 00:03:37.340
+Or you can avoid using raw pointers as data members if possible or use smart pointers.
+
+00:03:39.340 --> 00:03:42.840
+So what does the method signature look like for a copy constructor?
+
+00:03:43.440 --> 00:03:46.440
+The syntax might look strange at first but it's pretty straightforward.
+
+00:03:46.940 --> 00:03:49.940
+First, it's a constructor, so it has the same name as the class.
+
+00:03:50.540 --> 00:03:54.640
+And in the parameter list, we have a single object passed in of the same type.
+
+00:03:55.340 --> 00:03:58.840
+We pass that object in as a reference and a constant.
+
+00:03:59.090 --> 00:04:03.490
+Why by reference and constant? First, if we pass it in by value,
+
+00:04:03.490 --> 00:04:05.290
+then we have to make a copy of it.
+
+00:04:05.290 --> 00:04:07.650
+That's the whole point of the copy constructor.
+
+00:04:07.650 --> 00:04:11.520
+We would defeat the purpose and end up with never ending recursive calls.
+
+00:04:12.320 --> 00:04:15.920
+And as a constant because the semantics of copying means that
+
+00:04:15.920 --> 00:04:18.120
+we're copying the source, we're not modifying it.
+
+00:04:18.520 --> 00:04:21.920
+So the const prevents any modification to the source object.
+
+00:04:22.900 --> 00:04:25.800
+The last two statements are the prototypes for the player
+
+00:04:25.800 --> 00:04:27.700
+and account copy constructors.
+
+00:04:27.700 --> 00:04:31.000
+Note that they're exactly the same except for the names of the classes.
+
+00:04:32.600 --> 00:04:35.200
+So how do we actually implement the copy constructor.
+
+00:04:35.700 --> 00:04:39.900
+In the next video, we'll look at the case where we have raw pointers as data members
+
+00:04:39.900 --> 00:04:41.300
+and we'll do a deep copy.
+
+00:04:41.300 --> 00:04:44.300
+In this video, we'll just concentrate on shallow copies.
+
+00:04:45.200 --> 00:04:47.300
+In the body of the copy constructor,
+
+00:04:47.300 --> 00:04:49.900
+we do whatever we need to initialize our new object.
+
+00:04:50.150 --> 00:04:54.450
+Remember, we have access to source, so we can reference any attributes we want from source.
+
+00:04:54.950 --> 00:04:58.150
+But rather than write assignment statements in the constructor body,
+
+00:04:58.150 --> 00:05:01.510
+we can use a constructor initialization list as we've done before.
+
+00:05:02.870 --> 00:05:06.170
+Here is the implemented player class copy constructor.
+
+00:05:06.530 --> 00:05:09.630
+Notice that we're initializing the newly created object attributes
+
+00:05:09.630 --> 00:05:13.030
+in the initializer list based on the source object's attributes.
+
+00:05:13.630 --> 00:05:15.130
+Pretty simple and intuitive.
+
+00:05:15.680 --> 00:05:18.580
+Of course, any code we write in the constructor body
+
+00:05:18.580 --> 00:05:21.940
+will be executed immediately after the new object is initialized.
+
+00:05:23.440 --> 00:05:26.740
+And here you can see the copy constructor for the account class.
+
+00:05:27.290 --> 00:05:29.890
+Again, we're initializing the newly created object
+
+00:05:29.890 --> 00:05:32.290
+based on the existing source account object.
+
+00:05:32.890 --> 00:05:36.890
+Now let's head over to the IDE. We'll write a copy constructor for the player class
+
+00:05:36.890 --> 00:05:39.890
+and step through the code so you can see exactly when it's called.
+
+00:05:40.790 --> 00:05:42.670
+Okay. So I'm in the ide now,
+
+00:05:42.670 --> 00:05:46.820
+and I'm in the section 13 workspace in the CopyConstructor project.
+
+00:05:47.320 --> 00:05:50.820
+And what we've got here is that player class that we've been using all along.
+
+00:05:50.820 --> 00:05:53.020
+I just made a couple of little changes to it.
+
+00:05:53.020 --> 00:05:55.380
+I created three getters here,
+
+00:05:55.380 --> 00:05:59.880
+and we're going to use those getters in a display function which we'll write in a little bit,
+
+00:06:00.180 --> 00:06:03.080
+and they just return the name the health and the xp.
+
+00:06:03.080 --> 00:06:07.180
+We've got our our single 3 arg constructor here with
+
+00:06:07.180 --> 00:06:09.080
+default parameters as we've done before,
+
+00:06:09.480 --> 00:06:12.780
+and it's implemented right down here using
+
+00:06:12.780 --> 00:06:13.780
+our initializer.
+
+00:06:14.330 --> 00:06:17.630
+Okay. So that's all we've got we've created four objects down here.
+
+00:06:17.630 --> 00:06:19.030
+Now the first thing we want to do is
+
+00:06:19.630 --> 00:06:24.030
+let's write the prototype for the copy constructor.
+
+00:06:26.330 --> 00:06:28.830
+And it looks like the name of the class,
+
+00:06:29.230 --> 00:06:33.130
+which is player in this case and a single object
+
+00:06:33.130 --> 00:06:35.130
+in the parameter list.
+
+00:06:35.130 --> 00:06:37.130
+And it's a const player by reference and.
+
+00:06:38.630 --> 00:06:43.190
+We could just leave it like that or we can put source in here it doesn't really matter.
+
+00:06:43.190 --> 00:06:47.860
+So that's it. That's all we need to say. Obviously, we need to implement that we'll do that in a minute.
+
+00:06:48.410 --> 00:06:51.010
+And the other thing I want to do here is i want to write a destructor.
+
+00:06:51.710 --> 00:06:55.010
+And basically, I just want to know when this thing is going to be destroyed
+
+00:06:55.010 --> 00:06:57.570
+because it's going to be very important so that we understand
+
+00:06:57.570 --> 00:06:58.770
+the life cycle of these objects.
+
+00:06:58.770 --> 00:07:02.270
+So again, how do we write a destructor we put a tilde
+
+00:07:02.270 --> 00:07:05.870
+in front of the destructor name, which is the name of the class.
+
+00:07:05.870 --> 00:07:08.870
+No parameters. And in this case, I'm just simply saying
+
+00:07:09.670 --> 00:07:12.670
+I want to output that the destructor
+
+00:07:13.370 --> 00:07:14.670
+is being called
+
+00:07:15.970 --> 00:07:18.470
+for and we'll just put a colon here.
+
+00:07:18.970 --> 00:07:21.270
+And we'll do that for that name
+
+00:07:21.270 --> 00:07:24.270
+that way we know which object is actually being destroyed.
+
+00:07:27.870 --> 00:07:31.670
+Okay. That's it. So now we've got our destructor.So what we need to do now is
+
+00:07:31.670 --> 00:07:34.170
+implement that copy constructor.
+
+00:07:34.670 --> 00:07:37.770
+And I'm going to do it right down here right after our
+
+00:07:38.430 --> 00:07:39.430
+constructor.
+
+00:07:40.430 --> 00:07:43.430
+So what do we do? Well, we start off by writing player,
+
+00:07:45.030 --> 00:07:47.930
+scope resolution operator player again,
+
+00:07:48.920 --> 00:07:53.520
+and we're going to implement the same prototype basically right. So it's const,
+
+00:07:54.020 --> 00:07:55.020
+player
+
+00:07:56.220 --> 00:07:58.220
+by reference source.
+
+00:07:59.320 --> 00:08:03.120
+And now what we can do is we can create the initializer list if we like.
+
+00:08:03.120 --> 00:08:07.120
+And how we're going to initialize this? Well, I want to initialize the name attribute
+
+00:08:07.120 --> 00:08:08.420
+to what
+
+00:08:08.420 --> 00:08:12.420
+to this object's name attribute. In which case,it would be
+
+00:08:12.420 --> 00:08:13.420
+source
+
+00:08:15.920 --> 00:08:16.920
+.name.
+
+00:08:19.120 --> 00:08:21.320
+I want to initialize the health attribute
+
+00:08:21.820 --> 00:08:23.180
+to source.health.
+
+00:08:23.180 --> 00:08:26.980
+Remember, I'm making a copy. So I'm copying these values over
+
+00:08:26.980 --> 00:08:28.540
+and the xp to
+
+00:08:29.840 --> 00:08:31.540
+source.xp.
+
+00:08:32.740 --> 00:08:35.300
+That's it. Now we implement an empty body for that,
+
+00:08:37.180 --> 00:08:38.180
+copy constructor.
+
+00:08:38.840 --> 00:08:43.200
+And what we'll do is in the body, we'll write an output statement we'll say cout,
+
+00:08:43.450 --> 00:08:46.110
+and we'll write something like copy constructor,
+
+00:08:48.010 --> 00:08:50.010
+and we'll do something like made.
+
+00:08:50.670 --> 00:08:53.270
+Let's see, we made a copy of
+
+00:08:53.270 --> 00:08:56.870
+what we made a copy of source name,
+
+00:09:02.100 --> 00:09:03.700
+and we'll put an endline there.
+
+00:09:07.900 --> 00:09:10.400
+Okay. So that's it. That just tells us that
+
+00:09:10.400 --> 00:09:14.400
+it'll tell us what we've made a copy of, That'll come in handy when we're stepping through this,
+
+00:09:14.400 --> 00:09:17.700
+and we can understand what's going on. Okay. So now
+
+00:09:18.700 --> 00:09:20.900
+we've got our copy constructor set up.
+
+00:09:21.400 --> 00:09:25.400
+Now let's get -- let's create a function that expects a player by value
+
+00:09:25.650 --> 00:09:30.010
+and we know that that's one of the use cases where the copy constructor is called. So let's do that.
+
+00:09:30.260 --> 00:09:34.460
+Let's write just a regular function, and we'll call it display player,
+
+00:09:37.360 --> 00:09:40.360
+and it will expect a player object, we'll call it p.
+
+00:09:42.360 --> 00:09:44.960
+And remember, it's expecting it by value here.
+
+00:09:44.960 --> 00:09:49.860
+That's the default way of passing parameters around. So this implies a copy.
+
+00:09:50.660 --> 00:09:55.540
+And in here all we're going to do is I'll just copy the code that I've got over here. So I don't have to type it all in.
+
+00:09:55.540 --> 00:09:57.140
+And what we'll do here is just
+
+00:09:59.340 --> 00:10:01.940
+create those three output statements that displays
+
+00:10:02.190 --> 00:10:06.790
+p.get, name p.can help, p.get xp. So we're just going to display those values for p.
+
+00:10:07.390 --> 00:10:10.390
+Okay. Now I'm going to put some break points all over here
+
+00:10:10.390 --> 00:10:12.390
+just so we can see what's being called.
+
+00:10:12.790 --> 00:10:16.290
+We won't do it in the destructor because we'll see that being called it'll just
+
+00:10:16.290 --> 00:10:17.890
+print out destructor called.
+
+00:10:18.140 --> 00:10:22.340
+And what we've got now is we've got an empty object frank,
+
+00:10:22.340 --> 00:10:27.000
+hero and villain which are all objects, and these are just regular constructor calls happening here.
+
+00:10:27.000 --> 00:10:30.200
+So what we'll do down here is -- actually, we'll do it right here.
+
+00:10:32.000 --> 00:10:35.300
+What we'll do now is we'll say something like display player,
+
+00:10:35.660 --> 00:10:36.960
+I'll leave an extra line here,
+
+00:10:39.160 --> 00:10:42.460
+we'll say display player, and we'll pass in empty.
+
+00:10:43.450 --> 00:10:48.440
+Empty is an object so what's going to happen is a copy of that object will be made.
+
+00:10:49.140 --> 00:10:53.440
+Okay. So what I'm going to do is. Again, I'll put a break point right there and let's
+
+00:10:53.690 --> 00:10:55.790
+debug this and we'll step through it
+
+00:10:59.940 --> 00:11:01.940
+and I'll move the output window just over there.
+
+00:11:02.740 --> 00:11:06.890
+Okay. So let's step through this. And you can see that right now we're on line 26,
+
+00:11:06.890 --> 00:11:10.390
+and that's because that's empty player object is being created here.
+
+00:11:10.390 --> 00:11:14.050
+And we should see that print out that constructor right there.
+
+00:11:14.050 --> 00:11:19.040
+So we've just three args constructor for none. Remember, that's the default none 0 0.
+
+00:11:19.640 --> 00:11:23.640
+And we'll step through again and now we're just about to call this display
+
+00:11:23.640 --> 00:11:25.040
+player function here.
+
+00:11:25.040 --> 00:11:29.240
+We'll look at empty, which is the object we just created, and it contains
+
+00:11:29.240 --> 00:11:32.840
+none for name 0 and for health and 0 for xp.
+
+00:11:32.840 --> 00:11:36.440
+Okay. So we're just about to call this function right here.
+
+00:11:37.040 --> 00:11:39.740
+Now before we pass any information in,
+
+00:11:39.740 --> 00:11:43.640
+we have to make a copy of it, right. Because we're doing pass-by-value or pass-by-copy.
+
+00:11:44.630 --> 00:11:47.030
+So I've got empty, which you can see right here.
+
+00:11:47.030 --> 00:11:51.490
+I need to make a copy of empty, and that's what p is going to be.
+
+00:11:51.490 --> 00:11:55.490
+Now p is local to this function. So again, it's a copy
+
+00:11:55.490 --> 00:11:58.290
+of empty and it's on the stack, right.
+
+00:11:58.290 --> 00:12:01.290
+So let's step through and what we should see is
+
+00:12:01.290 --> 00:12:05.490
+we should see the copy constructor being called, because a we should see the copy constructor being called, because a
+
+00:12:05.490 --> 00:12:06.490
+So let's step through.
+
+00:12:07.150 --> 00:12:10.150
+And there you go. You can see we're right on line 31,
+
+00:12:10.450 --> 00:12:13.550
+and we're in the copy constructor. What are we doing now?
+
+00:12:13.550 --> 00:12:18.350
+We're making a copy of empty, and that copy is going to be called p.
+
+00:12:19.010 --> 00:12:21.010
+So let's step through again.
+
+00:12:22.110 --> 00:12:23.990
+We just did the initialization.
+
+00:12:24.540 --> 00:12:27.840
+And now it's going to say copy constructor made copy of none.
+
+00:12:28.240 --> 00:12:31.640
+That's exactly what we did. We made a copy of that
+
+00:12:31.640 --> 00:12:33.240
+object whose name is none. Okay.
+
+00:12:34.040 --> 00:12:36.140
+Now I'll step through one more time.
+
+00:12:36.140 --> 00:12:39.740
+Now that p has been created. You can see p right here.
+
+00:12:39.740 --> 00:12:43.240
+It's a local variable to this function. And it's none 0 0.
+
+00:12:43.240 --> 00:12:45.840
+It's a copy of empty.
+
+00:12:46.640 --> 00:12:50.240
+There are two different objects, but they have the same values right now.
+
+00:12:50.790 --> 00:12:52.390
+Okay. Let's walk through this.
+
+00:12:53.750 --> 00:12:57.750
+We just displayed the name, the health and the xp.
+
+00:12:58.610 --> 00:13:00.210
+Now what should happen is
+
+00:13:00.210 --> 00:13:03.810
+p is going out of scope right now, right. We're going to leave this function
+
+00:13:03.810 --> 00:13:06.170
+so that stack frame needs to be cleaned up.
+
+00:13:06.170 --> 00:13:08.530
+So the destructor for p should be called.
+
+00:13:08.530 --> 00:13:11.530
+The destructor for the copy, not the destructor for empty,
+
+00:13:11.530 --> 00:13:15.130
+but the destructor for that p copy. So let's do that.
+
+00:13:15.630 --> 00:13:18.430
+And there you go, you can see the destructor has been called.
+
+00:13:18.430 --> 00:13:20.930
+And now we're back in main on line 46.
+
+00:13:20.930 --> 00:13:23.930
+And from this point on, we're just constructing objects as usual.
+
+00:13:24.530 --> 00:13:27.530
+Okay. So hopefully that's clear. You can see it's it's these
+
+00:13:27.530 --> 00:13:32.400
+little nuances, and using the debugger to step through things really, really makesthings
+
+00:13:32.400 --> 00:13:33.760
+very nice to follow.
+
+00:13:34.260 --> 00:13:38.060
+So let's do another example here. I'm going to stop the debugger here.
+
+00:13:38.060 --> 00:13:40.860
+And what I'll do is we'll create
+
+00:13:41.760 --> 00:13:45.760
+that empty. Well, you know what let's create a different -- Let's create a different empty.
+
+00:13:45.760 --> 00:13:50.750
+In this case, let's just create something called xxxx
+
+00:13:50.750 --> 00:13:53.250
+with 150.
+
+00:13:53.450 --> 00:13:55.450
+That way we know what those values are.
+
+00:13:55.750 --> 00:13:59.110
+And what I want to do here is I'm going to get rid of that break point right here.
+
+00:13:59.110 --> 00:14:01.470
+I want to create another player object.
+
+00:14:02.270 --> 00:14:06.270
+Okay. And I'm going to call it my new object,
+
+00:14:08.970 --> 00:14:13.170
+and I'm going to create a copy of that empty object.
+
+00:14:15.870 --> 00:14:18.170
+Okay. So again let's see what's going on here.
+
+00:14:18.870 --> 00:14:21.230
+I've got empty is a player object,
+
+00:14:21.230 --> 00:14:25.230
+and I'm setting the name to a bunch of x's, the health to 100, the xp to 50.
+
+00:14:25.530 --> 00:14:28.930
+Then I'm creating another object, it's called my new object
+
+00:14:28.930 --> 00:14:30.530
+and I'm creating it from empty.
+
+00:14:30.830 --> 00:14:34.930
+So I want a copy of empty. This will call the copy constructor.
+
+00:14:34.930 --> 00:14:36.930
+That's the whole idea of making a copy.
+
+00:14:36.930 --> 00:14:41.330
+Okay. So let me put a break point there, and let's run this debugger through again.
+
+00:14:47.930 --> 00:14:51.930
+Okay. So now we're here constructing that empty object right over here.
+
+00:14:51.930 --> 00:14:56.590
+So let's just walk through that until we get to that other break point on line 44,
+
+00:14:57.390 --> 00:15:01.290
+and that's where we're at now. So at this point, empty has been created.
+
+00:15:01.290 --> 00:15:05.890
+If I look at empty up here, you can see I've got the bunch of x's, 150.
+
+00:15:06.390 --> 00:15:09.690
+So now I'm right here on line 44.
+
+00:15:09.690 --> 00:15:14.250
+This is a constructor right. I'm constructing or initializing or instantiating
+
+00:15:14.250 --> 00:15:18.550
+the jargons all the same a my new object which is a player.
+
+00:15:18.800 --> 00:15:23.700
+In this case, from this object that I've already created, that's where the copy comes in.
+
+00:15:23.700 --> 00:15:28.000
+So when I step through this. I expect the copy constructor to be called again.
+
+00:15:28.000 --> 00:15:29.200
+So let's do that.
+
+00:15:30.190 --> 00:15:34.090
+And there we are. We're right in the copy constructor in the initializer,
+
+00:15:34.090 --> 00:15:35.490
+and I'm going to walk through that.
+
+00:15:37.930 --> 00:15:42.730
+It says right here I made a copy of that original xxx, 6x object.
+
+00:15:43.630 --> 00:15:45.230
+I'll step through again.
+
+00:15:46.030 --> 00:15:49.330
+And now we're right back to where we started before.
+
+00:15:49.690 --> 00:15:52.290
+Okay. So hopefully that gives you some insight into these
+
+00:15:52.290 --> 00:15:55.290
+copy constructors and how they work. They really make a lot of sense.
+
+00:15:55.290 --> 00:15:59.090
+The syntax is a little wonky sometimes, but it's pretty straightforward.
+
+00:15:59.090 --> 00:16:01.090
+Now one thing that I should mention is
+
+00:16:01.090 --> 00:16:04.090
+right here we're using the initializer list
+
+00:16:04.590 --> 00:16:07.190
+to initialize that new object.
+
+00:16:07.190 --> 00:16:11.890
+We could change this if we like and just do something like
+
+00:16:14.490 --> 00:16:16.690
+use a delegating constructor here,
+
+00:16:16.990 --> 00:16:19.990
+right. So we could delegate source
+
+00:16:20.690 --> 00:16:24.990
+.name source.health
+
+00:16:27.990 --> 00:16:29.980
+and source.xp.
+
+00:16:34.580 --> 00:16:37.580
+And I need a little colonel in front of that just like before.
+
+00:16:37.580 --> 00:16:40.180
+So what we're doing there is we're doing the delegation.
+
+00:16:41.180 --> 00:16:43.780
+And same exact thing should happen.
+
+00:16:45.780 --> 00:16:49.980
+We'll run the debugger here and we'll walk through that real quick so you can see the delegation now happening
+
+00:16:49.980 --> 00:16:53.970
+before we weren't delegating because we were just initializing right in place there, right.
+
+00:16:54.170 --> 00:16:57.470
+So at this point, let's walk through it until we get to
+
+00:16:57.870 --> 00:17:01.230
+line 45 this time, which is where we're at right.
+
+00:17:01.230 --> 00:17:03.830
+Now so now I'm going to call the copy constructor again
+
+00:17:03.830 --> 00:17:08.090
+to make a copy of this empty object we just created.So let's step through it.
+
+00:17:08.450 --> 00:17:10.450
+Right here, I'm in the copy constructor.
+
+00:17:10.450 --> 00:17:12.950
+But now rather than use this initializer,
+
+00:17:12.950 --> 00:17:17.150
+I'm going to delegate the construction of this object to my constructor,
+
+00:17:17.700 --> 00:17:21.300
+which is this guy right up here. So in this case, when I walk through it,
+
+00:17:21.300 --> 00:17:25.200
+you can see transfer will control will transfer up to here on line 25.
+
+00:17:26.000 --> 00:17:29.700
+And that's exactly where we are now. Now we're in the regular three arg constructor.
+
+00:17:30.200 --> 00:17:33.000
+And it's going to three args constructor.
+
+00:17:33.000 --> 00:17:36.500
+Remember, the first one was for empty. This is for the copy of empty.
+
+00:17:36.500 --> 00:17:38.500
+So we've got the two objects alive now.
+
+00:17:39.100 --> 00:17:42.100
+And when I'm done, I'm going to come back and it said made a copy of it.
+
+00:17:42.500 --> 00:17:43.490
+Okay. So there you go.
+
+00:17:43.490 --> 00:17:46.850
+There's the copy constructor, and you can see how we can delegate from that as well.

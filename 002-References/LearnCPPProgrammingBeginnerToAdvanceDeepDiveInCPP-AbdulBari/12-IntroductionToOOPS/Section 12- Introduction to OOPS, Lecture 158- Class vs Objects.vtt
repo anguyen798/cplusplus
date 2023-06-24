@@ -1,0 +1,645 @@
+WEBVTT
+
+0
+00:00.150 --> 00:02.180
+So let's talk about class.
+
+1
+00:02.190 --> 00:03.360
+versus object.
+
+2
+00:03.360 --> 00:04.950
+Why is an class? What is an object?
+
+3
+00:04.950 --> 00:08.520
+Mostly people say that everything in the world is an object and there is a glass for it.
+
+4
+00:08.520 --> 00:11.000
+So let us understand what us mean.
+
+5
+00:11.010 --> 00:12.600
+See classes.
+
+6
+00:12.600 --> 00:14.740
+Coming from classification.
+
+7
+00:14.910 --> 00:21.570
+So if you take anything in the world you can say that this belongs to so-and-so class so you can categorize
+
+8
+00:21.660 --> 00:22.300
+everything.
+
+9
+00:23.010 --> 00:23.770
+Yes.
+
+10
+00:23.820 --> 00:31.200
+So if you take a group of people at a college then you can say that these students belongs to computer
+
+11
+00:31.190 --> 00:31.980
+science.
+
+12
+00:32.130 --> 00:37.690
+So this is a class of computer science and this student belongs to electronics so this is the class of electronics.
+
+13
+00:37.690 --> 00:43.500
+So you're classifying based on the subject or the course they are going through. it means that classification
+
+14
+00:43.500 --> 00:46.050
+is based on the criteria that you are adopting.
+
+15
+00:46.560 --> 00:51.060
+So you are grouping set of students based on their course.
+
+16
+00:51.060 --> 00:55.360
+So does a class for computer science and the class for electronics.
+
+17
+00:55.440 --> 01:02.500
+But if you see the students both electronic and these are students only, so students are again a class.
+
+18
+01:02.570 --> 01:04.130
+There's is one of the classification.
+
+19
+01:04.200 --> 01:05.110
+These are the students.
+
+20
+01:05.130 --> 01:06.210
+These are the employees.
+
+21
+01:06.210 --> 01:13.920
+this is one classification categorization, then both students and employees are human beings.
+
+22
+01:13.940 --> 01:19.040
+So yes again there is a classification, these are human beings and these are birds and these are
+
+23
+01:19.040 --> 01:20.120
+reptiles.
+
+24
+01:20.150 --> 01:21.620
+So there are many classes.
+
+25
+01:21.620 --> 01:27.230
+So classification is based on some criteria or the common things that you find in them.
+
+26
+01:27.430 --> 01:27.750
+Right.
+
+27
+01:28.130 --> 01:31.920
+So we define classes in our daily life.
+
+28
+01:32.030 --> 01:38.210
+Any 4 wheel vehicle in which there is a driver and some people are sitting at the back or beside
+
+29
+01:38.210 --> 01:39.980
+the driver then we say it's a car.
+
+30
+01:40.520 --> 01:43.470
+If that are groups loaded at the back then we say it's a truck.
+
+31
+01:44.330 --> 01:49.730
+So this is the classification depend on the property we are defining that this is a truck this is a car and
+
+32
+01:49.760 --> 01:52.610
+and both are vehicle again, so vehicle is again a class.
+
+33
+01:52.610 --> 01:59.690
+So in this way, if I take examples like human beings human being is a class.
+
+34
+01:59.780 --> 02:07.120
+So there's a class human and you are an object of human being class.
+
+35
+02:07.280 --> 02:15.850
+and myself as an object of human being class and a class car.
+
+36
+02:17.030 --> 02:25.820
+So BMW X1 I guess it's a car and Camry Toyota is also a car.
+
+37
+02:26.510 --> 02:30.190
+So this is an object of a car.
+
+38
+02:30.240 --> 02:32.910
+This is an object of a car.
+
+39
+02:32.960 --> 02:39.110
+This is a class, so looking at the objects we classify like looking at me you can you can say he is a human.
+
+40
+02:39.110 --> 02:43.080
+So what I'm, I'm  a object and what you said human.
+
+41
+02:43.220 --> 02:46.420
+That is a class looking at this camry.
+
+42
+02:46.430 --> 02:47.750
+You said it's a car.
+
+43
+02:47.900 --> 02:49.570
+So this is an object.
+
+44
+02:49.880 --> 02:51.890
+And this is the definition that you're using.
+
+45
+02:51.890 --> 02:53.060
+You are using the class name.
+
+46
+02:53.300 --> 02:57.170
+So class is a definition and object is an instance.
+
+47
+02:57.200 --> 02:57.600
+Now.
+
+48
+02:57.650 --> 03:05.350
+Let us take example, suppose a civil engineer has made a plan of a house.
+
+49
+03:06.000 --> 03:08.600
+These are rooms in that house
+
+50
+03:15.670 --> 03:19.770
+so he made a plan of a house. this in entrance of house.
+
+51
+03:19.980 --> 03:23.620
+now a civil engineer has made this  plan.
+
+52
+03:24.510 --> 03:31.090
+So suppose the civil engineer is making this plan for making quarters or houses for the employees of some
+
+53
+03:31.240 --> 03:32.380
+organization.
+
+54
+03:32.380 --> 03:37.540
+So some organization is making a colony or courthouse for their employees.
+
+55
+03:37.540 --> 03:39.410
+Then they have approved this plan.
+
+56
+03:39.430 --> 03:43.760
+Then based on this plan all the houses are constructed.
+
+57
+03:43.780 --> 03:47.360
+There are many houses constructed based on this plan.
+
+58
+03:47.380 --> 03:52.780
+Some companies provide housing facilities for their employees so they will have some cargo or apartments
+
+59
+03:52.780 --> 03:55.810
+or independent houses or apartments.
+
+60
+03:55.970 --> 03:59.320
+All the apartments will be similar only they follow the same design.
+
+61
+03:59.650 --> 04:06.130
+So design is one and these are the houses or the apartments or the flats that are based on this
+
+62
+04:06.130 --> 04:06.820
+design.
+
+63
+04:07.120 --> 04:17.290
+So this design or the definition is nothing but class and these are objects these are objects.
+
+64
+04:17.290 --> 04:19.810
+These houses are constructed based on this one.
+
+65
+04:19.810 --> 04:20.960
+So what is this.
+
+66
+04:20.980 --> 04:26.710
+This is nothing but blueprint of this object.
+
+67
+04:27.490 --> 04:32.730
+So this will be having all those things that are defined here in the plan so that's it so civil engineer
+
+68
+04:32.730 --> 04:33.700
+will make this one.
+
+69
+04:33.760 --> 04:36.210
+And based on this construction is done.
+
+70
+04:36.540 --> 04:45.220
+Now let's take another example suppose an electronics engineer is making a design of a fingerprint scanner
+
+71
+04:45.580 --> 04:50.800
+and for fingerprint scanner he made a design and this is a circuit diagram just imagine that is the
+
+72
+04:50.800 --> 04:52.530
+circuit diagram.
+
+73
+04:52.540 --> 04:53.250
+OK.
+
+74
+04:53.360 --> 04:55.780
+Some ices are there on this one.
+
+75
+04:55.780 --> 04:58.040
+So he made some circuit diagram for this one.
+
+76
+04:58.930 --> 05:00.730
+So there's a circuit diagram.
+
+77
+05:00.790 --> 05:05.750
+Now this is a thumb scanner or fingerprint scanner.
+
+78
+05:06.140 --> 05:08.660
+And this is another fingerprint scanner.
+
+79
+05:09.150 --> 05:11.670
+And this is another fingerprint scanner
+
+80
+05:14.880 --> 05:19.380
+all  these fingerprint scanners are based on this design.
+
+81
+05:19.410 --> 05:27.030
+So this is a class or this is a blueprint of a fingerprint scanner.
+
+82
+05:27.030 --> 05:34.500
+So what all these are? these are objects, these are all objects of that design.
+
+83
+05:34.500 --> 05:35.670
+Based on that design.
+
+84
+05:36.090 --> 05:43.470
+So every engineer does some paperwork or designing work and based on that design the manufacturing
+
+85
+05:43.470 --> 05:45.060
+is done following that design.
+
+86
+05:45.390 --> 05:49.650
+So when you make a product, that product will be having all those things that are there in the design
+
+87
+05:49.920 --> 05:56.110
+and you can then make many products based on that design. a car company will design a new car.
+
+88
+05:56.340 --> 05:59.690
+Then they will manufacture many cars based on that design.
+
+89
+06:00.750 --> 06:07.470
+So all those cars are object and the design that company is holding with it is a class. that's it.
+
+90
+06:07.680 --> 06:12.880
+So Same way we also want to write a class and create objects in our program.
+
+91
+06:13.320 --> 06:14.970
+So how do you define a class.
+
+92
+06:14.970 --> 06:16.400
+What will be there in the class.
+
+93
+06:16.410 --> 06:17.780
+What do you will use.
+
+94
+06:17.940 --> 06:21.680
+Here we use ices and boards and pins.
+
+95
+06:21.770 --> 06:29.970
+Then in the house example there will be walls and pillars and roof then, what's will be in your class
+
+96
+06:30.360 --> 06:31.380
+in our classes.
+
+97
+06:31.380 --> 06:32.100
+What will be there.
+
+98
+06:32.160 --> 06:34.620
+I'll show you. our classes.
+
+99
+06:34.650 --> 06:40.380
+See our product, that is software is related to computation its related to computation.
+
+100
+06:40.380 --> 06:46.670
+So we are making a classes that are more related to computation so suppose I want to have a class for
+
+101
+06:46.680 --> 06:48.050
+rectangle.
+
+102
+06:48.060 --> 06:50.610
+Then I will see a rectangle class
+
+103
+06:53.920 --> 06:55.150
+then what it will contain.
+
+104
+06:55.480 --> 06:58.580
+So as we are related to computation needs data.
+
+105
+06:58.590 --> 07:01.570
+So we'll have only two things, data and the functions.
+
+106
+07:01.570 --> 07:05.240
+So our class will contain data and functions.
+
+107
+07:05.260 --> 07:10.680
+So data is called as property and function is called as behavior.
+
+108
+07:10.690 --> 07:15.430
+So what is the data required for rectangle so rectangle will have length and breadth.
+
+109
+07:15.540 --> 07:22.660
+So we will have a data that is float length and float.
+
+110
+07:23.950 --> 07:24.400
+breadth
+
+111
+07:27.190 --> 07:28.660
+this is about data.
+
+112
+07:28.900 --> 07:31.780
+Then what are the function computations we can do.
+
+113
+07:31.780 --> 07:36.690
+We can find area of a rectangle and this should give us the float result.
+
+114
+07:37.110 --> 07:43.480
+And we can find perimeter of a rectangle this also gets a float result.
+
+115
+07:43.890 --> 07:50.300
+we can find diagonal  of a rectangle, means there is a diagram of a rectangle.
+
+116
+07:50.320 --> 07:54.130
+This also gets floated result and so on.
+
+117
+07:54.130 --> 07:58.340
+So these are set of functions and this is the data.
+
+118
+07:58.420 --> 08:05.350
+So if you say data and the functions so now anything in the world you can define in terms of data and
+
+119
+08:05.350 --> 08:07.570
+its function if it is useful for you.
+
+120
+08:08.800 --> 08:10.690
+So this a class, this is the class.
+
+121
+08:10.780 --> 08:13.460
+I have not written a complete class I have not written the detail.
+
+122
+08:13.480 --> 08:15.900
+So this is more abstract, abstract.
+
+123
+08:16.290 --> 08:16.630
+Now
+
+124
+08:19.840 --> 08:21.520
+I will create an object rectangle, 
+
+125
+08:21.550 --> 08:27.510
+r one, r two, r three.
+
+126
+08:27.750 --> 08:37.170
+So these are objects, what this r1will have, length breadth and area perimetre and so on and so functions
+
+127
+08:37.500 --> 08:39.330
+r2 will also have length breadth and these functions.
+
+128
+08:39.330 --> 08:45.360
+r3, all these objects will have samething like of fingerprint scanner was having
+
+129
+08:45.360 --> 08:50.910
+everything what was there in their design and a house was having all the rooms and leaving the hall everything
+
+130
+08:50.910 --> 08:52.390
+what was there in their design.
+
+131
+08:52.500 --> 08:59.240
+So same way this rectangular object is having everything whatever it is given in this design. that's
+
+132
+08:59.370 --> 08:59.650
+it.
+
+133
+08:59.690 --> 09:06.050
+This is how you write the classes, we can write down the class for anything in the world.
+
+134
+09:06.080 --> 09:13.040
+So mostly what type of things we deal in our programming for that we can see it as a object unfold file
+
+135
+09:13.140 --> 09:17.070
+we can  define it as a class and based on the class we can create an object and use it.
+
+136
+09:17.910 --> 09:24.630
+So in programming we define this class and keep it, and in our program, actually program, let us say main function
+
+137
+09:24.630 --> 09:26.430
+and other set of functions.
+
+138
+09:26.430 --> 09:31.950
+they will be using these objects and they will be using these objects so were to write the class, shall
+
+139
+09:31.950 --> 09:33.660
+we write it somewhere else and use it.
+
+140
+09:33.680 --> 09:33.920
+Yes.
+
+141
+09:33.990 --> 09:40.440
+If you want. mostly in program we write in the same program with the class and there only we will use it.
+
+142
+09:40.470 --> 09:44.510
+this is our practise, otherwise you can write on some set of classes and keep them in some header file
+
+143
+09:44.600 --> 09:48.740
+files and you can include the header file and used objects of a class.
+
+144
+09:49.080 --> 09:54.380
+So defining a class is different and creating its object and using it as different.
+
+145
+09:54.390 --> 09:58.980
+So let us say this I am doing this inside the main function.
+
+146
+09:59.850 --> 10:01.600
+and This is a defined here.
+
+147
+10:02.010 --> 10:07.700
+So mostly as a programmer we write class on the main function there only, get confused little bit.
+
+148
+10:07.730 --> 10:12.900
+But it's not like that, like design separate so who will have that design engineer will have
+
+149
+10:12.900 --> 10:20.010
+the design and he will construct houses right everything about the design engineer knows and based on that
+
+150
+10:20.040 --> 10:25.530
+the houses are constructed and a electronic engineer  will have the design and the manufacturing of
+
+151
+10:25.530 --> 10:27.240
+the product is done based on that design.
+
+152
+10:27.900 --> 10:34.800
+So designing work is different and manufacturing and using the devices based on that design is different.
+
+153
+10:34.890 --> 10:41.040
+So same way writing a class is a different work, using a class is a different work if you mix them
+
+154
+10:41.040 --> 10:46.950
+then you confuse Why the hell I am writting all these things, no writing the class complete the design
+
+155
+10:47.190 --> 10:48.600
+then use them.
+
+156
+10:49.200 --> 10:52.710
+So that's all I have given you the difference between class and an object.
+
+157
+10:52.710 --> 10:56.300
+So we have defined a class based on the data and the functions.
+
+158
+10:56.310 --> 10:58.750
+And here we create object and use it.
+
+159
+10:59.250 --> 11:05.310
+So the next video I'll show you the syntax how we define the class how to create object how do you use
+
+160
+11:05.310 --> 11:06.570
+members of an object.

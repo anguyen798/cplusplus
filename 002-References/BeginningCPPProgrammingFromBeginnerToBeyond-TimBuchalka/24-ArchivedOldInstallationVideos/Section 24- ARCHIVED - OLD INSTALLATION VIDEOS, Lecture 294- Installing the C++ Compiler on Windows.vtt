@@ -1,0 +1,245 @@
+WEBVTT
+
+0
+00:05.640 --> 00:11.530
+This video I'll take you through the steps necessary to install the C++ compiler on the Windows operating
+
+1
+00:11.530 --> 00:12.620
+system.
+
+2
+00:12.700 --> 00:15.610
+We're going to use the Minimalist GNU for Windows. 
+
+3
+00:15.680 --> 00:17.960
+GNU stands for GNUs not Unix.
+
+4
+00:17.980 --> 00:26.320
+It's basically a compiler collection called GCC that includes the C compiler,  C++ compiler,  Fortran compiler,
+
+5
+00:26.320 --> 00:27.460
+and an Ada compiler.
+
+6
+00:27.550 --> 00:32.830
+We're only going to be using the C++ compiler in this class so we'll only install that .
+
+7
+00:32.830 --> 00:39.280
+Open up your favorite browser and you go to mingw.org. You'll see a page similar to this and what you want
+
+8
+00:39.280 --> 00:44.040
+to do on this page is click on the button at the top right here called 'Download Installer'.
+
+9
+00:44.110 --> 00:51.990
+So I'm going to select that and that'll automatically start a download of the MinGW installer.
+
+10
+00:52.000 --> 00:57.000
+It's a pretty small file, so it should be a quick download depending on your internet connection.
+
+11
+00:57.340 --> 00:59.580
+Ok so I'm finished downloading.
+
+12
+00:59.740 --> 01:01.990
+And what I want to do is just run that installer.
+
+13
+01:01.990 --> 01:05.570
+So I'm just going to double click on it and I'll close down the browser.
+
+14
+01:05.920 --> 01:10.440
+OK so what we're going to do here is we're basically just going to follow the installation wizard.
+
+15
+01:10.540 --> 01:17.250
+I'm going to install and I want to install in C:\MinGW 
+
+16
+01:17.380 --> 01:22.570
+Now certainly this could be a different drive letter but don't change the name of the installation directory
+
+17
+01:22.570 --> 01:25.170
+and certainly don't put spaces or anything in there.
+
+18
+01:25.180 --> 01:30.260
+I'd suggest that you just keep the default if you can.  Keep all the default settings and press continue
+
+19
+01:31.960 --> 01:35.860
+and this will start the download of the installation manager.
+
+20
+01:35.860 --> 01:42.130
+Now once the installation manager is downloaded then we can continue and we can start downloading and
+
+21
+01:42.130 --> 01:44.200
+installing the actual compiler.
+
+22
+01:56.270 --> 02:02.450
+OK, so when the download is complete,  you can see that on my system it processed 113 items and it only
+
+23
+02:02.450 --> 02:03.440
+took a couple of minutes.
+
+24
+02:03.440 --> 02:04.570
+I sped up the video.
+
+25
+02:04.640 --> 02:07.000
+so you didn't have to wait through the installation.
+
+26
+02:07.070 --> 02:13.220
+Once you're finished, just press continue and you're going to be shown a window which is the installation
+
+27
+02:13.220 --> 02:14.350
+manager.
+
+28
+02:14.360 --> 02:19.610
+Now here what you want to do is you want to click Basic Set up on the left and you want to select three
+
+29
+02:19.700 --> 02:27.620
+of these packages on the right.  You want to select the msys-base down near the bottom and you select
+
+30
+02:27.650 --> 02:29.220
+mark for installation.
+
+31
+02:29.360 --> 02:31.940
+You want to select the mingw32-gcc-g++
+
+32
+02:31.940 --> 02:40.490
+package. That package contains the C and the C++ compilers and will mark for
+
+33
+02:40.490 --> 02:41.740
+installation as well.
+
+34
+02:42.110 --> 02:47.880
+And you want to select the mingw-base package and we'll mark that for installation.
+
+35
+02:47.940 --> 02:53.450
+Now once you've got those three selected, you can come back up here to the installation menu and press
+
+36
+02:53.480 --> 02:56.860
+apply changes.
+
+37
+02:56.870 --> 03:05.510
+Now at this point we can click apply and it's going to download and install the new compiler.
+
+38
+03:17.720 --> 03:19.420
+OK,  so that's the installation.
+
+39
+03:19.430 --> 03:22.790
+It only took a couple of minutes on my machine. I'll select to close.
+
+40
+03:23.000 --> 03:25.900
+And at this point we're done installing the compiler.
+
+41
+03:25.970 --> 03:31.460
+Now there's one step that you should take. In this case we want to set the path variable on our Windows
+
+42
+03:31.460 --> 03:33.580
+system to the binary directory.
+
+43
+03:33.590 --> 03:35.060
+So let me show you how to do that.
+
+44
+03:35.060 --> 03:39.020
+Open up your control panel.  You can open it up down here or you can open it up right here. I've just got
+
+45
+03:39.020 --> 03:44.990
+a shortcut on my desktop and you can search your control panel for ENV for environment variables.
+
+46
+03:45.020 --> 03:49.670
+I'll just type ENV and you can select Edit the system environment variables.
+
+47
+03:50.020 --> 03:50.610
+OK.
+
+48
+03:50.840 --> 03:58.370
+Now at this point you want to come down here to where it says 'environment variables' and press that and then
+
+49
+03:58.370 --> 04:06.680
+down to 'system variables' and select the path right there and you want to edit the path.  And what you
+
+50
+04:06.680 --> 04:09.580
+want to do is you want to add a new variable to the path.
+
+51
+04:09.570 --> 04:17.330
+So going to select new and at this point you want to browse and find the directory where you installed
+
+52
+04:17.390 --> 04:18.980
+the compiler libraries.
+
+53
+04:18.980 --> 04:21.540
+So in this case it was my C-Drive
+
+54
+04:24.160 --> 04:30.560
+and it was the MinGW directory and you want to go to the bin subdirectory and select that. That's where
+
+55
+04:30.560 --> 04:36.410
+the binaries are for the executive files and then press OK and OK one more time.
+
+56
+04:36.410 --> 04:40.090
+And just finish off and close everything up.
+
+57
+04:40.400 --> 04:41.250
+That's it.
+
+58
+04:41.360 --> 04:46.820
+The compiler system is now installed and we're ready to compile.  The next step is if you're going to
+
+59
+04:46.820 --> 04:52.130
+install an integrated development environment or IDE now your compiler is all set up and you can proceed
+
+60
+04:52.130 --> 04:53.250
+with that step.

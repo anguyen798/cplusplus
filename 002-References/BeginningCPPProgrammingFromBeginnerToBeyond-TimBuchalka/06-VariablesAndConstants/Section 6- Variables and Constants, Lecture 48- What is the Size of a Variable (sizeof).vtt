@@ -1,0 +1,355 @@
+WEBVTT
+
+00:00:05.400 --> 00:00:09.800
+In this video, we'll learn about c++ sizeof operator
+
+00:00:10.050 --> 00:00:13.050
+and about the climits and cfloat include files.
+
+00:00:13.850 --> 00:00:16.650
+C++ has an operator called sizeof
+
+00:00:16.650 --> 00:00:20.150
+that returns the number of bytes used to represent any type.
+
+00:00:21.030 --> 00:00:25.530
+Sizeof can also be used to determine the sizeof compound types like arrays,
+
+00:00:25.530 --> 00:00:29.730
+structures and objects. We'll learn about compound types in a future section.
+
+00:00:30.730 --> 00:00:33.530
+In order to determine the sizeof a specific type,
+
+00:00:33.530 --> 00:00:36.970
+we provide the name of the type inside the parentheses.
+
+00:00:36.970 --> 00:00:39.850
+For example, sizeof int, sizeof double.
+
+00:00:40.510 --> 00:00:42.810
+This will tell us the sizeof that type in
+
+00:00:42.810 --> 00:00:46.690
+bytes on the specific machine and compiler that you're running the program on.
+
+00:00:47.490 --> 00:00:50.790
+You can also determine the sizeof variables using their names.
+
+00:00:50.790 --> 00:00:53.290
+In this case, you can use the same syntax
+
+00:00:53.290 --> 00:00:57.090
+or you can omit the parentheses since they're optional for variables.
+
+00:00:58.420 --> 00:01:01.220
+The sizeof operator gets its information from
+
+00:01:01.220 --> 00:01:05.210
+two c++ include files, climits and cfloat.
+
+00:01:06.110 --> 00:01:08.910
+Climits provides information about integral types
+
+00:01:08.910 --> 00:01:11.210
+and seefloat about floating point types.
+
+00:01:11.760 --> 00:01:15.360
+These include files also provide a bunch of handy defined constants
+
+00:01:15.360 --> 00:01:18.660
+that we can use to determine the precision of our primitive types.
+
+00:01:19.060 --> 00:01:19.860
+For example,
+
+00:01:20.110 --> 00:01:24.710
+int max tells us the maximum value we can store in an int on this specific machine.
+
+00:01:25.310 --> 00:01:28.410
+There are many others, and you can see some in the examples in this slide.
+
+00:01:28.910 --> 00:01:33.410
+Let's head over to the CodeLite IDE, and we'll see what some of these values are in my machine.
+
+00:01:35.210 --> 00:01:36.710
+I'm in the CodeLite IDE
+
+00:01:36.710 --> 00:01:40.710
+and I've written some code that uses the sizeof operator. Let me walk you through it.
+
+00:01:41.210 --> 00:01:43.810
+First thing we'll see is that we're including iostream
+
+00:01:43.810 --> 00:01:46.010
+and we're also including climits.
+
+00:01:46.010 --> 00:01:48.210
+Everything I'm using here will use climits.
+
+00:01:48.210 --> 00:01:52.670
+You can get the same information in cfloat, and I'll leave that as an exercise for you if you like.
+
+00:01:53.470 --> 00:01:57.570
+First thing we'll do is we'll output sizeof information for types.
+
+00:01:57.930 --> 00:02:00.930
+So in this case, I'm going to output char,
+
+00:02:00.930 --> 00:02:03.230
+followed by sizeof char and bytes,
+
+00:02:03.590 --> 00:02:06.490
+sizeof int, sizeof unsigned int
+
+00:02:06.490 --> 00:02:08.790
+short, long and long, long.
+
+00:02:08.790 --> 00:02:10.090
+Now when I run this,
+
+00:02:10.090 --> 00:02:12.290
+I'll get information about how
+
+00:02:12.290 --> 00:02:14.650
+big or how much storage is necessary
+
+00:02:14.650 --> 00:02:17.650
+to represent a character an integer and so forth
+
+00:02:17.650 --> 00:02:21.450
+on my specific machine using this specific compiler.
+
+00:02:21.850 --> 00:02:25.350
+Okay. Now the rest of the code is commented out. And again, I'll uncomment that
+
+00:02:25.350 --> 00:02:27.650
+as we go through. So what I'll do is
+
+00:02:27.650 --> 00:02:30.850
+and I've created a project here called sizeof operator project,
+
+00:02:30.850 --> 00:02:33.950
+and you can run this code on your machine and see what your values look like.
+
+00:02:33.950 --> 00:02:35.250
+So I'll build and run.
+
+00:02:37.610 --> 00:02:40.310
+And you can see the sizeof information that's come up.
+
+00:02:40.310 --> 00:02:43.310
+A character is 1 byte, an integer is 4 bytes,
+
+00:02:43.310 --> 00:02:46.310
+an unsigned integer is also 4 bytes, that makes sense
+
+00:02:46.310 --> 00:02:49.510
+because the only difference between an int and an unsigned int
+
+00:02:49.510 --> 00:02:53.110
+is that signed bit and how much precision you can store in it
+
+00:02:53.710 --> 00:02:57.070
+a short integer is 2 bytes. A long integer is 4 bytes.
+
+00:02:57.070 --> 00:03:00.630
+A long, long integer is 8 bytes. And there you go.
+
+00:03:00.830 --> 00:03:05.030
+Now I'm running a 32-bit compiler on a 64-bit operating system.
+
+00:03:05.280 --> 00:03:09.780
+If you're running a 64-bit compiler, these numbers will likely be different.
+
+00:03:11.080 --> 00:03:15.480
+All right. So that takes care of the the basic sizeof for the integral types.
+
+00:03:15.480 --> 00:03:17.980
+Let's look at some of the floating point types.
+
+00:03:18.640 --> 00:03:22.300
+So in this case, you can see that I want the sizeof a float,
+
+00:03:22.300 --> 00:03:24.900
+a sizeof a double and the sizeof the long double.
+
+00:03:25.500 --> 00:03:27.760
+Okay. So what we can do is we can build and run.
+
+00:03:29.560 --> 00:03:33.760
+And you can see now that a float on this particular machine again is 4 bytes,
+
+00:03:33.760 --> 00:03:37.060
+a double is 8 bytes and a long double is 12 bytes.
+
+00:03:37.060 --> 00:03:40.560
+So that's the amount of storage that it takes to represent
+
+00:03:40.860 --> 00:03:42.860
+these specific types on this machine.
+
+00:03:44.160 --> 00:03:46.660
+Okay. So now the climits file
+
+00:03:46.660 --> 00:03:50.460
+contains some pretty nice defined constants,
+
+00:03:50.460 --> 00:03:54.360
+and let's use some of them. You can see what it's like. In this case,
+
+00:03:55.660 --> 00:03:58.660
+I want minimum value. So I want to know what's the minimum value
+
+00:03:58.660 --> 00:04:03.020
+that I can store in a character, what's the minimum value that I can store in an integer,
+
+00:04:03.020 --> 00:04:05.620
+in a short integer, in a long integer
+
+00:04:05.620 --> 00:04:09.220
+and in a long, long integer. And you can see the defines are right here,
+
+00:04:09.720 --> 00:04:11.600
+and those will default to some integers.
+
+00:04:11.600 --> 00:04:14.900
+So let's let's run this now. Again, I'll build and run.
+
+00:04:16.400 --> 00:04:20.000
+And you can see that the minimum value I can store in a character is -128.
+
+00:04:20.000 --> 00:04:23.200
+That makes sense because a character is 1 byte big.
+
+00:04:24.000 --> 00:04:25.800
+In an integer, you can see the number there.
+
+00:04:25.800 --> 00:04:30.200
+In a short -32768. The long and the long,
+
+00:04:31.450 --> 00:04:34.950
+long your numbers may look different on your machine depending on a lot of factors.
+
+00:04:36.550 --> 00:04:38.750
+All right. Now we can do the maximum values,
+
+00:04:40.550 --> 00:04:42.150
+and it's exactly the same except.
+
+00:04:42.150 --> 00:04:45.750
+We're doing char max, int max instead of char min and int min.
+
+00:04:46.250 --> 00:04:48.850
+I'll run this again, and I'll press ctrl F5 to run.
+
+00:04:50.750 --> 00:04:53.950
+And now, our maximum values are for characters 127,
+
+00:04:53.950 --> 00:04:57.150
+for short 32767 and for long, longs,
+
+00:04:57.150 --> 00:04:58.650
+you can see that's a pretty big number.
+
+00:05:01.010 --> 00:05:06.000
+All right. So that's the use of climits and sizeof with types.
+
+00:05:06.000 --> 00:05:10.000
+We can also use sizeof with variable names. And I'll show you an example here
+
+00:05:10.500 --> 00:05:13.100
+where what we have here is
+
+00:05:13.100 --> 00:05:15.600
+here we've got an integer called age,
+
+00:05:15.600 --> 00:05:19.100
+and we're assigning 21 to it. We're not going to use the 21 at all.
+
+00:05:19.100 --> 00:05:22.100
+All we're interested in is the sizeof that variable.
+
+00:05:22.100 --> 00:05:26.200
+So rather than sizeof int, here we're saying sizeof age.
+
+00:05:26.800 --> 00:05:28.950
+This is one syntactic variant.
+
+00:05:28.950 --> 00:05:32.250
+We can also just say sizeof age without the parentheses.
+
+00:05:32.910 --> 00:05:34.910
+So I'm doing that for an integer called age.
+
+00:05:34.910 --> 00:05:37.410
+And I'm doing the same for a double called wage.
+
+00:05:37.770 --> 00:05:40.770
+So obviously, we would expect the double to be much bigger.
+
+00:05:40.970 --> 00:05:44.470
+But again, what I'm doing in here is I'm using the variable name
+
+00:05:44.470 --> 00:05:46.830
+instead of the type here as well.
+
+00:05:47.630 --> 00:05:49.330
+All right. So let's run this one more time.
+
+00:05:50.630 --> 00:05:53.630
+And what we've got now at the bottom here is that
+
+00:05:53.630 --> 00:05:57.890
+the sizeof using variable names. So age is 4 bytes.
+
+00:05:57.890 --> 00:06:01.880
+And if you recall here we know that age is an integer right,
+
+00:06:01.880 --> 00:06:06.280
+and integer up top is 4 bytes if you recall that statement at the top.
+
+00:06:06.280 --> 00:06:07.780
+So age is 4 bytes.
+
+00:06:08.780 --> 00:06:11.780
+The other syntax variant gives you exactly the same result.
+
+00:06:11.780 --> 00:06:16.080
+And wage is a double, which is 8 bytes and you can see our doubles here is 8 bytes.
+
+00:06:16.480 --> 00:06:19.280
+You may be wondering why in the world would I ever use this stuff.
+
+00:06:19.280 --> 00:06:22.280
+Well, it's important a to understand
+
+00:06:22.280 --> 00:06:25.380
+what the size and precision of your
+
+00:06:25.380 --> 00:06:26.980
+types are on your system.
+
+00:06:27.640 --> 00:06:31.140
+Later on when we deal with arrays and other data structures,
+
+00:06:31.140 --> 00:06:34.800
+sometimes it's nice to be able to understand how big something is,
+
+00:06:34.800 --> 00:06:36.500
+how big each section of it is.
+
+00:06:37.000 --> 00:06:40.600
+This is one of the big differences between c++ and other languages
+
+00:06:40.600 --> 00:06:42.600
+like java and python.
+
+00:06:42.600 --> 00:06:46.400
+But those languages, you're really far removed from the machine.
+
+00:06:46.400 --> 00:06:48.600
+So you're programming at a much higher level.
+
+00:06:48.600 --> 00:06:52.400
+C++,  we're at a lower level. So we've got to deal with this kind of thing.

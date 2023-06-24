@@ -1,0 +1,152 @@
+WEBVTT
+
+00:00:05.500 --> 00:00:07.819
+In this video, we'll talk
+about the functions that
+
+00:00:07.820 --> 00:00:09.299
+we can use with characters.
+
+00:00:10.139 --> 00:00:14.830
+This cctype library includes very
+simple and very useful functions
+
+00:00:15.089 --> 00:00:18.729
+that allow the testing of characters
+for various properties as well as
+
+00:00:18.730 --> 00:00:22.990
+the conversion of characters from
+upper to lower or lower to uppercase.
+
+00:00:23.820 --> 00:00:27.159
+In order to use these functions,
+you must include cctype.
+
+00:00:28.520 --> 00:00:31.070
+The functions all expect
+a single character.
+
+00:00:31.509 --> 00:00:35.540
+In the case of the testing functions,
+they evaluate to true or false.
+
+00:00:35.949 --> 00:00:38.880
+And the conversion functions
+return the converted character.
+
+00:00:39.730 --> 00:00:41.130
+Let's see some of these functions.
+
+00:00:44.889 --> 00:00:47.830
+This table contains some of
+the functions in cctype that
+
+00:00:47.830 --> 00:00:49.589
+allow for testing of characters.
+
+00:00:50.410 --> 00:00:53.369
+You call the function and
+pass into character you wish
+
+00:00:53.369 --> 00:00:54.990
+to test in the parentheses.
+
+00:00:55.990 --> 00:00:58.760
+The function that evaluates
+to true or false depending on
+
+00:00:58.760 --> 00:01:01.610
+whether the character has the
+property your testing or not.
+
+00:01:02.889 --> 00:01:06.979
+Isalpha test to see if a character
+is a letter, either uppercase or
+
+00:01:07.770 --> 00:01:10.789
+lowercase and evaluates to true
+if it is or false otherwise.
+
+00:01:11.719 --> 00:01:15.080
+Isalnum test to see if the
+character is a letter or digit.
+
+00:01:16.120 --> 00:01:18.870
+Isdigit test to see if
+the character is a digit.
+
+00:01:19.890 --> 00:01:23.509
+Islower test to see if the
+character is a lowercase letter.
+
+00:01:24.440 --> 00:01:28.229
+Isprint test to see if the
+character is a printable character.
+
+00:01:29.080 --> 00:01:32.960
+Ispunct test to see if the
+characters of punctuation character.
+
+00:01:34.000 --> 00:01:37.190
+Isupper test to see if the
+characters and uppercase letter.
+
+00:01:38.010 --> 00:01:42.050
+And isspace test to see if the
+characters of whitespace character.
+
+00:01:43.349 --> 00:01:45.690
+There are a few other
+functions in cctype that I
+
+00:01:45.700 --> 00:01:46.950
+haven't listed in the table.
+
+00:01:47.260 --> 00:01:49.710
+You can refer to the
+c++ docs for those.
+
+00:01:50.920 --> 00:01:52.660
+Now let's see the
+conversion functions.
+
+00:01:55.990 --> 00:01:59.810
+The two character conversion
+functions are tolower and toupper.
+
+00:02:00.500 --> 00:02:04.750
+Tolower evaluates the lower case
+equivalent of the character passed in
+
+00:02:05.219 --> 00:02:07.820
+and toupper the uppercase equivalent.
+
+00:02:08.770 --> 00:02:11.970
+If these functions can't
+perform the conversion, then a
+
+00:02:11.970 --> 00:02:14.880
+function simply evaluate to the
+character that was passed in.
+
+00:02:16.179 --> 00:02:18.519
+As you can see, these
+functions are very handy.
+
+00:02:18.730 --> 00:02:20.359
+They're also extremely efficient.
+
+00:02:21.049 --> 00:02:23.699
+We'll use these functions
+in the next few videos when
+
+00:02:23.699 --> 00:02:25.090
+we talk more about strings.
+
+00:02:25.990 --> 00:02:28.780
+In the next video, we'll
+learn about c style strings.
+
+00:02:28.920 --> 00:02:29.920
+I'll see you there.

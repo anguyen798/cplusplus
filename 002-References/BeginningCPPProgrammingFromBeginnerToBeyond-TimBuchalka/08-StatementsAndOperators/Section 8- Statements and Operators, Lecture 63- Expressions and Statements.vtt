@@ -1,0 +1,175 @@
+WEBVTT
+
+00:00:05.400 --> 00:00:09.500
+In this video, will learn about c++ expressions and statements.
+
+00:00:10.200 --> 00:00:11.600
+Let's start with expressions.
+
+00:00:12.300 --> 00:00:15.800
+Expressions are the most basic building blocks in programming.
+
+00:00:16.600 --> 00:00:19.600
+Expressions are defined as follows in the c++ standard.
+
+00:00:20.300 --> 00:00:24.300
+A sequence of operators and operands that specifies a computation.
+
+00:00:24.800 --> 00:00:28.200
+We'll see some examples shortly. But for now you can think of an expression
+
+00:00:28.200 --> 00:00:31.500
+as a sequence of operation operators that computer value.
+
+00:00:31.800 --> 00:00:33.500
+That's a pretty simplistic view, but it will
+
+00:00:33.500 --> 00:00:37.000
+serve us well until we learn more advanced c++ features.
+
+00:00:37.700 --> 00:00:40.300
+Let's see some example c++ expressions.
+
+00:00:40.960 --> 00:00:43.060
+Let's start with the literal 34.
+
+00:00:43.060 --> 00:00:45.960
+That's an expression whose value is simply 34.
+
+00:00:45.960 --> 00:00:49.860
+Variables, such as favorite number in this example, are also expressions
+
+00:00:49.860 --> 00:00:52.260
+since their value is the value of the variable.
+
+00:00:53.160 --> 00:00:57.760
+We can also have mathematical expressions, such as 1.5 + 2.8,
+
+00:00:57.760 --> 00:00:59.560
+which will add those two numbers.
+
+00:01:00.060 --> 00:01:02.960
+And 2 * 5, which will multiply 2 and 5.
+
+00:01:02.960 --> 00:01:05.460
+There are many, many more examples of expressions
+
+00:01:05.460 --> 00:01:07.860
+since they're many operators in c++,
+
+00:01:07.860 --> 00:01:10.360
+and we can combine them to make any expression we wish.
+
+00:01:10.960 --> 00:01:13.960
+If we wanted to test to see if A was greater than B,
+
+00:01:13.960 --> 00:01:18.560
+where A and B are variables, we can use the greater than sign between the A and the B.
+
+00:01:18.810 --> 00:01:21.810
+This evaluates to a Boolean, a true false value.
+
+00:01:22.610 --> 00:01:25.910
+Notice the last example, this is an assignment expression.
+
+00:01:25.910 --> 00:01:27.710
+We are assigning B to A.
+
+00:01:28.210 --> 00:01:32.560
+This is also an expression because the value of this expression is what we just assign.
+
+00:01:32.560 --> 00:01:36.860
+We'll talk more about this in a few videos when we talked about assignment statements in detail.
+
+00:01:37.360 --> 00:01:40.360
+Now let's see what makes a statement different from an expression.
+
+00:01:40.360 --> 00:01:44.460
+A statement is a complete line of code that performs some action.
+
+00:01:44.960 --> 00:01:47.560
+Statements are usually terminated with a semicolon.
+
+00:01:47.560 --> 00:01:49.560
+When you first learn c++,
+
+00:01:49.560 --> 00:01:53.460
+it's a very common error to forget to terminate statements with semicolons.
+
+00:01:53.860 --> 00:01:56.060
+Statements usually contain expressions.
+
+00:01:56.420 --> 00:02:00.120
+As you would expect, c++ has many types of statements.
+
+00:02:00.120 --> 00:02:04.120
+It has expression statements, the null statement, compound statements and more.
+
+00:02:04.120 --> 00:02:08.120
+We'll discuss specific types of statements in the next several sections of the course.
+
+00:02:08.120 --> 00:02:10.480
+Let's see some example c++ statements.
+
+00:02:11.080 --> 00:02:13.180
+The first statement is the declaration statement,
+
+00:02:13.180 --> 00:02:16.280
+which we've already seen in this course when we declared variables.
+
+00:02:16.280 --> 00:02:19.160
+In this example, we declare x2b of type integer.
+
+00:02:20.060 --> 00:02:22.460
+The second is a simple assignment statement,
+
+00:02:22.460 --> 00:02:26.120
+where we assign the literal expression 12 to favorite number.
+
+00:02:26.920 --> 00:02:29.120
+The third example is an expression statement.
+
+00:02:29.520 --> 00:02:32.520
+Note that is simply an expression with a semicolon at the end.
+
+00:02:33.120 --> 00:02:37.320
+It's a pretty useless statement though since we add 2 numbers, but don't do anything with the sum.
+
+00:02:37.820 --> 00:02:42.020
+The fourth example is x equals 2 * 5 is an assignment statement.
+
+00:02:42.020 --> 00:02:45.380
+First, we multiply 2 and 5 and store the product in x.
+
+00:02:45.380 --> 00:02:48.080
+Notice how expression are used to make up the statement.
+
+00:02:48.780 --> 00:02:50.780
+The next example is an if statement.
+
+00:02:51.280 --> 00:02:54.840
+If statements give you lots of power to control the flow of your program.
+
+00:02:54.840 --> 00:02:57.040
+We'll discuss if statements in detail.
+
+00:02:57.340 --> 00:02:59.640
+But you can see that we're comparing A and B.
+
+00:02:59.640 --> 00:03:03.840
+And if A is greater than B, then we execute the statement that displays to the console.
+
+00:03:04.340 --> 00:03:06.440
+So here you can see an example of a statement
+
+00:03:06.440 --> 00:03:10.440
+that contains another statement within it and is also made up of expressions.
+
+00:03:10.640 --> 00:03:12.840
+The final statement is simply a semicolon.
+
+00:03:12.840 --> 00:03:15.640
+This is the null statement and perform has no actions.
+
+00:03:16.140 --> 00:03:19.340
+You don't often used in all statement, but it can come in handy sometimes.

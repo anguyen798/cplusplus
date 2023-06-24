@@ -1,0 +1,382 @@
+WEBVTT
+
+00:00:06.900 --> 00:00:11.500
+In this video, we'll see how we can use base class references and dynamic polymorphism.
+
+00:00:12.400 --> 00:00:14.600
+In addition to base class pointers,
+
+00:00:14.600 --> 00:00:19.000
+we can also use base class references and have polymorphic function calls.
+
+00:00:19.300 --> 00:00:22.900
+This is very useful when we pass objects to functions by reference,
+
+00:00:22.900 --> 00:00:26.100
+and the functions expect a reference to a base class object.
+
+00:00:27.700 --> 00:00:32.600
+First, let's see how we can use references directly and achieve dynamic binding of virtual methods.
+
+00:00:33.480 --> 00:00:37.080
+We'll use the same account class hierarchy that we've used throughout this section.
+
+00:00:37.380 --> 00:00:39.580
+So let's create an account object a.
+
+00:00:39.940 --> 00:00:43.300
+And then we'll create a reference ref that's a reference to an account,
+
+00:00:43.300 --> 00:00:46.900
+that's the base class reference, and we initialize ref to a.
+
+00:00:47.300 --> 00:00:50.900
+Now if we call the withdraw method using the ref reference,
+
+00:00:50.900 --> 00:00:54.800
+we're calling the accounts withdraw method, but the binding is dynamic.
+
+00:00:55.600 --> 00:00:57.800
+Let's see another example with a trust account.
+
+00:00:58.300 --> 00:01:00.900
+In the second example, we created trust object t.
+
+00:01:01.670 --> 00:01:05.270
+And then we'll create ref1 as a reference to an account object.
+
+00:01:05.270 --> 00:01:09.170
+That's the base class reference, and we initialize ref one to t.
+
+00:01:10.050 --> 00:01:13.650
+Now if we call the withdraw method using the reference ref1,
+
+00:01:13.650 --> 00:01:15.650
+we call the trust withdraw method.
+
+00:01:15.650 --> 00:01:18.150
+You can see that this method was bound dynamically.
+
+00:01:18.510 --> 00:01:20.010
+Let's see a more useful example.
+
+00:01:22.010 --> 00:01:24.210
+Suppose we have a method called do withdraw,
+
+00:01:24.610 --> 00:01:27.210
+and it expects a reference to an account object.
+
+00:01:27.210 --> 00:01:29.410
+Note this is our base class reference.
+
+00:01:29.770 --> 00:01:32.970
+It also expects a double with the amount to withdraw.
+
+00:01:33.770 --> 00:01:36.270
+In the function body, we call the withdraw method
+
+00:01:36.270 --> 00:01:38.770
+of whatever account object was passed in,
+
+00:01:38.770 --> 00:01:40.770
+and we also use the amount supplied.
+
+00:01:41.270 --> 00:01:43.630
+So let's call this method with a few objects.
+
+00:01:43.630 --> 00:01:45.630
+First, we create an account object a.
+
+00:01:46.130 --> 00:01:49.130
+And we pass a and 1000 to do withdraw.
+
+00:01:49.630 --> 00:01:51.830
+In the body of the do withdraw function,
+
+00:01:52.330 --> 00:01:56.330
+we bind the withdraw call to account withdraw dynamically.
+
+00:01:57.330 --> 00:02:00.330
+Now suppose we create a trust account object named t,
+
+00:02:00.830 --> 00:02:04.130
+and we pass t and 1000 to do withdraw.
+
+00:02:04.790 --> 00:02:07.990
+The withdraw method that will be called in the do withdraw method
+
+00:02:07.990 --> 00:02:11.290
+is the trust withdraw since we're binding it dynamically.
+
+00:02:11.890 --> 00:02:15.090
+You can see that functions expecting base class references
+
+00:02:15.090 --> 00:02:19.390
+allow us to think in the general again and not have to worry about details.
+
+00:02:19.390 --> 00:02:22.690
+So let's head over to the IDE and try some base class references.
+
+00:02:23.940 --> 00:02:27.040
+So I'm in the IDE. I'm in the section 16 workspace
+
+00:02:27.040 --> 00:02:29.640
+in the BaseClassReferences project.
+
+00:02:30.540 --> 00:02:34.340
+And let's go through a couple of simple examples here. First of all,
+
+00:02:34.340 --> 00:02:36.340
+this is similar to what I did on the slide here.
+
+00:02:37.140 --> 00:02:39.940
+Let's take a look at these three lines of code right here.
+
+00:02:40.240 --> 00:02:44.140
+Here we're creating an account object a, and we're using the same account hierarchy
+
+00:02:44.140 --> 00:02:45.940
+we've been using throughout this section.
+
+00:02:46.740 --> 00:02:48.740
+So that creates the account object.
+
+00:02:48.740 --> 00:02:51.620
+And now I've got a ref, that's my variable name.
+
+00:02:51.620 --> 00:02:54.980
+And it is a reference to an account. That's my base class reference.
+
+00:02:54.980 --> 00:02:57.480
+And I'm initializing it to a right here.
+
+00:02:57.980 --> 00:03:00.980
+So when I call ref withdraw,
+
+00:03:00.980 --> 00:03:03.180
+that's going to bind it dynamically.
+
+00:03:03.580 --> 00:03:06.940
+And in this case, I happen to be referring to an account.
+
+00:03:06.940 --> 00:03:08.940
+So it will call account withdraw.
+
+00:03:09.930 --> 00:03:14.330
+Now in this case here on line 15 through 52, we've got a trust object now,
+
+00:03:14.330 --> 00:03:15.430
+which is a little bit different.
+
+00:03:16.200 --> 00:03:19.000
+So ref1, again, is a reference to an account,
+
+00:03:19.000 --> 00:03:20.990
+that's my base class reference.
+
+00:03:21.540 --> 00:03:25.740
+And I'm initializing it to t, t is a trust account. So that's perfectly valid.
+
+00:03:26.340 --> 00:03:29.460
+In this case, when I call ref1's withdraw,
+
+00:03:29.960 --> 00:03:33.320
+what's going to happen is that method call will be bound dynamically
+
+00:03:33.320 --> 00:03:35.660
+because it'll realize that ref1
+
+00:03:35.660 --> 00:03:38.320
+is currently referring to a trust account.
+
+00:03:38.820 --> 00:03:42.220
+So it'll bind it to trusts withdrawal because they're all virtual methods.
+
+00:03:43.580 --> 00:03:46.240
+Okay. So that's pretty straightforward I think.
+
+00:03:46.240 --> 00:03:50.600
+Now let's take a look at this function call. I've got a c++ function up here
+
+00:03:50.600 --> 00:03:54.500
+on line 40. It's the same one we did on the slides, it's called do withdraw,
+
+00:03:54.500 --> 00:03:57.700
+and it expects a reference to an account object.
+
+00:03:57.700 --> 00:04:00.300
+That's my base class reference right there.
+
+00:04:00.550 --> 00:04:03.350
+It also expects a double, which is going to be passed in.
+
+00:04:03.350 --> 00:04:07.710
+And then in the body of this function, I'm just calling account and withdraw.
+
+00:04:08.260 --> 00:04:12.260
+So the idea here is since the withdraw function is a virtual function,
+
+00:04:12.260 --> 00:04:14.260
+this will be bound dynamically.
+
+00:04:15.060 --> 00:04:17.760
+And here's an example we're creating four accounts:
+
+00:04:17.760 --> 00:04:21.260
+a1 a2 a3 and a4, they're all different types.
+
+00:04:21.260 --> 00:04:25.260
+One's an account, one's a savings account, checking account and trust account,as you can see.
+
+00:04:25.620 --> 00:04:30.120
+And then I'm calling do withdraw, and I'm passing in a1 a2 a3 and a4.
+
+00:04:30.820 --> 00:04:34.030
+These methods will be bound dynamically, and we'll see this
+
+00:04:34.030 --> 00:04:36.290
+behavior, which is exactly what we expect.
+
+00:04:36.990 --> 00:04:40.490
+Now every compiler vendor is free to implement
+
+00:04:40.490 --> 00:04:44.890
+dynamic polymorphism using virtual functions however they wish.
+
+00:04:44.890 --> 00:04:47.150
+But most implementations are pretty similar.
+
+00:04:47.150 --> 00:04:49.650
+So let's take a look at this. Let's run the debugger.
+
+00:04:50.950 --> 00:04:52.950
+And I've put in a couple of break points already.
+
+00:04:53.650 --> 00:04:56.850
+And what's important here is we'll look at all these variables. There's a lot of variables.
+
+00:04:56.850 --> 00:04:58.450
+We're only interested in a couple.
+
+00:04:58.750 --> 00:05:01.750
+Now at this point, we have ref and we have ref1,
+
+00:05:01.750 --> 00:05:04.950
+and all that code already executed but let's take a look at ref.
+
+00:05:05.150 --> 00:05:07.030
+You can see ref right here,
+
+00:05:07.430 --> 00:05:11.530
+and you can see that ref is referring to an account, right. That's the whole idea.
+
+00:05:12.030 --> 00:05:14.830
+Now you also see this bunch of code in here.
+
+00:05:14.830 --> 00:05:17.830
+You see that vptr, that's your virtual pointer.
+
+00:05:17.830 --> 00:05:21.830
+So this tells you that there is dynamic polymorphism going on.
+
+00:05:22.430 --> 00:05:26.830
+But now take a look at ref1. Here's ref1. If we expand ref1,
+
+00:05:27.130 --> 00:05:29.930
+here you can see that ref1 while it is
+
+00:05:29.930 --> 00:05:31.730
+a reference to a base class,
+
+00:05:31.730 --> 00:05:34.730
+it's actually referring to a trust account right now.
+
+00:05:35.030 --> 00:05:39.230
+And you can see it right there. So you can see the trust account has the account part of it.
+
+00:05:40.110 --> 00:05:43.410
+And so that's pretty cool. That you can see all that information right in here,
+
+00:05:43.410 --> 00:05:45.610
+and it really gives you a good idea of what's going on.
+
+00:05:46.270 --> 00:05:48.470
+Now let's take a look at the do withdraw.
+
+00:05:48.470 --> 00:05:51.670
+We're right here on line 59. We're about to call do withdraw.
+
+00:05:51.670 --> 00:05:55.030
+We're about to pass that account a1 in with a 1000.
+
+00:05:55.030 --> 00:05:58.830
+So I'm going to step through it. And now I'm in do withdraw.
+
+00:05:58.830 --> 00:06:02.030
+So let's take a look at what account is all about.
+
+00:06:02.030 --> 00:06:06.290
+In this case, the account that was passed in is a reference to account, right, of course it is.
+
+00:06:06.290 --> 00:06:10.650
+That's my base class reference. But in this case, when I expand it, you can see
+
+00:06:10.650 --> 00:06:14.650
+that it's actually referring to an account object since it didn't expand out.
+
+00:06:14.950 --> 00:06:19.410
+Let's try it one more time, and we'll do it with a2, a2 is a savings account.
+
+00:06:19.770 --> 00:06:20.870
+So I'll step through that.
+
+00:06:21.470 --> 00:06:24.670
+And now if we look at account, you can see that account
+
+00:06:25.170 --> 00:06:27.830
+while it is still a reference to the base class,
+
+00:06:28.330 --> 00:06:31.030
+it is currently referring to a savings account.
+
+00:06:31.530 --> 00:06:35.530
+And you can see that the savings account has the account part within it.
+
+00:06:36.430 --> 00:06:40.430
+So when we execute this and I'll just step through it real quickly, we'll do the last two,
+
+00:06:41.530 --> 00:06:43.030
+and when we see the output,
+
+00:06:43.930 --> 00:06:45.930
+and here you can see the output.
+
+00:06:46.330 --> 00:06:50.330
+So we're doing account withdraw, trusts withdraw, and then we're saying account savings, checking
+
+00:06:50.330 --> 00:06:52.330
+and trust withdraw, right down here.
+
+00:06:52.330 --> 00:06:54.530
+So it's exactly like we expect.
+
+00:06:54.530 --> 00:06:57.430
+So you can see that when you use a base class reference,
+
+00:06:57.430 --> 00:07:00.330
+you still get the polymorphic behavior, which is pretty cool.
+
+00:07:00.730 --> 00:07:04.390
+And writing functions like these that expect references to
+
+00:07:04.390 --> 00:07:07.490
+base class objects is really handy to do,
+
+00:07:07.490 --> 00:07:09.990
+and it saves you from thinking in detail again.
+
+00:07:09.990 --> 00:07:12.890
+So I'm thinking here just I want to deposit that amount
+
+00:07:12.890 --> 00:07:17.090
+to whatever account was passed into me, so I can think very very abstractly.

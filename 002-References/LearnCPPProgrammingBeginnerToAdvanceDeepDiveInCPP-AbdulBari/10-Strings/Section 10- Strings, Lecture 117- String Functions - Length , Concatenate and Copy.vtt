@@ -1,0 +1,502 @@
+WEBVTT
+
+00:00.430 --> 00:04.630
+In this video, we will learn about functions upon string.
+
+00:05.560 --> 00:07.690
+There's a header file called C string.
+
+00:07.990 --> 00:10.480
+Even you can use string dot edge.
+
+00:12.340 --> 00:15.760
+These Hydrofoils are having some built in functions.
+
+00:16.330 --> 00:24.280
+With that, you can perform some operations on string and this is a string using a character or a string
+
+00:24.280 --> 00:25.720
+using a pointer.
+
+00:26.560 --> 00:27.940
+Let us look at the functions.
+
+00:27.940 --> 00:28.990
+I'll show you function.
+
+00:28.990 --> 00:32.410
+And also I will give a demonstration of each function.
+
+00:33.040 --> 00:35.090
+So here, this is an array.
+
+00:35.110 --> 00:38.530
+Let us call this as string one, str one.
+
+00:38.530 --> 00:41.920
+And if you want to find out the length of this string.
+
+00:41.920 --> 00:43.720
+So the length of this string is.
+
+00:43.750 --> 00:47.980
+This is one, two, three, four, five letters are there.
+
+00:47.980 --> 00:49.510
+So the length is five.
+
+00:50.290 --> 00:54.900
+And if you see the indices, the indices are from zero and the last index is five.
+
+00:54.910 --> 00:57.790
+But at that index, none character is present.
+
+00:57.790 --> 01:00.820
+So total five alphabets are there in this string.
+
+01:01.210 --> 01:05.190
+So there is a function called string length Australian.
+
+01:05.200 --> 01:09.160
+Using this you can find out the length of any string.
+
+01:11.280 --> 01:13.260
+Let us see the demonstration for this one.
+
+01:14.160 --> 01:20.460
+Here I have a skeleton of a program in which already I have declared an array and assign it with some
+
+01:20.460 --> 01:20.790
+string.
+
+01:20.790 --> 01:21.330
+Hello.
+
+01:21.930 --> 01:23.940
+So let us call that function.
+
+01:23.940 --> 01:25.890
+So for that I will include.
+
+01:28.180 --> 01:29.380
+CS sprinkler.
+
+01:29.860 --> 01:30.340
+Sorry.
+
+01:32.730 --> 01:36.480
+See, Sting had a fight, so Sea Sting is included.
+
+01:37.800 --> 01:39.060
+You can call that function.
+
+01:39.060 --> 01:46.590
+So I will say sea out star alien and the sting is SW.
+
+01:47.250 --> 01:50.160
+So also I will use NULL for a new line.
+
+01:50.280 --> 01:51.090
+Let us run it.
+
+01:54.370 --> 01:54.580
+Yes.
+
+01:54.640 --> 01:57.310
+Here you can see that land this five.
+
+01:59.790 --> 02:00.510
+I will.
+
+02:01.580 --> 02:04.670
+Write more in the string hello world.
+
+02:04.700 --> 02:06.110
+Now let us run and see.
+
+02:08.300 --> 02:13.720
+So add 11 alphabets, five for hello and five for World and there is a space also.
+
+02:13.730 --> 02:16.550
+So altogether 11 characters are there.
+
+02:16.550 --> 02:19.370
+So the length of first string is 11.
+
+02:20.000 --> 02:23.390
+Let me do it using a pointer to a string.
+
+02:23.600 --> 02:25.670
+So I will take a pointer to a string.
+
+02:25.670 --> 02:27.770
+Then I will say see out.
+
+02:29.520 --> 02:31.470
+Enter a string.
+
+02:32.890 --> 02:39.100
+Then I will use the scene and say s so this will be reading only one word.
+
+02:39.190 --> 02:44.260
+Now whatever the string entered from the keyboard, I'll be displaying the length of that string.
+
+02:44.260 --> 02:51.520
+So here I will include a message that is length and string length.
+
+02:51.730 --> 02:53.680
+So here I can get the string length.
+
+02:54.850 --> 02:57.430
+So here I have taken a pointer to a string.
+
+02:57.440 --> 02:58.680
+Then I'm using scene.
+
+02:58.690 --> 03:01.030
+I'm reading a string.
+
+03:01.150 --> 03:02.230
+Let us run it.
+
+03:03.810 --> 03:04.500
+Here.
+
+03:04.690 --> 03:05.940
+Interesting.
+
+03:06.420 --> 03:10.470
+So I'll give a string programming.
+
+03:11.740 --> 03:14.950
+There are 11 characters in this one length.
+
+03:14.970 --> 03:15.550
+11.
+
+03:17.900 --> 03:19.090
+I'll give you a string.
+
+03:19.100 --> 03:21.200
+That is holiday.
+
+03:22.050 --> 03:23.430
+Seven letters are there.
+
+03:24.270 --> 03:25.470
+I'll try it once again.
+
+03:25.470 --> 03:27.240
+I'll try to type two words.
+
+03:27.450 --> 03:28.440
+Hello, world.
+
+03:28.920 --> 03:30.330
+Five letters only.
+
+03:30.360 --> 03:32.660
+It is saying that the length of a string is five.
+
+03:32.670 --> 03:34.220
+So actually it is taking only.
+
+03:34.230 --> 03:35.010
+Hello.
+
+03:35.040 --> 03:38.190
+Already we saw that it will not take multiple words.
+
+03:38.190 --> 03:40.920
+So by using scene, let us try this.
+
+03:40.920 --> 03:41.580
+Using.
+
+03:42.460 --> 03:44.140
+Get or get line.
+
+03:44.650 --> 03:48.550
+See in dot get line.
+
+03:50.400 --> 03:54.450
+And the sizes handed maximum size.
+
+03:54.990 --> 03:57.270
+Hello world.
+
+03:58.680 --> 04:00.210
+Yes, it is working.
+
+04:01.000 --> 04:04.140
+So if you get line and give multiple words, it will work.
+
+04:05.880 --> 04:09.240
+So this is about string lend function.
+
+04:10.470 --> 04:12.510
+Let us continue with the next function.
+
+04:13.260 --> 04:15.690
+Next function is string cat.
+
+04:15.720 --> 04:18.730
+This is for concatenating two strings.
+
+04:18.750 --> 04:22.370
+So you have to pass two strings as parameters.
+
+04:22.380 --> 04:24.720
+That is two character type arrays as parameters.
+
+04:24.720 --> 04:26.210
+First is destination.
+
+04:26.220 --> 04:27.420
+Second one is four.
+
+04:27.420 --> 04:29.850
+So it will concatenate two strings.
+
+04:30.030 --> 04:32.580
+So first is destination this one, right?
+
+04:32.880 --> 04:36.330
+It is already having string that is written as good.
+
+04:36.840 --> 04:40.680
+Then there is one more string that is having word.
+
+04:40.680 --> 04:41.650
+Morning.
+
+04:41.670 --> 04:43.470
+I want to combine these two.
+
+04:43.500 --> 04:46.770
+This two, I want to combine and store the result in this one.
+
+04:46.950 --> 04:53.310
+So how it should work as after this end of the first string, that is it is ending at D, then it should
+
+04:53.310 --> 04:54.950
+start writing morning here.
+
+04:54.960 --> 04:57.360
+So morning should be written here.
+
+04:57.990 --> 05:01.600
+And then after the end of this null character should be included.
+
+05:01.620 --> 05:05.040
+So this is what happens when you say concatenate a string.
+
+05:05.040 --> 05:10.890
+So this string will be attached to the end of the string and the continuation of this one, and it will
+
+05:10.890 --> 05:13.140
+form a single large string.
+
+05:13.900 --> 05:19.000
+And there is one more version of string concatenation that is STR and the CAT.
+
+05:19.000 --> 05:20.950
+So a letter end is included here.
+
+05:21.070 --> 05:27.040
+You can mention how many characters you want to concatenate from this second string that is so string
+
+05:27.040 --> 05:28.060
+that is modeling.
+
+05:28.060 --> 05:29.980
+Suppose you want only three letters.
+
+05:29.980 --> 05:35.860
+So this model will be concatenated with this code that is destination.
+
+05:35.860 --> 05:40.210
+So you can mention what length of the source you want to concatenate.
+
+05:40.420 --> 05:42.880
+So let us see the demonstration of this one.
+
+05:44.530 --> 05:48.340
+I already have a skeleton of a program containing two strings that is SW.
+
+05:48.340 --> 05:51.400
+One is having good and SW two is having morning.
+
+05:51.400 --> 05:53.710
+So I will use STR.
+
+05:55.270 --> 05:56.020
+Kat.
+
+05:56.230 --> 05:59.080
+Then I will say as one comma as to.
+
+06:00.330 --> 06:02.760
+Then I will print as one.
+
+06:08.600 --> 06:10.970
+So this morning should be included in this.
+
+06:10.970 --> 06:11.420
+Good.
+
+06:11.510 --> 06:12.740
+Let us see this.
+
+06:14.610 --> 06:18.930
+Yes, but I print S1 so it is a new thing now that is.
+
+06:18.930 --> 06:19.860
+Good morning.
+
+06:20.510 --> 06:22.730
+So this is what concatenation is.
+
+06:24.290 --> 06:30.860
+Now I have shown you there is one more version that screen and you can mention the number of alphabets.
+
+06:30.860 --> 06:33.560
+So I will take just three alphabets and I will run.
+
+06:35.330 --> 06:37.570
+So good and more, right?
+
+06:37.670 --> 06:43.250
+Only three letters are concatenated from this second string that is source of string.
+
+06:43.880 --> 06:45.800
+So that's all about concatenation.
+
+06:45.800 --> 06:47.430
+Let us go to the next function.
+
+06:47.450 --> 06:49.130
+Next function is string.
+
+06:49.130 --> 06:49.820
+Copy.
+
+06:49.910 --> 06:53.210
+This will copy the contents of one string to another string.
+
+06:53.210 --> 06:55.430
+So this is the source and this is a destination.
+
+06:55.430 --> 06:58.370
+So I want the contents of this source to be copied here.
+
+06:58.400 --> 06:59.900
+So this is having a string.
+
+06:59.900 --> 07:00.500
+Hello.
+
+07:00.500 --> 07:03.350
+So this hello should be copied here as it is.
+
+07:04.070 --> 07:05.210
+So hello.
+
+07:05.210 --> 07:06.890
+And then null character.
+
+07:06.980 --> 07:11.420
+So as it is, the same string will be copied in destination array also.
+
+07:11.420 --> 07:12.920
+So it needs to parameters.
+
+07:12.920 --> 07:17.830
+The first one where we want the copy to be and from source from where you want to copy.
+
+07:17.840 --> 07:20.180
+So from this side it will be copied in this one.
+
+07:21.040 --> 07:25.090
+So again, there is one more version that is SDR and CP VI.
+
+07:25.120 --> 07:29.560
+So in this you can mention how many letters you want to copy from here to here.
+
+07:29.710 --> 07:31.750
+Suppose you don't want to copy the entire string.
+
+07:31.750 --> 07:36.360
+You want to copy part of a string so you can mention how many letters you want to copy.
+
+07:36.370 --> 07:37.750
+That is length of a string.
+
+07:38.770 --> 07:40.260
+Let us see the demo of this one.
+
+07:40.270 --> 07:41.980
+We are here in this program already.
+
+07:41.980 --> 07:43.150
+I have two strings.
+
+07:43.150 --> 07:46.810
+One is having content that is good and next is empty.
+
+07:47.440 --> 07:51.280
+So now I will call this function still CB vi.
+
+07:52.270 --> 07:55.270
+Then the destination is S2 then sources.
+
+07:55.270 --> 07:59.170
+S1 So the contents of S1 should be copied in this too.
+
+07:59.680 --> 08:01.660
+So let us print S2 and see.
+
+08:03.190 --> 08:03.870
+And I'll.
+
+08:05.150 --> 08:06.860
+So here I am printing as to.
+
+08:08.860 --> 08:09.970
+Let us run this.
+
+08:10.880 --> 08:12.530
+Yes it has printed.
+
+08:12.650 --> 08:17.060
+So the contents of S1 are copied in S2.
+
+08:18.110 --> 08:24.380
+As I said, there is one more version of string copy that is str and p v.
+
+08:24.380 --> 08:27.470
+So I should mention how many letters I want to copy.
+
+08:27.470 --> 08:29.120
+So I'll say just two letters.
+
+08:29.120 --> 08:29.990
+So it will copy.
+
+08:29.990 --> 08:30.980
+Just go.
+
+08:31.010 --> 08:31.850
+That is go.
+
+08:32.390 --> 08:33.680
+Let us run it and see.
+
+08:34.650 --> 08:35.220
+Yes.
+
+08:35.220 --> 08:39.300
+Only two alphabets are copied from string one to string two.
+
+08:39.510 --> 08:43.320
+So this is about string copy copying one string to another string.

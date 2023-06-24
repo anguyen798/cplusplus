@@ -1,0 +1,523 @@
+WEBVTT
+
+00:00.970 --> 00:08.830
+Now our next challenge is to count the number of vowels, consonants and number of words in a string.
+
+00:09.220 --> 00:11.340
+So here I have an example string.
+
+00:11.350 --> 00:15.870
+A string is containing lowercase with wobbles as well as uppercase.
+
+00:15.890 --> 00:20.050
+So also the few letters are uppercase and the spaces are also there.
+
+00:20.050 --> 00:27.220
+So total three words are here and I have not taken any special characters or numbers in this one.
+
+00:28.330 --> 00:29.980
+Now let us solve this problem.
+
+00:30.520 --> 00:31.660
+I have to count vowels.
+
+00:31.660 --> 00:32.770
+So what are vowels?
+
+00:33.460 --> 00:37.450
+A e, i, o and you?
+
+00:37.480 --> 00:38.530
+These are vowels.
+
+00:39.100 --> 00:40.870
+Even these are also models.
+
+00:42.320 --> 00:42.820
+Right.
+
+00:42.830 --> 00:48.470
+So what I mean is if it is an uppercase or lowercase, so it could be in any case.
+
+00:48.500 --> 00:53.660
+So we have to check whether it's a vowel in lowercase as well as uppercase.
+
+00:53.660 --> 00:54.980
+You have to consider both.
+
+00:55.310 --> 00:58.580
+So while scanning a string, you should check for both of these.
+
+00:59.330 --> 01:06.880
+Now, if it is not a vowel, then there are two possibilities in this example string that it is a consonant,
+
+01:06.890 --> 01:07.190
+right?
+
+01:07.310 --> 01:08.540
+It's a consonant.
+
+01:08.570 --> 01:10.730
+Or it may be a space.
+
+01:10.760 --> 01:11.800
+It may be a space.
+
+01:11.810 --> 01:13.040
+This is a blank space.
+
+01:14.110 --> 01:19.800
+So if it is a blank space, then it means there is a new word starting now.
+
+01:19.870 --> 01:20.980
+Again, blank space.
+
+01:20.980 --> 01:22.720
+So only a word is a starting.
+
+01:23.420 --> 01:30.380
+So in this thing there are total three words and there are two spaces.
+
+01:30.620 --> 01:34.370
+So two spaces are there means there are three words.
+
+01:34.460 --> 01:38.150
+So this is the idea we have now, right now for our example, string.
+
+01:38.240 --> 01:40.760
+So if there is a space, then there is a new work.
+
+01:40.850 --> 01:45.030
+So you have to count the number of words means you have to count the number of spaces.
+
+01:45.050 --> 01:48.770
+If you've got two spaces, then there are three words.
+
+01:49.750 --> 01:55.510
+So for this example, string, how to find out this vowels and consonants and words.
+
+01:55.510 --> 01:57.160
+So I'll give the idea here.
+
+01:57.160 --> 02:01.570
+You have to scan through the string from left to right by checking each and every character.
+
+02:01.570 --> 02:02.870
+We have already done that.
+
+02:02.920 --> 02:04.030
+How to scan a string.
+
+02:04.030 --> 02:08.590
+We know it very well now while scanning what you should do check for wobble.
+
+02:09.130 --> 02:13.730
+If it is a wobble, then count it or add one good.
+
+02:14.290 --> 02:19.090
+And if there are spaces, if it is a space, then count one to it.
+
+02:19.180 --> 02:19.720
+Right?
+
+02:20.440 --> 02:22.900
+So counter space plus one.
+
+02:23.350 --> 02:27.400
+Otherwise, just you can count it as a consonant.
+
+02:27.430 --> 02:28.030
+Right.
+
+02:32.600 --> 02:33.860
+Are you concerned?
+
+02:34.430 --> 02:38.660
+We don't have any special characters or extra spaces.
+
+02:39.350 --> 02:41.510
+Now, let us talk about checking of this one.
+
+02:41.510 --> 02:46.550
+So for checking a bubble, you have to check whether a letter is any of these.
+
+02:46.550 --> 02:53.240
+So you have to write a very lengthy condition where the letter is Capital A or E or I or O.
+
+02:53.240 --> 02:57.860
+So you have to check it for all four uppercase as well as lowercase.
+
+02:57.860 --> 03:01.580
+Then for space, just you have to give a space in between single course.
+
+03:01.610 --> 03:02.900
+This is very easy.
+
+03:02.930 --> 03:04.550
+Otherwise it's a consonant.
+
+03:06.420 --> 03:08.340
+So you can write on the program.
+
+03:08.340 --> 03:10.330
+Now, I have given you the idea.
+
+03:10.350 --> 03:12.650
+So write a program by yourself.
+
+03:12.660 --> 03:14.610
+So pause the video and try it.
+
+03:16.540 --> 03:18.730
+If you want help, you can continue the video.
+
+03:18.760 --> 03:20.170
+You will find the solution.
+
+03:20.470 --> 03:25.840
+I will read on the program and show you after giving the solution for this one, I'll give you one more
+
+03:25.840 --> 03:27.730
+problem that you have to do it by yourself.
+
+03:27.730 --> 03:29.980
+So watch this video till end.
+
+03:30.880 --> 03:32.020
+Now here is a string.
+
+03:32.020 --> 03:33.300
+I have taken the same string.
+
+03:33.310 --> 03:36.180
+Now I have to count wobbles, so and consonants.
+
+03:36.180 --> 03:37.660
+So I will declare some variable.
+
+03:40.840 --> 03:41.440
+What else?
+
+03:41.470 --> 03:52.330
+That is initialize to zero and consonant is also initialized to zero and space or OC I will call it
+
+03:52.330 --> 03:53.350
+as space.
+
+03:53.350 --> 03:55.450
+And this is also initialized to zero.
+
+03:55.990 --> 04:00.610
+Now I have to scan through this string and check for those letters.
+
+04:00.610 --> 04:12.790
+So for this I will say digit is zero and str of I is not equal to null character and I plus plus.
+
+04:14.070 --> 04:14.610
+No.
+
+04:14.610 --> 04:16.450
+I have to check whether survival or not.
+
+04:16.470 --> 04:25.590
+So if star of I is equal to capital A then or.
+
+04:26.570 --> 04:28.210
+I have to check for another thing.
+
+04:28.220 --> 04:29.180
+For every letter.
+
+04:29.180 --> 04:30.050
+I should do this.
+
+04:30.080 --> 04:37.040
+So what I do now is, instead of typing this entire thing, I'll copy this and I will list it just for
+
+04:37.040 --> 04:37.580
+E!
+
+04:39.260 --> 04:45.350
+I owe you the lowercase a e I owe you.
+
+04:45.680 --> 04:46.100
+Right.
+
+04:46.550 --> 04:48.980
+So I'll just change the letters.
+
+04:49.730 --> 04:51.380
+This is Capital E.
+
+04:52.720 --> 04:53.920
+Kept an eye.
+
+04:54.760 --> 04:55.360
+Capital.
+
+04:55.370 --> 04:55.960
+Oh.
+
+04:57.650 --> 04:58.490
+And capital.
+
+04:58.490 --> 05:03.950
+You then hear lowercase a lowercase e.
+
+05:04.220 --> 05:05.580
+Lowercase I.
+
+05:05.840 --> 05:08.700
+Lowercase o and lowercase.
+
+05:08.720 --> 05:09.200
+You.
+
+05:10.430 --> 05:13.850
+Now, if this are the case, then I will say.
+
+05:15.050 --> 05:15.410
+Plus.
+
+05:15.410 --> 05:16.140
+Plus.
+
+05:16.580 --> 05:17.300
+That's it.
+
+05:17.960 --> 05:19.580
+Then else.
+
+05:20.440 --> 05:26.640
+If this is not the case, if it's not a waffle, then I said I have to check only for the space so as
+
+05:26.650 --> 05:27.450
+to verify.
+
+05:27.460 --> 05:30.790
+Already I have copied it so I will just simply paste it here.
+
+05:31.180 --> 05:32.920
+I have to check for a space.
+
+05:33.190 --> 05:33.940
+So.
+
+05:34.810 --> 05:37.960
+This should be a space in between single course, right?
+
+05:38.230 --> 05:39.640
+So space.
+
+05:40.690 --> 05:40.950
+Plus.
+
+05:40.960 --> 05:41.740
+Plus.
+
+05:42.620 --> 05:43.280
+Else.
+
+05:43.280 --> 05:45.650
+I'm assuming that it's a consonant.
+
+05:49.700 --> 05:50.300
+Consonant.
+
+05:50.300 --> 05:51.320
+Plus, plus.
+
+05:52.380 --> 05:54.300
+Let's hope so.
+
+05:54.300 --> 05:59.370
+I'm counting vowels and spaces and consonants.
+
+05:59.850 --> 06:02.970
+So now here I will print.
+
+06:05.220 --> 06:06.990
+What else are?
+
+06:07.350 --> 06:08.820
+So how many of us are there?
+
+06:09.390 --> 06:11.340
+Whatever we get in this one.
+
+06:11.370 --> 06:12.020
+Right.
+
+06:12.030 --> 06:15.480
+So now I'll just copy this.
+
+06:16.810 --> 06:19.570
+And paste tier two times.
+
+06:19.930 --> 06:20.920
+Novels.
+
+06:20.920 --> 06:22.890
+Then words.
+
+06:22.900 --> 06:24.610
+So then.
+
+06:25.660 --> 06:26.980
+Consonants.
+
+06:27.250 --> 06:28.990
+So how many consonants are there?
+
+06:29.350 --> 06:30.700
+So I'll type here.
+
+06:33.260 --> 06:35.900
+Consonants, then words.
+
+06:36.380 --> 06:38.810
+So here I will say space plus one.
+
+06:40.350 --> 06:41.310
+Otherwise.
+
+06:41.310 --> 06:44.390
+If you don't want to write one here, then you should start from here.
+
+06:44.440 --> 06:45.330
+Right here.
+
+06:45.330 --> 06:47.130
+You should start space from one onwards.
+
+06:47.130 --> 06:50.910
+But initially we don't have any spaces, so it's better to start with zero.
+
+06:50.910 --> 06:54.090
+And here you have to show plus one for number of words.
+
+06:54.690 --> 06:58.560
+So let us first of all, count how many vowels are there?
+
+06:58.560 --> 07:02.670
+One, two and three vocals are there.
+
+07:02.940 --> 07:04.440
+So how many consonants?
+
+07:04.440 --> 07:09.300
+One, two, three, four, five, six, seven, eight, nine, nine.
+
+07:09.300 --> 07:10.380
+Consonants are there.
+
+07:10.380 --> 07:11.790
+And there are three words.
+
+07:15.080 --> 07:18.230
+Three warbles nine consonants and three words.
+
+07:18.230 --> 07:20.480
+Yes, you got a perfect answer for this one.
+
+07:20.840 --> 07:26.780
+So this was a solution for counting words and vowels and consonants.
+
+07:27.710 --> 07:31.660
+Now next challenge that you are supposed to do it, you solve it by yourself.
+
+07:31.670 --> 07:33.410
+So I'll just remove this.
+
+07:33.860 --> 07:34.430
+Okay.
+
+07:35.030 --> 07:35.990
+I'll push it down.
+
+07:36.080 --> 07:38.780
+And here, I'll show you a new string.
+
+07:38.810 --> 07:43.880
+See if I have more spaces than how to handle this.
+
+07:44.240 --> 07:46.400
+So you have to find out a solution for this one.
+
+07:46.400 --> 07:47.900
+So it's a challenge for you.
+
+07:47.930 --> 07:52.230
+You can write the program by yourself if there are multiple spaces.
+
+07:52.250 --> 07:53.740
+See this logic?
+
+07:53.750 --> 07:55.190
+The one we have written here.
+
+07:55.220 --> 08:00.370
+If there are multiple space, then every space it will count and I have given for extra spaces.
+
+08:00.380 --> 08:02.330
+So right now the answer was three.
+
+08:02.330 --> 08:08.060
+So it will say plus four total seven words, but it's having actually three words.
+
+08:08.060 --> 08:11.210
+So if there are multiple words, then what you will do?
+
+08:12.770 --> 08:14.630
+So there are multiple spaces.
+
+08:14.630 --> 08:15.660
+Then what you'll do.
+
+08:15.680 --> 08:17.810
+So find out the solution.
+
+08:18.470 --> 08:22.650
+Now, next thing in this challenge is suppose here I have a number seven.
+
+08:22.670 --> 08:24.760
+See, this is not a consonant.
+
+08:24.770 --> 08:25.640
+It's a number.
+
+08:25.760 --> 08:26.330
+So what?
+
+08:26.330 --> 08:30.590
+Our program that we have written just now, it will simply count it as consonant.
+
+08:30.590 --> 08:32.780
+So it will take seven also as consonant.
+
+08:32.780 --> 08:38.780
+So you have to make sure that it's a uppercase consonant or it may be a lowercase consonant and you
+
+08:38.780 --> 08:41.750
+should count it as lower or uppercase consonant.
+
+08:42.270 --> 08:42.770
+Right.
+
+08:43.040 --> 08:47.810
+So if it is other than consonant, you should not count it.
+
+08:48.170 --> 08:51.710
+So these are the two conditions I have introduced.
+
+08:51.740 --> 08:58.820
+That is, if there are multiple spaces, then if there are any other special characters like words,
+
+08:58.820 --> 09:02.510
+hyphen seven, if hyphen, you should not count it as consonant.
+
+09:03.290 --> 09:07.400
+So you have to handle these two conditions and complete a challenge by yourself.
+
+09:08.480 --> 09:10.610
+That all practice these programs.

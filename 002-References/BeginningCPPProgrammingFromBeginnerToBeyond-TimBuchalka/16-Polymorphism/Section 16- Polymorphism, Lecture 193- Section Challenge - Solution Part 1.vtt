@@ -1,0 +1,598 @@
+WEBVTT
+
+00:00:05.500 --> 00:00:08.400
+Welcome back to the section 16 challenge solution.
+
+00:00:08.400 --> 00:00:11.060
+This is part one of the solution to this challenge.
+
+00:00:11.310 --> 00:00:14.410
+This was a very, very challenging exercise.
+
+00:00:14.410 --> 00:00:17.410
+I hope you're able to finish this, and I hope your solution worked.
+
+00:00:17.410 --> 00:00:21.310
+As usual, your solution could be different from mine, very likely it is.
+
+00:00:21.310 --> 00:00:22.510
+So let's get started.
+
+00:00:23.010 --> 00:00:27.010
+First thing we want to do is we want to make this account class and abstract class.
+
+00:00:27.260 --> 00:00:30.030
+And we know that we can do that with the pure virtual functions.
+
+00:00:30.030 --> 00:00:31.630
+So that's what I'm going to do right here.
+
+00:00:31.630 --> 00:00:35.290
+I'm coming down right here to my deposit withdrawal
+
+00:00:35.290 --> 00:00:37.790
+functions. And I'm going to say virtual,
+
+00:00:38.190 --> 00:00:41.850
+and I'm going to make it pure virtual, right there.
+
+00:00:41.850 --> 00:00:45.150
+My class is now abstract. I'm going to do for both of them.
+
+00:00:48.450 --> 00:00:52.050
+And again, I've got a pure virtual function here as well.
+
+00:00:53.200 --> 00:00:55.860
+Okay. So that was easy, right. That's cool.
+
+00:00:55.860 --> 00:00:59.220
+Eventually, we'll get rid of this guy, and we'll replace it with the printable
+
+00:00:59.220 --> 00:01:01.220
+interface, but we'll leave that for later.
+
+00:01:01.220 --> 00:01:03.520
+So we've got those two pure virtual functions.
+
+00:01:03.520 --> 00:01:07.080
+So if I try to create an account object, I won't be able to any longer.
+
+00:01:07.080 --> 00:01:09.680
+So let's take a look at the account implementation file
+
+00:01:09.680 --> 00:01:13.340
+and see if there's anything in here we need to change. Our constructors are fine.
+
+00:01:13.340 --> 00:01:16.640
+You might be thinking why do I need a constructor if I'm never going to create these things.
+
+00:01:16.640 --> 00:01:19.240
+Well, you are, right. You are through the derived classes.
+
+00:01:19.240 --> 00:01:23.640
+Remember, the constructor calling up the chain. So it's important that we have constructors here.
+
+00:01:23.640 --> 00:01:26.000
+There's our deposit, and there's a withdrawal.
+
+00:01:26.000 --> 00:01:29.000
+Now these are pure virtual functions, can we implement them?
+
+00:01:29.000 --> 00:01:31.500
+Absolutely, we can. In this case, it makes sense.
+
+00:01:31.500 --> 00:01:34.500
+We've got a really simple deposit, really simple withdrawal.
+
+00:01:35.050 --> 00:01:39.450
+In the case of the examples I gave you with the shape and you know how do you draw a shape in the
+
+00:01:39.450 --> 00:01:43.750
+in the base class, you really can't. But here, we can say that deposit and withdraw,
+
+00:01:43.750 --> 00:01:45.050
+this is the simplest case.
+
+00:01:45.050 --> 00:01:49.250
+And I'd argue that we would leave this in here. Now there's one little thing that's missing,
+
+00:01:49.250 --> 00:01:52.950
+that's our virtual destructor. That's really important. So let's do that.
+
+00:01:52.950 --> 00:01:57.410
+We'll say virtual. The destructor is the name of the class with utility in front,
+
+00:01:57.910 --> 00:02:02.210
+and we could implement this thing or we could just simply say equals default.
+
+00:02:02.610 --> 00:02:05.810
+And that's good enough. That tells the compiler hey just give me
+
+00:02:05.810 --> 00:02:09.170
+a default for destructor in this case, and that's fine.
+
+00:02:09.170 --> 00:02:12.770
+I don't need any special behavior in the destructor, so that would be just fine.
+
+00:02:13.570 --> 00:02:16.670
+All right. So now what are we going to do next.
+
+00:02:16.670 --> 00:02:19.270
+Let's look at one of the derived classes. So let's start with checking.
+
+00:02:20.470 --> 00:02:22.670
+So let's look at the header file for checking account.
+
+00:02:23.470 --> 00:02:25.830
+You see here it's derived from account, that's fine.
+
+00:02:25.830 --> 00:02:30.430
+So remember, I've got two pure virtual functions in my parent that I need to implement here.
+
+00:02:30.830 --> 00:02:33.330
+So I'm implementing one of them right here. So
+
+00:02:33.580 --> 00:02:38.180
+I want to make sure that this is virtual, and i want to be sure that I'm overwriting this
+
+00:02:38.430 --> 00:02:42.790
+that way the compiler is going to help me out if I rename something correctly or if I change
+
+00:02:42.790 --> 00:02:44.790
+one of the parameters or something.
+
+00:02:44.790 --> 00:02:46.790
+Now what about this guy, this deposit method.
+
+00:02:46.790 --> 00:02:49.290
+We want to implement this guy in here ourselves as well.
+
+00:02:49.590 --> 00:02:51.590
+So we'll just say virtual
+
+00:02:52.390 --> 00:02:53.290
+bool,
+
+00:02:54.590 --> 00:02:56.590
+and this is the deposit method.
+
+00:02:56.950 --> 00:03:00.250
+So we're going to implement this ourselves, and it expects to double.
+
+00:03:00.550 --> 00:03:01.550
+And again,
+
+00:03:02.950 --> 00:03:07.150
+I'm overwriting here. So I want to be sure that the compiler is helping me.
+
+00:03:07.750 --> 00:03:11.110
+Okay. Perfect. What else do I need here, you guessed it.
+
+00:03:11.110 --> 00:03:13.910
+I need a virtual destructor for a checking account.
+
+00:03:14.810 --> 00:03:18.410
+And I'm going to let the compiler give me a default version,
+
+00:03:18.710 --> 00:03:20.910
+which is fine. Okay. Now
+
+00:03:20.910 --> 00:03:24.910
+this guy wasn't here before, so we're definitely going to have to implement that in the
+
+00:03:24.910 --> 00:03:25.910
+cpp file.
+
+00:03:25.910 --> 00:03:28.770
+So let's go into our cpp file for checking account.
+
+00:03:29.570 --> 00:03:33.570
+And here's our withdrawal. We're calling our parents withdrawal, which is fine.
+
+00:03:33.970 --> 00:03:36.270
+Here's our constructor that looks good as well.
+
+00:03:36.270 --> 00:03:39.270
+Again, these output operators will get rid of them later.
+
+00:03:39.270 --> 00:03:41.770
+But we need to implement this guy,
+
+00:03:43.270 --> 00:03:47.260
+our deposit. And it's going to be a checking account deposit.
+
+00:03:48.160 --> 00:03:49.460
+That's the class we're in.
+
+00:03:51.690 --> 00:03:53.890
+We don't need the override here.
+
+00:03:53.890 --> 00:03:55.890
+We already have it in our header file.
+
+00:03:55.890 --> 00:03:58.890
+And we do need a name for this parameter.
+
+00:03:59.690 --> 00:04:01.490
+So what do we do here. Well,
+
+00:04:01.890 --> 00:04:05.090
+we're simply going to return and call our accounts
+
+00:04:06.390 --> 00:04:08.890
+deposit method and pass in the double.
+
+00:04:10.190 --> 00:04:13.690
+That's it, right. I have nothing special to do here so I'm just calling my parent.
+
+00:04:14.190 --> 00:04:15.990
+So that takes care of checking account.
+
+00:04:15.990 --> 00:04:20.290
+Now let's go down to savings account, and we did put the destructor in there right. Yes, we did.
+
+00:04:20.290 --> 00:04:21.790
+So let's go to savings account,
+
+00:04:22.780 --> 00:04:25.140
+same idea here. We've got
+
+00:04:27.240 --> 00:04:30.120
+a virtual function here that we're going to override,
+
+00:04:30.520 --> 00:04:31.820
+that's my deposit.
+
+00:04:34.180 --> 00:04:38.280
+And we'll say override right here, and then we've got the withdrawal. So I also want to
+
+00:04:38.680 --> 00:04:43.180
+take care of that one here. So I'll say bool. We'll call this withdraw,
+
+00:04:44.080 --> 00:04:47.280
+and it expects that double amount.
+
+00:04:47.280 --> 00:04:48.780
+And again, we're overriding.
+
+00:04:50.680 --> 00:04:54.340
+This is one we'll have to implement because we were not implementing it before.
+
+00:04:54.340 --> 00:04:56.570
+And then we also need a
+
+00:04:57.450 --> 00:04:59.150
+virtual destructor here,
+
+00:05:00.950 --> 00:05:03.210
+and the name of the class is savings account,
+
+00:05:04.510 --> 00:05:07.310
+let the compiler give us one by default.
+
+00:05:10.410 --> 00:05:13.610
+Okay. Now this withdraw method is the one we have to write.
+
+00:05:13.610 --> 00:05:17.600
+So let's go to our implementation. So I'm opening up savings cpp.
+
+00:05:18.360 --> 00:05:21.160
+My constructor looks fine. My deposit looks fine.
+
+00:05:21.460 --> 00:05:24.960
+We'll get rid of the insertion operator later. But
+
+00:05:24.960 --> 00:05:26.960
+let's implement this method here.
+
+00:05:27.620 --> 00:05:29.620
+So this is bool for a savings account.
+
+00:05:35.420 --> 00:05:37.620
+And all we are doing here -- again,
+
+00:05:37.620 --> 00:05:40.120
+we don't need the override here only in the declaration.
+
+00:05:40.520 --> 00:05:45.320
+And what we're doing here is we're just simply returning our parent, which is the account,
+
+00:05:45.620 --> 00:05:48.980
+and we're asking it to withdraw that amount.
+
+00:05:50.680 --> 00:05:51.580
+That's it.
+
+00:05:51.940 --> 00:05:55.840
+And then the last one we've got is the trust account. So let me go to its header file.
+
+00:05:56.640 --> 00:05:58.740
+And let's see what we've got here,
+
+00:05:58.740 --> 00:06:02.640
+we already have deposit and withdraw. That's good. We've already implemented them.
+
+00:06:02.640 --> 00:06:06.300
+So let's just be sure that we implemented them correctly. And we didn't just
+
+00:06:06.300 --> 00:06:09.500
+that we are overriding them and not redefining them.
+
+00:06:09.500 --> 00:06:11.400
+So we'll put override over here
+
+00:06:12.700 --> 00:06:15.300
+as well as on the withdrawal.
+
+00:06:18.300 --> 00:06:19.400
+Okay. That's it.
+
+00:06:19.400 --> 00:06:21.600
+Let's take a look at the cpp file.
+
+00:06:22.260 --> 00:06:23.560
+All that looks good.
+
+00:06:24.560 --> 00:06:27.860
+And the last thing we need here is our destructor.
+
+00:06:30.630 --> 00:06:33.630
+So we'll create a virtual destructor for our trust account.
+
+00:06:35.130 --> 00:06:38.130
+And let the compiler give us one.
+
+00:06:40.010 --> 00:06:43.610
+All right. So that's the first step. So now let's go to our main.
+
+00:06:45.010 --> 00:06:49.370
+And you'll notice I commented out all the driver code that I provided for you. So I just want to start
+
+00:06:49.370 --> 00:06:50.870
+really fresh here.
+
+00:06:50.870 --> 00:06:55.070
+And the first thing I want to do is let's just do this right here. Let's just create an account
+
+00:06:55.430 --> 00:06:59.550
+and call it Joe, real simple. Let's build and run.
+
+00:07:00.540 --> 00:07:01.900
+And we have an error.
+
+00:07:02.900 --> 00:07:05.260
+I forgot a semicolon there, so let's try that again.
+
+00:07:08.510 --> 00:07:10.010
+And I spelled the virtual wrong.
+
+00:07:12.710 --> 00:07:15.410
+Okay. Let's get all those errors out of the way.
+
+00:07:15.410 --> 00:07:16.770
+There's account Joe, finally.
+
+00:07:16.770 --> 00:07:20.130
+So now we have a clean compile, and it says variable Joe
+
+00:07:20.130 --> 00:07:24.030
+is abstract. You can't abstract. I can't do this. So this is good,
+
+00:07:24.030 --> 00:07:28.330
+right. This is a real good thing. We now know that our account class is abstract,
+
+00:07:28.330 --> 00:07:29.430
+we can't create any.
+
+00:07:29.930 --> 00:07:32.930
+So let's comment that out, and let's create a checking account.
+
+00:07:33.630 --> 00:07:37.290
+Remember, this is not using a base class pointer, this is just a regular old
+
+00:07:37.290 --> 00:07:38.290
+local variable.
+
+00:07:38.650 --> 00:07:42.310
+And we're going to create a checking account.And let's just use the default.
+
+00:07:42.910 --> 00:07:47.270
+So now let's test this out. We've created the c object, which is just a checking account.
+
+00:07:47.270 --> 00:07:49.630
+And let's display that and see what we get.
+
+00:07:49.630 --> 00:07:53.390
+Now this should still work because we overloaded those insertion operators
+
+00:07:53.390 --> 00:07:54.750
+when we did this previously.
+
+00:07:54.750 --> 00:07:58.550
+And as long as we're not coming at, this with a base class pointer. They should all still work.
+
+00:07:58.550 --> 00:08:01.050
+So let's try that out. And let's see what we get.
+
+00:08:02.410 --> 00:08:05.170
+There we go. We've got a checking account, unnamed checking account
+
+00:08:05.170 --> 00:08:07.970
+with a 0 balance. That's exactly what we expected.
+
+00:08:07.970 --> 00:08:11.330
+So let's create a savings account object,
+
+00:08:11.330 --> 00:08:14.330
+and we'll call it s. And we'll initialize it to Frank
+
+00:08:14.830 --> 00:08:17.830
+with 5000 dollar balance and
+
+00:08:17.830 --> 00:08:20.080
+2.6% interest.
+
+00:08:21.180 --> 00:08:23.540
+And let's display that and see what it looks like.
+
+00:08:24.440 --> 00:08:25.940
+All right. Let's try that out.
+
+00:08:26.940 --> 00:08:31.300
+Here we go. We've got a savings account object Frank 5000 2.6, perfect.
+
+00:08:31.300 --> 00:08:33.600
+So this all seems to be working perfectly.
+
+00:08:33.600 --> 00:08:36.260
+So now why don't we create a base class pointer.
+
+00:08:36.260 --> 00:08:38.620
+So the base class is the account class, right.
+
+00:08:38.620 --> 00:08:40.920
+So we'll create a pointer called ptr.
+
+00:08:41.220 --> 00:08:43.880
+And let's create a new trust account.
+
+00:08:45.240 --> 00:08:49.240
+So we'll create a new trust account on the heap, and that will be let's say Leo
+
+00:08:50.140 --> 00:08:54.140
+with 10000 dollar balance and 2.6% interest.
+
+00:08:55.640 --> 00:09:00.000
+So that should create that object on the heap, and the pointer will point to it.
+
+00:09:00.400 --> 00:09:03.400
+This was perfectly valid since a trust account is an account.
+
+00:09:03.800 --> 00:09:07.900
+Now let's display that and see what we get. Now we can't display ptr here
+
+00:09:07.900 --> 00:09:11.560
+because that will display the address of that pointer.We need to display the object.
+
+00:09:11.560 --> 00:09:16.220
+So we need to de-reference ptr. We need to go to where ptr is pointing and an endline here.
+
+00:09:17.220 --> 00:09:18.220
+and an endline here.
+
+00:09:18.220 --> 00:09:19.820
+Now this won't work as we expect.
+
+00:09:20.320 --> 00:09:23.320
+The reason is we haven't really handled
+
+00:09:23.320 --> 00:09:26.220
+the insertion operator to work with dynamic polymorphism.
+
+00:09:26.220 --> 00:09:28.520
+So as far as the compiler is concerned,
+
+00:09:28.520 --> 00:09:33.020
+that insertion operator -- compiler knows that ptr is a pointer to an account,
+
+00:09:33.020 --> 00:09:37.680
+it really doesn't care what type of account it's pointing to. So it's going to bind this statically,
+
+00:09:37.680 --> 00:09:41.340
+and it'll slice that object. It'll slice the trust account stuff away
+
+00:09:41.340 --> 00:09:42.700
+and just keep the account part.
+
+00:09:42.700 --> 00:09:45.600
+So this should still display Leo in 10000 though
+
+00:09:45.600 --> 00:09:49.900
+because all accounts have the name of their balance. So let's give that a try
+
+00:09:50.260 --> 00:09:53.860
+and see what our output is, and that's exactly what happens. You see right here,
+
+00:09:53.860 --> 00:09:55.560
+account Leo 10000.
+
+00:09:56.060 --> 00:09:58.260
+We're not getting the trust part of us, right.
+
+00:09:58.260 --> 00:10:00.920
+It's not even displaying trust account, it's just displaying your account.
+
+00:10:00.920 --> 00:10:05.520
+We'll fix that when we implement that i printable interface, that'll be pretty cool.
+
+00:10:06.320 --> 00:10:09.420
+So we can see that this seems to be working. Let's test this out.
+
+00:10:09.420 --> 00:10:13.620
+And let's just test it out with s right here. Let me comment out this Leo part here.
+
+00:10:13.620 --> 00:10:16.620
+And let's just say that we want to deposit,
+
+00:10:18.500 --> 00:10:19.500
+let's say,
+
+00:10:22.000 --> 00:10:25.800
+10000 dollars into s.
+
+00:10:26.460 --> 00:10:28.460
+And then I want to display s again.
+
+00:10:31.160 --> 00:10:34.040
+So let's try that out. And you can see here,
+
+00:10:34.040 --> 00:10:38.700
+I have my savings account Frank with 5000, and I just deposited 10000 into it.
+
+00:10:38.700 --> 00:10:43.460
+It's a savings account, so it's going to use that interest rate to give me a little bonus. And that's exactly what happened.
+
+00:10:43.460 --> 00:10:47.060
+So that looks correct. And then finally, let's withdraw.
+
+00:10:47.060 --> 00:10:49.360
+So now let's say we want to withdraw
+
+00:10:50.020 --> 00:10:52.220
+10000 dollars from s.
+
+00:10:55.320 --> 00:10:57.520
+And again, we'll display s.
+
+00:10:58.970 --> 00:11:01.570
+And we'll test out our withdrawal functionality here.
+
+00:11:01.570 --> 00:11:04.230
+We'll give it a run. And we can see that we have
+
+00:11:04.230 --> 00:11:07.530
+savings account 5000, then we deposited 10000,
+
+00:11:07.530 --> 00:11:10.190
+and then we withdrew 10000. So it's all looking good.
+
+00:11:10.550 --> 00:11:14.150
+So you see it wasn't too much work to get this to work with
+
+00:11:14.150 --> 00:11:16.950
+dynamic polymorphism. The next step now is
+
+00:11:16.950 --> 00:11:21.850
+let's get rid of all the overloaded insertion operators that's in this code.
+
+00:11:21.850 --> 00:11:25.200
+And let's create that printable interface and get that working.
+
+00:11:25.200 --> 00:11:27.000
+And then the last thing we'll do is
+
+00:11:27.000 --> 00:11:29.800
+we'll take care of those functions in the account util file
+
+00:11:29.800 --> 00:11:32.800
+and clean that up because there's a lot of duplicated code in there.

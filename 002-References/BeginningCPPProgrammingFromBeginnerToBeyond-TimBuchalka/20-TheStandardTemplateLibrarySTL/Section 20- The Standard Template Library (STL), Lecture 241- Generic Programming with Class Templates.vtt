@@ -1,0 +1,727 @@
+WEBVTT
+
+00:00:05.500 --> 00:00:09.900
+We've seen how we can write generic functions using c++ templates.
+
+00:00:10.500 --> 00:00:12.750
+In this video, we'll take it a step further,
+
+00:00:12.750 --> 00:00:16.950
+and we'll learn how we can use c++ templates to create generic classes.
+
+00:00:17.450 --> 00:00:20.050
+So what is the c++ class template.
+
+00:00:20.600 --> 00:00:23.480
+A class template is similar to a function template
+
+00:00:23.480 --> 00:00:25.780
+but instead of creating a generic function,
+
+00:00:25.780 --> 00:00:27.780
+we'll be creating a generic class.
+
+00:00:27.780 --> 00:00:31.280
+So this implies generic attributes, constructors, destructors,
+
+00:00:31.280 --> 00:00:32.940
+methods and so forth.
+
+00:00:33.740 --> 00:00:36.740
+Just like we can plug in any type to a function template,
+
+00:00:36.740 --> 00:00:38.740
+we can do the same with a class template.
+
+00:00:39.340 --> 00:00:42.780
+We've already used class templates in several places in this course,
+
+00:00:42.780 --> 00:00:45.550
+the most obvious is when we created vector objects.
+
+00:00:45.850 --> 00:00:49.730
+We didn't just say I want a vector, we said I want a vector of a specific type,
+
+00:00:49.980 --> 00:00:51.980
+and that's where the class templates come in.
+
+00:00:52.230 --> 00:00:54.730
+So the class template is a generic blueprint
+
+00:00:54.730 --> 00:00:58.130
+that the compiler uses to create specialized classes.
+
+00:00:58.830 --> 00:01:00.830
+That's what metaprogramming is all about.
+
+00:01:01.630 --> 00:01:05.630
+As I mentioned in the previous slides, templates can be very complex.
+
+00:01:05.830 --> 00:01:08.830
+Class templates, in particular, can be very complex.
+
+00:01:08.830 --> 00:01:12.430
+Imagine combining inheritance, dynamic polymorphism,
+
+00:01:12.630 --> 00:01:16.930
+operator overloading, templates and other advanced c++ features together,
+
+00:01:17.330 --> 00:01:20.030
+super powerful but also complex.
+
+00:01:20.630 --> 00:01:23.030
+So let's see how we can use class templates.
+
+00:01:25.280 --> 00:01:28.530
+Let's say we want a class that will hold an integer and a string,
+
+00:01:29.070 --> 00:01:31.270
+and we want that class to be called item.
+
+00:01:31.770 --> 00:01:33.870
+We can write a simple class as follows.
+
+00:01:34.270 --> 00:01:37.470
+Note that we have 2 private attributes, name and value.
+
+00:01:37.970 --> 00:01:41.850
+A constructor that initializes those attributes to those provided by the user,
+
+00:01:42.150 --> 00:01:44.850
+and we have a get name and get value getter methods.
+
+00:01:45.350 --> 00:01:48.550
+Of course, we could add other methods, but we won't in this example
+
+00:01:48.550 --> 00:01:52.050
+since the purpose is to focus on how we can make this class generic.
+
+00:01:52.950 --> 00:01:57.450
+So let's suppose that now we need a class that's similar to the item class.
+
+00:01:57.700 --> 00:02:02.200
+Except instead of an int and a string, we want to model a double and a string.
+
+00:02:04.700 --> 00:02:05.700
+What can we do?
+
+00:02:06.500 --> 00:02:10.860
+Sure, we can create a new class, just like we did for item that has a double and a string.
+
+00:02:11.460 --> 00:02:14.960
+But we'd have to name it something other than items since we can't overload
+
+00:02:14.960 --> 00:02:16.960
+class names in the same namespace.
+
+00:02:17.840 --> 00:02:21.340
+And we don't want to create a complex hierarchy with dynamic polymorphism.
+
+00:02:21.840 --> 00:02:24.190
+So let's see how we can use class templates
+
+00:02:24.190 --> 00:02:27.400
+to allow us to just write the blueprint for the class.
+
+00:02:30.390 --> 00:02:35.090
+First, we can replace the type of the value attribute from int to t in this case.
+
+00:02:35.390 --> 00:02:36.990
+But remember, this can be any name.
+
+00:02:37.690 --> 00:02:40.790
+Then we go through the class. And wherever we used value
+
+00:02:40.790 --> 00:02:43.790
+or return values type, we replace it with a t.
+
+00:02:44.450 --> 00:02:47.550
+That's pretty much it. Now, of course, this won't compile.
+
+00:02:47.550 --> 00:02:50.350
+We need to tell the compiler that this is a template class.
+
+00:02:52.010 --> 00:02:54.890
+And we can do this by adding the template declaration
+
+00:02:54.890 --> 00:02:58.790
+before the class declaration and provide the template parameter.
+
+00:02:59.450 --> 00:03:01.450
+This is a pretty simple example,
+
+00:03:01.450 --> 00:03:05.350
+but it sure makes the item class much more generic and much more useful.
+
+00:03:07.250 --> 00:03:09.750
+Now if we want to create instances of items,
+
+00:03:10.150 --> 00:03:14.300
+we can simply provide the type of the value in the template parameter and the compiler
+
+00:03:14.300 --> 00:03:17.400
+will take care of generating the correct class from the template.
+
+00:03:18.200 --> 00:03:22.200
+In the first example, we're creating item1 as an item with a value
+
+00:03:22.200 --> 00:03:24.400
+of type int and a name of type string.
+
+00:03:24.800 --> 00:03:28.900
+Name will always be of type string, so we don't have to provide it as the template parameter.
+
+00:03:29.400 --> 00:03:32.500
+In the second example, value will be of type double.
+
+00:03:32.500 --> 00:03:35.100
+In the third example, value will be a std string.
+
+00:03:35.400 --> 00:03:39.390
+And in the final example, we're creating a vector that holds items,
+
+00:03:39.390 --> 00:03:42.090
+and those items will have value as an integer.
+
+00:03:42.490 --> 00:03:43.490
+That's it.
+
+00:03:45.040 --> 00:03:46.540
+Just as with function templates.
+
+00:03:46.540 --> 00:03:49.540
+There's no limit to the number of template parameters you can have.
+
+00:03:49.540 --> 00:03:51.900
+And of course, they may be of different types.
+
+00:03:52.400 --> 00:03:56.600
+In this example, we're creating a class template called my pair
+
+00:03:56.600 --> 00:03:58.590
+that models a pair of data items.
+
+00:03:59.390 --> 00:04:03.270
+The types of these data items can be different if we wish or they can be the same.
+
+00:04:04.170 --> 00:04:06.770
+Note that in this case, we use a struct
+
+00:04:06.770 --> 00:04:09.770
+since all we want to do is associate first with second.
+
+00:04:10.430 --> 00:04:14.420
+We're just modeling data so we won't bother with constructors, methods and so forth.
+
+00:04:15.220 --> 00:04:18.620
+Now if we wanted to create my pair objects, it's really easy.
+
+00:04:20.120 --> 00:04:25.000
+In the first example, we create p1 as a my pair of std string and integer,
+
+00:04:25.000 --> 00:04:27.000
+and we initialized it to Frank and 100.
+
+00:04:27.800 --> 00:04:32.000
+In the second example, we create p2 as a my pair of integer
+
+00:04:32.000 --> 00:04:33.000
+and double.
+
+00:04:33.000 --> 00:04:37.100
+And we initialize it to 124 and 13.6.
+
+00:04:37.800 --> 00:04:42.160
+And in the last example, we create a vector that holds my pair objects,
+
+00:04:42.160 --> 00:04:44.960
+and those objects are int double pairs.
+
+00:04:46.960 --> 00:04:49.760
+This my pair class can be a very handy class
+
+00:04:49.760 --> 00:04:52.990
+since it can associate any 2 pieces of data of any type.
+
+00:04:53.590 --> 00:04:58.390
+In fact, it's so useful that it's already defined for us in std pair.
+
+00:04:59.270 --> 00:05:01.770
+We need to include the utility header file,
+
+00:05:01.770 --> 00:05:04.770
+and then we can use the std pair class, which is implemented
+
+00:05:04.770 --> 00:05:07.370
+very much like the way we implemented my pair.
+
+00:05:08.370 --> 00:05:13.360
+In addition to the pair template class, c++ also has a template class named tuple.
+
+00:05:14.460 --> 00:05:17.660
+It allows you to have a fixed number of elements of any type.
+
+00:05:17.660 --> 00:05:20.260
+It's not just limited to 2 items, like the pair class.
+
+00:05:21.360 --> 00:05:24.960
+Okay. So let's head over to the IDE, and we'll see these class templates,
+
+00:05:24.960 --> 00:05:28.620
+and we'll also implement our own template-based array class.
+
+00:05:30.180 --> 00:05:34.080
+Okay. So I'm in the IDE. I'm in the section 20 workspace,
+
+00:05:34.080 --> 00:05:36.580
+and I'm in the ClassTemplates project.
+
+00:05:37.940 --> 00:05:42.600
+In this project what I'd like to do is go over those 2 templates that we talked about in the slides,
+
+00:05:43.100 --> 00:05:46.700
+and then we'll switch to this other project up here class template array,
+
+00:05:46.700 --> 00:05:49.900
+and we'll implement an array class based on a template.
+
+00:05:50.560 --> 00:05:54.560
+Okay. So first things first. I put a little note here that's important.
+
+00:05:54.560 --> 00:05:58.460
+Template classes are typically completely contained in header files.
+
+00:05:58.860 --> 00:06:02.160
+So we would have the template class in item.h,
+
+00:06:02.160 --> 00:06:05.160
+and I'm talking about this template class that I'm going to talk about right here.
+
+00:06:05.520 --> 00:06:08.720
+And there would be no item cpp file associated with it.
+
+00:06:09.020 --> 00:06:12.020
+Now that makes sense because what we have is a blueprint.
+
+00:06:12.020 --> 00:06:14.900
+The compiler is not compiling this blueprint,
+
+00:06:14.900 --> 00:06:17.500
+it's basically using it to create
+
+00:06:17.500 --> 00:06:21.490
+a specialized version of it that will be compiled. So it's important
+
+00:06:21.490 --> 00:06:25.850
+if you start putting stuff in cpp files, you're going to get -- run into all kinds of issues.
+
+00:06:25.850 --> 00:06:27.650
+There are ways to get it to work,
+
+00:06:27.650 --> 00:06:32.150
+but they're beyond the scope of this course. So for this course, put all your template classes
+
+00:06:32.450 --> 00:06:34.450
+in their own .h file.
+
+00:06:34.450 --> 00:06:36.250
+Let's talk about this template class.
+
+00:06:36.250 --> 00:06:39.050
+This is the one we did in the slides, and we'll do this one first,
+
+00:06:39.050 --> 00:06:41.250
+and then we'll do this smaller one down here second.
+
+00:06:41.800 --> 00:06:44.600
+So what have I got here. I've got a template class.
+
+00:06:44.600 --> 00:06:48.100
+I know it's a class right here. It's not a function, it's called item.
+
+00:06:48.100 --> 00:06:50.600
+And here's my template parameter right here, T.
+
+00:06:51.150 --> 00:06:54.400
+So what do I know about this? Well, I know I've got a class called item,
+
+00:06:54.400 --> 00:06:58.600
+and it's got 2 private attributes. One is a string called name
+
+00:06:58.600 --> 00:07:03.400
+and one is a value of type t, that's what's going to be replaced or plugged in.
+
+00:07:04.200 --> 00:07:08.450
+I've got a constructor here that just constructs it based on my name and my value
+
+00:07:08.450 --> 00:07:09.450
+that are being passed in.
+
+00:07:10.250 --> 00:07:12.650
+I've got to get name, and I've got to get value.
+
+00:07:12.650 --> 00:07:15.530
+And notice, the get value returns a t.
+
+00:07:16.300 --> 00:07:18.500
+So that's pretty straightforward I think.
+
+00:07:18.500 --> 00:07:23.490
+And now let's look at the second template down here. This is the pair template that we created.
+
+00:07:23.490 --> 00:07:27.690
+And we're going to use a struct here instead of a class, but -- again, it's perfectly fine.
+
+00:07:27.690 --> 00:07:29.890
+We're only modeling data in this case.
+
+00:07:29.890 --> 00:07:33.250
+So we've got this template, parameter list right here
+
+00:07:33.250 --> 00:07:37.550
+where we've got a t1 and a t2 and they could be the same or they could be different.
+
+00:07:37.550 --> 00:07:42.840
+So all we're doing is we're saying the first item here. In other words, this is this is just a name,
+
+00:07:42.840 --> 00:07:46.140
+an attribute name. First is the t1, second is a t2.
+
+00:07:46.140 --> 00:07:49.140
+So what we're really doing is associating 2 data types
+
+00:07:49.140 --> 00:07:52.140
+and calling it my pair. Okay. Just like we did in the slides.
+
+00:07:52.140 --> 00:07:55.840
+So let me go down to the main, and I'll show you some examples of of this,
+
+00:07:55.840 --> 00:07:58.140
+and I'll walk through these one at a time.
+
+00:07:58.140 --> 00:08:01.140
+So first thing. On line 30 right here,
+
+00:08:01.440 --> 00:08:04.740
+I'm creating an item1 object
+
+00:08:04.740 --> 00:08:06.740
+and it's of type item.
+
+00:08:06.740 --> 00:08:10.040
+That's my class. Value is going to be an integer.
+
+00:08:10.040 --> 00:08:13.700
+So remember, I have a string and I have a value.
+
+00:08:13.700 --> 00:08:16.200
+In this case, I always have a string first.
+
+00:08:16.600 --> 00:08:18.400
+And then this guy right here,
+
+00:08:18.400 --> 00:08:19.900
+that's going to be the t.
+
+00:08:19.900 --> 00:08:23.560
+That can be replaced with any type I want. So in this case,
+
+00:08:23.560 --> 00:08:27.360
+item1 will look something like this. Item1 is an object.
+
+00:08:28.260 --> 00:08:30.860
+It has a name, attribute,
+
+00:08:30.860 --> 00:08:35.060
+and it's got a value attribute. The name is always going to be a string.
+
+00:08:35.060 --> 00:08:38.660
+In this case, it's going to be Frank and the value,
+
+00:08:38.660 --> 00:08:42.560
+that's our template parameter. That can be any type I pass into this, right.
+
+00:08:42.560 --> 00:08:46.260
+That's what I'm doing right here. So in this case, it's going to be an integer,
+
+00:08:48.410 --> 00:08:51.960
+and it's going to be 100. So that's kind of what's going on.
+
+00:08:51.960 --> 00:08:54.960
+So when I display item1 get name,
+
+00:08:55.260 --> 00:08:58.560
+I'm getting this guy right here, and that's going to display Frank.
+
+00:08:58.960 --> 00:09:02.960
+And then when I say item1 get value, it's going to get the 100
+
+00:09:03.840 --> 00:09:07.440
+here. Okay. So that's that example.
+
+00:09:07.440 --> 00:09:09.440
+Let's take a look at this one here on line 33,
+
+00:09:09.990 --> 00:09:13.590
+and we'll run these in just a bit. So here I'm creating, again,
+
+00:09:13.990 --> 00:09:16.990
+an item2, that's my object name.
+
+00:09:17.240 --> 00:09:20.440
+And it's an item, but look at my template parameter here.
+
+00:09:20.440 --> 00:09:24.040
+I'm saying the second one is a string. So what that would look like is
+
+00:09:24.040 --> 00:09:25.640
+now I've got item2.
+
+00:09:27.640 --> 00:09:31.440
+It has a name. It also has a value.
+
+00:09:32.430 --> 00:09:36.530
+In this case, they're both going to be strings. The first one will be Frank,
+
+00:09:36.530 --> 00:09:37.530
+that's my name,
+
+00:09:38.780 --> 00:09:40.780
+and value will be professor.
+
+00:09:40.780 --> 00:09:45.380
+Now in the output statement, item2 get name. We'll get Frank
+
+00:09:45.380 --> 00:09:46.380
+right here,
+
+00:09:46.740 --> 00:09:51.240
+and item 2 get value. We'll get professor, and that's what will be displayed Frank professor.
+
+00:09:52.040 --> 00:09:54.840
+Now this one here is a little more complicated. And I did this one on
+
+00:09:54.840 --> 00:09:57.440
+purpose so just so you can see how you can build these things up
+
+00:09:57.440 --> 00:09:59.940
+because sometimes you'll see these defined this way.
+
+00:09:59.940 --> 00:10:01.940
+Now let's walk through this one really slowly.
+
+00:10:01.940 --> 00:10:06.440
+Item3 is my object. So let me write that down. Right here, this is item3.
+
+00:10:07.240 --> 00:10:10.240
+And we know that item3 is an item.
+
+00:10:10.900 --> 00:10:13.900
+Okay. So it's going to have a name,
+
+00:10:14.800 --> 00:10:16.600
+and it's going to have a value.
+
+00:10:17.700 --> 00:10:22.690
+But what are we saying that the value is? Well, in this case, the value is another item,
+
+00:10:23.690 --> 00:10:27.290
+but that other item has a string as the value.
+
+00:10:27.290 --> 00:10:30.740
+Makes sense? So this value here -- well, let's see name is Frank.
+
+00:10:30.740 --> 00:10:33.340
+Let's get rid of that one first. Let's do that one really easily here.
+
+00:10:34.440 --> 00:10:37.100
+And I'm using my initializer right here to do it.
+
+00:10:37.100 --> 00:10:41.100
+And now my value is going to be an item.
+
+00:10:41.460 --> 00:10:43.460
+And that item has a name
+
+00:10:44.560 --> 00:10:45.560
+and a value.
+
+00:10:46.660 --> 00:10:50.320
+Okay. So you can see that I'm just building them up, I'm nesting one within the other.
+
+00:10:50.320 --> 00:10:53.320
+So in this case, the name will be c++
+
+00:10:54.820 --> 00:10:57.220
+and the value will be professor in this case.
+
+00:10:59.220 --> 00:11:03.370
+All right. So now when I say item3 get name,
+
+00:11:03.370 --> 00:11:07.360
+I'm getting this guy right here, that's item3's name.
+
+00:11:08.560 --> 00:11:11.660
+In order to get to these guys and here I've got to go through the value.
+
+00:11:11.660 --> 00:11:14.860
+So in this case, I'm saying item3 get the value.
+
+00:11:14.860 --> 00:11:18.460
+Now I've got this item, and then I'm saying get the name.
+
+00:11:18.760 --> 00:11:20.760
+So now I've got c++.
+
+00:11:21.010 --> 00:11:24.910
+And over here, I'm just saying item3 get value, that takes me to the value,
+
+00:11:25.310 --> 00:11:28.810
+that is an item. Remember, that I'm going to get the value from the value,
+
+00:11:28.810 --> 00:11:30.810
+which is going to be professor in this case.
+
+00:11:31.170 --> 00:11:34.070
+So when I print this out, I should get Frank 100,
+
+00:11:34.070 --> 00:11:37.070
+Frank professor, Frank c++ professor.
+
+00:11:37.730 --> 00:11:40.090
+All right. So let me clear the screen, and we'll give it a run.
+
+00:11:41.090 --> 00:11:46.080
+And what we've got here is we've got Frank 100, Frank professor,Frank c++ professor,
+
+00:11:46.680 --> 00:11:47.780
+just what we expected.
+
+00:11:49.030 --> 00:11:52.930
+Okay. So let me make a little bit more room here.
+
+00:11:52.930 --> 00:11:56.930
+And now what I'm going to do is I'm simply going to take some items
+
+00:11:56.930 --> 00:11:59.430
+and create a vector of those items.
+
+00:11:59.430 --> 00:12:01.930
+So in this case, I'm creating a vector,
+
+00:12:02.180 --> 00:12:04.540
+and that vector is going to hold
+
+00:12:04.540 --> 00:12:05.840
+item objects.
+
+00:12:05.840 --> 00:12:08.640
+And in this case, the values will all be doubles.
+
+00:12:08.640 --> 00:12:11.540
+Remember, the names are always strings. But in this case,
+
+00:12:11.540 --> 00:12:13.240
+the values will be doubles.
+
+00:12:13.240 --> 00:12:15.240
+And I'm just going to push back 3 of them.
+
+00:12:15.240 --> 00:12:19.040
+So I'm going to say Larry 100.0, Moe 200.0
+
+00:12:19.040 --> 00:12:22.700
+and Curly 300.0.I'm creating items here,
+
+00:12:23.300 --> 00:12:26.300
+and I'm pushing those items on the vector.
+
+00:12:26.300 --> 00:12:31.100
+And then all I'm doing is looping through the vector with a range-based for loop right here.
+
+00:12:31.600 --> 00:12:35.400
+So for each item in that vector, get its name,
+
+00:12:35.400 --> 00:12:36.400
+get its value.
+
+00:12:37.000 --> 00:12:41.990
+That's it. Now that's pretty cool, because I'm doing all of this using a template class.
+
+00:12:42.590 --> 00:12:46.890
+So if we run this, we should see Larry 100, Moe 200 and Curly 300.
+
+00:12:46.890 --> 00:12:48.090
+So let's give that a run.
+
+00:12:49.450 --> 00:12:50.570
+And there you go.
+
+00:12:51.270 --> 00:12:54.270
+Larry is 100, Moe is 200 and Curly is 300,
+
+00:12:55.370 --> 00:12:56.370
+just what we expected.
+
+00:12:56.370 --> 00:12:59.030
+Okay. So now let's look at the pair.
+
+00:12:59.030 --> 00:13:02.590
+That's this last piece right here. So I'll uncomment that out,
+
+00:13:02.590 --> 00:13:07.190
+and we will run this now. You can see what's happening here. I'm creating my pair.
+
+00:13:07.740 --> 00:13:11.090
+And my pair is going to associate
+
+00:13:11.090 --> 00:13:14.970
+a pair of types, right, in this case a string and an integer.
+
+00:13:14.970 --> 00:13:17.470
+There's the string, there's the integer.
+
+00:13:18.170 --> 00:13:20.970
+Here I'm associating an integer and a double.
+
+00:13:20.970 --> 00:13:23.270
+There's the integer, there's the double.
+
+00:13:23.270 --> 00:13:26.270
+This guy is called p1, and this guy's called p2.
+
+00:13:26.520 --> 00:13:29.720
+And if I want to display those values, all I have to say is
+
+00:13:29.720 --> 00:13:33.920
+p1.first. To display the second, I would just say p1.second,
+
+00:13:34.280 --> 00:13:36.780
+and that will display Frank 100.
+
+00:13:37.440 --> 00:13:41.140
+Then for p2, we could do the same, p2 first, p2 second, we'll display
+
+00:13:41.140 --> 00:13:45.640
+124 and the 13.6. So let's give this one a run.
+
+00:13:46.740 --> 00:13:48.340
+And you could see down here,
+
+00:13:48.340 --> 00:13:52.330
+we've got Frank 100 124 13.6.
+
+00:13:52.330 --> 00:13:54.730
+So this gives you an idea of using 2 pretty simple
+
+00:13:54.730 --> 00:13:57.030
+template classes that we've created.
+
+00:13:57.180 --> 00:14:01.280
+Now I'm going to pause this for a second, and I'll be right back, and I'm going to jump right into this class
+
+00:14:01.280 --> 00:14:02.840
+template array project.
+
+00:14:02.840 --> 00:14:06.940
+And what we'll do there is we'll create another class template for an array.

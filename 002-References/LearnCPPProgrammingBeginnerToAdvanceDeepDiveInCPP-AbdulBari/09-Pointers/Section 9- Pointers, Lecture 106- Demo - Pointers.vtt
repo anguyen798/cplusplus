@@ -1,0 +1,105 @@
+WEBVTT
+
+0
+00:00.740 --> 00:02.930
+That us learn about pointer variable.
+
+1
+00:02.940 --> 00:10.660
+See this is int type variable having value 10 and then also I will take a integer type pointer
+
+2
+00:10.910 --> 00:14.310
+and to this I will assign address of A
+
+3
+00:28.310 --> 00:42.740
+here I display value of A and endl then cout adress of A then cout.
+
+4
+00:43.070 --> 00:49.440
+Just P, see  I have to get the pointer here and I have assigned the address of A to P.
+
+5
+00:49.460 --> 01:00.170
+So if I display P I should get the address of A only then cout  address of P Also. as P is a  pointer
+
+6
+01:00.290 --> 01:02.000
+is also occupying some space.
+
+7
+01:02.030 --> 01:11.920
+I want to print its address then cout dereference P.
+
+8
+01:12.180 --> 01:14.280
+Now I have some syntax here.
+
+9
+01:14.280 --> 01:20.170
+I have declared a pointer and initialize a pointer and here I'm dereferencing a pointer.
+
+10
+01:20.370 --> 01:21.580
+Let us run and see. what 
+
+11
+01:21.600 --> 01:27.720
+All values I get.
+
+12
+01:28.110 --> 01:30.030
+See first I am displaying a.
+
+13
+01:30.050 --> 01:31.950
+So I got the value of A.
+
+14
+01:32.000 --> 01:34.470
+That is the address of a.
+
+15
+01:34.490 --> 01:38.840
+I got some hexa decimal a number ending with 4e8.
+
+16
+01:39.020 --> 01:43.510
+Then what is P, P is a pointer which is storing address of a.
+
+17
+01:43.670 --> 01:46.360
+So I got the same address.
+
+18
+01:46.610 --> 01:49.550
+Then adress of P, P is a variable.
+
+19
+01:49.550 --> 01:51.320
+It is also having its own adress.
+
+20
+01:51.410 --> 01:52.590
+So this is  adress of P.
+
+21
+01:52.600 --> 01:53.270
+P.
+
+22
+01:53.640 --> 01:59.520
+Then here I am displaying the data of where P is  pointing So hereP is pointing on a.
+
+23
+01:59.570 --> 02:01.650
+And A  contains 10.
+
+24
+02:01.670 --> 02:04.190
+So here 10 is displayed.
+
+25
+02:04.940 --> 02:13.290
+So this is the syntax for declaring and initializing a pointer and dereferencing a pointer.

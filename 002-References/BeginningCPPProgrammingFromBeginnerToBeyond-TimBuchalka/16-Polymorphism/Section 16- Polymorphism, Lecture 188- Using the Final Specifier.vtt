@@ -1,0 +1,67 @@
+WEBVTT
+
+00:00:05.880 --> 00:00:09.880
+In this video, we'll learn about the c++11 final specifier.
+
+00:00:11.180 --> 00:00:14.060
+We can use the final specifier in two contexts.
+
+00:00:14.660 --> 00:00:16.020
+At the class level,
+
+00:00:16.020 --> 00:00:20.620
+the final specifier prevents a class from being derived from or subclassed.
+
+00:00:21.320 --> 00:00:24.920
+Sometimes frameworks have final classes that can't be subclassed.
+
+00:00:24.920 --> 00:00:27.920
+In some cases, this is done for better compiler optimization.
+
+00:00:28.620 --> 00:00:33.020
+Other times, it may be done to ensure that objects are copied safely without slicing.
+
+00:00:34.020 --> 00:00:36.220
+When used at the method or function level,
+
+00:00:36.220 --> 00:00:40.820
+the final specifier prevents the method from being overridden in derived classes.
+
+00:00:41.520 --> 00:00:44.520
+This can also be done for better compiler optimization.
+
+00:00:47.020 --> 00:00:51.280
+The syntax for using the final specifier at the class level is pretty simple.
+
+00:00:51.280 --> 00:00:55.280
+We simply add the final specifier after the class name when we declare it.
+
+00:00:55.780 --> 00:00:59.080
+In the first example, my class cannot be derived from.
+
+00:00:59.580 --> 00:01:02.580
+And in the second example, derived cannot be derived from.
+
+00:01:04.080 --> 00:01:08.080
+If you try to drive a class from these classes, the compiler will generate a compiler error.
+
+00:01:10.070 --> 00:01:13.670
+Now let's see the final specifier in the context of a virtual function.
+
+00:01:14.330 --> 00:01:18.990
+In this case, we have a simple class hierarchy with three classes: a b and c.
+
+00:01:19.490 --> 00:01:23.090
+The base class a declares the function do something as virtual.
+
+00:01:23.750 --> 00:01:27.350
+Class b is derived from a and it overrides do something
+
+00:01:27.350 --> 00:01:29.150
+but it also marks it as final.
+
+00:01:30.030 --> 00:01:34.030
+So do something can no longer be overridden further down in the hierarchy.
+
+00:01:34.690 --> 00:01:39.190
+Notice that if class c tries to override do something, the compiler generates an error.

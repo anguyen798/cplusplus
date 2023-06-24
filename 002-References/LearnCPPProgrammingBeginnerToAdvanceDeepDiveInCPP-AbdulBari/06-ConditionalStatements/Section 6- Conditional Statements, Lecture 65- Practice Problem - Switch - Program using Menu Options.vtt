@@ -1,0 +1,181 @@
+WEBVTT
+
+0
+00:00.840 --> 00:05.730
+switch cases are used for writing menu driven programs let's write
+
+1
+00:05.730 --> 00:16.240
+One example, simple menu driven program for taking a menu option for Performing Arithmetic operations.
+
+2
+00:16.260 --> 00:23.600
+So what I will do here is I take a menu option then based on the menu option I will perform a specific task.
+
+3
+00:23.700 --> 00:30.920
+So let me prepare some program then you can see. first I will display a menu on the screen that is menu
+
+4
+00:31.200 --> 00:34.740
+slash n then cout
+
+5
+00:38.350 --> 00:39.840
+first option is.
+
+6
+00:39.890 --> 00:50.350
+Add then slash n if I can a single line then the second option is subtract and slash n and third
+
+7
+00:50.380 --> 00:58.900
+option is multiply and then slash n fourth option is
+
+8
+01:04.050 --> 01:10.860
+divide and slash n that's it.
+
+9
+01:10.860 --> 01:14.870
+So I have written in a single cout statement all four menu options.
+
+10
+01:14.930 --> 01:20.550
+Then here I will declare a variable option.
+
+11
+01:20.730 --> 01:27.160
+Then I will say cout enter your choice.
+
+12
+01:30.310 --> 01:38.770
+Then cin I read options from Keyboard whatever the option may be I take two numbers and I will perform
+
+13
+01:38.770 --> 01:45.250
+the operation based on the option so for that I would take two numbers so far I am declaring variables and
+
+14
+01:45.250 --> 01:54.940
+also I have declared C then I will say cout enter two numbers so that operation can be performed on
+
+15
+01:54.940 --> 01:55.720
+them.
+
+16
+01:56.210 --> 02:11.250
+I read A and B then switch based on option. if it is case 1 if he has selected case 1 then I will say
+
+17
+02:11.260 --> 02:21.210
+c assign  A-plus B, A and B will be added and the result is stored in C And if it is case two then c
+
+18
+02:21.260 --> 02:39.600
+Assign A minus B and result is stored in C. case 3 then c assign A multiplied by B then break then
+
+19
+02:39.610 --> 02:47.050
+case four C assign A divided by B then break.
+
+20
+02:47.050 --> 02:58.630
+After this I will say cout, result is then displays C and also endl then
+
+21
+03:01.350 --> 03:03.390
+that's it it is complete program with
+
+22
+03:03.430 --> 03:11.650
+Me. its giving a warning that C might have not been initialized means if the option is not available then
+
+23
+03:11.650 --> 03:20.560
+C means uninitialized so ignored the warning and run the program.
+
+24
+03:20.620 --> 03:25.630
+Now you can see that here is a menu and all the menu options are given.
+
+25
+03:25.720 --> 03:31.150
+If I select the menu option as one then it ask for two numbers 12 and 3
+
+26
+03:34.240 --> 03:37.240
+result is 15.
+
+27
+03:37.610 --> 03:39.910
+So it has added two numbers.
+
+28
+03:40.310 --> 03:47.850
+If I run it again and enter the option as 2 and enter two numbers like 12 and 3.
+
+29
+03:47.900 --> 03:49.240
+Then the result is nine.
+
+30
+03:49.250 --> 03:52.060
+It has subtracted two numbers.
+
+31
+03:52.340 --> 03:55.030
+I will run the program once again.
+
+32
+03:55.040 --> 03:57.150
+Now the option is 3.
+
+33
+03:57.480 --> 04:03.350
+I will enter 2l numbers 10 and 2 so it is 20 this is multiplying them.
+
+34
+04:03.350 --> 04:05.410
+So that's all.
+
+35
+04:05.420 --> 04:06.530
+So.
+
+36
+04:06.920 --> 04:07.290
+So that's how
+
+37
+04:07.290 --> 04:12.330
+it is taking an option and performing a particular operation depending on the option.
+
+38
+04:12.530 --> 04:17.330
+So there is a switch case and this is used as menul driven program.
+
+39
+04:17.330 --> 04:19.720
+You can see how the program is working.
+
+40
+04:19.790 --> 04:24.580
+It is giving a menu and asking us to select one of the options from the menu.
+
+41
+04:24.650 --> 04:31.370
+If I select the four then it is asking two numbers ten and five on it is giving the result depending
+
+42
+04:31.370 --> 04:33.160
+on the option given fourth option.
+
+43
+04:33.170 --> 04:36.310
+So it is dividing two numbers.
+
+44
+04:36.890 --> 04:39.100
+So you can try this program on your computer.

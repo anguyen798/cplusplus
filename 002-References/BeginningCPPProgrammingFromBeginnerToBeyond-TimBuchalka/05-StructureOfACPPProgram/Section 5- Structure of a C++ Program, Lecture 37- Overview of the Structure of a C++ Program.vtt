@@ -1,0 +1,226 @@
+WEBVTT
+
+00:00:05.500 --> 00:00:06.600
+In this section,
+
+00:00:06.900 --> 00:00:09.220
+we'll talk about keywords, identifiers,
+
+00:00:09.220 --> 00:00:13.220
+punctuation operators and syntax in programming languages.
+
+00:00:13.720 --> 00:00:15.520
+Most languages have keywords.
+
+00:00:15.520 --> 00:00:19.020
+Keywords are part of the vocabulary of a programming language
+
+00:00:19.020 --> 00:00:22.020
+in most languages. The keywords are also reserved.
+
+00:00:22.020 --> 00:00:24.220
+This means that you, the programmer,
+
+00:00:24.220 --> 00:00:28.210
+cannot redefine their meaning and you can't use them in a way in which there were not intended.
+
+00:00:28.870 --> 00:00:30.870
+C++ has lots of keywords
+
+00:00:31.370 --> 00:00:35.570
+in a browser. I've opened up a webpage for CPP reference.com
+
+00:00:35.570 --> 00:00:37.770
+that lists the C++ keywords
+
+00:00:38.570 --> 00:00:42.370
+without a frame of reference. It's difficult to know that this is a lot of keywords.
+
+00:00:42.370 --> 00:00:45.370
+There are around 90 keywords in C++.
+
+00:00:47.870 --> 00:00:49.470
+Java has around 50 --
+
+00:00:52.370 --> 00:00:55.970
+has 32 and Python has 33.
+
+00:00:58.570 --> 00:01:00.570
+90 is a lot of keywords.
+
+00:01:00.570 --> 00:01:04.230
+Now in general, the more keywords that a language has,
+
+00:01:04.230 --> 00:01:06.730
+the more complex the programming language grammar.
+
+00:01:07.390 --> 00:01:10.690
+However, there are many keywords in C++ that are rarely used.
+
+00:01:10.690 --> 00:01:13.690
+I've been using C++ for a very long time.
+
+00:01:13.690 --> 00:01:16.190
+And there are some keywords in this list that I've never used.
+
+00:01:16.490 --> 00:01:19.290
+There's no need to sit down and memorize all these keywords.
+
+00:01:19.290 --> 00:01:22.290
+We'll use the keywords as we need them. You'll learn that along the way.
+
+00:01:22.890 --> 00:01:27.090
+Notice that some of the keywords in this list we've already used. For example,
+
+00:01:27.290 --> 00:01:31.390
+we've used it and we've used return. Here and here's
+
+00:01:32.190 --> 00:01:33.790
+return right here.
+
+00:01:34.590 --> 00:01:38.690
+We use that in our first program.Also noticed that pound include
+
+00:01:38.990 --> 00:01:41.990
+main, favorite number, standard endline,
+
+00:01:41.990 --> 00:01:44.990
+cin and cout are not in this list.
+
+00:01:45.650 --> 00:01:48.850
+That's because they're not keywords. We'll talk about them. Next.
+
+00:01:49.100 --> 00:01:50.980
+What's important to remember here
+
+00:01:50.980 --> 00:01:55.240
+is that C++ has a set of keywords that it's defined in the language.
+
+00:01:55.240 --> 00:01:57.040
+And these words are reserved.
+
+00:01:57.040 --> 00:02:00.340
+Now let's go to code light and see the reserve words in our first program.
+
+00:02:03.240 --> 00:02:07.040
+Back in code light. And I'm looking at the same program that we did in the previous section.
+
+00:02:07.040 --> 00:02:10.440
+The moment, the favorite number, you can see that I mentioned that
+
+00:02:10.440 --> 00:02:12.240
+main and pound include
+
+00:02:12.740 --> 00:02:14.940
+and favorite number and so forth.
+
+00:02:14.940 --> 00:02:17.440
+We're not keywords. Same with standard out,
+
+00:02:17.990 --> 00:02:21.190
+see out and so forth and inline all of these.
+
+00:02:21.190 --> 00:02:24.850
+These are not keywords. These are called identifiers.
+
+00:02:25.850 --> 00:02:29.650
+And there's an important distinction between identifiers and keywords
+
+00:02:29.650 --> 00:02:33.950
+and identifier is something that the programmer names.
+
+00:02:33.950 --> 00:02:36.450
+So these names have been created by programmers
+
+00:02:36.450 --> 00:02:39.650
+to create something that represents something meaningful to them.
+
+00:02:40.200 --> 00:02:44.300
+There are rules about how to name identifiers and we'll go into all those in a later section C++
+
+00:02:44.600 --> 00:02:46.600
+also has operators has got a lot of operators.
+
+00:02:46.600 --> 00:02:50.700
+It's got the operators that you used to, you know, your addition,
+
+00:02:50.700 --> 00:02:53.700
+multiplication, subtraction, division, and so forth.
+
+00:02:54.200 --> 00:02:57.560
+But in this case, we're using some non-standard operators,for example.
+
+00:02:58.160 --> 00:03:00.560
+This guy right here, that little Chevron
+
+00:03:00.560 --> 00:03:03.360
+is the stream insertion operator.
+
+00:03:03.360 --> 00:03:07.020
+We're going to insert whatever's on the right-hand side of it, into that stream.
+
+00:03:07.020 --> 00:03:10.420
+In this case, it's an output stream that gets displayed to the console.
+
+00:03:11.020 --> 00:03:14.120
+Same thing with the string extraction operator.
+
+00:03:14.120 --> 00:03:18.120
+One takes something from the console and stores it into a variable
+
+00:03:18.120 --> 00:03:18.890
+in this case.
+
+00:03:18.890 --> 00:03:19.890
+Favorite number
+
+00:03:20.790 --> 00:03:22.790
+there's also that double colon right here.
+
+00:03:23.190 --> 00:03:24.990
+That's the scope resolution operator.
+
+00:03:24.990 --> 00:03:28.860
+We'll talk about all of these operators as we go on to section nine in the course,
+
+00:03:29.360 --> 00:03:31.760
+C++ also has punctuation
+
+00:03:31.760 --> 00:03:35.260
+things like semi-colons at the end of statements, curlies
+
+00:03:36.160 --> 00:03:40.160
+open and closed quotes, parentheses.It's got all kinds of punctuation.
+
+00:03:42.160 --> 00:03:45.760
+When you put all of these elements together in a program,
+
+00:03:45.760 --> 00:03:48.360
+you end up with something called syntax.
+
+00:03:50.360 --> 00:03:53.960
+Syntax is the syntax of the programming language, the structure,
+
+00:03:53.960 --> 00:03:57.960
+and the meaning of what you want the compiler to understand
+
+00:03:58.460 --> 00:04:02.120
+the compiler is taking your code and translating it to machine code.
+
+00:04:02.620 --> 00:04:05.980
+And it's translating it based on what you told that you wanted to be done.
+
+00:04:05.980 --> 00:04:09.780
+It's not going to guess. This may sound a little intimidating at this point,
+
+00:04:09.780 --> 00:04:12.140
+but it comes pretty quickly with a little bit of practice.
+
+00:04:12.140 --> 00:04:14.340
+Well, that completes this video in the next video.
+
+00:04:14.340 --> 00:04:16.740
+We'll talk about the seatbelt plus preprocessor
+
+00:04:16.740 --> 00:04:20.140
+and we'll learn more about that.Pre-processor directive pound include.

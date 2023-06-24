@@ -1,0 +1,571 @@
+WEBVTT
+
+00:00.180 --> 00:04.890
+In this video, let us look at the functions of string class.
+
+00:06.090 --> 00:06.900
+In the previous video.
+
+00:06.900 --> 00:09.360
+Already, I have shown you how to create the object.
+
+00:09.600 --> 00:10.680
+Now let us see.
+
+00:10.710 --> 00:12.940
+There are built in functions of this class.
+
+00:12.960 --> 00:14.010
+Let us look at them.
+
+00:14.280 --> 00:17.620
+Here I have a few basic functions of string class.
+
+00:17.640 --> 00:19.530
+We will see more functions after this.
+
+00:20.680 --> 00:22.570
+The first one is land.
+
+00:22.780 --> 00:26.590
+This will find out the length of a string.
+
+00:27.010 --> 00:28.610
+So how to call this function?
+
+00:28.630 --> 00:31.450
+I will create an object of string class here.
+
+00:32.420 --> 00:33.050
+String.
+
+00:34.220 --> 00:35.060
+That's one.
+
+00:35.730 --> 00:37.920
+Now here I will give the word.
+
+00:37.950 --> 00:38.550
+Hello.
+
+00:40.480 --> 00:45.970
+Now there's a strain for calling the function, I have to say, as dot length.
+
+00:46.210 --> 00:50.040
+This will find out the length of this string only.
+
+00:50.050 --> 00:53.950
+So the functions are called upon the object because they are members.
+
+00:53.950 --> 00:58.330
+So you have to use dot operator for calling the member functions.
+
+00:58.750 --> 01:00.660
+Suppose I have one more string.
+
+01:00.670 --> 01:03.970
+I will create one more string here as to.
+
+01:04.120 --> 01:07.180
+And suppose this a string is world.
+
+01:10.440 --> 01:18.810
+Then for finding the length of this one, I can call the function as to what length this will be calling
+
+01:18.810 --> 01:21.210
+function upon this object.
+
+01:21.450 --> 01:25.170
+See, depending on the object, the function will be called.
+
+01:25.200 --> 01:30.330
+This function will find out the length of S1 and this function will find out the length of S2.
+
+01:30.780 --> 01:36.500
+So the benefit of object orientation is we can call the functions upon the object itself.
+
+01:36.510 --> 01:38.070
+They are inside the object.
+
+01:38.070 --> 01:41.220
+So it means this S1 is having a string.
+
+01:41.220 --> 01:46.680
+Hello, as well as the various functions like length and all these functions that are given here.
+
+01:47.160 --> 01:49.050
+All these functions are present here.
+
+01:49.200 --> 01:52.650
+So we can simply call those function upon the same object.
+
+01:54.120 --> 01:55.970
+So let us come back to the functions.
+
+01:55.980 --> 01:58.380
+This is for finding length of a strain.
+
+01:58.950 --> 02:02.310
+Now, if I take this example and draw an array.
+
+02:04.040 --> 02:06.350
+Let us take another inside.
+
+02:06.350 --> 02:06.740
+This.
+
+02:06.740 --> 02:08.750
+This halo is written like this.
+
+02:09.020 --> 02:09.710
+Hello.
+
+02:10.100 --> 02:11.840
+Terminated by the character.
+
+02:11.960 --> 02:17.300
+Right now, if you call this length, it will give the length of a string that is five.
+
+02:17.330 --> 02:19.160
+So total five alphabets are there in.
+
+02:19.160 --> 02:19.760
+This is string.
+
+02:20.720 --> 02:23.860
+Now let us go to the next function size.
+
+02:23.870 --> 02:25.460
+This is also a same thing.
+
+02:25.640 --> 02:29.180
+See, even you can call length or you can call size.
+
+02:29.180 --> 02:29.900
+So whatever.
+
+02:29.900 --> 02:32.740
+First come to your mind, you can use it, right?
+
+02:32.750 --> 02:34.280
+Both have same meaning.
+
+02:34.280 --> 02:35.530
+That is the same work.
+
+02:35.540 --> 02:37.850
+So that you call it a size or you call length.
+
+02:37.850 --> 02:38.690
+They are seen.
+
+02:39.620 --> 02:43.890
+Now this capacity, this function is different, right?
+
+02:43.940 --> 02:46.370
+This we have finished capacity.
+
+02:46.370 --> 02:51.920
+This gives the capacity of a string, as I have already explained in the previous video, that it will
+
+02:51.920 --> 02:55.820
+not create an array exactly of this string size.
+
+02:55.820 --> 02:59.430
+It will create a bigger size, a little bigger size array.
+
+02:59.600 --> 03:04.070
+Usually it may be 15 or 16, so it depends on the compiler, whatever the size may be.
+
+03:04.160 --> 03:07.700
+So it will give the capacity of this string.
+
+03:07.700 --> 03:10.190
+So how many more characters you can add?
+
+03:10.190 --> 03:12.530
+You can know about this one, no doubt.
+
+03:12.530 --> 03:19.520
+If you give a bigger string or larger string, it will increase the capacity and also length of a string.
+
+03:19.520 --> 03:19.970
+Right.
+
+03:19.970 --> 03:20.810
+It is dynamic.
+
+03:20.810 --> 03:22.310
+It will be changing its size.
+
+03:22.880 --> 03:26.330
+But right now, whatever is the capacity, you can know the capacity.
+
+03:26.750 --> 03:32.630
+And if you want to increase the capacity, you can call resize function, you can mention the size and
+
+03:32.630 --> 03:34.010
+you can change the capacity.
+
+03:34.280 --> 03:36.020
+So this will be changed.
+
+03:36.020 --> 03:37.430
+Capacity will be changed.
+
+03:38.270 --> 03:42.170
+Now let us look at these functions quickly, maximum size.
+
+03:42.170 --> 03:48.230
+So depending on the compiler, this gives the what is the possible maximum size a string you can have
+
+03:48.230 --> 03:49.220
+in this compiler.
+
+03:49.460 --> 03:51.680
+This may vary from compiler to compiler.
+
+03:51.680 --> 03:59.960
+So this will give you the maximum possible size like 1000 characters or 10,000 or lacs of characters.
+
+03:59.960 --> 04:01.310
+How many characters are allowed?
+
+04:01.310 --> 04:02.690
+You can know the size.
+
+04:03.740 --> 04:05.890
+This will clear the contents of testing.
+
+04:05.930 --> 04:08.900
+This will find out whether a string is empty or not.
+
+04:09.700 --> 04:12.100
+Let us try all these functions and check them.
+
+04:12.670 --> 04:14.350
+So, Len size, capacity.
+
+04:14.500 --> 04:15.880
+Size, max size.
+
+04:15.910 --> 04:17.410
+Clear and empty.
+
+04:18.400 --> 04:24.970
+I'll give you a demo on this one here in this program already I have a string object created, so let
+
+04:24.970 --> 04:28.060
+us call struct length.
+
+04:28.930 --> 04:34.330
+Right now, I will directly see out this one so that we can see the result.
+
+04:34.840 --> 04:37.840
+And then let us run this and see.
+
+04:39.970 --> 04:42.190
+Yes, it is five.
+
+04:42.190 --> 04:44.470
+And then also I am printing a string.
+
+04:44.470 --> 04:46.240
+So length here is five.
+
+04:46.940 --> 04:48.520
+Now I will change this function.
+
+04:48.520 --> 04:51.370
+I'll remove this and I'll call another function.
+
+04:53.400 --> 05:00.000
+Dot see the moment I am pressing dot it is showing all the functions that are present inside this string
+
+05:00.000 --> 05:00.690
+class.
+
+05:01.720 --> 05:04.510
+So it depends on your ID that you're using.
+
+05:04.510 --> 05:07.000
+It may pop up the list of functions.
+
+05:07.450 --> 05:08.710
+Depends on the ID.
+
+05:08.740 --> 05:10.210
+I'm using x code.
+
+05:10.210 --> 05:13.420
+So now I will call a function that is size.
+
+05:14.230 --> 05:15.340
+Let us run this.
+
+05:15.580 --> 05:18.130
+So here I got the size of a string.
+
+05:19.160 --> 05:21.890
+Now let us go back to that land function.
+
+05:23.990 --> 05:25.200
+Here I.
+
+05:25.260 --> 05:27.440
+I'll give a string that is bigger.
+
+05:29.750 --> 05:30.530
+Welcome.
+
+05:30.740 --> 05:31.280
+Yes.
+
+05:31.310 --> 05:32.720
+Lent is seven.
+
+05:33.810 --> 05:35.760
+Now I'll give the size as.
+
+05:36.090 --> 05:36.810
+Nothing.
+
+05:37.020 --> 05:38.190
+No string at all.
+
+05:41.370 --> 05:42.430
+So size is zero.
+
+05:42.450 --> 05:43.290
+There is nothing.
+
+05:44.130 --> 05:46.710
+I'll try this one now.
+
+05:46.740 --> 05:47.490
+Peter.
+
+05:47.520 --> 05:48.510
+Another pointer?
+
+05:48.540 --> 05:49.200
+No.
+
+05:52.230 --> 05:54.540
+It's a letter that is recorded.
+
+05:54.540 --> 05:59.400
+It is here it is trying to find the length, but the string is null so it's causing an error.
+
+05:59.940 --> 06:04.950
+So null pointer it will not work, so make sure that the string is null or not.
+
+06:05.430 --> 06:08.630
+Now let us take the string back to hell.
+
+06:09.600 --> 06:11.430
+Now I'll show you other functions.
+
+06:11.850 --> 06:14.340
+I'll call the function capacity.
+
+06:14.730 --> 06:16.590
+Let see when I say hello.
+
+06:16.590 --> 06:18.750
+The size was five or length was five.
+
+06:18.750 --> 06:20.310
+Let us see what is the capacity?
+
+06:20.310 --> 06:22.200
+So here it is giving capacity.
+
+06:22.200 --> 06:23.940
+That is 22.
+
+06:24.830 --> 06:31.160
+So as I said, the capacity will be bigger than the length of string and whatever the capacity that
+
+06:31.160 --> 06:37.040
+depends on the compiler or that depends on the implementation of this class that is string class inside
+
+06:37.040 --> 06:37.700
+the compiler.
+
+06:38.540 --> 06:41.660
+So check it on your machine, what capacity you are getting.
+
+06:42.260 --> 06:44.210
+Now I will call one more function.
+
+06:45.580 --> 06:57.220
+Resize and I'll give the size as 50 and here I should give the size struct resize and I'll give the
+
+06:57.220 --> 06:59.410
+capacity that is as 50.
+
+06:59.800 --> 07:00.640
+Then here.
+
+07:01.810 --> 07:04.510
+I will display directly capacity.
+
+07:05.710 --> 07:06.100
+Right.
+
+07:06.100 --> 07:09.240
+So I have changed the capacity of Austin to 50.
+
+07:09.310 --> 07:12.310
+Let us run it so it may take 50 or more, 50 or so.
+
+07:12.730 --> 07:14.410
+So it has taken more than 50.
+
+07:14.450 --> 07:15.190
+Yes.
+
+07:15.730 --> 07:19.990
+It will make sure that the capacity is 50 or more than 50.
+
+07:20.050 --> 07:24.240
+Right now, I will call one more function and I'll show you.
+
+07:24.250 --> 07:27.750
+We have seen this one max size.
+
+07:27.760 --> 07:28.360
+Right.
+
+07:28.660 --> 07:29.470
+So.
+
+07:30.590 --> 07:31.720
+But that score.
+
+07:31.850 --> 07:38.480
+So here it will tell you what is the maximum possible size of a string that you can have in this compiler.
+
+07:42.190 --> 07:43.810
+Oh, such a big string.
+
+07:43.990 --> 07:47.080
+So these many characters you can have in this string.
+
+07:47.080 --> 07:50.530
+So this is thing supports up to these many characters.
+
+07:50.890 --> 07:53.680
+So it can accommodate very big size of string.
+
+07:53.680 --> 07:57.550
+So a lot of contents that you can add as a string object.
+
+07:59.530 --> 08:00.650
+So let's set.
+
+08:00.670 --> 08:02.890
+So I have two more functions to show.
+
+08:03.220 --> 08:05.470
+I will say steer clear.
+
+08:06.160 --> 08:07.780
+Let us see after clearing.
+
+08:07.810 --> 08:09.010
+I'm printing this one.
+
+08:09.010 --> 08:09.750
+So what happens?
+
+08:09.760 --> 08:10.450
+Let us see.
+
+08:12.110 --> 08:14.480
+Nothing is printed, string is cleared.
+
+08:14.780 --> 08:19.460
+Now I will try to see out length of a string after clearing it.
+
+08:20.890 --> 08:21.430
+Right.
+
+08:26.710 --> 08:31.420
+Length zero strings cleared once it has become an empty string.
+
+08:34.120 --> 08:35.530
+Now one more function.
+
+08:37.480 --> 08:40.120
+I will check whether the string is empty or not.
+
+08:40.120 --> 08:42.310
+So struct empty.
+
+08:42.340 --> 08:45.070
+If this function is called, it will return true.
+
+08:45.100 --> 08:46.980
+If string is empty.
+
+08:46.990 --> 08:51.490
+So I will say see out it is empty.
+
+08:52.240 --> 08:55.510
+And then else I will see.
+
+08:56.500 --> 08:57.730
+String is.
+
+08:59.370 --> 09:00.480
+Whatever this thing is.
+
+09:00.480 --> 09:02.730
+Still, I will print this one.
+
+09:04.470 --> 09:05.040
+Right.
+
+09:05.070 --> 09:10.620
+So here, instead of saying it as empty, I will say string is empty.
+
+09:11.370 --> 09:12.630
+Now let us run this right now.
+
+09:12.630 --> 09:14.200
+You can see that the string is empty.
+
+09:14.250 --> 09:14.760
+Right.
+
+09:14.760 --> 09:17.910
+So you've got a message that is string is empty and I will type.
+
+09:17.910 --> 09:19.320
+Hello here and run.
+
+09:21.030 --> 09:22.440
+Now string is hello.
+
+09:22.440 --> 09:24.030
+So it is giving this a string.
+
+09:25.110 --> 09:26.250
+Now string is not empty.
+
+09:26.250 --> 09:28.020
+This function returns false.
+
+09:28.140 --> 09:29.840
+So that's all in this video.
+
+09:29.850 --> 09:34.080
+And the next video I will show you other functions of string class.
+
+09:35.930 --> 09:38.210
+So you check these functions on your computer.
+
+09:38.510 --> 09:42.650
+Then after looking at the functions, I will give you some exercises or practice programs.

@@ -1,0 +1,2006 @@
+﻿WEBVTT
+
+00:00:00.000 --> 00:00:10.000
+Hello everyone, welcome back to lecture 16 on vectors, iterators, and the standard template library.
+
+00:00:10.000 --> 00:00:16.000
+If you're wondering about the illustration on the front page here, those are two characters named vector.
+
+00:00:16.000 --> 00:00:26.000
+That's Vector the Crocodile from Sonic the Hedgehog, and Vector Perkins from Despicable Me, a thinly disguised younger Bill Gates.
+
+00:00:26.000 --> 00:00:34.000
+So we're going to start today by doing a little review of structures and overloaded output operators.
+
+00:00:34.000 --> 00:00:44.000
+So you remember for any user defined type, you can overload most of the C++ operators so that the operators will work with your new type.
+
+00:00:44.000 --> 00:00:57.000
+The syntax for a binary operator looks like this. Whatever the return type, here I've used T, the operator and the symbol, plus, minus, greater than, equal, equal, whatever.
+
+00:00:57.000 --> 00:01:04.000
+Then a const Tref for the left hand side and a const Tref for the right hand side.
+
+00:01:04.000 --> 00:01:13.000
+Now the output operator is a binary operator, but it requires a specific value on the left hand side, not a Tref.
+
+00:01:13.000 --> 00:01:20.000
+And so the overloaded output operator syntax, it returns an OstreamRef.
+
+00:01:20.000 --> 00:01:26.000
+It takes as its first argument an OstreamRef, the output stream that you're going to print to,
+
+00:01:26.000 --> 00:01:32.000
+and then it takes only one const Tref, the argument that you're going to print to the output.
+
+00:01:32.000 --> 00:01:42.000
+Now when the overloaded output operator ends, you return the Ostream argument after you've written to it, after you've changed it.
+
+00:01:42.000 --> 00:01:47.000
+So we're going to start today, rather than me talking a whole bunch, by doing an exercise.
+
+00:01:47.000 --> 00:01:50.000
+We're going to write an output operator for the car type.
+
+00:01:50.000 --> 00:02:02.000
+We want to print the data as manufacturer, a comma, a space, the model, a comma, a space, the miles per gallon, a space, and then the literal MPG.
+
+00:02:02.000 --> 00:02:17.000
+So let's go ahead and do that. So make sure that you have gone to week four, and in week four it's this last tab on vectors and exercise.
+
+00:02:17.000 --> 00:02:27.000
+Click the lecture exercise, and the lecture size opens. Click the link for the starter form, and here's the starter form for the overloaded output operator.
+
+00:02:27.000 --> 00:02:39.000
+Then make sure you've opened up your VS code, and gone to lecture 16, IC 16, and we're going to modify cars.h.
+
+00:02:39.000 --> 00:02:48.000
+So cars.h has the manufacturer and the model, and we're going to prototype the output operator.
+
+00:02:48.000 --> 00:02:54.000
+So you notice I've already included Iostream. If we didn't already include that, this wouldn't work.
+
+00:02:54.000 --> 00:02:59.000
+And because we're in the header, our car structure actually has a mistake in it.
+
+00:02:59.000 --> 00:03:07.000
+Because we're in a header, we can't use using namespace standard, so we have to make sure that all standard types are fully qualified.
+
+00:03:07.000 --> 00:03:14.000
+So we have to change it to standard, colon, colon, string, manufacturer.
+
+00:03:14.000 --> 00:03:25.000
+The same thing with the Iostream operator. So the output operator is standard, colon, colon, Iostream, ref. That's what we're going to return.
+
+00:03:25.000 --> 00:03:44.000
+It's operator, output, that direction, and it's a standard Iostream, ref. We generally call it out. And then a const car, ref, car for the argument.
+
+00:03:44.000 --> 00:04:04.000
+So that's the prototype for the output argument. We can add a little documentation to it.
+
+00:04:04.000 --> 00:04:18.000
+Car, model, mpg, mpg.
+
+00:04:18.000 --> 00:04:27.000
+I'm not going to put the rest of the documentation inside there. So let's copy that over.
+
+00:04:27.000 --> 00:04:39.000
+Let's go to cars.cpp. Drop it in there. Put our ID on top here.
+
+00:04:39.000 --> 00:04:50.000
+Now when you bring a prototype over to the implementation file, we have included using namespace standard over here. That's legal here.
+
+00:04:50.000 --> 00:04:58.000
+And so if you like, you can go remove the standard if you don't like it. Generally it's just as easy to leave it there.
+
+00:04:58.000 --> 00:05:02.000
+But if you want, you can go ahead and remove it like that.
+
+00:05:02.000 --> 00:05:10.000
+Now the output operator is always going to return the stream that it takes as its input.
+
+00:05:10.000 --> 00:05:28.000
+As its first argument. And we're going to print the manufacturer, model, and mpg. So that is called mfg, model, and mpg are the names of our fields.
+
+00:05:28.000 --> 00:05:42.000
+So we're going to say out car manufacturer. Notice I've called my variable car lowercase. You could call it c or something like that if you wanted.
+
+00:05:42.000 --> 00:06:08.000
+Car manufacturer. We want a comma space. Car model. Comma space. Car mpg.
+
+00:06:08.000 --> 00:06:19.000
+And then we want space and mpg for the output. Now you never put a new line when you're writing an overloaded operator like this. Don't put a new line at the end.
+
+00:06:19.000 --> 00:06:22.000
+That's kind of a hard habit to get out of.
+
+00:06:22.000 --> 00:06:29.000
+Okay, let's open a shell on this. Right click it. Open an integrated terminal.
+
+00:06:29.000 --> 00:06:36.000
+Let's maximize that so we can see it on the whole page. I'll close the earlier one so we're not using up that space.
+
+00:06:36.000 --> 00:06:45.000
+And let's do make to check the syntax. Okay, no errors. So make test.
+
+00:06:45.000 --> 00:06:53.000
+And let's see what our mistake is.
+
+00:06:53.000 --> 00:07:04.000
+Expected. Okay, it looks like the expected output wants braces around it, which we didn't put and it wasn't shown on the slide.
+
+00:07:04.000 --> 00:07:11.000
+So we'll go ahead and add that fix to it. It looks like everything else is okay.
+
+00:07:11.000 --> 00:07:16.000
+So we'll put a brace around it there.
+
+00:07:16.000 --> 00:07:21.000
+And we'll put a brace around it there.
+
+00:07:21.000 --> 00:07:32.000
+And we'll go check our program again.
+
+00:07:32.000 --> 00:07:36.000
+So make test.
+
+00:07:36.000 --> 00:07:43.000
+Okay, so that looks like our overloaded output operator works the way we were expecting it in this case.
+
+00:07:43.000 --> 00:07:56.000
+Now again, the format I did, there's nothing special about this. I just made it up myself. I decided what I wanted the format to look like.
+
+00:07:56.000 --> 00:08:02.000
+Okay, so now let's look at our next topic, which is vectors.
+
+00:08:02.000 --> 00:08:13.000
+So a vector is a standard library list-like container, a sequential container, meaning that you have items in order.
+
+00:08:13.000 --> 00:08:23.000
+It is a homogeneous collection. That means it only stores items of the same type versus a structure, which is heterogeneous,
+
+00:08:23.000 --> 00:08:29.000
+meaning that it has fields or data members of different types.
+
+00:08:29.000 --> 00:08:35.000
+So this sounds like an array. It is kind of like an array, but unlike an array, it's not fixed size.
+
+00:08:35.000 --> 00:08:40.000
+It will grow and shrink as you need to make it larger or smaller.
+
+00:08:40.000 --> 00:08:47.000
+Now like all the things in the standard library, it is not automatically included. You need to include it.
+
+00:08:47.000 --> 00:08:53.000
+The name of the header is, not surprisingly, vector.
+
+00:08:53.000 --> 00:09:01.000
+Now to create a vector variable, you need to specify what kind of thing you're going to store inside it.
+
+00:09:01.000 --> 00:09:11.000
+We call this the base type. So here I've said that I want to create a vector variable v1, and I want to store integers inside it.
+
+00:09:11.000 --> 00:09:18.000
+Usually we'll pronounce this when you're reading the code to yourself as vector of int or vector int.
+
+00:09:18.000 --> 00:09:28.000
+So v1 automatically is constructed. It's not uninitialized. It's a constructed vector of int, and it is empty.
+
+00:09:28.000 --> 00:09:31.000
+It doesn't have anything inside of it.
+
+00:09:31.000 --> 00:09:36.000
+You can, when you create it, specify how many elements you want.
+
+00:09:36.000 --> 00:09:43.000
+When you create it with elements like that, all of the elements are automatically initialized.
+
+00:09:43.000 --> 00:09:53.000
+So they are not left uninitialized. They will all be initialized to zero in this case, and v2 is a vector of double.
+
+00:09:53.000 --> 00:10:05.000
+Now if you wanted to initialize the vector to a specific set of values, that was relatively difficult to do before C++11.
+
+00:10:05.000 --> 00:10:14.000
+What you had to do was you had to initialize an array. The syntax looks almost exactly the same as Java, if you're familiar with Java.
+
+00:10:14.000 --> 00:10:27.000
+And then you would pass to the vector the array as the first argument, and then add to the array the number of elements you wanted to read.
+
+00:10:27.000 --> 00:10:32.000
+Now when we look at addresses in the next lecture, we'll see what this actually is doing.
+
+00:10:32.000 --> 00:10:44.000
+A is actually the address of the one, and A+3 is the address right beyond the three, and the vector constructor takes that.
+
+00:10:44.000 --> 00:10:51.000
+Now that's relatively clunky. It requires us to create an extra array.
+
+00:10:51.000 --> 00:10:59.000
+Wouldn't it be nice if we could do it in line? Just plainly initialize the vector with an initializer list like this,
+
+00:10:59.000 --> 00:11:08.000
+and of course in C++11, that's exactly what we can do. We can use an initializer list to do this.
+
+00:11:08.000 --> 00:11:16.000
+So we're going to look at these different versions of initialization. We're going to do our first exercise in VInit.
+
+00:11:16.000 --> 00:11:23.000
+I believe this is B, so I'm going to go look at it and see if it is B over here.
+
+00:11:23.000 --> 00:11:35.000
+So let's close A. Let's look at B.
+
+00:11:35.000 --> 00:11:43.000
+Ok, so put your name on top of it, or your ID.
+
+00:11:43.000 --> 00:11:53.000
+We're going to create some vectors of short, int, long, and float, each containing five elements of the Fibonacci sequence.
+
+00:11:53.000 --> 00:11:58.000
+So V1 is going to be a short, and we're going to initialize it from an array.
+
+00:11:58.000 --> 00:12:02.000
+The first five sequences are 0, 1, 1, 2, and 3.
+
+00:12:02.000 --> 00:12:14.000
+So I'm going to say int A, bracket bracket, means that's an array, equals 0, 1, 1, 2, 3.
+
+00:12:14.000 --> 00:12:19.000
+Now I want to copy those elements into a vector, V1.
+
+00:12:19.000 --> 00:12:28.000
+So I'm going to say vector, the type is short, the base type is short, V1.
+
+00:12:28.000 --> 00:12:38.000
+And I'm going to pass it A, and A plus, I have five elements, so A plus 5.
+
+00:12:38.000 --> 00:12:43.000
+Ok, so that will initialize V1.
+
+00:12:43.000 --> 00:12:49.000
+Now in C++11, this will be V2, which is an int.
+
+00:12:49.000 --> 00:13:03.000
+We can use a simpler syntax, I can just say vector, int, V2, and I can just supply 5, 8, 13, 21, 34.
+
+00:13:03.000 --> 00:13:13.000
+So much less work, doesn't require us to create two objects in memory to create an initialized vector.
+
+00:13:13.000 --> 00:13:20.000
+Now V3, we're going to use a sized vector, meaning I'm going to allocate the size when I create the vector.
+
+00:13:20.000 --> 00:13:29.000
+So V3 is a long, so vector, long, V3, I have five elements.
+
+00:13:29.000 --> 00:13:40.000
+Now I want to go through and create, use the algorithm here for the Fibonacci sequence.
+
+00:13:40.000 --> 00:14:01.000
+So I'm going to create the first two terms, so long, LT1, long term 1, equals 55, and LT2 equals 89.
+
+00:14:01.000 --> 00:14:04.000
+So there are our first two terms.
+
+00:14:04.000 --> 00:14:24.000
+Now we'll use a traditional for loop, for size T, I equals 0, len equals V3 size, I less than len, plus plus I.
+
+00:14:24.000 --> 00:14:31.000
+So your fingers should just type that automatically, you shouldn't really have to think about it.
+
+00:14:31.000 --> 00:15:00.000
+Okay, so now we want to say V at I equals LT1.
+
+00:15:00.000 --> 00:15:18.000
+Long term equals LT1.
+
+00:15:18.000 --> 00:15:32.000
+LT1 equals LT2, and LT2 equals temp plus LT2.
+
+00:15:32.000 --> 00:15:42.000
+Or we could write it like LT2 plus equals temp.
+
+00:15:42.000 --> 00:15:50.000
+Okay, so that should move us to 144, 233, and 377 when we do that.
+
+00:15:50.000 --> 00:15:54.000
+Okay, so remember this algorithm we're going to use in the next two.
+
+00:15:54.000 --> 00:15:59.000
+Okay, so V4 is a sized vector filled with a range-based loop.
+
+00:15:59.000 --> 00:16:10.000
+So we're going to do vector, this one's a float, V4, 5.
+
+00:16:10.000 --> 00:16:25.000
+And we'll say long float term 1 equals 16.
+
+00:16:25.000 --> 00:16:36.000
+And float term 2 equals 987.
+
+00:16:36.000 --> 00:16:44.000
+Okay, we don't, and this of course is a float, not a long.
+
+00:16:44.000 --> 00:16:46.000
+Okay, so this is a different loop here.
+
+00:16:46.000 --> 00:16:50.000
+Up here we used a traditional loop.
+
+00:16:50.000 --> 00:17:10.000
+We're going to do 4, auto, ref, E. For each element in V4,
+
+00:17:10.000 --> 00:17:25.000
+we're going to set E equal to FT1. Let's say auto temp equals FT1.
+
+00:17:25.000 --> 00:17:39.000
+FT1 equals FT2. And FT2 plus equals temp.
+
+00:17:39.000 --> 00:17:43.000
+Okay, so pretty much the same algorithm we used here.
+
+00:17:43.000 --> 00:17:51.000
+Finally we're going to use the same algorithm a third time with an unsized vector.
+
+00:17:51.000 --> 00:18:03.000
+So let's try that. We'll do vector double V5.
+
+00:18:03.000 --> 00:18:17.000
+No size on it. While V5 size is less than 5, we'll do something in here.
+
+00:18:17.000 --> 00:18:40.000
+Okay, so let's create our terms. We had double DT1 equals 6765.0. DT2 equals 10946.0.
+
+00:18:40.000 --> 00:18:50.000
+So while V5 size is less than 5, we'll do V5 pushback.
+
+00:18:50.000 --> 00:19:13.000
+DT1, auto temp equals DT1 equals DT2. And DT2 plus equals temp.
+
+00:19:13.000 --> 00:19:21.000
+So same algorithm, this time we're expanding V5 as we go.
+
+00:19:21.000 --> 00:19:27.000
+Okay, so this is the four kinds of initialization we looked at.
+
+00:19:27.000 --> 00:19:33.000
+Let's go ahead and create a terminal on this. Open an integrated terminal.
+
+00:19:33.000 --> 00:19:41.000
+Let's expand it up there and let's do make test.
+
+00:19:41.000 --> 00:19:49.000
+And I got V at on line 35, so I have a syntax error.
+
+00:19:49.000 --> 00:20:01.000
+And this should be V3 at.
+
+00:20:01.000 --> 00:20:07.000
+V4, V5.
+
+00:20:07.000 --> 00:20:21.000
+That looks like the only one we made a syntax error on.
+
+00:20:21.000 --> 00:20:32.000
+Okay, all five of the vectors were initialized correctly there.
+
+00:20:32.000 --> 00:20:42.000
+Alright, let's look at accessing the vector elements. You already saw me access them there.
+
+00:20:42.000 --> 00:20:49.000
+So just like string, we can access the individual elements with the @ member function or the square brackets.
+
+00:20:49.000 --> 00:20:55.000
+If you use the @ member function and you go out of bounds, it will throw an exception.
+
+00:20:55.000 --> 00:21:02.000
+So it's safe. It's range checked. If you use the square brackets, it's not range checked.
+
+00:21:02.000 --> 00:21:10.000
+Your program may crash, but not because it throws an exception. There's no range checking on that.
+
+00:21:10.000 --> 00:21:17.000
+So other operations on vector objects. We have size. You just saw it in the last exercise.
+
+00:21:17.000 --> 00:21:27.000
+Just like string, the type is vector size type, but we'll of course use size T just because it's shorter and less typing.
+
+00:21:27.000 --> 00:21:32.000
+You can add elements to the end of the vector, which you just saw us do.
+
+00:21:32.000 --> 00:21:38.000
+So we can do V1.pushback(3) and that increases the elements by one.
+
+00:21:38.000 --> 00:21:47.000
+We can remove the last element. Now this doesn't return the last element. It just removes it. This is a void member function.
+
+00:21:47.000 --> 00:21:51.000
+That pops back and it shrinks the vector by one.
+
+00:21:51.000 --> 00:21:58.000
+And we have some aggregate operations. Unlike structures, we can compare vectors without a loop.
+
+00:21:58.000 --> 00:22:03.000
+So if V1 == V2 works perfectly fine.
+
+00:22:03.000 --> 00:22:13.000
+And you can assign using equals. Again, you don't need a loop for this. These aggregate operations are built in.
+
+00:22:13.000 --> 00:22:23.000
+Now, when you write a function that takes a vector, you'll first always want to pass by reference or const reference.
+
+00:22:23.000 --> 00:22:27.000
+So I'm going to compute the average of this vector of double.
+
+00:22:27.000 --> 00:22:34.000
+Since I'm not going to change any of the elements, it's a const vector double ref V.
+
+00:22:34.000 --> 00:22:42.000
+So pass by reference or const reference. Never ever pass a vector by value.
+
+00:22:42.000 --> 00:22:53.000
+Two, use size to get the number of elements and store it in a size T object. Again, not in an int.
+
+00:22:53.000 --> 00:23:02.000
+Now in this example, I've checked, for instance, if the length of the vector is empty.
+
+00:23:02.000 --> 00:23:07.000
+It doesn't really have an average. Its average is not zero. The average is the number of elements.
+
+00:23:07.000 --> 00:23:13.000
+The sum of the elements divided by the number of elements. And of course we can't divide by zero.
+
+00:23:13.000 --> 00:23:24.000
+Now if you use floating point, you divide 0.0 divided by 0.0, you get the special value, not a number.
+
+00:23:24.000 --> 00:23:32.000
+So our function average here does the same thing the square root function does when it's passed an invalid input.
+
+00:23:32.000 --> 00:23:40.000
+Really, if you think about it, if we pass an empty vector here, what we're doing is violating the precondition for the average function.
+
+00:23:40.000 --> 00:23:44.000
+You can't compute the average of an empty vector.
+
+00:23:44.000 --> 00:23:56.000
+You can also call the built-in standard not a number function, NAN, and pass an additional message if you want that would display as an error message.
+
+00:23:56.000 --> 00:24:03.000
+So if we didn't have an error, if we check the preconditions, and again I'm not throwing exceptions in this case,
+
+00:24:03.000 --> 00:24:08.000
+I'm just doing the same thing most numeric functions do,
+
+00:24:08.000 --> 00:24:15.000
+I used the range-based for loop whenever you can.
+
+00:24:15.000 --> 00:24:20.000
+Range-based for loops just make the code much simpler.
+
+00:24:20.000 --> 00:24:30.000
+And now I can safely return sum divided by len because I know that len is at least one in this case.
+
+00:24:30.000 --> 00:24:37.000
+Now, imagine that we want to write a print function for vector.
+
+00:24:37.000 --> 00:24:41.000
+So I'm going to call it just print, I'm not going to return anything.
+
+00:24:41.000 --> 00:24:49.000
+I'm going to pass in the stream I'm going to print through so we can print a vector to a file or a string stream or whatever.
+
+00:24:49.000 --> 00:24:55.000
+And of course my argument is going to be a const vector.
+
+00:24:55.000 --> 00:25:03.000
+That would not be too hard to write, but the problem is it wouldn't work for other vector types.
+
+00:25:03.000 --> 00:25:08.000
+I have this perfect print function that prints my vector of double just like I want,
+
+00:25:08.000 --> 00:25:17.000
+and I have to duplicate the code for vectors of shorts or vectors of ints.
+
+00:25:17.000 --> 00:25:24.000
+So to work for vectors of any type, what you do is you use templates.
+
+00:25:24.000 --> 00:25:28.000
+So the template definition goes in the header file.
+
+00:25:28.000 --> 00:25:34.000
+You have to remember to fully qualify all library types with standard.
+
+00:25:34.000 --> 00:25:38.000
+So you cannot simply put using namespace standard.
+
+00:25:38.000 --> 00:25:42.000
+And so that template would look like this.
+
+00:25:42.000 --> 00:25:47.000
+Template type name any type or type name T.
+
+00:25:47.000 --> 00:25:57.000
+Void print standard ostream ref, fully qualified it, and const standard vector any type ref V.
+
+00:25:57.000 --> 00:26:06.000
+So we're going to do that in exercise C, vprint.cpp and vprint.h.
+
+00:26:06.000 --> 00:26:14.000
+So let's put away B and let's go take a look at C.
+
+00:26:14.000 --> 00:26:18.000
+So vprint.h is where we're going to put our function.
+
+00:26:18.000 --> 00:26:28.000
+vprint.cpp is only going to have our name inside there.
+
+00:26:28.000 --> 00:26:38.000
+So I'm going to go ahead and take this comment that I've put inside here.
+
+00:26:38.000 --> 00:26:50.000
+I'm going to move it over to my header file.
+
+00:26:50.000 --> 00:26:54.000
+And I'm going to write my generic print function here.
+
+00:26:54.000 --> 00:27:03.000
+So template type name T or any name you want for T.
+
+00:27:03.000 --> 00:27:28.000
+Void print standard ostream ref out and const standard vector T, not vector double, vector T ref back.
+
+00:27:28.000 --> 00:27:30.000
+Okay, now we want the output to look like this.
+
+00:27:30.000 --> 00:27:33.000
+Notice there's no space before the one.
+
+00:27:33.000 --> 00:27:37.000
+There is a comma and a space before the other items.
+
+00:27:37.000 --> 00:27:39.000
+There's no space after the four.
+
+00:27:39.000 --> 00:27:41.000
+And we have brackets after it.
+
+00:27:41.000 --> 00:27:44.000
+This algorithm is called the fence post algorithm.
+
+00:27:44.000 --> 00:27:49.000
+It's one of those algorithms you should memorize until it becomes second nature.
+
+00:27:49.000 --> 00:28:00.000
+So we're going to print to out the opening bracket.
+
+00:28:00.000 --> 00:28:11.000
+Then if vec size is greater than zero, we're going to print the stuff inside it.
+
+00:28:11.000 --> 00:28:18.000
+At the end, we're going to print to out and put the closing bracket.
+
+00:28:18.000 --> 00:28:22.000
+These are called the delimiters.
+
+00:28:22.000 --> 00:28:37.000
+Okay, so if vector size is greater than zero, we're going to do out vec at zero or vec sub zero.
+
+00:28:37.000 --> 00:28:39.000
+If you like, that's perfectly fine.
+
+00:28:39.000 --> 00:28:42.000
+You know it's there. It's safe.
+
+00:28:42.000 --> 00:28:48.000
+And then we're going to do for size T i equals.
+
+00:28:48.000 --> 00:28:50.000
+Make sure you don't do zero here.
+
+00:28:50.000 --> 00:28:52.000
+If you do zero, you repeat the first element.
+
+00:28:52.000 --> 00:29:00.000
+One, len equals vec size.
+
+00:29:00.000 --> 00:29:06.000
+I less than len plus plus i.
+
+00:29:06.000 --> 00:29:12.000
+And so each one of the remaining elements, we want a comma space.
+
+00:29:12.000 --> 00:29:16.000
+And then we want vec at i.
+
+00:29:16.000 --> 00:29:22.000
+Again, we won't put a new line on this print function.
+
+00:29:22.000 --> 00:29:31.000
+So here is our template function that will work for any kind of vector as long as we can print the elements.
+
+00:29:31.000 --> 00:29:37.000
+If we have an overloaded operator for a user defined type, that will work perfectly fine.
+
+00:29:37.000 --> 00:29:44.000
+So this is a generic print function for any vector.
+
+00:29:44.000 --> 00:29:52.000
+Let's try it out. Let's go ahead and get a terminal there.
+
+00:29:52.000 --> 00:29:57.000
+And then let's do make. Make sure syntax is correct.
+
+00:29:57.000 --> 00:30:01.000
+And make test.
+
+00:30:01.000 --> 00:30:05.000
+So there's v1. v1 is the one we created in the last exercise.
+
+00:30:05.000 --> 00:30:08.000
+And v2, v3, v4.
+
+00:30:08.000 --> 00:30:13.000
+And all of those are printing correctly.
+
+00:30:13.000 --> 00:30:24.000
+Now there's no formatting on the numbers, so we're not seeing that this is a float and this is a double and so forth.
+
+00:30:24.000 --> 00:30:30.000
+All right. Pretty impressive.
+
+00:30:30.000 --> 00:30:53.000
+So let's look now at operators and vectors.
+
+00:30:53.000 --> 00:31:00.000
+Okay. So vector doesn't define an output operator.
+
+00:31:00.000 --> 00:31:06.000
+We just wrote the print function to print, but it would be nice to do it with an overloaded output operator.
+
+00:31:06.000 --> 00:31:11.000
+And again, we want it to work with any vector type, so we're going to use a template.
+
+00:31:11.000 --> 00:31:19.000
+So really the only difference between print is we're changing the name of it to operator arrow arrow.
+
+00:31:19.000 --> 00:31:21.000
+Now remember a template is not a function.
+
+00:31:21.000 --> 00:31:24.000
+Instead it generates a function when it's called.
+
+00:31:24.000 --> 00:31:28.000
+And again, we should place this in a header file.
+
+00:31:28.000 --> 00:31:30.000
+So we're going to do d.
+
+00:31:30.000 --> 00:31:35.000
+Leave c open if you've already got it open.
+
+00:31:35.000 --> 00:31:38.000
+Because we're going to use exactly the same code.
+
+00:31:38.000 --> 00:31:40.000
+So I've got print open here.
+
+00:31:40.000 --> 00:31:45.000
+I'm going to go open d.
+
+00:31:45.000 --> 00:31:53.000
+And in vecout.cpp, I'm going to put my name on it.
+
+00:31:53.000 --> 00:32:00.000
+That's all I'm going to put in vecout.cpp.
+
+00:32:00.000 --> 00:32:07.000
+And in vecout.h, what I'm going to do is come over to vprint.h.
+
+00:32:07.000 --> 00:32:12.000
+I'm going to copy this code I had inside here.
+
+00:32:12.000 --> 00:32:15.000
+And I'm going to make two changes to it.
+
+00:32:15.000 --> 00:32:18.000
+I'm going to make two changes to it.
+
+00:32:18.000 --> 00:32:20.000
+First I'm going to change the name.
+
+00:32:20.000 --> 00:32:21.000
+Three changes to it.
+
+00:32:21.000 --> 00:32:28.000
+So I'm going to change it to operator.
+
+00:32:28.000 --> 00:32:35.000
+I'm going to change the return type to standard ostream ref.
+
+00:32:35.000 --> 00:32:44.000
+And I'm going to return out at the end of this.
+
+00:32:44.000 --> 00:32:50.000
+Now again, this only works if we know how to print vector objects.
+
+00:32:50.000 --> 00:32:53.000
+And if we look at cars.h here,
+
+00:32:53.000 --> 00:32:56.000
+notice that we already have the output operator.
+
+00:32:56.000 --> 00:33:00.000
+We wrote that in our first exercise today.
+
+00:33:00.000 --> 00:33:09.000
+So let's open up a shell on D.
+
+00:33:09.000 --> 00:33:16.000
+And let's do make on that.
+
+00:33:16.000 --> 00:33:23.000
+And then do make test.
+
+00:33:23.000 --> 00:33:29.000
+And okay, so almost the same code.
+
+00:33:29.000 --> 00:33:30.000
+Oh yeah, it's perfect.
+
+00:33:30.000 --> 00:33:43.000
+Yeah, 100% of those pass.
+
+00:33:43.000 --> 00:33:53.000
+100% of them pass.
+
+00:33:53.000 --> 00:34:01.000
+So C and D were very, very similar using templates to process a vector of a built-in type
+
+00:34:01.000 --> 00:34:04.000
+and then a vector of a user-defined type.
+
+00:34:04.000 --> 00:34:07.000
+We didn't have to change the code almost at all.
+
+00:34:07.000 --> 00:34:08.000
+The first one was print.
+
+00:34:08.000 --> 00:34:14.000
+And the second one, what we did is turned it into an overloaded operator.
+
+00:34:14.000 --> 00:34:26.000
+With that, we had to make three changes.
+
+00:34:26.000 --> 00:34:31.000
+Now, there are several common algorithms that you should memorize.
+
+00:34:31.000 --> 00:34:36.000
+You should know about counting for a selection.
+
+00:34:36.000 --> 00:34:40.000
+Count how many vowels are in this string.
+
+00:34:40.000 --> 00:34:44.000
+Count how many positive numbers are in this array.
+
+00:34:44.000 --> 00:34:51.000
+Count how many cars get more than 35 miles per gallon.
+
+00:34:51.000 --> 00:34:56.000
+Accumulation is adding things up.
+
+00:34:56.000 --> 00:35:01.000
+So and averaging, of course, and standard deviation, all of those,
+
+00:35:01.000 --> 00:35:03.000
+those are called cumulative algorithms.
+
+00:35:03.000 --> 00:35:06.000
+You should know about how to find the extreme values,
+
+00:35:06.000 --> 00:35:12.000
+how to find the largest and smallest, how to process adjacent elements.
+
+00:35:12.000 --> 00:35:16.000
+So the algorithm we just did was a form of adjacent elements.
+
+00:35:16.000 --> 00:35:20.000
+Look at the one in front of it, look at the one behind it, that sort of thing,
+
+00:35:20.000 --> 00:35:25.000
+and how to add separators, which we just did with the fence post algorithm.
+
+00:35:25.000 --> 00:35:32.000
+Now, different loops are best for different kinds of algorithms.
+
+00:35:32.000 --> 00:35:38.000
+If you need to visit every element, there's no reason to use a counter-controlled loop.
+
+00:35:38.000 --> 00:35:41.000
+Use a range-for loop. It's much faster, it's easier.
+
+00:35:41.000 --> 00:35:47.000
+If you need to keep track of the position, however, then use a traditional for loop.
+
+00:35:47.000 --> 00:35:50.000
+Don't use a range loop and add an additional counter for it.
+
+00:35:50.000 --> 00:35:53.000
+The traditional for loop is ideal for that.
+
+00:35:53.000 --> 00:35:59.000
+If you need to move or sort or shuffle items, you can't do that with a range loop.
+
+00:35:59.000 --> 00:36:01.000
+Use a traditional for loop.
+
+00:36:01.000 --> 00:36:09.000
+And if you need to grow or shrink the elements in an array, use an iterator or a while loop.
+
+00:36:09.000 --> 00:36:17.000
+Now, alternatively, you can more and more just skip using loops altogether.
+
+00:36:17.000 --> 00:36:21.000
+I can hear those of you who hate loops thinking, "Yay!"
+
+00:36:21.000 --> 00:36:26.000
+How do you do that? You use the standard library algorithms.
+
+00:36:26.000 --> 00:36:44.000
+This is part of the standard template library, which was included in the standardization of C++ in C++98.
+
+00:36:44.000 --> 00:36:47.000
+So, let's look at counting elements.
+
+00:36:47.000 --> 00:36:53.000
+To count elements which match a condition, first you create a counter for each type you want to count.
+
+00:36:53.000 --> 00:36:56.000
+So, don't use the regular loop counter.
+
+00:36:56.000 --> 00:37:03.000
+Create a separate counter that represents the data that you're collecting as you visit each of these items.
+
+00:37:03.000 --> 00:37:05.000
+You may have more than one counter.
+
+00:37:05.000 --> 00:37:12.000
+I may want to count the number of cats and dogs I have in an array of pet objects.
+
+00:37:12.000 --> 00:37:16.000
+Then write a loop that processes every element.
+
+00:37:16.000 --> 00:37:24.000
+And then, if the element matches the condition, count it and update the counter variable that you have for that.
+
+00:37:24.000 --> 00:37:31.000
+So, we're going to do our first exercise like that, which is divisible by n.
+
+00:37:31.000 --> 00:37:33.000
+So, we're going to pass a vector n.
+
+00:37:33.000 --> 00:37:39.000
+n is the number we're going to do, and we're going to get the numbers that are divisible by n.
+
+00:37:39.000 --> 00:37:42.000
+So, write a loop that processes every element.
+
+00:37:42.000 --> 00:37:44.000
+What does that sound like?
+
+00:37:44.000 --> 00:37:47.000
+The range for loop.
+
+00:37:47.000 --> 00:37:49.000
+Okay, let's look at that.
+
+00:37:49.000 --> 00:37:54.000
+That's in D.
+
+00:37:54.000 --> 00:38:03.000
+No, that's in E.
+
+00:38:03.000 --> 00:38:09.000
+So, let's put our name on it, S. Gilbert.
+
+00:38:09.000 --> 00:38:17.000
+So, we will write, we're going to count, so we're going to get an int back.
+
+00:38:17.000 --> 00:38:31.000
+Divisible by, and we want a vector of, it doesn't tell what type it is, but I'm assuming it's a vector of int.
+
+00:38:31.000 --> 00:38:39.000
+Oh, actually in the instructions it probably does.
+
+00:38:39.000 --> 00:38:49.000
+Then the vector int v, which are evenly divisible by n.
+
+00:38:49.000 --> 00:38:56.000
+Okay, now remember when we pass arguments, the library types are never passed by value.
+
+00:38:56.000 --> 00:39:03.000
+So, this is a const vector int reference v.
+
+00:39:03.000 --> 00:39:06.000
+And then int n.
+
+00:39:06.000 --> 00:39:10.000
+So, we want the numbers that are evenly divisible by n.
+
+00:39:10.000 --> 00:39:18.000
+So, we're going to go for int e n n.
+
+00:39:18.000 --> 00:39:24.000
+Now, I frequently will do auto e, just so I don't have to remember what type it is.
+
+00:39:24.000 --> 00:39:30.000
+So, for n, also then if I decide, oh I want it to work with a vector of double, I can change it.
+
+00:39:30.000 --> 00:39:33.000
+I don't need to change my code.
+
+00:39:33.000 --> 00:39:35.000
+But I'll put int here for right now.
+
+00:39:35.000 --> 00:39:40.000
+For int e in n, so that visits every element.
+
+00:39:40.000 --> 00:39:48.000
+If e remainder 2, no if e remainder n equals 0.
+
+00:39:48.000 --> 00:39:59.000
+If e divided by n has no remainder, then we're going to count it.
+
+00:39:59.000 --> 00:40:03.000
+And let me first create my counter.
+
+00:40:03.000 --> 00:40:21.000
+So, int divisible.
+
+00:40:21.000 --> 00:40:27.000
+And so, we'd say divisible plus plus.
+
+00:40:27.000 --> 00:40:31.000
+Of course, we could use any name for this.
+
+00:40:31.000 --> 00:40:34.000
+So, that's the basic counting algorithm.
+
+00:40:34.000 --> 00:40:39.000
+Let's open that in a terminal.
+
+00:40:39.000 --> 00:40:42.000
+Let's do make.
+
+00:40:42.000 --> 00:40:47.000
+No, it didn't work.
+
+00:40:47.000 --> 00:40:52.000
+For e in n, that of course is wrong.
+
+00:40:52.000 --> 00:41:00.000
+So, I need to say for each element v in v, my vector.
+
+00:41:00.000 --> 00:41:07.000
+Even if e remainder n, I think that's the only error I have there.
+
+00:41:07.000 --> 00:41:09.000
+Make, good.
+
+00:41:09.000 --> 00:41:12.000
+And make test.
+
+00:41:12.000 --> 00:41:13.000
+Good.
+
+00:41:13.000 --> 00:41:18.000
+So, in this vector there are 3 that are divisible by 10.
+
+00:41:18.000 --> 00:41:24.000
+In this vector there are 5 that are divisible by 2.
+
+00:41:24.000 --> 00:41:28.000
+In this vector there are 6 that are divisible by 2.
+
+00:41:28.000 --> 00:41:31.000
+In this vector there are none that are divisible by 5.
+
+00:41:31.000 --> 00:41:39.000
+In this vector there's one that's divisible by 9.
+
+00:41:39.000 --> 00:41:45.000
+And when you run it, you'll get a different randomized vector in your case.
+
+00:41:45.000 --> 00:41:50.000
+Alright, let's throw that terminal away.
+
+00:41:50.000 --> 00:41:57.000
+And let's go talk about how we would do this with the standard library.
+
+00:41:57.000 --> 00:42:01.000
+So, the standard library already includes this algorithm.
+
+00:42:01.000 --> 00:42:06.000
+As I mentioned, this is part of the standard template library, or the STL.
+
+00:42:06.000 --> 00:42:16.000
+The STL has containers, the vector is part of the STL, the deck, the list, the map, the set, and so forth.
+
+00:42:16.000 --> 00:42:18.000
+And it contains iterators.
+
+00:42:18.000 --> 00:42:22.000
+So, it contains algorithms, containers, and iterators.
+
+00:42:22.000 --> 00:42:26.000
+Iterators allow you to access any container type.
+
+00:42:26.000 --> 00:42:30.000
+But you have to know about iterators to use the algorithms.
+
+00:42:30.000 --> 00:42:34.000
+So, let me explain what an iterator is.
+
+00:42:34.000 --> 00:42:39.000
+Different containers store data in different ways.
+
+00:42:39.000 --> 00:42:44.000
+So, a vector has elements right next to each other.
+
+00:42:44.000 --> 00:42:47.000
+They're contiguous in memory.
+
+00:42:47.000 --> 00:42:51.000
+A list stores elements like this.
+
+00:42:51.000 --> 00:42:56.000
+So, both vector and list are sequential containers.
+
+00:42:56.000 --> 00:43:01.000
+But with the list, you'll notice the elements are not next to each other.
+
+00:43:01.000 --> 00:43:03.000
+Thus, they are not indexed.
+
+00:43:03.000 --> 00:43:09.000
+They are any random place in memory with pointers connecting each one.
+
+00:43:09.000 --> 00:43:11.000
+So, again, this is sequential.
+
+00:43:11.000 --> 00:43:17.000
+We start at the beginning, and we go through this maze until we get to the end.
+
+00:43:17.000 --> 00:43:18.000
+This is sequential.
+
+00:43:18.000 --> 00:43:23.000
+So, we start at the beginning, we go through this maze at the end.
+
+00:43:23.000 --> 00:43:29.000
+So, iterators are objects which ignore the physical order
+
+00:43:29.000 --> 00:43:35.000
+and allow us to select elements from any kind of container.
+
+00:43:35.000 --> 00:43:40.000
+They're kind of like the claw in an arcade game like this.
+
+00:43:40.000 --> 00:43:47.000
+Now, we can use iterators with sequential containers instead of indexes.
+
+00:43:47.000 --> 00:43:53.000
+And we can use iterators with lists instead of pointers.
+
+00:43:53.000 --> 00:43:59.000
+And so, that means we can write a function, an algorithm,
+
+00:43:59.000 --> 00:44:04.000
+that works and counts no matter what kind of container I pass it to.
+
+00:44:04.000 --> 00:44:07.000
+So, how do you get the elements?
+
+00:44:07.000 --> 00:44:14.000
+Well, you move the claw to the first element, beginC,
+
+00:44:14.000 --> 00:44:22.000
+calling beginC, where C is the container object that you want to position your claw over.
+
+00:44:22.000 --> 00:44:28.000
+And so, you'd write that code as auto iterator equals begin list.
+
+00:44:28.000 --> 00:44:31.000
+Now, we could actually not use auto here,
+
+00:44:31.000 --> 00:44:38.000
+but it's actually relatively complex, the declaration for that.
+
+00:44:38.000 --> 00:44:42.000
+You'll learn about it in 250 if you take 250.
+
+00:44:42.000 --> 00:44:47.000
+Now, we're positioned over this first little space creature.
+
+00:44:47.000 --> 00:44:49.000
+We want to move it to the second space creature.
+
+00:44:49.000 --> 00:44:51.000
+How do we do that?
+
+00:44:51.000 --> 00:44:56.000
+We use the increment operator, use prefix on this.
+
+00:44:56.000 --> 00:45:02.000
+So, we move to the next element, and now we're positioned on the next one.
+
+00:45:02.000 --> 00:45:04.000
+How do you know when to stop?
+
+00:45:04.000 --> 00:45:08.000
+Well, you stop when you reach endC.
+
+00:45:08.000 --> 00:45:12.000
+Now, endC is not the last element in the collection.
+
+00:45:12.000 --> 00:45:15.000
+It's one past the last collection.
+
+00:45:15.000 --> 00:45:20.000
+So, you can say while iterator not equal to endC.
+
+00:45:20.000 --> 00:45:24.000
+Now, generally, we don't use that with numeric arrays.
+
+00:45:24.000 --> 00:45:28.000
+We'd use less than, right, less than size.
+
+00:45:28.000 --> 00:45:34.000
+But with iterators, you always use not equals.
+
+00:45:34.000 --> 00:45:38.000
+Now, that's for moving the claw through the collection.
+
+00:45:38.000 --> 00:45:42.000
+How do we pick up an item?
+
+00:45:42.000 --> 00:45:45.000
+Well, we pick up an item by dereferencing it.
+
+00:45:45.000 --> 00:45:50.000
+Dereferencing it simply uses the same symbol we've used for multiplication,
+
+00:45:50.000 --> 00:45:54.000
+but as a unary operator in front of an iterator.
+
+00:45:54.000 --> 00:45:59.000
+We'll also use this operator, the dereferencing operator, in front of pointers
+
+00:45:59.000 --> 00:46:01.000
+when we get to that.
+
+00:46:01.000 --> 00:46:07.000
+So, this picks up the item and puts it in the variable value here.
+
+00:46:07.000 --> 00:46:11.000
+So, we're going to write the same function we just wrote, divisible by,
+
+00:46:11.000 --> 00:46:15.000
+but instead of using a loop, we'll use iterators.
+
+00:46:15.000 --> 00:46:21.000
+Instead of using a for each loop, we'll use iterators to do that.
+
+00:46:21.000 --> 00:46:27.000
+Okay, so let's close counting in E and let's go to F
+
+00:46:27.000 --> 00:46:39.000
+and put our name on top of it.
+
+00:46:39.000 --> 00:46:43.000
+Okay, so this time we're writing it using an iterator loop.
+
+00:46:43.000 --> 00:46:47.000
+I've already written the header here.
+
+00:46:47.000 --> 00:46:51.000
+So, what we want to do is we want to create a counter.
+
+00:46:51.000 --> 00:47:02.000
+So, int divisible equals zero and return divisible.
+
+00:47:02.000 --> 00:47:06.000
+So, that's the skeleton for the structure of the stub.
+
+00:47:06.000 --> 00:47:09.000
+Now, we want to loop through using an iterator.
+
+00:47:09.000 --> 00:47:18.000
+So, for auto iter equals begin v,
+
+00:47:18.000 --> 00:47:25.000
+iter not equal to end v, plus plus iter.
+
+00:47:25.000 --> 00:47:32.000
+So, again, we're not doing an index, we're moving this little claw.
+
+00:47:32.000 --> 00:47:39.000
+Now, the element is star iter, right?
+
+00:47:39.000 --> 00:47:41.000
+That's how we pick up the item.
+
+00:47:41.000 --> 00:47:51.000
+So, if star iter divide by n equals zero,
+
+00:47:51.000 --> 00:47:55.000
+or star iter remainder n equals zero,
+
+00:47:55.000 --> 00:48:00.000
+then divisible plus plus.
+
+00:48:00.000 --> 00:48:04.000
+So, this is an iterator loop.
+
+00:48:04.000 --> 00:48:09.000
+By the way, the for each loop just writes an iterator loop behind the scenes.
+
+00:48:09.000 --> 00:48:16.000
+This is writing an iterator loop manually showing the code.
+
+00:48:16.000 --> 00:48:20.000
+So, let's test that. Let's open a terminal.
+
+00:48:20.000 --> 00:48:24.000
+Let's do make test.
+
+00:48:24.000 --> 00:48:28.000
+And this one still works just as well.
+
+00:48:28.000 --> 00:48:36.000
+So, there's one seven, one eight, no tens, two fours, and so forth in these arrays.
+
+00:48:36.000 --> 00:48:43.000
+And again, these are randomly generated, so you'll have different values there.
+
+00:48:43.000 --> 00:48:51.000
+So, here is our iterator based version of divisible by.
+
+00:48:51.000 --> 00:48:57.000
+Now, most of you are probably thinking, "Oh, great, another way to do exactly the same thing."
+
+00:48:57.000 --> 00:49:02.000
+That's not actually very useful.
+
+00:49:02.000 --> 00:49:04.000
+Actually, I'm going to talk about that in a second.
+
+00:49:04.000 --> 00:49:08.000
+Let me talk about constant iterators first.
+
+00:49:08.000 --> 00:49:14.000
+Iterators permit you to change the items they refer to.
+
+00:49:14.000 --> 00:49:20.000
+A constant iterator, i.e., vector const iterator, does not.
+
+00:49:20.000 --> 00:49:29.000
+Begin will return a const iterator when the container is const, and a regular iterator when it is not.
+
+00:49:29.000 --> 00:49:42.000
+Now, beginning in C++14, you can actually use cbegin and cend to explicitly state that your iterator won't change the items.
+
+00:49:42.000 --> 00:49:46.000
+So, you can use that when you don't want the container elements changed,
+
+00:49:46.000 --> 00:49:54.000
+although, generally, I have to say, most of the time, just using begin and end is perfectly fine.
+
+00:49:54.000 --> 00:49:57.000
+Okay, now let me talk about algorithms.
+
+00:49:57.000 --> 00:50:04.000
+The STL has a collection, or several collections, of pre-built algorithms.
+
+00:50:04.000 --> 00:50:09.000
+So, there's a collection in the header algorithm, there's another collection in the header iterator,
+
+00:50:09.000 --> 00:50:14.000
+there's a collection of numeric algorithms in the header numeric.
+
+00:50:14.000 --> 00:50:21.000
+And so, here is how we would use the count algorithm from the library.
+
+00:50:21.000 --> 00:50:32.000
+We'd create a vector v, and we'd count from begin v to end v, or in this case, we could use cbegin v and cend v.
+
+00:50:32.000 --> 00:50:36.000
+It wouldn't make any difference for 3.
+
+00:50:36.000 --> 00:50:45.000
+And that would tell us the number of 3's that are inside there, and we would not have to write a loop at all.
+
+00:50:45.000 --> 00:50:56.000
+Now, how do we write, though, and how do we call the count function when what we want to count for is a condition?
+
+00:50:56.000 --> 00:51:00.000
+Well, first, you have to write a function that represents that condition.
+
+00:51:00.000 --> 00:51:02.000
+This is called a predicate function.
+
+00:51:02.000 --> 00:51:07.000
+A predicate function is a function that returns true or false.
+
+00:51:07.000 --> 00:51:16.000
+So, isEven takes the integer n and returns n remainder 2 equals 0.
+
+00:51:16.000 --> 00:51:25.000
+Now, and then, once you've written the function, you would pass the name of the function instead of 3 or 4
+
+00:51:25.000 --> 00:51:28.000
+to the function called countIf.
+
+00:51:28.000 --> 00:51:32.000
+You don't pass it to count, this is a separate function.
+
+00:51:32.000 --> 00:51:44.000
+So, countIf beginC endC is even, and that would return you the number of even values.
+
+00:51:44.000 --> 00:51:47.000
+Now, that's not quite what we want to do, though.
+
+00:51:47.000 --> 00:51:49.000
+We don't want to check to see if it's even.
+
+00:51:49.000 --> 00:51:54.000
+We want to pass in a value for this 2 right here.
+
+00:51:54.000 --> 00:51:57.000
+We want to pass in a value for that 2.
+
+00:51:57.000 --> 00:52:04.000
+So, that requires us to use an anonymous function rather than a predicate function like this.
+
+00:52:04.000 --> 00:52:07.000
+This anonymous function is called a lambda.
+
+00:52:07.000 --> 00:52:13.000
+A lambda starts with a set of square brackets like this.
+
+00:52:13.000 --> 00:52:19.000
+The argument list, just like we'd have in isEven, and the comparison here.
+
+00:52:19.000 --> 00:52:26.000
+So, this countIf does the same thing as this countIf, but doesn't require you to create a separate isEven function.
+
+00:52:26.000 --> 00:52:30.000
+We've just written the function right inside the argument list.
+
+00:52:30.000 --> 00:52:36.000
+This function does not have a name like isEven.
+
+00:52:36.000 --> 00:52:42.000
+Now, suppose we want to write our divisible by function using countIf.
+
+00:52:42.000 --> 00:52:52.000
+Well, I could countIf e remainder 2 equals 0, but how do I countIf e remainder n equals 0?
+
+00:52:52.000 --> 00:53:04.000
+Well, I do that by capturing here in the square brackets any additional variables I want to use in the body of this function.
+
+00:53:04.000 --> 00:53:06.000
+So, I'm going to show you how to do it.
+
+00:53:06.000 --> 00:53:10.000
+We're not going to do this a lot in this class, but I just want to introduce you to it.
+
+00:53:10.000 --> 00:53:19.000
+So, you can get a picture of the fact that you can write C++ code without really using a lot of loops.
+
+00:53:19.000 --> 00:53:26.000
+So, we're going to write for our next exercise divisible by using an algorithm instead.
+
+00:53:26.000 --> 00:53:39.000
+And then you'll have three different versions of this in E, F, and G of the same function using it three different ways.
+
+00:53:39.000 --> 00:53:49.000
+So, this is S Gilbert.
+
+00:53:49.000 --> 00:53:53.000
+So, here I'm not going to create a counter. I'm not going to do anything.
+
+00:53:53.000 --> 00:54:01.000
+I'm just going to return countIf beginV.
+
+00:54:01.000 --> 00:54:04.000
+Or you can actually write this.
+
+00:54:04.000 --> 00:54:08.000
+There is a member as well, so I can write v begin if you want.
+
+00:54:08.000 --> 00:54:18.000
+I actually like beginV and endV instead.
+
+00:54:18.000 --> 00:54:29.000
+And then on the next line I'm going to put this beginning of the lambda expression.
+
+00:54:29.000 --> 00:54:32.000
+And inside that I'm going to put what I want to capture.
+
+00:54:32.000 --> 00:54:35.000
+So, I'm going to capture the variable n.
+
+00:54:35.000 --> 00:54:39.000
+And this function is going to take one argument.
+
+00:54:39.000 --> 00:54:43.000
+So, I'll call it the element in E for each element.
+
+00:54:43.000 --> 00:54:59.000
+Inside the body of this I'm going to say return E remainder n equals zero.
+
+00:54:59.000 --> 00:55:07.000
+So, notice this function is just an argument inside that function.
+
+00:55:07.000 --> 00:55:14.000
+Now we need to end the function here.
+
+00:55:14.000 --> 00:55:18.000
+So, you might find this less readable.
+
+00:55:18.000 --> 00:55:21.000
+But it actually makes your code much simpler.
+
+00:55:21.000 --> 00:55:24.000
+Notice we don't have any loops inside here at all.
+
+00:55:24.000 --> 00:55:37.000
+Okay, let's try that out with g.
+
+00:55:37.000 --> 00:55:39.000
+Let's do make.
+
+00:55:39.000 --> 00:55:43.000
+Make test.
+
+00:55:43.000 --> 00:55:46.000
+Notice it still works exactly the same.
+
+00:55:46.000 --> 00:55:51.000
+But the code is somewhat simpler.
+
+00:55:51.000 --> 00:55:56.000
+And you don't have to format that.
+
+00:55:56.000 --> 00:56:02.000
+You can format it just like you would a regular function.
+
+00:56:02.000 --> 00:56:08.000
+And then put that over there.
+
+00:56:08.000 --> 00:56:12.000
+So, you can make your functions easy to read in other words.
+
+00:56:12.000 --> 00:56:13.000
+Easy to read.
+
+00:56:13.000 --> 00:56:20.000
+So, this is called a lambda or an anonymous function that can be passed around as an argument.
+
+00:56:20.000 --> 00:56:30.000
+It can also be stored in a variable.
+
+00:56:30.000 --> 00:56:35.000
+So, we can use vectors to return a collection of items.
+
+00:56:35.000 --> 00:56:38.000
+Suppose we have a vector with duplicates.
+
+00:56:38.000 --> 00:56:46.000
+And I want to write a function that removes all of the duplicates or only keeps the unique names.
+
+00:56:46.000 --> 00:56:48.000
+So, I'll write a function named unique.
+
+00:56:48.000 --> 00:56:53.000
+The returns of a new vector with only the unique values.
+
+00:56:53.000 --> 00:56:55.000
+So, here's the unique algorithm.
+
+00:56:55.000 --> 00:56:59.000
+We're going to create an empty vector result.
+
+00:56:59.000 --> 00:57:02.000
+We're going to visit each element in the input vector.
+
+00:57:02.000 --> 00:57:06.000
+Then we're going to check to see if that element is in the result.
+
+00:57:06.000 --> 00:57:09.000
+If it's not, we're going to add it.
+
+00:57:09.000 --> 00:57:12.000
+And then we're going to return the result.
+
+00:57:12.000 --> 00:57:20.000
+Now, this algorithm is relatively slow because we aren't assuming the vector is sorted.
+
+00:57:20.000 --> 00:57:27.000
+If the vectors are sorted, it would actually be relatively fast to do it if the vector was sorted.
+
+00:57:27.000 --> 00:57:35.000
+Okay, so let's write unique using loops.
+
+00:57:35.000 --> 00:57:37.000
+So, let me open that up.
+
+00:57:37.000 --> 00:57:40.000
+Close counting.
+
+00:57:40.000 --> 00:57:57.000
+Close these bash shells here.
+
+00:57:57.000 --> 00:58:01.000
+Okay, so this one now is going to return a vector.
+
+00:58:01.000 --> 00:58:22.000
+So, vector int unique const vector int ref v.
+
+00:58:22.000 --> 00:58:25.000
+So, here's my result.
+
+00:58:25.000 --> 00:58:28.000
+Vector int result.
+
+00:58:28.000 --> 00:58:31.000
+And, of course, I'm going to return the result.
+
+00:58:31.000 --> 00:58:36.000
+Okay, so I have a stub, something that would compile, and something I could test.
+
+00:58:36.000 --> 00:58:40.000
+Now, we want to visit each element in that.
+
+00:58:40.000 --> 00:58:49.000
+So, I'm going to say for auto e1 in v.
+
+00:58:49.000 --> 00:58:55.000
+Now, I want to see if it is inside result.
+
+00:58:55.000 --> 00:59:02.000
+So, found equals false.
+
+00:59:02.000 --> 00:59:06.000
+I'll say add.
+
+00:59:06.000 --> 00:59:17.000
+Bool add.
+
+00:59:17.000 --> 00:59:22.000
+Bool add equals true.
+
+00:59:22.000 --> 00:59:33.000
+For auto e2 in result.
+
+00:59:33.000 --> 00:59:40.000
+If e1 equals e2, then it has already been seen.
+
+00:59:40.000 --> 00:59:44.000
+It's a duplicate.
+
+00:59:44.000 --> 00:59:49.000
+And, add equals false.
+
+00:59:49.000 --> 00:59:57.000
+And, actually, once we know the answer, once we know it's a duplicate, let's just break out of that loop.
+
+00:59:57.000 --> 01:00:01.000
+Make it a little bit easier.
+
+01:00:01.000 --> 01:00:07.000
+Then, after the inner loop, now remember what we're doing.
+
+01:00:07.000 --> 01:00:11.000
+I just created an empty vector result.
+
+01:00:11.000 --> 01:00:14.000
+Visited each element in the input vector.
+
+01:00:14.000 --> 01:00:20.000
+Now, I'm looking to see if it's not in the result, then I'm going to add it.
+
+01:00:20.000 --> 01:00:23.000
+Okay, not in the result, then I'm going to add it.
+
+01:00:23.000 --> 01:00:28.000
+So, how do I add it?
+
+01:00:28.000 --> 01:00:43.000
+I say, if add, result pushback e1.
+
+01:00:43.000 --> 01:00:57.000
+So, this is creating a new vector, going through and seeing if it's in the result.
+
+01:00:57.000 --> 01:01:02.000
+Okay, let's try a shell on that one.
+
+01:01:02.000 --> 01:01:10.000
+And, let's do make test.
+
+01:01:10.000 --> 01:01:15.000
+Okay.
+
+01:01:15.000 --> 01:01:20.000
+So, here's my original vector, here's the unique ones inside that.
+
+01:01:20.000 --> 01:01:24.000
+Here's my original vector, here's the unique ones inside that.
+
+01:01:24.000 --> 01:01:34.000
+Here's my original vector, here's my original vector, original vector, original vector, and the unique ones inside each case.
+
+01:01:34.000 --> 01:01:45.000
+And, you can see, like this one has two fives there, skip the five, it has two fours, one four there.
+
+01:01:45.000 --> 01:01:51.000
+Alright, so one last thing we're going to look at today
+
+01:01:51.000 --> 01:01:59.000
+is how do I insert and delete items, or how do I insert and erase items.
+
+01:01:59.000 --> 01:02:05.000
+So, if you insert something into a vector, the vector has to expand.
+
+01:02:05.000 --> 01:02:13.000
+So, if I want to put six where this three was, I have to move the items to the right and add the six inside it.
+
+01:02:13.000 --> 01:02:17.000
+And, the vector gets larger by one.
+
+01:02:17.000 --> 01:02:25.000
+Now, to do this, to call these functions insert or erase, you have to use iterators.
+
+01:02:25.000 --> 01:02:27.000
+Indexes don't work.
+
+01:02:27.000 --> 01:02:31.000
+However, iterators have an interesting property.
+
+01:02:31.000 --> 01:02:38.000
+If you add a number to an iterator, you essentially get the iterator that would represent the index.
+
+01:02:38.000 --> 01:02:45.000
+So, when I say v_begin, I'm representing, it's pointing to v at zero.
+
+01:02:45.000 --> 01:02:54.000
+v_end is pointing to the element that would be at v_size, which of course is beyond the end of the vector.
+
+01:02:54.000 --> 01:03:04.000
+If I take v_begin, or begin v, and I add one to it, however, I'm no longer pointing at the element zero, I'm pointing at the element one.
+
+01:03:04.000 --> 01:03:10.000
+If I take v_end and I subtract one to it, I'm pointing at the last item.
+
+01:03:10.000 --> 01:03:16.000
+Now, there's one other complication you need to think about when you're inserting and deleting.
+
+01:03:16.000 --> 01:03:20.000
+That complication is the size of the vector changes,
+
+01:03:20.000 --> 01:03:26.000
+and any iterators that were already pointing to things are invalidated.
+
+01:03:26.000 --> 01:03:33.000
+So, as you can imagine, if I had an iterator that was pointing to this three, and I inserted the six,
+
+01:03:33.000 --> 01:03:39.000
+now it would be pointing to the six instead of pointing to the three, so it would be invalidated.
+
+01:03:39.000 --> 01:03:42.000
+So, often students will try this.
+
+01:03:42.000 --> 01:03:47.000
+This is trying to erase all elements.
+
+01:03:47.000 --> 01:03:50.000
+So, we're going to see if cppShell opens here.
+
+01:03:50.000 --> 01:03:55.000
+It did. It opened in another browser I have, so I'm going to bring it over here.
+
+01:03:55.000 --> 01:04:00.000
+So, here I have, here's my print function that we wrote earlier today.
+
+01:04:00.000 --> 01:04:08.000
+And so here I have an array with one, two, three, four, five, six, seven.
+
+01:04:08.000 --> 01:04:12.000
+And I'm going through the array with a counter-controlled loop,
+
+01:04:12.000 --> 01:04:17.000
+and at each element I'm trying to erase the item in it.
+
+01:04:17.000 --> 01:04:23.000
+Now, the intention of this programmer was to erase every item.
+
+01:04:23.000 --> 01:04:26.000
+That's not what happens.
+
+01:04:26.000 --> 01:04:32.000
+And you'll see if you run this, that we have seven items.
+
+01:04:32.000 --> 01:04:37.000
+We try and erase the first item, and it does in fact go away.
+
+01:04:37.000 --> 01:04:39.000
+We have that.
+
+01:04:39.000 --> 01:04:47.000
+And then we try and erase the item at position one, because our index has gone forward here.
+
+01:04:47.000 --> 01:04:56.000
+And so, notice we skip over the two, because our index is now pointing to this three.
+
+01:04:56.000 --> 01:05:04.000
+And so we delete the three, then we delete that, and so we end with these three elements left in the array.
+
+01:05:04.000 --> 01:05:07.000
+Not really what we intended to do.
+
+01:05:07.000 --> 01:05:10.000
+Oops.
+
+01:05:10.000 --> 01:05:18.000
+So you have to remember, when you erase something, the items kind of under your feet are going to change.
+
+01:05:18.000 --> 01:05:21.000
+So we're writing one last exercise here.
+
+01:05:21.000 --> 01:05:26.000
+This is a modified version of Unique.
+
+01:05:26.000 --> 01:05:31.000
+It's going to remove all the elements from the existing vector v.
+
+01:05:31.000 --> 01:05:40.000
+And I'm going to give you a little bit more practice, or show you a little bit more about using iterators instead of loops.
+
+01:05:40.000 --> 01:05:44.000
+So let's use Unique.
+
+01:05:44.000 --> 01:05:50.000
+Put our canvas ID on it.
+
+01:05:50.000 --> 01:05:55.000
+Okay, so this is going to return the number of duplicates removed.
+
+01:05:55.000 --> 01:05:58.000
+So int.
+
+01:05:58.000 --> 01:06:04.000
+Again, is not required to be sorted.
+
+01:06:04.000 --> 01:06:10.000
+We're going to keep the last, not the first element that we find.
+
+01:06:10.000 --> 01:06:17.000
+Of course, that will determine how the output is sorted.
+
+01:06:17.000 --> 01:06:20.000
+It's called Unique.
+
+01:06:20.000 --> 01:06:26.000
+It's a vector.
+
+01:06:26.000 --> 01:06:30.000
+Oh, it's not a constant vector. It's a vector.
+
+01:06:30.000 --> 01:06:31.000
+Int.
+
+01:06:31.000 --> 01:06:38.000
+And it's changed.
+
+01:06:38.000 --> 01:06:41.000
+Okay.
+
+01:06:41.000 --> 01:06:44.000
+So first we want the number of dupes.
+
+01:06:44.000 --> 01:06:49.000
+So int dupes equals zero.
+
+01:06:49.000 --> 01:06:53.000
+And we're going to return the dupes.
+
+01:06:53.000 --> 01:06:56.000
+Now we don't create a separate vector.
+
+01:06:56.000 --> 01:07:06.000
+What we're simply going to do is we're going to use an iterator to look at each item.
+
+01:07:06.000 --> 01:07:11.000
+And the easiest way to do this for erasing is to use a while loop.
+
+01:07:11.000 --> 01:07:27.000
+So we'll say auto iter equals begin vec.
+
+01:07:27.000 --> 01:07:40.000
+And we'll say while iter is not equal to end vec.
+
+01:07:40.000 --> 01:07:41.000
+Okay.
+
+01:07:41.000 --> 01:07:47.000
+So now I have to see if -- so I'm looking at the first item.
+
+01:07:47.000 --> 01:07:50.000
+Does that item appear anywhere else?
+
+01:07:50.000 --> 01:08:08.000
+So the pseudocode.
+
+01:08:08.000 --> 01:08:12.000
+Yes, erase it.
+
+01:08:12.000 --> 01:08:14.000
+No.
+
+01:08:14.000 --> 01:08:20.000
+Look at the next -- look at the next element.
+
+01:08:20.000 --> 01:08:21.000
+Okay.
+
+01:08:21.000 --> 01:08:25.000
+So that's my pseudocode.
+
+01:08:25.000 --> 01:08:41.000
+So I need to say for auto -- I'm going to call this iter two.
+
+01:08:41.000 --> 01:08:49.000
+Auto iter two equals iter plus one.
+
+01:08:49.000 --> 01:08:57.000
+Iter two not equal to end vec.
+
+01:08:57.000 --> 01:09:03.000
+Iter two plus plus.
+
+01:09:03.000 --> 01:09:23.000
+If star iter equals star iter two.
+
+01:09:23.000 --> 01:09:25.000
+That means I found it.
+
+01:09:25.000 --> 01:09:51.000
+So I'm going to erase it.
+
+01:09:51.000 --> 01:09:55.000
+I'm actually just going to set found and break.
+
+01:09:55.000 --> 01:10:13.000
+So bool.
+
+01:10:13.000 --> 01:10:15.000
+And let's not even have a break in it.
+
+01:10:15.000 --> 01:10:19.000
+Let's just put that condition here.
+
+01:10:19.000 --> 01:10:37.000
+Not found.
+
+01:10:37.000 --> 01:10:38.000
+Okay.
+
+01:10:38.000 --> 01:10:41.000
+So this was -- does the current item appear elsewhere?
+
+01:10:41.000 --> 01:10:44.000
+Yes.
+
+01:10:44.000 --> 01:11:01.000
+If found, then erase the item.
+
+01:11:01.000 --> 01:11:16.000
+Now v vec erase that iterator.
+
+01:11:16.000 --> 01:11:25.000
+Else iter plus plus.
+
+01:11:25.000 --> 01:11:26.000
+Okay.
+
+01:11:26.000 --> 01:11:29.000
+Or plus plus iter.
+
+01:11:29.000 --> 01:11:39.000
+We kind of don't want to use -- we don't want to use the negative one on that.
+
+01:11:39.000 --> 01:11:45.000
+So notice that this iterator is looking, starting at the next one after it.
+
+01:11:45.000 --> 01:11:49.000
+It's looking to see if it's found inside of that.
+
+01:11:49.000 --> 01:11:52.000
+If it finds it in the else one, it deletes the current one.
+
+01:11:52.000 --> 01:11:54.000
+It deletes the current one.
+
+01:11:54.000 --> 01:11:59.000
+Otherwise it leaves it there and it goes to the next one.
+
+01:11:59.000 --> 01:12:14.000
+It goes to the next one.
+
+01:12:14.000 --> 01:12:26.000
+And actually, this invalidates the iterator, so we should write it like this.
+
+01:12:26.000 --> 01:12:34.000
+And that gets back what that new iterator is pointing at.
+
+01:12:34.000 --> 01:12:44.000
+Okay. Let's see if we got it here.
+
+01:12:44.000 --> 01:12:49.000
+And let's open up a shell on this.
+
+01:12:49.000 --> 01:12:51.000
+Let's bring that up.
+
+01:12:51.000 --> 01:12:55.000
+Let's kill the first one.
+
+01:12:55.000 --> 01:12:59.000
+Let's do make.
+
+01:12:59.000 --> 01:13:03.000
+Make test.
+
+01:13:03.000 --> 01:13:07.000
+Okay. It didn't work.
+
+01:13:07.000 --> 01:13:15.000
+Oh. You know what I forgot to do is -- so I'm getting the correct outputs.
+
+01:13:15.000 --> 01:13:19.000
+V after works.
+
+01:13:19.000 --> 01:13:20.000
+So I got plus plus plus.
+
+01:13:20.000 --> 01:13:23.000
+I got 50% of the points.
+
+01:13:23.000 --> 01:13:43.000
+But every time I find it, when I found it, I want to say dupes plus plus to count the number of duplicates there.
+
+01:13:43.000 --> 01:13:46.000
+Okay. There's 100%.
+
+01:13:46.000 --> 01:13:55.000
+So before we had this, I remove five of them, and after I have that.
+
+01:13:55.000 --> 01:14:03.000
+So notice seven appears last, even though -- if I kept the first one, it would be 57261.
+
+01:14:03.000 --> 01:14:05.000
+57261.
+
+01:14:05.000 --> 01:14:17.000
+Because I'm keeping the last one, it's 52167.
+
+01:14:17.000 --> 01:14:21.000
+All right. So that's it for lecture 16.
+
+01:14:21.000 --> 01:14:28.000
+When you come back, we will look at memory and pointers.
+
+01:14:28.000 --> 01:14:31.000
+I'll see you then.
+

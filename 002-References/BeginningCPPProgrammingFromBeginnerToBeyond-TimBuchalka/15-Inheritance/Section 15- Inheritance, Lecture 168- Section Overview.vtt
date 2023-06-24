@@ -1,0 +1,129 @@
+WEBVTT
+
+00:00:05.790 --> 00:00:08.049
+In this section, we'll learn
+about one of the most useful
+
+00:00:08.059 --> 00:00:11.910
+features of object-oriented
+programming languages, inheritance.
+
+00:00:12.969 --> 00:00:15.229
+Conceptually inheritance
+is easy to understand.
+
+00:00:15.480 --> 00:00:18.680
+However, inheritance in
+c++ can be very complex.
+
+00:00:19.540 --> 00:00:23.090
+We'll keep it simple in this section
+so that the basics of inheritance in
+
+00:00:23.090 --> 00:00:27.079
+c++ are clear and you can have the
+foundation to study more advanced
+
+00:00:27.080 --> 00:00:28.870
+concepts in more advanced courses.
+
+00:00:29.360 --> 00:00:33.050
+First, we'll look at what inheritance
+is and why it's so useful, think
+
+00:00:33.050 --> 00:00:37.000
+reusability, and then we'll discuss
+some of the terminology and notations
+
+00:00:37.010 --> 00:00:38.600
+used when talking about inheritance.
+
+00:00:39.420 --> 00:00:42.740
+Aggregation is also a reusability
+mechanism, and we'll see the
+
+00:00:42.740 --> 00:00:45.889
+difference between inheritance
+and aggregation since many times
+
+00:00:45.889 --> 00:00:49.140
+we can use aggregation instead of
+inheritance to achieve what we want
+
+00:00:49.480 --> 00:00:51.420
+and avoid unnecessary complexity.
+
+00:00:52.090 --> 00:00:55.059
+Then we'll get into the
+syntax of inheritance in c++.
+
+00:00:55.589 --> 00:00:58.349
+We'll learn how to derive one
+class from an existing class
+
+00:00:58.690 --> 00:01:01.460
+and discuss the three types of
+inheritance provided by c++.
+
+00:01:03.200 --> 00:01:06.020
+You may recall when we talked
+about the public and private class
+
+00:01:06.050 --> 00:01:08.340
+access modifiers in section 13.
+
+00:01:08.880 --> 00:01:10.910
+I mentioned that there
+was a third type of access
+
+00:01:10.910 --> 00:01:12.259
+modifier name protected.
+
+00:01:12.850 --> 00:01:15.910
+Well, protected is used in the
+context of inheritance, and
+
+00:01:15.910 --> 00:01:18.780
+we'll see how it can be useful
+in that context in this section.
+
+00:01:19.710 --> 00:01:22.999
+Then we'll look at constructors and
+destructors and see how they work when
+
+00:01:23.000 --> 00:01:24.500
+we've got inheritance hierarchies.
+
+00:01:25.000 --> 00:01:27.880
+With inheritance, we can create
+new classes that modify the
+
+00:01:27.880 --> 00:01:29.699
+behavior of their parent classes.
+
+00:01:29.980 --> 00:01:32.590
+So we'll see how that works
+and how it can be useful.
+
+00:01:33.000 --> 00:01:36.610
+Finally, we'll talk about what class
+hierarchies are, and we'll do a short
+
+00:01:36.610 --> 00:01:38.360
+introduction to multiple inheritance.
+
+00:01:39.210 --> 00:01:42.350
+Once we understand the basics of
+inheritance in this section, the
+
+00:01:42.350 --> 00:01:46.079
+next section will really open up
+the power of c++ when we talk about
+
+00:01:46.080 --> 00:01:49.780
+polymorphism when it's used with
+inheritance and polymorphic methods.
+
+00:01:50.230 --> 00:01:53.210
+So let's head to the next video and
+see what inheritance is all about.

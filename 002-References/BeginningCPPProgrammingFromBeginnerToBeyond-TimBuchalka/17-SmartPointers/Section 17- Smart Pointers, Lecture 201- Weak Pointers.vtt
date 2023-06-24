@@ -1,0 +1,319 @@
+WEBVTT
+
+00:00:05.300 --> 00:00:07.500
+In this video, we'll learn about the weak pointer.
+
+00:00:08.490 --> 00:00:13.190
+The weak pointer provides a non-owning or weak reference to a shared manage object.
+
+00:00:13.850 --> 00:00:17.650
+Like a shared pointer, a weak pointer points to an object on the heap.
+
+00:00:17.650 --> 00:00:22.010
+But unlike a shared pointer, it doesn't participate in the owning relationship.
+
+00:00:22.910 --> 00:00:25.910
+Weak pointers are always created from shared pointers.
+
+00:00:26.270 --> 00:00:29.270
+And since weak pointers are non-owning references,
+
+00:00:29.270 --> 00:00:32.270
+they do not affect the reference count for the managed object.
+
+00:00:32.870 --> 00:00:36.430
+So weak pointers don't affect the lifetime of the objects they're pointing to.
+
+00:00:37.420 --> 00:00:39.780
+There are a few use cases for the weak pointer,
+
+00:00:39.780 --> 00:00:43.140
+one is to prevent strong reference cycles between two objects.
+
+00:00:43.500 --> 00:00:45.500
+We'll see this visually in the next slide.
+
+00:00:45.750 --> 00:00:50.400
+Another use case is when we have a pointer that we use to temporarily reference another object,
+
+00:00:50.400 --> 00:00:54.060
+something like an iterator pointer that traverses a list of nodes.
+
+00:00:54.060 --> 00:00:57.160
+It really doesn't own them, just visits them temporarily.
+
+00:00:57.160 --> 00:00:59.860
+Let's see the problem with strong circular references.
+
+00:01:01.060 --> 00:01:04.160
+Sometimes when we design programs we may have two classes
+
+00:01:04.160 --> 00:01:06.040
+where each class refers to the other.
+
+00:01:06.700 --> 00:01:09.700
+This implies a one-to-one relationship between the classes,
+
+00:01:09.700 --> 00:01:13.300
+and this will be reflected in the class objects when we instantiate them.
+
+00:01:13.800 --> 00:01:16.400
+In this case, we have two objects a and b,
+
+00:01:16.400 --> 00:01:18.760
+which were instantiated from two different classes.
+
+00:01:19.260 --> 00:01:23.810
+Notice that A has a shared pointer to B, and B has a shared pointer to A.
+
+00:01:24.010 --> 00:01:26.010
+Now we have a bit of a chicken and egg problem.
+
+00:01:26.560 --> 00:01:29.560
+When they go out of scope, they'll be destroyed from the stack,
+
+00:01:29.560 --> 00:01:33.660
+but their shared resources on the heap will not be destroyed and will leak memory.
+
+00:01:34.160 --> 00:01:36.460
+A keeps B alive, and B keeps A alive.
+
+00:01:36.960 --> 00:01:40.060
+This is exactly where the weak pointer comes in. Let's see.
+
+00:01:41.720 --> 00:01:45.720
+Now we need to decide who owns who. Let's say that A owns B.
+
+00:01:46.320 --> 00:01:49.320
+Then we replace the shared pointer in B with a weak pointer.
+
+00:01:49.320 --> 00:01:52.310
+And now everything works as expected, and we don't leak memory.
+
+00:01:52.970 --> 00:01:54.170
+In the next video,
+
+00:01:54.170 --> 00:01:58.470
+we'll complete this section with a brief introduction to custom deleters for smart pointers.
+
+00:01:58.770 --> 00:02:02.130
+But first, let's head over to the IDE and see this example in live code.
+
+00:02:03.230 --> 00:02:06.830
+Okay. So I'm back in the IDE. I'm in the section 17 workspace
+
+00:02:06.830 --> 00:02:08.530
+in the weak pointers project.
+
+00:02:09.630 --> 00:02:13.880
+And what we'll do here is we'll do that same example that we did visually in the slides, where I've got an A
+
+00:02:13.880 --> 00:02:16.080
+referencing a B and a B referencing an A,
+
+00:02:16.080 --> 00:02:19.140
+and we've got that strong circular reference that we can't break.
+
+00:02:19.140 --> 00:02:21.500
+So let's take a look at how we do this.
+
+00:02:21.500 --> 00:02:24.200
+First, of all you can see that I've got a class A
+
+00:02:24.200 --> 00:02:26.700
+declared, right here on line 10 to 17.
+
+00:02:27.200 --> 00:02:31.000
+And the class A has a shared pointer to a B.
+
+00:02:31.400 --> 00:02:34.500
+Now since we haven't seen the B yet, we need to put this
+
+00:02:34.500 --> 00:02:37.890
+forward declaration in here. I'm not sure if we've done that in class before or not.
+
+00:02:37.890 --> 00:02:41.140
+But since the compiler needs to know about a B,
+
+00:02:41.140 --> 00:02:45.840
+we're just simply saying, hey, you know what compiler, I've got a class B, I'll declare it later, just assume it's here.
+
+00:02:45.840 --> 00:02:48.940
+It's similar to a function prototype in a sense that
+
+00:02:48.940 --> 00:02:51.600
+just tells the compiler don't worry about it, you'll see this later.
+
+00:02:51.600 --> 00:02:56.100
+So in this case, again, the class A has a shared pointer to a B.
+
+00:02:56.100 --> 00:02:58.700
+And here's my set method that just sets that pointer.
+
+00:02:59.200 --> 00:03:03.860
+It's got a real simple constructor and destructor that just simply display when they're called,
+
+00:03:03.860 --> 00:03:05.860
+so we can see them actually being called.
+
+00:03:05.860 --> 00:03:08.460
+And then my class B is defined down here.
+
+00:03:09.010 --> 00:03:11.470
+And the class B has a shared pointer to an A.
+
+00:03:11.470 --> 00:03:13.970
+So there's that relationship between the two, right.
+
+00:03:13.970 --> 00:03:17.470
+So when A owns a B and a B onto A, so that's that's the problem that we have.
+
+00:03:17.830 --> 00:03:21.330
+And here's my set method that sets that A pointer,
+
+00:03:21.990 --> 00:03:24.790
+and again, my constructor. So really, really simple.
+
+00:03:24.790 --> 00:03:26.490
+Let's take a look at the main.
+
+00:03:28.390 --> 00:03:31.040
+And you can see the main here on line 31,
+
+00:03:31.040 --> 00:03:34.940
+I create that A shared pointer using make shared.
+
+00:03:35.340 --> 00:03:38.540
+And on line 32, I create the b
+
+00:03:38.540 --> 00:03:40.200
+shared pointer using make shared.
+
+00:03:40.860 --> 00:03:42.560
+Then right here I'm going to say
+
+00:03:42.560 --> 00:03:46.550
+set the b part of a to b, and set the a part of b to a.
+
+00:03:46.550 --> 00:03:50.650
+That's establishing that circular reference. So what happens here is,
+
+00:03:50.650 --> 00:03:54.310
+here's my a, here's my b. Remember, these are shared pointers.
+
+00:03:54.310 --> 00:03:57.610
+So we've basically got a pointer here and a pointer here.
+
+00:03:57.610 --> 00:04:00.270
+Remember, it's a shared pointer. So this is just an object.
+
+00:04:00.270 --> 00:04:03.870
+And this guy is pointing to an A object on the heap.
+
+00:04:04.530 --> 00:04:07.230
+This guy's pointing to a B object on the heap.
+
+00:04:07.890 --> 00:04:11.290
+And what we just did here is we did this.
+
+00:04:11.950 --> 00:04:14.610
+He points to that one, and this guy points to that one.
+
+00:04:15.270 --> 00:04:19.670
+Okay. So you can see the problem. Now this guy has a reference count of 1 or use count of 1.
+
+00:04:19.670 --> 00:04:23.930
+This guy has a used count of 1. So what happens when a and b go out of scope.
+
+00:04:23.930 --> 00:04:27.730
+Well, a goes out of scope, and it tries to destroy this piece here, right.
+
+00:04:28.090 --> 00:04:32.310
+But it notices that something else is referencing it. So it's not 0.
+
+00:04:32.310 --> 00:04:35.070
+So it's not going to destroy it, same thing with b.
+
+00:04:35.070 --> 00:04:39.670
+So what ends up happening is what actually gets destroyed is a and b
+
+00:04:39.670 --> 00:04:41.170
+that are on the stack, right,
+
+00:04:41.830 --> 00:04:44.820
+the shared pointers, but not the area on the heap.
+
+00:04:45.220 --> 00:04:48.880
+And there's your memory leak, right. So all this is going to leak.
+
+00:04:49.980 --> 00:04:51.380
+And we've got no way to get to it.
+
+00:04:51.880 --> 00:04:56.780
+So that's the problem. And the problem is because of this implied shared ownership.
+
+00:04:57.180 --> 00:05:00.680
+So the fix is really simple. The fix is using a weak pointer.
+
+00:05:00.680 --> 00:05:02.480
+So we determine who owns what.
+
+00:05:02.480 --> 00:05:05.780
+Let's just assume that we're going to change this guy right here.
+
+00:05:05.780 --> 00:05:08.580
+And actually, let me run this so you can actually see the leak.
+
+00:05:08.880 --> 00:05:10.380
+Let me build and run.
+
+00:05:12.380 --> 00:05:15.380
+And there's the run. You can see I constructed an, a I constructed a b,
+
+00:05:15.380 --> 00:05:18.980
+but the destructors never got called because we leaked the memory.
+
+00:05:19.680 --> 00:05:23.930
+That's what we want is -- we want a's constructor b's constructor.
+
+00:05:23.930 --> 00:05:26.180
+Then we want obviously the destructors for both of them being called.
+
+00:05:26.580 --> 00:05:29.240
+Okay. So let's do that. So what we can do is
+
+00:05:29.240 --> 00:05:32.840
+you can see the comment right here, make it weak to break that strong circular reference.
+
+00:05:32.840 --> 00:05:35.830
+And that's exactly what we're going to do. We're going to come right here,
+
+00:05:35.830 --> 00:05:38.430
+we're going to make this shared pointer a weak pointer.
+
+00:05:39.430 --> 00:05:43.090
+That won't affect the reference count.
+
+00:05:43.990 --> 00:05:46.890
+So now when we run this, you can see the a constructor the b constructor then the
+
+00:05:46.890 --> 00:05:51.490
+a and the b destructures being called.Now we're no longer leaking memory.
+
+00:05:51.490 --> 00:05:55.150
+So this is a real, real common use case for the weak pointer.
+
+00:05:55.150 --> 00:05:57.750
+And this kind of stuff happens more often than you would think --
+
+00:05:57.750 --> 00:06:01.350
+when you've got very complex data structures and graphs and you're traversing and
+
+00:06:01.350 --> 00:06:03.010
+doing all kinds of manipulation.
+
+00:06:03.310 --> 00:06:07.210
+It's very possible you can end up with a  strong circular references like these,
+
+00:06:07.210 --> 00:06:09.210
+and the weak pointer is the solution.

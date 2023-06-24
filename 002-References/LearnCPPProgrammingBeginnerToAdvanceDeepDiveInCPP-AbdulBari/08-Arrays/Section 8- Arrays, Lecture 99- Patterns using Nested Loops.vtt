@@ -1,0 +1,217 @@
+WEBVTT
+
+0
+00:00.390 --> 00:06.120
+Let us write programs for displaying various patterns using for loop already you
+
+1
+00:06.120 --> 00:07.090
+have seen this code.
+
+2
+00:07.110 --> 00:15.780
+So instead of displaying i and j values I'll just remove this and even say cout  star than space and
+
+3
+00:15.780 --> 00:16.660
+close the one.
+
+4
+00:16.680 --> 00:19.200
+So Star and space will be displayed.
+
+5
+00:19.200 --> 00:24.580
+And you know this cout will move to next line after every row.
+
+6
+00:24.660 --> 00:27.150
+Let us show this.
+
+7
+00:27.500 --> 00:31.100
+I'm getting a square patterns of three stars each.
+
+8
+00:31.130 --> 00:37.020
+So I just increase this to five and let us run again.
+
+9
+00:40.370 --> 00:46.880
+So I'm getting a square pattern of five by five stars.
+
+10
+00:46.880 --> 00:49.100
+Now here I'll make a small change.
+
+11
+00:49.100 --> 00:53.590
+J is starting from 1 and j is less than or equal to 5.
+
+12
+00:53.790 --> 00:56.420
+I will say less than or equal to i
+
+13
+00:56.570 --> 01:02.250
+So I initially one so it is repeated for innner for loop is repeated for only one time.
+
+14
+01:02.420 --> 01:08.360
+Then next two times then three time so whatever the value of i is it will be for that many times not always
+
+15
+01:08.360 --> 01:11.390
+five times what pattern we get
+
+16
+01:14.080 --> 01:14.550
+OK.
+
+17
+01:14.560 --> 01:16.040
+I'm getting a triangle.
+
+18
+01:16.240 --> 01:23.670
+There's one star and two stars next lined and three stars and next line and so on.
+
+19
+01:23.690 --> 01:29.790
+Now instead of this if I say five minus i.
+
+20
+01:30.200 --> 01:32.040
+Then let us see what happens.
+
+21
+01:35.110 --> 01:41.440
+I'm getting this triangle but I'm getting just four so I should write five minus I plus one so I'll be
+
+22
+01:41.440 --> 01:45.560
+getting it 5 4 3 2 1 so let me change this 5 minus i.
+
+23
+01:45.570 --> 01:47.020
+I plus one
+
+24
+01:51.130 --> 01:55.660
+so I got a triangle of stars right.
+
+25
+01:55.710 --> 02:01.830
+So I got two shapes you have seen, now i will make some changes and display  this star based on condition.
+
+26
+02:01.830 --> 02:03.320
+So just watch this one.
+
+27
+02:03.330 --> 02:05.160
+So now it is a square.
+
+28
+02:05.160 --> 02:06.780
+This is exactly the first one.
+
+29
+02:06.780 --> 02:09.250
+That is square of size 5.
+
+30
+02:09.300 --> 02:21.610
+But now here I will write if I plus j is less than 5 then displayed this star.
+
+31
+02:21.660 --> 02:24.280
+Otherwise else
+
+32
+02:24.870 --> 02:32.200
+cout just give two spaces.
+
+33
+02:32.310 --> 02:33.220
+That's it.
+
+34
+02:33.230 --> 02:34.960
+So I have made changes here.
+
+35
+02:35.000 --> 02:37.000
+I'm not displaying star every time.
+
+36
+02:37.010 --> 02:42.700
+I'm also displaying a space when this condition is true it will be showing star.
+
+37
+02:42.710 --> 02:45.160
+Otherwise it will be showing space.
+
+38
+02:45.180 --> 02:47.410
+Just watch what happens.
+
+39
+02:48.350 --> 02:49.540
+I'll change this condition.
+
+40
+02:49.550 --> 02:52.440
+That is I plus j is greater than 5.
+
+41
+02:52.610 --> 02:53.630
+Then display this
+
+42
+02:57.210 --> 03:00.530
+see i got a right bottom side of our triangle.
+
+43
+03:01.050 --> 03:07.860
+If I say I is less than j then only print  this one.
+
+44
+03:07.860 --> 03:09.840
+Let us see what you get.
+
+45
+03:12.930 --> 03:14.950
+I got only a few stars.
+
+46
+03:14.950 --> 03:19.050
+One started iS less so I will say I is less than or equal to j
+
+47
+03:23.600 --> 03:28.100
+now on the top right side of a triangle.
+
+48
+03:28.240 --> 03:34.420
+So initially when you saw that this was from 5 to 5 so I was getting a square of 5 by 5.
+
+49
+03:34.720 --> 03:37.290
+Now these locations are filled with spaces.
+
+50
+03:37.330 --> 03:44.000
+These are all spaces and these are stars so it is displaying stars or spaces depending on the condition met.
+
+51
+03:44.590 --> 03:46.280
+So in this way you can play around with these i & j.
+
+52
+03:46.290 --> 03:52.300
+values and you can get different stars and this will help you to develop your logic so
+
+53
+03:52.300 --> 03:55.830
+different designs you can make using stars or even you can use number.

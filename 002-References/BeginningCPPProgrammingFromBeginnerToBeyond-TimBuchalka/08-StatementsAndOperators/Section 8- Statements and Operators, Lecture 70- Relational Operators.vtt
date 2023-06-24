@@ -1,0 +1,211 @@
+WEBVTT
+
+00:00:05.500 --> 00:00:09.100
+In this video, we'll look at c++ relational operators.
+
+00:00:10.100 --> 00:00:13.900
+In addition to the equality operators, c++ also has several
+
+00:00:13.900 --> 00:00:16.200
+other relational or comparison operators.
+
+00:00:16.600 --> 00:00:19.800
+These are greater than, greater than or equal to,
+
+00:00:19.800 --> 00:00:22.100
+less than and less than or equal to.
+
+00:00:22.500 --> 00:00:26.900
+And in c++20, there'll be a really neat three-way comparison operator.
+
+00:00:27.100 --> 00:00:31.100
+This operator compares two expressions and evaluates to zero if they're equal,
+
+00:00:31.600 --> 00:00:34.960
+less than zero if the left-hand side is greater than the right-hand side
+
+00:00:35.460 --> 00:00:39.260
+and greater than zero if the right-hand side is greater than the left-hand side.
+
+00:00:39.860 --> 00:00:43.660
+Like the equality operators, these operators are very intuitive,
+
+00:00:43.660 --> 00:00:47.650
+easy to use and understand. Let's see a few examples in CodeLite.
+
+00:00:49.350 --> 00:00:52.350
+I'm in CodeLite. I'm in the section 8 workspace.
+
+00:00:52.350 --> 00:00:54.650
+And this is the relational operators project. In this project,
+
+00:00:55.750 --> 00:00:59.950
+I'm just using some really simple examples to test some of these
+
+00:00:59.950 --> 00:01:01.310
+relational operators.
+
+00:01:01.310 --> 00:01:04.970
+As you can see, I've got two numbers declared num1 and num2.
+
+00:01:04.970 --> 00:01:07.170
+This is where I'm going to read some integers into.
+
+00:01:07.830 --> 00:01:10.930
+And I'm asking the user to enter two integers separated by space
+
+00:01:10.930 --> 00:01:13.130
+and I'm reading those two integers from the user.
+
+00:01:14.030 --> 00:01:16.330
+Then what I'm doing in this output statement right here
+
+00:01:16.330 --> 00:01:18.930
+is suppose that the user entered 10 and 20 here.
+
+00:01:19.730 --> 00:01:21.330
+I'm just saying 10 greater than,
+
+00:01:22.210 --> 00:01:26.610
+I'm just explicitly printing out that greater than sign, 20
+
+00:01:27.110 --> 00:01:31.610
+and then I'm evaluating whether num1 is greater than num2 and that's going to say true or false.
+
+00:01:32.270 --> 00:01:35.970
+So it's going to do that for all four operators, greater than, greater than or equal to,
+
+00:01:35.970 --> 00:01:37.630
+less than and less than or equal to.
+
+00:01:38.030 --> 00:01:41.220
+And then we could try out a couple of examples with this program.
+
+00:01:41.220 --> 00:01:42.720
+So let's run it.
+
+00:01:45.080 --> 00:01:48.580
+And let's enter two integers. Okay. So let's enter 10 and 20.
+
+00:01:49.980 --> 00:01:53.080
+So you could see here, 10 greater than 20 is false.
+
+00:01:53.580 --> 00:01:55.780
+10 greater than or equal to 20 is false.
+
+00:01:56.280 --> 00:02:01.080
+10 less than 20 is true. And 10 less than or equal to 20 is also true.
+
+00:02:01.580 --> 00:02:04.080
+Okay. So now let's try some other ones,
+
+00:02:04.680 --> 00:02:07.980
+a couple of other test cases here. Let's try 20 and 20.
+
+00:02:08.980 --> 00:02:13.180
+In this case, you can see that 20 is greater -- 20 is not greater than 20.
+
+00:02:13.430 --> 00:02:16.230
+20 is, is greater than or equal to 20.
+
+00:02:16.230 --> 00:02:19.730
+20 is not less than 20. And 20 is less than or equal to 20.
+
+00:02:19.730 --> 00:02:23.330
+Just what we'd expect, so real simple example.
+
+00:02:23.330 --> 00:02:27.430
+What I'll do now is I'll comment out those output statements that we just did here.
+
+00:02:28.030 --> 00:02:30.630
+And I'll declare a couple of constants here.
+
+00:02:30.630 --> 00:02:33.630
+And I'll uncomment this piece of code out and I'll walk you through it.
+
+00:02:34.630 --> 00:02:38.330
+So in this case, I'm declaring two constants, lower and upper
+
+00:02:38.330 --> 00:02:39.630
+to be 10 and 20.
+
+00:02:40.230 --> 00:02:43.590
+And. I'm asking the user to enter an integer that's greater than lower.
+
+00:02:43.840 --> 00:02:47.540
+So in this case, I'm asking them to enter an integer that's greater than 10.
+
+00:02:47.540 --> 00:02:50.740
+And I left those as constants so you can modify them here and
+
+00:02:50.740 --> 00:02:54.840
+play around with this program yourself. So in this case, enter an integer that's greater than 10.
+
+00:02:55.090 --> 00:02:56.890
+I'm reading that integer into num1.
+
+00:02:57.390 --> 00:03:00.390
+Then I'm comparing to see if that number is greater than
+
+00:03:00.390 --> 00:03:02.690
+the lower limit which is 10 in this case.
+
+00:03:02.690 --> 00:03:07.290
+Then I'm doing the same thing. I'm saying enter an integer that's less than or equal to the upper limit.
+
+00:03:07.290 --> 00:03:08.590
+So let's run this.
+
+00:03:09.390 --> 00:03:12.690
+And first thing you'll see is it says enter --
+
+00:03:13.990 --> 00:03:15.490
+let me get rid of that
+
+00:03:19.490 --> 00:03:21.790
+statement at the beginning here.
+
+00:03:23.150 --> 00:03:24.450
+And we try that again.
+
+00:03:25.450 --> 00:03:28.750
+Here we go. So enter an integer that's greater than 10. So let's write 12.
+
+00:03:29.750 --> 00:03:33.740
+And it says 12 greater than 10 is true. That's what we expect.
+
+00:03:34.140 --> 00:03:37.340
+Now it says enter an integer that's less than or equal to 20.
+
+00:03:37.340 --> 00:03:40.840
+Let's put in 12. And it says 12
+
+00:03:40.840 --> 00:03:42.440
+less than or equal to 20 is true.
+
+00:03:43.440 --> 00:03:46.440
+Okay so let's run this one more time with a different test case.
+
+00:03:46.440 --> 00:03:50.340
+So enter an integer that's greater than 10. Let's put in 8 this time.
+
+00:03:51.640 --> 00:03:56.340
+And it says 8 greater than 10 is false. Obviously, I didn't do what i was told to do.
+
+00:03:56.840 --> 00:04:01.340
+And here enter an integer that's less than or equal to 20. Let's put in 25.
+
+00:04:01.640 --> 00:04:05.740
+And we can say 25 is less than or equal to 20 is also false.
+
+00:04:06.540 --> 00:04:09.040
+Okay. You can see where we're going with these operators.
+
+00:04:09.040 --> 00:04:10.840
+Once we get to control flow statements,
+
+00:04:10.840 --> 00:04:12.840
+you'll have all this knowledge under your belt
+
+00:04:12.840 --> 00:04:16.840
+and you'll really be able to write some really powerful programs that solve problems.

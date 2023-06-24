@@ -1,0 +1,377 @@
+WEBVTT
+
+0
+00:00.500 --> 00:05.360
+in this video we will write a program for finding the roots of a quadratic equation.
+
+1
+00:06.180 --> 00:10.110
+So first of all what is quadratic equation, a equation of this form.
+
+2
+00:10.110 --> 00:15.210
+That is a polynomial of this form,  X square, X and X poverty zero.
+
+3
+00:15.210 --> 00:17.520
+This is x power 2, x power 1,  power 0.
+
+4
+00:17.520 --> 00:18.600
+There is nothing yet.
+
+5
+00:18.660 --> 00:20.640
+It means one is there that is x power 0.
+
+6
+00:20.910 --> 00:22.510
+So the higest degree is a 2.
+
+7
+00:22.590 --> 00:29.680
+So a polynomial of degree 2 is a quadratic expression and when it is equal to something that is 0 that
+
+8
+00:29.680 --> 00:31.710
+it is quadratic equation.
+
+9
+00:32.100 --> 00:37.680
+Then the coefficients of the highest degree term and the next degree term and the next degree term in the
+
+10
+00:37.680 --> 00:38.820
+decreasing order.
+
+11
+00:38.820 --> 00:45.180
+So these are the variables that are used here to find out the roots means what are the possible values
+
+12
+00:45.180 --> 00:45.870
+of x.
+
+13
+00:45.930 --> 00:50.400
+So we get the possible values of X if we know ABC.
+
+14
+00:50.400 --> 00:53.340
+So roots can be known by using this formula.
+
+15
+00:53.370 --> 00:58.640
+So actually we will know for what values values of x this equation will be equal to zero.
+
+16
+00:58.650 --> 01:02.990
+That's it. so that are roots so we'll know the values of x.
+
+17
+01:03.140 --> 01:09.290
+Now for this we will write a program. a program will take the input and find out the roots and give the
+
+18
+01:09.340 --> 01:09.840
+output.
+
+19
+01:10.020 --> 01:12.290
+So we will follow those steps.
+
+20
+01:12.660 --> 01:22.670
+So let us see what is input. input is A B and C these three variables are input and root.
+
+21
+01:22.670 --> 01:24.930
+The result is the output.
+
+22
+01:24.930 --> 01:27.000
+So far this let us first draw a flowchart.
+
+23
+01:27.420 --> 01:31.170
+So start a flow chart.
+
+24
+01:31.180 --> 01:32.430
+What is the input.
+
+25
+01:32.430 --> 01:34.680
+We should know the coefficients ABC.
+
+26
+01:34.710 --> 01:35.550
+Three things.
+
+27
+01:35.550 --> 01:45.280
+So inside this input output box and give a message and the coefficients enter coefficients or instead
+
+28
+01:45.290 --> 01:46.110
+of coefficients.
+
+29
+01:46.110 --> 01:51.130
+I will say enter a b and c these three values.
+
+30
+01:51.250 --> 01:56.140
+Now I read ABC so I should take the values.
+
+31
+01:56.210 --> 02:02.410
+You imagine I am a program I have to calculate the roots so then I should take ABC values from you right.
+
+32
+02:02.620 --> 02:06.580
+this is the coefficients, next is process so in the process.
+
+33
+02:06.600 --> 02:12.900
+Actually we get two roots because one is with the plus and one was minus so r1 is  the first root
+
+34
+02:13.140 --> 02:21.630
+and that is minus B plus and sqrt of this formula B square minus 4ac.
+
+35
+02:21.630 --> 02:28.140
+So this b into b  minus 4 into a into c.
+
+36
+02:28.230 --> 02:37.980
+I need more space, than this whole thing should be divided by two into a, yes this is the first one and
+
+37
+02:37.980 --> 02:46.950
+same way root2 also everything is same minus B, instead of this plus this is minus, sqrt  of b into
+
+38
+02:46.950 --> 03:00.540
+B minus 4 ininto a into C then by 2 into a.  I got two routes now I have to give the output that
+
+39
+03:00.540 --> 03:12.150
+is the result so give a message that routes are so print the message roots are then first
+
+40
+03:12.150 --> 03:22.870
+one is r1 and the second one is r2, r1 and R2. next  the end of a flowchart now this is similar
+
+41
+03:22.870 --> 03:26.140
+to the one we have seen in the previous videos also.
+
+42
+03:26.140 --> 03:27.750
+So you can write on the algorithm.
+
+43
+03:27.900 --> 03:33.880
+Now I will write on a C++ program for this fun so let us convert this flowchart into C++ program for
+
+44
+03:33.880 --> 03:35.140
+the very first thing you know well.
+
+45
+03:35.250 --> 03:39.660
+That is hash include iostream right.
+
+46
+03:39.700 --> 03:44.140
+So this is the first thing then we have to say.
+
+47
+03:44.140 --> 03:48.780
+Using namespace so say using namespace right.
+
+48
+03:48.970 --> 03:55.960
+Using namespace std then main function this the entry point for program.
+
+49
+03:55.960 --> 03:59.360
+So instead the main function what is the first thing I should do.
+
+50
+03:59.420 --> 04:02.050
+take input read ABC.
+
+51
+04:02.320 --> 04:09.720
+So I should be giving a message cout enter a b c right.
+
+52
+04:09.790 --> 04:16.910
+So the one who is using this program should know that ABC are the coefficients of quadratic equations.
+
+53
+04:16.930 --> 04:19.330
+Now I will be reading this ABC.
+
+54
+04:19.330 --> 04:24.640
+So when I am reading ABC I realize that these are the variables that I must declare.
+
+55
+04:24.760 --> 04:25.020
+Yes.
+
+56
+04:25.030 --> 04:25.980
+So what are the variables.
+
+57
+04:25.990 --> 04:29.370
+I need a b c r1, r2.
+
+58
+04:29.380 --> 04:30.440
+These are the variables I need.
+
+59
+04:30.780 --> 04:32.890
+So declare them all of them here on the top.
+
+60
+04:32.890 --> 04:37.350
+So I will declare all of them as float because this float is involved here.
+
+61
+04:37.360 --> 04:39.340
+So let us make all of them as float.
+
+62
+04:39.490 --> 04:42.620
+That is a b c r1 r2.
+
+63
+04:42.650 --> 04:51.970
+all the variables I have declared then the first one r1 assign with minus B plus same formula.
+
+64
+04:52.030 --> 04:58.410
+So I need not write down that same thing as it is I have written perfectly as required in C++ program.
+
+65
+04:58.560 --> 05:02.350
+write on this one then r2 that is the same formula.
+
+66
+05:02.530 --> 05:05.800
+just install plus use minus.
+
+67
+05:05.800 --> 05:07.000
+Then after that print.
+
+68
+05:07.330 --> 05:10.120
+So the result C out now.
+
+69
+05:10.160 --> 05:11.850
+Watch this carefully.
+
+70
+05:11.860 --> 05:15.930
+I will say roots are then,.
+
+71
+05:16.480 --> 05:23.010
+After this first root then next  second root.
+
+72
+05:23.400 --> 05:28.170
+But there should be space in between two values because the first time we are displaying two values
+
+73
+05:28.200 --> 05:28.600
+now.
+
+74
+05:28.740 --> 05:30.360
+So there should be space in between them.
+
+75
+05:30.360 --> 05:33.180
+Suppose one value is one another is one five.
+
+76
+05:33.300 --> 05:35.210
+There should be a space in between them.
+
+77
+05:35.340 --> 05:38.390
+So roots are then for the space.
+
+78
+05:38.430 --> 05:47.950
+Just give quotes with a blank space then gives r2 that's it. and the last thing is return 0.
+
+79
+05:48.150 --> 05:51.230
+So this is what because we have written int here.
+
+80
+05:51.730 --> 05:55.110
+So return 0 is like a formality.
+
+81
+05:55.110 --> 06:00.120
+Later we will learn what does it really mean by return0 in the later videos.
+
+82
+06:00.120 --> 06:00.840
+So that's all.
+
+83
+06:01.090 --> 06:07.020
+this is a C++ program so there is a coding  exercise available so you have to write on this complete formula
+
+84
+06:07.020 --> 06:12.270
+there so read the description and whatever is asked in that coding exercise you'll complete that.
+
+85
+06:12.390 --> 06:14.860
+Then after that there is a demo video on this one.
+
+86
+06:15.000 --> 06:21.360
+So the coding part so you have to practice that on your own machine and also there are a few more coding
+
+87
+06:21.360 --> 06:23.280
+exercises for the other formulas.
+
+88
+06:23.280 --> 06:28.380
+We have seen in the beginning when we were talking of what it's like for finding the speed and finding
+
+89
+06:28.380 --> 06:33.770
+the perimeter of a rectangle like that there are some more coding exercises.
+
+90
+06:33.780 --> 06:37.440
+So read the description and you can do that right.
+
+91
+06:37.470 --> 06:42.870
+So that's all about the expression and all then we will move on to the next topic.
+
+92
+06:43.530 --> 06:48.540
+So that's all level the expressions and all we have seen different expressions and written the programs.
+
+93
+06:48.590 --> 06:51.660
+Now really move to a little advance topic in the next video.

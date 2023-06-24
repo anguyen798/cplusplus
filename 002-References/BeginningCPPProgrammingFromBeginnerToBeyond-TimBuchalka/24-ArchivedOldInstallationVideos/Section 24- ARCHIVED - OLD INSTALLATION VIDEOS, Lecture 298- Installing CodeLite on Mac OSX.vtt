@@ -1,0 +1,79 @@
+WEBVTT
+
+00:05.190 --> 00:11.460
+Now that we've downloaded and installed the command line tools and the C++ compiler, we'll now install
+
+00:11.460 --> 00:14.580
+the code light ID code.
+
+00:14.580 --> 00:18.960
+LT is an integrated development environment that's cross-platform open source.
+
+00:19.080 --> 00:21.840
+It runs on Mac OS ten Linux and Windows.
+
+00:22.200 --> 00:24.930
+In this video we're going to install it on Mac OS ten.
+
+00:24.930 --> 00:28.590
+So open up your favorite browser and go to code light dot org.
+
+00:28.590 --> 00:31.860
+That's code L dot org.
+
+00:32.310 --> 00:34.200
+And you'll see a web page similar to this.
+
+00:34.200 --> 00:37.800
+You want to find the download link, you can see one here at the top bar menu.
+
+00:37.800 --> 00:40.890
+And there's also this big blue button, which is the one I'm going to click on.
+
+00:42.390 --> 00:47.520
+I'll select that and you takes you to a page where you can contribute to the developers if you wish,
+
+00:47.520 --> 00:50.340
+or you could just go straight to the downloads and I'll do that.
+
+00:50.340 --> 00:53.070
+So I'll select right here, not now, take me to the download.
+
+00:55.320 --> 01:00.000
+Now here we've got some options we can install for Windows, for Mac, for Linux and so forth.
+
+01:00.000 --> 01:02.070
+We're interested in Mac in this example.
+
+01:02.070 --> 01:07.200
+So the third one down says Code Light 11.0 app bundle for OS ten.
+
+01:07.200 --> 01:11.880
+That's the one I want and I'm going to select the direct link to begin the download.
+
+01:15.960 --> 01:19.950
+The file is not very large, but the download is quite slow from this site.
+
+01:20.940 --> 01:22.890
+I'll pause the video while the download occurs.
+
+01:23.130 --> 01:28.410
+Once the download is complete, you can see that it's downloaded a compressed archive file.
+
+01:28.410 --> 01:30.570
+So what I'll do is I'll open that.
+
+01:34.000 --> 01:36.190
+And I'll double click on it to, um, compress it.
+
+01:40.280 --> 01:45.050
+There's my code light app, which I just drag to my applications folder.
+
+01:46.040 --> 01:46.670
+That's it.
+
+01:46.700 --> 01:48.440
+Code lights now on our system.
+
+01:49.460 --> 01:55.400
+In the next video, we'll run code light and configure it to use C++ compilers on MAC OS ten.

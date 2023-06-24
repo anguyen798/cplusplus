@@ -1,0 +1,403 @@
+WEBVTT
+
+00:04.820 --> 00:10.880
+In this video, I'll show you how to use the source code provided for the course in Visual Studio code.
+
+00:11.360 --> 00:16.250
+So the first thing we need to do is we need to get the source code and the source code is in the course
+
+00:16.250 --> 00:20.630
+and you can see here in the course content and if you scroll all the way to the bottom, you'll see
+
+00:20.630 --> 00:27.590
+section 22, extra information source code and other stuff right here and right in there, you'll see
+
+00:27.590 --> 00:29.010
+source code for all sections.
+
+00:29.010 --> 00:33.650
+So if you click on that, you're going to see the source code that's going to be downloadable here,
+
+00:33.860 --> 00:38.030
+and each one of these is going to be a zip file for each section of the course.
+
+00:38.030 --> 00:41.960
+Now, as I'm making this video, this is in section 22.
+
+00:41.960 --> 00:48.230
+When you all watch this video, most likely this will be way down here, section 25 or 26 or 27 or somewhere
+
+00:48.230 --> 00:54.230
+down at the bottom of the content, because the new lectures that I'll put in the course will be inserted
+
+00:54.230 --> 00:54.620
+in here.
+
+00:54.620 --> 00:59.450
+So anyway, just look for extra information and then source code for all sections and you'll find it.
+
+00:59.450 --> 01:02.660
+And then once you do that, you can download the source code.
+
+01:02.660 --> 01:09.140
+So for example, I'm going to download section four right here and I'm just going to click on there
+
+01:10.160 --> 01:12.200
+and then I'm going to save that to my desktop.
+
+01:12.200 --> 01:15.500
+I've already done that and you can extract it to the desktop as well.
+
+01:15.500 --> 01:19.940
+So the idea is create a section for folder on my desktop.
+
+01:19.940 --> 01:23.240
+Now I say my desktop, you can do this anywhere you like.
+
+01:23.600 --> 01:26.630
+I'm just putting it on my desktop just to make it easier to show you.
+
+01:26.630 --> 01:31.160
+So I've already done that and if you come over here you can see my desktop.
+
+01:31.190 --> 01:36.320
+There is the section for folder that I unzipped and there are the contents of the folder.
+
+01:36.350 --> 01:40.820
+You'll notice this is a code like structure and that's okay, Visual Studio code, we'll just ignore
+
+01:40.850 --> 01:41.180
+that.
+
+01:41.180 --> 01:47.060
+But I've got one, two, three, four, five, six, seven projects inside this folder.
+
+01:47.510 --> 01:49.190
+So I think you know what to do.
+
+01:49.220 --> 01:53.240
+You go over to Visual Studio code and you open up the section for folder.
+
+01:53.240 --> 01:54.950
+So let's do that right now.
+
+01:57.370 --> 02:04.570
+So here's Visual Studio code and I'm just going to open the folder and I'm going to open up the section
+
+02:04.570 --> 02:06.760
+for folder on my desktop.
+
+02:07.510 --> 02:13.450
+So I'm just going to select that folder and it's going to open it up just like we did when we created
+
+02:13.450 --> 02:13.600
+our.
+
+02:13.930 --> 02:17.110
+Now again, you'll notice this code light information Makefile.
+
+02:17.110 --> 02:20.680
+You can delete this folder and you can delete these two files if you like.
+
+02:20.800 --> 02:21.610
+I wouldn't delete them.
+
+02:21.610 --> 02:25.240
+I would just leave them in there in case you ever want to use code like they're there, so you might
+
+02:25.240 --> 02:26.080
+as well keep them there.
+
+02:26.590 --> 02:29.320
+So we can't do anything yet.
+
+02:29.320 --> 02:36.220
+Remember, we need to create the V code folder with the launch json test, JSON and CP properties file.
+
+02:36.370 --> 02:38.770
+We only have to do that once per project.
+
+02:38.770 --> 02:45.040
+So once we include this section for folder, now we have to set that up and then after that we're good
+
+02:45.040 --> 02:45.370
+to go.
+
+02:45.370 --> 02:50.530
+We can compile and build any of these projects a couple of ways we can do this.
+
+02:50.530 --> 02:53.590
+We can do it the same way that we did it in the previous videos, right?
+
+02:53.590 --> 02:55.390
+I could just do it manually and create them.
+
+02:55.390 --> 02:59.320
+That's pretty easy and that's what I'm going to do now, just so that you can see it one more time,
+
+02:59.620 --> 03:05.260
+you can also just copy and paste that vs code folder that you've already created in that other project
+
+03:05.260 --> 03:05.920
+that we did.
+
+03:05.990 --> 03:08.380
+Just copy it right in here and it'll be good to go.
+
+03:08.920 --> 03:09.190
+All right.
+
+03:09.190 --> 03:13.450
+So what I'm going to do is, like I said, I'm going to create it from scratch, just like we did before.
+
+03:13.450 --> 03:17.080
+So I'm just going to open up any one of these guys and select that main.
+
+03:17.080 --> 03:18.610
+CP That's important.
+
+03:19.060 --> 03:25.120
+And then what I'm going to do is I'm going to come up here to view the command palette and select again,
+
+03:25.120 --> 03:27.040
+that's edit configurations UI.
+
+03:27.040 --> 03:30.460
+If that doesn't show up, just type C++ and it will show up somewhere in here.
+
+03:30.460 --> 03:31.690
+That's what I'm going to choose.
+
+03:32.140 --> 03:33.490
+We'll do just like before.
+
+03:33.490 --> 03:40.600
+We'll change this GC to G Plus Plus and we'll come down here and we'll set the compiler standard to
+
+03:40.600 --> 03:44.020
+C++ 17 right there.
+
+03:44.050 --> 03:44.650
+That's it.
+
+03:44.650 --> 03:45.730
+I'm saving that.
+
+03:46.120 --> 03:51.820
+And now you can see that it's created the V code folder with that CP properties JSON file.
+
+03:51.820 --> 03:52.570
+Pretty good.
+
+03:52.870 --> 03:53.890
+So we're done with that.
+
+03:53.890 --> 03:55.180
+I'm just going to close this up.
+
+03:55.180 --> 04:00.640
+The next thing we'll do is we need to create the task JSON file, so we'll come over here to terminal
+
+04:00.940 --> 04:03.310
+and configure default build task.
+
+04:03.790 --> 04:05.020
+What are we using?
+
+04:05.020 --> 04:11.140
+We're using G plus plus right here and that's going to create my test JSON file.
+
+04:11.140 --> 04:16.480
+What I can do here is just like we did before, I want to add my warnings.
+
+04:16.960 --> 04:20.530
+I want to add the C++ 17 standard.
+
+04:23.830 --> 04:31.360
+I want to change line 12 here, which is the file to file your name just like that.
+
+04:31.360 --> 04:36.730
+And I just want to add slash slash star DHCP so it compiles all the files.
+
+04:37.300 --> 04:37.990
+That's it.
+
+04:37.990 --> 04:39.130
+We're done with that.
+
+04:39.130 --> 04:42.100
+So at this point we can build and run a project.
+
+04:42.100 --> 04:44.350
+So let's run this first program right here.
+
+04:44.350 --> 04:51.040
+So again, I can select close test JSON, I can select that main CP and I can come up with the terminal,
+
+04:51.220 --> 04:54.850
+run the build test and we should get a clean compile that we do.
+
+04:54.850 --> 04:58.570
+And you can see right here or my mouse is that it's doing first program.
+
+04:58.570 --> 05:02.830
+That's that project right there, that folder and it finished successfully.
+
+05:02.830 --> 05:07.720
+If I want to run the XY file which was created, you can see it's created right there.
+
+05:08.050 --> 05:15.490
+I can right click on that, open it in the integrated terminal and just type dot slash main XY.
+
+05:16.030 --> 05:19.020
+Enter your favorite number between one and 150.
+
+05:19.780 --> 05:20.320
+Amazing.
+
+05:20.320 --> 05:21.730
+That's my favorite number too.
+
+05:21.900 --> 05:24.010
+Just like what the source code says up here.
+
+05:25.240 --> 05:26.560
+So that's it.
+
+05:26.560 --> 05:26.980
+We're done.
+
+05:26.980 --> 05:30.730
+We can run any of the other programs in any of the other folders the same way.
+
+05:31.450 --> 05:35.350
+Now, what we're going to do is we're going to set up the debugger.
+
+05:35.620 --> 05:38.830
+So we're going to set up our debugger so that we can debug as well.
+
+05:38.830 --> 05:46.000
+So what we do now is we go up to run add configuration, we're going to select g plus plus gdb lib.
+
+05:47.060 --> 05:53.930
+We're going to slight G plus plus again and we're going to get this running when it's done, just kill
+
+05:53.930 --> 05:57.430
+it right here with that little red box because we're not interested in running it right now.
+
+05:57.440 --> 06:03.110
+What we do want to do is we want to modify this launch JSON file and all we're doing is we're taking
+
+06:03.110 --> 06:09.380
+this file, your name right here, including the dollar and the curlies, just like that.
+
+06:09.380 --> 06:11.780
+I'm copying it and I'm pasting it into here.
+
+06:14.870 --> 06:15.830
+Just like that.
+
+06:18.020 --> 06:18.680
+And that's it.
+
+06:18.800 --> 06:19.820
+We're done with that.
+
+06:20.180 --> 06:26.390
+If you make mistakes here, let's say you forget that that close quote, you're going to get squiggles
+
+06:26.390 --> 06:27.350
+and stuff will turn red.
+
+06:27.350 --> 06:29.000
+So make sure you don't see any of that.
+
+06:29.000 --> 06:31.770
+Everything looks nice and nice and clean like this.
+
+06:31.790 --> 06:34.670
+No squiggly lines, no red errors or anything like that.
+
+06:34.970 --> 06:38.270
+When we're done, we can save it and I can close that up.
+
+06:39.020 --> 06:40.370
+And now let's say I'm here.
+
+06:40.370 --> 06:46.340
+And so if I want to debug this program, I would select the main CP file and I would click on this bug
+
+06:46.340 --> 06:47.030
+right here.
+
+06:47.840 --> 06:52.160
+If you have any breakpoint set down here, you can just delete them all, as I showed you before.
+
+06:52.160 --> 06:55.430
+And now we're going to set a breakpoint, let's say, right there.
+
+06:56.860 --> 07:01.270
+And once we're good to go, we just press this green arrow right here and our program will start in
+
+07:01.270 --> 07:02.080
+the debugger.
+
+07:02.410 --> 07:06.460
+You can see I've got a variable favorite number here and you can see its value is zero.
+
+07:06.460 --> 07:11.080
+Its value is actually undefined because I haven't defined it, but the debugger is putting a zero in
+
+07:11.110 --> 07:12.940
+there that could be any value in there.
+
+07:12.940 --> 07:13.560
+That's it.
+
+07:13.570 --> 07:17.830
+Now if I want to execute line eight, which is where I'm stopped at, I would just click this button
+
+07:17.830 --> 07:22.840
+right here, step over, and now it's asked me, enter your favorite number and it's just waiting me
+
+07:22.840 --> 07:23.650
+to type something in.
+
+07:23.650 --> 07:26.050
+I'll type in 45 and press enter.
+
+07:26.290 --> 07:27.760
+Now I'm at the next line.
+
+07:27.760 --> 07:32.290
+You can see that now favorite number is 45 and I can continue here.
+
+07:32.290 --> 07:34.540
+I can stop the program, I could do whatever I like.
+
+07:34.780 --> 07:35.650
+That's it.
+
+07:36.100 --> 07:36.820
+Program is finished.
+
+07:36.820 --> 07:41.440
+I can go back to my explorer and execute another program here.
+
+07:41.530 --> 07:42.700
+So there you go.
+
+07:42.700 --> 07:47.410
+This is how you would use the provided source code with Visual Studio code.
+
+07:47.410 --> 07:52.630
+So at this point, you have everything you need to be able to work in code light or in Visual Studio
+
+07:52.630 --> 07:53.290
+code.
+
+07:53.290 --> 07:58.180
+Some students prefer code light, other students prefer Visual Studio code, and now you've got the
+
+07:58.180 --> 07:59.710
+tools to do it both ways.

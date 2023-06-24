@@ -1,0 +1,637 @@
+WEBVTT
+
+00:00:05.360 --> 00:00:08.860
+We've already seen that in order for the c++ compiler
+
+00:00:08.860 --> 00:00:11.360
+to use dynamic binding of method calls,
+
+00:00:11.360 --> 00:00:13.360
+we must have an inheritance hierarchy,
+
+00:00:14.160 --> 00:00:17.760
+we must be using a base class pointer or base class reference,
+
+00:00:18.560 --> 00:00:22.160
+and we must declare the methods we want dynamically bound as virtual.
+
+00:00:23.150 --> 00:00:26.150
+In this video, we'll look at the base pointer requirement
+
+00:00:26.150 --> 00:00:28.650
+and see why it's so useful and so powerful.
+
+00:00:31.550 --> 00:00:35.450
+We'll use the account class hierarchy on the right side of the slide as our example.
+
+00:00:36.350 --> 00:00:40.850
+Let's also assume that this class hierarchy is now using dynamic polymorphism.
+
+00:00:41.250 --> 00:00:43.690
+We'll learn how to do that in this section of the course.
+
+00:00:43.690 --> 00:00:47.690
+For now, let's just concentrate on the effects and the power it gives us.
+
+00:00:48.290 --> 00:00:51.500
+So we'll create four pointers to account objects,
+
+00:00:51.500 --> 00:00:56.000
+and we'll initialize each one to a different type of account created on the heap.
+
+00:00:56.800 --> 00:01:00.600
+So as you can see, p1 holds the address of an account,
+
+00:01:00.750 --> 00:01:03.550
+object, p2 holds the address of a savings account object,
+
+00:01:03.800 --> 00:01:06.400
+p3 holds the address of a checking account object,
+
+00:01:06.700 --> 00:01:09.400
+and p4 holds the address of a trust account object.
+
+00:01:10.800 --> 00:01:13.500
+We've already seen that this is valid semantically
+
+00:01:13.500 --> 00:01:17.300
+since they're all accounts due to the public is a inheritance we're using.
+
+00:01:18.300 --> 00:01:21.800
+Now we can call the withdraw method using the base class pointers,
+
+00:01:21.800 --> 00:01:26.260
+and c++ will figure out which method to bind at runtime
+
+00:01:26.260 --> 00:01:29.860
+based on the type of the object being pointed to by each pointer.
+
+00:01:30.360 --> 00:01:34.760
+This is pretty cool. There's nothing else you need to do once the hierarchy is set up.
+
+00:01:35.560 --> 00:01:39.220
+Of course, we need to delete the storage allocated by the pointers when we're done with them.
+
+00:01:40.020 --> 00:01:43.820
+Okay. So now let's see a more compelling use case for using base class pointers.
+
+00:01:47.020 --> 00:01:51.020
+In this case, we have the same four pointers we created in the previous slide.
+
+00:01:51.570 --> 00:01:55.070
+But I've declared an array that holds pointers to account objects.
+
+00:01:55.730 --> 00:01:57.730
+These will be the base class pointers.
+
+00:01:58.330 --> 00:02:02.330
+I then initialize the array to hold the four pointers we declared previously.
+
+00:02:03.230 --> 00:02:05.330
+Now I can simply loop through the array
+
+00:02:05.330 --> 00:02:08.320
+and call the withdraw method for each element in the array,
+
+00:02:08.320 --> 00:02:10.920
+and the correct withdraw method will be called
+
+00:02:10.920 --> 00:02:14.120
+based on the type of the object that each pointer points to.
+
+00:02:14.780 --> 00:02:16.780
+You can see how powerful this is.
+
+00:02:16.780 --> 00:02:20.380
+It doesn't matter how many base class pointers I initialize the array with
+
+00:02:20.380 --> 00:02:24.180
+or what type of accounts they're pointing to, it will work as expected.
+
+00:02:24.840 --> 00:02:29.140
+Also, if we replace one array element for another, it will also work as expected.
+
+00:02:29.500 --> 00:02:34.000
+This is what i was talking about when I said programming more abstractly or more generally.
+
+00:02:34.550 --> 00:02:36.150
+Here I'm simply thinking
+
+00:02:36.150 --> 00:02:38.950
+call the withdraw method for each account in the array.
+
+00:02:39.200 --> 00:02:41.200
+That's it. No more details required.
+
+00:02:43.800 --> 00:02:47.100
+Of course, this also works with other collections such as a vector.
+
+00:02:48.000 --> 00:02:49.900
+Here we have the same four pointers,
+
+00:02:49.900 --> 00:02:52.400
+and then we create a vector of pointers to account.
+
+00:02:52.950 --> 00:02:55.550
+So the vector holds base class pointers.
+
+00:02:56.150 --> 00:02:59.950
+We can then initialize the vector to p1 p2 p3 and p4.
+
+00:03:00.940 --> 00:03:05.440
+Then we can simply loop through the vector using a range-based for loop or an iterator
+
+00:03:05.440 --> 00:03:08.240
+and call the withdraw method for each vector element.
+
+00:03:09.040 --> 00:03:12.440
+Think about what would happen if we added another class to our account hierarchy,
+
+00:03:12.440 --> 00:03:13.640
+say a bond account.
+
+00:03:14.300 --> 00:03:18.500
+None of the code that we have that works with account objects needs to be changed.
+
+00:03:18.750 --> 00:03:23.740
+Since a bond account is an account, it will automatically work with our existing code.
+
+00:03:24.890 --> 00:03:26.090
+A little note here though,
+
+00:03:26.090 --> 00:03:29.890
+be careful when you're using raw pointers and collections such as vectors.
+
+00:03:29.890 --> 00:03:32.780
+It's better to use smart pointers in this type of example.
+
+00:03:32.780 --> 00:03:36.580
+But we haven't really learned about them yet, we will soon. So there you go.
+
+00:03:36.580 --> 00:03:38.940
+I hope you can see the power of the base pointer
+
+00:03:38.940 --> 00:03:41.940
+and how much more abstractly we can think when writing our code.
+
+00:03:42.440 --> 00:03:46.440
+Let's head over to the IDE, and we'll run these examples so you can see firsthand.
+
+00:03:47.940 --> 00:03:49.940
+Okay. So I'm in the IDE.
+
+00:03:49.940 --> 00:03:54.140
+I'm in the section 16 workspace in the BaseClassPointers project.
+
+00:03:54.740 --> 00:03:58.400
+Now let me explain what's going on this project. I've already gone ahead
+
+00:03:58.800 --> 00:04:01.700
+and taken that account hierarchy account,
+
+00:04:01.700 --> 00:04:04.900
+checking account, savings account and trust account, and I've made it
+
+00:04:04.900 --> 00:04:07.500
+so that it works with dynamic polymorphism.
+
+00:04:07.500 --> 00:04:10.700
+So I've done the virtual functions, I've done all that already.
+
+00:04:10.700 --> 00:04:14.700
+I just want to show you how to use this and see how powerful it is. In the next video,
+
+00:04:14.700 --> 00:04:18.400
+we'll learn about virtual functions, and we'll start implementing it ourselves.
+
+00:04:18.800 --> 00:04:22.460
+But let's take a look at the main. This is really what the point of this video is.
+
+00:04:22.460 --> 00:04:24.160
+If you look at the main, you can see
+
+00:04:24.160 --> 00:04:27.160
+that first we're going to do the pointers, and we'll deal with arrays and vectors.
+
+00:04:27.160 --> 00:04:29.160
+But let's just do plain pointers first.
+
+00:04:29.560 --> 00:04:31.860
+Here you can see that I've got the four pointers:
+
+00:04:31.860 --> 00:04:33.860
+p1 p2 p3 and p4,
+
+00:04:34.220 --> 00:04:37.220
+each one points to a different type of account,
+
+00:04:37.220 --> 00:04:41.210
+but they are all accounts, right, because we've got public inheritance in our hierarchy.
+
+00:04:41.870 --> 00:04:45.770
+And then what we're doing is we're calling the withdraw method for each one of those objects.
+
+00:04:46.430 --> 00:04:50.230
+And the idea is if we've done our dynamic polymorphism correct,
+
+00:04:50.530 --> 00:04:53.330
+p1 will call the account withdraw,
+
+00:04:53.330 --> 00:04:55.530
+p2 will call the savings withdraw,
+
+00:04:55.530 --> 00:04:59.430
+p3 will call the checking withdraw, and p4 will call the trust withdraw.
+
+00:04:59.730 --> 00:05:01.730
+Okay. So let's give this a build and run.
+
+00:05:02.530 --> 00:05:06.680
+And you can see the output right here. I'll just move it over so we can see it, we can see pointers.
+
+00:05:07.080 --> 00:05:10.280
+And then the withdraw methods are called right down here. You can see
+
+00:05:10.280 --> 00:05:12.380
+that we're calling the accounts withdraw,
+
+00:05:12.380 --> 00:05:16.480
+then the savings withdraw, then the checking is withdraw, and then finally, the trust withdraw.
+
+00:05:16.480 --> 00:05:18.580
+So exactly like what we expected.
+
+00:05:18.580 --> 00:05:23.180
+We've got binding now happening at runtime. That's really, really powerful stuff.
+
+00:05:23.950 --> 00:05:28.650
+We also have the cleanup here. And I'll show you what that looks like. That's just deleting those four pointers,
+
+00:05:28.650 --> 00:05:31.450
+so we free up the storage that we allocated for them.
+
+00:05:32.250 --> 00:05:35.250
+All right. So now let's take a look at how this would work with arrays.
+
+00:05:35.250 --> 00:05:37.100
+And I'll uncomment this out.
+
+00:05:37.900 --> 00:05:41.500
+And in this case, I'm just printing out a line that says array, so we know what's going on.
+
+00:05:41.900 --> 00:05:46.500
+And what I'm doing here I'm creating an array, and this is the declaration right here.
+
+00:05:46.500 --> 00:05:49.700
+I'm creating an array that's what the brackets say
+
+00:05:50.200 --> 00:05:55.000
+of pointers to accounts. So I'm going to create an array, in this case,
+
+00:05:55.360 --> 00:05:57.660
+and it's going to have four pointers in it.
+
+00:05:57.660 --> 00:06:01.760
+Each one of these pointers is going to point to an account object.
+
+00:06:02.120 --> 00:06:04.620
+So that's what it looks like. P1 here,
+
+00:06:05.420 --> 00:06:08.420
+right, p1 is the account. So this will be an account.
+
+00:06:10.920 --> 00:06:14.120
+P2 will be a savings account. You get the idea, right.
+
+00:06:14.120 --> 00:06:16.560
+That's a checking account, and that would be a trust account.
+
+00:06:16.560 --> 00:06:19.920
+And then what I'm doing is I'm simply looping through this array right here.
+
+00:06:20.420 --> 00:06:24.920
+And I'm calling the withdraw method for each one of those pointers.
+
+00:06:25.280 --> 00:06:26.880
+So this will call the account,
+
+00:06:26.880 --> 00:06:31.240
+this will call the savings, this will call the checking, and this will call the trust withdraw methods.
+
+00:06:31.600 --> 00:06:35.900
+Okay. So the real powerful piece here is that you as you can see,
+
+00:06:36.300 --> 00:06:38.300
+I don't have to worry about that in the loop.
+
+00:06:38.800 --> 00:06:42.570
+All I'm doing here is simply calling the withdraw method for
+
+00:06:42.570 --> 00:06:45.570
+each one of those guys, and whatever happens to be there
+
+00:06:45.570 --> 00:06:47.470
+will be dynamically bound
+
+00:06:47.470 --> 00:06:51.270
+and it'll call the correct method which is super, super powerful.
+
+00:06:51.270 --> 00:06:52.770
+So let's give this one a run.
+
+00:06:53.570 --> 00:06:54.270
+And
+
+00:06:56.770 --> 00:06:59.770
+we can see that here's the run.
+
+00:07:01.070 --> 00:07:02.570
+And you can see the array right here.
+
+00:07:02.570 --> 00:07:05.230
+And notice what's happening here, i put p1 p2 p3 and p4 in the array,
+
+00:07:05.230 --> 00:07:09.230
+those are base class pointers, I'm not putting account objects in the array,
+
+00:07:09.230 --> 00:07:11.730
+I'm putting pointers to account objects in the array,
+
+00:07:11.730 --> 00:07:15.030
+and they all happen to be base class pointers, that's why this works.
+
+00:07:15.390 --> 00:07:19.290
+So in this case, I'm calling this four times right, 0 1 2 and 3.
+
+00:07:19.890 --> 00:07:23.890
+And you can see here in account, in savings, in checking and in trust.
+
+00:07:23.890 --> 00:07:26.390
+So we're getting the exact behavior that we want.
+
+00:07:26.890 --> 00:07:30.990
+So let's modify this just slightly. And what we can do is we can take --
+
+00:07:31.650 --> 00:07:34.950
+and I'll just copy this again, so we can see that output one more time
+
+00:07:34.950 --> 00:07:38.510
+so we can separate it and keep it nice and clean.
+
+00:07:39.110 --> 00:07:43.310
+What i want to do here is I simply want to say let's set array
+
+00:07:44.110 --> 00:07:46.710
+sub-0 that first item in the array,
+
+00:07:46.710 --> 00:07:48.510
+let's set that to p4.
+
+00:07:49.310 --> 00:07:52.510
+All right. P4 is a pointer to a trust account.
+
+00:07:52.510 --> 00:07:56.810
+And then let's just loop again, and call the withdraw method for all of those guys.
+
+00:07:57.110 --> 00:08:01.470
+Now our output should be a little different now, right. Because our first array element
+
+00:08:01.470 --> 00:08:05.270
+that one at index 0 is no longer an account, like it was up here.
+
+00:08:05.270 --> 00:08:06.570
+We put p1 in there,
+
+00:08:06.570 --> 00:08:08.070
+now it's a trust account.
+
+00:08:08.070 --> 00:08:13.060
+So what we expect in the output now would be trust, savings, checking, trust, right.
+
+00:08:13.310 --> 00:08:14.410
+So let's try that out.
+
+00:08:16.070 --> 00:08:20.570
+And let's see what we get here: trust, savings, checking, trust. You see
+
+00:08:20.930 --> 00:08:25.530
+that's exactly what we want. It really doesn't matter what these pointers point to,
+
+00:08:25.730 --> 00:08:27.530
+it will get bound correctly.
+
+00:08:27.530 --> 00:08:31.090
+And the real powerful thing here is I never really changed that loop, right.
+
+00:08:31.090 --> 00:08:33.450
+The loop is exactly the same as it was before.
+
+00:08:33.450 --> 00:08:35.650
+I didn't have to do any checking for anything.
+
+00:08:36.550 --> 00:08:39.050
+All right. So now let's take a look at the vector version.
+
+00:08:40.200 --> 00:08:44.860
+And as I mentioned in the slides, be really, really careful when you use raw pointers and
+
+00:08:45.220 --> 00:08:47.420
+any kind of collection but especially a vector.
+
+00:08:47.720 --> 00:08:50.920
+What you want to do is if you're going to use them, use them this way
+
+00:08:50.920 --> 00:08:54.720
+where you create -- you initialize the vector this way. Don't put
+
+00:08:54.720 --> 00:08:58.820
+like -- something like new account or something in here
+
+00:08:59.070 --> 00:09:01.670
+because that could be problematic when it comes to
+
+00:09:01.670 --> 00:09:05.470
+destroying those objects. You'd have to loop through the vector and destroy them yourself.
+
+00:09:05.770 --> 00:09:09.770
+But anyway, we'll just go look at this example real quick. So here's my vector.
+
+00:09:09.770 --> 00:09:13.270
+What am I doing. Well, in this case I'm creating a vector.
+
+00:09:13.670 --> 00:09:18.440
+And what is the vector of, right. My template parameter is a pointer to an account.
+
+00:09:18.440 --> 00:09:22.240
+So what have I got, just like we had an array, right. We have a vector
+
+00:09:22.240 --> 00:09:26.040
+of pointers to accounts. That's my base class pointer.
+
+00:09:26.400 --> 00:09:29.600
+I'm initializing it to p1 p2 p3 p4.
+
+00:09:29.900 --> 00:09:33.900
+And at this point all I'm doing is a range-based for loop right here,
+
+00:09:33.900 --> 00:09:37.700
+and I'm just using the auto keyword, it's going to figure out that that's an account pointer.
+
+00:09:38.360 --> 00:09:40.360
+And I'm looping through there. And
+
+00:09:40.360 --> 00:09:42.720
+that's it. I'm just calling the withdraw method for
+
+00:09:42.720 --> 00:09:45.080
+each one of those pointers that's in the vector.
+
+00:09:45.880 --> 00:09:50.180
+Again, what we expect here because we've got p1 p2 p3 p4, we expect
+
+00:09:50.430 --> 00:09:51.330
+account.
+
+00:09:51.630 --> 00:09:54.430
+Let me go back up and make sure I get this right.
+
+00:09:54.790 --> 00:09:59.150
+We expect account, savings, checking, trust. That's the order we're putting them in.
+
+00:09:59.150 --> 00:10:03.150
+So when this runs, that's what we expect. Let's give this a run.
+
+00:10:05.950 --> 00:10:08.550
+And there's our vector case right here.
+
+00:10:09.740 --> 00:10:14.340
+And in here, we've got account, savings, checking, trust, exactly what we wanted.
+
+00:10:15.700 --> 00:10:18.690
+All right. So let's just do one more little quick change here.
+
+00:10:18.690 --> 00:10:22.690
+And what we can do is let's add two more items to that vector.
+
+00:10:22.690 --> 00:10:27.680
+And what we can do is we can add that trust pointer again. We can add it two times at the back.
+
+00:10:27.680 --> 00:10:29.040
+So why don't we do that.
+
+00:10:29.040 --> 00:10:34.340
+Let me copy this again just so we have some separation in the output,
+
+00:10:34.700 --> 00:10:35.900
+and we can better follow it.
+
+00:10:35.900 --> 00:10:39.300
+So what we'll do here is we'll just say my vector is called accounts.
+
+00:10:39.800 --> 00:10:42.100
+So I'm going to say accounts.push_back.
+
+00:10:42.460 --> 00:10:45.760
+And let's push back p4, so we're adding p4 at the end.
+
+00:10:46.260 --> 00:10:47.760
+And let's do it again,
+
+00:10:48.420 --> 00:10:50.420
+and we'll add p4 again.
+
+00:10:50.420 --> 00:10:53.420
+So now when we loop through that vector this time,
+
+00:10:53.620 --> 00:10:56.980
+we expect those first four output statements to be the same,
+
+00:10:56.980 --> 00:10:59.970
+but we expect two more output statements at the end
+
+00:10:59.970 --> 00:11:02.170
+for the trust withdraw being called, right,
+
+00:11:02.170 --> 00:11:05.770
+because now we've got 6 items in this vector. So let's give that a run.
+
+00:11:06.970 --> 00:11:10.870
+And here we go. You can see 1 2 3 4 5 6
+
+00:11:10.870 --> 00:11:12.170
+items in the vector.
+
+00:11:12.420 --> 00:11:16.920
+We're calling the withdraw for each one of them, and you can see how the last three are trust, right.
+
+00:11:17.280 --> 00:11:21.780
+They give -- the fourth one was one that was already in there and then the two that I just added right here.
+
+00:11:22.880 --> 00:11:26.240
+As I said, be really careful when you're using raw pointers in these things it's
+
+00:11:26.240 --> 00:11:30.240
+better to use smart pointers. We'll talk about smart pointers in the next section.
+
+00:11:30.240 --> 00:11:33.240
+We could have used a shared pointer here, even a unique pointer,
+
+00:11:33.240 --> 00:11:35.240
+which would make things a lot more safe.
+
+00:11:35.740 --> 00:11:38.940
+All right. So there you go. Hopefully, you can see the power here.
+
+00:11:38.940 --> 00:11:40.940
+Remember, if I come up here,
+
+00:11:40.940 --> 00:11:44.840
+and I've got my accounts. And I decide to add a new account here, some
+
+00:11:44.840 --> 00:11:48.440
+like I said a a bond account or something, any kind of account.
+
+00:11:48.440 --> 00:11:50.640
+As long as I tie it into this hierarchy
+
+00:11:51.140 --> 00:11:54.800
+and make sure that the methods that are being called are virtual there as well,
+
+00:11:54.800 --> 00:11:58.680
+then I can create an account p -- account object right here p5,
+
+00:11:58.680 --> 00:12:02.080
+that's a bond account. And all this will work, right. All these loops,
+
+00:12:02.080 --> 00:12:05.680
+everything will work exactly the same. I won't have to modify any code
+
+00:12:05.680 --> 00:12:08.480
+because that's the point. I can think generally,
+
+00:12:08.480 --> 00:12:09.980
+I can think abstractly.
+
+00:12:09.980 --> 00:12:13.780
+If you think of this vector right here, this code right here, what does this say.
+
+00:12:13.780 --> 00:12:18.580
+It's basically saying loop through the vector and call the withdraw for everything in the vector.
+
+00:12:19.080 --> 00:12:21.680
+That's pretty high-level thinking. That's pretty powerful.
+
+00:12:21.680 --> 00:12:24.580
+If I've got a drawing program that's drawing shapes, I can just
+
+00:12:24.580 --> 00:12:27.780
+loop through all my shapes and ask each shape to draw itself
+
+00:12:27.780 --> 00:12:29.980
+or move itself or transform itself.
+
+00:12:30.380 --> 00:12:34.880
+So I'm really able to think abstractly and not get bogged down with details.
+
+00:12:34.880 --> 00:12:37.580
+And that's the power of dynamic polymorphism.

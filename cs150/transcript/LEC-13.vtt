@@ -1,0 +1,1004 @@
+﻿WEBVTT
+
+00:00:00.000 --> 00:00:09.000
+Hello everyone, this is Steve Gilbert. Welcome to lecture 13 on string streams and assertions.
+
+00:00:09.000 --> 00:00:17.000
+So, we have been working with streams that print to a source and read from a sink.
+
+00:00:17.000 --> 00:00:29.000
+That source has been your keyboard or a file, and the sink has been the monitor or a file or a screen.
+
+00:00:29.000 --> 00:00:36.000
+But instead of writing output to the screen or a file, or reading input from a keyboard or a file,
+
+00:00:36.000 --> 00:00:44.000
+a string stream reads and writes data to and from string objects in memory.
+
+00:00:44.000 --> 00:00:51.000
+Now to use string streams we have to include a new header. They are not included in Iostream or Fstream.
+
+00:00:51.000 --> 00:01:04.000
+This header is called Sstream. So for output files we create a new output string stream which is called an OStringStream.
+
+00:01:04.000 --> 00:01:12.000
+Now when you create that output string stream, nothing has been written to it yet. There is no data, so it is empty.
+
+00:01:12.000 --> 00:01:19.000
+You can write any kind of data to it using the regular interface of the stream classes.
+
+00:01:19.000 --> 00:01:29.000
+You can use put, you can use the extraction operator, you can print of course strings like this, or you can print integers.
+
+00:01:29.000 --> 00:01:35.000
+All of them will be converted to output in this string stream.
+
+00:01:35.000 --> 00:01:45.000
+Now once you have the data, what you want to do is you want to make a copy of the string that the string stream contains.
+
+00:01:45.000 --> 00:01:50.000
+And you do that by calling the member function str.
+
+00:01:50.000 --> 00:01:59.000
+So when you are finished writing, you get a string object, you extract it from the string by calling out.str.
+
+00:01:59.000 --> 00:02:06.000
+Now string streams are really useful when you need to mix numeric and text formatting.
+
+00:02:06.000 --> 00:02:15.000
+So in Java you do something like this, str.ance = the answer is colon + 42.
+
+00:02:15.000 --> 00:02:22.000
+And Java would automatically convert this 42 to a string and concatenate it with this string.
+
+00:02:22.000 --> 00:02:34.000
+In C++ what you do is you take an OStringStream, an output string stream, and you would print the answer is and then 42.
+
+00:02:34.000 --> 00:02:38.000
+And then you would say string out = outString.
+
+00:02:38.000 --> 00:02:48.000
+Now you can reuse the same string stream object over and over again, in other words print a line, extract the string, print a line and extract the string.
+
+00:02:48.000 --> 00:02:52.000
+But when you do that you need to clear out the old string object.
+
+00:02:52.000 --> 00:03:00.000
+And you do that by calling str. function, but this time instead of passing no arguments, you pass an empty string.
+
+00:03:00.000 --> 00:03:13.000
+And that will give you a fresh stream buffer. So this is like set the string I'm carrying to nothing, this is like get the string that I'm carrying around to nothing.
+
+00:03:13.000 --> 00:03:17.000
+So we are going to do an exercise here.
+
+00:03:17.000 --> 00:03:27.000
+And we are going to write a function that takes a double monetary value and returns a dollar formatted C++ string.
+
+00:03:27.000 --> 00:03:38.000
+And you would use the function like this. If you have an amount, you would simply write $2 amount when you do cout and that would convert it to this dollar formatted string.
+
+00:03:38.000 --> 00:03:51.000
+So if the amount was 1234, it should produce $1,234.00
+
+00:03:51.000 --> 00:04:08.000
+So let's go ahead and do that. Make sure you have opened up your VSCode. And this is in 13A, so let's open dollars there.
+
+00:04:08.000 --> 00:04:14.000
+Let's open a shell on it, open an integrated terminal.
+
+00:04:14.000 --> 00:04:19.000
+And let's complete the $2 function here.
+
+00:04:19.000 --> 00:04:32.000
+So let's put our ID up here.
+
+00:04:32.000 --> 00:04:39.000
+Ok, so I'm going to put this down a little bit and put that over here so we can see the code a little bit more.
+
+00:04:39.000 --> 00:04:51.000
+Ok, so the function is going to return a string. It's named as $2.
+
+00:04:51.000 --> 00:04:57.000
+It is going to take a double amount.
+
+00:04:57.000 --> 00:05:04.000
+And we want to turn that into a string. Now to convert a double to a string, we just do this.
+
+00:05:04.000 --> 00:05:26.000
+$string $out $out $fixed $setPrecision $to $out $amount
+
+00:05:26.000 --> 00:05:33.000
+And return $out.$string
+
+00:05:33.000 --> 00:05:39.000
+So we created a string stream. We set the formatting on the string stream.
+
+00:05:39.000 --> 00:05:48.000
+We printed our amount to the string stream. And then we extracted the string from that and returned the string stream.
+
+00:05:48.000 --> 00:06:01.000
+So let's go ahead and try that. Let's do a test. It's not going to be correct yet because we haven't put in the commas or the dollars.
+
+00:06:01.000 --> 00:06:13.000
+But you notice it is in fact turning our thing into a number with two decimal places here at the end.
+
+00:06:13.000 --> 00:06:20.000
+So now all we need to do is we need to insert the comma and the dollar sign.
+
+00:06:20.000 --> 00:06:24.000
+We can do that using string formatting.
+
+00:06:24.000 --> 00:06:40.000
+So basically what I'm going to do is I'm going to say $str = $out$str
+
+00:06:40.000 --> 00:06:46.000
+Now what I want to do, so let's look at what we have for our output string.
+
+00:06:46.000 --> 00:06:55.000
+So I have something like this.
+
+00:06:55.000 --> 00:06:59.000
+Let's see if that in fact copied control C.
+
+00:06:59.000 --> 00:07:03.000
+It might not have.
+
+00:07:03.000 --> 00:07:07.000
+Maybe I can copy it like
+
+00:07:07.000 --> 00:07:20.000
+No, it doesn't look like I can copy it.
+
+00:07:20.000 --> 00:07:25.000
+Oh, I can copy it. I did copy it.
+
+00:07:25.000 --> 00:07:41.000
+So what I want to do is I want to go 1, 2, 3, 4, 5, 6 and put in a comma.
+
+00:07:41.000 --> 00:07:48.000
+Hi folks, I'm back. I kind of got interrupted there for some meetings and an office hour and so forth.
+
+00:07:48.000 --> 00:07:53.000
+OK, so let's return to this problem of the $2 function.
+
+00:07:53.000 --> 00:07:58.000
+What we're going to do here is rather than just returning $out$str
+
+00:07:58.000 --> 00:08:03.000
+We're going to save the output as a result variable, as a string.
+
+00:08:03.000 --> 00:08:08.000
+And then we're going to return the dollar sign, the space and result at the end.
+
+00:08:08.000 --> 00:08:14.000
+And now all I need to do is I need to look inside here and find out where to put commas.
+
+00:08:14.000 --> 00:08:16.000
+I need to add one comma here.
+
+00:08:16.000 --> 00:08:27.000
+And so obviously it needs to be greater than 1, 2, 3, 4, 5, 6 characters before I add a comma.
+
+00:08:27.000 --> 00:08:31.000
+Otherwise, it's fine just the way it is.
+
+00:08:31.000 --> 00:08:44.000
+So if result size is greater than 6, what we're going to need to do is split it up and bring in commas.
+
+00:08:44.000 --> 00:08:52.000
+So the place where I'm going to put the first comma is at position 6.
+
+00:08:52.000 --> 00:08:55.000
+If it's only 6 long, it doesn't need a comma.
+
+00:08:55.000 --> 00:08:58.000
+So I'm going to save that in an int variable.
+
+00:08:58.000 --> 00:09:01.000
+I'm going to call this "pos"
+
+00:09:01.000 --> 00:09:14.000
+And I'm going to get the string size, the result size, minus 6.
+
+00:09:14.000 --> 00:09:21.000
+And technically, we should do a static cast on this.
+
+00:09:21.000 --> 00:09:24.000
+But it actually works without it.
+
+00:09:24.000 --> 00:09:27.000
+The reason we need a static cast is because this is an int.
+
+00:09:27.000 --> 00:09:36.000
+Because if I'm going backwards here, I want to make sure I can go less than 0 when I'm done.
+
+00:09:36.000 --> 00:09:51.000
+And so we're going to say result equals result, substring 0, up into the position where the comma is supposed to go.
+
+00:09:51.000 --> 00:10:03.000
+We'll add a comma to it, and then we'll get the rest of the result.
+
+00:10:03.000 --> 00:10:11.000
+So that's going to let me get, these three is from 0 to the position.
+
+00:10:11.000 --> 00:10:13.000
+So that position would be there.
+
+00:10:13.000 --> 00:10:21.000
+And the second part is from the position to the end, and we added a comma to it.
+
+00:10:21.000 --> 00:10:23.000
+Now we might need to add more commas.
+
+00:10:23.000 --> 00:10:26.000
+We can go ahead and try this right here.
+
+00:10:26.000 --> 00:10:29.000
+Do make test.
+
+00:10:29.000 --> 00:10:35.000
+And we'll see the first three work, where we only have one, but here I need another comma.
+
+00:10:35.000 --> 00:10:38.000
+And I might need more here.
+
+00:10:38.000 --> 00:10:41.000
+Here I have several commas.
+
+00:10:41.000 --> 00:10:54.000
+And so what I'm going to do is I'm going to say pos minus equals 3, move back three characters.
+
+00:10:54.000 --> 00:11:19.000
+And while pos is greater than 0, I'm going to say result equals result, substring 0, pos, plus comma, plus result, substring, pos.
+
+00:11:19.000 --> 00:11:31.000
+Finally, to make that loop go around, I'll need to say pos minus equals 3 if I need another one.
+
+00:11:31.000 --> 00:11:36.000
+OK, let's see if that does it.
+
+00:11:36.000 --> 00:11:39.000
+So let's do control L.
+
+00:11:39.000 --> 00:11:41.000
+Do make test.
+
+00:11:41.000 --> 00:11:44.000
+And it looks like we have all of ours.
+
+00:11:44.000 --> 00:11:49.000
+So here I have one, two, three, four commas in this one.
+
+00:11:49.000 --> 00:12:00.000
+Notice how this also, when we converted it to a string, it converted that .99, rounded up to an 8 for the number there.
+
+00:12:00.000 --> 00:12:03.000
+So it did that correctly.
+
+00:12:03.000 --> 00:12:10.000
+OK, so now let's look at input strings.
+
+00:12:10.000 --> 00:12:14.000
+So in Java you can parse a string by using a scanner.
+
+00:12:14.000 --> 00:12:24.000
+So I can create a scanner, in equals new scanner, and instead of passing in system in, I can pass the string that I want to parse.
+
+00:12:24.000 --> 00:12:33.000
+And so then I could simply use in next, which would give me March, and in next int, which would give me the 17 here.
+
+00:12:33.000 --> 00:12:38.000
+And then I could say int year equals in next year.
+
+00:12:38.000 --> 00:12:46.000
+Notice that it's kind of hard here, however, to parse it if it's going to contain a comma or something like that.
+
+00:12:46.000 --> 00:12:51.000
+In C++ you use an input string stream to do something similar.
+
+00:12:51.000 --> 00:12:56.000
+So here's an iStringStream in, instead of a scanner in.
+
+00:12:56.000 --> 00:12:59.000
+This is January 1st, 2018.
+
+00:12:59.000 --> 00:13:02.000
+Notice here I do have a comma in this one.
+
+00:13:02.000 --> 00:13:04.000
+Then I can get a month.
+
+00:13:04.000 --> 00:13:07.000
+I can read in the month like this.
+
+00:13:07.000 --> 00:13:13.000
+I can get an int for the day and the year, and notice month was a string.
+
+00:13:13.000 --> 00:13:18.000
+An int for the day, the year, and a character for the comma that I want to read.
+
+00:13:18.000 --> 00:13:26.000
+And then I can just read in the day, the comma, to extract this comma after that and the year.
+
+00:13:26.000 --> 00:13:31.000
+And this input will skip all of this extra white space.
+
+00:13:31.000 --> 00:13:35.000
+So really, really very flexible.
+
+00:13:35.000 --> 00:13:38.000
+So we're going to put that to work.
+
+00:13:38.000 --> 00:13:45.000
+And we're going to complete a function which takes a string that contains multiple parts.
+
+00:13:45.000 --> 00:13:48.000
+So we're going to parse the arguments.
+
+00:13:48.000 --> 00:13:54.000
+And then we're going to print only the input lines following between those lines.
+
+00:13:54.000 --> 00:13:58.000
+And so this list function will take a string that looks like this.
+
+00:13:58.000 --> 00:14:05.000
+This says open Alice.text and prints the lines 40 to 50 in Alice.text.
+
+00:14:05.000 --> 00:14:10.000
+We'll assume that the lines start at 1 and that we'll include both 40 and 50.
+
+00:14:10.000 --> 00:14:18.000
+Now this time, if the function doesn't work, we're going to return, if it does work, we're going to return true.
+
+00:14:18.000 --> 00:14:23.000
+Otherwise, we're going to return false.
+
+00:14:23.000 --> 00:14:28.000
+So let's minimize that. Let's close dollars.
+
+00:14:28.000 --> 00:14:34.000
+Let's come on over here and open up B.
+
+00:14:34.000 --> 00:14:40.000
+And open up list.cpp.
+
+00:14:40.000 --> 00:14:48.000
+So put your ID here.
+
+00:14:48.000 --> 00:14:52.000
+OK, in the instructions it gives you a little bit more information.
+
+00:14:52.000 --> 00:14:56.000
+So we're going to attempt a file name that passes the first word.
+
+00:14:56.000 --> 00:14:59.000
+Cannot open file name or return false.
+
+00:14:59.000 --> 00:15:04.000
+If the starting number is larger than the ending number, the starting number and ending number are the same.
+
+00:15:04.000 --> 00:15:06.000
+We're going to print that one line.
+
+00:15:06.000 --> 00:15:12.000
+We'll print invalid starter end position along with the argument and return false.
+
+00:15:12.000 --> 00:15:16.000
+If the file is opened and the starting number is not larger than the ending number,
+
+00:15:16.000 --> 00:15:21.000
+then the function reads the lines specified in the file and prints those lines.
+
+00:15:21.000 --> 00:15:25.000
+Assume that the line numbers start at 1, not 0.
+
+00:15:25.000 --> 00:15:31.000
+And print the line numbers in a field 4 wide, followed by a period and a space and the line.
+
+00:15:31.000 --> 00:15:35.000
+If successful, it should return true.
+
+00:15:35.000 --> 00:15:39.000
+So we're going to assume it's successful, so I'll add that line.
+
+00:15:39.000 --> 00:15:43.000
+Return true.
+
+00:15:43.000 --> 00:15:45.000
+OK, now let's parse args.
+
+00:15:45.000 --> 00:15:53.000
+So I'm going to create an input string stream, iStringStream.
+
+00:15:53.000 --> 00:15:56.000
+I'll call it StirIn.
+
+00:15:56.000 --> 00:16:01.000
+And I'm going to initialize it by passing in the arguments.
+
+00:16:01.000 --> 00:16:06.000
+Now I'm going to extract from that string stream the file name.
+
+00:16:06.000 --> 00:16:17.000
+So, string, fName, and StirIn, fName.
+
+00:16:17.000 --> 00:16:22.000
+Now I want to extract the starting and ending positions.
+
+00:16:22.000 --> 00:16:40.000
+So, if starting, ending, StirIn, starting, and ending.
+
+00:16:40.000 --> 00:16:44.000
+OK, so this is how we read from a string stream.
+
+00:16:44.000 --> 00:16:50.000
+Now let's put this to work and do our two possible errors.
+
+00:16:50.000 --> 00:16:59.000
+So, we'll do an ifStream, in, and I'll use fName.
+
+00:16:59.000 --> 00:17:15.000
+If in fail, couldn't open it, we'll see error, cannot open, fName.
+
+00:17:15.000 --> 00:17:19.000
+And we'll return false.
+
+00:17:19.000 --> 00:17:26.000
+Another possibility. Starting is greater than ending.
+
+00:17:26.000 --> 00:17:33.000
+If starting greater than ending.
+
+00:17:33.000 --> 00:17:36.000
+See error.
+
+00:17:36.000 --> 00:17:54.000
+Let's just go ahead and copy from the handout.
+
+00:17:54.000 --> 00:17:57.000
+Args.
+
+00:17:57.000 --> 00:18:00.000
+And we'll return false as well.
+
+00:18:00.000 --> 00:18:04.000
+So here we extracted or parsed the data.
+
+00:18:04.000 --> 00:18:10.000
+Here we're double checking or validating that data to make sure it's OK.
+
+00:18:10.000 --> 00:18:14.000
+We have the right file name, we can open it.
+
+00:18:14.000 --> 00:18:18.000
+Now, we're going to go ahead and print the lines.
+
+00:18:18.000 --> 00:18:26.000
+So I need a int lineName equals one.
+
+00:18:26.000 --> 00:18:32.000
+I need a string line.
+
+00:18:32.000 --> 00:18:45.000
+I need a while getLine, in, line.
+
+00:18:45.000 --> 00:18:50.000
+Let's start the line number zero.
+
+00:18:50.000 --> 00:18:57.000
+And then immediately say lineNode++.
+
+00:18:57.000 --> 00:19:06.000
+Now, we're only going to print it if it's in front of, after the starting.
+
+00:19:06.000 --> 00:19:29.000
+So if lineNode is greater or equal to starting.
+
+00:19:29.000 --> 00:19:37.000
+See out.
+
+00:19:37.000 --> 00:19:42.000
+We want a field for wide.
+
+00:19:42.000 --> 00:19:44.000
+Let's look at our instructions again.
+
+00:19:44.000 --> 00:19:46.000
+For wide.
+
+00:19:46.000 --> 00:19:55.000
+And we're going to print the line number in that field.
+
+00:19:55.000 --> 00:19:58.000
+That's followed by a period and a space.
+
+00:19:58.000 --> 00:20:05.000
+That's followed by line.
+
+00:20:05.000 --> 00:20:18.000
+OK, so let's try it.
+
+00:20:18.000 --> 00:20:22.000
+OK, let's actually close that terminal.
+
+00:20:22.000 --> 00:20:26.000
+And open up a terminal over here.
+
+00:20:26.000 --> 00:20:32.000
+Now, we have a problem already.
+
+00:20:32.000 --> 00:20:42.000
+So we're going to see that when we test the code.
+
+00:20:42.000 --> 00:20:49.000
+OK, so our checking, invalid start position and position work.
+
+00:20:49.000 --> 00:20:55.000
+Our checking for the cannot open no file.
+
+00:20:55.000 --> 00:21:00.000
+But here, we're looking for Moby Dick from 101 to 103.
+
+00:21:00.000 --> 00:21:02.000
+Expected three lines.
+
+00:21:02.000 --> 00:21:07.000
+But we found 22,000 lines.
+
+00:21:07.000 --> 00:21:11.000
+Yeah, 22,000 lines.
+
+00:21:11.000 --> 00:21:17.000
+And so the problem is that we didn't stop.
+
+00:21:17.000 --> 00:21:20.000
+We didn't stop when we hit our end.
+
+00:21:20.000 --> 00:21:28.000
+So let's say.
+
+00:21:28.000 --> 00:21:32.000
+And.
+
+00:21:32.000 --> 00:21:39.000
+Line no is less than.
+
+00:21:39.000 --> 00:21:43.000
+OK, and so that will stop us when we get to the ending number.
+
+00:21:43.000 --> 00:21:50.000
+Now we have to read all the ones up to the starting number. We don't have to read any of the ones after that.
+
+00:21:50.000 --> 00:21:54.000
+Alright, let's try it.
+
+00:21:54.000 --> 00:21:57.000
+Let's do make test.
+
+00:21:57.000 --> 00:22:02.000
+OK, so here we're running the correct number of lines.
+
+00:22:02.000 --> 00:22:06.000
+Now you might wonder, you might wonder.
+
+00:22:06.000 --> 00:22:11.000
+Why I didn't say this if we're going to include the line number.
+
+00:22:11.000 --> 00:22:19.000
+Because notice we're incrementing the line number before we decide if we're going to print it.
+
+00:22:19.000 --> 00:22:22.000
+And so if I said less than or equal to ending.
+
+00:22:22.000 --> 00:22:28.000
+When it was on ending, we'd go and we'd print the next line number after.
+
+00:22:28.000 --> 00:22:37.000
+So be really careful when you're doing this to make sure that you have this part set up correctly.
+
+00:22:37.000 --> 00:22:47.000
+OK, so that's it for our string streams and input string stream and an output string stream.
+
+00:22:47.000 --> 00:22:53.000
+So let's go ahead now and talk about one other topic.
+
+00:22:53.000 --> 00:22:56.000
+This is assumptions and preconditions.
+
+00:22:56.000 --> 00:23:03.000
+Now often a function makes assumptions about its inputs.
+
+00:23:03.000 --> 00:23:07.000
+These are called the functions preconditions.
+
+00:23:07.000 --> 00:23:12.000
+And for instance, if I say cout the square root of n.
+
+00:23:12.000 --> 00:23:16.000
+What is assumed about n?
+
+00:23:16.000 --> 00:23:20.000
+We assume that it's positive number.
+
+00:23:20.000 --> 00:23:24.000
+If it's not a positive number, the output is not correct.
+
+00:23:24.000 --> 00:23:30.000
+In the standard library, there's a function called s2i or string to int.
+
+00:23:30.000 --> 00:23:33.000
+That will convert a string to an integer.
+
+00:23:33.000 --> 00:23:39.000
+What would we assume about s when we're calling s2i s?
+
+00:23:39.000 --> 00:23:47.000
+We'd assume that s contains something like 125 and not the word one.
+
+00:23:47.000 --> 00:23:54.000
+Now at a minimum, when you're writing a function, you need to think about and document your assumptions.
+
+00:23:54.000 --> 00:23:59.000
+And we do that with a statement called a pre statement.
+
+00:23:59.000 --> 00:24:03.000
+This is part of the doxygen tags.
+
+00:24:03.000 --> 00:24:13.000
+So for the square root, the precondition would be that n is greater or equal to zero.
+
+00:24:13.000 --> 00:24:20.000
+Now, a post condition is what we assume will be true when the functions completed.
+
+00:24:20.000 --> 00:24:25.000
+Now that may be include things like external side effects.
+
+00:24:25.000 --> 00:24:28.000
+A global variable will be set.
+
+00:24:28.000 --> 00:24:34.000
+If you do see output 65, a is set to the standard output.
+
+00:24:34.000 --> 00:24:38.000
+Right, that's a side effect. That's the post condition.
+
+00:24:38.000 --> 00:24:43.000
+You should include what the functions assumed to return as well.
+
+00:24:43.000 --> 00:24:45.000
+So all of these are the post conditions.
+
+00:24:45.000 --> 00:24:50.000
+And you should document those as well using doxygen tags.
+
+00:24:50.000 --> 00:24:54.000
+And so at post says the status is true.
+
+00:24:54.000 --> 00:24:58.000
+If the number is read correctly, we might have more to say about that.
+
+00:24:58.000 --> 00:25:04.000
+If the function throws an exception, we'd use an at exception tag.
+
+00:25:04.000 --> 00:25:06.000
+Again, that's part of the post condition.
+
+00:25:06.000 --> 00:25:08.000
+This is what will happen.
+
+00:25:08.000 --> 00:25:12.000
+So if the function works correctly, the status is true.
+
+00:25:12.000 --> 00:25:19.000
+If the function does not work correctly, it throws an exception when the number is out of range.
+
+00:25:19.000 --> 00:25:25.000
+So again, when you're writing your functions, you want to document those.
+
+00:25:25.000 --> 00:25:32.000
+You want to allow the people who see the function to know what will happen when an error occurs.
+
+00:25:32.000 --> 00:25:42.000
+So when we have a precondition violation, when we have inappropriate input given to our function,
+
+00:25:42.000 --> 00:25:45.000
+we can do five things.
+
+00:25:45.000 --> 00:25:48.000
+Three of them are appropriate in certain circumstances.
+
+00:25:48.000 --> 00:25:53.000
+Two of them are commonly done, but are not really very appropriate.
+
+00:25:53.000 --> 00:26:00.000
+The first is you can make the input fail safely.
+
+00:26:00.000 --> 00:26:04.000
+So this is sometimes called defensive programming.
+
+00:26:04.000 --> 00:26:10.000
+Specifically, what you're defending against is the program crashing.
+
+00:26:10.000 --> 00:26:13.000
+You don't want the program to crash.
+
+00:26:13.000 --> 00:26:21.000
+So for instance, we could have S2I1 simply return the value zero.
+
+00:26:21.000 --> 00:26:23.000
+What's the problem with that?
+
+00:26:23.000 --> 00:26:26.000
+That makes it very hard to find errors in your code.
+
+00:26:26.000 --> 00:26:34.000
+In other words, you won't find the place where you in fact passed the wrong argument to S2I1.
+
+00:26:34.000 --> 00:26:39.000
+You'll just get back a zero in that case, which is not really the right answer.
+
+00:26:39.000 --> 00:26:43.000
+So number one is really not a good idea.
+
+00:26:43.000 --> 00:26:46.000
+We really don't want that to happen.
+
+00:26:46.000 --> 00:26:52.000
+Number two, if your function gets an invalid input,
+
+00:26:52.000 --> 00:26:56.000
+or you notice some other kind of precondition violation,
+
+00:26:56.000 --> 00:27:01.000
+you can terminate the program with an error message.
+
+00:27:01.000 --> 00:27:05.000
+Think about would you like that to happen in your web browser.
+
+00:27:05.000 --> 00:27:10.000
+You type in a URL and Chrome or Firefox crash.
+
+00:27:10.000 --> 00:27:12.000
+You wouldn't like that.
+
+00:27:12.000 --> 00:27:20.000
+You try to save a document in Word and the disk is full and it just terminates the program.
+
+00:27:20.000 --> 00:27:22.000
+Again, you wouldn't like that.
+
+00:27:22.000 --> 00:27:28.000
+So there are certain situations where that's not appropriate.
+
+00:27:28.000 --> 00:27:32.000
+Three, you can return an error code, which the user can check.
+
+00:27:32.000 --> 00:27:41.000
+Or what we've seen with our streams, you can set an error state like see and fail.
+
+00:27:41.000 --> 00:27:44.000
+When an error occurs, they set an error state.
+
+00:27:44.000 --> 00:27:46.000
+It's up to us to check that.
+
+00:27:46.000 --> 00:27:48.000
+Is there a problem with that?
+
+00:27:48.000 --> 00:27:49.000
+Yeah, actually.
+
+00:27:49.000 --> 00:27:55.000
+Programmers may or sometimes will just ignore those error states.
+
+00:27:55.000 --> 00:28:00.000
+So it doesn't force the programmer to handle potential problems.
+
+00:28:00.000 --> 00:28:04.000
+The way you can force programmers to handle potential problems,
+
+00:28:04.000 --> 00:28:11.000
+which we'll cover in the next lecture, is you can throw an exception, which can be caught.
+
+00:28:11.000 --> 00:28:15.000
+Finally, you can do what most programmers do.
+
+00:28:15.000 --> 00:28:17.000
+That's number five.
+
+00:28:17.000 --> 00:28:18.000
+You just don't do anything.
+
+00:28:18.000 --> 00:28:20.000
+You just hope for the best.
+
+00:28:20.000 --> 00:28:23.000
+Or you say, that's a feature.
+
+00:28:23.000 --> 00:28:25.000
+It's not a bug.
+
+00:28:25.000 --> 00:28:30.000
+So all of those are possibilities.
+
+00:28:30.000 --> 00:28:36.000
+So today in this lecture, I want to talk about one of these situations,
+
+00:28:36.000 --> 00:28:40.000
+terminating the program with an error message.
+
+00:28:40.000 --> 00:28:45.000
+When is that the correct thing to do?
+
+00:28:45.000 --> 00:28:49.000
+Some errors are caused by external circumstances.
+
+00:28:49.000 --> 00:28:53.000
+The user types in the wrong URL, as I mentioned.
+
+00:28:53.000 --> 00:28:56.000
+They save to a full thumb drive.
+
+00:28:56.000 --> 00:28:59.000
+Well, that's not the right way to handle that problem.
+
+00:28:59.000 --> 00:29:03.000
+You don't want the program to terminate when that happens.
+
+00:29:03.000 --> 00:29:09.000
+However, other errors are caused by you, the programmer.
+
+00:29:09.000 --> 00:29:13.000
+Here, if you've made a mistake in your code,
+
+00:29:13.000 --> 00:29:17.000
+you want the error to announce itself as soon as it's found
+
+00:29:17.000 --> 00:29:21.000
+and stop at the point where the error occurs.
+
+00:29:21.000 --> 00:29:23.000
+You don't want just the program to crash
+
+00:29:23.000 --> 00:29:26.000
+and not tell you where the problem was.
+
+00:29:26.000 --> 00:29:28.000
+You don't want it to fail silently,
+
+00:29:28.000 --> 00:29:31.000
+because then you'll never find the bug.
+
+00:29:31.000 --> 00:29:36.000
+To do this, we use a statement called an assert statement.
+
+00:29:36.000 --> 00:29:39.000
+Now, this is inherited from the C language.
+
+00:29:39.000 --> 00:29:43.000
+As you can see, the header file is called C assert.
+
+00:29:43.000 --> 00:29:48.000
+All of the C inherited functions are C assert.
+
+00:29:48.000 --> 00:29:56.000
+And in this, you just write assert counter is greater than 3.
+
+00:29:56.000 --> 00:30:09.000
+If this was the precondition, the counter must be 3.
+
+00:30:09.000 --> 00:30:14.000
+The advantage of assertions is it allows you to write self-checking code.
+
+00:30:14.000 --> 00:30:20.000
+If you write a statement, you're certain, or you assume that it does one thing,
+
+00:30:20.000 --> 00:30:22.000
+write an assertion for that.
+
+00:30:22.000 --> 00:30:25.000
+This is called instrumenting your code.
+
+00:30:25.000 --> 00:30:32.000
+This allows you to automatically detect and notify you when an error occurs.
+
+00:30:32.000 --> 00:30:38.000
+Sometimes these are called sanity checks or smoke tests.
+
+00:30:38.000 --> 00:30:46.000
+So you want to use assert only for things that cannot logically happen.
+
+00:30:46.000 --> 00:30:51.000
+Don't use asserts for things where the user will input bad data.
+
+00:30:51.000 --> 00:30:55.000
+Only for things that cannot logically happen.
+
+00:30:55.000 --> 00:31:00.000
+So if I have a function called sumBetween,
+
+00:31:00.000 --> 00:31:08.000
+I want to make sure that lower is not greater than upper.
+
+00:31:08.000 --> 00:31:14.000
+And so I'm going to assert that lower is less than or equal to upper.
+
+00:31:14.000 --> 00:31:18.000
+It's impossible for that not to pass.
+
+00:31:18.000 --> 00:31:23.000
+Logically, that must be true for this function to have any sense at all.
+
+00:31:23.000 --> 00:31:27.000
+And so I have on my slide here, it cannot happen,
+
+00:31:27.000 --> 00:31:30.000
+but it really must happen.
+
+00:31:30.000 --> 00:31:35.000
+Now assertions actually are something called a macro.
+
+00:31:35.000 --> 00:31:41.000
+And a macro is a piece of code that this is going to expand
+
+00:31:41.000 --> 00:31:45.000
+when I write assert lower less than or equal to upper.
+
+00:31:45.000 --> 00:31:52.000
+It's going to say, if lower is greater than upper,
+
+00:31:52.000 --> 00:31:58.000
+then terminate the program, print out the file number, and so forth.
+
+00:31:58.000 --> 00:32:03.000
+So this is going to expand, we say the macro expands,
+
+00:32:03.000 --> 00:32:05.000
+into an if statement.
+
+00:32:05.000 --> 00:32:09.000
+And as you can imagine, a macro or an assert statement
+
+00:32:09.000 --> 00:32:12.000
+takes time to do this check.
+
+00:32:12.000 --> 00:32:16.000
+It takes time to do this automatic detection.
+
+00:32:16.000 --> 00:32:22.000
+And so when we have found all of these logical errors in our code,
+
+00:32:22.000 --> 00:32:25.000
+and we're ready to ship it out to our users,
+
+00:32:25.000 --> 00:32:27.000
+what we call production code,
+
+00:32:27.000 --> 00:32:33.000
+we would generally remove that code by defining the end debug symbol
+
+00:32:33.000 --> 00:32:36.000
+before including cassert.
+
+00:32:36.000 --> 00:32:41.000
+That simply replaces what the assert did with just nothing.
+
+00:32:41.000 --> 00:32:46.000
+Now alternatively, and normally, we'll add a make debug
+
+00:32:46.000 --> 00:32:51.000
+or make release flag to our make file,
+
+00:32:51.000 --> 00:32:56.000
+and it will just pass in the -d end debug when we're compiling.
+
+00:32:56.000 --> 00:33:01.000
+So we don't actually have to change the source code at all.
+
+00:33:01.000 --> 00:33:06.000
+Okay, so that's it for this lecture.
+
+00:33:06.000 --> 00:33:11.000
+We'll see you next time with lecture 14.
+

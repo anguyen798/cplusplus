@@ -1,0 +1,312 @@
+WEBVTT
+
+00:00:06.340 --> 00:00:07.880
+Welcome to the section challenge.
+
+00:00:08.760 --> 00:00:11.100
+This has been a long section,
+and there was a lot to learn.
+
+00:00:11.340 --> 00:00:13.889
+Pointers can be tricky
+and intimidating.
+
+00:00:14.380 --> 00:00:17.580
+But here's a real nice challenge
+that'll help you understand pointers
+
+00:00:17.580 --> 00:00:19.089
+in dynamic memory allocation.
+
+00:00:19.670 --> 00:00:21.840
+So I've given you a bit of a start.
+
+00:00:21.840 --> 00:00:23.870
+I've written part of the
+main for you, and you just
+
+00:00:23.870 --> 00:00:25.290
+have to write two functions.
+
+00:00:25.540 --> 00:00:29.020
+You have to write a print function
+that should be pretty easy.
+
+00:00:29.309 --> 00:00:31.829
+And then you have to write an
+apply all function that I'll talk
+
+00:00:31.840 --> 00:00:34.000
+about in a second, and we'll walk
+right through this real quick.
+
+00:00:34.430 --> 00:00:37.390
+Okay, so let's go back up to
+the top of the challenge here.
+
+00:00:38.180 --> 00:00:41.720
+And what I'd like you to do is write
+those two functions, but the first
+
+00:00:41.720 --> 00:00:42.990
+one let's talk about the first one.
+
+00:00:43.420 --> 00:00:45.780
+Write a c++ function named apply all.
+
+00:00:46.330 --> 00:00:50.590
+Now this function expects two arrays
+of integers and their sizes, and it
+
+00:00:50.600 --> 00:00:54.860
+dynamically allocates a new array of
+integers whose size is the size of
+
+00:00:54.860 --> 00:00:56.839
+one times the size of the other then.
+
+00:00:56.839 --> 00:00:58.860
+What you want to do is you want
+to loop through the second array
+
+00:00:58.870 --> 00:01:02.290
+and multiply each element across
+each element of the other array.
+
+00:01:02.620 --> 00:01:04.450
+It sounds complicated, it's not.
+
+00:01:04.730 --> 00:01:06.710
+Let me walk you through
+exactly what I'm talking about.
+
+00:01:07.080 --> 00:01:12.004
+So here's the function so it expects
+two arrays, array1 and array2.
+
+00:01:12.170 --> 00:01:13.949
+And it expects the
+sizes for those two arrays.
+
+00:01:14.130 --> 00:01:18.270
+You can see right here
+array1, array2 5 and 3.
+
+00:01:18.670 --> 00:01:20.500
+Okay, So let's say
+that this is array1.
+
+00:01:20.500 --> 00:01:23.700
+It's one 1 2 3 4 and 5.
+
+00:01:24.870 --> 00:01:26.190
+This is array1.
+
+00:01:27.250 --> 00:01:33.130
+And then we've got array2,
+which contains 10 20 and 30.
+
+00:01:34.190 --> 00:01:37.679
+Okay, So we're passing these two
+pointers basically, right, the
+
+00:01:37.810 --> 00:01:40.200
+array names into that function.
+
+00:01:40.620 --> 00:01:44.070
+And we're passing along 5, which
+is how many elements are in
+
+00:01:44.070 --> 00:01:47.189
+this array, and 3, which is how
+many elements in this array.
+
+00:01:47.949 --> 00:01:51.280
+Now that function is going to
+dynamically allocate an array
+
+00:01:51.580 --> 00:01:56.809
+that's 15 big, 5 times 3,
+and those numbers could vary.
+
+00:01:56.880 --> 00:02:00.780
+So in this case, what we want
+to do is we want to take each
+
+00:02:00.820 --> 00:02:04.960
+element in array2 and multiply it
+across all the elements of array1.
+
+00:02:05.580 --> 00:02:07.900
+So 10 times 1 is 10.
+
+00:02:09.000 --> 00:02:10.440
+10 times 2 is 20.
+
+00:02:11.910 --> 00:02:13.380
+10 times 3 is 30.
+
+00:02:14.730 --> 00:02:17.830
+We got the 40, and we have a 50.
+
+00:02:19.230 --> 00:02:22.659
+Okay, then what we want to do
+is we want to go through here.
+
+00:02:23.010 --> 00:02:26.109
+And now go to the next
+array element in array2.
+
+00:02:26.900 --> 00:02:27.750
+So that's 20.
+
+00:02:27.790 --> 00:02:28.618
+So 20 times 1 is 20.
+
+00:02:28.618 --> 00:02:30.280
+20 times 2 is 40.
+
+00:02:31.080 --> 00:02:32.460
+20 times 3 is 60.
+
+00:02:33.670 --> 00:02:37.480
+20 times 4 is 80.
+
+00:02:37.660 --> 00:02:40.199
+And finally, 20 times 5 is 100.
+
+00:02:41.609 --> 00:02:44.740
+Okay, then the last thing is
+go through that last number.
+
+00:02:46.130 --> 00:02:50.869
+So now we're at the 30, and we're
+going to go 30 times 1, which is 30.
+
+00:02:51.830 --> 00:02:58.260
+You get the idea 60 90 120 150.
+
+00:02:58.619 --> 00:03:02.079
+So this here is the newly created
+array that you're going to
+
+00:03:02.079 --> 00:03:03.759
+create dynamically on the heap.
+
+00:03:04.809 --> 00:03:08.469
+We want to return the address of this
+array, which is the address of this
+
+00:03:08.469 --> 00:03:10.779
+guy right here from the function.
+
+00:03:11.119 --> 00:03:15.409
+That function returns the address,
+which we store right here in
+
+00:03:15.409 --> 00:03:19.360
+that pointer variable results
+then we pass results to the print
+
+00:03:19.360 --> 00:03:23.450
+function with a 15, and this is
+what we get from this example, let
+
+00:03:23.450 --> 00:03:24.930
+me clear the screen real quick.
+
+00:03:25.920 --> 00:03:27.109
+So here's array1.
+
+00:03:27.570 --> 00:03:28.839
+I call the print function.
+
+00:03:28.840 --> 00:03:31.630
+I pass array1 into it, and
+it's going to display that.
+
+00:03:33.160 --> 00:03:35.970
+Then I output array2, and then
+I call the print function.
+
+00:03:35.970 --> 00:03:37.510
+I pass in array2 with a 3.
+
+00:03:38.430 --> 00:03:39.080
+I get that.
+
+00:03:40.440 --> 00:03:41.480
+I call this function.
+
+00:03:41.480 --> 00:03:43.060
+It dynamically creates that array.
+
+00:03:43.060 --> 00:03:44.260
+It does the multiplication.
+
+00:03:44.260 --> 00:03:48.739
+It stores all the values into the
+the dynamically allocated array,
+
+00:03:48.739 --> 00:03:52.489
+and it returns the address of that
+array, and we store it in results.
+
+00:03:53.139 --> 00:03:56.530
+Then we pass results in
+15, and that's what we get.
+
+00:03:58.230 --> 00:04:01.269
+Okay, so what you need to
+do again one more time.
+
+00:04:01.980 --> 00:04:10.989
+You need to write the apply all
+function and the print function.
+
+00:04:12.340 --> 00:04:17.170
+Now the apply all function
+expects array1 and its
+
+00:04:17.170 --> 00:04:21.340
+size, array2 and its size.
+
+00:04:21.340 --> 00:04:23.410
+And you could decide what
+the types are going to be.
+
+00:04:24.280 --> 00:04:27.789
+The print function expects
+an array and a size.
+
+00:04:28.539 --> 00:04:33.140
+Now obviously, this guy returns
+a pointer to an integer.
+
+00:04:33.220 --> 00:04:34.469
+This guy doesn't return anything.
+
+00:04:35.240 --> 00:04:37.890
+So that's roughly your your
+function prototypes here.
+
+00:04:37.890 --> 00:04:40.090
+You just have to decide what
+these types here are going to be.
+
+00:04:42.719 --> 00:04:43.549
+Okay, that's it.
+
+00:04:43.929 --> 00:04:46.739
+Test your code, and have fun.
+
+00:04:47.049 --> 00:04:49.250
+If you need to use the
+debugger, go for it.
+
+00:04:49.410 --> 00:04:52.159
+Meet me on the other side
+of the challenge, and
+
+00:04:52.160 --> 00:04:53.390
+I'll show you my solution.

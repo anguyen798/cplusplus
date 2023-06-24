@@ -1,0 +1,361 @@
+WEBVTT
+
+00:00:05.300 --> 00:00:09.300
+In this video, I'd like to briefly talk about exceptions in the context of
+
+00:00:09.300 --> 00:00:10.800
+c++ class.
+
+00:00:12.100 --> 00:00:14.980
+Exceptions can be thrown from class methods,
+
+00:00:14.980 --> 00:00:16.880
+constructors and destructors.
+
+00:00:17.430 --> 00:00:19.530
+Let's talk about the last one first.
+
+00:00:20.030 --> 00:00:22.630
+Do not throw exceptions from a destructor.
+
+00:00:22.830 --> 00:00:27.190
+The destructor is marked in c++ as no except by default,
+
+00:00:27.190 --> 00:00:29.490
+which means that it does not throw exceptions.
+
+00:00:30.290 --> 00:00:34.440
+If a destructor is called as a result of an exception being thrown elsewhere
+
+00:00:34.440 --> 00:00:36.940
+and then the destructor throws an exception,
+
+00:00:36.940 --> 00:00:40.600
+then there's a problem since the original catch block will never be reached.
+
+00:00:40.600 --> 00:00:42.600
+This is a very bad situation.
+
+00:00:43.260 --> 00:00:46.160
+The only time a destructor might throw an exception
+
+00:00:46.160 --> 00:00:50.060
+is if it handles it itself, and that's a very unlikely use case.
+
+00:00:50.060 --> 00:00:55.050
+So remember, best practice is to not throw exceptions from a destructor.
+
+00:00:55.950 --> 00:00:58.650
+Okay. So now let's talk about methods and constructors.
+
+00:00:58.650 --> 00:01:00.530
+In the case of class methods,
+
+00:01:00.530 --> 00:01:04.130
+exception handling here works just as we've seen with regular functions.
+
+00:01:04.680 --> 00:01:06.040
+What about constructors?
+
+00:01:06.590 --> 00:01:08.390
+Constructors could certainly fail.
+
+00:01:08.390 --> 00:01:12.890
+And since constructors don't return values, we can't return a Boolean or an error code.
+
+00:01:13.590 --> 00:01:17.850
+Constructors may fail for many reasons. For example, suppose you're allocating
+
+00:01:17.850 --> 00:01:20.710
+memory dynamically and you're unable to allocate
+
+00:01:20.710 --> 00:01:24.010
+it or if you open a file in the constructor but the file doesn't exist.
+
+00:01:24.510 --> 00:01:28.110
+In cases such as these, the constructor can throw an exception.
+
+00:01:28.810 --> 00:01:30.810
+The rest works just as you would expect.
+
+00:01:31.110 --> 00:01:34.470
+Let's see an example of throwing an exception from a constructor.
+
+00:01:36.070 --> 00:01:40.060
+In this slide, we're using the account classes that we've been using throughout the course.
+
+00:01:40.860 --> 00:01:43.860
+Suppose we cannot have accounts with negative balances.
+
+00:01:44.260 --> 00:01:46.360
+So in the account class constructor,
+
+00:01:46.360 --> 00:01:49.240
+we can check the balance and if it's less than 0,
+
+00:01:49.240 --> 00:01:51.840
+throw an illegal balance exception object.
+
+00:01:52.640 --> 00:01:57.440
+In this case, we're assuming that we've created our own illegal balance exception class.
+
+00:01:57.440 --> 00:02:01.140
+That's it. Now let's see how we can catch this exception if it occurs.
+
+00:02:02.340 --> 00:02:07.330
+So here we have a try block. And in that try block, we're declaring a unique pointer to an account object.
+
+00:02:07.830 --> 00:02:11.830
+And using make unique to create a checking account object for Moe
+
+00:02:11.830 --> 00:02:13.490
+with a negative balance on the heap.
+
+00:02:14.150 --> 00:02:16.150
+Since the account balance is negative,
+
+00:02:16.150 --> 00:02:19.610
+the account constructor is going to throw an illegal balance exception,
+
+00:02:19.610 --> 00:02:21.610
+which we're catching in our catch block.
+
+00:02:22.610 --> 00:02:25.170
+We display an error, and our program continues.
+
+00:02:25.770 --> 00:02:28.270
+Now there's a lot more to class level exceptions.
+
+00:02:28.270 --> 00:02:32.930
+But for the purpose of this course, this is the basic information necessary to use
+
+00:02:32.930 --> 00:02:35.330
+and understand class level exceptions.
+
+00:02:35.330 --> 00:02:39.130
+In the next video, we'll look at the exception class hierarchy that the c++
+
+00:02:39.130 --> 00:02:41.730
+standard library uses internally,
+
+00:02:41.930 --> 00:02:45.920
+and we'll see how we can tap into that hierarchy for our own exception classes.
+
+00:02:45.920 --> 00:02:50.180
+But first, let's head over to the IDE and let's throw a class level exception
+
+00:02:50.180 --> 00:02:51.480
+from our account class.
+
+00:02:52.280 --> 00:02:56.780
+Welcome back. I'm in the IDE, and I'm in the still in the section 18 workspace,
+
+00:02:56.780 --> 00:02:59.980
+and I'm in the ConstructorException project.
+
+00:02:59.980 --> 00:03:02.540
+And what I've done here is I've copied all those files
+
+00:03:02.540 --> 00:03:06.140
+that we created for the account class that we've been using throughout the term.
+
+00:03:06.140 --> 00:03:09.740
+So I've got accounts and checking accounts and printables
+
+00:03:09.740 --> 00:03:12.540
+and basically, everything we've done, this is the latest version of it.
+
+00:03:12.540 --> 00:03:14.540
+But what I've done is I've added a new
+
+00:03:14.540 --> 00:03:17.900
+header file right here called illegal balance exception.
+
+00:03:17.900 --> 00:03:22.000
+And i don't need the cpp file because everything can be done in this header file.
+
+00:03:22.000 --> 00:03:26.200
+Notice what I've done here. I've created a class called illegal balance exception,
+
+00:03:26.200 --> 00:03:30.000
+which represents the condition where we've got an illegal balance, in this case,
+
+00:03:30.000 --> 00:03:31.200
+a negative value.
+
+00:03:31.200 --> 00:03:33.700
+This is the exception object we're going to throw.
+
+00:03:33.700 --> 00:03:36.200
+And then we've got a constructor and a destructor.
+
+00:03:36.200 --> 00:03:40.400
+And I've tagged them both as default that way we're using just regular default constructor
+
+00:03:40.400 --> 00:03:43.390
+and regular default destructor. That's it.
+
+00:03:43.790 --> 00:03:46.990
+Now what we want to do is go to our account cpp file.
+
+00:03:47.690 --> 00:03:51.690
+And what we're going to do is in the account constructor right here
+
+00:03:52.190 --> 00:03:55.070
+we're going to check to see if the balance is less than 0.
+
+00:03:55.620 --> 00:03:59.620
+If the balance is negative, then we're going to throw in an illegal balance exception.
+
+00:03:59.620 --> 00:04:04.610
+That's that class that we just created. This will throw an object of that class.
+
+00:04:04.610 --> 00:04:05.270
+Okay.
+
+00:04:05.270 --> 00:04:09.070
+Now I mentioned that there was a lot more to constructor level
+
+00:04:09.070 --> 00:04:10.270
+exception handling.
+
+00:04:10.270 --> 00:04:13.770
+One of the things that you can do with constructors is you can try
+
+00:04:13.770 --> 00:04:15.770
+remember we have an initializer list here.
+
+00:04:16.430 --> 00:04:19.730
+We could try to execute some of that.
+
+00:04:19.730 --> 00:04:22.630
+So it's possible to put try statements in there as well.
+
+00:04:22.630 --> 00:04:26.990
+In this case, we wouldn't do that, but you might want to do that in subclasses.
+
+00:04:26.990 --> 00:04:30.990
+Again, that's a little bit beyond the scope of the class, but I just wanted to bring it to your attention
+
+00:04:30.990 --> 00:04:32.790
+in case you see that out there.
+
+00:04:32.790 --> 00:04:37.590
+So this is it here, right. We've got an account. If the balance is negative, we're going to throw an exception.
+
+00:04:37.590 --> 00:04:40.390
+So now let's look at our main and let's test this out.
+
+00:04:41.490 --> 00:04:44.290
+So here's my main. And notice what I've done in the main.
+
+00:04:44.290 --> 00:04:47.790
+I've got a try block right here. Let me grab my pen so I can mark this up
+
+00:04:47.790 --> 00:04:49.090
+and make it a little clearer.
+
+00:04:49.090 --> 00:04:53.090
+I've got a try block right here. And in the try block,
+
+00:04:53.090 --> 00:04:55.750
+I've got a unique pointer to the base class.
+
+00:04:56.250 --> 00:04:58.250
+I call it Moe's account.
+
+00:04:58.250 --> 00:05:02.850
+And I'm using std make unique to create a checking account on the heap.
+
+00:05:03.210 --> 00:05:05.870
+That checking account contains the name Moe
+
+00:05:05.870 --> 00:05:08.170
+and notice that negative balance right there.
+
+00:05:08.830 --> 00:05:12.830
+Okay. That's going to throw an exception. We're using this in the try block
+
+00:05:12.830 --> 00:05:17.080
+because that constructor for the account class. In this case, remember, it's checking account,
+
+00:05:17.280 --> 00:05:21.880
+but it's calling the base class constructor as well. And that's the guy that's going to throw the exception
+
+00:05:22.480 --> 00:05:25.080
+So in this case, this will throw an exception.
+
+00:05:25.440 --> 00:05:30.040
+It'll throw a illegal balance exception which I'm catching here
+
+00:05:30.040 --> 00:05:31.340
+by const ref.
+
+00:05:32.240 --> 00:05:36.240
+If it doesn't throw an exception, then we simply de-reference Moe's account and print
+
+00:05:36.240 --> 00:05:37.240
+it out to stand it out.
+
+00:05:37.740 --> 00:05:41.540
+Okay. If it does throw an exception, we're going to catch it right here.
+
+00:05:42.640 --> 00:05:47.240
+And we're going to deal with it. How do we deal with it? We're just going to say couldn't create account, negative balance.
+
+00:05:47.240 --> 00:05:51.600
+That's it. But the point is our program completes successfully. This will execute.
+
+00:05:51.600 --> 00:05:55.500
+It doesn't crash. Okay. Now let's do this two different ways.
+
+00:05:55.500 --> 00:05:59.300
+Let's run this test case. And first, let's create it with a positive balance,
+
+00:05:59.800 --> 00:06:02.400
+a 10 dollar balance.So let me build and run,
+
+00:06:04.600 --> 00:06:07.800
+and the output says checking account Moe 10 dollars,
+
+00:06:07.800 --> 00:06:11.000
+program completed successfully, just what we'd expect.
+
+00:06:11.000 --> 00:06:15.360
+But now let's create the negative balance, and we'll build and run again.
+
+00:06:16.610 --> 00:06:20.910
+And notice the output now says couldn't create account negative balance.
+
+00:06:20.910 --> 00:06:24.710
+And again, program completed successfully. That's pretty cool.
+
+00:06:24.710 --> 00:06:28.270
+So that works really, really well. And that pretty much does it.
+
+00:06:28.270 --> 00:06:32.590
+For the section challenge in this section, it's actually a pretty easy challenge.
+
+00:06:32.590 --> 00:06:36.590
+Although some of the things will be a little bit advanced, the challenge is pretty easy to do.
+
+00:06:36.590 --> 00:06:40.950
+What I'd like you to do for that challenge, and I'll talk about it in the challenge video
+
+00:06:40.950 --> 00:06:43.310
+is to provide an exception
+
+00:06:43.810 --> 00:06:48.010
+when we've got insufficient funds. Okay. Remember, before we created
+
+00:06:48.010 --> 00:06:50.510
+right here this withdrawal that was true false.
+
+00:06:51.110 --> 00:06:55.210
+Well, rather than do true false, let's throw an exception and catch it,
+
+00:06:55.210 --> 00:06:56.510
+but we'll get to that soon.
+
+00:06:56.870 --> 00:07:01.370
+In the next video, we'll talk about the c++ standard exception class hierarchy.

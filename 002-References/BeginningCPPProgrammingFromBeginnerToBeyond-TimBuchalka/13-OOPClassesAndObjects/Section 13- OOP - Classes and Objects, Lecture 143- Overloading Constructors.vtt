@@ -1,0 +1,133 @@
+WEBVTT
+
+00:00:05.360 --> 00:00:10.060
+We've already seen overloaded constructors in the IDE, but let's see a few more examples.
+
+00:00:10.660 --> 00:00:13.860
+Classes can have as many constructors as necessary.
+
+00:00:13.860 --> 00:00:17.760
+The only restriction is that they must each have a unique signature.
+
+00:00:17.760 --> 00:00:20.860
+The compiler has to be able to determine which to call
+
+00:00:20.860 --> 00:00:25.220
+based on the initialization information provided when creating the objects.
+
+00:00:25.470 --> 00:00:29.870
+If there's any ambiguity, the compiler won't guess, it will generate a compiler error.
+
+00:00:30.420 --> 00:00:32.820
+Remember, once you declare any constructor,
+
+00:00:32.820 --> 00:00:37.020
+then the compiler generated default constructor will no longer be provided.
+
+00:00:38.010 --> 00:00:42.010
+Here's the player class again, and we've decided that we need three constructors.
+
+00:00:42.370 --> 00:00:44.470
+The first is a no args constructor,
+
+00:00:44.620 --> 00:00:47.280
+the second only expects a single string object
+
+00:00:47.640 --> 00:00:50.140
+and the third expects a string and two integers.
+
+00:00:50.940 --> 00:00:55.200
+Obviously, the signatures for these constructors are different so the compiler can tell them apart.
+
+00:00:55.800 --> 00:00:58.900
+We could have more constructors depending on our class design.
+
+00:00:58.900 --> 00:01:00.900
+Now let's implement these constructors.
+
+00:01:01.800 --> 00:01:02.900
+In the first example,
+
+00:01:02.900 --> 00:01:07.770
+we're implementing the no args constructor to initialize the object to name none,
+
+00:01:07.770 --> 00:01:10.030
+health 0 and xp 0.
+
+00:01:10.430 --> 00:01:13.430
+The values we initialize to are totally dependent
+
+00:01:13.430 --> 00:01:18.330
+on what we want our objects in the game to look like when no initialization information is provided.
+
+00:01:18.990 --> 00:01:22.990
+It's important that we initialize our objects to some state that we know.
+
+00:01:22.990 --> 00:01:26.590
+We don't want garbage data in any of the attributes after they're created.
+
+00:01:27.290 --> 00:01:31.290
+In the second constructor, we only have the name parameter provided.
+
+00:01:31.290 --> 00:01:36.090
+So we set the name attribute to name val and then the health and xp to 0.
+
+00:01:36.690 --> 00:01:40.290
+If we don't initialize health in xp, they'll contain garbage
+
+00:01:40.290 --> 00:01:42.890
+and that leaves the object in an unknown state.
+
+00:01:44.330 --> 00:01:46.210
+Finally, the third constructor
+
+00:01:46.210 --> 00:01:49.570
+is given initialization values for all three attributes.
+
+00:01:49.570 --> 00:01:53.270
+So we initialize name to name val, health to health val
+
+00:01:53.270 --> 00:01:55.070
+and xp to xp val.
+
+00:01:56.470 --> 00:01:59.470
+Now we have three ways to create player objects.
+
+00:02:00.350 --> 00:02:04.250
+In this case, the empty object will be initialized by the no args
+
+00:02:04.250 --> 00:02:07.850
+constructor and it will contain none 0 and 0.
+
+00:02:08.650 --> 00:02:12.010
+Hero and villain will be initialized with the constructor that expects
+
+00:02:12.010 --> 00:02:15.210
+a single string object, and they will be initialized to
+
+00:02:15.210 --> 00:02:18.710
+hero 0 0 and villain 0 0, respectively.
+
+00:02:20.250 --> 00:02:23.850
+The frank object will be initialized by the three args constructor,
+
+00:02:23.850 --> 00:02:26.050
+and it will contain frank 100 and 4.
+
+00:02:27.040 --> 00:02:31.030
+And finally, the enemy object will be created dynamically on the heap
+
+00:02:31.030 --> 00:02:35.430
+and initialized by the three args constructor to enemy 1000 and 0.
+
+00:02:35.830 --> 00:02:40.430
+As you can see overloading constructors is a super powerful way to provide many useful
+
+00:02:40.430 --> 00:02:42.730
+initialization options for your classes,
+
+00:02:43.030 --> 00:02:46.530
+also best practice is to initialize all class attributes
+
+00:02:46.530 --> 00:02:49.830
+so that created objects do not contain any garbage data.

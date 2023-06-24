@@ -1,0 +1,184 @@
+WEBVTT
+
+00:00:05.800 --> 00:00:10.460
+In this video, we'll learn about operator precedence and associativity in c++.
+
+00:00:11.660 --> 00:00:15.660
+C++ has well-defined operator precedence and associativity rules.
+
+00:00:16.210 --> 00:00:19.090
+Here's the table showing the precedence and associativity
+
+00:00:19.090 --> 00:00:21.090
+of some of c++ operators.
+
+00:00:21.690 --> 00:00:23.690
+Note that this table is not complete.
+
+00:00:23.690 --> 00:00:26.890
+It only shows a subset of c++ operators.
+
+00:00:26.890 --> 00:00:30.190
+You can find complete operator precedence tables online
+
+00:00:30.190 --> 00:00:31.890
+and in most c++ books.
+
+00:00:32.990 --> 00:00:35.990
+Note that there's two columns. The first column shows the operator.
+
+00:00:36.690 --> 00:00:41.090
+The operators on higher rows have higher precedence than operators on lower rows.
+
+00:00:41.590 --> 00:00:45.850
+So as you can see the assignment operators are down at the bottom as you would expect
+
+00:00:45.850 --> 00:00:48.150
+and the parenthesis operator is at the top.
+
+00:00:49.450 --> 00:00:52.450
+Operators on the same row have the same precedence.
+
+00:00:52.450 --> 00:00:54.750
+So for example, you can see that addition
+
+00:00:54.750 --> 00:00:57.050
+and subtraction have the same precedence.
+
+00:00:58.150 --> 00:01:00.350
+I think precedence is pretty easy to understand.
+
+00:01:00.850 --> 00:01:04.050
+We learned operator precedence when we learned math and grammar school.
+
+00:01:04.050 --> 00:01:07.550
+It's the same idea here except we have more operators to consider.
+
+00:01:08.350 --> 00:01:11.350
+The second column is the associativity column.
+
+00:01:11.500 --> 00:01:15.900
+This is the part that many times confuses students and even c++ programmers.
+
+00:01:16.600 --> 00:01:20.200
+Notice that associativity is left to right or right to left.
+
+00:01:20.600 --> 00:01:21.900
+Let's see what it means.
+
+00:01:23.900 --> 00:01:25.900
+So what's associativity all about
+
+00:01:26.400 --> 00:01:31.100
+suppose you have an expression with two adjacent operators and these operators are different,
+
+00:01:31.100 --> 00:01:32.700
+like we see in the first example.
+
+00:01:33.400 --> 00:01:35.700
+We can look for operators in the precedence chart,
+
+00:01:36.030 --> 00:01:39.030
+and if one of the operators has higher precedence than the other,
+
+00:01:39.030 --> 00:01:41.020
+then that's the operator that's applied first.
+
+00:01:41.620 --> 00:01:44.620
+This is exactly what we've been doing with our math that we've learned.
+
+00:01:45.420 --> 00:01:48.220
+But suppose the two operators are the same
+
+00:01:48.220 --> 00:01:51.220
+or they're different but they have the same level of precedence.
+
+00:01:51.820 --> 00:01:53.820
+Now precedence doesn't really help us.
+
+00:01:54.320 --> 00:01:58.920
+In this case, we determine how the operators are applied by using their associativity.
+
+00:02:00.280 --> 00:02:04.880
+In the second example, we have the same operator, op1, used adjacently.
+
+00:02:05.380 --> 00:02:08.080
+If op1 associates left to right,
+
+00:02:08.080 --> 00:02:12.080
+then we apply the operator to expression1 and expression2 first.
+
+00:02:12.680 --> 00:02:15.480
+If op1 associates right to left,
+
+00:02:15.480 --> 00:02:19.470
+then we apply the operator to expression2 and expression3 first.
+
+00:02:20.170 --> 00:02:23.530
+Of course, you can always use parentheses to remove any doubt
+
+00:02:23.530 --> 00:02:26.030
+and be sure that your result is what you expect.
+
+00:02:26.230 --> 00:02:29.530
+Using parentheses is good practice with complex expressions.
+
+00:02:30.630 --> 00:02:32.630
+Let's see a couple of simple examples.
+
+00:02:33.930 --> 00:02:36.430
+In the first example, we have three operators:
+
+00:02:36.430 --> 00:02:40.430
+the assignment operator, the addition operator and the multiplication operator.
+
+00:02:41.130 --> 00:02:45.430
+The precedence chart tells us that the multiplication operator has the highest precedence,
+
+00:02:45.790 --> 00:02:48.590
+followed by addition, followed by assignment.
+
+00:02:48.590 --> 00:02:51.190
+So I've rewritten the same statement on line two,
+
+00:02:51.390 --> 00:02:54.990
+showing the order of evaluation by including parentheses.
+
+00:02:55.650 --> 00:02:59.210
+Note that the evaluation takes place in order of multiplication,
+
+00:02:59.210 --> 00:03:01.510
+addition and finally, assignment.
+
+00:03:02.610 --> 00:03:05.810
+In the second example, we again have three operators:
+
+00:03:05.810 --> 00:03:09.310
+the assignment operator, the addition operator and the subtraction operator.
+
+00:03:10.110 --> 00:03:14.610
+In this case, addition and subtraction are of higher precedence than assignment,
+
+00:03:15.110 --> 00:03:17.110
+but they both have the same precedence.
+
+00:03:18.010 --> 00:03:22.810
+So in this case, we need to use their associativity to determine the order of evaluation.
+
+00:03:24.370 --> 00:03:27.870
+We see that plus and minus associate left to right.
+
+00:03:28.370 --> 00:03:32.170
+I've rewritten this example using parentheses to show the order of evaluation.
+
+00:03:33.170 --> 00:03:35.730
+Many beginning c++ programmers
+
+00:03:35.730 --> 00:03:39.730
+keep an operator precedence chart handy when they first start out with c++.
+
+00:03:40.730 --> 00:03:44.430
+After not too long, you get to know the operators and this becomes second nature
+
+00:03:44.430 --> 00:03:48.090
+just like using math precedence did the more we used it in school.

@@ -1,0 +1,1100 @@
+WEBVTT
+
+00:00:05.440 --> 00:00:08.620
+In this video, we'll overload
+the move assignment operator
+
+00:00:08.670 --> 00:00:10.170
+for our mystring class.
+
+00:00:11.139 --> 00:00:13.920
+Remember, the copy assignment
+operator that we just overloaded
+
+00:00:13.920 --> 00:00:17.180
+in the previous video works
+with l-value references.
+
+00:00:17.580 --> 00:00:20.470
+The move operator that will
+overload in this video works
+
+00:00:20.470 --> 00:00:21.990
+with r-value references.
+
+00:00:22.140 --> 00:00:24.770
+Again, think temporary
+unnamed objects.
+
+00:00:25.700 --> 00:00:27.939
+You don't have to provide
+a move assignment operator.
+
+00:00:28.080 --> 00:00:31.550
+And if you don't, c++ will use
+the copy constructor by default.
+
+00:00:31.840 --> 00:00:34.659
+But as we said when we talked
+about the move constructor, move
+
+00:00:34.660 --> 00:00:38.180
+semantics can be much more efficient,
+and it's not a lot of extra work
+
+00:00:38.180 --> 00:00:40.919
+to provide a move constructor
+and a move assignment operator.
+
+00:00:41.650 --> 00:00:44.270
+First, let's see when the move
+assignment operator will be used.
+
+00:00:44.679 --> 00:00:47.430
+In the code snippet in this
+slide, you can see that we create
+
+00:00:47.430 --> 00:00:51.260
+a mystring object s1 that's
+basically just an empty string.
+
+00:00:51.920 --> 00:00:55.120
+Now we assign the mystring object
+with the string frank to it.
+
+00:00:55.900 --> 00:00:58.100
+Notice that the mystring
+object initialized to
+
+00:00:58.100 --> 00:00:59.809
+frank must be constructed.
+
+00:01:00.030 --> 00:01:03.870
+And once it's constructed, it has
+no name, it's a temporary object.
+
+00:01:04.050 --> 00:01:05.310
+So it's an r-value.
+
+00:01:05.730 --> 00:01:09.230
+That means that when we assign
+it to s1, the move assignment
+
+00:01:09.240 --> 00:01:12.769
+operator will be called since we're
+providing an r-value reference.
+
+00:01:13.360 --> 00:01:15.010
+Let's see how to do
+this syntactically.
+
+00:01:17.080 --> 00:01:19.930
+You'll notice the move assignment
+operator declaration is very
+
+00:01:19.930 --> 00:01:21.429
+similar to copy assignment.
+
+00:01:22.039 --> 00:01:23.250
+But there are a few differences.
+
+00:01:23.550 --> 00:01:27.030
+First, we use the double ampersand
+operator in the parameter list
+
+00:01:27.270 --> 00:01:30.869
+to tell the compiler that the
+right-side object is an r-value.
+
+00:01:31.470 --> 00:01:34.860
+So the right-side value will
+be an r-value reference.
+
+00:01:35.510 --> 00:01:38.510
+Second the right-hand side
+object reference can't be const
+
+00:01:38.770 --> 00:01:41.449
+since we'll be modifying that
+object when we move the data.
+
+00:01:42.219 --> 00:01:46.010
+So the declaration for the mystring
+class returns a mystring object by
+
+00:01:46.010 --> 00:01:50.000
+reference and expects an r-value
+reference to a mystring object.
+
+00:01:51.220 --> 00:01:54.610
+You can see that in the two assignment
+statements on this slide, the move
+
+00:01:54.610 --> 00:01:57.380
+assignment operator will be called
+because the right-hand side of the
+
+00:01:57.380 --> 00:01:59.270
+assignment statements are r-values.
+
+00:02:00.480 --> 00:02:03.450
+So let's look at the code for the move
+assignment operator for this example.
+
+00:02:04.199 --> 00:02:06.699
+As you would expect, the code
+is very similar to the copy
+
+00:02:06.700 --> 00:02:09.470
+assignment with the exception
+that we're not deep copying
+
+00:02:09.470 --> 00:02:10.919
+from the right-hand side object.
+
+00:02:11.280 --> 00:02:13.739
+Instead, we're simply stealing
+the pointer and then nulling
+
+00:02:13.760 --> 00:02:15.130
+out the right-hand side pointer.
+
+00:02:16.099 --> 00:02:18.680
+Again, you can see from this
+code how much more efficient this
+
+00:02:18.690 --> 00:02:20.220
+is compared to copy assignment.
+
+00:02:20.750 --> 00:02:22.640
+Let's walk through this
+one step at a time.
+
+00:02:24.150 --> 00:02:26.530
+First, we check for
+self-assignment just before.
+
+00:02:26.810 --> 00:02:29.130
+And if we're self-assigning,
+then we return the left-hand
+
+00:02:29.130 --> 00:02:31.970
+side object, and we're done
+since there was nothing to do.
+
+00:02:32.889 --> 00:02:36.680
+Otherwise, we again de-allocate the
+storage pointed to by the left side
+
+00:02:36.680 --> 00:02:40.630
+object since we'll be overriding
+this, and we don't want a memory leak.
+
+00:02:41.299 --> 00:02:43.230
+Now the left-hand
+side object is ready.
+
+00:02:43.240 --> 00:02:44.769
+So let's move the pointer over.
+
+00:02:46.830 --> 00:02:49.940
+First, we steal the pointer from
+the right-side object and assign
+
+00:02:49.940 --> 00:02:51.140
+it to the left-side object.
+
+00:02:51.570 --> 00:02:54.010
+This is simply a copy
+of a pointer variable.
+
+00:02:54.150 --> 00:02:55.900
+We're not doing a deep copy here.
+
+00:02:56.520 --> 00:02:59.249
+Then we know out the pointer
+on the right-side object.
+
+00:02:59.549 --> 00:03:00.700
+This step is critical.
+
+00:03:01.180 --> 00:03:03.230
+Finally, we return
+the left-side object.
+
+00:03:03.420 --> 00:03:05.600
+Now let's head over to the
+IDE and compare the move
+
+00:03:05.600 --> 00:03:08.930
+assignment operator to the copy
+assignment operator in live code.
+
+00:03:10.050 --> 00:03:11.520
+Okay, so I'm back in the IDE.
+
+00:03:11.570 --> 00:03:17.269
+I'm in the section 14 workspace in
+the mystring-move-assignment project.
+
+00:03:18.219 --> 00:03:22.390
+Now what I'd like to do in this
+project is add a move assignment
+
+00:03:22.410 --> 00:03:24.350
+operator to our mystring class.
+
+00:03:24.650 --> 00:03:27.970
+This can be really useful when
+we're assigning r-value references.
+
+00:03:28.230 --> 00:03:30.320
+So let me give you an example
+of how this would work.
+
+00:03:30.660 --> 00:03:34.579
+Here we've created an object
+a, and it's using an overloaded
+
+00:03:34.579 --> 00:03:36.920
+constructor that's expecting
+that character pointer.
+
+00:03:36.920 --> 00:03:39.490
+And we're just constructing
+a simple object a that's
+
+00:03:39.500 --> 00:03:42.000
+got that string attribute
+pointing to hello on the heap.
+
+00:03:42.970 --> 00:03:45.310
+Now at this point, we
+want to use assignment.
+
+00:03:45.320 --> 00:03:49.060
+Remember, a already exists so now this
+will be assignment not initialization.
+
+00:03:49.500 --> 00:03:53.909
+And what I want to do is construct
+another mystring object off of
+
+00:03:53.920 --> 00:03:55.610
+the initialization string hola.
+
+00:03:56.390 --> 00:04:00.770
+At this point, that temporary object
+has no name, so it's an r-value.
+
+00:04:01.320 --> 00:04:05.629
+If we don't provide any move
+semantics, then it's going to use a
+
+00:04:05.630 --> 00:04:09.039
+copy constructor or a copy assignment
+operator to do what it needs to do.
+
+00:04:09.570 --> 00:04:13.019
+And if I run this right now, remember,
+I don't have any move constructors
+
+00:04:14.160 --> 00:04:17.529
+-- sorry, I don't have any move
+assignment operator implemented.
+
+00:04:17.779 --> 00:04:21.200
+So if I run this at this point,
+you'll see that it's using copy
+
+00:04:21.200 --> 00:04:22.900
+assignment, using copy assignment.
+
+00:04:23.520 --> 00:04:26.229
+Now we really could use move
+assignment here since we've
+
+00:04:26.230 --> 00:04:28.509
+got those r-value references,
+and that's what we'll do.
+
+00:04:29.299 --> 00:04:32.100
+So let's go over conceptually
+what's going on here again.
+
+00:04:32.770 --> 00:04:37.010
+At this point, we've created
+that a object, and it's on
+
+00:04:37.010 --> 00:04:40.739
+the stack, it's got the str
+attribute, which is a pointer.
+
+00:04:41.320 --> 00:04:44.589
+And once this object has
+been constructed that pointer
+
+00:04:44.589 --> 00:04:47.770
+is pointing to the string
+hello, which is on the heap.
+
+00:04:48.389 --> 00:04:50.780
+And again remember, it's got
+that null terminator at the end.
+
+00:04:51.090 --> 00:04:53.940
+So this is the situation
+once we instantiate a.
+
+00:04:54.630 --> 00:04:58.120
+Now what we want to do is we
+want to assign to a the object
+
+00:04:58.150 --> 00:05:00.419
+that we created right here.
+
+00:05:00.750 --> 00:05:01.960
+So let's create that object.
+
+00:05:02.000 --> 00:05:05.190
+That object gets created exactly the
+same way as we created a, right?
+
+00:05:05.190 --> 00:05:07.080
+It's using the overloaded constructor.
+
+00:05:07.080 --> 00:05:08.570
+But it doesn't have a name.
+
+00:05:08.580 --> 00:05:10.540
+It's an unnamed temporary object.
+
+00:05:10.780 --> 00:05:13.240
+So I'm just going to leave it right
+over here like this without a name.
+
+00:05:13.720 --> 00:05:18.000
+It's got an str attribute,
+and it's pointing to hola,
+
+00:05:18.190 --> 00:05:19.250
+which is on the heap.
+
+00:05:20.589 --> 00:05:22.560
+So that's the situation
+like right now.
+
+00:05:23.199 --> 00:05:27.680
+Now what we want to do is we want
+to assign this guy over to this guy.
+
+00:05:28.360 --> 00:05:31.120
+But we really don't want to
+do the overhead of copying
+
+00:05:31.120 --> 00:05:32.580
+because we don't need to.
+
+00:05:32.580 --> 00:05:35.090
+This temporary object
+will be destroyed soon.
+
+00:05:35.480 --> 00:05:39.299
+So let's just use move assignment
+so that we can steal that pointer
+
+00:05:39.299 --> 00:05:42.409
+and not have to make any copies
+of anything or copy anything over.
+
+00:05:42.850 --> 00:05:44.109
+Okay, so let's do that.
+
+00:05:44.750 --> 00:05:46.300
+How does this work,
+what are the semantics.
+
+00:05:46.300 --> 00:05:50.340
+Well, the first thing we need to do
+is de-allocate the space here, right.
+
+00:05:50.340 --> 00:05:53.200
+We need to call delete for this guy
+because we're not going to use that.
+
+00:05:53.700 --> 00:05:54.459
+That's the whole point.
+
+00:05:54.460 --> 00:05:55.590
+I want to assign to it.
+
+00:05:56.000 --> 00:05:57.879
+So we're going to get rid of that.
+
+00:05:57.879 --> 00:06:01.150
+And what that's going to do it's going
+to leave us in this situation where
+
+00:06:02.060 --> 00:06:03.780
+we're no longer pointing to that area.
+
+00:06:04.020 --> 00:06:06.050
+And then what we want to do is
+we want to steal the pointer.
+
+00:06:06.260 --> 00:06:09.590
+So I want to make this
+pointer here point to hola.
+
+00:06:11.309 --> 00:06:15.109
+And then once that's done, what
+I want to do is not delete this.
+
+00:06:15.179 --> 00:06:17.090
+I don't want to delete this
+information here, right.
+
+00:06:17.109 --> 00:06:19.919
+I don't want to de-allocate that
+because I'm using it now over here.
+
+00:06:20.410 --> 00:06:22.580
+All I want to do is just
+null out that pointer.
+
+00:06:22.880 --> 00:06:23.840
+So that's what I'll do.
+
+00:06:24.020 --> 00:06:25.909
+I'll just null this pointer out.
+
+00:06:27.240 --> 00:06:28.790
+So this guy is now null.
+
+00:06:29.530 --> 00:06:34.070
+You'll notice a is now though the
+string attribute a is now pointing
+
+00:06:34.070 --> 00:06:37.310
+to the correct string in the on
+the heap which is what I want.
+
+00:06:37.690 --> 00:06:39.090
+This guy has been nulled out.
+
+00:06:39.100 --> 00:06:43.420
+So when it gets destroyed by the
+destructor, it won't delete anything
+
+00:06:43.420 --> 00:06:45.920
+out there on the heap because it's
+not pointing to anything on the heap.
+
+00:06:46.270 --> 00:06:50.690
+So once this gets destroyed,
+we're right back to here, which
+
+00:06:50.690 --> 00:06:52.089
+is exactly where we want to be.
+
+00:06:52.820 --> 00:06:55.410
+And the same is true with
+this statement right here.
+
+00:06:55.850 --> 00:06:56.690
+A is bonjour.
+
+00:06:56.740 --> 00:06:59.310
+We'll create a temporary object.
+
+00:07:00.470 --> 00:07:07.470
+There's the str, and it's going
+to be pointing to bonjour, right.
+
+00:07:07.490 --> 00:07:10.229
+Now when we assign over,
+we'll do the same thing.
+
+00:07:10.379 --> 00:07:13.490
+We want to de-allocate
+that storage right here.
+
+00:07:14.000 --> 00:07:15.450
+So we want to get rid of this.
+
+00:07:16.520 --> 00:07:18.340
+We want to move the pointer, right.
+
+00:07:18.340 --> 00:07:20.930
+We just want to seal this
+pointer let it point over here.
+
+00:07:22.240 --> 00:07:25.230
+And then what we want to
+do is set this pointer
+
+00:07:25.230 --> 00:07:28.290
+right here to null, right.
+
+00:07:28.290 --> 00:07:30.930
+So we just move the data
+simply by just pointing to
+
+00:07:30.930 --> 00:07:32.130
+it from a different place.
+
+00:07:33.250 --> 00:07:34.490
+This will be destroyed.
+
+00:07:35.520 --> 00:07:37.719
+And that's the effect that we want.
+
+00:07:38.610 --> 00:07:39.370
+Okay, perfect.
+
+00:07:39.380 --> 00:07:41.050
+So now let's write some code for this.
+
+00:07:41.410 --> 00:07:43.780
+And you'll see it's actually
+a little bit simpler even
+
+00:07:43.780 --> 00:07:45.790
+than the copy assignment.
+
+00:07:45.929 --> 00:07:46.690
+First things first.
+
+00:07:46.699 --> 00:07:48.039
+Let's go to the header file.
+
+00:07:48.900 --> 00:07:52.150
+And you'll notice that I've already
+implemented a move constructor.
+
+00:07:52.800 --> 00:07:55.370
+I just wanted to be complete
+there, so the move constructor
+
+00:07:55.380 --> 00:07:56.410
+has been implemented.
+
+00:07:56.849 --> 00:07:58.889
+And it's about as dead
+simple as you can get.
+
+00:07:58.900 --> 00:08:01.070
+Let me show you what the
+move constructor looks like.
+
+00:08:01.740 --> 00:08:02.900
+It's right here.
+
+00:08:03.599 --> 00:08:05.219
+Remember, this is a constructor now.
+
+00:08:05.219 --> 00:08:08.650
+This is not an assignment, so this
+is actually creating a new object
+
+00:08:09.000 --> 00:08:11.240
+based on an r-value reference.
+
+00:08:11.520 --> 00:08:17.360
+So you can see right here on line
+35, I'm stealing the pointer, right.
+
+00:08:17.360 --> 00:08:22.569
+So I'm taking the source object's
+pointer and moving it right to str.
+
+00:08:22.940 --> 00:08:25.790
+And then I'm nullifying
+the source object pointer.
+
+00:08:26.680 --> 00:08:27.360
+So that's it.
+
+00:08:27.450 --> 00:08:31.160
+We just stole the pointer, that other
+object will eventually be destroyed.
+
+00:08:31.770 --> 00:08:34.289
+Let's write the move
+assignment operator.
+
+00:08:34.750 --> 00:08:37.740
+So let's go back to our header
+file, and we'll do it right here.
+
+00:08:37.740 --> 00:08:40.840
+And we'll do something like
+mystring reference because
+
+00:08:40.840 --> 00:08:42.010
+it's the same idea here.
+
+00:08:42.350 --> 00:08:44.100
+We're overloading operator equal.
+
+00:08:45.130 --> 00:08:47.800
+We don't want to be const here
+because we do need to modify
+
+00:08:47.800 --> 00:08:51.070
+that right-hand side's string
+attribute to null it out.
+
+00:08:51.349 --> 00:08:55.829
+So it's simply going to be mystring,
+two ampersands here because we wanted
+
+00:08:55.830 --> 00:08:58.029
+our-value reference right-hand side.
+
+00:08:59.020 --> 00:08:59.740
+That's it.
+
+00:09:00.119 --> 00:09:01.890
+And we'll call this
+guy move assignment.
+
+00:09:03.070 --> 00:09:05.030
+All right, so now let's
+go implement that method.
+
+00:09:05.030 --> 00:09:07.439
+So we'll go to mystring cpp file.
+
+00:09:08.130 --> 00:09:11.460
+And right underneath the copy
+assignment right here, I'll just put
+
+00:09:11.460 --> 00:09:12.730
+it right here under move assignment.
+
+00:09:12.730 --> 00:09:14.959
+And you can see I've already
+set some break points just
+
+00:09:14.969 --> 00:09:15.920
+to save a little time.
+
+00:09:16.260 --> 00:09:17.819
+So let's implement this here.
+
+00:09:17.879 --> 00:09:18.529
+So what do we do.
+
+00:09:18.729 --> 00:09:23.229
+We're going to return a
+mystring reference, and it's
+
+00:09:23.280 --> 00:09:24.750
+part of the mystring class.
+
+00:09:25.140 --> 00:09:29.490
+We're overloading operator
+equal, and we're expecting a
+
+00:09:29.490 --> 00:09:32.660
+mystring r-value reference.
+
+00:09:35.850 --> 00:09:36.670
+Okay, that's it.
+
+00:09:36.900 --> 00:09:42.280
+So first thing we do is as usual
+let's just put a string out on std
+
+00:09:42.290 --> 00:09:47.350
+cout, and we'll just say something
+like using move assignment.
+
+00:09:49.290 --> 00:09:50.930
+That way we know that
+we're actually in here.
+
+00:09:52.250 --> 00:09:54.079
+And we'll put an endline here.
+
+00:09:55.700 --> 00:09:58.200
+Perfect. Now let's check for self-assignment.
+
+00:09:58.260 --> 00:09:59.820
+I'll scroll up just a little bit here.
+
+00:10:00.180 --> 00:10:03.140
+We'll check for self-assignment so
+we're going to say if the current
+
+00:10:03.160 --> 00:10:09.469
+object, right, the address of this
+object is equal to the address of
+
+00:10:09.860 --> 00:10:14.280
+the right-hand side object, if that's
+the case, I've got self-assignment.
+
+00:10:14.460 --> 00:10:17.300
+So all I want to do
+is just return this.
+
+00:10:18.950 --> 00:10:21.410
+In the case that we're not doing
+self-assignment, remember, the
+
+00:10:21.410 --> 00:10:23.029
+conceptual drawing I just drew.
+
+00:10:23.200 --> 00:10:24.139
+So what do we want to do.
+
+00:10:24.459 --> 00:10:29.770
+We want to delete str
+from the current object.
+
+00:10:31.320 --> 00:10:33.060
+We want to steal the pointer.
+
+00:10:35.420 --> 00:10:38.595
+So we want to assign the
+right-hand side's pointer to
+
+00:10:38.660 --> 00:10:39.979
+the left-hand side's pointer.
+
+00:10:41.940 --> 00:10:44.680
+And we want to nullify
+the right-side pointer.
+
+00:10:44.910 --> 00:10:46.270
+This one's really, really important.
+
+00:10:46.270 --> 00:10:49.210
+If you forget to do this step, then
+there's going to be problems because
+
+00:10:49.210 --> 00:10:53.040
+what's going to happen is when that
+temporary object gets destroyed,
+
+00:10:53.060 --> 00:10:54.430
+it's going to take this data with it.
+
+00:10:54.630 --> 00:10:56.720
+So you want to be sure that
+this is pointing to nowhere.
+
+00:10:56.880 --> 00:11:02.069
+So right-hand side.string
+equals null pointer.
+
+00:11:04.520 --> 00:11:05.179
+That's it.
+
+00:11:05.270 --> 00:11:06.359
+We return this.
+
+00:11:08.829 --> 00:11:12.350
+Now we'll step through this in a
+second, but let's run it first.
+
+00:11:13.340 --> 00:11:16.050
+And now you can see the
+difference in the run, using move
+
+00:11:16.050 --> 00:11:17.770
+assignment, using move assignment.
+
+00:11:17.849 --> 00:11:18.990
+That's exactly what we want.
+
+00:11:19.190 --> 00:11:22.750
+And then we've got two destructors
+being called for null pointers, right,
+
+00:11:22.770 --> 00:11:24.970
+which is again exactly what we want.
+
+00:11:25.970 --> 00:11:27.969
+All right, so let me
+put a break point here.
+
+00:11:29.540 --> 00:11:32.880
+And let's walk through
+this using the debugger.
+
+00:11:32.880 --> 00:11:34.400
+So I'm going to go
+back to my main here.
+
+00:11:35.059 --> 00:11:36.860
+And I'll start the debugger over here.
+
+00:11:37.170 --> 00:11:38.819
+All right, so this is where we're at.
+
+00:11:39.520 --> 00:11:41.280
+Right now, we're about
+to call the overloaded
+
+00:11:41.779 --> 00:11:42.660
+constructor to create the a.
+
+00:11:42.660 --> 00:11:44.190
+That's pretty standard stuff now.
+
+00:11:44.690 --> 00:11:45.410
+Here we are.
+
+00:11:45.450 --> 00:11:46.939
+We don't have a null pointer.
+
+00:11:47.020 --> 00:11:49.470
+So we're simply going to
+allocate space for the string,
+
+00:11:49.490 --> 00:11:51.000
+copy it over, and we're done.
+
+00:11:51.300 --> 00:11:55.219
+So now a is hello, and you
+can see the address of that
+
+00:11:55.380 --> 00:11:56.510
+string attribute right here.
+
+00:11:57.750 --> 00:12:01.510
+Now what we need to do here is
+first construct that temporary
+
+00:12:01.510 --> 00:12:06.420
+object and then call the overloaded
+assignment operator, right, with
+
+00:12:06.450 --> 00:12:08.940
+an r-value reference because
+that's exactly what this is.
+
+00:12:08.940 --> 00:12:11.939
+This is an unnamed object
+so let's walk through this.
+
+00:12:12.200 --> 00:12:15.340
+So first, we're going to create
+the object using the overloaded
+
+00:12:15.340 --> 00:12:16.539
+constructor right here.
+
+00:12:17.010 --> 00:12:21.489
+So we'll walk through that,
+allocate the space, copy it over.
+
+00:12:22.130 --> 00:12:22.800
+It's done.
+
+00:12:23.130 --> 00:12:26.290
+Now notice that the move assignment
+operator gets called right away.
+
+00:12:26.809 --> 00:12:30.270
+That's exactly what you expect because
+we have an r-value reference here
+
+00:12:30.270 --> 00:12:32.080
+which is a temporary unnamed object.
+
+00:12:32.440 --> 00:12:37.469
+So we display using move assignment,
+we check for self assignment, which we
+
+00:12:37.470 --> 00:12:41.360
+don't have, we delete this str, right.
+
+00:12:41.380 --> 00:12:43.290
+Remember, this is this
+object right here.
+
+00:12:43.680 --> 00:12:47.020
+So we're going to delete
+that and de-allocate it.
+
+00:12:47.440 --> 00:12:49.780
+We're going to steal the
+pointer, and then we're going
+
+00:12:49.780 --> 00:12:51.550
+to nullify that other pointer.
+
+00:12:51.990 --> 00:12:55.190
+Now the temporary object is
+being destructed right here.
+
+00:12:55.980 --> 00:12:58.400
+And we do have a null pointer
+now because we nulled it out.
+
+00:12:58.400 --> 00:12:59.770
+You can see it's 0 right there.
+
+00:13:00.080 --> 00:13:03.510
+So this will print out calling
+destructor for null pointer.
+
+00:13:04.410 --> 00:13:05.590
+We'll delete the area.
+
+00:13:07.460 --> 00:13:08.210
+And that's it.
+
+00:13:08.230 --> 00:13:12.589
+Now if we refresh, you'll
+see that a now is hola.
+
+00:13:13.740 --> 00:13:15.650
+So we did exactly what we
+said we were going to do.
+
+00:13:15.930 --> 00:13:17.280
+Here it's the same idea.
+
+00:13:17.880 --> 00:13:22.919
+First, we're going to construct a
+temporary object based on that string.
+
+00:13:23.090 --> 00:13:24.300
+So let's do that.
+
+00:13:24.840 --> 00:13:25.410
+Here we are.
+
+00:13:25.410 --> 00:13:28.609
+We're in the overloaded constructor
+and that's going to create a
+
+00:13:28.609 --> 00:13:30.730
+temporary object with bonjour in it.
+
+00:13:32.140 --> 00:13:35.920
+Then we call the move assignment
+again because we have an r-value
+
+00:13:35.920 --> 00:13:38.180
+reference and what we're going
+to do here is we're just going
+
+00:13:38.180 --> 00:13:40.049
+to steal that bonjour pointer.
+
+00:13:40.710 --> 00:13:42.600
+First, we delete what
+we're pointing to, right.
+
+00:13:42.600 --> 00:13:43.590
+So hola is gone.
+
+00:13:44.429 --> 00:13:47.520
+Then we steal the bonjour
+pointer, and we set that temporary
+
+00:13:47.889 --> 00:13:49.010
+object's pointer to null.
+
+00:13:49.540 --> 00:13:52.010
+We return the object, and then
+we're going to destroy that
+
+00:13:52.010 --> 00:13:54.650
+temporary object again the one that
+we just stole the pointer from.
+
+00:13:55.650 --> 00:13:56.569
+We'll delete it.
+
+00:13:57.389 --> 00:14:00.369
+We're back, and you can
+see now that a is bonjour.
+
+00:14:02.469 --> 00:14:05.250
+We'll unwind now, and we'll destroy a.
+
+00:14:08.810 --> 00:14:09.430
+There you go.
+
+00:14:09.570 --> 00:14:12.660
+And you can see over here that
+we've got two move assignments,
+
+00:14:12.950 --> 00:14:16.870
+three destructors; two destroying
+just null pointers temp objects and
+
+00:14:16.870 --> 00:14:20.630
+then the final one destroying the
+actual a object that we created.
+
+00:14:21.509 --> 00:14:21.900
+That's it.
+
+00:14:21.910 --> 00:14:23.530
+So you can see it's
+pretty straightforward.
+
+00:14:23.619 --> 00:14:27.890
+And we'll see that in the main driver
+here, I've got a lot more code.
+
+00:14:27.960 --> 00:14:30.880
+And if you recall that code
+running from before, so I'll
+
+00:14:30.880 --> 00:14:33.369
+run this code again in the main
+now that I've uncommented it.
+
+00:14:33.660 --> 00:14:36.709
+And if you remember, when we
+ran it before, it was using copy
+
+00:14:36.710 --> 00:14:38.160
+constructors and copy assignment.
+
+00:14:38.460 --> 00:14:40.589
+Well in this case when we run
+it, we're going to see a lot
+
+00:14:40.600 --> 00:14:42.260
+more move semantics going on.
+
+00:14:42.260 --> 00:14:45.910
+So I'll scroll up here, and you can
+see that we've got move assignment,
+
+00:14:45.910 --> 00:14:49.910
+move assignment, move assignments,
+move assignments, move constructors.
+
+00:14:50.130 --> 00:14:52.550
+So this version is much,
+much more efficient.
+
+00:14:52.550 --> 00:14:55.559
+And if -- again, walk through it,
+check out the the statements, use
+
+00:14:55.559 --> 00:14:58.769
+the debugger if you like and really
+understand what's going on, but
+
+00:14:58.770 --> 00:15:00.129
+it's very very straightforward.
+
+00:15:00.510 --> 00:15:04.530
+In the case of r-values, we really
+want those move assignments and
+
+00:15:04.580 --> 00:15:07.460
+move constructors just to make
+our code so much more efficient.

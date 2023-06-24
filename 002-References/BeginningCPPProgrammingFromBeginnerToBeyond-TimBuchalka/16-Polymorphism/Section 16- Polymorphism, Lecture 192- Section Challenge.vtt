@@ -1,0 +1,241 @@
+WEBVTT
+
+00:00:05.250 --> 00:00:08.050
+Welcome to the section 16 challenge.
+
+00:00:08.650 --> 00:00:10.750
+This challenge is all about polymorphism.
+
+00:00:11.350 --> 00:00:13.550
+I'm in the section 16 workspace.
+
+00:00:13.550 --> 00:00:15.750
+And there's going to be a couple of projects here.
+
+00:00:15.750 --> 00:00:17.350
+First, we've got the challenge project.
+
+00:00:17.350 --> 00:00:19.850
+This is the base source code that I'm providing for you.
+
+00:00:20.350 --> 00:00:24.250
+Then we'll break this up into a few parts in several different videos so that we can
+
+00:00:24.250 --> 00:00:27.850
+take this step by step. So right now we're in the challenge project.
+
+00:00:28.100 --> 00:00:31.700
+And I'm in the description.txt file which describes this challenge.
+
+00:00:31.700 --> 00:00:35.100
+So what's the idea. I think you know what you're going to have to do, right.
+
+00:00:35.100 --> 00:00:38.100
+You've got the solution that we had for
+
+00:00:38.100 --> 00:00:42.000
+last section's challenge where we have the account class, and it's all working great.
+
+00:00:42.400 --> 00:00:46.400
+Well, now we need to modify that so that it's polymorphic, so that we're using dynamic
+
+00:00:46.400 --> 00:00:49.400
+polymorphism, so we can use base class pointers
+
+00:00:49.400 --> 00:00:53.200
+and get this all working using dynamic polymorphism. It's going to be pretty cool,
+
+00:00:53.500 --> 00:00:55.860
+but it's going to be some work. So let's see where we're at.
+
+00:00:55.860 --> 00:00:57.860
+We've got the source code that I provided.
+
+00:00:58.160 --> 00:00:59.960
+And your challenge is as follows.
+
+00:00:59.960 --> 00:01:02.660
+Remember, the source code right now has no virtual functions in it.
+
+00:01:02.660 --> 00:01:04.860
+Therefore, it's all being bound statically.
+
+00:01:04.860 --> 00:01:07.960
+That's what we want to change. So here's the challenge.
+
+00:01:07.960 --> 00:01:11.460
+Part one of the challenges modify the account class
+
+00:01:11.460 --> 00:01:14.260
+so that it's now abstract. How do you do that,
+
+00:01:14.660 --> 00:01:19.160
+pure virtual functions. We want two of them, and they're right here. I'm giving them to you right there.
+
+00:01:19.560 --> 00:01:23.360
+Deposit and withdraw will now be pure virtual functions.
+
+00:01:23.760 --> 00:01:27.760
+Remember, we can implement these in the account class if it makes sense.
+
+00:01:27.960 --> 00:01:31.960
+In this class, it does make sense. So you may want to consider implementing
+
+00:01:31.960 --> 00:01:35.260
+a simple deposit and a simple withdrawal in the account class.
+
+00:01:35.620 --> 00:01:38.820
+Even if you implement these in the account class, the account class
+
+00:01:38.820 --> 00:01:42.820
+will still be abstract because it's got those pure virtual functions in it.
+
+00:01:42.820 --> 00:01:46.320
+That's going to take some work because you've got to revamp your class hierarchies,
+
+00:01:46.320 --> 00:01:47.880
+you've got to think about what you're doing.
+
+00:01:47.880 --> 00:01:50.480
+Remember, once you put virtual functions in there,
+
+00:01:50.480 --> 00:01:51.680
+like we are here,
+
+00:01:51.680 --> 00:01:55.780
+don't forget about the virtual destructor. So there's a lot of little things that you'll have to do along the way,
+
+00:01:56.140 --> 00:01:56.680
+great.
+
+00:01:56.680 --> 00:01:57.680
+Now part two.
+
+00:01:58.230 --> 00:02:02.230
+Create the i printable class interface, similar to what we did in the class.
+
+00:02:02.230 --> 00:02:05.230
+The idea is that all accounts are going to be printable.
+
+00:02:05.630 --> 00:02:08.230
+So I've given you the class right here.
+
+00:02:08.230 --> 00:02:12.430
+I haven't implemented this guy. You guys can do that. And obviously,
+
+00:02:12.430 --> 00:02:15.930
+the account class can be derived from i printable,
+
+00:02:15.930 --> 00:02:18.130
+so now it's printable. And all those concrete account objects
+
+00:02:18.130 --> 00:02:21.630
+can implement that guy right there, and they should be printable, which is pretty cool.
+
+00:02:22.030 --> 00:02:25.330
+One little hint here, you'll notice this destructor right here.
+
+00:02:25.330 --> 00:02:28.990
+Obviously, we need virtual destructors. We can use equal default.
+
+00:02:28.990 --> 00:02:32.550
+Tells the compiler just generate a simple destructor for me.
+
+00:02:32.550 --> 00:02:35.350
+So this is really the same as you writing that kind of code,
+
+00:02:35.350 --> 00:02:38.950
+but you don't have to do it at all, just say equal default let the compiler do it for you.
+
+00:02:39.850 --> 00:02:42.100
+Then the last part of the challenge
+
+00:02:42.100 --> 00:02:46.660
+is to modify the functions in that account.util file that I gave you.
+
+00:02:46.660 --> 00:02:50.460
+Remember that one had a display deposit and a withdrawal for,
+
+00:02:50.460 --> 00:02:54.150
+an account then it had a display in the deposit a withdrawal for a checking account
+
+00:02:54.150 --> 00:02:56.510
+and it just had a lot of code in there.
+
+00:02:56.510 --> 00:02:59.870
+What we want is we just want one version of each. So we want
+
+00:02:59.870 --> 00:03:01.870
+one display function,
+
+00:03:01.870 --> 00:03:04.230
+one deposit function, one withdraw function,
+
+00:03:04.230 --> 00:03:08.530
+that will work with any kind of account. And you'll notice what's going on here.
+
+00:03:08.930 --> 00:03:11.930
+There's our base class pointer, that's why this is going to work.
+
+00:03:11.930 --> 00:03:15.130
+So in this case when we create these vectors in our main,
+
+00:03:15.130 --> 00:03:18.530
+we're going to create a vector of base class pointers.
+
+00:03:19.330 --> 00:03:22.330
+And that's what we're going to pass into these functions here.
+
+00:03:23.230 --> 00:03:26.490
+Finally, test your code both with base class pointers
+
+00:03:26.490 --> 00:03:30.690
+as well as local objects. I've given you a main driver that gets you started.
+
+00:03:31.050 --> 00:03:35.410
+But I'd suggest that you just take it one step at a time, it's really the best way to do it.
+
+00:03:35.660 --> 00:03:38.260
+What I would suggest that you do for the very first thing is
+
+00:03:38.260 --> 00:03:41.060
+take that account class and make it abstract.
+
+00:03:41.060 --> 00:03:44.760
+Add those pure virtual functions to it and start from there,
+
+00:03:44.760 --> 00:03:47.260
+and then work your way down the class hierarchy
+
+00:03:47.560 --> 00:03:51.160
+and see what you have to override, what you don't have to override and so forth.
+
+00:03:51.160 --> 00:03:52.410
+That's it. Have fun.
+
+00:03:52.410 --> 00:03:56.970
+This is a very very challenging exercise. There's a lot going on here.
+
+00:03:56.970 --> 00:04:01.270
+So again, take it one step at a time. Don't think that you'll be able to do this in 15 minutes.
+
+00:04:01.270 --> 00:04:03.630
+This will take some time and some thought
+
+00:04:03.630 --> 00:04:06.430
+because there's a lot going on, a lot of little pieces to this.
+
+00:04:06.430 --> 00:04:09.430
+All right. So give it a shot. I'm sure you can do it.
+
+00:04:09.430 --> 00:04:12.430
+Take your time. Think about everything you learned in the class,
+
+00:04:12.430 --> 00:04:14.030
+and put it all together in this challenge.
+
+00:04:14.230 --> 00:04:17.430
+I'll see you in the next video where we'll do part one of the solution,
+
+00:04:17.430 --> 00:04:21.430
+part one is taking that account class and making it abstract.

@@ -1,0 +1,529 @@
+WEBVTT
+
+0
+00:00.420 --> 00:03.060
+Now we will  start object orientation.
+
+1
+00:03.080 --> 00:08.270
+Now one important thing is for this section you should watch all the videos in the same order.
+
+2
+00:08.270 --> 00:12.390
+Don't skip any video because the topics are linked with one another.
+
+3
+00:12.660 --> 00:18.140
+And my explanation of a topic may be related to the previous topic covered so don't skip anything
+
+4
+00:18.170 --> 00:19.710
+and watch them thoroughly.
+
+5
+00:19.790 --> 00:26.630
+Then I can help you in giving you a complete picture or the clear picture of object orientation.
+
+6
+00:26.750 --> 00:31.910
+So let us start with object orientation, see it as a strategy or a style of developing application or
+
+7
+00:31.910 --> 00:33.040
+developing a software.
+
+8
+00:33.080 --> 00:39.230
+It's a methodology like other methodologies are also they like structured programming procedural programming
+
+9
+00:39.260 --> 00:43.490
+or modular programming or aspect oriented programming so they're 
+
+10
+00:43.580 --> 00:50.000
+Other styles also available and one of the well known and famous style is object orientation. All the latest
+
+11
+00:50.000 --> 00:55.460
+language supports object orientation and this object orientation  is more related to designing
+
+12
+00:55.550 --> 01:02.150
+of a software and this deals with internal designing not external that is visible designing, so its nowhere
+
+13
+01:02.150 --> 01:07.610
+related to the user of the software, its related to the programmers who are working
+
+14
+01:07.610 --> 01:13.280
+for developing a software. With the help of object orientation the application development or the programming
+
+15
+01:13.280 --> 01:20.480
+becomes more and more systematic and we can follow the procedures of engineering to develop a software.
+
+16
+01:20.720 --> 01:27.020
+like in other engineering how any product is developed same way a software product is developed by adopting
+
+17
+01:27.110 --> 01:28.730
+object orientation.
+
+18
+01:28.730 --> 01:34.310
+If I talk a little bit about other engineering like suppose a civil engineer is constructing a building
+
+19
+01:34.340 --> 01:36.240
+then first of all he will make a plan.
+
+20
+01:36.260 --> 01:38.510
+He will make a design when making a design.
+
+21
+01:38.510 --> 01:42.470
+He may be having many options but he will select one of the design and finalize it.
+
+22
+01:42.620 --> 01:49.220
+Then once it is finalized as a blueprint on paper then he will start constructing, same way an electronic
+
+23
+01:49.220 --> 01:51.320
+engineer, when he is manufacturing any device.
+
+24
+01:51.320 --> 01:55.510
+He will come up with some design that is circuit design of that device on paper.
+
+25
+01:55.850 --> 01:59.980
+Once it is finalized then he will start manufacturing the device.
+
+26
+01:59.990 --> 02:03.610
+So on paper we make blueprints we are not using paper nowadays.
+
+27
+02:03.620 --> 02:07.970
+We have many computer editing tools so let us just imagine on paper we are working.
+
+28
+02:08.260 --> 02:12.980
+So same way for developing a software we want to do some paper work, come up with some blueprint and
+
+29
+02:12.980 --> 02:18.980
+then we start developing a software,  and a team of programmer can work over a single software and the
+
+30
+02:18.980 --> 02:26.730
+work can be distributed easily and the work can be reused between the programmers very easily. so object
+
+31
+02:26.730 --> 02:33.480
+orientation it all depends on how you see the system how you understand the system.
+
+32
+02:33.480 --> 02:37.280
+Looking at the system and your perspective is more important.
+
+33
+02:37.290 --> 02:43.140
+So if you understand the system perfectly and your perspective is clear then you can develop a better
+
+34
+02:43.140 --> 02:49.620
+system not just object oriented programming that are the programming styles also like procedural programming
+
+35
+02:50.040 --> 02:56.280
+modular programming structure programming and aspect oriented programming but object oriented programming
+
+36
+02:56.280 --> 03:02.490
+is well known and successful pattern for software development and most of the latest languages
+
+37
+03:02.520 --> 03:04.760
+that are used for application development.
+
+38
+03:04.890 --> 03:06.980
+They are object oriented.
+
+39
+03:07.110 --> 03:11.280
+No I'm going to explain you object orientation from modular programming.
+
+40
+03:11.280 --> 03:18.390
+The reason is, people who learn C++ will already be knowing C language so C language supports modular or
+
+41
+03:18.450 --> 03:19.990
+procedural programming.
+
+42
+03:20.320 --> 03:26.680
+So based on that I can give you the idea how object orientation  is different from modular programming.
+
+43
+03:26.820 --> 03:29.270
+Let us compare them through some examples.
+
+44
+03:29.280 --> 03:31.950
+So first I will take an example of bank
+
+45
+03:35.950 --> 03:42.070
+if you're developing an application for a bank using modular programming then how you see the system
+
+46
+03:42.100 --> 03:44.500
+how you see the working of a bank.
+
+47
+03:44.500 --> 03:46.080
+So what will be your design.
+
+48
+03:46.120 --> 03:49.100
+So that depends on how you understand it and how you see the system.
+
+49
+03:49.110 --> 03:54.550
+So let us see how I'm looking at the system using modular programming see at the bank.
+
+50
+03:54.550 --> 04:10.040
+You can open an account, open account, and you can deposit some amount, and you can withdraw some amount or
+
+51
+04:10.030 --> 04:13.280
+you can check balance.
+
+52
+04:13.510 --> 04:15.450
+You can apply for loan
+
+53
+04:18.740 --> 04:19.250
+so on.
+
+54
+04:20.240 --> 04:22.640
+So these are the things that you can do at the bank.
+
+55
+04:22.730 --> 04:29.120
+So opening an account is a function depositing some amount in your account is a function.
+
+56
+04:29.120 --> 04:30.250
+withdrawing is function.
+
+57
+04:30.260 --> 04:33.380
+So all these are nothing but functions.
+
+58
+04:33.440 --> 04:35.000
+So at the bank what.
+
+59
+04:35.020 --> 04:38.200
+All you can do each thing you can call it has a function.
+
+60
+04:38.200 --> 04:43.990
+So if you're developing a software for a bank it is nothing but a collection of functions.
+
+61
+04:44.060 --> 04:51.200
+So bank application will be based on the function and the user of your application will be utilizing
+
+62
+04:51.200 --> 04:54.530
+these functions for performing his required task.
+
+63
+04:54.800 --> 05:02.150
+So you will develop a software in the set off in the form of a set of functions in modern programming.
+
+64
+05:02.420 --> 05:12.320
+Now for object orientation I would take some different example see government, government provide a lot of
+
+65
+05:12.320 --> 05:25.820
+services like one of the services electric service and waterworks, water supply service and education
+
+66
+05:28.810 --> 05:36.700
+transport and even government can have banks and so on.
+
+67
+05:36.700 --> 05:41.380
+So all these are departments of a government see this is a department
+
+68
+05:48.090 --> 05:53.020
+so all these departments. Now what you can do in this department as a user.
+
+69
+05:53.130 --> 06:00.880
+You can apply for a new connection, new connection or you can close your connection if you want.
+
+70
+06:00.900 --> 06:08.160
+If you have extra connections, or you can make bill payment, then what.
+
+71
+06:08.160 --> 06:14.320
+These are? these are functions, belonging to this department, now same way bank is also there, so
+
+72
+06:14.340 --> 06:18.750
+same function deposit and withdraw all those things.
+
+73
+06:18.750 --> 06:22.840
+So these things comes as a function of the bank.
+
+74
+06:22.860 --> 06:23.930
+So now what is this.
+
+75
+06:23.940 --> 06:28.830
+So for these also you may be having some functions you may be having these functions so what do you
+
+76
+06:28.830 --> 06:31.890
+call to these, these you call them as objects.
+
+77
+06:31.890 --> 06:32.200
+….
+
+78
+06:33.450 --> 06:42.200
+So complete system for the government a complete software for a government is a collection of set of objects.
+
+79
+06:42.210 --> 06:48.790
+I can say, now each object is having its relevant functions.
+
+80
+06:48.810 --> 06:54.060
+These are relevant functions, so related to transport, related to banking.
+
+81
+06:54.060 --> 07:02.640
+So a complete software is collection of objects and objects contains functions as well as data related
+
+82
+07:02.670 --> 07:05.010
+to those functions.
+
+83
+07:05.120 --> 07:08.940
+And here the system was collection of functions.
+
+84
+07:09.070 --> 07:14.070
+So if you compare them now this we are looking at very close level and this
+
+85
+07:14.110 --> 07:16.760
+We are looking at little far away level.
+
+86
+07:17.400 --> 07:22.380
+So if you look at things closer like if you go closer to the bank then everything inside that is nothing
+
+87
+07:22.410 --> 07:23.720
+but set of functions.
+
+88
+07:24.420 --> 07:29.140
+So the point here is that I can tell you one thing, when initially when computer science was introduced
+
+89
+07:29.250 --> 07:33.650
+the computers where used for performing some simple very small task.
+
+90
+07:34.020 --> 07:39.280
+Then later on it has, now later on people where started getting a critical computer.
+
+91
+07:39.320 --> 07:43.370
+So they started using them for larger and bigger and bigger task.
+
+92
+07:43.440 --> 07:47.910
+So at the  time when in c lang. or procedural language were there.
+
+93
+07:47.940 --> 07:52.800
+Everything was not computerized in the system suppose  any organization any business organization was
+
+94
+07:52.800 --> 07:57.690
+not computerized everything, they will computerised  some part of it, like account part of it
+
+95
+07:57.780 --> 08:04.200
+or Paravel part of it, everything was not computerized so when the programmers were
+
+96
+08:04.230 --> 08:09.810
+working on one particular department then they were looking at everything as functions, but now
+
+97
+08:10.170 --> 08:16.710
+we are developing a software at a larger scale for a big organisation as a complete one single software
+
+98
+08:16.980 --> 08:21.330
+then you can see all the things as a set of objects.
+
+99
+08:21.390 --> 08:26.760
+So electric related things are functions related to electric and transport related function are
+
+100
+08:26.760 --> 08:31.040
+related to transport and those are objects and this is collection of objects.
+
+101
+08:31.290 --> 08:39.030
+So we have increased our level of looking at the system because earlier we were solving a small problem
+
+102
+08:39.060 --> 08:42.680
+now we are solving a bigger problem, that's how
+
+103
+08:42.720 --> 08:44.230
+When this trend has started.
+
+104
+08:44.400 --> 08:50.790
+Then there was a need of some methodology that should support software development easily.
+
+105
+08:50.790 --> 08:54.650
+So yes object orientation is best suitable for large size systems.
+
+106
+08:54.660 --> 08:56.160
+I will take one more example.
+
+107
+08:56.190 --> 09:02.130
+Let us talk about a manufacturing form which manufactures some goods.
+
+108
+09:02.160 --> 09:09.420
+Let us see auto mobile company which manufacture cars or vehicles then for them then if you look
+
+109
+09:09.420 --> 09:15.600
+at that manufacturing farm then it may be working in the form of departments like one is a inventory department 
+
+110
+09:15.600 --> 09:22.320
+by raw material and maintain that stock of raw material and one is manufacturing that is the production
+
+111
+09:22.620 --> 09:23.580
+work that they do.
+
+112
+09:23.580 --> 09:28.810
+And one department will be looking at sales one department is looking at marketing and one is about
+
+113
+09:28.900 --> 09:31.230
+petrol and one is for accounts and all.
+
+114
+09:31.740 --> 09:33.660
+So there may be many departments.
+
+115
+09:33.910 --> 09:40.350
+Now if you are developing a software only for pegol purpose or only for inventory plus then you may
+
+116
+09:40.350 --> 09:47.040
+look at the system just like modular and in that you can find the pieces like placing an order and checking
+
+117
+09:47.100 --> 09:51.250
+the item in stock checking for the checking the reorder level.
+
+118
+09:51.300 --> 09:57.750
+These type of things you can have set of functions in that, so you can develop the software only for
+
+119
+09:57.750 --> 10:02.360
+the inventory system as a collection of function but when you are developing a software for the
+
+120
+10:02.390 --> 10:06.120
+entire organization then you have to see the things in the form of objects.
+
+121
+10:06.840 --> 10:09.580
+So there the items is an object.
+
+122
+10:09.630 --> 10:15.270
+The inventory items as an object, employees as an object account is an object and the product manufacture
+
+123
+10:15.330 --> 10:16.090
+is an object.
+
+124
+10:16.110 --> 10:18.710
+The machines that are used for production is an object.
+
+125
+10:19.020 --> 10:23.820
+So all these things are objects so you have to see the things in the form of objects and define their
+
+126
+10:24.240 --> 10:28.450
+data and the functions that they're performing.
+
+127
+10:28.590 --> 10:31.830
+So that's it the level at which you see the system has changed.
+
+128
+10:31.830 --> 10:36.570
+We are looking at the system at the higher level. so we can adopt object orientation.
+
+129
+10:37.020 --> 10:42.780
+So that's it, this is  the introduction for object orientation in comparison with modular programming so that's
+
+130
+10:42.780 --> 10:44.220
+all about object orientation.
+
+131
+10:44.460 --> 10:47.590
+So the next video will be on principles of object orientation.

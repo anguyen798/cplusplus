@@ -1,0 +1,73 @@
+WEBVTT
+
+0
+00:00.780 --> 00:06.510
+Here's the exercise program for calculating average of all the elements in an array.
+
+1
+00:06.900 --> 00:12.900
+So you are supposed to take the list of elements as an input in an array and then calculate the average
+
+2
+00:12.990 --> 00:15.940
+amount of all those elements.
+
+3
+00:15.960 --> 00:22.110
+So this program uses an array here I will show you how the program should run, what should be the input and what
+
+4
+00:22.110 --> 00:27.630
+should be the output, and a program file is given in the resource if you face any difficulty then you
+
+5
+00:27.630 --> 00:30.360
+can check that program code.
+
+6
+00:30.880 --> 00:31.260
+Yeah.
+
+7
+00:31.260 --> 00:35.810
+Here is a program for finding the average of elements from an array.
+
+8
+00:35.970 --> 00:41.530
+I will run the program and show you it's asking the number of elements.
+
+9
+00:41.550 --> 00:49.480
+so I Will say there are five elements and the elements are 10 and 20 30 40 and 50.
+
+10
+00:49.530 --> 00:52.300
+So the average of all these elements is 30.
+
+11
+00:52.320 --> 00:53.980
+So the output is given here.
+
+12
+00:54.210 --> 00:59.010
+So you are supposed to take the no. of elements and then read all the elements and you have to keep
+
+13
+00:59.010 --> 01:00.910
+all these elements in an array.
+
+14
+01:00.930 --> 01:05.880
+So the main important thing in the program is to store the elements in an array and from the array you have
+
+15
+01:05.880 --> 01:10.700
+to iterate through all the elements using for loop and find out sum.
+
+16
+01:10.710 --> 01:17.750
+And then you can calculate average by dividing the sum of the elements by number of elements.
+
+17
+01:18.150 --> 01:23.550
+So try this for program it is based on arrays and even the program file is available as pdf.

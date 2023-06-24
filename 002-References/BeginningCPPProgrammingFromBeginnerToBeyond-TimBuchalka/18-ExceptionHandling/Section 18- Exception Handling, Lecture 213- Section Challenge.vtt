@@ -1,0 +1,229 @@
+WEBVTT
+
+00:00:05.300 --> 00:00:09.500
+Hello. Welcome to the section 18 challenge on exception handling.
+
+00:00:09.500 --> 00:00:11.700
+Congratulations on finishing this section.
+
+00:00:12.300 --> 00:00:14.630
+This challenge is a very straightforward challenge,
+
+00:00:14.630 --> 00:00:17.230
+but it's going to be using some interesting techniques.
+
+00:00:17.530 --> 00:00:20.530
+One of the things that I want you to do in this challenge is to
+
+00:00:20.530 --> 00:00:23.530
+derive your own exception classes from
+
+00:00:23.530 --> 00:00:26.030
+the standard libraries exception class
+
+00:00:26.030 --> 00:00:30.230
+and then integrate that into the account class and then test your code.
+
+00:00:30.230 --> 00:00:32.030
+Now I've got you started here,
+
+00:00:32.030 --> 00:00:37.020
+I've created a challenge project and again I'm in the section 18 workspace in the challenge project.
+
+00:00:37.520 --> 00:00:40.720
+And under here, I've got all the source code for the account class
+
+00:00:40.720 --> 00:00:43.320
+that we've been working with throughout the course.
+
+00:00:44.320 --> 00:00:47.470
+This is the description.txt file, which is what we're looking at right now.
+
+00:00:47.470 --> 00:00:52.030
+And I'd like to read through this in a minute, and then I'll talk about the different exception classes.
+
+00:00:52.030 --> 00:00:56.030
+Okay. So for this challenge what we want you to do is to integrate
+
+00:00:56.030 --> 00:00:59.690
+your own user-defined exception classes into the account class.
+
+00:01:00.350 --> 00:01:03.650
+The account classes are provided for you. You can see them over here.
+
+00:01:04.450 --> 00:01:07.450
+Also the illegal balance exception class
+
+00:01:07.450 --> 00:01:12.050
+already has been created for you, but it does not derive from
+
+00:01:12.050 --> 00:01:14.850
+the std exception class. You have to do that yourself.
+
+00:01:15.350 --> 00:01:19.710
+What I'd like you to do is derive the illegal balance exception class,
+
+00:01:19.710 --> 00:01:23.310
+like I just said from std exception and implement the what method.
+
+00:01:23.710 --> 00:01:28.410
+Okay. That what method is that virtual method that returns a character string, a c-style string
+
+00:01:29.210 --> 00:01:31.210
+and provide an exception message there.
+
+00:01:31.610 --> 00:01:35.810
+Now this exception object should be thrown from the account class constructor
+
+00:01:36.360 --> 00:01:38.160
+whenever we get a negative balance.
+
+00:01:39.150 --> 00:01:41.750
+Okay. So in other words, if you try to create an account with a negative balance,
+
+00:01:41.750 --> 00:01:44.410
+we want to throw this, very much like what I did in the slides.
+
+00:01:45.210 --> 00:01:48.510
+So that's one class. The second class is a class called
+
+00:01:48.510 --> 00:01:51.610
+insufficient funds exception, you can see that right here.
+
+00:01:52.910 --> 00:01:55.670
+Again, I want you to derive this from std exception
+
+00:01:55.670 --> 00:01:58.670
+and implement the what method for it to provide a message.
+
+00:01:59.330 --> 00:02:01.530
+This exception object should be thrown
+
+00:02:01.530 --> 00:02:05.430
+if a withdrawal results in a negative balance, so you're overdrawn.
+
+00:02:05.830 --> 00:02:09.490
+Okay. You should throw this exception object from the accounts withdraw method.
+
+00:02:09.690 --> 00:02:13.690
+That's it. Pretty straightforward. The harder part of this
+
+00:02:13.690 --> 00:02:17.690
+assignment is not so much implementing these classes, it's testing them,
+
+00:02:17.690 --> 00:02:19.460
+and you'll have to do that in your main.
+
+00:02:19.460 --> 00:02:23.460
+All right. So let me go over this illegal balance exception class right here.
+
+00:02:23.460 --> 00:02:26.340
+There's no cpp file, it's all in the header file.
+
+00:02:26.540 --> 00:02:29.540
+And I've created a class called illegal balance exception.
+
+00:02:29.540 --> 00:02:33.340
+It's got a default constructor and a default destructor.
+
+00:02:33.340 --> 00:02:37.340
+And I've got those curlies here, you could replace those with equal default if you like.
+
+00:02:37.340 --> 00:02:40.340
+I think I did that in the solution, but you don't have to.
+
+00:02:40.340 --> 00:02:43.200
+So that's it. Now what I want you to do is
+
+00:02:43.200 --> 00:02:47.200
+public inheritance here, std exception and then implement the what method.
+
+00:02:47.860 --> 00:02:49.860
+You'll notice that that's already there.
+
+00:02:49.860 --> 00:02:51.520
+And if you go to account cpp
+
+00:02:52.320 --> 00:02:54.720
+in the account constructor here on line three,
+
+00:02:54.970 --> 00:02:57.970
+I'm checking to see if the balance is less than 0.
+
+00:02:57.970 --> 00:03:00.470
+If it is, I'm throwing a legal balance exception.
+
+00:03:01.370 --> 00:03:02.730
+Okay. So that's part one.
+
+00:03:02.730 --> 00:03:04.730
+The second part is I want you to create
+
+00:03:04.730 --> 00:03:06.230
+let me go back to my description real quick.
+
+00:03:06.230 --> 00:03:10.130
+I want you to create another class called insufficient funds exception,
+
+00:03:10.630 --> 00:03:13.430
+same idea as illegal balance exception.
+
+00:03:13.430 --> 00:03:16.430
+It's going to be derived publicly from std exception.
+
+00:03:16.930 --> 00:03:20.290
+You're going to have, your constructor your destructor, and you're going to implement that
+
+00:03:20.290 --> 00:03:22.090
+what virtual function again.
+
+00:03:22.090 --> 00:03:24.790
+And then that exception will be thrown
+
+00:03:24.790 --> 00:03:27.990
+here in the account cpp withdraw method right here.
+
+00:03:28.490 --> 00:03:31.590
+So you can see that if the balance goes negative,
+
+00:03:31.590 --> 00:03:34.190
+you want to throw that exception object.
+
+00:03:34.850 --> 00:03:37.730
+Okay. Now where do you catch these things. Well,
+
+00:03:38.230 --> 00:03:39.430
+let's go to our main.
+
+00:03:40.090 --> 00:03:43.590
+This is where you want to test your code. This is where you want to create
+
+00:03:43.590 --> 00:03:46.950
+your checking account objects, your savings account objects and so forth,
+
+00:03:46.950 --> 00:03:48.850
+create them with negative balances,
+
+00:03:48.850 --> 00:03:53.290
+put a 100 dollars in it, and then withdraw 200 dollars from it so you get an um
+
+00:03:53.290 --> 00:03:56.990
+insufficient funds exception. So that's the kind of thing you want to do here.
+
+00:03:56.990 --> 00:03:59.140
+You want to be sure you do that in a try block and.
+
+00:03:59.140 --> 00:04:02.640
+You want to be sure that you're catching those exception objects here.
+
+00:04:03.140 --> 00:04:06.040
+Okay. So that's really it. It's not a lot of code to write.
+
+00:04:06.040 --> 00:04:09.540
+It's just writing them in precise locations and getting it to work just right.
+
+00:04:10.200 --> 00:04:11.500
+All right. So good luck.
+
+00:04:12.000 --> 00:04:15.000
+I'll see you on the next video where I'll show you my solution.

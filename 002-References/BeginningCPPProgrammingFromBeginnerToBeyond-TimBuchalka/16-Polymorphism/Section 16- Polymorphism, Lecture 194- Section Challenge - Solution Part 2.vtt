@@ -1,0 +1,547 @@
+WEBVTT
+
+00:00:05.400 --> 00:00:09.400
+Okay. So welcome back. This is part 2 of the solution to the section
+
+00:00:09.400 --> 00:00:11.760
+16 challenge on polymorphism.
+
+00:00:12.460 --> 00:00:16.760
+If you recall in the last part, what we did was we took the account class,
+
+00:00:16.760 --> 00:00:19.760
+and we made it an abstract base class by adding
+
+00:00:19.760 --> 00:00:23.060
+those two pure virtual functions for deposit and withdraw.
+
+00:00:23.460 --> 00:00:26.660
+Then we went through all the classes, gave them all virtual destructors,
+
+00:00:26.660 --> 00:00:30.460
+made sure our deposits and our withdrawal methods were running correctly and so forth.
+
+00:00:30.460 --> 00:00:32.560
+So everything was working great.
+
+00:00:32.560 --> 00:00:37.460
+And right now, the source code that you see in challenge solution-part2 project,
+
+00:00:37.460 --> 00:00:42.120
+which is the active project right now is exactly where we left off in part 1.
+
+00:00:42.780 --> 00:00:46.580
+And this is the only test case I'm really interested in right now.
+
+00:00:46.580 --> 00:00:49.780
+I've got a base class pointer. I'm creating a new trust account,
+
+00:00:49.780 --> 00:00:51.660
+and I'm displaying that object
+
+00:00:51.660 --> 00:00:54.860
+on an output stream. And when I run this,
+
+00:00:54.860 --> 00:00:56.520
+I don't really get what i want.
+
+00:00:56.520 --> 00:01:00.720
+I get the account part of the object. You remember, what we talked about last time.
+
+00:01:00.720 --> 00:01:05.080
+So what that means is that this is being statically bound, not dynamically bound,
+
+00:01:05.080 --> 00:01:09.380
+and the object is being sliced so the trust account part of it is being discarded.
+
+00:01:09.780 --> 00:01:12.780
+And we're displaying account instead of trust account.
+
+00:01:13.180 --> 00:01:17.480
+The account name Leo and the account name balance, which is part of that account part of me,
+
+00:01:17.480 --> 00:01:19.480
+but the interest rate is not displaying.
+
+00:01:19.480 --> 00:01:22.250
+And the same will be true for savings and checking accounts.
+
+00:01:23.050 --> 00:01:26.350
+So what's the fix? Well, there s a lot of ways to fix this.
+
+00:01:26.350 --> 00:01:29.230
+But the way we're going to fix it is we're going to create
+
+00:01:29.230 --> 00:01:31.430
+an interface class called I printable.
+
+00:01:31.830 --> 00:01:34.830
+And we're going to let account be derived from I printable.
+
+00:01:34.830 --> 00:01:37.490
+And then all of the concrete classes will implement
+
+00:01:37.490 --> 00:01:39.090
+how they want to be displayed.
+
+00:01:39.340 --> 00:01:41.640
+Okay. So let's get started with that.
+
+00:01:41.840 --> 00:01:45.500
+So the first thing we want to do is we want to create the I printable class.
+
+00:01:45.500 --> 00:01:47.500
+So you can right click here on source
+
+00:01:48.050 --> 00:01:52.650
+and select new class and give it the name I printable and you could just call it printable if you like.
+
+00:01:52.650 --> 00:01:54.010
+I'll name it I printable,
+
+00:01:54.370 --> 00:01:58.070
+and the block guard I'll use is just I_printable
+
+00:01:58.870 --> 00:02:01.310
+_h underscore just like we've done before.
+
+00:02:01.310 --> 00:02:04.510
+You can choose to leave this blank, and CodeLite will generate one for you.
+
+00:02:04.510 --> 00:02:08.610
+That's it. I'll select okay. So there's my I printable class.
+
+00:02:09.010 --> 00:02:11.110
+You can see right now it's a real simple class.
+
+00:02:11.110 --> 00:02:13.470
+And what we want to do is implement this.
+
+00:02:13.470 --> 00:02:15.670
+So let's look at the header file first.
+
+00:02:15.670 --> 00:02:20.070
+We need to include iostream since we're going to use an ostream.
+
+00:02:20.470 --> 00:02:24.070
+So we'll do that right away, and there's my class i printable.
+
+00:02:24.470 --> 00:02:26.570
+We don't need a constructor.
+
+00:02:27.470 --> 00:02:28.870
+And we want our
+
+00:02:28.870 --> 00:02:33.370
+de-structure to be virtual because we're going to have a pure virtual function in here.
+
+00:02:33.370 --> 00:02:37.570
+So we want this to be virtual, and we want the compiler to just generate one for us.
+
+00:02:39.070 --> 00:02:41.930
+We don't need anything special. We don't have raw pointers.
+
+00:02:41.930 --> 00:02:44.930
+We're not -- we don't have any resources that we have to clean up.
+
+00:02:45.590 --> 00:02:47.950
+Okay. So there's my virtual destructor.
+
+00:02:48.550 --> 00:02:52.650
+Now I want to have another function. This is going to be a pure virtual function.
+
+00:02:53.050 --> 00:02:56.550
+And it's going to be called print. We can call this anything you like,
+
+00:02:56.550 --> 00:02:58.430
+and it expects a std ostream.
+
+00:02:59.730 --> 00:03:02.230
+And it's going to be by reference, and I'll call it OS.
+
+00:03:03.110 --> 00:03:06.470
+It's a const virtual function. We don't want it to modify anything,
+
+00:03:06.830 --> 00:03:10.510
+and it's pure. So I'm going to add the equal 0 at the end.
+
+00:03:11.310 --> 00:03:15.310
+Okay. So now we also need to create a friend function here.
+
+00:03:15.310 --> 00:03:18.560
+And the reason we're creating the friend function is for the syntax, right.
+
+00:03:18.560 --> 00:03:22.460
+Remember, when we're using the insertion operator, we want to stream on the left side
+
+00:03:22.460 --> 00:03:25.160
+and the object that we want to display on the right side.
+
+00:03:25.160 --> 00:03:28.760
+I can't do that with amember function, so I'm going to use a friend function.
+
+00:03:28.760 --> 00:03:30.760
+So we will say friend
+
+00:03:31.360 --> 00:03:34.360
+and it's going to return a std ostream by reference.
+
+00:03:34.960 --> 00:03:38.560
+What are we overloading, we're overloading the insertion operator.
+
+00:03:38.560 --> 00:03:41.550
+And what are the parameters. Well, the first one is std ostream
+
+00:03:43.750 --> 00:03:46.250
+by reference. Again, I'll call that OS.
+
+00:03:46.610 --> 00:03:50.710
+And the second parameter is a const I printable.
+
+00:03:51.510 --> 00:03:55.010
+It's really important that this is an I printable, not an account, not anything else.
+
+00:03:55.010 --> 00:03:58.010
+Since an account will be derived from an I printable,
+
+00:03:58.370 --> 00:04:02.730
+everything in that hierarchy will also be an eye principle and conform to this interface,
+
+00:04:03.330 --> 00:04:06.440
+and we can call this object or right-hand side or whatever you like.
+
+00:04:06.440 --> 00:04:09.740
+I'll just call it object. That's it. That's our class.
+
+00:04:09.940 --> 00:04:13.140
+Now what we need to do is we need to implement this function right here.
+
+00:04:13.140 --> 00:04:17.500
+And we'll do that in the I printable implementation file right here. We'll get rid of all of this.
+
+00:04:19.600 --> 00:04:22.600
+And I'll include iostream up here.
+
+00:04:24.480 --> 00:04:27.480
+Perfect. So let's implement this function right here.
+
+00:04:27.730 --> 00:04:32.030
+So what is this function all about. This is the function that really runs everything.
+
+00:04:32.720 --> 00:04:35.420
+We're going to get an I printable object here by reference.
+
+00:04:35.420 --> 00:04:39.120
+So we know that, that object has already overridden print.
+
+00:04:39.120 --> 00:04:41.780
+It must have right, otherwise it wouldn't have compiled.
+
+00:04:41.780 --> 00:04:46.440
+So what we can do here is we can simply call obj.print.
+
+00:04:47.760 --> 00:04:50.760
+And that reference to the output stream.
+
+00:04:51.660 --> 00:04:56.320
+That's pretty cool. And you notice that, that matches this guy right here, right.
+
+00:04:56.820 --> 00:04:59.820
+right. There's print, and there's the ostream.
+
+00:04:59.820 --> 00:05:03.030
+Now remember all the classes in our account class hierarchy
+
+00:05:03.030 --> 00:05:05.630
+are going to override this virtual function.
+
+00:05:05.990 --> 00:05:08.690
+So they'll be printable. It's really as simple as that.
+
+00:05:08.690 --> 00:05:11.890
+So that's it. We're going to put that --
+
+00:05:11.890 --> 00:05:15.090
+we're going to call the objects print, and then we're just going to return OS,
+
+00:05:16.390 --> 00:05:19.750
+and we are done. It's a real, real simple interface.
+
+00:05:20.740 --> 00:05:21.400
+Perfect.
+
+00:05:21.400 --> 00:05:22.700
+Now let's go to our account.
+
+00:05:23.500 --> 00:05:25.000
+And what are we going to do here.
+
+00:05:25.800 --> 00:05:28.900
+Well, you know what we're going to leave taking this guy out for last because
+
+00:05:28.900 --> 00:05:33.100
+we really do need to take him out. But for now, let's just leave him in.
+
+00:05:33.100 --> 00:05:36.700
+But what we need to do first is we need to be printable,
+
+00:05:36.700 --> 00:05:40.000
+right. So let's come over here and we will include
+
+00:05:41.500 --> 00:05:43.000
+I printable.
+
+00:05:45.700 --> 00:05:50.000
+So now we've got the header file, and we want our accounts to be
+
+00:05:50.500 --> 00:05:53.300
+derived publicly from I printable.
+
+00:05:55.100 --> 00:05:58.400
+So what does that tell you now, an account is an I printable,
+
+00:05:58.400 --> 00:06:02.700
+right, and I printable has this pure virtual function.
+
+00:06:04.000 --> 00:06:08.400
+So that account needs to override that function, and then it becomes printable.
+
+00:06:09.300 --> 00:06:12.900
+All right. So let's come over here, and what's the function.
+
+00:06:13.560 --> 00:06:15.260
+The function is virtual,
+
+00:06:17.260 --> 00:06:21.460
+void print. It expects a std ostream ref,
+
+00:06:24.960 --> 00:06:28.160
+it's const, and I'm overriding it.
+
+00:06:29.060 --> 00:06:32.060
+So you're telling the compiler exactly what's going on here.
+
+00:06:32.560 --> 00:06:37.550
+This guy is a pure virtual function in the I printable interface class.
+
+00:06:38.210 --> 00:06:41.210
+You're telling the compiler that you plan to override it.
+
+00:06:41.410 --> 00:06:44.110
+Please check this signature, make sure I get it right.
+
+00:06:44.610 --> 00:06:48.610
+So I'm going to copy this because we need to do that in all our classes
+
+00:06:48.610 --> 00:06:49.830
+in the class hierarchy.
+
+00:06:49.830 --> 00:06:51.530
+So this is account.h.
+
+00:06:51.530 --> 00:06:55.730
+I'm going to go to checkingaccount.h, and I'm going to put it right in here.
+
+00:06:57.430 --> 00:07:01.030
+I'm going to go to savingsaccount.h, put it right in here.
+
+00:07:02.230 --> 00:07:05.830
+And finally, I'm going to go to trustaccount.h and put it right in there.
+
+00:07:09.520 --> 00:07:10.120
+Perfect.
+
+00:07:10.480 --> 00:07:12.940
+So now what do we need to do, we actually need to
+
+00:07:12.940 --> 00:07:15.820
+override that function. Do what we say we were going to do.
+
+00:07:15.820 --> 00:07:18.810
+So where do we do that. Well, we do that in the cpp file.
+
+00:07:18.810 --> 00:07:20.810
+So here's my account header file.
+
+00:07:20.810 --> 00:07:23.610
+This is the function that we want to override.
+
+00:07:24.270 --> 00:07:27.070
+And what we want to do is we want to say okay if I'm an account,
+
+00:07:27.070 --> 00:07:31.060
+this is how I'm going to print myself. If I'm a checking account, this is how i want to print myself.
+
+00:07:31.060 --> 00:07:35.560
+So it's very similar to what we did earlier with those friend -- with this friend function right here.
+
+00:07:35.560 --> 00:07:38.560
+And we can -- just about to get rid of that. We can actually get rid of it now
+
+00:07:38.560 --> 00:07:41.450
+but I like getting rid of it at the very end, so we'll do that.
+
+00:07:41.450 --> 00:07:43.440
+So here's my account cpp.
+
+00:07:43.690 --> 00:07:48.090
+And let me copy this since that's the one that we need to override in here.
+
+00:07:48.090 --> 00:07:49.450
+So I'm going to come right over here.
+
+00:07:49.950 --> 00:07:52.250
+And you notice this line right here,
+
+00:07:52.250 --> 00:07:55.250
+we're going to reuse that line because that's how we want to print an account.
+
+00:07:55.800 --> 00:07:57.800
+Let's override this function.
+
+00:07:58.400 --> 00:08:02.700
+This is the print function for the account class.
+
+00:08:04.030 --> 00:08:06.390
+And we can get rid of the override. We don't need that here.
+
+00:08:07.890 --> 00:08:12.690
+So what do we do here. Well, let's just set the precision for the output stream. Since we're printing numbers,
+
+00:08:12.690 --> 00:08:14.790
+we'll just print them to two decimal places.
+
+00:08:14.790 --> 00:08:18.790
+And what we'll do is we'll also display fixed point
+
+00:08:18.790 --> 00:08:20.390
+that way it looks nicer as well.
+
+00:08:21.290 --> 00:08:23.490
+Okay. Now what do we want to do here. Well,
+
+00:08:23.490 --> 00:08:25.490
+we want to do what we said we were going to do, right
+
+00:08:25.490 --> 00:08:28.490
+We want to display the account information. This is how we do it.
+
+00:08:29.090 --> 00:08:31.390
+So we just need to copy that right in here.
+
+00:08:31.940 --> 00:08:35.940
+Now there's only one little thing, this is now a member, right.
+
+00:08:35.940 --> 00:08:39.140
+So we don't need to do account dot. We could just get rid of all that
+
+00:08:39.140 --> 00:08:41.640
+we did that we had to do that before because it was a friend.
+
+00:08:41.640 --> 00:08:45.300
+But now we can just access those members directly since we're members.
+
+00:08:45.300 --> 00:08:48.700
+And now we can get rid of this guy, don't need him anymore.
+
+00:08:48.700 --> 00:08:51.700
+We can go back to our header file and get rid of the friend.
+
+00:08:52.900 --> 00:08:55.500
+That's it. So now this account class
+
+00:08:55.860 --> 00:08:58.860
+is using that overridden functionality to print itself.
+
+00:08:58.860 --> 00:09:01.860
+So let's do that for the other one. So we'll go to checking account.
+
+00:09:02.160 --> 00:09:05.160
+There it is. So it's good to go here. We'll go to the implementation.
+
+00:09:05.760 --> 00:09:09.360
+And what we'll do is we'll implement this function again.
+
+00:09:10.260 --> 00:09:12.760
+Again, we don't have to say virtual here.
+
+00:09:12.760 --> 00:09:15.560
+We can simply say this is the checking account
+
+00:09:18.860 --> 00:09:19.860
+print method.
+
+00:09:20.360 --> 00:09:21.960
+We can get rid of the override,
+
+00:09:24.960 --> 00:09:27.460
+and then we can write the same code that we wrote before.
+
+00:09:28.460 --> 00:09:32.660
+And finally, we just display how we want to display it.
+
+00:09:33.660 --> 00:09:34.660
+Okay. Pretty easy.
+
+00:09:36.160 --> 00:09:37.960
+And now we can get rid of this guy,
+
+00:09:38.820 --> 00:09:41.520
+and we come to the header file and get rid of our friend.
+
+00:09:42.880 --> 00:09:46.540
+Okay. So you can see the steps involved. I'll go ahead and do the last two.
+
+00:09:46.540 --> 00:09:50.200
+Okay. So I've gone ahead and implemented that print function
+
+00:09:50.560 --> 00:09:53.450
+in all of these classes.So here's the print for account,
+
+00:09:53.450 --> 00:09:55.810
+you can see it's just printing the name of the balance.
+
+00:09:55.810 --> 00:09:58.110
+Here's the print for a checking account,
+
+00:09:58.410 --> 00:10:02.010
+you can see it's printing out checking account, name and balance.
+
+00:10:02.260 --> 00:10:06.060
+Here's the print for the savings account, which is printing savings account,
+
+00:10:06.060 --> 00:10:08.360
+the name, the balance and the interest rate.
+
+00:10:08.360 --> 00:10:10.360
+And finally, for the trust account,
+
+00:10:10.360 --> 00:10:14.360
+it's printing out the name, the balance, the interest rate and the number of withdrawals on that account.
+
+00:10:15.160 --> 00:10:18.160
+That's it. Before we had that trust account Leo
+
+00:10:18.160 --> 00:10:20.760
+and it only printed account Leo 10000.
+
+00:10:20.760 --> 00:10:25.120
+Now we've got dynamic binding, so we should get what we want. So let's give this a run,
+
+00:10:26.620 --> 00:10:30.920
+and that's exactly what happens. That's pretty cool. Now we've got trust account Leo
+
+00:10:30.920 --> 00:10:35.220
+1000 2.6% interest rate and 0 withdrawals.
+
+00:10:35.820 --> 00:10:37.820
+All right. So we're almost done.
+
+00:10:37.820 --> 00:10:40.820
+The last step is to deal with those functions in account util
+
+00:10:40.820 --> 00:10:43.720
+and clean that up, and we had a lot of duplicated code in there.
+
+00:10:43.720 --> 00:10:46.220
+Once we've got that, then challenge is done.

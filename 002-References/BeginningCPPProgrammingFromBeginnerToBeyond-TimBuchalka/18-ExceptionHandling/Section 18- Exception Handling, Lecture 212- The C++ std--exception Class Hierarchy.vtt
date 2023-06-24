@@ -1,0 +1,211 @@
+WEBVTT
+
+00:00:05.250 --> 00:00:08.850
+In this video, I'd like to briefly talk about the c++
+
+00:00:08.850 --> 00:00:11.150
+standard exception class hierarchy.
+
+00:00:12.050 --> 00:00:16.050
+C++ provides a class hierarchy of exception classes.
+
+00:00:16.350 --> 00:00:20.350
+These exception classes are used throughout the c++ standard libraries.
+
+00:00:20.850 --> 00:00:23.450
+The std exception class is the base class
+
+00:00:23.450 --> 00:00:27.250
+and all other exception classes are ultimately derived from it.
+
+00:00:27.910 --> 00:00:31.710
+Std exception provides a virtual function named what
+
+00:00:32.210 --> 00:00:36.460
+that returns a c-style string with a description of the exception that occurred.
+
+00:00:37.060 --> 00:00:40.260
+We can create subclasses of the exception classes
+
+00:00:40.260 --> 00:00:45.250
+and then implement the what virtual function so that it displays whatever exception message we want.
+
+00:00:45.910 --> 00:00:48.310
+Let's take a look at the exception class hierarchy.
+
+00:00:50.010 --> 00:00:53.510
+Here's the c++ standard library exception class hierarchy.
+
+00:00:54.060 --> 00:00:58.060
+The classes that are in orange are the c++17 additions
+
+00:00:58.060 --> 00:00:59.360
+to the class hierarchy.
+
+00:01:00.160 --> 00:01:03.960
+Notice that the common base class in the center is std exception,
+
+00:01:04.260 --> 00:01:06.490
+and then we have many classes derived from it.
+
+00:01:07.390 --> 00:01:11.160
+Exceptions that are runtime errors, logic errors, bad allocation errors,
+
+00:01:11.160 --> 00:01:13.160
+out of range errors and many more.
+
+00:01:13.560 --> 00:01:15.860
+We aren't going to study these classes in detail,
+
+00:01:15.860 --> 00:01:19.410
+but we can create our own user-defined classes that are derived
+
+00:01:19.410 --> 00:01:21.110
+from these exception classes.
+
+00:01:21.810 --> 00:01:24.610
+This can be very useful in some situations
+
+00:01:24.610 --> 00:01:27.970
+since by being derived publicly from stood exception,
+
+00:01:27.970 --> 00:01:30.430
+our classes are now part of this hierarchy
+
+00:01:30.430 --> 00:01:33.630
+and can be used wherever a stood exception is expected
+
+00:01:33.630 --> 00:01:35.630
+since your class is an exception.
+
+00:01:36.730 --> 00:01:39.090
+Also thanks to dynamic polymorphism.
+
+00:01:39.090 --> 00:01:42.190
+All you have to do is implement the what virtual function
+
+00:01:42.190 --> 00:01:44.390
+and it will be bound dynamically at runtime.
+
+00:01:45.190 --> 00:01:47.590
+Let's see an example of how we could create an illegal
+
+00:01:47.590 --> 00:01:49.790
+balance exception for our account class,
+
+00:01:50.040 --> 00:01:52.740
+but this time, let's derive it from std exception.
+
+00:01:54.840 --> 00:01:56.830
+Here's a simple example that shows how we can
+
+00:01:56.830 --> 00:02:00.820
+create our user-defined exception class named illegal balance exception,
+
+00:02:00.820 --> 00:02:04.720
+and this might be thrown if the account is created with a negative balance.
+
+00:02:05.380 --> 00:02:09.040
+Notice that we derive the class publicly from std exception,
+
+00:02:09.340 --> 00:02:13.540
+and we simply provide a default constructor and a default destructor.
+
+00:02:14.040 --> 00:02:17.140
+Finally, we implement the what virtual function
+
+00:02:17.140 --> 00:02:20.500
+and return a c-style string describing the exception.
+
+00:02:21.380 --> 00:02:23.580
+This is a really simple implementation.
+
+00:02:23.580 --> 00:02:28.080
+We could provide all sorts of error information, codes, descriptions and so forth,
+
+00:02:28.080 --> 00:02:32.980
+as class attributes and initialize them in the constructor when we create and throw the object.
+
+00:02:33.780 --> 00:02:36.280
+There's a keyword here that I haven't talked about yet,
+
+00:02:36.680 --> 00:02:38.680
+that is the no accept keyword.
+
+00:02:39.180 --> 00:02:42.680
+This tells the compiler that the method will not throw an exception.
+
+00:02:43.180 --> 00:02:45.680
+So don't throw exceptions from these methods.
+
+00:02:46.340 --> 00:02:48.700
+The destructor is no except by default.
+
+00:02:49.300 --> 00:02:52.200
+If you do happen to throw an exception from a no throw method,
+
+00:02:52.200 --> 00:02:55.000
+the program will terminate, the exception will not be handled.
+
+00:02:55.800 --> 00:03:00.000
+Let's see how we might use the account class hierarchy that we've used throughout the course.
+
+00:03:01.560 --> 00:03:03.700
+Here's the code for our account constructor.
+
+00:03:04.200 --> 00:03:07.100
+We're checking to see if the account balance is less than 0.
+
+00:03:07.350 --> 00:03:10.150
+And if it is, we're throwing an illegal balance exception,
+
+00:03:10.150 --> 00:03:14.750
+which is our user-defined exception class derived from std exception.
+
+00:03:15.350 --> 00:03:19.010
+This code should look pretty familiar since it's more or less the same code that we wrote
+
+00:03:19.010 --> 00:03:22.510
+when we created our own standalone illegal balance exception class.
+
+00:03:24.870 --> 00:03:27.370
+Now we can try to create an account object.
+
+00:03:27.370 --> 00:03:32.170
+In this case, we'll create a unique pointer and create a checking account object dynamically.
+
+00:03:32.830 --> 00:03:36.730
+Notice that we're creating Moe's account with a negative 100 balance.
+
+00:03:37.390 --> 00:03:41.270
+This is not legal, so we expect that the account constructor will throw
+
+00:03:41.270 --> 00:03:43.570
+an illegal balance exception object.
+
+00:03:43.570 --> 00:03:46.370
+And that's exactly what we're catching in our catch handler.
+
+00:03:47.120 --> 00:03:49.420
+In this case, the catch handler fires
+
+00:03:49.420 --> 00:03:52.120
+and we call ex.what,
+
+00:03:52.120 --> 00:03:54.620
+which will display illegal balance exception.
+
+00:03:55.120 --> 00:03:58.220
+That's pretty powerful and not too difficult to understand or use.
+
+00:03:58.770 --> 00:04:00.870
+Well, that's it for exception handling.
+
+00:04:00.870 --> 00:04:03.370
+The challenge exercise for this section is next.
+
+00:04:03.370 --> 00:04:06.870
+And although it involves some more advanced exception handling techniques
+
+00:04:06.870 --> 00:04:11.170
+that you'll find in most courses, I think you'll be able to do it just fine. Let's get to it.

@@ -1,0 +1,166 @@
+WEBVTT
+
+00:00.330 --> 00:03.560
+Let us write a program for finding the greatest of three numbers.
+
+00:03.570 --> 00:06.660
+I have three variables A, B and C.
+
+00:07.260 --> 00:17.640
+See out enter three numbers, then C in A, B and C.
+
+00:18.090 --> 00:20.010
+Then I'll write down the conditions here.
+
+00:20.010 --> 00:27.540
+If A is greater than B as well as A is greater than C, then see out.
+
+00:29.470 --> 00:30.070
+A.
+
+00:32.250 --> 00:33.490
+A is greater.
+
+00:34.060 --> 00:49.720
+LS If B is greater than C than C out b is greater and nl ls c out c is greater.
+
+00:50.470 --> 00:56.110
+Here I am not writing the statement inside a block because it is single statement inside f or else.
+
+00:56.140 --> 00:58.000
+So here the first condition is check.
+
+00:58.000 --> 01:01.090
+If the condition is true, then it will execute this one.
+
+01:01.390 --> 01:06.700
+If the condition is false, then it will jump on to this spot and checks the second condition.
+
+01:06.970 --> 01:09.300
+If this is true, then it will print this one.
+
+01:09.310 --> 01:12.850
+Otherwise it will jump on to L spot and display this one.
+
+01:13.870 --> 01:20.560
+Let us run and see the program and enter two numbers, ten and three and four.
+
+01:21.130 --> 01:23.470
+See, the greatest number is ten.
+
+01:25.550 --> 01:27.410
+I'll run the program once again.
+
+01:29.610 --> 01:31.170
+And the three numbers.
+
+01:32.300 --> 01:36.520
+And then the numbers two, three and ten.
+
+01:36.520 --> 01:38.620
+So ten will be displayed and that is C.
+
+01:42.080 --> 01:42.360
+No.
+
+01:42.360 --> 01:47.040
+One interesting thing we will see here, this program, how it is working.
+
+01:47.060 --> 01:50.600
+I will show you by debugging this one.
+
+01:50.600 --> 01:56.810
+So I'll put a breakpoint on this statement and run the program.
+
+01:57.910 --> 01:58.900
+This is a breakpoint.
+
+01:58.900 --> 01:59.870
+Just click here.
+
+01:59.890 --> 02:02.560
+It will add a breakpoint to that statement.
+
+02:02.770 --> 02:06.070
+If I run, it will run up to this line.
+
+02:08.430 --> 02:09.870
+So let us see how it works.
+
+02:09.870 --> 02:14.820
+If I say run, then it is asking for three numbers, so I'll give the numbers.
+
+02:14.820 --> 02:17.250
+That is a three and four and ten.
+
+02:17.970 --> 02:20.940
+Now it is in this particular line that is seen.
+
+02:20.940 --> 02:22.260
+It is reading the input.
+
+02:22.410 --> 02:26.880
+So once I enter input then it will enter into this line.
+
+02:26.880 --> 02:29.340
+Now this has entered into debug mode.
+
+02:29.340 --> 02:32.490
+This is the first breakpoint inside thread one.
+
+02:32.490 --> 02:34.140
+So it has stopped here.
+
+02:34.170 --> 02:36.060
+Now this is a debug window.
+
+02:36.060 --> 02:40.290
+You can see here the watch which is showing the values of the variables.
+
+02:40.290 --> 02:43.650
+A is three and B is four and C is ten.
+
+02:44.410 --> 02:52.060
+If a Continuum seat has skipped the first if statement because the condition was false and has jumped
+
+02:52.060 --> 02:54.520
+on to this one, it has not entered inside.
+
+02:54.550 --> 02:58.900
+Even if I click these variables, it is showing the value of these variables.
+
+02:59.320 --> 03:01.580
+Value of A is three, B is four.
+
+03:01.600 --> 03:07.390
+So you can clearly see what is happening in the program with the help of debugger inside the debugging
+
+03:07.390 --> 03:07.900
+mode.
+
+03:08.200 --> 03:10.520
+Now I'll press f seven here.
+
+03:10.540 --> 03:11.680
+Go to the next line.
+
+03:11.710 --> 03:13.840
+See, now this condition also fails.
+
+03:13.840 --> 03:17.770
+So it has entered into LS part and it is about to display this one.
+
+03:18.070 --> 03:21.290
+It is on this line so it has not yet executed the line.
+
+03:21.310 --> 03:27.610
+If I press f seven once again now it has finished this line and you can see that the output is ten here.
+
+03:29.080 --> 03:34.720
+So that's how we can trace the program or debug the program step by step and see what is happening inside
+
+03:34.720 --> 03:35.410
+the program.
+
+03:36.240 --> 03:37.560
+But it stopped the program.

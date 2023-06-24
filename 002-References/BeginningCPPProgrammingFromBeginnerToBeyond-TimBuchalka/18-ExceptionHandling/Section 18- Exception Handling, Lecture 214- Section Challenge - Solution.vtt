@@ -1,0 +1,274 @@
+WEBVTT
+
+00:00:05.200 --> 00:00:08.100
+Okay. Welcome back. This is my solution
+
+00:00:08.100 --> 00:00:11.100
+to the section 18 exception handling challenge.
+
+00:00:11.700 --> 00:00:15.600
+I'm in the section 18 workspace in the challenge solution project.
+
+00:00:15.850 --> 00:00:19.750
+And again, this is my solution. There's different ways to do this.
+
+00:00:19.750 --> 00:00:23.110
+If you did it a different way, that doesn't mean it's wrong, it's just different.
+
+00:00:23.110 --> 00:00:27.010
+Post it, and look at some comments from everyone. So in this case,
+
+00:00:27.010 --> 00:00:28.780
+let's take a look at what what I did.
+
+00:00:28.780 --> 00:00:32.980
+I've created the illegal balance exception that we had earlier,
+
+00:00:32.980 --> 00:00:36.980
+but I changed it a little bit because what we want now is we want the class illegal balance
+
+00:00:36.980 --> 00:00:40.580
+exception to be derived publicly from std exception.
+
+00:00:41.180 --> 00:00:43.380
+Okay. So that takes care of that part.
+
+00:00:43.380 --> 00:00:47.740
+So now remember, an illegal balance exception now is a std exception.
+
+00:00:48.740 --> 00:00:52.340
+I've got my public modifier here. Here's my constructor,
+
+00:00:52.700 --> 00:00:55.700
+I'm just using a default constructor and I'm
+
+00:00:55.700 --> 00:00:58.400
+guaranteeing no exceptions being thrown from it.
+
+00:00:59.300 --> 00:01:02.300
+I've got a destructor here again a default destructor.
+
+00:01:02.300 --> 00:01:04.900
+And here's my virtual what function.
+
+00:01:05.300 --> 00:01:08.960
+And here's the prototype forward, it's virtual, it returns a pointer
+
+00:01:08.960 --> 00:01:11.960
+to a character, which is a c-style string.
+
+00:01:12.620 --> 00:01:15.870
+And it's const -- the function itself is constant won't modify anything.
+
+00:01:15.870 --> 00:01:19.420
+And again, I'm guaranteeing no exceptions being thrown from here.
+
+00:01:19.420 --> 00:01:23.320
+And all I'm returning here is any kind of c-style string,
+
+00:01:23.320 --> 00:01:25.820
+in this case, illegal balance exception.
+
+00:01:25.820 --> 00:01:30.020
+And this is what we're going to print out on the other side when we catch this exception
+
+00:01:30.020 --> 00:01:34.220
+and print out the message. So that takes care of illegal balance exception.
+
+00:01:34.220 --> 00:01:37.780
+Now let's take a look at insufficient funds exception which is right here.
+
+00:01:37.780 --> 00:01:42.140
+And neither one of these needs a cpp file because we're doing everything right in here.
+
+00:01:42.800 --> 00:01:46.900
+So here's the insufficient funds exception, pretty much the same pattern.
+
+00:01:46.900 --> 00:01:51.800
+My class is insufficient funds exception. It's derived publicly
+
+00:01:54.100 --> 00:01:55.900
+from std exception.
+
+00:01:55.900 --> 00:01:58.700
+And I've got insufficient funds exception.
+
+00:01:58.700 --> 00:02:01.900
+Again, no except, default constructor, default destructor.
+
+00:02:01.900 --> 00:02:04.260
+And there's my what virtual function,
+
+00:02:04.260 --> 00:02:07.260
+which simply returns insufficient funds exception.
+
+00:02:07.760 --> 00:02:11.120
+That's it. Now if I go to my account cpp file,
+
+00:02:11.780 --> 00:02:14.680
+you can see here in my account constructor,
+
+00:02:14.680 --> 00:02:16.930
+if my balance -- if I'm trying to create
+
+00:02:16.930 --> 00:02:21.530
+an account object with a balance that's negative, I'm throwing a legal balance exception.
+
+00:02:22.530 --> 00:02:25.130
+And down here my withdrawal method,
+
+00:02:25.630 --> 00:02:30.380
+if the balance goes below 0, I'm throwing an insufficient funds exception.
+
+00:02:31.680 --> 00:02:33.680
+Okay. That's it. Pretty straightforward.
+
+00:02:33.680 --> 00:02:36.340
+Now let's take a look at the main where we can test some of this.
+
+00:02:37.240 --> 00:02:39.840
+So here's the main, and
+
+00:02:39.840 --> 00:02:44.340
+what I'm doing here is I'm creating two unique pointers, one to Moe's account
+
+00:02:44.340 --> 00:02:45.840
+one to Larry's account.
+
+00:02:46.140 --> 00:02:50.840
+And then the first thing I want to do is I want to try to create Larry's account with a negative balance.
+
+00:02:51.140 --> 00:02:54.500
+Right now I expect this to throw an exception.
+
+00:02:54.500 --> 00:02:58.700
+And I want to catch it right here, I want to catch the illegal balance exception
+
+00:02:58.700 --> 00:03:01.690
+and just simply print out x.what,
+
+00:03:02.050 --> 00:03:04.710
+right. That's going to call my virtual function.
+
+00:03:04.710 --> 00:03:08.510
+And hopefully, it'll say that I've got a negative balance or a new legal balance.
+
+00:03:08.510 --> 00:03:12.110
+So that's one test case here. In this test case,
+
+00:03:12.660 --> 00:03:15.260
+I'm going to try to create Moe's account
+
+00:03:15.260 --> 00:03:19.560
+as they're both savings accounts by the way. I'm creating Moe's account as a savings account
+
+00:03:19.560 --> 00:03:21.060
+with a 1000 dollar balance.
+
+00:03:21.820 --> 00:03:24.620
+And then I'm displaying it. I expect that to work.
+
+00:03:24.620 --> 00:03:29.380
+Then I'm withdrawing five 500 dollars and displaying it again. I expect that to work.
+
+00:03:29.380 --> 00:03:31.480
+Now I'm withdrawing a 1000 dollars.
+
+00:03:31.480 --> 00:03:34.980
+I don't expect that to work. I expect that to throw an exception
+
+00:03:34.980 --> 00:03:39.230
+because that would create an account now with negative 500, I'd be overdrawn.
+
+00:03:39.230 --> 00:03:42.230
+So i don't expect this to display.
+
+00:03:43.890 --> 00:03:47.090
+Okay. And this Larry's account here,
+
+00:03:47.590 --> 00:03:51.370
+we really don't need -- sorry about that, that was a carryover from before.
+
+00:03:52.140 --> 00:03:56.640
+Okay. So that's better. So in this case, we're going to catch both these exceptions,
+
+00:03:56.640 --> 00:04:00.200
+an illegal balance exception and an insufficient funds exception.
+
+00:04:00.200 --> 00:04:04.200
+If either one of them throws, then I catch them and just display their what.
+
+00:04:04.200 --> 00:04:06.200
+Okay. So let's run this.
+
+00:04:10.200 --> 00:04:11.700
+And here's my output.
+
+00:04:12.360 --> 00:04:16.610
+First one is I've got an illegal balance exception. That's what I expected because I tried to
+
+00:04:16.610 --> 00:04:20.270
+create Larry's account here with negative balance, right.
+
+00:04:20.270 --> 00:04:22.940
+Then down here, remember, at this point,
+
+00:04:22.940 --> 00:04:26.340
+I don't display Larry's account because Larry's account hasn't been created.
+
+00:04:26.340 --> 00:04:30.340
+So what I do is I just skip down to here, and now I'm in this piece of code here.
+
+00:04:30.340 --> 00:04:34.940
+So the first thing I want to do is i want to try to create Moe's account with a 1000 dollars and display it.
+
+00:04:34.940 --> 00:04:37.940
+And you can see right here, Moe's account with a 1000 dollars.
+
+00:04:37.940 --> 00:04:39.940
+There's no interest rate because I didn't supply one.
+
+00:04:40.700 --> 00:04:44.600
+Then I'm going to withdraw 500 from Moe's account and display it again.
+
+00:04:44.600 --> 00:04:47.960
+So now you can see Moe's account now has 500 balance right here.
+
+00:04:48.950 --> 00:04:52.610
+Now I'm going to try to withdraw a 1000 dollars that should not work.
+
+00:04:52.610 --> 00:04:55.860
+So I shouldn't see Moe's account displayed again. Instead,
+
+00:04:55.860 --> 00:04:59.220
+I should get an insufficient funds exception being thrown,
+
+00:04:59.220 --> 00:05:01.370
+and that's exactly what happens here.
+
+00:05:01.370 --> 00:05:04.470
+This catch block fires a second catch block
+
+00:05:04.470 --> 00:05:08.570
+and ex.what is displaying insufficient funds exception.
+
+00:05:09.870 --> 00:05:13.530
+That's it. Most likely your code is very much very similar to mine.
+
+00:05:13.530 --> 00:05:16.630
+Your test cases may be different, but that's okay.
+
+00:05:16.630 --> 00:05:19.630
+You can test this by using nested try statements as well.
+
+00:05:19.630 --> 00:05:23.030
+You can have one try inside another, you can try to create the object.
+
+00:05:23.030 --> 00:05:25.390
+And then once you've created the object, you can create
+
+00:05:25.390 --> 00:05:29.750
+try statements within that try statements that are exercising some of the withdrawal methods.
+
+00:05:30.550 --> 00:05:34.550
+So that's it. I hope you had fun in this section and in this challenge.

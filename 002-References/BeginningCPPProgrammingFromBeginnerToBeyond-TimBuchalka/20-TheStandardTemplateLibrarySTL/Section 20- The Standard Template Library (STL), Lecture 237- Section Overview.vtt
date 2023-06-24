@@ -1,0 +1,82 @@
+WEBVTT
+
+00:00:05.400 --> 00:00:08.800
+Welcome to the standard template library section of the course.
+
+00:00:09.700 --> 00:00:12.600
+In this section of the course, we'll learn about the c++
+
+00:00:12.600 --> 00:00:16.100
+standard template library or stl for short.
+
+00:00:16.900 --> 00:00:19.700
+The stl provides a rich set of containers,
+
+00:00:19.700 --> 00:00:24.400
+iterators and algorithms that we can use with just about any type of data we wish.
+
+00:00:25.000 --> 00:00:28.500
+We've already worked with one of the stl workhorses, the vector.
+
+00:00:29.000 --> 00:00:31.360
+First, we'll see what the stl is all about,
+
+00:00:31.360 --> 00:00:34.460
+and then we'll learn a little bit about generic or meta programming,
+
+00:00:34.460 --> 00:00:38.120
+which is what the stl uses to allow us to use its components
+
+00:00:38.120 --> 00:00:39.920
+on just about any type of data.
+
+00:00:40.720 --> 00:00:44.280
+We'll see how c++ can use preprocessor macros,
+
+00:00:44.280 --> 00:00:48.270
+function templates and class templates to achieve generic programming.
+
+00:00:48.550 --> 00:00:52.050
+We'll also learn what generic programming is and why it's so powerful.
+
+00:00:53.150 --> 00:00:58.140
+Then we'll look at the types of containers, iterators and algorithms provided by the stl.
+
+00:00:58.640 --> 00:01:01.890
+And we'll look at each of the main containers such as array,
+
+00:01:01.890 --> 00:01:05.890
+vector, dec, list, set, maps, stacks,
+
+00:01:05.890 --> 00:01:07.390
+queues and priority queues.
+
+00:01:08.380 --> 00:01:12.280
+Finally, we'll learn about some of the commonly used algorithms in the stl.
+
+00:01:12.830 --> 00:01:16.530
+The cool thing about the stl is that once you learn how to use one container,
+
+00:01:16.530 --> 00:01:18.410
+one iterator and one algorithm,
+
+00:01:18.410 --> 00:01:22.210
+then the rest follows the same pattern so they become easy to learn.
+
+00:01:22.610 --> 00:01:25.210
+There will also be several challenges in this section
+
+00:01:25.210 --> 00:01:28.770
+that will allow you to solve more problems using the stl containers,
+
+00:01:28.770 --> 00:01:30.270
+iterators and algorithms.
+
+00:01:31.070 --> 00:01:34.470
+Most beginning c++ courses don't cover the stl
+
+00:01:34.470 --> 00:01:39.370
+but I think it's important to cover it since it's used very often in c++ programming.
+
+00:01:39.770 --> 00:01:41.970
+Great. So let's see what the stl is all about.

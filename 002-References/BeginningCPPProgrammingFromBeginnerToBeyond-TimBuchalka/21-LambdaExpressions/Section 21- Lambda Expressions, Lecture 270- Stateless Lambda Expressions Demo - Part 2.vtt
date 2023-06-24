@@ -1,0 +1,787 @@
+WEBVTT
+
+00:05.250 --> 00:05.610
+Okay.
+
+00:05.610 --> 00:06.280
+Welcome back.
+
+00:06.300 --> 00:09.630
+In this video, we'll finish off what we started in the previous video.
+
+00:09.630 --> 00:12.480
+So let's get a little bit more complicated now.
+
+00:12.520 --> 00:14.280
+Look at a couple more examples.
+
+00:14.280 --> 00:17.100
+I'm going to reduce this a little bit here.
+
+00:18.310 --> 00:23.590
+All right, so here's test four and I've got two pieces to test for it and expand them both and I'll
+
+00:23.770 --> 00:24.550
+walk through them.
+
+00:24.760 --> 00:31.300
+The first one I've written a function and that function is called filter vector.
+
+00:31.480 --> 00:32.800
+It's right here.
+
+00:33.520 --> 00:34.810
+It returns nothing.
+
+00:34.990 --> 00:36.220
+And what does it expect?
+
+00:36.250 --> 00:40.660
+It expects a stood vector of integers and its const.
+
+00:40.660 --> 00:42.670
+So I cannot modify it from in here.
+
+00:43.510 --> 00:47.980
+It's called VEC and a function that's a function object.
+
+00:48.100 --> 00:49.330
+What does that function object?
+
+00:49.330 --> 00:51.020
+Expect an integer.
+
+00:51.040 --> 00:52.140
+What does it return?
+
+00:52.150 --> 00:53.060
+A boolean?
+
+00:53.080 --> 00:54.800
+That's what the syntax says.
+
+00:54.820 --> 00:58.950
+I know the syntax may look a little wonky, but it's just a matter of getting used to it.
+
+00:58.960 --> 01:00.130
+It's not complicated.
+
+01:00.430 --> 01:03.170
+And what is the name of that parameter func?
+
+01:03.190 --> 01:05.020
+This is a function object.
+
+01:05.020 --> 01:10.690
+So I can call that function object simply by saying func and passing an integer into it.
+
+01:11.440 --> 01:14.560
+Any kind of integer, whether it's a literal or a variable name.
+
+01:14.740 --> 01:18.430
+And this guy will return a boolean that I can use.
+
+01:18.520 --> 01:20.290
+So that's what's really happening here.
+
+01:20.440 --> 01:26.230
+I'm displaying the left bracket and then I've got a range based for loop here that's looping over this
+
+01:26.230 --> 01:26.950
+vector.
+
+01:27.730 --> 01:34.000
+And for each integer I in the vector, I'm calling func and passing it in.
+
+01:34.030 --> 01:35.340
+What does this func do?
+
+01:35.350 --> 01:36.340
+I have no idea.
+
+01:36.340 --> 01:37.870
+That's the real power here.
+
+01:37.900 --> 01:41.110
+I could care less what is happening in that function.
+
+01:41.590 --> 01:46.540
+All I know is that I'm a filter vector function and I get a function.
+
+01:46.540 --> 01:47.560
+I'm calling that function.
+
+01:47.560 --> 01:48.700
+I really don't know what it does.
+
+01:48.700 --> 01:49.900
+I don't care what it does.
+
+01:50.320 --> 01:53.800
+The only thing that's important is that it expects an INT and returns a boom.
+
+01:54.130 --> 02:00.790
+So in this case, if it returns true, I'm going to display that value and then I'm just closing this
+
+02:00.790 --> 02:01.600
+with a bracket.
+
+02:02.440 --> 02:04.360
+So it'll make sense now when you see when I call it.
+
+02:04.360 --> 02:07.080
+So let me scroll up just a little bit.
+
+02:07.090 --> 02:11.620
+I'm right here on test four, so I'm saying that's four.
+
+02:11.650 --> 02:12.790
+That's right here.
+
+02:12.790 --> 02:19.270
+Here's my vector of numbers called nums and I'm going to call filter vector and I'm going to pass in
+
+02:19.270 --> 02:20.020
+nums.
+
+02:20.020 --> 02:20.380
+Right.
+
+02:20.380 --> 02:21.670
+That's this guy.
+
+02:22.900 --> 02:26.900
+And now I'm going to pass in the function that I want called every time in here.
+
+02:26.920 --> 02:30.830
+Well, I'm going to pass in a lambda expression, stateless.
+
+02:30.850 --> 02:33.770
+It expects an INT and it returns a boolean.
+
+02:33.790 --> 02:35.680
+That's exactly what we set up here.
+
+02:36.430 --> 02:38.200
+So what is this guy going to do?
+
+02:38.380 --> 02:42.150
+It's going to return true when X is greater than 50.
+
+02:42.160 --> 02:47.460
+And this guy here will be true only whenever each one of those eyes is greater than 50.
+
+02:47.470 --> 02:48.520
+So what does this do?
+
+02:48.790 --> 02:53.380
+This only prints out values that are greater than 50 right there.
+
+02:53.770 --> 02:55.930
+60, 70, 89, 80, 100.
+
+02:56.440 --> 02:59.260
+In this example, I'm just using a different lambda.
+
+02:59.260 --> 03:02.870
+I'm only going to display values that are less than or equal to 30.
+
+03:02.870 --> 03:04.540
+And you can see them display right here.
+
+03:04.930 --> 03:09.820
+And in this case, I'm only displaying values that are greater than or equal to 30 and less than or
+
+03:09.820 --> 03:10.540
+equal to 60.
+
+03:10.570 --> 03:13.270
+So we're displaying 30, 40, 50, 60.
+
+03:13.510 --> 03:14.580
+This is pretty cool.
+
+03:14.590 --> 03:18.550
+I think you can really wrap your head around this and see how powerful these lambdas are.
+
+03:18.790 --> 03:27.310
+Also, it's very important to understand is the programmer that wrote this function doesn't really care
+
+03:27.310 --> 03:33.290
+what this function does right here, for example, only greater than 50, less than or equal to 30.
+
+03:33.310 --> 03:40.060
+It's up to perhaps another programmer that's using this filter vector function to decide what's the
+
+03:40.060 --> 03:41.020
+logic here?
+
+03:41.890 --> 03:46.150
+Now, this guy right here is called a predicate Lambda.
+
+03:46.180 --> 03:49.600
+And I mentioned that in the slides in the previous lecture.
+
+03:49.870 --> 03:57.360
+This is a predicate, Lambda, because it expects one or more parameters and returns a boolean.
+
+03:57.370 --> 04:01.570
+That's the definition of a predicate lambda or a predicate function, if you will.
+
+04:01.600 --> 04:07.420
+So again, walk through this example and try them out and change these lambdas to do different things.
+
+04:07.420 --> 04:09.960
+And you can see just how powerful this really is.
+
+04:09.970 --> 04:15.310
+There are so many algorithms in the standard template library that use these predicate lambdas just
+
+04:15.310 --> 04:15.970
+like this.
+
+04:15.970 --> 04:20.350
+So from a programmers perspective, we're working in here, right?
+
+04:20.350 --> 04:26.800
+But the person or the team that wrote those algorithms are expecting this kind of thing and they could
+
+04:26.800 --> 04:29.980
+care less how we want to sort something or how we want to compare something.
+
+04:29.980 --> 04:31.210
+That's for our logic.
+
+04:31.210 --> 04:31.860
+Determine.
+
+04:31.870 --> 04:32.830
+Try one more.
+
+04:32.860 --> 04:42.460
+Oh, and by the way, I should mention this line 95 right here, we use this in C++ 14 or higher in
+
+04:42.460 --> 04:52.300
+C++ 20, we can replace this with just this auto func and let the compiler figure out that it returns
+
+04:52.300 --> 04:54.010
+a boolean and expects an integer parameter.
+
+04:54.010 --> 04:57.430
+So that's pretty cool too, but that's what that would be in C++ 20.
+
+04:58.150 --> 04:59.440
+Scroll this up as well.
+
+05:01.420 --> 05:05.380
+So now we're in test five and it's these two pieces right here.
+
+05:05.410 --> 05:05.710
+All right.
+
+05:05.710 --> 05:07.240
+So what's going on in test five?
+
+05:07.270 --> 05:10.030
+Well, test five is a little bit different as well.
+
+05:10.030 --> 05:15.100
+And you'll see this make more sense when we talk about stateful lambdas in the next couple of sections.
+
+05:15.100 --> 05:16.630
+But in this case, look what I've got.
+
+05:16.630 --> 05:19.390
+I've got a function called make lambda.
+
+05:19.960 --> 05:22.390
+And what does it return auto?
+
+05:22.840 --> 05:24.970
+Let the compiler figure it out.
+
+05:24.970 --> 05:26.350
+It's returning a lambda.
+
+05:26.380 --> 05:28.510
+You can see right here it's return.
+
+05:28.510 --> 05:33.660
+There's my capture list, no parameters and there's the body of the a c statement.
+
+05:33.940 --> 05:34.390
+Wow.
+
+05:34.390 --> 05:37.110
+You know, you wrap your head around this thing and you're going, well, what's going on here?
+
+05:37.120 --> 05:40.450
+Well, I'm calling a function that's returning a lambda.
+
+05:40.990 --> 05:44.770
+It's not executing that lambda, it's just returning the lambda later on.
+
+05:44.770 --> 05:46.570
+I can execute that lambda if I want.
+
+05:46.570 --> 05:48.160
+And that's what I'm doing right here.
+
+05:48.160 --> 05:51.880
+You can see right here I'm displaying test five right there.
+
+05:52.450 --> 05:55.210
+Then I'm calling make lambda right.
+
+05:55.300 --> 06:01.210
+That's my function and I'm assigning whatever it's returning, which is a lambda in this case to this
+
+06:01.210 --> 06:08.320
+lambda right here called L five and now I'm calling it and when I call it it instantiate the lambda
+
+06:08.320 --> 06:13.420
+executes that lambda that's being returned and you can see what displays this lambda was made using
+
+06:13.420 --> 06:14.230
+make lambda.
+
+06:14.230 --> 06:17.110
+We could pass parameters, we could do all kinds of things.
+
+06:17.110 --> 06:21.490
+And again, it makes more sense to see this in the stateful context.
+
+06:21.490 --> 06:24.610
+So I'll leave those examples for the next couple of videos.
+
+06:24.610 --> 06:29.680
+But you can see it's pretty cool, right, that a lambda that's sorry that a function can return a lambda
+
+06:29.680 --> 06:33.310
+and those lambda that we return can be pretty complicated as well.
+
+06:33.340 --> 06:39.640
+Let's move over to Test six and there's just a couple left, couple of examples and this one's pretty
+
+06:39.640 --> 06:41.320
+easy example to understand.
+
+06:41.410 --> 06:44.200
+And we're over here in Test six.
+
+06:44.860 --> 06:45.790
+So what do we do here?
+
+06:45.790 --> 06:48.700
+Well, this is using auto in the Lambda Parameter list.
+
+06:48.700 --> 06:51.100
+I mentioned this in the slides in the previous lecture.
+
+06:51.370 --> 06:53.830
+Notice now I'm saying auto and auto.
+
+06:54.340 --> 06:57.760
+So I'm telling the compiler, hey, compiler, you figure out what's going on.
+
+06:57.910 --> 07:02.170
+This is pretty cool because we're not trying to create some generic template function here.
+
+07:02.170 --> 07:03.400
+We're just doing it this way.
+
+07:03.400 --> 07:06.520
+So again, l six is the variable.
+
+07:06.820 --> 07:08.920
+Let the compiler figure out the type.
+
+07:09.340 --> 07:11.410
+And what are we assigning to this variable?
+
+07:11.560 --> 07:14.890
+Lambda no captur to parameters.
+
+07:14.890 --> 07:15.940
+What are their types?
+
+07:15.940 --> 07:16.450
+I don't know.
+
+07:16.450 --> 07:18.040
+Let the compiler figure it out.
+
+07:18.580 --> 07:22.150
+And within the body of that lambda, all we're doing is we're displaying.
+
+07:22.860 --> 07:24.200
+And we're displaying why?
+
+07:24.210 --> 07:26.040
+What's the type of X and Y?
+
+07:26.070 --> 07:27.090
+Again, I don't know.
+
+07:27.090 --> 07:28.470
+The compiler will figure it out.
+
+07:28.620 --> 07:35.070
+So now that I've got my lambda my lambda expression in the variable L six, I can call it right here.
+
+07:35.070 --> 07:36.630
+I'm calling it with two integers.
+
+07:36.630 --> 07:39.940
+So the compiler sees this and says, oh that's it, that's in it.
+
+07:39.980 --> 07:40.360
+Aha.
+
+07:40.380 --> 07:43.230
+Intent 1020 is being displayed now.
+
+07:43.230 --> 07:46.350
+I'm displaying it, I'm calling it with a double and an integer.
+
+07:46.380 --> 07:49.620
+So it's displaying 100.3 and 200, right?
+
+07:49.620 --> 07:50.760
+The double and the integer.
+
+07:50.910 --> 07:52.380
+Here's two doubles.
+
+07:52.620 --> 07:53.870
+That works too.
+
+07:53.880 --> 07:55.560
+But this is where it's really neat.
+
+07:55.560 --> 08:00.090
+I'm calling L six now and I'm passing in two person objects.
+
+08:00.810 --> 08:03.330
+Larry 18, Curly 22.
+
+08:03.720 --> 08:07.020
+These guys, the compiler is going to say, Oh, those are person objects.
+
+08:07.020 --> 08:10.560
+Remember, I created that person class up at the top of this file.
+
+08:10.800 --> 08:14.580
+So it's going to pass those things into this lambda.
+
+08:14.580 --> 08:22.650
+Execute the lambda and it's going to display person Larry 18 person curly 22 Same thing we passed in
+
+08:22.650 --> 08:23.070
+here.
+
+08:24.060 --> 08:25.320
+Now, that's pretty cool.
+
+08:25.890 --> 08:28.500
+Now, a couple of things that are happening here.
+
+08:29.430 --> 08:35.850
+It's very important that whatever you pass in to this must overload this operator.
+
+08:35.850 --> 08:35.990
+Right.
+
+08:36.000 --> 08:39.030
+I mean, we're displaying these guys using this operator right here.
+
+08:39.570 --> 08:45.390
+I've I have overloaded the insertion operator in that person class that I've already created up there.
+
+08:45.390 --> 08:47.000
+So this is really important.
+
+08:47.010 --> 08:51.390
+Otherwise you're going to get a compiler error that may not be too easy to read and it's going to say
+
+08:51.390 --> 08:55.740
+something about operator less than less than not defined somehow.
+
+08:55.860 --> 09:01.670
+It's not a problem here because the floats in the ints and the doubles all support the overloaded insertion
+
+09:01.680 --> 09:02.280
+operator.
+
+09:02.610 --> 09:03.780
+Last example.
+
+09:04.110 --> 09:06.300
+This example right here is Test seven.
+
+09:06.300 --> 09:09.510
+Also really straightforward example what we're doing here.
+
+09:09.510 --> 09:12.390
+And let me scroll this up just a little so we can see it a little bit better.
+
+09:12.390 --> 09:14.460
+I'm right here in Test seven.
+
+09:15.030 --> 09:20.100
+What I've done is I've created a vector of person objects called stooges.
+
+09:20.100 --> 09:21.690
+So there are Larry, Moe and Curly.
+
+09:21.690 --> 09:22.680
+Larry's 18.
+
+09:22.680 --> 09:23.670
+Moe is 30 Curl.
+
+09:23.670 --> 09:24.530
+He's 25.
+
+09:24.540 --> 09:29.580
+Now, what I'm doing is I'm calling some of the standard template library algorithm functions.
+
+09:30.120 --> 09:30.960
+I'm going to use two of them.
+
+09:30.960 --> 09:37.680
+I'm going to use stewed sort and stewed for each they take in lambda expressions, right, or function
+
+09:37.680 --> 09:38.430
+objects.
+
+09:38.430 --> 09:45.660
+In this case I'm using lambdas, so I'm calling Stuart sort and basically it says, well, what do you
+
+09:45.660 --> 09:46.350
+want to sort?
+
+09:46.350 --> 09:47.040
+Where does it start?
+
+09:47.040 --> 09:47.880
+Where does it end?
+
+09:47.880 --> 09:50.580
+So begin stooges and stooges.
+
+09:50.580 --> 09:51.930
+Right, there's my vector.
+
+09:52.320 --> 09:53.760
+I want to start at the beginning.
+
+09:53.760 --> 09:54.390
+Go to the end.
+
+09:54.390 --> 09:58.050
+Remember, this is just an alternate syntax for stooges.
+
+09:59.310 --> 10:01.700
+Begin and end.
+
+10:01.710 --> 10:03.720
+We could do it like begin like this or like this.
+
+10:03.720 --> 10:04.590
+Either way it works.
+
+10:04.830 --> 10:06.960
+And here is the lambda expression.
+
+10:08.130 --> 10:10.950
+Remember stood sorte is expecting a function object.
+
+10:10.950 --> 10:12.210
+So that's why I'm going to send it.
+
+10:13.340 --> 10:18.170
+No capture list two parameters by Konst reference.
+
+10:19.100 --> 10:21.270
+The first one is one person.
+
+10:21.290 --> 10:22.710
+The other is the other person.
+
+10:22.730 --> 10:23.510
+It's sorting.
+
+10:23.510 --> 10:26.000
+So when you're sorting, you're comparing two things, right?
+
+10:26.000 --> 10:27.180
+And moving them around.
+
+10:27.200 --> 10:31.370
+Well, how does this guy know where to move things around?
+
+10:31.500 --> 10:33.330
+Well, you need to tell it which one is bigger.
+
+10:33.350 --> 10:37.150
+So in this case, I'm returning p one.
+
+10:37.160 --> 10:38.120
+Get the name.
+
+10:38.120 --> 10:41.540
+And if it's less than P two's name, I'm going to return.
+
+10:41.540 --> 10:43.820
+True or false, depending on this condition.
+
+10:43.910 --> 10:49.430
+Based on that condition, these two sort algorithm knows which one is greater, which one is less than,
+
+10:49.430 --> 10:50.720
+and it can do what it's doing.
+
+10:51.080 --> 10:52.400
+Now, this is pretty powerful.
+
+10:52.400 --> 10:55.370
+This is, again, a predicate lambda right here.
+
+10:55.370 --> 10:58.100
+You can see that this is a predicate lambda right here.
+
+10:58.250 --> 11:02.450
+You're passing in some parameters and it's returning a boolean.
+
+11:02.900 --> 11:07.100
+So that's exactly what's happening here and that's exactly what stood sort expects.
+
+11:07.100 --> 11:08.510
+So what's going on?
+
+11:08.510 --> 11:13.040
+I'm sorting the Stooges vector by name.
+
+11:13.040 --> 11:18.430
+Now, when I finished this, this stood vector right here will be sorted.
+
+11:18.440 --> 11:20.990
+Now I just want to display each element in there.
+
+11:20.990 --> 11:26.060
+And to do that, I'm going to use another standard template library algorithm called for each.
+
+11:26.870 --> 11:27.110
+Okay.
+
+11:27.110 --> 11:27.980
+Now, what does this do?
+
+11:28.010 --> 11:29.630
+Well, where do you want to start?
+
+11:29.660 --> 11:31.010
+Where do you want to end?
+
+11:31.010 --> 11:32.420
+And what do you want to do?
+
+11:32.450 --> 11:33.010
+Right.
+
+11:33.020 --> 11:35.810
+So it's going to loop through that vector.
+
+11:36.260 --> 11:38.660
+That's what it's doing for each element in the vector.
+
+11:38.750 --> 11:40.310
+It's going to loop through that vector.
+
+11:40.310 --> 11:45.050
+And for each one of those elements, it's going to call this lambda function right here.
+
+11:46.130 --> 11:47.930
+It's going to take that element in here.
+
+11:48.110 --> 11:51.670
+Larry, Moe, Curly, pass it into here and I'm just going to display it.
+
+11:51.680 --> 11:54.440
+So when I call this, look what happened right here.
+
+11:57.140 --> 11:58.470
+Curly Larry Moe.
+
+11:58.490 --> 12:00.640
+Notice it's sorted alphabetically.
+
+12:00.680 --> 12:02.100
+Clem Right.
+
+12:02.120 --> 12:02.910
+Curly Larry.
+
+12:02.930 --> 12:05.110
+Moe It used to be Larry.
+
+12:05.120 --> 12:06.110
+Moe Curly.
+
+12:06.380 --> 12:14.090
+So this function right here that we called absolutely sorted that vector based on the condition in our
+
+12:14.090 --> 12:14.970
+predicate lambda.
+
+12:14.990 --> 12:15.380
+All right.
+
+12:15.380 --> 12:18.500
+So one more example and we're right here now.
+
+12:18.560 --> 12:20.600
+I'm calling stooge sort again.
+
+12:20.840 --> 12:23.630
+This time I'm sorting based on age.
+
+12:23.630 --> 12:25.280
+I want to sort based on age.
+
+12:25.280 --> 12:26.360
+Same idea, right?
+
+12:26.360 --> 12:33.710
+Give me the two parameters and return p ones age less than p two's age now stood sought knows which
+
+12:33.710 --> 12:34.880
+one to put ahead of the other.
+
+12:35.240 --> 12:39.230
+And once we do that, we're going to do this for each again in this code.
+
+12:39.230 --> 12:41.140
+And this code are exactly the same.
+
+12:41.150 --> 12:42.920
+But look what happens over here.
+
+12:43.430 --> 12:48.770
+Now we're going to display Larry, Curly and Moe, but now they're sorted by age.
+
+12:49.010 --> 12:49.640
+There you go.
+
+12:49.820 --> 12:54.770
+This gives you a, I think, a pretty good introduction to different kinds of stateless lambdas using
+
+12:54.770 --> 12:57.680
+references by value objects and so forth.
+
+12:57.830 --> 13:03.020
+In the next video, we'll switch over and we'll start talking about stateful lambda expressions.
+
+13:03.020 --> 13:04.400
+So I'll see you in that one.

@@ -1,0 +1,928 @@
+WEBVTT
+
+00:00:05.360 --> 00:00:10.140
+In this video, we'll learn the basic syntax for declaring a class in c++.
+
+00:00:10.840 --> 00:00:12.740
+The syntax is very simple.
+
+00:00:12.740 --> 00:00:17.740
+First we use the reserve keyword class followed by the name of the class we're declaring.
+
+00:00:18.240 --> 00:00:23.140
+Notice that it's best practice to capitalize class names for our user-defined classes.
+
+00:00:23.640 --> 00:00:26.740
+Then we have a block which are open and close curly braces,
+
+00:00:26.740 --> 00:00:29.740
+and the class declaration is terminated with a semicolon.
+
+00:00:30.340 --> 00:00:32.340
+In the body of the class declaration,
+
+00:00:32.340 --> 00:00:36.540
+we can supply the declarations that define the structure and behavior of our class.
+
+00:00:36.540 --> 00:00:37.740
+Let's see an example.
+
+00:00:39.730 --> 00:00:43.720
+Here we're declaring a class name to player as we might have in a game application.
+
+00:00:44.120 --> 00:00:48.220
+Notice the class keyword followed by the name of the class, in this case, player.
+
+00:00:48.720 --> 00:00:50.220
+Then in the body of the class,
+
+00:00:50.220 --> 00:00:54.220
+we can define the classes attributes or instance variables and methods.
+
+00:00:54.720 --> 00:00:57.620
+In this case, the class has a string named name
+
+00:00:57.620 --> 00:01:01.220
+and two integers representing the player's health and xp.
+
+00:01:02.340 --> 00:01:04.900
+Since c++ supports encapsulation,
+
+00:01:04.900 --> 00:01:08.560
+that means we can also provide methods or functions in the class body
+
+00:01:08.560 --> 00:01:10.810
+that are specific to the player class.
+
+00:01:11.360 --> 00:01:16.120
+In this case, we have two methods talk which expects a standard string
+
+00:01:16.120 --> 00:01:18.320
+and is dead which returns a Boolean.
+
+00:01:19.920 --> 00:01:21.920
+Now that we've created the class,
+
+00:01:21.920 --> 00:01:24.920
+we can create objects that are instances of that class.
+
+00:01:25.580 --> 00:01:29.580
+So in this example, I'm creating Frank and hero which are player objects.
+
+00:01:29.580 --> 00:01:33.940
+Notice the syntax, it should feel familiar since it's the same way we create primitive types.
+
+00:01:34.820 --> 00:01:37.420
+We can also create pointers to objects.
+
+00:01:37.420 --> 00:01:41.780
+In the last example, I'm declaring enemy as a pointer to a player object,
+
+00:01:41.780 --> 00:01:45.280
+and I'm creating that object dynamically on the heap using new.
+
+00:01:45.780 --> 00:01:50.280
+When I'm finished using enemy object, its storage has to be freed up using delete.
+
+00:01:51.530 --> 00:01:54.090
+Here's another example where we declare an account class.
+
+00:01:54.490 --> 00:01:57.690
+Notice that accounts have a name, which is a standard string
+
+00:01:57.690 --> 00:01:59.290
+and a balance, which is a double.
+
+00:01:59.840 --> 00:02:04.200
+And in this example, we have a withdraw method that expects the amount to withdraw
+
+00:02:04.200 --> 00:02:06.700
+and returns a Boolean indicating success.
+
+00:02:07.470 --> 00:02:10.770
+We also have a deposit method that expects the amount to deposit
+
+00:02:10.770 --> 00:02:13.370
+and also returns a Boolean indicating success.
+
+00:02:14.270 --> 00:02:17.630
+We'll talk more about how we define class methods in a few videos,
+
+00:02:17.630 --> 00:02:21.230
+but notice how they're basically function prototypes in these examples.
+
+00:02:22.530 --> 00:02:26.130
+Now that we've declared the account class, we can create objects of that type.
+
+00:02:26.130 --> 00:02:30.030
+So Frank's account and Jim's account are objects or instances
+
+00:02:30.030 --> 00:02:31.390
+of the account class.
+
+00:02:31.890 --> 00:02:35.890
+In the last declaration, Mary's account is a pointer to an account object
+
+00:02:35.890 --> 00:02:40.880
+that again has been allocated dynamically on the heap and then freed up when we're done with it.
+
+00:02:42.080 --> 00:02:46.070
+Once we have objects, we can use them like any other variable in c++.
+
+00:02:46.070 --> 00:02:49.170
+For example, we can create an array of account objects
+
+00:02:49.170 --> 00:02:51.830
+and initialize the array to Frank's account and Jim's account.
+
+00:02:52.490 --> 00:02:56.690
+We can create a standard vector of account objects and initialize it to Frank's account
+
+00:02:56.690 --> 00:02:58.490
+and then push back Jim's account.
+
+00:02:59.150 --> 00:03:01.950
+You can see how easy and how readable our code looks.
+
+00:03:02.610 --> 00:03:06.610
+We're using our own user-defined types, and we're using them intuitively
+
+00:03:06.610 --> 00:03:08.810
+like we've used other c++ types.
+
+00:03:09.470 --> 00:03:13.270
+In the next video, we'll see the syntax for accessing the attributes
+
+00:03:13.270 --> 00:03:14.770
+and methods and objects.
+
+00:03:14.770 --> 00:03:17.770
+But first, let's head over to the IDE and create these classes.
+
+00:03:19.370 --> 00:03:23.170
+Okay. So I'm in the IDE. I'm in the section 13 workspace,
+
+00:03:23.170 --> 00:03:25.530
+the DeclareClassAndObjects project.
+
+00:03:26.430 --> 00:03:29.230
+This is just an empty little project right now with an empty main.
+
+00:03:29.230 --> 00:03:31.730
+I've included iostream, string and vector.
+
+00:03:32.130 --> 00:03:34.130
+And I'm using namespace standard.
+
+00:03:34.130 --> 00:03:37.430
+Remember, you really don't want to use namespace standard all the time.
+
+00:03:37.430 --> 00:03:40.730
+You really want to be explicit and type out
+
+00:03:40.730 --> 00:03:43.330
+scope resolution operator and whatever you need,
+
+00:03:43.330 --> 00:03:46.330
+but I'm going to do it because it'll save me a lot of typing
+
+00:03:46.330 --> 00:03:49.890
+time, otherwise these videos could be a pretty long with me making typos.
+
+00:03:49.890 --> 00:03:53.890
+So what do I want to do here? Let's create the player class, the account class,
+
+00:03:53.890 --> 00:03:55.490
+and we'll create some objects.
+
+00:03:56.090 --> 00:03:59.090
+The first question is where do we create the player class.
+
+00:03:59.090 --> 00:04:00.690
+Let's do the player class first.
+
+00:04:00.690 --> 00:04:04.050
+I could do it right inside main. I could say class player
+
+00:04:04.050 --> 00:04:06.050
+and define that class right in here.
+
+00:04:06.650 --> 00:04:10.650
+That's really not what i want to do. Because if I do that, then I'm defining that
+
+00:04:10.650 --> 00:04:13.650
+class inside the scope of main,
+
+00:04:14.250 --> 00:04:17.950
+which means that only main will have access to that class,
+
+00:04:17.950 --> 00:04:19.250
+and that's not really what I want.
+
+00:04:19.250 --> 00:04:23.050
+I want to create my player class so that the entire application has access to it.
+
+00:04:23.050 --> 00:04:24.600
+So I'm going to do it right up here.
+
+00:04:24.600 --> 00:04:28.200
+And then later on in this section, we'll learn how to do it an even better way.
+
+00:04:28.200 --> 00:04:32.400
+We'll use separate files to do it. But for now, let's learn about classes and objects.
+
+00:04:32.400 --> 00:04:35.700
+So what I want to do is I want to say class player.
+
+00:04:36.060 --> 00:04:39.060
+Remember, the class name should be an upper case.
+
+00:04:39.060 --> 00:04:44.050
+And you need a semicolon right here at the end of the class declaration.
+
+00:04:44.610 --> 00:04:47.210
+So what do we put inside this class declaration.
+
+00:04:47.210 --> 00:04:51.710
+Well, we saw in the slides that you can put attributes in here, that's typically data.
+
+00:04:52.510 --> 00:04:56.110
+And we can put methods in here, which are operations or functions.
+
+00:04:56.990 --> 00:05:00.090
+That's what encapsulation is all about, putting all these things together.
+
+00:05:00.590 --> 00:05:02.890
+Now what do you put in here?
+
+00:05:02.890 --> 00:05:07.250
+Well, it depends. It depends on what a player is in the context of your application.
+
+00:05:07.250 --> 00:05:10.910
+It could have all kinds of stuff in here or could have a minimal amount of stuff in here.
+
+00:05:10.910 --> 00:05:14.010
+That's the whole point. You really don't want to model a player
+
+00:05:14.010 --> 00:05:16.670
+that could be used in any application in the world.
+
+00:05:17.270 --> 00:05:20.470
+You just want to model a player that's going to be used in your application
+
+00:05:20.470 --> 00:05:22.170
+that you can extend easily.
+
+00:05:22.170 --> 00:05:25.670
+Okay. So don't try to model like the the best player object
+
+00:05:25.670 --> 00:05:29.070
+or class you could ever have, just solve your problem.
+
+00:05:29.070 --> 00:05:33.670
+So in this case, let's assume that a player has or a name which is a string.
+
+00:05:34.330 --> 00:05:38.320
+And the player has an integer
+
+00:05:38.320 --> 00:05:42.520
+which is their health and let's say something like between 0 and 100.
+
+00:05:42.520 --> 00:05:46.180
+0 health, you're dead, and xp which is experience
+
+00:05:46.180 --> 00:05:49.980
+and that could be 3 up to whatever, it doesn't really matter.
+
+00:05:49.980 --> 00:05:51.980
+It's all based on our application.
+
+00:05:52.230 --> 00:05:56.010
+So now what we're saying here is that the class player is going to be a blueprint
+
+00:05:56.010 --> 00:05:58.010
+to create player objects from
+
+00:05:58.010 --> 00:06:01.910
+and every player object is going to have a string that represents their name,
+
+00:06:01.910 --> 00:06:05.110
+two integers; one representing their health, one representing their xp.
+
+00:06:05.710 --> 00:06:09.410
+Okay. Now what methods can we have? We can have a ton of methods.
+
+00:06:09.910 --> 00:06:13.910
+Let's just create two of them really simply so you understand how this works.
+
+00:06:14.410 --> 00:06:19.010
+What you do here is you basically do everything we learned when we talked about functions.
+
+00:06:19.010 --> 00:06:21.710
+So I want to have a method called talk,
+
+00:06:22.710 --> 00:06:26.710
+and it expects a string. So whatever string you pass into the player,
+
+00:06:26.710 --> 00:06:28.910
+the player will talk it right back out.
+
+00:06:29.570 --> 00:06:33.570
+And let's say we want to have is dead.
+
+00:06:34.370 --> 00:06:36.770
+This is a method that returns true or false
+
+00:06:37.130 --> 00:06:39.130
+based on whether the player is dead.
+
+00:06:39.130 --> 00:06:43.230
+And the player might be dead if their health is 0 or whatever other criteria we have for that.
+
+00:06:44.330 --> 00:06:49.320
+Okay. Again, notice that what these look like are basically function prototypes at this point.
+
+00:06:49.320 --> 00:06:52.700
+We could implement them right here and we will in a couple of more videos.
+
+00:06:52.700 --> 00:06:56.900
+But for now let's just think these are the attributes, these are the methods.
+
+00:06:57.100 --> 00:06:57.760
+Okay.
+
+00:06:58.460 --> 00:07:01.060
+Also there's the concept of public and private.
+
+00:07:01.060 --> 00:07:04.560
+What we have access to we'll get to all that really, really soon.
+
+00:07:04.920 --> 00:07:08.470
+But that's it. That's a minimal player class given this,
+
+00:07:08.470 --> 00:07:10.370
+I can create player objects.
+
+00:07:10.730 --> 00:07:13.830
+Now let's create two player objects right here in main.
+
+00:07:13.830 --> 00:07:16.130
+I'll say player Frank
+
+00:07:16.830 --> 00:07:18.430
+and player Hero.
+
+00:07:20.790 --> 00:07:21.490
+That's it.
+
+00:07:22.850 --> 00:07:27.510
+When these two lines execute, the system will create two player objects.
+
+00:07:27.510 --> 00:07:29.770
+One is called Frank, one is called Hero.
+
+00:07:29.770 --> 00:07:32.670
+Each one of them has a name, health and xp.
+
+00:07:32.920 --> 00:07:35.910
+Each one of them can call these methods and talk and
+
+00:07:35.910 --> 00:07:37.270
+ask if it's dead or not.
+
+00:07:37.420 --> 00:07:39.620
+Okay. So hopefully that makes sense.
+
+00:07:40.120 --> 00:07:44.120
+Let's run this right now. We're going to run this in the debugger so you can see them.
+
+00:07:44.120 --> 00:07:48.780
+What I'm going to do is I'm going to first I'm going to save this then I'm going to click right here in the gutter,
+
+00:07:49.380 --> 00:07:51.680
+and you get that little stop sign for the debugger.
+
+00:07:51.680 --> 00:07:56.670
+And then what I'm going to do is just go to debugger start debugger or you can just press F5.
+
+00:07:57.470 --> 00:08:01.130
+And I've got my debugger set up so that my local variables are over here
+
+00:08:01.130 --> 00:08:04.790
+any watches that I want to look for here and then here.
+
+00:08:04.790 --> 00:08:07.790
+The call stack is real simple, we're just in main right now.
+
+00:08:08.490 --> 00:08:10.490
+You can see I've got my two local variables.
+
+00:08:10.490 --> 00:08:14.090
+You can see them displayed right up here. I've got Frank and I've got Hero.
+
+00:08:14.090 --> 00:08:17.390
+Right now, they don't really exist because I haven't created them yet,
+
+00:08:17.390 --> 00:08:20.090
+but they're in the local variables pane here.
+
+00:08:20.090 --> 00:08:23.090
+So what I want to do is let's create Frank in here.
+
+00:08:23.090 --> 00:08:25.390
+I'll just hit the next arrow down here,
+
+00:08:25.390 --> 00:08:29.790
+and Frank is now active and then Hero is now active.
+
+00:08:29.790 --> 00:08:32.590
+And if you expand these guys a little bit,
+
+00:08:33.290 --> 00:08:35.390
+you can see something of what's going on here
+
+00:08:35.390 --> 00:08:38.990
+you can see Frank has a name, right, of course, here it is. It's one of the attributes.
+
+00:08:39.650 --> 00:08:43.250
+Frank has health, and Frank has xp notice it's garbage data right.
+
+00:08:43.950 --> 00:08:47.850
+The only reason that the string is not garbage is because
+
+00:08:47.850 --> 00:08:51.050
+our c++ string class, our standard string class
+
+00:08:51.050 --> 00:08:55.460
+has a default initializer which initializes it to empty, which is pretty cool.
+
+00:08:55.960 --> 00:08:59.460
+But the rest of this stuff is junk, just garbage data.
+
+00:08:59.460 --> 00:09:02.120
+The same thing with health and the same thing with xp.
+
+00:09:02.120 --> 00:09:05.620
+This is the same sort of behavior we saw when we created regular variables.
+
+00:09:05.830 --> 00:09:10.030
+Okay so we'll talk about initializing these objects
+
+00:09:10.030 --> 00:09:13.030
+in a couple of videos where we use constructors to do it
+
+00:09:13.030 --> 00:09:15.030
+and that makes things much much easier.
+
+00:09:15.530 --> 00:09:17.530
+Okay. So I'm going to stop this debugger.
+
+00:09:17.830 --> 00:09:21.130
+And we can also create objects on the heap,
+
+00:09:21.930 --> 00:09:22.810
+on the heap,
+
+00:09:23.410 --> 00:09:27.310
+just like we could regular primitive types. So in this case, I'm going to say
+
+00:09:28.410 --> 00:09:29.210
+player
+
+00:09:32.210 --> 00:09:35.710
+enemy is a pointer to a player. Remember, you read these from right to left.
+
+00:09:36.510 --> 00:09:40.710
+And you know what let's set it to null pointer. I'm going to do this in two steps just, so you can see
+
+00:09:40.710 --> 00:09:43.710
+this happening in the debugger. Then I'm going to say enemy
+
+00:09:44.710 --> 00:09:47.210
+equals new player.
+
+00:09:48.110 --> 00:09:50.810
+That's going to create the enemy on the heap,
+
+00:09:50.810 --> 00:09:52.810
+that enemy object, which is a player.
+
+00:09:53.170 --> 00:09:55.770
+And then I'm just going to say delete enemy when I'm done.
+
+00:09:58.170 --> 00:10:01.370
+Okay. So let me move that right to about there.
+
+00:10:01.370 --> 00:10:03.370
+And let's run this again in the debugger.
+
+00:10:05.560 --> 00:10:08.660
+Here you can see that right now there's garbage data
+
+00:10:08.660 --> 00:10:11.860
+in the value for enemy, right. So it exists.
+
+00:10:11.860 --> 00:10:14.760
+It's a pointer. It's got a value, and it's junk right now.
+
+00:10:14.760 --> 00:10:19.120
+So when I execute the statement, I just nulled it out.Now you can see it's 0.
+
+00:10:19.620 --> 00:10:21.420
+That's the safe way to do things.
+
+00:10:22.080 --> 00:10:25.880
+Now I want to create this new player object on the heap.
+
+00:10:26.580 --> 00:10:30.940
+So right now when I execute that statement, you expect that address to change,
+
+00:10:30.940 --> 00:10:33.540
+right. Because obviously I'm creating this on the heap,
+
+00:10:33.540 --> 00:10:37.140
+and I'm storing the address of that object in enemy, which is a pointer.
+
+00:10:37.140 --> 00:10:40.540
+So let's step through it. Here we go.
+
+00:10:40.540 --> 00:10:43.640
+At this point, that enemy object is created.
+
+00:10:43.890 --> 00:10:47.690
+It's on the heap. It's a player, right, that's its type.
+
+00:10:47.690 --> 00:10:52.680
+And if I expand this, you can see that the name is empty but health and xp contain garbage,
+
+00:10:52.680 --> 00:10:56.280
+just what we would expect. And then when we're done with it, we can delete it.
+
+00:10:57.640 --> 00:10:59.640
+Okay. Really, really straightforward.
+
+00:10:59.640 --> 00:11:02.840
+Let me add a few lines of code right in here,
+
+00:11:02.840 --> 00:11:05.540
+and we'll get rid of that break point and we'll move it in a second.
+
+00:11:06.040 --> 00:11:08.840
+Once we have these objects, we can treat them like any variables,
+
+00:11:08.840 --> 00:11:11.640
+just like we've worked with integers and doubles and everything else.
+
+00:11:11.640 --> 00:11:15.630
+So in this case, suppose I want to create an array right here
+
+00:11:15.630 --> 00:11:16.930
+called players,
+
+00:11:19.830 --> 00:11:24.130
+and it's an array. And I want to set it to Frank and hero,
+
+00:11:25.490 --> 00:11:28.260
+right just like we've done with integers. It's the same idea.
+
+00:11:28.260 --> 00:11:32.460
+So let's read this together here. It says players is an array
+
+00:11:32.760 --> 00:11:34.360
+of player objects.
+
+00:11:34.560 --> 00:11:38.860
+Well, I've got two of them right here. So I can initialize that array to Frank and Hero.
+
+00:11:39.220 --> 00:11:40.920
+I'm going to save this,
+
+00:11:40.920 --> 00:11:44.220
+and let's put a break point right there so we can look at it and we'll run it.
+
+00:11:46.820 --> 00:11:51.320
+Okay. So you can see players is right here and I'm going to step through it.
+
+00:11:52.310 --> 00:11:55.710
+So now player has been initialized here to those two objects:
+
+00:11:55.710 --> 00:11:58.370
+the first object and the second object.
+
+00:11:58.370 --> 00:12:01.370
+The first object is Frank, the second object is hero.
+
+00:12:01.370 --> 00:12:05.470
+And you can tell we don't have any strings for names now but you can tell from the garbage
+
+00:12:05.470 --> 00:12:08.140
+values that they really are indeed those objects.
+
+00:12:08.740 --> 00:12:10.740
+So it's really as simple as that.
+
+00:12:10.740 --> 00:12:13.400
+This is very powerful stuff because we can create our own
+
+00:12:13.400 --> 00:12:16.280
+user-defined types, which is what player is.
+
+00:12:16.280 --> 00:12:18.860
+And then use it just like we can use any other variable.
+
+00:12:19.360 --> 00:12:23.160
+Okay. So last thing is let's try
+
+00:12:23.160 --> 00:12:25.820
+to create rather than an array here.
+
+00:12:26.120 --> 00:12:30.120
+Let's do a vector. So let's create a vector. A vector of what.
+
+00:12:30.370 --> 00:12:33.030
+Well, we've done vectors of integers and vectors of strings.
+
+00:12:33.030 --> 00:12:35.030
+Well, why not a vector of player.
+
+00:12:36.530 --> 00:12:38.530
+Okay. And we'll just call it player vec.
+
+00:12:39.530 --> 00:12:43.890
+So again, what is this? This is a collection of player objects.
+
+00:12:44.690 --> 00:12:48.790
+Okay. So let's initialize this to Frank. That's a player object.
+
+00:12:49.450 --> 00:12:52.750
+And then what we could do is we can ask the player vec
+
+00:12:52.750 --> 00:12:56.850
+to push back, remember, push back as a method in the vector class.
+
+00:12:57.250 --> 00:12:59.250
+And we can push back hero,
+
+00:12:59.950 --> 00:13:03.050
+right. So let's execute both these lines, and again I'll put a
+
+00:13:03.550 --> 00:13:05.550
+break point right there,
+
+00:13:06.150 --> 00:13:08.150
+and we'll go back to the debugger and run this.
+
+00:13:09.950 --> 00:13:14.940
+So right now we have player vec, so I'm going to step into it here so that I can create that vector.
+
+00:13:15.600 --> 00:13:19.800
+Okay. The vector is now created. It's called player vec, it's right here.
+
+00:13:19.800 --> 00:13:23.500
+If I expand it, you can see that right now there's one item in there,
+
+00:13:23.500 --> 00:13:27.400
+and that one item is Frank. If you look at frank up here,
+
+00:13:27.400 --> 00:13:30.280
+you could see it's garbage data right here.
+
+00:13:30.280 --> 00:13:34.270
+Well, it's going to be the same garbage data right here because we just copied that object.
+
+00:13:35.070 --> 00:13:38.070
+Okay. Now when I execute the next line,
+
+00:13:38.070 --> 00:13:40.270
+which I'm going to just by clicking next here
+
+00:13:40.520 --> 00:13:44.120
+that should add hero to that vector. So let's do that.
+
+00:13:45.420 --> 00:13:49.020
+And now you can see -- you notice here that it didn't really show up here,
+
+00:13:49.220 --> 00:13:50.220
+this player vec.
+
+00:13:52.120 --> 00:13:55.320
+What you can do when that happens is you need to refresh right here.
+
+00:13:55.620 --> 00:13:59.420
+So when i refresh see right now it says there's only one item in there, we know there are two.
+
+00:13:59.420 --> 00:14:02.420
+So if you refresh and then expand player vec,
+
+00:14:02.420 --> 00:14:06.820
+there you go. Now you see both items. In this case, that's Frank. And in this case,
+
+00:14:07.120 --> 00:14:07.920
+that's hero.
+
+00:14:09.800 --> 00:14:14.300
+Okay. So all this works exactly like it did with integers and doubles and so forth.
+
+00:14:15.000 --> 00:14:18.200
+All right. So let's create an account class now real
+
+00:14:18.200 --> 00:14:22.800
+quick, and we'll do it right below the player class. We'll create a class account.
+
+00:14:23.300 --> 00:14:26.970
+We'll create the body, and we'll put a semicolon on the end.
+
+00:14:26.970 --> 00:14:30.870
+Don't forget that semicolon. If you forget that semicolon, you're going to get compiler errors.
+
+00:14:30.870 --> 00:14:32.670
+And they're going to be strange compiler errors
+
+00:14:32.670 --> 00:14:35.670
+because the compiler is going to be lost trying to figure out where you are.
+
+00:14:35.670 --> 00:14:37.970
+Okay. So here we can have attributes.
+
+00:14:40.470 --> 00:14:44.720
+And what we'll say here is again we've got a string name, a name of an account
+
+00:14:44.720 --> 00:14:47.220
+and we've got a double, which is called balance.
+
+00:14:48.520 --> 00:14:52.020
+And then here we can have methods, again, as many methods as we want.
+
+00:14:52.020 --> 00:14:54.020
+Now you'll notice that over here,
+
+00:14:54.320 --> 00:14:58.120
+I just prototyped those two methods. I just declared them, I never defined them.
+
+00:14:58.120 --> 00:15:01.820
+So how in the world did this work. Well, this worked because I never called them.
+
+00:15:01.820 --> 00:15:03.720
+If I had called those methods,
+
+00:15:03.720 --> 00:15:07.870
+I'd have a linker error because the linker is going to say I don't know where those things are.
+
+00:15:07.870 --> 00:15:10.230
+You told me they were there, but I don't know where they are. Okay.
+
+00:15:10.230 --> 00:15:12.890
+We'll implement all this stuff in the next few videos.
+
+00:15:12.890 --> 00:15:15.890
+So let's create a couple of methods. Bool
+
+00:15:16.550 --> 00:15:20.650
+deposit and a double
+
+00:15:22.150 --> 00:15:24.650
+and bool withdraw double.
+
+00:15:27.150 --> 00:15:29.850
+Those are my two method declarations.
+
+00:15:29.850 --> 00:15:31.850
+I want to deposit some amount, and I'm going to return true false whether it was successful or not.
+
+00:15:31.850 --> 00:15:34.550
+and I'm going to return true false whether it was successful or not.
+
+00:15:34.550 --> 00:15:37.450
+I want to withdraw some amount again it's a double,
+
+00:15:37.810 --> 00:15:41.470
+and I want to return true or false, depending on whether it was successful.
+
+00:15:41.470 --> 00:15:45.070
+Once that I've got -- once I've got that class declared,
+
+00:15:45.070 --> 00:15:48.430
+I can now create account objects.So I could say Frank account,
+
+00:15:50.630 --> 00:15:53.620
+I could say Jim account and so forth.
+
+00:15:54.220 --> 00:15:56.420
+Okay. And then I'll put a break right here.
+
+00:15:57.920 --> 00:16:00.520
+And let's check that out in the debugger.
+
+00:16:01.750 --> 00:16:04.550
+You can see right here is Frank account.So I'm going
+
+00:16:04.550 --> 00:16:06.350
+to go next and next again,
+
+00:16:06.350 --> 00:16:09.350
+that's created those two objects. So here Frank account
+
+00:16:09.600 --> 00:16:13.500
+has a name. It's empty, and it's got a garbage number for balance.
+
+00:16:14.000 --> 00:16:17.360
+And the same thing for Jim account. It's got a name, and it's got a balance.
+
+00:16:17.860 --> 00:16:21.960
+Okay. Now something that's useful in c++11 and going
+
+00:16:21.960 --> 00:16:25.620
+forward is that you can actually initialize these guys right here.
+
+00:16:25.620 --> 00:16:30.280
+So let's just say that I wanted to initialize that to Frank -- to account, sorry.
+
+00:16:32.380 --> 00:16:35.180
+And I wanted to initialize balance to 0.
+
+00:16:36.480 --> 00:16:37.680
+I can do that,
+
+00:16:38.340 --> 00:16:42.540
+and I can also do this up here. So let's just say I wanted to initialize this to player.
+
+00:16:44.420 --> 00:16:48.420
+If you think about this, it's really odd that they're letting you do this at all because we're
+
+00:16:48.420 --> 00:16:51.220
+creating these initialization variables here,
+
+00:16:51.580 --> 00:16:55.380
+but we don't even have objects yet right. I mean this is just a class declaration.
+
+00:16:55.380 --> 00:16:58.980
+We don't have any objects, but they can come in handy.
+
+00:16:58.980 --> 00:17:01.860
+And I'll show you how to initialize these things using
+
+00:17:01.860 --> 00:17:05.960
+constructors and initializer lists in a little while. But let's say that
+
+00:17:06.260 --> 00:17:08.760
+that xp is three and the health is a 100.
+
+00:17:11.360 --> 00:17:13.720
+Okay. So let's run this again this time.
+
+00:17:13.720 --> 00:17:16.400
+And I'll stop the debugger and start it again.
+
+00:17:18.900 --> 00:17:20.900
+Oops, forgot my semicolon
+
+00:17:22.450 --> 00:17:24.450
+and probably forgot some down here as well.
+
+00:17:26.450 --> 00:17:27.950
+So let's run that.
+
+00:17:29.550 --> 00:17:31.150
+Okay. So now you can see --
+
+00:17:31.150 --> 00:17:34.140
+let me scroll up a little bit. I'm right here on line 33.
+
+00:17:34.140 --> 00:17:37.140
+So I'm going to go next, next. I've just created those two accounts.
+
+00:17:37.140 --> 00:17:41.340
+And again, I'm going to go next, next. And I just created those two players, Frank and Hero.
+
+00:17:41.340 --> 00:17:42.700
+But now when I look at Frank,
+
+00:17:43.100 --> 00:17:47.200
+you can see Frank's name is player, it's health is a 100 and it's xp is 3.
+
+00:17:47.200 --> 00:17:50.800
+So basically any object is going to get these values right here.
+
+00:17:51.300 --> 00:17:55.300
+And as I said, we'll learn other ways to initialize, but this is pretty nice
+
+00:17:55.300 --> 00:17:58.900
+right now because we can actually see them in the debugger, and you can see this working.
+
+00:17:59.300 --> 00:18:03.660
+Okay. And the same thing with the account. Frank account here says account with a balance of 0.
+
+00:18:03.660 --> 00:18:06.960
+And Jim's account is a count with a balance of 0 as well.
+
+00:18:07.960 --> 00:18:11.060
+Okay. All right. Perfect. Now in the next video,
+
+00:18:11.060 --> 00:18:13.560
+what we'll learn to do is we'll learn how to actually access those
+
+00:18:13.920 --> 00:18:17.420
+class attributes and class methods using an object.
+
+00:18:17.420 --> 00:18:18.720
+Okay. So I'll see in a little bit.

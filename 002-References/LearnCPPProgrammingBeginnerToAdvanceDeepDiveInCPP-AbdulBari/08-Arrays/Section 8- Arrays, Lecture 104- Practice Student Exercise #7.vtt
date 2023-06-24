@@ -1,0 +1,157 @@
+WEBVTT
+
+0
+00:00.660 --> 00:06.060
+Yah here is an exercise program for multiplication of to matrices.
+
+1
+00:06.060 --> 00:10.770
+So in this program you have to take out two dimensional array for each metrics and you have to take
+
+2
+00:10.780 --> 00:12.840
+two matrices and multiply them.
+
+3
+00:12.840 --> 00:16.820
+So for multiplication of matrices you should know what is the formula for multiplying the matrices
+
+4
+00:16.950 --> 00:18.750
+you should find that formula.
+
+5
+00:19.300 --> 00:25.060
+Here I will run the program and show you what should be the input and output of a program and even a program
+
+6
+00:25.060 --> 00:28.010
+file is given in the form of PDF in resource.
+
+7
+00:28.260 --> 00:31.470
+So if you're facing any difficulty you can check the program.
+
+8
+00:31.980 --> 00:36.840
+I have a program for matrix multiplication I will run the program and show you how the program should
+
+9
+00:36.840 --> 00:42.910
+run. See First it is asking the number of rows and columns for first matrix.
+
+10
+00:42.940 --> 00:48.210
+I'll give the dimensions as 2 and 2 that is 2x2  matrix.
+
+11
+00:48.220 --> 00:50.830
+Then the second Matrix is also two by two.
+
+12
+00:51.130 --> 00:57.550
+So the first matrix elements I'll give it as three and three that is first row and three and three
+
+13
+00:57.550 --> 00:58.760
+that is second row.
+
+14
+00:59.110 --> 01:05.550
+Now for the second matix I will giveit as 1 0 and 0 1 this is a identity matrix if I give identity matrix
+
+15
+01:05.560 --> 01:15.090
+I should get the same result that this 3 3 3, yah i got the answer 3 3 3 3.
+
+16
+01:15.220 --> 01:18.040
+So this is working and if I read rerun and show you
+
+17
+01:21.050 --> 01:24.840
+I'll give the first matrix dimensions as 2 x 3.
+
+18
+01:24.930 --> 01:29.550
+And the second matixs dimension also two x three matrices cannot be multiplied because the
+
+19
+01:29.550 --> 01:34.450
+number of columns of first matrix should be equal the number of rows of second matrix,  if i run this.
+
+20
+01:34.440 --> 01:39.780
+Then I got an error message that columns of the first Matrix is not equal  rows of second matix.
+
+21
+01:39.810 --> 01:44.940
+So that's how the program should verify whether the matrices can be multiplied or not.
+
+22
+01:44.940 --> 01:50.310
+So the matrices can be multiplied if the number of columns of first matrix is equal to the number of rows
+
+23
+01:50.310 --> 01:52.310
+of second matrix.
+
+24
+01:52.380 --> 02:00.510
+And if the valid dimension are given and then it should take the elements and multiply them.
+
+25
+02:00.510 --> 02:03.940
+So if I am giving the elements as 2 and 2.
+
+26
+02:04.050 --> 02:07.110
+So all elements has two then for the second matix.
+
+27
+02:07.140 --> 02:12.770
+I'll give it as a unity identity matrix that is 1 0 and 0 1.
+
+28
+02:13.050 --> 02:15.530
+So I've got the same matrix as first matrix.
+
+29
+02:15.540 --> 02:18.440
+So the answer is all twos.
+
+30
+02:18.570 --> 02:20.690
+So this is how your program should work.
+
+31
+02:20.810 --> 02:21.170
+Right.
+
+32
+02:21.180 --> 02:26.110
+Take the dimensions of two matrices and take the elements and then multiply them.
+
+33
+02:26.190 --> 02:32.530
+So here more focus is on the writing nested for loops and taking two dimensional arrays.
+
+34
+02:32.760 --> 02:37.000
+So try this program already i  have shown you addition and subtraction of matrices.
+
+35
+02:37.020 --> 02:41.960
+So based on that just you have to know which is the formula for multiplying two matrices.
+
+36
+02:41.970 --> 02:43.200
+So find  out the formula.
+
+37
+02:43.200 --> 02:43.410
+write 
+
+38
+02:43.410 --> 02:48.840
+The problem in case of any difficulty you can check the pdf file.

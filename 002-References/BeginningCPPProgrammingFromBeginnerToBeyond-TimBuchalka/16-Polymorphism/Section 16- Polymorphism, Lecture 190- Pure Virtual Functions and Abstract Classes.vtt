@@ -1,0 +1,859 @@
+WEBVTT
+
+00:00:05.600 --> 00:00:09.500
+In this video, we'll learn about a specific type of virtual function
+
+00:00:09.500 --> 00:00:13.900
+called a pure virtual function and how it lets us create abstract classes.
+
+00:00:14.900 --> 00:00:19.300
+Before we learn about pure virtual functions, let's see what an abstract class is.
+
+00:00:20.290 --> 00:00:23.690
+An abstract class is a class that cannot be instantiated.
+
+00:00:24.350 --> 00:00:26.650
+So if we have an abstract class shape,
+
+00:00:26.650 --> 00:00:29.950
+then we cannot directly instantiate shape objects.
+
+00:00:30.610 --> 00:00:33.710
+You might be thinking so what good is a class like that.
+
+00:00:34.210 --> 00:00:38.410
+Well, abstract classes are used as base classes in inheritance hierarchies.
+
+00:00:39.110 --> 00:00:42.110
+And they're often referred to as abstract based classes.
+
+00:00:43.210 --> 00:00:46.010
+So what do we call classes that you can instantiate from.
+
+00:00:46.510 --> 00:00:48.870
+These classes are called concrete classes.
+
+00:00:48.870 --> 00:00:51.570
+And those are the ones that we've been using all along in this course.
+
+00:00:51.570 --> 00:00:53.930
+All of their member functions must be defined.
+
+00:00:54.730 --> 00:00:56.630
+Examples of these classes might be a
+
+00:00:56.630 --> 00:00:59.830
+checking account and a savings account in an account hierarchy,
+
+00:01:00.190 --> 00:01:03.290
+a faculty and staff classes in the employee hierarchy
+
+00:01:03.650 --> 00:01:06.250
+and enemy and level bosses in a player hierarchy.
+
+00:01:08.910 --> 00:01:11.510
+An abstract based class is usually too generic
+
+00:01:11.510 --> 00:01:14.010
+to be useful to directly derive objects from,
+
+00:01:14.370 --> 00:01:17.170
+but it serves as a parent to be derived from,
+
+00:01:17.170 --> 00:01:19.170
+and those could be concrete classes.
+
+00:01:19.530 --> 00:01:22.530
+So in an account hierarchy, we're providing savings accounts,
+
+00:01:22.530 --> 00:01:26.730
+checking accounts and trust accounts. But do we ever provide just an account?
+
+00:01:27.430 --> 00:01:31.430
+Probably not. If a customer walked in and said they'd like to open an account,
+
+00:01:31.430 --> 00:01:33.930
+they'd be asked what type of account they'd like to open.
+
+00:01:34.330 --> 00:01:38.790
+So we would never really have account objects directly instantiated in our system.
+
+00:01:38.790 --> 00:01:42.390
+We would have checking accounts, savings accounts or trust accounts.
+
+00:01:42.390 --> 00:01:46.790
+So the account class can be thought of as a general class that's the parent
+
+00:01:46.790 --> 00:01:48.150
+to all other classes.
+
+00:01:48.650 --> 00:01:51.750
+The same can be said for the player class in a player hierarchy
+
+00:01:51.750 --> 00:01:54.750
+and the employee class in a university personnel system.
+
+00:01:55.950 --> 00:01:58.940
+In order for a class to be an abstract base class,
+
+00:01:58.940 --> 00:02:02.140
+it must contain at least one pure virtual function.
+
+00:02:02.390 --> 00:02:04.610
+So let's see what a pure virtual function is.
+
+00:02:06.110 --> 00:02:10.990
+A pure virtual function is a virtual function that's used to make a class abstract.
+
+00:02:11.490 --> 00:02:13.490
+We declare pure virtual functions
+
+00:02:13.490 --> 00:02:17.890
+just like virtual functions, but we add the equal 0 after the prototype.
+
+00:02:19.140 --> 00:02:22.800
+Typically, pure virtual functions don't have any implementation
+
+00:02:22.800 --> 00:02:27.000
+since it's really up to the derived concrete classes to define this behavior,
+
+00:02:27.000 --> 00:02:29.300
+but it is possible to give them an implementation.
+
+00:02:29.800 --> 00:02:33.800
+In the code snippet in the slide, you can see that we declared a pure virtual function
+
+00:02:33.800 --> 00:02:34.700
+named function.
+
+00:02:35.690 --> 00:02:39.690
+Whatever class this function is declared in is now an abstract class
+
+00:02:39.690 --> 00:02:41.190
+and cannot be instantiated.
+
+00:02:43.190 --> 00:02:46.990
+So we see that a pure virtual function makes a class abstract,
+
+00:02:46.990 --> 00:02:49.290
+which means we can't directly instantiate them.
+
+00:02:50.090 --> 00:02:53.290
+But when we derive a class from an abstract class,
+
+00:02:53.290 --> 00:02:58.480
+we must override the pure virtual functions in the base class in order to be a concrete class.
+
+00:02:58.880 --> 00:03:02.540
+If we don't override all the pure virtual functions in the base class,
+
+00:03:02.540 --> 00:03:05.240
+then the derived class will also be abstract.
+
+00:03:06.040 --> 00:03:10.440
+This is very useful when it doesn't make sense for a base class to have an implementation,
+
+00:03:10.740 --> 00:03:13.240
+but it does make sense in concrete classes.
+
+00:03:13.940 --> 00:03:16.440
+For example, suppose we have a shape hierarchy.
+
+00:03:16.840 --> 00:03:20.140
+The concept of a shape is too general or too abstract
+
+00:03:20.140 --> 00:03:22.140
+to have shape objects in our system.
+
+00:03:22.640 --> 00:03:24.840
+So we can define the draw method
+
+00:03:24.840 --> 00:03:27.840
+as a pure virtual function in the shape class,
+
+00:03:28.200 --> 00:03:31.700
+and that not only makes it an abstract class, but it also forces
+
+00:03:31.700 --> 00:03:36.600
+all derived classes to implement the draw method if they want to be concrete classes.
+
+00:03:37.260 --> 00:03:40.560
+And we can say the same thing for the defend method in the player class.
+
+00:03:42.920 --> 00:03:45.120
+Here we see an example of a shape hierarchy.
+
+00:03:46.020 --> 00:03:51.020
+Suppose we're creating a simple application that allows us to draw and manipulate shapes on the screen.
+
+00:03:51.020 --> 00:03:54.120
+The shapes that we would be drawing and manipulating would be lines,
+
+00:03:54.120 --> 00:03:56.320
+circles, squares and probably many others.
+
+00:03:57.020 --> 00:04:01.380
+So we will have circle objects, line objects, square objects and so forth.
+
+00:04:02.180 --> 00:04:04.180
+Would we ever have a shape object?
+
+00:04:04.880 --> 00:04:09.480
+No, a shape object is just an abstraction that we can use as a base class.
+
+00:04:09.880 --> 00:04:13.680
+If we declare two pure virtual functions draw and rotate
+
+00:04:13.680 --> 00:04:17.180
+in that shape class, then all derived classes
+
+00:04:17.180 --> 00:04:21.180
+must override these methods or they will also be abstract.
+
+00:04:21.180 --> 00:04:23.680
+You can see in this class hierarchy that shape,
+
+00:04:23.880 --> 00:04:27.680
+open shape and closed shape are all abstract classes
+
+00:04:27.680 --> 00:04:29.560
+since their names are italicized and line,
+
+00:04:29.560 --> 00:04:32.920
+circle and square are concrete classes.
+
+00:04:34.220 --> 00:04:36.220
+Here is the partial code for the shape class.
+
+00:04:36.880 --> 00:04:39.880
+Notice the declarations for the pure virtual functions.
+
+00:04:40.540 --> 00:04:43.800
+It makes no sense to provide implementations for draw
+
+00:04:43.800 --> 00:04:45.500
+and rotate in the shape class
+
+00:04:45.500 --> 00:04:49.100
+since we have no idea how to draw or rotate the abstraction shape.
+
+00:04:49.460 --> 00:04:51.460
+We'll leave that up to our concrete classes.
+
+00:04:52.960 --> 00:04:55.960
+In this example, we derive a circle from a shape.
+
+00:04:57.110 --> 00:05:01.310
+If this class overrides the draw and rotate virtual functions,
+
+00:05:01.310 --> 00:05:03.510
+then it becomes a concrete class,
+
+00:05:03.510 --> 00:05:05.870
+and we can instantiate circle objects.
+
+00:05:05.870 --> 00:05:08.970
+In this case, we're overriding the pure virtual functions
+
+00:05:08.970 --> 00:05:11.330
+so the circle class is a concrete class.
+
+00:05:13.230 --> 00:05:17.890
+So remember, abstract base classes cannot be instantiated directly.
+
+00:05:18.690 --> 00:05:22.290
+If we create a shape object shape, the compiler will give us an error.
+
+00:05:23.090 --> 00:05:25.790
+Also if we create a shape object dynamically on the heap,
+
+00:05:25.790 --> 00:05:27.790
+we will also get a compiler error.
+
+00:05:27.790 --> 00:05:30.290
+But we can use base class pointers and references
+
+00:05:30.290 --> 00:05:33.390
+as we've already learned to achieve dynamic polymorphism
+
+00:05:33.390 --> 00:05:37.590
+and have some very powerful reusable and flexible class hierarchies.
+
+00:05:38.580 --> 00:05:40.980
+Notice that ptr is a pointer to a shape,
+
+00:05:40.980 --> 00:05:45.340
+and then we create a circle object on the heap and point to it from ptr.
+
+00:05:46.040 --> 00:05:49.240
+Now we can call draw and rotate via the pointer.
+
+00:05:49.790 --> 00:05:51.290
+How do we know this will work?
+
+00:05:51.590 --> 00:05:55.790
+Well, it has to because all concrete classes derived from shape
+
+00:05:55.790 --> 00:05:58.390
+must have overridden the draw and rotate methods.
+
+00:05:58.690 --> 00:05:59.690
+That's pretty awesome.
+
+00:06:00.190 --> 00:06:04.450
+Let's head over to the IDE and see an example that uses pure virtual functions
+
+00:06:04.450 --> 00:06:05.950
+and abstract base classes.
+
+00:06:06.940 --> 00:06:12.330
+So I'm in the IDE. I'm in the section 16 workspace in the pure virtual functions project.
+
+00:06:13.130 --> 00:06:15.630
+What I've done here is I've created a shape hierarchy,
+
+00:06:15.990 --> 00:06:19.790
+and I'm using pure virtual functions to establish an abstract base class.
+
+00:06:19.790 --> 00:06:22.990
+So let me walk you through this and then what we'll do is we'll run some examples
+
+00:06:22.990 --> 00:06:25.350
+when we write a main, and we'll create some shape objects
+
+00:06:25.350 --> 00:06:28.550
+and call some of the methods so that you can see exactly how this works.
+
+00:06:28.850 --> 00:06:31.050
+Okay. So here's my shape class.
+
+00:06:31.410 --> 00:06:33.510
+Notice that the shape class has
+
+00:06:33.510 --> 00:06:37.710
+these two pure virtual functions: one is called draw, one is called rotate.
+
+00:06:37.960 --> 00:06:41.320
+That makes this class shape an abstract class.
+
+00:06:41.620 --> 00:06:45.520
+In this case, it's going to be an abstract base class because I'm going to derive from it.
+
+00:06:45.520 --> 00:06:49.320
+I cannot instantiate shape objects. I can't say
+
+00:06:49.320 --> 00:06:50.320
+shape s.
+
+00:06:51.680 --> 00:06:55.480
+Okay. I can't say -- I can't even go at it through a pointer.I can't say
+
+00:06:55.980 --> 00:06:59.280
+pointer p equals new shape.
+
+00:07:01.280 --> 00:07:04.580
+Okay. Right there I'm trying to create a shape object directly, I can't do that.
+
+00:07:04.580 --> 00:07:06.780
+So both of these will give me compiler errors.
+
+00:07:07.030 --> 00:07:11.330
+An error will say something like you can't instantiate an abstract class or something like that,
+
+00:07:11.330 --> 00:07:13.330
+which which is a good error, makes sense.
+
+00:07:13.330 --> 00:07:16.130
+So that's my abstract base class.
+
+00:07:16.130 --> 00:07:19.790
+Notice the virtual destructor, always use that when you've got virtual functions.
+
+00:07:20.590 --> 00:07:23.590
+Perfect. So now let's create an open shape.
+
+00:07:23.590 --> 00:07:27.580
+An open shape would be a line, a spline things like that and closed shapes would be circles
+
+00:07:27.580 --> 00:07:31.180
+and squares and so forth. So here we're creating a class called open shape.
+
+00:07:31.540 --> 00:07:33.840
+Notice it's derived publicly from shape.
+
+00:07:34.240 --> 00:07:37.600
+Also notice that I did not override those two virtual functions.
+
+00:07:37.600 --> 00:07:41.900
+So that makes this class abstract. I cannot instantiate
+
+00:07:41.900 --> 00:07:43.500
+open shape objects.
+
+00:07:43.860 --> 00:07:48.160
+Same idea here. Here I've got a closed shape, that's derived publicly from shape.
+
+00:07:48.660 --> 00:07:53.020
+I am not overriding those two methods that you can see in the base class in here.
+
+00:07:53.020 --> 00:07:55.820
+So this class, again, is an abstract class.
+
+00:07:57.120 --> 00:08:01.420
+Okay. So now let's look at our concrete classes. Those are the ones that obviously know how to do things.
+
+00:08:01.420 --> 00:08:03.620
+It makes no sense for me to write code here
+
+00:08:03.620 --> 00:08:07.220
+that draws a shape or rotates a shape, I have no idea what a shape is,
+
+00:08:07.220 --> 00:08:09.580
+right. This is just an abstraction for a shape.
+
+00:08:09.580 --> 00:08:12.780
+Rotating a square versus a line is very different,
+
+00:08:12.780 --> 00:08:15.280
+and drawing a line versus a square is very different.
+
+00:08:15.280 --> 00:08:17.940
+So the concrete classes are the ones that take care of that.
+
+00:08:18.440 --> 00:08:21.740
+Okay. So let me scroll down just a bit to be the concrete
+
+00:08:21.740 --> 00:08:23.040
+glasses right here.
+
+00:08:23.040 --> 00:08:26.700
+So these are my concrete classes right here. You can see I've got a line,
+
+00:08:27.400 --> 00:08:29.800
+I've got the circle,
+
+00:08:29.800 --> 00:08:32.100
+and I've got the square, right here.
+
+00:08:32.100 --> 00:08:35.700
+So in this case, I'm not deriving directly from shape.
+
+00:08:35.700 --> 00:08:38.700
+Line is an open shape, so I'm taking advantage of that.
+
+00:08:39.300 --> 00:08:42.600
+It's a concrete class this time because you can see right here
+
+00:08:43.100 --> 00:08:46.900
+I'm overriding both of those pure virtual functions,
+
+00:08:47.700 --> 00:08:51.360
+that makes me a concrete class. So now I can have line objects,
+
+00:08:51.360 --> 00:08:54.960
+same with circle. You can see here circle is a closed shape.
+
+00:08:54.960 --> 00:08:59.360
+And right here, I'm overriding those two pure virtual functions.
+
+00:08:59.720 --> 00:09:03.380
+And then down at the bottom, you can see exactly the same thing with the square.
+
+00:09:04.280 --> 00:09:07.280
+Right here, you can see that square is a closed shape,
+
+00:09:07.280 --> 00:09:09.980
+and I'm overriding those two pure virtual functions.
+
+00:09:09.980 --> 00:09:12.640
+So I can have square objects out there.
+
+00:09:13.940 --> 00:09:18.540
+Okay. So this is the same hierarchy that you saw in the slides that were displayed in the uml diagram.
+
+00:09:18.940 --> 00:09:22.540
+Now let's write some code that will allow us to use these.
+
+00:09:23.440 --> 00:09:25.440
+Okay. So let's write some code in the main.
+
+00:09:25.690 --> 00:09:28.690
+We can start off by just trying to create a shape object, right.
+
+00:09:28.690 --> 00:09:30.570
+We can create a shape object s
+
+00:09:30.570 --> 00:09:34.070
+or we can come at it with a pointer, just like we did a little bit ago.
+
+00:09:34.070 --> 00:09:39.060
+We'll just call it p is a new shape. And you can see that if I try to compile this,
+
+00:09:39.060 --> 00:09:40.360
+it's not going to compile.
+
+00:09:42.060 --> 00:09:43.360
+There's my compiler error.
+
+00:09:43.360 --> 00:09:46.960
+It says cannot declare variable s to be of an abstract type shape.
+
+00:09:47.860 --> 00:09:51.060
+And same thing here with this new shape.
+
+00:09:51.420 --> 00:09:53.920
+I'm not allowed to instantiate shape objects.
+
+00:09:53.920 --> 00:09:55.920
+Okay. So we've seen that before.
+
+00:09:55.920 --> 00:09:58.920
+And that's a function of those pure virtual functions.
+
+00:09:58.920 --> 00:10:01.280
+The fact that they're in there makes the classes abstract.
+
+00:10:01.640 --> 00:10:03.940
+I'll comment these two lines of code out.
+
+00:10:03.940 --> 00:10:05.740
+And if we also try to
+
+00:10:05.740 --> 00:10:09.640
+instantiate open shapes and close shapes, we'd also get the same error
+
+00:10:09.640 --> 00:10:12.640
+because they are also abstract classes.
+
+00:10:13.930 --> 00:10:18.530
+Now suppose we create a circle, right, we can certainly do that. We can say circle c,
+
+00:10:19.530 --> 00:10:21.730
+and we can call c.draw.
+
+00:10:23.230 --> 00:10:25.930
+We know it's there. Now in this case --
+
+00:10:27.290 --> 00:10:29.950
+so in this case, you can see it says drawing a circle, right.
+
+00:10:29.950 --> 00:10:32.610
+But this is not coming at it with a base class pointer.
+
+00:10:32.610 --> 00:10:36.410
+This is all being statically bound. We're not using dynamic polymorphism here.
+
+00:10:36.410 --> 00:10:38.610
+And that's okay, sometimes you want to do that.
+
+00:10:38.610 --> 00:10:42.710
+But the real purpose of creating that abstract base class is so we can come at this
+
+00:10:43.110 --> 00:10:46.310
+class hierarchy with base class pointers or references.
+
+00:10:46.310 --> 00:10:48.410
+So let me comment that code out as well.
+
+00:10:48.410 --> 00:10:50.210
+And let's create a base class pointer.
+
+00:10:50.210 --> 00:10:53.570
+So the base class in this example is shape, right.
+
+00:10:53.570 --> 00:10:56.930
+So we'll create a shape pointer, and we'll just call it ptr.
+
+00:10:57.530 --> 00:10:59.830
+And what we'll do is remember, I can't say new shape here,
+
+00:10:59.830 --> 00:11:02.830
+but I can certainly instantiate derived concrete classes.
+
+00:11:02.830 --> 00:11:04.630
+So what I'll do is I'll create a circle.
+
+00:11:06.330 --> 00:11:10.930
+And now if I do ptr draw or ptr rotate,
+
+00:11:12.230 --> 00:11:16.590
+so you can see now that if I call the draw and rotate methods through the base class pointer,
+
+00:11:16.950 --> 00:11:19.450
+what's going to happen is we're having dynamic polymorphism.
+
+00:11:19.450 --> 00:11:21.950
+So the function call will be bound at runtime,
+
+00:11:21.950 --> 00:11:26.200
+and we're going to call the draw on the rotate for the circle because that's what I'm pointing to so.
+
+00:11:26.200 --> 00:11:30.500
+If we run this, we can see that we're drawing and rotating the circle,
+
+00:11:30.500 --> 00:11:31.700
+which is pretty cool.
+
+00:11:32.700 --> 00:11:36.300
+Okay. So this is exactly what we've been doing before. The only difference here is that we're using those
+
+00:11:36.300 --> 00:11:40.000
+pure virtual functions to define an interface,
+
+00:11:40.000 --> 00:11:42.000
+if you will, at that base class level.
+
+00:11:42.600 --> 00:11:46.600
+And all our concrete classes must implement those pure virtual functions.
+
+00:11:46.600 --> 00:11:48.960
+Otherwise, they are abstract themselves.
+
+00:11:49.660 --> 00:11:52.260
+Okay. So let's look at a couple of other examples.
+
+00:11:52.260 --> 00:11:55.920
+And let me comment this out again real quick so it doesn't clutter up our display.
+
+00:11:56.420 --> 00:11:59.020
+And let's just create a few shape objects.
+
+00:11:59.680 --> 00:12:02.880
+So let's say let's create a few shape objects through pointers.
+
+00:12:02.880 --> 00:12:04.480
+So let's say s1 is a new circle,
+
+00:12:07.480 --> 00:12:09.840
+S2 is a new line,
+
+00:12:11.340 --> 00:12:13.700
+and finally, we'll just say s3
+
+00:12:14.500 --> 00:12:16.200
+is a new square.
+
+00:12:17.860 --> 00:12:21.160
+Okay. Now remember, we've got all shape pointers here, right,
+
+00:12:21.160 --> 00:12:22.760
+all base class pointers.
+
+00:12:22.760 --> 00:12:26.260
+And what we're actually pointing to are our concrete derived classes.
+
+00:12:27.140 --> 00:12:29.140
+So that's pretty cool. Now what we can do is,
+
+00:12:29.140 --> 00:12:33.640
+let me write the code here to delete these guys down at the bottom, so we definitely don't want to leak --
+
+00:12:36.140 --> 00:12:40.040
+Okay. So I've written the code to free up that allocated storage down at the bottom.
+
+00:12:40.040 --> 00:12:41.640
+And now we're free to use these guys.
+
+00:12:42.000 --> 00:12:44.900
+And now we're free to use these guys. So what do we want to do.
+
+00:12:44.900 --> 00:12:47.260
+Well, why don't we put them in a vector, and then loop through the vector and
+
+00:12:47.260 --> 00:12:50.160
+call each one of their shape methods that say the draw method.
+
+00:12:50.660 --> 00:12:52.360
+So let's create a vector.
+
+00:12:54.260 --> 00:12:58.510
+And what is that vector -- what's my template parameter there.
+
+00:12:58.510 --> 00:13:01.170
+Well, it has to be a shape pointer, right.
+
+00:13:01.170 --> 00:13:04.370
+It can't be a shape coming at it from a base class pointer.
+
+00:13:04.370 --> 00:13:07.070
+So in this case, I have a shape pointer.
+
+00:13:07.070 --> 00:13:11.470
+And again, I'm using a raw pointer here in the shape so. You've got to be really careful when you do that.
+
+00:13:11.470 --> 00:13:15.930
+In the next section, we'll learn about smart pointers. You should probably be using a unique pointer here
+
+00:13:15.930 --> 00:13:17.730
+or a shared pointer.But in this case,
+
+00:13:18.130 --> 00:13:21.930
+this will be -- this will work just fine. So there's my shapes.
+
+00:13:22.130 --> 00:13:25.430
+And let's set it to s1, s2 and s3.
+
+00:13:25.430 --> 00:13:29.030
+So there's my vector. It contains pointers to shapes.
+
+00:13:29.030 --> 00:13:30.690
+And I've got all three of them in there.
+
+00:13:31.490 --> 00:13:34.040
+And now what do we do. Well, let's loop through that vector, right.
+
+00:13:34.040 --> 00:13:38.040
+So we'll use a range base for loop. And we'll say for, let's say, const
+
+00:13:38.340 --> 00:13:39.340
+auto p,
+
+00:13:39.640 --> 00:13:42.840
+p is going to be the pointer to the shape in shapes.
+
+00:13:43.640 --> 00:13:46.640
+And when I'm here, I can just simply call p's draw.
+
+00:13:48.640 --> 00:13:50.540
+That's it. Simple as that.
+
+00:13:50.540 --> 00:13:53.140
+If I run this now, I should get three lines of output:
+
+00:13:53.390 --> 00:13:57.290
+one for each of those objects. So in this case, I'm calling drawing a circle,
+
+00:13:57.290 --> 00:14:00.290
+drawing a line and drawing a square.
+
+00:14:00.290 --> 00:14:01.790
+So you can see that's pretty cool.
+
+00:14:02.040 --> 00:14:04.640
+Imagine you have a collection of base class pointers
+
+00:14:04.640 --> 00:14:07.240
+and they're all pointing to objects on the screen, right.
+
+00:14:07.490 --> 00:14:10.090
+All of those objects are going to be concrete objects.
+
+00:14:10.090 --> 00:14:13.690
+And then let's say you want to refresh your screen, what do you do? Well, you just loop
+
+00:14:13.690 --> 00:14:15.690
+through that collection and say
+
+00:14:15.690 --> 00:14:18.690
+draw draw draw draw draw for each one of those objects, right.
+
+00:14:18.690 --> 00:14:20.990
+And each one of them knows how to draw itself.
+
+00:14:21.390 --> 00:14:25.750
+Makes it super easy to think abstractly and think in the general.
+
+00:14:25.750 --> 00:14:27.110
+So why don't we actually do that.
+
+00:14:27.110 --> 00:14:30.470
+Why don't we write a function, just a basic function right here.We'll call it,
+
+00:14:30.470 --> 00:14:33.970
+let's say it's, void. Let's call it screen refresh.
+
+00:14:36.850 --> 00:14:39.550
+Okay. So it's called screen refresh. And what are we going to do what
+
+00:14:39.550 --> 00:14:43.350
+we're just going to pass that vector into here and let the vector do its thing.
+
+00:14:43.750 --> 00:14:47.250
+So const -- again, it's a std vector
+
+00:14:48.460 --> 00:14:52.120
+of shape base class pointers.
+
+00:14:52.120 --> 00:14:54.480
+And we'll pass it by reference so we don't copy it.
+
+00:14:57.080 --> 00:14:59.080
+That's it, right. That's pretty cool.
+
+00:14:59.080 --> 00:15:01.080
+So now I'm going to say std cout.
+
+00:15:02.080 --> 00:15:04.680
+I'll just say refreshing, just so we know it's being called.
+
+00:15:08.340 --> 00:15:11.540
+And now we'll just loop through that vector, right. So I'm going to say 4,
+
+00:15:11.540 --> 00:15:13.840
+again, same thing we did before, for const.
+
+00:15:14.340 --> 00:15:15.940
+We'll use auto p again,
+
+00:15:17.740 --> 00:15:19.740
+and shapes is my collection.
+
+00:15:21.040 --> 00:15:24.140
+And right here all I'm doing is p draw.
+
+00:15:27.440 --> 00:15:32.040
+That's awesome. I mean think about the power that we have here, right. Remember, we're coming at this
+
+00:15:32.700 --> 00:15:36.000
+with an a vector of base class pointers.
+
+00:15:36.400 --> 00:15:38.700
+So we know we've got dynamic polymorphism
+
+00:15:38.700 --> 00:15:39.360
+kicking in.
+
+00:15:39.360 --> 00:15:42.260
+We know that each one of those derived classes that are concrete
+
+00:15:42.260 --> 00:15:43.760
+must have implemented draw.
+
+00:15:44.120 --> 00:15:47.220
+So i can simply call this without even worrying about what I'm pointing
+
+00:15:47.220 --> 00:15:49.580
+to because I know it'll be bound correctly at runtime.
+
+00:15:50.240 --> 00:15:53.840
+And all we need to do now is let's comment this loop out here,
+
+00:15:54.200 --> 00:15:55.700
+and let's just call that.
+
+00:15:55.700 --> 00:15:59.690
+We'll call screen refresh, and we'll pass in the shapes vector.
+
+00:16:03.490 --> 00:16:04.390
+And there you go.
+
+00:16:04.390 --> 00:16:08.390
+Refreshing drawing a line, circle drawing a line, drawing a square. That's pretty cool.
+
+00:16:09.090 --> 00:16:11.090
+So you can see the real power here.
+
+00:16:11.090 --> 00:16:14.290
+And again, the real power of the pure virtual functions is
+
+00:16:14.290 --> 00:16:18.590
+to really force all your derived concrete classes to implement those methods.
+
+00:16:18.590 --> 00:16:20.950
+Now you know that they must be implemented,
+
+00:16:20.950 --> 00:16:23.410
+so you can create base class pointers and just
+
+00:16:23.410 --> 00:16:27.410
+call any of those guys. And you know that they're there, they have to be there.

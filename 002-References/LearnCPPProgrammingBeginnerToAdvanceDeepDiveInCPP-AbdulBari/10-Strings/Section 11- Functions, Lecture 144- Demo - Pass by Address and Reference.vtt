@@ -1,0 +1,217 @@
+WEBVTT
+
+0
+00:00.270 --> 00:06.000
+let us see call by address I have a same program that is for swapping two numbers and already we have
+
+1
+00:06.000 --> 00:09.830
+seen that in call by value values will not be swapped.
+
+2
+00:10.080 --> 00:17.540
+So here for call by address I should pass address of these actual parameters actual values are x and y.
+
+3
+00:17.630 --> 00:19.460
+So I will send addresses.
+
+4
+00:19.500 --> 00:22.190
+Now I got the message that there is no matching function.
+
+5
+00:22.410 --> 00:25.580
+So here I must write down pointers.
+
+6
+00:25.590 --> 00:33.540
+So these are pointers A and B are pointers and these are pointers so I should derefer them by using asterisks
+
+7
+00:33.540 --> 00:35.880
+so this is the change in the syntax.
+
+8
+00:35.880 --> 00:42.150
+Now here after swapping the values if I display the values the values will be swapped .
+
+9
+00:42.150 --> 00:45.290
+So here I am displaying the values and also endl.
+
+10
+00:45.420 --> 00:48.910
+let us run this program and see.
+
+11
+00:49.110 --> 00:52.080
+See here I'm passing x and y values by address.
+
+12
+00:52.290 --> 00:57.720
+And these are the pointers which will directly modify these x and y values so these x and y values will
+
+13
+00:57.720 --> 01:01.730
+be swapped when I display I'll get 20, 10.
+
+14
+01:01.770 --> 01:06.750
+So here I got the values that is 20 and 10 these two values are displayed here.
+
+15
+01:06.750 --> 01:13.560
+So that's it this is call by address where the formal parameters are pointers and the formal parameters
+
+16
+01:13.560 --> 01:18.570
+can indirectly modify the actual parameters.
+
+17
+01:18.570 --> 01:19.740
+Now next let us look at.
+
+18
+01:19.740 --> 01:21.810
+Call by reference so in  call by reference.
+
+19
+01:21.810 --> 01:23.790
+I'll just modify the same code.
+
+20
+01:23.910 --> 01:26.170
+See how simple call by references.
+
+21
+01:26.400 --> 01:29.880
+I will remove this &s and here
+
+22
+01:29.910 --> 01:33.860
+I will remove pointers and I will make them as references.
+
+23
+01:33.990 --> 01:39.920
+Then here I don't have to write astricks so they are removed, nos these
+
+24
+01:40.030 --> 01:42.960
+A and B will be refering to this x and y.
+
+25
+01:43.170 --> 01:47.960
+So I'll show you here by displaying addresses of a and b.
+
+26
+01:48.270 --> 01:49.450
+&a.
+
+27
+01:49.470 --> 01:55.240
+That is address of a then &B.
+
+28
+01:55.680 --> 02:05.850
+And here before displaying their values I will display address of x and y, &X and &y.
+
+29
+02:05.850 --> 02:12.570
+You can see that the addresses of x and y and here A and B will be same because these A and B are nothing
+
+30
+02:12.570 --> 02:24.000
+but X and Y only see this is the address of a and b and address of x and y.
+
+31
+02:24.300 --> 02:26.730
+Y address and the B value are same.
+
+32
+02:26.850 --> 02:31.630
+And here the value of a and x is same so their addresses are same.
+
+33
+02:31.830 --> 02:37.090
+So it means it's the same variable so it's not creating any other variable separately.
+
+34
+02:37.110 --> 02:38.650
+A refers to the same thing.
+
+35
+02:38.640 --> 02:44.800
+So what happens here is though we have written it as a function but it will not be called like a function.
+
+36
+02:44.810 --> 02:49.420
+This my machine code of the swap function will be pasted at this place.
+
+37
+02:49.470 --> 02:54.420
+I will program it  as a function only but the machine code that we get will not
+
+38
+02:54.420 --> 02:56.220
+be having two different modules.
+
+39
+02:56.220 --> 03:00.860
+It will be having a single code, the machine code that we will get will not be having two pieces
+
+40
+03:00.850 --> 03:01.590
+of a function.
+
+41
+03:01.600 --> 03:03.870
+There will be a single piece of function.
+
+42
+03:03.900 --> 03:08.190
+So finally you can say that call by value should be used when you don't want the function to modify
+
+43
+03:08.190 --> 03:13.950
+anything just it has to compute and return the result. call by address you can use when you want the function
+
+44
+03:13.950 --> 03:20.310
+to modify actual parameters and call by reference is also used for same purpose but it can be used only
+
+45
+03:20.310 --> 03:22.180
+for simple functions.
+
+46
+03:22.230 --> 03:30.210
+If inside this call reference function I'll just write something here and show you integer I have zero
+
+47
+03:30.270 --> 03:34.070
+i.e. less than ten and I plus plus.
+
+48
+03:34.290 --> 03:38.310
+Then I will just write something here, cout I.
+
+49
+03:38.360 --> 03:44.790
+If I write any complex code like this loops or something this function will no longer be using call
+
+50
+03:44.790 --> 03:45.690
+by reference.
+
+51
+03:45.690 --> 03:49.940
+It may become call by address automatically compilers will change it.
+
+52
+03:50.160 --> 03:56.420
+So therefore we should not write any complex code inside the functions which are using call by reference.
+
+53
+03:56.520 --> 03:58.980
+So that's all about parameter passing methods.

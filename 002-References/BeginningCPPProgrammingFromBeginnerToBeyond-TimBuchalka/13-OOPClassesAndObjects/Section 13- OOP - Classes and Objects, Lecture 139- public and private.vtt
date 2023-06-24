@@ -1,0 +1,388 @@
+WEBVTT
+
+00:00:05.700 --> 00:00:08.900
+In this video, we'll learn about using access modifiers
+
+00:00:08.900 --> 00:00:13.800
+to determine what will be hidden in the class and what parts of the program have access to this information.
+
+00:00:14.500 --> 00:00:18.000
+C++ has three basic class member access modifiers:
+
+00:00:18.400 --> 00:00:21.000
+these are public, private and protected.
+
+00:00:21.800 --> 00:00:24.800
+Class members that are public are accessible everywhere.
+
+00:00:24.800 --> 00:00:29.000
+Private class members are only accessible by other members of the same class
+
+00:00:29.000 --> 00:00:30.660
+or by friends of the class.
+
+00:00:31.260 --> 00:00:33.360
+We'll talk about friends later in this section. Finally,
+
+00:00:33.860 --> 00:00:37.960
+protected members are used with inheritance, which we'll talk about later in the course.
+
+00:00:39.560 --> 00:00:42.550
+Using the class member access modifiers is super simple.
+
+00:00:42.950 --> 00:00:47.310
+In the body of the class, you specify the axis modifier followed by colon.
+
+00:00:47.710 --> 00:00:50.370
+Then everything you declare from that point forward
+
+00:00:50.370 --> 00:00:52.870
+will have that access modifier applied to it.
+
+00:00:53.370 --> 00:00:56.370
+In this example, we're using the public access modifier.
+
+00:00:56.370 --> 00:01:01.270
+And anything we declare after this will be public until we see a different access modifier.
+
+00:01:02.870 --> 00:01:05.470
+In this example, we're using the private modifier.
+
+00:01:05.670 --> 00:01:10.330
+By default, everything in the class will be private if no access modifier is specified.
+
+00:01:11.210 --> 00:01:14.210
+Protected works exactly the same way as private.
+
+00:01:14.210 --> 00:01:17.810
+For now you can think of protected and private as being pretty much the same.
+
+00:01:17.810 --> 00:01:19.810
+The different comes in when we use inheritance.
+
+00:01:21.700 --> 00:01:25.700
+Of course, we commonly use public, private and protected all at the same time
+
+00:01:25.700 --> 00:01:29.900
+to tell the compiler what class members should not be available outside the class,
+
+00:01:29.900 --> 00:01:33.400
+and what class members should be part of the public interface of the class.
+
+00:01:34.060 --> 00:01:37.060
+This is how c++ implements information hiding.
+
+00:01:37.560 --> 00:01:42.160
+In this example the player's name, health and xp are all private.
+
+00:01:42.560 --> 00:01:46.260
+This means that they're only accessible from the other members of this class
+
+00:01:46.260 --> 00:01:47.860
+and from friends of the class.
+
+00:01:48.760 --> 00:01:52.060
+The talk and is dead methods are publicly accessible.
+
+00:01:53.060 --> 00:01:56.660
+So what happens if we try to access a private class member.
+
+00:01:57.320 --> 00:02:00.620
+Simple, you get a compiler error. Here are some examples.
+
+00:02:00.620 --> 00:02:02.920
+First, we create a player object named frank.
+
+00:02:03.720 --> 00:02:07.320
+If we try to access the player object's name instance variable,
+
+00:02:07.320 --> 00:02:10.120
+then we get a compiler error because name is private,
+
+00:02:10.120 --> 00:02:14.320
+and it's not accessible from outside the class. The same is true for health.
+
+00:02:14.920 --> 00:02:18.220
+Why would we want to make some class members private and others public.
+
+00:02:18.820 --> 00:02:22.420
+The idea is that you want to control access to certain data and methods
+
+00:02:22.420 --> 00:02:23.720
+by making them private.
+
+00:02:24.080 --> 00:02:28.080
+For example, you want to prevent users from directly setting frank's health to
+
+00:02:28.080 --> 00:02:29.680
+a 1000 as in this example.
+
+00:02:30.280 --> 00:02:32.680
+Maybe the maximum health for the player is a 100.
+
+00:02:33.080 --> 00:02:36.880
+In order to control this, you would create a public method in the class
+
+00:02:36.880 --> 00:02:38.580
+that sets this health property.
+
+00:02:38.980 --> 00:02:42.780
+And in the code for that method, it makes sure to max out the health at a 100.
+
+00:02:43.380 --> 00:02:47.840
+Since that method is a class member, it would have access to the private health property.
+
+00:02:48.640 --> 00:02:52.840
+In the second example we create a pointer named enemy to a player object.
+
+00:02:53.040 --> 00:02:57.940
+If we try to directly access the xp property, we get a compiler error because it's private.
+
+00:02:58.540 --> 00:03:02.200
+However, we can call the talk method with no error since it's public.
+
+00:03:02.800 --> 00:03:03.900
+Let's see another example.
+
+00:03:05.400 --> 00:03:07.610
+In this example, we have an account class
+
+00:03:07.610 --> 00:03:10.610
+and the name of the account and the balance of the account are private.
+
+00:03:11.010 --> 00:03:14.910
+These properties cannot be accessed directly from outside the class.
+
+00:03:14.910 --> 00:03:18.210
+We also provide public withdraw and deposit methods
+
+00:03:18.210 --> 00:03:20.410
+that can be called from outside the class.
+
+00:03:21.210 --> 00:03:24.410
+Since these methods are member methods, they have access to the balance
+
+00:03:24.410 --> 00:03:28.710
+and can update its value based on whatever business logic we have for the class.
+
+00:03:29.920 --> 00:03:32.220
+Here are a few examples that use the account object.
+
+00:03:32.620 --> 00:03:34.820
+Frank account is an account object.
+
+00:03:34.820 --> 00:03:38.180
+If we try to access the object's balance property directly,
+
+00:03:38.180 --> 00:03:40.540
+we'll get a compiler error because balance is private.
+
+00:03:41.340 --> 00:03:45.340
+However, we can use the deposit method and provide the amount to deposit
+
+00:03:45.340 --> 00:03:46.940
+since deposit is public.
+
+00:03:47.740 --> 00:03:51.380
+The idea is that the deposit method would somehow verify
+
+00:03:51.380 --> 00:03:56.370
+that the 10 million dollars that I want to deposit are indeed available before incrementing balance.
+
+00:03:57.030 --> 00:04:00.030
+If I try to directly access the name of the account,
+
+00:04:00.030 --> 00:04:04.130
+I also get a compiler error for the same reason, the account name is private.
+
+00:04:05.130 --> 00:04:09.290
+The same behavior applies whether we access an object using the dot operator
+
+00:04:09.290 --> 00:04:11.790
+or via a pointer using the arrow operator.
+
+00:04:12.590 --> 00:04:15.590
+In the case of Mary's account trying to access the balance
+
+00:04:15.590 --> 00:04:17.890
+or name directly results in a compiler error,
+
+00:04:18.790 --> 00:04:21.790
+but using the deposit method is fine since it's public.
+
+00:04:22.390 --> 00:04:24.190
+You can see how powerful this is.
+
+00:04:24.190 --> 00:04:27.790
+For example, if we have an object whose balance is 20 million dollars
+
+00:04:28.090 --> 00:04:29.980
+and we know that that must have been an error,
+
+00:04:29.980 --> 00:04:34.640
+then the only place where that error could have happened in this example is in the deposit method.
+
+00:04:35.140 --> 00:04:38.640
+There's no way that any other part of the program could have changed that value
+
+00:04:38.640 --> 00:04:43.440
+since the value is private. This makes testing and debugging code much, much easier.
+
+00:04:44.640 --> 00:04:47.640
+Okay. So I'm in the IDE. I'm in the section 13 workspace
+
+00:04:47.640 --> 00:04:50.840
+in the AccessModifiers project.
+
+00:04:51.240 --> 00:04:54.840
+And in this project, we've got our player class that we've been using.
+
+00:04:54.840 --> 00:04:57.730
+And you'll notice i made a couple of changes to it. I made
+
+00:04:57.930 --> 00:05:02.130
+the attributes all private, so the name the health and the xp are all private.
+
+00:05:02.490 --> 00:05:05.790
+And I made the two methods talking is dead public. Okay.
+
+00:05:06.590 --> 00:05:10.690
+Okay. So I want to show you the compiler errors that you'll get when you try to access those
+
+00:05:10.690 --> 00:05:12.350
+private data members.
+
+00:05:12.550 --> 00:05:15.550
+So in this case, I want to create a player object and I'll call it frank.
+
+00:05:17.150 --> 00:05:19.750
+And if i try to set frank's name,
+
+00:05:20.550 --> 00:05:22.850
+so I can say frank.name
+
+00:05:23.150 --> 00:05:26.450
+equals anything, in this case, I'll just say frank.
+
+00:05:26.750 --> 00:05:30.350
+And we're trying to compile, I'm going to build and run with control F5.
+
+00:05:31.150 --> 00:05:32.950
+You see the error I'm getting.
+
+00:05:32.950 --> 00:05:37.610
+And you can see it here in the box as well, it says player's name is private within this context,
+
+00:05:37.610 --> 00:05:41.110
+same thing we're seeing here. So you're trying to access
+
+00:05:41.110 --> 00:05:46.100
+a private attribute which is name from outside of the class.
+
+00:05:46.700 --> 00:05:50.700
+This is exactly the same area you'll get if you try to use health or xp.
+
+00:05:50.700 --> 00:05:53.300
+And it's not just a matter of trying to set that variable,
+
+00:05:53.300 --> 00:05:55.560
+it's trying to use that variable as well.
+
+00:05:55.560 --> 00:06:00.260
+Okay. So if i try to do something like cout frank.health,
+
+00:06:02.460 --> 00:06:03.960
+and I'll do an endline here,
+
+00:06:05.160 --> 00:06:06.960
+and we'll compile this as well.
+
+00:06:07.160 --> 00:06:09.660
+You'll see I get two errors now,
+
+00:06:09.660 --> 00:06:12.660
+same idea. I don't have access to health.
+
+00:06:12.660 --> 00:06:17.320
+It's not just a matter of not allowing you to set it, it's not allowing you to access it.
+
+00:06:17.520 --> 00:06:21.180
+Okay. Now these -- I'm going to comment those two out for a moment.
+
+00:06:22.060 --> 00:06:25.720
+And let's initialize the name here just to player,
+
+00:06:26.220 --> 00:06:29.820
+just so we have something to see when we call the talk method.
+
+00:06:31.320 --> 00:06:34.520
+Okay. So now what I can do is I can say frank
+
+00:06:34.520 --> 00:06:35.520
+.talk,
+
+00:06:36.820 --> 00:06:40.180
+and I can pass in the string hello there.
+
+00:06:42.980 --> 00:06:44.980
+Now if I try to build and run,
+
+00:06:46.280 --> 00:06:49.180
+I says player says hello there. Okay.
+
+00:06:49.180 --> 00:06:52.380
+So we know it works in this case because we're accessing
+
+00:06:52.380 --> 00:06:56.370
+a publicly accessible method right here talk.
+
+00:06:56.370 --> 00:06:59.970
+Same thing with is dead. We can't call is dead because we haven't implemented it yet,
+
+00:06:59.970 --> 00:07:01.870
+but we did implement talk right here.
+
+00:07:02.770 --> 00:07:05.770
+Okay. So that's really all there is to it.
+
+00:07:05.770 --> 00:07:10.070
+If you get these errors that are saying you don't have access to something, that's exactly why.
+
+00:07:10.070 --> 00:07:12.270
+Now why do we do this?
+
+00:07:13.150 --> 00:07:18.140
+It's really good programming practice to hide certain parts of your classes declarations.
+
+00:07:18.440 --> 00:07:21.100
+The idea is you want to control that variable
+
+00:07:21.100 --> 00:07:24.770
+via some sort of public method, so they've got to go through the public method
+
+00:07:24.770 --> 00:07:26.570
+and then the public method
+
+00:07:26.570 --> 00:07:29.570
+makes sure that the health is within some reasonable range.
+
+00:07:29.820 --> 00:07:33.020
+And as I mentioned in the slides, if we're doing this
+
+00:07:33.020 --> 00:07:37.120
+and we output some value of health that's 20000 or something like that,
+
+00:07:37.120 --> 00:07:40.120
+that's really really out of whack. If health is public,
+
+00:07:40.120 --> 00:07:42.720
+then anything could have changed that property.
+
+00:07:42.720 --> 00:07:46.820
+But if health is private, then I know that the changes that were wrong
+
+00:07:46.820 --> 00:07:50.720
+happen somewhere in here, right, somewhere in the public interface. My methods
+
+00:07:50.720 --> 00:07:55.490
+made that mistake, and I can find and fix that error much, much easier.

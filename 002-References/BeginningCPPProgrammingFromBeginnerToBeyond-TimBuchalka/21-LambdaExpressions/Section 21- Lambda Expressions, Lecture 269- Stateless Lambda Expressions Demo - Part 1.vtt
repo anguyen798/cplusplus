@@ -1,0 +1,877 @@
+WEBVTT
+
+00:05.340 --> 00:06.120
+Hello, everyone.
+
+00:06.120 --> 00:07.110
+Welcome back.
+
+00:07.140 --> 00:13.800
+I am in the Section 21 workspace and I'm in the Stateless Lambda Project.
+
+00:14.550 --> 00:20.790
+In this project I've got some examples of stateless lambdas that I'm using in different ways, and I've
+
+00:20.790 --> 00:26.280
+got some using value parameter as a reference parameter as passing objects and returning lambdas and
+
+00:26.280 --> 00:26.910
+so forth.
+
+00:26.910 --> 00:31.260
+So I'll go through them one at a time and I've already gone ahead and built and run.
+
+00:31.260 --> 00:32.850
+So you can see the run over here on the right.
+
+00:32.850 --> 00:34.470
+And I'm just going to walk through this.
+
+00:34.470 --> 00:39.660
+There are seven little test functions that I've written, that kind of exercise, a whole bunch of different
+
+00:39.660 --> 00:41.490
+combinations of stateless lambdas.
+
+00:41.490 --> 00:43.110
+So you can get a pretty good feel for them.
+
+00:43.110 --> 00:46.680
+But before I talk about those little functions, let's talk about what's going on here.
+
+00:46.680 --> 00:51.030
+So it's important to keep in mind that we are working with stateless lambda expressions.
+
+00:51.030 --> 00:54.210
+So that means that the capture lists are empty, they're going to be empty.
+
+00:54.210 --> 00:59.340
+For all of the examples in here, you can see here that I've included IO stream, string and vector.
+
+00:59.340 --> 01:01.800
+These are just common includes that I'm going to use throughout.
+
+01:01.800 --> 01:07.890
+I'm also including algorithm which gives us the standard template library algorithms and here is the
+
+01:07.890 --> 01:08.970
+functional header.
+
+01:08.970 --> 01:13.860
+This is the one we need for function and this is the one I mentioned in the slides in the previous lecture.
+
+01:13.860 --> 01:19.230
+So those are my includes and here have defined a real simple class person and this is the one that I'm
+
+01:19.230 --> 01:23.280
+going to use in some of the examples where we're passing objects within the Lambdas.
+
+01:23.280 --> 01:25.350
+So here's my class person.
+
+01:25.350 --> 01:31.110
+I have a friend function that's just my overloaded insertion operator that lets us display these person
+
+01:31.110 --> 01:34.530
+objects to a stream and you can see it implemented down here.
+
+01:34.560 --> 01:35.390
+Nothing new.
+
+01:35.400 --> 01:37.680
+This is all stuff we have already done before.
+
+01:37.710 --> 01:44.280
+You can see that the person class has these two attributes a name which is a string and the person's
+
+01:44.280 --> 01:45.870
+age really simple.
+
+01:45.870 --> 01:48.540
+We've got a constructor that expects a name and an age.
+
+01:48.810 --> 01:55.200
+We've got a copy constructor, we've got a destructor, which I'm just letting the compiler create the
+
+01:55.200 --> 01:58.080
+default for me, since there's nothing special to do here.
+
+01:58.080 --> 02:01.170
+And then right here I've got my getters in my setters, right?
+
+02:01.170 --> 02:04.800
+So I'm going to I've got my name, set name, get age, set age.
+
+02:05.010 --> 02:05.220
+Okay.
+
+02:05.340 --> 02:08.460
+So now that that's out of the way, you can see it's really straightforward.
+
+02:08.460 --> 02:10.440
+I'll refer back to this when we get to it.
+
+02:10.470 --> 02:16.530
+You can see down here in my main, what I'm doing is I'm calling these functions all the way from test
+
+02:16.530 --> 02:18.390
+one, all the way to test seven.
+
+02:18.390 --> 02:22.770
+So I'm going to walk through them one at a time and each one adds a little bit and changes a little
+
+02:22.770 --> 02:27.930
+bit just so you can get a good feel for the differences between the stateless lambda expressions that
+
+02:27.930 --> 02:28.710
+I'm going to show you.
+
+02:29.070 --> 02:29.430
+All right.
+
+02:29.430 --> 02:34.950
+So let me start with test one and I'm going to scroll up to it and here is test one.
+
+02:35.160 --> 02:40.740
+And you can see over here and the output right up here, that's the output for test one.
+
+02:40.740 --> 02:43.080
+So that's what I'll be referring to as I walk through this.
+
+02:43.260 --> 02:44.190
+Real simple.
+
+02:44.190 --> 02:46.320
+We have no capture list.
+
+02:46.440 --> 02:48.450
+None of these guys are capturing anything.
+
+02:48.450 --> 02:49.680
+That's why they're stateless.
+
+02:49.680 --> 02:56.880
+We have no parameters and the body of the lambda just says, see out high in this case.
+
+02:56.880 --> 02:57.990
+So it's just going to display.
+
+02:57.990 --> 03:01.620
+Hi, we are instantiating it right there.
+
+03:01.620 --> 03:03.330
+It's really important that we use that.
+
+03:03.330 --> 03:07.200
+Otherwise it's not doing anything at this point.
+
+03:07.200 --> 03:13.380
+Now that lambda expression will execute and high is displayed, you can see it right there.
+
+03:13.530 --> 03:15.420
+Same idea with this guy here.
+
+03:15.420 --> 03:17.490
+Except now we've got a parameter.
+
+03:17.490 --> 03:21.300
+We've got an integer parameter x again, stateless, right?
+
+03:21.330 --> 03:27.750
+So this is a parameter X and we are displaying X, that's the body of the lambda.
+
+03:27.750 --> 03:33.930
+So whatever value is in here will be displayed here when we display the output statement.
+
+03:33.960 --> 03:36.000
+Now same idea over here.
+
+03:36.000 --> 03:40.080
+We're calling that lambda and we're passing in 100.
+
+03:40.080 --> 03:43.320
+This 100 is being passed in here.
+
+03:44.230 --> 03:44.470
+Right.
+
+03:44.480 --> 03:46.090
+So now X gets the 100.
+
+03:46.090 --> 03:49.240
+And when this body executes, we're going to display 100.
+
+03:49.240 --> 03:51.310
+And that's exactly what's happening here.
+
+03:51.970 --> 03:52.330
+All right.
+
+03:52.330 --> 03:54.040
+So let's look at the third example.
+
+03:54.580 --> 03:57.340
+Same idea, except now I've got two parameters.
+
+03:57.340 --> 03:58.600
+I've got an X and a Y.
+
+03:58.630 --> 04:01.390
+So we're displaying the X plus the Y over here.
+
+04:01.390 --> 04:02.530
+We're just adding them up.
+
+04:02.560 --> 04:03.730
+We're displaying the sum.
+
+04:03.820 --> 04:09.610
+You see, the 100 is being passed over here to the X, the 200 is being passed into the Y.
+
+04:09.640 --> 04:12.070
+All this is happening by value, right?
+
+04:12.070 --> 04:13.420
+There's no references in here.
+
+04:13.420 --> 04:14.530
+This is by value.
+
+04:14.530 --> 04:15.940
+So we're doing copies.
+
+04:16.240 --> 04:21.010
+And what we're going to do is 100 plus 200 and this guy will display 300.
+
+04:21.010 --> 04:22.720
+And that's what you're seeing right here.
+
+04:24.520 --> 04:28.900
+So that's a real, real simple example of lambda expressions.
+
+04:30.100 --> 04:31.810
+Simple, but very useful, right?
+
+04:31.810 --> 04:33.160
+You can see it's kind of silly.
+
+04:33.160 --> 04:34.180
+Well, why would you do this?
+
+04:34.180 --> 04:40.180
+You know, you just it's kind of contrived, if you will, and nobody really writes lambda expressions
+
+04:40.180 --> 04:40.750
+this way.
+
+04:40.750 --> 04:44.110
+It's more of what I'm going to show you in a little bit, but this gives you a good feeling for the
+
+04:44.110 --> 04:47.560
+structure and the syntax of the lambda expressions.
+
+04:47.620 --> 04:49.360
+They're not complicated.
+
+04:49.360 --> 04:53.770
+You've got the capture list, you've got the parameter list, you've got the body of the lambda.
+
+04:53.770 --> 04:54.940
+That's what it's like.
+
+04:55.360 --> 04:59.380
+It can get more complicated and what we're doing captures and we'll do that in the next video.
+
+04:59.950 --> 05:04.090
+So let me show you now test to let me close this piece down.
+
+05:04.210 --> 05:10.480
+And here I've got test two and you can see here what I'm doing is using values and references now for
+
+05:10.480 --> 05:11.020
+the parameter.
+
+05:11.020 --> 05:14.950
+So it's going to be a little bit different because we're going to be using reference parameters in this
+
+05:14.950 --> 05:15.700
+case.
+
+05:15.910 --> 05:17.890
+I've got a variable here.
+
+05:18.830 --> 05:24.050
+What I'm doing over here is I've got a lambda expression and I'm assigning that land expression to a
+
+05:24.050 --> 05:24.690
+variable.
+
+05:24.710 --> 05:30.380
+This is the same thing as saying something like X equals three plus five.
+
+05:30.380 --> 05:34.430
+I'm evaluating that expression and assigning it to x.
+
+05:34.520 --> 05:36.970
+Later on, when I use x, I'm going to be using eight.
+
+05:36.980 --> 05:37.390
+Right?
+
+05:37.400 --> 05:39.270
+This is exactly the same idea.
+
+05:39.290 --> 05:41.980
+This is a variable l one.
+
+05:41.990 --> 05:47.030
+What's important here is I'm using the auto keyword to tell the compiler, hey, compiler, you figure
+
+05:47.030 --> 05:48.470
+out what the type of this thing is.
+
+05:48.470 --> 05:49.100
+It's a lambda.
+
+05:49.100 --> 05:52.220
+It's not an end, it's not a void, it's not a double, it's a lambda.
+
+05:52.250 --> 05:54.530
+Let the compiler figure out how to do it.
+
+05:54.710 --> 05:55.490
+Same idea.
+
+05:55.490 --> 05:56.960
+It's the same lambda as before.
+
+05:56.990 --> 05:57.950
+Notice the difference though.
+
+05:57.950 --> 06:00.170
+We don't have that piece at the end, right?
+
+06:00.170 --> 06:07.340
+So what we're doing is we're creating that lambda expression and we're assigning it to L one now whenever
+
+06:07.340 --> 06:11.960
+I want to call it now, I could just say L one with the parents.
+
+06:12.080 --> 06:15.140
+It looks just like a function call and essentially it is.
+
+06:15.140 --> 06:19.910
+Remember we talked about overloading the function call operator Well, that's really what's happening
+
+06:19.910 --> 06:20.870
+behind the scenes.
+
+06:20.870 --> 06:27.800
+So at this point, right here, not here, but right there on line 45, that's when we get the high
+
+06:27.800 --> 06:28.160
+here.
+
+06:28.160 --> 06:29.510
+So hopefully that's clear.
+
+06:29.510 --> 06:32.750
+And in this case now let's look at lines 47, 48.
+
+06:32.750 --> 06:37.520
+We have two integers, number one and number two, and each one is been initialized to 100.
+
+06:38.300 --> 06:44.450
+I'm creating another variable L two right here, which is also a lambda right.
+
+06:44.450 --> 06:45.860
+Again, stateless.
+
+06:45.860 --> 06:49.610
+I've got two parameters by value and I'm doing the same thing.
+
+06:49.610 --> 06:50.240
+X plus y.
+
+06:50.270 --> 06:53.210
+Set an example I used earlier, but now look what I'm doing.
+
+06:53.240 --> 06:57.260
+I'm calling it some pass l two and then I'm passing at ten and a 20.
+
+06:57.260 --> 07:00.440
+So the ten gets over here and the 20 comes over here.
+
+07:00.440 --> 07:05.330
+This guy is going to be 30 and that's what's going to display right here.
+
+07:05.450 --> 07:07.400
+We get that 30 displayed.
+
+07:08.150 --> 07:13.550
+Now, those are two integer literals and that's perfectly valid in this case.
+
+07:13.550 --> 07:14.540
+We've got number one.
+
+07:14.540 --> 07:15.170
+Number two.
+
+07:15.200 --> 07:18.980
+So now we're going to pass in instead of ten and 20, 101 hundred.
+
+07:18.980 --> 07:19.460
+Right?
+
+07:19.670 --> 07:23.450
+So we're going to display 200, which is what's being displayed here.
+
+07:24.140 --> 07:26.480
+Remember, this is passed by value.
+
+07:26.480 --> 07:27.650
+This is your value parameter.
+
+07:27.650 --> 07:30.230
+So we're making copies of these values.
+
+07:30.770 --> 07:34.100
+So now let's take a look at an example with some references.
+
+07:34.100 --> 07:39.230
+And now we are right here on line 54 and we've got the same idea.
+
+07:39.230 --> 07:43.940
+I've got a variable L three and we've got two parameters.
+
+07:43.940 --> 07:48.140
+Now the difference is now X is a reference parameter.
+
+07:48.140 --> 07:49.230
+We know what those are, right?
+
+07:49.250 --> 07:50.930
+We've talked about them already in the class.
+
+07:51.170 --> 07:58.160
+It's basically an alias to an actual parameter and I have Y, which is a value type parameter.
+
+07:58.520 --> 08:02.990
+And all this lambda does, it's going to display X and then it's going to display Y.
+
+08:03.410 --> 08:07.130
+But within the body of the lamb that we're changing X and Y.
+
+08:07.130 --> 08:09.080
+Now, this is really important to understand.
+
+08:09.230 --> 08:12.350
+When I'm changing X, I've got a reference.
+
+08:12.350 --> 08:17.960
+So that means that the actual parameter is going to be changed to 1000.
+
+08:18.530 --> 08:23.360
+When I change Y to 2000, the local copy of y will be changed.
+
+08:23.360 --> 08:24.620
+So not the actual.
+
+08:24.620 --> 08:27.230
+So let me show you what that looks like when I call this.
+
+08:27.230 --> 08:32.060
+So at this point, remember, we're going to call this with number one and number two, and if you remember
+
+08:32.060 --> 08:33.560
+number one and number two or 100 each.
+
+08:33.560 --> 08:34.040
+Right?
+
+08:34.040 --> 08:37.250
+So what's going to happen is actually let me clear this up and do this one more time.
+
+08:37.250 --> 08:38.120
+So it's clearer.
+
+08:38.420 --> 08:41.420
+I've got number one and number two, which is each 100.
+
+08:41.510 --> 08:45.200
+Now I'm going to call L three with number one and number two.
+
+08:45.650 --> 08:47.420
+Number two is 100.
+
+08:47.420 --> 08:49.880
+So that becomes the Y.
+
+08:50.820 --> 08:51.990
+And that's copied.
+
+08:52.000 --> 08:54.350
+But number one is a reference, right?
+
+08:54.360 --> 09:00.690
+So what happens is this guy now refers to the actual parameter up here.
+
+09:01.410 --> 09:03.120
+This guy is just local.
+
+09:04.200 --> 09:05.190
+That's really important.
+
+09:05.190 --> 09:06.570
+It's a very important distinction.
+
+09:06.570 --> 09:10.590
+We learned about this when we used functions exactly the same thing.
+
+09:10.590 --> 09:13.260
+So at this point, we're going to execute this code.
+
+09:13.260 --> 09:14.760
+This code is going to change.
+
+09:14.880 --> 09:17.970
+First of all, it's going to display X and Y, which are 101 hundred.
+
+09:17.970 --> 09:18.120
+Right.
+
+09:18.120 --> 09:19.140
+Because I haven't changed them.
+
+09:19.140 --> 09:20.520
+You can see it right there.
+
+09:21.090 --> 09:23.580
+Then it's going to change X to 1000.
+
+09:23.580 --> 09:24.810
+That's this guy right here.
+
+09:24.810 --> 09:26.430
+So this guy is going to be 1000.
+
+09:27.060 --> 09:30.120
+He's going to change Y to 2000, which is this guy.
+
+09:30.330 --> 09:33.210
+It's irrelevant because that's going to go away when the -- is finished.
+
+09:33.240 --> 09:34.710
+Now we're done.
+
+09:34.710 --> 09:39.030
+So what happens is all of this gets cleaned up and the only thing that's left behind is this guy is
+
+09:39.030 --> 09:39.990
+1000.
+
+09:40.140 --> 09:42.390
+Number one is 1000, number two is 100.
+
+09:42.780 --> 09:46.920
+So when we come back, we're just going to display number one and number two.
+
+09:46.920 --> 09:51.300
+And you can see right here, we're getting the 1000, which we changed and the 100.
+
+09:52.610 --> 09:52.850
+Okay.
+
+09:52.880 --> 09:53.960
+Hopefully that's pretty clear.
+
+09:53.960 --> 09:56.210
+If not, just walk through it yourself, just like I did.
+
+09:56.210 --> 09:59.030
+And that way you'll get a really, really good feeling of what's going on here.
+
+09:59.170 --> 10:01.580
+Okay, so let's move on to test three.
+
+10:01.910 --> 10:02.450
+All right.
+
+10:02.450 --> 10:04.100
+So what are we doing in test three?
+
+10:04.730 --> 10:11.540
+We're basically doing the same thing we did in Test two, except we're using objects now instead of
+
+10:11.540 --> 10:12.580
+primitive types.
+
+10:12.590 --> 10:14.290
+The other example, we used integers.
+
+10:14.300 --> 10:16.270
+So what's going on here?
+
+10:16.280 --> 10:22.460
+Well, I'm going to create a person object called stooge, and that would be Larry and Larry's 18 years
+
+10:22.460 --> 10:22.820
+old.
+
+10:22.820 --> 10:26.930
+And then I want to display Stooge here, so run on line 68.
+
+10:26.930 --> 10:28.160
+I'm in test three.
+
+10:28.340 --> 10:30.230
+This is what's happening right there.
+
+10:30.230 --> 10:31.970
+That one line is executing.
+
+10:33.190 --> 10:35.200
+Larry, 18, just what we expect.
+
+10:35.290 --> 10:37.110
+Now I'm creating a lambda.
+
+10:37.120 --> 10:38.410
+I'll call it L four.
+
+10:39.040 --> 10:43.300
+In this example, here we are passing in a person object.
+
+10:43.540 --> 10:45.250
+This is really important.
+
+10:45.250 --> 10:47.140
+This is by value.
+
+10:47.890 --> 10:49.230
+So what happens here?
+
+10:49.240 --> 10:50.230
+A copy.
+
+10:50.530 --> 10:52.270
+And how do we copy objects?
+
+10:52.300 --> 10:54.070
+Copy constructor.
+
+10:55.360 --> 10:59.960
+The copy constructor will be called and it will create a new copy of that object.
+
+10:59.980 --> 11:03.910
+That copy of the object will be alive within the body of the lambda.
+
+11:03.940 --> 11:07.200
+We can change it all we want in there and it's not going to affect the actual.
+
+11:07.210 --> 11:08.340
+That's really important.
+
+11:08.350 --> 11:12.120
+Same thing that it's happened with integers, but now we're dealing with objects.
+
+11:12.130 --> 11:15.520
+So now what am I passing into L for stooge?
+
+11:16.360 --> 11:19.840
+So now what's happening is I get a new version, right?
+
+11:19.840 --> 11:22.240
+A new copy of that stooge object.
+
+11:22.240 --> 11:30.970
+So inside this function here I have P and P would be Larry 18, which is totally separate from this.
+
+11:30.970 --> 11:31.300
+Larry.
+
+11:31.330 --> 11:31.720
+18.
+
+11:31.720 --> 11:35.050
+This is a new copy and that's active.
+
+11:35.050 --> 11:38.110
+So I'm going to display it and it's going to display right there.
+
+11:38.110 --> 11:39.820
+That's the second display statement, right?
+
+11:39.820 --> 11:41.140
+The first one was up here.
+
+11:42.750 --> 11:43.650
+And that's it.
+
+11:43.680 --> 11:45.360
+Stooge did not change.
+
+11:45.570 --> 11:47.640
+It can't change because we made a copy of it.
+
+11:48.330 --> 11:50.790
+Now let's do it by reference and see the difference.
+
+11:52.390 --> 11:54.330
+I'm right here on line 75.
+
+11:54.360 --> 11:58.170
+Remember, we've already executed that one and we've executed that statement right over here.
+
+11:58.170 --> 11:59.010
+So now I'm over here.
+
+11:59.010 --> 12:00.180
+L five again.
+
+12:00.180 --> 12:01.060
+Stateless.
+
+12:01.080 --> 12:03.120
+One parameter.
+
+12:03.270 --> 12:04.650
+A reference parameter.
+
+12:04.650 --> 12:06.550
+Really, really different now, right?
+
+12:06.570 --> 12:07.140
+No copy.
+
+12:07.140 --> 12:08.580
+Constructor, no copy.
+
+12:08.610 --> 12:11.070
+We're going to get an alias at this point.
+
+12:11.070 --> 12:12.420
+We also said it's const.
+
+12:12.420 --> 12:17.040
+So if we try to change that P object and here in the body, we won't be allowed.
+
+12:17.040 --> 12:18.360
+The compiler will give us an error.
+
+12:18.810 --> 12:20.250
+So let's do this.
+
+12:20.250 --> 12:22.700
+L five We're going to pass in stooge.
+
+12:22.710 --> 12:24.470
+We don't make a copy of it.
+
+12:24.480 --> 12:28.350
+This P refers to the real one.
+
+12:28.350 --> 12:30.060
+So again, very efficient.
+
+12:30.060 --> 12:31.830
+I can't change it because it's const.
+
+12:31.830 --> 12:33.730
+So I get the best of both worlds, right?
+
+12:33.750 --> 12:36.090
+When I'm in here, I'm displaying p.
+
+12:36.120 --> 12:38.760
+P is right there, Larry 18.
+
+12:38.760 --> 12:42.390
+And you can see that third statement executes right there.
+
+12:42.660 --> 12:44.490
+So that's passed by reference.
+
+12:44.490 --> 12:47.850
+Now let's do pass by reference, but actually modify the object.
+
+12:47.850 --> 12:50.790
+And that's what this last statement here does.
+
+12:50.940 --> 12:53.790
+And let me scroll up just a little bit so you can see it a little bit better.
+
+12:53.790 --> 12:59.550
+So remember, at this point, we've done this, this, this, and we are right here now.
+
+13:00.390 --> 13:03.180
+So my lambda variable is l six.
+
+13:03.240 --> 13:06.810
+I'm passing in a person object by reference.
+
+13:07.560 --> 13:11.010
+Really important notice there's no contact over here like there was over here.
+
+13:11.010 --> 13:13.440
+I'm able to modify that and I'm going to modify that.
+
+13:13.440 --> 13:15.240
+So I'm going to pass in stooge.
+
+13:15.480 --> 13:17.940
+This P will be stooge, right?
+
+13:17.940 --> 13:21.270
+So it's going to be a reference to stooge and it's defined up there.
+
+13:21.270 --> 13:26.130
+It scrolled off, but it was stooge and it was Larry 18.
+
+13:26.490 --> 13:27.750
+That's my object.
+
+13:28.650 --> 13:30.240
+But now look what I'm doing in the body.
+
+13:30.240 --> 13:33.240
+I'm saying, hey, set the name to Frank.
+
+13:33.240 --> 13:38.310
+So I'm changing Larry to Frank and change the age to 25.
+
+13:38.310 --> 13:46.350
+So I'm changing the 18 to a 25, then I'm displaying P well, p is a reference to this guy, right?
+
+13:46.350 --> 13:48.160
+And notice right there what happens.
+
+13:48.180 --> 13:53.580
+Frank 25 Then once I finish, I'm going to display Stooge now.
+
+13:53.580 --> 13:55.140
+Well, that is stooge, right?
+
+13:55.140 --> 13:56.340
+So I'm going to get the same thing.
+
+13:56.340 --> 14:03.240
+So there's proof here in both cases, there's the proof that we actually changed that stooge variable
+
+14:03.240 --> 14:06.750
+out there from within the lambda because of that reference parameter.
+
+14:07.380 --> 14:07.730
+Okay.
+
+14:07.800 --> 14:09.480
+So this fit is getting a bit long now.
+
+14:09.480 --> 14:13.560
+So what I'm going to do is I'm going to stop this video here and we'll continue with test for in the
+
+14:13.560 --> 14:14.160
+next video.
+
+14:14.160 --> 14:14.970
+I'll see you there.

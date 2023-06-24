@@ -1,0 +1,389 @@
+WEBVTT
+
+0
+00:01.650 --> 00:08.590
+Now let us write a program for finding a maximum element in an Array. that is the largest element in an
+
+1
+00:08.670 --> 00:09.040
+Array.
+
+2
+00:09.740 --> 00:15.320
+So already I have an Array with me with some elements some from that I have to find out maximum.
+
+3
+00:15.520 --> 00:20.470
+I will do it once more just watch it how we do, what is our  procedure if you observe this procedure
+
+4
+00:20.500 --> 00:22.200
+then you can convert it into a program.
+
+5
+00:22.300 --> 00:26.960
+Observe it.first is 4, then 8, oh 8 is 
+
+6
+00:27.010 --> 00:29.450
+greater than four, so eight
+
+7
+00:29.820 --> 00:33.730
+then the 9,  9 is greater than 8 na.
+
+8
+00:33.730 --> 00:34.380
+That is greater.
+
+9
+00:34.440 --> 00:36.430
+Yes 9.
+
+10
+00:36.460 --> 00:38.070
+This is smaller then leave it, 
+
+11
+00:38.080 --> 00:40.940
+This is smaller then this is also smaller then leave it
+
+12
+00:41.000 --> 00:43.250
+So what are the last number 9.
+
+13
+00:43.270 --> 00:46.150
+So we should remember what is the largest right now with us.
+
+14
+00:46.270 --> 00:48.610
+Let's go on comparing with all the elements.
+
+15
+00:48.610 --> 00:50.410
+This is a simple procedure.
+
+16
+00:50.410 --> 00:51.100
+Let us do it.
+
+17
+00:51.310 --> 00:53.140
+I have the list of elements here.
+
+18
+00:53.140 --> 00:55.310
+Let us do the same thing here.
+
+19
+00:55.330 --> 00:56.140
+I will do it.
+
+20
+00:56.140 --> 01:01.650
+So initially first element  you leave it because Max is four the maximum element that you want to find out
+
+21
+01:01.660 --> 01:05.440
+is four now let us do that with that one, 8.
+
+22
+01:05.560 --> 01:06.990
+Is it a greater than four?.
+
+23
+01:07.000 --> 01:07.560
+Yes.
+
+24
+01:07.570 --> 01:09.930
+So change it to 8 then 6.
+
+25
+01:09.940 --> 01:10.930
+Is it greater than max.
+
+26
+01:10.930 --> 01:11.460
+No.
+
+27
+01:11.470 --> 01:13.720
+Don't change it, is it greater than Max.
+
+28
+01:13.750 --> 01:14.140
+Yes.
+
+29
+01:14.140 --> 01:16.380
+So change it to nine, then five.
+
+30
+01:16.380 --> 01:17.560
+Is it greater than nine.
+
+31
+01:17.560 --> 01:18.700
+No.
+
+32
+01:18.700 --> 01:20.530
+2 Is it to get to the max 9.
+
+33
+01:20.530 --> 01:21.100
+No.
+
+34
+01:21.100 --> 01:21.670
+7.
+
+35
+01:21.670 --> 01:22.810
+Is it better than Max.
+
+36
+01:22.810 --> 01:24.290
+no leave it.
+
+37
+01:24.310 --> 01:27.880
+So what is the last value that is updated in Max that is 9.
+
+38
+01:28.600 --> 01:29.380
+So that's it.
+
+39
+01:29.380 --> 01:32.710
+So you need some value that you have to remember which is the maximum.
+
+40
+01:32.710 --> 01:38.890
+So initially you'll make it as 4 so maximum is what? four. initially it is 4, then you will see that 8
+
+41
+01:38.890 --> 01:45.300
+is greater then 4, so change it. then 6 is not greater let it be eight only, then 9 is greater than 8.
+
+42
+01:45.340 --> 01:47.830
+So change it.  5 is not greater than 9.
+
+43
+01:48.130 --> 01:53.090
+Let it be 9 only, 2 is not greater,let it be 9 only. 7 is not greater, let it be nine only.
+
+44
+01:53.230 --> 01:58.070
+So this is how you can maintain the value of Max that will give us the back maximum element.
+
+45
+01:58.120 --> 01:59.510
+So what we were doing here.
+
+46
+01:59.530 --> 02:10.610
+We were checking that if A[i] is greater than maximum then change Max to A[i], this is
+
+47
+02:10.630 --> 02:14.960
+the procedure we are storing that A[i] in Max.
+
+48
+02:15.070 --> 02:18.570
+So we have to scans all the elements and every time check with the max.
+
+49
+02:18.580 --> 02:21.010
+So initially Max will have the first value.
+
+50
+02:21.070 --> 02:24.520
+So basically we should start from the second value onwards from here.
+
+51
+02:24.670 --> 02:27.070
+That is index 1 onwards.
+
+52
+02:27.070 --> 02:28.850
+So these are the repeating steps.
+
+53
+02:28.870 --> 02:35.640
+Let us write a program for that one. already I have an Array and n for the number of elements.
+
+54
+02:35.800 --> 02:38.530
+Then I should have a max. And here,
+
+55
+02:38.530 --> 02:45.130
+The first step what I will do is Max assign A of 0 that is 0th element I have taken, that is I said this element
+
+56
+02:45.130 --> 02:47.120
+will take it, 4 we will take it now.
+
+57
+02:47.190 --> 02:52.770
+Next I have to go on checking thi is a repeating process so this I can do it in the for loop repeating
+
+58
+02:52.780 --> 02:58.430
+procedure. for I assign one onwards, I said we will start comparing from here if it start from zero
+
+59
+02:58.430 --> 03:04.960
+also nothing will happen right because 4 is not a greater than Four, nothing will happen, then i is less
+
+60
+03:04.960 --> 03:07.850
+than 7 then i plus plus.
+
+61
+03:08.060 --> 03:12.960
+Then while scanning through an array one by one what  I have to do, check the that one.
+
+62
+03:13.120 --> 03:27.790
+If A of I is greater than Max, change Max to A[i] right that's all. this is the
+
+63
+03:27.790 --> 03:35.370
+only thing that really we will be doing inside the for loop then afterwards print maximum element is, right
+
+64
+03:35.800 --> 03:37.420
+maximum number is
+
+65
+03:40.390 --> 03:48.030
+the value that we got in Max. that's it and then returns zero, you know that well.
+
+66
+03:48.070 --> 03:49.890
+So this is the program for finding maximum.
+
+67
+03:49.900 --> 03:54.510
+So for this actually we have prepared this table and observed it's working.
+
+68
+03:54.640 --> 03:57.910
+And based on the working we have written the program code right.
+
+69
+03:58.240 --> 04:03.460
+So if you are a beginner if you are learning how to write programs then this type of work is very important
+
+70
+04:03.460 --> 04:04.140
+for you.
+
+71
+04:04.210 --> 04:09.000
+If you tried to directly jump here and tried to write something and expect correct results.
+
+72
+04:09.040 --> 04:10.540
+You may not get it.
+
+73
+04:10.540 --> 04:12.620
+You should get the correct result on paper.
+
+74
+04:12.700 --> 04:14.380
+You should know what you are writing.
+
+75
+04:14.560 --> 04:15.820
+right, what you are writing.
+
+76
+04:15.820 --> 04:20.810
+So if you do some paperwork that will tell you whether your steps are perfect or not.
+
+77
+04:20.920 --> 04:23.940
+Then you can do this one and one more interesting thing.
+
+78
+04:24.090 --> 04:31.060
+If this is the program in front of you want to know how this program works then this board you can see this
+
+79
+04:31.060 --> 04:33.080
+you can say tracing of a program.
+
+80
+04:33.130 --> 04:37.790
+So first we have done a tracing then from there we write the program this is the right method.
+
+81
+04:37.990 --> 04:42.220
+If you have not written the program, it is somebody else program somebody else has written it.
+
+82
+04:42.400 --> 04:46.300
+Then you can understand it how it is working by making a table like this.
+
+83
+04:46.360 --> 04:51.460
+So that's all there is a coding available for finding the maximum number so you finish
+
+84
+04:51.460 --> 04:55.120
+that exercise and that you have to write down few statements not everything.
+
+85
+04:55.570 --> 04:56.840
+And one more thing.
+
+86
+04:56.860 --> 04:59.120
+The demo is also available, watch that demo.
+
+87
+04:59.120 --> 05:00.520
+Write the program by yourself.
+
+88
+05:00.520 --> 05:03.180
+So before watching demo, write the program by yourself. on your P.C.
+
+89
+05:03.180 --> 05:04.540
+or  your laptop.
+
+90
+05:04.960 --> 05:10.390
+If you get any errors any problem then you can check the demo and remove any errors.
+
+91
+05:10.390 --> 05:12.780
+No I don't think you will get any errors.
+
+92
+05:12.790 --> 05:13.930
+Everything is there on board.
+
+93
+05:14.260 --> 05:16.030
+So just copy this and write it
+
+94
+05:16.030 --> 05:17.340
+By yourself.
+
+95
+05:17.580 --> 05:18.090
+That's all.
+
+96
+05:18.090 --> 05:21.100
+So we'll see more programs on this.

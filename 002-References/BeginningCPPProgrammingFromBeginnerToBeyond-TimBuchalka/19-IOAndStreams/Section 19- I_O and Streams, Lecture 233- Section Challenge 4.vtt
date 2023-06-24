@@ -1,0 +1,130 @@
+WEBVTT
+
+00:00:05.400 --> 00:00:08.700
+Welcome to the fourth and final challenge of section 19.
+
+00:00:09.060 --> 00:00:13.360
+I'm in the section 19 workspace in the challenge_4 project.
+
+00:00:13.360 --> 00:00:16.720
+We also have a challenge_4_solution project
+
+00:00:16.720 --> 00:00:18.220
+which contains a solution.
+
+00:00:18.520 --> 00:00:20.820
+This challenge is pretty easy, but it's kind of fun.
+
+00:00:20.820 --> 00:00:25.620
+The idea is that we have the Romeo and Juliet play that we've used before.
+
+00:00:25.620 --> 00:00:28.120
+And what we want to do is we want to read that in,
+
+00:00:28.480 --> 00:00:31.730
+add line numbers to it and then write it out to a new file.
+
+00:00:31.730 --> 00:00:34.730
+So we're not going to modify the original file. We're going to create a copy of the
+
+00:00:34.730 --> 00:00:37.030
+original file that has line numbers on it.
+
+00:00:37.030 --> 00:00:41.030
+Okay. So it's real nice, really easy to do, and we'll get you a little bit
+
+00:00:41.030 --> 00:00:42.590
+of experience writing more files.
+
+00:00:42.590 --> 00:00:44.090
+Let me run this for you.
+
+00:00:45.590 --> 00:00:49.590
+I'm going to run the solution, and it shows no output, it just says copy complete
+
+00:00:49.590 --> 00:00:52.890
+because there's not much to show. But let's open up the
+
+00:00:53.490 --> 00:00:56.090
+enclosing folder here so we can see what's created.
+
+00:00:56.090 --> 00:00:58.750
+Now here you can see the original Romeo and Juliet.
+
+00:00:59.150 --> 00:01:01.150
+There's no line numbers here on the left.
+
+00:01:01.510 --> 00:01:06.280
+And this is the file that's created right here, RomeoandJuliet_out. You can name that anything you like.
+
+00:01:07.050 --> 00:01:11.040
+And you can see that that has line numbers now nice and formatted.
+
+00:01:11.640 --> 00:01:14.140
+And you can see them all lined up right around the side.
+
+00:01:14.140 --> 00:01:16.640
+There are a lot of line numbers in this file,
+
+00:01:17.440 --> 00:01:19.640
+about 5000 something. I believe
+
+00:01:19.640 --> 00:01:22.140
+now there's one thing I don't like about this solution
+
+00:01:22.140 --> 00:01:24.840
+is -- let me scroll there, you see this solution
+
+00:01:25.200 --> 00:01:28.200
+gives line numbers to all these empty lines.
+
+00:01:28.450 --> 00:01:32.350
+I guess that's okay.It all depends on what you want a line number. So
+
+00:01:32.650 --> 00:01:35.250
+I'm doing it two ways. I'm doing it like this.
+
+00:01:35.250 --> 00:01:38.250
+And then I'll show you another way in a second, which
+
+00:01:38.250 --> 00:01:42.250
+gives only line numbers to lines that actually have text.
+
+00:01:42.250 --> 00:01:45.750
+Okay. So let me run that solution in a second I'll show that one to you.
+
+00:01:46.950 --> 00:01:48.940
+Okay. So I'm going to run this other version.
+
+00:01:49.740 --> 00:01:52.990
+And its copy is complete, and then we'll take a look at what it looks like.
+
+00:01:54.650 --> 00:01:57.310
+And right here, RomeoandJuliet_out.
+
+00:01:57.510 --> 00:02:02.110
+And you can see it looks exactly like the previous one except that blank lines aren't numbered.
+
+00:02:02.610 --> 00:02:05.610
+So you can see that we're skipping those blank lines, we're still displaying
+
+00:02:05.610 --> 00:02:08.810
+them like they were in the original file, but we're not numbering them.
+
+00:02:08.810 --> 00:02:12.810
+And I think it looks a little easier to read this way. I mean I don't know whether
+
+00:02:12.810 --> 00:02:16.470
+line numbers are put into scripts like this or not,but
+
+00:02:17.270 --> 00:02:20.930
+different option. It gives you two different solutions, and you can experiment with that.
+
+00:02:20.930 --> 00:02:24.930
+I'll show you both solutions when we do the solution project in a little bit.
+
+00:02:24.930 --> 00:02:26.730
+So that's it. Have fun.
+
+00:02:26.730 --> 00:02:29.730
+Okay. So that's it for this video. I'll see you in the solution.

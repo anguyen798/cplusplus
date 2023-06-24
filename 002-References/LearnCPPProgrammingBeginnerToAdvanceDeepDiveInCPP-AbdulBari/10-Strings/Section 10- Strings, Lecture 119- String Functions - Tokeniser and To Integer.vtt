@@ -1,0 +1,439 @@
+WEBVTT
+
+00:00.750 --> 00:00.980
+Yeah.
+
+00:01.050 --> 00:05.310
+These functions are for converting a string into a number.
+
+00:05.310 --> 00:07.910
+So this a string is containing numbers.
+
+00:07.920 --> 00:11.130
+Actually, these are characters two, three and seven.
+
+00:11.130 --> 00:12.540
+They also have their ASCII codes.
+
+00:12.540 --> 00:13.860
+So these are the characters.
+
+00:14.070 --> 00:23.550
+But this function str two l this is str that is a string too long.
+
+00:24.270 --> 00:28.200
+So it will give a long integer out of this number.
+
+00:28.200 --> 00:36.780
+So it will convert this into a long integer and this is str two f so this is string to float so it will
+
+00:36.780 --> 00:40.230
+convert a string to a float number.
+
+00:40.230 --> 00:42.270
+So I have a float number here.
+
+00:42.270 --> 00:44.190
+So it takes parameter that is a string.
+
+00:44.190 --> 00:48.210
+This a string you have to give parameter and this is actually the end of a string.
+
+00:48.210 --> 00:52.170
+So usually it is taken as null, so it has to be kept null.
+
+00:52.440 --> 00:58.440
+So this is not useful parameter, but this prototype of this function is having one more pointer, so
+
+00:58.440 --> 00:59.340
+it is kept as null.
+
+00:59.340 --> 01:07.020
+So it converts this into a float number and thus it will convert into a long integer.
+
+01:07.290 --> 01:09.570
+Let us try these two functions.
+
+01:09.720 --> 01:09.970
+Yeah.
+
+01:10.110 --> 01:12.210
+Here in the program already I have two strings.
+
+01:12.210 --> 01:18.540
+As for the last two, this is having a number to 35, but actually it is a string.
+
+01:18.540 --> 01:28.080
+So let us convert it into a long integer, long int x, assign str to l and I will pass as one.
+
+01:28.260 --> 01:30.840
+Now next number I will convert it into float.
+
+01:30.840 --> 01:39.750
+So float vi i will say str two f and first second string I have to pass and I said this parameter is
+
+01:39.750 --> 01:40.260
+null.
+
+01:41.610 --> 01:42.660
+Oh there is an error.
+
+01:42.660 --> 01:44.400
+Oh I missed this C here.
+
+01:44.400 --> 01:48.840
+Also it needs a parameter that is null, that is end of a string.
+
+01:48.840 --> 01:51.090
+And also we should mention the base.
+
+01:51.720 --> 01:54.450
+This is a decimal number system, so it should be ten.
+
+01:54.540 --> 02:00.450
+If you are using a octal number system, then it should mention eight or binary, you have to mention
+
+02:00.450 --> 02:00.930
+two.
+
+02:01.250 --> 02:03.660
+And that is the number system you have to mention here.
+
+02:03.660 --> 02:07.530
+So both this function needs and of a string, that is where the number is ending.
+
+02:07.530 --> 02:12.420
+So it's better right now because you have everything here as a number.
+
+02:12.810 --> 02:15.000
+Now let us print these two values.
+
+02:15.000 --> 02:23.370
+See out X and L and Y and then and let us print this.
+
+02:25.220 --> 02:25.880
+Yes.
+
+02:25.880 --> 02:28.280
+We got a number that is 235.
+
+02:28.490 --> 02:31.610
+Then this is 54.78.
+
+02:31.880 --> 02:33.820
+So these are numbers, actually.
+
+02:33.830 --> 02:35.990
+So I will show you how these are numbers.
+
+02:35.990 --> 02:41.920
+So in this X, I will add plus ten and show you this is 235.
+
+02:41.930 --> 02:43.730
+So it should become 245.
+
+02:45.580 --> 02:46.720
+Yes it is adding.
+
+02:46.720 --> 02:50.350
+So because it's an integer, so it's an integer number.
+
+02:50.350 --> 02:51.940
+So this ten is getting added.
+
+02:52.030 --> 02:56.860
+Now from this way, I will subtract five and see.
+
+02:57.250 --> 02:59.400
+So it is 54, so it should be 49.
+
+02:59.410 --> 03:00.690
+Yes, it is 49.
+
+03:00.700 --> 03:06.870
+So I'm able to perform arithmetic operations because these are integer and float type of values.
+
+03:06.880 --> 03:07.300
+Now.
+
+03:07.320 --> 03:10.690
+Now, let us look at one more function on string.
+
+03:12.540 --> 03:13.080
+Yeah.
+
+03:13.860 --> 03:17.130
+Here the function is string token SDR.
+
+03:17.460 --> 03:18.090
+Okay.
+
+03:18.120 --> 03:19.890
+This will tokenize a string.
+
+03:20.010 --> 03:28.440
+So if you observe a string here x equals then ten, then semicolon y equals 20.
+
+03:28.770 --> 03:32.800
+So the y value is 20 and z value is 35.
+
+03:32.820 --> 03:38.670
+So the way I have written a string, this means to say that X is having value ten and Y is having value
+
+03:38.670 --> 03:40.790
+20 and that is having value 35.
+
+03:40.800 --> 03:43.680
+And these values are separated by semicolons.
+
+03:44.340 --> 03:49.320
+So from this I want to know what is the value of X or what is the value of Z?
+
+03:49.530 --> 03:53.910
+So I should be able to know where is Z and what is the value beside that one.
+
+03:54.270 --> 03:57.450
+So I should be able to tokenize this one, make the token.
+
+03:57.460 --> 03:58.440
+So what are the tokens?
+
+03:58.440 --> 04:02.020
+X is one token and ten is under the token, right?
+
+04:02.040 --> 04:05.070
+Y is one token and 20 is another token.
+
+04:05.490 --> 04:09.320
+Now same way Z and its value 35 is another token.
+
+04:09.330 --> 04:12.570
+So I want to tokenize this a string make the token out of it.
+
+04:12.570 --> 04:19.580
+So for that the mm are the symbols that are separating are equal to symbol and semicolon symbol.
+
+04:19.590 --> 04:24.450
+So the string should be tokenized based on these two symbols equal to n semicolon.
+
+04:25.110 --> 04:33.200
+So yes, this strategic function will tokenize a string based on the symbols that you use here or Mm.
+
+04:33.210 --> 04:34.260
+That you use here.
+
+04:35.100 --> 04:38.820
+This type of string is famously known as key value pair.
+
+04:39.090 --> 04:45.450
+That is x is a key and its value then separated Y is the key and 20 is its value.
+
+04:45.870 --> 04:48.210
+Z is a key and 35 is a value.
+
+04:48.300 --> 04:51.060
+This is you commonly used in web programming.
+
+04:51.300 --> 04:56.350
+So this type of string, we can tokenize it by using this function that is str t.
+
+04:56.380 --> 05:03.000
+Okay, so I'll show you how to use this function for taking out all these tokens one by one.
+
+05:03.450 --> 05:05.700
+So let us look at a demonstration on this one.
+
+05:05.880 --> 05:11.040
+Now, in this program already I have a string containing the key value pairs.
+
+05:11.040 --> 05:20.190
+Now let us tokenize this and by calling a function str to see that is str functioning.
+
+05:20.220 --> 05:26.850
+So the string name is s one and then the token is equal to symbol and semicolon symbol.
+
+05:28.050 --> 05:31.830
+So here what I will try to do is I will directly use it with C out.
+
+05:31.980 --> 05:35.280
+Let us see what happens and I'll.
+
+05:37.210 --> 05:38.040
+Run this one.
+
+05:40.190 --> 05:47.180
+Yes, it has tokenize and it has given just one letter that is x, but I want this stand also the next
+
+05:47.180 --> 05:48.730
+I want Y then 20.
+
+05:48.740 --> 05:50.870
+Likewise, I want rest of the tokens.
+
+05:51.020 --> 05:53.420
+So for this I have to do it repeatedly.
+
+05:54.470 --> 05:55.510
+So what is the method?
+
+05:55.520 --> 05:56.910
+How to do it repeatedly.
+
+05:56.930 --> 06:00.860
+So for that, I'll remove this and I'll show you again once again.
+
+06:01.010 --> 06:03.230
+So take a character string.
+
+06:03.230 --> 06:05.580
+That is, I will call it as token.
+
+06:05.600 --> 06:07.190
+So this is the method you should follow.
+
+06:07.490 --> 06:17.030
+Say str to say that is a or token and give a string se sorry s one and then the delimiter are equal
+
+06:17.030 --> 06:18.710
+to symbol and semicolon.
+
+06:19.880 --> 06:26.330
+Now I have to do it repeatedly so I should take a loop while token is not equal to null.
+
+06:26.330 --> 06:27.140
+Continue.
+
+06:28.160 --> 06:30.170
+So the first token I will print it.
+
+06:30.650 --> 06:34.460
+So I will say see out token.
+
+06:36.660 --> 06:37.240
+Then.
+
+06:38.170 --> 06:40.500
+NL So it should go into the next line.
+
+06:40.500 --> 06:44.550
+So the first token that will come out from this one is X and that will be in token.
+
+06:44.550 --> 06:46.530
+So first of all, I'm printing that one.
+
+06:46.740 --> 06:56.070
+Then after that I should again call str rt or C bypassing null this time and same mm.
+
+06:57.740 --> 07:00.800
+And this result should be again, taken in string.
+
+07:00.800 --> 07:02.180
+That is token.
+
+07:02.960 --> 07:03.730
+Yes.
+
+07:03.980 --> 07:05.510
+So let us do it repeatedly.
+
+07:05.510 --> 07:11.660
+Now, this time I have to mention NULL, because all of you have given S1 to string token function.
+
+07:11.660 --> 07:16.640
+So next time onwards it works on the same string and for the same delimiter.
+
+07:16.640 --> 07:19.220
+So it will be going on giving the tokens.
+
+07:19.220 --> 07:21.620
+So one by one all the tokens will be displayed.
+
+07:22.040 --> 07:27.020
+So follow this method and now I'll run it and show you how it will print all the tokens.
+
+07:27.260 --> 07:33.980
+See X is first token, second one is ten and the next is Y, then 20, then Z, then 35.
+
+07:35.500 --> 07:38.500
+That's how we can tokenize and take out all the tokens from a string.
+
+07:38.800 --> 07:41.560
+Now here I'll give just a limited semicolon.
+
+07:41.560 --> 07:42.850
+So here also I will change it.
+
+07:42.850 --> 07:44.050
+Just semicolons.
+
+07:44.080 --> 07:45.400
+Let us see what happens.
+
+07:45.400 --> 07:49.840
+At two places I have made changes that is x equal to ten and so on.
+
+07:50.770 --> 07:58.480
+Right now I'll give equal to as it is, but I'll remove semicolon, I'll give quotation marks.
+
+07:58.690 --> 08:01.510
+So here also equal to a question mark.
+
+08:01.510 --> 08:04.600
+Question marks are not there so tokenizing will not be done.
+
+08:06.670 --> 08:09.460
+Si upon equal to symbol tokenization is done.
+
+08:10.680 --> 08:11.190
+Right.
+
+08:11.490 --> 08:15.390
+So I'll remove this equal to and gives just a question mark.
+
+08:15.390 --> 08:17.720
+So no question mark is there in the string.
+
+08:17.730 --> 08:19.800
+So it will give the same result again.
+
+08:21.000 --> 08:22.480
+So I got a single string.
+
+08:22.520 --> 08:24.030
+There is no tokenisation.
+
+08:26.930 --> 08:29.530
+But so we can use different symbol and stuff.
+
+08:29.540 --> 08:34.880
+This semicolon, I'll give quotation marks and then let us see what happens.
+
+08:35.060 --> 08:36.650
+So I'll give equal to symbol.
+
+08:37.130 --> 08:41.390
+And here after question mark, I'll give equal to symbol so you can give them in any order.
+
+08:42.150 --> 08:44.660
+All right, let us run it.
+
+08:44.960 --> 08:45.650
+Yes.
+
+08:45.740 --> 08:48.500
+X ten, Y 20 and Z 35.
+
+08:49.820 --> 08:54.320
+So that's all I have shown you a few important functions on a string, so I suggest you practice this
+
+08:54.320 --> 08:54.830
+one.
+
+08:54.860 --> 08:56.960
+Just watching videos will not help you.
+
+08:57.350 --> 09:02.370
+So next topic will be string class that is available in C++.
+
+09:02.390 --> 09:07.340
+Then afterwards, we will see some student exercise programs using strings.

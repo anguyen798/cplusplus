@@ -1,0 +1,321 @@
+WEBVTT
+
+0
+00:00.390 --> 00:06.810
+let's see function. here so I will write down multiple functions.
+
+1
+00:06.810 --> 00:13.050
+I will write down overloaded functions so here first I will write down a function for finding the sum of
+
+2
+00:13.140 --> 00:16.510
+two integers, 
+
+3
+00:16.860 --> 00:24.720
+So function name is sum and it will take two integers and integer B.
+
+4
+00:25.020 --> 00:28.170
+Then this should be a written type for a function also.
+
+5
+00:28.380 --> 00:30.860
+I will give the return type as int.
+
+6
+00:30.930 --> 00:38.160
+Now here is a simple statement I will write down return a plus b,  just I have to add two numbers and
+
+7
+00:38.280 --> 00:39.660
+return the result.
+
+8
+00:39.660 --> 00:42.020
+So this is the one function and one more.
+
+9
+00:42.010 --> 00:48.750
+I will write float and the function name is sum and it is taking float values two float values float A
+
+10
+00:49.000 --> 00:55.030
+and float B then return a plus b.
+
+11
+00:55.650 --> 01:02.430
+So I have two functions with same name that is sum and sum but their argument  list is different.
+
+12
+01:02.430 --> 01:07.840
+So yes these are overloaded functions, if function names are different than they are unique functions means they are
+
+13
+01:07.890 --> 01:09.390
+not function overloading.
+
+14
+01:09.420 --> 01:16.250
+When we say function overloading if there are two functions with the same name but their argument list
+
+15
+01:16.260 --> 01:17.840
+must be different.
+
+16
+01:17.850 --> 01:23.920
+I will try to write one more sum function, which is  taking two floats let us see what happens.
+
+17
+01:24.000 --> 01:25.990
+float B.
+
+18
+01:26.090 --> 01:30.410
+Now I write down its body,  let's see.
+
+19
+01:30.420 --> 01:38.720
+See here I got a error message that redefinition of sum already I have sum with the same signature.
+
+20
+01:38.930 --> 01:42.930
+And again I am writing one more sum function with the same signature.
+
+21
+01:43.170 --> 01:44.400
+It's not allowed.
+
+22
+01:44.610 --> 01:47.980
+Let us change the return type and see.
+
+23
+01:47.980 --> 01:49.890
+I will make the return type as int.
+
+24
+01:50.100 --> 01:52.170
+Now is it allowed or not.
+
+25
+01:52.170 --> 01:53.830
+See I got the error message.
+
+26
+01:53.850 --> 01:55.680
+So I got a complete message.
+
+27
+01:55.680 --> 01:59.510
+Functions that differ only in their return type cannot be overloaded.
+
+28
+01:59.670 --> 02:06.350
+Yes it's true we saw that, we already discussed that return type was not considered under overloading.
+
+29
+02:06.540 --> 02:08.780
+So anyway I don't want flawed.
+
+30
+02:08.850 --> 02:15.240
+I want to take three integers integer a, integer b, and integer C.
+
+31
+02:15.360 --> 02:22.610
+Now here I will simply say a plus b plus C.
+
+32
+02:22.620 --> 02:30.500
+Now here I will call sum function by sending two numbers 10, 5 
+
+33
+02:34.470 --> 02:43.440
+and endl. I will call one more functions sum by sending 12.5,3.4 
+
+34
+02:46.860 --> 02:49.150
+endl, then cout.
+
+35
+02:49.200 --> 02:59.670
+I will call one more some function by sending three integers 10, 2, 3 and endl. let us see
+
+36
+02:59.670 --> 03:00.530
+what happens.
+
+37
+03:00.540 --> 03:05.250
+Now say here I am getting an error message.
+
+38
+03:05.250 --> 03:08.280
+This is a sum function with 2 integers.
+
+39
+03:08.280 --> 03:10.580
+This is the sum function with three integers.
+
+40
+03:10.590 --> 03:15.720
+Yes I have both the versions but here this is a sum function with the two floats.
+
+41
+03:15.720 --> 03:18.810
+don't I have that one?
+
+42
+03:18.810 --> 03:21.380
+Yes I have that one also that is flawed.
+
+43
+03:21.420 --> 03:22.110
+Is also there.
+
+44
+03:22.120 --> 03:27.540
+Then why am I getting an error message called to sum is ambiguous.
+
+45
+03:27.540 --> 03:31.680
+The reason is these values are by default taken as  double.
+
+46
+03:31.680 --> 03:34.680
+So I have to make them as float.
+
+47
+03:34.680 --> 03:38.910
+Now I have made them as float literals and I don't get that error now.
+
+48
+03:38.910 --> 03:41.760
+Now let us run this and see
+
+49
+03:45.740 --> 03:46.500
+yeah first I got
+
+50
+03:46.500 --> 03:51.690
+The sum of two integers than the sum of two floats then sum of three integers.
+
+51
+03:51.690 --> 03:57.660
+So you have to be careful when sending the parameters and the type of the parameters are strongly checked.
+
+52
+03:57.690 --> 04:03.250
+This was taking float type so you cannot send a double type which is larger than that one.
+
+53
+04:03.300 --> 04:07.510
+So here implicitly the type of parameters will not be changed.
+
+54
+04:07.820 --> 04:10.280
+We have to send the proper parameters.
+
+55
+04:10.620 --> 04:14.730
+So here these three are overloaded functions with all three.
+
+56
+04:14.730 --> 04:18.450
+Same name but the difference is in the argument list.
+
+57
+04:18.450 --> 04:22.350
+See here there are two arguments and here also two arguments.
+
+58
+04:22.350 --> 04:24.400
+But their datA type is different.
+
+59
+04:24.480 --> 04:27.560
+And here we have three arguments and the data type is same.
+
+60
+04:27.570 --> 04:33.630
+But the number of arguments are different because of overloaded function it becomes very easy for us
+
+61
+04:33.630 --> 04:35.590
+to decide the function name.
+
+62
+04:35.640 --> 04:40.450
+Quickly we can assign the name relevent to its working.
+
+63
+04:40.470 --> 04:43.460
+Suppose function Overloading is not there in C++.
+
+64
+04:43.460 --> 04:50.700
+Then I have to give different names to these functions so I may be giving it like this sum_int2
+
+65
+04:50.790 --> 04:52.070
+means
+
+66
+04:52.080 --> 04:53.000
+It is sum of integer two.
+
+67
+04:54.030 --> 04:55.660
+And that is two integers.
+
+68
+04:55.740 --> 04:58.160
+Then I should say sum underscore float 2.
+
+69
+04:58.350 --> 05:05.620
+to say  sum of two floats and this is a function for finding the sum of int 3.
+
+70
+05:05.620 --> 05:06.560
+That is three integer.
+
+71
+05:06.570 --> 05:09.510
+So this is how one way I can differentiate them.
+
+72
+05:09.750 --> 05:16.830
+Or else I can say this is sum tree and this is some two and some one.
+
+73
+05:16.850 --> 05:20.330
+Then I should remember what is the name of function.
+
+74
+05:20.490 --> 05:25.940
+The one I am calling unless I remember the function name I cannot call it easily.
+
+75
+05:25.950 --> 05:31.200
+The benefit of function overloading is if the function is performing some task than the name of that
+
+76
+05:31.200 --> 05:33.720
+function will be relevent to that task.
+
+77
+05:34.080 --> 05:37.110
+So this makes programming very easy and simple.
+
+78
+05:37.200 --> 05:39.390
+Say high relief for the programmers
+
+79
+05:42.260 --> 05:49.190
+so you can practice this and I will give you some challenges you can solve those problems.

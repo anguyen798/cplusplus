@@ -1,0 +1,127 @@
+WEBVTT
+
+00:00.390 --> 00:03.050
+Let us look at bitwise operations.
+
+00:03.060 --> 00:11.430
+I have one variable x in that I will take value 11 and y, I will take value five and also z.
+
+00:13.290 --> 00:17.600
+Let us say Z, assign x and y.
+
+00:17.610 --> 00:23.570
+So an operation is performed on the values of X and Y and the result is A stored in Z.
+
+00:23.580 --> 00:30.690
+So let us display the value of Z and L, let me run this and see what the result will be.
+
+00:31.080 --> 00:33.840
+Like I have already discussed, the result will be one.
+
+00:33.840 --> 00:34.690
+So that's it.
+
+00:34.770 --> 00:37.980
+How the bitwise operations are performed already have shown you.
+
+00:38.190 --> 00:42.840
+Let us take the y value chain, the y value to seven and see what the result will be.
+
+00:46.100 --> 00:49.700
+Yes, we are getting the value three and we have already seen on board.
+
+00:49.970 --> 00:53.600
+Now instead of an operation, I'll show our operation.
+
+00:55.250 --> 00:56.960
+Let's see what the result we get.
+
+01:00.590 --> 01:01.070
+Yeah.
+
+01:01.070 --> 01:03.530
+We got the 15 all become one.
+
+01:03.620 --> 01:08.900
+11 is 1011 and seven is 111.
+
+01:08.900 --> 01:13.130
+So when our operations perform, all the bits becomes one and the result is 50.
+
+01:14.030 --> 01:15.650
+Let me show you XOR.
+
+01:16.220 --> 01:17.960
+This is XOR operation.
+
+01:18.980 --> 01:20.120
+Let us check the value.
+
+01:24.270 --> 01:25.020
+Now this is true.
+
+01:27.090 --> 01:31.620
+So we have seen and or and XOR operations.
+
+01:33.140 --> 01:35.240
+Now let us take a character type variable.
+
+01:35.240 --> 01:36.350
+I'll remove this.
+
+01:36.980 --> 01:43.280
+Let us take a character type variable X with value five and also Y.
+
+01:43.970 --> 01:56.600
+Then let us say why assign that x left shift by one and let us display the value of y and L trying to
+
+01:56.600 --> 01:57.830
+display it as character.
+
+01:57.830 --> 02:04.730
+So I will just typecast it as integer and see what is the output the values will be.
+
+02:06.020 --> 02:09.410
+The bits are shifted on the left hand side and the number gets double that.
+
+02:09.420 --> 02:10.820
+It is becoming ten.
+
+02:11.300 --> 02:20.000
+Now if I have the value 20 here and if I right shift them by one, let us see what is the result.
+
+02:22.520 --> 02:26.480
+The number will get divided by two and the result is ten.
+
+02:29.500 --> 02:34.810
+If I left shift, then the number will get multiplied by two and the result will be 40.
+
+02:40.050 --> 02:40.380
+Yes.
+
+02:40.380 --> 02:41.340
+This is 40.
+
+02:42.420 --> 02:45.150
+Now, let us look at the last bitwise operation.
+
+02:45.150 --> 02:46.500
+That is not.
+
+02:46.830 --> 02:48.030
+If I have.
+
+02:50.440 --> 02:52.090
+X is equal to five.
+
+02:52.090 --> 03:00.130
+And if I say not of x, then as I have already discussed on board and show you the value that it will
+
+03:00.130 --> 03:01.840
+be minus six.
+
+03:03.130 --> 03:05.180
+Yes, we got down to minus six.
+
+03:05.200 --> 03:08.470
+However, you are getting this answer already I have discussed on board.

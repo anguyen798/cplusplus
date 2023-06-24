@@ -1,0 +1,968 @@
+WEBVTT
+
+00:00:05.680 --> 00:00:08.850
+So far, we've seen that when we
+pass a parameter into a function,
+
+00:00:09.200 --> 00:00:10.880
+the default is pass by value.
+
+00:00:11.450 --> 00:00:13.800
+That means a copy of the
+actual parameter is made.
+
+00:00:14.660 --> 00:00:17.690
+We also saw that when we pass an
+array into a function, we don't make
+
+00:00:17.690 --> 00:00:21.200
+a copy, instead we use the location
+of the array, which means we can
+
+00:00:21.200 --> 00:00:22.760
+change it from within the function.
+
+00:00:23.960 --> 00:00:26.160
+Well, sometimes we want to
+be able to change an actual
+
+00:00:26.160 --> 00:00:27.770
+parameter from within a function.
+
+00:00:28.300 --> 00:00:30.860
+As we saw with arrays, this
+is achieved by passing in the
+
+00:00:30.860 --> 00:00:32.570
+location of the actual parameter.
+
+00:00:33.420 --> 00:00:36.969
+We can do this in c++ for any
+variable type not just arrays
+
+00:00:37.280 --> 00:00:38.919
+by using reference parameters.
+
+00:00:39.480 --> 00:00:41.449
+Reference parameters create an alias.
+
+00:00:41.660 --> 00:00:44.480
+So now the formal parameter
+in the function is an alias
+
+00:00:44.480 --> 00:00:45.650
+to the actual parameter.
+
+00:00:46.179 --> 00:00:47.320
+No copy is made.
+
+00:00:47.540 --> 00:00:50.899
+When you change the formal parameter,
+you're changing the actual parameter.
+
+00:00:51.389 --> 00:00:54.130
+This is called pass by reference,
+and it's really easy to achieve
+
+00:00:54.130 --> 00:00:58.160
+in c++ by using the ampersand
+symbol in the parameter list.
+
+00:00:58.330 --> 00:00:59.230
+Let's see an example.
+
+00:01:01.880 --> 00:01:04.269
+In this example, we have a
+function named scale number.
+
+00:01:04.719 --> 00:01:07.940
+Notice that the parameter list to
+the function is not an int name num,
+
+00:01:08.219 --> 00:01:10.239
+it's a reference to an int name num.
+
+00:01:11.230 --> 00:01:13.270
+That's what the ampersand does so.
+
+00:01:13.270 --> 00:01:16.270
+Now when we use num in the
+function body, we're referencing
+
+00:01:16.280 --> 00:01:17.590
+the actual parameter.
+
+00:01:18.030 --> 00:01:19.280
+Let's walk through this.
+
+00:01:20.179 --> 00:01:23.789
+In main, we declare an integer
+number and initialize it to 1000.
+
+00:01:24.750 --> 00:01:27.160
+Then we call the scale number
+function and pass in the
+
+00:01:27.170 --> 00:01:28.589
+actual parameter number.
+
+00:01:29.420 --> 00:01:32.890
+We now transfer control to the
+scale number function since the
+
+00:01:32.890 --> 00:01:36.040
+formal parameter in the scale number
+function is a reference parameter.
+
+00:01:36.400 --> 00:01:38.889
+This means that num is
+an alias for number.
+
+00:01:39.110 --> 00:01:41.369
+If we change num,
+we're changing number.
+
+00:01:41.980 --> 00:01:44.559
+Behind the scenes, the
+location of numbers being
+
+00:01:44.559 --> 00:01:45.799
+passed into the function.
+
+00:01:46.190 --> 00:01:48.690
+So the code in scale number
+checks to see if the number
+
+00:01:48.690 --> 00:01:49.710
+is greater than one 100.
+
+00:01:50.130 --> 00:01:51.210
+In this case, it is.
+
+00:01:51.220 --> 00:01:52.050
+It's one 1000.
+
+00:01:52.210 --> 00:01:55.350
+So we set num to 100, and
+the function completes.
+
+00:01:55.630 --> 00:01:59.270
+When we return to main and display
+number, it will display 100.
+
+00:02:00.120 --> 00:02:03.260
+Pass by reference can be super
+useful for several reasons.
+
+00:02:03.700 --> 00:02:07.039
+First, it allows us to change an
+actual parameter if we need to.
+
+00:02:07.860 --> 00:02:10.620
+Second, we don't make a
+copy of the parameter, which
+
+00:02:10.620 --> 00:02:12.250
+could be large and take time.
+
+00:02:13.210 --> 00:02:16.029
+But we have to be aware of
+potentially unwanted changes.
+
+00:02:16.320 --> 00:02:19.409
+Let's see how we could swap two
+numbers using pass by reference.
+
+00:02:21.880 --> 00:02:24.739
+In this example, we're writing a
+function that swaps the values of
+
+00:02:24.740 --> 00:02:26.460
+the two integers passed into it.
+
+00:02:26.860 --> 00:02:28.160
+Take a look at main.
+
+00:02:28.160 --> 00:02:30.460
+X is 10 and y is 20.
+
+00:02:30.760 --> 00:02:33.860
+X and y are first displayed, and
+we get 10 20,
+
+00:02:34.260 --> 00:02:35.460
+just as we expect.
+
+00:02:35.960 --> 00:02:39.060
+Then we call swap and pass in x y.
+
+00:02:39.260 --> 00:02:41.420
+Then we display x and y again.
+
+00:02:41.420 --> 00:02:42.840
+Now they're 20 and 10.
+
+00:02:42.840 --> 00:02:43.940
+We swap them.
+
+00:02:44.580 --> 00:02:47.480
+Look at the function definition
+and notice that both a and
+
+00:02:47.490 --> 00:02:49.200
+b are reference parameters.
+
+00:02:49.590 --> 00:02:53.290
+So when I call this function
+with x and y, a and b become
+
+00:02:54.179 --> 00:02:56.000
+aliases to x and y, respectively.
+
+00:02:56.960 --> 00:03:00.320
+In the body of the function,
+I set temp to a, then a
+
+00:03:00.320 --> 00:03:02.070
+to b, and then b to temp.
+
+00:03:02.520 --> 00:03:05.220
+And we've swapped the two
+values that were passed into us.
+
+00:03:06.130 --> 00:03:08.750
+What do you think would happen if
+we didn't use pass by reference
+
+00:03:08.790 --> 00:03:10.149
+and we used pass by value?
+
+00:03:10.940 --> 00:03:14.260
+Well, the actuals would be copied,
+so we would swap the copies in
+
+00:03:14.260 --> 00:03:15.560
+the function and then return.
+
+00:03:15.570 --> 00:03:18.690
+When we get back to main, the
+actuals haven't changed since
+
+00:03:18.690 --> 00:03:20.019
+we were working with copies.
+
+00:03:20.700 --> 00:03:23.770
+Let's talk a bit about how
+parameters are passed into functions.
+
+00:03:26.389 --> 00:03:29.700
+Let's see what happens when we pass
+in a vector object to a function.
+
+00:03:30.259 --> 00:03:32.870
+In this case, I have a
+function called print, and it
+
+00:03:32.870 --> 00:03:34.089
+expects a vector of integers.
+
+00:03:35.299 --> 00:03:37.899
+Notice that in this case
+we're using pass by value.
+
+00:03:38.740 --> 00:03:42.640
+Inside the print function, I simply
+use a range based for loop and display
+
+00:03:42.640 --> 00:03:44.290
+the vector elements, pretty easy.
+
+00:03:44.700 --> 00:03:48.550
+But there's one issue with this code
+that is we're using pass by value.
+
+00:03:48.849 --> 00:03:52.540
+So we're making a complete copy of
+the vector object in the function.
+
+00:03:53.010 --> 00:03:56.140
+So the formal parameter v
+will be a copy of the actual
+
+00:03:56.140 --> 00:03:57.829
+parameter data in this case.
+
+00:03:58.640 --> 00:04:02.890
+In order to make a copy, we need to
+allocate storage and copy values over.
+
+00:04:03.280 --> 00:04:05.540
+If the vector is very
+large, we could run it to
+
+00:04:05.540 --> 00:04:07.280
+performance and storage issues.
+
+00:04:08.139 --> 00:04:11.999
+So why don't we use pass by reference
+instead so we can avoid the copy.
+
+00:04:12.070 --> 00:04:13.070
+Let's do it.
+
+00:04:15.220 --> 00:04:18.760
+Notice that now I'm using pass by
+reference since I've declared the
+
+00:04:18.760 --> 00:04:22.600
+formal parameter v as a reference
+parameter using the ampersand.
+
+00:04:23.880 --> 00:04:26.980
+The output of this program is
+exactly the same as before,
+
+00:04:27.270 --> 00:04:30.680
+but we avoid the storage and
+copy overhead of pass by value.
+
+00:04:31.310 --> 00:04:34.669
+But there is one issue, since
+I'm using pass by reference,
+
+00:04:34.920 --> 00:04:37.570
+the print function could
+change the value of the vector.
+
+00:04:37.770 --> 00:04:39.650
+It could even erase the entire vector.
+
+00:04:40.460 --> 00:04:42.040
+This is probably not a good idea.
+
+00:04:42.270 --> 00:04:45.350
+So let's tell the compiler that
+this is a constant reference.
+
+00:04:47.830 --> 00:04:50.270
+So now I've added the const
+keyword to the parameter.
+
+00:04:50.620 --> 00:04:53.880
+Now I've told the compiler to
+use pass by constant reference.
+
+00:04:54.250 --> 00:04:57.510
+So if I try to make any changes
+to the formal parameter v in the
+
+00:04:57.510 --> 00:04:59.550
+function, I will get a compiler error.
+
+00:05:00.179 --> 00:05:03.320
+This is really the best of both worlds
+since we're more efficiently passing
+
+00:05:03.320 --> 00:05:07.400
+information to the function, but
+we're still ensuring that the function
+
+00:05:07.400 --> 00:05:09.250
+can't change the data by mistake.
+
+00:05:09.750 --> 00:05:12.099
+Let's head over to the IDE
+and see this in action.
+
+00:05:13.820 --> 00:05:17.105
+Okay, so now I'm in the IDE, and
+I'm in the section 11 workspace
+
+00:05:17.110 --> 00:05:18.900
+in the pass by reference project.
+
+00:05:19.259 --> 00:05:22.650
+This is the same project that we
+used when we did pass by value.
+
+00:05:22.980 --> 00:05:25.650
+The only thing I've changed
+is I've made the parameters
+
+00:05:25.790 --> 00:05:27.020
+reference parameters now.
+
+00:05:27.220 --> 00:05:30.560
+So you can see the way I did that
+was just by including that ampersand.
+
+00:05:31.100 --> 00:05:33.359
+Now these are the same function
+prototypes I've just named the
+
+00:05:33.360 --> 00:05:37.400
+functions pass by ref1 rather than
+pass by value, as we had before.
+
+00:05:37.679 --> 00:05:41.990
+Okay, so I've got three pass by
+reference functions and just a
+
+00:05:41.990 --> 00:05:45.260
+simple print vector function that
+displays a vector element by element.
+
+00:05:45.730 --> 00:05:50.450
+Pass by reference1 expects a reference
+to an integer, pass by reference2
+
+00:05:50.780 --> 00:05:54.400
+a reference to a string, pass by
+reference3 a reference to a vector.
+
+00:05:54.710 --> 00:05:57.340
+And then the print vector
+function expects a reference to
+
+00:05:57.340 --> 00:05:59.639
+a constant vector because I don't
+want to be able to change the
+
+00:05:59.639 --> 00:06:01.230
+vector from the print function.
+
+00:06:01.500 --> 00:06:04.450
+Now I've implemented all of
+these functions and basically
+
+00:06:04.450 --> 00:06:07.979
+the code hasn't changed from
+before I set number to a 1000.
+
+00:06:08.179 --> 00:06:11.879
+I set the string to change and I
+clear all the elements out of there.
+
+00:06:12.280 --> 00:06:15.159
+Now if you remember before,
+we printed a value, we called
+
+00:06:15.160 --> 00:06:17.670
+the function, we came back and
+the old value was still there.
+
+00:06:17.889 --> 00:06:19.550
+Well, now it's totally
+different because we're
+
+00:06:19.550 --> 00:06:21.120
+passing an alias to the value.
+
+00:06:21.340 --> 00:06:23.070
+Okay, so let's go
+through these examples.
+
+00:06:23.660 --> 00:06:26.160
+Here, in main, I've got numb
+initialized to 10 and another
+
+00:06:26.389 --> 00:06:27.670
+num initialized to 20.
+
+00:06:28.349 --> 00:06:31.420
+So now what I'm doing is
+I'm calling pass by ref1.
+
+00:06:32.170 --> 00:06:33.630
+And I'm passing num into it.
+
+00:06:34.010 --> 00:06:36.920
+So before I call it, I
+expect this to display a 10.
+
+00:06:37.500 --> 00:06:40.420
+But then after I call it, I
+don't expect the 10 anymore
+
+00:06:40.420 --> 00:06:41.680
+because I've passed a reference.
+
+00:06:41.710 --> 00:06:45.480
+Instead, if you look at
+pass by ref1, num is a 1000.
+
+00:06:45.679 --> 00:06:47.460
+So I expect num to change.
+
+00:06:47.460 --> 00:06:49.479
+All right, so let me run this,
+and then we'll walk through
+
+00:06:49.480 --> 00:06:50.890
+exactly what's going on.
+
+00:06:51.089 --> 00:06:51.559
+There you go.
+
+00:06:51.589 --> 00:06:53.749
+Before calling passed
+by ref1, we have a 10.
+
+00:06:54.299 --> 00:06:56.710
+After calling pass by
+ref1, we have a 1000.
+
+00:06:57.080 --> 00:07:00.039
+If you remember the way it was with
+call by value we had 10 and 10.
+
+00:07:00.070 --> 00:07:02.720
+All right, so let's see
+what's really going on here.
+
+00:07:03.559 --> 00:07:05.139
+Let me scroll up just a little bit.
+
+00:07:06.719 --> 00:07:07.370
+There we go.
+
+00:07:08.740 --> 00:07:12.429
+Okay, so I'm in main,
+and I've got num is 10.
+
+00:07:15.570 --> 00:07:17.590
+And I'm displaying
+it right here, right.
+
+00:07:17.590 --> 00:07:19.890
+So that's going to display a 10 in
+that output statement right here.
+
+00:07:19.890 --> 00:07:21.420
+But then I'm calling pass by ref.
+
+00:07:21.740 --> 00:07:26.769
+So I'm going to call pass by ref1
+over here, and it has a variable.
+
+00:07:26.900 --> 00:07:28.739
+And if you remember what
+that variable was, let me
+
+00:07:28.740 --> 00:07:29.909
+scroll up, it's right here.
+
+00:07:29.909 --> 00:07:31.150
+And it's also called num.
+
+00:07:31.260 --> 00:07:32.590
+Remember, this could
+be any other name.
+
+00:07:32.590 --> 00:07:34.860
+They just happen to be the
+same name in this case.
+
+00:07:34.890 --> 00:07:37.000
+So that's got a variable
+in there called num.
+
+00:07:37.570 --> 00:07:42.830
+And right here, what's
+happening is when I pass this
+
+00:07:43.080 --> 00:07:46.539
+num into it, then this num now
+becomes an alias to that num.
+
+00:07:46.789 --> 00:07:48.720
+Okay, and again, don't
+worry about the names.
+
+00:07:48.820 --> 00:07:50.460
+I'm going to use a
+different name next time.
+
+00:07:50.470 --> 00:07:53.260
+But it's common to many
+times use the same name, so
+
+00:07:53.260 --> 00:07:54.430
+don't let that confuse you.
+
+00:07:54.970 --> 00:07:58.059
+And then in here I'm saying num
+equals I believe it was a 1000.
+
+00:07:58.690 --> 00:08:02.210
+So what's happening is this
+is an alias to this number.
+
+00:08:02.210 --> 00:08:04.259
+So this guy's going
+to change to a 1000.
+
+00:08:04.299 --> 00:08:07.100
+Real, real different to call by value.
+
+00:08:07.760 --> 00:08:11.650
+Okay, so in this case, we are
+really passing in the location
+
+00:08:11.650 --> 00:08:13.010
+of the number behind the scenes.
+
+00:08:13.530 --> 00:08:15.530
+But we don't have to worry
+about it because syntactically
+
+00:08:15.530 --> 00:08:17.139
+it's the same as call by value.
+
+00:08:17.960 --> 00:08:19.600
+Let's take a look at
+another example here.
+
+00:08:21.440 --> 00:08:22.749
+I'll scroll down just a little bit.
+
+00:08:22.770 --> 00:08:28.440
+And here we've got the same call
+to pass by ref1 except we're
+
+00:08:28.440 --> 00:08:30.650
+passing in another number, right.
+
+00:08:30.730 --> 00:08:32.350
+In this case, another number is 20.
+
+00:08:32.650 --> 00:08:34.030
+So this will display a 20.
+
+00:08:34.200 --> 00:08:36.569
+And when I get back, it
+will have changed also.
+
+00:08:37.799 --> 00:08:39.630
+There it is, 10 1000.
+
+00:08:39.639 --> 00:08:42.289
+Now we've got another num
+was 20, and now it's a 1000.
+
+00:08:42.619 --> 00:08:46.710
+So you can see that we're passing that
+by reference and the alias is actually
+
+00:08:46.710 --> 00:08:48.710
+referring to the actual parameter.
+
+00:08:48.910 --> 00:08:51.070
+That's the important part
+to really understand here.
+
+00:08:51.830 --> 00:08:54.320
+In this example, let's
+take a look at that.
+
+00:08:54.420 --> 00:08:57.419
+If you recall this one, let me scroll
+up just a little bit so you can see
+
+00:08:57.420 --> 00:09:03.400
+it right here, pass by ref2 expects
+a reference to a string, and it
+
+00:09:03.590 --> 00:09:05.990
+just assigns changed to that string.
+
+00:09:06.750 --> 00:09:09.339
+Okay, so let's walk through this
+one and see what we can expect.
+
+00:09:09.650 --> 00:09:14.520
+In this case, I've got this
+variable right here name, which
+
+00:09:14.520 --> 00:09:21.189
+is Frank and it's in main, and
+it's a string object, right.
+
+00:09:21.430 --> 00:09:22.910
+Then I call pass by ref2.
+
+00:09:23.440 --> 00:09:28.339
+So here's passed by ref2, and it
+has a variable over there called
+
+00:09:28.370 --> 00:09:29.949
+s, that's the formal parameter.
+
+00:09:30.500 --> 00:09:34.090
+And what we're doing here is we're
+passing by reference, so we're
+
+00:09:34.090 --> 00:09:40.120
+passing name over here and this
+s will now be an alias to name.
+
+00:09:40.610 --> 00:09:44.450
+So it's really referring
+to the actual parameter.
+
+00:09:44.570 --> 00:09:46.900
+Remember, this right here
+is the actual parameter.
+
+00:09:47.870 --> 00:09:50.930
+So now when I change this to
+change, nothing happens over here,
+
+00:09:50.940 --> 00:09:52.310
+it's actually happening over here.
+
+00:09:54.420 --> 00:09:55.410
+So this is gone.
+
+00:09:55.430 --> 00:09:56.510
+It's now changed.
+
+00:09:56.610 --> 00:10:01.390
+So when this function is done,
+my actual parameter has changed,
+
+00:10:01.390 --> 00:10:02.670
+in this case, to changed.
+
+00:10:03.330 --> 00:10:06.950
+Okay, so let's run this example,
+and we'll be able to see that
+
+00:10:06.960 --> 00:10:08.870
+that string really does change.
+
+00:10:08.929 --> 00:10:12.389
+You see that right there, name
+before calling pass by ref2 is Frank.
+
+00:10:12.490 --> 00:10:16.890
+Name after calling pass by
+ref2 is changed, pretty easy.
+
+00:10:16.990 --> 00:10:18.160
+It's really up to you.
+
+00:10:18.160 --> 00:10:22.159
+And when you're designing, do you
+need the actual changed or not?
+
+00:10:22.910 --> 00:10:25.400
+If you do need a change,
+you pass it by reference.
+
+00:10:25.440 --> 00:10:28.119
+If you don't need a change,
+you do pass by value.
+
+00:10:29.109 --> 00:10:32.339
+Sometimes pass by value is very
+expensive, as I mentioned before.
+
+00:10:32.340 --> 00:10:35.940
+So you want to pass by reference
+and then qualify it to be constant.
+
+00:10:36.160 --> 00:10:38.370
+And that's what we'll do in the
+print function a little bit.
+
+00:10:38.490 --> 00:10:40.390
+But let's take a look
+at this one here.
+
+00:10:42.550 --> 00:10:44.979
+Okay, so this is the last
+example we'll look at right here.
+
+00:10:45.130 --> 00:10:49.460
+Remember, we're calling passed
+by rer3 and pass by ref3 all it
+
+00:10:49.470 --> 00:10:51.010
+does is clears out that vector.
+
+00:10:51.010 --> 00:10:52.970
+So it's going to remove
+all the vector elements.
+
+00:10:52.980 --> 00:10:54.260
+It's going make the vector empty.
+
+00:10:55.220 --> 00:10:56.410
+Okay, so let's do that.
+
+00:10:58.770 --> 00:10:59.919
+All right, so we're here.
+
+00:11:00.050 --> 00:11:01.139
+This is stooges.
+
+00:11:01.759 --> 00:11:03.950
+And again, stooges
+is declared in main.
+
+00:11:04.289 --> 00:11:11.500
+So stooges is basically three
+strings: Larry, Moe and Curly.
+
+00:11:13.560 --> 00:11:14.520
+And they're in a vector.
+
+00:11:15.460 --> 00:11:17.440
+Okay, so now I'm going
+to print the vector.
+
+00:11:17.910 --> 00:11:20.830
+And I'm going to pass
+stooges into print vector.
+
+00:11:21.270 --> 00:11:24.260
+Now the vector is also
+expecting a reference.
+
+00:11:24.299 --> 00:11:27.100
+In this case, a constant reference
+so I can't change anything.
+
+00:11:27.350 --> 00:11:29.950
+So what happens is when I call print,
+
+00:11:32.350 --> 00:11:34.350
+so when I call print vector,
+
+00:11:34.350 --> 00:11:36.359
+there's a variable over there called v.
+
+00:11:36.880 --> 00:11:41.659
+And since I'm doing pass by
+reference, this refers to this.
+
+00:11:42.590 --> 00:11:46.810
+So whenever I deal with I do any
+operation on v, it's affecting
+
+00:11:46.820 --> 00:11:49.530
+the stooges vector, right.
+
+00:11:50.040 --> 00:11:51.069
+That would be the case.
+
+00:11:51.080 --> 00:11:55.300
+But since this is const,
+this is read-only.
+
+00:11:55.340 --> 00:11:56.700
+There's no changes allowed.
+
+00:11:56.990 --> 00:12:00.100
+But I avoid the whole copy
+issue which is important.
+
+00:12:00.609 --> 00:12:02.320
+All right, so that
+takes care of print.
+
+00:12:02.580 --> 00:12:07.459
+Now when I call pass by reference3,
+I do exactly the same thing, right.
+
+00:12:07.460 --> 00:12:09.850
+So I call pass by reference3.
+
+00:12:10.130 --> 00:12:13.750
+I've got my vector, and it's
+also pointing to stooges.
+
+00:12:14.410 --> 00:12:19.800
+Now when I say v.clear, I'm
+clearing this out now, right.
+
+00:12:19.800 --> 00:12:21.490
+So stooges is empty now.
+
+00:12:22.830 --> 00:12:25.790
+When this when this
+function is done, it's gone.
+
+00:12:26.190 --> 00:12:27.430
+And my vector is empty.
+
+00:12:27.430 --> 00:12:30.380
+So when I print it out again right
+here, you'll see nothing print.
+
+00:12:30.710 --> 00:12:33.820
+If you recall in the pass by
+value, it printed out Larry
+
+00:12:33.820 --> 00:12:35.189
+Moe and Curly again, right.
+
+00:12:35.529 --> 00:12:36.269
+Here nothing.
+
+00:12:36.289 --> 00:12:42.980
+So let's run this, and you could see
+right here stooges before calling
+
+00:12:42.980 --> 00:12:44.720
+pass by ref3: Larry, Moe Curly.
+
+00:12:45.099 --> 00:12:46.540
+After calling it, empty.
+
+00:12:46.980 --> 00:12:51.770
+Why is it empty because pass by
+ref3 cleared out that vector.
+
+00:12:51.860 --> 00:12:53.059
+It deleted all the elements.
+
+00:12:53.100 --> 00:12:56.650
+And because I'm passing
+by reference, it's really
+
+00:12:56.650 --> 00:12:58.670
+affecting the actual object.
+
+00:12:59.240 --> 00:13:03.250
+If I didn't want this to happen, I
+would make this const in which case
+
+00:13:03.250 --> 00:13:06.190
+this won't compile anymore because
+you're not allowing me to change the
+
+00:13:06.190 --> 00:13:07.700
+vector, which is what this is doing.
+
+00:13:08.770 --> 00:13:11.849
+You'll get a lot of chances to
+play with this in the challenge
+
+00:13:11.910 --> 00:13:12.980
+at the end of the section.
+
+00:13:13.250 --> 00:13:16.520
+But that's passed by reference, we
+can use it with simple primitive types
+
+00:13:16.520 --> 00:13:17.920
+or we can use it with object types.
+
+00:13:18.180 --> 00:13:19.800
+It basically works the same way.
+
+00:13:19.810 --> 00:13:23.219
+Just think of it as an alias
+to the actual parameter.

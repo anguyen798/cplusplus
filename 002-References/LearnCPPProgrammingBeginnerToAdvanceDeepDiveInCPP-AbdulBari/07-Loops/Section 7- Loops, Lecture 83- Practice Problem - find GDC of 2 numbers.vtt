@@ -1,0 +1,177 @@
+WEBVTT
+
+0
+00:00.610 --> 00:08.390
+let us write a  program to find the gcd or greatest common divisor of two numbers.  suppose I have two numbers m is
+
+1
+00:09.480 --> 00:13.990
+30 and n is  21.
+
+2
+00:14.010 --> 00:16.150
+Now let me repeat how we can,
+
+3
+00:16.180 --> 00:19.920
+Let us re-learn that how GCD can be found for  2 number.
+
+4
+00:19.920 --> 00:29.600
+So if I have two numbers m and n, what we can do is, out of these two numbers whichever number is greater.
+
+5
+00:29.690 --> 00:30.860
+See this thirty is great.
+
+6
+00:30.870 --> 00:31.930
+And this is smaller.
+
+7
+00:32.040 --> 00:34.950
+So subtract smaller number from the greater number.
+
+8
+00:34.950 --> 00:37.620
+So this becomes 30 minus 21.
+
+9
+00:37.620 --> 00:43.590
+This is 9 and this is 21 now we have nine here nine and 21 which is greater.
+
+10
+00:43.590 --> 00:44.190
+This is greater.
+
+11
+00:44.190 --> 00:48.420
+So subtract the smaller number from that one  21 minus nine gives 12.
+
+12
+00:48.490 --> 00:53.970
+And this is 9 really still this number is smaller and this is a greater So subtract smaller number from
+
+13
+00:53.970 --> 00:54.750
+the greater numbers.
+
+14
+00:54.760 --> 00:59.150
+What is this 12 minus 9 is 3 and this is 9 only.
+
+15
+00:59.150 --> 01:01.610
+Now this time this is greater than that smaller.
+
+16
+01:01.620 --> 01:04.750
+So subtract 9-3 is 6.
+
+17
+01:04.800 --> 01:09.690
+And this is three only, this is  three as it is now 6 and 3.
+
+18
+01:09.690 --> 01:10.300
+This is great.
+
+19
+01:10.300 --> 01:13.140
+And so 6 minus 3 is a 3.
+
+20
+01:13.200 --> 01:18.510
+And this is 3 so no we have reached a stage where both the numbers are equal.
+
+21
+01:18.510 --> 01:26.120
+So therefore this is the gcd that is the greatest common divisor our highest common factor of two numbers.
+
+22
+01:26.130 --> 01:30.530
+So the common factor of thirty and 21 is three.
+
+23
+01:30.540 --> 01:36.610
+So the procedure is you have to subtract the smaller number from the greater number whichever is greater
+
+24
+01:36.610 --> 01:38.990
+which are a smaller check it and subtract it.
+
+25
+01:39.120 --> 01:43.660
+So we have to go on doing it until both the numbers become equal.
+
+26
+01:44.150 --> 01:46.500
+At least they will become equal to 1
+
+27
+01:47.010 --> 01:50.710
+If you are taking two prime no.s then they  will reduse down to finally one.
+
+28
+01:50.730 --> 01:56.310
+So you have to continue the procedure as long as these two are different when these two becomes equal
+
+29
+01:56.310 --> 01:56.990
+we should stop.
+
+30
+01:57.000 --> 01:59.590
+So now, right now m is 3 and n is also three.
+
+31
+01:59.610 --> 02:00.710
+So we should stop.
+
+32
+02:00.960 --> 02:04.380
+So here I read on the program I need 2 numbers.
+
+33
+02:04.790 --> 02:05.490
+m & n.
+
+34
+02:05.790 --> 02:18.690
+So we take two numbers from keyboard Enter two numbers, cin m and n. now what should I
+
+35
+02:18.690 --> 02:32.760
+do is if m is greater then n then from m subtract n and store the result in m only else if
+
+36
+02:32.760 --> 02:36.110
+then n>m then from n  subtract m.
+
+37
+02:36.180 --> 02:39.240
+And store the result in n.
+
+38
+02:39.240 --> 02:47.520
+So these two statements I have to go on repeating how long,  while m is not equal to n.
+
+39
+02:47.890 --> 02:51.360
+So where i should stop when they are equal, I should stop.
+
+40
+02:51.360 --> 02:56.060
+So how long i should continue as long as they are not equal i should Continue.
+
+41
+02:56.160 --> 03:02.510
+So once they are equals it will stop and here I can display GCD of two numbers that is m.
+
+42
+03:02.520 --> 03:08.660
+And so there are a lot of programs that you can go and some of the programs are in exercises so do those
+
+43
+03:08.820 --> 03:09.000
+by yourself.

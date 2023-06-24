@@ -1,0 +1,777 @@
+WEBVTT
+
+0
+00:00.480 --> 00:06.090
+Let us write a class in C++ we will learn how to write a class and we will learn all the things in detail
+
+1
+00:06.130 --> 00:06.990
+about the class.
+
+2
+00:07.020 --> 00:12.480
+How do you define a class how to create objects and how to use objects we learn on these things.
+
+3
+00:12.480 --> 00:13.870
+So let us start.
+
+4
+00:13.870 --> 00:20.990
+See this is a four sided figure.
+
+5
+00:21.310 --> 00:24.060
+This is also a  four sided figure.
+
+6
+00:25.620 --> 00:28.850
+And even this is a four sided figure.
+
+7
+00:30.210 --> 00:37.080
+So what these are these are nothing but rectangles.
+
+8
+00:37.170 --> 00:39.890
+This is example one, example 2.
+
+9
+00:39.920 --> 00:41.410
+Example 3.
+
+10
+00:41.520 --> 00:44.150
+This is an example of a rectangle example.
+
+11
+00:44.160 --> 00:46.320
+All of these are examples of the rectangle.
+
+12
+00:46.320 --> 00:53.130
+So we say that these are the objects of type rectangle instances of type rectangle.
+
+13
+00:53.130 --> 00:56.420
+Each instance is an object of class rectangle.
+
+14
+00:56.940 --> 01:00.540
+So can we define a class rectangle in C++.
+
+15
+01:00.540 --> 01:01.790
+Yes.
+
+16
+01:01.830 --> 01:08.100
+So what are the properties or attributes of a rectangle every rectangle will have its length and breadth
+
+17
+01:08.220 --> 01:11.170
+so this is length and breadth, were the l is smaller here.
+
+18
+01:11.240 --> 01:17.640
+This is length and breadth, now  what are the operations that you can perform on this rectangle
+
+19
+01:17.820 --> 01:21.250
+So we can calculate area,
+
+20
+01:21.450 --> 01:25.830
+Calculations are there see length and breadth is not calculation area is calculation.
+
+21
+01:25.830 --> 01:29.180
+So if we say its a function, we can find its perimeter.
+
+22
+01:29.790 --> 01:30.750
+And so on.
+
+23
+01:30.750 --> 01:33.060
+So these are the important operations.
+
+24
+01:33.060 --> 01:35.760
+So let us define a class for rectangle.
+
+25
+01:35.790 --> 01:38.670
+So I'll start writing a class.
+
+26
+01:38.700 --> 01:42.360
+Class rectangle.
+
+27
+01:44.730 --> 01:46.590
+What are its properties.
+
+28
+01:46.590 --> 01:50.160
+Length and breadth are the properties, attributes.
+
+29
+01:50.160 --> 01:54.370
+So we make them as data members, data members.
+
+30
+01:54.550 --> 02:01.260
+I will take them off type Integer only, integer length is one data member., breadth
+
+31
+02:01.320 --> 02:06.760
+But it's better to write in next line integer breadth.
+
+32
+02:07.230 --> 02:08.800
+These are two data members.
+
+33
+02:08.820 --> 02:15.070
+These are the two functions I can define them here, so one function name is area.
+
+34
+02:15.090 --> 02:20.540
+It will cal. area and it will return integer type value that is area.
+
+35
+02:20.720 --> 02:22.940
+how To calculate, return
+
+36
+02:25.420 --> 02:28.760
+length into breadth.
+
+37
+02:29.160 --> 02:32.400
+This is a area function then for perimeter.
+
+38
+02:32.450 --> 02:43.530
+I will write a function return 2 X length X breadth that's it.
+
+39
+02:43.530 --> 02:48.570
+I'll close this class, so this is the opening bracket of a class and this is the closing bracket and after the closing
+
+40
+02:48.570 --> 02:50.560
+bracket, semicolon is mandatory.
+
+41
+02:50.610 --> 02:51.650
+We should give semocolon.
+
+42
+02:51.840 --> 02:54.150
+So here is a class for rectangle.
+
+43
+02:54.450 --> 02:58.640
+Having 2 data members and area and perimeter and all. then let us see
+
+44
+02:58.680 --> 03:00.660
+how to use this class, so for this
+
+45
+03:00.720 --> 03:03.090
+I will write down Main function and use it.
+
+46
+03:03.510 --> 03:04.250
+So here I write.
+
+47
+03:04.260 --> 03:07.860
+Main function here is a main function void Main I'm writing.
+
+48
+03:07.860 --> 03:08.610
+You can write.
+
+49
+03:08.610 --> 03:10.260
+Void main or int Main.
+
+50
+03:10.260 --> 03:19.390
+Depends on the compilers, I'm creating object of rectangle, rectangle of r1 and r2
+
+51
+03:19.470 --> 03:25.900
+so I have created two objects of type rectangle this is it the method of creating a object rectangle.
+
+52
+03:25.900 --> 03:29.490
+r1 and r2. we observed 2 things here.
+
+53
+03:29.490 --> 03:38.010
+First one I am creating variables, r1 and r2 are variables of what type rectangle, see we declared variables of some
+
+54
+03:38.130 --> 03:43.260
+data type Integer float double character like this, rectangle.
+
+55
+03:43.440 --> 03:44.390
+Is it a data type.
+
+56
+03:44.730 --> 03:47.340
+Yes we have defined our own data type.
+
+57
+03:47.550 --> 03:53.350
+So this class is used for defining our own data type that is usually define data type.
+
+58
+03:53.370 --> 03:58.480
+So yes class are used for defining user defined data type so that you can declare the variables of
+
+59
+03:58.480 --> 03:59.820
+that type.
+
+60
+03:59.820 --> 04:02.380
+So r1 and r2 are rectangle type.
+
+61
+04:03.690 --> 04:07.720
+So these variables we call them as objects.
+
+62
+04:07.850 --> 04:13.990
+Now second thing when we declare any variable inside a function the variable will occupy memory inside
+
+63
+04:14.120 --> 04:14.690
+Stack.
+
+64
+04:15.030 --> 04:20.070
+Yes we know that then these variables are also occupying memory inside the stack.
+
+65
+04:20.700 --> 04:22.650
+How much memory they are occupying.
+
+66
+04:22.830 --> 04:28.030
+So r1 this is occupying how many bytes.
+
+67
+04:28.170 --> 04:29.410
+Let us look at here.
+
+68
+04:29.550 --> 04:35.060
+what are the data members it is having length, how many bytes see as part of our discussion we are saying 
+
+69
+04:35.060 --> 04:40.880
+length int  is 2 bytes but the compiler that we are using that it is taking 4 bytes.
+
+70
+04:40.890 --> 04:43.530
+Just remember this for my explanation it is easy.
+
+71
+04:43.530 --> 04:50.250
+If I take two bytes so I can show you many things in detail so this is 2 bytes and this also two
+
+72
+04:50.250 --> 04:57.710
+bytes, functions are also there,  no functions will not occupy any memory space functions will not occupy
+
+73
+04:57.720 --> 05:00.860
+any memory space only 2 data members so.
+
+74
+05:00.860 --> 05:04.290
+So what is the size of this class.
+
+75
+05:04.290 --> 05:11.540
+This is 4 bytes so if you create variable of this type class. they will take 4 byte.
+
+76
+05:11.550 --> 05:21.930
+So yes this rectangle, r1 will take 4 bytes and 2 bytes for length and two bytes for Breadth, R2 will
+
+77
+05:21.930 --> 05:24.390
+also take 2 bytes.
+
+78
+05:24.390 --> 05:31.400
+This is length and this is Breadth, that's it.
+
+79
+05:31.400 --> 05:33.330
+Two variables are created inside the stack.
+
+80
+05:33.420 --> 05:36.940
+For variables will consume memory four bytes each.
+
+81
+05:37.100 --> 05:40.540
+But class will not consume, this is just the size of a class.
+
+82
+05:40.670 --> 05:46.010
+It is just like this is the plan of a house area of houses.
+
+83
+05:46.010 --> 05:47.720
+Suppose a hundred yards.
+
+84
+05:48.020 --> 05:51.170
+So this is a blueprint on paper.
+
+85
+05:51.170 --> 05:52.870
+So what is the size of the house.
+
+86
+05:52.880 --> 05:53.540
+Hundred yard.
+
+87
+05:53.540 --> 05:57.380
+So this paper will not occupy space of hundred yards.
+
+88
+05:57.650 --> 06:03.430
+But when you construct a house as per this plan it will occupy hundred yards.
+
+89
+06:03.440 --> 06:07.410
+So yes this we are creating a house constructing a house.
+
+90
+06:07.430 --> 06:10.110
+This is taking a hundred yards and this is taking hundred yards.
+
+91
+06:10.270 --> 06:13.530
+So imagine like this OK.
+
+92
+06:13.640 --> 06:15.640
+Creation of an object is over.
+
+93
+06:15.730 --> 06:16.960
+No.
+
+94
+06:17.390 --> 06:19.180
+Can I use this length and breadth.
+
+95
+06:19.350 --> 06:19.990
+Yes.
+
+96
+06:20.000 --> 06:21.220
+How to access.
+
+97
+06:21.440 --> 06:23.610
+I should say r1 length
+
+98
+06:23.630 --> 06:31.010
+I want to make it as 10 and  breadth as five so I will say r1. length.
+
+99
+06:31.020 --> 06:36.180
+Ten, r1.breadth assign .
+
+100
+06:36.320 --> 06:38.060
+5 Yes.
+
+101
+06:38.060 --> 06:40.360
+For accessing the members of this class.
+
+102
+06:40.370 --> 06:44.980
+We have to use dot operators dot operators.
+
+103
+06:45.020 --> 06:47.870
+So using dot operators you can access the members.
+
+104
+06:48.200 --> 06:53.240
+Now one problem I cannot access this length and breadth. reason is
+
+105
+06:53.420 --> 06:58.480
+Whatever you write inside the class by default it becomes private.
+
+106
+06:58.550 --> 07:08.380
+remember this point by default it becomes private so I should write everything under public, public colon
+
+107
+07:08.600 --> 07:16.730
+after this what all written is public, now I can access, unless I say public I cannot
+
+108
+07:16.730 --> 07:20.110
+access them because by default they are private.
+
+109
+07:20.130 --> 07:24.530
+See one thing you observe here I'm showing you the things when required.
+
+110
+07:24.770 --> 07:29.900
+So I am taking them in some sequence initially also I would have done public and said that this is
+
+111
+07:29.900 --> 07:30.610
+compulsary.
+
+112
+07:30.680 --> 07:35.000
+I did not do that first I tried to access and said it is not allowed.
+
+113
+07:35.270 --> 07:38.240
+Then you can understand the reason why I should write public there.
+
+114
+07:38.480 --> 07:43.230
+So most of the topics are like this only, I will  be covered in this fashion only.
+
+115
+07:43.320 --> 07:47.630
+OK so following it bit by bit is more important.
+
+116
+07:47.680 --> 07:53.070
+In this way I guess you can easily memorize the things or understand the things so follow next.
+
+117
+07:53.220 --> 07:54.620
+I had access length and breadth.
+
+118
+07:54.740 --> 07:57.680
+OK this length is 10 and this breadth is 5.
+
+119
+07:57.760 --> 07:59.860
+same way I can do it for r2 also
+
+120
+07:59.870 --> 08:06.080
+its length and breadth I can set them, now I want to know area, cout 
+
+121
+08:07.850 --> 08:09.650
+r1.area
+
+122
+08:10.430 --> 08:18.320
+So who's area will be calculated r1's area that is 10 X 5  50 will appear on the screen so this
+
+123
+08:18.380 --> 08:19.730
+area will be calculated.
+
+124
+08:19.770 --> 08:22.260
+where is area here in the diagram we are not showing it.
+
+125
+08:22.540 --> 08:28.940
+Yes we don't show because functions will not occupy any memory but functions will be there along with
+
+126
+08:29.030 --> 08:30.120
+every object.
+
+127
+08:30.170 --> 08:36.830
+when you call r1.area whose area will be called  thi r1's area will be called so I will extend this one
+
+128
+08:36.830 --> 08:43.940
+then say this is having its own area function and own perimeter function then what about this.
+
+129
+08:43.960 --> 08:49.570
+This is also having its own area function and its own perimeter function.
+
+130
+08:49.570 --> 08:54.740
+They both are having their own area and  perimeter function so I just extend this box and say
+
+131
+08:55.030 --> 08:56.400
+these are having functions.
+
+132
+08:56.400 --> 09:03.110
+Also though they will not occupy memory separately for these each object but I am showing them because they are
+
+133
+09:03.260 --> 09:04.770
+available for each object.
+
+134
+09:04.780 --> 09:08.400
+So now who's area is calculated? r1's area is calculated
+
+135
+09:08.930 --> 09:11.690
+Now I will access this r2 also.
+
+136
+09:11.690 --> 09:19.180
+So here I will write r2.length assign 15 so I'm making this length as
+
+137
+09:19.200 --> 09:20.360
+15.
+
+138
+09:20.370 --> 09:27.640
+There is no space, so I will continue in the same line r2.breadth assigned ten.
+
+139
+09:27.780 --> 09:35.500
+So I will set this breadth as 10. now I will say cout r2.area
+
+140
+09:36.590 --> 09:38.440
+So who's area will be calculated.
+
+141
+09:38.570 --> 09:43.640
+See this function was called up on this one when I said r one.area in this line. 
+
+142
+09:43.700 --> 09:44.600
+now when I'm saying.
+
+143
+09:44.640 --> 09:52.330
+r2.area then area function will be called up on this one so I get the answer as 150 so as I was
+
+144
+09:52.340 --> 09:54.750
+discussing in my previous video.
+
+145
+09:54.770 --> 09:57.920
+This is a design of fingerprint scanner.
+
+146
+09:57.920 --> 10:00.260
+Now we have two fingerprint scanners.
+
+147
+10:00.260 --> 10:04.650
+This is having its own functions and data, this is having its own functions and data.
+
+148
+10:04.940 --> 10:11.650
+If there's a plan of a house and its having rooms and living Hall another room so each house the two
+
+149
+10:11.660 --> 10:16.760
+houses then we have taken two a house each house is having its own data and functions.
+
+150
+10:16.790 --> 10:18.620
+rooms and  living Hall and everything.
+
+151
+10:18.650 --> 10:23.800
+So this is having its own and they both are same houses based on the same plan.
+
+152
+10:23.840 --> 10:28.540
+So there is one class and there are multiple objects you can create n number of objects.
+
+153
+10:28.550 --> 10:29.320
+So that's it.
+
+154
+10:29.330 --> 10:31.280
+I repeat the things once again.
+
+155
+10:31.280 --> 10:33.080
+See this is how we write a class.
+
+156
+10:33.080 --> 10:38.540
+We define data numbers and functions and we should make everything as public when you want to access
+
+157
+10:38.570 --> 10:39.460
+everything.
+
+158
+10:39.840 --> 10:45.910
+Then this is how an object is created objects are created inside the stack for this type class rectangle.
+
+159
+10:46.070 --> 10:47.690
+And who will occupy memory.
+
+160
+10:47.690 --> 10:53.690
+Only data members will occupy memory functions from not occupy any memory but the function works according
+
+161
+10:53.690 --> 10:54.410
+to the object.
+
+162
+10:54.410 --> 10:58.370
+So we feel as if each object is having its own set of functions.
+
+163
+10:58.370 --> 11:03.950
+So I have just extended I have shown the function also-dot operators  is used for accessing them
+
+164
+11:03.950 --> 11:09.590
+members of an object we can access data members also our member functions also both you can access
+
+165
+11:09.590 --> 11:11.750
+using dot operator. now next I will
+
+166
+11:11.870 --> 11:19.130
+Show you how it looks like in the Main memory so I remove the class and show you.
+
+167
+11:19.190 --> 11:23.990
+This is the main memory, and this is the code  section.
+
+168
+11:23.990 --> 11:27.390
+This is a stack and this is heap.
+
+169
+11:27.410 --> 11:30.740
+As the diagram that we are following.
+
+170
+11:31.380 --> 11:35.150
+See what is the function we are having, just main function.
+
+171
+11:35.150 --> 11:36.340
+Yes main function.
+
+172
+11:36.350 --> 11:37.620
+This is main function.
+
+173
+11:37.630 --> 11:42.420
+code then actually inside the class we are having two more functions.
+
+174
+11:42.440 --> 11:51.280
+area and perimeter, then where they will be, area and perimeter will also be present here.
+
+175
+11:51.320 --> 11:52.880
+How many times.
+
+176
+11:52.880 --> 11:57.060
+Only one time so all three functions are here.
+
+177
+11:57.080 --> 12:03.700
+Where is a class, class definition is not there just their functions are present here.
+
+178
+12:03.740 --> 12:10.600
+Functions are present here now when the main function start to objects are created inside the stack.
+
+179
+12:10.610 --> 12:17.590
+So r1 will have its own length and breadth, R2 will also have its own length & breadth and when r.length
+
+180
+12:17.600 --> 12:21.780
+when you said this no. is access ten and this is five.
+
+181
+12:21.890 --> 12:27.990
+Then when you said r2.length and r2.breadth then this is access 15 then 10 then.
+
+182
+12:28.010 --> 12:31.450
+when we said r1.area this line, this line.
+
+183
+12:31.470 --> 12:32.660
+when we said this one.
+
+184
+12:32.690 --> 12:39.650
+So this area function is called it over r1 and when we said this line r2.area then this area
+
+185
+12:39.650 --> 12:45.430
+function is called over r two objects so it will multiplied these two and  give the result. and this time it will multiply
+
+186
+12:45.430 --> 12:46.410
+these two and give the result.
+
+187
+12:47.930 --> 12:53.240
+So you can see that a class was having two data members and two functions.
+
+188
+12:53.240 --> 12:57.950
+So the data number for each object is separate inside the stack.
+
+189
+12:57.950 --> 13:03.100
+But the functions there is only one copy but depending on how you called it when you said r1.area
+
+190
+13:03.140 --> 13:06.290
+then this function is called upon r1.
+
+191
+13:06.350 --> 13:11.970
+When you said r2.area then this function is called upon r2.
+
+192
+13:12.560 --> 13:16.040
+That's it, these are the internal details of a memory.
+
+193
+13:16.040 --> 13:19.790
+The next video I will show you how to access an object using a pointer.

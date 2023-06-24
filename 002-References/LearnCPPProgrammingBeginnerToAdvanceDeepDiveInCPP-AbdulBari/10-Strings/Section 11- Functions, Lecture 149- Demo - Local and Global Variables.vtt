@@ -1,0 +1,333 @@
+WEBVTT
+
+0
+00:00.180 --> 00:04.990
+Now let us look at a local and global variables.
+
+1
+00:05.040 --> 00:08.220
+I will take one function fun, here inside this.
+
+2
+00:08.250 --> 00:12.470
+I will take one local variable A that with value 10.
+
+3
+00:12.490 --> 00:16.170
+Now this is a local variable that is useful only inside this function.
+
+4
+00:16.170 --> 00:21.250
+I can see a plus plus or i can say cout a.
+
+5
+00:22.170 --> 00:29.850
+This is accessible only here, can I access that same function inside main If I see A, see there is no a
+
+6
+00:29.910 --> 00:32.320
+declared here inside main function.
+
+7
+00:32.430 --> 00:38.910
+So there is no A declared inside main function so I'm getting an error message that A is of undeclared
+
+8
+00:39.000 --> 00:44.830
+identifier A,  when a variable is available in some function it is accessible only there.
+
+9
+00:44.910 --> 00:48.790
+It means the variables have local scope in C++.
+
+10
+00:48.930 --> 00:53.040
+I will declare one global variable integer G assign 5.
+
+11
+00:53.040 --> 00:58.020
+Now this should be accessible everywhere which is declared outside, now inside main function.
+
+12
+00:58.020 --> 01:03.380
+Can I say cout g yes that value of g can be accessed here.
+
+13
+01:03.450 --> 01:07.370
+Can I Access that same variable g in function fun also.
+
+14
+01:07.470 --> 01:10.760
+yes you can access that in function fun also.
+
+15
+01:10.770 --> 01:13.850
+see there are no error messages here.
+
+16
+01:13.860 --> 01:21.040
+So it means this g is accessible inside function fun as well as inside function main here.
+
+17
+01:21.050 --> 01:22.020
+I will say G
+
+18
+01:22.050 --> 01:26.050
+Plus plus, I will modify the value of g, g is 5 so it becomes 6.
+
+19
+01:26.070 --> 01:32.670
+And here it should display 6 and what about main function.
+
+20
+01:32.680 --> 01:34.500
+I will call function fun.
+
+21
+01:34.500 --> 01:37.540
+Then again I will display the value of G.
+
+22
+01:37.540 --> 01:40.380
+Now if you see here this is cout g.
+
+23
+01:40.390 --> 01:43.320
+First the value of G that is 5 is displayed.
+
+24
+01:43.320 --> 01:50.020
+Then it will call the function fun, function fun will have variable A and g,  A is increase and g is increase.
+
+25
+01:50.180 --> 01:57.480
+It should print 11 and 6 then when the function return back again in the main function it should display
+
+26
+01:57.480 --> 01:58.980
+6.
+
+27
+01:58.980 --> 02:01.100
+Let us see what are the results we will get.
+
+28
+02:01.260 --> 02:06.650
+We should get 5, and 11, 6 and then again 6.
+
+29
+02:07.080 --> 02:12.960
+Yeah first the value from the main function then the values are printed from function fun.
+
+30
+02:12.960 --> 02:16.720
+Then again the values from function main, i will do one thing.
+
+31
+02:16.730 --> 02:21.080
+I'll remove these things and I will also remove this A.
+
+32
+02:21.210 --> 02:29.210
+Now this is function of having just G. so g is modified by function fun and here let us display
+
+33
+02:29.230 --> 02:33.340
+g before and after calling function fun.
+
+34
+02:33.340 --> 02:38.740
+And from here also I will change, now just in main function I will print the value of G before calling
+
+35
+02:38.740 --> 02:41.040
+function fun and after calling function fun.
+
+36
+02:41.440 --> 02:45.930
+So g should be changed to 6 because the function fun is changing the value of G.
+
+37
+02:45.970 --> 02:48.780
+So this is the only work I'm doing inside function fun.
+
+38
+02:48.950 --> 02:49.830
+Let us run.
+
+39
+02:49.930 --> 02:55.690
+Yeah I got the value as 5 and 6 so these are the only two couts I have, which is printing 5.
+
+40
+02:55.750 --> 02:57.600
+And then this is printing 6.
+
+41
+02:57.820 --> 03:02.210
+So this shows that variable g is accessible in all the functions.
+
+42
+03:02.260 --> 03:05.410
+So these are global and local variables.
+
+43
+03:05.410 --> 03:09.080
+Now let us see one more thing inside functions fun.
+
+44
+03:09.130 --> 03:14.200
+I will declare one more variable called G and whose value is 10.
+
+45
+03:14.320 --> 03:17.080
+Now you can see that the color of this G has changed.
+
+46
+03:17.080 --> 03:19.970
+It was a green to show that this is a global variable.
+
+47
+03:20.140 --> 03:21.510
+Here it is green.
+
+48
+03:21.520 --> 03:24.340
+Now if I said g++ then what happens.
+
+49
+03:24.340 --> 03:26.520
+Let us see, now if you see function fun.
+
+50
+03:26.560 --> 03:32.980
+It is having a local variable g also and global variable name is also G when we say G plus plus which
+
+51
+03:33.160 --> 03:37.120
+variable it will increment it will increment local variable.
+
+52
+03:37.120 --> 03:41.540
+So when the compiler will look for the declaration of variable in the nearest scope.
+
+53
+03:41.550 --> 03:43.220
+So this is the nearest scope.
+
+54
+03:43.240 --> 03:44.770
+Let us run the program.
+
+55
+03:45.160 --> 03:52.360
+Yes the global variable 5 is not modified by the function fun, main function I have displayed g before
+
+56
+03:52.390 --> 03:54.430
+and after calling function fun.
+
+57
+03:54.430 --> 03:57.030
+So it has not modified the global variable.
+
+58
+03:57.050 --> 03:59.460
+One more thing I'll show you here.
+
+59
+03:59.560 --> 04:03.640
+I will have a block level scope and inside this block.
+
+60
+04:03.680 --> 04:11.850
+I will have one more variable integer G assign 0 and I will say G plus plus.
+
+61
+04:11.980 --> 04:16.150
+And also I will say Cout G endl.
+
+62
+04:16.240 --> 04:19.690
+Now here I will display cout G.
+
+63
+04:19.930 --> 04:23.210
+can you figured out which variable we are referring to.
+
+64
+04:23.230 --> 04:25.770
+See here I have a local variable g.
+
+65
+04:25.960 --> 04:32.950
+But again a block is there inside that again g is declared whose value is zero and g-plus Plus which g
+
+66
+04:32.950 --> 04:38.830
+will increment, this local g will increment and the value will be 1 and when it comes out of this
+
+67
+04:38.830 --> 04:40.550
+block then the value of G.
+
+68
+04:40.570 --> 04:46.950
+which G is accessible here which is outside this block outside the block so that values is 10 and
+
+69
+04:46.950 --> 04:49.520
+it remains 10 only and the 10 value is displayed.
+
+70
+04:49.520 --> 04:51.210
+Let us run this and see.
+
+71
+04:51.280 --> 04:54.820
+First the function main is printing this g.
+
+72
+04:54.850 --> 04:57.940
+That is 5 and then 1 is displayed.
+
+73
+04:57.940 --> 05:00.410
+So that is this one.
+
+74
+05:00.500 --> 05:01.670
+This variable g.
+
+75
+05:01.750 --> 05:03.740
+And then this variable g is 10.
+
+76
+05:03.730 --> 05:11.350
+So this is referring to this one because this is with in this block only and g is created and
+
+77
+05:11.350 --> 05:12.360
+destroyed.
+
+78
+05:12.820 --> 05:14.420
+So that's all.
+
+79
+05:14.440 --> 05:18.310
+So variables in C++ have block level scope.
+
+80
+05:18.310 --> 05:26.530
+So in this block this G belongs to this block only and this g belongs to this outer block and as inside
+
+81
+05:26.530 --> 05:28.590
+this block there is one more g available.
+
+82
+05:28.600 --> 05:33.660
+So this outside is not accessible and this is a global variable g.

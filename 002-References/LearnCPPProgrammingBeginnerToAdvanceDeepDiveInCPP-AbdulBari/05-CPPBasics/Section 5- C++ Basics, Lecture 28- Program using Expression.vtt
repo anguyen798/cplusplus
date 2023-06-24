@@ -1,0 +1,481 @@
+WEBVTT
+
+0
+00:00.210 --> 00:05.040
+we will write a program for finding the area of a triangle.
+
+1
+00:05.070 --> 00:08.220
+Already we have seen the formula in the previous video.
+
+2
+00:08.290 --> 00:14.460
+Now we will write a complete program so already in one of the video I have discuss what is the procedure
+
+3
+00:14.460 --> 00:16.200
+and how to develop a program.
+
+4
+00:16.570 --> 00:23.610
+So every basic program will have three parts or three elements first is input.
+
+5
+00:23.640 --> 00:27.220
+It will take some input and then process the output.
+
+6
+00:27.270 --> 00:29.250
+So these are the three steps that we will follow.
+
+7
+00:30.030 --> 00:35.400
+So program should have these three things, some basic program, so whatever they input has or take it to take
+
+8
+00:35.430 --> 00:36.320
+the values.
+
+9
+00:36.360 --> 00:38.250
+Then it will process them and give output.
+
+10
+00:38.640 --> 00:41.270
+So let us see for what we have to write on a program.
+
+11
+00:41.280 --> 00:43.140
+We have to write a program for finding the area.
+
+12
+00:43.170 --> 00:49.590
+So this is the formula base into height divided by two and that is area.
+
+13
+00:49.890 --> 00:57.430
+So in this what is input base into height is input then more output Area is output.
+
+14
+00:57.510 --> 01:03.810
+So this is output and these two are input of a program.
+
+15
+01:04.010 --> 01:04.880
+Great.
+
+16
+01:05.100 --> 01:09.840
+So now program should take two inputs and then give the output.
+
+17
+01:10.620 --> 01:16.160
+So for this first of all every drop flow chart first thing is starting off the flow chart.
+
+18
+01:16.380 --> 01:18.650
+So this is start now.
+
+19
+01:18.660 --> 01:21.810
+Next we should take input.
+
+20
+01:21.830 --> 01:26.510
+See imagine I am a program and you are using the program.
+
+21
+01:26.520 --> 01:27.750
+So you are a user.
+
+22
+01:27.900 --> 01:34.050
+So I have to find out the area of the triangle, then what I should know I should know what is base and
+
+23
+01:34.050 --> 01:37.440
+height then I should ask you tell me what is base and height.
+
+24
+01:37.440 --> 01:39.320
+So I should take input from you.
+
+25
+01:39.330 --> 01:41.000
+So the first thing is input.
+
+26
+01:41.010 --> 01:42.330
+So first of all I should ask.
+
+27
+01:42.330 --> 01:47.970
+Please enter base and height so that can be done by  using a parallelogram.
+
+28
+01:48.060 --> 01:49.780
+So input and output box.
+
+29
+01:49.800 --> 01:52.820
+So here print I will write the message.
+
+30
+01:53.160 --> 01:58.630
+Enter base and height enter base and height.
+
+31
+01:58.720 --> 01:59.480
+this is the message.
+
+32
+01:59.520 --> 02:03.610
+So it is just like I'm asking you to please give me base and height.
+
+33
+02:03.630 --> 02:08.360
+Then you give me I will take them in variables so that is b and h.
+
+34
+02:08.490 --> 02:10.040
+So two values whatever you give.
+
+35
+02:10.110 --> 02:11.740
+I will read them.
+
+36
+02:11.850 --> 02:15.390
+So this is input, input is over next process.
+
+37
+02:15.510 --> 02:18.090
+So what is the process, formula.
+
+38
+02:18.210 --> 02:20.530
+What is the formula? area.
+
+39
+02:20.670 --> 02:28.120
+I will call it as a is assignment base into height by doing this the formula.
+
+40
+02:28.440 --> 02:32.320
+So even I can write them in brackets also.
+
+41
+02:32.510 --> 02:33.950
+Now process is over.
+
+42
+02:34.020 --> 02:35.730
+Now next is output.
+
+43
+02:35.910 --> 02:38.370
+So I have to give you the result.
+
+44
+02:38.610 --> 02:43.650
+So I should tell you that area is so and so the next is again output.
+
+45
+02:43.860 --> 02:46.440
+So for that paralellogram or  output box.
+
+46
+02:46.440 --> 02:50.610
+So here I should say print area is .
+
+47
+02:50.880 --> 02:52.530
+So this is the message I'm giving you.
+
+48
+02:52.560 --> 02:54.320
+So this is area is.
+
+49
+02:54.330 --> 02:56.430
+So the messages are written in quotes.
+
+50
+02:56.490 --> 02:58.590
+Then next is a.
+
+51
+02:58.680 --> 03:04.750
+I have the result in a so that's all the output end of the flow chart.
+
+52
+03:04.770 --> 03:05.480
+So this is end.
+
+53
+03:05.520 --> 03:09.440
+And the next thing I will write down the algorithm for this one.
+
+54
+03:09.510 --> 03:14.850
+So the algorithm will contain the same thing just I have to group all of them together here and I was
+
+55
+03:14.850 --> 03:15.690
+like an algorithm.
+
+56
+03:15.700 --> 03:23.930
+And after that we will write a program. algorithm area.
+
+57
+03:24.320 --> 03:30.710
+Now inside this let us begin not the same scripts first of all I should give a message to you I should
+
+58
+03:30.710 --> 03:41.150
+tell you that enter base and height then I should read the values that you
+
+59
+03:41.150 --> 03:43.130
+are giving me in b and h.
+
+60
+03:43.130 --> 03:51.590
+These are variables then I should calculate area a assign  B into h by 2 now.
+
+61
+03:51.650 --> 03:53.370
+Then I should print the result.
+
+62
+03:53.580 --> 03:59.590
+Print area is so just it just print right.
+
+63
+03:59.690 --> 04:08.350
+So print this one then end of this. thats it.  see whatever the contents are there in flow chart and then
+
+64
+04:08.350 --> 04:13.800
+algorithm looks similar because this is just formula based  program or so very simple program.
+
+65
+04:13.920 --> 04:16.520
+Write some extra things to write the algorithm.
+
+66
+04:16.640 --> 04:18.670
+Right now it looks the same now.
+
+67
+04:18.740 --> 04:27.010
+Next I have to write on a c++ program for this one. so first thing is hash include i should include a
+
+68
+04:27.020 --> 04:37.670
+header file that is iostream. then using namespace std. 
+
+69
+04:37.670 --> 04:38.960
+I have to write down.
+
+70
+04:39.440 --> 04:43.090
+Then the next thing is int main function.
+
+71
+04:44.560 --> 04:48.310
+Now let us convert this algorithm to a program.
+
+72
+04:48.490 --> 04:52.030
+So inside the algorithm very first thing is enter base and height.
+
+73
+04:52.100 --> 04:53.230
+So it is print.
+
+74
+04:53.270 --> 04:54.650
+So how to write print.
+
+75
+04:54.680 --> 05:02.510
+We use cout so already i have used namespace so I can directly saycout enter base and height
+
+76
+05:03.200 --> 05:05.940
+and base and height.
+
+77
+05:06.860 --> 05:09.230
+So this will give a message on the screen right.
+
+78
+05:09.260 --> 05:12.720
+And on base and height this will appear on the screen.
+
+79
+05:12.730 --> 05:14.440
+Then we need b and h.
+
+80
+05:14.450 --> 05:22.670
+So for reading cin is there, so I should write cin that is extraction operator b done for another
+
+81
+05:22.670 --> 05:23.520
+variable again.
+
+82
+05:23.520 --> 05:23.820
+again.
+
+83
+05:23.810 --> 05:24.380
+write the operator
+
+84
+05:24.410 --> 05:25.270
+So we cannot write
+
+85
+05:25.270 --> 05:25.640
+Comma.
+
+86
+05:25.670 --> 05:27.230
+Don't get confused here.
+
+87
+05:27.230 --> 05:31.560
+As many variables you are rereading you should write all of them with extraction operator.
+
+88
+05:32.420 --> 05:35.230
+Now next important thing this b and h.
+
+89
+05:35.240 --> 05:37.380
+What they are? variables.
+
+90
+05:37.490 --> 05:41.050
+So in C++ program you must declare the variable first.
+
+91
+05:41.080 --> 05:46.640
+So can that is go back on the top and declare the variable which type of league tables we want here.
+
+92
+05:46.670 --> 05:48.680
+see this result should be in float.
+
+93
+05:48.680 --> 05:50.470
+So let us make everything as float.
+
+94
+05:50.780 --> 05:56.060
+So I will declare them as float base height and area.
+
+95
+05:56.480 --> 05:59.650
+So I have three variables all of them are of type float.
+
+96
+05:59.660 --> 06:04.590
+The next step in the algorithm we have finished with this is step and this is step the next is process.
+
+97
+06:04.610 --> 06:06.330
+So find out the area.
+
+98
+06:06.410 --> 06:12.360
+So a assign B in to h divided by two.
+
+99
+06:12.470 --> 06:18.530
+And this I can put it in bracket that the next step is print the result than end.
+
+100
+06:18.800 --> 06:27.890
+So here I will write on area is so c out first of all a message that this area is right.
+
+101
+06:27.960 --> 06:34.010
+There's a message then display a variable so this is a variable see the message should be double quotes
+
+102
+06:34.140 --> 06:36.070
+variable should not be in double quotes.
+
+103
+06:36.680 --> 06:38.780
+Then end of the program.
+
+104
+06:39.170 --> 06:40.850
+So this is the C++ program.
+
+105
+06:40.850 --> 06:47.440
+So first we have written the flowchart and convert it to an algorithm that is having input process output
+
+106
+06:47.450 --> 06:52.450
+so this also having input and then process and output so these lines are input.
+
+107
+06:52.730 --> 07:00.060
+And this is for process and these lines for output so I'll give the demonstration of this program in
+
+108
+07:00.060 --> 07:00.960
+the next video.
+
+109
+07:01.080 --> 07:06.410
+But before that you have a coding exercise so in that coding exercise you have to write down the formula
+
+110
+07:06.410 --> 07:07.770
+for this one.
+
+111
+07:07.770 --> 07:09.900
+So some code is already done there.
+
+112
+07:09.900 --> 07:14.390
+So just you have to write on the formula properly for finding the area of a triangle.
+
+113
+07:15.150 --> 07:20.880
+So read the description in coding exercise and also read the comments properly and complete the codings
+
+114
+07:20.880 --> 07:21.330
+exercise.
+
+115
+07:21.330 --> 07:27.000
+Then after that you will find a demonstration video that after watching it you can do it on your own
+
+116
+07:27.000 --> 07:27.590
+machine.
+
+117
+07:27.630 --> 07:28.850
+So that's all in this video.
+
+118
+07:28.860 --> 07:34.260
+You will learn more formulas in the coming videos, we will write more programs using just formulas and
+
+119
+07:34.320 --> 07:35.120
+expressions.

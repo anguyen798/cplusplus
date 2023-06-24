@@ -1,0 +1,881 @@
+WEBVTT
+
+00:00:05.600 --> 00:00:09.960
+Before we get into declaring and defining overloaded operators for our own classes,
+
+00:00:09.960 --> 00:00:11.260
+let's understand what they are.
+
+00:00:11.960 --> 00:00:14.960
+We've already seen what operators are and how to use them.
+
+00:00:14.960 --> 00:00:17.960
+We have traditional operators with traditional meetings.
+
+00:00:17.960 --> 00:00:22.260
+These include the plus symbol for addition, the equal sign for assignment and many more.
+
+00:00:23.160 --> 00:00:26.460
+The c++ operators are defined to work with the primitive
+
+00:00:26.460 --> 00:00:28.660
+or built in c++ types,
+
+00:00:28.660 --> 00:00:31.660
+such as integer, doubles, longs and so forth.
+
+00:00:32.060 --> 00:00:37.040
+In fact we've already seen that the c++ operators are overloaded to work with different types.
+
+00:00:37.840 --> 00:00:41.440
+For example, the plus symbol can add two integers, two doubles,
+
+00:00:41.440 --> 00:00:43.240
+an integer and a double and so forth.
+
+00:00:43.790 --> 00:00:47.890
+C++ allows us to overload operators for our own user-defined types.
+
+00:00:48.290 --> 00:00:52.090
+This allows our types to behave and feel similar to the built-in types.
+
+00:00:52.790 --> 00:00:56.690
+This allows our types to behave and feel similar to the built-in types.
+
+00:00:57.490 --> 00:01:01.490
+more readable and more writeable. The only operator that the compiler provides a default implementation for
+
+00:01:01.490 --> 00:01:04.790
+is the assignment operator, the single equal sign.
+
+00:01:05.090 --> 00:01:08.590
+That's because the compiler must be able to assign one object to another.
+
+00:01:09.390 --> 00:01:13.690
+All the other operators that can be overloaded must be explicitly defined by the programmer.
+
+00:01:17.190 --> 00:01:21.550
+So what does operator overloading look like from the perspective of using the objects.
+
+00:01:22.210 --> 00:01:26.310
+Well, first, let's see how we would write code if we were not overloading operators.
+
+00:01:26.670 --> 00:01:29.670
+Suppose we've implemented our own class name number,
+
+00:01:29.670 --> 00:01:32.770
+and that class can model any kind of number: an integer, a double,
+
+00:01:32.770 --> 00:01:35.770
+a complex number, an irrational number, you name it.
+
+00:01:36.270 --> 00:01:40.270
+If we want to be able to manipulate number objects so that we can add them, subtract them,
+
+00:01:40.270 --> 00:01:43.770
+multiply them and so forth, we could implement non-member functions
+
+00:01:43.770 --> 00:01:46.270
+or member functions to achieve what we want.
+
+00:01:46.270 --> 00:01:49.770
+So if we wanted to add a and b, then multiply that result by the
+
+00:01:49.770 --> 00:01:51.770
+quotient of c divided by d.
+
+00:01:51.770 --> 00:01:53.770
+Our code might look like the first statement.
+
+00:01:54.760 --> 00:01:56.560
+If we wanted to use member methods,
+
+00:01:56.560 --> 00:02:00.960
+then we need objects and method names so our code might look like the second statement.
+
+00:02:01.560 --> 00:02:04.560
+Are these statements very unreadable and very difficult to write?
+
+00:02:04.810 --> 00:02:08.110
+Maybe it depends on your perspective, but the point is
+
+00:02:08.110 --> 00:02:10.360
+that we're adding dividing and multiplying
+
+00:02:10.360 --> 00:02:15.260
+and we've been using these operators to do that since we were little kids in school why can't we use them now.
+
+00:02:16.140 --> 00:02:20.440
+Of course, the answer is that c++ doesn't know what to do with our user-defined types.
+
+00:02:20.940 --> 00:02:24.940
+In most cases, it makes no sense to add or multiply or subtract your objects.
+
+00:02:24.940 --> 00:02:28.940
+For example, what does it mean to subtract two player objects in a game
+
+00:02:28.940 --> 00:02:30.940
+or multiply two account objects?
+
+00:02:31.440 --> 00:02:33.640
+It's totally dependent on what you want to do.
+
+00:02:34.140 --> 00:02:38.290
+In many cases, it doesn't make sense to overload certain operators for your classes.
+
+00:02:38.540 --> 00:02:42.140
+In those cases don't do it. Only do it if it makes sense.
+
+00:02:42.940 --> 00:02:47.340
+In this example, I would argue that it does make sense since the users of the number class
+
+00:02:47.340 --> 00:02:50.640
+would know the meaning and how to use those operators we would overload.
+
+00:02:51.300 --> 00:02:54.900
+Let's see what our calculation would look like if we overloaded the addition,
+
+00:02:54.900 --> 00:02:56.900
+multiplication and division operators.
+
+00:02:59.260 --> 00:03:01.860
+Here you can see that our user-defined number class
+
+00:03:01.860 --> 00:03:05.860
+now looks and feels and behaves like the built in c++ types.
+
+00:03:07.110 --> 00:03:09.610
+Operator overloading is syntactic sugar.
+
+00:03:09.860 --> 00:03:12.960
+Behind the scenes, we're still calling methods or functions.
+
+00:03:12.960 --> 00:03:14.960
+We'll see how it all works in the next video.
+
+00:03:16.620 --> 00:03:19.120
+So what operators can be overloaded?
+
+00:03:19.720 --> 00:03:23.220
+Well, c++ allows you to overload most of its operators.
+
+00:03:23.220 --> 00:03:25.720
+There are a few exceptions and they're listed in the table.
+
+00:03:26.220 --> 00:03:30.420
+We can't overload the scope resolution operator, the conditional operator,
+
+00:03:30.420 --> 00:03:34.620
+the pointer to member operator, the dot operator and the sizeof operator.
+
+00:03:35.280 --> 00:03:39.180
+Remember, just because an operator can be overloaded doesn't mean you should.
+
+00:03:39.180 --> 00:03:41.940
+Don't overload it unless it makes sense and makes your code
+
+00:03:41.940 --> 00:03:44.440
+more usable, more readable and more writable.
+
+00:03:46.440 --> 00:03:50.740
+So as always, there are some basic rules that must be followed when you're overloading operators.
+
+00:03:51.140 --> 00:03:55.240
+First the precedence and associativity of the operator that you're overloading
+
+00:03:55.240 --> 00:03:56.240
+cannot be changed.
+
+00:03:56.740 --> 00:03:59.740
+This makes perfect sense since c++ programmers
+
+00:03:59.740 --> 00:04:03.940
+are already familiar with the precedence and associativity of its operators.
+
+00:04:04.340 --> 00:04:06.940
+The arity of an operator cannot be changed.
+
+00:04:06.940 --> 00:04:09.440
+So if an operator is a binary operator
+
+00:04:09.440 --> 00:04:13.340
+which means that it's applied to two arguments, then this can't be changed.
+
+00:04:14.240 --> 00:04:17.740
+C++ does not allow you to change the way that the current operators
+
+00:04:17.740 --> 00:04:19.240
+work with the built-in types.
+
+00:04:20.230 --> 00:04:25.130
+C++ does it all you create new operators that are not currently used by c++.
+
+00:04:25.930 --> 00:04:30.130
+And finally, c++ allows you to overload operators using global functions
+
+00:04:30.130 --> 00:04:31.130
+or member methods.
+
+00:04:31.790 --> 00:04:35.390
+However, there are several operators that must be implemented
+
+00:04:35.390 --> 00:04:39.050
+as member methods as you can see. Notice that the assignment operator
+
+00:04:39.050 --> 00:04:41.250
+must be implemented as a member method.
+
+00:04:43.250 --> 00:04:45.250
+Let's wrap up this video by looking at some
+
+00:04:45.250 --> 00:04:47.850
+examples where operator overloading could be used.
+
+00:04:48.450 --> 00:04:52.450
+The left column shows examples of using operators with the built-in types.
+
+00:04:52.750 --> 00:04:54.750
+For example, we can use plus
+
+00:04:54.750 --> 00:04:58.250
+and equals for addition of integers, doubles and logs and assignment.
+
+00:04:58.250 --> 00:05:00.350
+We also use the insertion operator
+
+00:05:00.350 --> 00:05:04.350
+with many built-in types so that we can easily insert values into streams.
+
+00:05:05.340 --> 00:05:06.840
+Now take a look at the right column.
+
+00:05:07.500 --> 00:05:11.600
+Here we have examples of using operators on user-defined types.
+
+00:05:11.850 --> 00:05:13.850
+The first is std string.
+
+00:05:14.250 --> 00:05:17.250
+We can use the plus operator to concatenate strings,
+
+00:05:17.610 --> 00:05:19.790
+and we can compare strings using less than,
+
+00:05:19.790 --> 00:05:21.790
+greater than less than or equal to and so forth.
+
+00:05:23.190 --> 00:05:27.790
+In this section, we're going to create our own version of a string class named my string and,
+
+00:05:28.150 --> 00:05:31.850
+we want to be able to overload some operators to concatenate mystrings
+
+00:05:31.850 --> 00:05:33.850
+compare them, assign them and so forth.
+
+00:05:34.750 --> 00:05:37.450
+The last example is the player class.
+
+00:05:37.450 --> 00:05:40.710
+Does it make sense to overload operators for the player class?
+
+00:05:40.710 --> 00:05:43.310
+Maybe, it depends on what we're trying to achieve.
+
+00:05:43.750 --> 00:05:48.250
+For example, suppose we want to compare two player objects p1 and p2.
+
+00:05:48.750 --> 00:05:52.350
+We might only care about their health attribute, and this would do just that.
+
+00:05:53.010 --> 00:05:56.210
+What about comparing two player objects with the equality operator,
+
+00:05:56.210 --> 00:05:58.980
+are we comparing names, health, xp,
+
+00:05:58.980 --> 00:06:00.980
+all of those attributes or just some of them.
+
+00:06:01.530 --> 00:06:04.030
+That's one of the issues with overloading operators.
+
+00:06:04.030 --> 00:06:06.530
+We can make the operator mean anything we want.
+
+00:06:06.530 --> 00:06:07.890
+So we want to make sure
+
+00:06:07.890 --> 00:06:12.250
+that when we do overload operators it makes sense and the users of the class know about it.
+
+00:06:12.910 --> 00:06:16.510
+Finally, it would make sense to overload the stream insertion operator
+
+00:06:16.510 --> 00:06:18.810
+so that we can insert player objects into a stream.
+
+00:06:20.810 --> 00:06:23.910
+So let's look at the class that we'll be using in this section of the course.
+
+00:06:24.710 --> 00:06:28.860
+We're going to add overloaded operators to this basic class called mystring.
+
+00:06:29.420 --> 00:06:33.570
+Mystring models a string and will implement it behind the scenes using a
+
+00:06:33.570 --> 00:06:34.870
+raw c-style pointer.
+
+00:06:35.230 --> 00:06:38.430
+I chose to include a raw pointer because it will allow us more practice
+
+00:06:38.430 --> 00:06:40.630
+with our copy and move constructors,
+
+00:06:40.630 --> 00:06:43.530
+and we'll also have to think about copy and move assignment
+
+00:06:43.530 --> 00:06:45.330
+when we overload the assignment operator.
+
+00:06:46.130 --> 00:06:49.130
+Right now the class contains a no args constructor,
+
+00:06:49.130 --> 00:06:52.130
+a constructor that expects a c-style string or literal,
+
+00:06:52.490 --> 00:06:57.150
+a copy constructor, a destructor, a display method that displays the string
+
+00:06:57.150 --> 00:07:01.140
+and two getter methods. The first one returns the current length of the string
+
+00:07:01.140 --> 00:07:03.500
+and the other returns a pointer to the string.
+
+00:07:04.200 --> 00:07:05.100
+That's it.
+
+00:07:05.100 --> 00:07:08.100
+At this point in the course, you should start feeling pretty comfortable
+
+00:07:08.100 --> 00:07:10.100
+when you see a class declaration such as this.
+
+00:07:10.700 --> 00:07:13.700
+Now let's head over to the ide, and we'll take a closer look
+
+00:07:13.700 --> 00:07:16.400
+at this class and how it's implemented so that it's clear what
+
+00:07:16.400 --> 00:07:19.000
+it does before we extend it by overloading operators.
+
+00:07:20.200 --> 00:07:24.500
+Okay. So now I'm in the IDE. I'm in the section 14 workspace.
+
+00:07:24.500 --> 00:07:27.700
+I'm in the MyString-Start project.
+
+00:07:28.390 --> 00:07:32.390
+This project really doesn't do much. It's just the beginning project that
+
+00:07:32.390 --> 00:07:36.290
+initially implements that my string class that we're going to extend throughout.
+
+00:07:36.290 --> 00:07:40.890
+But I want to take a few minutes to go over that class to make sure that you 100% understand it
+
+00:07:40.890 --> 00:07:43.890
+and I encourage you to walk through it, set some break points,
+
+00:07:43.890 --> 00:07:46.880
+step through it using the debugger and be sure that you really,
+
+00:07:46.880 --> 00:07:48.880
+really understand what's going on in this class.
+
+00:07:48.880 --> 00:07:52.780
+The idea with this class is that I want to model strings.
+
+00:07:52.780 --> 00:07:55.980
+Now we already have a standard string class I know.
+
+00:07:55.980 --> 00:08:00.080
+Let's do it ourselves that way we really, really learn how to implement one of these things.
+
+00:08:00.080 --> 00:08:03.280
+So what we're going to do is we're going to create our own my string class.
+
+00:08:03.280 --> 00:08:06.280
+And here's an example of how you would use it in a main.
+
+00:08:06.780 --> 00:08:08.980
+Here I'm creating empty which is just an
+
+00:08:08.980 --> 00:08:12.580
+empty mystring object is going to call a no args constructor.
+
+00:08:12.880 --> 00:08:16.680
+Here I'm going to create Larry, which again is a MyString object.
+
+00:08:16.680 --> 00:08:19.340
+And I'm going to initialize it to that string Larry,
+
+00:08:19.340 --> 00:08:21.140
+using an overloaded constructor.
+
+00:08:21.140 --> 00:08:25.020
+And then finally, I've got another mystring called stooge.
+
+00:08:25.020 --> 00:08:29.380
+And I'm initializing with Larry. So there we have a copy constructor call.
+
+00:08:29.380 --> 00:08:31.740
+And then all I'm doing is calling the display method
+
+00:08:31.740 --> 00:08:34.400
+for each one of those objects which is going to display
+
+00:08:34.800 --> 00:08:38.500
+empty string, Larry and Larry again since we copied it,
+
+00:08:38.500 --> 00:08:40.700
+okay. So let's take a look at the class.
+
+00:08:40.700 --> 00:08:43.400
+This is the same class that I showed you in the slides a minute ago.
+
+00:08:44.390 --> 00:08:48.590
+What we're doing here is we've got our my string class you can see it right up here.
+
+00:08:48.990 --> 00:08:52.590
+And we're implementing a string behind the scenes
+
+00:08:52.590 --> 00:08:56.490
+as a pointer crit to a character is basically the way a c-style string works.
+
+00:08:56.490 --> 00:08:59.490
+Now we could have done this a lot of different ways. I chose to do it this way.
+
+00:08:59.490 --> 00:09:02.390
+That way we can play around with raw pointers a little bit more,
+
+00:09:02.390 --> 00:09:03.590
+understand
+
+00:09:03.590 --> 00:09:06.590
+the copy constructor, understand the move constructor,
+
+00:09:06.590 --> 00:09:10.590
+which we'll do soon and understand the assignment operators.
+
+00:09:10.590 --> 00:09:14.590
+Now we've got a destructor. We've got the display method that displays the contents
+
+00:09:14.590 --> 00:09:16.590
+of this string basically,
+
+00:09:16.590 --> 00:09:19.690
+the string itself and its length, and then we've got a couple of getters.
+
+00:09:20.090 --> 00:09:23.290
+Okay. So let's go through these and see how they're implemented,
+
+00:09:23.290 --> 00:09:25.490
+and I'll walk you through a couple of examples.
+
+00:09:26.390 --> 00:09:29.190
+And let's take a look at mystring cpp.
+
+00:09:30.290 --> 00:09:34.730
+Okay. So here you can see that I'm using behind the scenes the c-string library,
+
+00:09:34.730 --> 00:09:38.630
+which I need. I've got i o stream simply because I'm doing some output.
+
+00:09:38.630 --> 00:09:41.990
+And here is mystring.h. I need to include that
+
+00:09:41.990 --> 00:09:45.980
+because this is what I'm implementing, right. That's my spec. Here's my implementation.
+
+00:09:45.980 --> 00:09:49.230
+So here's my no args constructor. You can see it right here.
+
+00:09:49.230 --> 00:09:53.690
+Remember, the no args constructor gets called when it's code like this executes.
+
+00:09:54.570 --> 00:09:56.170
+Let's see mystring
+
+00:09:57.070 --> 00:09:58.670
+and let's say just a.,
+
+00:09:59.660 --> 00:10:02.540
+right. So we're providing no construction information here.
+
+00:10:02.540 --> 00:10:06.040
+So the no args constructor gets called. You can see it expects nothing.
+
+00:10:06.540 --> 00:10:11.240
+And what we're doing here is we're creating an object called a. And let's just put a right here.
+
+00:10:11.240 --> 00:10:13.500
+This is that object, it's just a blob right now.
+
+00:10:13.860 --> 00:10:17.360
+And it has in it a pointer called str.
+
+00:10:18.020 --> 00:10:19.720
+That's the one we really care about.
+
+00:10:21.220 --> 00:10:25.580
+Now if we create an empty object, we could simply set that pointer to null pointer,
+
+00:10:25.580 --> 00:10:28.580
+and we're done with it. I don't want to do that. I want to set
+
+00:10:28.580 --> 00:10:32.140
+an empty string to an empty string that looks like that. In other words,
+
+00:10:32.140 --> 00:10:35.140
+a single character with the null terminator in it
+
+00:10:35.140 --> 00:10:36.740
+rather than a null pointer
+
+00:10:36.740 --> 00:10:39.340
+that just makes it easier later if we ever display
+
+00:10:39.340 --> 00:10:42.000
+or print out an empty string, it'll be fine.
+
+00:10:42.000 --> 00:10:44.200
+We don't have to check for null pointers later.
+
+00:10:44.560 --> 00:10:48.120
+Okay. So what are we going to do here? Well, we're going to allocate space for
+
+00:10:48.120 --> 00:10:48.720
+one character.
+
+00:10:48.720 --> 00:10:52.020
+Notice the brackets they're important here because we're going to delete characters
+
+00:10:52.020 --> 00:10:55.620
+in that manner as well. So I'm going to allocate one character.
+
+00:10:55.920 --> 00:10:57.920
+Remember, all this is happening on the heap.
+
+00:10:58.690 --> 00:11:00.290
+This is happening on the stack.
+
+00:11:02.090 --> 00:11:07.090
+And I'm going to assign that address to str, so str is pointing there.
+
+00:11:07.090 --> 00:11:10.690
+And then what I'm doing is de-referencing the pointer and putting that terminator in there.
+
+00:11:11.290 --> 00:11:15.090
+That's my empty string. If you try to display this, it will just display nothing.
+
+00:11:15.090 --> 00:11:17.450
+Okay. So that's my no args constructor.
+
+00:11:17.450 --> 00:11:19.450
+Now let's take a look at the
+
+00:11:20.700 --> 00:11:24.700
+overloaded constructor here that expects a c-style string, right, our string literal.
+
+00:11:24.700 --> 00:11:26.060
+So in this case,
+
+00:11:26.720 --> 00:11:30.520
+this will be called with statements like this. Mystring,
+
+00:11:30.520 --> 00:11:35.320
+let's call this -- again, let's call this a again and we'll just say hello.
+
+00:11:36.880 --> 00:11:40.180
+Notice this the quotes and the curlies,
+
+00:11:40.430 --> 00:11:44.690
+okay. At this point, you can see what's being passed in.
+
+00:11:44.690 --> 00:11:48.680
+So this constructor matches and this is the constructor that executes. In this case,
+
+00:11:48.680 --> 00:11:52.670
+I'm checking to see if by any chance somebody sent a null pointer here.
+
+00:11:53.170 --> 00:11:57.830
+If they did, I'm just going to create an empty string. I'm just going to double check that just to be safe.
+
+00:11:58.190 --> 00:12:02.190
+Normally, this else is going to execute. And I'll show you what's going on here.
+
+00:12:02.590 --> 00:12:05.890
+Again, we're going to create that a object, it's right here.
+
+00:12:05.890 --> 00:12:09.890
+It's got an attribute called str that's the only attribute it has actually.
+
+00:12:10.390 --> 00:12:12.590
+And what we're going to do is we're going to allocate
+
+00:12:12.590 --> 00:12:15.090
+this many characters on the heap.
+
+00:12:15.090 --> 00:12:19.090
+How many characters is that? Well, I'm going to figure out what the length of
+
+00:12:19.090 --> 00:12:22.090
+hello is, right. That's what s is, s is hello.
+
+00:12:24.450 --> 00:12:29.440
+I'm going to figure out what's the length of s and add 1 to it because I need an extra character for that terminator.
+
+00:12:30.100 --> 00:12:33.600
+Well, the c-string functions in c-string right here,
+
+00:12:34.150 --> 00:12:36.950
+there's one called str land that does exactly that.
+
+00:12:36.950 --> 00:12:39.750
+So what I'm doing is I'm just calling std strlen
+
+00:12:39.750 --> 00:12:42.350
+which is going to return 5. I'm going to add 1 to it,
+
+00:12:42.350 --> 00:12:45.350
+and I'm going to allocate 6 characters on the heap.
+
+00:12:46.120 --> 00:12:48.120
+Then I'm going to call std string copy
+
+00:12:48.120 --> 00:12:51.720
+to copy s to str. So at this point,
+
+00:12:51.720 --> 00:12:53.720
+it's going to copy hello here,
+
+00:12:54.120 --> 00:12:58.020
+it's going to put the null terminator. Those are my six characters, and I'm going to point to it.
+
+00:12:58.020 --> 00:13:00.020
+So you can see I've indeed made a copy.
+
+00:13:00.380 --> 00:13:03.380
+Okay. We never messed with hello
+
+00:13:03.380 --> 00:13:06.680
+because it's const, and it's not mine so I don't want to mess with it.
+
+00:13:08.880 --> 00:13:12.540
+Okay. So now let's make a copy constructor.
+
+00:13:13.200 --> 00:13:17.400
+Let's go through that real quick. And you can see it defined right here on line 25,
+
+00:13:18.200 --> 00:13:21.640
+right here. Now when does a copy constructor get called?
+
+00:13:21.640 --> 00:13:23.840
+Well, remember, we've got an existing
+
+00:13:24.240 --> 00:13:27.600
+object and I want to copy it and construct a new object from it.
+
+00:13:27.600 --> 00:13:29.700
+This is not an assignment, it's a construction.
+
+00:13:29.700 --> 00:13:34.260
+So what I've got is let's say I've got that string object again, Mystring
+
+00:13:37.560 --> 00:13:39.920
+and let's call it a, and we'll use hello again.
+
+00:13:42.720 --> 00:13:46.620
+So there's that object. Now I want to create a new object, I'll just say mystring.
+
+00:13:47.920 --> 00:13:52.220
+We'll call it b, and I want to create it based on a.
+
+00:13:52.220 --> 00:13:53.720
+So there's my copy.
+
+00:13:54.520 --> 00:13:56.720
+That's my copy constructor being called.
+
+00:13:56.720 --> 00:14:00.720
+Also a copy constructor, as you know, gets called if you pass an object by value to
+
+00:14:00.720 --> 00:14:02.520
+a function lots of different places.
+
+00:14:02.520 --> 00:14:07.020
+So let's see what's going on here. In this case, this
+
+00:14:07.920 --> 00:14:10.320
+refers to the object that I'm creating,
+
+00:14:10.320 --> 00:14:13.220
+and source is that guy right there.
+
+00:14:13.220 --> 00:14:16.520
+So source in this case is that a object, hello.
+
+00:14:17.880 --> 00:14:21.540
+Okay makes sense, good. So I'm creating the object.
+
+00:14:21.540 --> 00:14:23.340
+I'm setting str, right.
+
+00:14:23.740 --> 00:14:27.240
+So here's that new object I'm creating. It doesn't even have a name yet.
+
+00:14:27.240 --> 00:14:30.900
+But let's just call it this because it's being pointed to by that pointer.
+
+00:14:30.900 --> 00:14:34.200
+It's got str again, just like before.
+
+00:14:34.900 --> 00:14:38.200
+And what I want to do is I want to copy that hello to this guy.
+
+00:14:38.200 --> 00:14:40.400
+And I want to do a deep copy. I don't want to share this.
+
+00:14:40.900 --> 00:14:43.400
+So what do I do? Well, again
+
+00:14:43.400 --> 00:14:46.060
+I want to allocate space. How much space?
+
+00:14:46.420 --> 00:14:49.420
+The length of that source object's string,
+
+00:14:49.920 --> 00:14:50.580
+right.
+
+00:14:50.580 --> 00:14:53.580
+A.str, in this case, which would be hello.
+
+00:14:54.830 --> 00:14:59.820
+So 5 plus 1 is 6. Again I'm going to allocate 6 characters on the heap.
+
+00:15:00.180 --> 00:15:02.480
+Remember, these are unnamed. It's all in the heap.
+
+00:15:02.780 --> 00:15:07.330
+Then I'm going to do -- and again, I used std string length to do that.
+
+00:15:07.330 --> 00:15:09.330
+Now I'm going to do std string copy
+
+00:15:09.330 --> 00:15:13.030
+to copy the source string to the string, again, a deep copy.
+
+00:15:13.030 --> 00:15:15.230
+So in this case, I'm copying over hello,
+
+00:15:16.220 --> 00:15:19.320
+the null terminator and this guy's pointing to that.
+
+00:15:20.520 --> 00:15:24.220
+That's it. So that's where we're at right now. The rest of the functions
+
+00:15:24.220 --> 00:15:27.020
+you shouldn't have any issues with at this point in the course.
+
+00:15:27.020 --> 00:15:30.580
+Let's go through them anyway. Here's my destructor obviously.
+
+00:15:30.580 --> 00:15:33.180
+Remember, this you're responsible for
+
+00:15:33.180 --> 00:15:35.180
+de-allocating the memory that you allocate.
+
+00:15:35.180 --> 00:15:37.540
+So I've allocated some memory in the constructors.
+
+00:15:37.540 --> 00:15:41.740
+I've got to be sure to de-allocate it in the destructor, and that's exactly what I'm doing here.
+
+00:15:42.140 --> 00:15:45.140
+I've got a display method. This is a member method.
+
+00:15:45.140 --> 00:15:49.640
+And the display member method just simply displays the string which is a c-style string
+
+00:15:49.640 --> 00:15:51.640
+and the length separated by colon.
+
+00:15:52.240 --> 00:15:55.540
+And then I've got some getters, one just returns the length of the string,
+
+00:15:55.540 --> 00:15:57.740
+which I'm determining
+
+00:15:57.740 --> 00:16:01.100
+every time dynamically I'm asking what the string length is.
+
+00:16:01.100 --> 00:16:05.700
+We could have had -- let me just come back and and let me do this one first and the string returns the pointer
+
+00:16:05.700 --> 00:16:08.060
+so I can print it it returns it as a const.
+
+00:16:08.060 --> 00:16:12.260
+We could have added another attribute here
+
+00:16:12.660 --> 00:16:16.650
+called length, and we could have maintained that length of that string all along.
+
+00:16:16.650 --> 00:16:20.650
+But. I chose not to do that I'm just going to keep it as simple as we can.
+
+00:16:21.010 --> 00:16:23.810
+And that's it. So let's take a look at the main, and we'll run it.
+
+00:16:24.800 --> 00:16:29.100
+There's my main give me an empty my string create Larry and then copy Larry.
+
+00:16:29.100 --> 00:16:30.300
+So when i run this,
+
+00:16:31.900 --> 00:16:33.500
+you see the run says
+
+00:16:34.700 --> 00:16:39.600
+display the empty string, and it's displayed right here. Obviously it's empty, and its length is 0.
+
+00:16:39.900 --> 00:16:40.890
+Display Larry.
+
+00:16:41.190 --> 00:16:43.190
+There's larry and its length is 5.
+
+00:16:43.190 --> 00:16:46.690
+And there's stooge. It should be Larry because i use the copy constructor.
+
+00:16:46.690 --> 00:16:49.190
+Again, I did a deep copy, and there's a 5.
+
+00:16:50.180 --> 00:16:53.680
+Okay. So that's it. That runs through this program. As I said,
+
+00:16:53.680 --> 00:16:58.670
+you, may want to step through it until you become really really comfortable with it.
+It's a very, very straightforward program.
+
+00:16:58.670 --> 00:17:01.270
+It's using everything that we've learned so far.
+
+00:17:01.270 --> 00:17:06.040
+And what we're going to do now is start by overloading the assignment operators.

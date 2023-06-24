@@ -1,0 +1,1008 @@
+WEBVTT
+
+00:00:05.500 --> 00:00:08.750
+In this video, we'll learn about a
+really great feature that was added
+
+00:00:08.750 --> 00:00:12.159
+in c++11, the range-based for loop.
+
+00:00:13.190 --> 00:00:17.070
+This loop really makes c++ feel
+like a modern programming language.
+
+00:00:17.629 --> 00:00:21.040
+The idea with the range based for loop
+is to loop through a collection of
+
+00:00:21.040 --> 00:00:25.020
+elements and be able to easily access
+each element without having to worry
+
+00:00:25.020 --> 00:00:28.430
+about the length of the collection or
+incrementing or decrementing looping
+
+00:00:28.430 --> 00:00:31.209
+variables or subscripting indexes.
+
+00:00:31.929 --> 00:00:34.109
+The syntax is very simple and elegant.
+
+00:00:34.670 --> 00:00:39.220
+We have the keyword for followed by
+open and closed parentheses as usual.
+
+00:00:40.080 --> 00:00:43.780
+Inside the parentheses, we provide
+the type and name for the variable
+
+00:00:43.790 --> 00:00:45.339
+we want to use in the loop body.
+
+00:00:46.010 --> 00:00:48.830
+This variable will be bound to
+each element of the collection.
+
+00:00:49.090 --> 00:00:51.710
+So it should be of the same
+type as the collection elements.
+
+00:00:52.250 --> 00:00:55.280
+Then we provide a colon and the
+collection or collection name.
+
+00:00:55.680 --> 00:00:56.180
+That's it.
+
+00:00:56.990 --> 00:01:00.290
+Now when we access the variable name
+in the body of the loop, it will have
+
+00:01:00.290 --> 00:01:02.160
+a specific element in the collection.
+
+00:01:02.450 --> 00:01:03.069
+Pretty cool.
+
+00:01:03.160 --> 00:01:04.069
+Let's see an example.
+
+00:01:05.170 --> 00:01:09.480
+In this example, our collection is an
+array of integers named scores, that
+
+00:01:09.480 --> 00:01:12.619
+we've initialized to 100, 90 and 97.
+
+00:01:13.590 --> 00:01:15.890
+And here's the code that
+iterates over that collection
+
+00:01:15.900 --> 00:01:17.470
+using the range-based for loop.
+
+00:01:18.510 --> 00:01:20.470
+Notice that in the
+parentheses, we provide the
+
+00:01:20.480 --> 00:01:21.780
+type of each array element.
+
+00:01:21.849 --> 00:01:23.440
+In this case, it's an integer.
+
+00:01:24.160 --> 00:01:26.710
+And we provide the variable name
+that we can use in the body of
+
+00:01:26.809 --> 00:01:28.539
+the loop, in this case, score.
+
+00:01:29.859 --> 00:01:32.160
+Finally, we provide a
+colon and the name of the
+
+00:01:32.160 --> 00:01:33.820
+collection which is scores.
+
+00:01:34.390 --> 00:01:35.130
+That's it.
+
+00:01:35.190 --> 00:01:37.140
+Now we can use score in
+the body of the loop.
+
+00:01:37.800 --> 00:01:41.970
+The loop displays 100, 90 and 97,
+which are the elements in the array.
+
+00:01:42.700 --> 00:01:44.960
+See how much cleaner and
+less error prone this is.
+
+00:01:44.969 --> 00:01:46.350
+It was a great addition to c++.
+
+00:01:48.740 --> 00:01:52.020
+We actually don't have to explicitly
+provide the type of the variable.
+
+00:01:52.550 --> 00:01:55.210
+Instead, we can use
+the auto keyword this.
+
+00:01:55.210 --> 00:01:59.020
+Tells the c++ compiler to
+deduce the type itself.
+
+00:01:59.429 --> 00:02:02.830
+In other words, you're asking the
+c++ compiler to figure out the
+
+00:02:02.839 --> 00:02:04.690
+type based on the declarations.
+
+00:02:05.080 --> 00:02:07.789
+So in this case, the compiler
+sees that you're using a
+
+00:02:07.790 --> 00:02:09.380
+collection scores in the loop.
+
+00:02:09.610 --> 00:02:13.550
+So it looks it scores and it sees that
+it's an array of integers, so it uses
+
+00:02:13.550 --> 00:02:15.490
+an integer for the score variable.
+
+00:02:16.410 --> 00:02:17.109
+Pretty easy.
+
+00:02:17.429 --> 00:02:20.810
+Actually, in this case, using
+auto versus int doesn't really,
+
+00:02:20.810 --> 00:02:24.810
+buy us much but c++ can have
+very complex collections.
+
+00:02:24.950 --> 00:02:28.810
+And sometimes defining the type of a
+collection variable can be quite long
+
+00:02:28.810 --> 00:02:31.310
+and tricky, auto makes it dead simple.
+
+00:02:32.580 --> 00:02:35.600
+In this example, we want to
+calculate the average temperature
+
+00:02:35.610 --> 00:02:38.810
+from a vector that contains doubles
+that represent temperatures.
+
+00:02:39.440 --> 00:02:43.190
+The vector in this case is called
+temps, and it contains 4 doubles.
+
+00:02:44.220 --> 00:02:47.200
+In order to calculate the average
+temperature in this vector, we
+
+00:02:47.200 --> 00:02:51.200
+need to iterate over the vector,
+access each temperature, add
+
+00:02:51.200 --> 00:02:52.739
+them all up and divide by 4.
+
+00:02:52.929 --> 00:02:53.440
+That's it.
+
+00:02:54.219 --> 00:02:56.369
+Notice the for loop
+and how simple it is.
+
+00:02:56.910 --> 00:03:00.130
+It's saying loop through the temps
+collection and each time through
+
+00:03:00.450 --> 00:03:04.230
+assign a temperature from the vector
+to the loop variable temp, which
+
+00:03:04.230 --> 00:03:06.180
+the compiler deduces to be a double.
+
+00:03:07.110 --> 00:03:11.009
+We add this to our running sum then
+when the loop is done we perform a
+
+00:03:11.020 --> 00:03:12.760
+simple division to get the average.
+
+00:03:13.650 --> 00:03:16.490
+Notice that I'm using the vector's
+size method which returns the
+
+00:03:16.490 --> 00:03:17.920
+number of elements in the vector.
+
+00:03:17.980 --> 00:03:19.730
+In this case, it will return 4.
+
+00:03:20.110 --> 00:03:24.030
+The range-based for loop can also use
+an initializer list as a collection.
+
+00:03:24.210 --> 00:03:24.930
+Let's see that one.
+
+00:03:26.610 --> 00:03:29.719
+This example also calculates
+the average before temperatures.
+
+00:03:30.410 --> 00:03:33.770
+Notice how we can explicitly provide
+the collection right in the for loop.
+
+00:03:34.449 --> 00:03:37.059
+This is sometimes handy when you
+know the elements of your collection
+
+00:03:37.080 --> 00:03:38.710
+ahead of time, and they won't change.
+
+00:03:39.710 --> 00:03:42.790
+The only downside is that you have
+to calculate the size as you go.
+
+00:03:45.190 --> 00:03:48.120
+In this last example, we can
+use the range-based for loop
+
+00:03:48.120 --> 00:03:51.530
+to iterate over a string which
+is a collection of characters.
+
+00:03:52.279 --> 00:03:56.110
+In this case the string is the literal
+franc, but it could be a variable.
+
+00:03:56.720 --> 00:03:59.190
+We're going to discuss strings in
+the next section of the course.
+
+00:03:59.470 --> 00:04:02.179
+Well, that pretty much covers the
+basics of the range-based for loop.
+
+00:04:02.599 --> 00:04:05.010
+Let's head over to the
+IDE and see some examples.
+
+00:04:07.190 --> 00:04:11.320
+I'm in the CodeLite IDE in
+the section 9 workspace in the
+
+00:04:11.320 --> 00:04:13.380
+range-based for loop project.
+
+00:04:14.140 --> 00:04:16.829
+What I'd like to do in this
+example is go over a couple of
+
+00:04:16.829 --> 00:04:21.559
+examples of using the range-based
+for loop with an array, with
+
+00:04:21.559 --> 00:04:23.490
+a vector and with a string.
+
+00:04:23.780 --> 00:04:25.989
+So the first thing we'll do
+is just use a simple array.
+
+00:04:25.990 --> 00:04:28.770
+And you'll notice that I've already
+included vector right up here since
+
+00:04:28.770 --> 00:04:30.140
+I'm going to use vector in a minute.
+
+00:04:31.840 --> 00:04:35.770
+So let's create an array of
+integers, and we'll call it scores.
+
+00:04:37.000 --> 00:04:39.679
+And we'll initialize it,
+let's just say 10, 20 and 30.
+
+00:04:41.900 --> 00:04:44.060
+Okay, so what we want to do
+now is we want to iterate
+
+00:04:44.070 --> 00:04:46.109
+through that collection.
+
+00:04:46.420 --> 00:04:49.750
+It's an array in this case,
+using the range-based for loop.
+
+00:04:50.480 --> 00:04:51.880
+It's as simple as can be.
+
+00:04:52.130 --> 00:04:56.080
+We can say for int because we
+know we've got integers here.
+
+00:04:56.809 --> 00:04:59.470
+And what do we want to call each
+int, we'll call it score because
+
+00:04:59.470 --> 00:05:00.830
+that's what it is a single score.
+
+00:05:01.340 --> 00:05:03.469
+Then we have the colon and
+then we provide the name of the
+
+00:05:03.469 --> 00:05:05.380
+collection, in this case, scores.
+
+00:05:06.990 --> 00:05:08.150
+So that's the loop header.
+
+00:05:08.670 --> 00:05:11.159
+And then all we really
+need to do here is just say
+
+00:05:11.159 --> 00:05:14.940
+cout and display the score.
+
+00:05:18.450 --> 00:05:20.350
+That's it.Let's run this.
+
+00:05:22.639 --> 00:05:25.895
+And that's exactly what
+we get 10, 20 and 30.
+
+00:05:26.050 --> 00:05:31.270
+Now as I mentioned in the slides, we
+don't have to provide that in there.
+
+00:05:31.270 --> 00:05:33.570
+We can simply use the auto keyword.
+
+00:05:34.820 --> 00:05:36.140
+And what's going to happen here.
+
+00:05:36.140 --> 00:05:38.229
+I mean it's pretty straightforward,
+but it's important that you
+
+00:05:38.230 --> 00:05:39.299
+understand what's going on.
+
+00:05:39.610 --> 00:05:41.860
+You're telling the compiler
+to figure out the type.
+
+00:05:42.080 --> 00:05:45.430
+So the compiler is going to come in
+here and say, okay, what's going on.
+
+00:05:45.690 --> 00:05:47.950
+The collection is scores, okay.
+
+00:05:47.950 --> 00:05:49.280
+Scores is an array of integers.
+
+00:05:49.920 --> 00:05:51.260
+So this must be an int.
+
+00:05:52.340 --> 00:05:55.039
+So it's going to deduce that
+type right here to be an int.
+
+00:05:55.380 --> 00:05:56.619
+Same as we did before.
+
+00:05:57.059 --> 00:05:59.679
+As I mentioned, this is not
+a big deal, it's easy to type
+
+00:05:59.680 --> 00:06:01.150
+in, it's easy to type auto.
+
+00:06:01.460 --> 00:06:05.660
+But collections in c++, especially
+generic collections and templates
+
+00:06:06.020 --> 00:06:08.090
+get really crazy syntax.
+
+00:06:08.090 --> 00:06:13.400
+And sometimes it's very difficult
+to exactly the type that you want.
+
+00:06:14.259 --> 00:06:15.799
+And this just makes it so easy.
+
+00:06:15.799 --> 00:06:18.849
+You just type auto and the compiler
+will figure it out, which is great.
+
+00:06:19.360 --> 00:06:20.260
+That's what we're doing here.
+
+00:06:20.260 --> 00:06:22.350
+We just printed out the
+scores really, really easy.
+
+00:06:22.350 --> 00:06:23.500
+Let me run this.
+
+00:06:23.970 --> 00:06:27.580
+Using the auto keyword now, you can
+see the behavior is exactly the same.
+
+00:06:28.679 --> 00:06:29.479
+All right, perfect.
+
+00:06:29.520 --> 00:06:33.230
+Let me comment that out, and
+let's do another example.
+
+00:06:33.700 --> 00:06:35.779
+In this case, we'll create a vector.
+
+00:06:36.400 --> 00:06:38.580
+So let's create a vector of doubles.
+
+00:06:40.430 --> 00:06:41.990
+And we'll just call it temperatures.
+
+00:06:43.670 --> 00:06:51.009
+And we'll initialize these to
+let's say 87.9, 77.9 could be
+
+00:06:51.009 --> 00:06:55.760
+really any numbers you like
+and 80.0 and how about 72.5.
+
+00:06:56.530 --> 00:06:59.110
+So those are the 4 temperatures
+that I'm interested in.
+
+00:06:59.380 --> 00:07:03.430
+Maybe their temperatures per week,
+per year, per month, it doesn't
+
+00:07:03.430 --> 00:07:05.469
+really matter, it all depends
+on what you're trying to do.
+
+00:07:05.840 --> 00:07:08.560
+Now what we want to do is we
+want to calculate the average of
+
+00:07:08.560 --> 00:07:10.120
+the mean of those temperatures.
+
+00:07:10.120 --> 00:07:13.730
+All right, so we're going
+to need the average itself.
+
+00:07:15.170 --> 00:07:17.560
+So we'll just call it average
+temp, and it's a double.
+
+00:07:19.130 --> 00:07:20.600
+We'll initialize that to 0.
+
+00:07:21.330 --> 00:07:24.470
+And we also need a double that's
+going to be the running total
+
+00:07:24.470 --> 00:07:27.000
+because we need to sum them
+all up and then divide them by
+
+00:07:27.219 --> 00:07:28.940
+whatever size that vector is.
+
+00:07:29.199 --> 00:07:32.180
+In this case, it happens to be 4
+but it could be any size we want.
+
+00:07:32.520 --> 00:07:33.469
+So there's my double.
+
+00:07:33.490 --> 00:07:36.869
+I'll call it total, and
+I'll initialize that to 0.
+
+00:07:36.869 --> 00:07:41.039
+All right, so now let's
+loop through that vector.
+
+00:07:41.520 --> 00:07:44.030
+So we'll say for auto.
+
+00:07:45.160 --> 00:07:47.820
+Let's create the variable
+temp, that'll be one of those
+
+00:07:47.830 --> 00:07:49.780
+temperatures one at each iteration.
+
+00:07:49.780 --> 00:07:54.550
+And the name of the collection
+is temperatures, right.
+
+00:07:54.550 --> 00:08:00.270
+What do we do, we say total
+plus equals temp,
+
+00:08:02.390 --> 00:08:04.810
+and I'll scroll up just a little bit give
+myself a little bit of room.
+
+00:08:05.549 --> 00:08:06.370
+That's it.
+
+00:08:06.600 --> 00:08:09.720
+Now we divide by the size
+of that temperatures vector.
+
+00:08:10.110 --> 00:08:12.810
+But before we do that, always
+make sure that that size is
+
+00:08:12.810 --> 00:08:15.369
+not equal to 0 because we don't
+want to divide by 0 error.
+
+00:08:15.389 --> 00:08:22.479
+So we'll just say something like
+if temperatures.size, that's
+
+00:08:22.490 --> 00:08:26.909
+the method for the vector, if
+that's equal to 0, then we don't
+
+00:08:26.910 --> 00:08:28.099
+want to do the division, right.
+
+00:08:28.310 --> 00:08:31.340
+So what do we want to do we want
+to make sure it's not equal to 0.
+
+00:08:32.690 --> 00:08:36.080
+If it's not equal to 0, it's
+safe to divide and what I'll say
+
+00:08:36.080 --> 00:08:43.760
+is as simple as average temp is
+equal to the total divided by the
+
+00:08:43.820 --> 00:08:48.319
+temperatures.size again, number
+of elements in that vector.
+
+00:08:49.800 --> 00:08:53.480
+That's it. Notice we don't have to do any
+casting here because total --
+
+00:08:53.690 --> 00:08:56.420
+this is an unsigned integer right here
+it's going to return the size
+
+00:08:56.440 --> 00:08:59.909
+which is an unsight integer but
+total we defined as a double so
+
+00:08:59.909 --> 00:09:01.490
+it's going to do double division.
+
+00:09:02.500 --> 00:09:05.440
+All right, so that's
+it we'll output now.
+
+00:09:08.230 --> 00:09:16.910
+We'll say something like average
+temperature is average temp.
+
+00:09:17.000 --> 00:09:19.910
+We'll put an endline at the
+end, and let's run this.
+
+00:09:22.540 --> 00:09:25.620
+There's the average
+temperature, 79.575.
+
+00:09:26.059 --> 00:09:29.459
+Now let me show you one of the
+io manipulators that you can use.
+
+00:09:29.710 --> 00:09:32.919
+And as I said, I'll cover
+these later on in the course.
+
+00:09:33.509 --> 00:09:34.529
+There's a whole bunch of them.
+
+00:09:34.539 --> 00:09:37.030
+They're not all that important,
+but they'll they're important
+
+00:09:37.270 --> 00:09:38.780
+to help us format our output.
+
+00:09:39.150 --> 00:09:43.398
+What we can do is we can say -- first
+thing, we need to do is we need to
+
+00:09:43.398 --> 00:09:48.730
+go up top here and include io manip.
+
+00:09:49.090 --> 00:09:51.429
+That's the io manipulation operators.
+
+00:09:51.969 --> 00:09:59.700
+And what we'll do here is right before
+we output, we can say cout, fixed and
+
+00:09:59.700 --> 00:10:02.600
+then set precision to let's say 1.
+
+00:10:02.880 --> 00:10:07.150
+That's 1 number after the
+decimal point, and it will round.
+
+00:10:07.460 --> 00:10:13.110
+So in this case, let's run that and
+now you'll see this formatted as 79.6.
+
+00:10:13.130 --> 00:10:17.240
+I think before, it was 79.575 or
+something like that I don't recall.
+
+00:10:17.500 --> 00:10:19.770
+But it's going to round it up to 79.6.
+
+00:10:20.040 --> 00:10:22.769
+It's always going to have one digit
+to the right of the decimal point.
+
+00:10:23.130 --> 00:10:25.500
+If this is what you need,
+this is an easy way to do it.
+
+00:10:25.860 --> 00:10:29.029
+Otherwise 79.575 works for me.
+
+00:10:30.010 --> 00:10:33.100
+All right, so that'll
+take care of this example.
+
+00:10:33.490 --> 00:10:35.090
+Let me show you a
+couple more examples.
+
+00:10:35.090 --> 00:10:37.970
+And again I'll comment these out
+so they don't keep executing.
+
+00:10:38.420 --> 00:10:41.970
+Let's put in an initializer
+list right into the loop.
+
+00:10:42.180 --> 00:10:44.200
+This is not something
+you see very often.
+
+00:10:44.200 --> 00:10:47.379
+But I wanted to show you in case you
+do see it, you know what's going on.
+
+00:10:47.879 --> 00:10:53.530
+In this case, we'll say 4 again
+auto and the value it will be val.
+
+00:10:54.310 --> 00:10:56.590
+Then right in here, we can
+put the initializer list.
+
+00:10:56.590 --> 00:10:58.900
+So we can say 1, 2, 3, 4, 5.
+
+00:10:59.590 --> 00:11:02.829
+Sometimes you see this when you know
+that these numbers are ahead of time.
+
+00:11:03.389 --> 00:11:11.569
+And in this case, we could just say
+cout val and we can do endline here.
+
+00:11:12.180 --> 00:11:14.120
+So what's going to happen
+is it's going to iterate
+
+00:11:14.130 --> 00:11:15.110
+through that collection.
+
+00:11:15.110 --> 00:11:17.000
+Remember, this is a
+collection and it's going
+
+00:11:17.000 --> 00:11:18.780
+to display 1, 2, 3, 4 and 5.
+
+00:11:19.410 --> 00:11:21.599
+And let's run that real quick.
+
+00:11:21.960 --> 00:11:24.540
+And there you can see
+the 1 2 3 4 and 5.
+
+00:11:25.910 --> 00:11:28.959
+Now the last example i want
+to show you is with a string.
+
+00:11:29.920 --> 00:11:31.770
+Now there's two kinds
+of strings in c++.
+
+00:11:32.500 --> 00:11:36.610
+There is a c style string, and
+there's a c++ style string.
+
+00:11:36.950 --> 00:11:38.900
+I'm going to cover these
+in the next section.
+
+00:11:39.280 --> 00:11:41.840
+What we're going to use here
+is just a c style string.
+
+00:11:41.850 --> 00:11:43.230
+That's what we've
+been using all along.
+
+00:11:43.240 --> 00:11:46.209
+That's a bunch of characters
+inside double quotes.
+
+00:11:46.580 --> 00:11:50.449
+So what I want to do is I'm just
+going to say for again auto, in
+
+00:11:50.500 --> 00:11:53.560
+this case, it's going to be a
+character type, I'll call it c.
+
+00:11:54.160 --> 00:11:58.200
+And my collection is basically
+a bunch of characters, right,
+
+00:11:58.200 --> 00:11:59.199
+a sequence of characters.
+
+00:11:59.199 --> 00:12:01.730
+So this is a test.
+
+00:12:03.130 --> 00:12:03.709
+That's it.
+
+00:12:04.540 --> 00:12:05.660
+What can I do in here.
+
+00:12:05.680 --> 00:12:08.620
+Well, I can output the character.
+
+00:12:09.360 --> 00:12:11.569
+And I'm not going to put a new
+line because I don't want a new
+
+00:12:11.570 --> 00:12:13.950
+line at the end of every character,
+that'll print them up and down.
+
+00:12:14.259 --> 00:12:17.329
+In this case, it should just print
+that string right back out at me.
+
+00:12:19.649 --> 00:12:22.280
+And there you see right
+up here, this is a test.
+
+00:12:22.320 --> 00:12:24.390
+So it's printing it
+out directly out at me.
+
+00:12:25.040 --> 00:12:27.499
+Suppose I wanted to skip the spaces.
+
+00:12:28.200 --> 00:12:28.980
+How would I do that?
+
+00:12:28.980 --> 00:12:30.569
+Well, I would just
+filter the spaces out.
+
+00:12:30.570 --> 00:12:34.129
+I would say if the character
+I'm looking at c in this case,
+
+00:12:34.699 --> 00:12:40.600
+right, is not equal to a space,
+then print the character.
+
+00:12:41.450 --> 00:12:42.460
+So what's going to happen here.
+
+00:12:42.460 --> 00:12:44.929
+Again, each iteration I'm
+looking at that character.
+
+00:12:45.160 --> 00:12:46.680
+If it's not a space, I print it.
+
+00:12:46.719 --> 00:12:48.530
+If it is a space, I'm
+not doing anything.
+
+00:12:48.710 --> 00:12:52.050
+So I'm basically just getting rid of
+all the spaces inside that string.
+
+00:12:52.309 --> 00:12:57.000
+So when I display that, you should
+see -- you see that right there, this
+
+00:12:57.010 --> 00:12:59.020
+is the test all bunched up together.
+
+00:13:00.020 --> 00:13:03.680
+Okay, now suppose I wanted to
+replace the -- and again, we're
+
+00:13:03.680 --> 00:13:06.030
+not changing the string here,
+we're just printing out the
+
+00:13:06.030 --> 00:13:07.939
+string, one character at a time.
+
+00:13:08.230 --> 00:13:11.449
+Suppose what I wanted to do was
+every time there's a space I want
+
+00:13:11.449 --> 00:13:14.079
+to replace it with a tab character,
+I want to display the tab.
+
+00:13:14.390 --> 00:13:16.439
+So I'm going to spread these
+characters out a little bit.
+
+00:13:16.830 --> 00:13:18.829
+Well, we can change the
+logic here a little bit.
+
+00:13:19.150 --> 00:13:22.979
+And again, let me comment this out so
+it's available for you to play with.
+
+00:13:23.429 --> 00:13:28.120
+And I'll do something like that just.
+
+00:13:28.120 --> 00:13:32.000
+So I can just modify a little bit
+of code and get this to run, right.
+
+00:13:32.260 --> 00:13:34.190
+Okay, so we're here
+in the same position.
+
+00:13:34.190 --> 00:13:35.380
+I'm going to comment this out.
+
+00:13:35.870 --> 00:13:39.200
+And so I'm reading the string
+again, I've got each character in c.
+
+00:13:39.809 --> 00:13:47.829
+And I'm going to say if c
+is the space, then I don't
+
+00:13:47.830 --> 00:13:48.910
+want to print out the space.
+
+00:13:48.910 --> 00:13:51.340
+What I want to do is, I
+want to print out a tab.
+
+00:13:52.160 --> 00:13:54.380
+And if you remember the tab is a /t.
+
+00:13:56.910 --> 00:14:01.490
+Otherwise, I just want to print out
+the character, right, anything except
+
+00:14:01.840 --> 00:14:05.899
+the space, something like that.
+
+00:14:07.199 --> 00:14:08.229
+So let's try that out.
+
+00:14:11.309 --> 00:14:12.669
+And there you go.
+
+00:14:12.669 --> 00:14:15.749
+It says this then you see
+a tab is then a tab a and a
+
+00:14:15.749 --> 00:14:17.089
+tab and test and so forth.
+
+00:14:17.719 --> 00:14:19.129
+We can play all kinds of games.
+
+00:14:19.129 --> 00:14:20.959
+You can replace one
+character with another.
+
+00:14:21.329 --> 00:14:25.140
+You can create your own little
+cipher if you want that you can
+
+00:14:25.140 --> 00:14:27.810
+send across to a friend and they
+can decipher it on the other side.
+
+00:14:28.080 --> 00:14:32.150
+Anyway, that's pretty much
+the range-based for loop.
+
+00:14:32.190 --> 00:14:35.120
+There's a couple of examples I've
+shown you here that hopefully
+
+00:14:35.559 --> 00:14:37.610
+make it really, really easy.
+
+00:14:37.610 --> 00:14:39.240
+I mean this is so much simpler.
+
+00:14:39.240 --> 00:14:41.909
+Notice again, there's no int i.
+
+00:14:41.920 --> 00:14:43.189
+There's no ++I.
+
+00:14:43.190 --> 00:14:44.120
+We're not counting.
+
+00:14:44.410 --> 00:14:48.610
+We're simply looping through a
+collection, and we don't even have to
+
+00:14:48.610 --> 00:14:50.170
+worry about the type with the auto.
+
+00:14:50.280 --> 00:14:54.410
+So it makes it really easy to think
+but a very high level to solve your
+
+00:14:54.410 --> 00:14:57.070
+problems without getting bogged
+down with all the little details.
+
+00:14:57.559 --> 00:14:59.190
+Okay, so, that's the
+end of this video.

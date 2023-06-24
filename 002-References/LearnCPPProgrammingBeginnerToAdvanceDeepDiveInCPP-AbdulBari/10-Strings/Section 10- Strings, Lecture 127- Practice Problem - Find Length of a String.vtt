@@ -1,0 +1,262 @@
+WEBVTT
+
+00:01.060 --> 00:02.870
+Let us solve a problem on string.
+
+00:02.890 --> 00:04.390
+The challenge is very simple.
+
+00:04.390 --> 00:07.080
+We have to find out the length of a string.
+
+00:07.090 --> 00:09.970
+We have to count how many characters are there in a string.
+
+00:11.650 --> 00:15.730
+For this, you have to write a program where you have to declare one string.
+
+00:15.730 --> 00:17.810
+Whatever the string you like, you can take it.
+
+00:17.830 --> 00:21.180
+I have taken a string that is welcome all in capital letters.
+
+00:21.190 --> 00:27.280
+Then you have to write the logic for finding the length by counting all the characters one by one.
+
+00:27.820 --> 00:30.070
+Like here, the length of a string is seven.
+
+00:30.070 --> 00:32.530
+So I should get that answer as seven.
+
+00:33.310 --> 00:35.160
+I'll explain you how it can be done.
+
+00:35.170 --> 00:37.740
+Suppose this is a string str.
+
+00:38.110 --> 00:44.320
+Then you have to check all the characters one by one until you reach null character.
+
+00:45.160 --> 00:49.510
+So you can scan through the string letter by letter by using a four loop.
+
+00:50.800 --> 00:51.110
+Right.
+
+00:51.220 --> 00:56.530
+And you can access every location by its index by seeing str of a.
+
+00:57.360 --> 01:00.120
+I'm just showing you the elements that you have to use.
+
+01:01.230 --> 01:05.370
+And this is to verify it's a W and this is e, l, so on.
+
+01:05.370 --> 01:09.000
+And when it reaches null character, you have to stop.
+
+01:09.330 --> 01:11.520
+So how to check the null character?
+
+01:11.520 --> 01:12.900
+So you have to write it in.
+
+01:13.910 --> 01:17.870
+The single cause backslash and this is zero.
+
+01:17.900 --> 01:19.670
+Make sure you are typing zero.
+
+01:19.790 --> 01:20.660
+You should not type.
+
+01:20.660 --> 01:23.090
+Oh, so it should be in single quotes.
+
+01:23.570 --> 01:29.870
+And while scanning through this entire string, you can maintain one counter that is initially count
+
+01:29.870 --> 01:33.980
+is zero and you have to go on incrementing the counter.
+
+01:34.490 --> 01:41.030
+And once you reach this null character, the string, this loop should stop and this count will be having
+
+01:41.030 --> 01:42.740
+the length of a string.
+
+01:43.130 --> 01:47.840
+So one method I have shown you by using a follow and index.
+
+01:48.650 --> 01:53.150
+There is one more method already have shown you in previous videos.
+
+01:53.150 --> 01:59.000
+You can use a iterator on a string that is string iterator you can take.
+
+01:59.780 --> 02:05.780
+And you can start this iterator from a beginning of a string that is structured to begin.
+
+02:06.080 --> 02:11.600
+And you can reach at the end that is stroke end, and you can stop it.
+
+02:11.600 --> 02:16.550
+And while iterating through a string by using a for loop, this is also done using for loop.
+
+02:16.550 --> 02:20.900
+And here also you can maintain a count and you can.
+
+02:22.130 --> 02:23.960
+Increment that current value.
+
+02:25.930 --> 02:26.440
+Right.
+
+02:26.710 --> 02:34.030
+So by either using begin and end offer iterator, you can scan through a string or by using index you
+
+02:34.030 --> 02:40.060
+can scan through a string and you have command and a counter which will count the number of characters
+
+02:40.060 --> 02:41.560
+which gives the length of a string.
+
+02:42.480 --> 02:46.470
+So you can post the video and you can try this program by yourself.
+
+02:46.500 --> 02:47.930
+It's a very simple program.
+
+02:47.940 --> 02:52.350
+No doubt we can directly find the length of a string by calling a function length.
+
+02:52.440 --> 02:55.110
+But here, let us do it using followup.
+
+02:56.490 --> 02:58.410
+So post the video and try it.
+
+02:58.500 --> 03:01.590
+If you can't get it, then you can continue the video.
+
+03:01.650 --> 03:03.000
+And there is a solution.
+
+03:03.000 --> 03:04.860
+I will create the program and show you.
+
+03:06.530 --> 03:09.190
+If you have tried and got the solution, that's very good.
+
+03:09.200 --> 03:12.710
+Otherwise, I'm giving you the solution for this challenge.
+
+03:13.160 --> 03:18.890
+For this I will declare one variable count and that is initialize to zero and I will use a follow up
+
+03:18.890 --> 03:19.610
+integer.
+
+03:19.610 --> 03:24.650
+I assign zero onwards and str of I.
+
+03:24.800 --> 03:29.060
+I should continue until it is not equal to null character.
+
+03:29.570 --> 03:31.640
+If it is equal, it should stop.
+
+03:31.640 --> 03:33.410
+If it is not equal, it should continue.
+
+03:33.410 --> 03:34.970
+Then say a plus plus.
+
+03:35.770 --> 03:39.480
+Then here simply say count plus, plus.
+
+03:39.490 --> 03:40.240
+That's all.
+
+03:40.390 --> 03:43.630
+Now, at the end, I will print length.
+
+03:44.890 --> 03:46.120
+Length is.
+
+03:47.610 --> 03:49.350
+Count and also.
+
+03:51.550 --> 03:53.170
+See by just using a follow up.
+
+03:53.170 --> 03:54.250
+You can do this one.
+
+03:54.460 --> 03:55.930
+I will turn it and show you.
+
+03:56.560 --> 03:57.230
+Yes.
+
+03:57.250 --> 03:58.360
+Length seven.
+
+03:58.360 --> 03:59.800
+Length of string seven.
+
+04:01.200 --> 04:07.980
+Now second method, as I said, you can also use a string iterator, so I'll just change this one string
+
+04:08.460 --> 04:11.250
+iterator and that is it.
+
+04:11.430 --> 04:12.720
+Then here, say.
+
+04:13.780 --> 04:14.890
+In the follow up.
+
+04:16.800 --> 04:24.660
+I'd assign a strict begin then here it should stop when it reaches.
+
+04:25.520 --> 04:30.710
+And so it is not equal to strict and.
+
+04:31.410 --> 04:33.980
+And I have to do it plus, plus.
+
+04:34.020 --> 04:36.780
+So I have made changes and stuff, writing it freshly.
+
+04:36.960 --> 04:42.090
+So these are the changes I have done and the plus plus finally displaying count.
+
+04:42.630 --> 04:43.740
+Let us read this.
+
+04:44.890 --> 04:45.400
+Yes.
+
+04:45.400 --> 04:46.720
+I got the 27.
+
+04:48.220 --> 04:48.870
+That's it.
+
+04:48.880 --> 04:51.190
+So at least you can try the program now.
+
+04:51.220 --> 04:56.500
+Don't just watch the videos, practise them, write the same thing, and do it by yourself.
+
+04:57.520 --> 04:58.660
+In the next video, we'll see.
+
+04:58.660 --> 04:59.470
+Another challenge.
+
+04:59.470 --> 05:05.680
+And this logic of iterating through a string or scanning through a string is very useful.

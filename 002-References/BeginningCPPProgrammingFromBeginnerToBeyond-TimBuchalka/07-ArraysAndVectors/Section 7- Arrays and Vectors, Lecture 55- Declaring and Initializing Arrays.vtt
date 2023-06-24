@@ -1,0 +1,145 @@
+WEBVTT
+
+00:00:05.500 --> 00:00:10.000
+In this video, we'll look at the syntax for declaring and initializing arrays.
+
+00:00:10.500 --> 00:00:13.100
+The syntax for an array declaration is very simple.
+
+00:00:13.600 --> 00:00:16.200
+First, we write the type of each element in the array.
+
+00:00:16.700 --> 00:00:19.200
+This is followed by the name of the array variable.
+
+00:00:19.700 --> 00:00:23.700
+Then we provide square brackets which is the array indexing operator.
+
+00:00:24.200 --> 00:00:27.700
+And in the square brackets, we provide the size that we want the array to be.
+
+00:00:28.200 --> 00:00:32.300
+Remember, this size is fixed, so the compiler must know the size
+
+00:00:32.300 --> 00:00:34.740
+of whatever's in the square brackets at compile time.
+
+00:00:34.740 --> 00:00:36.840
+So this can be a constant literal.
+
+00:00:36.840 --> 00:00:39.640
+It can be a declared constant or constant expression.
+
+00:00:40.540 --> 00:00:45.340
+In the first example, we're declaring an array named test scores of 5 integers.
+
+00:00:45.840 --> 00:00:49.500
+The second example declares an array named high scores per level
+
+00:00:49.500 --> 00:00:50.500
+of 10 integers.
+
+00:00:51.300 --> 00:00:54.500
+And the third example declares an array named high temperatures
+
+00:00:54.500 --> 00:00:56.700
+of 365 doubles.
+
+00:00:56.700 --> 00:01:01.030
+Notice that days and years are declared constant, so the compiler knows its value.
+
+00:01:01.830 --> 00:01:06.030
+Also note that in all three cases the arrays have not been initialized.
+
+00:01:06.390 --> 00:01:09.590
+This means that the contents of the array elements could be anything.
+
+00:01:10.090 --> 00:01:13.640
+Best practice is to always initialize arrays when you declare them.
+
+00:01:13.640 --> 00:01:14.940
+Let's see how we can do that.
+
+00:01:15.440 --> 00:01:19.440
+We can also initialize arrays when we declare them, and it's good practice to do so.
+
+00:01:19.940 --> 00:01:26.640
+The syntax is similar to when we initialize primitive variables.
+
+00:01:27.140 --> 00:01:30.440
+We include an initialization list after the declaration.
+
+00:01:31.100 --> 00:01:34.800
+In this list, we can provide as many initializers as we like
+
+00:01:34.800 --> 00:01:36.400
+separated by commas.
+
+00:01:36.700 --> 00:01:40.360
+In the first example, test scores is initialized to 100,
+
+00:01:40.360 --> 00:01:43.660
+95, 99, 97 and 88.
+
+00:01:45.160 --> 00:01:47.860
+The initialization works as you would expect.
+
+00:01:47.860 --> 00:01:51.760
+The test scores array element at index 0 is initialized to 100.
+
+00:01:51.760 --> 00:01:54.760
+The element at index 1 to 95 and so on.
+
+00:01:55.640 --> 00:02:00.040
+In the second example, you see that we declared an array named high scores per level
+
+00:02:00.290 --> 00:02:01.490
+of 10 integers,
+
+00:02:01.490 --> 00:02:06.090
+but we only provided two values in the initializer list, 3 and 5.
+
+00:02:06.590 --> 00:02:11.190
+In this case, the first two elements of the array are initialized to 3 and 5,
+
+00:02:11.190 --> 00:02:11.890
+respectively.
+
+00:02:12.290 --> 00:02:15.590
+And the remaining eight array elements will be initialized to 0.
+
+00:02:15.590 --> 00:02:19.290
+In the third example, all of the elements of the array high temperatures
+
+00:02:19.290 --> 00:02:23.890
+are initialized to 0. This is a very handy initializer that's used very often.
+
+00:02:24.550 --> 00:02:26.750
+The final example is a little bit different.
+
+00:02:26.750 --> 00:02:29.550
+In this case, I didn't provide any number for the size
+
+00:02:29.550 --> 00:02:31.550
+of the array inside the square brackets.
+
+00:02:32.050 --> 00:02:35.250
+Instead, I'm letting the compiler determine the size of the array
+
+00:02:35.250 --> 00:02:38.150
+based on the number of elements in the initializer list.
+
+00:02:38.950 --> 00:02:40.550
+This form is also often seen.
+
+00:02:41.050 --> 00:02:44.450
+In this case, another array will be of size 5 integers
+
+00:02:44.450 --> 00:02:47.050
+and they'll each be initialized from 1 to 5.
+
+00:02:47.550 --> 00:02:51.750
+As you can see the syntax for declaring and initializing arrays is very straightforward.
+
+00:02:52.050 --> 00:02:56.350
+In the next video, we'll look at the syntax for accessing individual array elements.

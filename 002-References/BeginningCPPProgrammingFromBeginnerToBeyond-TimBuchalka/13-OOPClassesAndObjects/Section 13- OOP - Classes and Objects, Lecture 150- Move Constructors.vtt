@@ -1,0 +1,883 @@
+WEBVTT
+
+00:00:05.300 --> 00:00:09.200
+In this video, we'll learn about c++'s move constructor
+
+00:00:09.200 --> 00:00:10.400
+and move semantics.
+
+00:00:11.200 --> 00:00:14.300
+These features were introduced in c++11,
+
+00:00:14.300 --> 00:00:18.660
+and they can be difficult to understand. So we'll take it slow and one step at a time.
+
+00:00:19.320 --> 00:00:23.220
+While move semantics is not considered a beginning c++ topic,
+
+00:00:23.220 --> 00:00:25.580
+it's important to understand it conceptually
+
+00:00:25.580 --> 00:00:27.980
+so you can identify it in code when you see it.
+
+00:00:28.880 --> 00:00:33.680
+One of c++11's most pervasive features was probably move semantics.
+
+00:00:33.680 --> 00:00:37.680
+And to really understand move semantics, it's important to be able to tell
+
+00:00:37.680 --> 00:00:40.980
+whether an expression is an l-value or an r-value.
+
+00:00:41.580 --> 00:00:44.580
+If you need a refresher about L-values and R-values,
+
+00:00:44.580 --> 00:00:48.940
+please refer to the L-values and R-values video in section 12 of this course.
+
+00:00:49.540 --> 00:00:53.640
+But a useful rule of thumb is that when you can refer to an object by name
+
+00:00:53.640 --> 00:00:56.300
+or you can follow a pointer to get to an object,
+
+00:00:56.300 --> 00:00:59.300
+then that object is addressable and it's an L-value,
+
+00:00:59.900 --> 00:01:02.160
+and R-values are everything else.
+
+00:01:02.160 --> 00:01:04.660
+But in the context of move semantics
+
+00:01:04.660 --> 00:01:08.650
+r-values refer to temporary objects that are created by the compiler
+
+00:01:09.050 --> 00:01:11.250
+and objects returned from methods.
+
+00:01:11.610 --> 00:01:16.510
+As you can see in this slide, when the expression 100 plus 200 is evaluated,
+
+00:01:16.760 --> 00:01:20.360
+the compiler stores 300 in an unnamed temporary value.
+
+00:01:20.960 --> 00:01:23.960
+This value is not addressable so it's an R-value.
+
+00:01:24.620 --> 00:01:27.980
+The R-value is then assigned to the L-value total.
+
+00:01:28.640 --> 00:01:31.300
+The same happens with objects. However,
+
+00:01:31.300 --> 00:01:33.660
+with objects there can be a great amount of overhead
+
+00:01:33.660 --> 00:01:36.810
+if copy constructors are called over and over and over again,
+
+00:01:36.810 --> 00:01:39.010
+making copies of these temporary objects.
+
+00:01:39.410 --> 00:01:42.770
+And when we have raw pointers and we have to do deep copies,
+
+00:01:42.770 --> 00:01:44.270
+then the overhead is even greater.
+
+00:01:44.870 --> 00:01:48.370
+This is where move semantics and the move constructor comes into the picture.
+
+00:01:49.030 --> 00:01:52.630
+R-value objects are the objects that move semantics addresses.
+
+00:01:54.630 --> 00:01:58.990
+We know that copy constructors are called whenever the compiler needs to make a copy of an object.
+
+00:01:59.290 --> 00:02:02.290
+We also know that if our class contains a raw pointer,
+
+00:02:02.290 --> 00:02:04.290
+then we must implement deep copy.
+
+00:02:04.790 --> 00:02:07.290
+However, this can be computationally expensive
+
+00:02:07.290 --> 00:02:11.290
+since we have to allocate space for the copy and then copy the data over.
+
+00:02:11.290 --> 00:02:13.490
+The c++ move constructor
+
+00:02:13.490 --> 00:02:17.890
+moves the object rather than copies it, this can be extremely efficient.
+
+00:02:18.690 --> 00:02:23.050
+Move constructors are optional. If you don't provide them, then the copy constructors will be called.
+
+00:02:23.050 --> 00:02:26.050
+But it's a good idea to use move constructors for efficiency.
+
+00:02:27.250 --> 00:02:30.250
+Finally, when you run your code and step through it in the debugger,
+
+00:02:30.250 --> 00:02:33.250
+you might not see move constructors being called.
+
+00:02:33.250 --> 00:02:37.050
+In fact sometimes you may not even see the copy constructors being called.
+
+00:02:37.050 --> 00:02:40.850
+If you experience this, it's probably due to something called copy illusion.
+
+00:02:41.210 --> 00:02:44.110
+Copy illusion is a compiler optimization technique
+
+00:02:44.110 --> 00:02:46.310
+that eliminates unnecessary copying.
+
+00:02:46.910 --> 00:02:49.810
+Compilers are really smart with their optimizations now.
+
+00:02:49.810 --> 00:02:53.310
+And one of the common techniques is called return value optimization,
+
+00:02:53.310 --> 00:02:56.610
+that's when the compiler generates code that doesn't create a copy every
+
+00:02:56.610 --> 00:02:59.610
+return value from a function making the code much more efficient.
+
+00:03:01.970 --> 00:03:04.770
+So let's start by talking about R-value references.
+
+00:03:04.920 --> 00:03:08.820
+We've already seen L-value references which are references to L-values.
+
+00:03:08.820 --> 00:03:12.120
+Well, R-value references are references to R-values.
+
+00:03:12.120 --> 00:03:16.220
+In the context of move semantics, think of R-value references
+
+00:03:16.220 --> 00:03:19.520
+as references to those temporary objects that we were talking about.
+
+00:03:20.820 --> 00:03:25.020
+L-value references are declared using a single ampersand like we've done,
+
+00:03:25.020 --> 00:03:28.820
+but r-value references are declared using two ampersands.
+
+00:03:28.820 --> 00:03:29.920
+Let's see some examples.
+
+00:03:31.480 --> 00:03:35.280
+In this example, we'll see the difference between an L-values reference and an
+
+00:03:35.280 --> 00:03:36.530
+R-value reference.
+
+00:03:36.930 --> 00:03:40.430
+First, we declare x as an integer and initialize it to a 100.
+
+00:03:41.130 --> 00:03:45.230
+In this case, x is an L-value, it's addressable, and it's got a name.
+
+00:03:45.730 --> 00:03:49.730
+Now we can create r ref as a reference to x.
+
+00:03:50.090 --> 00:03:54.290
+And since x is an L-value, this is an L-values reference.
+
+00:03:54.950 --> 00:03:59.310
+We can use l ref to refer to x. Nothing new, this is stuff we've seen already.
+
+00:03:59.860 --> 00:04:02.860
+But now let's see what an R-value reference looks like.
+
+00:04:03.740 --> 00:04:07.740
+R ref is declared as an R-value ref to an integer
+
+00:04:07.740 --> 00:04:09.740
+with a double ampersand operator,
+
+00:04:10.240 --> 00:04:12.440
+and we set it to refer to 200.
+
+00:04:13.140 --> 00:04:15.340
+Since 200 is an R-value,
+
+00:04:15.340 --> 00:04:18.000
+this makes ref an R-value reference.
+
+00:04:18.000 --> 00:04:20.900
+Now we can actually assign 300 to r ref,
+
+00:04:20.900 --> 00:04:23.900
+which stores 300 into the R-value
+
+00:04:23.900 --> 00:04:28.300
+of where ref refers to. In other words, we just change that temporary variable.
+
+00:04:29.100 --> 00:04:32.500
+Notice that if we try to assign an L-value to an R-value reference,
+
+00:04:32.500 --> 00:04:35.000
+we get a compiler error, which makes perfect sense.
+
+00:04:37.870 --> 00:04:42.470
+So now let's look at L-value references in the context of function parameters.
+
+00:04:42.470 --> 00:04:45.670
+This is what we've been doing all along up to this point in the course.
+
+00:04:46.330 --> 00:04:49.330
+We have an integer x, we initialize it to 100,
+
+00:04:49.690 --> 00:04:51.190
+x is an L-values.
+
+00:04:51.550 --> 00:04:53.350
+Now look at the function func.
+
+00:04:53.350 --> 00:04:58.010
+It expects an L-value reference, as denoted by the single ampersand.
+
+00:04:58.910 --> 00:05:00.210
+So it wants an L-value.
+
+00:05:00.610 --> 00:05:02.970
+If we call func and pass in x,
+
+00:05:02.970 --> 00:05:05.850
+then this is okay since x is an L-value
+
+00:05:05.850 --> 00:05:08.350
+and num will be the reference to an L-value.
+
+00:05:08.650 --> 00:05:11.150
+But what happens if we call func with 200.
+
+00:05:11.650 --> 00:05:14.650
+Well, 200 is not an L-value, it's an R-value,
+
+00:05:14.650 --> 00:05:16.650
+and the compiler will generate an error.
+
+00:05:17.450 --> 00:05:20.750
+You can see the error message below that the compiler generates.
+
+00:05:23.110 --> 00:05:26.990
+Now let's look at R-value references in the context of function parameters.
+
+00:05:27.350 --> 00:05:31.010
+We, again, have defined x to be an integer and initialized it to 100.
+
+00:05:31.010 --> 00:05:35.470
+This time we declare func as a function that expects an R-value reference,
+
+00:05:35.470 --> 00:05:38.270
+and we denote that with the double ampersands.
+
+00:05:38.930 --> 00:05:40.930
+So it wants an R-value.
+
+00:05:40.930 --> 00:05:43.590
+If we call func and pass in 200,
+
+00:05:43.590 --> 00:05:46.190
+this is okay since 200 is an R-value.
+
+00:05:46.590 --> 00:05:49.590
+And now num will be a reference to an R-value.
+
+00:05:49.590 --> 00:05:53.580
+But what happens if we call func with x? Well, we get an error message.
+
+00:05:53.580 --> 00:05:56.180
+X is not an R-value, it's an L-value.
+
+00:05:56.180 --> 00:06:00.180
+So the compiler generates the error, and you can see the message it generates below.
+
+00:06:02.180 --> 00:06:05.280
+Now we can overload these functions and have both of them in our code at
+
+00:06:05.280 --> 00:06:07.880
+the same time since they have unique signatures.
+
+00:06:08.380 --> 00:06:10.380
+And the compiler will call the correct function
+
+00:06:10.380 --> 00:06:13.380
+depending on whether the parameter is an L-value or and R-value.
+
+00:06:13.380 --> 00:06:16.680
+We're going to take advantage of this when we define the move constructor.
+
+00:06:18.280 --> 00:06:20.880
+So now let's see how this works with a move constructor in a class.
+
+00:06:21.480 --> 00:06:25.780
+Here, I've created a class named move and it has a raw pointer as a data member.
+
+00:06:26.330 --> 00:06:30.440
+This class is similar to the shallow and deep classes we used earlier in this section.
+
+00:06:31.440 --> 00:06:34.940
+The rest of the class methods are pretty standard, and we've seen them before.
+
+00:06:34.940 --> 00:06:38.540
+Notice that we've included a copy constructor that does a deep copy.
+
+00:06:39.140 --> 00:06:42.540
+We have not defined the move constructor yet, we'll do that soon.
+
+00:06:42.540 --> 00:06:44.740
+But first, let's look at the copy constructor.
+
+00:06:46.730 --> 00:06:50.730
+Here's the code for the copy constructor, again, pretty standard deep copy.
+
+00:06:50.730 --> 00:06:53.430
+We allocate storage, and then we copy the data.
+
+00:06:55.680 --> 00:06:59.180
+Now we run a simple main that creates a vector of some move objects,
+
+00:06:59.180 --> 00:07:02.840
+and we call the vector vec, and we push back to move object.
+
+00:07:02.840 --> 00:07:05.340
+Now notice what's happening in the argument list.
+
+00:07:05.340 --> 00:07:09.640
+Move 10 and move 20 are creating temporary objects, they're unnamed.
+
+00:07:09.640 --> 00:07:11.640
+So they're going to be R-values.
+
+00:07:11.640 --> 00:07:16.000
+What happens is that the compiler is going to use the copy constructor
+
+00:07:16.000 --> 00:07:18.000
+to make copies of these guys.
+
+00:07:18.800 --> 00:07:21.800
+So here's the sample output from that program.
+
+00:07:22.460 --> 00:07:26.820
+You can see these constructors and destructors and copy constructors being called.
+
+00:07:27.120 --> 00:07:30.220
+In fact, you can see that the copy constructor is doing several deep
+
+00:07:30.220 --> 00:07:31.990
+copies, which can be inefficient.
+
+00:07:32.650 --> 00:07:37.250
+Now let's add the move constructor to the class to make it much more efficient.
+
+00:07:38.500 --> 00:07:40.860
+So what does the move constructor actually do.
+
+00:07:40.860 --> 00:07:44.220
+Well, instead of making a deep copy like the copy constructor does.
+
+00:07:44.220 --> 00:07:47.880
+Well, instead of making a deep copy as the copy constructor does,
+
+00:07:47.880 --> 00:07:50.680
+it simply moves the resource that's on the heap.
+
+00:07:50.680 --> 00:07:55.040
+And the way we do that is just to assign the pointer from the source object to the current object.
+
+00:07:55.440 --> 00:07:59.240
+You might be thinking isn't that what default member-wise copy is.
+
+00:07:59.240 --> 00:08:00.240
+And yes, it is.
+
+00:08:00.600 --> 00:08:04.500
+But now the difference is that we know out the pointer in the source object.
+
+00:08:05.100 --> 00:08:07.100
+So what we have now is an object
+
+00:08:07.100 --> 00:08:11.700
+who owns the data on the heap and then the original object with a null pointer to that data.
+
+00:08:12.600 --> 00:08:15.600
+This is real efficient since we're not doing a copy at all.
+
+00:08:17.200 --> 00:08:20.400
+Before we implement the move constructor, let's look at its syntax.
+
+00:08:20.400 --> 00:08:24.000
+As you can see it's very similar to the syntax for a copy constructor,
+
+00:08:24.000 --> 00:08:25.600
+but it's got two differences.
+
+00:08:25.600 --> 00:08:28.950
+First, there's no const qualifier for the parameter source.
+
+00:08:28.950 --> 00:08:32.950
+There can't be because we need to modify it in order to null out its pointer.
+
+00:08:33.550 --> 00:08:36.950
+And second, the parameter is an r-value reference,
+
+00:08:36.950 --> 00:08:39.150
+and you can see that with the double ampersands.
+
+00:08:40.450 --> 00:08:43.250
+You can see in the last two declarations what the move constructor
+
+00:08:43.250 --> 00:08:46.610
+prototype might look like for a player class and the move class.
+
+00:08:47.510 --> 00:08:52.170
+So here we're adding the move constructor prototype to the move class declaration,
+
+00:08:52.170 --> 00:08:53.770
+and now we need to implement it.
+
+00:08:55.370 --> 00:08:57.870
+Notice how simple the implementation is.
+
+00:08:58.070 --> 00:09:01.070
+We simply copy source.data to data.
+
+00:09:01.320 --> 00:09:04.200
+That's a simple copy of a pointer data member.
+
+00:09:04.200 --> 00:09:08.190
+Again, we're not copying what it's pointing to, we're not doing a deep copy.
+
+00:09:08.190 --> 00:09:10.590
+Then we null out source.data.
+
+00:09:11.390 --> 00:09:12.950
+This step is really important.
+
+00:09:12.950 --> 00:09:17.250
+Otherwise, we end up with the equivalent of a shallow copy and not a move.
+
+00:09:17.610 --> 00:09:20.610
+That's it. Many resources that describe
+
+00:09:20.610 --> 00:09:24.210
+the move constructor say that it steals or pilfers the data
+
+00:09:24.210 --> 00:09:26.210
+and then it nulls out the source pointer,
+
+00:09:26.210 --> 00:09:29.110
+and that's really a good way to think about it, that's exactly what it's doing.
+
+00:09:30.100 --> 00:09:32.460
+Now we've got our same program.
+
+00:09:32.460 --> 00:09:36.460
+And when we execute it, instead of the copy constructors being called for those
+
+00:09:36.460 --> 00:09:40.960
+temporary objects, the move constructors will be called because there are values.
+
+00:09:41.260 --> 00:09:43.960
+And it's going to be much more efficient than doing deep copies.
+
+00:09:44.320 --> 00:09:46.320
+So let's take a look at the output now.
+
+00:09:47.310 --> 00:09:50.670
+As you can see, there are no copy constructor calls at all
+
+00:09:50.670 --> 00:09:53.170
+and the move constructor is indeed being called.
+
+00:09:53.770 --> 00:09:57.370
+You can also see when the destructors are called for null pointer.
+
+00:09:57.370 --> 00:10:01.570
+That's destroying the object that we just moved and set its data pointer to null.
+
+00:10:02.170 --> 00:10:06.570
+So there you go. That's a basic introduction to R-value references in the move constructor.
+
+00:10:06.820 --> 00:10:11.180
+I know it's complicated. You'll probably have to watch this video a few times, but don't worry
+
+00:10:11.180 --> 00:10:14.180
+everybody goes through this. It's a difficult topic to understand.
+
+00:10:14.680 --> 00:10:17.880
+We'll see move semantics again in the next section of the course
+
+00:10:17.880 --> 00:10:21.480
+when we overload the assignment operator to do both copy and move.
+
+00:10:22.360 --> 00:10:25.260
+There's so much more to move semantics in the move constructor that are
+
+00:10:25.260 --> 00:10:26.960
+better left for a more advanced course,
+
+00:10:26.960 --> 00:10:30.500
+but now you know the foundations and you'll be fine when you learn about them.
+
+00:10:30.900 --> 00:10:34.260
+So let's head over to the ide and run this program and see it in action.
+
+00:10:35.120 --> 00:10:38.380
+Okay. So I'm in the IDE. Again, I'm in the section 13 workspace
+
+00:10:38.380 --> 00:10:40.380
+in the MoveConstructor project.
+
+00:10:40.880 --> 00:10:44.240
+And what I've got here is that class move that we used in the slides,
+
+00:10:44.240 --> 00:10:46.240
+it's got a raw pointer to an integer,
+
+00:10:46.740 --> 00:10:51.000
+it's got get set methods and your typical constructor,
+
+00:10:51.000 --> 00:10:54.990
+a copy constructor destructor. Now you'll notice that I've got a move
+
+00:10:54.990 --> 00:10:58.390
+constructor here but I've commented it out because I'm going to run this first
+
+00:10:58.390 --> 00:11:01.190
+with only the copy constructor so you can see what's going on.
+
+00:11:01.190 --> 00:11:03.790
+And right here is the copy constructor on line 17.
+
+00:11:05.690 --> 00:11:07.690
+Here's my implemented copy constructor.
+
+00:11:07.690 --> 00:11:11.490
+Again, I've commented out the move constructor will uncomment that at a moment.
+
+00:11:11.490 --> 00:11:13.090
+And here's my destructor.
+
+00:11:13.090 --> 00:11:15.090
+My destructor looks a little different because
+
+00:11:15.090 --> 00:11:18.090
+if my data is not equal to the null pointer,
+
+00:11:18.090 --> 00:11:22.280
+then I'm just saying what I'm destroying. Otherwise, I'm just saying that I'm destroying null pointer.
+
+00:11:22.280 --> 00:11:25.640
+And that's important because it will let us know if we are
+
+00:11:25.640 --> 00:11:28.140
+destroying those objects that we just moved,
+
+00:11:28.140 --> 00:11:30.740
+and it'll be really easy to see when it says null pointer.
+
+00:11:30.740 --> 00:11:34.940
+Okay. So here's my main. I'm creating a vector of move objects,
+
+00:11:34.940 --> 00:11:37.300
+and I'm simply calling pushback,
+
+00:11:37.300 --> 00:11:40.300
+and I'm supplying move in here.Now you'll notice
+
+00:11:40.300 --> 00:11:43.800
+there's no variable name there, right. So that's going to create a temporary object.
+
+00:11:44.460 --> 00:11:48.960
+And a temporary object is an R-value. So in this case,
+
+00:11:48.960 --> 00:11:53.420
+it's going to use the copy constructor. Once we put the move constructor in, it's going to use that.
+
+00:11:53.420 --> 00:11:56.920
+So let's walk through this example. And you'll see what's happening.
+
+00:11:56.920 --> 00:11:58.520
+So I'll start the debugger
+
+00:12:00.880 --> 00:12:02.540
+and I'll move the window over here to the right.
+
+00:12:02.540 --> 00:12:04.240
+And this is where we're at, right here.
+
+00:12:04.240 --> 00:12:07.840
+So first thing we need to do is we need to construct this object,
+
+00:12:08.640 --> 00:12:12.740
+right.We need to create that temporary object, and we're going to use the constructor to do that. So we'll
+
+00:12:13.040 --> 00:12:16.640
+step through here. You can see the constructor being called here.
+
+00:12:16.640 --> 00:12:19.540
+It's going to allocate that object on the heap
+
+00:12:19.540 --> 00:12:21.740
+and store whatever we passed it into it.
+
+00:12:22.400 --> 00:12:24.500
+We're going to display constructor for 10.
+
+00:12:25.600 --> 00:12:28.800
+And now we're in the copy constructor because remember we just
+
+00:12:28.800 --> 00:12:33.100
+created this temporary, right. So this temporary now needs to be copied into the vector.
+
+00:12:33.400 --> 00:12:35.400
+So we're in the copy constructor.
+
+00:12:35.400 --> 00:12:38.400
+We're here. We're going to construct a copy.
+
+00:12:38.800 --> 00:12:41.700
+So we're going right back here. We're delegating to the constructor.
+
+00:12:42.200 --> 00:12:44.200
+We're going to create another 10.
+
+00:12:44.700 --> 00:12:48.700
+And it says here, we just deep copied that 10, which is exactly what we did.
+
+00:12:48.700 --> 00:12:52.700
+Now we're back here, and we need to destroy that copy we made.
+
+00:12:52.700 --> 00:12:54.900
+So the destructor will be called right now.
+
+00:12:55.500 --> 00:12:58.100
+You can see a data will be pointing to 10.
+
+00:12:58.700 --> 00:13:01.300
+And we're going to destroy that copy of 10.
+
+00:13:02.800 --> 00:13:06.100
+That's it. That's pretty much exactly what's happening.
+
+00:13:06.100 --> 00:13:10.100
+You can see that we're using copy constructors just like we've used all the time.
+
+00:13:10.100 --> 00:13:12.600
+Now the fact that this is an R-value,
+
+00:13:13.100 --> 00:13:16.000
+that comes into play when we use the move constructor.
+
+00:13:16.000 --> 00:13:19.300
+Now I'm going to stop this, and I'm going to uncomment out
+
+00:13:20.600 --> 00:13:23.900
+all of these here. So you can see what's happening, it might be a little surprising.
+
+00:13:24.700 --> 00:13:27.700
+So what I've done is I've pushed back
+
+00:13:27.700 --> 00:13:31.580
+10 20 all the way through 80. Remember, these are all creating temporary objects,
+
+00:13:31.580 --> 00:13:34.080
+so they're going to be copied and copy constructed
+
+00:13:34.080 --> 00:13:36.880
+so that the vector can push them back. Remember, the vector
+
+00:13:36.880 --> 00:13:40.870
+makes copies of these guys.So it's going to make a copy of the temp.
+
+00:13:40.870 --> 00:13:43.470
+That's one of the problems. That's why it's so inefficient.
+
+00:13:43.970 --> 00:13:46.570
+But it's even worse than that because if we run this
+
+00:13:46.570 --> 00:13:48.770
+without debugging it. Let's just build and run.
+
+00:13:50.070 --> 00:13:54.570
+Let's take a look at what we just got here. I'm going to scroll all the way to the top.
+
+00:13:55.070 --> 00:13:56.270
+I'm at the top now.
+
+00:13:56.270 --> 00:14:00.670
+So you can see that I've created that 10, right. Then I've copied it. I've done a deep copy,
+
+00:14:00.670 --> 00:14:03.670
+and then I'm destroying it, I'm doing the same thing for 20.
+
+00:14:03.670 --> 00:14:07.670
+So you can see all these deep copies. But if you count them, you've got 1 2  3
+
+00:14:07.670 --> 00:14:10.970
+4 5 6 7 8 9 10,
+
+00:14:13.970 --> 00:14:16.470
+about 15 deep copies.
+
+00:14:17.350 --> 00:14:20.550
+That's much more than you would expect, right. When you look at the code,
+
+00:14:20.550 --> 00:14:22.150
+I don't think you would expect that many.
+
+00:14:22.150 --> 00:14:25.150
+l mean there's only 8 pushbacks here.
+
+00:14:25.150 --> 00:14:27.950
+But what's going on is that the vector
+
+00:14:28.450 --> 00:14:30.810
+is actually growing behind the scenes.
+
+00:14:30.810 --> 00:14:34.810
+And when the vector grows, those objects need to be copied to the new storage.
+
+00:14:34.810 --> 00:14:37.310
+Remember, the vector is using contiguous storage.
+
+00:14:37.310 --> 00:14:40.810
+So it's making copies of the objects behind the scenes as well.
+
+00:14:40.810 --> 00:14:45.800
+So you can see that a lot of times there's a lot of copying going on behind the scenes that we're not aware of.
+
+00:14:45.800 --> 00:14:49.100
+So that's the version with the copy constructor.
+
+00:14:49.100 --> 00:14:51.400
+Now what we'll do is we'll uncomment out
+
+00:14:52.200 --> 00:14:53.200
+the move constructor.
+
+00:14:54.500 --> 00:14:58.000
+And you can see what the move constructor is doing. The same thing that we did on the slides.
+
+00:14:58.000 --> 00:15:01.600
+The move constructor simply copying the source data and nulling out the pointer.
+
+00:15:01.600 --> 00:15:02.830
+Really, really straightforward.
+
+00:15:02.830 --> 00:15:05.630
+And I'll uncomment out the prototype here.
+
+00:15:06.930 --> 00:15:10.930
+Okay. Now what we'll do is we'll debug this again,
+
+00:15:12.530 --> 00:15:16.190
+and we'll walk through that very first one so you can see what's happening.
+
+00:15:17.290 --> 00:15:19.490
+So I'm right here on line 55.
+
+00:15:19.490 --> 00:15:23.600
+I need to create that move object, right. That's a regular constructor to create that,
+
+00:15:23.600 --> 00:15:25.960
+that creates that temporary R-value.
+
+00:15:25.960 --> 00:15:27.260
+So let's walk through there.
+
+00:15:27.920 --> 00:15:31.120
+I'm going to create that 10
+
+00:15:31.120 --> 00:15:34.120
+object that 10 move object. Now notice what happened?
+
+00:15:34.120 --> 00:15:35.820
+The move constructor got called.
+
+00:15:36.220 --> 00:15:39.220
+That's the move constructor right there with the double ampersand.
+
+00:15:39.220 --> 00:15:44.210
+So we got called rather than the copy constructor. Why? Because this is an R-value temporary.
+
+00:15:44.810 --> 00:15:47.610
+Now what we're going to do is we're basically going to steal the data
+
+00:15:47.610 --> 00:15:51.610
+and null out the pointer to the source objects, right. So we're going to move it rather than copy it.
+
+00:15:51.610 --> 00:15:55.910
+So we're here we're sourcing. We're nulling out the source data,
+
+00:15:55.910 --> 00:15:58.570
+and you can see the move constructor got called.
+
+00:15:58.570 --> 00:16:03.560
+Now look what happens when I go to delete that object right the one that we just moved the source.
+
+00:16:05.160 --> 00:16:07.960
+We're here in the destructor, just like we would expect.
+
+00:16:07.960 --> 00:16:10.160
+But if you look at the object we're destroying.
+
+00:16:10.560 --> 00:16:14.760
+Notice it's a null. The data's a null. That's the one we just nulled out, right.
+
+00:16:14.760 --> 00:16:17.760
+So in this case, I'm simply
+
+00:16:17.760 --> 00:16:20.760
+saying destructor freeing data for
+
+00:16:21.160 --> 00:16:22.060
+null pointer.
+
+00:16:22.720 --> 00:16:25.020
+So that's really obvious, which one is being destroyed.
+
+00:16:25.420 --> 00:16:28.420
+And then at this point, I'm back here.
+
+00:16:29.420 --> 00:16:33.020
+Okay. So you can hopefully see the difference here. How much more efficient this is.
+
+00:16:33.020 --> 00:16:37.620
+And I think you'll really see the difference in efficiency when we just run it without the debugger.
+
+00:16:38.170 --> 00:16:40.170
+So let me just run that without the debugger.
+
+00:16:40.420 --> 00:16:43.420
+And you can see here again I'll scroll all the way to the top.
+
+00:16:43.670 --> 00:16:47.070
+You can see that as you scroll down here, there is not one single copy
+
+00:16:47.070 --> 00:16:49.870
+constructor being called. So we're doing no deep copies,
+
+00:16:49.870 --> 00:16:53.170
+we're only moving resources using the move constructor.
+
+00:16:54.370 --> 00:16:56.170
+Okay. So there you go.
+
+00:16:56.170 --> 00:17:00.070
+That's a introduction to move constructors and move semantics.
+
+00:17:00.370 --> 00:17:04.370
+And I think this is a pretty good example that you can walk through and understand what's going on.

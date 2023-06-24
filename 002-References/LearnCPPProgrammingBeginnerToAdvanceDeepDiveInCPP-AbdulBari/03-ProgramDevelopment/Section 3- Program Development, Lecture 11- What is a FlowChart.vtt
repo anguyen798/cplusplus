@@ -1,0 +1,597 @@
+WEBVTT
+
+0
+00:00.090 --> 00:07.740
+in this Video let us talk about flow charts. flow charts where used at the time and monolithic programming
+
+1
+00:07.740 --> 00:15.330
+was there than later on than when procedural programming came the usage of  flow charts was
+
+2
+00:15.350 --> 00:16.740
+little redused.
+
+3
+00:16.910 --> 00:17.610
+and today.
+
+4
+00:17.610 --> 00:23.930
+We are following object oriented programming or aspect oriented programming so the usage of flowchart
+
+5
+00:23.970 --> 00:29.990
+is very much less so what does a flow chart flow chart is used for showing the flow of control of a
+
+6
+00:29.990 --> 00:31.460
+program.
+
+7
+00:31.550 --> 00:33.680
+How the program is flowing.
+
+8
+00:33.770 --> 00:36.170
+What are the steps it is performing.
+
+9
+00:36.170 --> 00:37.070
+One by one.
+
+10
+00:38.120 --> 00:46.400
+So if a program is very big it is hard to figure out how the flow of a program is so flow chart is useful
+
+11
+00:46.400 --> 00:49.280
+for understanding the program, instead of 
+
+12
+00:49.280 --> 00:51.620
+One is reading the program and understanding.
+
+13
+00:51.920 --> 00:56.360
+He can see the flow chart and understand how the program is working.
+
+14
+00:56.360 --> 01:00.810
+It is just like if you talk about electrical wiring in a home.
+
+15
+01:00.830 --> 01:05.270
+Then from there the wires or the cables are moving through the walls.
+
+16
+01:05.270 --> 01:10.490
+If you have a plan then you can know where exactly they are flowing and where are the important points.
+
+17
+01:10.490 --> 01:11.420
+Everything you can know.
+
+18
+01:12.060 --> 01:16.040
+Otherwise if there is any problem in the wiring then you have to dig the whole wall.
+
+19
+01:16.370 --> 01:18.350
+You have to dig the whole wall to find out
+
+20
+01:18.350 --> 01:21.350
+The problem is there is a proper plan.
+
+21
+01:21.350 --> 01:22.540
+Then you can understand.
+
+22
+01:22.550 --> 01:26.860
+So before laying the wire so pulling the wires we will make a plan.
+
+23
+01:26.870 --> 01:32.030
+So same way before writing the program we make a flow chart right.
+
+24
+01:32.270 --> 01:34.160
+So based on the flow chart we write the program.
+
+25
+01:34.160 --> 01:37.900
+So this will help you understand the program.
+
+26
+01:38.220 --> 01:49.010
+Now next usually when we are using flow chart the program as a scene as three steps: input, process and
+
+27
+01:49.160 --> 01:50.270
+output.
+
+28
+01:50.270 --> 01:51.540
+We call it like this.
+
+29
+01:51.540 --> 01:53.270
+First it takes some input.
+
+30
+01:53.270 --> 01:55.100
+Then it will process.
+
+31
+01:55.280 --> 01:58.670
+Then it will give output.
+
+32
+01:59.330 --> 02:05.600
+So any procedure you take it will have the similar steps like I was talking about a recipe preparing
+
+33
+02:05.600 --> 02:06.530
+a dish.
+
+34
+02:06.530 --> 02:09.070
+Input is the ingredients.
+
+35
+02:09.230 --> 02:12.770
+That process is the process of making a dish and output.
+
+36
+02:12.980 --> 02:20.450
+the dish is ready. if you take a chemistry experiment our chemistry experiment that is done usually in laboratories
+
+37
+02:20.990 --> 02:26.140
+will have input means chemicals and the vessels or instruments for whatever you need.
+
+38
+02:26.240 --> 02:29.460
+Then the process what you will do with that then it gets the desert.
+
+39
+02:29.920 --> 02:35.030
+So every procedure will have these 3 things so program also used to see like this.
+
+40
+02:35.030 --> 02:36.660
+Now for that program.
+
+41
+02:36.710 --> 02:41.350
+We draw the flowchart Now let us look at the elements of the flow chart.
+
+42
+02:41.360 --> 02:43.220
+This is a pictorial representation.
+
+43
+02:43.220 --> 02:45.700
+So picture are there for representation.
+
+44
+02:45.830 --> 02:53.000
+This ellipse is used for start and stop and this is for taking input as well as output.
+
+45
+02:53.270 --> 02:55.780
+And this is for processing and this is condition.
+
+46
+02:55.820 --> 02:58.320
+And this shows flow of control.
+
+47
+02:58.450 --> 03:04.160
+Now draw a few flow charts and show you gives you the idea how flow charts are used and how they are
+
+48
+03:04.160 --> 03:10.630
+useful for writing the programs. flow chart for adding two numbers.
+
+49
+03:10.640 --> 03:13.070
+See first of all a flow chart starts.
+
+50
+03:13.070 --> 03:18.580
+This is a start then for finding addition of two numbers.
+
+51
+03:18.590 --> 03:19.730
+We need two numbers.
+
+52
+03:19.850 --> 03:21.380
+So that is input.
+
+53
+03:21.380 --> 03:31.700
+So we need input so we can give a message usually give the message that print Enter two numbers.
+
+54
+03:31.700 --> 03:36.290
+So does a message usually we write that because we are writing a program program should be interactive.
+
+55
+03:36.290 --> 03:37.790
+So for that purpose right.
+
+56
+03:37.970 --> 03:39.910
+Then read 2 numbers.
+
+57
+03:39.910 --> 03:41.390
+So we read them in variables.
+
+58
+03:41.600 --> 03:43.770
+A and B.
+
+59
+03:44.010 --> 03:44.880
+This is input.
+
+60
+03:44.880 --> 03:51.990
+Now we have two numbers and variables and b then next step is process so processing that we have to
+
+61
+03:51.990 --> 03:52.350
+do.
+
+62
+03:52.500 --> 03:59.070
+We have to add a and b and stored the result in C this is processing.
+
+63
+03:59.070 --> 04:05.910
+We have the result in c now so output, display the output so print sum as
+
+64
+04:09.410 --> 04:13.220
+c that's all end of the procedure.
+
+65
+04:13.250 --> 04:14.160
+that is a stop.
+
+66
+04:15.080 --> 04:16.420
+So does that end a flowchart.
+
+67
+04:17.270 --> 04:21.920
+So how it's going to work first it in input then it will perform addition then it'll give the output
+
+68
+04:22.340 --> 04:23.660
+then it will stop.
+
+69
+04:23.660 --> 04:25.910
+So this shows the flow of control.
+
+70
+04:25.910 --> 04:27.860
+These lines are showing the flow right.
+
+71
+04:27.860 --> 04:31.970
+These lines are showing flow there's a simple example.
+
+72
+04:32.100 --> 04:37.440
+The next example I will draw a flow chart for finding a greater number.
+
+73
+04:37.560 --> 04:41.100
+If you have two numbers then which one is the greater we will find out.
+
+74
+04:41.400 --> 04:44.810
+So in that till here it will be same  we need to take two numbers.
+
+75
+04:44.940 --> 04:47.680
+Then from a and b you'll find out which one is greater.
+
+76
+04:47.700 --> 04:48.910
+Whichever one is greater.
+
+77
+04:49.050 --> 04:57.410
+We will print that greater number so I'll remove this and modify this one so here flowchart starts and
+
+78
+04:57.670 --> 04:58.930
+it will take two numbers.
+
+79
+04:58.940 --> 05:01.190
+Now we don't know which number is greater.
+
+80
+05:01.190 --> 05:06.590
+So then we have to check with the condition that if a is greater than B The A is greater.
+
+81
+05:07.160 --> 05:11.090
+Otherwise B is greater so for a condition we can use this symbol.
+
+82
+05:11.090 --> 05:14.780
+So here I will draw condition box.
+
+83
+05:14.780 --> 05:20.570
+So here I can check if A is greater than B if it is a true.
+
+84
+05:20.600 --> 05:24.550
+Then we will print A if it is a false and then we will print B.
+
+85
+05:24.560 --> 05:26.880
+Now here there are two branches.
+
+86
+05:27.020 --> 05:28.490
+True or false.
+
+87
+05:28.490 --> 05:30.830
+So I will take two branches first one.
+
+88
+05:30.830 --> 05:33.270
+Let us take it as true, if this is true.
+
+89
+05:33.860 --> 05:36.010
+And second one if it is false.
+
+90
+05:36.110 --> 05:48.470
+So if it is true then we will print a value a print a simply I will say A then here false print.
+
+91
+05:48.490 --> 05:53.020
+B if it is not then print B then what to do after this.
+
+92
+05:53.030 --> 05:54.380
+That's all it is over.
+
+93
+05:54.410 --> 05:55.700
+So this is over.
+
+94
+05:55.700 --> 05:57.800
+Then finally it has to stop.
+
+95
+05:58.030 --> 05:58.280
+Right.
+
+96
+05:58.610 --> 06:04.430
+So this will flow and come here and this will join at this point.
+
+97
+06:04.430 --> 06:06.110
+So this will also stop.
+
+98
+06:07.100 --> 06:13.690
+So this all we can use a condition box if a is greater than B true then print a false means.
+
+99
+06:13.700 --> 06:14.460
+B is greater.
+
+100
+06:14.480 --> 06:16.810
+So print B so we can look at this one.
+
+101
+06:16.880 --> 06:22.460
+Now we will see one more flowchart for printing numbers from 1 to 10.
+
+102
+06:22.780 --> 06:29.750
+So I will remove this and draw flowchart for printing numbers from 
+
+103
+06:29.750 --> 06:31.440
+from 1 to 10.
+
+104
+06:31.940 --> 06:36.430
+So for printing we have to do two things one is print.
+
+105
+06:36.530 --> 06:45.440
+Second is count like 1 print, 2 print and 3 print so counting as well as printing two things we have to do so keep
+
+106
+06:45.440 --> 06:45.970
+in mind.
+
+107
+06:46.060 --> 06:51.580
+i will draw it let us start this as a starting point of a flow chart.
+
+108
+06:51.600 --> 06:53.990
+Now next we have to take any input.
+
+109
+06:53.990 --> 06:54.370
+No.
+
+110
+06:54.410 --> 06:57.050
+We already know what we have to print numbers from 1 to10.
+
+111
+06:57.140 --> 07:03.890
+So there is no input than initially we should have some counter for counting as we are printing
+
+112
+07:03.890 --> 07:04.600
+from one onwards.
+
+113
+07:04.600 --> 07:06.710
+So we need something starting from 1 onwards.
+
+114
+07:06.710 --> 07:08.390
+So for that we take a counter.
+
+115
+07:08.420 --> 07:12.020
+So this is a process so in processing we will take i.
+
+116
+07:12.050 --> 07:14.860
+That is initially it is one for first time.
+
+117
+07:14.870 --> 07:18.560
+it will be 1 so we will be printing it right now.
+
+118
+07:18.650 --> 07:20.860
+Next we will print this one.
+
+119
+07:20.870 --> 07:29.300
+So print means output so print i, so first time it will be printing one next.
+
+120
+07:29.360 --> 07:32.500
+After this I should change it to 2.
+
+121
+07:32.510 --> 07:35.130
+If it is one then it should increase by 1.
+
+122
+07:35.150 --> 07:36.680
+So how to increase it by 1.
+
+123
+07:36.980 --> 07:38.540
+So this is again a process.
+
+124
+07:38.540 --> 07:40.240
+It is not input output.
+
+125
+07:40.370 --> 07:45.470
+So whatever I value is in that add 1and store the result in i
+
+126
+07:45.710 --> 07:52.460
+So this will increase the value of i by one in the next I have to print again.
+
+127
+07:52.550 --> 07:57.770
+So again print and again increase again print and again increase how long.
+
+128
+07:58.250 --> 08:02.240
+As long as I is less than or equal to 10.
+
+129
+08:03.050 --> 08:06.970
+So is I equal to 10 now or is it less then.
+
+130
+08:07.100 --> 08:09.290
+Yes it is less than, so how to  check.
+
+131
+08:10.760 --> 08:12.470
+Checking condition box.
+
+132
+08:12.470 --> 08:15.790
+So here again we need a condition box.
+
+133
+08:15.890 --> 08:21.930
+So here inside this condition what we will check if i is less than or equal to 10.
+
+134
+08:22.280 --> 08:25.940
+If yes we will print the again and increment.
+
+135
+08:25.940 --> 08:31.660
+So if yes that is true, if this true then go here again start.
+
+136
+08:32.150 --> 08:34.040
+So this is like a loop.
+
+137
+08:34.220 --> 08:39.830
+This like a loop it will go there and again start and go there again stop how long it will be go on
+
+138
+08:39.830 --> 08:43.340
+repeating as long as this is true how long that is true.
+
+139
+08:43.340 --> 08:50.840
+If I is less than or equal to 10 so when I becomes eleven we should not print so false if it is a false
+
+140
+08:50.920 --> 08:51.470
+means.
+
+141
+08:51.650 --> 09:02.290
+This is false we should stop ,this  is stop so that's all the flowchart for printing numbers from
+
+142
+09:02.680 --> 09:04.430
+1 to 10.
+
+143
+09:04.750 --> 09:10.030
+This is how flow charts values in early days of programming but still in academic.
+
+144
+09:10.030 --> 09:15.620
+So this is being used this is being taught initially but it is not much useful later on.
+
+145
+09:15.850 --> 09:20.230
+But initially for understanding programming this is little helpful.
+
+146
+09:21.160 --> 09:28.750
+So that's all about the flowchart and next video we will see what are the steps involved for writing and
+
+147
+09:28.750 --> 09:30.760
+compiling and executing a program.
+
+148
+09:30.790 --> 09:33.970
+So step four development and execution of a program.

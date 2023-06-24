@@ -1,0 +1,365 @@
+WEBVTT
+
+0
+00:01.080 --> 00:06.220
+We have already done a few simple programs using formulas or expressions. 
+
+1
+00:06.420 --> 00:09.170
+We have already use arithmetic operators.
+
+2
+00:09.180 --> 00:14.010
+We have a lot of other operators to learn so slowly you'll be learning about them.
+
+3
+00:14.060 --> 00:14.620
+Now.
+
+4
+00:14.670 --> 00:18.660
+We will learn about compound assignment operators.
+
+5
+00:18.660 --> 00:22.770
+These are related to arithmetic as well as other operators also.
+
+6
+00:23.370 --> 00:27.510
+So let us understand what these are and when they are useful.
+
+7
+00:27.510 --> 00:34.320
+See already I have listed the compound assignment operators so this you can see this, plus assign minus
+
+8
+00:34.410 --> 00:35.050
+assigned.
+
+9
+00:35.070 --> 00:41.070
+So the operators coming before the assignment. usually the expression or  all the operator will be
+
+10
+00:41.070 --> 00:44.510
+after the assignment ut here it is coming before the assignment.
+
+11
+00:44.610 --> 00:46.730
+So when it is useful let us see.
+
+12
+00:46.770 --> 00:53.280
+For that I have taken one example here I have some variables ABC which are having some values and sum
+
+13
+00:53.280 --> 00:55.610
+is also there which is having some value.
+
+14
+00:55.880 --> 01:05.940
+Now the first thing I want to add sum and a and store the result in sum itself.
+
+15
+01:05.940 --> 01:07.430
+So let us see how we can do that.
+
+16
+01:07.920 --> 01:15.190
+I want to add sum, sum is how much? five then a how much a is? 10
+
+17
+01:15.930 --> 01:18.380
+Then this will be five plus 10.
+
+18
+01:18.390 --> 01:29.450
+That is 15 when I want to stored? in sum only, so assign sum, so this means this will be added and the result
+
+19
+01:29.450 --> 01:33.430
+will be stored in sum now sum becomes how much, 15.
+
+20
+01:33.580 --> 01:35.310
+Right now sum is 5.
+
+21
+01:35.630 --> 01:37.030
+So sum becomes 15.
+
+22
+01:37.910 --> 01:43.880
+So these type of statements are commonly used in programming not now in the coming sections you will
+
+23
+01:43.880 --> 01:44.760
+find them.
+
+24
+01:44.780 --> 01:48.980
+So right now we are learning about this operator so that we can use them whenever we require
+
+25
+01:49.730 --> 01:54.410
+now we will see the same statement can be written using compound assignment.
+
+26
+01:54.410 --> 01:56.290
+OPERATOR Let us see this.
+
+27
+01:56.420 --> 02:04.620
+See here in this expression we find a variable sum is used on the right hand side of assignment as well as
+
+28
+02:04.620 --> 02:08.500
+left hand side of assignment. when it is appearing on the both side.
+
+29
+02:08.510 --> 02:15.010
+It means that this result is added with sum and this result is stored in sum. so the value of a is added 
+
+30
+02:15.140 --> 02:16.310
+And result is stored in sum
+
+31
+02:16.310 --> 02:22.100
+So the same thing can be written like this sum plus assign a.
+
+32
+02:22.820 --> 02:27.120
+So instead of writing like this we can write it like this.
+
+33
+02:27.270 --> 02:28.800
+What is the benefit.
+
+34
+02:28.800 --> 02:32.300
+The first benefit this is easily readable.
+
+35
+02:32.420 --> 02:40.560
+See for a beginner it is not readable but when you are writing C++ programming you get used to then
+
+36
+02:40.560 --> 02:42.270
+it is easy for understanding that.
+
+37
+02:42.280 --> 02:47.790
+Okay the result on the right hand side is added with sum and the results are stored in sum and
+
+38
+02:47.790 --> 02:48.880
+the second thing.
+
+39
+02:49.080 --> 02:57.510
+This operation will be faster than this one because one more thing this operation will be a little faster
+
+40
+02:57.510 --> 03:00.650
+than this one internally compiler will make it faster.
+
+41
+03:00.900 --> 03:02.810
+So this a statement is faster.
+
+42
+03:02.900 --> 03:09.060
+Now next thing I will show you one more expression in that I'll give you a more clear idea where this
+
+43
+03:09.060 --> 03:10.620
+type of statements are useful.
+
+44
+03:11.730 --> 03:24.600
+I want to add sum A B and C together and store the result in sum again so I will write the expression sum plus A plus
+
+45
+03:24.870 --> 03:33.070
+B plus C and I want to store the result in sum so it means all these things are added along with the
+
+46
+03:33.070 --> 03:35.660
+sum and the result is a stored to sum.
+
+47
+03:35.790 --> 03:38.370
+This is in a single statement.
+
+48
+03:38.400 --> 03:45.500
+No I want to break it in multiple statements means a repeated addition i want to do, first,
+
+49
+03:45.510 --> 03:47.150
+A then B then C.
+
+50
+03:47.250 --> 03:49.020
+So let us see how we can do that.
+
+51
+03:49.050 --> 03:58.710
+So first of all let us add a instead of this I'm writing another method see sum assign sum plus a SO
+
+52
+03:58.800 --> 04:02.900
+a is added with sum that is result is stored in sum now how much sum will be. Right
+
+53
+04:02.940 --> 04:04.330
+Now sum is 5 and a is 10.
+
+54
+04:04.530 --> 04:06.840
+So sum becomes 15 next statement.
+
+55
+04:06.840 --> 04:10.850
+Sum assign sum plus B.
+
+56
+04:11.070 --> 04:14.190
+So right now sum is 15 and then add B to it.
+
+57
+04:14.210 --> 04:14.990
+That is 5.
+
+58
+04:15.000 --> 04:16.800
+So this becomes twenty.
+
+59
+04:16.830 --> 04:28.030
+Then again sum assign sum plus C so sum is right now twenty and plus C is the 15 so sum becomes 35.
+
+60
+04:28.200 --> 04:34.110
+So this is done in steps so sometimes in our programs that is incoming sections we will see that we
+
+61
+04:34.110 --> 04:36.540
+have planned multiple values one by one.
+
+62
+04:36.630 --> 04:40.390
+So in such situations we use this type of operator.
+
+63
+04:40.530 --> 04:42.060
+That is a compound assignment.
+
+64
+04:42.060 --> 04:53.250
+So the same thing I can write it like this now sum plus assign a and sum plus assign b sum plus assign
+
+65
+04:53.720 --> 04:54.720
+C so.
+
+66
+04:54.990 --> 04:57.890
+So these same statements are done like this now.
+
+67
+04:57.960 --> 05:03.990
+So instead of writing all of them I have broken them to give you the idea how this component assignment
+
+68
+05:03.990 --> 05:05.250
+operators use.
+
+69
+05:05.280 --> 05:11.040
+So if you have to add more than one elements one by one that is repeatedly I have add then we can go
+
+70
+05:11.040 --> 05:14.910
+for this actually we need the statement like this same statement can be written like this.
+
+71
+05:14.910 --> 05:22.660
+This gives more meaning and the faster in C++ so this example I have given it only for addition but
+
+72
+05:22.660 --> 05:28.170
+it can be done for subtraction multiplication division for all these and these are bit wise operators
+
+73
+05:28.180 --> 05:29.150
+we have not seen them.
+
+74
+05:29.170 --> 05:31.420
+We look at them in the coming videos. so for
+
+75
+05:31.450 --> 05:39.540
+bit wise operates also we have compound assignment operators, now we take one more example for multiplication
+
+76
+05:39.580 --> 05:41.370
+and I will show you.
+
+77
+05:41.450 --> 05:48.250
+Now here I have a variable called product which is having value 1, I want to multiply a b c and also
+
+78
+05:48.330 --> 05:50.240
+with product and store the result in product.
+
+79
+05:50.250 --> 05:59.450
+So this can be written as product product multiplied by a multiplied by B multiplied by C suppose i want
+
+80
+05:59.460 --> 06:09.950
+like this then the same thing can also be done like this product multiplied assign a into B into C so
+
+81
+06:09.950 --> 06:15.490
+this means that multiply all these and multiply the result with the product also and store the result in
+
+82
+06:15.500 --> 06:16.470
+product.
+
+83
+06:16.840 --> 06:19.180
+So the same statement can be written like this.
+
+84
+06:19.280 --> 06:23.000
+Now if you want to break it into multiple statements you can break them.
+
+85
+06:24.080 --> 06:30.380
+So that's all about this compound assignment operator I have shown you just arithmetic operators
+
+86
+06:30.740 --> 06:32.380
+other operators are also there.
+
+87
+06:32.420 --> 06:35.570
+We may be using these operators in our program  where ever required.
+
+88
+06:35.580 --> 06:40.550
+So right now there are no example programs on this one but just I will show you that demonstration for
+
+89
+06:40.550 --> 06:44.250
+this compound assignment operators in the next video.
+
+90
+06:44.270 --> 06:44.900
+So that's all.

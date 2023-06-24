@@ -1,0 +1,79 @@
+WEBVTT
+
+00:00:05.400 --> 00:00:08.400
+In this section, we'll look at how we can create,
+
+00:00:08.400 --> 00:00:11.170
+build and execute c++ programs
+
+00:00:11.170 --> 00:00:14.170
+using only a simple editor in the command line.
+
+00:00:15.270 --> 00:00:18.270
+All we need on our system is a simple text editor.
+
+00:00:18.270 --> 00:00:21.630
+It's important to note that word processors such as Microsoft
+
+00:00:21.630 --> 00:00:26.030
+Word and Apple Pages are not usually used to enter program code.
+
+00:00:26.030 --> 00:00:30.230
+Instead, we use basic text editors or programmer text editors.
+
+00:00:31.030 --> 00:00:34.590
+these types of editors are much simpler than integrated development environments.
+
+00:00:35.950 --> 00:00:38.650
+We also need an installed c++ compiler
+
+00:00:38.650 --> 00:00:41.650
+like GCC or mingw on windows
+
+00:00:41.650 --> 00:00:44.010
+and Apple's command line compilers on mac.
+
+00:00:44.370 --> 00:00:44.970
+That's it.
+
+00:00:45.470 --> 00:00:49.460
+At this point, we can create the c++ program using the text editor
+
+00:00:49.460 --> 00:00:52.820
+and compile and run it by typing commands into the command line.
+
+00:00:53.320 --> 00:00:57.200
+This may sound intimidating at first but it's actually quite easy and efficient.
+
+00:00:58.300 --> 00:01:02.700
+That said, this is a workflow that's more commonly seen with experienced developers.
+
+00:01:02.700 --> 00:01:07.060
+However, you may wish to consider this approach if you find the IDEs too complex
+
+00:01:07.060 --> 00:01:08.720
+or too difficult to understand.
+
+00:01:08.720 --> 00:01:12.520
+You might also consider this approach if your computer hardware resources
+
+00:01:12.520 --> 00:01:14.720
+are insufficient to run an IDE.
+
+00:01:15.320 --> 00:01:18.320
+In any case, this is another option that you may use.
+
+00:01:18.680 --> 00:01:21.080
+In the next several videos, I'll show you how to edit,
+
+00:01:21.080 --> 00:01:23.680
+build and execute c++ programs
+
+00:01:23.680 --> 00:01:26.180
+using only the command line in a simple editor.
+
+00:01:26.780 --> 00:01:28.980
+There will be separate videos for windows,
+
+00:01:28.980 --> 00:01:31.980
+macs and ubuntu Linux for your reference.

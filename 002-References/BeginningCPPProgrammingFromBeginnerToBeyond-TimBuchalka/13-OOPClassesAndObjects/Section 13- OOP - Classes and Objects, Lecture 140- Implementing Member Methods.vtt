@@ -1,0 +1,1042 @@
+WEBVTT
+
+00:00:05.360 --> 00:00:09.910
+In this video, we'll learn about how to implement member methods in our c++ classes.
+
+00:00:10.410 --> 00:00:13.310
+You'll be glad to hear that class methods are implemented
+
+00:00:13.310 --> 00:00:16.670
+in a manner very similar to the way we implemented functions.
+
+00:00:16.670 --> 00:00:19.270
+But I'd say that they're generally less complex.
+
+00:00:19.570 --> 00:00:23.570
+This is because member methods have access to the classes member attributes,
+
+00:00:23.570 --> 00:00:26.070
+so we don't have to pass so many arguments around.
+
+00:00:26.870 --> 00:00:31.270
+C++ gives you many options regarding where to write code for member methods.
+
+00:00:31.570 --> 00:00:35.170
+You can define the member methods right inside the class declaration.
+
+00:00:35.170 --> 00:00:38.530
+If you do this, then the methods become implicitly in line.
+
+00:00:39.030 --> 00:00:42.330
+While this is okay for small and relatively simple methods,
+
+00:00:42.330 --> 00:00:47.230
+we tend to implement larger, more complex methods outside of the class declaration.
+
+00:00:47.780 --> 00:00:51.780
+In order to do so, we need to tell the compiler that we're implementing a method
+
+00:00:51.780 --> 00:00:53.780
+that belongs to a specific class.
+
+00:00:54.180 --> 00:00:55.780
+So we use the class name
+
+00:00:55.780 --> 00:00:59.080
+followed by the scope resolution operator and then the method name.
+
+00:00:59.880 --> 00:01:03.180
+This unambiguously tells the compiler that you're implementing a method
+
+00:01:03.180 --> 00:01:04.480
+for a specific class.
+
+00:01:05.360 --> 00:01:08.660
+In c++, it's also very common to separate
+
+00:01:08.660 --> 00:01:12.220
+a class's specification from its implementation.
+
+00:01:12.580 --> 00:01:14.780
+This makes the class much easier to manage.
+
+00:01:15.280 --> 00:01:17.580
+We usually create a header or include file
+
+00:01:17.580 --> 00:01:20.380
+that has a .h or .hpp extension
+
+00:01:20.380 --> 00:01:24.780
+for the class specification and then a separate .cpp file
+
+00:01:24.780 --> 00:01:26.580
+for the class implementation.
+
+00:01:26.980 --> 00:01:30.880
+First, let's look at implementing methods inside the class declaration.
+
+00:01:32.740 --> 00:01:35.740
+In this example, we're declaring an account class.
+
+00:01:35.990 --> 00:01:39.350
+Notice that the account class has a private double named balance,
+
+00:01:39.600 --> 00:01:42.900
+and two public methods: set balance and get balance.
+
+00:01:43.780 --> 00:01:47.380
+Set balance sets the balance to the value passed in by the user,
+
+00:01:47.680 --> 00:01:50.680
+and get balance returns a copy of the account balance.
+
+00:01:51.180 --> 00:01:53.380
+These public methods are necessary
+
+00:01:53.380 --> 00:01:56.080
+to access the balance since the balance is private.
+
+00:01:56.480 --> 00:02:01.440
+Notice the syntax is exactly as it was for defining regular c++ functions.
+
+00:02:01.940 --> 00:02:04.040
+Also notice that the public methods
+
+00:02:04.040 --> 00:02:08.700
+have direct access to the private balance because they're members of the same class.
+
+00:02:09.690 --> 00:02:13.680
+Now let's see how we would implement these methods outside the class declaration.
+
+00:02:14.670 --> 00:02:18.670
+In this example, we're defining the set balance and get balance methods
+
+00:02:18.670 --> 00:02:20.330
+outside the class declaration.
+
+00:02:21.230 --> 00:02:26.130
+Inside the class declaration, we simply provide the method prototype or declaration.
+
+00:02:26.330 --> 00:02:30.830
+This tells the compiler the name of the methods,the parameters they expect and the return type.
+
+00:02:31.820 --> 00:02:35.480
+The compiler can then type check the method implementation when it sees them.
+
+00:02:36.080 --> 00:02:40.080
+In order for the compiler to know that these methods belong to the account class,
+
+00:02:40.080 --> 00:02:42.440
+we have to prefix the method names
+
+00:02:42.440 --> 00:02:45.740
+with account followed by the scope resolution operator.
+
+00:02:45.990 --> 00:02:48.290
+Then we implement the method as we normally would.
+
+00:02:48.650 --> 00:02:52.250
+In this case, the compiler knows that the two method implementations
+
+00:02:52.250 --> 00:02:55.550
+are for the method declarations in the account class we provided.
+
+00:02:56.050 --> 00:03:00.300
+As our programs get larger, we really want to separate class specification
+
+00:03:00.300 --> 00:03:05.100
+and class implementation into different files. Let's see an example of how we can do that.
+
+00:03:05.980 --> 00:03:09.580
+In this example, we create a file named account.h.
+
+00:03:09.940 --> 00:03:12.040
+This is an includer header file
+
+00:03:12.040 --> 00:03:15.400
+that will pound include in our .cpp files
+
+00:03:15.400 --> 00:03:17.600
+whenever we need to use the account class.
+
+00:03:18.200 --> 00:03:22.400
+Notice that in this file we provide the specification for the account class.
+
+00:03:23.200 --> 00:03:27.200
+Before we can use or pound include this account.h header file,
+
+00:03:27.200 --> 00:03:29.400
+we need to take care of a potential problem.
+
+00:03:30.060 --> 00:03:33.720
+If this file is included by more than one cpp file,
+
+00:03:34.120 --> 00:03:38.420
+then the compiler will see the declaration for the account class more than once
+
+00:03:38.420 --> 00:03:41.020
+and give us an error about duplicate declarations.
+
+00:03:41.680 --> 00:03:45.480
+In order to solve this, we can use what's called an include
+
+00:03:45.480 --> 00:03:49.380
+guard that ensures that the compiler will process this file only once,
+
+00:03:49.380 --> 00:03:51.370
+no matter how many times it's included.
+
+00:03:52.470 --> 00:03:56.070
+An include guard is just a series of pre-processor directives that guarantees the file will only be
+
+00:03:56.070 --> 00:03:58.870
+that guarantees the file will only be included once.
+
+00:03:59.470 --> 00:04:04.460
+The way it works is we wrap up our entire class declaration in this include guard.
+
+00:04:04.660 --> 00:04:08.020
+The first line is pound if not defined
+
+00:04:08.020 --> 00:04:11.680
+underscore account underscore h underscore, all in uppercase.
+
+00:04:12.080 --> 00:04:15.740
+This checks to see if the preprocessor has a symbol named
+
+00:04:15.740 --> 00:04:18.340
+underscore account underscore h underscore.
+
+00:04:18.940 --> 00:04:21.040
+This simple name can be anything you want,
+
+00:04:21.040 --> 00:04:24.710
+but best practice is to use some sort of combination of the file name
+
+00:04:24.710 --> 00:04:28.110
+in uppercase with preceding and ending underscores.
+
+00:04:28.910 --> 00:04:31.910
+Any name is fine as long as it's unique in the program.
+
+00:04:32.510 --> 00:04:35.510
+If the preprocessor has that name defined,
+
+00:04:35.510 --> 00:04:39.870
+then it skips the entire file and goes to the pound end if at the end.
+
+00:04:40.530 --> 00:04:43.890
+In other words, it doesn't process the file since it's already seen it
+
+00:04:43.890 --> 00:04:45.890
+because the symbol has been defined.
+
+00:04:46.690 --> 00:04:49.920
+If the symbol has not been defined, then the symbol is set
+
+00:04:49.920 --> 00:04:51.920
+and the file is processed as usual.
+
+00:04:52.280 --> 00:04:54.080
+As you can see, it's pretty simple
+
+00:04:54.080 --> 00:04:57.280
+but not very elegant compared to more modern programming languages.
+
+00:04:58.580 --> 00:05:02.180
+So now this is what the account.h file typically contains.
+
+00:05:02.180 --> 00:05:05.480
+You can see the include guard wrapping the class declaration.
+
+00:05:05.880 --> 00:05:08.880
+Now we can provide the implementation for the account class
+
+00:05:08.880 --> 00:05:11.880
+in a separate file named account.cpp.
+
+00:05:13.540 --> 00:05:18.140
+Many compilers also support the pound pragma once compiler directive.
+
+00:05:18.940 --> 00:05:22.240
+The effect of this directive is the same as the include guard,
+
+00:05:22.240 --> 00:05:25.040
+while many compounders support this directive, some don't.
+
+00:05:25.040 --> 00:05:27.540
+So check your compiler documentation to be sure.
+
+00:05:28.420 --> 00:05:32.420
+Now we can provide the implementation for the account class in a separate file
+
+00:05:32.420 --> 00:05:35.720
+named account.cpp. Let's take a look at that.
+
+00:05:36.520 --> 00:05:39.820
+This is the source code for the account.cpp file.
+
+00:05:40.480 --> 00:05:44.480
+Notice that we include account.h and it's in double quotes.
+
+00:05:44.980 --> 00:05:48.780
+Up to this point, our includes have used angle brackets with no extensions.
+
+00:05:49.140 --> 00:05:52.240
+There's an important difference between the two forms of include.
+
+00:05:52.640 --> 00:05:56.540
+Include with angle brackets as in include iostream
+
+00:05:56.540 --> 00:05:59.140
+is used to include system header files
+
+00:05:59.140 --> 00:06:01.440
+and the compiler knows where these are located.
+
+00:06:02.340 --> 00:06:06.040
+Includes with double quotes tell the compiler to include header files
+
+00:06:06.040 --> 00:06:09.840
+that are local to this project, the compiler also knows where those are.
+
+00:06:10.640 --> 00:06:15.240
+Notice that this file implements the two methods declared in the account.h header file.
+
+00:06:15.840 --> 00:06:18.040
+Now our account class is complete,
+
+00:06:18.040 --> 00:06:20.600
+the specification is in account.h
+
+00:06:20.600 --> 00:06:23.400
+and the implementation is in account.cpp.
+
+00:06:24.080 --> 00:06:27.180
+How do we use an account in our main cpp file though.
+
+00:06:27.180 --> 00:06:28.480
+Let's see in the next slide.
+
+00:06:29.730 --> 00:06:31.730
+Here's our main.cpp file.
+
+00:06:32.390 --> 00:06:35.990
+Notice how we include iostream as well as account.h.
+
+00:06:36.490 --> 00:06:41.480
+It's important that you always include .h files, never include .cpp files.
+
+00:06:42.360 --> 00:06:44.960
+Then we just write our main as we normally would.
+
+00:06:44.960 --> 00:06:46.510
+When the program is compiled,
+
+00:06:46.510 --> 00:06:48.410
+both the main.cpp
+
+00:06:48.410 --> 00:06:51.210
+and the account.cpp files are compiled
+
+00:06:51.210 --> 00:06:53.470
+and then linked to produce the executable.
+
+00:06:53.470 --> 00:06:55.670
+Let's see how all this works in the IDE.
+
+00:06:57.030 --> 00:07:01.690
+Okay. So I'm in the IDE, and I'm in the section 13 workspace
+
+00:07:01.690 --> 00:07:04.490
+in the ImplementingMethods1 project.
+
+00:07:04.990 --> 00:07:06.590
+What I'm going to do here is
+
+00:07:06.590 --> 00:07:10.580
+I'm going to implement these methods in this account class and we'll implement some of them
+
+00:07:10.580 --> 00:07:14.570
+inside the class declaration and some of them outside the class declaration.
+
+00:07:14.570 --> 00:07:18.170
+Then we'll create another project ImplementingMethods2
+
+00:07:18.170 --> 00:07:22.070
+where we'll separate the accept specification from the implementation
+
+00:07:22.070 --> 00:07:25.730
+and we'll create the account.h file and the account.cpp file.
+
+00:07:25.730 --> 00:07:27.730
+Okay. So let's start here.
+
+00:07:28.130 --> 00:07:31.330
+What we're doing here is we have our class account right here,
+
+00:07:31.730 --> 00:07:34.390
+and we've got two private attributes: name and balance.
+
+00:07:34.390 --> 00:07:37.390
+And then we've got the methods. And the methods are really what we're interested in here.
+
+00:07:37.890 --> 00:07:41.890
+Now in this case, I've got six methods, all public.
+
+00:07:41.890 --> 00:07:44.250
+We've got a set balance and a get balance.
+
+00:07:44.250 --> 00:07:47.610
+And you can see that these methods have been implemented in line
+
+00:07:47.610 --> 00:07:49.610
+right inside the class declaration.
+
+00:07:50.160 --> 00:07:53.860
+This is easy to do, and this is okay to do when you've got methods like
+
+00:07:53.860 --> 00:07:56.220
+these that are really really straightforward methods.
+
+00:07:56.880 --> 00:07:58.980
+They're done. They're implemented, and we're all set.
+
+00:07:59.640 --> 00:08:03.540
+Now we can also implement methods outside the class declaration.
+
+00:08:03.540 --> 00:08:05.640
+Notice these last four methods.
+
+00:08:05.640 --> 00:08:09.000
+I've got set name, get name, deposit and withdraw.
+
+00:08:09.000 --> 00:08:13.990
+And what you see right here are basically the function prototypes or the method prototypes.
+
+00:08:14.590 --> 00:08:17.790
+They're not defined here. These are only declarations.
+
+00:08:17.790 --> 00:08:20.990
+What we want to do is we want to define them outside the class,
+
+00:08:20.990 --> 00:08:25.880
+and you'll notice the class begins here on line 8, and it ends right here on line 26.
+
+00:08:25.880 --> 00:08:29.680
+So what we want to do is define them outside the class. And let me show you how to do that.
+
+00:08:29.680 --> 00:08:30.580
+It's really straightforward.
+
+00:08:31.080 --> 00:08:34.580
+What we've got here is -- so let me show you how easy it is.
+
+00:08:35.080 --> 00:08:38.080
+Here are the methods that have been implemented outside the class.
+
+00:08:38.740 --> 00:08:43.540
+We're starting on line 28, right here. The method is set name, which is this method right there.
+
+00:08:43.740 --> 00:08:45.340
+It's called set name.
+
+00:08:45.340 --> 00:08:48.700
+Now it's not just good enough to say void set name, that would just
+
+00:08:48.950 --> 00:08:50.950
+define any method.
+
+00:08:50.950 --> 00:08:54.250
+We want to define the set name for the account class.
+
+00:08:54.250 --> 00:08:57.850
+So we need to prefix the name of the method set name
+
+00:08:57.850 --> 00:09:01.510
+with the name of the class followed by the scope resolution operator.
+
+00:09:01.510 --> 00:09:04.500
+Now when the compiler sees this, it knows okay,
+
+00:09:04.500 --> 00:09:09.160
+you're defining the set name method that you declared in the account class.
+
+00:09:09.160 --> 00:09:11.820
+So it's going to come up here, and I'll be able to type check
+
+00:09:11.820 --> 00:09:14.820
+all of these things together and make sure that there's no mistakes.
+
+00:09:15.220 --> 00:09:17.820
+Okay. So you can see what's going on here.
+
+00:09:17.820 --> 00:09:20.020
+In this example, it's really straightforward.
+
+00:09:20.020 --> 00:09:22.020
+A string is being passed in,
+
+00:09:22.020 --> 00:09:26.170
+and the name is set to whatever string was passed in, which is n. Remember, name is
+
+00:09:26.170 --> 00:09:27.830
+one of the attributes of the class.
+
+00:09:27.830 --> 00:09:31.510
+It was private, and that's okay. This is a member method. So it has
+
+00:09:31.510 --> 00:09:33.710
+access to private information.
+
+00:09:33.710 --> 00:09:37.010
+Get name simply returns a copy of the string.
+
+00:09:37.610 --> 00:09:41.470
+Okay. And in this case, we've got our deposit or withdraw.
+
+00:09:41.470 --> 00:09:44.670
+So you're going to pass in an amount to deposit.
+
+00:09:44.670 --> 00:09:48.670
+This method would somehow verify that that amount is indeed there,
+
+00:09:48.670 --> 00:09:50.170
+so that you can deposit it.
+
+00:09:50.170 --> 00:09:53.570
+And all it does is it increments balance by whatever the amount is.
+
+00:09:54.170 --> 00:09:58.170
+And it returns true. Obviously, you would return false if it didn't verify.
+
+00:09:58.670 --> 00:10:02.330
+Okay. And then the last method that we'll implement is
+
+00:10:02.330 --> 00:10:04.530
+this account withdraw method.
+
+00:10:04.530 --> 00:10:08.190
+Again, it's the same idea. We prefixed the name of the method
+
+00:10:08.190 --> 00:10:11.090
+with the name of the class because it's a class method.
+
+00:10:11.590 --> 00:10:13.790
+And here's the amount. And what do we do here?
+
+00:10:13.790 --> 00:10:16.670
+Well, we look at the balance and we subtract the amount from it.
+
+00:10:16.670 --> 00:10:20.330
+If that's greater than or equal to 0, then there is sufficient funds.
+
+00:10:20.330 --> 00:10:23.330
+We'll just decrement the balance by the amount,
+
+00:10:24.130 --> 00:10:25.430
+and we'll return true. Okay. Simple as that.
+
+00:10:25.430 --> 00:10:28.430
+If the funds aren't there, then we'll just return false.
+
+00:10:28.430 --> 00:10:31.230
+So let's see how we can use this in the main,
+
+00:10:31.230 --> 00:10:35.530
+and it's really, really straightforward. I've got some break points in here that we'll follow in a second.
+
+00:10:36.330 --> 00:10:39.690
+So what I'm doing here is I'm creating an account called Frank account.
+
+00:10:40.350 --> 00:10:42.550
+And I'm setting the name to Frank's account.
+
+00:10:42.550 --> 00:10:44.910
+Now I can't say Frank account.name
+
+00:10:45.510 --> 00:10:50.170
+because that's private. So I've got to go through this public method called set name.
+
+00:10:50.970 --> 00:10:55.470
+I'm doing the same thing for balance. Frank account.set balance to a 1000.
+
+00:10:55.470 --> 00:11:00.370
+I can't say Frank account.balance equals a 1000 because balance is private.
+
+00:11:01.170 --> 00:11:03.970
+Okay. So at this point, I've got an account.
+
+00:11:03.970 --> 00:11:07.570
+It's got Frank's account is the name, a 1000 is the balance.
+
+00:11:07.570 --> 00:11:10.570
+And then I want to deposit 200 into that account.
+
+00:11:11.370 --> 00:11:14.570
+I'm going to call Frank account.deposit 200.
+
+00:11:14.570 --> 00:11:18.870
+If that returns true, then the deposit will okay, and I'm going to just display that.
+
+00:11:18.870 --> 00:11:22.770
+If that returns false, then the deposit was not allowed for whatever reason.
+
+00:11:23.570 --> 00:11:26.370
+Now I'm going to call some withdrawal methods here.
+
+00:11:26.370 --> 00:11:30.030
+I'm going to call the withdrawal method on the Frank account with 500.
+
+00:11:30.030 --> 00:11:32.390
+So I'm going to check, I should have a 1000 in there,
+
+00:11:32.390 --> 00:11:36.270
+right. Actually I should have 1200 in there because I just put 200 in there.
+
+00:11:36.270 --> 00:11:40.470
+So I'll check to see if 1200
+
+00:11:40.470 --> 00:11:43.770
+minus 500 is greater than or equal to zero which it is,
+
+00:11:43.770 --> 00:11:45.570
+and the withdrawal should be okay.
+
+00:11:45.570 --> 00:11:47.770
+I should have 700 left after that.
+
+00:11:47.770 --> 00:11:51.070
+Then I try to do another withdrawal with 1500 and that should fail.
+
+00:11:52.320 --> 00:11:54.880
+Okay. So let's let's run this through the debugger here.
+
+00:11:54.880 --> 00:11:57.180
+Right now, I'm at line 53.
+
+00:11:57.840 --> 00:12:00.440
+And I'm going to set a watch to Frank account.
+
+00:12:00.940 --> 00:12:04.240
+That way I can see that as it changes, really easily,
+
+00:12:04.240 --> 00:12:05.740
+and that's already set here.
+
+00:12:05.940 --> 00:12:08.240
+So what I'm going to do is I'm going to hit next.
+
+00:12:08.640 --> 00:12:11.640
+And remember, I'm right here on line 53. So at this point,
+
+00:12:11.640 --> 00:12:14.140
+I've just created the Frank account object.
+
+00:12:14.500 --> 00:12:18.800
+Now I want to set that name. Notice that the name is empty right now and the balance is garbage.
+
+00:12:19.160 --> 00:12:22.760
+I'm going to set the name to Frank's account. So when I select next,
+
+00:12:22.760 --> 00:12:25.560
+you can see that that's changed right here to Frank account.
+
+00:12:26.220 --> 00:12:30.520
+And now I want to set the balance to a 1000, so we should see that change here as well.
+
+00:12:31.420 --> 00:12:34.420
+Again, remember, these two attributes are private.
+
+00:12:34.420 --> 00:12:37.220
+That's why we're going through those public methods to change them.
+
+00:12:38.120 --> 00:12:41.780
+Now what we're going to do is we're going to deposit 200 into that account.
+
+00:12:41.780 --> 00:12:43.770
+So let's step through here.
+
+00:12:43.770 --> 00:12:47.670
+And what we're going to do now is we're going to jump to this method right here.
+
+00:12:47.670 --> 00:12:50.270
+I've got a breakpoint in there, that's where I'm at right now.
+
+00:12:50.270 --> 00:12:55.070
+Assuming there was some business logic here that would verify that that deposit amount was there,
+
+00:12:55.470 --> 00:12:57.470
+I'm going to increase the balance
+
+00:12:57.470 --> 00:13:01.970
+by 200, so I should have 1200 here when I finish and return true.
+
+00:13:03.630 --> 00:13:06.990
+And I'm back now. You can see I've got 1200 here.
+
+00:13:07.540 --> 00:13:11.540
+And I'm going to return true, and it should display deposit okay over here.
+
+00:13:13.040 --> 00:13:14.700
+And exactly what happens.
+
+00:13:15.200 --> 00:13:19.300
+Now we're going to withdraw 500. Well, Now we're going to withdraw 500. Well,
+
+00:13:19.300 --> 00:13:22.600
+So let's try that. And you can see I'm right in here now.
+
+00:13:22.600 --> 00:13:24.960
+I've jumped to this function, this method right here.
+
+00:13:24.960 --> 00:13:29.760
+So balance is 1200 minus 500 is greater than or equal to 0, so we should be good.
+
+00:13:29.760 --> 00:13:34.460
+In that case, I'm going to decrement the balance by the amount, and I'm going to return true.
+
+00:13:35.450 --> 00:13:38.350
+And I'm right back here now on line 63.
+
+00:13:39.010 --> 00:13:42.910
+Notice I've got 700 left in the account, and it should display
+
+00:13:43.110 --> 00:13:44.360
+withdrawal okay.
+
+00:13:45.660 --> 00:13:50.650
+The last example here is I'm going to withdraw 1500. I don't have 1500.
+
+00:13:51.010 --> 00:13:52.710
+So it should fail.
+
+00:13:52.710 --> 00:13:56.970
+So I'm going to go back up here if balance amount is greater than or equal to 0, it's not.
+
+00:13:56.970 --> 00:13:59.970
+So it's going to go straight to false, which it's going to return.
+
+00:14:00.470 --> 00:14:02.670
+And then when I come back to my main,
+
+00:14:02.670 --> 00:14:06.660
+I'm right here on line 70 and it should display not sufficient funds.
+
+00:14:06.660 --> 00:14:08.160
+And that's exactly what it does.
+
+00:14:08.820 --> 00:14:12.320
+Okay. So there you go. This is a real simple example of
+
+00:14:12.320 --> 00:14:16.320
+implementing these class methods both inside the
+
+00:14:16.320 --> 00:14:19.920
+class declaration and outside the class declaration.
+
+00:14:19.920 --> 00:14:24.720
+Okay. What I'm going to do next is we'll create a new project called ImplementingMethods2.
+
+00:14:24.720 --> 00:14:28.380
+And what we'll do is we'll create the account.h and account.cpp,
+
+00:14:28.380 --> 00:14:33.180
+and then we'll have a main cpp that runs the whole thing. So I'll set that up and be right back.
+
+00:14:36.780 --> 00:14:40.180
+Okay. So I'm back. I'm still in the section 13 workspace,
+
+00:14:40.180 --> 00:14:43.680
+but I've just created a new project called ImplementingMethods2.
+
+00:14:43.680 --> 00:14:47.580
+And all it has in it is a main cpp file that you're looking at right here.
+
+00:14:47.580 --> 00:14:51.180
+What we're going to do here is we're going to create our account.h file,
+
+00:14:51.180 --> 00:14:53.170
+our account.cpp file.
+
+00:14:53.170 --> 00:14:55.970
+And then we'll use this main cpp
+
+00:14:55.970 --> 00:14:59.630
+file as a driver so that we can create some objects and so forth.
+
+00:14:59.630 --> 00:15:04.030
+Okay. So what do we do? Well, we need to create an account class.
+
+00:15:04.430 --> 00:15:08.030
+Every IDE has its way of creating a new class.
+
+00:15:08.580 --> 00:15:12.380
+CodeLite is no different. If you select the source directory and right click,
+
+00:15:12.380 --> 00:15:15.380
+you'll have an option for new class. We'll select that.
+
+00:15:15.380 --> 00:15:19.930
+And then you get this pop-up dialog, and it's going to ask you, what's the class name?
+
+00:15:19.930 --> 00:15:23.590
+Well, the class name is account, again with a capital a.
+
+00:15:24.250 --> 00:15:28.250
+Don't worry about namespace. And then the block guard is what you saw with the include guard that
+
+00:15:28.250 --> 00:15:29.450
+i talked about.
+
+00:15:29.450 --> 00:15:31.110
+This is that pound define.
+
+00:15:31.110 --> 00:15:34.010
+So I'm just going to say underscore account
+
+00:15:34.010 --> 00:15:37.110
+underscore h underscore you can really do anything you like, you can even
+
+00:15:37.110 --> 00:15:39.710
+leave it blank and it's going to use its own way of doing it.
+
+00:15:40.010 --> 00:15:43.510
+Okay. So that's it. There's some more advanced options here,
+
+00:15:43.510 --> 00:15:46.390
+which should all be off at this point.
+
+00:15:46.390 --> 00:15:51.380
+And you can choose to create a .hpp file instead of a .h file,
+
+00:15:51.580 --> 00:15:54.580
+I'm not going to. And you can also choose to use the pragma once command.
+
+00:15:54.580 --> 00:15:57.080
+Again, I'm not going to. I'm just going to use the block guard.
+
+00:15:57.880 --> 00:15:59.180
+You select okay.
+
+00:15:59.980 --> 00:16:02.880
+And what happens here on the left-hand side, you'll see that
+
+00:16:02.880 --> 00:16:06.670
+we've got two files that were created. We've got the account.h file
+
+00:16:07.030 --> 00:16:10.330
+and the account.cpp file, that's exactly what we want
+
+00:16:10.330 --> 00:16:13.930
+Now we're going to start with the account h file, notice the wrapper.
+
+00:16:14.530 --> 00:16:18.130
+Okay. Now I'm going to get rid of what it generated for me.
+
+00:16:18.130 --> 00:16:22.390
+And what I'm going to do is I'm going to copy and paste the account that we were working on.
+
+00:16:22.390 --> 00:16:26.390
+And I'm just going to copy and paste the declaration of the account.
+
+00:16:26.390 --> 00:16:30.390
+So let me do that right now, and I'll paste it right in here.
+
+00:16:30.390 --> 00:16:31.990
+It should be pretty familiar.
+
+00:16:32.490 --> 00:16:35.890
+There's the class account. Those are the two private attributes.
+
+00:16:35.890 --> 00:16:40.690
+Let's see what we've got here? Now we've got to do a couple of things. We're using a string here.
+
+00:16:40.940 --> 00:16:44.940
+So what we want to do is here we want to pound include string,
+
+00:16:46.070 --> 00:16:49.270
+so our account header file is complete.
+
+00:16:49.270 --> 00:16:52.610
+And we really don't want to use the namespace in here. So
+
+00:16:52.610 --> 00:16:55.610
+I'm just going to prefix this with standard.
+
+00:16:56.210 --> 00:16:58.810
+And let's see I've got a string here as well.
+
+00:17:00.010 --> 00:17:02.010
+And I believe I've got one here as well.
+
+00:17:04.010 --> 00:17:06.610
+And I think that'll do it. So that's my account
+
+00:17:06.610 --> 00:17:09.970
+.h file. You can see it's exactly as we had before.
+
+00:17:09.970 --> 00:17:13.770
+There's my account declaration and it's wrapped up in that guard.
+
+00:17:14.470 --> 00:17:17.460
+Okay. Now let's go to the account cpp.
+
+00:17:17.460 --> 00:17:21.120
+Now you'll notice that it's generated the include for me.
+
+00:17:21.620 --> 00:17:26.120
+And also it's generated these two functions, these two member functions.
+
+00:17:26.370 --> 00:17:29.870
+We've got to get rid of those. This is a constructor and that's a destructor.
+
+00:17:29.870 --> 00:17:32.230
+We'll talk about those in a couple of videos.
+
+00:17:32.230 --> 00:17:34.230
+But for now, I just want to get rid of them.
+
+00:17:34.230 --> 00:17:37.230
+And what I want to do is I want to copy and paste
+
+00:17:37.230 --> 00:17:41.430
+those four methods that we wrote. Remember, the ones we wrote outside the class.
+
+00:17:41.430 --> 00:17:45.230
+So I'm going to copy them right in here like that. There's my account.
+
+00:17:45.630 --> 00:17:49.930
+There's my -- and again, I'm going to prefix this with standard,
+
+00:17:50.530 --> 00:17:52.330
+wherever we're using strings.
+
+00:17:52.930 --> 00:17:55.930
+And I think that was the -- right here's the other one.
+
+00:17:58.290 --> 00:17:59.090
+That's it.
+
+00:17:59.750 --> 00:18:01.550
+Now what we'll do is we'll go to the main.
+
+00:18:02.540 --> 00:18:05.540
+And what we're going to do here is we're going to include
+
+00:18:06.340 --> 00:18:08.000
+account.h
+
+00:18:08.360 --> 00:18:12.360
+because we're going to need it in our main. And if you remember the code for the main,
+
+00:18:12.360 --> 00:18:15.360
+again, I'll copy and paste it because it's really straightforward.
+
+00:18:18.360 --> 00:18:21.460
+That was the code for the main where we created the Frank account,
+
+00:18:21.460 --> 00:18:23.820
+we set the name for the account and so forth.
+
+00:18:23.820 --> 00:18:27.420
+Now what we're going to do is I'm going to save this and we'll compile the whole thing.
+
+00:18:27.420 --> 00:18:32.020
+We'll just basically do build and run, control F5. What's going to happen is
+
+00:18:32.020 --> 00:18:35.920
+the .cpp files will both be compiled and everything will be linked
+
+00:18:35.920 --> 00:18:39.120
+into an executable. Now we may run into some errors here,
+
+00:18:39.120 --> 00:18:42.120
+and we'll fix those as we go. So I'm going to hit control F5,
+
+00:18:42.780 --> 00:18:43.880
+no errors.
+
+00:18:43.880 --> 00:18:47.870
+Everything worked great. You can see I run the file and i get
+
+00:18:47.870 --> 00:18:52.420
+deposit okay, withdrawal okay, not sufficient funds, exactly like we had before.
+
+00:18:52.420 --> 00:18:55.080
+We could run this through the debugger if we like.
+
+00:18:55.080 --> 00:18:57.580
+But it's really as simple as that.
+
+00:18:58.080 --> 00:19:02.080
+Throughout the course, this is the way we're going to start writing code now. We're going to have
+
+00:19:02.080 --> 00:19:03.780
+the specification here
+
+00:19:03.780 --> 00:19:06.780
+and the implementation in the .cpp file.
+
+00:19:06.780 --> 00:19:09.380
+And you can see -- again, let's do this one more time,
+
+00:19:09.380 --> 00:19:13.080
+you can see the account.h the header or the include file
+
+00:19:13.080 --> 00:19:17.180
+that is our declaration for the account class.
+
+00:19:17.180 --> 00:19:20.980
+We have to wrap that up so that the compiler only sees it once.
+
+00:19:21.340 --> 00:19:24.540
+We're including string here because we've got our string
+
+00:19:24.540 --> 00:19:26.340
+class that we're using right there.
+
+00:19:26.340 --> 00:19:30.330
+And we really don't want to use name spaces inside these header files
+
+00:19:30.330 --> 00:19:34.590
+because everything that includes them is going to get that all that name space stuff,
+
+00:19:34.590 --> 00:19:36.470
+which is really not necessary.
+
+00:19:36.620 --> 00:19:40.620
+So what we've got there is that we've got our private stuff, we've got our public stuff.
+
+00:19:40.620 --> 00:19:45.610
+We've defined these two methods right inside the class declaration.
+
+00:19:46.210 --> 00:19:50.210
+And then these other methods we've defined outside the class declaration
+
+00:19:50.210 --> 00:19:52.210
+in account cpp.
+
+00:19:52.610 --> 00:19:57.410
+Now in order for the compiler to understand what you're talking about here,
+
+00:19:57.410 --> 00:19:59.610
+you have to include account.h.
+
+00:19:59.910 --> 00:20:03.710
+Once you include account.h, the compiler now knows what this is.
+
+00:20:04.210 --> 00:20:08.650
+Okay. Once that's done, you go to your main and you can see the main is now
+
+00:20:08.650 --> 00:20:11.650
+pretty self-contained. You're just including account.h,
+
+00:20:11.800 --> 00:20:15.460
+it's really really simple to do. The idea is just
+
+00:20:15.460 --> 00:20:18.900
+you're going to have a lot of header files and a lot of cpp files
+
+00:20:18.900 --> 00:20:23.800
+in your application, and everything gets compiled and linked into a single executable.

@@ -1,0 +1,123 @@
+WEBVTT
+
+00:00:05.560 --> 00:00:08.270
+In this section, we'll talk
+about characters and strings.
+
+00:00:09.080 --> 00:00:12.220
+As we've already seen, the
+character type can hold values
+
+00:00:12.220 --> 00:00:13.550
+that represent characters.
+
+00:00:13.980 --> 00:00:17.320
+These values are basically integers
+that match to a character set
+
+00:00:17.559 --> 00:00:19.080
+like the ASCII character set.
+
+00:00:20.000 --> 00:00:23.300
+And we've also seen that strings
+are sequences of characters.
+
+00:00:24.100 --> 00:00:29.729
+C++ supports two types of strings,
+c-style strings and c++ strings.
+
+00:00:30.480 --> 00:00:33.250
+So will first look at
+the cctype library.
+
+00:00:33.500 --> 00:00:36.559
+This is a library a very simple
+but very useful functions
+
+00:00:36.560 --> 00:00:37.760
+that work with characters.
+
+00:00:38.060 --> 00:00:40.700
+For example, we can test
+characters to see if they're
+
+00:00:40.730 --> 00:00:45.080
+uppercase to lowercase, numeric,
+alphanumeric, punctuation and more.
+
+00:00:45.800 --> 00:00:48.739
+We can also convert characters
+between lower and uppercase.
+
+00:00:49.950 --> 00:00:53.799
+After we learn about the cctype
+functions, we'll talk about strings.
+
+00:00:54.289 --> 00:00:57.860
+As I said earlier, you can think of
+strings is a sequence of characters.
+
+00:00:58.250 --> 00:01:00.550
+So far, we've only used
+string literals, which were
+
+00:01:00.550 --> 00:01:03.660
+represented as a sequence of
+characters inside double quotes.
+
+00:01:04.340 --> 00:01:08.959
+I'll discuss both c-style strings
+and c++ strings in this section and
+
+00:01:08.960 --> 00:01:10.679
+give you the basics of using each.
+
+00:01:11.369 --> 00:01:15.450
+However, you should be using
+c++ strings in modern c++.
+
+00:01:15.450 --> 00:01:17.750
+I think you'll understand why
+at the end of this section.
+
+00:01:18.940 --> 00:01:21.470
+First we'll see what c-style
+strings are and how they
+
+00:01:21.470 --> 00:01:22.680
+represented in memory.
+
+00:01:23.070 --> 00:01:25.739
+Then we'll see how to work with
+c-style strings using some of the
+
+00:01:25.740 --> 00:01:30.339
+string functions available in the
+cstring and cstandard lib libraries.
+
+00:01:31.639 --> 00:01:33.589
+Then we'll learn about c++ strings.
+
+00:01:33.979 --> 00:01:37.170
+C++ strings are objects,
+just like are vectors were.
+
+00:01:37.700 --> 00:01:40.840
+And they're used using an
+object-oriented style of programming.
+
+00:01:41.429 --> 00:01:43.870
+In this section, will learn
+how to declare, initialize,
+
+00:01:43.889 --> 00:01:47.820
+assign, compare and use some of
+the other c++ string methods.
+
+00:01:48.160 --> 00:01:50.330
+Methods are functions
+that work with objects.
+
+00:01:51.370 --> 00:01:54.120
+So let's look at c-style
+strings first in the next video.

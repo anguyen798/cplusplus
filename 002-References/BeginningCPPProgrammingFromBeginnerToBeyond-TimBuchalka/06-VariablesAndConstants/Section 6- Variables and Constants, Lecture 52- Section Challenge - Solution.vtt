@@ -1,0 +1,172 @@
+WEBVTT
+
+00:00:05.400 --> 00:00:08.600
+Welcome back. I hope you had fun trying to solve the problem.
+
+00:00:08.600 --> 00:00:09.800
+I'm sure you did great.
+
+00:00:10.400 --> 00:00:14.600
+As you noticed in the workspace I created the challenge which just created an empty shell
+
+00:00:14.600 --> 00:00:15.500
+for the problem.
+
+00:00:15.500 --> 00:00:19.100
+And I've also got the challenge solution which has my solution to the problem.
+
+00:00:19.500 --> 00:00:22.160
+Okay. So let's start looking at the code here.
+
+00:00:22.160 --> 00:00:23.660
+We know what we had to solve.
+
+00:00:23.660 --> 00:00:26.560
+So let's look at some of these really simple statements first.
+
+00:00:26.560 --> 00:00:29.160
+And I'll mark this up just so it's easier for you to follow.
+
+00:00:29.760 --> 00:00:33.260
+So in this case, I'm simply outputting welcome
+
+00:00:33.660 --> 00:00:37.260
+then I've defined a variable here which is going to hold small rooms.
+
+00:00:37.260 --> 00:00:41.860
+And I've initialized to 0, that's the best practice. I'm prompting the user.
+
+00:00:42.160 --> 00:00:46.150
+And I'm asking them to put in the number of small rooms they want cleaned.
+
+00:00:46.150 --> 00:00:50.050
+I'm doing exactly the same thing here except we're doing large rooms.
+
+00:00:50.950 --> 00:00:55.050
+And now we've got to define 2 declared constants right.
+
+00:00:55.050 --> 00:00:57.850
+We're going to declare one is the price for a small room
+
+00:00:57.850 --> 00:01:02.050
+and one is the price for a large room, 25 and 35, respectively.
+
+00:01:02.350 --> 00:01:06.050
+We've got our sales tax declared constant here, and we've got our estimate
+
+00:01:06.050 --> 00:01:07.550
+expiry constant.
+
+00:01:07.550 --> 00:01:11.050
+So far so good. It's exactly the same as we did before.
+
+00:01:11.050 --> 00:01:13.450
+The only thing is I'm adding the large rooms.
+
+00:01:13.450 --> 00:01:16.450
+Okay. So let me clear this and I'll scroll up just a little bit
+
+00:01:17.050 --> 00:01:19.250
+and let's take a look at some of the calculations.
+
+00:01:19.250 --> 00:01:21.150
+Here are some of the output statements,
+
+00:01:21.150 --> 00:01:25.250
+and you can see here I'm as I'm outputting the number of small rooms which is just
+
+00:01:25.250 --> 00:01:29.050
+whatever the user typed in and the number of large rooms which is whatever they typed in.
+
+00:01:29.050 --> 00:01:32.450
+The price per small room and the price per large room right here,
+
+00:01:32.450 --> 00:01:36.550
+those are our declared constants which I'm outputting. Now the cost.
+
+00:01:36.550 --> 00:01:41.250
+The calculation is really simple it's the cost of the small rooms plus the cost of the large rooms,
+
+00:01:41.450 --> 00:01:43.050
+and we calculate each one by
+
+00:01:43.250 --> 00:01:46.050
+price per small room times the number of small rooms
+
+00:01:46.050 --> 00:01:50.050
+plus and there's my plus sign. Remember you can split these across lines so you can
+
+00:01:50.050 --> 00:01:53.650
+line up the insertion operators like that it makes them nice and easy to read.
+
+00:01:53.650 --> 00:01:57.640
+So in this case, I'm just calculating the cost for the small rooms, and I'm adding
+
+00:01:57.640 --> 00:01:59.140
+the cost of the large rooms to it.
+
+00:01:59.740 --> 00:02:03.340
+Same thing with tax. I'm calculating the cost again.
+
+00:02:03.340 --> 00:02:06.140
+And I'm multiplying the whole thing by sales tax.
+
+00:02:06.140 --> 00:02:09.800
+Notice that I've got those parentheses here because what I want to do is
+
+00:02:09.800 --> 00:02:11.790
+I want to calculate the whole cost
+
+00:02:11.790 --> 00:02:15.290
+and then multiply that by the sales tax. Otherwise,
+
+00:02:15.590 --> 00:02:17.390
+I won't get the correct answer.
+
+00:02:17.390 --> 00:02:19.090
+Got to make sure the whole thing is here.
+
+00:02:19.090 --> 00:02:24.480
+So this becomes all the small costs plus all the large costs.
+
+00:02:25.780 --> 00:02:29.770
+Okay. Then finally, the total estimate just takes the cost
+
+00:02:29.770 --> 00:02:33.070
+and adds the sales tax to it. That's it.
+
+00:02:33.570 --> 00:02:36.670
+The estimate is valid for 30 days and there's my program.
+
+00:02:36.670 --> 00:02:38.570
+So you can see that
+
+00:02:38.570 --> 00:02:41.670
+my formatting is probably going to be a little bit different from your formatting,
+
+00:02:41.670 --> 00:02:43.470
+and mine might be a little bit more readable.
+
+00:02:43.470 --> 00:02:46.070
+But you may not have split things across lines like I did.
+
+00:02:46.070 --> 00:02:49.270
+It's real good practice to split these across lines that way you can
+
+00:02:49.270 --> 00:02:52.670
+really see what's going on, and it's much, much easier to follow.
+
+00:02:53.170 --> 00:02:56.470
+Okay. Well, I hope you enjoyed the challenge, and I hope you did well.
+
+00:02:56.470 --> 00:03:01.460
+Remember, there's a lot of duplicated code here that we're going to clean up as the course progresses.
+
+00:03:01.460 --> 00:03:04.960
+And this program -- we'll actually modify this program a little bit later
+
+00:03:04.960 --> 00:03:05.960
+on when we use functions.
+
+00:03:05.960 --> 00:03:07.960
+Okay, so that's it for the challenge.

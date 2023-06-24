@@ -1,0 +1,94 @@
+WEBVTT
+
+00:00:05.200 --> 00:00:08.860
+In this video, we'll talk about logic errors and why they can happen.
+
+00:00:09.360 --> 00:00:12.160
+Logic errors, or errors or bugs in your code
+
+00:00:12.560 --> 00:00:14.860
+that cause your program to run incorrectly.
+
+00:00:15.660 --> 00:00:18.060
+Logic errors are mistakes made by a programmer.
+
+00:00:18.460 --> 00:00:20.900
+Sometimes the mistakes are careless of the time.
+
+00:00:20.900 --> 00:00:24.890
+Some mistakes are because the programmers have incomplete or incorrect information.
+
+00:00:25.550 --> 00:00:29.760
+Other times mistakes occur when one programmer modifies another programmer's code
+
+00:00:29.760 --> 00:00:32.960
+to fix or add something, and they introduce an error as they do this.
+
+00:00:32.960 --> 00:00:35.320
+There are many, many causes for logic errors.
+
+00:00:35.980 --> 00:00:38.980
+It doesn't matter what the cause is though, they need to be corrected.
+
+00:00:38.980 --> 00:00:42.480
+We need to test our code and debug it to find incorrect errors.
+
+00:00:43.280 --> 00:00:47.180
+Suppose we have a program that determines if a person can vote in an election
+
+00:00:47.680 --> 00:00:50.040
+and you must be 18 years old or older to vote.
+
+00:00:51.030 --> 00:00:53.230
+We haven't talked about if statements yet in this class.
+
+00:00:53.730 --> 00:00:56.730
+But they're very intuitive and I'm sure you'll follow this little piece of code.
+
+00:00:57.830 --> 00:01:00.940
+First, we test to see if the age is greater than 18.
+
+00:01:02.040 --> 00:01:05.340
+If it is, then we execute the code that's inside those curly braces.
+
+00:01:06.240 --> 00:01:07.230
+Do you see the error.
+
+00:01:08.130 --> 00:01:11.230
+It’s pretty easy to see it here because the code is isolated,
+
+00:01:11.230 --> 00:01:12.530
+and I told you there was an error.
+
+00:01:13.030 --> 00:01:15.830
+However, in reality, there's much more code typically involved.
+
+00:01:15.830 --> 00:01:18.830
+In this may just be a small part of a much larger program.
+
+00:01:20.080 --> 00:01:23.880
+The problem with this code is that the test conditions should be greater than
+
+00:01:23.880 --> 00:01:27.480
+or equal to 18 or greater than 17,
+
+00:01:27.480 --> 00:01:28.580
+either one will work.
+
+00:01:29.240 --> 00:01:32.240
+As it's written now, 18 year old would not be able to vote.
+
+00:01:33.440 --> 00:01:35.940
+We'll talk about testing throughout the course in the context of
+
+00:01:35.940 --> 00:01:38.240
+learning c++ and best practices.
+
+00:01:38.900 --> 00:01:40.900
+Well, that wraps up this section.
+
+00:01:40.900 --> 00:01:45.100
+Next, you can take the section quiz and attempt the challenge exercise and see how you do.
+
+00:01:45.100 --> 00:01:49.400
+I'm sure you'll do great. If you have any questions, please post them to the course forum.

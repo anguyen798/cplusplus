@@ -1,0 +1,193 @@
+WEBVTT
+
+00:00:05.200 --> 00:00:08.200
+In this video, we'll go over the steps necessary
+
+00:00:08.200 --> 00:00:12.600
+to install the command line tools,, which includes the c++ compiler
+
+00:00:12.850 --> 00:00:14.850
+on the macOS 10 platform.
+
+00:00:15.510 --> 00:00:18.870
+I'm running right now macOS 10 10.15,
+
+00:00:18.870 --> 00:00:20.170
+which is Catalina.
+
+00:00:20.720 --> 00:00:23.920
+So in order to do this, we need to open a terminal session.
+
+00:00:23.920 --> 00:00:26.720
+So that's what I'm going to do. I'm going to come up to spotlight search here
+
+00:00:26.720 --> 00:00:29.720
+and just type terminal and press enter.
+
+00:00:30.270 --> 00:00:33.770
+And that will open up a terminal. Now one of the things that's changed in
+
+00:00:33.770 --> 00:00:37.760
+Catalina is that default interactive shell is now z shell.
+
+00:00:37.760 --> 00:00:40.860
+Actually, I'm running the born again shell right now bash.
+
+00:00:40.860 --> 00:00:42.860
+So this is why I'm getting this message.
+
+00:00:42.860 --> 00:00:45.860
+You can keep using bash if you want.
+
+00:00:45.860 --> 00:00:49.760
+I really don't want to see this message all the time so i'm going to switch to the z shell.
+
+00:00:49.760 --> 00:00:52.060
+And it basically tells you right here how to do it.
+
+00:00:52.060 --> 00:00:56.050
+It says run that command right there, which is the change shell command.
+
+00:00:56.050 --> 00:00:57.720
+So that's what I'm going to do. I'm just going to type
+
+00:00:57.720 --> 00:01:01.720
+c-h-s-h for change shell space -s
+
+00:01:02.320 --> 00:01:06.680
+and then bin/zsh for the z shell.
+
+00:01:06.680 --> 00:01:10.180
+I'm going to now press enter and it's going to prompt me for my password
+
+00:01:12.880 --> 00:01:14.880
+which I enter and we're done.
+
+00:01:14.880 --> 00:01:19.380
+Now you'll notice i'm still running the born-again shell right. So I'm going to close the terminal session
+
+00:01:19.740 --> 00:01:21.140
+and open it again.
+
+00:01:22.130 --> 00:01:24.730
+And now I'm running the z-shell. So you can see right there.
+
+00:01:24.730 --> 00:01:27.030
+I won't get that annoying message anymore.
+
+00:01:27.030 --> 00:01:29.230
+Okay. So let's install the command line tools.
+
+00:01:29.230 --> 00:01:31.430
+There's a couple of ways to do this.
+
+00:01:31.430 --> 00:01:33.430
+We can type xcode
+
+00:01:33.980 --> 00:01:37.420
+-select all one word, no spaces,
+
+00:01:37.420 --> 00:01:41.080
+followed by a space and then --install,
+
+00:01:42.680 --> 00:01:46.680
+that's XCode-select --install.
+
+00:01:46.680 --> 00:01:50.010
+When I press enter,I'm going to get a pop-up window here that says
+
+00:01:50.010 --> 00:01:52.510
+do you want to install the command line tools now?
+
+00:01:52.510 --> 00:01:55.070
+And you can just click install, and you're good to go.
+
+00:01:55.070 --> 00:01:59.840
+If you get a message that says that the command line tools are already installed,
+
+00:01:59.840 --> 00:02:02.040
+then you're pretty much good to go already.
+
+00:02:02.040 --> 00:02:05.240
+The only thing you need to do is keep them updated through the app store.
+
+00:02:05.240 --> 00:02:07.440
+And I'll show you how to do that at the end of this video.
+
+00:02:07.440 --> 00:02:11.840
+So I'm going to cancel. Another way you can do this is just to type g++.
+
+00:02:12.340 --> 00:02:16.540
+And since g++ is the c++ compiler, when I press enter,
+
+00:02:16.540 --> 00:02:19.540
+it's not there. So it's going to tell me do you want to install it?
+
+00:02:19.540 --> 00:02:21.840
+I do so. I'm going to select install.
+
+00:02:22.340 --> 00:02:24.840
+I'm going to agree to the license agreement,
+
+00:02:25.720 --> 00:02:29.220
+and then it's going to go off and download the software and install it.
+
+00:02:29.220 --> 00:02:32.720
+This takes a little bit of time, depending on your internet connection.
+
+00:02:32.720 --> 00:02:35.720
+So what I'm going to do is I'm going to pause the video and I'll be back.
+
+00:02:35.720 --> 00:02:38.020
+You can see here it takes about a minute on my
+
+00:02:38.020 --> 00:02:40.320
+with my connection, it might take a little bit longer.
+
+00:02:40.320 --> 00:02:42.620
+So I'll pause this, and I'll be back in about a minute.
+
+00:02:42.920 --> 00:02:46.520
+Okay. So the install took about four minutes on my end.
+
+00:02:46.520 --> 00:02:51.020
+And now you get the pop-up that says the software was installed. So I'll select done.
+
+00:02:51.380 --> 00:02:54.980
+And we could do a quick test by just typing g++
+
+00:02:54.980 --> 00:02:58.080
+--version,
+
+00:02:58.680 --> 00:03:03.080
+again that's g++ --version and press enter.
+
+00:03:04.180 --> 00:03:08.780
+And we should get something like this. Your versions might be a little different than mine.
+
+00:03:09.180 --> 00:03:13.380
+But it's good to go. We're installed, our command line tools are ready to go.
+
+00:03:13.580 --> 00:03:17.940
+The other thing you can do now is you need to keep these tool chains updated.
+
+00:03:17.940 --> 00:03:21.440
+So you need to do that through the app store. So you'll come up here to the apple,
+
+00:03:22.040 --> 00:03:23.540
+and we'll go to app store.
+
+00:03:24.040 --> 00:03:28.730
+And if you go to updates, you'll see any updates that need to be done here.
+
+00:03:28.730 --> 00:03:32.130
+There are no updates now because I've just installed the latest and greatest.
+
+00:03:32.630 --> 00:03:35.630
+And that's pretty much it. Our compiler is installed.
+
+00:03:35.830 --> 00:03:39.930
+The next step is to install the CodeLite integrated development environment,
+
+00:03:39.930 --> 00:03:41.430
+and we'll do that in the next video.

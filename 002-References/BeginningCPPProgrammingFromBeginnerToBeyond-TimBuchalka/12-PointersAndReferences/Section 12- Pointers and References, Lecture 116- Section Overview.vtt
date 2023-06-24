@@ -1,0 +1,262 @@
+WEBVTT
+
+00:00:05.540 --> 00:00:07.210
+Welcome to pointers and references.
+
+00:00:07.700 --> 00:00:09.819
+In this section of the course,
+you'll learn how to use one of the
+
+00:00:09.830 --> 00:00:13.610
+most powerful elements in the c++
+programming language, the pointer.
+
+00:00:14.400 --> 00:00:17.200
+Pointers give the programmer
+the power to work directly
+
+00:00:17.200 --> 00:00:18.320
+with the computer's memory.
+
+00:00:18.320 --> 00:00:21.270
+And that includes allocating
+and de-allocating memory
+
+00:00:21.270 --> 00:00:24.590
+dynamically at runtime as
+it's required by the program.
+
+00:00:25.390 --> 00:00:27.830
+You might have heard horror stories
+from other programmers about
+
+00:00:27.830 --> 00:00:31.090
+pointers and how difficult they
+can be to use and the damage they
+
+00:00:31.090 --> 00:00:34.489
+can cause when used improperly,
+you may have also heard that java
+
+00:00:34.489 --> 00:00:37.980
+and python and other programming
+languages don't have pointers because
+
+00:00:37.980 --> 00:00:39.350
+they can cause so many issues.
+
+00:00:39.690 --> 00:00:43.070
+C++ pointers give you more
+power over your machine than
+
+00:00:43.070 --> 00:00:45.800
+you could ever achieve with
+languages like java and python.
+
+00:00:46.230 --> 00:00:49.590
+Now that's not a knock on java or
+python, it all comes down to why
+
+00:00:49.590 --> 00:00:53.190
+the languages were created and what
+domains they're typically used in.
+
+00:00:53.760 --> 00:00:57.400
+C++ programs are used extensively
+to develop operating systems,
+
+00:00:57.510 --> 00:01:01.200
+system software, device drivers,
+embedded systems and so forth.
+
+00:01:01.540 --> 00:01:04.790
+With these systems, we want to be in
+complete control over the hardware.
+
+00:01:05.059 --> 00:01:07.700
+We don't want a virtual machine
+handling memory or checking for
+
+00:01:07.700 --> 00:01:08.790
+everything that could go wrong.
+
+00:01:09.450 --> 00:01:12.250
+We just simply can't afford
+that extra overhead at runtime.
+
+00:01:13.070 --> 00:01:15.039
+With this power comes responsibility.
+
+00:01:15.300 --> 00:01:18.210
+Responsibility to understand
+how to use and release memory
+
+00:01:18.210 --> 00:01:19.440
+efficiently and correctly.
+
+00:01:19.890 --> 00:01:22.240
+And this is one of the main
+use cases for pointers.
+
+00:01:22.840 --> 00:01:25.030
+In this section, we'll learn
+about what a pointer is.
+
+00:01:25.559 --> 00:01:26.830
+Guess what? It's a variable.
+
+00:01:26.870 --> 00:01:28.060
+That was easy right.
+
+00:01:28.150 --> 00:01:31.210
+My point is that pointers are not
+this mysterious concept that's
+
+00:01:31.210 --> 00:01:32.919
+virtually impossible to understand.
+
+00:01:33.490 --> 00:01:35.350
+Pointers are easy to
+understand and use.
+
+00:01:35.450 --> 00:01:37.210
+We just need to learn
+to use them correctly.
+
+00:01:37.450 --> 00:01:40.170
+The syntax around using pointers
+is the part that can be a
+
+00:01:40.170 --> 00:01:41.569
+little intimidating at first.
+
+00:01:41.900 --> 00:01:44.160
+But as usual, I'll use my
+handy drawing pad and walk
+
+00:01:44.160 --> 00:01:45.330
+you through it all in detail.
+
+00:01:45.860 --> 00:01:48.650
+We'll learn how to declare pointers,
+store addresses in pointers and
+
+00:01:48.650 --> 00:01:51.649
+de-reference pointers, that means
+getting what they're pointing to.
+
+00:01:52.200 --> 00:01:54.410
+Then we'll learn how to
+allocate memory dynamically
+
+00:01:54.410 --> 00:01:55.920
+from the heap or the free store.
+
+00:01:56.580 --> 00:01:58.779
+This opens up a new
+world of problem solving.
+
+00:01:59.490 --> 00:02:02.130
+Then we'll talk about pointer
+arithmetic and see how similar
+
+00:02:02.130 --> 00:02:03.489
+pointers and arrays are.
+
+00:02:03.849 --> 00:02:06.920
+We'll also learn to do pass by
+reference with pointers this time.
+
+00:02:07.200 --> 00:02:10.090
+And we'll also learn how the const
+qualifier applies to pointers.
+
+00:02:11.039 --> 00:02:13.760
+Finally, we'll talk about some of
+the pointer potential pitfalls,
+
+00:02:13.760 --> 00:02:16.639
+what can go wrong and what
+kind of things can happen when
+
+00:02:16.639 --> 00:02:18.019
+you use pointers incorrectly.
+
+00:02:18.950 --> 00:02:21.019
+Then we'll switch over
+and talk about references.
+
+00:02:21.190 --> 00:02:23.249
+We've already seen references
+when we talked about
+
+00:02:23.250 --> 00:02:24.700
+functions in the last section.
+
+00:02:25.040 --> 00:02:26.929
+Remember, how references are aliases.
+
+00:02:27.420 --> 00:02:30.030
+In this section, we'll quickly
+review what we learned about
+
+00:02:30.030 --> 00:02:33.079
+references in the last section of
+the course, and we'll see a few more
+
+00:02:33.080 --> 00:02:34.680
+ways that we can use references.
+
+00:02:35.150 --> 00:02:37.870
+Finally, everything we learn in
+this section regarding pointers
+
+00:02:38.179 --> 00:02:40.590
+is using c++ raw pointers.
+
+00:02:40.949 --> 00:02:44.530
+There's a ton of code out there that
+uses raw pointers, and it's important
+
+00:02:44.530 --> 00:02:45.769
+to understand them completely.
+
+00:02:46.310 --> 00:02:48.510
+But c++ also has smart pointers.
+
+00:02:48.820 --> 00:02:51.440
+These are pointers that eliminate
+many of the safety problems
+
+00:02:51.440 --> 00:02:54.309
+with raw pointers but are
+still very efficient to use.
+
+00:02:54.590 --> 00:02:57.840
+While smart pointers are used
+more often with object orientation
+
+00:02:58.119 --> 00:03:01.100
+and are considered a more
+advanced c++ topic, I'll provide
+
+00:03:01.100 --> 00:03:02.480
+an overview in this section.
+
+00:03:02.960 --> 00:03:03.690
+So that's it.
+
+00:03:03.730 --> 00:03:06.890
+A lot to cover in this section,
+but it's all very focused and
+
+00:03:06.890 --> 00:03:09.350
+shouldn't take too long at all
+before you completely understand
+
+00:03:09.350 --> 00:03:10.540
+pointers and references.
+
+00:03:11.099 --> 00:03:13.950
+First let's see exactly what a
+pointer is in the next video.

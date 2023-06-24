@@ -1,0 +1,259 @@
+WEBVTT
+
+00:00:05.300 --> 00:00:08.600
+Welcome back. I hope you were able to solve the challenge.
+
+00:00:08.600 --> 00:00:11.300
+Let's go over it together, and I'll give you my solution to it.
+
+00:00:11.300 --> 00:00:12.860
+This is a pretty simple challenge,
+
+00:00:12.860 --> 00:00:16.960
+but it's important that you get it because we have to be able to compile, build,
+
+00:00:16.960 --> 00:00:18.060
+link and run.
+
+00:00:18.660 --> 00:00:21.990
+Obviously, we don't want any compiler errors, we don't want any compiler warnings.
+
+00:00:21.990 --> 00:00:23.290
+So let's start here.
+
+00:00:23.290 --> 00:00:27.190
+What I've done is I've created a challenge solution project based on the template.
+
+00:00:27.190 --> 00:00:29.990
+And here's my main cpp. It's just a simple Hello World.
+
+00:00:29.990 --> 00:00:33.140
+So this is the one I'm going to modify. All right.
+
+00:00:33.140 --> 00:00:36.340
+So let me change a little bit of this. I'm going to get rid of that statement right here,
+
+00:00:36.340 --> 00:00:39.640
+and we'll totally start from scratch. Now remember, we need to include
+
+00:00:40.140 --> 00:00:43.440
+the iostream library. This is how we do input and output.
+
+00:00:43.740 --> 00:00:46.340
+This is how we do our cins and our couts.
+
+00:00:46.340 --> 00:00:49.840
+So first thing I want to do is I want to prompt the user.
+
+00:00:49.840 --> 00:00:53.200
+I want to say std::cout,
+
+00:00:55.700 --> 00:00:58.900
+and there's my insertion operator. I'm just going to simply say enter
+
+00:00:59.500 --> 00:01:00.800
+your favorite number
+
+00:01:04.100 --> 00:01:05.000
+between,
+
+00:01:07.360 --> 00:01:08.660
+let's say, 100.
+
+00:01:10.260 --> 00:01:12.260
+And we'll put a colon there
+
+00:01:13.060 --> 00:01:15.960
+and a semicolon on the end. That will prompt the user.
+
+00:01:16.660 --> 00:01:19.260
+Okay. Now we want to be able to read that number from the user.
+
+00:01:19.260 --> 00:01:21.260
+Remember, when we read something,
+
+00:01:21.260 --> 00:01:24.860
+we need to store it somewhere. So we need to store that in a variable.
+
+00:01:24.860 --> 00:01:28.660
+In this case, it's going to be a whole number so we're going to use an integer. So I'm just going to say int
+
+00:01:30.460 --> 00:01:33.690
+favorite number, just like we did with that first program we wrote.
+
+00:01:34.490 --> 00:01:36.690
+So that's my favorite number, perfect.
+
+00:01:36.690 --> 00:01:40.890
+Now I can read into that variable, so I can say std
+
+00:01:41.550 --> 00:01:42.550
+from cin.
+
+00:01:43.650 --> 00:01:46.650
+I want to extract so I'm using the operator going the other way
+
+00:01:47.450 --> 00:01:48.850
+into favorite number.
+
+00:01:50.850 --> 00:01:53.150
+Okay. So at this point, I've prompted the user.
+
+00:01:53.150 --> 00:01:54.250
+They've typed in a number.
+
+00:01:54.650 --> 00:01:57.050
+I've read that number, and I've stored that number in
+
+00:01:57.050 --> 00:01:59.050
+this favorite number variable right here.
+
+00:01:59.950 --> 00:02:03.550
+The last thing to do is to print out those two statements. So first, I'm going to say
+
+00:02:04.350 --> 00:02:05.240
+cout,
+
+00:02:09.240 --> 00:02:10.740
+and I'll say "Amazing.
+
+00:02:13.290 --> 00:02:14.790
+That's my favorite number too."
+
+00:02:22.690 --> 00:02:25.190
+And we'll print a new line here so we can go to the next line.
+
+00:02:27.090 --> 00:02:29.690
+We'll say endl, followed by a semicolon.
+
+00:02:31.050 --> 00:02:34.930
+And this is the only difference now between this program and the one that we wrote previously.
+
+00:02:34.930 --> 00:02:38.130
+We want to be able to display the number. Say no really.
+
+00:02:38.130 --> 00:02:40.730
+Whatever you entered was or is my favorite number.
+
+00:02:40.730 --> 00:02:43.230
+So in this case, let's do that again. We'll do std,
+
+00:02:44.030 --> 00:02:47.030
+and we'll do again cout, and we're going to write to that stream,
+
+00:02:48.690 --> 00:02:51.690
+and I'll say "No really!"
+
+00:02:54.890 --> 00:02:57.190
+And I'll put a comma here followed by a space
+
+00:02:57.190 --> 00:02:59.390
+because we want this to be spaced out nicely.
+
+00:02:59.390 --> 00:03:02.390
+And I'll show you what the problems may be if you don't do that in a second.
+
+00:03:02.640 --> 00:03:06.940
+And at this point, we're going to insert our favorite number right in here.
+
+00:03:08.540 --> 00:03:10.740
+And we'll do another insertion operator.
+
+00:03:10.740 --> 00:03:14.040
+Remember, we can stream all these things together we can do as many as we want.
+
+00:03:14.040 --> 00:03:18.280
+And we'll say space is my favorite number.
+
+00:03:24.280 --> 00:03:26.280
+And we'll finish it off with a new line.
+
+00:03:32.180 --> 00:03:34.480
+Let's try that. We'll go up to build,
+
+00:03:36.580 --> 00:03:38.680
+run and build and execute.
+
+00:03:40.180 --> 00:03:41.980
+We've got a clean compile and it's running.
+
+00:03:41.980 --> 00:03:44.680
+Enter your favorite number between 1 and 100. Let's say it's 10.
+
+00:03:45.980 --> 00:03:48.180
+Amazing, that's my favorite number too.
+
+00:03:48.180 --> 00:03:50.280
+No really. 10 is my favorite number,
+
+00:03:50.280 --> 00:03:52.780
+perfect. That's exactly what we wanted to solve.
+
+00:03:52.780 --> 00:03:56.660
+Now the reason that I put in these little spaces here is because let's say I don't
+
+00:03:56.660 --> 00:03:59.760
+put that space in there and I don't put the space in here
+
+00:04:02.260 --> 00:04:05.360
+just like that. And let's run this again now. You can see that
+
+00:04:05.360 --> 00:04:06.860
+the output is not going to look right.
+
+00:04:09.260 --> 00:04:11.460
+So in this case let's say I typed in 25
+
+00:04:12.260 --> 00:04:16.060
+and you can see amazing that's my favorite number too, that's fine. But now look, no really
+
+00:04:16.720 --> 00:04:19.980
+comma 25. No space between 25 and the little I for
+
+00:04:19.980 --> 00:04:22.280
+and the lowercase I for is
+
+00:04:22.280 --> 00:04:25.640
+my favorite number. So you can see that the output doesn't really look very nice.
+
+00:04:25.640 --> 00:04:27.440
+So all we're doing is just formatting it.
+
+00:04:27.440 --> 00:04:31.640
+We'll talk more about writing to streams and using manipulators so that we can really get
+
+00:04:31.640 --> 00:04:34.840
+more fine grained control of what we want this to look like.
+
+00:04:34.840 --> 00:04:37.340
+But for now we, could just put spaces right in here.
+
+00:04:37.840 --> 00:04:40.840
+And we'll try that again. Build and run.
+
+00:04:43.440 --> 00:04:45.210
+My favorite number is 10.
+
+00:04:46.710 --> 00:04:49.710
+No really, 10 is my favorite number, perfect. So that's it.
+
+00:04:50.210 --> 00:04:53.090
+And that's that's the solution to this challenge.
+
+00:04:53.090 --> 00:04:55.590
+As I said it's a pretty simple challenge,
+
+00:04:55.590 --> 00:04:57.890
+but there's a lot of pieces here that come together.
+
+00:04:57.890 --> 00:05:01.790
+In the next few sections, we'll talk about the structure of the c++ program
+
+00:05:01.790 --> 00:05:04.450
+as well as variables. We'll talk a lot about variables
+
+00:05:04.450 --> 00:05:08.050
+how we declare them, how we define them, how we initialize them and how we use them
+
+00:05:08.050 --> 00:05:09.550
+but you got a taste of it here.

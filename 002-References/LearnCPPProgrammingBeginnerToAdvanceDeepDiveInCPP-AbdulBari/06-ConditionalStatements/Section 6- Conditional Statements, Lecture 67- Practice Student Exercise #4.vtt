@@ -1,0 +1,93 @@
+WEBVTT
+
+0
+00:00.510 --> 00:02.950
+Here is an exercise program that you have to write.
+
+1
+00:03.210 --> 00:08.930
+So you have to take a year and check whether it's a leap year or not.
+
+2
+00:08.940 --> 00:09.970
+a leap year
+
+3
+00:09.990 --> 00:17.070
+If it is divisible by four and if it is a century  year that is it is divisible by 100 then it should also
+
+4
+00:17.070 --> 00:21.420
+be divisible by 400 then only it is called as leap year.
+
+5
+00:21.420 --> 00:28.780
+I repeat once again if a yeAR IS divisible by 4 AND hen it is a leap year and if it is also divisible by 100 that is
+
+6
+00:28.790 --> 00:32.410
+a century year then it should also be divisible by 400.
+
+7
+00:32.640 --> 00:38.130
+So you have to write a program which will take the year as input and based on these conditions you have
+
+8
+00:38.130 --> 00:44.340
+to find out weather it is a leap year or not here I will run the program and show you and how it should
+
+9
+00:44.340 --> 00:46.380
+work what should be the input and output.
+
+10
+00:46.440 --> 00:53.150
+So you can see the program and even the program file is given as pdf in the resource.
+
+11
+00:53.190 --> 00:57.900
+You can download that if you face any difficulty in writing this program.
+
+12
+00:57.960 --> 01:03.370
+Now here is a program, let me run this program for finding that it is a leap year or not.
+
+13
+01:03.630 --> 01:13.880
+I've learned it if I give the year as 2020 then it's a leap year.
+
+14
+01:14.260 --> 01:16.930
+See the message is 2020 is a leap year.
+
+15
+01:17.140 --> 01:23.090
+I re-run the program and I will say two one double zero then it's not a leap year.
+
+16
+01:23.260 --> 01:24.630
+It's a century year.
+
+17
+01:24.850 --> 01:28.980
+It is not divisible by 100 but not divisible by 400.
+
+18
+01:29.200 --> 01:31.330
+So you have to write the conditions for this one.
+
+19
+01:31.330 --> 01:36.370
+So the important thing in this program is writting the conditions so already I have explained what
+
+20
+01:36.370 --> 01:37.730
+does it mean by leap year.
+
+21
+01:37.930 --> 01:45.400
+So write this program it should give give the output like this. otherwise afterwards you can check the program file that
+
+22
+01:45.400 --> 01:46.940
+is available as pdf.

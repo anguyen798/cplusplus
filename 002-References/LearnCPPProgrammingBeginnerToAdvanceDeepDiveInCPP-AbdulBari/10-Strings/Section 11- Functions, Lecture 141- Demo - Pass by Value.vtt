@@ -1,0 +1,221 @@
+WEBVTT
+
+0
+00:00.190 --> 00:05.040
+Let us look at parameter passing method for call by value, pass by value.
+
+1
+00:05.170 --> 00:07.210
+I will declare some variables,
+
+2
+00:07.340 --> 00:13.500
+As I have already shown you I have used swap function Let us right our swap function here.
+
+3
+00:13.710 --> 00:19.510
+Swap function which takes parameters A and B.
+
+4
+00:19.630 --> 00:23.190
+now here I write down the code for swapping two numbers.
+
+5
+00:23.220 --> 00:34.650
+That is a and b temporary variable, then a temporary variable assign a then a asssign B then B assign a temporary
+
+6
+00:34.650 --> 00:36.250
+variable.
+
+7
+00:36.270 --> 00:44.650
+Then after swapping, then main function, I will call this swap function by passing x and Y.
+
+8
+00:44.670 --> 00:53.460
+So when I write just x and y the values of x and y will be copied in this a and b and it will swap the number.
+
+9
+00:53.460 --> 01:00.960
+So who will get swap the variables a and b values and get swap actual parameters that are x and y will
+
+10
+01:00.990 --> 01:02.580
+not get modified.
+
+11
+01:02.640 --> 01:08.890
+So after this I will display the values of x and y.
+
+12
+01:09.240 --> 01:11.850
+So what values I should get.
+
+13
+01:12.040 --> 01:16.060
+I will get the same values 10 and 20 because these values will not be swapped.
+
+14
+01:16.110 --> 01:18.180
+So I  will do one thing I will display here.
+
+15
+01:18.330 --> 01:19.410
+a And B also.
+
+16
+01:19.410 --> 01:20.390
+So you can know
+
+17
+01:23.580 --> 01:25.460
+what are the values of A and B.
+
+18
+01:25.700 --> 01:28.820
+And before swapping Also I will display their values.
+
+19
+01:28.920 --> 01:35.430
+So first I will display the values and then swap them and again display the values and let us run this
+
+20
+01:35.520 --> 01:40.240
+and see. first values are 10 and 20.
+
+21
+01:40.380 --> 01:41.510
+That is in the beginning.
+
+22
+01:41.520 --> 01:44.370
+Here they are displayed, then 20 and 10.
+
+23
+01:44.370 --> 01:45.940
+So the values are change.
+
+24
+01:46.050 --> 01:49.830
+And finally it is displaying the values of x and y they remain same.
+
+25
+01:49.860 --> 01:52.930
+That is 10 and 20 only they are not swap.
+
+26
+01:53.040 --> 01:59.610
+So in call by value mechanism the value of the formal parameters if they are modified they will not reflect
+
+27
+01:59.760 --> 02:01.950
+into actual parameters.
+
+28
+02:02.060 --> 02:03.650
+Let us debug this program and see.
+
+29
+02:03.650 --> 02:08.140
+So here i will add a breakpoint and let us run the program. now
+
+30
+02:08.180 --> 02:17.610
+Next line when I move the value of x and y are initialize that is x is 10 and the y is 20, and x is 10
+
+31
+02:17.610 --> 02:18.630
+and y is 20.
+
+32
+02:18.630 --> 02:21.550
+So you can see that they are having these values.
+
+33
+02:21.570 --> 02:23.840
+Now let us move further.
+
+34
+02:24.660 --> 02:31.730
+Now other than to swap function and the values of a and b are 10 and 20.
+
+35
+02:31.800 --> 02:32.510
+Yes.
+
+36
+02:32.640 --> 02:33.680
+Move ahead.
+
+37
+02:34.050 --> 02:38.070
+Now the values are printed 10  and 20, now temp value.
+
+38
+02:38.070 --> 02:39.390
+This is not yet completed.
+
+39
+02:39.400 --> 02:40.870
+So it is garbage.
+
+40
+02:40.980 --> 02:49.580
+If I continue, if I see the values of A B and temp, A became 20 and the b is are still 10 only
+
+41
+02:49.580 --> 02:53.880
+and temp was having 10, now values of A and B are display.
+
+42
+02:53.880 --> 02:57.400
+So they are changed to 20 and 10, the values are Swapped.
+
+43
+02:57.480 --> 03:05.790
+So whose values are swaped? this local variable values are swapped, actual x and y are not to change these x and
+
+44
+03:05.790 --> 03:06.300
+y.
+
+45
+03:06.420 --> 03:07.560
+They will remain the same.
+
+46
+03:07.560 --> 03:11.190
+So now we are not inside this function so I cannot see these values.
+
+47
+03:11.190 --> 03:14.820
+Now we are back to the main function.
+
+48
+03:14.820 --> 03:21.310
+So the values of x and y remain same, 10 and 20 only they are not change, even though.
+
+49
+03:21.450 --> 03:25.860
+in the swap function we have changed the values so the values of A and B are swapped.
+
+50
+03:25.890 --> 03:28.000
+Not the actual parameters.
+
+51
+03:28.440 --> 03:29.400
+So that's it.
+
+52
+03:29.460 --> 03:34.230
+So these are called by value, so you know that we don't have to modify the values just you want
+
+53
+03:34.230 --> 03:40.820
+to send something to a function so that function returns back some result, then call the value mechanism
+
+54
+03:40.860 --> 03:41.290
+is useful.

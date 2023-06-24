@@ -1,0 +1,622 @@
+WEBVTT
+
+00:00:05.660 --> 00:00:10.650
+In this video, we'll see some of the stream formatting options available for integers.
+
+00:00:11.650 --> 00:00:14.250
+Integers have 4 basic formatting options.
+
+00:00:14.550 --> 00:00:17.150
+Let's see what the defaults are for those options.
+
+00:00:17.150 --> 00:00:20.750
+First, integers are displayed in base 10 by default.
+
+00:00:20.750 --> 00:00:25.250
+This makes sense since base 10 is what most people in the world use as their base system.
+
+00:00:25.750 --> 00:00:29.410
+However, we also have the option of displaying integers in base 8,
+
+00:00:29.410 --> 00:00:33.510
+which is called octal and base 16 which is called hexadecimal.
+
+00:00:34.410 --> 00:00:37.210
+Remember, computers work in base 2 or binary.
+
+00:00:37.210 --> 00:00:39.570
+And that's difficult for humans to understand.
+
+00:00:40.070 --> 00:00:42.070
+So we need alternate base systems. Base 10 is what we learned in school,
+
+00:00:42.070 --> 00:00:45.730
+Base 10 is what we learned in school, and that's the way we count and do math.
+
+00:00:45.880 --> 00:00:48.880
+But it's not so intuitive to convert decimal to binary.
+
+00:00:49.540 --> 00:00:52.140
+The alternate bases are often used in computing
+
+00:00:52.140 --> 00:00:55.440
+since they allow us to group information more like a computer would.
+
+00:00:56.040 --> 00:00:58.640
+For example, since octal is base 8,
+
+00:00:58.640 --> 00:01:02.300
+we can group consecutive binary digits into groups of 3
+
+00:01:02.300 --> 00:01:03.660
+starting from the right,
+
+00:01:03.660 --> 00:01:07.260
+and we can easily convert between octal and binary and back again.
+
+00:01:07.920 --> 00:01:11.920
+Hexadecimal is base 16, which allows us to represent locations
+
+00:01:11.920 --> 00:01:16.420
+in memory since each hexadecimal digit represents 8 bits or 1 byte.
+
+00:01:16.920 --> 00:01:20.020
+If you recall, earlier in the course, when we displayed addresses,
+
+00:01:20.020 --> 00:01:22.220
+they were displayed in hexadecimal format.
+
+00:01:22.720 --> 00:01:26.280
+We also have the option to display the base as a prefix for hex
+
+00:01:26.280 --> 00:01:27.780
+and octal values.
+
+00:01:28.140 --> 00:01:31.640
+For hex, we start with 0x followed by the hex number.
+
+00:01:31.640 --> 00:01:33.840
+And for octal, we start with a 0.
+
+00:01:33.840 --> 00:01:38.040
+This clearly tells the reader that the number is hex or octal since in some cases
+
+00:01:38.040 --> 00:01:40.240
+it would be impossible to tell otherwise.
+
+00:01:40.740 --> 00:01:42.940
+The default is not to show the base.
+
+00:01:43.600 --> 00:01:47.040
+We can show the letters in hex numbers as well as the hex prefix in
+
+00:01:47.040 --> 00:01:50.400
+upper or lower case and lowercase is the default.
+
+00:01:50.400 --> 00:01:54.960
+And finally, we can choose to display the plus sign when we have positive integers.
+
+00:01:54.960 --> 00:01:59.960
+The default, as we've seen already, is not to display the plus sign when an integer is positive.
+
+00:02:00.210 --> 00:02:04.090
+This might sound complicated and intimidating, but it's easy as pi.
+
+00:02:04.090 --> 00:02:06.990
+Let me show you how we can use the iostream manipulators
+
+00:02:06.990 --> 00:02:08.990
+to change the way we format integers.
+
+00:02:10.490 --> 00:02:14.090
+First, let's see an example of displaying integers using different bases.
+
+00:02:14.750 --> 00:02:17.850
+Here we initialize num to 255. That is 255
+
+00:02:17.850 --> 00:02:20.840
+in base 10, just like we're used to doing.
+
+00:02:21.500 --> 00:02:25.600
+Now we can use the base manipulators to change the way the integer is formatted.
+
+00:02:25.600 --> 00:02:28.100
+Remember, even though the output changes,
+
+00:02:28.100 --> 00:02:31.700
+255 is still stored in num, and we're not going to change it.
+
+00:02:32.600 --> 00:02:35.820
+First, we use stood des and that means decimal,
+
+00:02:35.820 --> 00:02:38.420
+and that displays the number in base 10.
+
+00:02:38.820 --> 00:02:41.820
+We really don't have to specify this at all since the default,
+
+00:02:41.820 --> 00:02:45.320
+but I wanted to show you how to do it, and this will display 255.
+
+00:02:45.980 --> 00:02:48.880
+The second display statement uses std hex.
+
+00:02:48.880 --> 00:02:54.540
+In this case, we display ff, which is the hexadecimal value for 255.
+
+00:02:55.040 --> 00:02:59.040
+Also note that the f's are in lower case which is also the default.
+
+00:02:59.740 --> 00:03:02.300
+Finally, we have the oct manipulator,
+
+00:03:02.300 --> 00:03:05.960
+and we display 277, which is the octal value
+
+00:03:05.960 --> 00:03:07.960
+for decimal 255.
+
+00:03:08.620 --> 00:03:11.170
+Once we set the base using the manipulator,
+
+00:03:11.170 --> 00:03:15.770
+that base will be used for all future insertions of any integer on the output stream,
+
+00:03:15.770 --> 00:03:18.070
+so that setting will persist.
+
+00:03:18.070 --> 00:03:21.870
+Now if we see 255 and 277 out of context,
+
+00:03:21.870 --> 00:03:26.530
+it would be virtually impossible to tell whether they were base 8 or base 10,
+
+00:03:26.530 --> 00:03:30.530
+so that's where the show base manipulator comes in handy, I'll show you that in the next slide.
+
+00:03:32.890 --> 00:03:37.190
+So in this example, we have the same code except we're using the show base manipulator.
+
+00:03:37.690 --> 00:03:39.690
+Now when we execute the same code,
+
+00:03:39.690 --> 00:03:44.240
+notice that 255 is unchanged, but the hexadecimal ff
+
+00:03:44.240 --> 00:03:48.040
+now has a 0x prefix, and it's in lower case.
+
+00:03:48.700 --> 00:03:52.900
+Also, the octal 377 now has a 0 preceding it.
+
+00:03:53.400 --> 00:03:56.700
+Now it's very clear what the base of each of these numbers is.
+
+00:03:56.950 --> 00:03:59.250
+Also note that the showbase is applied
+
+00:03:59.250 --> 00:04:02.650
+to all further integer stream insertions, so it also persists.
+
+00:04:03.450 --> 00:04:07.110
+We can toggle back to not showing the base by using std no show base.
+
+00:04:09.110 --> 00:04:13.110
+Sometimes we want to be able to display hexadecimal digits in upper case as well.
+
+00:04:13.610 --> 00:04:16.910
+And sometimes we wan to display the 0x prefix in uppercase.
+
+00:04:16.910 --> 00:04:19.410
+We can do this with the uppercase manipulator.
+
+00:04:19.410 --> 00:04:22.770
+In this case, we're using showbase and uppercase.
+
+00:04:23.320 --> 00:04:26.120
+And then we use the hex manipulator and display the number.
+
+00:04:26.120 --> 00:04:30.480
+Notice how we display 0xff and all the letters are uppercase. Like showbase,
+
+00:04:31.080 --> 00:04:35.440
+uppercase will be used for all further hex output,
+
+00:04:35.440 --> 00:04:38.940
+and we can toggle back to lowercase using no uppercase.
+
+00:04:40.600 --> 00:04:43.480
+Now let's see how the show positive manipulator works.
+
+00:04:43.480 --> 00:04:46.080
+If we use showpos or show positive,
+
+00:04:46.380 --> 00:04:49.880
+then we'll get a preceding plus sign on positive integers.
+
+00:04:50.780 --> 00:04:53.140
+You can see in the provided code that we have 2 integers,
+
+00:04:53.140 --> 00:04:57.340
+num1 which is initialized to 255, and num2
+
+00:04:57.340 --> 00:04:59.700
+which is initialized to minus 255.
+
+00:05:00.500 --> 00:05:02.800
+Without using the showpos manipulator,
+
+00:05:02.800 --> 00:05:07.400
+if we display these integers, we get 255 and negative 255.
+
+00:05:07.400 --> 00:05:11.280
+Note that there's no plus sign in front of the positive 255.
+
+00:05:11.780 --> 00:05:14.780
+However, when we use the showpos manipulator,
+
+00:05:14.780 --> 00:05:18.680
+now we see the plus sign in front of the positive 255.
+
+00:05:18.680 --> 00:05:21.450
+This can be useful sometimes depending on the application,
+
+00:05:21.450 --> 00:05:24.750
+some accounting software wants that plus sign in front of the number.
+
+00:05:25.550 --> 00:05:29.650
+Again, this setting also persists, so it'll apply to any other integer
+
+00:05:29.650 --> 00:05:30.640
+stream output.
+
+00:05:31.630 --> 00:05:33.300
+And again, we can toggle back
+
+00:05:33.300 --> 00:05:36.960
+by to not showing the plus sign with the no showpos manipulator.
+
+00:05:37.950 --> 00:05:39.850
+That's it. I told you it was easy.
+
+00:05:39.850 --> 00:05:42.850
+There are also several variations using the setf method,
+
+00:05:42.850 --> 00:05:46.850
+and we can also reset to defaults using std reset iOS flags
+
+00:05:46.850 --> 00:05:50.850
+and providing the flags we want. I encourage you to do as I do,
+
+00:05:50.850 --> 00:05:54.350
+that is not memorize any of these things but just know where to look them up.
+
+00:05:54.350 --> 00:05:58.550
+The c++ reference documentation is pretty good, and everything's there.
+
+00:05:58.550 --> 00:06:01.150
+Unless, of course, you want to memorize them, that's up to you.
+
+00:06:01.150 --> 00:06:04.810
+Okay. So let's head over to the IDE and try some of these combinations out.
+
+00:06:05.690 --> 00:06:09.590
+Okay. So I'm in the IDE. I'm in the section 19 workspace
+
+00:06:09.590 --> 00:06:12.590
+in the manip_integer project.
+
+00:06:13.580 --> 00:06:16.480
+And what I'm doing in this project just manipulating integers,
+
+00:06:16.480 --> 00:06:18.780
+just like we did in the slides. I'm converting them
+
+00:06:18.780 --> 00:06:22.780
+to different bases. Then I'm playing around with some of these manipulators.
+
+00:06:22.780 --> 00:06:26.380
+So let's start by, first of all, including iostream and
+
+00:06:26.380 --> 00:06:29.580
+iomanip. We need to do that too in order to use our manipulators.
+
+00:06:30.080 --> 00:06:33.080
+And I've got an integer here that I've defined and initialized
+
+00:06:33.080 --> 00:06:35.080
+to 255, it's called num.
+
+00:06:36.080 --> 00:06:40.080
+Okay. So let's start right here. Here what we're doing is we're displaying num.
+
+00:06:40.080 --> 00:06:43.440
+And again, it's only the 1 variable. We're going to use throughout this example.
+
+00:06:43.440 --> 00:06:47.990
+We're displaying it in decimal format. Again, we don't really need to do this here since it's the default
+
+00:06:48.390 --> 00:06:51.990
+and then in hex and then an octal and. So when we run this,
+
+00:06:53.090 --> 00:06:57.190
+we see 255 ff, which is the hex and 377,
+
+00:06:57.190 --> 00:07:00.790
+which is octal, just like we saw in the slides. So that's pretty straightforward.
+
+00:07:00.790 --> 00:07:04.790
+And now, like I said, sometimes if you see those
+
+00:07:04.790 --> 00:07:07.790
+2 integers or those 2 series of numbers,
+
+00:07:07.790 --> 00:07:09.490
+you really don't know what the base is.
+
+00:07:09.490 --> 00:07:13.090
+So we can use the showbase manipulator right here,
+
+00:07:13.590 --> 00:07:15.790
+as I'm using right here on line 18.
+
+00:07:15.790 --> 00:07:18.690
+And now when I run it, we'll see the base.
+
+00:07:18.690 --> 00:07:22.890
+So now we're going to see the 0x right here in front of the hexadecimal number
+
+00:07:22.890 --> 00:07:25.140
+and the 0 in front of the octal number, which is
+
+00:07:25.140 --> 00:07:28.020
+pretty nice that way you know exactly what the context, right.
+
+00:07:28.020 --> 00:07:30.620
+So you know this is hex and you know that this is octal.
+
+00:07:30.820 --> 00:07:33.320
+And obviously, you know that just as a decimal up here.
+
+00:07:34.320 --> 00:07:37.120
+Okay. I’ll tell you a funny story. A couple years ago, I was interviewing a
+
+00:07:37.120 --> 00:07:40.120
+candidate for a c++ programming position,
+
+00:07:40.370 --> 00:07:42.370
+and it was an entry level position.
+
+00:07:42.620 --> 00:07:46.720
+You ask them to write code and to, ask them some questions about the language.
+
+00:07:46.720 --> 00:07:51.380
+So I asked them to write a program that accepted an integer and converted it to a hexadecimal number.
+
+00:07:51.930 --> 00:07:54.130
+And every other candidate that I've ever
+
+00:07:54.130 --> 00:07:58.230
+asked that kind of question to goes off and writes a function and does all kinds of stuff.
+
+00:07:58.230 --> 00:08:00.830
+This kid went over wrote the program in like
+
+00:08:00.830 --> 00:08:03.490
+30 seconds and told me he was done,and I couldn't believe it.
+
+00:08:03.490 --> 00:08:05.490
+So when I went over there and just ran it,
+
+00:08:06.390 --> 00:08:07.750
+his output was correct.
+
+00:08:08.110 --> 00:08:10.910
+And what he did was this, which was pretty clever, right.
+
+00:08:10.910 --> 00:08:13.110
+All he did was ask me for the integer,
+
+00:08:13.110 --> 00:08:17.310
+did a std hex and printed it out. I was very, very clever,
+
+00:08:17.310 --> 00:08:18.970
+a very bright kid.
+
+00:08:18.970 --> 00:08:21.970
+I never would have thought about doing that in an interview, but anyway he got the job,
+
+00:08:21.970 --> 00:08:25.970
+and he did really well in the end. So that's a good way to think outside the box.
+
+00:08:25.970 --> 00:08:29.070
+Sometimes you don't want to go for the fancy algorithms, just do it the easy way.
+
+00:08:29.070 --> 00:08:31.070
+I'm all for that, but anyway.
+
+00:08:31.070 --> 00:08:33.770
+So here now what we're going to do is,
+
+00:08:33.770 --> 00:08:37.130
+notice that let me run this again so that you can see that
+
+00:08:37.130 --> 00:08:40.930
+the 0x and the ff here and the hex number are lower case.
+
+00:08:41.330 --> 00:08:43.530
+If you need to have them in uppercase,
+
+00:08:43.530 --> 00:08:47.630
+we can use std uppercase, just like we are here on line 25.
+
+00:08:47.630 --> 00:08:50.830
+And when I run that now, you'll see that,
+
+00:08:50.830 --> 00:08:52.530
+let me put that comment back.
+
+00:08:53.830 --> 00:08:58.630
+So when i run this now, you can see that now it's a 0xff, and those are capitalized.
+
+00:08:58.630 --> 00:09:01.930
+That only applies to hexadecimal numbers because the hex numbers
+
+00:09:01.930 --> 00:09:04.030
+are the only ones that have letters in them.
+
+00:09:04.830 --> 00:09:08.930
+Okay. The showpos or show positive modifier right here.
+
+00:09:08.930 --> 00:09:11.130
+So let me uncomment this code out.
+
+00:09:11.930 --> 00:09:15.290
+And what this does, it only works with decimal values.
+
+00:09:15.290 --> 00:09:19.490
+And if the number is positive, then it displays the plus sign in front of the number.
+
+00:09:19.490 --> 00:09:22.290
+By default, we don't display a plus sign in front of the number.
+
+00:09:22.690 --> 00:09:26.490
+So let's run this. And you can see that right here on the 255,
+
+00:09:26.490 --> 00:09:28.850
+you can see that plus sign right in front of it.
+
+00:09:28.850 --> 00:09:33.050
+And that's exactly what that does. Notice that it has no effect on hex or octal,
+
+00:09:33.050 --> 00:09:34.550
+it only works on decimals.
+
+00:09:36.050 --> 00:09:41.040
+And in this case, there is a method called setf.
+
+00:09:41.540 --> 00:09:44.740
+And we can see -- and this isn't a manipulator. This is a method call.
+
+00:09:44.740 --> 00:09:48.400
+So we're saying std cout.setf. So setf is a method.
+
+00:09:48.400 --> 00:09:50.900
+And then we can pass in these format flags.
+
+00:09:51.300 --> 00:09:54.600
+And what this will do is it'll set it to showbase or no showbase
+
+00:09:54.600 --> 00:09:57.800
+or uppercase or no uppercase, whatever you really want here.
+
+00:09:57.800 --> 00:10:01.160
+So it's an alternate way of doing what we did up here.
+
+00:10:01.160 --> 00:10:05.360
+Okay. And you tend to see this style more often than this style.
+
+00:10:05.360 --> 00:10:07.960
+But you'll see this sometimes out there I just wanted to show you.
+
+00:10:09.160 --> 00:10:12.150
+Okay. Also we can use
+
+00:10:12.150 --> 00:10:15.650
+std reset iOS flags to set these back to normal.
+
+00:10:15.650 --> 00:10:19.330
+So for example, this one right here std iOS base field,
+
+00:10:19.330 --> 00:10:23.010
+that'll set your integer base back to decimal. Okay.
+
+00:10:23.010 --> 00:10:26.610
+Showbase will set it back to the default for showbase, which is
+
+00:10:26.610 --> 00:10:31.110
+not to show the base, right. That's the default. Again, remember, this resets it back to the defaults.
+
+00:10:31.810 --> 00:10:36.010
+This one show positive says it sets it back to not showing the positive.
+
+00:10:36.310 --> 00:10:39.610
+And the upper case, it goes back to not showing uppercase.
+
+00:10:39.610 --> 00:10:43.510
+Again, so don't let that confuse you. It's not we're not setting it to those flags.
+
+00:10:43.510 --> 00:10:45.510
+We're just telling it to set it to the default.
+
+00:10:45.760 --> 00:10:50.660
+Okay. So in this last example, I'm just using a real simple
+
+00:10:50.660 --> 00:10:51.760
+input statement
+
+00:10:52.460 --> 00:10:54.460
+Let me uncomment that code out.
+
+00:10:54.460 --> 00:10:57.460
+And I'm asking the user for an integer. And I'm putting it right back into that
+
+00:10:57.460 --> 00:11:01.260
+num variable that we had before. And I'm just using default
+
+00:11:01.260 --> 00:11:02.920
+to display it as a decimal.
+
+00:11:02.920 --> 00:11:05.720
+And then as a hex, and then hex upper case,
+
+00:11:05.720 --> 00:11:10.710
+and then hex again. And the point here is so that you can see that these settings stick,
+
+00:11:10.710 --> 00:11:14.210
+so this upper case will still be uppercase even though we've already used it
+
+00:11:14.210 --> 00:11:15.510
+because they are persistent.
+
+00:11:15.810 --> 00:11:17.410
+And then no uppercase
+
+00:11:17.410 --> 00:11:22.010
+and. Then finally, octal hex, we're going to show the base and octal at the end.
+
+00:11:22.010 --> 00:11:25.010
+So again, really, really straightforward. Let me run it. And
+
+00:11:25.010 --> 00:11:28.610
+we can use a number like, let's say, 135.
+
+00:11:29.710 --> 00:11:33.710
+And there you go. An integer is 135, the decimal value is 135.
+
+00:11:33.710 --> 00:11:35.210
+In hex, it's 87.
+
+00:11:36.110 --> 00:11:38.710
+And you can see the showbase here
+
+00:11:39.310 --> 00:11:40.300
+because I've got
+
+00:11:41.200 --> 00:11:44.500
+no showbase, right, because that was my default. Right here
+
+00:11:45.600 --> 00:11:49.900
+I set it back to the default to not showbase, and that's why we're not seeing it.
+
+00:11:50.900 --> 00:11:54.400
+Notice that when we're not showing the base, this uppercase
+
+00:11:54.400 --> 00:11:57.400
+has no effect at all, which is exactly what you would expect, right.
+
+00:11:58.300 --> 00:12:01.300
+So that's it. In the next video,
+
+00:12:01.300 --> 00:12:06.290
+what we're going to do is we're going to look at the manipulators for floating point numbers and see how they work.

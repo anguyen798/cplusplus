@@ -1,0 +1,414 @@
+WEBVTT
+
+00:00:05.500 --> 00:00:07.960
+In this video, we'll learn about
+the if else statement.
+
+00:00:08.540 --> 00:00:12.840
+Adding An else section to an if statement
+is the obvious next step to
+
+00:00:12.840 --> 00:00:14.639
+improving control flow in a program.
+
+00:00:15.500 --> 00:00:18.880
+Many times, we want to perform
+different actions depending on whether
+
+00:00:18.890 --> 00:00:20.650
+the condition is true or false.
+
+00:00:21.250 --> 00:00:24.130
+Again, the syntax for the if
+else statement is very simple.
+
+00:00:24.770 --> 00:00:28.990
+We have the same syntax as for the if
+section as in a simple if statement.
+
+00:00:29.450 --> 00:00:32.759
+But we add the else keyword and
+the statement we want to execute
+
+00:00:32.790 --> 00:00:34.050
+when the condition is false.
+
+00:00:34.830 --> 00:00:37.490
+So in this case, if the
+control expression is true
+
+00:00:37.700 --> 00:00:39.400
+we execute statement1.
+
+00:00:39.640 --> 00:00:41.949
+And if it's false, we
+execute statement2.
+
+00:00:42.710 --> 00:00:43.950
+Notice the indentation.
+
+00:00:43.990 --> 00:00:47.300
+I can't stress enough how important
+good indentation and style is.
+
+00:00:47.679 --> 00:00:51.449
+By simply looking at the construct,
+we can easily see both sections
+
+00:00:51.450 --> 00:00:52.989
+because it's indented properly.
+
+00:00:54.260 --> 00:00:57.190
+In this slide, you can see example
+code and the flow chart that
+
+00:00:57.190 --> 00:00:58.950
+visually shows the flow of control.
+
+00:00:59.850 --> 00:01:02.570
+The condition num greater
+than 10 is evaluated.
+
+00:01:03.030 --> 00:01:04.989
+If that's true, we increment num.
+
+00:01:05.509 --> 00:01:07.519
+If it's false, we assign 10 to num.
+
+00:01:08.580 --> 00:01:11.889
+In both cases, we then continue
+execution to the next statement.
+
+00:01:12.580 --> 00:01:13.909
+Let's see a few more examples.
+
+00:01:15.409 --> 00:01:18.369
+In the first statement, we
+check if num is greater than 10.
+
+00:01:18.789 --> 00:01:21.979
+If this is true, we display
+num is greater than 10.
+
+00:01:22.279 --> 00:01:25.160
+If it's false, we display
+num is not greater than 10.
+
+00:01:26.270 --> 00:01:29.170
+In the second example, we
+check if health is less than
+
+00:01:29.170 --> 00:01:31.500
+100 and heal player is true.
+
+00:01:32.180 --> 00:01:35.410
+If both these conditions
+evaluate to true, then we
+
+00:01:35.410 --> 00:01:37.440
+assign 100 to the player health.
+
+00:01:38.050 --> 00:01:40.620
+Otherwise, we simply
+increment the player health.
+
+00:01:42.559 --> 00:01:45.099
+Here we could see sample code
+along with a flowchart that
+
+00:01:45.099 --> 00:01:46.859
+visually shows the flow of control.
+
+00:01:47.660 --> 00:01:51.160
+Notice that in this example,
+we're using two block statements
+
+00:01:51.220 --> 00:01:52.540
+in the if else statement.
+
+00:01:54.050 --> 00:01:57.449
+So if num is greater than
+10 is true, we execute both
+
+00:01:57.450 --> 00:01:58.590
+statements in the block.
+
+00:01:59.230 --> 00:02:01.960
+We increment num, and
+we display increment.
+
+00:02:02.720 --> 00:02:07.420
+If num is not greater than 10, then
+we assign 10 to num and display reset.
+
+00:02:08.130 --> 00:02:11.700
+Regardless of which block statement
+executes, we continue processing.
+
+00:02:12.270 --> 00:02:16.099
+Finally, let's see another example
+where we group if else if statements.
+
+00:02:17.690 --> 00:02:20.950
+In many cases, we can group
+if else statements together.
+
+00:02:21.099 --> 00:02:22.429
+Here's a common example.
+
+00:02:22.820 --> 00:02:25.150
+Suppose I want to display
+a student's letter grade
+
+00:02:25.160 --> 00:02:26.740
+given their score on an exam.
+
+00:02:27.570 --> 00:02:30.840
+In this case, we can check if
+their score is greater than 90.
+
+00:02:31.400 --> 00:02:33.679
+If it is, we display
+an a., and we're done.
+
+00:02:34.070 --> 00:02:35.679
+No other conditions will be checked.
+
+00:02:36.270 --> 00:02:39.280
+So we continue to the last output
+statement and display done.
+
+00:02:39.960 --> 00:02:41.879
+Suppose the student scored a 75.
+
+00:02:42.770 --> 00:02:45.290
+First, we check to see if
+the score is greater than 90.
+
+00:02:45.670 --> 00:02:46.320
+It isn't.
+
+00:02:46.460 --> 00:02:50.470
+So we go to the next else
+if score greater than 80.
+
+00:02:50.910 --> 00:02:52.130
+Again it's, not true.
+
+00:02:52.590 --> 00:02:54.560
+Then we check score greater than 70.
+
+00:02:54.960 --> 00:02:57.840
+Now it's true, so we
+display a c, and we're done.
+
+00:02:58.139 --> 00:03:01.400
+No other conditions will be
+checked, so we continue to the last
+
+00:03:01.400 --> 00:03:03.080
+output statement and display done.
+
+00:03:03.860 --> 00:03:06.470
+Notice that the last else in
+the construct doesn't have
+
+00:03:06.470 --> 00:03:07.870
+an if associated with it.
+
+00:03:08.670 --> 00:03:10.470
+This is the catch all else statement.
+
+00:03:10.889 --> 00:03:14.199
+If none of the previous if statements
+is true, then this l statement
+
+00:03:14.200 --> 00:03:16.380
+will execute and f is displayed.
+
+00:03:18.090 --> 00:03:21.600
+This is a very very common pattern
+that's often seen in programming.
+
+00:03:21.970 --> 00:03:25.180
+It's efficient since no extra
+checks will be performed once
+
+00:03:25.180 --> 00:03:26.719
+we know which condition is true.
+
+00:03:27.260 --> 00:03:30.259
+We could obviously change the logic
+and start with score less than
+
+00:03:30.259 --> 00:03:32.620
+60 and work our way up to an a.
+
+00:03:33.259 --> 00:03:36.339
+Let's head over to the IDE and
+see some examples in live code.
+
+00:03:38.300 --> 00:03:40.140
+I'm in the CodeLite IDE.
+
+00:03:40.240 --> 00:03:44.750
+I'm in the section 9 workspace
+in the if else statement project.
+
+00:03:45.780 --> 00:03:47.049
+This one's really really simple.
+
+00:03:47.050 --> 00:03:50.340
+The user is going to enter a number,
+and we're going to store it in num.
+
+00:03:51.620 --> 00:03:53.449
+And we're going to compare
+the number to a target.
+
+00:03:53.449 --> 00:03:56.020
+In this case, I just
+assigned 10 to the target.
+
+00:03:56.390 --> 00:04:00.090
+So we'll ask them enter a number, and
+I'll compare it to 10 in this case.
+
+00:04:00.730 --> 00:04:02.300
+Okay, we get the number from the user.
+
+00:04:02.510 --> 00:04:04.279
+And then we've got a
+real simple if statement.
+
+00:04:04.520 --> 00:04:08.149
+If the number is greater than or
+equal to the target, we're just
+
+00:04:08.150 --> 00:04:11.519
+going to display this line, and
+then we're going to display the
+
+00:04:11.520 --> 00:04:15.060
+number they entered is greater
+than or equal to the target.
+
+00:04:16.350 --> 00:04:17.150
+That's it.
+
+00:04:17.740 --> 00:04:20.066
+We're also going to calculate the
+difference between the number
+
+00:04:20.079 --> 00:04:22.000
+and the target and display the difference.
+
+00:04:22.000 --> 00:04:24.985
+So in this case, in this
+piece right here this is the
+
+00:04:25.170 --> 00:04:26.510
+if statement right there.
+
+00:04:27.540 --> 00:04:28.509
+That's the if section.
+
+00:04:28.509 --> 00:04:29.450
+That's the true section.
+
+00:04:29.980 --> 00:04:32.620
+We're going to say yeah the
+number you entered is greater
+
+00:04:32.620 --> 00:04:33.890
+than or equal to the target.
+
+00:04:34.210 --> 00:04:37.080
+It's so far away from the -- so
+much greater than the target.
+
+00:04:37.150 --> 00:04:37.650
+That's it.
+
+00:04:38.090 --> 00:04:41.480
+Now if the number they enter is
+not greater than or equal to the
+
+00:04:41.480 --> 00:04:44.170
+target, then the else part fires.
+
+00:04:44.920 --> 00:04:46.970
+And in which case we're still going
+to print a line, and then we're
+
+00:04:46.970 --> 00:04:49.820
+just going to say the number you
+entered is less than the target.
+
+00:04:50.390 --> 00:04:52.670
+What's the difference between target
+and number, and we're going to
+
+00:04:52.670 --> 00:04:54.130
+display that difference as well.
+
+00:04:54.430 --> 00:04:56.739
+Okay, so really really
+straightforward program.
+
+00:04:57.030 --> 00:04:58.469
+Let's compile and run this.
+
+00:04:59.280 --> 00:05:01.810
+So in this case let's enter a
+number and I'll compare it to 10.
+
+00:05:02.259 --> 00:05:03.429
+Let's say I enter 10.
+
+00:05:04.940 --> 00:05:09.039
+It says 10 is greater than or equal
+to 10, which it is and 10 is 0
+
+00:05:09.050 --> 00:05:11.140
+greater than 10 because it is 10.
+
+00:05:11.270 --> 00:05:12.070
+Perfect.
+
+00:05:12.160 --> 00:05:14.000
+So let's run this a couple more times.
+
+00:05:14.320 --> 00:05:18.980
+Let's put in 100, and we get 100
+is greater than or equal to 10.
+
+00:05:19.660 --> 00:05:21.169
+100 is 90 greater than 10.
+
+00:05:21.410 --> 00:05:24.980
+Right, and let's put
+in let's negative 10.
+
+00:05:27.070 --> 00:05:29.170
+In this case, negative
+10 is less than 10.
+
+00:05:29.650 --> 00:05:33.140
+And negative 10 is 20 less than
+10, which is again correct.
+
+00:05:33.290 --> 00:05:37.210
+So you can see real simple program
+adding an else section to the if
+
+00:05:37.210 --> 00:05:41.510
+statement is really, really simple and
+actually it's super powerful because
+
+00:05:41.510 --> 00:05:45.480
+it gives you you know the ability to
+have a binary decision and execute
+
+00:05:45.550 --> 00:05:48.040
+code on both sides of that decision.

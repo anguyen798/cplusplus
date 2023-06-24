@@ -1,0 +1,763 @@
+WEBVTT
+
+00:00:05.570 --> 00:00:08.930
+The last operators we'll overload
+in this section are the stream
+
+00:00:08.930 --> 00:00:11.239
+insertion and extraction operators.
+
+00:00:12.120 --> 00:00:15.120
+This will allow us to insert
+and extract our mystring objects
+
+00:00:15.120 --> 00:00:18.220
+to and from streams exactly
+as we've been doing with all
+
+00:00:18.220 --> 00:00:19.570
+the other built-in types.
+
+00:00:20.330 --> 00:00:22.960
+You can see in this slide what the
+code would look like if we could
+
+00:00:22.960 --> 00:00:27.120
+simply insert our own user-defined
+objects into an output stream.
+
+00:00:27.580 --> 00:00:32.049
+This makes our classes feel and
+behave more like a built-in c++ type.
+
+00:00:33.620 --> 00:00:37.110
+Of course, we can also overload the
+stream extraction operator so that
+
+00:00:37.110 --> 00:00:40.199
+we can read data from a stream and
+assign them to our own objects.
+
+00:00:40.470 --> 00:00:43.510
+Here you can see that we're
+reading data into Larry and Hero.
+
+00:00:44.470 --> 00:00:46.670
+In this example and the
+one on the previous slide,
+
+00:00:46.950 --> 00:00:48.510
+we're using cout and cin.
+
+00:00:49.099 --> 00:00:51.689
+But we can use other streams
+as well as well as redirect cin
+
+00:00:51.690 --> 00:00:53.860
+and cout to files and so forth.
+
+00:00:56.000 --> 00:00:58.820
+Before we start, let's see why
+it really doesn't make sense to
+
+00:00:58.820 --> 00:01:02.580
+implement the insertion and extraction
+operators as member methods.
+
+00:01:03.200 --> 00:01:06.270
+Remember, when we overload an
+operator as a member method, the
+
+00:01:06.270 --> 00:01:09.949
+left-hand side object must be an
+object of the class we're overloading.
+
+00:01:10.609 --> 00:01:13.210
+This means that we would have
+to write Larry on the left-hand
+
+00:01:13.210 --> 00:01:14.670
+side of the output statement.
+
+00:01:15.840 --> 00:01:18.660
+While this will work, it would
+be very strange for c++ plus
+
+00:01:18.670 --> 00:01:21.539
+programmers to use in this manner
+since it's not the way we use
+
+00:01:21.539 --> 00:01:23.289
+these operators with other values.
+
+00:01:24.160 --> 00:01:26.410
+The same is true for
+the extraction operator.
+
+00:01:26.940 --> 00:01:30.520
+So we're going to overload these
+operators as non-member functions.
+
+00:01:32.340 --> 00:01:35.080
+Let's overload the stream
+insertion operator first.
+
+00:01:35.590 --> 00:01:39.679
+You can see that this is a non-member
+function named operator insertion
+
+00:01:39.679 --> 00:01:41.930
+operator that has two arguments.
+
+00:01:42.340 --> 00:01:46.050
+The first argument is an output
+stream object by reference.
+
+00:01:46.150 --> 00:01:48.030
+This is typed as std ostream.
+
+00:01:48.539 --> 00:01:52.200
+The second parameter is a reference
+to the mystring object whose data we
+
+00:01:52.200 --> 00:01:53.790
+want to insert in the output stream.
+
+00:01:54.210 --> 00:01:56.060
+Notice that the reference is constant.
+
+00:01:56.929 --> 00:02:00.539
+Also notice that the function
+returns an output stream reference.
+
+00:02:00.880 --> 00:02:02.810
+This is important because
+we want to be able to chain
+
+00:02:02.810 --> 00:02:04.420
+insertions as we normally do.
+
+00:02:04.709 --> 00:02:07.380
+It's important that we use
+ostream references, and
+
+00:02:07.380 --> 00:02:08.720
+we don't copy the stream.
+
+00:02:09.910 --> 00:02:13.580
+Then comes the easy part, put whatever
+data you like in whatever format you
+
+00:02:13.580 --> 00:02:15.459
+like on the output stream as usual.
+
+00:02:16.150 --> 00:02:18.935
+If this function has been declared
+as a friend function in the mystream
+
+00:02:19.190 --> 00:02:22.299
+class, then you have access to
+all the private data members.
+
+00:02:22.809 --> 00:02:25.010
+Otherwise, you have to use
+the public getters to get
+
+00:02:25.010 --> 00:02:26.040
+the information you need.
+
+00:02:26.940 --> 00:02:30.380
+And finally, the last step is to
+return the output stream reference.
+
+00:02:30.550 --> 00:02:31.300
+That's it.
+
+00:02:31.370 --> 00:02:33.990
+As you can see it's very
+simple and very useful too.
+
+00:02:34.630 --> 00:02:37.380
+Now let's see how we can overload
+the stream extraction operator.
+
+00:02:39.020 --> 00:02:41.159
+Let's start by looking at
+the function signature.
+
+00:02:41.529 --> 00:02:44.780
+The name of the function is
+operator, extraction operator.
+
+00:02:45.290 --> 00:02:47.260
+The function has two parameters.
+
+00:02:47.540 --> 00:02:50.369
+The first is a reference to an
+input stream whose type is istream.
+
+00:02:51.639 --> 00:02:55.670
+And the second is a reference to the
+object we want to extract data into.
+
+00:02:56.250 --> 00:02:58.739
+Notice that since we're going
+to modify this object, we
+
+00:02:58.740 --> 00:03:00.129
+don't want it to be a const.
+
+00:03:00.719 --> 00:03:03.390
+So depending on the data we
+want to read, we can get the
+
+00:03:03.390 --> 00:03:06.550
+data from the input stream
+and either store it locally or
+
+00:03:06.560 --> 00:03:08.140
+store it directly in the object.
+
+00:03:08.620 --> 00:03:11.490
+In this case, we allocate a
+large array of characters that
+
+00:03:11.490 --> 00:03:14.019
+will hold the data we want to
+construct a mystring object.
+
+00:03:14.190 --> 00:03:18.670
+Then we simply create a temporary
+mystring object and assign it back
+
+00:03:18.680 --> 00:03:20.170
+to the object that was passed in.
+
+00:03:20.940 --> 00:03:24.220
+This assumes we have copied or moved
+overloaded assignment operators,
+
+00:03:24.240 --> 00:03:26.810
+and they're implemented correctly
+since we have a raw pointer.
+
+00:03:27.440 --> 00:03:29.690
+Finally, we return the
+istream reference so that
+
+00:03:29.690 --> 00:03:30.660
+we can change assign.
+
+00:03:31.790 --> 00:03:34.669
+We can do all sorts of error
+checking and setting and getting
+
+00:03:34.670 --> 00:03:37.760
+the state of the input stream so
+we have control of the data we're
+
+00:03:38.250 --> 00:03:41.590
+extracting as well as not overrunning
+the size of the buffer we created.
+
+00:03:41.990 --> 00:03:44.260
+Now let's head over to the
+IDE and implement these two
+
+00:03:44.260 --> 00:03:45.980
+operators in the mystring class.
+
+00:03:47.320 --> 00:03:48.780
+Okay, so I'm back in the IDE.
+
+00:03:48.780 --> 00:03:54.760
+I'm in the section 14 workspace in the
+MyString-insertion-extraction project.
+
+00:03:55.400 --> 00:03:58.440
+And what I've got here is I've
+got the my string class again.
+
+00:03:58.440 --> 00:04:00.329
+And I've gotten rid of all
+the operators that we've
+
+00:04:00.330 --> 00:04:03.549
+overloaded previously just so
+it's a bare bones class again.
+
+00:04:03.969 --> 00:04:07.130
+And the reason I did that's just to
+make this a little bit more readable.
+
+00:04:07.469 --> 00:04:10.659
+And what we want to do here is
+overload the insertion and extraction
+
+00:04:10.660 --> 00:04:14.650
+operator, so we can use this these
+objects with streams really easily.
+
+00:04:15.230 --> 00:04:18.049
+So here's a sample main
+that's going to test this.
+
+00:04:18.350 --> 00:04:21.280
+And you can see here I'm creating
+Larry and Moe as my strings and
+
+00:04:21.280 --> 00:04:22.929
+Curly is an empty string right now.
+
+00:04:23.429 --> 00:04:26.169
+And I'm outputting enter the
+third stooge's first name.
+
+00:04:26.570 --> 00:04:31.060
+I'm reading from standard n,
+in this case, cin into Curly.
+
+00:04:31.340 --> 00:04:33.800
+So we're overloading the
+out operator right there to
+
+00:04:33.800 --> 00:04:35.930
+work with mystring object.
+
+00:04:36.360 --> 00:04:40.530
+Then I'm displaying the three
+stooges are Larry Moe and Curly.
+
+00:04:40.530 --> 00:04:43.039
+Again, we're using the
+insertion operator here that
+
+00:04:43.040 --> 00:04:43.899
+we're going to overload.
+
+00:04:44.599 --> 00:04:46.929
+And then we're going to grab
+all three of the stooges names.
+
+00:04:46.940 --> 00:04:50.590
+So we say enter the three stooges
+names separated by a space, and
+
+00:04:50.590 --> 00:04:51.900
+we'll type in whatever we like.
+
+00:04:51.900 --> 00:04:53.650
+They'll be stored into
+Larry Moe and Curly.
+
+00:04:53.650 --> 00:04:55.150
+And then we'll display them out again.
+
+00:04:55.510 --> 00:04:57.109
+Okay, so pretty simple.
+
+00:04:57.220 --> 00:04:59.860
+And you can see this this
+main driver here looks nice.
+
+00:04:59.860 --> 00:05:02.830
+Now we don't have all those dot
+display methods that we had before.
+
+00:05:03.250 --> 00:05:06.220
+Cool, so let's go to
+mystring header file.
+
+00:05:06.610 --> 00:05:08.150
+And let's get started here.
+
+00:05:08.160 --> 00:05:10.470
+First thing we want to do
+is I'm going to implement
+
+00:05:10.470 --> 00:05:12.130
+these as friend functions.
+
+00:05:12.140 --> 00:05:15.120
+So the class is going to
+declare them as friends.
+
+00:05:15.179 --> 00:05:16.590
+So why don't we do that first.
+
+00:05:16.870 --> 00:05:22.330
+And what we can do here is just simply
+say friend and provide the prototype.
+
+00:05:22.330 --> 00:05:26.270
+So we've got we're returning
+a std ostream reference.
+
+00:05:26.510 --> 00:05:28.930
+We'll do the insertion operator first.
+
+00:05:29.560 --> 00:05:30.880
+So we've got a reference.
+
+00:05:31.120 --> 00:05:36.330
+The operator we're overloading
+is the insertion operator.
+
+00:05:37.110 --> 00:05:38.550
+And it's a binary operator.
+
+00:05:38.550 --> 00:05:40.179
+So we've got two parameters here.
+
+00:05:40.430 --> 00:05:42.349
+The first one is a std ostream.
+
+00:05:42.349 --> 00:05:45.730
+And we can call this anything we like.
+
+00:05:45.730 --> 00:05:48.780
+We can call it os or out, typically
+those are the names that are used.
+
+00:05:49.260 --> 00:05:52.929
+And we've got a mystring, a
+const my string reference.
+
+00:05:56.289 --> 00:05:58.110
+And we'll just call
+that right-hand side.
+
+00:05:58.350 --> 00:05:59.889
+We'll stick to that naming convention.
+
+00:06:00.510 --> 00:06:02.200
+So that takes care of that prototype.
+
+00:06:02.220 --> 00:06:05.729
+And now we'll do the extraction
+operator, so same idea friend.
+
+00:06:06.250 --> 00:06:11.049
+In this case, we're returning an
+input stream by reference again.
+
+00:06:12.230 --> 00:06:14.479
+And the operator is operator.
+
+00:06:16.059 --> 00:06:18.429
+And we'll be doing the
+extraction operator.
+
+00:06:19.280 --> 00:06:22.260
+And again, we've got two
+parameters the first one is
+
+00:06:22.610 --> 00:06:25.870
+the input stream by reference,
+and we'll just call that in.
+
+00:06:26.950 --> 00:06:30.240
+And we've got a my string
+object also by reference
+
+00:06:30.240 --> 00:06:31.400
+called it right-hand side.
+
+00:06:31.580 --> 00:06:35.430
+Notice how this one is not const
+because I do want to modify
+
+00:06:35.440 --> 00:06:38.210
+that object based on what I'm
+reading in from the input stream.
+
+00:06:39.000 --> 00:06:39.770
+Okay, so that's it.
+
+00:06:39.780 --> 00:06:41.650
+Those are our two function prototypes.
+
+00:06:42.150 --> 00:06:44.820
+And now what we can do is we
+can go to the implementation
+
+00:06:44.820 --> 00:06:48.120
+file or mystring cpp file, and
+we'll actually write these.
+
+00:06:48.420 --> 00:06:50.590
+I'm going to put them all the
+way down at the bottom here.
+
+00:06:50.590 --> 00:06:51.970
+That way I've got a
+lot of room to work.
+
+00:06:52.469 --> 00:06:56.610
+So let's say that this is the
+overloaded insertion operator.
+
+00:06:56.660 --> 00:06:57.640
+Let's do that one first.
+
+00:07:00.490 --> 00:07:03.210
+All right, so same type of
+function prototype, right.
+
+00:07:03.220 --> 00:07:08.440
+Instead, ostream reference,
+the operator we're overloading
+
+00:07:08.590 --> 00:07:10.220
+is the insertion operator.
+
+00:07:10.609 --> 00:07:12.940
+And we've got the same two
+parameters that we had before.
+
+00:07:13.160 --> 00:07:14.850
+We've got an ostream reference.
+
+00:07:19.020 --> 00:07:21.270
+And we called it os, I believe.
+
+00:07:21.280 --> 00:07:29.939
+Yes, we did and a const mystring
+class by reference right-hand side.
+
+00:07:30.170 --> 00:07:30.640
+There we go.
+
+00:07:31.090 --> 00:07:35.430
+Okay, so now this is probably one of
+the simplest methods to implement.
+
+00:07:35.810 --> 00:07:38.620
+All we're doing is
+we're putting on os.
+
+00:07:40.660 --> 00:07:41.770
+Remember, this is a friend.
+
+00:07:41.780 --> 00:07:44.439
+So we can simply say
+right-hand sides str.
+
+00:07:46.430 --> 00:07:47.290
+That's it.
+
+00:07:47.359 --> 00:07:49.990
+If this wasn't a friend, we
+could use the get str method.
+
+00:07:50.510 --> 00:07:53.540
+And then we're going to
+return that output stream.
+
+00:07:54.640 --> 00:07:56.520
+That's it. Pretty straightforward.
+
+00:07:56.809 --> 00:07:59.440
+Now let's overload our
+extraction operator.
+
+00:08:05.180 --> 00:08:07.150
+And we'll do the prototype again here.
+
+00:08:07.190 --> 00:08:09.390
+So it's a stood istream reference.
+
+00:08:11.560 --> 00:08:16.659
+The operator we're overloading is
+the extraction operator, and we
+
+00:08:16.660 --> 00:08:18.070
+also have two parameters, right.
+
+00:08:18.070 --> 00:08:20.219
+The first one is a
+std istream reference.
+
+00:08:21.979 --> 00:08:23.760
+And we'll just call that in.
+
+00:08:24.900 --> 00:08:29.919
+And we've got the mystring ref
+right-hand side, again, this one
+
+00:08:29.950 --> 00:08:32.780
+can't be const because we're going
+to read into it or change it,
+
+00:08:33.409 --> 00:08:37.840
+that's it, so now we're going to
+get a string from the input stream.
+
+00:08:38.059 --> 00:08:39.630
+We need to store that somewhere.
+
+00:08:39.860 --> 00:08:42.830
+So let's create a pretty
+big size buffer here.
+
+00:08:44.760 --> 00:08:46.500
+And we'll do this
+dynamically on the heap.
+
+00:08:46.500 --> 00:08:48.280
+We'll just store a 1000 characters.
+
+00:08:49.400 --> 00:08:51.310
+That should give us plenty of room.
+
+00:08:52.250 --> 00:08:54.590
+We could certainly do this
+in different ways so that we
+
+00:08:54.590 --> 00:08:55.689
+don't overrun this buffer.
+
+00:08:55.710 --> 00:08:58.570
+But let's just do it like this because
+it's a simple example to understand.
+
+00:08:59.209 --> 00:09:02.560
+Now we get whatever's in the input
+stream and we store it in buffer.
+
+00:09:04.220 --> 00:09:07.010
+Right now we've got the buffer, it's
+got the data we have -- we want.
+
+00:09:07.030 --> 00:09:10.800
+And what we want to do is we want to
+update this right-hand side objects
+
+00:09:10.809 --> 00:09:12.560
+string based on this data, right.
+
+00:09:12.840 --> 00:09:14.990
+So there's a lot of ways to do this.
+
+00:09:15.080 --> 00:09:19.760
+One of the simplest ways to do it
+is just to say RHS equals mystring
+
+00:09:21.390 --> 00:09:23.510
+and initialize it with buff.
+
+00:09:24.720 --> 00:09:27.670
+Okay, now depending on whether
+you've got copy assignment or move
+
+00:09:27.670 --> 00:09:30.300
+assignment, that's what's going
+to happen here, we've got both.
+
+00:09:30.610 --> 00:09:32.459
+So this is going to use
+move assignment which is
+
+00:09:32.460 --> 00:09:34.519
+super-efficient we're just
+going to steal that pointer.
+
+00:09:35.600 --> 00:09:38.750
+When we're done, we make sure
+that we delete this temporary
+
+00:09:38.750 --> 00:09:40.470
+storage that we created in buff.
+
+00:09:42.550 --> 00:09:44.719
+And we return the input stream.
+
+00:09:45.340 --> 00:09:47.240
+Remember, this is going
+to return it by reference.
+
+00:09:47.670 --> 00:09:48.369
+And that's it.
+
+00:09:48.370 --> 00:09:49.170
+We should be done.
+
+00:09:49.630 --> 00:09:51.930
+Let's run this and see
+if we have any typos.
+
+00:09:52.559 --> 00:09:53.610
+And we do.
+
+00:09:53.930 --> 00:09:57.020
+I spelled operator incorrectly,
+I believe, I sure did.
+
+00:09:57.610 --> 00:09:58.800
+I'll fix that real quick.
+
+00:09:59.000 --> 00:10:00.590
+Let's see if there's any
+other errors down here.
+
+00:10:01.200 --> 00:10:02.780
+I think they're all
+related to that same error.
+
+00:10:02.780 --> 00:10:03.789
+So let's run this.
+
+00:10:04.080 --> 00:10:04.890
+And here we go.
+
+00:10:05.480 --> 00:10:07.689
+Enter the third stooge's first name.
+
+00:10:07.700 --> 00:10:09.089
+Well, the third stooge is Curly.
+
+00:10:11.660 --> 00:10:14.250
+Notice we use the move assignment,
+which is what we expected.
+
+00:10:14.250 --> 00:10:17.000
+That move assignment happened
+when I copied that object out.
+
+00:10:17.450 --> 00:10:20.670
+Now it says enter the three
+stooges names separated by a space.
+
+00:10:20.670 --> 00:10:22.440
+Well, let's just give
+them different names.
+
+00:10:22.620 --> 00:10:24.670
+Let's say it's frank, Jim and Joe.
+
+00:10:26.299 --> 00:10:28.030
+So you can see three
+move assignments there.
+
+00:10:28.030 --> 00:10:30.400
+And it says the three stooges
+are Frank, Jim and Joe.
+
+00:10:30.410 --> 00:10:31.130
+So there you go.
+
+00:10:31.340 --> 00:10:35.170
+We've overloaded the insertion and
+the extraction operators to work with
+
+00:10:35.170 --> 00:10:39.590
+our classes, and it really feels like
+it's part of the type system now.
+
+00:10:40.110 --> 00:10:42.690
+All right, so that's
+it for this section.
+
+00:10:42.690 --> 00:10:45.609
+The next part is the challenge
+exercise, so I'll see you there.

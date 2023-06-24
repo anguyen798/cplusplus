@@ -1,0 +1,562 @@
+WEBVTT
+
+00:00:05.700 --> 00:00:10.000
+In this video, we'll talk about the steps needed to read input
+
+00:00:10.000 --> 00:00:13.000
+from text files using c++ streams.
+
+00:00:14.250 --> 00:00:15.750
+In the following slides,
+
+00:00:15.750 --> 00:00:19.950
+I'll talk about the main classes and methods that we can use to read from files.
+
+00:00:20.310 --> 00:00:23.010
+And then I'll go over a bunch of examples in live code
+
+00:00:23.010 --> 00:00:26.610
+so that you can see alternative ways to read text data from files,
+
+00:00:26.610 --> 00:00:28.810
+depending on the type of data we want to read.
+
+00:00:29.580 --> 00:00:32.880
+First, we'll talk about input files and reading from them.
+
+00:00:32.880 --> 00:00:36.760
+And then in another video, we'll discuss output files and writing to them.
+
+00:00:37.310 --> 00:00:41.670
+The two classes that I'll discuss for text file input are fstream
+
+00:00:41.670 --> 00:00:43.170
+and ifstream.
+
+00:00:43.470 --> 00:00:47.970
+There are a few steps that we must always perform when we read from files.
+
+00:00:48.330 --> 00:00:51.530
+The first is to include the fstream header file.
+
+00:00:52.410 --> 00:00:55.810
+Then we declare a stream object of either fstream
+
+00:00:55.810 --> 00:00:57.360
+or ifstream type.
+
+00:00:58.160 --> 00:01:02.160
+We then connect the stream object that we just created to the file that we want to
+
+00:01:02.160 --> 00:01:03.860
+read from on our file system.
+
+00:01:04.560 --> 00:01:06.440
+File systems are very different,
+
+00:01:06.440 --> 00:01:11.100
+so we have to be sure that we get the file name and the path correct. I'll talk more about that later.
+
+00:01:11.600 --> 00:01:14.600
+Once the file is connected and open, then we can read from it.
+
+00:01:15.100 --> 00:01:17.760
+There are many many different ways to read from a file.
+
+00:01:18.260 --> 00:01:21.030
+We can read in binary mode. We can read in text mode.
+
+00:01:21.030 --> 00:01:23.830
+We can read one line at a time, one character at a time.
+
+00:01:23.830 --> 00:01:25.980
+We can use methods like getline,
+
+00:01:25.980 --> 00:01:29.180
+and we can use the extraction operator, like we've been doing with cin.
+
+00:01:30.080 --> 00:01:33.480
+Then when we're done processing the file, we have to close the file.
+
+00:01:34.380 --> 00:01:37.080
+This should sound pretty easy, and for the most part it is.
+
+00:01:37.080 --> 00:01:40.880
+In the next few slides, we'll discuss the details of opening a file,
+
+00:01:40.880 --> 00:01:43.680
+checking to make sure that the file was opened correctly,
+
+00:01:43.680 --> 00:01:47.340
+reading from the file in various ways and then closing the file.
+
+00:01:47.340 --> 00:01:49.840
+So let's get started creating the stream object.
+
+00:01:51.720 --> 00:01:55.220
+In this example, we're creating an object named infile,
+
+00:01:55.470 --> 00:01:58.770
+and we're using the fstream class as its type.
+
+00:01:59.370 --> 00:02:02.170
+Notice that I'm initializing the object as well.
+
+00:02:02.170 --> 00:02:05.670
+The initializer takes two arguments. The first is the name of the file.
+
+00:02:06.330 --> 00:02:10.330
+This can sometimes be very operating system-specific and also very
+
+00:02:10.330 --> 00:02:11.690
+IDE-specific.
+
+00:02:12.570 --> 00:02:16.570
+In the CodeLite IDE, we always open our files one directory up
+
+00:02:16.570 --> 00:02:18.340
+from where the executable lives.
+
+00:02:18.340 --> 00:02:22.220
+That's why we're using ../ before the file name.
+
+00:02:22.220 --> 00:02:25.100
+I'll talk more about file names in the live code session.
+
+00:02:25.100 --> 00:02:29.000
+I'll also include a video at the end of this section that talks about the file paths
+
+00:02:29.000 --> 00:02:31.800
+used for some other IDEs. But for now,
+
+00:02:31.800 --> 00:02:34.400
+let's assume the file is where it's supposed to be.
+
+00:02:35.060 --> 00:02:38.660
+The second parameter specifies the mode and any other properties
+
+00:02:38.660 --> 00:02:39.960
+of the file that's being opened.
+
+00:02:40.660 --> 00:02:44.260
+In the first example, we're using std ios in.
+
+00:02:44.260 --> 00:02:47.260
+This means to open the file in input mode.
+
+00:02:47.260 --> 00:02:50.260
+So we're able to read from it, but not write to it.
+
+00:02:50.920 --> 00:02:53.920
+By default, files are opened in text mode.
+
+00:02:53.920 --> 00:02:58.420
+In the second example, we're opening the file in input mode and in binary mode.
+
+00:02:58.780 --> 00:03:02.980
+This is necessary when reading non-text files that contain binary data.
+
+00:03:03.480 --> 00:03:06.880
+We won't be doing that in this course. We'll work strictly with text files.
+
+00:03:07.980 --> 00:03:11.080
+Notice the vertical bar or the pipe operator between
+
+00:03:11.080 --> 00:03:13.680
+std ios in and std ios binary.
+
+00:03:14.180 --> 00:03:16.480
+This is the bitwise or operator.
+
+00:03:16.840 --> 00:03:18.940
+When used with bit fields such as these,
+
+00:03:18.940 --> 00:03:22.240
+it sets both the input and the binary modes to true.
+
+00:03:23.740 --> 00:03:26.540
+At this point, the file will be opened if it was found.
+
+00:03:26.840 --> 00:03:29.640
+In this slide, we used the fstream class.
+
+00:03:30.040 --> 00:03:34.600
+The fstream class can actually open up a file for reading and writing at the same time.
+
+00:03:34.600 --> 00:03:38.750
+We won't be doing that. But if you have a file that you'll use only for input,
+
+00:03:38.750 --> 00:03:43.350
+it's more common to use the ifstream class. Let's see that in the next slide.
+
+00:03:46.150 --> 00:03:50.250
+In this slide, we're using the ifstream class as the type for infile.
+
+00:03:51.050 --> 00:03:54.050
+Ifstream is used for input files only.
+
+00:03:54.550 --> 00:03:58.700
+We can create an ifstream object the same way we created an fstream object.
+
+00:03:58.700 --> 00:04:01.250
+However, in the case of an ifstream object,
+
+00:04:01.250 --> 00:04:04.910
+the std ios in is optional since it's already the default.
+
+00:04:05.460 --> 00:04:08.660
+So the first two declarations of infile have the same effect.
+
+00:04:09.260 --> 00:04:12.560
+The last declaration opens infile in binary mode.
+
+00:04:13.360 --> 00:04:17.760
+There's another way to open a file that's commonly seen in code. So let's take a look at that next.
+
+00:04:19.460 --> 00:04:24.010
+In this example, notice that we're creating infile as an ifstream,
+
+00:04:24.010 --> 00:04:27.610
+but we haven't provided any file name to associate with it yet.
+
+00:04:27.610 --> 00:04:31.010
+This is a common use case since many times we don't know the file name,
+
+00:04:31.010 --> 00:04:34.410
+and we have to get it from the user or from some other source at runtime.
+
+00:04:35.070 --> 00:04:36.730
+Once we have the file name,
+
+00:04:36.730 --> 00:04:40.930
+we can then use it and use the open method on the stream object to open the file.
+
+00:04:41.130 --> 00:04:44.790
+So we can say infile.open and provide the file name
+
+00:04:45.190 --> 00:04:49.490
+or infile.open file name and then any flags we need to set.
+
+00:04:50.690 --> 00:04:54.090
+Now that we attempted to create the stream and connect it to a file,
+
+00:04:54.090 --> 00:04:57.990
+we have to be sure that this was successful before we start reading from the file.
+
+00:04:57.990 --> 00:04:59.390
+So let's do that next.
+
+00:05:00.890 --> 00:05:03.890
+So we have to be sure that the file was opened successfully.
+
+00:05:03.890 --> 00:05:07.690
+Maybe it wasn't found or there was some sort of hardware or permission issue.
+
+00:05:08.490 --> 00:05:12.090
+There are a few ways that we can check to see if the file was opened successfully.
+
+00:05:12.790 --> 00:05:16.790
+We can call the is open method of the file stream object that we created.
+
+00:05:16.790 --> 00:05:21.190
+This will return a boolean indicating whether the file is open for processing or not.
+
+00:05:21.690 --> 00:05:24.190
+If we get back true, we're good to go.
+
+00:05:24.390 --> 00:05:27.690
+If we get back false, something happened or we can't read from the file.
+
+00:05:27.990 --> 00:05:31.980
+In the case of this error, what do we do? Well, it depends on the application.
+
+00:05:31.980 --> 00:05:35.180
+We might just display an error message and terminate the program.
+
+00:05:35.180 --> 00:05:39.170
+We might see if we can somehow recreate that file from a backup.
+
+00:05:39.170 --> 00:05:41.470
+It's totally application dependent.
+
+00:05:41.470 --> 00:05:45.570
+In our examples, we'll simply display an error message and terminate the program.
+
+00:05:46.370 --> 00:05:50.370
+If there was no such error, then we can go ahead and read from the file.
+
+00:05:50.570 --> 00:05:54.770
+Now let's see another way that we can test to see if the file was opened successfully.
+
+00:05:56.570 --> 00:05:59.970
+In this case, we can simply test the stream object itself.
+
+00:06:00.870 --> 00:06:02.570
+If we couldn't open the file,
+
+00:06:03.270 --> 00:06:04.930
+then this will return false,
+
+00:06:04.930 --> 00:06:09.330
+and then we can decide what to do. Otherwise, it's good, and we can proceed reading from the file.
+
+00:06:10.030 --> 00:06:13.530
+Let's talk about the last step first, that is closing the file.
+
+00:06:13.930 --> 00:06:16.830
+Once we finish reading from the file, we must close it.
+
+00:06:16.830 --> 00:06:19.330
+This is a simple method call to the close method.
+
+00:06:20.130 --> 00:06:22.330
+With input files, it's not so critical.
+
+00:06:22.330 --> 00:06:25.830
+But when we talk about output files, closing them is very important.
+
+00:06:26.630 --> 00:06:31.130
+Okay. So now that we know how to open a file, check to make sure that it's open and close it.
+
+00:06:31.130 --> 00:06:33.490
+Let's do the part that's the most fun reading from it.
+
+00:06:35.290 --> 00:06:38.790
+There are many, many ways to read from a file. In these examples,
+
+00:06:38.790 --> 00:06:40.340
+we'll be using text files.
+
+00:06:40.740 --> 00:06:43.620
+We can read formatted data from the text file
+
+00:06:43.620 --> 00:06:45.500
+using the stream extraction operator.
+
+00:06:45.500 --> 00:06:49.800
+Remember, that one, we've used it all along with cin to get input from the keyboard.
+
+00:06:50.100 --> 00:06:53.200
+Well, now we can use it again to get input from the file stream.
+
+00:06:53.700 --> 00:06:56.600
+In this example, let's suppose that we have an integer,
+
+00:06:56.600 --> 00:06:58.900
+a double and a string and a text file,
+
+00:06:58.900 --> 00:07:01.100
+and we want to read these into our programs.
+
+00:07:01.100 --> 00:07:04.460
+You can see the text files content in the little box here on the slides.
+
+00:07:05.560 --> 00:07:08.220
+We can assume that infile was created successfully.
+
+00:07:09.100 --> 00:07:12.100
+Notice that we create three variables. Num is an int,
+
+00:07:12.100 --> 00:07:14.760
+total is a double and name is a string.
+
+00:07:15.420 --> 00:07:18.920
+Now we can read from infile using the extraction operator.
+
+00:07:19.320 --> 00:07:22.120
+The first statement will read 100 and store it in num.
+
+00:07:22.720 --> 00:07:27.080
+The second statement will read in 255.67 and store it in total.
+
+00:07:27.080 --> 00:07:31.080
+And then read Larry and store it in name. That's it, simple as pie.
+
+00:07:31.580 --> 00:07:34.700
+We can have these three separate read statements on a single line.
+
+00:07:34.700 --> 00:07:38.500
+We can chain them all together, just like we did when we worked with cin.
+
+00:07:40.380 --> 00:07:43.980
+Sometimes we want to read files an entire line at a time,
+
+00:07:44.780 --> 00:07:48.780
+and we know that the extraction operators will stop when they see any white space.
+
+00:07:48.780 --> 00:07:51.770
+So in this case, we can use the getline method.
+
+00:07:51.770 --> 00:07:55.870
+Remember, that method we used it when we read lines from the keyboard using cin.
+
+00:07:56.230 --> 00:08:00.330
+In this case, suppose our file contains the string, this is a line.
+
+00:08:01.130 --> 00:08:03.490
+We create a string object called line.
+
+00:08:03.490 --> 00:08:06.250
+And then we use getline with the name of the string
+
+00:08:06.250 --> 00:08:09.550
+we're reading from and the string we're reading into. That's it.
+
+00:08:09.910 --> 00:08:14.010
+An entire line of text up to the new line will be read from the file
+
+00:08:14.010 --> 00:08:16.510
+and stored in the string name line.
+
+00:08:16.510 --> 00:08:21.110
+Reading a single line from a file isn't too useful unless the file only has one line.
+
+00:08:21.110 --> 00:08:23.910
+But usually, files have many lines of text.
+
+00:08:23.910 --> 00:08:28.010
+So let's see how we can wrap this up in a loop to read all the lines in the text file.
+
+00:08:29.670 --> 00:08:31.170
+Here's the sample code.
+
+00:08:31.170 --> 00:08:35.160
+We can assume this code is in main and all the necessary header files have been included.
+
+00:08:35.960 --> 00:08:39.320
+First, we declare infile as an ifstream
+
+00:08:39.320 --> 00:08:41.980
+and we connect it to myfile.txt.
+
+00:08:43.080 --> 00:08:45.780
+We also declare line to be a string object.
+
+00:08:45.780 --> 00:08:48.660
+That's where we'll store each line that we read from the text file.
+
+00:08:49.460 --> 00:08:53.460
+Okay. So first, let's make sure the file was opened successfully.
+
+00:08:53.760 --> 00:08:57.760
+You can see in the if statement that we're checking to see if not in file.
+
+00:08:58.060 --> 00:09:02.360
+Not infile will be true, if the file was not opened successfully.
+
+00:09:03.160 --> 00:09:06.720
+And if so, we display an error message, and we return something other than 0,
+
+00:09:06.720 --> 00:09:08.220
+and our program terminates.
+
+00:09:08.920 --> 00:09:12.020
+Otherwise, we have an open file, and we can start processing it.
+
+00:09:13.010 --> 00:09:15.810
+We'll read the lines from the file in a while loop.
+
+00:09:16.470 --> 00:09:22.370
+And while we're in the while loop, you'll see the condition while not infile.eof.
+
+00:09:22.870 --> 00:09:26.670
+Eof is a method that returns true when we reach the end of the file.
+
+00:09:27.030 --> 00:09:30.830
+So we're looping while we have not seen the end of file.
+
+00:09:31.330 --> 00:09:35.330
+At each loop iteration, we use getline to read from infile
+
+00:09:35.330 --> 00:09:37.830
+and store an entire line of text into a line,
+
+00:09:38.190 --> 00:09:40.950
+then we display line to the console, and we iterate again.
+
+00:09:41.750 --> 00:09:44.050
+At some point, we'll reach the end of the file
+
+00:09:44.050 --> 00:09:46.750
+and the loop terminates. Then we close the file, and we're done.
+
+00:09:47.150 --> 00:09:51.350
+So as you can see, this program will read a text file from some file on disk
+
+00:09:51.350 --> 00:09:54.910
+and display its contents to the console, pretty easy.
+
+00:09:56.570 --> 00:10:00.970
+Now let's see a variation of this program that does the while loop condition a bit differently.
+
+00:10:01.520 --> 00:10:05.720
+In this case, the loop is while getline infile line.
+
+00:10:06.710 --> 00:10:08.970
+At first, you might think what's going on there.
+
+00:10:08.970 --> 00:10:13.870
+Well, we can embed many of the string input statements right into the while condition.
+
+00:10:13.870 --> 00:10:17.370
+We can also embed statements that have the extraction operator in there.
+
+00:10:17.370 --> 00:10:21.030
+Since these statements return a reference to the stream object,
+
+00:10:21.030 --> 00:10:24.690
+they'll only return a true value when the read was successful.
+
+00:10:25.240 --> 00:10:29.640
+So when we reach the end of file or some other error condition is encountered,
+
+00:10:29.640 --> 00:10:32.140
+they will not return true, and the loop will terminate.
+
+00:10:33.040 --> 00:10:35.040
+You can write code either way.
+
+00:10:36.740 --> 00:10:40.940
+Okay. So one more example, and then we'll see some examples in live code in the next video.
+
+00:10:41.490 --> 00:10:45.990
+In this example, we're again using infile as an ifstream object.
+
+00:10:46.190 --> 00:10:49.550
+But this time, we're reading the file in an unformatted manner,
+
+00:10:49.550 --> 00:10:51.750
+in other words, one character at a time.
+
+00:10:52.300 --> 00:10:56.400
+Sometimes this is very useful since the extraction operator getline
+
+00:10:56.400 --> 00:11:00.800
+and other methods depend on white space or new lines to be able to work correctly.
+
+00:11:01.500 --> 00:11:06.100
+Unformatted input reads one character at a time regardless of what that character is.
+
+00:11:06.900 --> 00:11:10.100
+The code in this example is exactly the same except
+
+00:11:10.100 --> 00:11:14.900
+that in the while loop condition we're reading a single character into the variable c
+
+00:11:14.900 --> 00:11:16.100
+with the get method.
+
+00:11:16.900 --> 00:11:18.900
+Then we simply output the character.
+
+00:11:19.450 --> 00:11:23.950
+So as you can see, this example also reads a file from disk and displays it to the console,
+
+00:11:24.150 --> 00:11:27.510
+but it does it in an unformatted manner one character at a time.
+
+00:11:28.410 --> 00:11:32.510
+Okay. So in the next video, we'll head over to the IDE and we'll read some files,
+
+00:11:32.510 --> 00:11:34.510
+and I'll talk some more about those file names.

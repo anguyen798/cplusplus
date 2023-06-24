@@ -1,0 +1,832 @@
+WEBVTT
+
+00:00:05.250 --> 00:00:07.910
+In this video, we'll learn about some of the concepts,
+
+00:00:07.910 --> 00:00:11.910
+terminology and syntax of exception handling in c++,
+
+00:00:11.910 --> 00:00:15.210
+and then we'll see a simple example that uses exception handling
+
+00:00:15.210 --> 00:00:17.410
+to deal with the divide by 0 condition.
+
+00:00:18.410 --> 00:00:20.770
+Let's start with what exception handling is all about.
+
+00:00:21.170 --> 00:00:24.170
+First, exceptions in c++ should be used
+
+00:00:24.170 --> 00:00:26.840
+only for synchronous code, not asynchronous code.
+
+00:00:27.440 --> 00:00:31.240
+Exception handling is about dealing with extraordinary situations.
+
+00:00:31.490 --> 00:00:34.170
+How we define what an extraordinary situation is,
+
+00:00:34.170 --> 00:00:37.160
+is really dependent on the application and on the designer.
+
+00:00:37.960 --> 00:00:39.560
+We want to be able to detect
+
+00:00:39.560 --> 00:00:44.160
+when an extraordinary situation has occurred or is about to occur so that we can deal with it.
+
+00:00:44.860 --> 00:00:48.260
+Again, what does deal with it mean? It depends on the application.
+
+00:00:48.260 --> 00:00:52.260
+In some cases, we'll be able to recover and continue. But in other cases,
+
+00:00:52.260 --> 00:00:55.060
+maybe the only alternative is to terminate the program.
+
+00:00:55.460 --> 00:00:58.560
+But in this case, we can control how we terminate the program.
+
+00:00:58.560 --> 00:01:03.160
+Perhaps, we can close files, save as much data as we can and fail soft.
+
+00:01:03.560 --> 00:01:07.360
+So what can cause these exceptional or extraordinary situations?
+
+00:01:07.860 --> 00:01:10.460
+One cause could be insufficient resources.
+
+00:01:10.460 --> 00:01:14.820
+Maybe we're out of memory or we have no external storage left, and we need that to continue.
+
+00:01:15.480 --> 00:01:18.080
+Another cause is missing resources.
+
+00:01:18.080 --> 00:01:21.740
+Suppose we need to open and read a file, but that file doesn't exist.
+
+00:01:21.740 --> 00:01:24.340
+If this file is critical to our program,
+
+00:01:24.340 --> 00:01:27.840
+then we have to decide how we're going to continue if it's even possible.
+
+00:01:28.140 --> 00:01:32.140
+Invalid operations, range violations, underflows and overflows,
+
+00:01:32.140 --> 00:01:34.140
+there are many many causes for exceptions.
+
+00:01:34.800 --> 00:01:38.800
+Our programs are said to be exception safe when our code handles exceptions.
+
+00:01:39.160 --> 00:01:42.160
+This is very difficult to do completely in c++.
+
+00:01:42.760 --> 00:01:47.260
+Now let's learn about the terminology used in c++ when we talk about exception handling.
+
+00:01:47.660 --> 00:01:51.660
+This terminology is fairly consistent with many other popular programming languages
+
+00:01:51.660 --> 00:01:53.260
+that you might be familiar with.
+
+00:01:53.260 --> 00:01:56.560
+However, the way it works with c++ tends to be different.
+
+00:01:57.220 --> 00:02:00.720
+First, an exception is an object or primitive type such as an int,
+
+00:02:00.720 --> 00:02:05.220
+a double, a Boolean and so forth. And it signals that an error condition has occurred.
+
+00:02:05.920 --> 00:02:10.420
+In many cases, this exception object also contains information
+
+00:02:10.420 --> 00:02:12.020
+about what happened.
+
+00:02:12.020 --> 00:02:15.020
+When your code determines that something is wrong,
+
+00:02:15.020 --> 00:02:17.320
+then it can throw an exception object.
+
+00:02:17.920 --> 00:02:19.920
+Why can't the code just deal with the problem?
+
+00:02:19.920 --> 00:02:24.280
+Well, in some cases it can, and it doesn't throw an exception, it just handles it itself.
+
+00:02:24.280 --> 00:02:27.480
+However, the more common use case is that the problem is detected
+
+00:02:27.480 --> 00:02:30.580
+in one place in your program, but that part of the program
+
+00:02:30.580 --> 00:02:32.380
+doesn't know what to do about it.
+
+00:02:32.380 --> 00:02:36.980
+So it throws an exception in hopes that some other part of the program can deal with it.
+
+00:02:37.230 --> 00:02:39.230
+That's where catching an exception comes in.
+
+00:02:39.830 --> 00:02:42.530
+Some other part of the program could contain the code
+
+00:02:42.530 --> 00:02:44.930
+that catches the thrown exception and handles it.
+
+00:02:45.530 --> 00:02:46.830
+In some cases,
+
+00:02:46.830 --> 00:02:51.820
+dealing with this simply means displaying or logging an error message and terminating the program
+
+00:02:51.820 --> 00:02:55.180
+that's okay if the program can't continue, and we fail soft.
+
+00:02:55.840 --> 00:02:58.940
+In other cases, we may be able to handle the exception
+
+00:02:58.940 --> 00:03:00.940
+recover and continue processing.
+
+00:03:01.490 --> 00:03:02.490
+For example,
+
+00:03:02.490 --> 00:03:06.590
+suppose I want to allocate some memory dynamically, but there isn't enough memory available.
+
+00:03:07.090 --> 00:03:09.390
+The part of our code that allocates the memory
+
+00:03:09.390 --> 00:03:12.940
+would throw an exception since it couldn't allocate any more memory,
+
+00:03:12.940 --> 00:03:14.440
+but it doesn't know what to do.
+
+00:03:14.940 --> 00:03:18.600
+Then in some other part of our program, we can catch this exception,
+
+00:03:18.600 --> 00:03:21.100
+and maybe we can clear out some buffers or caches
+
+00:03:21.100 --> 00:03:24.100
+and then release some memory and then try to allocate it again.
+
+00:03:24.100 --> 00:03:28.600
+Now let's see the keywords that c++ uses to achieve exception handling.
+
+00:03:29.500 --> 00:03:33.030
+In c++, we use three keywords to work with exception handling.
+
+00:03:33.630 --> 00:03:36.230
+These are throw, try and catch.
+
+00:03:37.030 --> 00:03:41.030
+The throw keyword is used to throw an exception object or primitive type,
+
+00:03:41.030 --> 00:03:45.180
+and it's usually followed by an argument, which is the exception that we're throwing.
+
+00:03:45.680 --> 00:03:49.780
+The try keyword is followed by a code block in curly braces.
+
+00:03:50.080 --> 00:03:54.180
+The code in the code block is code that could potentially throw an exception.
+
+00:03:54.980 --> 00:03:56.980
+So we place that code in the try block.
+
+00:03:56.980 --> 00:04:01.080
+If the code does not throw an exception, then the code executes as normal.
+
+00:04:01.440 --> 00:04:04.940
+However, if the code in the try block throws an exception,
+
+00:04:04.940 --> 00:04:07.830
+then the rest of the code in the block does not execute,
+
+00:04:07.830 --> 00:04:12.190
+and c++ looks for a block of code that can handle that thrown exception.
+
+00:04:13.090 --> 00:04:15.690
+That's the catch block, which is the catch keyword
+
+00:04:15.690 --> 00:04:18.690
+followed by the type of exception object that it handles.
+
+00:04:19.190 --> 00:04:23.550
+It also has a code block where the code that handles the exception executes.
+
+00:04:23.950 --> 00:04:26.950
+Catch blocks only execute if an exception is thrown,
+
+00:04:27.050 --> 00:04:31.050
+and the type of the thrown exception matches the parameter in the catch block.
+
+00:04:32.050 --> 00:04:35.850
+We can write multiple catch handlers that expect different types of exceptions.
+
+00:04:35.850 --> 00:04:39.550
+The best way to understand exception handling is to really just look at some examples.
+
+00:04:40.550 --> 00:04:43.750
+Let's start with a very simple example that divides by 0.
+
+00:04:44.250 --> 00:04:47.690
+Here we have a code snippet that divides sum by total
+
+00:04:47.690 --> 00:04:49.690
+and stores the resulting average.
+
+00:04:49.940 --> 00:04:53.140
+Let's assume that sum and total have been declared and initialized.
+
+00:04:53.640 --> 00:04:55.640
+So what happens when total is 0.
+
+00:04:56.040 --> 00:04:59.030
+Does the program crash, do we get an undefined result?
+
+00:04:59.580 --> 00:05:02.180
+The answer is yes to all of them. It really depends
+
+00:05:02.780 --> 00:05:07.080
+because the result of a division by 0 depends on the types of the arguments
+
+00:05:07.080 --> 00:05:08.680
+in the division operation.
+
+00:05:08.930 --> 00:05:10.530
+Integer divided by 0
+
+00:05:10.530 --> 00:05:15.330
+and floating point divided by 0 may provide different results. We'll see this in a minute in the IDE.
+
+00:05:16.130 --> 00:05:19.130
+Regardless, we can't let that statement execute. So what do we do?
+
+00:05:19.930 --> 00:05:23.130
+Well, that's pretty easy. We check to see if total is 0.
+
+00:05:23.130 --> 00:05:25.130
+And if it is, we don't do the division.
+
+00:05:25.930 --> 00:05:28.730
+And if it is not equal to 0, we go ahead with the division.
+
+00:05:28.730 --> 00:05:33.330
+That's pretty easy. The harder question is what do we do when total is equal to 0?
+
+00:05:33.930 --> 00:05:35.930
+Well, that totally depends on the application.
+
+00:05:35.930 --> 00:05:38.290
+And this question becomes much more difficult
+
+00:05:38.290 --> 00:05:40.590
+if this code existed in a function
+
+00:05:40.590 --> 00:05:43.590
+and that function calculates and returns the average.
+
+00:05:43.990 --> 00:05:46.990
+What do we return from that function if total is 0?
+
+00:05:48.490 --> 00:05:51.590
+So we can use exception handling to deal with the situation.
+
+00:05:52.250 --> 00:05:55.750
+This is an example to show you the syntax for exception handling.
+
+00:05:55.750 --> 00:05:59.420
+You wouldn't write code like this since we could print an error message easily
+
+00:05:59.420 --> 00:06:04.020
+with a simple if else statement as in the previous slide, but let's look at this code together.
+
+00:06:04.900 --> 00:06:08.900
+Again, let's assume that sum, total and average have been declared and initialized.
+
+00:06:09.450 --> 00:06:10.950
+First, we have a try block.
+
+00:06:11.200 --> 00:06:13.200
+Inside the code in the try block,
+
+00:06:13.200 --> 00:06:16.200
+we write code that could potentially throw an exception.
+
+00:06:17.100 --> 00:06:20.700
+In this case, if total equals 0, we throw an exception.
+
+00:06:21.300 --> 00:06:25.600
+The type of the exception in this example is an integer, and we set it to 0.
+
+00:06:26.200 --> 00:06:29.700
+Best practice is to throw objects, not primitives,
+
+00:06:29.700 --> 00:06:31.360
+but we'll get to throwing objects soon.
+
+00:06:31.960 --> 00:06:34.960
+Let's first look at the case where total is not equal to 0.
+
+00:06:35.560 --> 00:06:39.160
+In this case, the try block executes, the division occurs
+
+00:06:39.160 --> 00:06:41.760
+and we can use the average, and the try block is normal.
+
+00:06:42.010 --> 00:06:46.210
+When the code in the try block completes, we transfer control to the last statement
+
+00:06:46.210 --> 00:06:48.210
+that displays program continues.
+
+00:06:48.710 --> 00:06:52.920
+Notice that the catch block does not fire since no exception was thrown.
+
+00:06:53.720 --> 00:06:56.320
+Okay. Now let's suppose that total is equal to 0.
+
+00:06:57.120 --> 00:07:00.020
+Now the code in the try block throws 0.
+
+00:07:00.520 --> 00:07:03.220
+No further code in that try block is executed.
+
+00:07:03.520 --> 00:07:05.820
+So the divide by 0 does not happen.
+
+00:07:06.480 --> 00:07:08.980
+Now we transfer control to a catch handler
+
+00:07:08.980 --> 00:07:12.970
+that expects an exception object of the same type as the one we threw,
+
+00:07:12.970 --> 00:07:16.970
+in this case, an integer. The code in the catch block now executes.
+
+00:07:16.970 --> 00:07:20.330
+And when it's done, we transfer control to the last statement that displays
+
+00:07:20.330 --> 00:07:21.930
+program continues again.
+
+00:07:22.830 --> 00:07:25.830
+Notice that we prevented the divide by 0 error,
+
+00:07:25.830 --> 00:07:27.830
+and we handled it in a controlled manner.
+
+00:07:28.490 --> 00:07:31.490
+Now let's head over to the IDE, and we'll see this example in action.
+
+00:07:32.480 --> 00:07:34.840
+Okay. So I'm back in the CodeLite IDE.
+
+00:07:34.840 --> 00:07:39.140
+I'm in the section 18 workspace, and I'm in the MPG project.
+
+00:07:39.640 --> 00:07:43.300
+MPG stands for miles per gallon, and that's what we're going to calculate.
+
+00:07:43.300 --> 00:07:47.500
+Apologies to my kilometers per liter friends out there. So what do we do.
+
+00:07:47.500 --> 00:07:52.490
+We've got miles, we've got gallons, we're going to ask the user for those two values. They're both integers,
+
+00:07:52.490 --> 00:07:55.790
+and then we're going to calculate miles per gallon, which is a double.
+
+00:07:56.690 --> 00:07:58.990
+Pretty straightforward stuff that we've done already.
+
+00:07:58.990 --> 00:08:02.890
+So in this case, notice on line 15, here I'm calculating
+
+00:08:02.890 --> 00:08:05.690
+miles per gallon equals miles divided by gallons.
+
+00:08:05.690 --> 00:08:10.680
+Now there's a problem here, we're going to get some truncation because you can see that miles
+
+00:08:10.680 --> 00:08:14.240
+right here and gallons are both integers.
+
+00:08:14.240 --> 00:08:17.540
+So this is going to be integer division, and we're going to truncate the
+
+00:08:17.540 --> 00:08:18.750
+the decimal part, right.
+
+00:08:18.750 --> 00:08:22.350
+But the reason I'm doing it this way is to show you the error that happens
+
+00:08:22.350 --> 00:08:24.950
+when you do integer division by 0.
+
+00:08:24.950 --> 00:08:28.750
+Okay. So but before we do that, let's run this with just some normal data.
+
+00:08:29.550 --> 00:08:33.550
+So let's say we have 13 miles and
+
+00:08:33.800 --> 00:08:34.800
+3 gallons.
+
+00:08:34.800 --> 00:08:39.300
+Our result is 4. You can see it's not 4 point something because we're doing integer division.
+
+00:08:39.300 --> 00:08:41.300
+But that's okay. We can fix that in a minute.
+
+00:08:41.550 --> 00:08:44.350
+Now let's do a division by 0 and see what happens.
+
+00:08:44.350 --> 00:08:46.350
+So I'm going to run this again.
+
+00:08:46.350 --> 00:08:50.010
+And let's say I put in 13. And this time I put in 0 for gallons.
+
+00:08:50.010 --> 00:08:54.370
+Now when I press enter, it's going to try to divide 13 by 0,
+
+00:08:54.370 --> 00:08:57.870
+and it's going to crash. So I pressed enter.
+
+00:08:57.870 --> 00:09:01.370
+There's the crash on windows. Okay. I'll cancel that,
+
+00:09:02.070 --> 00:09:04.770
+close the program, and I'll terminate this program.
+
+00:09:04.770 --> 00:09:08.870
+We don't want to crash. Okay. Now if I comment this out,
+
+00:09:09.530 --> 00:09:14.520
+and we do a division by 0 with a floating point number.
+
+00:09:14.520 --> 00:09:18.620
+And what we're doing here is what we did a while back in the course where we had a static cast.
+
+00:09:19.020 --> 00:09:21.820
+Remember, these are both integers right here,
+
+00:09:21.820 --> 00:09:25.020
+miles and gallons. So I really don't want to do integer division.
+
+00:09:25.020 --> 00:09:28.680
+So I just need to make one of them a double, and then double division will occur.
+
+00:09:28.680 --> 00:09:33.670
+So I'm statically casting miles to a double. I could have statically casted gallons or both of them.
+
+00:09:34.030 --> 00:09:36.330
+So in this case, we're doing double division.
+
+00:09:36.330 --> 00:09:39.430
+And the behavior is different here. And I'll show you why.
+
+00:09:39.430 --> 00:09:40.990
+Let me run this again.
+
+00:09:43.190 --> 00:09:47.290
+Okay. So let's -- again, let's do something valid. Let's say 130
+
+00:09:47.890 --> 00:09:50.690
+divided by 3 gallons,
+
+00:09:50.690 --> 00:09:54.350
+result is 43.3 miles per gallon. That's fine.
+
+00:09:54.350 --> 00:09:55.850
+Now let's do it with a 0.
+
+00:09:56.950 --> 00:09:59.450
+So I'll get 123 this time,
+
+00:09:59.450 --> 00:10:03.650
+0 gallons. So we're going to get a divide by 0 here. We're not going to crash though.
+
+00:10:03.950 --> 00:10:06.650
+You can see that the result that prints is infinity.
+
+00:10:07.450 --> 00:10:09.750
+And that's the standard in c++
+
+00:10:09.750 --> 00:10:12.410
+when you do floating point division by 0.
+
+00:10:12.910 --> 00:10:14.310
+If i run this again
+
+00:10:14.910 --> 00:10:19.160
+and I enter negative for miles and obviously, we would have to do checks for all of this stuff and 0,
+
+00:10:19.660 --> 00:10:23.760
+then I'll get a negative infinity. You can see that result right here.
+
+00:10:24.360 --> 00:10:27.760
+And the last thing if we type 0 0,
+
+00:10:27.760 --> 00:10:31.860
+so we do 0 divided by 0, we get not a number.
+
+00:10:31.860 --> 00:10:33.860
+And that's the error that you see here.
+
+00:10:34.660 --> 00:10:37.260
+All those are bad outcomes. We really don't want those.
+
+00:10:37.260 --> 00:10:41.160
+So the easy fix is not to execute line 16
+
+00:10:41.160 --> 00:10:43.160
+if gallons is equal to 0, right.
+
+00:10:43.560 --> 00:10:46.960
+It's really that simple. So let's do that. Let's do an if statement. If
+
+00:10:47.560 --> 00:10:50.860
+gallons is not equal to 0,
+
+00:10:53.860 --> 00:10:57.360
+then we do want to execute this code, right. We're safe.
+
+00:11:00.720 --> 00:11:03.080
+And we'll use an else statement here.
+
+00:11:03.080 --> 00:11:06.680
+Let me see CodeLite puts an extra curly in there for me. So else --
+
+00:11:07.180 --> 00:11:09.840
+we've got an error so we want to display the error.
+
+00:11:09.840 --> 00:11:13.830
+And what we'll do is we haven't used standard error or cerr yet.
+
+00:11:14.380 --> 00:11:19.180
+It's another output stream that's pretty much reserved for error messages or error logging.
+
+00:11:19.680 --> 00:11:22.980
+And I'll talk about that a little bit more when we talk about file error.
+
+00:11:25.530 --> 00:11:30.130
+By default cerr is your console, just like cout.
+
+00:11:30.130 --> 00:11:31.730
+So we should see this on the screen.
+
+00:11:32.730 --> 00:11:34.730
+And we'll do an endline here.
+
+00:11:34.730 --> 00:11:38.720
+Okay. So far so good. Like -- again, nothing we haven't done before.
+
+00:11:39.220 --> 00:11:41.220
+But in this case, we're just handling this error.
+
+00:11:41.720 --> 00:11:44.720
+And we're not using exception handling here, we're just using a
+
+00:11:44.720 --> 00:11:47.720
+regular old logic to handle the error. So let me run this.
+
+00:11:48.220 --> 00:11:53.020
+And let's say 130 miles by 0, now we should have, sorry can't divide by 0,
+
+00:11:53.420 --> 00:11:55.020
+right, just like what we'd expect.
+
+00:11:56.020 --> 00:12:01.410
+Okay so now let's rewrite this program so that we use exception handling.
+
+00:12:01.410 --> 00:12:06.310
+And what we'll do is we'll load the MPG exception project right here,
+
+00:12:06.310 --> 00:12:07.810
+and I'll load that and I'll be right back.
+
+00:12:09.110 --> 00:12:12.110
+Okay. So I loaded the MPG exception project
+
+00:12:12.110 --> 00:12:16.470
+in the section 18 workspace. And you can see that right now it has no exception handling,
+
+00:12:16.470 --> 00:12:18.670
+and it has no if else logic either.
+
+00:12:19.030 --> 00:12:24.020
+Now here's the commented code that does the integer division. I'm just going to get rid of that
+
+00:12:24.020 --> 00:12:28.380
+because I really don't want to clutter up. And I'm still doing our floating point division here.
+
+00:12:28.380 --> 00:12:31.040
+So what do we do to get exception handling working here.
+
+00:12:31.040 --> 00:12:35.340
+Well, we have to have a try block. So we're going to say right here try
+
+00:12:35.590 --> 00:12:39.190
+to execute this code. And I'm going to wrap this code up right here
+
+00:12:39.190 --> 00:12:40.550
+inside the try,
+
+00:12:40.550 --> 00:12:41.750
+and I'll indent this.
+
+00:12:42.050 --> 00:12:47.640
+Okay. So what we do here is we try to execute code that could potentially throw an exception.
+
+00:12:47.940 --> 00:12:52.300
+And when do we throw the exception? Well, we throw the exception if gallons is equal to 0.
+
+00:12:52.300 --> 00:12:55.800
+So let's do that right in here. I'm going to say if gallons
+
+00:12:56.900 --> 00:12:58.200
+is equal to 0,
+
+00:12:59.200 --> 00:13:01.200
+that's where I want to throw.
+
+00:13:02.200 --> 00:13:03.560
+And what do I throw?
+
+00:13:03.560 --> 00:13:08.460
+An exception could be anything, it could be an integer, a character, a pointer, an object.
+
+00:13:08.460 --> 00:13:12.860
+Right here we're just going to throw an integer, later on we'll use objects.
+
+00:13:12.860 --> 00:13:17.850
+Best practice is to use objects, but let's just use an integer here so it's easy to understand.
+
+00:13:17.850 --> 00:13:21.450
+So what do I want to throw? I could throw any integer, I could throw 0,
+
+00:13:21.650 --> 00:13:25.310
+right, I could throw gallons, I could do anything I want, but let's just throw 0.
+
+00:13:26.310 --> 00:13:31.210
+Now what happens. If gallons is equal to 0,
+
+00:13:31.560 --> 00:13:33.560
+then we're throwing this 0.
+
+00:13:34.460 --> 00:13:39.060
+Okay. If gallons is not equal to 0, then our code executes as normal.
+
+00:13:39.560 --> 00:13:42.160
+But what if we do throw this 0 here,
+
+00:13:42.460 --> 00:13:47.950
+if we do throw this exception right here, this piece of code here is not executed at all.
+
+00:13:48.150 --> 00:13:52.050
+Okay. It's totally skipped. And then what happens is that
+
+00:13:52.050 --> 00:13:56.310
+the c++ system is looking for that exception
+
+00:13:56.310 --> 00:13:58.670
+that was just thrown. If you don't catch it,
+
+00:13:59.070 --> 00:14:00.670
+then the program will terminate.
+
+00:14:01.070 --> 00:14:04.270
+But if you catch it, then you can deal with it. So how do you catch it?
+
+00:14:04.270 --> 00:14:08.770
+Well, you catch it using a catch block, and you can put that right here. I'll say catch.
+
+00:14:09.430 --> 00:14:13.870
+And what's the type of the exception we want to catch? In this case, it's an integer.
+
+00:14:14.670 --> 00:14:18.030
+And you always want to catch by reference. That's the best practice.
+
+00:14:18.030 --> 00:14:21.390
+Name this thing any thing you want. We really aren't going to use it.
+
+00:14:22.290 --> 00:14:25.290
+And now whatever code we want to execute in here
+
+00:14:25.690 --> 00:14:29.940
+is what's going to happen when the error is thrown, when the exception is thrown.
+
+00:14:29.940 --> 00:14:34.930
+And I'm just going to paste that same cerr message that I had earlier.
+
+00:14:36.230 --> 00:14:39.830
+Okay. So now, again, let me walk through this with you really carefully because
+
+00:14:39.830 --> 00:14:43.330
+in the next few videos it'll get a little bit more complicated. So
+
+00:14:43.990 --> 00:14:47.690
+here's my try block. You can see it between lines 15 and 20.
+
+00:14:47.690 --> 00:14:50.250
+And here's my catch handler right here or my catch block.
+
+00:14:50.250 --> 00:14:52.810
+I tend to use both names synonymously.
+
+00:14:52.810 --> 00:14:56.310
+So again, if the user entered 0, we throw it,
+
+00:14:56.670 --> 00:15:01.470
+right. This code is not executed thankfully. Otherwise, we'd have a divide by 0 right here.
+
+00:15:02.460 --> 00:15:04.460
+We try to catch an integer.
+
+00:15:05.260 --> 00:15:09.560
+If there is a catch block but it doesn't catch an integer or even if there's no catch block,
+
+00:15:09.560 --> 00:15:12.060
+then we've got -- our program will terminate right on the spot.
+
+00:15:13.720 --> 00:15:15.720
+In this case, it will -- because we're right in our main.
+
+00:15:15.720 --> 00:15:20.220
+Then if we do throw 0 and we do have a catch handler for it,
+
+00:15:20.220 --> 00:15:21.720
+we'll catch it right here.
+
+00:15:21.720 --> 00:15:26.370
+Now i could print out ex if I wanted to, right, it will print out 0 because that's what was thrown here,
+
+00:15:26.370 --> 00:15:29.370
+that's what this guy is right here, that's the object that was thrown,
+
+00:15:29.370 --> 00:15:30.370
+the exception.
+
+00:15:30.970 --> 00:15:33.470
+So in this case, there's my catch handler.
+
+00:15:33.470 --> 00:15:36.720
+In either case, my program will not crash because --
+
+00:15:36.720 --> 00:15:39.720
+let me walk, again, right through clear this and this.
+
+00:15:39.720 --> 00:15:42.720
+If I do throw an exception, it's handled here.
+
+00:15:42.720 --> 00:15:45.520
+If I don't throw an exception, it's handled here.
+
+00:15:45.520 --> 00:15:47.880
+In both cases, this line will execute.
+
+00:15:47.880 --> 00:15:50.580
+My program will continue normally, it won't crash.
+
+00:15:51.080 --> 00:15:53.080
+All right. So let's give this a run.
+
+00:15:54.880 --> 00:15:57.440
+Let's say 130, and we'll do 0 again.
+
+00:15:58.540 --> 00:16:01.540
+Sorry, you can't divide by 0. So our exception is being handled.
+
+00:16:02.040 --> 00:16:07.030
+Okay. Now you might ask, `so what? same thing I could have done with an if else statement.
+
+00:16:07.030 --> 00:16:10.530
+Yes. And this is not typically the way that we do exception handling.
+
+00:16:10.530 --> 00:16:13.730
+This is just showing you the syntax and what's going on.
+
+00:16:13.730 --> 00:16:18.090
+Usually, we do the exception handling when a function throws an exception,
+
+00:16:18.090 --> 00:16:20.090
+and that function has no idea what to do with it
+
+00:16:20.090 --> 00:16:22.890
+and we catch that exception somewhere else.
+
+00:16:22.890 --> 00:16:26.890
+And that's where we're going to go into the next few videos. Okay. I'll see you there.

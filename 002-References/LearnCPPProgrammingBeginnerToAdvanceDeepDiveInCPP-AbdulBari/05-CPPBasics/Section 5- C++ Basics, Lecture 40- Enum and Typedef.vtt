@@ -1,0 +1,837 @@
+WEBVTT
+
+0
+00:00.700 --> 00:06.600
+The topic is enumerated data type 'enum' that is a enumerated data type. 
+
+1
+00:06.640 --> 00:15.310
+And also we will learn about the typedef. enum is useful for defining user defined data types means.
+
+2
+00:15.310 --> 00:19.070
+As a programmer we can define our own data types.
+
+3
+00:19.090 --> 00:23.640
+There are a lot of data types to given in C++ like integer float, double and so on.
+
+4
+00:23.830 --> 00:29.680
+If at all you want to define your own data type you can define but you can not introduce something new
+
+5
+00:30.040 --> 00:33.080
+you have to use these existing data type only and define them.
+
+6
+00:33.910 --> 00:42.610
+So let us see examples where we can use enum, first example in your application in your program
+
+7
+00:42.640 --> 00:47.680
+you are using department names like computer science department electronic communication engineering
+
+8
+00:47.680 --> 00:51.280
+department and information technology and civil engineering department.
+
+9
+00:51.280 --> 00:56.530
+You have to use these departments in your application like a student belongs to which a department you
+
+10
+00:56.530 --> 00:57.320
+want to check.
+
+11
+00:57.380 --> 01:02.220
+How do you want to store information or employee or faculty belongs to which department.
+
+12
+01:02.530 --> 01:05.080
+So there is something related to department.
+
+13
+01:05.330 --> 01:09.280
+Now the question is how do you represent department. will you write
+
+14
+01:09.280 --> 01:14.610
+The name of the department name of the department means it will be a string, ECE.
+
+15
+01:14.710 --> 01:20.190
+It's a string, now working with string is little time consuming because it's not one letter.
+
+16
+01:20.260 --> 01:22.600
+It's a set of characters.
+
+17
+01:22.600 --> 01:24.030
+We want to make it faster.
+
+18
+01:24.790 --> 01:33.820
+So mostly in daily life we find that if you have some commonly used terms or words we define codes for
+
+19
+01:33.820 --> 01:34.380
+them.
+
+20
+01:34.660 --> 01:41.650
+We define codes so in programming this is very common that if you have a limited set of words commonly
+
+21
+01:41.650 --> 01:48.670
+used then you can assign codes for them and you can use codes so for this departments.
+
+22
+01:48.730 --> 01:54.650
+I can give codes like let's say this is the department number one and this is two, this is three and this is 
+
+23
+01:54.670 --> 02:00.400
+four, now one means the CS,  Two means electronics like this.
+
+24
+02:00.400 --> 02:04.310
+So we can use numbers instead of using strings.
+
+25
+02:04.330 --> 02:07.960
+So this will be faster and easy also for programming.
+
+26
+02:08.740 --> 02:10.510
+Similarly I have other examples.
+
+27
+02:10.510 --> 02:12.780
+Also let us look at them now.
+
+28
+02:12.820 --> 02:16.350
+This is file menu in any application.
+
+29
+02:16.360 --> 02:20.970
+If you open you will find a menu called file and that you will have some options I'm talking only about
+
+30
+02:20.990 --> 02:23.440
+file menu  not of what all others.
+
+31
+02:23.470 --> 02:24.790
+So this is file menu.
+
+32
+02:24.790 --> 02:27.790
+So for this let's say the code for this is zero.
+
+33
+02:27.820 --> 02:29.980
+This is one and this is 2 and 3.
+
+34
+02:30.010 --> 02:34.470
+New means 0, open means 1 save means two, close means 3, like this is menu
+
+35
+02:34.480 --> 02:43.720
+So menu driven program so menu options so and so option 0 means option new 1 means option open like this
+
+36
+02:43.810 --> 02:51.760
+you can give the codes similarly here if you are using days then Monday is 0 Tuesdays 1 then Wednesdays
+
+37
+02:51.760 --> 02:54.880
+at 2 and so on and these are playing cards.
+
+38
+02:54.910 --> 03:01.240
+See these are all the shapes so there are 4 different shapes of cards club spade Diamond and heart.
+
+39
+03:01.240 --> 03:04.230
+So for this also you can give codes right.
+
+40
+03:04.270 --> 03:10.090
+So in your application in your program 0 means club, 1 means a spade you can treat it like this.
+
+41
+03:10.090 --> 03:18.070
+So numeric values can represent those words right and same way for the feedback poor feedback or satisfactory
+
+42
+03:18.370 --> 03:19.190
+good and excellent.
+
+43
+03:19.250 --> 03:20.880
+You can give some codes.
+
+44
+03:21.250 --> 03:24.630
+So there's a common practice in daily life also we use codes.
+
+45
+03:24.700 --> 03:26.610
+Now these were the examples.
+
+46
+03:26.620 --> 03:32.760
+Now we want to learn how we can define these chords in our programs and use them.
+
+47
+03:32.770 --> 03:35.120
+So for this there are more than one options.
+
+48
+03:35.140 --> 03:40.760
+So first option I will tell you I take this example like CS, ECE for all this.
+
+49
+03:40.930 --> 03:56.620
+I can define constants I can say constants integer CS as one or constant integer E C E is two, now whenever
+
+50
+03:56.620 --> 03:58.420
+you say ECE it's not a string now,
+
+51
+03:58.420 --> 04:01.630
+Now it's a constant it's a value is two.
+
+52
+04:01.930 --> 04:06.970
+So like this for other two also we can do this so I can define constants.
+
+53
+04:06.970 --> 04:12.790
+So if there are 4 I can define four constants, there are 10 I can define 10 such constants in our application
+
+54
+04:12.870 --> 04:14.730
+wherever we write CS.
+
+55
+04:14.950 --> 04:19.760
+It should mean as one, it should mean as one a code is there for it.
+
+56
+04:20.050 --> 04:20.890
+So it's not a string.
+
+57
+04:20.890 --> 04:22.990
+Now it's a code.
+
+58
+04:22.990 --> 04:27.700
+This is one method. if I am defining like seven codes here.
+
+59
+04:27.700 --> 04:28.680
+This would be to lengthy.
+
+60
+04:29.080 --> 04:30.290
+So instead of dark.
+
+61
+04:30.340 --> 04:34.600
+Is there any way that we can collectively define them together.
+
+62
+04:34.960 --> 04:36.600
+Yes that is enem.
+
+63
+04:37.060 --> 04:41.330
+I can define them as enum all those constants together.
+
+64
+04:41.380 --> 04:50.440
+So for days I will show you so the method of defining enum is say enum and say day or days, plural whatever
+
+65
+04:50.440 --> 04:50.970
+it is.
+
+66
+04:51.100 --> 04:55.740
+Then what are the days Monday Tuesday.
+
+67
+04:56.320 --> 05:04.370
+In more cases I am writing wednesday then Thursday Friday Saturday and Sunday.
+
+68
+05:05.990 --> 05:06.770
+Now.
+
+69
+05:06.850 --> 05:14.140
+This means I'm defining all these constants together this is nothing but defining the constants like this.
+
+70
+05:14.830 --> 05:16.200
+Now Monday will be zero.
+
+71
+05:16.210 --> 05:19.330
+Tuesday will be one Wednesday it will be 2 and so on.
+
+72
+05:19.570 --> 05:26.150
+Automatically they will take all those values. so instead of writing them constants one by one seven times
+
+73
+05:26.150 --> 05:29.300
+I have to write down, instead you make it as a data type.
+
+74
+05:29.330 --> 05:31.980
+Now day is a new data type.
+
+75
+05:32.030 --> 05:39.020
+This is user defined data type, and what are the values it can have it have values from Monday
+
+76
+05:39.020 --> 05:40.040
+to Sunday.
+
+77
+05:40.730 --> 05:42.460
+So what is the value of Monday.
+
+78
+05:42.470 --> 05:45.510
+Monday is the 0, so automatically it takes.
+
+79
+05:45.560 --> 05:54.680
+This is as 0  this as 1 2 3 4 5 6 so it defines the collection of values with these figures or with these
+
+80
+05:54.680 --> 06:00.990
+codes automatically it happens. you don't have to mention 0 1 2 3 by default the first one is zero
+
+81
+06:01.470 --> 06:02.850
+the starting one is 0.
+
+82
+06:03.740 --> 06:08.930
+Now if I have defined this in my program then I can use it in my program.
+
+83
+06:08.930 --> 06:14.510
+Let us say inside the main function this is done outside the main function inside the main function.
+
+84
+06:14.660 --> 06:21.900
+I can declare the variable of type day now, day d is a variable of type day DNR.
+
+85
+06:22.170 --> 06:25.240
+See there's a variable. of which type? day type.
+
+86
+06:25.520 --> 06:26.350
+What is the day.
+
+87
+06:26.360 --> 06:30.820
+It's a data type, is it build in?  no we have defined it, this is our data type.
+
+88
+06:31.370 --> 06:32.390
+Yes.
+
+89
+06:32.580 --> 06:34.760
+Now what are the values that they can have.
+
+90
+06:34.760 --> 06:37.910
+You can assign anything from these set of values.
+
+91
+06:37.910 --> 06:42.620
+You can write Monday or you can write Friday.
+
+92
+06:42.800 --> 06:47.600
+Anything you can write to this one but you cannot directly assign the value zero now.
+
+93
+06:47.630 --> 06:49.200
+So this will be invalid.
+
+94
+06:49.220 --> 06:55.560
+You have to use those set of values only at any place in your program.
+
+95
+06:55.560 --> 06:58.640
+You want to check whether it is Monday or not.
+
+96
+06:58.700 --> 07:00.780
+So you have to check it like this.
+
+97
+07:00.780 --> 07:08.610
+If day is equals to Monday so you can check like this and if it is true then answer will be true and it will
+
+98
+07:08.610 --> 07:09.840
+enter into this if block.
+
+99
+07:10.270 --> 07:16.920
+So if for days is Monday it will be true. now let us define enum for this one for this one I remove this
+
+100
+07:16.920 --> 07:26.850
+and I will define. for this let's say enum and these are departments dept. now the Departments are CS
+
+101
+07:27.680 --> 07:27.990
+then ECE.
+
+102
+07:27.990 --> 07:33.120
+see if I write CS by default it will start from zero.
+
+103
+07:33.300 --> 07:36.060
+If you want to change it you can change the number.
+
+104
+07:36.390 --> 07:40.430
+So if you say CS assign one the next right.
+
+105
+07:40.530 --> 07:44.220
+Just E C E this will automatically become two.
+
+106
+07:44.220 --> 07:47.330
+So this is the starting point you can just mention the starting point right.
+
+107
+07:47.550 --> 07:52.860
+Then this becomes two and this becomes three and civil becomes four.
+
+108
+07:53.880 --> 07:54.640
+So this is one.
+
+109
+07:54.630 --> 07:56.880
+This is two this is three and this is four.
+
+110
+07:56.910 --> 08:02.070
+So if you mentioned some starting number then the remaining will take the next number automatically
+
+111
+08:02.070 --> 08:02.940
+takes that next time.
+
+112
+08:03.690 --> 08:12.540
+Now in my program inside the main function if I want to declare a variable of type Department dept.
+
+113
+08:12.690 --> 08:20.100
+d then D assign CS like this you can use or any other department you can assign, so you can declare
+
+114
+08:20.110 --> 08:23.260
+the variable which can have only these set of values.
+
+115
+08:23.460 --> 08:26.020
+You cannot write anything other than this.
+
+116
+08:26.340 --> 08:31.830
+Next here I will change some values but I will remove this.
+
+117
+08:31.830 --> 08:37.200
+Suppose I say Monday as one so this will be one if I write just a Tuesday.
+
+118
+08:37.200 --> 08:42.060
+Then automatically it will be two then for Wednesday I will write five.
+
+119
+08:42.090 --> 08:43.490
+So this will become five.
+
+120
+08:43.650 --> 08:48.600
+Then Thursday if I say this will automatically becomes a six right.
+
+121
+08:48.900 --> 08:52.700
+Then Friday it will automatically become seven then Saturday.
+
+122
+08:52.710 --> 08:58.110
+If I say nine then it will become nine then Sunday it will become ten.
+
+123
+08:58.890 --> 09:02.090
+So I can mention the values are different places.
+
+124
+09:02.100 --> 09:08.930
+I can change the values but the next term or the next constant will be a next number.
+
+125
+09:09.050 --> 09:12.340
+Like if this is one then automatically, I'm not assigning here anything,
+
+126
+09:12.410 --> 09:14.660
+So this will become two right.
+
+127
+09:14.840 --> 09:15.730
+No this is five.
+
+128
+09:15.740 --> 09:20.900
+I'm not assigning any value here so this will become six the next number it would take for the next
+
+129
+09:21.670 --> 09:23.740
+constant that really defining.
+
+130
+09:23.750 --> 09:31.260
+So this is about enum this feature is available but how to use it.
+
+131
+09:31.290 --> 09:33.280
+It's all up to a programmer.
+
+132
+09:33.510 --> 09:37.350
+First of all programmers should think about He need some codes.
+
+133
+09:37.770 --> 09:43.730
+If he's not a using codes then he cannot think of using enum.
+
+134
+09:43.780 --> 09:49.000
+First of all if you're following a approach that you are assigning codes to some some strings or some
+
+135
+09:49.000 --> 09:56.600
+names then you can think of using enum So utilizing it or not is a user's choice.
+
+136
+09:56.660 --> 10:01.100
+It's not frequently used if it is used in the programming will be more better.
+
+137
+10:01.300 --> 10:06.850
+So the program will be more readable so you don't have to write on the course like just 0 1 2 3 you
+
+138
+10:06.850 --> 10:14.390
+can use the names like this CS, ECE, I.T. So the program becomes more readable and easy for programming.
+
+139
+10:14.410 --> 10:20.810
+If a project is very lengthy, its a very big project then it will be very easy for working in that project.
+
+140
+10:20.830 --> 10:24.610
+If you use the names. then next we will see.
+
+141
+10:24.610 --> 10:26.600
+Typedef.  Now
+
+142
+10:26.690 --> 10:32.180
+Let us look at typedef that is type  definition.
+
+143
+10:32.320 --> 10:33.350
+What is this.
+
+144
+10:33.370 --> 10:36.260
+So for explanation I have taken one example here.
+
+145
+10:36.370 --> 10:39.570
+So if you see this example I have some variables.
+
+146
+10:39.610 --> 10:48.230
+All these are of type Integer these are off type integer, now variable names if you see  M1 M2 M3, r1
+
+147
+10:48.290 --> 10:49.280
+r2 r3.
+
+148
+10:49.310 --> 10:51.430
+So what is this.
+
+149
+10:51.440 --> 10:55.930
+See I have not use meaningful name a readable name.
+
+150
+10:56.120 --> 11:01.100
+So usually programmers they will have the habit of doing this like you when you are learning no C++
+
+151
+11:01.420 --> 11:06.710
+now for quickly practicing you will give the names like this you will not give lengthy names or more
+
+152
+11:06.740 --> 11:09.980
+meaningful names and that will become your habit.
+
+153
+11:10.220 --> 11:15.400
+So even in your real projects or the major projects also you will follow the same thing.
+
+154
+11:15.620 --> 11:21.080
+So give them names like this and if this type of names are given they are not readable and if the project
+
+155
+11:21.080 --> 11:27.530
+is becoming Lengthy and is taking much time it is very tough for you to work on the project because you
+
+156
+11:27.530 --> 11:32.950
+yourself cannot figure out what is m1 what is m2 today  you wrote something.
+
+157
+11:32.960 --> 11:36.000
+Tomorrow you come back to work and again you read the code.
+
+158
+11:36.020 --> 11:39.020
+What is this m1 I forgot for what I declare.
+
+159
+11:39.350 --> 11:44.270
+So this type of problem arises if you're not using readable or meaningful name.
+
+160
+11:44.570 --> 11:48.090
+So this issue is readability issue right.
+
+161
+11:48.110 --> 11:53.110
+Again I tell you it's a readability issue not what I want this.
+
+162
+11:53.120 --> 12:00.890
+I want to make those variable meaningful so if not the names if I cannot give names at least this data
+
+163
+12:00.900 --> 12:02.510
+types should tell me what is that.
+
+164
+12:03.320 --> 12:06.920
+So yes that I can do it using typedef.
+
+165
+12:06.980 --> 12:07.960
+So let us do it.
+
+166
+12:07.960 --> 12:09.080
+I will define it I guess.
+
+167
+12:09.410 --> 12:11.910
+So actually this m1, m2, m3 
+
+168
+12:11.930 --> 12:17.270
+Three are the marks, r1 r2  r3 are roll numbers both are of integer type.
+
+169
+12:17.630 --> 12:20.150
+So here I will define typedef.
+
+170
+12:20.330 --> 12:26.240
+So this is type definition integer marks.
+
+171
+12:28.010 --> 12:28.940
+And one more typedef.
+
+172
+12:28.940 --> 12:33.520
+integer.
+
+173
+12:33.740 --> 12:35.810
+Roll number.
+
+174
+12:36.320 --> 12:42.600
+Inside main function I would declare the variable now m1 m2 and m3
+
+175
+12:42.650 --> 12:52.310
+I will declare them off type marksm1 m2  m3 then r1 r2 r3 are of type roll number.
+
+176
+12:52.580 --> 12:56.070
+So r1, r2 r3.
+
+177
+12:56.360 --> 13:00.160
+These are the roll no's,  what are the roll numbers. 
+
+178
+13:00.440 --> 13:01.020
+What is it.
+
+179
+13:01.040 --> 13:03.420
+integer type.
+
+180
+13:04.130 --> 13:07.460
+these are useful for defining user defined data type.
+
+181
+13:07.850 --> 13:09.580
+Yes we have our own data type now.
+
+182
+13:09.600 --> 13:12.310
+Now there's nothing but the change of name of integer.
+
+183
+13:12.320 --> 13:12.730
+Right.
+
+184
+13:12.800 --> 13:17.520
+So int we are calling it as marks, marks is integer, marks is an integer.
+
+185
+13:17.840 --> 13:18.420
+So now.
+
+186
+13:19.250 --> 13:21.640
+Even if I use m1, m2 m3 and I forgot.
+
+187
+13:21.650 --> 13:22.310
+What is this.
+
+188
+13:22.340 --> 13:24.990
+So if I come at this declaration point I can know that.
+
+189
+13:24.990 --> 13:25.440
+Okay.
+
+190
+13:25.460 --> 13:28.920
+This is for Marks m1, m2 m3 are for marks.
+
+191
+13:29.010 --> 13:32.410
+and r1 r2 r3 are roll number of storing roll number.
+
+192
+13:32.780 --> 13:38.210
+So instead of giving documentation or giving lengthy name you cannot use follow this one.
+
+193
+13:38.510 --> 13:44.870
+So this is not related to efficiency or the speeding up of a program this is just related to readability
+
+194
+13:44.960 --> 13:45.790
+of a program.
+
+195
+13:45.800 --> 13:52.130
+We can make the program more readable by introducing typedef so I already told you the issue.
+
+196
+13:52.130 --> 13:53.770
+The problem faced by the programmer.
+
+197
+13:53.770 --> 13:56.860
+They forget the things in the project is going lengthy.
+
+198
+13:57.440 --> 14:04.310
+So this is how you can make it easy for you to remember the things or to recall the things by giving
+
+199
+14:04.310 --> 14:06.410
+proper type definitions.
+
+200
+14:06.410 --> 14:11.750
+Again this depends on the program or how he utilizes right and what type of project and what are its
+
+201
+14:11.750 --> 14:13.390
+habits programming habits.
+
+202
+14:13.460 --> 14:17.750
+So where ever useful if you try to go on using this one then it will do better.
+
+203
+14:18.020 --> 14:22.310
+So while practicing whenever you identify oh I can use typedef, you use it.
+
+204
+14:22.340 --> 14:24.650
+So that's all about typedef.
+
+205
+14:25.040 --> 14:29.270
+So there is a demo video after this one so you can watch it then I'm showing you how to declare and
+
+206
+14:29.270 --> 14:30.530
+use it.
+
+207
+14:30.550 --> 14:31.730
+So you can practice on this one.
+
+208
+14:32.450 --> 14:33.580
+So that's all in this video.

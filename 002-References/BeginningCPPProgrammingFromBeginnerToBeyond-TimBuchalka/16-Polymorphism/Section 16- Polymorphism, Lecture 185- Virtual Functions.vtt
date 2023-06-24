@@ -1,0 +1,289 @@
+WEBVTT
+
+00:00:05.360 --> 00:00:08.160
+In this video, we'll learn about the virtual keyword,
+
+00:00:08.160 --> 00:00:12.160
+virtual functions and how to declare them in your own class hierarchies.
+
+00:00:13.150 --> 00:00:15.650
+When we derive a class from a base class,
+
+00:00:15.650 --> 00:00:20.050
+we can redefine the base classes functions behaviors in the derived class.
+
+00:00:20.710 --> 00:00:25.070
+This creates a specialized version of the function specific to the derived class.
+
+00:00:25.950 --> 00:00:28.950
+If we don't use the virtual keyword with these functions,
+
+00:00:28.950 --> 00:00:32.650
+then they're statically bound at compile time as we've already seen.
+
+00:00:33.450 --> 00:00:36.330
+Overridden functions are bound dynamically.
+
+00:00:36.330 --> 00:00:38.930
+We do this by declaring the function to be virtual.
+
+00:00:39.920 --> 00:00:43.210
+So virtual functions are overridden functions,
+
+00:00:43.430 --> 00:00:47.630
+and they allow us to think abstractly by treating all objects in the hierarchy
+
+00:00:47.630 --> 00:00:49.530
+as objects of the base class.
+
+00:00:50.410 --> 00:00:53.410
+Let's see the syntax for declaring a function as virtual.
+
+00:00:55.110 --> 00:00:59.470
+First, we declare the function we want to override in our derived classes
+
+00:00:59.470 --> 00:01:01.470
+as virtual in the base class.
+
+00:01:02.130 --> 00:01:06.030
+You can see in the code snippet that we're in the account base class,
+
+00:01:06.030 --> 00:01:08.830
+and we declare the withdraw method as virtual
+
+00:01:08.830 --> 00:01:12.330
+by preceding the functions prototype with the virtual keyword.
+
+00:01:13.530 --> 00:01:15.780
+This makes withdraw a virtual function,
+
+00:01:15.780 --> 00:01:18.780
+which means it can be overridden in derived classes
+
+00:01:18.780 --> 00:01:23.440
+and it will be bound dynamically at runtime when we use a base class pointer
+
+00:01:23.440 --> 00:01:24.440
+or reference.
+
+00:01:25.540 --> 00:01:27.740
+Once we declare a function as virtual,
+
+00:01:27.740 --> 00:01:32.180
+then that function is virtual all the way down the class hierarchy from this point forward.
+
+00:01:34.380 --> 00:01:38.820
+Here we can see an example of overriding the withdraw function and the derived class checking.
+
+00:01:39.700 --> 00:01:43.060
+The derived withdraw function will be implicitly virtual,
+
+00:01:43.260 --> 00:01:46.160
+so we don't have to use the virtual keyword again,
+
+00:01:46.160 --> 00:01:47.820
+but it's best practice to do so.
+
+00:01:48.920 --> 00:01:52.920
+It's important to understand that in order to override a base classes function,
+
+00:01:53.220 --> 00:01:56.820
+the function's signature and return type must match exactly.
+
+00:01:57.480 --> 00:02:01.380
+If you don't match it exactly, the compiler will treat it as a redefinition
+
+00:02:01.380 --> 00:02:02.780
+and statically bind it.
+
+00:02:03.440 --> 00:02:06.320
+That's it. It's pretty simple and provides so much power.
+
+00:02:06.320 --> 00:02:09.310
+Remember, virtual functions are dynamically bound
+
+00:02:09.310 --> 00:02:12.970
+only when we call them via a base class pointer or reference.
+
+00:02:12.970 --> 00:02:15.170
+Otherwise, they're statically bound.
+
+00:02:15.670 --> 00:02:18.670
+So let's head over to the IDE and make that simple account
+
+00:02:18.670 --> 00:02:22.270
+class hierarchy dynamically polymorphic with virtual functions.
+
+00:02:22.270 --> 00:02:23.570
+It's so easy to do.
+
+00:02:24.560 --> 00:02:28.560
+Okay. So I'm in the IDE. I'm in section 16 workspace,
+
+00:02:28.560 --> 00:02:31.220
+and I'm in the VirtualFunctions project.
+
+00:02:31.720 --> 00:02:36.590
+All right. So here we've got the simple account hierarchy. You can see we've got an account class,
+
+00:02:36.590 --> 00:02:40.850
+a checking account, a savings account and a trust account, and they're all accounts.
+
+00:02:40.850 --> 00:02:43.750
+And right now we've all -- we've only got the withdraw method,
+
+00:02:43.750 --> 00:02:46.250
+and it's been redefined in every single class.
+
+00:02:46.610 --> 00:02:50.210
+And all we're doing is just displaying in account withdraw, in checking withdraw.
+
+00:02:50.210 --> 00:02:53.360
+You've seen this one before. This just tells you which one is being called
+
+00:02:53.360 --> 00:02:54.920
+so that we can better follow it.
+
+00:02:54.920 --> 00:02:56.820
+So there are my four classes.
+
+00:02:56.820 --> 00:03:00.620
+And right now, it's -- you can see there's no virtual keywords in here at all.
+
+00:03:00.620 --> 00:03:03.420
+So this is not going to use dynamic binding.
+
+00:03:03.420 --> 00:03:07.780
+Here are pointers. Again, p1 p2 p3 p4,
+
+00:03:07.780 --> 00:03:11.880
+each one pointing to a different  type of a account,
+
+00:03:11.880 --> 00:03:14.440
+and we're just simply calling the withdraw method for each one,
+
+00:03:14.440 --> 00:03:15.740
+and then we're cleaning up our pointers.
+
+00:03:15.740 --> 00:03:20.000
+Now, since we don't have dynamic polymorphism when we run this,
+
+00:03:20.000 --> 00:03:22.150
+we expect all four of these
+
+00:03:22.150 --> 00:03:25.750
+methods to be bound to the account classes withdraw.
+
+00:03:25.750 --> 00:03:28.110
+So let's run that and be sure that that's our starting point.
+
+00:03:28.770 --> 00:03:30.770
+And that's exactly what we see here.
+
+00:03:31.130 --> 00:03:35.130
+Those are the withdraw methods executing right here. We're executing account withdraw
+
+00:03:35.130 --> 00:03:38.430
+for all four of them because we're using static binding.
+
+00:03:38.730 --> 00:03:42.030
+All right. So now let's make this polymorphic.
+
+00:03:42.390 --> 00:03:43.290
+What do we do?
+
+00:03:43.290 --> 00:03:46.490
+So we go to our base class, and we look at the functions that we want
+
+00:03:46.490 --> 00:03:49.090
+our derived classes to be able to override.
+
+00:03:49.090 --> 00:03:51.080
+And those are the ones that we want to make virtual.
+
+00:03:51.080 --> 00:03:55.080
+There's only one example here, but typically you would have several in a base class.
+
+00:03:55.080 --> 00:04:00.070
+In this case, this is the one, withdraw. So all you need to do is put virtual in front.
+
+00:04:00.470 --> 00:04:02.910
+That's it. That's a virtual function now.
+
+00:04:02.910 --> 00:04:07.270
+Whenever I come at any derived object via a base class pointer
+
+00:04:07.270 --> 00:04:10.630
+or a base class reference, it'll be dynamically bound.
+
+00:04:10.630 --> 00:04:12.830
+That's as simple as that. It's pretty powerful.
+
+00:04:12.830 --> 00:04:15.830
+Now I don't have to put the virtual keyword down here,
+
+00:04:15.830 --> 00:04:18.630
+but it's best practice to do so because many times
+
+00:04:18.630 --> 00:04:21.830
+users will be looking at this class here
+
+00:04:21.830 --> 00:04:24.430
+and it's nice for them to see that it is indeed virtual.
+
+00:04:24.830 --> 00:04:28.390
+So let's do this, virtual here. I'll just copy that.
+
+00:04:28.890 --> 00:04:29.890
+We'll do it here.
+
+00:04:30.590 --> 00:04:32.990
+And we'll do it one more time right here.
+
+00:04:33.790 --> 00:04:37.790
+So now every one of these classes has overridden
+
+00:04:37.790 --> 00:04:39.090
+the withdraw method.
+
+00:04:39.890 --> 00:04:43.490
+All right. That's it. That's all we really have to do. If we run this now,
+
+00:04:43.890 --> 00:04:47.690
+we'll get our polymorphic behavior, which is exactly what we want. You see that
+
+00:04:48.090 --> 00:04:51.890
+in account withdraw and savings withdraw and checking withdraw and trust withdraw.
+
+00:04:52.250 --> 00:04:53.250
+This is awesome.
+
+00:04:53.250 --> 00:04:56.750
+I mean one simple keyword, you get a lot of bang for your buck here.
+
+00:04:56.750 --> 00:04:59.850
+There's a lot going on. Now you'll notice a few things.
+
+00:04:59.850 --> 00:05:01.050
+We're getting some warnings here,
+
+00:05:01.550 --> 00:05:04.750
+and we're getting four warnings, and they're all about destructors.
+
+00:05:05.550 --> 00:05:08.090
+Whenever you have a virtual function,
+
+00:05:08.090 --> 00:05:10.290
+you need to have virtual destructors.
+
+00:05:10.290 --> 00:05:12.490
+And that's what we're going to talk about in the next video.
+
+00:05:12.490 --> 00:05:16.590
+So you can see how simple this was to do and the power that it gives you.
+
+00:05:16.590 --> 00:05:19.150
+In the next video, we'll address these warnings,
+
+00:05:19.150 --> 00:05:21.350
+and we'll talk about virtual destructors.

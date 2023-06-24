@@ -1,0 +1,413 @@
+WEBVTT
+
+0
+00:00.450 --> 00:06.960
+Almost all programming languages supports Multi-dimensional arrays or C++ also supports Multidimensional Array.
+
+1
+00:07.110 --> 00:12.690
+We have already seen single dimensional Array, you can create 2D array, 3D array  depending on your requirement.
+
+2
+00:12.690 --> 00:15.660
+Commonly we study about single dimension and two dimensional array.
+
+3
+00:15.690 --> 00:19.680
+So let us see how 2D array is created and accessed.
+
+4
+00:19.770 --> 00:27.600
+See the method for creating a two dimensional array is int A of, first dimension is 3 and the second
+
+5
+00:27.600 --> 00:29.560
+dimension is four.
+
+6
+00:29.650 --> 00:36.600
+If I created like this we imagine that the array like this is created with the three rows and four
+
+7
+00:36.600 --> 00:40.910
+columns where the name of an array is A.
+
+8
+00:40.980 --> 00:43.950
+And this is row 0 1 2.
+
+9
+00:43.950 --> 00:47.110
+And this is 0 1 2 3.
+
+10
+00:47.340 --> 00:52.370
+And when you want to access anything like here I want to write 15 then I should say A of.
+
+11
+00:52.560 --> 00:57.150
+First row 1 and second column.
+
+12
+00:57.210 --> 01:00.230
+So two assign 15.
+
+13
+01:00.470 --> 01:03.020
+This is how we can access any location.
+
+14
+01:03.420 --> 01:08.670
+now one fact about two dimensional array IS IF I SAY THE STARTING address of these two bytes is three
+
+15
+01:08.670 --> 01:10.930
+hundred and three not one.
+
+16
+01:11.070 --> 01:20.160
+Then this is 2 and 3 4 and 5 6 and 7 and then definitely this will be 8 and 9 see though we are drawing it in 
+
+17
+01:20.160 --> 01:26.400
+2D  form, rectangular form but this location is next to this location so it means the
+
+18
+01:26.400 --> 01:29.790
+location is allocated continuously side by side.
+
+19
+01:29.850 --> 01:38.220
+So basically it will create a sigle dimension array of size 12, where the first four locations are used
+
+20
+01:38.220 --> 01:44.280
+as first rows, second four locations are used as second row and these locations are used as third row
+
+21
+01:44.670 --> 01:51.250
+and the name of this is A but the compiler will allow us to access this single dimension.
+
+22
+01:51.360 --> 01:53.310
+as actually it is 2D array.
+
+23
+01:54.450 --> 01:57.120
+Let me repeat the points we can create a two dimensional array like this.
+
+24
+01:57.120 --> 02:02.230
+by mentioning no. of rows and number of columns and the indices are like this.
+
+25
+02:02.220 --> 02:08.220
+They start from zero only but in reality there will be a single dimension that is created which is used
+
+26
+02:08.540 --> 02:10.430
+as a  2D array by the compiler.
+
+27
+02:10.440 --> 02:17.570
+We don't have to worry about this just we are finding the fact that arrays are created like this now.
+
+28
+02:17.580 --> 02:21.200
+Next let us see how to create an initialize a 2D array.
+
+29
+02:21.600 --> 02:27.290
+Suppose i want to declare an array of size 2 rows, 3 columns.
+
+30
+02:27.390 --> 02:28.790
+So this is the declaration.
+
+31
+02:28.920 --> 02:31.990
+And along with this I can mentioned the values also.
+
+32
+02:32.020 --> 02:34.140
+So 2 5 9.
+
+33
+02:34.470 --> 02:40.980
+This is first row, with 3 values that are 2 rows and 3 columns so each row can have 3 values
+
+34
+02:41.040 --> 02:45.110
+so it will be like this 2 rows and 3 columns.
+
+35
+02:45.360 --> 02:47.850
+First row value is 2 5 9.
+
+36
+02:48.000 --> 02:56.050
+Then the second row values are 6 9 15 so 6 9 15.
+
+37
+02:56.130 --> 03:01.500
+This is how the will be filled and we can access any element with the help of two indices.
+
+38
+03:01.530 --> 03:10.140
+That is a row number and column No. now other way of initializing it as I can mention A[2][3]
+
+39
+03:10.590 --> 03:19.100
+and I can simply write all these values, 2 5 9 6 9 15 so this also can fill this array like same way.
+
+40
+03:19.530 --> 03:22.250
+Even I can say A[2][3],
+
+41
+03:22.500 --> 03:28.320
+I'm thinking same size and same name so if I fill up only 2 values then you know well that the
+
+42
+03:28.320 --> 03:31.260
+rest of the values have be initialized automatically by zero.
+
+43
+03:32.130 --> 03:35.550
+So this is how we can declare & initialized two dimentional array.
+
+44
+03:35.760 --> 03:41.010
+Next let us see how to access the elements of 2-D array. for accessing all the elements
+
+45
+03:41.010 --> 03:47.770
+Basically we require nested for loop one for loop for row and other for loop  for columns, let me write down
+
+46
+03:47.790 --> 03:49.170
+the code and show you.
+
+47
+03:49.170 --> 03:53.910
+I just want to display all these elements by driving all elements one by one.
+
+48
+03:53.910 --> 03:54.840
+That is row wise.
+
+49
+03:54.870 --> 04:01.920
+So for that I would take for integer I assign zero I is less than two.
+
+50
+04:01.980 --> 04:10.710
+This is for rows, I is for rows and I plus plus, then inside this I will take for int j assign 0
+
+51
+04:10.710 --> 04:19.290
+and j is less than 3, so j is  for columns and J plus plus.
+
+52
+04:19.290 --> 04:25.980
+So you know well  how these two nested for loops will take the values, they  take the values 0 0 0 1 0 2 and so
+
+53
+04:25.980 --> 04:28.000
+on that is 1 0 1 1 1 2.
+
+54
+04:28.140 --> 04:33.160
+So cout A[i][j].
+
+55
+04:33.750 --> 04:36.600
+So in this way all the elements will be accessed.
+
+56
+04:36.630 --> 04:38.980
+And here I am displaying all of them.
+
+57
+04:38.980 --> 04:46.110
+Now one more thing is I can after every row I want to make a new line so say cout
+
+58
+04:46.150 --> 04:47.250
+endl after this.
+
+59
+04:47.260 --> 04:50.020
+Now let me take it as a complete program and show you.
+
+60
+04:50.450 --> 04:54.730
+i will declare a two dimensional array and display all the elements from that two dimensional.
+
+61
+04:55.140 --> 05:01.050
+So here is a program I will declare int array only, see mostly I'M taking integer type array only.
+
+62
+05:02.410 --> 05:05.900
+Now I will display this using 2 for loops for integer.
+
+63
+05:05.970 --> 05:19.290
+I assign zero I is less than two I plus plus and for integer J assign zero J iS less than three and J++.
+
+64
+05:19.350 --> 05:30.780
+now Cout  I will display all the elements one by one A[i][j] then cout  endl, we want a
+
+65
+05:30.780 --> 05:39.690
+new line after every row that's it, this is a piece of code for accessing all the elements of two dimensional array
+
+66
+05:40.080 --> 05:42.510
+and displaying them next.
+
+67
+05:42.510 --> 05:48.690
+Mostly it 2d arrays are used for performing matrix operations on matrixes like adding
+
+68
+05:49.020 --> 05:51.820
+subtracting or multiplying two matrixes.
+
+69
+05:51.840 --> 05:58.220
+So let us look at one simple program for adding two matrixes so first I will explain how matrixes are
+
+70
+05:58.230 --> 05:58.920
+added.
+
+71
+05:59.100 --> 06:12.460
+If I have some two matrixes 2 5 9 7 3 6 this is matrix A and  matrix of B is 6 3 4 9 5 2.
+
+72
+06:12.600 --> 06:18.930
+These are the two matrixes. the I dimension of both these matrixes are 2x3 and 2x3.
+
+73
+06:18.930 --> 06:21.620
+Then we can add them if their dimensions are same.
+
+74
+06:21.630 --> 06:23.060
+And the result and matrix also be 2x3
+
+75
+06:23.060 --> 06:28.410
+how these elements are added is corresponding elements are added.
+
+76
+06:28.440 --> 06:31.320
+That is two and six means A[i][j] is added with.
+
+77
+06:31.380 --> 06:42.460
+b[i][j], if I say this is 0 1 and this is 0 1 2 and 0 1 0 1 2 so 0 0 0 is added 0 commas
+
+78
+06:42.460 --> 06:42.940
+zero.
+
+79
+06:43.050 --> 06:53.610
+and 0 1 1 1 5 is added with  0 1 3 and 9 with 4 so on, now in this way the corresponding elements are added.
+
+80
+06:54.300 --> 06:59.470
+We can write down the logic here for adding two matrixes how this addition can be done is.
+
+81
+06:59.490 --> 07:06.660
+just you have to browse through all the elements of C matrix while being here that is 0 ,0.
+
+82
+07:06.660 --> 07:11.410
+Get elements of A[0] and b[0] and add them and stored the result.
+
+83
+07:11.550 --> 07:15.870
+So we have to prepare c matrix so the program will be very simple.
+
+84
+07:15.870 --> 07:21.990
+I will write the code here for adding two matrices and displaying the result. first matrix i will take
+
+85
+07:22.380 --> 07:25.530
+A[2][3].
+
+86
+07:25.560 --> 07:34.710
+The second matrix B I will take the same elements 2 and 3 then I need one more matrix that is C for that.
+
+87
+07:34.710 --> 07:43.460
+Also I will create an array. now what I have to do is I have to go to all these empty locations in C and for each location
+
+88
+07:43.470 --> 07:49.470
+I should get the elements added Form A and B so I can browse through all these locations by using two for
+
+89
+07:49.470 --> 07:55.200
+loops for integer i  assign zero i is less than two.
+
+90
+07:55.860 --> 08:01.260
+I plus plus. then inside this for J assigned 0.
+
+91
+08:01.260 --> 08:11.230
+J is less than 3 J plus plus then I have to prepare matrix c and for
+
+92
+08:11.260 --> 08:12.910
+Each element of C matrix.
+
+93
+08:12.940 --> 08:18.390
+I should get the element of A matrix and addit with elements of
+
+94
+08:18.570 --> 08:20.210
+b matrix
+
+95
+08:20.260 --> 08:21.270
+That's it.
+
+96
+08:21.280 --> 08:29.680
+So these two nested for loop will  add all the elements of a and b and store the result in C if
+
+97
+08:29.680 --> 08:36.790
+I want to display c matrix then again I should use 2 for loops Integer i assign zero I use less than
+
+98
+08:37.260 --> 08:53.170
+two I less plus and for integer j assign Zero j is less than three j plus plus and cout C[i][j].
+
+99
+08:53.270 --> 08:57.530
+that's it.
+
+100
+08:58.020 --> 09:03.210
+So this will display the result in matrix addition I have shown you just by changing the sign.
+
+101
+09:03.210 --> 09:08.460
+We can make the program for subtraction and multiplication will be an exercise for you.
+
+102
+09:08.460 --> 09:10.050
+You can try that multiplication.

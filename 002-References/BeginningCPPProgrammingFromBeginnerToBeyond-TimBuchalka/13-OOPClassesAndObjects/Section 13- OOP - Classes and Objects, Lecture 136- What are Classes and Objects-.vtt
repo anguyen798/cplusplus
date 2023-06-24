@@ -1,0 +1,172 @@
+WEBVTT
+
+00:00:05.300 --> 00:00:08.600
+In this video, we'll learn a little bit more about classes and objects.
+
+00:00:09.200 --> 00:00:13.200
+You can think of classes as blueprints from which objects are created.
+
+00:00:13.700 --> 00:00:15.800
+Classes are user-defined types.
+
+00:00:15.800 --> 00:00:18.360
+And one of the goals in object-oriented programming
+
+00:00:18.360 --> 00:00:22.460
+is to make the user-defined types feel like they're part of the programming language.
+
+00:00:22.820 --> 00:00:24.520
+So when we create our classes,
+
+00:00:24.520 --> 00:00:28.420
+we want to be able to use them, just like we use integers, doubles and so forth,
+
+00:00:28.420 --> 00:00:29.420
+easy and simple.
+
+00:00:30.620 --> 00:00:32.820
+Classes have attributes which are data.
+
+00:00:33.180 --> 00:00:35.680
+And they also have functions, which are called methods.
+
+00:00:36.480 --> 00:00:38.580
+As mentioned in the previous videos,
+
+00:00:38.580 --> 00:00:42.980
+classes can hide data and methods that are only used internally by the class.
+
+00:00:43.380 --> 00:00:46.980
+This is done using the private and public access modifiers.
+
+00:00:47.580 --> 00:00:51.480
+The goal of a class is to provide a well-defined public interface
+
+00:00:51.480 --> 00:00:54.780
+that the user of the class can easily use to solve their problem.
+
+00:00:55.580 --> 00:00:57.580
+Here are some example classes:
+
+00:00:57.580 --> 00:01:01.580
+account, employee, image, standard vector and standard string.
+
+00:01:01.780 --> 00:01:04.380
+These are all classes that model real-world entities.
+
+00:01:04.980 --> 00:01:08.580
+Vector and string are part of the c++ standard library.
+
+00:01:08.830 --> 00:01:13.430
+Account, employee and image might be classes that we would create in our applications.
+
+00:01:15.230 --> 00:01:18.030
+Okay. So now that we know what a class is, what's an object?
+
+00:01:18.330 --> 00:01:22.330
+Well, objects are created from classes and represent a specific
+
+00:01:22.330 --> 00:01:24.530
+instance of the class they're created from.
+
+00:01:25.080 --> 00:01:28.980
+So if I have an account class, I can create a Frank's account object
+
+00:01:28.980 --> 00:01:33.970
+that's a specific instance of an account that models Frank's account information.
+
+00:01:34.770 --> 00:01:37.130
+We can have as many objects as we need.
+
+00:01:37.130 --> 00:01:39.730
+If we were modeling a real banking application,
+
+00:01:39.730 --> 00:01:42.530
+we could have hundreds of thousands of account objects,
+
+00:01:42.530 --> 00:01:45.530
+each representing an individual instance of an account.
+
+00:01:46.300 --> 00:01:48.560
+Each object has its own identity,
+
+00:01:48.560 --> 00:01:51.160
+and each can use the methods defined in the class.
+
+00:01:51.960 --> 00:01:53.320
+Let's see an example.
+
+00:01:53.820 --> 00:01:57.480
+We know that ints and doubles are primitive types in c++.
+
+00:01:57.480 --> 00:02:00.680
+They're not classes, but this analogy will help make a point.
+
+00:02:01.380 --> 00:02:05.370
+In the first two lines, we define two integers, high score and low score.
+
+00:02:05.730 --> 00:02:10.610
+What does that tell us? Well, it tells us what the valid values are for those variables,
+
+00:02:10.810 --> 00:02:14.510
+and it also tells us the operations we can perform on those variables,
+
+00:02:14.510 --> 00:02:18.110
+for example, addition, subtraction, multiplication and so forth.
+
+00:02:18.610 --> 00:02:21.110
+Again, integers are not classes.
+
+00:02:21.110 --> 00:02:23.770
+But just for a moment, think of int as the class
+
+00:02:23.770 --> 00:02:27.870
+and low score and high score as objects created from the int class.
+
+00:02:29.070 --> 00:02:32.370
+Notice that low score and high score are instances of integer.
+
+00:02:32.810 --> 00:02:35.470
+They each have a value, and they each have an identity.
+
+00:02:36.170 --> 00:02:37.970
+Now look at the next two lines.
+
+00:02:37.970 --> 00:02:42.740
+Let's assume that we've already written the account class, and it's a true c++ class.
+
+00:02:43.340 --> 00:02:47.540
+Notice the syntax and how similar it is to the syntax for the integers above.
+
+00:02:48.240 --> 00:02:50.840
+Account is a user-defined type.
+
+00:02:50.840 --> 00:02:55.400
+So Frank account and Jim account are instances of the account class,
+
+00:02:55.600 --> 00:02:56.700
+they are objects.
+
+00:02:57.300 --> 00:03:01.300
+Each of these objects has an identity and values associated with them,
+
+00:03:01.300 --> 00:03:03.100
+just like high and low score did.
+
+00:03:03.900 --> 00:03:07.500
+This should look familiar since we've already been using objects all along.
+
+00:03:07.500 --> 00:03:09.760
+The last two lines create a scores object
+
+00:03:09.760 --> 00:03:12.020
+that's an instance of a vector of integers
+
+00:03:12.520 --> 00:03:15.020
+and a name object that's an instance of string.
+
+00:03:15.720 --> 00:03:19.020
+Okay. So now that we know a little bit more about classes and objects,
+
+00:03:19.020 --> 00:03:23.120
+let's see how we can declare a class in c++ in the next video.

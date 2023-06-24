@@ -1,0 +1,751 @@
+WEBVTT
+
+00:00.570 --> 00:04.530
+Let us look at next function that is substring.
+
+00:05.550 --> 00:08.000
+This will take out the part of a string.
+
+00:08.010 --> 00:11.040
+You can extract a portion of a string.
+
+00:11.520 --> 00:16.980
+So like here I have an example that is a word programming instead.
+
+00:16.980 --> 00:17.790
+And this is string.
+
+00:17.880 --> 00:20.070
+Suppose I want to take out a substring.
+
+00:20.070 --> 00:24.210
+So I will say str suppressed here.
+
+00:25.960 --> 00:33.100
+From three now from 30 next onwards, it will give me the remaining string grabbing.
+
+00:34.120 --> 00:38.260
+So whatever the index is given here, it will give the string starting from that index.
+
+00:38.260 --> 00:44.530
+So all these remaining portion of the string is given as substring and it returns a string object.
+
+00:44.530 --> 00:46.990
+It will create a new string object and it will return.
+
+00:48.370 --> 00:54.730
+Even I can give a number of characters that I want in a substring.
+
+00:55.210 --> 00:58.660
+So we start from three index three.
+
+00:58.660 --> 01:00.850
+So one, two, three, four.
+
+01:00.850 --> 01:05.500
+So I want up to here so I can mention four letters I want.
+
+01:05.500 --> 01:08.050
+So it will give the word gram.
+
+01:09.190 --> 01:15.010
+So you can just give the starting index and also starting index along with the number of letters that
+
+01:15.010 --> 01:15.670
+you want.
+
+01:16.780 --> 01:18.370
+So we'll see the name of this one.
+
+01:18.370 --> 01:22.480
+But before that I will show you this function that is compared.
+
+01:22.600 --> 01:25.360
+This will compare two strings, right?
+
+01:25.360 --> 01:28.360
+This current string with another string.
+
+01:29.110 --> 01:35.500
+So how the strings are compared already you have explained in the previous video I have discussed about
+
+01:35.500 --> 01:38.020
+a function that is SWD RCMP.
+
+01:38.110 --> 01:40.840
+So you can watch that video the same way it works.
+
+01:40.840 --> 01:49.510
+It will compare to strings and dictionary order and returns the result that is -0 or positive.
+
+01:49.960 --> 01:55.420
+So after comparing two strings, if the first is string, this a string itself is smaller, then it
+
+01:55.420 --> 01:56.620
+returns negative.
+
+01:57.040 --> 02:03.130
+Or if this is greater than this one that is comes after words in the dictionary, then it returns positive.
+
+02:03.130 --> 02:06.280
+If both the strings are equal, then it will return zero.
+
+02:06.940 --> 02:10.510
+Now let us look at the demonstration of both these functions.
+
+02:10.600 --> 02:14.140
+That is a substring and compare strings.
+
+02:15.100 --> 02:17.860
+So already I have a program ready here.
+
+02:17.860 --> 02:20.230
+The string is programming.
+
+02:20.410 --> 02:24.910
+Now I will call substring function and also I will display its results.
+
+02:24.910 --> 02:29.860
+So see out struct substring and here the index.
+
+02:29.860 --> 02:31.120
+I will give it as three.
+
+02:32.100 --> 02:33.340
+Let us run and see.
+
+02:35.470 --> 02:38.680
+So it has given a world that is growing.
+
+02:38.680 --> 02:42.940
+So starting from index three onwards, it has given the rest of the string.
+
+02:43.820 --> 02:47.890
+I have shown you one more version that I can mention, the number of characters that I want.
+
+02:48.040 --> 02:50.080
+So here I have changed it to four.
+
+02:50.680 --> 02:51.520
+Now let us see.
+
+02:51.520 --> 02:53.260
+It will give four characters.
+
+02:53.260 --> 02:55.790
+Yes, four characters are given.
+
+02:57.070 --> 03:03.790
+So you can take out any portion of a string if you know the index and then you can mention the number
+
+03:03.790 --> 03:06.640
+of letters also, and you can take out the portion of the string.
+
+03:07.450 --> 03:10.840
+Now I will show you an X function that is comparing two strings.
+
+03:10.840 --> 03:13.420
+So for that I will just change the strings here.
+
+03:14.140 --> 03:17.890
+String str two and let it be.
+
+03:18.340 --> 03:22.330
+Hello simple string I'm taking and I will change this one.
+
+03:22.330 --> 03:26.860
+Also I will call this as str one and this is also help.
+
+03:28.230 --> 03:29.380
+Now let us compare.
+
+03:29.380 --> 03:31.660
+The both are same, the both are equal.
+
+03:31.930 --> 03:32.440
+Right?
+
+03:32.440 --> 03:34.870
+So I will directly display the result.
+
+03:35.410 --> 03:50.080
+See out str one a dot compare str to see the function compare will be called upon str one and str two
+
+03:50.080 --> 03:57.460
+is given as a parameter, so the function will take a str two and compare with its own object that is
+
+03:57.460 --> 03:58.570
+str one.
+
+03:59.710 --> 04:02.830
+Now, as both are equal, so it should return zero.
+
+04:05.670 --> 04:06.150
+Yes.
+
+04:06.150 --> 04:07.170
+Result is zero.
+
+04:09.800 --> 04:10.040
+Now.
+
+04:10.040 --> 04:14.280
+Here, I'll change the word, the second word.
+
+04:14.300 --> 04:17.840
+I will call it as world.
+
+04:18.800 --> 04:20.930
+Now W comes afterwards.
+
+04:20.930 --> 04:24.590
+Right edge comes before W in dictionary.
+
+04:27.440 --> 04:28.380
+So negative.
+
+04:28.400 --> 04:29.750
+So which comes first?
+
+04:29.750 --> 04:31.310
+The helo comes first.
+
+04:31.310 --> 04:34.730
+So it means it is smaller than world, right?
+
+04:34.730 --> 04:38.420
+So that's why it is returning a negative number.
+
+04:38.420 --> 04:45.650
+And this 15 is the difference between the ASCII code of capital H and capital W uppercase.
+
+04:45.650 --> 04:51.140
+Such an uppercase W and I will change it to the world.
+
+04:51.170 --> 04:51.890
+Hello.
+
+04:51.890 --> 04:56.630
+And I will use lowercase s here h and this is uppercase.
+
+04:56.630 --> 04:57.200
+So
+
+05:00.230 --> 05:07.700
+you should know that ASCII code cases are smaller than ASCII code of lowercase.
+
+05:07.910 --> 05:16.040
+So still this two things are same, but the first string will be smaller than second string because
+
+05:16.040 --> 05:18.530
+of the ASCII code of lower and uppercase.
+
+05:18.830 --> 05:19.730
+Let us check.
+
+05:19.940 --> 05:22.310
+So negative and 32 will be the result.
+
+05:22.310 --> 05:22.910
+Yes.
+
+05:23.210 --> 05:29.720
+The difference between ASCII codes of capital and smaller is 32 or any letter.
+
+05:29.720 --> 05:33.650
+The difference between it's uppercase and lowercase is 32.
+
+05:35.810 --> 05:39.350
+Now here I will change this to small edge and this to capital.
+
+05:39.350 --> 05:40.370
+Let us see now.
+
+05:40.370 --> 05:45.170
+So the first thing is greater str one is greater, so it has given positive result.
+
+05:46.310 --> 05:49.550
+Now I'll change the word, I'll make it as morning.
+
+05:50.180 --> 05:53.600
+And this is evening now.
+
+05:53.630 --> 05:53.900
+Hm.
+
+05:53.900 --> 05:55.580
+Comes after E.
+
+05:55.610 --> 05:57.380
+Right, so let us check this.
+
+05:57.680 --> 06:03.020
+So for strings greater second string is smaller, so the result is positive and it is eight.
+
+06:03.740 --> 06:04.580
+So that's it.
+
+06:04.580 --> 06:07.490
+So this is how you can compare two strings.
+
+06:08.270 --> 06:13.940
+Now I will show you some operators define upon string class here.
+
+06:13.940 --> 06:16.850
+Here I have some operators also I will show them.
+
+06:17.100 --> 06:17.510
+Right.
+
+06:17.570 --> 06:20.210
+But before that let me tell you about these.
+
+06:20.210 --> 06:22.850
+See add suppose I have a string.
+
+06:23.030 --> 06:24.350
+String is holiday.
+
+06:24.410 --> 06:29.090
+Now this add function will give a letter at a particular index.
+
+06:29.420 --> 06:33.680
+Now if I say str dot at.
+
+06:34.840 --> 06:39.910
+And in this society 012, three, four, five, six.
+
+06:39.910 --> 06:40.390
+Right.
+
+06:40.420 --> 06:45.110
+If I say four, then that this will give the letter D.
+
+06:45.130 --> 06:52.480
+So at index for the letter D is there so you can find out a letter at a given index.
+
+06:53.170 --> 06:56.770
+So it is just like using this subscript operator.
+
+06:57.040 --> 07:02.260
+So instead of writing it like this, even I can say star or four.
+
+07:03.160 --> 07:05.260
+So yes, they should give the same thing.
+
+07:05.260 --> 07:10.210
+That is a D letter D or I should be able to modify it also.
+
+07:10.390 --> 07:12.190
+So steer or for.
+
+07:12.220 --> 07:14.620
+If I want to store something else, I can store it.
+
+07:14.770 --> 07:22.660
+So by using this operator I can read as well as I can write down the letters present at a given index.
+
+07:23.020 --> 07:25.150
+So these two works in a similar way.
+
+07:26.230 --> 07:33.160
+Now, one interesting thing to observe here is this is a member function and string is a class.
+
+07:33.160 --> 07:37.240
+It is not an array, it's a class, it is not an array.
+
+07:37.270 --> 07:39.760
+Then how this operator works on it.
+
+07:40.300 --> 07:45.880
+So this is a overloaded operator inside C++ classes.
+
+07:45.880 --> 07:47.760
+We can overload operators.
+
+07:47.770 --> 07:53.650
+Also, we can define functions for operators or we can define a function member function.
+
+07:53.650 --> 08:00.010
+As an operator, you will be learning this in one of the sections coming sections.
+
+08:00.190 --> 08:04.390
+So this operators are already defined in this string class.
+
+08:04.390 --> 08:08.410
+So it is having these operators and these are very useful operators.
+
+08:09.160 --> 08:13.090
+So I have shown you about ADD and this is also subscript is also same.
+
+08:14.530 --> 08:17.910
+Now these are simple functions, these two are fragments.
+
+08:17.920 --> 08:23.470
+It will give you the first letter of a string that is edge and back means it will give you the last
+
+08:23.470 --> 08:24.400
+letter of a string.
+
+08:25.090 --> 08:27.820
+Let us look at these two plus operator.
+
+08:27.940 --> 08:29.260
+Assignment operator.
+
+08:29.740 --> 08:31.210
+So plus operator.
+
+08:31.240 --> 08:33.850
+Suppose I have two strings.
+
+08:35.440 --> 08:38.290
+String str one is.
+
+08:39.940 --> 08:40.630
+Hello.
+
+08:42.990 --> 08:47.310
+And one more string I have that is str too.
+
+08:48.900 --> 08:52.200
+And a curse word.
+
+08:53.790 --> 08:55.170
+Not two strings are there?
+
+08:55.290 --> 08:56.840
+I want to join them.
+
+08:56.850 --> 08:58.680
+I want to concatenate them.
+
+08:59.340 --> 08:59.610
+Right.
+
+08:59.610 --> 09:00.510
+Concatenation.
+
+09:00.510 --> 09:05.760
+So for concatenation I can just use plus operator C++ additions.
+
+09:05.760 --> 09:08.520
+But here upon string, the meaning is different.
+
+09:08.520 --> 09:10.170
+It is concatenation.
+
+09:10.170 --> 09:14.430
+So if I use plus operator on this, then it will become a single string.
+
+09:14.430 --> 09:16.320
+That is hello world.
+
+09:17.130 --> 09:18.480
+Hello world.
+
+09:19.110 --> 09:19.620
+Right.
+
+09:19.620 --> 09:24.660
+So it will combine the second string followed by first a string.
+
+09:25.080 --> 09:26.730
+These two strings will become minor.
+
+09:26.730 --> 09:27.780
+Have given space here.
+
+09:27.990 --> 09:30.540
+If you give a space here, then space will appear.
+
+09:30.540 --> 09:34.620
+Otherwise this letter w will be just beside this.
+
+09:34.620 --> 09:39.150
+Oh, so this result is a string again.
+
+09:39.990 --> 09:46.020
+So you can store it in some other variable like string SW three or str three.
+
+09:46.020 --> 09:51.240
+So this will be stored in this one so we can concatenate by using plus operation.
+
+09:52.860 --> 09:54.780
+Even I can say it like this.
+
+09:55.010 --> 09:57.540
+Star one is the first is sitting right.
+
+09:57.570 --> 10:05.120
+This is the first string star one plus and with space I will write word.
+
+10:05.130 --> 10:07.950
+So I'm mentioning a string little here itself.
+
+10:07.950 --> 10:11.670
+And this I want to store it in star one only.
+
+10:11.670 --> 10:14.620
+So a star was already halo.
+
+10:14.640 --> 10:20.280
+Now within that void is also concatenated and the result is stored in Star one.
+
+10:20.490 --> 10:23.070
+Now str one has become a single string.
+
+10:23.070 --> 10:24.510
+That is hello world.
+
+10:25.680 --> 10:26.130
+Right.
+
+10:26.130 --> 10:27.720
+It has become a single string.
+
+10:27.720 --> 10:28.710
+That is hello world.
+
+10:29.490 --> 10:29.910
+So.
+
+10:30.090 --> 10:37.470
+So you can use concatenation then the last operator see already I have two strings here.
+
+10:37.500 --> 10:38.550
+I'll show them here.
+
+10:39.090 --> 10:47.970
+See if I write a str to assign str one so the contents of the first string will be copied in second
+
+10:47.970 --> 10:48.620
+string.
+
+10:48.630 --> 10:51.090
+This will be copied in second string.
+
+10:51.090 --> 10:53.550
+Contents of this thing will be copied in second string.
+
+10:54.240 --> 11:00.150
+So just by using assignment operator, the whole lot of content of this string will be copied in this
+
+11:00.150 --> 11:00.600
+one.
+
+11:01.710 --> 11:05.010
+So we already know that this is a string object.
+
+11:05.010 --> 11:09.210
+There will be an array in which these characters are stored.
+
+11:09.300 --> 11:14.020
+So all that array elements will be copied in the array of this str go.
+
+11:14.040 --> 11:17.790
+So this is a simple and easy mechanism for a programmer.
+
+11:18.090 --> 11:23.520
+It is a more programmer friendly feature that just you write assign it will copy the entire string.
+
+11:23.820 --> 11:26.550
+So but internally this idea has to be copied.
+
+11:26.550 --> 11:29.850
+Suppose this is a STR one and this is a str goes array.
+
+11:29.940 --> 11:31.350
+This has to be copied.
+
+11:31.350 --> 11:37.260
+So yes, this assignment operator will take care of copying everything from the system to the string.
+
+11:38.790 --> 11:46.200
+So all these operators make the programming very simple and easy so we can easily use a string.
+
+11:46.320 --> 11:48.520
+So that's all about all these operators.
+
+11:48.540 --> 11:51.590
+Now, let me show you demonstration for this.
+
+11:51.600 --> 11:55.440
+Here I have a string that is holiday.
+
+11:56.100 --> 12:00.300
+Now let me show you add function.
+
+12:00.360 --> 12:06.360
+So I will directly use the code and I will say str dot at index four.
+
+12:06.990 --> 12:09.450
+So I should get a letter D.
+
+12:10.260 --> 12:14.790
+Yes, I got a letter D and I said that even I can use subscript.
+
+12:14.790 --> 12:15.840
+That is four.
+
+12:16.350 --> 12:18.300
+So I should get a letter D now.
+
+12:19.890 --> 12:20.850
+Yes.
+
+12:21.360 --> 12:27.870
+See, one thing I will do, I said that we can read as well as write using this subscript operator.
+
+12:27.870 --> 12:34.500
+So I will say str of four I will change it to something else.
+
+12:34.590 --> 12:41.550
+Let us say capital M, letter capital M I will change it and here I will display str.
+
+12:41.580 --> 12:42.570
+That is a string.
+
+12:43.320 --> 12:44.610
+Let us see what happens.
+
+12:45.540 --> 12:49.890
+See these go on and in place of de m is written here.
+
+12:50.610 --> 12:53.430
+So yes, I can modify any particular character in a string.
+
+12:53.430 --> 12:57.330
+Also by using this subscript by using add function.
+
+12:57.330 --> 13:05.700
+Just you can read it, but by using subscript you can read as well as right if right here a of four
+
+13:05.730 --> 13:06.840
+it will display this one.
+
+13:06.840 --> 13:08.070
+So I am reading it.
+
+13:08.070 --> 13:11.730
+But when I say str of four assign m, I'm writing into it.
+
+13:13.050 --> 13:14.520
+So this is our subscript.
+
+13:14.760 --> 13:19.260
+Now let me show you assignment as well as this concatenation.
+
+13:19.260 --> 13:25.890
+So I will take one more string str two and I will call it as space world.
+
+13:26.610 --> 13:32.610
+Right then here I will call it as str one and I will say hello.
+
+13:32.640 --> 13:38.130
+Now here I have two strings and I am displaying string one so I should get a word that is.
+
+13:38.130 --> 13:38.520
+Hello.
+
+13:40.320 --> 13:42.180
+Yes it is displaying hello.
+
+13:42.990 --> 13:55.050
+Now before this I will do concatenation as TR one plus str two and here I will store the result in str
+
+13:55.050 --> 13:56.280
+one assign.
+
+13:56.670 --> 13:58.440
+So here also assignment is used.
+
+13:58.470 --> 14:00.540
+You can see these two are concatenated.
+
+14:00.540 --> 14:04.080
+It becomes a string and that is assigned to a str one.
+
+14:04.380 --> 14:08.190
+So str one should become hello world with a space in between.
+
+14:11.030 --> 14:13.010
+Yes, it has become hello world.
+
+14:13.980 --> 14:19.350
+Now here even they can write on string literal so word.
+
+14:22.480 --> 14:24.190
+How are you?
+
+14:27.280 --> 14:28.960
+So it becomes the single string.
+
+14:28.990 --> 14:29.880
+Hello World.
+
+14:29.890 --> 14:30.760
+How are you?
+
+14:30.790 --> 14:34.570
+So here we have seen concatenation and assignment.
+
+14:34.570 --> 14:35.980
+I will show you like this.
+
+14:36.750 --> 14:41.100
+I will say start to just read the slide.
+
+14:41.130 --> 14:47.640
+STR one assign str two and here it will display str one.
+
+14:47.640 --> 14:51.720
+So str two is having vol so that will be assigned into first string.
+
+14:52.350 --> 14:53.250
+Let's run it.
+
+14:55.020 --> 14:56.070
+Yes.
+
+14:57.780 --> 14:59.340
+The Times became war.
+
+14:59.450 --> 15:01.500
+FDR one has became war.
+
+15:01.650 --> 15:02.670
+Now, here.
+
+15:03.580 --> 15:06.660
+I will also display str two.
+
+15:06.670 --> 15:10.270
+So now both are same because the still two is stored in str one.
+
+15:10.630 --> 15:12.070
+Yes, both are world.
+
+15:13.770 --> 15:18.060
+So that's all these are the operations or operators upon string.
+
+15:18.420 --> 15:20.970
+So you must check all these things, you must practice them.
+
+15:20.970 --> 15:22.590
+Then next I will be showing you.
+
+15:22.860 --> 15:24.690
+You must check all these things by yourself.
+
+15:24.690 --> 15:26.670
+Just watching video will not help you.
+
+15:26.790 --> 15:29.370
+You have to type this thing and practice a little bit.
+
+15:29.370 --> 15:36.540
+So if you have tested all the functions that you can remember them and use them when required.
+
+15:36.570 --> 15:38.550
+So check these things on your machine.

@@ -1,0 +1,262 @@
+WEBVTT
+
+00:00.420 --> 00:01.980
+Let us look at such case.
+
+00:03.880 --> 00:06.570
+This is a branch and control statement.
+
+00:06.580 --> 00:08.800
+It is just like a switchboard at home.
+
+00:09.250 --> 00:12.860
+Whichever thing you want to put on, you have to press that switch on.
+
+00:12.880 --> 00:14.410
+So it is just like that.
+
+00:14.500 --> 00:18.700
+So this is the construct of switch case, the statement switch.
+
+00:18.700 --> 00:25.270
+Here you can write something, expression or a variable, anything, but you can mention either integer
+
+00:25.270 --> 00:29.080
+type or character type variable or an expression.
+
+00:29.560 --> 00:34.270
+And for the different values of this expression, you can mention various cases.
+
+00:34.270 --> 00:39.910
+So I have example mentioned case one and case two and there is a space mostly people do mistake here,
+
+00:39.910 --> 00:43.930
+they don't give a space here, so they face a problem.
+
+00:43.930 --> 00:47.980
+It will not be a syntax error, but it works but doesn't give the result.
+
+00:48.520 --> 00:50.140
+Then colon followed by that.
+
+00:50.140 --> 00:57.640
+You can write what all you want under this case, then break the case and break and default is optional.
+
+00:58.090 --> 01:03.250
+So if the cases are not mentioned for the other cases you can mention default.
+
+01:03.460 --> 01:05.110
+Let us see how it works.
+
+01:05.350 --> 01:06.850
+The value of this expression.
+
+01:06.850 --> 01:10.000
+If it is one, then this case is executed and break.
+
+01:10.000 --> 01:11.200
+It will come out here.
+
+01:12.310 --> 01:16.930
+If the value of this expression is two, then it will directly jump to case two and it will execute
+
+01:16.930 --> 01:19.180
+this statement and break and come out here.
+
+01:20.110 --> 01:26.110
+If you mention the value as of 903 or any other number apart from one and two, it will jump on to default
+
+01:26.110 --> 01:28.960
+and then there is nothing, so it will come out of switch.
+
+01:30.340 --> 01:35.830
+So one important thing is if you don't give this break, then if the value of the expression is one,
+
+01:35.830 --> 01:40.840
+then it will execute case one, followed by that it will execute case two also then break and it will
+
+01:40.840 --> 01:41.380
+come out.
+
+01:43.060 --> 01:44.980
+So it will execute both the cases.
+
+01:45.340 --> 01:49.480
+So for every case, you have to mention a break.
+
+01:49.510 --> 01:51.980
+If you don't need it, then you can skip it.
+
+01:52.030 --> 01:54.560
+So you should know clearly whether you need it or not.
+
+01:54.580 --> 01:56.410
+Otherwise, you make it as mandatory.
+
+01:57.040 --> 01:57.730
+Next.
+
+01:58.150 --> 01:58.940
+Next thing.
+
+01:58.960 --> 01:59.410
+What?
+
+01:59.410 --> 02:01.330
+All the cases you want you can mention.
+
+02:01.330 --> 02:03.810
+And if you don't want default, you can avoid it.
+
+02:03.820 --> 02:05.650
+And you can write on default anyway.
+
+02:05.680 --> 02:06.820
+It's optional.
+
+02:06.850 --> 02:10.360
+If it is written anywhere else, then you should have a break followed by that.
+
+02:11.570 --> 02:12.710
+Now next thing.
+
+02:13.890 --> 02:17.530
+If it is integer type, then I can write cases as one, two, three, four.
+
+02:17.550 --> 02:22.110
+So if it is character type, then I can use cases like this.
+
+02:23.370 --> 02:25.200
+A Encodes.
+
+02:26.130 --> 02:28.190
+B encodes.
+
+02:28.200 --> 02:30.930
+So if the value of character is A, then this will execute.
+
+02:30.930 --> 02:32.870
+B then this will execute and so on.
+
+02:32.880 --> 02:36.640
+So I can even use character labels.
+
+02:36.660 --> 02:40.890
+Also, so the activities are called as labels, so you can use labels in the form of characters.
+
+02:40.890 --> 02:43.170
+Also where this which case is useful.
+
+02:43.170 --> 02:46.280
+Mostly it is useful for writing menu driven program.
+
+02:46.290 --> 02:53.460
+For example, if I take the example of notepad in notepad we will have the menu that is file, and in
+
+02:53.460 --> 03:00.390
+that file the options will be there like new open save, save as.
+
+03:02.800 --> 03:05.760
+Now for each I can mention some code behind this one.
+
+03:05.770 --> 03:07.510
+If this is click, let us say it is one.
+
+03:07.510 --> 03:10.570
+If this is click, let us say it is two, then three, then four.
+
+03:10.630 --> 03:15.730
+So four depending on the value that is clicked, we can execute that particular case.
+
+03:15.730 --> 03:20.260
+If the case is one our cases two, we cannot give strings here.
+
+03:20.260 --> 03:22.450
+You cannot write a new in course here.
+
+03:22.450 --> 03:26.950
+So you have to use numbers or alphabets so we can assign some codes to this.
+
+03:26.950 --> 03:29.110
+If this is click do this work.
+
+03:29.140 --> 03:31.150
+If this is click, then do this work.
+
+03:31.150 --> 03:38.170
+So for every menu option, I can define the cases and even inside the case I can have against which
+
+03:38.170 --> 03:41.380
+also so we can have nested switch also.
+
+03:42.690 --> 03:43.550
+Like for five.
+
+03:43.560 --> 03:46.400
+Minow One case in that case, again switch.
+
+03:46.410 --> 03:51.140
+If one is pressed the new tools press then open like that we can mention the case.
+
+03:51.150 --> 03:54.120
+So menus are designed using switch cases.
+
+03:54.120 --> 03:56.760
+When we do that type of programming, we will see that.
+
+03:56.970 --> 03:58.290
+Let us look at an example.
+
+03:58.290 --> 04:05.280
+Using Switch case, I will write a program to take our day number and display the name Main.
+
+04:05.670 --> 04:18.420
+Here I will take a variable day and see out and day number see in.
+
+04:19.690 --> 04:20.320
+Dave.
+
+04:22.210 --> 04:23.230
+Switch.
+
+04:24.610 --> 04:30.820
+C Whatever the value is given based on that day in case if it is one.
+
+04:32.570 --> 04:38.840
+Then see out Monday and break.
+
+04:40.560 --> 04:51.360
+Then key is to see out Tuesday and then give a break goes on.
+
+04:52.160 --> 04:53.240
+Default.
+
+04:54.120 --> 04:58.460
+If it is any other value like other than 1 to 7 days will be there.
+
+04:58.470 --> 05:04.890
+Other than that we can see out in value today close end of a program.
+
+05:05.100 --> 05:09.930
+So this program will take our daily number and it will display the name of our day, whether it is Monday
+
+05:09.930 --> 05:10.950
+or Tuesday or so on.
+
+05:10.980 --> 05:12.490
+That's all about such case.
+
+05:12.510 --> 05:17.400
+You can type this program by yourself and you can test it on your machine because simultaneously practice
+
+05:17.400 --> 05:18.580
+is more important.
+
+05:18.600 --> 05:22.380
+Practice will make you perfect on C++, so practice this one.
+
+05:22.380 --> 05:25.020
+And the next video is on the program.
+
+05:25.020 --> 05:25.830
+Sample program.

@@ -1,0 +1,362 @@
+WEBVTT
+
+00:00:05.360 --> 00:00:09.360
+Hello everyone.
+In this video, I'll be installing the C++ compiler,
+
+00:00:09.360 --> 00:00:13.660
+along with the build tools that we'll need to build C++ programs
+
+00:00:13.660 --> 00:00:14.660
+on Linux.
+
+00:00:15.060 --> 00:00:19.560
+The distribution that I'm using is Ubuntu 2204, which is Jammy.
+
+00:00:19.560 --> 00:00:22.250
+There are a lot of different Linux distributions out there,
+
+00:00:22.250 --> 00:00:24.250
+so depending on which one you're on,
+
+00:00:24.250 --> 00:00:28.250
+you can check out the different options here for Ubuntu, Fedora, so forth.
+
+00:00:28.250 --> 00:00:30.130
+As I said, I'm on Ubuntu,
+
+00:00:30.130 --> 00:00:33.730
+so open up your favorite browser and head over to Codelite.org.
+
+00:00:34.130 --> 00:00:37.430
+And then once you get there, select Docs
+
+00:00:39.430 --> 00:00:41.030
+and getting started.
+
+00:00:42.230 --> 00:00:45.920
+And then right where it says prepare your environment, select Linux.
+
+00:00:47.720 --> 00:00:51.710
+And there's basically one command we're going to run, which is pretty straightforward.
+
+00:00:51.710 --> 00:00:54.510
+Once you get to the Linux section, there's a lot of information here, right?
+
+00:00:54.510 --> 00:00:57.310
+Depending on whether you want to install Rust and
+
+00:00:57.310 --> 00:00:59.110
+Python and Brew and so forth.
+
+00:00:59.110 --> 00:01:01.810
+I'm not going to do any of that, I'm just going to install the essentials,
+
+00:01:01.810 --> 00:01:03.610
+which gives us everything we need.
+
+00:01:03.610 --> 00:01:07.610
+And you can see this box right here that says Install the essentials.
+
+00:01:07.910 --> 00:01:09.510
+So what you can do is
+
+00:01:09.510 --> 00:01:12.280
+Hover over this box and click that little icon right
+
+00:01:12.280 --> 00:01:14.980
+ there that's going to copy this information to the clipboard,
+
+00:01:14.980 --> 00:01:17.340
+and that's what we're going to execute on a terminal now.
+
+00:01:17.340 --> 00:01:19.940
+I'm done with this for now, I'm just going to minimize it.
+
+00:01:19.940 --> 00:01:21.200
+I'm going to open up a terminal.
+
+00:01:24.200 --> 00:01:26.560
+All right, so there's my terminal.
+
+00:01:26.560 --> 00:01:29.460
+Now at this point, all I really want to do is,
+
+00:01:29.460 --> 00:01:32.660
+paste what I just copied into the terminal and execute it,
+
+00:01:32.660 --> 00:01:33.960
+It's as simple as that.
+
+00:01:33.960 --> 00:01:36.960
+So I'm going to right click right here, paste,
+
+00:01:36.960 --> 00:01:39.560
+click the right arrow key and press enter.
+
+00:01:40.060 --> 00:01:42.060
+It's going to ask you for your password.
+
+00:01:43.860 --> 00:01:44.860
+And that's it,
+
+00:01:44.860 --> 00:01:48.160
+some of these tools might already be installed depending on the
+
+00:01:48.160 --> 00:01:50.420
+ type of distribution you installed originally.
+
+00:01:50.420 --> 00:01:51.820
+So it says, do you want to continue?
+
+00:01:51.820 --> 00:01:53.120
+Yes, I do want to continue.
+
+00:01:54.020 --> 00:01:56.270
+And there it goes, It's going to do its thing
+
+00:01:56.270 --> 00:01:57.770
+when it's finished and again,
+
+00:01:57.770 --> 00:02:01.370
+how long it takes really depends on what's already on your system.
+
+00:02:01.370 --> 00:02:03.170
+So it may take a little bit longer,
+
+00:02:03.170 --> 00:02:07.730
+I've already got most of the stuff on my system, so we're good, let me clear the screen.
+
+00:02:09.030 --> 00:02:12.530
+So if you type g++ -- version, you should get some information
+
+00:02:12.530 --> 00:02:13.780
+about your compiler.
+
+00:02:13.780 --> 00:02:17.580
+This is g++, which is the GNU C++ compiler.
+
+00:02:17.580 --> 00:02:20.480
+And the installed version is 11.3.
+
+00:02:20.480 --> 00:02:23.980
+The version you have installed might be different, might be 11.4,
+
+00:02:23.980 --> 00:02:27.580
+12.0, 10. whatever it is, that's fine.
+
+00:02:27.580 --> 00:02:31.180
+They're all going to support C++ 17, unless you've got a really
+
+00:02:31.180 --> 00:02:33.780
+old distribution, which is very unlikely.
+
+00:02:35.140 --> 00:02:38.340
+All right, so the next step is to install CodeLite.
+
+00:02:38.340 --> 00:02:41.600
+And then once we install CodeLite, we can configure CodeLite to work
+
+00:02:41.600 --> 00:02:42.200
+with the compiler,
+
+00:02:42.200 --> 00:02:45.000
+we just installed and we should be good to go.
+
+00:02:45.000 --> 00:02:48.200
+So head over to CodeLite.org again
+
+00:02:48.200 --> 00:02:50.200
+and in the Doc section,
+
+00:02:50.200 --> 00:02:52.500
+you'll see this downloads link right here.
+
+00:02:52.500 --> 00:02:56.000
+So I'm going to select that and I'm going to click latest.
+
+00:02:56.600 --> 00:03:00.600
+I've got the information here, how to install for Mac, Windows, Linux.
+
+00:03:00.600 --> 00:03:04.960
+And this is the one we're interested in right here, the Ubuntu area.
+
+00:03:04.960 --> 00:03:08.760
+Now, it's all going to be terminal driven, so
+
+00:03:08.760 --> 00:03:10.960
+ I'm going to make some room here for my terminal.
+
+00:03:11.760 --> 00:03:16.260
+And really what I want to have access to these collect and copy and paste them, okay?
+
+00:03:16.260 --> 00:03:18.760
+So, let me open the terminal again.
+
+00:03:22.860 --> 00:03:25.060
+And I'm going to move the terminal just over here
+
+00:03:25.060 --> 00:03:27.860
+ just, so we can get it just slightly out of the way.
+
+00:03:28.660 --> 00:03:30.140
+Perfect, all right?
+
+00:03:30.140 --> 00:03:30.940
+So what we're going to do is?
+
+00:03:30.940 --> 00:03:32.540
+We're just going to go through this
+
+00:03:32.540 --> 00:03:35.940
+and basically copy these commands into the terminal and execute them.
+
+00:03:35.940 --> 00:03:37.940
+So the first thing we need to do is?
+
+00:03:37.940 --> 00:03:39.440
+We need to set the public key,
+
+00:03:39.440 --> 00:03:41.640
+so again I'm going to click on this little
+
+00:03:41.640 --> 00:03:45.140
+icon right here, then come over to my terminal.Paste,
+
+00:03:46.130 --> 00:03:49.630
+press the right arrow just to make sure that that's un-highlighted
+
+00:03:49.630 --> 00:03:50.930
+ and press enter.
+
+00:03:50.930 --> 00:03:53.130
+It's going to ask you for your password again.
+
+00:03:55.120 --> 00:03:58.620
+Notice the warning that it's deprecated, don't worry about it,
+
+00:03:59.420 --> 00:04:00.920
+that's a normal warning.
+
+00:04:06.520 --> 00:04:09.520
+All right, we're done with that, then I'm going to come down here.
+
+00:04:11.720 --> 00:04:14.920
+And depending on which distribution you have and again,
+
+00:04:14.920 --> 00:04:17.920
+there's a lot of Linux distributions out there.
+
+00:04:17.920 --> 00:04:19.520
+I'm using Jammy,
+
+00:04:19.520 --> 00:04:22.820
+which is 22.04, If you're using these other releases,
+
+00:04:22.820 --> 00:04:25.020
+you can use these lines here.
+
+00:04:25.020 --> 00:04:26.710
+So basically what I'm doing is?
+
+00:04:26.710 --> 00:04:30.700
+I'm going to execute this command because it's already my jammy command right here.
+
+00:04:30.700 --> 00:04:32.390
+But if you've got one of these,
+
+00:04:32.390 --> 00:04:34.490
+ you can just replace this part
+
+00:04:34.490 --> 00:04:36.390
+with whatever distribution you have,
+
+00:04:36.390 --> 00:04:39.690
+whether it's bulls eye or kinetic or whatever else you have.
+
+00:04:39.690 --> 00:04:41.690
+So, I'm just going to copy this.
+
+00:04:42.590 --> 00:04:44.090
+If you're a Linux user,
+
+00:04:44.090 --> 00:04:46.390
+you probably know exactly what you're doing.
+
+00:04:46.390 --> 00:04:48.890
+So, let me right click on here and paste it.
+
+00:04:49.490 --> 00:04:52.490
+Press the right arrow again and press enter.
+
+00:04:57.690 --> 00:04:59.290
+And it'll just be a second.
+
+00:05:03.690 --> 00:05:07.290
+Okay, I'm done, I'm going to clear this terminal just to make a little room here.
+
+00:05:09.090 --> 00:05:12.490
+All right, so I'm going to scroll up here and just a couple of more commands to run.
+
+00:05:12.490 --> 00:05:15.790
+I'm just going to type these in, the first one is sudo apt update.
+
+00:05:16.780 --> 00:05:20.180
+sudo apt update.
+
+00:05:20.180 --> 00:05:21.180
+Press enter.
+
+00:05:25.870 --> 00:05:28.470
+Okay, that's done, I'll clear it once more.
+
+00:05:29.070 --> 00:05:30.670
+Okay, so now what we want to do is
+
+00:05:30.670 --> 00:05:33.670
+We want to install the latest version, which we know is 17.
+
+00:05:33.670 --> 00:05:37.030
+Don't do this right here for now, just come right down here and type
+
+00:05:37.030 --> 00:05:38.330
+this one right here.
+
+00:05:39.690 --> 00:05:42.690
+Just click the icon and paste it just to make it easier.
+
+00:05:46.990 --> 00:05:48.890
+Okay, clear it once more.
+
+00:05:50.390 --> 00:05:52.690
+And now here we're going to execute this command,
+
+00:05:52.690 --> 00:05:55.940
+except we're going to use the 17, instead of the 14.
+
+00:05:55.940 --> 00:05:57.740
+Because we know that that's the latest.
+
+00:05:58.240 --> 00:06:01.240
+So, let me paste that.
+
+00:06:02.840 --> 00:06:08.530
+And I'm going to change that 4 to at 7, just like that 17.0 star.
+
+00:06:08.530 --> 00:06:12.030
+And that will install CodeLite and all the other dependencies that it might have.
+
+00:06:12.030 --> 00:06:14.830
+So this one might take a little while, but once we're done,
+
+00:06:14.830 --> 00:06:17.030
+we've got CodeLite installed
+
+00:06:17.430 --> 00:06:21.630
+and the next step is to actually run CodeLite and configure it to work with the compiler.
+
+00:06:21.630 --> 00:06:24.230
+Okay, so we're done with that, so let's now
+
+00:06:24.230 --> 00:06:27.230
+open up CodeLite and configure it to work with the compiler.

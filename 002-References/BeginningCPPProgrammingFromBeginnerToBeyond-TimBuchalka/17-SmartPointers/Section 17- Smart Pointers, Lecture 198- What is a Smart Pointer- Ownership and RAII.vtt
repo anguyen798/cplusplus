@@ -1,0 +1,190 @@
+WEBVTT
+
+00:00:05.600 --> 00:00:09.800
+So what are smart pointers? Well, smart pointers are objects.
+
+00:00:10.200 --> 00:00:13.500
+In fact, smart pointers are implemented as c++
+
+00:00:13.500 --> 00:00:15.700
+template classes, which we can instantiate.
+
+00:00:16.600 --> 00:00:19.600
+Smart pointers can only point to heap allocated memory,
+
+00:00:19.600 --> 00:00:22.600
+and they automatically call delete when that's no longer needed.
+
+00:00:23.100 --> 00:00:27.700
+Also very importantly, smart pointers adhere to RAII principles.
+
+00:00:28.300 --> 00:00:32.530
+As previously mentioned, c++ has several types of smart pointers:
+
+00:00:32.530 --> 00:00:36.030
+unique pointer, shared pointer, weak pointer and auto pointer.
+
+00:00:36.580 --> 00:00:40.270
+Auto pointer has been deprecated so you shouldn't use this going forward,
+
+00:00:40.270 --> 00:00:44.870
+and we won't discuss it in this section. So now let's see how we can create a smart pointer.
+
+00:00:46.770 --> 00:00:50.760
+First, we need to include the memory header file since it defines the smart pointer
+
+00:00:50.760 --> 00:00:52.560
+classes and functions we'll use.
+
+00:00:53.550 --> 00:00:57.550
+As previously mentioned, smart pointers are implemented as class templates,
+
+00:00:57.550 --> 00:01:00.450
+very similar to the way that the vector class is implemented,
+
+00:01:00.450 --> 00:01:04.110
+and we create them using a template parameter, much as we did with vectors.
+
+00:01:04.990 --> 00:01:08.790
+Smart pointers are basically wrapper classes that contain and manage
+
+00:01:08.790 --> 00:01:09.790
+a raw pointer.
+
+00:01:10.090 --> 00:01:13.790
+The actual implementation of smart pointers is compiler dependent
+
+00:01:13.790 --> 00:01:15.490
+and is beyond the scope of this section.
+
+00:01:16.040 --> 00:01:19.040
+Once we create a smart pointer, we can use the smart pointer
+
+00:01:19.040 --> 00:01:21.300
+much in the same way as we use the raw pointer.
+
+00:01:21.900 --> 00:01:26.400
+The smart pointer classes provide overloaded dereference and member selection operators
+
+00:01:26.550 --> 00:01:29.150
+as well as methods to get the raw pointer and more.
+
+00:01:29.650 --> 00:01:34.450
+However, you can't do pointer arithmetic on smart pointers, like you can with raw pointers.
+
+00:01:35.110 --> 00:01:37.770
+Finally, we can have custom deleters with smart pointers
+
+00:01:37.770 --> 00:01:42.430
+where we can explicitly define the exact behavior we want when the pointer is about to be destroyed.
+
+00:01:42.790 --> 00:01:45.390
+Now let's see the syntax for declaring a smart pointer.
+
+00:01:47.050 --> 00:01:50.040
+Here's an example of how you might create a smart pointer variable.
+
+00:01:50.400 --> 00:01:52.500
+Of course, you would replace smart pointer
+
+00:01:52.500 --> 00:01:55.860
+with one of the c++ smart pointer types,like unique pointer,
+
+00:01:55.860 --> 00:01:57.520
+shared pointer or weak pointer.
+
+00:01:58.120 --> 00:02:00.820
+In this case, the smart pointer ptr
+
+00:02:00.820 --> 00:02:04.920
+will manage an object of type sum class that's been allocated on the heap.
+
+00:02:05.800 --> 00:02:07.800
+Once we create a smart pointer object,
+
+00:02:07.800 --> 00:02:11.000
+we can use the dereference operator, the member selection operator
+
+00:02:11.000 --> 00:02:13.360
+or any of the other smart pointer member methods.
+
+00:02:14.130 --> 00:02:17.730
+Notice that we don't have to explicitly delete the pointer when we're done with it.
+
+00:02:18.030 --> 00:02:21.130
+In this example, when the pointer goes out of scope,
+
+00:02:21.130 --> 00:02:23.930
+the smart pointer's destructor is called automatically
+
+00:02:23.930 --> 00:02:26.930
+and it takes care of de-allocating any heap storage that was used.
+
+00:02:27.430 --> 00:02:31.030
+That's pretty cool. You can see how powerful smart pointers are.
+
+00:02:31.230 --> 00:02:35.230
+They can prevent memory leaks, make your code easier to read and write and maintain
+
+00:02:35.230 --> 00:02:36.230
+with less errors.
+
+00:02:38.340 --> 00:02:42.540
+Now let's talk about a common idiom or design pattern used in c++ programming.
+
+00:02:43.040 --> 00:02:46.340
+It's called RAII
+
+00:02:46.940 --> 00:02:50.540
+and it stands for Resource Acquisition Is Initialization.
+
+00:02:51.240 --> 00:02:53.840
+A complicated acronym for a pretty simple concept.
+
+00:02:54.340 --> 00:02:57.840
+First, RAII objects are allocated on the stack.
+
+00:02:58.440 --> 00:03:01.440
+The resource acquisition part is pretty straightforward.
+
+00:03:01.440 --> 00:03:05.540
+It means that RAII objects will acquire some sort of resource
+
+00:03:05.540 --> 00:03:09.840
+that could be opening a file, allocating memory, acquiring a lock and so forth.
+
+00:03:10.390 --> 00:03:13.190
+The initialization part is also straightforward.
+
+00:03:13.190 --> 00:03:17.190
+This means that the resource is acquired at object initialization time.
+
+00:03:17.190 --> 00:03:20.190
+So in other words, it happens in the object's constructor.
+
+00:03:21.070 --> 00:03:24.270
+Now at some point we need to relinquish that resource that we acquired,
+
+00:03:24.270 --> 00:03:25.870
+and that happens in the destructor.
+
+00:03:26.230 --> 00:03:29.590
+Here we can close the file, de-allocate any allocated memory,
+
+00:03:29.590 --> 00:03:31.090
+release locks and so forth.
+
+00:03:31.890 --> 00:03:35.390
+Smart pointers are examples of RAII classes
+
+00:03:35.390 --> 00:03:38.890
+since this is the idiom they follow with regard to memory resources,
+
+00:03:39.490 --> 00:03:41.990
+a simple concept but a very powerful concept.
+
+00:03:42.350 --> 00:03:46.550
+So let's start our exploration of the c++ smart pointers with the unique pointer
+
+00:03:46.550 --> 00:03:47.550
+in the next video.

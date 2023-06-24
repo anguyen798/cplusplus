@@ -1,0 +1,595 @@
+WEBVTT
+
+00:00.480 --> 00:02.320
+Next function is stressed.
+
+00:02.790 --> 00:06.120
+This is for finding a substring from a mainstream.
+
+00:06.930 --> 00:10.140
+We can find out the existence of this string.
+
+00:10.140 --> 00:16.330
+If this is found, then it will give the occurrence of the substring followed by remaining string.
+
+00:16.350 --> 00:20.610
+So here this is the main string containing word programming.
+
+00:20.640 --> 00:24.390
+Then here is substring.
+
+00:25.260 --> 00:29.560
+So I want to find out if there is any string or gram within this one.
+
+00:29.580 --> 00:31.590
+Yes, this is gram.
+
+00:31.590 --> 00:36.000
+So the result will be it will give out the complete string that is gram.
+
+00:36.330 --> 00:37.710
+So from the starting point.
+
+00:37.710 --> 00:39.360
+So it will find the remaining string.
+
+00:40.520 --> 00:42.560
+Let us see the rim of this one.
+
+00:43.460 --> 00:44.060
+Here already.
+
+00:44.060 --> 00:50.180
+I have two strengths as one and as two, so I will directly display the result of a function that is
+
+00:50.180 --> 00:50.960
+SDR.
+
+00:51.000 --> 00:51.860
+SDR.
+
+00:52.740 --> 00:57.000
+And first mainspring is S1 and the second string is S2.
+
+00:58.670 --> 01:03.410
+And also given that for a new line, let us run this.
+
+01:04.620 --> 01:04.980
+Yeah.
+
+01:04.980 --> 01:06.990
+It has given the result that is growing.
+
+01:06.990 --> 01:11.160
+So Graham Graham is found and it is giving the rest of the string.
+
+01:11.160 --> 01:18.450
+So so it is giving a portion of a string starting from Graham now instead of Graham.
+
+01:18.450 --> 01:20.370
+I'll give some another word.
+
+01:20.370 --> 01:21.480
+I'll just give.
+
+01:23.010 --> 01:23.520
+M.
+
+01:24.400 --> 01:26.290
+Just a single letter word I have given.
+
+01:26.290 --> 01:26.980
+And it is a string.
+
+01:27.010 --> 01:27.580
+Remember this?
+
+01:27.580 --> 01:28.600
+This is in double code.
+
+01:28.600 --> 01:30.250
+So a double code string.
+
+01:30.580 --> 01:31.900
+Let us learn this.
+
+01:32.410 --> 01:36.430
+So for us, first and onwards, it has given a substring.
+
+01:37.210 --> 01:37.800
+Right?
+
+01:37.810 --> 01:40.540
+So I'll give another letter that is not present here.
+
+01:40.570 --> 01:45.640
+K so it should be an error because k is not found, so nothing is returned.
+
+01:45.640 --> 01:46.750
+So it should be null.
+
+01:46.780 --> 01:47.200
+Right.
+
+01:47.200 --> 01:49.180
+So the result of this should be null.
+
+01:49.450 --> 01:50.830
+Let us see what happens.
+
+01:53.220 --> 01:59.230
+Yes, it's an error and it's causing an error because it's a runtime error.
+
+01:59.280 --> 01:59.840
+Right.
+
+01:59.850 --> 02:01.760
+So it is crashing here.
+
+02:01.770 --> 02:02.760
+Who is crashing here?
+
+02:02.790 --> 02:05.190
+Code cannot display null.
+
+02:05.700 --> 02:06.200
+Right.
+
+02:06.210 --> 02:12.630
+So here if you if you have to print this one, only if a substring is found, then you can write a condition
+
+02:12.660 --> 02:18.810
+that is str str if SW one contains se two.
+
+02:19.700 --> 02:21.740
+And which is not equal to null.
+
+02:21.770 --> 02:23.420
+Then only print this one.
+
+02:24.320 --> 02:24.890
+Right.
+
+02:25.320 --> 02:28.070
+LS c see out.
+
+02:29.650 --> 02:30.700
+Not found.
+
+02:34.670 --> 02:34.990
+And.
+
+02:38.910 --> 02:40.050
+Let us do this.
+
+02:40.910 --> 02:42.920
+He stopped this one and ran again.
+
+02:44.060 --> 02:45.080
+Not found.
+
+02:45.080 --> 02:46.910
+So that K is not found.
+
+02:47.300 --> 02:48.150
+I'll give a letter.
+
+02:48.180 --> 02:48.770
+Kite.
+
+02:48.770 --> 02:49.150
+Kite.
+
+02:49.160 --> 02:51.190
+Is it present in this string or not?
+
+02:51.200 --> 02:52.700
+So no, it is not found.
+
+02:53.210 --> 02:59.540
+So this is how you can find occurrence of a substring inside a main string and get the content of a
+
+02:59.540 --> 03:03.170
+string from that occurrence till the end of a string.
+
+03:03.980 --> 03:06.830
+Let us look at other functions for string.
+
+03:07.310 --> 03:13.960
+There is a function called STR Cat that is finding the occurrence of a given character within a string.
+
+03:13.970 --> 03:18.920
+So here you can mention a character and find out if it is appearing inside the main string.
+
+03:19.010 --> 03:21.050
+So this is similar to structure.
+
+03:21.050 --> 03:22.430
+We have already we have seen it.
+
+03:22.430 --> 03:26.050
+So but that was for a string, but this is for car.
+
+03:26.060 --> 03:29.930
+So the difference is that was for a string and here it's for cat.
+
+03:30.140 --> 03:31.850
+And there is one more version of this one.
+
+03:31.850 --> 03:33.800
+So that is str cat.
+
+03:33.890 --> 03:40.250
+But ah so this will find the occurrence of a string from the right hand side or from the rear end of
+
+03:40.250 --> 03:41.120
+a string.
+
+03:41.720 --> 03:49.340
+Now if this is a string and I want to find occurrence of M letter M, so it will give the part of a
+
+03:49.340 --> 03:52.130
+string starting from M till the end of a string.
+
+03:52.640 --> 03:58.640
+And if I use string this one, then it will find the occurrence of M from the right hand side.
+
+03:58.640 --> 04:00.020
+So it will take out this one.
+
+04:01.240 --> 04:03.390
+Right from here, it will give the remaining strength.
+
+04:03.510 --> 04:06.870
+Similarly, we have occurrence of ah twice.
+
+04:07.740 --> 04:08.050
+Right.
+
+04:08.070 --> 04:13.560
+G is also appearing twice, so let us try them on different characters and see how the results will
+
+04:13.560 --> 04:13.860
+be.
+
+04:13.860 --> 04:15.300
+So I'll give you a demo of this one.
+
+04:17.340 --> 04:17.790
+Already.
+
+04:17.790 --> 04:19.950
+I have a string that is programming.
+
+04:19.950 --> 04:23.270
+Now I will directly use it and see out.
+
+04:23.280 --> 04:27.810
+So I will say a structure and the string is SW one.
+
+04:27.810 --> 04:31.110
+And the letter I want to find out is G.
+
+04:33.050 --> 04:34.910
+And here also.
+
+04:34.910 --> 04:35.140
+And.
+
+04:37.490 --> 04:38.560
+Now grabbing.
+
+04:38.880 --> 04:39.290
+Right.
+
+04:39.290 --> 04:45.070
+So the first occurrence of G now I'll use another letter that is R.
+
+04:45.080 --> 04:50.180
+So from our programming it should give this result.
+
+04:51.670 --> 04:53.310
+Yes, it has given this recent.
+
+04:54.670 --> 04:59.770
+Now, if I use any letter that is not there in this one, let us say small piece, small piece, not
+
+04:59.770 --> 05:01.130
+the capital piece there.
+
+05:01.150 --> 05:07.180
+So it should be an error because this will be null and see out cannot display null and it will be an
+
+05:07.180 --> 05:07.600
+error.
+
+05:08.790 --> 05:11.950
+Yes, it is an error when you're using these functions.
+
+05:11.970 --> 05:15.450
+You should know that that character is present or not.
+
+05:15.480 --> 05:18.750
+If not, then you should handle the condition that I have shown you earlier.
+
+05:18.780 --> 05:23.450
+Now I will use another function str aka already.
+
+05:23.460 --> 05:28.470
+I have told you about this function that it will check the occurrence of this letter from the right
+
+05:28.470 --> 05:29.220
+hand side.
+
+05:29.250 --> 05:30.060
+That is rare.
+
+05:30.060 --> 05:30.630
+And.
+
+05:32.410 --> 05:33.700
+You said on it again.
+
+05:34.150 --> 05:35.830
+So JI is on the right hand side.
+
+05:35.830 --> 05:39.460
+The first letter from the right side is G, so it is displaying only G.
+
+05:40.840 --> 05:43.420
+I'll give the name letter that is R.
+
+05:43.600 --> 05:44.740
+It is in single course.
+
+05:44.740 --> 05:45.430
+Remember this?
+
+05:45.430 --> 05:46.270
+It's a character.
+
+05:46.270 --> 05:47.720
+So it's a single course.
+
+05:48.730 --> 05:51.010
+No ramming EMI injury.
+
+05:51.190 --> 05:53.710
+So this is the substring we go.
+
+05:54.010 --> 05:56.410
+So from the right hand side does the occurrence.
+
+05:56.710 --> 06:01.360
+Your next function is string compare comparing two strings.
+
+06:01.750 --> 06:06.250
+This will compare to strings and dictionary order or alphabetical order.
+
+06:06.250 --> 06:11.260
+If two words are there that if they are present additionally, what will be their order?
+
+06:11.260 --> 06:17.770
+So the first one that appears in the dictionary is a smaller word, and the second one is a larger word
+
+06:17.770 --> 06:18.550
+or a bigger word.
+
+06:18.550 --> 06:19.720
+Suppose there are two words.
+
+06:19.720 --> 06:24.700
+If I take two words, that is apple and banana.
+
+06:25.580 --> 06:31.220
+So apple is smaller than banana because banana comes after apple in dictionary.
+
+06:31.790 --> 06:37.190
+So similarly, whatever the words that you take here, so it will see the alphabetical order as per
+
+06:37.190 --> 06:38.000
+the dictionary.
+
+06:38.270 --> 06:41.030
+By comparing two strings, it returns the result.
+
+06:41.270 --> 06:47.870
+Like if the first string comes first in the dictionary means that if it is smaller than it returns negative
+
+06:47.870 --> 06:49.850
+value or it may be minus one.
+
+06:49.850 --> 06:53.420
+Also, sometimes it depends on the compiler you are using.
+
+06:54.220 --> 06:58.630
+If the first string is equal to second string, it returns zero.
+
+06:59.950 --> 07:07.450
+If a first one is greater means it comes afterwards of two in the dictionary, then it will return positive
+
+07:07.450 --> 07:08.080
+result.
+
+07:09.020 --> 07:11.540
+So here I have some examples like this.
+
+07:11.540 --> 07:16.310
+A string helo and helo both are same, so it will return zero for this one.
+
+07:16.610 --> 07:18.880
+Now string one small edge.
+
+07:18.890 --> 07:23.300
+I have taken lowercase each here and capital case s here.
+
+07:23.600 --> 07:31.580
+So you know that lowercase alphabets are having greater ASCII code than smaller case.
+
+07:31.580 --> 07:35.900
+Like a smaller case is 97, A's 97.
+
+07:35.930 --> 07:41.150
+Then uppercase A is 65.
+
+07:42.430 --> 07:47.080
+So if you take capital etch, then it will be 73.
+
+07:47.890 --> 07:50.410
+And small edge it will be.
+
+07:50.980 --> 07:52.090
+We're not five.
+
+07:52.090 --> 07:54.100
+So one not five is greater than.
+
+07:54.930 --> 07:55.930
+73.
+
+07:55.950 --> 07:59.840
+So therefore, this strain is greater than this one.
+
+07:59.850 --> 08:04.730
+So though alphabetical order, if you see they are same, but the cases are different.
+
+08:04.740 --> 08:07.320
+So this becomes bigger than this one.
+
+08:07.320 --> 08:10.020
+So this helo is greater than this one.
+
+08:10.620 --> 08:12.450
+Then here I have another example.
+
+08:12.450 --> 08:17.850
+So this is the letter M and this is starting with the letter E.
+
+08:17.880 --> 08:22.830
+So obviously M's comes after E, so M is greater than E.
+
+08:22.860 --> 08:25.430
+So minor is greater than 11.
+
+08:27.180 --> 08:30.660
+So let us try this function and see how it sends the results.
+
+08:31.770 --> 08:37.350
+So in this program already you have two strengths, that is Helo and Helo four, S1 and S2.
+
+08:37.380 --> 08:40.530
+Now let me directly call the function and use it in C out.
+
+08:40.980 --> 08:46.610
+So SDR C and B string compare s1 comma S2.
+
+08:46.620 --> 08:50.610
+So it will compare two strings and let us run.
+
+08:52.170 --> 08:58.020
+Yes, exit code is appearing in next line and the result is zero because both those things are seen.
+
+08:58.500 --> 09:01.950
+Now take first letter first the string, that first letter as lowercase.
+
+09:01.950 --> 09:03.590
+So this should become greater.
+
+09:03.600 --> 09:05.670
+So it should give a positive result.
+
+09:06.330 --> 09:10.680
+And the difference in ASCII codes of application lowercase is 32.
+
+09:10.690 --> 09:11.580
+Remember this one?
+
+09:13.440 --> 09:19.260
+So yeah, it is giving positive result, as I said that if the first string is greater than second string,
+
+09:19.260 --> 09:22.730
+it gives positive result and it is giving positive 32.
+
+09:22.740 --> 09:28.560
+So actually it is giving the difference between these two alphabets, ASCII codes of these two alphabets.
+
+09:29.350 --> 09:30.260
+I'll change it.
+
+09:30.280 --> 09:34.780
+I'll say this as same capital L and last letter.
+
+09:34.780 --> 09:36.630
+I'll give it as capital.
+
+09:36.640 --> 09:37.120
+Oh.
+
+09:38.280 --> 09:43.080
+And this is lower or that smaller or so lowercase in uppercase.
+
+09:43.080 --> 09:47.010
+So all the alphabets are same, but the last letter is different in cases.
+
+09:47.010 --> 09:53.640
+So now it makes this a string grader second string greater because it is of lowercase o and of uppercase
+
+09:53.640 --> 09:53.840
+o.
+
+09:53.880 --> 09:56.130
+And the difference is again 32.
+
+09:56.130 --> 09:57.750
+But now first the string.
+
+09:57.750 --> 10:01.710
+The first string is smaller than second string, so the result must be -32.
+
+10:04.190 --> 10:05.840
+Yes it is -32.
+
+10:06.470 --> 10:10.250
+So negative shows that the string is a smaller.
+
+10:10.250 --> 10:11.540
+It comes first.
+
+10:11.700 --> 10:13.100
+Now I'll change these words.
+
+10:13.100 --> 10:14.660
+I'll change it to minor.
+
+10:14.660 --> 10:18.690
+And this has elder now, man.
+
+10:19.460 --> 10:19.730
+So.
+
+10:19.740 --> 10:19.900
+Hm.
+
+10:19.940 --> 10:20.920
+Comes next.
+
+10:20.930 --> 10:21.760
+So yes.
+
+10:21.770 --> 10:28.280
+Then E so e comes first, then m so first the string is greater than second one.
+
+10:28.280 --> 10:30.010
+So it is giving positive result.
+
+10:30.020 --> 10:36.170
+And the difference between the ASCII code of M and E, that is the difference is eight.
+
+10:36.710 --> 10:38.520
+So it has given positive result.
+
+10:38.540 --> 10:40.730
+So this is about string compare function.
+
+10:40.730 --> 10:43.070
+So you can use it for comparing two strings.

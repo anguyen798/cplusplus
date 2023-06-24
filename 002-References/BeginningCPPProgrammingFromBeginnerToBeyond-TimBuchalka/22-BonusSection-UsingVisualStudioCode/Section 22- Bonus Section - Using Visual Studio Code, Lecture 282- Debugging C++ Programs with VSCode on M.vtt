@@ -1,0 +1,304 @@
+WEBVTT
+
+00:04.750 --> 00:05.600
+Welcome back.
+
+00:05.620 --> 00:11.890
+In this video, I'm going to show you how to set up the debugger so that we can debug C++ programs in
+
+00:11.890 --> 00:13.060
+Visual Studio code.
+
+00:13.360 --> 00:20.020
+The debugger is a great tool that allows us to execute our code one line at a time, and we can inspect
+
+00:20.020 --> 00:21.430
+variables as we do them.
+
+00:21.760 --> 00:27.100
+So let's use the same project that we wrote in the previous video, and I'm going to debug Project two
+
+00:27.130 --> 00:27.670
+here.
+
+00:28.000 --> 00:29.470
+I'm just going to make one little change to it.
+
+00:29.470 --> 00:34.960
+I'm going to initialize favorite number to 100 just so we can see it and see it when it changes.
+
+00:36.040 --> 00:37.360
+All right, so where do we start?
+
+00:37.390 --> 00:38.350
+Well, it's pretty easy.
+
+00:38.350 --> 00:41.710
+You just select the file, any main CPP file.
+
+00:41.740 --> 00:46.960
+What we're doing now is we're configuring the debugger, so I'm going to select main CPP, then I'm
+
+00:46.960 --> 00:50.440
+going to go through run and add a configuration.
+
+00:51.630 --> 00:54.210
+And I'm going to select C plus plus gdb.
+
+00:55.180 --> 00:57.520
+And my G plus plus compiler again.
+
+00:58.360 --> 01:01.680
+Then you'll see some stuff happen and you'll see this little menu bar pop up.
+
+01:01.690 --> 01:07.220
+Just click that little red box to stop the debugger and we'll finish configuring it.
+
+01:07.240 --> 01:09.880
+I'm going to close this window down here to give us some more room.
+
+01:09.880 --> 01:12.760
+And you can see that a new file was created.
+
+01:12.850 --> 01:14.950
+It's called Launch JSON.
+
+01:15.130 --> 01:18.940
+And this is the one that we're going to modify slightly to get our debugger to work.
+
+01:18.970 --> 01:24.370
+The most important thing to do here is we want to change line nine, which is the type, and we want
+
+01:24.370 --> 01:28.450
+to change that from CP Dpkg to LSB.
+
+01:28.480 --> 01:34.200
+Now when we do that, you'll see that we have some errors pop up here on lines 13, 15, 16 and 17.
+
+01:34.210 --> 01:36.580
+We want to delete those lines completely.
+
+01:37.570 --> 01:42.610
+So let me get rid of that and we'll get rid of these three lines as well.
+
+01:43.000 --> 01:47.110
+And that's what we've got now on line 13 should be filed.
+
+01:47.110 --> 01:47.650
+Your name.
+
+01:47.650 --> 01:51.960
+If it's anything other than that, be sure to change it, to file your name and that's it.
+
+01:51.970 --> 01:52.340
+We're done.
+
+01:52.420 --> 01:55.270
+Make sure again, make sure there's no squiggles and no errors in here.
+
+01:55.570 --> 01:56.710
+I just saved that.
+
+01:56.710 --> 01:58.900
+And I'm going to close it because we're done with it.
+
+01:58.900 --> 02:02.080
+So now we're ready to debug to start the debugger.
+
+02:02.080 --> 02:04.640
+Select the file that you want to debug.
+
+02:04.660 --> 02:08.080
+So in this case, I want to debug main CPP in Project two.
+
+02:08.440 --> 02:12.970
+If I wanted to debug Project one, I would click on main CPP and Project one.
+
+02:12.970 --> 02:16.330
+So I don't I want Project Two's main CPP.
+
+02:16.330 --> 02:19.000
+So I've just selected it and here it is in my editor.
+
+02:19.240 --> 02:23.500
+To start the debugger, you click on this bug icon right here, run and debug.
+
+02:23.500 --> 02:27.090
+So I'll do that now and you'll notice a couple of things happen.
+
+02:27.100 --> 02:33.730
+Well, one is you have this play arrow up here and you have this information area where you have variables
+
+02:33.730 --> 02:36.190
+and watches and call stacks and breakpoints.
+
+02:36.370 --> 02:37.960
+I'll cover these during the course.
+
+02:38.380 --> 02:42.780
+I'll cover them in code light in the course, but it's the same concept in Visual Studio code.
+
+02:42.790 --> 02:45.100
+What we need to do first is set a breakpoint.
+
+02:45.100 --> 02:49.750
+This is the place where the bugger is going to stop executing our code.
+
+02:49.930 --> 02:52.240
+You can do that right over here on the left side.
+
+02:52.240 --> 02:56.710
+If you just hover over this left gutter here, you see that red dot that keeps popping up?
+
+02:56.890 --> 02:58.480
+Well, you could just select that.
+
+02:58.480 --> 03:02.350
+So let's say that I wanted to stop right on that line.
+
+03:02.350 --> 03:07.120
+So now when the debugger starts executing, it's going to run the program and stop here and then we
+
+03:07.120 --> 03:08.620
+can control it from there.
+
+03:08.800 --> 03:12.490
+Also, notice that when to select that breakpoint, it shows up down here.
+
+03:13.310 --> 03:15.920
+Bright main KPIs breakpoint in Project two.
+
+03:15.920 --> 03:21.500
+Now Visual Studio code has a glitch where sometimes all the breakpoints and all the projects show up
+
+03:21.500 --> 03:21.990
+here.
+
+03:22.010 --> 03:26.870
+My recommendation is when you start your debugging, as soon as you click on that bug icon, just come
+
+03:26.870 --> 03:32.240
+down here and click that X if there's anything there that clears out all the breakpoints everywhere,
+
+03:32.240 --> 03:36.110
+and then you can just come back up and click select your breakpoint and you're good to go.
+
+03:36.110 --> 03:40.940
+So once you're ready to start debugging, we click on that green play button right up here on the top
+
+03:40.940 --> 03:41.540
+left.
+
+03:42.230 --> 03:47.330
+And when I do that, you see this little menu option here comes up with these icons that control the
+
+03:47.330 --> 03:48.020
+debugger.
+
+03:48.020 --> 03:53.600
+The bottom bar down here turns orange, and this area right here is where your variables show up.
+
+03:53.600 --> 03:58.760
+You can see my favorite number of variables, 100, and that's exactly what I initialized it to.
+
+03:58.790 --> 04:04.070
+We can also hover over our variable names just like that, and you can see the 100 pop up.
+
+04:04.070 --> 04:06.740
+That's the value and that's the current value.
+
+04:06.740 --> 04:09.350
+If we change it, that number is going to change.
+
+04:09.500 --> 04:14.000
+What I can do next is and you can see that line six executed right down here in the terminal.
+
+04:14.000 --> 04:15.230
+Hello from project two.
+
+04:15.530 --> 04:20.060
+So now what I can do is I can click these buttons and I'll explain these buttons during the course.
+
+04:20.060 --> 04:22.100
+But this one right here just steps over the code.
+
+04:22.100 --> 04:23.630
+It executes that statement.
+
+04:23.630 --> 04:29.480
+So if I want to execute that statement now, the program is basically waiting for us to type something
+
+04:29.480 --> 04:29.630
+in.
+
+04:29.630 --> 04:30.200
+Right, right here.
+
+04:30.200 --> 04:31.790
+We have to enter our favorite number.
+
+04:31.790 --> 04:36.380
+So I'm going to enter in something other than 100 so that we can see favorite number change.
+
+04:36.410 --> 04:39.110
+Let me type in 45 and press enter.
+
+04:39.590 --> 04:42.650
+You can see now that the play head is here on line nine.
+
+04:42.650 --> 04:47.510
+Line nine has not executed yet, but also notice I entered 45.
+
+04:47.510 --> 04:52.550
+But look what happened over here on the top left and my variables favorite number is now 45.
+
+04:52.550 --> 04:56.180
+And again, I can hover over it anywhere that it's being used to see its value.
+
+04:56.180 --> 04:57.280
+This is really handy.
+
+04:57.290 --> 05:02.780
+Sometimes programming gets really complex and it's very helpful to be able to execute your code one
+
+05:02.780 --> 05:07.430
+line at a time and see your variables, see the results of your calculations visually.
+
+05:07.430 --> 05:10.490
+And it can be very, very useful when we're done.
+
+05:10.490 --> 05:16.070
+We can just continue the program or we can stop the program right here in this case, I'm just going
+
+05:16.070 --> 05:20.540
+to continue and you can see it says here, your favorite number is 45.
+
+05:20.540 --> 05:21.920
+And at this point, we're done.
+
+05:21.920 --> 05:23.930
+This bottom bar turns blue again.
+
+05:23.930 --> 05:29.540
+And if we want to continue editing and so forth, we can just click explore and go right back to our
+
+05:29.540 --> 05:30.290
+files.
+
+05:30.440 --> 05:31.490
+So that's it.
+
+05:31.610 --> 05:35.750
+At this point, we've set up Visual Studio code for building a task.
+
+05:35.750 --> 05:40.190
+We know how to execute our executable and we know how to debug our project.
+
+05:40.190 --> 05:45.470
+In the next video, I'll show you how we can use the source code that I provide for the course within
+
+05:45.470 --> 05:46.520
+Visual Studio code.
+
+05:46.520 --> 05:47.300
+I'll see you there.

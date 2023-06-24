@@ -1,0 +1,1177 @@
+WEBVTT
+
+00:05.180 --> 00:06.260
+Hello, everyone.
+
+00:06.260 --> 00:10.580
+In this video, I want to give you a tour of the code light interface.
+
+00:10.580 --> 00:14.750
+The version of Code Light that I'm using here is 17 .3.0.
+
+00:14.780 --> 00:20.000
+This version is more recent than the versions that I used when I recorded the videos for the course.
+
+00:20.030 --> 00:22.580
+Overall, they are very, very similar.
+
+00:22.580 --> 00:25.640
+Sure, you're going to see a couple of differences in the user interface.
+
+00:25.640 --> 00:31.130
+Some things have been cleaned up and made more streamlined, but the basic functionality of the IDE,
+
+00:31.370 --> 00:37.250
+namely creating workspaces, creating projects, editing the code, building and running the code have
+
+00:37.250 --> 00:38.180
+not changed.
+
+00:38.180 --> 00:40.250
+So let me give you a quick tour here.
+
+00:40.250 --> 00:45.170
+When you first open up code light, if you don't have a workspace already open since the last time you
+
+00:45.200 --> 00:47.720
+saved it, you'll get a screen that looks like this.
+
+00:47.720 --> 00:51.590
+Over here on the left side, you'll see the workspace view.
+
+00:51.800 --> 00:55.490
+This is where the workspace and projects will reside.
+
+00:55.490 --> 00:58.910
+There aren't any open now because I don't have a workspace open yet.
+
+00:58.910 --> 01:02.540
+Over here in the center, you see these four big buttons.
+
+01:02.570 --> 01:06.270
+Again, that might change in the future, but right now we're going to use two of them.
+
+01:06.270 --> 01:11.130
+We're going to open an existing workspace and we're going to create a new workspace down at the bottom.
+
+01:11.130 --> 01:13.410
+We can see recently opened workspaces.
+
+01:13.410 --> 01:17.280
+So you can see that I've already opened three workspaces and I did that.
+
+01:17.280 --> 01:19.110
+So you can see something down here.
+
+01:19.110 --> 01:22.860
+Very likely the first time you run code light, you're not going to have any workspaces.
+
+01:22.860 --> 01:25.080
+So this section down here will be empty.
+
+01:25.230 --> 01:30.300
+So suppose I want to load a workspace, I can open a workspace and navigate to it, or I'm just going
+
+01:30.300 --> 01:35.280
+to click Workspace two right here, which is a workspace that I created with several projects in it
+
+01:35.280 --> 01:37.080
+just to walk you through this interface.
+
+01:37.080 --> 01:43.170
+So I'm just going to double click that and you can see that Code Light has loaded Workspace two into
+
+01:43.170 --> 01:44.340
+the workspace view.
+
+01:44.370 --> 01:46.740
+Workspace two has four projects in it.
+
+01:46.740 --> 01:48.990
+Project one, project two, three and four.
+
+01:48.990 --> 01:52.680
+Each one of those is a standalone C plus plus application.
+
+01:52.680 --> 01:59.280
+We can expand each of them and you can see each one has a source folder and within the source folder
+
+01:59.280 --> 02:02.370
+they each have a Main.cpp source file.
+
+02:02.370 --> 02:04.650
+That's where our C plus plus code goes.
+
+02:04.800 --> 02:09.450
+Later in the course, we're going to have projects that have multiple CP files in them.
+
+02:10.230 --> 02:17.580
+Also you can see that project one is bold and italicized that tells you that project one is the active
+
+02:17.580 --> 02:18.360
+project.
+
+02:18.390 --> 02:23.010
+The way that code light works is that it builds and runs the active project.
+
+02:23.010 --> 02:27.900
+So when we come up and build things in a minute, it's always going to build the active project.
+
+02:27.900 --> 02:32.460
+So it's really important that we understand what we're building because we could be editing Project
+
+02:32.460 --> 02:36.480
+four and then pressing build thinking that Project four is being built.
+
+02:36.480 --> 02:40.590
+But if Project One is the active project, project one will be built.
+
+02:40.780 --> 02:45.120
+It sounds confusing, but it really isn't just make active what you're working on.
+
+02:45.120 --> 02:46.680
+It's really, really straightforward.
+
+02:46.830 --> 02:49.800
+Okay, so that's the workspace view.
+
+02:49.830 --> 02:54.330
+We've got some tabs up here and the only one we're going to use is workspace.
+
+02:54.330 --> 02:55.440
+Don't worry about the rest.
+
+02:55.470 --> 03:02.040
+An IDE or an integrated development environment such as Code Lite is designed for small programs like
+
+03:02.040 --> 03:04.950
+we're going to do, and it's also designed for very large programs.
+
+03:04.950 --> 03:08.670
+So it's got a lot of bells and whistles that we're not going to use.
+
+03:08.700 --> 03:13.360
+These are the kinds of things you would use in programs that are thousands of files and very, very
+
+03:13.360 --> 03:14.070
+complicated.
+
+03:14.080 --> 03:16.750
+So in this case, we're just going to keep it really, really simple.
+
+03:16.750 --> 03:20.320
+This is all about learning C plus plus more than it is about learning code lite.
+
+03:20.530 --> 03:23.050
+So there's my workspace.
+
+03:23.050 --> 03:27.040
+You can see that I have this little paper airplane here.
+
+03:27.040 --> 03:29.320
+And when you click that, it collapses everything.
+
+03:29.320 --> 03:34.270
+Sometimes we've got a lot of projects in here and they all get expanded and it's really hard to find
+
+03:34.300 --> 03:34.810
+stuff.
+
+03:34.810 --> 03:37.330
+So if you click that, it just collapses everything.
+
+03:37.990 --> 03:40.270
+Now I can expand whatever I like again.
+
+03:41.020 --> 03:48.550
+Also, if I'm somewhere down here, let's say, and I want to go to my active project, I can just click
+
+03:48.550 --> 03:52.910
+that home icon and that takes me to my active project right away and opens it up.
+
+03:52.930 --> 03:54.130
+So that's kind of handy.
+
+03:54.130 --> 03:55.750
+And you've already seen the settings.
+
+03:55.750 --> 04:00.430
+You can click the project you want and you can click that little wrench and it gives you your settings.
+
+04:00.430 --> 04:04.360
+We did that when we installed and configured code light a few videos ago.
+
+04:04.660 --> 04:05.170
+All right.
+
+04:05.170 --> 04:07.300
+So that's the workspace view.
+
+04:07.330 --> 04:11.260
+Now, this big area right here in the center that's got nothing in it right now.
+
+04:11.260 --> 04:12.540
+This is your editor.
+
+04:12.580 --> 04:17.620
+In order to use the editor, you need to click on a C plus plus file or something in the project.
+
+04:17.620 --> 04:20.590
+So in this case, I'm going to double click on main.cpp.
+
+04:20.590 --> 04:26.050
+And it opened it up and you can see this is very similar to the program we wrote during the installs.
+
+04:26.050 --> 04:27.550
+Hello from Project one.
+
+04:27.850 --> 04:28.810
+Makes sense.
+
+04:28.810 --> 04:33.760
+Now let's say I want to open up Project two and I want to open up that source file that loaded up as
+
+04:33.760 --> 04:34.000
+well.
+
+04:34.000 --> 04:37.150
+And it says Hello from Project two up here in the tab.
+
+04:37.150 --> 04:39.080
+We can tab between those two.
+
+04:39.080 --> 04:44.780
+And as I do that, you can see this blue bar over here in the Workspace view jumping to the appropriate
+
+04:44.780 --> 04:46.250
+file in the project.
+
+04:46.280 --> 04:50.000
+We can turn that off by clicking that little link right here.
+
+04:50.180 --> 04:51.740
+I don't know why you would want to do that.
+
+04:51.740 --> 04:55.820
+I love the fact that I can see exactly where it's at, so I'm just going to leave that alone.
+
+04:55.880 --> 04:58.460
+We can open up the rest of these projects as well.
+
+04:58.460 --> 05:02.240
+Let me expand all of these and I'll open up Project three and Project four.
+
+05:02.240 --> 05:08.750
+So now you can see that I've got four project Main.cpp open up here and it's pretty easy to see which
+
+05:08.750 --> 05:13.010
+project they belong to and you can actually hover over it and it tells you the path to the workspace
+
+05:13.010 --> 05:15.860
+and the project and the file within the project.
+
+05:16.040 --> 05:18.200
+Okay, so that's great.
+
+05:18.230 --> 05:20.850
+When I modify the code and again, I'm going to go.
+
+05:20.870 --> 05:26.180
+Let me collapse all of these and I'm going to go to my active project and there's Project One.
+
+05:26.180 --> 05:28.460
+So that's where I'm at right now.
+
+05:28.550 --> 05:31.250
+I can close these up now just to get them out of the way.
+
+05:31.250 --> 05:33.140
+Right now I'm working on Project One.
+
+05:33.530 --> 05:35.990
+When I make any changes to this file.
+
+05:35.990 --> 05:38.810
+For example, suppose I added a space at the end of this line.
+
+05:40.000 --> 05:45.730
+We get this little red dot right there, right next to the project name in the tab that tells you that
+
+05:45.730 --> 05:47.060
+this file is called dirty.
+
+05:47.080 --> 05:52.420
+So in other words, what I'm working on right now is not what is on the file system.
+
+05:52.420 --> 05:58.570
+So it's telling you right there, hey, be sure to save this if you really want this updated on the
+
+05:58.570 --> 06:06.850
+disk so we can save with file, save file or Ctrl s, or you can click on this little save icon right
+
+06:06.850 --> 06:07.900
+up here on the bar.
+
+06:07.900 --> 06:10.000
+And I'll talk more about that control bar in a moment.
+
+06:10.270 --> 06:11.290
+So I can do that.
+
+06:11.290 --> 06:14.610
+I can press Ctrl s and that little red dot goes away.
+
+06:14.620 --> 06:15.790
+If you're on Linux.
+
+06:15.790 --> 06:20.080
+It's a little black dot on most Linux distributions, but again, it doesn't matter what color it is,
+
+06:20.080 --> 06:22.090
+but you're not going to see that little extra close.
+
+06:22.540 --> 06:25.000
+So that's my project one.
+
+06:25.570 --> 06:27.490
+Let me remove that line.
+
+06:27.490 --> 06:30.730
+And again, you can see that that's red and I'm going to save it again.
+
+06:30.730 --> 06:33.820
+So this is how we would edit our program.
+
+06:33.820 --> 06:38.560
+I've made this font large so that you can see it better on video.
+
+06:38.560 --> 06:41.480
+All of that is in the settings, colors and fonts.
+
+06:41.480 --> 06:46.160
+If you click that, you can change the fonts, the colors, the theme that you're using, whether it's
+
+06:46.160 --> 06:50.420
+a light theme or a dark theme and so forth, I'm just going to leave this alone.
+
+06:51.020 --> 06:53.150
+We've already learned how to create projects.
+
+06:53.150 --> 06:55.190
+We've learned how to create workspaces.
+
+06:55.190 --> 06:56.960
+We did that in the installation video.
+
+06:56.960 --> 06:59.270
+So that process is exactly the same.
+
+06:59.270 --> 07:01.200
+Now how do we build and run?
+
+07:01.220 --> 07:04.040
+Well, let me expand this right now.
+
+07:04.040 --> 07:09.290
+Project one is the active project so we can come up to build and we've got a couple of options here.
+
+07:09.290 --> 07:13.850
+You can see we can run, we can build the project, we can rebuild it, we can clean it, we can do
+
+07:13.850 --> 07:15.320
+a whole bunch of stuff, right?
+
+07:15.350 --> 07:19.640
+We're only going to be using a couple of these, actually, probably just one of these most of the time
+
+07:20.090 --> 07:25.220
+in order to create an executable file that we can run, we need to build the project.
+
+07:25.220 --> 07:29.660
+And in order to run an executable file, we have to have a good build.
+
+07:29.660 --> 07:31.910
+No syntax errors, no other errors.
+
+07:31.910 --> 07:35.000
+We can do that by pressing F7 to build the project.
+
+07:35.000 --> 07:36.200
+So let me do that.
+
+07:36.200 --> 07:38.600
+And the output view opens up down here.
+
+07:38.600 --> 07:42.560
+And I'm just going to scroll this up just a little bit, move it up so you can see it all.
+
+07:42.590 --> 07:47.180
+The output view opens up and we get our build output here.
+
+07:47.180 --> 07:50.030
+You can see that build output is in this build tab.
+
+07:50.780 --> 07:55.130
+If you post on the Q&amp;A forum saying, hey, I've got some kind of error, it's not building, I'm going
+
+07:55.130 --> 07:58.490
+to ask you to show me the build output because that tells me what's going on.
+
+07:58.730 --> 08:00.950
+So this is the build output notice.
+
+08:00.950 --> 08:02.640
+Successful build, no errors.
+
+08:02.660 --> 08:06.680
+Once we have a successful build, we can come up to build and run it.
+
+08:06.680 --> 08:10.310
+Now it's going to ask me, Would you like to build the active project before executing it?
+
+08:10.310 --> 08:12.880
+I've already built it so I don't have to build it again.
+
+08:12.890 --> 08:14.060
+You certainly could.
+
+08:14.060 --> 08:19.400
+And if you want to always do one of these, just remember your choice and click that little check mark
+
+08:19.400 --> 08:22.280
+and it's not going to pester you all the time with this little pop up.
+
+08:22.280 --> 08:23.540
+So let me execute it.
+
+08:23.540 --> 08:25.100
+Building and Running Project one.
+
+08:25.100 --> 08:31.460
+So I expect hello from Project one to display on my terminal, my command prompt execute.
+
+08:32.560 --> 08:33.340
+And there you go.
+
+08:33.370 --> 08:34.810
+Hello from Project One.
+
+08:34.930 --> 08:40.360
+I should also mention that the process for Mac Linux and Windows is exactly the same.
+
+08:40.360 --> 08:44.280
+So everything I'm talking about in this video applies to all of the operating systems.
+
+08:44.290 --> 08:47.500
+When we're done, we press enter and we close that.
+
+08:47.710 --> 08:48.700
+So that's that.
+
+08:48.700 --> 08:52.860
+Now we can modify the look and feel of.
+
+08:52.870 --> 08:56.200
+So for example, suppose I don't want my output view over here.
+
+08:56.200 --> 09:00.600
+Suppose I want my output view over here on the right, I can grab this blue bar.
+
+09:00.610 --> 09:04.510
+It may not be blue on your end, but I can grab that bar and just drag it over here.
+
+09:04.510 --> 09:07.540
+You can see it's lighting up right there, so I'm just going to drop it there.
+
+09:07.540 --> 09:09.250
+So there's my output view.
+
+09:09.460 --> 09:15.280
+And now suppose I want my workspace view to be above that so I can just move that over there.
+
+09:15.280 --> 09:18.880
+So now I can have my workspace view over here, my output view over here.
+
+09:19.120 --> 09:23.440
+The view menu option gives you all kinds of options.
+
+09:23.530 --> 09:28.360
+For example, I can turn my output pane off, in which case you can see it's just disappeared over here
+
+09:28.360 --> 09:31.090
+from the right and I can turn it back on.
+
+09:31.480 --> 09:35.480
+I can turn my workspace pane off and back on.
+
+09:36.140 --> 09:39.260
+This is totally up to you what your preferences are.
+
+09:39.290 --> 09:42.650
+As far as the look and feel of your work environment.
+
+09:42.860 --> 09:46.790
+We can also do a view with the main toolbar orientation.
+
+09:46.790 --> 09:47.960
+That's the toolbar.
+
+09:47.960 --> 09:52.400
+That's this toolbar right up there, the one we see with the plus and the bug and all that.
+
+09:52.400 --> 09:54.590
+These are just shortcuts to things I've been doing.
+
+09:54.590 --> 09:58.190
+We can add a new file, we can open a file, we can save a file.
+
+09:58.190 --> 10:01.910
+That little hammer builds the active project here.
+
+10:01.910 --> 10:06.290
+We can stop a build, which is not a big deal for us because our builds are pretty fast.
+
+10:06.290 --> 10:08.580
+But when we have really, really large.
+
+10:08.600 --> 10:13.280
+C plus plus programs builds can sometimes take an hour, believe it or not, or longer.
+
+10:13.280 --> 10:15.380
+So sometimes we want to stop the build.
+
+10:15.380 --> 10:16.580
+For whatever reason.
+
+10:16.820 --> 10:18.680
+We can clean the active project.
+
+10:18.680 --> 10:20.600
+And I'll show you what that is in just a moment.
+
+10:20.600 --> 10:25.250
+And we can run the active project and certainly we can debug and we'll talk about debugging in a different
+
+10:25.250 --> 10:25.890
+video.
+
+10:25.910 --> 10:28.640
+So these are the main functions here.
+
+10:29.030 --> 10:34.580
+If for whatever reason you just get lost in this interface, you start moving these things around and
+
+10:34.580 --> 10:35.990
+oh my goodness, I don't like what I've done.
+
+10:35.990 --> 10:42.620
+And if having trouble getting back, you can always just go to view and restore layout and that'll bring
+
+10:42.620 --> 10:45.110
+it right back to factory default basically.
+
+10:45.320 --> 10:48.410
+So as I said, there's all the view issues here.
+
+10:48.410 --> 10:52.670
+If you don't like that main toolbar up here at the top and you want it on the left, you can just go
+
+10:52.670 --> 10:57.740
+to view main toolbar orientation left and then it's going to say, Do you want to reload code light?
+
+10:57.830 --> 10:59.930
+Sometimes it's going to want to restart.
+
+10:59.940 --> 11:01.670
+So let's say yes, you can see what it's like.
+
+11:01.700 --> 11:04.100
+It closes up, it opens up again.
+
+11:04.100 --> 11:07.100
+And now you can see that the toolbar is over here on the left.
+
+11:07.100 --> 11:11.030
+So again, personal preference is there all the way around with the views.
+
+11:11.240 --> 11:13.580
+So now let's talk about the build again.
+
+11:14.000 --> 11:22.760
+In this case, if I want to build, what that means is I want to build the active project.
+
+11:23.090 --> 11:24.640
+So what code light is going to do?
+
+11:24.650 --> 11:29.000
+It's going to go out there and it's going to see first, has it already been built?
+
+11:29.240 --> 11:35.630
+If it has been built, then it's going to say, has anything changed in the source code here since the
+
+11:35.630 --> 11:36.620
+last build?
+
+11:36.740 --> 11:39.170
+If the answer is no, then it's not going to rebuild it.
+
+11:39.170 --> 11:42.320
+It doesn't need to rebuild it since the build is current.
+
+11:42.410 --> 11:43.430
+Makes sense.
+
+11:43.460 --> 11:48.710
+Now if we have made any changes or it's the first time we build, it's going to certainly build it.
+
+11:48.710 --> 11:50.150
+So that's what Build does.
+
+11:50.180 --> 11:50.690
+Clean.
+
+11:50.690 --> 11:57.170
+The project removes any intermediate files, the executables, it just basically clears out everything.
+
+11:57.170 --> 12:00.560
+Not your source code, just the build products cleans out everything.
+
+12:00.560 --> 12:03.140
+So the next time we build, we have a clean build.
+
+12:03.140 --> 12:05.270
+In other words, there's nothing pre built.
+
+12:05.810 --> 12:06.710
+Rebuild.
+
+12:06.710 --> 12:08.280
+Does both of those essentially.
+
+12:08.300 --> 12:10.530
+First, it cleans and then it builds.
+
+12:10.550 --> 12:14.690
+That's what I would encourage you to use throughout the course Rebuild project.
+
+12:14.720 --> 12:20.600
+The reason that we don't use rebuild project in industry very much is because our projects can be very,
+
+12:20.600 --> 12:21.530
+very large.
+
+12:21.530 --> 12:27.980
+And if I do a clean and then a build every time, it could take 20 30 minutes, whereas the build itself
+
+12:27.980 --> 12:30.950
+is only going to build things that have changed since the last build.
+
+12:30.950 --> 12:32.390
+So they're much more efficient.
+
+12:32.390 --> 12:35.570
+But for this course I would encourage you to select Rebuild Project.
+
+12:35.570 --> 12:36.320
+So let me do that.
+
+12:36.320 --> 12:41.480
+I'm going to click Rebuild Project and you can see that the output view opened up down here.
+
+12:41.660 --> 12:47.510
+You probably didn't see it, but right before the build happened, the clean also happened and the clean
+
+12:47.510 --> 12:48.380
+kind of looks like this.
+
+12:48.380 --> 12:52.790
+I'm going to select Build clean project and you can see that means remove.
+
+12:52.820 --> 12:58.310
+So it's removing all the files in the build debug folder, which are all the intermediate files, all
+
+12:58.310 --> 12:59.840
+the binary files essentially.
+
+12:59.840 --> 13:01.830
+So that's the clean.
+
+13:01.850 --> 13:03.770
+Now we can come up to build again.
+
+13:03.770 --> 13:05.970
+Now remember, let me rebuild it.
+
+13:06.210 --> 13:11.250
+Now when you see a build that includes G plus plus X, that's a real build.
+
+13:11.250 --> 13:14.870
+That's actually building the intermediate files.
+
+13:14.880 --> 13:15.090
+Okay.
+
+13:15.090 --> 13:16.290
+I hope this makes sense.
+
+13:16.320 --> 13:20.730
+Now, if I try to build again just to build notice, nothing happened.
+
+13:20.730 --> 13:22.920
+There was no G plus plus command in there.
+
+13:22.950 --> 13:25.020
+That's because the project was already built.
+
+13:25.050 --> 13:27.210
+Code light realized I don't need to build it.
+
+13:27.210 --> 13:28.290
+It's already current.
+
+13:28.470 --> 13:31.290
+So my advice is to always use rebuild.
+
+13:31.680 --> 13:35.490
+Okay, now we can do it at the project level, the active project.
+
+13:35.490 --> 13:40.710
+Or we can build the entire workspace or clean an entire workspace or rebuild an entire workspace.
+
+13:40.710 --> 13:43.350
+So let me show you how to clean the entire workspace.
+
+13:44.480 --> 13:47.270
+You can see that I just cleaned the workspace.
+
+13:47.270 --> 13:51.590
+So it's removing files from every single project.
+
+13:51.590 --> 13:52.700
+So you can see Project four.
+
+13:52.700 --> 13:54.800
+Project two, Project three, Project one.
+
+13:54.830 --> 13:56.990
+Now I can rebuild each project.
+
+13:57.870 --> 14:04.710
+I'm going to rebuild the workspace and it's going to build everything for each project within the workspace.
+
+14:04.740 --> 14:06.390
+We're probably not going to use that.
+
+14:06.390 --> 14:08.250
+I just wanted to show you that it was there.
+
+14:09.450 --> 14:10.680
+Okay, perfect.
+
+14:10.710 --> 14:16.680
+Now, obviously I can run Project one again if I make project for the active project and I can do that
+
+14:16.680 --> 14:22.320
+by just double clicking it just like that and I can run it and go to build and run.
+
+14:22.980 --> 14:27.720
+I don't need to build it Since I've built everything in the workspace already, I'll just execute and
+
+14:27.720 --> 14:31.230
+we should see Hello from Project four and that's exactly what we see.
+
+14:31.800 --> 14:32.550
+Great.
+
+14:32.580 --> 14:32.880
+All right.
+
+14:32.880 --> 14:38.130
+So that covers the building, the debugger I'll cover in a separate video later on in the class.
+
+14:38.370 --> 14:41.340
+Let me close this output view down a little bit.
+
+14:41.370 --> 14:47.220
+We also have searching, for example, I could search for things within files, across files.
+
+14:47.220 --> 14:53.070
+I know that all these programs have a main in it so I can find in files and I can say I want to search
+
+14:53.070 --> 14:53.880
+for Main.
+
+14:54.700 --> 14:56.020
+And press find.
+
+14:56.020 --> 15:01.510
+And then the output view again opens up, this time with the search tab highlighted.
+
+15:01.510 --> 15:06.760
+And you can see that I've got a main in Project one and Project two and project three and so forth.
+
+15:06.760 --> 15:12.460
+And if I want to go to, let's say, Project Ones main, I could just find Project one and click here.
+
+15:13.370 --> 15:14.330
+And there it is.
+
+15:14.330 --> 15:19.580
+Project Once Main, I can go to Project Two's main and Project two opens up up here and there.
+
+15:19.580 --> 15:25.370
+It's been so it's pretty handy to find things across files in your entire workspace in this case.
+
+15:26.450 --> 15:29.960
+We can clear all this by just clicking right there.
+
+15:29.990 --> 15:31.790
+That little broom and clear it up.
+
+15:32.530 --> 15:34.110
+And that's my output view.
+
+15:34.120 --> 15:35.820
+It's got several uses.
+
+15:35.830 --> 15:40.630
+This build tab is probably the one we're going to use the most and it's probably the most important
+
+15:40.630 --> 15:44.050
+one because that'll tell us if there's compiler errors and so forth.
+
+15:44.260 --> 15:44.560
+All right.
+
+15:44.560 --> 15:46.120
+So let me close this back up.
+
+15:47.920 --> 15:49.930
+Now the plug ins.
+
+15:49.960 --> 15:51.700
+Let's talk about that for a moment.
+
+15:51.700 --> 15:54.130
+There's really two plug ins I want you to activate.
+
+15:54.130 --> 15:55.630
+They may be activated already.
+
+15:55.630 --> 15:56.260
+They may not be.
+
+15:56.260 --> 15:57.450
+But let me show you how to do it.
+
+15:57.460 --> 16:00.550
+You go to plug ins and manage plug ins.
+
+16:00.550 --> 16:03.760
+And let me close this down here to give us a little bit more room.
+
+16:03.760 --> 16:06.430
+Let's go to plug ins, manage plug ins.
+
+16:06.580 --> 16:08.290
+And there's a whole bunch of plug ins.
+
+16:08.290 --> 16:13.600
+And plug ins are just little external pieces of code and little programs that code like uses.
+
+16:13.600 --> 16:19.150
+So the ones that I want you to check off for sure are language server, plug in, make sure that's checked.
+
+16:19.150 --> 16:23.110
+And down here where it says wizards, make sure that's checked because we're going to use that later
+
+16:23.110 --> 16:24.040
+in the course.
+
+16:24.800 --> 16:25.670
+That's it.
+
+16:25.850 --> 16:26.120
+Hit.
+
+16:26.120 --> 16:26.840
+Okay.
+
+16:27.110 --> 16:33.200
+And when you come to plug ins, it might ask you to restart, but you'll see those two plug ins here
+
+16:33.290 --> 16:35.150
+and the language server.
+
+16:35.180 --> 16:38.630
+You can basically go to settings and make sure that everything is enabled.
+
+16:38.630 --> 16:44.150
+It should be by default and then you could restart the language server.
+
+16:45.140 --> 16:48.110
+And what that does is that helps you do code completion.
+
+16:48.110 --> 16:51.760
+So as I type, it's going to help me by helping me complete the code.
+
+16:51.770 --> 16:56.810
+For example, if I typed in some variable name here and again, we'll talk all about variable names
+
+16:56.810 --> 16:57.440
+later.
+
+16:57.590 --> 16:59.600
+Let's create an integer called age.
+
+16:59.600 --> 17:05.020
+Let's say my age, something like that, and put a semicolon here.
+
+17:05.030 --> 17:10.430
+Then later on, if I want to use my age, I can just type my underscore and it pops it up for me and
+
+17:10.430 --> 17:13.550
+I can just press tab and use it so I don't have to type.
+
+17:13.580 --> 17:17.000
+It also allows us let me delete this.
+
+17:17.030 --> 17:20.690
+It also allows us to use some of the C plus plus keywords and functions.
+
+17:20.690 --> 17:26.660
+So for example, if I wanted to use a double, I could just do that press tab and create a variable
+
+17:26.660 --> 17:27.050
+name.
+
+17:27.050 --> 17:30.050
+So again, it makes it very, very handy.
+
+17:30.170 --> 17:32.120
+It's kind of finicky sometimes.
+
+17:32.120 --> 17:35.230
+Sometimes it wants to work, sometimes it doesn't want to work.
+
+17:35.240 --> 17:38.930
+What I've found is if it doesn't work, just rebuild.
+
+17:39.140 --> 17:39.950
+Rebuild.
+
+17:39.950 --> 17:42.050
+And then it kind of kicks it in.
+
+17:42.500 --> 17:45.600
+So that's the plug ins, the settings.
+
+17:45.600 --> 17:47.040
+There's tons of settings here.
+
+17:47.040 --> 17:50.280
+We've already seen some of the colors and fonts, the preferences.
+
+17:50.790 --> 17:55.420
+We've got whether we want to display line numbers over here in the editor or not.
+
+17:55.440 --> 17:58.740
+We can turn that on and off, highlight the current line number like that.
+
+17:58.740 --> 18:00.450
+You can see seven is bold.
+
+18:00.810 --> 18:06.600
+Again, I just leave all this alone because the default settings are pretty good.
+
+18:07.200 --> 18:07.740
+Close that up.
+
+18:07.740 --> 18:08.610
+You can look through there.
+
+18:08.610 --> 18:13.680
+But again, don't just start clicking on things because your interface is going to get pretty crazy.
+
+18:13.680 --> 18:15.270
+So let me just leave that alone.
+
+18:15.300 --> 18:19.410
+Then the other thing you're going to see in your code is this little red thing, and it might be red
+
+18:19.410 --> 18:23.640
+or it might not be red depending on the operating system, but you'll see some kind of little icon here
+
+18:23.640 --> 18:27.810
+where we can click it and it collapses that.
+
+18:28.140 --> 18:30.710
+So you can see that it collapses that.
+
+18:30.720 --> 18:34.780
+Now that doesn't look very useful here, but when you've got a lot of code, let's say you have five,
+
+18:34.800 --> 18:40.110
+600 lines of code and you've got parts of your program that you're really not interested in right now,
+
+18:40.140 --> 18:41.820
+you're working on a different section.
+
+18:41.820 --> 18:47.340
+You can collapse certain sections to kind of just hide them, sort of it's not really hiding them because
+
+18:47.340 --> 18:51.700
+they're there, but just kind of get them out of my way right now while I work on this other section.
+
+18:51.700 --> 18:52.990
+The code is still there.
+
+18:52.990 --> 18:57.910
+You can see from the dots that the code is still there and we can always expand it whenever we like.
+
+18:59.130 --> 18:59.520
+Okay.
+
+18:59.520 --> 19:02.830
+So pretty much covers the basics that I wanted to cover.
+
+19:02.850 --> 19:03.750
+Really important.
+
+19:03.780 --> 19:06.450
+Don't forget about view restore layout.
+
+19:06.450 --> 19:12.740
+If your layout gets really wonky, just go back to view and restore your layout and you're good to go.
+
+19:12.750 --> 19:17.730
+As far as creating workspaces and creating projects, we've already done that before in the installation
+
+19:17.730 --> 19:20.160
+videos, so that should be pretty straightforward.
+
+19:20.190 --> 19:26.310
+If you have a workspace open and you try to create a new one, it won't let you make sure you close
+
+19:26.310 --> 19:29.820
+the workspace first and then you're allowed to create one.
+
+19:29.820 --> 19:32.460
+So here's a Section 19 workspace.
+
+19:32.460 --> 19:34.690
+This is a workspace we're going to use later in the course.
+
+19:34.710 --> 19:40.020
+Let me open it up to give you an example of a workspace with a bunch of projects in it.
+
+19:40.020 --> 19:41.790
+So you can see Section 19.
+
+19:41.790 --> 19:43.170
+That's again later on in the course.
+
+19:43.170 --> 19:47.790
+This is the section we're going to use, and this is the section on i o on how to use files and how
+
+19:47.790 --> 19:48.930
+to do things like that.
+
+19:48.930 --> 19:52.050
+So we've got a lot of different projects in here.
+
+19:52.230 --> 19:58.050
+Each one has a description main.cpp and this is some of the code that we'll write later on.
+
+19:58.350 --> 20:02.950
+I know it looks maybe a little bit daunting right now, but don't worry, it'll be fine.
+
+20:03.190 --> 20:04.420
+I can close that up.
+
+20:04.420 --> 20:05.890
+And in this case, challenge.
+
+20:05.890 --> 20:08.800
+One solution is the default project.
+
+20:08.830 --> 20:09.970
+Here is the challenge.
+
+20:09.970 --> 20:12.670
+One solution solution.
+
+20:12.880 --> 20:19.990
+So there's the code and you can see here where it really is useful to use code folding and fold some
+
+20:19.990 --> 20:22.440
+of this stuff and kind of get it out of the way.
+
+20:22.450 --> 20:25.300
+So for example, there's my main that's my whole program, right?
+
+20:25.300 --> 20:29.590
+But let's say I only want to look at structs and I'm only looking at my structure.
+
+20:29.590 --> 20:34.960
+So they show up really, really cleanly without going through hundreds and hundreds of lines of code.
+
+20:35.350 --> 20:37.120
+In this case, that's my challenge.
+
+20:37.120 --> 20:40.300
+One solution Suppose I want to run it well, I'm going to come to build.
+
+20:40.300 --> 20:44.200
+Remember, it is the active project because it's bold and italicized.
+
+20:44.200 --> 20:45.430
+I'm going to go to build.
+
+20:45.430 --> 20:47.410
+I'm going to select Rebuild Project.
+
+20:47.710 --> 20:49.750
+You can see my output view down here.
+
+20:49.750 --> 20:51.760
+It's doing G plus plus X.
+
+20:51.790 --> 20:54.400
+It's using everything I need to use.
+
+20:54.430 --> 20:58.270
+Then I'm going to come to build run project right there.
+
+20:58.800 --> 21:00.150
+Just execute.
+
+21:00.810 --> 21:04.920
+I'm going to get a command prompt window, and that's the output from this program that we're going
+
+21:04.920 --> 21:06.480
+to do later on in the course.
+
+21:08.150 --> 21:09.630
+Okay, so that's it.
+
+21:09.650 --> 21:13.130
+This gives you a pretty good feeling for the interface.
+
+21:13.130 --> 21:14.720
+The entire code, light interface.
+
+21:14.720 --> 21:18.770
+There's a lot of stuff I didn't cover, obviously, but I'm not going to use any of that stuff that
+
+21:18.770 --> 21:20.270
+I didn't cover in the course.
+
+21:20.660 --> 21:26.810
+IDs, as I said, are usually used for very large programs, but they can also be used for small programs.
+
+21:26.810 --> 21:28.940
+We're just not going to use all the bells and whistles.
+
+21:28.940 --> 21:33.950
+So you have any questions, please let me know and I'll see you in the next video and we'll start coding.

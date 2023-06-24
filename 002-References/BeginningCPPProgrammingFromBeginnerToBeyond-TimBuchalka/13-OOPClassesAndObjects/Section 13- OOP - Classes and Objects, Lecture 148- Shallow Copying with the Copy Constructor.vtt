@@ -1,0 +1,748 @@
+WEBVTT
+
+00:00:05.500 --> 00:00:08.860
+In this video, we'll look at the difference between a shallow copy
+
+00:00:08.860 --> 00:00:12.160
+and a deep copy in the context of the copy constructor.
+
+00:00:13.150 --> 00:00:16.650
+First, we'll assume that the object we're copying has a raw pointer.
+
+00:00:17.250 --> 00:00:19.050
+When the object is constructed,
+
+00:00:19.050 --> 00:00:23.250
+we'll likely allocate storage for the data that that pointer is pointing to.
+
+00:00:23.250 --> 00:00:27.550
+And then when we're done with the copy we'll release the memory as per best practices.
+
+00:00:28.050 --> 00:00:30.050
+But what happens in the copy constructor.
+
+00:00:30.350 --> 00:00:33.650
+We can do a shallow copy or a deep copy. Let's see what that means.
+
+00:00:35.850 --> 00:00:39.350
+Let's first look at doing a shallow copy and the problems we can run into.
+
+00:00:40.150 --> 00:00:43.550
+A shallow copy is the default behavior provided by the compiler
+
+00:00:43.550 --> 00:00:45.350
+generated copy constructor.
+
+00:00:45.350 --> 00:00:49.350
+It basically does member-wise copying of all the object attributes.
+
+00:00:49.850 --> 00:00:52.150
+So you end up with the newly created object,
+
+00:00:52.150 --> 00:00:56.750
+and the object being copied both pointing to the same area of storage in the heap.
+
+00:00:57.150 --> 00:00:58.450
+So what's the problem?
+
+00:00:58.700 --> 00:01:03.600
+Well, the problem comes into play when one of those objects is destroyed and its destructor is called.
+
+00:01:03.600 --> 00:01:07.600
+When this happens the object's destructor releases the memory allocated on the
+
+00:01:07.600 --> 00:01:08.600
+heap as it should.
+
+00:01:09.000 --> 00:01:12.300
+However, the other object is still pointing to this released area
+
+00:01:12.300 --> 00:01:13.800
+and thinks the area is still valid.
+
+00:01:14.600 --> 00:01:16.300
+This could lead to subtle errors.
+
+00:01:16.300 --> 00:01:18.660
+The best thing that can happen is that the program crashes
+
+00:01:18.660 --> 00:01:20.860
+while in development so that you can fix the error.
+
+00:01:21.660 --> 00:01:24.660
+But we'll learn how to do a deep copy and avoid the error completely.
+
+00:01:24.660 --> 00:01:28.460
+But first, let's walk through an example that has a class with a pointer attribute
+
+00:01:28.460 --> 00:01:31.760
+that does a shallow copy so we can really understand the problem.
+
+00:01:33.760 --> 00:01:35.660
+Here's the class we'll use in this example.
+
+00:01:36.160 --> 00:01:39.260
+The class is called shallow and it has a single data attribute
+
+00:01:39.260 --> 00:01:41.860
+called data that's a pointer to a single integer.
+
+00:01:42.360 --> 00:01:46.460
+This class is about as simple an example as we could write that demonstrates the problem
+
+00:01:46.460 --> 00:01:47.760
+with a shallow copy.
+
+00:01:48.260 --> 00:01:51.860
+But any class that has a raw pointer as a data member will have the same issues.
+
+00:01:52.860 --> 00:01:55.360
+This class has a constructor that expects an integer,
+
+00:01:55.510 --> 00:01:59.310
+a copy constructor and a destructor. Let's see how these are implemented.
+
+00:02:00.630 --> 00:02:02.330
+Here's the code for the constructor.
+
+00:02:02.330 --> 00:02:05.330
+Notice that the constructor allocates storage for the integer,
+
+00:02:05.830 --> 00:02:09.830
+and stores the passed in integer d where that data pointer is pointing.
+
+00:02:10.630 --> 00:02:13.230
+Since we allocated this storage dynamically,
+
+00:02:13.230 --> 00:02:16.430
+then we must be sure to release it in the destructor. Let's do that now.
+
+00:02:17.410 --> 00:02:19.010
+Here's the destructor.
+
+00:02:19.010 --> 00:02:23.010
+It simply frees the storage that was allocated by the constructor as it should.
+
+00:02:23.210 --> 00:02:25.410
+It also displays a message to the console.
+
+00:02:25.770 --> 00:02:28.370
+Okay. So now let's implement the copy constructor.
+
+00:02:29.480 --> 00:02:30.980
+Here's the copy constructor.
+
+00:02:31.380 --> 00:02:33.880
+This copy constructor is user defined
+
+00:02:33.880 --> 00:02:36.540
+but it provides the same semantics as the default
+
+00:02:36.540 --> 00:02:40.440
+compiler generated copy constructor if we hadn't provided this one.
+
+00:02:40.940 --> 00:02:44.240
+Notice that in the initializer list we simply copy the pointer.
+
+00:02:44.740 --> 00:02:48.340
+This is member-wise copy. Now we have a problem.
+
+00:02:48.340 --> 00:02:52.440
+In this case, the source object and the newly created object both point
+
+00:02:52.440 --> 00:02:55.040
+to the same area and heap that was allocated for the data.
+
+00:02:55.840 --> 00:02:57.040
+But why is this a problem?
+
+00:02:57.940 --> 00:03:01.640
+Well, the problem comes into play when we make a copy of a shallow object
+
+00:03:01.640 --> 00:03:04.640
+using the copy constructor that's doing a shallow copy.
+
+00:03:05.440 --> 00:03:09.740
+Suppose we have a function display shallow that expects a shallow object by copy.
+
+00:03:10.340 --> 00:03:11.540
+We make the copy
+
+00:03:11.540 --> 00:03:13.540
+with the copy constructor as usual,
+
+00:03:13.540 --> 00:03:17.530
+but when that local object s goes out of scope its destructor is called,
+
+00:03:17.530 --> 00:03:21.430
+and the destructor releases the storage in the heap that s is pointing to.
+
+00:03:21.680 --> 00:03:23.040
+You see the problem now.
+
+00:03:23.040 --> 00:03:26.340
+The object that was copied into this function still points
+
+00:03:26.340 --> 00:03:29.700
+to this now released storage, but it thinks that the storage is valid.
+
+00:03:31.200 --> 00:03:33.400
+So all kinds of bad things can happen.
+
+00:03:33.400 --> 00:03:37.300
+Now here's a sample main we create object1 as a shallow object.
+
+00:03:38.000 --> 00:03:42.360
+Object1 will be created and an integer will be allocated on the heap and 100 stored in it.
+
+00:03:42.760 --> 00:03:44.560
+Now we call display shallow,
+
+00:03:44.560 --> 00:03:47.660
+and a copy of object one will be created inside that function.
+
+00:03:48.160 --> 00:03:52.060
+And when that function is done, the copy of object one will be destroyed.
+
+00:03:52.560 --> 00:03:55.560
+Since object one and the copy that was just destroyed
+
+00:03:55.560 --> 00:03:57.810
+pointed to the same memory area,
+
+00:03:57.810 --> 00:04:00.810
+object one now points to invalid storage.
+
+00:04:00.810 --> 00:04:05.210
+If we try to access that storage from object1, our program could crash.
+
+00:04:05.710 --> 00:04:09.310
+Also when the destructor for object1 eventually gets called
+
+00:04:09.310 --> 00:04:12.910
+it will try to release memory that's no longer valid and will probably crash.
+
+00:04:13.510 --> 00:04:18.310
+Let's head over to the IDE, and we'll walk through this example and I'll draw out exactly what's happening.
+
+00:04:19.610 --> 00:04:23.410
+Okay so I'm back in the IDE. I'm in the section 13 workspace
+
+00:04:23.410 --> 00:04:25.410
+in the ShallowCopy project.
+
+00:04:26.210 --> 00:04:29.310
+And we've got a program, and the class is called shallows,
+
+00:04:29.310 --> 00:04:31.310
+the same one that I put in the slides.
+
+00:04:31.310 --> 00:04:35.510
+I made a couple little changes in the main just to streamline it a little bit.
+
+00:04:35.510 --> 00:04:39.310
+Anyway, this program does a shallow copy in the copy constructor,
+
+00:04:39.310 --> 00:04:42.210
+and I'll walk you through that right now, but first let's just run it.
+
+00:04:42.210 --> 00:04:45.710
+And I'm going to run it without the debugger. So you can see that it does indeed crash.
+
+00:04:46.810 --> 00:04:48.810
+And there's the crash right here in windows,
+
+00:04:49.610 --> 00:04:53.210
+and it's a bad crash. Okay. It's not the kind of thing we want.
+
+00:04:53.210 --> 00:04:55.410
+So the point of
+
+00:04:55.410 --> 00:04:59.010
+this video is to try to understand exactly why this is crashing,
+
+00:04:59.010 --> 00:05:03.570
+why we need a deep copy and why we've got to be really careful when we use raw pointers.
+
+00:05:03.570 --> 00:05:06.470
+So let's take a look at the class. The class is shallow.
+
+00:05:06.470 --> 00:05:10.670
+It's got a raw pointer here to a single integer. We could have created an array of integers,
+
+00:05:10.670 --> 00:05:13.670
+a pointer to a some sort of object, it doesn't really matter.
+
+00:05:13.670 --> 00:05:16.970
+In this case, it's about as simple as examples you can get.
+
+00:05:16.970 --> 00:05:21.470
+And here we have a set value and a get value that we're using in my main.
+
+00:05:21.870 --> 00:05:24.470
+We have a constructor that just expects the integer.
+
+00:05:24.470 --> 00:05:28.370
+And what it does is you can see the source code for the constructor right here on line 21.
+
+00:05:28.730 --> 00:05:32.330
+It allocates storage on the heap dynamically for that one integer.
+
+00:05:33.230 --> 00:05:37.630
+And the integer is d. It's being passed in. Then I'm just de-referencing the pointer and storing that integer
+
+00:05:37.630 --> 00:05:39.830
+where data's pointing. Really, really simple.
+
+00:05:40.330 --> 00:05:43.930
+Okay. The destructor, let's take a look at that. Obviously,
+
+00:05:43.930 --> 00:05:46.130
+whenever we allocate storage in the constructor,
+
+00:05:46.130 --> 00:05:49.490
+the best practice is to release that storage in the destructor.
+
+00:05:49.490 --> 00:05:53.490
+That's what we're doing here. And in this case, we're just displaying destructor freeing data
+
+00:05:53.490 --> 00:05:55.490
+so that we can see when it's being called.
+
+00:05:55.490 --> 00:05:57.590
+We're going to step through this in the debugger,
+
+00:05:57.590 --> 00:06:00.580
+so we will definitely be able to see when it's being called.
+
+00:06:00.780 --> 00:06:04.880
+And then we've got the copy constructor. In this case, we're doing a shallow copy.
+
+00:06:04.880 --> 00:06:07.240
+You can see right here on line 27
+
+00:06:07.240 --> 00:06:11.500
+in the constructor initialization list, all we're doing is we're copying the value in
+
+00:06:11.500 --> 00:06:14.600
+that data variable which is the pointer from source
+
+00:06:14.600 --> 00:06:17.600
+to this, which is the object we're creating right now so.
+
+00:06:17.600 --> 00:06:20.200
+It's copying the pointer not what it's pointing to.
+
+00:06:20.200 --> 00:06:23.200
+What's gonna happen is both these objects when we copy them
+
+00:06:23.200 --> 00:06:26.500
+will be pointing to the same area, and I'll show you that in the debugger.
+
+00:06:27.160 --> 00:06:30.960
+Then we've got a real simple function right here called display shallow,
+
+00:06:31.360 --> 00:06:35.020
+which we pass in an object by value. So we're gonna make a copy of it,
+
+00:06:35.020 --> 00:06:38.320
+and that's where the problem shows up and again I'll walk you through that.
+
+00:06:38.720 --> 00:06:43.270
+Okay. So let's debug this, and we'll step through it so we can see exactly what's going on.
+
+00:06:44.260 --> 00:06:46.960
+And I'll move the output window over here to the right so we can
+
+00:06:46.960 --> 00:06:49.160
+see our constructors and destructors being called.
+
+00:06:49.600 --> 00:06:52.300
+All right. So I'm right here on line 42.
+
+00:06:53.500 --> 00:06:56.000
+And here, we're just doing a regular constructor call,
+
+00:06:56.000 --> 00:07:00.100
+and we're passing in the integer to us so this constructor right here on line 21 will be called.
+
+00:07:00.300 --> 00:07:01.800
+So let's step through this.
+
+00:07:02.200 --> 00:07:04.700
+And you can see now we're on line 22.
+
+00:07:04.700 --> 00:07:06.900
+We're going to allocate the new integer on the heap.
+
+00:07:07.260 --> 00:07:11.060
+We just did that and now I'm storing 100 into that area.
+
+00:07:11.560 --> 00:07:15.560
+And I'm back to line 43 so at this point obj1
+
+00:07:15.560 --> 00:07:17.560
+has been created, it's right here.
+
+00:07:18.550 --> 00:07:21.850
+And you can see that data is a pointer to an integer.
+
+00:07:22.250 --> 00:07:24.950
+And we just stored 100 where that integer was pointing.
+
+00:07:26.650 --> 00:07:30.310
+Okay. Now we're going to run into a little bit of a problem. This is where the
+
+00:07:30.310 --> 00:07:33.850
+deep copy is necessary rather than the shallow copy,
+
+00:07:33.850 --> 00:07:36.450
+and I'll do another video after this where we'll do a deep copy
+
+00:07:36.450 --> 00:07:38.650
+and I'll explain how that exactly works.
+
+00:07:38.650 --> 00:07:43.250
+But let's walk through this. We're going to call display shallow,
+
+00:07:43.250 --> 00:07:45.750
+which is this function right here on line 36.
+
+00:07:46.410 --> 00:07:49.210
+And this is just a regular function, it's not a member function.
+
+00:07:49.210 --> 00:07:51.710
+And we're going to pass object1 into it.
+
+00:07:51.710 --> 00:07:56.210
+Well, we're doing that by value. You can see right here there's no pointer, there's no reference.
+
+00:07:56.210 --> 00:07:58.710
+It's just by value, so we need to make a copy.
+
+00:07:58.710 --> 00:08:02.410
+So what we expect is that c++ needs to make a copy,
+
+00:08:02.410 --> 00:08:04.610
+so it's going to call the copy constructor to do that.
+
+00:08:05.010 --> 00:08:08.310
+And let's do that right now. So we'll step through it.
+
+00:08:08.310 --> 00:08:10.970
+You can see right here we're in the copy constructor.
+
+00:08:11.520 --> 00:08:13.720
+And we're doing that shallow copy.
+
+00:08:13.720 --> 00:08:16.820
+So at this point, you can see let me just step one more line.
+
+00:08:16.820 --> 00:08:20.180
+Okay. So what we've got now is let's take a look over here.
+
+00:08:20.680 --> 00:08:22.180
+We've got source.
+
+00:08:22.180 --> 00:08:26.680
+Now remember, source is what's being passed in so source in this case is obj1.
+
+00:08:27.340 --> 00:08:30.640
+So we've got -- so obj1 right here
+
+00:08:30.640 --> 00:08:32.520
+has a pointer data
+
+00:08:34.020 --> 00:08:35.820
+that points to an area in memory
+
+00:08:36.180 --> 00:08:37.780
+and we stored 100 in there.
+
+00:08:38.140 --> 00:08:41.140
+Now the location of that memory is right there
+
+00:08:41.140 --> 00:08:45.240
+foxtrot 0 0. So I'll just write that in there those last three hex digits.
+
+00:08:46.040 --> 00:08:49.640
+So it's foxtrot 0 0, that's where that data is on the heap.
+
+00:08:49.890 --> 00:08:54.490
+Okay. Now look what happened. I just made a copy of obj1,
+
+00:08:54.490 --> 00:08:58.850
+but I didn't copy what it's pointing to, I only copied the data.
+
+00:08:58.850 --> 00:09:02.150
+So if you can see as I expand this, which is right here inside here,
+
+00:09:02.150 --> 00:09:06.030
+this is the new object we're creating this right there,
+
+00:09:06.030 --> 00:09:09.530
+you can see that the address of
+
+00:09:10.130 --> 00:09:13.430
+that pointer data is exactly the same,
+
+00:09:14.930 --> 00:09:17.930
+right. So what we just did we just created a copy of this.
+
+00:09:17.930 --> 00:09:19.930
+That's pointing to the same area in memory.
+
+00:09:20.430 --> 00:09:24.230
+So let's walk through this a couple more steps and then we'll just keep going here.
+
+00:09:24.230 --> 00:09:27.430
+Great. Now we're here. We've just created the copy.
+
+00:09:27.430 --> 00:09:31.130
+So what we just did was we created a copy and it's called s,
+
+00:09:31.130 --> 00:09:33.630
+it's right here. Now s has
+
+00:09:35.290 --> 00:09:40.150
+a pointer called data. And guess what? It's pointing to the same area in memory as obj1.
+
+00:09:40.510 --> 00:09:41.710
+So what we just did was,
+
+00:09:41.710 --> 00:09:46.310
+yeah, sure we made a copy of obj1 absolutely,
+
+00:09:46.310 --> 00:09:49.810
+but we didn't make a copy of what that data pointer was pointing to.
+
+00:09:49.810 --> 00:09:53.910
+Ideally, what we would want with a deep copy is for s to be pointing
+
+00:09:53.910 --> 00:09:57.710
+to its own copy of that data over here,
+
+00:09:57.710 --> 00:09:59.310
+but that's not what's happening here.
+
+00:09:59.910 --> 00:10:03.270
+Okay. And what we can see is let me clear the screen real quick,
+
+00:10:03.270 --> 00:10:08.170
+what we can see here is that if we look at the s right here,
+
+00:10:09.360 --> 00:10:10.860
+that's that local variable.
+
+00:10:10.860 --> 00:10:15.120
+You can see that foxtrot 0 0. It's pointing to exactly the same memory location.
+
+00:10:15.120 --> 00:10:19.420
+So here's the problem. Right now s is just about to go out of scope.
+
+00:10:19.820 --> 00:10:23.480
+So again, let me draw that one more time just to be very very clear here.
+
+00:10:23.480 --> 00:10:27.740
+We've got obj1 pointing to this area right here where it's got a 100.
+
+00:10:27.740 --> 00:10:30.040
+And again that's the data attribute that's pointing,
+
+00:10:30.840 --> 00:10:31.500
+right.
+
+00:10:31.500 --> 00:10:34.800
+And then we've got s, which is also pointing to that area.
+
+00:10:36.400 --> 00:10:40.000
+Well, now s goes out of scope. What happens when s goes out of scope?
+
+00:10:40.360 --> 00:10:42.160
+We get the destructor called,
+
+00:10:42.160 --> 00:10:45.360
+right. So let's walk through that so we can see that destructor being called.
+
+00:10:45.960 --> 00:10:50.160
+It's out of scope right now. Boom, there's the call to the destructor on line 32,
+
+00:10:50.160 --> 00:10:53.460
+and the destructor deletes data. So what did the destructor just do.
+
+00:10:53.820 --> 00:10:56.820
+It freed up this area in memory right here.
+
+00:10:56.820 --> 00:11:00.320
+So as far as the c++ runtime system is concerned,
+
+00:11:00.320 --> 00:11:02.320
+this is no longer valid memory,
+
+00:11:02.820 --> 00:11:04.820
+right. We just deleted it.
+
+00:11:05.070 --> 00:11:09.470
+So this guy right here now is pointing to invalid memory.
+
+00:11:12.070 --> 00:11:16.060
+Now hopefully,you can see that that's a big problem here. So what's going to happen.
+
+00:11:16.060 --> 00:11:17.560
+Well, let's keep going.
+
+00:11:18.660 --> 00:11:20.660
+We're going to destructor freeing the data.
+
+00:11:21.460 --> 00:11:25.260
+Now we go back to main right here.
+
+00:11:26.060 --> 00:11:29.060
+And notice where we're at right now. At this point,
+
+00:11:29.060 --> 00:11:33.380
+this is now gone right because we were -- all that's been cleaned off the stack,
+
+00:11:33.380 --> 00:11:36.380
+and I'll take those x's off just so you can see what's going on here.
+
+00:11:36.380 --> 00:11:39.940
+This is the situation we've got. We've got obj1 now
+
+00:11:39.940 --> 00:11:41.840
+has a pointer called data
+
+00:11:41.840 --> 00:11:45.840
+that's pointing to an area on the heap that has 100 in it because that hasn't changed,
+
+00:11:45.840 --> 00:11:48.140
+but that memory is invalid.
+
+00:11:48.740 --> 00:11:52.740
+So now if we try to make a copy of obj1 and
+
+00:11:52.740 --> 00:11:56.040
+call it obj2 again, this calls the copy constructor again.
+
+00:11:56.640 --> 00:11:59.240
+Let's see what happens here. Let's walk through this.
+
+00:11:59.900 --> 00:12:02.900
+Again, copy constructor gets called because we're making a copy.
+
+00:12:02.900 --> 00:12:06.400
+And what did we just do? Well, we just copied it again. So now we've got
+
+00:12:06.400 --> 00:12:10.400
+two objects pointing to invalid data. And I'll walk you through this,
+
+00:12:10.950 --> 00:12:14.950
+and we're back to main here. So what I've got now is I've got
+
+00:12:14.950 --> 00:12:18.850
+obj2 right here pointing to that same invalid data.
+
+00:12:21.050 --> 00:12:25.250
+And that's not good. And you can obviously see what's going on here. You can see obj1
+
+00:12:25.850 --> 00:12:27.550
+and obj2
+
+00:12:27.550 --> 00:12:30.320
+are pointing to exactly the same memory locations.
+
+00:12:30.320 --> 00:12:34.310
+Right here you can see foxtrot 0 0, foxtrot 0 0.
+
+00:12:34.310 --> 00:12:36.510
+That's the situation we've got right here.
+
+00:12:37.870 --> 00:12:41.530
+So this could be problematic in a lot of ways.
+
+00:12:42.410 --> 00:12:45.770
+Suppose that on line 46,
+
+00:12:46.770 --> 00:12:50.770
+I'm setting the data value for obj2 to 100, right.
+
+00:12:50.770 --> 00:12:55.130
+So I'm coming this way -- sorry, to 1000. So I'm coming this way
+
+00:12:55.490 --> 00:12:58.290
+through this area here. I'm trying to put a 1000 in there.
+
+00:12:58.290 --> 00:13:00.790
+Well, what did I just do assuming that this worked, right,
+
+00:13:00.790 --> 00:13:04.990
+assuming that we haven't allocated any other objects and they've reused that space.
+
+00:13:04.990 --> 00:13:09.190
+But what did I just do? I just changed obj-1's data 2 to 1000
+
+00:13:09.190 --> 00:13:13.740
+indirectly without even knowing it because they're both pointing to the same area in memory.
+
+00:13:13.740 --> 00:13:16.640
+So let's walk through that, and you'll see exactly what I'm talking about.
+
+00:13:17.140 --> 00:13:21.140
+Right now, you can see they're both pointing me refresh this here.
+
+00:13:21.840 --> 00:13:24.440
+Since they're both pointing to the same area in memory,
+
+00:13:25.940 --> 00:13:28.600
+I just changed ob2's data to a 1000.
+
+00:13:28.600 --> 00:13:31.600
+But look what happened here with obj1's data,
+
+00:13:32.200 --> 00:13:36.200
+it changed to a 1000 too, of course, it did. It's -- we're pointing to the same area in memory,
+
+00:13:37.200 --> 00:13:42.000
+right. Now comes the problem, and this is where the crash comes in, and I'll clear the screen real quick.
+
+00:13:42.660 --> 00:13:45.160
+As we unwind now and start
+
+00:13:45.160 --> 00:13:49.360
+freeing up these two objects, right, I mean they're going out of scope right here in main,
+
+00:13:49.360 --> 00:13:53.560
+so we need to delete the data for both of them, we're calling both the destructors.
+
+00:13:53.560 --> 00:13:56.160
+Well, that pointer is pointing to invalid data.
+
+00:13:56.160 --> 00:13:59.520
+So when we try to delete it, we're going to have a problem. That's where the crash comes in.
+
+00:13:59.520 --> 00:14:02.720
+And I'll just step through it. You can see the destructors being unwound now.
+
+00:14:03.920 --> 00:14:07.420
+And at some point, we will crash.
+
+00:14:09.220 --> 00:14:10.720
+There's the crash right there.
+
+00:14:11.520 --> 00:14:13.820
+Okay. So you can see what's happening here.
+
+00:14:13.820 --> 00:14:16.480
+You can see how important it is to really understand
+
+00:14:16.480 --> 00:14:20.280
+what's going on with your heap memory when you're using raw pointers.
+
+00:14:20.280 --> 00:14:24.680
+What we'll do in the next video is we'll go over deep copy and then we'll
+
+00:14:24.680 --> 00:14:26.880
+do another example of this that we just did
+
+00:14:26.880 --> 00:14:29.880
+now using deep copy so you can see how that works better.

@@ -1,0 +1,667 @@
+WEBVTT
+
+00:01.410 --> 00:08.790
+In this video, I'll explain how to read a string from keyboard, a string that is form using character
+
+00:08.790 --> 00:09.380
+array.
+
+00:09.420 --> 00:14.700
+So already I have explained you a string can be formed by using character array as well as it is a class.
+
+00:15.330 --> 00:17.160
+We will learn about the class later on.
+
+00:18.020 --> 00:20.960
+Let us see how to read a string from keyboard.
+
+00:21.650 --> 00:25.910
+So here I have a character area of size 20.
+
+00:25.910 --> 00:28.530
+So this will be an array of characters.
+
+00:28.550 --> 00:37.550
+It can hold up to 20 characters, as we know very well that we need a/0 space for slash zero that is
+
+00:37.550 --> 00:38.420
+null character.
+
+00:38.420 --> 00:41.720
+So total 19 alphabets can be stored in this character.
+
+00:42.800 --> 00:47.210
+Now, here, I'm trying to read a name of a person or name of a user.
+
+00:47.210 --> 00:48.800
+So here I have given a message.
+
+00:48.800 --> 00:54.500
+So it's a good practice to give a message before taking input so a user will know what you are asking
+
+00:54.500 --> 00:55.010
+for.
+
+00:55.640 --> 01:02.510
+So see in SE this will read a string from keyboard and it will store it in this array.
+
+01:02.540 --> 01:04.600
+Suppose I will draw an array here.
+
+01:04.610 --> 01:08.000
+Suppose this is an array as of size 20.
+
+01:08.300 --> 01:09.980
+So I take few spaces.
+
+01:10.310 --> 01:11.420
+Suppose from keyboard.
+
+01:11.420 --> 01:16.550
+If you are entering name like john, then it will be stored like this.
+
+01:16.550 --> 01:17.600
+J o.
+
+01:17.630 --> 01:18.740
+H n.
+
+01:18.740 --> 01:23.570
+And followed by that null character will automatically be included.
+
+01:23.570 --> 01:26.870
+So we don't have to mention we don't have to type this anywhere.
+
+01:27.050 --> 01:29.540
+Automatically null character will be included.
+
+01:29.840 --> 01:35.960
+So all the functions built in functions of C++ will follow this method that whenever we are dealing
+
+01:35.960 --> 01:39.710
+with the string, it will include slash zero.
+
+01:40.850 --> 01:45.590
+So out of this 20 spaces only zero one, two, three, four.
+
+01:45.590 --> 01:49.130
+So total five spaces are used and these spaces are vacant.
+
+01:49.280 --> 01:53.240
+You type any name from here, enter from the keyboard and hit enter.
+
+01:53.240 --> 01:56.690
+So all those alphabets will be stored followed by null character.
+
+01:56.720 --> 01:58.940
+Now there is a problem in this method.
+
+01:58.940 --> 02:05.030
+So the problem is if you are writing full name, having more than one word, or if you're typing a sentence,
+
+02:05.030 --> 02:07.580
+then this will read only first word.
+
+02:07.580 --> 02:11.000
+Suppose I want to enter a name that is Steve Jobs.
+
+02:12.420 --> 02:12.840
+Right.
+
+02:12.840 --> 02:14.490
+So I have to type.
+
+02:14.490 --> 02:16.170
+Steve, then space, then jobs.
+
+02:16.170 --> 02:19.530
+So after this space it will treat this as another string.
+
+02:19.530 --> 02:21.420
+So it will take only the first string.
+
+02:21.420 --> 02:22.560
+That is first word.
+
+02:22.560 --> 02:26.580
+It will not take the words how to handle this one.
+
+02:26.580 --> 02:29.400
+So for this there is another method of reading a string.
+
+02:29.400 --> 02:31.410
+So for that here I have an example.
+
+02:31.560 --> 02:34.770
+I have taken a large size array of size 50.
+
+02:34.770 --> 02:36.810
+Then here I'm asking for a name.
+
+02:37.260 --> 02:44.940
+Then see, this object is having a function build in function called get as well as there is a function
+
+02:44.940 --> 02:46.020
+called get line.
+
+02:46.140 --> 02:52.980
+You can use any of these functions and as is an array you have to mention and this is the maximum number
+
+02:52.980 --> 02:56.640
+of alphabets you are expecting from keyboard as input.
+
+02:56.670 --> 02:57.990
+This is the maximum number.
+
+02:57.990 --> 03:02.370
+So you can give any larger number though you can enter less number of alphabets also.
+
+03:02.370 --> 03:06.060
+But you have to mention what is the maximum number beyond 50?
+
+03:06.060 --> 03:08.100
+It will not take the alphabets beyond 50.
+
+03:08.490 --> 03:11.220
+Even if the array size is larger, it will not store.
+
+03:11.220 --> 03:15.300
+It will take maximum 50 alphabets from keyboard.
+
+03:15.300 --> 03:19.410
+So here if I type Steve Jobs right.
+
+03:19.410 --> 03:24.720
+So it will store both the words if I add more words to this one.
+
+03:24.720 --> 03:29.300
+Also it will include them in a string, but maximum 50 alphabets.
+
+03:29.520 --> 03:36.870
+If you give more than 50 alphabets, then it will take just 49 alphabets plus null characters.
+
+03:36.870 --> 03:39.780
+So total 58 will take the next thing.
+
+03:39.810 --> 03:44.340
+If I say C out, then it will print a string.
+
+03:44.340 --> 03:46.110
+So C out will display a string.
+
+03:46.110 --> 03:51.870
+Whether this one or this one, this this first string or the second string, whatever it is, c out
+
+03:51.900 --> 03:53.910
+will print all the alphabets one by one.
+
+03:53.910 --> 03:55.200
+So here I have an example.
+
+03:55.200 --> 04:00.270
+So I'm showing here it will print all the alphabets until it reaches slash zero.
+
+04:00.750 --> 04:07.410
+So here the built in mechanism C in as a string character at the end of a string and see how it will
+
+04:07.410 --> 04:11.070
+print all the alphabets until it reaches null character.
+
+04:11.070 --> 04:19.320
+So here if you write C out s, then this will print all the alphabets till it find another character.
+
+04:19.740 --> 04:21.900
+So let us see the demonstration for this one.
+
+04:21.900 --> 04:26.100
+So I'll show you how to read a name and how to read name with multiple words.
+
+04:26.100 --> 04:28.890
+And also, I will show you some more problems in this one.
+
+04:29.160 --> 04:31.740
+So let us look at demonstration here.
+
+04:31.740 --> 04:35.010
+I have a skeleton of C++ program readily available.
+
+04:35.310 --> 04:41.790
+So now here I will declare a character type array as of size 20.
+
+04:42.060 --> 04:45.840
+And first I will read a string that is name.
+
+04:45.840 --> 04:48.000
+So for this I will say see out.
+
+04:48.240 --> 04:49.950
+Enter your name.
+
+04:51.480 --> 04:56.310
+I'll give you a space so that there should be a space after this word, then scene.
+
+04:56.400 --> 04:57.930
+I'll read this.
+
+04:58.620 --> 05:01.340
+Let us display it afterwards.
+
+05:01.350 --> 05:02.040
+Say.
+
+05:03.380 --> 05:11.720
+Welcome and give a space then se and also I will use and so what the program is going to do, it will
+
+05:11.720 --> 05:16.940
+give a message into your name, then it will read the name from the keyboard, then it will display
+
+05:16.940 --> 05:19.220
+the name and giving a message.
+
+05:19.220 --> 05:19.670
+Welcome.
+
+05:19.670 --> 05:23.720
+Whatever the name you have given, let us run it here.
+
+05:23.930 --> 05:26.240
+I'll give the name as John.
+
+05:26.930 --> 05:27.980
+So welcome, John.
+
+05:27.980 --> 05:28.850
+It's working.
+
+05:29.240 --> 05:30.650
+I'll run it once again.
+
+05:31.100 --> 05:34.430
+Now, here I give the name Steve Jobs.
+
+05:35.780 --> 05:41.090
+It has taken only Steve, so it's not taking second word of this name.
+
+05:41.240 --> 05:42.110
+So that's it.
+
+05:42.110 --> 05:47.840
+So the problem, I told you that this scene, a string, if you are taking a character type array,
+
+05:47.930 --> 05:50.900
+then it will allow you to enter only one word.
+
+05:50.930 --> 06:01.940
+Let us modify this program here instead of seen as I will see seen dot get as a rightmost 20 alphabets
+
+06:01.940 --> 06:02.450
+write.
+
+06:02.840 --> 06:05.150
+Let us run it now enter your name.
+
+06:06.920 --> 06:08.450
+Steve Jobs.
+
+06:08.660 --> 06:10.160
+Yes, it's working.
+
+06:10.640 --> 06:13.880
+So it's taking both the words and storing them.
+
+06:13.880 --> 06:16.010
+So it includes spaces.
+
+06:16.100 --> 06:19.550
+So this, until you hit enter, it will take it as a string.
+
+06:20.540 --> 06:22.580
+Here I will take some bigger size.
+
+06:23.330 --> 06:26.070
+All right, I'll take the size as 100.
+
+06:26.280 --> 06:29.070
+And here also, I'll take the size as a hundred.
+
+06:29.160 --> 06:31.550
+Just randomly and type few words.
+
+06:31.560 --> 06:32.030
+Right.
+
+06:32.070 --> 06:32.850
+I'll run it.
+
+06:34.510 --> 06:37.930
+I'm just randomly hitting some characters from the keyboard.
+
+06:38.050 --> 06:40.180
+So a space.
+
+06:40.180 --> 06:41.560
+BBW Space.
+
+06:41.770 --> 06:47.280
+CC Then D, then E, then f Right.
+
+06:47.290 --> 06:48.130
+So let us see.
+
+06:48.130 --> 06:50.920
+I have given multiple words here, but multiple spaces.
+
+06:50.920 --> 06:52.180
+So will it take or not?
+
+06:53.260 --> 06:54.490
+Yes, it has taken.
+
+06:54.490 --> 06:57.340
+So you can give a string up to any length.
+
+06:57.340 --> 06:59.650
+So but you have to mention the length here.
+
+06:59.770 --> 07:04.840
+But if it is 100, then it will take 99 alphabets and one place for null character.
+
+07:04.870 --> 07:05.680
+Remember that.
+
+07:05.920 --> 07:08.520
+Now let us use the function that is get line.
+
+07:08.530 --> 07:12.280
+As I said this, I'll remove this line and type it again once again.
+
+07:12.490 --> 07:16.020
+So scene dot get line.
+
+07:16.030 --> 07:17.470
+So does the same function.
+
+07:17.560 --> 07:20.320
+Even you can type, get or get line.
+
+07:20.320 --> 07:23.550
+So same thing I use get.
+
+07:23.560 --> 07:24.700
+Now this is a get line.
+
+07:25.240 --> 07:26.560
+Steve Jobs.
+
+07:26.590 --> 07:27.790
+Yes, it's working.
+
+07:29.850 --> 07:30.600
+That's it.
+
+07:31.650 --> 07:35.670
+Now let me show you the problem faced while reading strength from the keyboard.
+
+07:35.700 --> 07:42.270
+So for that, first of all, I will change this function from get line to just get right.
+
+07:42.270 --> 07:45.360
+So we will be facing problem here when you use it.
+
+07:46.080 --> 07:50.130
+So I will create one more array that is of size hundred.
+
+07:51.200 --> 07:52.730
+For a string.
+
+07:53.360 --> 07:59.200
+Now, here in this in these lines, I'm reading a string from the keyboard and I'm displaying it with
+
+07:59.210 --> 08:01.100
+a welcome message.
+
+08:01.100 --> 08:04.880
+So I'll copy this and I will page the same code again.
+
+08:05.030 --> 08:09.230
+And this time I will read it for string two as to.
+
+08:10.240 --> 08:10.710
+Right.
+
+08:10.710 --> 08:17.040
+So same thing is happening once again for string to so I'm first time reading for string one then again
+
+08:17.040 --> 08:18.720
+doing the same thing with String two.
+
+08:18.810 --> 08:20.370
+So enter your name.
+
+08:21.090 --> 08:26.520
+I'll give a message like this and do your name again so that you can differentiate.
+
+08:26.520 --> 08:31.590
+So first time under your name, second time and name again and I will run the program.
+
+08:32.220 --> 08:35.220
+And you see the problem here.
+
+08:35.220 --> 08:37.530
+I'll enter the name that is.
+
+08:38.300 --> 08:39.410
+Steve Jobs.
+
+08:40.340 --> 08:40.910
+Oh.
+
+08:41.330 --> 08:42.980
+It has taken a string.
+
+08:43.040 --> 08:45.410
+It has given a welcome message.
+
+08:45.770 --> 08:50.400
+And it is asking, enter your name again and saying, welcome, that's all.
+
+08:50.420 --> 08:51.320
+Nothing else.
+
+08:52.440 --> 08:57.300
+And this program ends with exit code zero is appearing in next line.
+
+08:58.020 --> 08:59.940
+It's not asking for the second time though.
+
+08:59.940 --> 09:02.520
+I have given get for two times.
+
+09:02.520 --> 09:03.880
+This is the first time it is reading.
+
+09:03.900 --> 09:05.400
+Second time it is not reading.
+
+09:06.000 --> 09:07.050
+What is the problem?
+
+09:07.590 --> 09:08.820
+Let us see the problem.
+
+09:08.850 --> 09:10.990
+I'll change this function to get line.
+
+09:11.010 --> 09:14.250
+I'll change this function also to get line both the functions.
+
+09:14.250 --> 09:15.540
+I'll make them as get line.
+
+09:15.780 --> 09:16.920
+Now let us run.
+
+09:19.220 --> 09:19.740
+See.
+
+09:20.120 --> 09:25.320
+I'll give them a a, then b, b, b, c, it has given a message.
+
+09:25.340 --> 09:25.910
+Welcome.
+
+09:25.910 --> 09:29.960
+A, b, b, b then now it is asking forget line.
+
+09:29.960 --> 09:30.830
+It is working.
+
+09:30.830 --> 09:32.750
+Forget it was not working.
+
+09:32.750 --> 09:39.650
+So I'll give the name here DVD and F it's working so it get function.
+
+09:39.650 --> 09:41.810
+It was not working with the get line function.
+
+09:41.810 --> 09:42.260
+It's working.
+
+09:42.260 --> 09:43.250
+What is the reason?
+
+09:44.270 --> 09:45.590
+I'll change it again.
+
+09:45.590 --> 09:46.430
+I'll show it.
+
+09:46.820 --> 09:55.380
+Make it as get right now I'll run now I will show you the difference here I'm entering name a, b,
+
+09:55.400 --> 09:58.610
+b, this is a string, right?
+
+09:58.610 --> 10:00.140
+With two words.
+
+10:00.170 --> 10:01.880
+Now I'm hitting enter.
+
+10:02.000 --> 10:05.150
+So enter will not be taken by this get function.
+
+10:05.150 --> 10:08.840
+It will not read that get right get function will not read enter key.
+
+10:08.990 --> 10:15.590
+I'm about to hit enter so it will leave that slash PN because it is not get line function, it is just
+
+10:15.590 --> 10:16.460
+get function.
+
+10:16.910 --> 10:24.260
+So once I hit enter it will take the center string and enter will be taken by this second get function.
+
+10:24.890 --> 10:26.630
+Just it will be having enter.
+
+10:27.420 --> 10:28.020
+Nothing else.
+
+10:28.020 --> 10:33.420
+So after Welcome Space, it will take entry to sprinting as two and that is two is nothing but just
+
+10:33.420 --> 10:34.020
+enter.
+
+10:34.200 --> 10:35.130
+Let us see.
+
+10:35.310 --> 10:36.420
+That is new line.
+
+10:37.270 --> 10:40.270
+Yeah, you can see that after Wellcome Space.
+
+10:41.170 --> 10:43.830
+This programming code is coming in the next line.
+
+10:43.840 --> 10:46.090
+This message is coming in the next line.
+
+10:46.090 --> 10:55.390
+So that means this A and b, b, b is taken by fuss, get function and a new line that is enter is taken
+
+10:55.390 --> 10:57.040
+by second function.
+
+10:57.310 --> 11:03.040
+So this problem may be faced when you are reading multiple strings from the keyboard to avoid such a
+
+11:03.040 --> 11:04.960
+problem, there is a solution.
+
+11:04.960 --> 11:12.070
+So here, after reading first string and before eating second string, I'll give a function call that
+
+11:12.070 --> 11:14.560
+is seen dot ignore.
+
+11:14.590 --> 11:20.380
+So it will ignore any extra characters remaining after reading first string.
+
+11:20.380 --> 11:21.430
+So it will.
+
+11:22.970 --> 11:30.380
+Clear off slash RN, then this function will be reading a fresh string and not find anything remaining.
+
+11:30.380 --> 11:33.360
+So it will read a fresh string, right?
+
+11:33.380 --> 11:39.560
+So it will clear off slash and or any other remaining characters in keyboard buffer.
+
+11:40.040 --> 11:41.660
+So I'll run it once again.
+
+11:41.660 --> 11:43.820
+Now you'll see it works perfectly.
+
+11:43.820 --> 11:47.510
+I'll give them a B then.
+
+11:47.510 --> 11:49.820
+Now it's asking and name once again.
+
+11:49.820 --> 11:51.740
+C, C, c and.
+
+11:52.620 --> 11:53.540
+Okay.
+
+11:54.000 --> 11:55.230
+Yeah, it's working.
+
+11:56.050 --> 11:57.910
+So that's all about reading a string.
+
+11:57.910 --> 11:59.500
+So you have to practice this one.
+
+11:59.500 --> 12:01.630
+Check it by yourself once on your machine.
+
+12:02.020 --> 12:03.370
+Try it on your computer.
+
+12:03.370 --> 12:03.880
+Right?
+
+12:03.880 --> 12:08.800
+So in an ID, try it on your computer and about various other functions.
+
+12:08.800 --> 12:11.350
+We'll learn them in next videos, that's all.

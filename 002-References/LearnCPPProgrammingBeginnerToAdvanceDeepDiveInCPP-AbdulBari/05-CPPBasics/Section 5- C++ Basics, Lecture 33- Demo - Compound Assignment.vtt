@@ -1,0 +1,129 @@
+WEBVTT
+
+0
+00:00.580 --> 00:04.860
+Let us look at compound statements these are commonly used statements in programming.
+
+1
+00:04.860 --> 00:11.490
+Like if I have a variable sum which is having value ten then also I have one variable x that is having
+
+2
+00:11.490 --> 00:12.410
+value 5.
+
+3
+00:12.570 --> 00:19.930
+So usually we say what? sum Plus assign X so the value of x and sum are added. then where the results
+
+4
+00:19.930 --> 00:20.710
+should be stored?
+
+5
+00:20.730 --> 00:23.410
+I'm storing it in sum again.
+
+6
+00:24.060 --> 00:31.240
+So I can say that the value of sum is updated by adding value of x.
+
+7
+00:31.350 --> 00:36.310
+So the result is back in X. let us display this and see what the result
+
+8
+00:36.420 --> 00:43.600
+Will be shown. see this is 15,  ten plus 5 is 15.
+
+9
+00:43.620 --> 00:50.360
+So instead of writing this statement like this writing  sum on the side we can also say sum Plus assign x.
+
+10
+00:50.400 --> 00:55.280
+So this is a compound statement for addition and the result will be same
+
+11
+00:59.730 --> 01:01.740
+it is 15.
+
+12
+01:01.740 --> 01:05.100
+So this is a very handy statement and it is more readable.
+
+13
+01:05.100 --> 01:10.920
+Instead of writing sum on both the sides, if you write compound statement if you use then it's very
+
+14
+01:10.980 --> 01:15.060
+easy to read even I use multiplication here.
+
+15
+01:15.540 --> 01:20.640
+So this will multiply X with the sum and the result is stored in sum again.
+
+16
+01:20.640 --> 01:26.790
+So if I am displaying it then the result would be 50.
+
+17
+01:27.100 --> 01:30.480
+And one more statement I'll show you more commonly used.
+
+18
+01:30.480 --> 01:34.390
+That is if I have a variable X whose value is 10.
+
+19
+01:34.410 --> 01:37.170
+Then I can say X assign X plus 1.
+
+20
+01:37.170 --> 01:40.230
+So this will increase the value of X by 1.
+
+21
+01:40.620 --> 01:49.240
+And if I print this one X, lets print  the value of x, x should change by 1 incremented by 1.
+
+22
+01:49.770 --> 01:52.310
+Yes it became 11.
+
+23
+01:52.860 --> 01:58.340
+Even we can use minus.
+
+24
+01:58.460 --> 02:00.350
+This is decrement by 1, 9
+
+25
+02:00.350 --> 02:03.890
+We are getting the result. now instead of writing like this.
+
+26
+02:03.890 --> 02:07.110
+We can also say X plus assign 1.
+
+27
+02:07.130 --> 02:08.720
+So one will be added to x
+
+28
+02:13.030 --> 02:14.490
+and that's it.
+
+29
+02:14.860 --> 02:16.270
+This is 11.
+
+30
+02:16.480 --> 02:19.180
+So this is all you can you make use of compound statements.
+
+31
+02:19.180 --> 02:22.630
+So we will write few programs where we'll be using compound statements.

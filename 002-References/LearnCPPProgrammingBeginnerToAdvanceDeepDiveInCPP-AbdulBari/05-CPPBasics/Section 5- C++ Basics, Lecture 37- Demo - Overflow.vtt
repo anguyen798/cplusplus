@@ -1,0 +1,125 @@
+WEBVTT
+
+0
+00:00.470 --> 00:09.450
+let us see what over flow is here I'll take one variable of type character X. And this I will assign value
+
+1
+00:09.600 --> 00:21.320
+127 then I will say cout displayed it in the int form that is X and endl let's see what I get.
+
+2
+00:21.420 --> 00:24.890
+This is valid value within the range so i am getting 127.
+
+3
+00:25.230 --> 00:26.610
+Let me assign 128.
+
+4
+00:26.670 --> 00:31.260
+This is out of the range because the maximum value that i can stored in char is 127.
+
+5
+00:31.260 --> 00:32.700
+So I got a prompt.
+
+6
+00:33.780 --> 00:40.920
+I got a warning here that is implicit conversion from int to char changes value from 128 to minus 128.
+
+7
+00:40.930 --> 00:46.290
+as I  said that over flow means it will take a cyclic value from after one twenty seven
+
+8
+00:46.290 --> 00:50.790
+that is the maximum it will turn into a minimum value possible.
+
+9
+00:50.790 --> 00:54.820
+So let us run and see what output we get.
+
+10
+00:55.240 --> 01:06.200
+see minus 128 if I take it as 127 only and I say X plus plus the let's see what happens.
+
+11
+01:06.460 --> 01:07.730
+The same thing again.
+
+12
+01:07.820 --> 01:11.490
+Overflow values overflown and it will take the next value.
+
+13
+01:13.090 --> 01:15.980
+I will assign 130.
+
+14
+01:16.750 --> 01:20.360
+So 130 gives me minus 125 so overflow,
+
+15
+01:20.370 --> 01:27.310
+it has taken the cyclic result. now i will take the value as one twenty eight and in that I will subtract
+
+16
+01:27.400 --> 01:28.830
+X minus minus.
+
+17
+01:28.840 --> 01:34.300
+This means the smallest no. is 128 and still decrementing it to take the largest value of type
+
+18
+01:34.300 --> 01:35.930
+character that is 127
+
+19
+01:40.220 --> 01:41.920
+Yes it is 127.
+
+20
+01:42.150 --> 01:45.480
+So these are overflowing the character character take just one bite.
+
+21
+01:45.480 --> 01:50.020
+So I have taken the example of a character you can do it with integer.
+
+22
+01:50.030 --> 01:57.400
+Also let me try integer, integer x assign int max.
+
+23
+01:57.410 --> 01:59.680
+So this is the maximum integer value.
+
+24
+01:59.840 --> 02:02.570
+Then after this if I say X plus plus
+
+25
+02:02.660 --> 02:02.940
+OK. before that
+
+26
+02:03.020 --> 02:11.170
+Let me print  this on and see maximum integer is 2 1 4 7 4 8 3 6 4 7.
+
+27
+02:11.180 --> 02:16.680
+Now if I say X plus plus then it should take a smallest value.
+
+28
+02:17.990 --> 02:21.020
+Is the smallest value that is possible in int.
+
+29
+02:21.050 --> 02:24.160
+That is minimum integer.
+
+30
+02:24.390 --> 02:26.490
+So that's it about overflow.

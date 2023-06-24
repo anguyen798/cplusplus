@@ -1,0 +1,385 @@
+WEBVTT
+
+0
+00:00.500 --> 00:05.730
+Let's talk about the reference, reference is a powerful feature of c++
+
+1
+00:05.730 --> 00:09.450
+This feature is not there, in any other language.
+
+2
+00:09.450 --> 00:11.750
+Let us see what it is.
+
+3
+00:11.760 --> 00:21.750
+See in the main function if I have a variable X and this also having some value and for this X some
+
+4
+00:21.750 --> 00:26.470
+memory is allocated let's say address is two hundred and 201.
+
+5
+00:26.490 --> 00:29.670
+So this is the value, now let us see what is a reference.
+
+6
+00:29.730 --> 00:37.880
+If I'm declaring one variable that's y, if I write like this it's a normal variable so for y
+
+7
+00:37.890 --> 00:39.570
+also some memory will be allocated.
+
+8
+00:39.990 --> 00:40.540
+No.
+
+9
+00:40.700 --> 00:43.410
+I will write & here.
+
+10
+00:43.440 --> 00:45.010
+This looks a little different.
+
+11
+00:45.120 --> 00:47.320
+If I star here it's a pointer.
+
+12
+00:47.350 --> 00:48.140
+Yes we know that.
+
+13
+00:48.420 --> 00:49.960
+But now &.
+
+14
+00:49.980 --> 00:50.260
+Yes.
+
+15
+00:50.280 --> 00:51.660
+There is a reference.
+
+16
+00:51.680 --> 00:52.980
+there is a reference.
+
+17
+00:53.190 --> 01:00.030
+And when ever you declare a reference you must initialize it that time only you must initialize.
+
+18
+01:00.300 --> 01:01.860
+So what is this reference.
+
+19
+01:02.000 --> 01:09.780
+Reference is nothing but a nickname of this variable alias of this variable.
+
+20
+01:09.810 --> 01:13.510
+So this is just another name.
+
+21
+01:13.650 --> 01:18.850
+So the same memory 200 this location which we were  calling it as x.
+
+22
+01:18.870 --> 01:27.030
+Now you can also call it as y, so this is a alias or nickname of variable x.
+
+23
+01:27.840 --> 01:29.800
+So why do you mean this.
+
+24
+01:29.880 --> 01:33.270
+We don't need inside the same function where do we need it.
+
+25
+01:33.270 --> 01:34.980
+I will show you in my next topic.
+
+26
+01:35.490 --> 01:41.400
+But you can have another name for a variable so that same location.
+
+27
+01:41.400 --> 01:48.680
+Two hundred, two not one, can be called with the name X also can be called with the name y also.
+
+28
+01:48.970 --> 01:49.360
+Right.
+
+29
+01:49.710 --> 01:54.910
+So if I say X plus plus then this value becomes eleven.
+
+30
+01:54.910 --> 02:00.750
+Same way if I say I plus plus then this value becomes 12.
+
+31
+02:00.840 --> 02:03.190
+see both X and Y are accessing the same memory.
+
+32
+02:03.300 --> 02:08.280
+If I say cout  x then I will get the value 12.
+
+33
+02:08.640 --> 02:15.060
+If I see a cout Y then also I get the value 12 same thing.
+
+34
+02:15.630 --> 02:17.940
+So definitely it is not  require in same function.
+
+35
+02:17.940 --> 02:21.100
+Just we are learning what is the reference.
+
+36
+02:21.270 --> 02:23.150
+Further I will show you a few more things.
+
+37
+02:23.220 --> 02:27.810
+See if I have one more variable A, and to this
+
+38
+02:27.900 --> 02:34.610
+A If I say a assign X or if I say X assign 25.
+
+39
+02:35.010 --> 02:39.540
+Let us see what is the difference between these two statements in these two statements.
+
+40
+02:39.550 --> 02:48.390
+I'm using X in both of them but this X is used on right hand side of assignment and this X is used
+
+41
+02:48.390 --> 02:50.220
+on the left hand side of assignment.
+
+42
+02:50.430 --> 02:55.210
+So here it is right hand side so we say it is R value.
+
+43
+02:55.230 --> 03:01.130
+I'm here it is on the left hand side so we call it as L value so let us understand these two things
+
+44
+03:01.120 --> 03:03.960
+what is R value and what is N value.
+
+45
+03:04.020 --> 03:04.350
+See.
+
+46
+03:05.280 --> 03:05.820
+R value right hand side
+
+47
+03:05.860 --> 03:06.900
+means
+
+48
+03:06.900 --> 03:08.190
+What happens here.
+
+49
+03:08.190 --> 03:11.080
+Whatever is there in X has to be stored in A.
+
+50
+03:11.220 --> 03:15.280
+So what is there in x ra,y it is 12, so 12 will be stored in A.
+
+51
+03:15.430 --> 03:22.400
+So when we write X it means the value of the video but X so that the value is stored here.
+
+52
+03:22.500 --> 03:24.890
+So value is like a literal constant value.
+
+53
+03:24.930 --> 03:29.090
+So yes R value is a data.
+
+54
+03:29.350 --> 03:31.360
+Literal the constant value.
+
+55
+03:31.410 --> 03:32.210
+Some value.
+
+56
+03:32.810 --> 03:40.530
+Whereas here we are saying x assign 25 we want 25 to be stored in X so 25 should
+
+57
+03:40.530 --> 03:44.450
+be stored in this location erasing whatever was there.
+
+58
+03:44.460 --> 03:47.250
+It should overwrite and 25 should be stored there.
+
+59
+03:47.280 --> 03:51.730
+So this means we are writing this 25 in this location.
+
+60
+03:51.780 --> 03:53.140
+So this is 200.
+
+61
+03:53.370 --> 03:57.790
+So this X is giving the location where this 25 should be written.
+
+62
+03:57.840 --> 04:02.180
+So this is address of x.
+
+63
+04:02.520 --> 04:11.530
+So this is data of X, so in simple terms  on the assignment  when you take a variable on the right hand side.
+
+64
+04:11.610 --> 04:12.810
+It means data.
+
+65
+04:12.840 --> 04:18.370
+Then you write it on left hand side  it means its address, L value means address.
+
+66
+04:18.530 --> 04:25.530
+But here what has happen you see in case of reference when you have written & y assign x so
+
+67
+04:25.550 --> 04:28.400
+x is written on the right hand side.
+
+68
+04:28.400 --> 04:30.370
+What is given in the name of Y.
+
+69
+04:30.480 --> 04:33.190
+That same address is given for Y also.
+
+70
+04:33.240 --> 04:35.110
+So it means this X.
+
+71
+04:35.130 --> 04:41.070
+Here it is L value of X. Now one more important thing.
+
+72
+04:41.220 --> 04:46.220
+That is access occupying supposed two bytes in the name of integer.
+
+73
+04:46.280 --> 04:46.580
+Right.
+
+74
+04:46.590 --> 04:50.480
+Because it is integer then how much memory Y is occupying.
+
+75
+04:50.650 --> 04:52.890
+Y Is not occupying any memory.
+
+76
+04:52.890 --> 04:59.280
+That is one more important thing about reference, reference doesn't consume any memory at all.
+
+77
+04:59.280 --> 05:06.150
+It is just like your brother has bought a car and that same car it belongs to you also right, mr. A
+
+78
+05:06.320 --> 05:07.110
+bought the car.
+
+79
+05:07.300 --> 05:08.450
+Mr. B is a brother.
+
+80
+05:08.470 --> 05:11.310
+So that same car belongs to B also.
+
+81
+05:11.500 --> 05:18.540
+So same car it belongs to x also it belongs to y  also, right so there are no two cars.
+
+82
+05:18.580 --> 05:20.970
+Same car, people when they see this A is car.
+
+83
+05:20.980 --> 05:22.430
+Some people will say no this is b's car.
+
+84
+05:22.450 --> 05:24.660
+both are same only, it's a same car
+
+85
+05:24.880 --> 05:27.070
+So weather you call X or Y.
+
+86
+05:27.070 --> 05:28.050
+It's the same thing.
+
+87
+05:28.750 --> 05:31.110
+Now one more important thing about references.
+
+88
+05:31.120 --> 05:38.280
+Once you have  declared and initialize reference you cannot make it as a nickname for any variable
+
+89
+05:38.310 --> 05:41.390
+but now it is meant for only x.
+
+90
+05:41.410 --> 05:47.000
+You cannot write like again  &y assign a, no there
+
+91
+05:47.020 --> 05:48.500
+There is no such syntax at all.
+
+92
+05:48.520 --> 05:49.590
+You cannot write.
+
+93
+05:49.720 --> 05:56.580
+So once you said that X will be reading as y also that's all, it's over.  within the same function
+
+94
+05:56.770 --> 06:02.420
+That y cannot be referencing any other variable at all.
+
+95
+06:02.500 --> 06:05.470
+Th's all I will show you  practically how it works.

@@ -1,0 +1,713 @@
+WEBVTT
+
+0
+00:00.380 --> 00:03.060
+Our next topic is binary search.
+
+1
+00:03.060 --> 00:06.120
+Already we have learned about the linear search in the previous video.
+
+2
+00:06.510 --> 00:09.470
+Now this is a another method of searching.
+
+3
+00:09.690 --> 00:15.110
+Now in this search method one compulsory condition that is one thing is mandatory.
+
+4
+00:15.240 --> 00:17.640
+The elements must be in the sorted order.
+
+5
+00:18.360 --> 00:19.910
+Yes they are in sorted order.
+
+6
+00:20.130 --> 00:23.470
+Then only you can perform binary search.
+
+7
+00:23.520 --> 00:26.610
+Now how actually binary search works.
+
+8
+00:26.700 --> 00:33.120
+I'll explain you, suppose in a book if you want to search for any page number let us suppose I want to
+
+9
+00:33.120 --> 00:36.100
+go on page number one twenty five.
+
+10
+00:36.540 --> 00:42.090
+So how you search, do you search like this,  page one page two, you go like this.
+
+11
+00:42.090 --> 00:42.460
+No.
+
+12
+00:42.600 --> 00:46.080
+If you're going like this then this is linear search.
+
+13
+00:46.510 --> 00:49.850
+But how we search for page number one 125 in a book.
+
+14
+00:49.860 --> 00:51.720
+We simply open the book from something.
+
+15
+00:52.110 --> 00:58.070
+OK this is 200 so 200 means 125 is on the left hand side.
+
+16
+00:58.220 --> 00:59.430
+It is on the left hand side.
+
+17
+00:59.670 --> 01:04.490
+So I should search in left hand side so I can open a book like this somewhere in the middle.
+
+18
+01:04.490 --> 01:09.670
+Let us say I'm opening in the middle right now and this has been number sixty seven.
+
+19
+01:09.690 --> 01:11.150
+So it is on the right hand side.
+
+20
+01:11.160 --> 01:14.050
+But before this two ends, right before this 2 ends.
+
+21
+01:14.100 --> 01:18.000
+Now again I'll open it in the middle, now this 133.
+
+22
+01:18.310 --> 01:19.580
+So it's on the left hand side.
+
+23
+01:19.950 --> 01:26.100
+So I'll go on. how i know that is on the left hand side or right turn side because these are sorted
+
+24
+01:26.130 --> 01:27.250
+page numbers are sorted.
+
+25
+01:27.330 --> 01:28.300
+Yes.
+
+26
+01:28.410 --> 01:30.960
+Then I'll go in the middle of this one.
+
+27
+01:30.990 --> 01:32.830
+Now you got ninety three.
+
+28
+01:32.880 --> 01:35.620
+Then again I have to look on the left hand right hand side.
+
+29
+01:35.910 --> 01:41.370
+No you know well how I'm doing it so definitely I will reach out to page no. 125
+
+30
+01:41.400 --> 01:46.980
+this is the method that we follow because the page numbers are sorted that same idea is used by binary search
+
+31
+01:46.980 --> 01:47.400
+also.
+
+32
+01:47.730 --> 01:51.210
+So let us learn by binary search on this example.
+
+33
+01:51.210 --> 01:56.940
+Here are the list of elements and I have the search for a key twenty five. Now I need two things for searching
+
+34
+01:56.940 --> 02:03.440
+I don't need a number of elements, i don't need starting element and ending element that is low and high.
+
+35
+02:03.870 --> 02:11.940
+So initially low is zero and high is nine then, as   I've told you that we have to search in the middle
+
+36
+02:12.240 --> 02:19.200
+we have to find one more thing that is Middle, that middle is low plus high divided by two
+
+37
+02:19.290 --> 02:27.240
+and that is float value means I have to truncate the decimal point if I get any decimal point then let
+
+38
+02:27.240 --> 02:28.820
+us perform this one.
+
+39
+02:28.830 --> 02:36.940
+So first of all I have the search for 25 so first of all find out mid, zero plus nine by two is 4.5
+
+40
+02:36.930 --> 02:37.350
+...
+
+41
+02:37.350 --> 02:38.540
+So we will take four.
+
+42
+02:38.550 --> 02:39.600
+So we got middle as 4.
+
+43
+02:39.600 --> 02:44.570
+this is middle is it the element that you are searching.
+
+44
+02:44.580 --> 02:45.030
+No.
+
+45
+02:45.060 --> 02:45.850
+That is 20.
+
+46
+02:45.870 --> 02:47.550
+I'm searching for 25.
+
+47
+02:47.770 --> 02:49.350
+Now where i should search.
+
+48
+02:49.350 --> 02:54.210
+I should search on the right hand side that side that side means from where .
+
+49
+02:54.210 --> 02:55.600
+low will start now.
+
+50
+02:55.810 --> 02:57.480
+Low should not be here.
+
+51
+02:57.510 --> 03:03.390
+Low should be at five means, after mid don't include it now because already we have checked it.
+
+52
+03:03.930 --> 03:04.970
+next location.
+
+53
+03:05.100 --> 03:08.130
+So low will be from 5 and High will be  till 9.
+
+54
+03:08.150 --> 03:12.060
+So mid plus one we will make modification to low that is mid plus one.
+
+55
+03:12.060 --> 03:15.330
+So this is five and high is nine only.
+
+56
+03:15.430 --> 03:17.460
+Now remove mid from here.
+
+57
+03:17.550 --> 03:23.120
+Again find out mid,  how much it is five plus nine by 2, 14 by two i.e, seven.
+
+58
+03:23.420 --> 03:24.790
+So mid is 7.
+
+59
+03:24.880 --> 03:26.780
+This is mid.
+
+60
+03:27.010 --> 03:32.760
+low + high by 2,  you do you get some value that is mid. now is it the element that I'm searching
+
+61
+03:32.760 --> 03:33.020
+for.
+
+62
+03:33.020 --> 03:33.950
+Twenty five no.
+
+63
+03:34.020 --> 03:35.270
+That is 28.
+
+64
+03:35.310 --> 03:37.890
+So it is your element as on the left hand side.
+
+65
+03:38.160 --> 03:40.590
+So now you have to search on the left hand side of list.
+
+66
+03:40.620 --> 03:42.160
+So what do you have to change now.
+
+67
+03:42.330 --> 03:46.710
+Low will remain as it is, high should be changed were mid-1.
+
+68
+03:46.710 --> 03:48.890
+So high should be changed to  mid minus one.
+
+69
+03:48.900 --> 03:53.880
+So low remains a five only high will become Seven minus one that is six.
+
+70
+03:54.030 --> 03:59.130
+So it means if we have to search on the left hand side modify your high, if you have to search on the
+
+71
+03:59.130 --> 04:04.880
+right hand side modify Low,  Now  Five and Six remove mid from here.
+
+72
+04:04.890 --> 04:11.880
+Now find out mid once again, five plus six by two that is 11 by two that is 5.5.
+
+73
+04:11.880 --> 04:13.240
+So we will take it as five.
+
+74
+04:13.240 --> 04:14.760
+this is five.
+
+75
+04:15.060 --> 04:18.300
+So we got mid as same as low.
+
+76
+04:18.390 --> 04:19.420
+No problem.
+
+77
+04:19.480 --> 04:24.130
+Now check at the mid, is it the element that you are searching for that is 22.
+
+78
+04:24.150 --> 04:25.600
+I'm searching for 25.
+
+79
+04:25.740 --> 04:29.940
+So where is your element on the right hand side so check on the right hand side list.
+
+80
+04:30.150 --> 04:32.090
+So what do we should modify.
+
+81
+04:32.310 --> 04:35.550
+Low should be changed to mid plus one, mid plus one is 6.
+
+82
+04:35.780 --> 04:38.970
+So low will also be here and high will also be here.
+
+83
+04:39.000 --> 04:40.430
+So both are at same place.
+
+84
+04:40.530 --> 04:41.760
+See I have the change low.
+
+85
+04:41.760 --> 04:44.670
+So that is mid plus 1 6 and this is also 6.
+
+86
+04:44.670 --> 04:46.240
+No move mid from there.
+
+87
+04:46.260 --> 04:51.340
+Find out middle so is what six plus six divided by two.
+
+88
+04:51.390 --> 04:53.530
+It is six and mid is
+
+89
+04:53.550 --> 04:57.100
+Six is it the element that you are searching 25.
+
+90
+04:57.330 --> 05:04.370
+Yes mid is at index six and there is 25 we got the key. see in
+
+91
+05:04.440 --> 05:06.510
+How many comparisions we got the key.
+
+92
+05:06.510 --> 05:08.610
+1 2 3 4 comparision.
+
+93
+05:09.450 --> 05:14.930
+If we perform linear search then we'll be checking all these elements after seven competitions.
+
+94
+05:14.940 --> 05:18.650
+One two three four five six seven comparisions we will get the key.
+
+95
+05:18.690 --> 05:20.260
+So three comparision less.
+
+96
+05:20.350 --> 05:20.750
+Yes.
+
+97
+05:20.780 --> 05:22.240
+binary search is faster.
+
+98
+05:22.470 --> 05:22.970
+It's fast
+
+99
+05:26.380 --> 05:32.380
+so this is how binary  works. now one more thing i will show you about unsuccessful search so far
+
+100
+05:32.380 --> 05:35.540
+that I'll use the same example just I will change the key.
+
+101
+05:35.550 --> 05:38.270
+Suppose I'm searching for 27.
+
+102
+05:38.350 --> 05:40.440
+So if I'm searching for 27 till here
+
+103
+05:40.450 --> 05:46.870
+The procedure will be same only it will be same only, right now after this what happens now.
+
+104
+05:46.900 --> 05:47.930
+Is it 27.
+
+105
+05:48.070 --> 05:48.950
+No.
+
+106
+05:48.950 --> 05:51.810
+27 is greater than twenty five it is twenty five.
+
+107
+05:52.060 --> 05:55.150
+So I have to search on the right hand side, right hand side means.
+
+108
+05:55.150 --> 05:57.790
+What I should change low I should change.
+
+109
+05:57.790 --> 06:00.920
+So what happens, low becomes mid plus one.
+
+110
+06:01.000 --> 06:02.570
+So loop comes here.
+
+111
+06:02.990 --> 06:06.700
+oh loop should be on left side height should be on the right side.
+
+112
+06:06.720 --> 06:10.310
+But here you see low became greater than high means
+
+113
+06:10.330 --> 06:11.320
+Element is not there.
+
+114
+06:11.980 --> 06:14.410
+So how to know that the element is not there.
+
+115
+06:14.590 --> 06:18.210
+when low becomes greater than high, element is not there.
+
+116
+06:18.290 --> 06:21.350
+This is a procedure of  binary search.
+
+117
+06:21.460 --> 06:26.970
+Now let me write a program and show you in the program we have to calculate mid every time and update
+
+118
+06:26.970 --> 06:27.990
+low and high.
+
+119
+06:28.150 --> 06:35.950
+So far that as per this example already I have an array, then I have loop that is starting from zero
+
+120
+06:36.280 --> 06:41.720
+high, that is starting from 9 and the Keys also there enter key. and i'm taking 
+
+121
+06:41.780 --> 06:48.040
+Key here. now if you see the previous programming linear search I was taking all the elements as input
+
+122
+06:48.580 --> 06:50.030
+but here I have directly written them.
+
+123
+06:50.140 --> 06:54.860
+So if you want you can take them as input but make sure you are entering the values in the sorted order
+
+124
+06:54.910 --> 07:02.000
+only then only it can work. now that procedure what I have shown you I will write down here.
+
+125
+07:02.020 --> 07:03.220
+So what we have to do.
+
+126
+07:03.220 --> 07:05.500
+Low is at zero and the high is at 9.
+
+127
+07:05.560 --> 07:07.210
+So we have to find out mid.
+
+128
+07:07.270 --> 07:11.520
+I'm writing the body of loop. this is the repeating statement repeating statement.
+
+129
+07:11.740 --> 07:12.510
+So it's a loop.
+
+130
+07:12.580 --> 07:14.120
+So first I will write down the body.
+
+131
+07:14.190 --> 07:17.980
+mid equals to low plus high.
+
+132
+07:18.070 --> 07:19.520
+Divided by two.
+
+133
+07:19.540 --> 07:22.830
+This is integer division so I need one more variable that is mid.
+
+134
+07:22.840 --> 07:32.890
+Also here. then check if key is equal to A[mid] whenever we got mid.
+
+135
+07:32.890 --> 07:40.060
+If the key found there, if found then say cout, found right.
+
+136
+07:40.150 --> 07:42.290
+Found at what  index.
+
+137
+07:42.330 --> 07:44.580
+where ever the mid pointing right now.
+
+138
+07:44.590 --> 07:45.160
+that's all.
+
+139
+07:45.430 --> 07:49.340
+And also stop the program for so return zero.
+
+140
+07:49.510 --> 07:50.620
+This is inside if.
+
+141
+07:52.350 --> 07:59.320
+If a key is not equal then key may be less or key may be greater if keys are less so.
+
+142
+07:59.340 --> 08:09.390
+Else if key is less than A[mid], then what i have to do modify
+
+143
+08:09.750 --> 08:16.770
+high so that we can search on the left hand side so I'm right in the same line height assign mid and
+
+144
+08:16.780 --> 08:18.160
+minus 1.
+
+145
+08:18.240 --> 08:25.140
+There is no space so I am writing the same line, else means what, key is neither equal nor small.
+
+146
+08:25.290 --> 08:25.850
+Then what.
+
+147
+08:25.850 --> 08:29.260
+Key is greater search on which side, right hand side.
+
+148
+08:29.310 --> 08:30.070
+right hand means
+
+149
+08:30.080 --> 08:33.090
+Modify low,  low should become mid plus one.
+
+150
+08:33.360 --> 08:39.630
+So in the same line I will write down low should be made as a mid plus 1.
+
+151
+08:39.660 --> 08:43.530
+So this is the procedure that I have repeatedly done.
+
+152
+08:43.740 --> 08:50.130
+Calculate mid,  check for key, if found stop there only, if key is a small check on the left side.
+
+153
+08:50.240 --> 08:53.900
+If key is a greater check on the right hand side by modifying the low.
+
+154
+08:53.910 --> 08:57.050
+This process was repeated how long either.
+
+155
+08:57.150 --> 08:58.180
+The key is a found.
+
+156
+08:58.230 --> 09:01.540
+It will stop, or else, low became greater than high.
+
+157
+09:01.710 --> 09:09.360
+So this procedure will continue as long as while low is less than or equal to high.
+
+158
+09:09.930 --> 09:13.420
+If low becomes greater than height then we will stop.
+
+159
+09:14.730 --> 09:21.930
+And once you stop come out of the while loop then at the end of we can say cout not found right
+
+160
+09:21.930 --> 09:25.290
+here only we can see outside the loop.
+
+161
+09:25.290 --> 09:29.470
+We cannot see inside the loop. that's all. after this write return zero.
+
+162
+09:29.490 --> 09:31.230
+An end of the program.
+
+163
+09:31.860 --> 09:35.250
+So this is a program for binary search.
+
+164
+09:35.380 --> 09:41.890
+You can write on this program as a practice and you can check it and it is a demo also available.
+
+165
+09:41.890 --> 09:48.960
+Now one important thing about linear search and binary search, see we say that linear search it checks
+
+166
+09:48.980 --> 09:53.540
+the element linearly one by one, we say it takes order of n times.
+
+167
+09:53.890 --> 09:55.120
+Right.
+
+168
+09:55.240 --> 10:01.880
+And binary search always check in the middle by dividing array into half right half every time.
+
+169
+10:02.110 --> 10:08.070
+So we say it takes log n time.  just you should know about this one.
+
+170
+10:08.080 --> 10:12.850
+How it is log and what does this n then all that is out of the scope of this course.
+
+171
+10:13.300 --> 10:20.060
+So just I have to tell you the point that binary search  is faster  because it takes log n time that's it.
+
+172
+10:20.090 --> 10:22.590
+and linear search is slower.
+
+173
+10:22.600 --> 10:24.160
+It takes a order of n time.
+
+174
+10:24.460 --> 10:30.370
+So these results are actually obtained by analysis so analysis We are not doing we writing programs.
+
+175
+10:30.370 --> 10:35.580
+We are learning programming but we have pick up the topic that is related to analysis.
+
+176
+10:35.650 --> 10:42.180
+So just I've given you the time taken by these algorithm linear search and binary search.
+
+177
+10:42.400 --> 10:43.510
+So that's all in this video.

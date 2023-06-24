@@ -1,0 +1,70 @@
+WEBVTT
+
+00:00:05.300 --> 00:00:08.180
+Welcome back. So you're ready for the section challenge.
+
+00:00:08.180 --> 00:00:09.480
+Let's go over the challenge.
+
+00:00:10.840 --> 00:00:13.740
+Create a c++ program that asks the user
+
+00:00:13.740 --> 00:00:16.040
+for their favorite number between 1 and 100,
+
+00:00:16.540 --> 00:00:18.740
+then read this number from the console.
+
+00:00:18.740 --> 00:00:21.000
+Suppose the user enters number 24.
+
+00:00:21.500 --> 00:00:25.900
+You want to display the following to the console amazing. That's my favorite number too.
+
+00:00:25.900 --> 00:00:28.600
+That's exactly what we did in our first program.
+
+00:00:29.000 --> 00:00:30.700
+Now here's the little bit of a twist.
+
+00:00:30.700 --> 00:00:34.360
+You also want to display, no really 24 is my favorite number.
+
+00:00:35.560 --> 00:00:39.760
+Below are two sample runs of the program. So in this case, we're prompting the user.
+
+00:00:39.760 --> 00:00:42.440
+There's our prompt. The user enters 24,
+
+00:00:43.140 --> 00:00:45.740
+and we print out amazing. That's my favorite number too.
+
+00:00:46.240 --> 00:00:48.840
+No really 24 is my favorite number.
+
+00:00:48.840 --> 00:00:53.070
+And if I run this program again and I type in 75, I'll get 75.
+
+00:00:53.070 --> 00:00:55.870
+So let me run the program for you so you can see what it looks like.
+
+00:01:00.120 --> 00:01:03.780
+Here we go. This is the prompt to the user. Enter your favorite number
+
+00:01:03.780 --> 00:01:07.380
+between 1 and a 100. So let's say I typed in a 50, and press enter.
+
+00:01:07.780 --> 00:01:11.380
+And you're going to display to the user amazing that's my favorite number too.
+
+00:01:11.680 --> 00:01:13.780
+No really 50 is my favorite number.
+
+00:01:14.380 --> 00:01:15.880
+That's it. That's the challenge.
+
+00:01:16.580 --> 00:01:20.080
+That's it. That's the challenge. Give it a shot and then come back to the next video,
+
+00:01:20.080 --> 00:01:21.380
+and we'll work through the solution together.

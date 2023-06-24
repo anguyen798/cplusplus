@@ -1,0 +1,184 @@
+WEBVTT
+
+00:00:05.500 --> 00:00:10.050
+In this video, I'll show you a couple of options that allow you to run your c++ programs
+
+00:00:10.050 --> 00:00:11.250
+right in a web browser.
+
+00:00:12.050 --> 00:00:15.850
+Now this is pretty nice because sometimes you're on the road, you don't have your computer with you
+
+00:00:15.850 --> 00:00:19.650
+and you want to take the the course and try out some examples,
+
+00:00:19.650 --> 00:00:23.310
+maybe you had an idea about an example you want to try it out but nothing's available
+
+00:00:23.310 --> 00:00:26.910
+or your friend's house, and there's no computer available there except the browser.
+
+00:00:27.270 --> 00:00:29.270
+All you need is a browser to run these.
+
+00:00:29.270 --> 00:00:33.470
+One example is if you open up your favorite browser I'm using chrome here,
+
+00:00:33.470 --> 00:00:37.370
+you can type in cpp.sh. That's the URL.
+
+00:00:37.370 --> 00:00:39.370
+And you get the c++ shell.
+
+00:00:39.370 --> 00:00:42.670
+Now both of these examples I'm going to show you
+
+00:00:42.670 --> 00:00:45.550
+are rather limited compared to obviously running on your own
+
+00:00:45.550 --> 00:00:47.550
+computer with an IDE and so forth.
+
+00:00:47.800 --> 00:00:51.300
+But they're really, really handy when you need to try something out really quickly
+
+00:00:51.300 --> 00:00:55.500
+without having to install a thing. So in this case, cpp.sh
+
+00:00:55.500 --> 00:00:56.940
+is the c++ plus shell.
+
+00:00:56.940 --> 00:00:59.300
+You can type your program right in here on the browser.
+
+00:00:59.300 --> 00:01:02.000
+And you can see here I've typed in the hello world program.
+
+00:01:02.800 --> 00:01:06.160
+And you can set options. You can set your c++14 options,
+
+00:01:06.160 --> 00:01:09.760
+your warnings to a wall, like we have in the examples.
+
+00:01:10.010 --> 00:01:13.010
+And if you want to run your program, you can just select run.
+
+00:01:13.010 --> 00:01:16.310
+And it's going to compile and run it at the same time, which is pretty nice.
+
+00:01:16.970 --> 00:01:21.870
+Also, if the program asks for input, which we'll get to a little bit later in the course,
+
+00:01:22.120 --> 00:01:25.920
+you can set that to interactive mode. So it'll be able to -- you'll be able to type into the program,
+
+00:01:25.920 --> 00:01:29.220
+which is kind of nice as well. So in this case, I want to run the program.
+
+00:01:29.880 --> 00:01:31.580
+And you can see it's compiling.
+
+00:01:32.380 --> 00:01:35.280
+Program is running, and the output is hello world right here,
+
+00:01:35.280 --> 00:01:37.940
+and the exit code is 0, which is our return 0.
+
+00:01:38.440 --> 00:01:41.800
+That's pretty nice. Now you can get a URL,
+
+00:01:42.460 --> 00:01:44.760
+which gets a URL to what you did.
+
+00:01:44.760 --> 00:01:47.850
+And you can click on that URL and you got the program that you wrote back.
+
+00:01:47.850 --> 00:01:50.110
+So that's obviously it's storing it somewhere.
+
+00:01:50.110 --> 00:01:52.310
+I'm not sure where or how long it's going to be available,
+
+00:01:52.310 --> 00:01:55.510
+but you can figure that out if you like. That's one example.
+
+00:01:55.510 --> 00:01:56.910
+Another example is
+
+00:01:57.570 --> 00:02:00.070
+webcompiler.cloudapp.net.
+
+00:02:00.070 --> 00:02:04.170
+This is a visual c++ plus compiler running in the web. It's a Microsoft compiler.
+
+00:02:04.420 --> 00:02:07.420
+And you can see that they've given you a sample program here.
+
+00:02:07.670 --> 00:02:12.070
+Now this text is pretty small. Again, it's a browser. So I'm going to make my browser a little bit bigger.
+
+00:02:12.430 --> 00:02:15.130
+So you can see it and then I'll make it a little smaller again to run it.
+
+00:02:16.530 --> 00:02:21.030
+So you can see here it's including iostream. It's using a namespace, which we'll talk about a little bit later
+
+00:02:21.030 --> 00:02:22.630
+and it's outputting hello world.
+
+00:02:23.290 --> 00:02:26.690
+And let me make this a little smaller again. So when you run the program
+
+00:02:26.690 --> 00:02:28.690
+by clicking this purple button down here,
+
+00:02:29.090 --> 00:02:31.890
+there's your output right up here in this black window here hello world,
+
+00:02:32.390 --> 00:02:35.690
+which is pretty nice. And you can set your compiler flags,
+
+00:02:35.690 --> 00:02:39.190
+however, you like. So in this case I'm setting the warnings to all, and I'm setting my
+
+00:02:39.190 --> 00:02:41.490
+standard compiler to c++14.
+
+00:02:42.290 --> 00:02:44.170
+I'll close that down. And so as you can see
+
+00:02:44.720 --> 00:02:48.720
+this is pretty nice option here. We can -- if we get a compiler error let's
+
+00:02:48.720 --> 00:02:51.320
+say we forget that semicolon and we run,
+
+00:02:51.820 --> 00:02:55.820
+then the compiler error shows up down here, it says in function main,
+
+00:02:55.820 --> 00:02:57.820
+on line 7 right here.
+
+00:02:58.480 --> 00:03:00.980
+There's a semicolon expected. You actually get a little red
+
+00:03:01.380 --> 00:03:05.780
+little x there that tells you the arrows right around here somewhere, so you can fix your error
+
+00:03:05.780 --> 00:03:06.780
+and run it again.
+
+00:03:07.880 --> 00:03:11.780
+And there you go. There's your hello world. So again, these are some web-based options.
+
+00:03:11.780 --> 00:03:15.440
+They're not perfect. You can't really save things and edit
+
+00:03:15.440 --> 00:03:17.040
+and do all kinds of good stuff, but
+
+00:03:17.540 --> 00:03:19.540
+you can run a lot of the programs that we're going to talk
+
+00:03:19.540 --> 00:03:22.040
+about in this class, right in the ++ shell on the web.

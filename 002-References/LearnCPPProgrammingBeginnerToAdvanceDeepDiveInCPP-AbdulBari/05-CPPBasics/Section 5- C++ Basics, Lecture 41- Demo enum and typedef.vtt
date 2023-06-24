@@ -1,0 +1,401 @@
+WEBVTT
+
+0
+00:00.920 --> 00:10.620
+let's look @ enum, it is used for defining our own data types for example  i will take here enum day
+
+1
+00:10.620 --> 00:11.820
+day is the name of data type.
+
+2
+00:12.120 --> 00:25.610
+What are the values that it can have is Monday Tuesday Wednesday Thursday Friday Saturday and Sunday.
+
+3
+00:25.770 --> 00:31.550
+where ever in my program I can declare a variable of type Day .
+
+4
+00:31.560 --> 00:32.290
+D.
+
+5
+00:32.350 --> 00:35.340
+So there's a variable of type day.
+
+6
+00:35.390 --> 00:39.530
+What are the values that day can have letter see D assigned one.
+
+7
+00:39.530 --> 00:42.620
+Can I have one.
+
+8
+00:42.630 --> 00:45.440
+No I cannot assign a value.
+
+9
+00:45.840 --> 00:50.120
+So can i assigned any numbers like this zero.
+
+10
+00:50.580 --> 00:51.390
+No.
+
+11
+00:51.590 --> 01:01.240
+But is it possible that I can assign Monday day like this yes I can assign only these values that I have
+
+12
+01:01.240 --> 01:01.950
+mentioned.
+
+13
+01:02.080 --> 01:04.070
+So what is the value of mon.
+
+14
+01:04.120 --> 01:10.040
+Let us print and check and cout d, Let me run the program and show you.
+
+15
+01:10.360 --> 01:13.140
+So Monday means zero so it is printing zero.
+
+16
+01:13.450 --> 01:21.320
+So it means if I give this value as Tuesday than what the value will be spending one.
+
+17
+01:21.430 --> 01:24.630
+So it means when I have defined enum.
+
+18
+01:24.650 --> 01:27.180
+Monday is assign with zero and this is one.
+
+19
+01:27.200 --> 01:31.960
+So definitely Wednesday will be two and thursday will be three and so on.
+
+20
+01:31.960 --> 01:34.690
+So it is assigning values to these.
+
+21
+01:34.780 --> 01:39.910
+So I directly say display Monday let us check instead of d.
+
+22
+01:39.960 --> 01:41.380
+I will say Monday.
+
+23
+01:41.890 --> 01:43.450
+So value of money is zero.
+
+24
+01:43.510 --> 01:45.590
+So I can use those values.
+
+25
+01:45.790 --> 01:49.780
+It means Mondays is like an identifier, so can i say monday plus plus
+
+26
+01:52.770 --> 01:56.630
+no cannot increment expression of enum type day.
+
+27
+01:56.730 --> 02:00.870
+So we cannot modify them so it means these are like constants.
+
+28
+02:01.020 --> 02:01.730
+Yes.
+
+29
+02:01.920 --> 02:05.310
+All these are set of constants under one name.
+
+30
+02:05.310 --> 02:11.880
+That is a day and I can declare the variable of type day and they can use those constant for these variables
+
+31
+02:12.800 --> 02:17.540
+and the constant starts from zero onward so 0 1 2 3 and so on.
+
+32
+02:17.730 --> 02:24.050
+So if I write anything like say if I write Friday then what the value will be.
+
+33
+02:24.630 --> 02:34.750
+Yes it is 4 so 0 1 2 3 and 4 Friday is  four now next thing, can I start
+
+34
+02:34.760 --> 02:37.040
+Monday with one.
+
+35
+02:37.190 --> 02:43.280
+If you start Monday with one what Tuesday will be, what wed will be, let's display all
+
+36
+02:43.280 --> 02:45.180
+these values and check them.
+
+37
+02:45.530 --> 02:51.020
+I will say this is Monday and copy paste these and change the values
+
+38
+02:56.730 --> 02:58.850
+yea I'm displaying all these values here.
+
+39
+02:58.940 --> 03:02.480
+So you know the order of that is from Monday to Sunday.
+
+40
+03:02.900 --> 03:05.610
+Let us run this now.
+
+41
+03:05.640 --> 03:13.760
+Monday's one so rest of the values are 1 2 3 4 5 6 7 so it means the starting point is one of them will
+
+42
+03:14.090 --> 03:17.130
+take the next value from one onwards.
+
+43
+03:17.810 --> 03:26.050
+If I give Monday as a 10 and what happens they will take the next values and ten 11 12 and so on.
+
+44
+03:26.160 --> 03:28.790
+So I'll make it one, back again.
+
+45
+03:28.890 --> 03:31.960
+Then on Thursday I will give it a 10.
+
+46
+03:32.000 --> 03:33.090
+Let us see what happens.
+
+47
+03:33.090 --> 03:43.130
+I have given Mondays one and Tuesday Wednesday and Thursday I have given 10, let's run, so Monday is one Tuesdays is2
+
+48
+03:43.130 --> 03:52.430
+Wednesday's three and Thursday as I have given value 10 here so it is starting from 10 11 12 and 13 so
+
+49
+03:52.430 --> 03:57.670
+it means I can give any value I want to these constants.
+
+50
+03:57.770 --> 04:01.400
+So can i say Tuesday assigned seven.
+
+51
+04:01.700 --> 04:09.590
+Let us check Tuesday's  7 so then Wednesday will be eight Yes Mondays one Tuesdays 7 and Wednesdays 8.
+
+52
+04:09.950 --> 04:14.990
+It means I can assign some values to these constants or leave them as it is.
+
+53
+04:14.990 --> 04:21.080
+They will be taking the values starting from zero on words instead of defining constants using hash
+
+54
+04:21.080 --> 04:22.640
+to define.
+
+55
+04:23.060 --> 04:33.650
+Say Monday is zero instead of instructors are instead of declaring Konst and Monday as a zero.
+
+56
+04:33.770 --> 04:40.100
+If I need constants like this or a symbolic constant not just one I need a set of constants then I can
+
+57
+04:40.100 --> 04:42.750
+define both sets of constants using enum.
+
+58
+04:42.890 --> 04:49.160
+So in them as you for defining a group of constants under one name that is related constants under one
+
+59
+04:49.160 --> 04:50.510
+name.
+
+60
+04:50.750 --> 04:57.070
+So that's the meaning of enum and in enum can be used for various purpose like see if I have enum
+
+61
+04:57.110 --> 04:59.630
+for the dept. that is department.
+
+62
+04:59.630 --> 05:05.990
+So one of the department is computer science that is C S Department or I.T. department or electronic
+
+63
+05:06.000 --> 05:12.330
+and communication department or mechanical department so I can define the departments like this.
+
+64
+05:12.410 --> 05:18.210
+Now these departments will take the codes from CS as zero and IT as one electronic is two mechanical it's
+
+65
+05:18.210 --> 05:19.390
+three and so on.
+
+66
+05:19.400 --> 05:24.650
+So if you so let them take the constant values from one onwards you can make CS is as one, rest of them
+
+67
+05:24.650 --> 05:26.840
+will be taking the following values.
+
+68
+05:26.840 --> 05:30.940
+So in this way I can define some constants and I can use them in the program.
+
+69
+05:30.950 --> 05:35.130
+The benefit of using the constant is that the program becomes readable.
+
+70
+05:35.170 --> 05:42.500
+See I can declare that the other type of type department and dept. and assign some department name.
+
+71
+05:42.680 --> 05:44.210
+So this becomes more readable.
+
+72
+05:44.210 --> 05:47.230
+That is the benefit of defining constant values.
+
+73
+05:47.360 --> 05:54.090
+So instead of using literals again using constants so that's all about enum.
+
+74
+05:54.090 --> 05:55.940
+Next I will talk about  type def.
+
+75
+05:56.080 --> 06:03.150
+Also let us talk about the typedef type, it is used for defining of our own data type or any idea
+
+76
+06:03.160 --> 06:07.860
+to some data type so that we can make the program more readable.
+
+77
+06:07.860 --> 06:10.990
+So the purpose of typedef is to make the program more readable.
+
+78
+06:11.070 --> 06:12.820
+Let us take example.
+
+79
+06:12.870 --> 06:20.210
+See type def integer as let us say max.
+
+80
+06:20.250 --> 06:26.910
+Now here anywhere in my program I can say marks as anyone come up and do so.
+
+81
+06:26.910 --> 06:34.260
+These are integer type variables I can assign any value to themm1 assign 50, m2 assign 90
+
+82
+06:34.260 --> 06:36.940
+90 I can assign some values to them.
+
+83
+06:36.940 --> 06:39.900
+So now m1 m2 are the variables of type marks.
+
+84
+06:39.930 --> 06:42.670
+And what is Marks, it is nothing but integer.
+
+85
+06:42.750 --> 06:45.030
+See if I write int here.
+
+86
+06:45.030 --> 06:50.300
+Then the problem is that I cannot make out what is the purpose of these two variables.
+
+87
+06:50.490 --> 06:52.430
+So while typing a very lengthy program.
+
+88
+06:52.440 --> 06:58.080
+I forget work for I have declared the variables even after a few days when I look at my program so it
+
+89
+06:58.080 --> 07:01.820
+will take time for me to understand what for I have declared these variables.
+
+90
+07:01.950 --> 07:08.640
+So instead of that if I use the meaningful name for data type then it is just a clear meaning that
+
+91
+07:08.820 --> 07:11.550
+m1 is of type marks and m2 is also  of type.
+
+92
+07:11.550 --> 07:18.630
+marks that is of type integer and otherwise I have to make documentation that is I have to write comments
+
+93
+07:18.690 --> 07:24.620
+that M one and M two are for storing marks
+
+94
+07:27.780 --> 07:29.640
+so I don't have to give these commands.
+
+95
+07:29.640 --> 07:35.820
+The statement itself speaks about the type of values that you are going to store in them.
+
+96
+07:35.820 --> 07:36.720
+So there is the benefit.
+
+97
+07:36.720 --> 07:42.500
+So it makes the program readable so it can be used very very glad is friendly for the programmer.
+
+98
+07:44.470 --> 07:45.420
+And that's it.
+
+99
+07:45.430 --> 07:47.760
+So you can try these things by yourself.

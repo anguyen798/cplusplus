@@ -1,0 +1,117 @@
+WEBVTT
+
+0
+00:05.540 --> 00:09.420
+In this video I'd like to go over the content in this section of the course.
+
+1
+00:09.540 --> 00:14.580
+This is a very important section since we describe the installation of the tools necessary to create,
+
+2
+00:14.640 --> 00:17.430
+build, and execute C++ programs.
+
+3
+00:17.430 --> 00:20.790
+We wanted to make this course accessible to as many students as possible
+
+4
+00:20.810 --> 00:22.450
+who want to learn C++.
+
+5
+00:22.470 --> 00:28.020
+So, if you're running Microsoft Windows, Mac OSX,  or Ubuntu Linux, we have videos detailing the steps
+
+6
+00:28.020 --> 00:31.510
+necessary to get set up and running on your platforms.
+
+7
+00:31.530 --> 00:38.730
+The following section includes videos for installing the C++ compiler, the CodeLite IDE and how to configure
+
+8
+00:38.730 --> 00:43.320
+the CodeLite IDE for each specific operating system.
+
+9
+00:43.320 --> 00:47.970
+Then we go over how to create a default CodeLite project template that you can use when you want to
+
+10
+00:47.970 --> 00:50.520
+create a new C++ project.
+
+11
+00:50.520 --> 00:54.990
+This makes it really easy to start new projects quickly since all the required settings will be ready
+
+12
+00:54.990 --> 01:02.100
+to go. In all the videos we use are a real simple C++ program to test the installations. All of the elements
+
+13
+01:02.100 --> 01:06.510
+of the C++ program will be explained in detail as we progress through the course.
+
+14
+01:06.840 --> 01:12.720
+In this section, just type along and follow along to ensure that your installation is complete.
+
+15
+01:12.840 --> 01:18.900
+In addition to using the CodeLite IDE,  we want to be sure that students can learn and build C++ programs
+
+16
+01:19.140 --> 01:23.050
+even though they may not be able to install an IDE due to hardware limitations.
+
+17
+01:23.280 --> 01:29.740
+So we created a section that uses just a simple text editor and the command line tools to do just that.
+
+18
+01:29.880 --> 01:34.620
+If you're unable to use an IDE then please don't let that stop you from learning C++.
+
+19
+01:34.620 --> 01:37.150
+You could still use the command line just fine.
+
+20
+01:37.290 --> 01:43.280
+So we created a video for the command line for Windows , for Ubuntu Linux, and for Mac OSX.
+
+21
+01:43.290 --> 01:48.870
+Finally, we include a video that uses a web site that has a C++ compiler available that you can use to
+
+22
+01:48.870 --> 01:52.050
+write and execute basic C++ programs.
+
+23
+01:52.910 --> 01:57.520
+This has some limitations, but it's great if you're on the road or away from your own PC.
+
+24
+01:57.530 --> 02:01.940
+All you need is a web browser and you can run much of the code presented in this course.
+
+25
+02:02.900 --> 02:08.930
+As the Course evolves we'd like to include videos for Xcode on Mac, Microsoft Visual Studio on Windows, 
+
+26
+02:09.300 --> 02:09.860
+Eclipse, 
+
+27
+02:09.890 --> 02:12.580
+NetBeans, and other major IDEs.
+
+28
+02:12.650 --> 02:15.920
+We want this to be the most complete beginning C++ course available.

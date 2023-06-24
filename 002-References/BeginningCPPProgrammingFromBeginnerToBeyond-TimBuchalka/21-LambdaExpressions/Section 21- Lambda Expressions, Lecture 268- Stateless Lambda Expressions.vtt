@@ -1,0 +1,568 @@
+WEBVTT
+
+00:05.240 --> 00:09.320
+In this video, we'll look at what it means for Lambda Expression to be stateless.
+
+00:09.980 --> 00:14.270
+You might be surprised to hear that you're already familiar with stateless lambda expressions.
+
+00:14.450 --> 00:20.240
+In the last video we looked at the structure and syntax of a lambda and said that a lambda capture list
+
+00:20.240 --> 00:24.410
+allows it to capture the context or closure in which it executes.
+
+00:24.410 --> 00:26.480
+But what if the captured list is empty?
+
+00:26.480 --> 00:32.300
+An empty capsule list means that the expression captures no information from its environment and only
+
+00:32.300 --> 00:36.470
+knows about the information passed to it via the function parameter list.
+
+00:36.500 --> 00:39.680
+This is what's known as a stateless lambda expression.
+
+00:39.770 --> 00:41.900
+Now let's take a look at some examples.
+
+00:42.680 --> 00:45.890
+In this example, we have two stateless lambda expressions.
+
+00:46.100 --> 00:49.280
+We can tell that they're stateless from their empty capture lists.
+
+00:49.610 --> 00:54.140
+The first expression takes no parameters and simply displays high one executed.
+
+00:54.350 --> 00:58.250
+Everything it needs to execute is contained within its function body.
+
+00:58.430 --> 01:04.490
+The second expression takes a single integer X as a parameter and displays the value of X when it's
+
+01:04.490 --> 01:05.000
+called.
+
+01:05.030 --> 01:10.790
+We can see that this lambda is instantiated and called with a value of 100 as its x parameter.
+
+01:11.150 --> 01:15.560
+But we can also see that another integer x has been defined above.
+
+01:15.800 --> 01:18.860
+Can you tell which x value the lambda will display?
+
+01:19.460 --> 01:25.200
+Remember this lambda expression is stateless and so it captures no information from its environment.
+
+01:25.220 --> 01:31.220
+This means that the lambda has no knowledge of the integer x defined above and only knows about the
+
+01:31.220 --> 01:35.840
+value that was assigned to its parameter X when it was instantiated and called.
+
+01:36.050 --> 01:41.600
+Since the parameter X was assigned a value of 100, the lambda will display 100.
+
+01:42.720 --> 01:49.350
+In this example, the lambda expression called Sum takes an integer array and its length as parameters
+
+01:49.350 --> 01:52.920
+and returns the sum of the integers contained within the array.
+
+01:53.190 --> 01:59.220
+We can see that the lambda parameter names are the same as the integer array and length defined above.
+
+01:59.580 --> 02:05.100
+But again, we know from the empty capsule list that this lambda expression is stateless, so it has
+
+02:05.100 --> 02:08.340
+no knowledge of the array defined above or its length.
+
+02:08.550 --> 02:13.830
+The only way for the lambda to compute the sum of the integers contained within the array is if the
+
+02:13.830 --> 02:17.310
+array and its length are passed to the lambda as parameters.
+
+02:17.670 --> 02:22.710
+We can see this being done when the lambda is called, and so the lambda will compute and return the
+
+02:22.710 --> 02:23.820
+sum 60.
+
+02:25.350 --> 02:29.850
+So far we've only seen lambda expressions that use value parameters.
+
+02:29.850 --> 02:33.330
+But you're probably wondering, could they also be reference parameters?
+
+02:33.360 --> 02:34.500
+Absolutely.
+
+02:34.770 --> 02:40.110
+Remember that by passing a parameter, by reference to a function or lambda expression, you're passing
+
+02:40.110 --> 02:42.360
+the location of the actual parameter.
+
+02:42.360 --> 02:47.400
+So the formal parameter and the function body is an alias to the actual parameter.
+
+02:47.430 --> 02:50.760
+Unlike passing by value, no copy will be made.
+
+02:51.180 --> 02:54.750
+When you change the formal parameter, you're changing the actual parameter.
+
+02:54.780 --> 02:56.460
+Let's take a look at an example.
+
+02:57.240 --> 03:03.570
+In this example, we have the lambda expression called bonus that takes as its parameters two test scores
+
+03:03.570 --> 03:05.730
+and a number of points to increase them by.
+
+03:05.760 --> 03:12.540
+You'll notice that both score one and score two are reference parameters, so any changes made to them
+
+03:12.540 --> 03:16.020
+within the Lambda body will change the parameters they're referencing.
+
+03:16.500 --> 03:21.720
+This means that there's no need to return the increased scores, since the parameters they're referencing
+
+03:21.720 --> 03:23.430
+will already have been updated.
+
+03:23.670 --> 03:26.140
+We can see that bonus is called and passed.
+
+03:26.160 --> 03:33.000
+Test score one, test score two and five as the number of bonus points to be awarded to each test score.
+
+03:33.030 --> 03:39.000
+As the Lambda Body executes, score one and score two are increased by five points.
+
+03:39.360 --> 03:44.700
+But these are just aliases for the parameters test score one and test score two.
+
+03:44.790 --> 03:49.860
+So it's actually test score one and test score two that are being increased by five points.
+
+03:50.070 --> 03:56.040
+Once the Lambda has finished executing test score one and test score two are displayed with their updated
+
+03:56.040 --> 03:56.820
+values.
+
+03:57.660 --> 04:03.870
+You may remember that in C++ it's possible to use pointer parameters to achieve past by reference.
+
+04:04.350 --> 04:11.010
+So naturally it follows that lambda expressions can also use pointers as parameters to use pointer parameters
+
+04:11.010 --> 04:11.700
+properly.
+
+04:11.700 --> 04:16.620
+We need to remember that the pointer parameter is pointing to the address of the parameter that's being
+
+04:16.620 --> 04:17.340
+passed.
+
+04:17.340 --> 04:23.670
+So when calling the lambda, we need to use the referencing or address of operator to pass the address
+
+04:23.670 --> 04:24.660
+of the parameter.
+
+04:25.050 --> 04:30.930
+Additionally, because the Lambda Pointer parameter is pointing to the address of the actual parameter,
+
+04:31.230 --> 04:36.960
+if we want to access or modify the parameter stored at that address, we need to use the DX referencing
+
+04:36.960 --> 04:37.680
+operator.
+
+04:37.860 --> 04:43.080
+All of this was covered in detail in section 12 of the course, but I think it's important that, you
+
+04:43.080 --> 04:46.020
+know, it can also be implemented with lambda expressions.
+
+04:46.110 --> 04:49.920
+Now let's quickly take a look at that example with the bonus lambda expression.
+
+04:49.920 --> 04:51.690
+But this time using pointers.
+
+04:52.080 --> 04:54.530
+Notice the differences from the last example.
+
+04:54.540 --> 04:58.380
+The parameters score one and score two are now pointer parameters.
+
+04:58.740 --> 05:04.680
+So when bonus is called, the referencing or address of operator is used to pass the addresses of test
+
+05:04.680 --> 05:06.870
+score one and test score two.
+
+05:07.170 --> 05:13.140
+We can also see that the DX referencing operator is used to modify the values that score one and score
+
+05:13.140 --> 05:16.020
+to a point to within the Lambda Body.
+
+05:16.200 --> 05:21.480
+Now that we've seen how Lambda expressions can use values, references and pointers as parameters for
+
+05:21.480 --> 05:27.960
+different data types, you may be asking yourself Can the same be applied to data structures and objects?
+
+05:27.960 --> 05:29.580
+And the answer is, of course.
+
+05:29.880 --> 05:35.760
+Let's take a look at how we can use vectors as reference parameters to pass multiple test scores to
+
+05:35.760 --> 05:37.500
+the Lambda Expression bonus.
+
+05:38.130 --> 05:44.190
+Here we see that the Lambda Expression bonus takes as its parameters a reference to an integer vector
+
+05:44.190 --> 05:50.340
+containing the scores to be awarded bonus points and an integer number of bonus points to be awarded
+
+05:50.700 --> 05:52.140
+within the Lambda body.
+
+05:52.140 --> 05:57.510
+A range based for loop is used to iterate over each individual score contained within the vector.
+
+05:57.720 --> 06:03.210
+You'll notice that the referencing operator is used in front of score in the range declaration of the
+
+06:03.210 --> 06:03.930
+for loop.
+
+06:04.350 --> 06:08.610
+This is because we want to modify the scores contained within the vector.
+
+06:08.910 --> 06:14.100
+If we didn't use the referencing operator, no change is made within the body of the lambda would carry
+
+06:14.100 --> 06:15.030
+outside of it.
+
+06:15.300 --> 06:21.000
+We can see that bonus is called and pass the integer vector test scores and five is the number of bonus
+
+06:21.000 --> 06:23.070
+points to be awarded to each test score.
+
+06:23.670 --> 06:28.170
+Once the lambda has finished executing, the updated test scores are displayed.
+
+06:28.440 --> 06:29.610
+Pretty simple, right?
+
+06:29.610 --> 06:34.290
+But what if the vector test scores contain floating point values instead of integers?
+
+06:34.590 --> 06:40.380
+Could we modify this lambda expression so that it could take both integer and floating point vectors
+
+06:40.380 --> 06:42.270
+as its scores parameter?
+
+06:42.270 --> 06:47.910
+Moreover, is there a way to write any lambda expression to accept any data type for a single parameter?
+
+06:48.000 --> 06:48.930
+Let's find out.
+
+06:49.840 --> 06:55.720
+Here we have two variables, number one and number two, which are of type integer and float respectively.
+
+06:55.720 --> 06:59.740
+The lambda expression L takes a parameter X and displays its value.
+
+07:00.280 --> 07:06.100
+What type specifiers would we need to use for parameter X so that the lambda could display both number
+
+07:06.100 --> 07:07.960
+one and number two when called?
+
+07:08.960 --> 07:14.330
+Just like we use the key word auto to tell the compiler to deduce the type of the lambda expression.
+
+07:14.660 --> 07:19.130
+We can also use it to tell the compiler to deduce the type of the parameter.
+
+07:19.160 --> 07:26.210
+This is a very powerful concept in C++ and it's commonly used with lambda expressions to increase robustness,
+
+07:26.210 --> 07:27.930
+performance and usability.
+
+07:27.950 --> 07:31.340
+Let's see how we can implement this concept with our last example.
+
+07:32.380 --> 07:38.890
+We can see now that by changing the type specified of the scores parameter to auto, the lambda expression
+
+07:38.890 --> 07:41.930
+can be passed both integer and floating point vectors.
+
+07:41.950 --> 07:48.220
+In fact, it can be passed in any container that can be iterated over so long as the logic of the lambda
+
+07:48.220 --> 07:50.980
+body can be applied to the contents of the container.
+
+07:51.010 --> 07:56.710
+You might also notice that the type specified for the for loop range declaration has changed to auto
+
+07:56.710 --> 07:57.520
+as well.
+
+07:57.550 --> 08:02.710
+This is necessary if we want the for loop to be able to iterate over whatever data type is contained
+
+08:02.710 --> 08:04.270
+within the scores container.
+
+08:04.900 --> 08:10.600
+You can see from this example how useful the auto keyword is when implementing lambda expressions.
+
+08:10.600 --> 08:15.700
+So going forward will be using the regularly as lambda parameter type specifiers.
+
+08:15.730 --> 08:19.090
+Just remember, auto is not an actual type.
+
+08:19.180 --> 08:22.810
+It's an instruction telling the compiler to deduce the actual type.
+
+08:23.610 --> 08:29.040
+One of the best things about Lambda expressions is their ability to be passed into functions as parameters.
+
+08:29.940 --> 08:31.560
+Is C++ 14.
+
+08:31.590 --> 08:33.540
+There are two ways in which we can do this.
+
+08:33.570 --> 08:39.210
+The first is by passing a lambda expression as a function object using the standard libraries functional
+
+08:39.210 --> 08:39.750
+header.
+
+08:40.500 --> 08:46.770
+We could see this done in the first example as the function foo takes as its parameter the function
+
+08:46.770 --> 08:53.340
+object l the void type specify a represents the return type of the function object and the integer type.
+
+08:53.340 --> 08:56.670
+Specify R represents the function object's parameter type.
+
+08:56.760 --> 09:03.060
+In this case, the function L takes as its parameter an integer, for example ten and returns nothing.
+
+09:03.690 --> 09:08.670
+The second way of passing a lambda expression to a function is as a function pointer.
+
+09:08.940 --> 09:14.220
+In the second example, the function foo takes as its parameter a pointer to the function l.
+
+09:14.990 --> 09:21.190
+Again, the void type specified represents the return type of the function and the integer type specify
+
+09:21.190 --> 09:23.510
+a represents the functions parameter type.
+
+09:23.720 --> 09:29.570
+In C++ 20, we could do away with the restrictiveness of having to declare the return and parameter
+
+09:29.570 --> 09:35.750
+types, and we can simply use the auto keyword to tell the compiler to deduce both the return type and
+
+09:35.750 --> 09:38.150
+the parameter type of the pass lambda expression.
+
+09:39.710 --> 09:46.010
+In addition to using lambda expressions as function parameters, we can also have functions return lambda
+
+09:46.010 --> 09:50.240
+expressions similar to how we can pass lambda expressions to functions.
+
+09:50.240 --> 09:56.390
+We can return them as either function objects, function pointers or by using the auto keyword to instruct
+
+09:56.390 --> 09:58.610
+the compiler to deduce the return type.
+
+09:58.820 --> 10:04.030
+You'll notice that the syntax of the second example which returns a function pointer is a little strange.
+
+10:04.040 --> 10:05.300
+This is old style.
+
+10:05.300 --> 10:10.610
+See syntax that has survived through generations for backward compatibility, but you shouldn't give
+
+10:10.610 --> 10:13.220
+it too much attention in modern C++.
+
+10:13.220 --> 10:18.290
+If you want to return a lambda expression from a function, you'll most likely return it as either a
+
+10:18.290 --> 10:20.870
+function object or by using the auto keyword.
+
+10:21.230 --> 10:24.620
+So here you see three different ways to achieve the same result.
+
+10:24.800 --> 10:28.190
+What would it look like to actually call and use these functions?
+
+10:28.490 --> 10:29.570
+It's simple.
+
+10:29.600 --> 10:32.780
+All three versions use the exact same way.
+
+10:33.020 --> 10:36.680
+First we call Foo and assign its return value to a variable.
+
+10:36.680 --> 10:41.570
+Then we use the variable to execute the function and pass any parameters into it that it needs.
+
+10:42.110 --> 10:45.500
+In this case, we're passing a ten and the ten is displayed as a result.
+
+10:45.740 --> 10:51.200
+Examples of why you might want to return a lambda from a function or best explained using stateful lambda
+
+10:51.200 --> 10:52.010
+expressions.
+
+10:52.010 --> 10:53.720
+So we'll wait until cover that.
+
+10:53.720 --> 10:58.940
+In the meantime, let's go back to looking at lambda expressions as function parameters and see how
+
+10:58.940 --> 11:02.900
+we can call a function with the lambda expression as the pass parameter.
+
+11:03.410 --> 11:08.450
+In the first example, we can see that the lambda expression is defined within the function call to
+
+11:08.450 --> 11:09.050
+foo.
+
+11:09.810 --> 11:14.790
+This is a common way of passing lambda expressions to functions, since in most cases they're only ever
+
+11:14.790 --> 11:15.810
+passed once.
+
+11:16.940 --> 11:21.920
+If the lambda will be used more than once, it may be beneficial to assign it to a variable so that
+
+11:21.920 --> 11:26.660
+it can be passed to multiple functions and call it independently without having to define the lambda.
+
+11:26.690 --> 11:31.400
+Each time, in this case, the lander that can be passed to a function by passing the variable it was
+
+11:31.400 --> 11:32.240
+assigned to.
+
+11:32.270 --> 11:33.920
+As seen in the second example.
+
+11:33.920 --> 11:39.560
+Now let's take a look at why we might want to pass a lambda expression to a function with a simple but
+
+11:39.560 --> 11:42.050
+powerful example using a predicate lambda.
+
+11:43.370 --> 11:46.760
+Before we get started, let me explain what a predicate Lambda is.
+
+11:46.880 --> 11:52.340
+A predicate is a C++ function that takes any number of arguments and returns a Boolean Valley.
+
+11:53.030 --> 11:57.590
+So naturally it follows that a predicate lambda is the lambda that implements this functionality.
+
+11:58.040 --> 12:03.470
+This may seem like a simple concept, and it is, but this is where the true power of Lambda lies.
+
+12:04.070 --> 12:06.440
+In this example, we have a function called print.
+
+12:06.470 --> 12:12.920
+If that takes as its parameters, an integer vector and a predicate lambda that's passed as a function
+
+12:12.920 --> 12:13.520
+pointer.
+
+12:13.760 --> 12:18.860
+In this case, the predicate lambda is used to determine which elements of the integer vector to display
+
+12:19.040 --> 12:20.900
+within the main function print.
+
+12:20.900 --> 12:26.900
+If is called with the integer vector nums and two different predicate lambdas, the first predicate
+
+12:26.900 --> 12:31.400
+lambda returns true if the parameter x is even and false otherwise.
+
+12:31.610 --> 12:36.080
+So when it's passed to the print, if the even value of nums will be displayed.
+
+12:36.920 --> 12:41.570
+The second predicate Lambda returns true if the parameter x is odd and false otherwise.
+
+12:41.570 --> 12:47.630
+So when it's passed into the print, if the odd values of nums will be displayed, you can see that
+
+12:47.630 --> 12:52.400
+the same print, if function can be used to display different elements of the vector depending on the
+
+12:52.400 --> 12:54.320
+predicate lambda that's passed into it.
+
+12:55.060 --> 13:00.970
+This exemplifies the predominant use of lambda expressions and why they're so powerful as we'll see
+
+13:00.970 --> 13:01.660
+later.
+
+13:01.720 --> 13:07.000
+Predicate lambdas are extremely important when using the standard template library functions and algorithms
+
+13:07.000 --> 13:11.470
+such as sort or for each, which require a predicate parameter.
+
+13:12.040 --> 13:17.500
+In the next video we'll go over to the ID and we'll run some of these examples in live code.
+
+13:17.500 --> 13:20.110
+I'll mark them up so you can see exactly what's happening.
+
+13:20.230 --> 13:21.160
+I'll see you there.

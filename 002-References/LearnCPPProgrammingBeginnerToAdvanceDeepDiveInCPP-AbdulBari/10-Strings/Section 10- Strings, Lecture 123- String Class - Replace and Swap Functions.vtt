@@ -1,0 +1,409 @@
+WEBVTT
+
+00:00.790 --> 00:02.800
+Now let us look at the next function.
+
+00:02.980 --> 00:05.560
+This replacing a string.
+
+00:06.760 --> 00:08.500
+Suppose I have a string.
+
+00:08.500 --> 00:09.970
+I will take an example.
+
+00:11.010 --> 00:12.630
+Strength still.
+
+00:13.780 --> 00:14.800
+I will say.
+
+00:16.410 --> 00:17.430
+Programming.
+
+00:19.310 --> 00:20.870
+Strenuous programming.
+
+00:21.600 --> 00:24.000
+Now here I will say replace.
+
+00:25.440 --> 00:26.560
+I please.
+
+00:26.600 --> 00:27.180
+Right.
+
+00:27.210 --> 00:30.510
+And I want to replace it with some letters.
+
+00:30.840 --> 00:34.410
+Letters C, k, k, two letters I have.
+
+00:34.980 --> 00:39.190
+Now, this should be replaced with what if I take this as zero?
+
+00:39.210 --> 00:42.540
+One, two, three, four, five, six, seven.
+
+00:42.540 --> 00:43.650
+So I have to confirm this.
+
+00:43.650 --> 00:44.050
+This.
+
+00:44.490 --> 00:49.070
+Now I want to replace this k k with these alphabets.
+
+00:49.080 --> 00:49.620
+Right?
+
+00:49.650 --> 00:50.340
+G.
+
+00:50.340 --> 00:51.840
+R a m.
+
+00:52.110 --> 00:55.980
+So what is the index of g three then?
+
+00:55.980 --> 00:57.890
+How many alphabets I want to replace?
+
+00:57.900 --> 00:59.760
+One, two, three, four.
+
+00:59.790 --> 01:01.560
+So I should mention four here.
+
+01:02.650 --> 01:05.760
+So this kick will be replaced at this place.
+
+01:05.770 --> 01:07.320
+Gram will change to kick.
+
+01:07.360 --> 01:08.330
+So it will look like this.
+
+01:08.360 --> 01:10.900
+PR 0kk.
+
+01:11.320 --> 01:13.240
+Then am I and g.
+
+01:15.350 --> 01:15.840
+Right.
+
+01:15.950 --> 01:19.790
+So this is how you can replace a substring inside one of the main string.
+
+01:20.540 --> 01:22.430
+So let us run this and see.
+
+01:22.640 --> 01:24.680
+I have a string here already.
+
+01:24.740 --> 01:26.060
+Programming is given.
+
+01:26.210 --> 01:30.290
+Now I will say str dot replace.
+
+01:32.320 --> 01:41.180
+Replaced with indexes is three and I want total for alphabets to be replaced with this.
+
+01:41.230 --> 01:41.500
+K.
+
+01:41.500 --> 01:41.950
+K.
+
+01:42.550 --> 01:43.630
+Let us run this.
+
+01:47.380 --> 01:47.920
+Yeah.
+
+01:47.950 --> 01:49.050
+I got a strange PR.
+
+01:49.150 --> 01:49.730
+Okay.
+
+01:50.140 --> 01:50.580
+G.
+
+01:53.730 --> 01:55.050
+I'll change it a little bit.
+
+01:55.140 --> 01:59.010
+I want total six alphabets to be replaced with just.
+
+02:00.990 --> 02:01.650
+Each.
+
+02:05.420 --> 02:09.420
+Just at index three, it has started taking edge.
+
+02:09.460 --> 02:12.200
+Then after that, it has cleared off remaining alphabets.
+
+02:12.590 --> 02:17.990
+That is total six alphabets has gone and the remaining that is an g are appearing next.
+
+02:18.680 --> 02:24.160
+So if I count, this is one, two, three, four, five, six.
+
+02:24.170 --> 02:26.000
+So this is replaced with edge.
+
+02:26.240 --> 02:27.440
+So that's it.
+
+02:27.890 --> 02:33.250
+This type of operations we find in text editors like Notepad or MMS word, right?
+
+02:33.260 --> 02:36.890
+So similarly, you can do it for your programming in your program.
+
+02:37.670 --> 02:39.680
+Let us look at next function.
+
+02:39.920 --> 02:41.630
+So here we have completed.
+
+02:41.630 --> 02:43.080
+The next function is erase.
+
+02:43.100 --> 02:46.580
+This is just like clear that you have explained in the previous video.
+
+02:46.580 --> 02:48.350
+Clear, clear of the entire string.
+
+02:48.350 --> 02:50.660
+So this is this will clear the string.
+
+02:50.690 --> 02:51.950
+It is a string.
+
+02:52.100 --> 02:53.240
+Then these are simple.
+
+02:53.240 --> 02:54.410
+Just I'll finish them.
+
+02:55.880 --> 02:57.110
+Push back.
+
+02:57.120 --> 03:01.340
+So this will insert a single character at the end of a string.
+
+03:03.170 --> 03:05.270
+Just a single character you can mention.
+
+03:05.270 --> 03:07.570
+And this will be inserted at the end of a string.
+
+03:07.580 --> 03:08.600
+Suppose you have.
+
+03:08.600 --> 03:09.500
+Hello.
+
+03:09.500 --> 03:13.400
+And you push back with the Z, then it will insert Z also.
+
+03:14.770 --> 03:15.640
+Then pop back.
+
+03:15.640 --> 03:17.860
+It will take out one of the characters from a string.
+
+03:18.190 --> 03:22.560
+So it is more like a static operation like you can push from the end.
+
+03:22.570 --> 03:25.230
+This is top end and you can delete some top end.
+
+03:25.240 --> 03:27.600
+So it is a matter of just single alphabet.
+
+03:27.610 --> 03:29.310
+This is for one single alphabet.
+
+03:29.320 --> 03:31.890
+So even you can call it as a backspace.
+
+03:31.900 --> 03:33.400
+It's more like backspace.
+
+03:33.850 --> 03:37.210
+When you hit backspace from your keyboard, one of the letters will be gone.
+
+03:37.210 --> 03:38.410
+So it's more like that.
+
+03:39.900 --> 03:41.480
+Then this is swap.
+
+03:41.490 --> 03:52.140
+So it will swap two strings if you have two strings, string STR, one or S1 and this is having a and
+
+03:52.140 --> 03:53.490
+there is one more string.
+
+03:54.940 --> 03:55.420
+True.
+
+03:55.990 --> 04:01.300
+And this is having b, b, b, then you can swap these two strings.
+
+04:01.300 --> 04:04.360
+So this baby will go into S1 and that will come here.
+
+04:05.230 --> 04:07.910
+I will show you all these three functions, including this.
+
+04:07.930 --> 04:08.620
+It is.
+
+04:08.620 --> 04:10.960
+Let us look at the demonstration for these.
+
+04:12.420 --> 04:16.320
+I have a string here that is programming and I will say strict.
+
+04:16.680 --> 04:17.640
+It is.
+
+04:19.080 --> 04:19.920
+Let us run.
+
+04:20.340 --> 04:21.680
+It will be an empty string.
+
+04:21.690 --> 04:23.070
+It will be cleared off.
+
+04:23.670 --> 04:25.920
+That's the same as clear.
+
+04:26.460 --> 04:28.260
+Now the next function is strong.
+
+04:29.100 --> 04:30.570
+Push back.
+
+04:30.690 --> 04:31.650
+So push back.
+
+04:31.650 --> 04:34.170
+I want to insert a letter.
+
+04:34.200 --> 04:35.100
+That is.
+
+04:36.400 --> 04:37.150
+Atch.
+
+04:37.270 --> 04:40.810
+I will just insert some random letter and see what happens.
+
+04:43.160 --> 04:46.310
+Programming each so you can insert just a single letter.
+
+04:46.340 --> 04:48.180
+I try to give it a string.
+
+04:48.200 --> 04:50.480
+Let us see whether it will accept or not.
+
+04:51.920 --> 04:53.130
+No, it's an error.
+
+04:53.660 --> 04:56.720
+See, there is no such function which takes a string.
+
+04:56.720 --> 04:59.440
+So it should be a single alphabet.
+
+04:59.450 --> 05:03.020
+So you can insert the alphabet after the end of a string.
+
+05:03.560 --> 05:07.220
+Now, if I call another function that is up back.
+
+05:10.160 --> 05:12.560
+Got Pop back now.
+
+05:12.560 --> 05:15.470
+It will take out one of the litter from a string that is G.
+
+05:15.590 --> 05:16.820
+This letter will be gone.
+
+05:19.630 --> 05:20.620
+Let us run it.
+
+05:22.500 --> 05:24.710
+Yes, JI is gone from this one.
+
+05:24.720 --> 05:28.350
+So it will take out the last letter from a string, just like backspace.
+
+05:29.620 --> 05:31.150
+I will take two strings.
+
+05:31.570 --> 05:38.110
+This is programming and this is star two as.
+
+05:39.820 --> 05:40.900
+Language?
+
+05:41.530 --> 05:43.540
+No, I will try to swap them.
+
+05:43.540 --> 05:44.890
+So I will say.
+
+05:46.050 --> 05:51.810
+SDR one dot swap with SDR to.
+
+05:55.210 --> 05:57.440
+And I will print str one here.
+
+05:57.440 --> 05:58.880
+I will print this tr one.
+
+05:59.390 --> 05:59.780
+Right.
+
+05:59.780 --> 06:03.380
+So right now is tr one is programming, but it should become language.
+
+06:05.830 --> 06:07.810
+Yes, it has became language.
+
+06:08.050 --> 06:12.310
+So after SDR one, I will also print SDR two.
+
+06:12.340 --> 06:16.510
+Then you can see that they are swapped with one another.
+
+06:17.670 --> 06:19.380
+Let us make it as straight to.
+
+06:22.780 --> 06:25.630
+Yes, this became language and this became programming.
+
+06:26.200 --> 06:29.090
+So that's all about a few functions from string class.
+
+06:29.090 --> 06:34.540
+So I suggest you you try these functions and test them and if you remember them, then you can use them
+
+06:34.540 --> 06:35.360
+properly.
+
+06:35.380 --> 06:38.770
+So there are a few more operations I will show them in the next video.

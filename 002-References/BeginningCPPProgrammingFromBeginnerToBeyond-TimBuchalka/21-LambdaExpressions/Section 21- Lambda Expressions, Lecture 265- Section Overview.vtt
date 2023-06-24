@@ -1,0 +1,97 @@
+WEBVTT
+
+00:05.070 --> 00:07.650
+Welcome to this bonus section for the course.
+
+00:08.250 --> 00:12.540
+In this section, we'll learn the basics of C++ Lambda expressions.
+
+00:13.490 --> 00:21.170
+Lambda expressions were first introduced in C++ 11 and then extended in C++ 14 and 17.
+
+00:22.000 --> 00:27.730
+They provide a very convenient way to provide functionality exactly where it's needed without writing
+
+00:27.730 --> 00:29.020
+lots and lots of code.
+
+00:29.770 --> 00:34.900
+In order to understand lambda expressions, it's important to understand what they are and what motivated
+
+00:34.900 --> 00:36.790
+their addition to C++.
+
+00:37.180 --> 00:42.820
+First, we'll look at what motivated C++ lambda expressions, and in order to do that, we'll quickly
+
+00:42.820 --> 00:46.660
+review using C++ function objects or functions.
+
+00:47.170 --> 00:52.480
+You may remember that I spoke about functions in the algorithm's lecture in the standard template library
+
+00:52.480 --> 00:53.680
+section of the course.
+
+00:54.840 --> 00:57.280
+Why is it important to understand functional objects?
+
+00:57.300 --> 01:04.170
+Well, because behind the scenes, the C++ compiler generates anonymous or unnamed functional objects
+
+01:04.170 --> 01:05.820
+from land expressions.
+
+01:06.570 --> 01:10.950
+Then we'll look at the syntax of a lambda expression and go through every part of it.
+
+01:11.750 --> 01:16.220
+Well, then see the difference between stateless and stateful lambda expressions.
+
+01:16.430 --> 01:21.750
+Stateless lambdas only know about the information that's passed into them via the parameter list.
+
+01:21.770 --> 01:23.600
+Pretty much like a regular function.
+
+01:23.990 --> 01:26.130
+Well then learn about stateful lambdas.
+
+01:26.150 --> 01:31.220
+These are a bit more complex since they can capture the elements from the environment that they execute
+
+01:31.220 --> 01:31.730
+in.
+
+01:31.730 --> 01:36.080
+So they close around their environment and that's where the concept of a closure comes from.
+
+01:36.920 --> 01:41.930
+This is a very, very powerful concept and happens via the lambdas capture list.
+
+01:42.140 --> 01:45.770
+There are lots of options here and we'll look at the ones that are most commonly used.
+
+01:46.070 --> 01:49.640
+Finally, we'll look at lambdas in the context of the STL.
+
+01:49.880 --> 01:54.710
+We've already seen basic lambdas in the STL section, but we'll look at a few more examples here.
+
+01:54.740 --> 01:55.640
+That's it.
+
+01:55.760 --> 01:57.260
+I hope you enjoyed this section.
+
+01:57.260 --> 02:01.300
+Please remember I'm only covering the basics of C++ lambda expressions.
+
+02:01.310 --> 02:07.160
+They can get very complex when we use them with templates as class functions and when we pass and return
+
+02:07.160 --> 02:09.140
+lambdas to and from functions.
+
+02:09.850 --> 02:13.720
+So let's see what motivated C++ Lambda expressions in the next video.

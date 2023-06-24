@@ -1,0 +1,448 @@
+WEBVTT
+
+00:05.090 --> 00:05.870
+Hello, everyone.
+
+00:05.870 --> 00:06.680
+Welcome back.
+
+00:06.710 --> 00:13.040
+In this video, I will create a default project template that we can then use to create new projects
+
+00:13.040 --> 00:13.850
+from.
+
+00:13.850 --> 00:18.440
+This makes us so much more productive and a lot less chances for errors as well.
+
+00:18.440 --> 00:21.560
+So we're going to create the project, save it as a template.
+
+00:21.560 --> 00:25.100
+Then when we create new projects, we'll use that template as the base.
+
+00:25.100 --> 00:26.360
+So let's get started.
+
+00:26.360 --> 00:31.460
+You notice here that I've got the previous workspace that I was working on in the installation videos,
+
+00:31.460 --> 00:33.320
+so let me just create a brand new workspace.
+
+00:33.320 --> 00:36.650
+I'll go through the flow again just so that you can see what it's like one more time.
+
+00:36.650 --> 00:38.450
+The more you see it, the easier it becomes.
+
+00:38.450 --> 00:42.440
+So I'm going to click right here new, create a new workspace.
+
+00:43.370 --> 00:46.940
+I'm going to select C plus plus workspace and click okay.
+
+00:47.390 --> 00:51.470
+Then I'm going to put it right inside my users folder Workspaces folder.
+
+00:51.470 --> 00:53.570
+I'm going to call this one Workspace two.
+
+00:54.170 --> 00:56.150
+Again, you can name that anything you like.
+
+00:56.180 --> 01:00.320
+Make sure create the workspace under a separate directory is checked.
+
+01:00.350 --> 01:00.740
+I'll click.
+
+01:00.740 --> 01:02.270
+Okay, Perfect.
+
+01:02.270 --> 01:04.800
+So now you can see our workspace has been created.
+
+01:04.800 --> 01:08.460
+Now I can right click on the workspace and create a new project.
+
+01:09.710 --> 01:14.270
+We can name this project again, whatever we like, so I'll just call it Project one.
+
+01:15.680 --> 01:19.040
+Make sure that create the project in its own folder is checked.
+
+01:19.070 --> 01:27.590
+The category is console type is simple executable g plus plus the compiler is mingw W on Linux and Mac
+
+01:27.620 --> 01:29.990
+you'll choose GCC for the compiler.
+
+01:30.230 --> 01:36.110
+The debugger is the gdb debugger on Mac, you will choose lldb vs code.
+
+01:36.320 --> 01:41.240
+And then we want to select the code light makefile generator as the build system.
+
+01:41.240 --> 01:43.850
+So I'll select and click okay.
+
+01:43.850 --> 01:45.710
+And that's going to create my project.
+
+01:45.710 --> 01:51.530
+As you can see in the workspace here with the source folder and the default main.cpp which we are going
+
+01:51.530 --> 01:53.300
+to remove and write our own.
+
+01:53.540 --> 01:55.430
+So let's do that real quick.
+
+01:55.460 --> 02:08.630
+Pound include IO stream just like we did before using I'll put a space here using namespace standard,
+
+02:09.080 --> 02:11.970
+then we'll create our main function right here.
+
+02:12.240 --> 02:17.760
+We'll say C out and what I'm going to do here is I'm going to display default template.
+
+02:20.440 --> 02:22.260
+End line again.
+
+02:22.310 --> 02:22.750
+End.
+
+02:23.050 --> 02:25.810
+Not in one and we'll return zero.
+
+02:26.020 --> 02:26.860
+That's it.
+
+02:26.890 --> 02:29.770
+Notice that this is red, so we need to save our project.
+
+02:29.770 --> 02:33.190
+I'm going to press control s on windows or command S on Mac.
+
+02:33.460 --> 02:36.010
+And we've got just what we had before.
+
+02:36.010 --> 02:38.590
+Now, before we build this, let's set up our project.
+
+02:38.590 --> 02:42.640
+So I'm going to select Project one and click on that wrench.
+
+02:44.570 --> 02:46.010
+In the general tab.
+
+02:46.040 --> 02:49.430
+I want to go to the working directory right here.
+
+02:49.460 --> 02:56.330
+Delete that and replace it with Project Path, just like we did before.
+
+02:56.360 --> 02:58.940
+Again, uppercase P for project and path.
+
+02:59.270 --> 03:01.810
+I'll press tab and it'll light up dark like that.
+
+03:01.820 --> 03:03.380
+You don't have to change anything else.
+
+03:03.380 --> 03:04.880
+In fact, don't touch anything else.
+
+03:04.880 --> 03:06.410
+It's just like it's supposed to be.
+
+03:06.440 --> 03:13.700
+We'll click on compiler now over here on the left, go to my compiler options and click those three
+
+03:13.730 --> 03:20.810
+dots in the button and I'm going to select Enable C plus plus 17 features right there, which is the
+
+03:20.810 --> 03:23.180
+stood C plus plus 17.
+
+03:24.110 --> 03:24.840
+I'll click okay.
+
+03:24.860 --> 03:31.160
+Then I can come over to my linker and if you like, you can put a dash static in the linker.
+
+03:31.160 --> 03:33.050
+Options again, dash static.
+
+03:33.050 --> 03:34.370
+No spaces in there.
+
+03:34.370 --> 03:36.410
+Mac users do not do this.
+
+03:36.440 --> 03:37.390
+Leave that blank.
+
+03:37.400 --> 03:39.140
+Otherwise you're going to get linker errors.
+
+03:39.140 --> 03:42.020
+So you can do this for Windows and for Linux.
+
+03:42.020 --> 03:43.340
+But Mac users.
+
+03:43.370 --> 03:44.280
+Leave it blank.
+
+03:44.280 --> 03:45.210
+That's it.
+
+03:45.270 --> 03:46.230
+I'll apply.
+
+03:46.540 --> 03:46.950
+I'll press.
+
+03:46.950 --> 03:47.440
+Okay.
+
+03:47.460 --> 03:48.990
+Now let's make sure that we can build.
+
+03:48.990 --> 03:51.870
+So we're going to come up here to build Rebuild project.
+
+03:52.920 --> 03:55.060
+We've got a clean build, no errors.
+
+03:55.080 --> 03:57.030
+Let's run it to make sure we can run it.
+
+03:57.830 --> 04:01.310
+And it should display default template.
+
+04:01.550 --> 04:02.910
+It does indeed.
+
+04:02.930 --> 04:04.610
+So we've got a good build.
+
+04:04.610 --> 04:05.870
+We've got a good project.
+
+04:05.900 --> 04:12.140
+Now what we can do is we can save this project as a template and we can use it later to create new projects
+
+04:12.140 --> 04:14.890
+from it without having to do all this setting stuff again.
+
+04:14.900 --> 04:15.860
+So let's do that.
+
+04:15.860 --> 04:21.380
+Let's right click on the project one and we'll come down here to where it says Save as template.
+
+04:21.470 --> 04:22.880
+Okay, let me do that one more time.
+
+04:22.880 --> 04:26.060
+Right click on Project one, Save as template.
+
+04:26.960 --> 04:28.130
+The project name.
+
+04:28.130 --> 04:31.340
+I'm just going to call this default project.
+
+04:32.210 --> 04:34.130
+You can call this anything you like.
+
+04:34.550 --> 04:36.070
+The project category.
+
+04:36.080 --> 04:37.790
+This says, Where am I going to store this?
+
+04:37.790 --> 04:40.940
+I'm going to store it in a category called User templates.
+
+04:40.970 --> 04:43.970
+It doesn't really matter where you put it as long as you remember where you put it.
+
+04:43.970 --> 04:48.620
+So user templates works for me and the description again can be anything.
+
+04:48.740 --> 04:51.020
+I'm just going to say my default project.
+
+04:53.720 --> 04:54.290
+There we go.
+
+04:54.290 --> 04:54.950
+And I'm going to press.
+
+04:54.950 --> 04:55.610
+Okay.
+
+04:56.180 --> 04:57.020
+Done.
+
+04:57.080 --> 05:00.740
+Now what we can do is we can create new projects from that template.
+
+05:00.740 --> 05:01.830
+So let's do that.
+
+05:01.850 --> 05:03.560
+I'll click on the workspace.
+
+05:03.590 --> 05:06.590
+I'll right click new project.
+
+05:08.200 --> 05:09.970
+The project's name Could be anything.
+
+05:09.970 --> 05:11.620
+I'll just say Project two again.
+
+05:11.620 --> 05:16.030
+Remember, no spaces, no special characters, no international characters anywhere.
+
+05:16.480 --> 05:23.620
+The category now what we'll do is we'll pick user templates and for type we'll pick default project,
+
+05:23.620 --> 05:25.210
+which is what we just created.
+
+05:25.720 --> 05:33.880
+Double check that you've got MinGW or GCC on Linux and Mac and the GNU debugger or the Lldb vs code
+
+05:33.880 --> 05:34.660
+on Mac.
+
+05:34.780 --> 05:37.660
+They should be populated from the template.
+
+05:37.780 --> 05:42.010
+We've got code like makefile generator, so you can just give it a once over and make sure everything
+
+05:42.010 --> 05:43.840
+looks good and I'll press.
+
+05:43.840 --> 05:44.560
+Okay.
+
+05:44.860 --> 05:47.560
+Now you can see that project two has been created.
+
+05:47.560 --> 05:52.990
+However, Project one is still the active project so we can make project two, the active project by
+
+05:52.990 --> 05:54.370
+just double clicking on it.
+
+05:54.820 --> 05:58.440
+And now Project two, you can see it's italicized and bold.
+
+05:58.450 --> 06:04.000
+So let me close this up here and let's open up our project Two's main.cpp.
+
+06:04.300 --> 06:07.910
+Notice I got the default template code which I wrote earlier.
+
+06:08.300 --> 06:13.010
+If I select Project two and I click the wrench, you can see that in the general.
+
+06:13.010 --> 06:15.630
+It did not keep the project path.
+
+06:15.650 --> 06:19.640
+Unfortunately, this is a bug that hopefully will be fixed soon.
+
+06:19.640 --> 06:25.400
+So in the meantime we'll just have to type project path just like that.
+
+06:25.640 --> 06:28.910
+But the compiler option did take.
+
+06:28.940 --> 06:34.040
+You can see this did equal C plus plus 17 and the linker option, you can see the static right here.
+
+06:34.040 --> 06:38.630
+So unfortunately, we still have to come in here and type project path, but it's a little bit less
+
+06:38.630 --> 06:40.250
+work than we had to do before.
+
+06:40.280 --> 06:41.180
+Apply.
+
+06:41.330 --> 06:42.230
+Okay.
+
+06:42.230 --> 06:43.580
+And we're good to go now.
+
+06:43.580 --> 06:45.830
+We can come over here to project to build it.
+
+06:48.520 --> 06:51.460
+And you can see the C plus plus 17 over here.
+
+06:51.460 --> 06:53.440
+You can see the static being used over here.
+
+06:53.440 --> 06:56.320
+So all this is good and we can build and run.
+
+06:58.140 --> 06:59.070
+And I'll execute it.
+
+06:59.070 --> 07:02.970
+And it should say default template, just like we did before.
+
+07:03.000 --> 07:07.800
+We can obviously change this and I'm going to say hello from project to.
+
+07:09.850 --> 07:13.090
+I'll save that and I can build and run again.
+
+07:14.510 --> 07:15.460
+There's our build.
+
+07:15.470 --> 07:16.130
+It's a clean build.
+
+07:16.130 --> 07:18.710
+Always be sure that you don't have any errors here before you run.
+
+07:19.130 --> 07:20.210
+I'll execute.
+
+07:21.680 --> 07:23.230
+And hello from Project two.
+
+07:23.240 --> 07:24.210
+So there you go.
+
+07:24.230 --> 07:25.760
+This makes life a little bit easier.
+
+07:25.760 --> 07:32.600
+Unfortunately, we still have to set that project path right here for the general options, but it's
+
+07:32.600 --> 07:35.930
+a lot less than we had to do before, and I think we're good to go here.
+
+07:35.930 --> 07:37.640
+So you can use this technique.
+
+07:37.640 --> 07:41.900
+So that finishes up the configuration of the default template.
+
+07:41.930 --> 07:44.060
+I'll see you in the next videos and we'll start coding.

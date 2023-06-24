@@ -1,0 +1,945 @@
+WEBVTT
+
+0
+00:00.570 --> 00:04.940
+In the previous video we have discussed about low level languages and the high level languages.
+
+1
+00:04.950 --> 00:11.340
+No we already know that high level languages are more like English that are easy for humans to understand.
+
+2
+00:12.180 --> 00:17.340
+So in the last video I have explained that there are many programming languages that are high level
+
+3
+00:17.340 --> 00:24.690
+languages and some languages are compiler based and some are interpreting based and somewhat hybrid
+
+4
+00:24.690 --> 00:25.170
+also.
+
+5
+00:25.980 --> 00:28.230
+So what does it mean by compiler based.
+
+6
+00:28.230 --> 00:30.500
+What does it mean by interpreter based.
+
+7
+00:30.530 --> 00:33.160
+We will understand just in this video.
+
+8
+00:33.540 --> 00:36.260
+So the topic is compiler vs interpreter.
+
+9
+00:36.300 --> 00:37.620
+Then also I will discuss about 
+
+10
+00:37.620 --> 00:38.610
+Hybrid languages.
+
+11
+00:38.930 --> 00:40.590
+So for understanding this.
+
+12
+00:40.590 --> 00:43.420
+We should know what is the job of compiler and interpreter.
+
+13
+00:43.430 --> 00:45.580
+What are the major task.
+
+14
+00:45.790 --> 00:48.190
+See the task of compiler or interpreter
+
+15
+00:48.190 --> 00:49.230
+Whatever it may be.
+
+16
+00:49.260 --> 00:54.020
+First thing is it will check for errors, check errors.
+
+17
+00:54.060 --> 00:54.810
+Right.
+
+18
+00:54.810 --> 00:56.640
+So this is the first thing.
+
+19
+00:56.670 --> 01:03.150
+Then the second thing is convert into machine code, convert into machine. 
+
+20
+01:03.160 --> 01:05.290
+code.
+
+21
+01:05.460 --> 01:11.890
+So I will write M.C. as machine code, or machine code language see high level language gets commodity
+
+22
+01:12.000 --> 01:16.890
+low level language that is machine code which is understandable by machine so compiler and interpreter
+
+23
+01:16.910 --> 01:25.800
+they do this job of convertion right and the third thing here is execution, execution of a program that is
+
+24
+01:25.980 --> 01:27.000
+running the program.
+
+25
+01:27.420 --> 01:31.500
+running the program means you know that like I already told you that the programs are brought into the
+
+26
+01:31.500 --> 01:33.920
+main memory and they are executed by the CPU.
+
+27
+01:34.160 --> 01:39.630
+So the machine instruction will come inside the main memory and CPU will execute it. That is execution,
+
+28
+01:40.140 --> 01:45.520
+running of a program now for these three things let us understand this.
+
+29
+01:45.550 --> 01:52.340
+See when we write any program like this the program so I will call this program as a source source when
+
+30
+01:52.340 --> 01:57.180
+you write any source code then that source code may be having errors.
+
+31
+01:57.570 --> 02:03.270
+So why you will have errors? see you may be misstating something or you might have forgot some statements
+
+32
+02:03.690 --> 02:06.000
+or you have not written the statements properly.
+
+33
+02:06.000 --> 02:09.370
+There could be some error so those errors are called out syntax errors.
+
+34
+02:09.480 --> 02:11.380
+So weather it is compiler or interpreter.
+
+35
+02:11.400 --> 02:17.180
+It has to first check that the code, the source code you have written is not having any errors and is
+
+36
+02:17.250 --> 02:23.260
+the first thing and if there are no errors then it will convert it into a machine code.
+
+37
+02:24.080 --> 02:30.580
+So majorly there are two task of compiler or interpreter they both do this thing check for the errors.
+
+38
+02:30.780 --> 02:38.780
+If the source code is error free then generate machine code then third thing, execution of program.
+
+39
+02:39.750 --> 02:48.990
+If I talk about execution compiler doesn't take the responsibility of execution but interpreter takes
+
+40
+02:48.990 --> 02:51.010
+the responsibility for execution.
+
+41
+02:51.210 --> 02:54.730
+Compiler if not involve in execution of a program interpreter is involved.
+
+42
+02:55.320 --> 02:59.040
+So this thing's all we will learn in detail right.
+
+43
+02:59.070 --> 03:04.110
+So step by step we learn everything about these differences between compiler and interpreter.
+
+44
+03:04.110 --> 03:10.670
+So just keep in mind these are the three major issues that are related to compiler and interpreter.
+
+45
+03:10.680 --> 03:14.900
+Now let us compare them one by one. For comparison,
+
+46
+03:14.910 --> 03:17.640
+Already I have taken some program code here.
+
+47
+03:17.640 --> 03:24.350
+This is the source code written in C++ and is the source code written in Javascript.
+
+48
+03:24.570 --> 03:26.550
+So I've taken these two examples.
+
+49
+03:26.610 --> 03:33.870
+C++ is a compiler based language it just having a compiler is not having interpreter javascript which
+
+50
+03:33.870 --> 03:36.150
+is useful for writing web pages.
+
+51
+03:36.150 --> 03:40.600
+It will be a part of that page and it runs inside the browser.
+
+52
+03:40.600 --> 03:47.040
+Most of the websites if you visit from your browser if you check the code you'll find html and java script in
+
+53
+03:47.040 --> 03:48.270
+javascript in there
+
+54
+03:48.480 --> 03:50.700
+So it's a common name everybody knows about it.
+
+55
+03:50.760 --> 03:53.130
+So this is used in  web programming.
+
+56
+03:53.130 --> 03:54.690
+This is interpreted based.
+
+57
+03:55.500 --> 03:57.490
+So this is the source code I have written.
+
+58
+03:57.580 --> 04:02.280
+This is not the machine code so this can be understood by a compiler and human means.
+
+59
+04:02.280 --> 04:07.320
+This can be understood by interpreter and human being so I have taken an example of compiler based language
+
+60
+04:07.320 --> 04:10.830
+an interpreter with language now let us understand the differences.
+
+61
+04:10.890 --> 04:18.420
+See if I have this program I wanted to compile means translate into machine code that if I give it to
+
+62
+04:18.420 --> 04:25.560
+a compiler, compiler it will convert this code into machine code and as you can see that I have done this
+
+63
+04:25.560 --> 04:28.460
+program into two pieces two pieces are there.
+
+64
+04:28.740 --> 04:31.610
+So like this is the add function, this is  the main function.
+
+65
+04:31.720 --> 04:36.420
+No dont we don't know anything about functions right now but I have just written the program in two
+
+66
+04:36.440 --> 04:37.110
+pieces.
+
+67
+04:37.230 --> 04:43.710
+So when the machine code is generated it will generate two different pieces that is machine code for
+
+68
+04:43.800 --> 04:44.950
+add function.
+
+69
+04:45.000 --> 04:47.670
+And the machine code for Main function.
+
+70
+04:47.670 --> 04:52.620
+So only the thing that you have to understand here is that if you bring the program in pieces then the
+
+71
+04:52.620 --> 04:55.380
+pieces will be generated in machine codes.
+
+72
+04:55.440 --> 04:57.120
+That is important.
+
+73
+04:57.120 --> 05:00.000
+Now this is the machine code generated.
+
+74
+05:00.000 --> 05:02.280
+See this is the file first.cpp
+
+75
+05:02.310 --> 05:08.970
+So after a compilation we get some file some intermediate files also and finally we get the executable
+
+76
+05:08.970 --> 05:15.740
+file and we get first.exe file, executable file.
+
+77
+05:16.140 --> 05:18.910
+So here at the hardest I have shown here.
+
+78
+05:19.000 --> 05:25.290
+first.cpp and if you call a compiler, compiler it will run into memory and it will take this program fine
+
+79
+05:25.640 --> 05:30.750
+and understand and check that there are no errors first thing,if there are no errors that it will generate
+
+80
+05:30.810 --> 05:32.050
+a machine code file.
+
+81
+05:32.220 --> 05:41.270
+That is first.exe and it will serve it on the hard disk like so you will get a separate file called
+
+82
+05:41.270 --> 05:51.910
+first.exe This is first.exe compiler generates machine code that's all if there are no
+
+83
+05:51.910 --> 05:55.910
+errors it has generated the machine code. job  of compiler is over.it has generated the machine code
+
+84
+05:56.560 --> 05:59.570
+Now next step I want to run.
+
+85
+05:59.770 --> 06:06.430
+I said there are three things right checking for errors, converting, no errors, converted. now execution
+
+86
+06:06.970 --> 06:12.280
+if you want to run the program now you can run this program first.exe file you can run and you
+
+87
+06:12.280 --> 06:17.800
+can run into as many times as you want you don't need compiler now, compiler has translated once that's
+
+88
+06:17.800 --> 06:23.160
+enough over now you run your program n number of times whenever you are running your program this .exe
+
+89
+06:23.220 --> 06:29.740
+will be used. source is off no use now and in at all you are making any changes in this one then you
+
+90
+06:29.740 --> 06:37.090
+can recompile to get a re generated first.exe file and that will be a new program or a fresh or updated
+
+91
+06:37.090 --> 06:37.900
+program.
+
+92
+06:38.200 --> 06:44.080
+So it means compilation or translation of source to machine code are done only once.
+
+93
+06:44.090 --> 06:48.590
+this is the first point and compiler generates a separate executable file.
+
+94
+06:48.590 --> 06:54.610
+there's the second point then the third point as whenever you what do you want to run the program you don't need
+
+95
+06:54.610 --> 07:01.210
+a compiler translation is done only once because that's the reason you don't need any compiler when
+
+96
+07:01.210 --> 07:08.950
+running the program and one more important thing of the compiler is that see that they are few lines one two
+
+97
+07:08.950 --> 07:15.340
+three four five six seven eight some ten fifteen lines are there. in this line if there is any error
+
+98
+07:15.410 --> 07:21.940
+at some place suppose if I start from here one two three four five, four lines are perfect and the fifth
+
+99
+07:21.940 --> 07:28.060
+line is having some error, your program not get compiled. your program will not get compile if there is
+
+100
+07:28.060 --> 07:34.330
+any error tho it is in fifth line first 4 lines are correct right?but it has to generate a complete
+
+101
+07:34.330 --> 07:37.520
+machine code, it cannot convert it into machine code.
+
+102
+07:37.780 --> 07:39.390
+So these are the points about compiler.
+
+103
+07:39.670 --> 07:44.680
+Let me repeat quickly compiler will generate a machine code file separate file and translation of a program
+
+104
+07:44.720 --> 07:49.740
+is onlu done ones, compiler will not be there when program is running, right, mostly students believe
+
+105
+07:49.750 --> 07:55.270
+that compiler will be there at the time of execution compiler will not be there, and last point is that
+
+106
+07:55.270 --> 08:01.450
+if there is any error in some line then the program will not get compiled. now coming to interpreter
+
+107
+08:01.570 --> 08:07.240
+so for explaining about interpreter I'll just remove this and I change this files now let
+
+108
+08:07.240 --> 08:12.760
+us look at the interpreter so for interpreter I have some javascript code don't try to read and understand
+
+109
+08:12.760 --> 08:15.040
+the code just some lines are there OK.
+
+110
+08:15.100 --> 08:18.990
+These are written in JavaScript now how interpreter works.
+
+111
+08:19.000 --> 08:19.720
+Let us see.
+
+112
+08:19.780 --> 08:26.220
+See this is suppose a file called my. JavaScript that is my.js and that file is present here
+
+113
+08:27.550 --> 08:33.180
+then I also have a program called Chrome that is a browser a commonly used browser.
+
+114
+08:33.190 --> 08:35.170
+So I'm using a name chrome here.
+
+115
+08:35.200 --> 08:40.320
+So this chrome.EXE is a browser javascript runs inside browser.
+
+116
+08:40.360 --> 08:42.500
+It cannot run independently.
+
+117
+08:42.530 --> 08:48.010
+Now how does javascript works how chrome works as an interpreter for JavaScript.
+
+118
+08:48.180 --> 08:49.240
+Let's see.
+
+119
+08:49.250 --> 08:53.040
+See first of all for I running this one for execution of this one.
+
+120
+08:53.050 --> 08:57.430
+I'm not saying translation or anything directly I'm saying execution third step.
+
+121
+08:57.430 --> 08:58.350
+Remember this.
+
+122
+08:58.510 --> 09:04.680
+I have to run chrome and inside Chrome I can run that javascript I can open that file in chrome.
+
+123
+09:04.690 --> 09:10.150
+Usually we don't open the file from local machine we get the pages from internet but here if you open
+
+124
+09:10.150 --> 09:12.870
+chrome then you can open that JavaScript file.
+
+125
+09:13.150 --> 09:19.530
+If you once open  inside chrome then Chrome will be executing this code, whatever it is.
+
+126
+09:19.530 --> 09:24.650
+Just leave it what it is doing so this code can be executed by chrome.
+
+127
+09:24.760 --> 09:30.530
+So how? so Chromebook as a interpreter for JavaScript.
+
+128
+09:30.700 --> 09:33.690
+So now you can see how it works.
+
+129
+09:33.700 --> 09:35.700
+First of all chrome will run.
+
+130
+09:35.860 --> 09:42.640
+Then if you make it use this file it will take the file then, it will go through this file and it will
+
+131
+09:42.640 --> 09:44.900
+translate it line by line.
+
+132
+09:44.930 --> 09:48.030
+And after translation it will convert into machine code.
+
+133
+09:48.040 --> 09:48.930
+Yes.
+
+134
+09:48.970 --> 09:59.080
+And also it will get executed and Chrome will execute it like C++ program and compiler will not execute
+
+135
+09:59.080 --> 09:59.730
+it here.
+
+136
+09:59.730 --> 10:03.450
+chrome is interpreter for JavaScript Chrome will execute it.
+
+137
+10:03.450 --> 10:10.190
+Yes so How  will it execute it will not translate whole thing then start executing, it will translate first
+
+138
+10:10.190 --> 10:10.470
+line.
+
+139
+10:10.690 --> 10:11.220
+Execute.
+
+140
+10:11.230 --> 10:13.640
+Second line, execute third line execute.
+
+141
+10:13.950 --> 10:17.400
+So line by line translation as well as execution.
+
+142
+10:17.400 --> 10:22.190
+Now let us compare this compiler interpreter C compiler will read the program.
+
+143
+10:22.260 --> 10:26.340
+It will be generating machine code line by line only but it will generate a machine code
+
+144
+10:26.340 --> 10:33.330
+for seperate entire program and make a separate file but the browser which is an interpreter for JavaScript.
+
+145
+10:33.330 --> 10:36.070
+It will not create the EXE file for JavaScript.
+
+146
+10:36.720 --> 10:43.430
+So this is the first difference. second difference compiler just translate it will not execute but interpreted
+
+147
+10:43.430 --> 10:47.120
+that as chrome it will translate as well as execute.
+
+148
+10:47.220 --> 10:48.720
+The second difference.
+
+149
+10:48.720 --> 10:56.610
+Second difference, third difference if once translated into machine code now you use  it as many times as
+
+150
+10:56.610 --> 11:03.120
+you want You don't need compiler translation is done only once but here whenever you want to run javascript
+
+151
+11:03.180 --> 11:06.880
+you should call chrome Chrome will run it every time, it will translate.
+
+152
+11:07.290 --> 11:15.090
+So if n times you are executing then n times translation will be done (interpreter language) then here if there
+
+153
+11:15.090 --> 11:17.990
+is any error then it will not compile. Here
+
+154
+11:18.030 --> 11:23.340
+If there is any error here suppose in some line then first two line definitely it will get executed.
+
+155
+11:23.670 --> 11:28.460
+INTERPRETER were not stop because you're just converting and executing converting executing.
+
+156
+11:28.500 --> 11:32.750
+If there is any error at any point then it will stop.
+
+157
+11:32.790 --> 11:40.140
+So till there it will execute interpreter will execute compiler program runs independently interpreted
+
+158
+11:40.140 --> 11:41.960
+program runs in sight.
+
+159
+11:42.010 --> 11:43.080
+Interpreter.
+
+160
+11:43.100 --> 11:48.510
+Interpreter No finally concluding point who is faster.
+
+161
+11:50.010 --> 11:55.350
+Compiling programs or interpretive program? compiled programs are faster because they're independent
+
+162
+11:55.470 --> 11:57.570
+as a separate program.
+
+163
+11:57.870 --> 12:03.060
+INTERPRETER programs are not fostered because they don't run independently there are an inside interpreter
+
+164
+12:03.270 --> 12:10.200
+inside interpreter context of interpreter so they are slower which are easy to write.
+
+165
+12:10.500 --> 12:13.470
+If there is any error in a single line it will not compile.
+
+166
+12:13.490 --> 12:20.920
+You cannot run if there is any line error in some line then a line till before that line you can execute.
+
+167
+12:21.170 --> 12:22.100
+So it's easy.
+
+168
+12:22.940 --> 12:26.360
+So to some extent you can see the program running at this place.
+
+169
+12:26.370 --> 12:27.970
+Okay there's an error I can remove it.
+
+170
+12:28.370 --> 12:30.480
+So these languages are very easy.
+
+171
+12:30.560 --> 12:36.350
+INTERPRETER languages are easier than compiler based language like so.
+
+172
+12:36.410 --> 12:40.820
+This is the difference between compiler and interpreter. now i will give you one small example.
+
+173
+12:40.820 --> 12:45.350
+With this you can remember this entire thing what I have discussed.
+
+174
+12:45.350 --> 12:53.600
+Suppose you are making are Chinese a recipe or dish you are preparing a dish so you have a recipe ofa
+
+175
+12:53.630 --> 12:56.000
+Chinese dish.
+
+176
+12:56.000 --> 13:01.140
+It is written in Chinese that's written in Chinese.
+
+177
+13:01.140 --> 13:02.330
+You don't know Chinese.
+
+178
+13:02.400 --> 13:09.030
+I know Chinese and English so I can help you I can translate it again translate it right.
+
+179
+13:09.040 --> 13:10.840
+So you want to prepare a dish.
+
+180
+13:10.840 --> 13:14.700
+Now what are the methods I can translate.
+
+181
+13:14.750 --> 13:22.590
+first method I can read that entire recipe and prepare English version and give it to you.
+
+182
+13:22.760 --> 13:26.570
+Is the first method then second method.
+
+183
+13:27.250 --> 13:29.400
+I will take that Chinese recipe.
+
+184
+13:29.970 --> 13:37.530
+I read first line translated it and I tell you and you will also execute it means you are now preparing
+
+185
+13:37.530 --> 13:38.260
+a dish.
+
+186
+13:38.260 --> 13:40.700
+I will say take a vessel of this size.
+
+187
+13:40.790 --> 13:46.180
+Okay you take it then take this this this, you take it, take some water and boil.
+
+188
+13:46.300 --> 13:52.710
+You'll boil it so I'm reading in Chinese translating in English and I will I'm also getting it executed.
+
+189
+13:52.710 --> 13:54.430
+You are doing it.
+
+190
+13:54.500 --> 13:56.130
+There's the second method.
+
+191
+13:56.190 --> 13:58.570
+Now let us compare them, first method.
+
+192
+13:58.600 --> 14:04.830
+If I give you an English copy then translations are done only once and you don't need me.
+
+193
+14:04.860 --> 14:11.410
+When you are preparing a dish 2 difference right and you can work independently.
+
+194
+14:11.450 --> 14:11.870
+Right.
+
+195
+14:11.870 --> 14:13.610
+Same thing second difference.
+
+196
+14:13.640 --> 14:14.790
+Now here.
+
+197
+14:15.000 --> 14:20.280
+Every time you want to prepare a dish again you will come more Chinese please translate I will translate
+
+198
+14:21.070 --> 14:22.270
+right this one.
+
+199
+14:22.850 --> 14:26.980
+And second thing whenever you are preparing your dish I must be delivered to you.
+
+200
+14:27.010 --> 14:29.700
+You're not independent.
+
+201
+14:29.950 --> 14:31.960
+That's all you can remember the differences.
+
+202
+14:31.990 --> 14:36.090
+So if I translate I'll give you a separate English version on a separate paper.
+
+203
+14:36.100 --> 14:39.360
+Now that Chinese version you can keep it in check if you don't need it.
+
+204
+14:39.640 --> 14:45.550
+You have the English version and you don't need me on that same recipe once again but here you need
+
+205
+14:45.550 --> 14:50.930
+me every time because I'm translating and I'm getting it done by you and that all work is over.
+
+206
+14:50.950 --> 14:57.520
+So same way this chrome will come inside the main memory and  it will take javascript and translate and get it executed
+
+207
+14:57.520 --> 14:58.940
+by Cpu.
+
+208
+14:59.050 --> 15:05.070
+So this chrome is myself and this is Chinese recipe and this is yourself for executing you understand 
+
+209
+15:05.080 --> 15:09.190
+machine code like in case of compiler.
+
+210
+15:09.280 --> 15:10.170
+You called me.
+
+211
+15:10.170 --> 15:13.850
+I took first.Cpp and converted into a first.exe.
+
+212
+15:13.930 --> 15:18.070
+Now you don't need me whenever you want you can execute directly that exe file.
+
+213
+15:19.690 --> 15:21.470
+So these are the differences.
+
+214
+15:21.480 --> 15:29.400
+Now finally let us talk a little bit about hybrid languages hybrid languages like languages like Java
+
+215
+15:29.660 --> 15:32.360
+or all adopted languages like C shop.
+
+216
+15:32.370 --> 15:33.790
+Now these are hybrid.
+
+217
+15:33.790 --> 15:42.580
+They have a partial combination that is first compiler will convert into byte code then later this is
+
+218
+15:42.580 --> 15:45.790
+converted by JVM into machine.
+
+219
+15:45.820 --> 15:51.460
+So I'm not going to explain in detail just briefly I'm telling you they have two steps compiler is also
+
+220
+15:51.460 --> 15:55.800
+their interpreter is also their JVM acts as an interpreter right.
+
+221
+15:55.800 --> 15:57.000
+this is an interpreter.
+
+222
+15:57.070 --> 16:04.360
+Why two stages compiler will check what compiler will do what it's not generating machine code the compiler
+
+223
+16:04.390 --> 16:10.420
+just check for the errors if there are no errors byte code is error free code  then Jvm will
+
+224
+16:10.420 --> 16:17.620
+convert or translate into machine code so two step process I highlighted three things like checking
+
+225
+16:17.620 --> 16:21.850
+for errors translation and then machine code and execution.
+
+226
+16:21.940 --> 16:23.260
+third was execution.
+
+227
+16:23.380 --> 16:26.820
+So compiler just check for the error free.
+
+228
+16:26.950 --> 16:32.450
+It's not machine code is bite code then JVM translate into machine code and also execute.
+
+229
+16:32.450 --> 16:37.820
+So it's an interpreter so interpreter for byte code not for source code.
+
+230
+16:38.800 --> 16:44.930
+So these two steps are therefore providing platform independency or in dotnet languages.
+
+231
+16:44.930 --> 16:47.400
+It is for language in dependency.
+
+232
+16:47.410 --> 16:52.630
+These are the different topics anyway just to be got the idea that there are some compiler based languages
+
+233
+16:52.630 --> 16:58.210
+there are some interpreter languages and some are hybrid which have compiler as well that's interpreter.
+
+234
+16:58.300 --> 17:03.980
+The take the benefit of both and try to provide some excellent in features so that all with this topic.
+
+235
+17:04.050 --> 17:06.290
+Let's continue with under the topic in the next video.

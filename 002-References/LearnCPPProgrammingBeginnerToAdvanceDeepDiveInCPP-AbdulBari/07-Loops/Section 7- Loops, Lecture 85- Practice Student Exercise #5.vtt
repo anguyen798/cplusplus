@@ -1,0 +1,93 @@
+WEBVTT
+
+0
+00:00.370 --> 00:05.670
+Here is an exercise program that you have to write this program is from the user and you have to reverse
+
+1
+00:05.670 --> 00:10.830
+it and check after reversing if the number is same than it is as palindrome.
+
+2
+00:11.100 --> 00:14.930
+You have to check whether a given number is a palindrome or not.
+
+3
+00:14.940 --> 00:20.220
+So here I'll show you how the program should run and what should be the input and what should be
+
+4
+00:20.210 --> 00:20.740
+o/p
+
+5
+00:21.090 --> 00:23.620
+And even the program file is given As pdf
+
+6
+00:23.640 --> 00:31.680
+So if you face any difficulty in writing the program you can check that program code. let me run the program
+
+7
+00:31.710 --> 00:34.850
+for checking whether a number is a palindrome or not.
+
+8
+00:34.860 --> 00:41.550
+I will run the program here is asking for any positive numbers so I'll give the number that is 1 2 3
+
+9
+00:41.820 --> 00:46.740
+so it will reverse the numbers so reversing 3 2 1 is not same as 1 2 3.
+
+10
+00:46.740 --> 00:53.140
+So number is the reverse of a number is 3 2 1 and the number is not a palindrome.
+
+11
+00:53.160 --> 00:54.440
+So this is the message I got.
+
+12
+00:54.480 --> 01:00.850
+I will run the program once again and I'll give the input as of 1 2 3 and 2 1.
+
+13
+01:00.930 --> 01:05.580
+So the reverse of the number is same as the number so it should be a palindrome.
+
+14
+01:05.580 --> 01:07.150
+So let us check the output.
+
+15
+01:07.290 --> 01:12.540
+So it says that reverse of the number is so-and-so and number is a palindrome.
+
+16
+01:12.540 --> 01:15.040
+So here I got the message that it's a palindrome.
+
+17
+01:15.180 --> 01:20.160
+So alreadsy we know how to take out the digits of a number so you can take out the digits of a number and based
+
+18
+01:20.160 --> 01:24.420
+on that you can reverse a number and once the number is reversed.
+
+19
+01:24.420 --> 01:27.390
+You can check that there is a palindrome or not
+
+20
+01:27.420 --> 01:32.970
+So the logic that is using loop you have to write down this code I mean focus on the program is to write
+
+21
+01:32.970 --> 01:36.330
+the logic in the loop for reversing a number .
+
+22
+01:36.420 --> 01:40.200
+So try this program and even pdf is available for the program.

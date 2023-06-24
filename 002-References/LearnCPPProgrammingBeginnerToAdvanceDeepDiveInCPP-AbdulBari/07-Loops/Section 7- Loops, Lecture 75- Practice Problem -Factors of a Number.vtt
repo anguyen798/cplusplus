@@ -1,0 +1,357 @@
+WEBVTT
+
+0
+00:00.660 --> 00:05.270
+Now let us write a program for finding factorial of number.
+
+1
+00:05.430 --> 00:10.350
+This will be similar to the previous program that is finding the sum of first n national numbers.
+
+2
+00:10.350 --> 00:15.030
+So let us understand what does it mean by factorial then how we can solve a problem.
+
+3
+00:15.030 --> 00:18.520
+Let us understand the procedure and flowchart and program.
+
+4
+00:18.570 --> 00:21.470
+So first what does it mean by Factorial.
+
+5
+00:21.690 --> 00:27.740
+If I have a number six integer no. it should not be a decimal like six point five six point four.
+
+6
+00:27.870 --> 00:34.440
+It should be integral number factorial of that number means product of first  n natural numbers that
+
+7
+00:34.440 --> 00:38.550
+is up to 6 1 into two into 3 into 4 into 5 into 6.
+
+8
+00:38.550 --> 00:39.700
+That is factorial.
+
+9
+00:39.720 --> 00:42.000
+It is written like this, this is the symbol.
+
+10
+00:42.090 --> 00:43.700
+Now how much is the product of that.
+
+11
+00:43.740 --> 00:46.000
+Up to 6 It is 7 20.
+
+12
+00:46.170 --> 00:49.770
+So we have to take one multiplied by 2 then multiply it by three.
+
+13
+00:49.800 --> 00:51.300
+This is repeating right.
+
+14
+00:51.300 --> 00:57.270
+This is repeating yes when it is repeating then we can use a loop but we have to do it using loop.
+
+15
+00:57.840 --> 01:03.210
+So how does repeating or understand that I have data here in the form of a table.
+
+16
+01:03.240 --> 01:08.970
+So the procedure I have in and it step by step I have broken down something in two steps so that I see
+
+17
+01:09.420 --> 01:12.590
+here I have no 1 2 3 4 5 6, oh
+
+18
+01:12.600 --> 01:13.490
+this is the counter.
+
+19
+01:13.920 --> 01:15.280
+We are familiar with the counter.
+
+20
+01:15.420 --> 01:16.070
+Yes.
+
+21
+01:16.110 --> 01:20.360
+So let us call it as i,  that I use is starting from 1 onwards.
+
+22
+01:20.400 --> 01:21.450
+Yes.
+
+23
+01:21.520 --> 01:23.430
+Then what is happening this side.
+
+24
+01:23.550 --> 01:26.750
+See what is multiplied by one, the result is one.
+
+25
+01:26.790 --> 01:32.760
+That one is taken here one into two the result two. 2  is taken down here then two is multiplied by three
+
+26
+01:32.760 --> 01:36.020
+to six and six is taken here after this.
+
+27
+01:36.210 --> 01:41.780
+Three four, six is multiplied by four, the result is twenty four is taken so next step.
+
+28
+01:41.880 --> 01:43.200
+And this four becomes five.
+
+29
+01:43.830 --> 01:44.950
+So this is multiplied.
+
+30
+01:45.020 --> 01:47.210
+The result here and this is multiplied.
+
+31
+01:47.760 --> 01:54.150
+So it means every time i is multiplied with the value there and the result is stored in that value only.
+
+32
+01:54.390 --> 01:56.300
+So let us call this as factorial.
+
+33
+01:56.400 --> 01:57.760
+So what is happening here.
+
+34
+01:57.900 --> 02:03.910
+Factorial is multiplied by I understand it is stored in factorial.
+
+35
+02:04.530 --> 02:07.590
+So initially what was the value of factorial.
+
+36
+02:07.590 --> 02:14.100
+So I should have a variable called factorial in that the value should be 1 then multiplied by 1 
+
+37
+02:14.100 --> 02:18.950
+result is one then that factorial is still 1 then it becomes two then Factorial  become 2
+
+38
+02:18.950 --> 02:25.000
+then factorial  become 6 factorial become 24 then 120 and finally the 720.
+
+39
+02:25.280 --> 02:28.600
+And here if you have the 1 2 3 4 5 6 that is a counter .
+
+40
+02:30.180 --> 02:36.700
+So we can see that these two steps if I perform them repeatedly from 1 to 6 I get the result.
+
+41
+02:36.920 --> 02:40.610
+Well let us look at the flow chart here again the similar thing.
+
+42
+02:40.650 --> 02:42.790
+I have a start and  read no.
+
+43
+02:43.050 --> 02:48.290
+Then I assign one factorial assign one these two are initialized then this is the same thing only
+
+44
+02:48.290 --> 02:49.760
+we have seen it previously.
+
+45
+02:49.830 --> 02:56.640
+The difference here is a factorial is multiplied by I and I is incremented this is repeated as long
+
+46
+02:56.640 --> 03:03.570
+as it is less than equal to N and where it is greater than n false it will come out and print the factorial
+
+47
+03:03.600 --> 03:04.600
+then stop.
+
+48
+03:04.650 --> 03:09.480
+So that differs from the previous program to this program is, there we were adding here we are multiplying
+
+49
+03:09.850 --> 03:11.050
+and that's it.
+
+50
+03:11.070 --> 03:17.250
+So let us write  down a program for this one I have some variables already declared here and i infact if you
+
+51
+03:17.250 --> 03:22.150
+read here n I in fact these are the variables used.
+
+52
+03:22.470 --> 03:27.820
+So if you observe here n, i,  fact three variables are used,  so I have declared them then read
+
+53
+03:27.820 --> 03:34.430
+the value of n then, this reputation can be done using for loop right this is the counter control.
+
+54
+03:34.590 --> 03:44.220
+So for I start from 1 onwards I should be less than equal to N and I plus plus not everything is happening
+
+55
+03:44.220 --> 03:47.120
+inside this for only this production part.
+
+56
+03:47.220 --> 03:48.190
+This is finished.
+
+57
+03:48.210 --> 03:49.030
+This is finished.
+
+58
+03:49.030 --> 03:50.050
+This is finished.
+
+59
+03:50.640 --> 03:53.670
+Only this product part should be inside the loop.
+
+60
+03:53.670 --> 04:01.660
+So fact multiply assign i also I can write, instead of writing like this fact aside factor and
+
+61
+04:01.720 --> 04:07.590
+why even I can relate to compound assignment statement and I can write it like this that's all.
+
+62
+04:08.010 --> 04:13.520
+So this becomes very simple outside the loop at the end I should bring the factorial.
+
+63
+04:13.650 --> 04:26.550
+So here I will give you a proper message I'll give a message that factorial of then n, then again
+
+64
+04:26.610 --> 04:36.540
+here is then fact is a variable, in this i got the answer, that's all, return so and so.
+
+65
+04:36.650 --> 04:37.430
+How the output looks like.
+
+66
+04:37.550 --> 04:49.910
+It looks like, output will be, factorial of what is n, it is a six so six is as I should give some
+
+67
+04:49.910 --> 04:54.120
+spaces right before i and after s I should give space then fact.
+
+68
+04:54.170 --> 04:55.700
+So I'm getting the result here.
+
+69
+04:55.730 --> 04:59.670
+If n is six then answer is seven twenty will be displayed.
+
+70
+04:59.740 --> 05:04.110
+This is more meaningful message factorial of Six Seven twenty.
+
+71
+05:04.500 --> 05:05.690
+One more thing you can do.
+
+72
+05:05.990 --> 05:09.230
+You can say cout instead of this one right.
+
+73
+05:09.270 --> 05:18.770
+Instead of this one cout and n  then in double quotes exclamation and equal to sign close this one and
+
+74
+05:18.900 --> 05:20.450
+safe fact.
+
+75
+05:20.450 --> 05:24.710
+So what will be the output n means 6 then after that this exclamation.
+
+76
+05:24.890 --> 05:31.170
+Six factorial is equal to fact is how much 720 you get o/p like this.
+
+77
+05:31.240 --> 05:34.260
+instead of giving a message like this you can write this one also.
+
+78
+05:34.520 --> 05:37.200
+So anyone of this you can use.
+
+79
+05:37.520 --> 05:41.780
+So that's all just for the simple program for finding the factorial.
+
+80
+05:41.780 --> 05:46.110
+And there is a coding exercise available you have to write on this loop part right.
+
+81
+05:46.160 --> 05:50.750
+You have to write on the loop part and also you can practice this program.
+
+82
+05:50.750 --> 05:54.360
+There is a demo is also available so fast you practice it right by yourself.
+
+83
+05:54.360 --> 05:56.150
+Everything is there here on board.
+
+84
+05:56.150 --> 05:59.130
+You can note down and you can practice on your machine.
+
+85
+05:59.450 --> 06:04.760
+If you get any problem if you face any problem you can check out the demo video and PDF is also there.
+
+86
+06:04.760 --> 06:07.820
+Still if you have any problem you can give a message to me right.
+
+87
+06:07.850 --> 06:10.160
+I'll quickly reply to your message.
+
+88
+06:10.250 --> 06:11.280
+That's all in this video.

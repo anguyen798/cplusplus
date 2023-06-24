@@ -1,0 +1,2351 @@
+﻿WEBVTT
+
+00:00:00.000 --> 00:00:04.600
+Hello everyone, this is Steve Gilbert.
+
+00:00:04.600 --> 00:00:09.600
+Welcome to week 5 and lecture 17.
+
+00:00:09.600 --> 00:00:13.800
+So today we're going to be talking about memory and pointers.
+
+00:00:13.800 --> 00:00:18.000
+In the next lecture we're going to be working with graphics.
+
+00:00:18.000 --> 00:00:23.000
+So before we do that though, let's do a little bit of review on vectors.
+
+00:00:23.000 --> 00:00:27.200
+So we create vectors by specifying the kind of thing
+
+00:00:27.200 --> 00:00:29.900
+that they're going to hold, called the base type.
+
+00:00:29.900 --> 00:00:36.600
+So v1 is a vector of int, v2 is a vector of int, all of these are vector of int.
+
+00:00:36.600 --> 00:00:43.500
+When we can create them, we can pass additional arguments to their constructor.
+
+00:00:43.500 --> 00:00:51.900
+And so if we pass a single integer, it says I want v2 to be an array of 10 integers,
+
+00:00:51.900 --> 00:00:56.400
+or a vector of 10 integers, zero initialized.
+
+00:00:56.400 --> 00:00:59.900
+If I don't want them zero initialized, I can pass two integers.
+
+00:00:59.900 --> 00:01:06.600
+So v3 is an array of three integers, all three are initialized to four.
+
+00:01:06.600 --> 00:01:11.100
+Or if I don't use the parentheses after the constructor,
+
+00:01:11.100 --> 00:01:15.000
+when I'm constructing the object, if I use braces instead,
+
+00:01:15.000 --> 00:01:18.700
+I'm saying that I want simply the values three and four.
+
+00:01:18.700 --> 00:01:22.300
+I'm list initializing them.
+
+00:01:22.300 --> 00:01:30.200
+We saw that we could access the individual elements in a vector with at,
+
+00:01:30.200 --> 00:01:33.700
+or front and back to get the first and the last one,
+
+00:01:33.700 --> 00:01:38.700
+or the square brackets, or the square brackets.
+
+00:01:38.700 --> 00:01:41.800
+We have members that change the object.
+
+00:01:41.800 --> 00:01:44.300
+We can get pushback and popback.
+
+00:01:44.300 --> 00:01:46.700
+Those both mutate the object.
+
+00:01:46.700 --> 00:01:49.800
+Pushback adds an item to the end of the list,
+
+00:01:49.800 --> 00:01:54.500
+and popback removes that item that's at the end of the list.
+
+00:01:54.500 --> 00:01:59.600
+Of course, if you call popback on an empty vector, you'll have an error.
+
+00:01:59.600 --> 00:02:01.400
+Size is an accessor.
+
+00:02:01.400 --> 00:02:04.900
+It tells us how many elements the array has.
+
+00:02:04.900 --> 00:02:10.600
+And we looked at several different loops in our exercises in the last lecture.
+
+00:02:10.600 --> 00:02:12.600
+We used the range-based loop.
+
+00:02:12.600 --> 00:02:18.700
+We can use the range-based loop with references, and so forth.
+
+00:02:18.700 --> 00:02:24.100
+So to just make this a little bit less theoretical,
+
+00:02:24.100 --> 00:02:29.200
+let's go ahead and do some vector function practice.
+
+00:02:29.200 --> 00:02:33.400
+So you pass passing vectors as function parameters.
+
+00:02:33.400 --> 00:02:42.800
+You always use a const vector ref, or a vector ref for an input or output parameter.
+
+00:02:42.800 --> 00:02:47.300
+We will never, ever pass a vector by value.
+
+00:02:47.300 --> 00:02:50.400
+We can also return a vector from a function.
+
+00:02:50.400 --> 00:02:52.200
+You simply create an empty vector.
+
+00:02:52.200 --> 00:02:57.800
+We did this with the next to the last version of unique in the last lecture.
+
+00:02:57.800 --> 00:03:00.300
+Fill it in, and then return it.
+
+00:03:00.300 --> 00:03:02.100
+Now, that makes a copy.
+
+00:03:02.100 --> 00:03:05.700
+And so adding an output parameter-- in other words,
+
+00:03:05.700 --> 00:03:10.000
+passing in an empty vector by reference-- may be more efficient.
+
+00:03:10.000 --> 00:03:14.900
+But actually, modern compilers will actually optimize that copy away.
+
+00:03:14.900 --> 00:03:19.300
+Since C++ 11, they're required to do that.
+
+00:03:19.300 --> 00:03:26.400
+Now, imagine that you are writing a program that is going to a web
+
+00:03:26.400 --> 00:03:31.500
+application, say, and you're writing the guts of it in C++.
+
+00:03:31.500 --> 00:03:37.600
+And you need to process the-- on the phone, on a phone--
+
+00:03:37.600 --> 00:03:41.000
+you need to process the camera roll.
+
+00:03:41.000 --> 00:03:45.200
+And all your application does is it looks through a person's camera roll,
+
+00:03:45.200 --> 00:03:50.400
+and it shows them a view of the pictures that have a cute cat in it.
+
+00:03:50.400 --> 00:03:56.500
+Now, you might think that you would pass in the camera roll as a vector of images.
+
+00:03:56.500 --> 00:04:00.800
+But remember, each image is quite large, so we don't want to make a copy.
+
+00:04:00.800 --> 00:04:07.100
+But because we're using input parameters, a const vector ref, we won't make a copy.
+
+00:04:07.100 --> 00:04:09.300
+It'll be very, very inefficient.
+
+00:04:09.300 --> 00:04:14.300
+We won't make duplicates of all those millions and millions of bytes.
+
+00:04:14.300 --> 00:04:22.100
+However, if you want to show them your pictures that have cats in it--
+
+00:04:22.100 --> 00:04:24.600
+the pictures of the cute cat pictures-- you
+
+00:04:24.600 --> 00:04:28.000
+may be tempted to create an empty vector of pictures,
+
+00:04:28.000 --> 00:04:31.200
+fill it in with just the cat pictures, and then return it.
+
+00:04:31.200 --> 00:04:33.200
+And that would be very, very inefficient,
+
+00:04:33.200 --> 00:04:36.800
+because we would make duplicates of all those millions of bytes
+
+00:04:36.800 --> 00:04:40.900
+of each cat picture, when really all we need to do
+
+00:04:40.900 --> 00:04:45.100
+is return a vector of the indexes into the camera roll.
+
+00:04:45.100 --> 00:04:48.900
+And then all your application would do is have to look at that.
+
+00:04:48.900 --> 00:04:52.900
+So that's very, very common to return a vector of indexes
+
+00:04:52.900 --> 00:04:58.400
+that's then used to index into the original vector.
+
+00:04:58.400 --> 00:05:03.800
+So for our first exercise here, we're going to complete these three functions.
+
+00:05:03.800 --> 00:05:11.000
+So again, make sure you've gone to week five, the second tab for Tuesday,
+
+00:05:11.000 --> 00:05:13.400
+on enumerations and memory.
+
+00:05:13.400 --> 00:05:17.600
+Gone to the lecture exercise and click the link for the starter form.
+
+00:05:17.600 --> 00:05:22.600
+When you have the starter form here, we're going to do these exercises right there.
+
+00:05:22.600 --> 00:05:24.800
+These exercises right there.
+
+00:05:24.800 --> 00:05:26.200
+So let's go over.
+
+00:05:26.200 --> 00:05:29.200
+Let's look at IC17.
+
+00:05:29.200 --> 00:05:33.000
+Let's look in vectors.h.
+
+00:05:33.000 --> 00:05:36.800
+These are the files we're going to create.
+
+00:05:36.800 --> 00:05:40.400
+And let's look at vectors.cpp.
+
+00:05:40.400 --> 00:05:44.100
+Now, if you don't modify these and you just click a couple of them,
+
+00:05:44.100 --> 00:05:46.600
+it doesn't reopen it, which is kind of frustrating.
+
+00:05:46.600 --> 00:05:53.000
+So I'm going to open vectors.cpp and put my name on it.
+
+00:05:53.000 --> 00:05:56.700
+Now I'm going to open vectors.h, and it'll open a new tab at the top,
+
+00:05:56.700 --> 00:05:58.300
+which is what I want.
+
+00:05:58.300 --> 00:06:01.900
+So here are the functions we want.
+
+00:06:01.900 --> 00:06:08.600
+We want to write swap ins, match up, and copy evens.
+
+00:06:08.600 --> 00:06:12.600
+So I'm going to copy all of those.
+
+00:06:12.600 --> 00:06:17.400
+So I don't simply have to go back and forth between them.
+
+00:06:17.400 --> 00:06:22.000
+And then as we do it, I'll remove the comments.
+
+00:06:22.000 --> 00:06:29.300
+So let's take our things here and just stub them out so that our code will always compile.
+
+00:06:29.300 --> 00:06:31.900
+So that's void.
+
+00:06:31.900 --> 00:06:37.300
+This function returns an int.
+
+00:06:37.300 --> 00:06:41.200
+And so I'm going to just return 0 here.
+
+00:06:41.200 --> 00:06:45.000
+Again, just to get a skeleton that works, copy evens.
+
+00:06:45.000 --> 00:06:49.900
+OK, so this is returning a vector.
+
+00:06:49.900 --> 00:06:54.200
+So I'm going to create a vector int the result.
+
+00:06:54.200 --> 00:06:56.400
+And I'm going to return the result.
+
+00:06:58.100 --> 00:07:02.100
+OK, let's get a shell here.
+
+00:07:02.100 --> 00:07:06.100
+And I can close that.
+
+00:07:06.100 --> 00:07:14.100
+And let's just do make test to make sure that our code compiles
+
+00:07:14.100 --> 00:07:16.100
+and we don't have any syntax errors on it.
+
+00:07:16.100 --> 00:07:17.100
+We don't, OK?
+
+00:07:17.100 --> 00:07:20.100
+So now we can go back to thinking about the code.
+
+00:07:20.100 --> 00:07:26.600
+So this first function we're going to write is going to have one parameter,
+
+00:07:26.600 --> 00:07:32.600
+which is an input/output parameter, a vector of int named nums.
+
+00:07:32.600 --> 00:07:38.600
+And if the vector length is greater than 0, then we're going to swap the first and last element.
+
+00:07:38.600 --> 00:07:42.600
+Now actually, it should be if the vector length is greater than 1,
+
+00:07:42.600 --> 00:07:50.600
+because if the vector length is 1, swapping the first and last elements gives me the same result.
+
+00:07:50.600 --> 00:08:02.600
+So I want to say if nums size is greater than 1, I'm going to swap them.
+
+00:08:02.600 --> 00:08:08.100
+Now to swap them, I have to temporarily save one value.
+
+00:08:08.100 --> 00:08:11.100
+And so I'm saving the first and the last.
+
+00:08:11.100 --> 00:08:14.600
+So I could do it four or five different ways.
+
+00:08:14.600 --> 00:08:29.600
+So first, I'm going to say int temp equals nums sub 0 or nums front,
+
+00:08:29.600 --> 00:08:35.600
+because it's a vector, or nums at 0.
+
+00:08:35.600 --> 00:08:47.100
+Now, so we can use all three of those, nums sub 0, nums.front, nums at.
+
+00:08:47.100 --> 00:08:53.100
+I like using nums.front, because it's kind of, you know, it's expressive.
+
+00:08:53.100 --> 00:08:58.100
+So I'm going to say, so I saved the first one.
+
+00:08:58.100 --> 00:09:10.100
+So now I'm going to change the first one, nums.front equals nums.back.
+
+00:09:10.100 --> 00:09:19.600
+And again, for nums.back, we could have written nums at nums size minus 1.
+
+00:09:19.600 --> 00:09:23.600
+Certainly nums.back is easier than doing that, right?
+
+00:09:23.600 --> 00:09:28.600
+And again, we could have used the square brackets with the same expression.
+
+00:09:28.600 --> 00:09:35.600
+And finally, I'm going to say nums.back equals temp.
+
+00:09:35.600 --> 00:09:43.600
+So this algorithm is called the swap algorithm.
+
+00:09:43.600 --> 00:09:46.100
+And in fact, it's in the standard library.
+
+00:09:46.100 --> 00:09:48.600
+So you generally don't need to write it yourself.
+
+00:09:48.600 --> 00:09:54.600
+You can just call the one in the standard library, and it will work fine.
+
+00:09:54.600 --> 00:09:56.600
+Okay, let's try it.
+
+00:09:56.600 --> 00:10:00.600
+Let's open our shell.
+
+00:10:00.600 --> 00:10:05.600
+Let's do make test.
+
+00:10:05.600 --> 00:10:12.100
+And all of our swap ins here should work fine.
+
+00:10:12.100 --> 00:10:15.600
+For the second function we're going to write,
+
+00:10:15.600 --> 00:10:31.600
+we're given a vector int nums1 and nums2 of the same length.
+
+00:10:31.600 --> 00:10:40.600
+And for every element in nums1, consider the corresponding element nums2 at the same index.
+
+00:10:40.600 --> 00:10:43.600
+So nums1 sub 0, nums2 sub 0.
+
+00:10:43.600 --> 00:10:51.600
+Return the count of the number of times that the two elements differ by 2 or less, but are not equal.
+
+00:10:51.600 --> 00:10:54.600
+So a couple different conditions.
+
+00:10:54.600 --> 00:11:03.600
+So we're returning a count, so I'm just going to call that variable.
+
+00:11:03.600 --> 00:11:12.600
+It matches 0, and I'm going to return the matches.
+
+00:11:12.600 --> 00:11:16.600
+Now I'm going to visit each element in both vectors.
+
+00:11:16.600 --> 00:11:19.600
+So could we use a range-based loop? No.
+
+00:11:19.600 --> 00:11:24.600
+We need to use a standard while or for loop. I'll use while.
+
+00:11:24.600 --> 00:11:28.600
+And because it told us they're the same length, I don't need to worry about that.
+
+00:11:28.600 --> 00:11:31.600
+That would be a slightly different problem.
+
+00:11:31.600 --> 00:11:36.600
+So I'm going to say for size t, i equals 0,
+
+00:11:36.600 --> 00:11:45.600
+len equals nums1.size. Again, it doesn't matter which one I use because they're the same size.
+
+00:11:45.600 --> 00:11:52.600
+i less than len, plus plus i.
+
+00:11:52.600 --> 00:12:07.600
+OK, so now if nums1 at i is not equal to nums2 at i,
+
+00:12:07.600 --> 00:12:16.600
+and again, for nums2 I'll do it like that, just so you can see that you can use either one of those.
+
+00:12:16.600 --> 00:12:20.600
+I try and train my fingers to do at.
+
+00:12:20.600 --> 00:12:29.600
+So if those are not equal, and the two elements differ by two or less,
+
+00:12:29.600 --> 00:12:32.600
+so how do we find out if something differs from each other?
+
+00:12:32.600 --> 00:12:34.600
+We subtract it.
+
+00:12:34.600 --> 00:12:53.600
+So nums1 at i minus nums2 at i is two or less, less than or equal to two.
+
+00:12:53.600 --> 00:12:59.600
+Then we're going to say matches plus plus.
+
+00:12:59.600 --> 00:13:10.600
+Now if you test this, you'll see a slight problem. Let's test it and see what that problem is.
+
+00:13:10.600 --> 00:13:17.600
+Oh, actually we didn't see it. Oh yeah, two of them didn't pass.
+
+00:13:17.600 --> 00:13:30.600
+So the problem is that when we take this, this only works if nums1 is larger than nums2.
+
+00:13:30.600 --> 00:13:36.600
+In the case where that's not the case, in cases where that is not the case,
+
+00:13:36.600 --> 00:13:44.600
+so in this case num1 is larger than num2, and I'm subtracting in this case.
+
+00:13:44.600 --> 00:13:47.600
+So it's not working in that case.
+
+00:13:47.600 --> 00:13:51.600
+So I need to think slightly different about that.
+
+00:13:51.600 --> 00:13:57.600
+This gives me the difference, but the difference can be positive or negative.
+
+00:13:57.600 --> 00:13:59.600
+So what do I really want to do?
+
+00:13:59.600 --> 00:14:03.600
+I want the absolute value of that difference.
+
+00:14:03.600 --> 00:14:07.600
+So I'm going to use the function from cmath,
+
+00:14:07.600 --> 00:14:12.600
+or actually this version of abs is from cstandard lib.
+
+00:14:12.600 --> 00:14:14.600
+So I have to include cmath in here.
+
+00:14:14.600 --> 00:14:25.600
+So it's from cstandard lib that knows how to use integers.
+
+00:14:25.600 --> 00:14:32.600
+I didn't include cstandard lib, so I probably should include.
+
+00:14:32.600 --> 00:14:48.600
+So include cstandard lib using standard abs.
+
+00:14:48.600 --> 00:14:58.600
+Okay, so let's try our code again for that function.
+
+00:14:58.600 --> 00:15:05.600
+Okay, and now all of the matchups work 100%.
+
+00:15:05.600 --> 00:15:09.600
+Okay, for the last test we're going to be doing here,
+
+00:15:09.600 --> 00:15:18.600
+we're going to be doing -- so I'm going to get rid of my code for this.
+
+00:15:18.600 --> 00:15:25.600
+The last review exercise we're doing is one where we're returning a vector.
+
+00:15:25.600 --> 00:15:28.600
+So we're getting a vector of positive ints.
+
+00:15:28.600 --> 00:15:33.600
+We're going to return a new vector array of length count,
+
+00:15:33.600 --> 00:15:37.600
+containing the first even numbers from the original vector.
+
+00:15:37.600 --> 00:15:40.600
+The original vector will contain at least count even numbers,
+
+00:15:40.600 --> 00:15:43.600
+but it may contain more.
+
+00:15:43.600 --> 00:15:47.600
+So we have two input vectors, or two input values.
+
+00:15:47.600 --> 00:15:51.600
+Nums is a vector of int, so it's const vector ref.
+
+00:15:51.600 --> 00:15:57.600
+And ecount is the number of even numbers in the return vector.
+
+00:15:57.600 --> 00:16:02.600
+Now you might wonder why I didn't do ecount like that.
+
+00:16:02.600 --> 00:16:08.600
+Now you could do that, but then you'd have to keep track of where you are in the two vectors.
+
+00:16:08.600 --> 00:16:12.600
+And it's actually easier to do it like this.
+
+00:16:12.600 --> 00:16:19.600
+While result size is less than ecount.
+
+00:16:19.600 --> 00:16:25.600
+As soon as we have the correct number of items in result,
+
+00:16:25.600 --> 00:16:28.600
+then our function is completely over.
+
+00:16:28.600 --> 00:16:32.600
+We're done with what we need to do.
+
+00:16:32.600 --> 00:16:37.600
+So what we want to do is we want to look through nums.
+
+00:16:37.600 --> 00:16:47.600
+So I want to say for --
+
+00:16:47.600 --> 00:16:51.600
+Oh no, actually I don't want to look through nums.
+
+00:16:51.600 --> 00:16:59.600
+I want to say size pi equals zero.
+
+00:16:59.600 --> 00:17:10.600
+If nums at i remainder two equals zero,
+
+00:17:10.600 --> 00:17:26.600
+if nums at i is even, then add it to the result.
+
+00:17:26.600 --> 00:17:31.600
+So add the number at i to the result.
+
+00:17:31.600 --> 00:17:36.600
+Each time we go through the loop, of course, we need to do i++.
+
+00:17:36.600 --> 00:17:44.600
+So we're looking at the correct element in nums.
+
+00:17:44.600 --> 00:17:48.600
+So this is not a counter controlled loop.
+
+00:17:48.600 --> 00:17:59.600
+This counter is being used to index into this.
+
+00:17:59.600 --> 00:18:03.600
+So the loop is only going to stop when result size gets to ecount.
+
+00:18:03.600 --> 00:18:10.600
+But our counter is actually being used to index into this while we go through that loop.
+
+00:18:10.600 --> 00:18:15.600
+OK, so let's see if copy evens works.
+
+00:18:15.600 --> 00:18:19.600
+And there copy evens works perfectly now.
+
+00:18:19.600 --> 00:18:22.600
+Copy evens works perfectly.
+
+00:18:22.600 --> 00:18:28.600
+OK, so a little review from the last lesson, last lecture.
+
+00:18:28.600 --> 00:18:33.600
+Let's go and talk about new items today.
+
+00:18:33.600 --> 00:18:36.600
+We're going to start looking at lower level.
+
+00:18:36.600 --> 00:18:42.600
+We're going to start drilling down into your computer and how your computer actually works.
+
+00:18:42.600 --> 00:18:46.600
+When you run a program, when you run an executable,
+
+00:18:46.600 --> 00:18:53.600
+your program runs a little part at the beginning of it called the startup code.
+
+00:18:53.600 --> 00:19:00.600
+That startup code is usually a function called start that is added by the linker.
+
+00:19:00.600 --> 00:19:06.600
+What that does is it sets the machine registers and it allocates memory.
+
+00:19:06.600 --> 00:19:10.600
+And so the memory it allocates is divided into sections.
+
+00:19:10.600 --> 00:19:14.600
+And machine registers point to each of these.
+
+00:19:14.600 --> 00:19:18.600
+So the static area, the part that's loaded directly from disk,
+
+00:19:18.600 --> 00:19:24.600
+this is in memory a picture of the image that you have on disk.
+
+00:19:24.600 --> 00:19:27.600
+This static area has code.
+
+00:19:27.600 --> 00:19:30.600
+That's the section marked down here as text.
+
+00:19:30.600 --> 00:19:32.600
+And it has all of your global variables.
+
+00:19:32.600 --> 00:19:37.600
+They're loaded into memory from disk when the program ends.
+
+00:19:37.600 --> 00:19:41.600
+And the machine registers, the code segment is set to point to this code.
+
+00:19:41.600 --> 00:19:45.600
+The data segment is set to point to these global areas.
+
+00:19:45.600 --> 00:19:49.600
+Those are registers on the machine.
+
+00:19:49.600 --> 00:19:54.600
+At the opposite end from where the memory is loaded into code,
+
+00:19:54.600 --> 00:19:59.600
+at a higher address up here, we have something called the stack.
+
+00:19:59.600 --> 00:20:08.600
+And again, this is just memory reserved for local variables and run time information.
+
+00:20:08.600 --> 00:20:14.600
+The return of disk, the mechanics of calling a function, parameters,
+
+00:20:14.600 --> 00:20:18.600
+all of that are placed in this area of memory called the stack.
+
+00:20:18.600 --> 00:20:22.600
+And as more items are added, the memory grows in this direction,
+
+00:20:22.600 --> 00:20:29.600
+down towards the static section.
+
+00:20:29.600 --> 00:20:31.600
+In between those is a third section.
+
+00:20:31.600 --> 00:20:34.600
+This is called the free store or the heap.
+
+00:20:34.600 --> 00:20:38.600
+And this is where dynamic variables are created.
+
+00:20:38.600 --> 00:20:42.600
+When you ask the operating system for some new data,
+
+00:20:42.600 --> 00:20:44.600
+for instance, when you're reading a file.
+
+00:20:44.600 --> 00:20:52.600
+So, for instance, if you ask the user to input a sentence,
+
+00:20:52.600 --> 00:20:54.600
+you don't know how long the sentence is.
+
+00:20:54.600 --> 00:21:00.600
+And so we cannot put that data on the stack or in the static storage area.
+
+00:21:00.600 --> 00:21:04.600
+It has to be determined depending on how much data they do.
+
+00:21:04.600 --> 00:21:07.600
+And the string class does that for you automatically.
+
+00:21:07.600 --> 00:21:09.600
+We'll work with the heap in a little bit.
+
+00:21:09.600 --> 00:21:16.600
+But right now, just know that it's where dynamic memory, like strings and vectors, go.
+
+00:21:16.600 --> 00:21:24.600
+So, with variables and functions as well, we have three related concepts.
+
+00:21:24.600 --> 00:21:27.600
+The first concept is scope.
+
+00:21:27.600 --> 00:21:31.600
+Where in your code can you see a name from?
+
+00:21:31.600 --> 00:21:34.600
+So scope is visibility.
+
+00:21:34.600 --> 00:21:37.600
+And C++ has two kinds of scope.
+
+00:21:37.600 --> 00:21:40.600
+Something that is created inside a block.
+
+00:21:40.600 --> 00:21:47.600
+For instance, a function body or the body of a for loop or an if statement.
+
+00:21:47.600 --> 00:21:53.600
+Something that's created inside the block is only visible from the point it's created
+
+00:21:53.600 --> 00:21:56.600
+to the end of the block that it was created in.
+
+00:21:56.600 --> 00:22:02.600
+Now sometimes this will be called local scope, but it's really not local scope, it's block scope.
+
+00:22:02.600 --> 00:22:09.600
+If you create something outside of a block, it has what's called file scope.
+
+00:22:09.600 --> 00:22:17.600
+File scope means that that name is visible from the point it's created to the end of the file that it was created in.
+
+00:22:17.600 --> 00:22:20.600
+Including inside any blocks.
+
+00:22:20.600 --> 00:22:23.600
+So block scope and file scope.
+
+00:22:23.600 --> 00:22:25.600
+Secondly, we have duration.
+
+00:22:25.600 --> 00:22:29.600
+In other words, how long does an item stay in memory?
+
+00:22:29.600 --> 00:22:35.600
+Now global variables, variables that are loaded into the static storage area,
+
+00:22:35.600 --> 00:22:38.600
+they persist as long as your program runs.
+
+00:22:38.600 --> 00:22:43.600
+You start running the program, the variable is created right at that moment.
+
+00:22:43.600 --> 00:22:47.600
+You stop running the program, the variable goes away.
+
+00:22:47.600 --> 00:22:50.600
+It stays at the same location.
+
+00:22:50.600 --> 00:22:55.600
+So static in this sense means it doesn't move.
+
+00:22:55.600 --> 00:22:59.600
+Now when you create a local variable, when does it come into existence?
+
+00:22:59.600 --> 00:23:03.600
+When the code is executed, that creates it.
+
+00:23:03.600 --> 00:23:05.600
+When does it go away?
+
+00:23:05.600 --> 00:23:09.600
+When the function or the block that you created it in ends.
+
+00:23:09.600 --> 00:23:15.600
+And so these variables are created on the stack up here, as I mentioned before,
+
+00:23:15.600 --> 00:23:19.600
+and they have what we call automatic duration.
+
+00:23:19.600 --> 00:23:21.600
+So they're automatic variables.
+
+00:23:21.600 --> 00:23:25.600
+Finally, we have variables, I mentioned them just briefly before,
+
+00:23:25.600 --> 00:23:29.600
+we're not going to create any now, that have dynamic duration.
+
+00:23:29.600 --> 00:23:32.600
+In other words, in one part of your program you can say,
+
+00:23:32.600 --> 00:23:37.600
+create this variable now, we do that with a new operator, like you do in Java,
+
+00:23:37.600 --> 00:23:40.600
+and in another part of this program we can say,
+
+00:23:40.600 --> 00:23:45.600
+I'm done with this, you can have it back to the operating system.
+
+00:23:45.600 --> 00:23:50.600
+Finally, when we have multiple files working together,
+
+00:23:50.600 --> 00:23:53.600
+those files are linked together.
+
+00:23:53.600 --> 00:23:57.600
+So you compile two CPP files, you link them together,
+
+00:23:57.600 --> 00:24:04.600
+which variables and which functions from which file can be used in which other file.
+
+00:24:04.600 --> 00:24:11.600
+So linkage determines which files and which functions can be used in each other.
+
+00:24:11.600 --> 00:24:15.600
+So if something has internal linkage,
+
+00:24:15.600 --> 00:24:22.600
+if I create a variable in one file using file scope,
+
+00:24:22.600 --> 00:24:26.600
+in other words, outside of a function,
+
+00:24:26.600 --> 00:24:29.600
+that variable can have internal linkage,
+
+00:24:29.600 --> 00:24:32.600
+meaning it can only be used inside that file,
+
+00:24:32.600 --> 00:24:34.600
+or it can have external linkage,
+
+00:24:34.600 --> 00:24:39.600
+meaning I can use it in that file and any other files that are linked in.
+
+00:24:39.600 --> 00:24:42.600
+So internal or external linkage,
+
+00:24:42.600 --> 00:24:47.600
+both of these have to do with functions and global variables.
+
+00:24:47.600 --> 00:24:53.600
+All other variables, local variables, have no linkage.
+
+00:24:53.600 --> 00:24:58.600
+They can only be used in the function that they're created in.
+
+00:24:58.600 --> 00:25:03.600
+So let's go look at a program, F1 and F2.
+
+00:25:03.600 --> 00:25:06.600
+I'm going to try and open them side by side.
+
+00:25:06.600 --> 00:25:12.600
+This is the first time we've been using this IDE right here.
+
+00:25:12.600 --> 00:25:23.600
+So this might be an interesting video.
+
+00:25:23.600 --> 00:25:33.600
+So here's F1 and here's F2.
+
+00:25:33.600 --> 00:25:36.600
+That's good.
+
+00:25:36.600 --> 00:25:41.600
+That's F1 and F2.
+
+00:25:41.600 --> 00:25:48.600
+Let me...
+
+00:25:48.600 --> 00:25:51.600
+I've got F1 and F2.
+
+00:25:51.600 --> 00:25:56.600
+I'm still trying to do it. There's F2.
+
+00:25:56.600 --> 00:26:01.600
+That's pretty good, and I'll move this over there.
+
+00:26:01.600 --> 00:26:04.600
+So here's F1 and F2.
+
+00:26:04.600 --> 00:26:08.600
+Notice that there's only one main function in F1 and F2.
+
+00:26:08.600 --> 00:26:13.600
+Actually, let me do one more thing.
+
+00:26:13.600 --> 00:26:23.600
+I'm going to open up a terminal on that folder.
+
+00:26:23.600 --> 00:26:31.600
+I'm simply going to type "nick run."
+
+00:26:31.600 --> 00:26:34.600
+Main first calls the function C.
+
+00:26:34.600 --> 00:26:44.600
+C is not defined in file F2, but it is linked together, and it's defined in file F1.
+
+00:26:44.600 --> 00:26:52.600
+So function C is over here, and it prints out the variables A and B.
+
+00:26:52.600 --> 00:26:57.600
+Now notice A is defined outside of any function here. It's a global variable.
+
+00:26:57.600 --> 00:27:02.600
+B also is defined outside of every function, and it's a global variable.
+
+00:27:02.600 --> 00:27:08.600
+So it prints out A and B, and so we get 37, and there's a new line.
+
+00:27:08.600 --> 00:27:10.600
+Then it calls the function D.
+
+00:27:10.600 --> 00:27:12.600
+So here's the function D.
+
+00:27:12.600 --> 00:27:19.600
+It creates a local variable E, another local variable F, 5 and 6,
+
+00:27:19.600 --> 00:27:25.600
+and it prints out A, B, E, and F.
+
+00:27:25.600 --> 00:27:31.600
+So we get 37 like we did before, and 56 just like you'd expect.
+
+00:27:31.600 --> 00:27:38.600
+Then we increment this variable F right here.
+
+00:27:38.600 --> 00:27:47.600
+So now we set A to 12, B to 13, and we call C again.
+
+00:27:47.600 --> 00:27:50.600
+So it's going to print A and B.
+
+00:27:50.600 --> 00:27:54.600
+So notice that the variable A lives over here.
+
+00:27:54.600 --> 00:28:00.600
+It's defined in F1, and we're changing it over here in F2.
+
+00:28:00.600 --> 00:28:07.600
+It's declared here so we can use it, and the function C is declared there so we can use it.
+
+00:28:07.600 --> 00:28:14.600
+But now when I print A and B, you would expect to get 12 and 13.
+
+00:28:14.600 --> 00:28:23.600
+But it looks like this file has its own copy of B, and so instead I get 12 and 7.
+
+00:28:23.600 --> 00:28:29.600
+So this A changes to 12, but this B doesn't change to 13.
+
+00:28:29.600 --> 00:28:32.600
+It still says 7, so I get 127.
+
+00:28:32.600 --> 00:28:35.600
+Then I call D again.
+
+00:28:35.600 --> 00:28:37.600
+E is set to that.
+
+00:28:37.600 --> 00:28:39.600
+It looks like F is set to 6.
+
+00:28:39.600 --> 00:28:52.600
+I print A, B, E, and F, but instead of getting 12, 7, 5, 6, I get 12, 7, 5, 7.
+
+00:28:52.600 --> 00:29:01.600
+So apparently this F++ kept this variable in the past.
+
+00:29:01.600 --> 00:29:05.600
+So let me explain what is happening here.
+
+00:29:05.600 --> 00:29:13.600
+Variables and functions have what we call external linkage and file scope.
+
+00:29:13.600 --> 00:29:20.600
+So all these variables, all these functions are visible from here down to here.
+
+00:29:20.600 --> 00:29:28.600
+File scope, external linkage, static duration.
+
+00:29:28.600 --> 00:29:34.600
+Now, local variables like E has block scope.
+
+00:29:34.600 --> 00:29:38.600
+It's visible only from here to the end of the function.
+
+00:29:38.600 --> 00:29:43.600
+F has block scope visible from there to the end of the duration.
+
+00:29:43.600 --> 00:29:49.600
+However, for these variables, this has automatic duration,
+
+00:29:49.600 --> 00:29:55.600
+meaning it comes into existence on the stack and is destroyed when the function ends.
+
+00:29:55.600 --> 00:30:02.600
+Because of this keyword static here, we're saying F is going to be stored in the static storage area,
+
+00:30:02.600 --> 00:30:08.600
+not on the stack, which is why when I increment it after calling the function once,
+
+00:30:08.600 --> 00:30:12.600
+the next time we come around, it's not reset to 6 here.
+
+00:30:12.600 --> 00:30:15.600
+It has the value 7 down there.
+
+00:30:15.600 --> 00:30:18.600
+It has the value 7.
+
+00:30:18.600 --> 00:30:21.600
+That leaves only one thing left to explain,
+
+00:30:21.600 --> 00:30:29.600
+and that is why is this word static in front of this variable and this function?
+
+00:30:29.600 --> 00:30:32.600
+We saw what it meant here with this local variable.
+
+00:30:32.600 --> 00:30:37.600
+It means it still cannot be used anywhere other than the function.
+
+00:30:37.600 --> 00:30:39.600
+It has block scope.
+
+00:30:39.600 --> 00:30:42.600
+Yeah, it has block scope.
+
+00:30:42.600 --> 00:30:45.600
+It only can be seen here.
+
+00:30:45.600 --> 00:30:52.600
+Even though it's stored the whole time your program is running, unlike E in this case.
+
+00:30:52.600 --> 00:31:00.600
+The static in front of a function or a global variable means that it has internal linkage.
+
+00:31:00.600 --> 00:31:06.600
+So this B will always and only be this B.
+
+00:31:06.600 --> 00:31:09.600
+It will never be this B over here.
+
+00:31:09.600 --> 00:31:11.600
+It will never be that B over here.
+
+00:31:11.600 --> 00:31:18.600
+These are two separate B's that are only visible inside their own function,
+
+00:31:18.600 --> 00:31:21.600
+or only exist inside their own function.
+
+00:31:21.600 --> 00:31:27.600
+So when I set B equal to 13 here, I get this B, not this B.
+
+00:31:27.600 --> 00:31:31.600
+When I set A equal to 12 here, I get this A.
+
+00:31:31.600 --> 00:31:35.600
+Now, why can I use this A inside this function?
+
+00:31:35.600 --> 00:31:37.600
+Because it's obviously not in scope.
+
+00:31:37.600 --> 00:31:41.600
+I brought it into scope by declaring it.
+
+00:31:41.600 --> 00:31:49.600
+So I declared A, I declared C, we now know the name, and I can use A and C in that function.
+
+00:31:49.600 --> 00:31:54.600
+So we had some exercises we're going to do with this and some questions.
+
+00:31:54.600 --> 00:32:02.600
+So I want to see what will happen in line 1 if I remove the word extern from this.
+
+00:32:02.600 --> 00:32:06.600
+What if I just change that to int A?
+
+00:32:06.600 --> 00:32:13.600
+Do I get an error now when I try and do make run?
+
+00:32:13.600 --> 00:32:16.600
+So make run.
+
+00:32:16.600 --> 00:32:18.600
+Yes, I get an error.
+
+00:32:18.600 --> 00:32:24.600
+So now, when the linker comes along, it sees two copies of A.
+
+00:32:24.600 --> 00:32:30.600
+Both of them could be used in either file, but you can't have two things that have the same name.
+
+00:32:30.600 --> 00:32:32.600
+So I have multiple definitions of A.
+
+00:32:32.600 --> 00:32:35.600
+It's a linker error.
+
+00:32:35.600 --> 00:32:41.600
+So I'm going to come over here and I'm just going to put my answer here.
+
+00:32:41.600 --> 00:32:50.600
+Oops. Save the wrong thing.
+
+00:32:50.600 --> 00:32:56.600
+Copy that.
+
+00:32:56.600 --> 00:32:59.600
+Again, that copy didn't work, did it?
+
+00:32:59.600 --> 00:33:01.600
+From the thing.
+
+00:33:01.600 --> 00:33:05.600
+So I'm going to do that.
+
+00:33:05.600 --> 00:33:07.600
+Right click.
+
+00:33:07.600 --> 00:33:12.600
+Can't seem to get a copy of the terminal.
+
+00:33:12.600 --> 00:33:30.600
+So I'm just going to type in multiple definitions of A.
+
+00:33:30.600 --> 00:33:42.600
+It's only one definition of each object in an executable.
+
+00:33:42.600 --> 00:33:56.600
+That's called the one definition rule or the ODR, the one definition rule.
+
+00:33:56.600 --> 00:34:05.600
+I still want to see if I can copy that.
+
+00:34:05.600 --> 00:34:14.600
+Doesn't look like it.
+
+00:34:14.600 --> 00:34:17.600
+Weird.
+
+00:34:17.600 --> 00:34:29.600
+Okay, so we're going to put extern back to that.
+
+00:34:29.600 --> 00:34:31.600
+Okay, let's look at the second one here.
+
+00:34:31.600 --> 00:34:35.600
+Now we're going to remove the word static from the definition of B on F1.
+
+00:34:35.600 --> 00:34:38.600
+Does the program still compile and link?
+
+00:34:38.600 --> 00:34:41.600
+Does the program run differently?
+
+00:34:41.600 --> 00:34:53.600
+Does the change to B on F2.cpp line 9 have any effect since B now has external linkage in file 1?
+
+00:34:53.600 --> 00:35:06.600
+So I'm going to remove the static from B on line 5 in F1.
+
+00:35:06.600 --> 00:35:12.600
+And I'm going to do make run.
+
+00:35:12.600 --> 00:35:18.600
+Now, 3756, 12757 runs exactly the same.
+
+00:35:18.600 --> 00:35:29.600
+So the answer is no difference.
+
+00:35:29.600 --> 00:35:33.600
+Runs the same.
+
+00:35:33.600 --> 00:35:38.600
+Can you remove the static from both definitions of B?
+
+00:35:38.600 --> 00:35:43.600
+Let's remove it over here.
+
+00:35:43.600 --> 00:35:47.600
+Let's do make run.
+
+00:35:47.600 --> 00:35:50.600
+Oops, no, multiple definitions of B.
+
+00:35:50.600 --> 00:35:52.600
+Okay, I've discovered how to copy.
+
+00:35:52.600 --> 00:35:57.600
+It looks like you just select the text, right click.
+
+00:35:57.600 --> 00:36:00.600
+Apparently it's copied here.
+
+00:36:00.600 --> 00:36:11.600
+And I can go error, multiple definitions of B.
+
+00:36:11.600 --> 00:36:18.600
+We're breaking the ODR rule.
+
+00:36:18.600 --> 00:36:25.600
+So again, we can't have two variables B with external linkage just like we can't have two A's.
+
+00:36:25.600 --> 00:36:33.600
+So let's turn them back to internal linkage.
+
+00:36:33.600 --> 00:36:37.600
+Right where we left off.
+
+00:36:37.600 --> 00:36:44.600
+Okay, now in F1 we have a declaration for C.
+
+00:36:44.600 --> 00:36:48.600
+Let's add a call to the declaration for D.
+
+00:36:48.600 --> 00:36:57.600
+So just like I have the function C here, I have a declaration for C here and I can call C here.
+
+00:36:57.600 --> 00:37:00.600
+Can I do the same thing for D?
+
+00:37:00.600 --> 00:37:10.600
+So can I write void D and then call the function D from here?
+
+00:37:10.600 --> 00:37:16.600
+Let's see.
+
+00:37:16.600 --> 00:37:19.600
+So make run.
+
+00:37:19.600 --> 00:37:23.600
+No, we have an undefined reference to D.
+
+00:37:23.600 --> 00:37:30.600
+That's because in a function if you have static in front of it, it means give this function internal linkage.
+
+00:37:30.600 --> 00:37:34.600
+The function D can only be called from F1.
+
+00:37:34.600 --> 00:37:38.600
+It cannot be called from FT.
+
+00:37:38.600 --> 00:37:49.600
+So let's copy our error message there.
+
+00:37:49.600 --> 00:38:06.600
+So function has internal linkage and only be used in file F1.cpp.
+
+00:38:06.600 --> 00:38:13.600
+Okay, so let's remove that.
+
+00:38:13.600 --> 00:38:20.600
+So that didn't work.
+
+00:38:20.600 --> 00:38:24.600
+Now, can we add an extern declaration?
+
+00:38:24.600 --> 00:38:31.600
+So notice that I could use the variable A over here by adding an extern over there.
+
+00:38:31.600 --> 00:38:39.600
+Can I use an extern to allow me to use the variables E and F?
+
+00:38:39.600 --> 00:38:49.600
+So let's do extern int E, extern int F.
+
+00:38:49.600 --> 00:38:56.600
+Let's do E equals 4, F equals 12.
+
+00:38:56.600 --> 00:39:02.600
+And let's compile that and try it.
+
+00:39:02.600 --> 00:39:05.600
+So make run.
+
+00:39:05.600 --> 00:39:07.600
+Now we've got two things here.
+
+00:39:07.600 --> 00:39:12.600
+Notice I have an undefined.
+
+00:39:12.600 --> 00:39:19.600
+Copy both those.
+
+00:39:19.600 --> 00:39:24.600
+And here's what happens.
+
+00:39:24.600 --> 00:39:39.600
+Both variables are locals so they have no linkage.
+
+00:39:39.600 --> 00:39:48.600
+Can't be used outside of function D.
+
+00:39:48.600 --> 00:39:53.600
+So that's the explanation for what happens there.
+
+00:39:53.600 --> 00:40:03.600
+Okay, so that doesn't work.
+
+00:40:03.600 --> 00:40:08.600
+Let's see what other questions we had.
+
+00:40:08.600 --> 00:40:16.600
+If I remove the static from the definition of the local variable F, what happens?
+
+00:40:16.600 --> 00:40:25.600
+So first let's make run.
+
+00:40:25.600 --> 00:40:30.600
+So 37, 37, 56, 127, 127, 57.
+
+00:40:30.600 --> 00:40:36.600
+I'm going to remove static.
+
+00:40:36.600 --> 00:40:40.600
+I'm going to do make run.
+
+00:40:40.600 --> 00:40:47.600
+Notice now that the variable F doesn't retain this F++.
+
+00:40:47.600 --> 00:40:51.600
+Now this variable has automatic duration.
+
+00:40:51.600 --> 00:40:53.600
+It's stored on the stack.
+
+00:40:53.600 --> 00:40:57.600
+Before it was stored in the static storage area and it didn't move.
+
+00:40:57.600 --> 00:41:01.600
+So each time we come into this function we get a new copy of F here.
+
+00:41:01.600 --> 00:41:04.600
+Before we did not.
+
+00:41:04.600 --> 00:41:08.600
+So notice the 57 and the 56.
+
+00:41:08.600 --> 00:41:11.600
+This is where it's stored in the static storage area.
+
+00:41:11.600 --> 00:41:14.600
+This is where it's stored on the stack.
+
+00:41:14.600 --> 00:41:31.600
+So we can say F no longer retains its value between function calls
+
+00:41:31.600 --> 00:41:45.600
+because it now has automatic storage instead of static storage.
+
+00:41:45.600 --> 00:41:47.600
+Okay, so we looked at linkage.
+
+00:41:47.600 --> 00:41:50.600
+We looked at changing duration.
+
+00:41:50.600 --> 00:41:54.600
+Put that back the way it was before.
+
+00:41:54.600 --> 00:41:59.600
+Now let's just change the order of these two functions here in F1.
+
+00:41:59.600 --> 00:42:04.600
+I'm just going to grab C.
+
+00:42:04.600 --> 00:42:09.600
+And I'm going to move it up above D here.
+
+00:42:09.600 --> 00:42:17.600
+And I'm going to do make run.
+
+00:42:17.600 --> 00:42:20.600
+And this is the first time I've got a red error here.
+
+00:42:20.600 --> 00:42:25.600
+Red error says D was not declared in this scope.
+
+00:42:25.600 --> 00:42:30.600
+D was not declared in this scope.
+
+00:42:30.600 --> 00:42:33.600
+So I see D right here.
+
+00:42:33.600 --> 00:42:35.600
+Why isn't it declared in this scope?
+
+00:42:35.600 --> 00:42:38.600
+Well, remember this has to do with scope.
+
+00:42:38.600 --> 00:42:41.600
+So this is a scope problem.
+
+00:42:41.600 --> 00:42:45.600
+So notice that C has file scope.
+
+00:42:45.600 --> 00:42:48.600
+It's visible from there to there.
+
+00:42:48.600 --> 00:42:52.600
+It's visible from its point of declaration to the end of the file.
+
+00:42:52.600 --> 00:42:55.600
+D also has file scope.
+
+00:42:55.600 --> 00:42:58.600
+It's visible from its point of declaration to there.
+
+00:42:58.600 --> 00:43:01.600
+But I'm trying to use D up here.
+
+00:43:01.600 --> 00:43:06.600
+So I'm using D before it's defined or declared.
+
+00:43:06.600 --> 00:43:09.600
+So it is out of scope.
+
+00:43:09.600 --> 00:43:18.600
+So using D before defined or declared.
+
+00:43:18.600 --> 00:43:27.600
+So it is out of scope.
+
+00:43:27.600 --> 00:43:33.600
+And let me, it says show me, so let me.
+
+00:43:33.600 --> 00:43:36.600
+And I'm just right clicking.
+
+00:43:36.600 --> 00:43:41.600
+Even though there's no symbol that anything happened.
+
+00:43:41.600 --> 00:43:49.600
+And I'm pasting in what I just real clicked there.
+
+00:43:49.600 --> 00:44:00.600
+All right, so a little bit of exploration with memory.
+
+00:44:00.600 --> 00:44:06.600
+So let's go explore a little bit more about variables, sizes, and addresses.
+
+00:44:06.600 --> 00:44:08.600
+So all variables have three addresses.
+
+00:44:08.600 --> 00:44:12.600
+So if I want to put something in a variable, I use its name.
+
+00:44:12.600 --> 00:44:16.600
+I don't say put something in that storage location that's at address 3000.
+
+00:44:16.600 --> 00:44:19.600
+I don't use its memory address.
+
+00:44:19.600 --> 00:44:21.600
+I use its name.
+
+00:44:21.600 --> 00:44:25.600
+All variables have a type that determines what I can store in the variable.
+
+00:44:25.600 --> 00:44:27.600
+I can't store an integer in a string.
+
+00:44:27.600 --> 00:44:30.600
+I can't store a string in an integer variable.
+
+00:44:30.600 --> 00:44:35.600
+It also determines what valid operations can happen to that data.
+
+00:44:35.600 --> 00:44:43.600
+And finally, inside that storage location, we have some data or some state or some value.
+
+00:44:43.600 --> 00:44:46.600
+We call that the value.
+
+00:44:46.600 --> 00:44:57.600
+Now, when you have a variable, you can also, instead of using the name, find out exactly where it is located.
+
+00:44:57.600 --> 00:45:01.600
+And so that operator is called the address of operator.
+
+00:45:01.600 --> 00:45:08.600
+It's the ampersand, and it's used in front of a variable instead of after a type.
+
+00:45:08.600 --> 00:45:13.600
+So after a type, we're saying int ref n.
+
+00:45:13.600 --> 00:45:16.600
+n is a reference to an integer.
+
+00:45:16.600 --> 00:45:23.600
+Before a variable, cout ampersand n says give me the address of n.
+
+00:45:23.600 --> 00:45:28.600
+So the address of operator returns the location of the object.
+
+00:45:28.600 --> 00:45:34.600
+And the size of operator returns its storage size in bytes.
+
+00:45:34.600 --> 00:45:44.600
+So we can see more technical details about how data is actually stored in memory, not just the logical details.
+
+00:45:44.600 --> 00:45:48.600
+So let's do that in our next exercise.
+
+00:45:48.600 --> 00:46:04.600
+Let's print the address and size of each variable by saying n lives at-- this is the address-- and uses xx bytes.
+
+00:46:04.600 --> 00:46:11.600
+So let me close F1 and F2.
+
+00:46:11.600 --> 00:46:15.600
+Let me close that terminal, throw it away.
+
+00:46:15.600 --> 00:46:22.600
+Let's come down here to C and open up variables.cpp.
+
+00:46:22.600 --> 00:46:25.600
+I actually need to open a terminal so we can run it.
+
+00:46:25.600 --> 00:46:33.600
+Let me right-click on C, open a terminal.
+
+00:46:33.600 --> 00:46:38.600
+OK, so here I've created a variable with file scope, static storage duration.
+
+00:46:38.600 --> 00:46:40.600
+It's a constant, pi.
+
+00:46:40.600 --> 00:46:42.600
+It's a global.
+
+00:46:42.600 --> 00:46:49.600
+And here I have created a variable n, an int, a string, and an employee object.
+
+00:46:49.600 --> 00:46:52.600
+So a structured variable.
+
+00:46:52.600 --> 00:46:54.600
+And here I've printed out the various names.
+
+00:46:54.600 --> 00:47:03.600
+Now obviously I have to have an overloaded operator for me to be able to print out the waiter, but I do.
+
+00:47:03.600 --> 00:47:11.600
+So now what we want to do is we want to print out the address and size of each one using this.
+
+00:47:11.600 --> 00:47:26.600
+So I'm going to say cl n lives at-- and to get where n lives, I'm going to take the address of n.
+
+00:47:26.600 --> 00:47:43.600
+And to get the number of bytes that n uses, I'm going to use size of n.
+
+00:47:43.600 --> 00:47:45.600
+OK, so there's n.
+
+00:47:45.600 --> 00:47:47.600
+Let's look at some of the other variables.
+
+00:47:47.600 --> 00:47:49.600
+I'll just copy that.
+
+00:47:49.600 --> 00:47:53.600
+So how about pi?
+
+00:47:53.600 --> 00:47:58.600
+So I take the address of pi.
+
+00:47:58.600 --> 00:48:04.600
+See how many bytes that uses.
+
+00:48:04.600 --> 00:48:08.600
+Let's take name.
+
+00:48:08.600 --> 00:48:15.600
+So I take the address of name and the size of name.
+
+00:48:15.600 --> 00:48:22.600
+And finally, how about the waiter?
+
+00:48:22.600 --> 00:48:32.600
+So I take the address of that variable waiter, where it lives, and the amount of space it uses.
+
+00:48:32.600 --> 00:48:34.600
+OK, let's run it.
+
+00:48:34.600 --> 00:48:40.600
+Do make run.
+
+00:48:40.600 --> 00:48:42.600
+So here's the name of this variable.
+
+00:48:42.600 --> 00:48:45.600
+Here's the value it stores.
+
+00:48:45.600 --> 00:48:47.600
+Here is where it lives.
+
+00:48:47.600 --> 00:48:50.600
+Now this is a hexadecimal address.
+
+00:48:50.600 --> 00:48:54.600
+And since it's an int, it uses four bytes.
+
+00:48:54.600 --> 00:48:57.600
+Pi lives at an entirely different address.
+
+00:48:57.600 --> 00:49:03.600
+Now you notice that this address is much smaller than this address.
+
+00:49:03.600 --> 00:49:07.600
+It's 0x5, meaning it's closer to zero.
+
+00:49:07.600 --> 00:49:09.600
+It's at the bottom of memory.
+
+00:49:09.600 --> 00:49:11.600
+This is at the top of memory.
+
+00:49:11.600 --> 00:49:16.600
+This is on the stack, as is this, as is this.
+
+00:49:16.600 --> 00:49:24.600
+And these are next to each other in the stack if we looked at these values in something other than hexadecimal.
+
+00:49:24.600 --> 00:49:29.600
+Pointers are always printed in hexadecimal or base 16 numbers.
+
+00:49:29.600 --> 00:49:31.600
+So my integer uses four bytes.
+
+00:49:31.600 --> 00:49:33.600
+My double uses eight bytes.
+
+00:49:33.600 --> 00:49:36.600
+My name uses 32 bytes.
+
+00:49:36.600 --> 00:49:39.600
+Now this will vary from compiler to compiler.
+
+00:49:39.600 --> 00:49:47.600
+We're on GCC, on a Unix operating system, and we use 32 byte strings.
+
+00:49:47.600 --> 00:50:02.600
+And waiter, which is a structure, uses 40 bytes for the parts that are inside the waiter.
+
+00:50:02.600 --> 00:50:06.600
+Now, let's talk about pointers.
+
+00:50:06.600 --> 00:50:11.600
+So we've seen how we can print out the address of a variable.
+
+00:50:11.600 --> 00:50:15.600
+Could we store that in another variable?
+
+00:50:15.600 --> 00:50:18.600
+Yes. These variables are called pointers.
+
+00:50:18.600 --> 00:50:22.600
+So pointers don't hold integers or hold doubles.
+
+00:50:22.600 --> 00:50:26.600
+They hold addresses of other variables.
+
+00:50:26.600 --> 00:50:30.600
+So that's how they got their name, because since the address is another variable,
+
+00:50:30.600 --> 00:50:35.600
+we say that variable points to another variable.
+
+00:50:35.600 --> 00:50:37.600
+We create a pointer like this.
+
+00:50:37.600 --> 00:50:43.600
+The kind of thing we're pointing to, the point E, a star, and the name of the pointer.
+
+00:50:43.600 --> 00:50:46.600
+So here's an example with int pointer.
+
+00:50:46.600 --> 00:50:51.600
+So iPointer is a pointer to an integer.
+
+00:50:51.600 --> 00:50:53.600
+You read this from the right to the left.
+
+00:50:53.600 --> 00:51:00.600
+You find the name. iPointer is a pointer to an integer.
+
+00:51:00.600 --> 00:51:05.600
+Now, you might wonder about the space before or after the star. It doesn't matter.
+
+00:51:05.600 --> 00:51:11.600
+I could write int star and put the star next to the int, put the star next to the iPointer.
+
+00:51:11.600 --> 00:51:13.600
+It's entirely irrelevant.
+
+00:51:13.600 --> 00:51:19.600
+However, you need to make sure that every pointer variable has its own star.
+
+00:51:19.600 --> 00:51:26.600
+So if I were to write this, int star iPointer, comma, i, i is not a pointer.
+
+00:51:26.600 --> 00:51:28.600
+i is an int.
+
+00:51:28.600 --> 00:51:36.600
+So iPointer is a pointer to an int. i is an int, not a pointer to an int.
+
+00:51:36.600 --> 00:51:43.600
+Now, unless you initialize a pointer, it just points to a random address in memory.
+
+00:51:43.600 --> 00:51:45.600
+It's uninitialized.
+
+00:51:45.600 --> 00:51:49.600
+And that is very, very, very bad.
+
+00:51:49.600 --> 00:51:55.600
+So you can initialize a pointer using no pointer, that keyword,
+
+00:51:55.600 --> 00:51:58.600
+or you can put in just zero.
+
+00:51:58.600 --> 00:52:01.600
+That signifies that the pointer is unused.
+
+00:52:01.600 --> 00:52:09.600
+Now, you might wonder, could I initialize a pointer with this address, that number, like that?
+
+00:52:09.600 --> 00:52:12.600
+And the answer is no, you cannot.
+
+00:52:12.600 --> 00:52:15.600
+In early versions of C, you could, but now you cannot.
+
+00:52:15.600 --> 00:52:21.600
+No other literal integer value is permitted.
+
+00:52:21.600 --> 00:52:27.600
+Now, you can return, you can call the address of operator,
+
+00:52:27.600 --> 00:52:31.600
+which is what we just used to print out the addresses,
+
+00:52:31.600 --> 00:52:35.600
+so that address operator returns an address,
+
+00:52:35.600 --> 00:52:39.600
+and we can use that to initialize a pointer.
+
+00:52:39.600 --> 00:52:41.600
+We could use the new operator,
+
+00:52:41.600 --> 00:52:44.600
+which we're going to look at in our section on dynamic memory,
+
+00:52:44.600 --> 00:52:49.600
+and initialize a pointer with the new operator, memory on the heap,
+
+00:52:49.600 --> 00:52:53.600
+or we could use a function that uses one of these techniques,
+
+00:52:53.600 --> 00:52:57.600
+or one of the C functions, that sort of thing.
+
+00:52:57.600 --> 00:53:01.600
+So let's complete part two of variables.cpp,
+
+00:53:01.600 --> 00:53:05.600
+and add some pointers inside there.
+
+00:53:05.600 --> 00:53:08.600
+Now, there's nothing to print for this part,
+
+00:53:08.600 --> 00:53:16.600
+but what I'm going to do is I'm going to create some pointers,
+
+00:53:16.600 --> 00:53:20.600
+and you can create the pointer like this,
+
+00:53:20.600 --> 00:53:31.600
+so int pointer ip, int pointer, equals the address of n.
+
+00:53:31.600 --> 00:53:41.600
+We could do it like this, const double pointer dp
+
+00:53:41.600 --> 00:53:45.600
+equals the address of pi.
+
+00:53:45.600 --> 00:53:51.600
+Could we just say double pointer dp equals the address of pi?
+
+00:53:51.600 --> 00:53:55.600
+Let's see what happens if we did make on that.
+
+00:53:55.600 --> 00:53:57.600
+Now, it says that's an error,
+
+00:53:57.600 --> 00:54:04.600
+because this, the address, pi, is a constant double,
+
+00:54:04.600 --> 00:54:07.600
+and taking the address of a constant double
+
+00:54:07.600 --> 00:54:14.600
+doesn't lead a double pointer, it leads a const double pointer.
+
+00:54:14.600 --> 00:54:25.600
+Now, could we do this?
+
+00:54:25.600 --> 00:54:27.600
+We could do that, right?
+
+00:54:27.600 --> 00:54:31.600
+So this is going to be initialized with whatever this returns,
+
+00:54:31.600 --> 00:54:37.600
+and so we could just use auto for that as well.
+
+00:54:37.600 --> 00:54:45.600
+So let's do a string pointer sp equals the address of name,
+
+00:54:45.600 --> 00:54:55.600
+and an employee pointer ep equals the address of my waiter.
+
+00:54:55.600 --> 00:54:58.600
+So you notice I can put the star in front of the variable.
+
+00:54:58.600 --> 00:55:02.600
+I can use auto and skip the star altogether.
+
+00:55:02.600 --> 00:55:05.600
+I can put it in front of the type.
+
+00:55:05.600 --> 00:55:12.600
+It doesn't make any difference to the syntax there.
+
+00:55:12.600 --> 00:55:16.600
+Okay, so a pointer is a variable.
+
+00:55:16.600 --> 00:55:20.600
+That means it has a name, a type, and a value.
+
+00:55:20.600 --> 00:55:24.600
+The value inside the pointer, we call its explicit value.
+
+00:55:24.600 --> 00:55:27.600
+That's, in other words, what's inside the memory.
+
+00:55:27.600 --> 00:55:30.600
+That's the address it contains.
+
+00:55:30.600 --> 00:55:34.600
+But a pointer has a second value called its indirect value.
+
+00:55:34.600 --> 00:55:38.600
+That's the value of the variable that it points to.
+
+00:55:38.600 --> 00:55:45.600
+We retrieve that by using the indirection or dereferencing operator, the star,
+
+00:55:45.600 --> 00:55:49.600
+just like we did with iterators in vectors.
+
+00:55:49.600 --> 00:55:53.600
+So here I have an integer, 3.
+
+00:55:53.600 --> 00:55:55.600
+I've got a box in memory.
+
+00:55:55.600 --> 00:55:57.600
+I put 3 inside the box.
+
+00:55:57.600 --> 00:56:01.600
+I create a second box in memory, pa,
+
+00:56:01.600 --> 00:56:08.600
+and inside pa, I put the address of this first box.
+
+00:56:08.600 --> 00:56:11.600
+Now, to print out what's in the box,
+
+00:56:11.600 --> 00:56:15.600
+print out the 3, I can print out the name of the variable,
+
+00:56:15.600 --> 00:56:18.600
+or I can dereference the pointer.
+
+00:56:18.600 --> 00:56:20.600
+Dereference a pointer says,
+
+00:56:20.600 --> 00:56:23.600
+go to the address that the pointer contains
+
+00:56:23.600 --> 00:56:28.600
+and give me back the value that's at that location.
+
+00:56:28.600 --> 00:56:33.600
+Now, notice the star I've used twice in these two lines.
+
+00:56:33.600 --> 00:56:38.600
+I've used it on line 1 where I'm declaring the pointer, int star pa.
+
+00:56:38.600 --> 00:56:42.600
+This star here means pa is a pointer to int.
+
+00:56:42.600 --> 00:56:46.600
+It's called the pointer declarator operator.
+
+00:56:46.600 --> 00:56:50.600
+This star doesn't have int star in front of it.
+
+00:56:50.600 --> 00:56:52.600
+It's just star pa.
+
+00:56:52.600 --> 00:56:57.600
+This is a unary operator, and it's the dereferencing operator.
+
+00:56:57.600 --> 00:57:00.600
+Now, the star means something different when declaring the pointer
+
+00:57:00.600 --> 00:57:02.600
+or when dereferencing it.
+
+00:57:02.600 --> 00:57:06.600
+Sometimes students get confused with that.
+
+00:57:06.600 --> 00:57:10.600
+Now, the pointer also has an address which could be stored.
+
+00:57:10.600 --> 00:57:14.600
+So I could say int star star or int star star star.
+
+00:57:14.600 --> 00:57:25.600
+So int star star star pa is a pointer to a pointer to a pointer to an int.
+
+00:57:25.600 --> 00:57:29.600
+So let's complete part 3, and we're going to print out
+
+00:57:29.600 --> 00:57:33.600
+IP contains, what its explicit value is,
+
+00:57:33.600 --> 00:57:48.600
+is stored at, its address, and the value that it points to.
+
+00:57:48.600 --> 00:58:02.600
+Okay, so let's print the cout,
+
+00:58:02.600 --> 00:58:06.600
+and I'm just going to put quotes around the xxx's
+
+00:58:06.600 --> 00:58:25.600
+where we're going to replace it.
+
+00:58:25.600 --> 00:58:27.600
+And let's do several of those.
+
+00:58:27.600 --> 00:58:34.600
+So there's IP, DP, SP, and EP.
+
+00:58:34.600 --> 00:58:40.600
+So this is DP, SP, and EP.
+
+00:58:40.600 --> 00:58:54.600
+And for this part, we're going to say IP.
+
+00:58:54.600 --> 00:58:55.600
+Right?
+
+00:58:55.600 --> 00:58:56.600
+That's what it contains.
+
+00:58:56.600 --> 00:59:01.600
+Like any variable, you use its name to get what it contains.
+
+00:59:01.600 --> 00:59:20.600
+And DP, and SP, and EP.
+
+00:59:20.600 --> 00:59:25.600
+Okay, to get what value it has,
+
+00:59:25.600 --> 00:59:32.600
+now I'm going to try and use a trick here in Visual Studio.
+
+00:59:32.600 --> 00:59:34.600
+I'm going to click there.
+
+00:59:34.600 --> 00:59:43.600
+I'm going to hold down my alt key and click there.
+
+00:59:43.600 --> 00:59:44.600
+No, that didn't seem to work.
+
+00:59:44.600 --> 00:59:45.600
+I'm going to click there.
+
+00:59:45.600 --> 00:59:54.600
+I'm going to hold down my alt key while I drag through.
+
+00:59:54.600 --> 00:59:55.600
+Let's see if that works.
+
+00:59:55.600 --> 00:59:59.600
+I'm going to try and copy that.
+
+00:59:59.600 --> 01:00:03.600
+And I'm going to go here.
+
+01:00:03.600 --> 01:00:04.600
+No, it didn't work.
+
+01:00:04.600 --> 01:00:09.600
+I'm not quite sure on this editor how to get multi-line cursors.
+
+01:00:09.600 --> 01:00:12.600
+Oh, you know how I think I can do?
+
+01:00:12.600 --> 01:00:16.600
+I think I can hold down my alt key and the shift key.
+
+01:00:16.600 --> 01:00:19.600
+No, didn't work.
+
+01:00:19.600 --> 01:00:20.600
+I'm messing up.
+
+01:00:20.600 --> 01:00:23.600
+I shouldn't be experimenting while I'm talking.
+
+01:00:23.600 --> 01:00:26.600
+Let's just go ahead and do this manually.
+
+01:00:26.600 --> 01:00:32.600
+So this is going to be the address of IP.
+
+01:00:32.600 --> 01:00:43.600
+This is going to be the address of DP.
+
+01:00:43.600 --> 01:00:50.600
+And this is going to be the address of SP.
+
+01:00:50.600 --> 01:00:58.600
+And this is going to be the address of EP.
+
+01:00:58.600 --> 01:01:04.600
+Now let's bring this one down here like that.
+
+01:01:04.600 --> 01:01:07.600
+And that.
+
+01:01:07.600 --> 01:01:10.600
+It's going to be easier to see.
+
+01:01:10.600 --> 01:01:14.600
+And that.
+
+01:01:14.600 --> 01:01:16.600
+And that.
+
+01:01:16.600 --> 01:01:19.600
+So the last one is what it points to.
+
+01:01:19.600 --> 01:01:27.600
+And it points to star IP.
+
+01:01:27.600 --> 01:01:39.600
+And star DP.
+
+01:01:39.600 --> 01:01:43.600
+Star SP.
+
+01:01:43.600 --> 01:01:50.600
+And star EP.
+
+01:01:50.600 --> 01:01:54.600
+So star EP dereferences this variable.
+
+01:01:54.600 --> 01:01:56.600
+This gives me the value in the variable.
+
+01:01:56.600 --> 01:01:58.600
+This gives me the location of the variable.
+
+01:01:58.600 --> 01:02:03.600
+This dereferences gives me its indirect value.
+
+01:02:03.600 --> 01:02:13.600
+Okay, let's open a terminal on that.
+
+01:02:13.600 --> 01:02:18.600
+And then let's do make run.
+
+01:02:18.600 --> 01:02:22.600
+And we can see the output of it.
+
+01:02:22.600 --> 01:02:28.600
+So when we did IP, we pointed it to N.
+
+01:02:28.600 --> 01:02:32.600
+So N lives at this address.
+
+01:02:32.600 --> 01:02:37.600
+Now if we look inside IP, that's the address we find.
+
+01:02:37.600 --> 01:02:42.600
+Notice that IP itself is stored at a completely different address.
+
+01:02:42.600 --> 01:02:48.600
+But when we dereference IP, we get the same value that N had inside it here.
+
+01:02:48.600 --> 01:02:53.600
+N had inside it.
+
+01:02:53.600 --> 01:02:57.600
+Alright, so those are pointer basics.
+
+01:02:57.600 --> 01:03:02.600
+Now a pointer input parameter should be const.
+
+01:03:02.600 --> 01:03:07.600
+So if I have a function, I'm passing a pointer to it.
+
+01:03:07.600 --> 01:03:11.600
+And I don't want to change what that pointer points to.
+
+01:03:11.600 --> 01:03:14.600
+The pointer should be const.
+
+01:03:14.600 --> 01:03:19.600
+If you don't put the const there, it will act like a reference.
+
+01:03:19.600 --> 01:03:26.600
+So if I write int F and I pass int P, int star P.
+
+01:03:26.600 --> 01:03:31.600
+That means that this pointer can change what P is pointing to.
+
+01:03:31.600 --> 01:03:34.600
+It can change what P is pointing to.
+
+01:03:34.600 --> 01:03:36.600
+So we're going to do that.
+
+01:03:36.600 --> 01:03:46.600
+So this is just an example to show how we can use pointers instead of references for output parameters.
+
+01:03:46.600 --> 01:03:49.600
+So we're going to write a function that takes a pointer to int.
+
+01:03:49.600 --> 01:03:53.600
+We're going to fill the pointer's indirect value with a random number.
+
+01:03:53.600 --> 01:03:59.600
+We're going to call one of the library functions called rand that's in the C standard library.
+
+01:03:59.600 --> 01:04:04.600
+In main, we're going to create an int variable that's uninitialized.
+
+01:04:04.600 --> 01:04:07.600
+We're going to pass its address to the function.
+
+01:04:07.600 --> 01:04:10.600
+So when we call the function, we won't pass the variable name.
+
+01:04:10.600 --> 01:04:14.600
+We'll use the address of the operator to pass it.
+
+01:04:14.600 --> 01:04:20.600
+And then we're going to print the value both before and calling the function.
+
+01:04:20.600 --> 01:04:24.600
+So let's close that terminal.
+
+01:04:24.600 --> 01:04:29.600
+Let's close variables.cpp.
+
+01:04:29.600 --> 01:04:35.600
+Go down to D.
+
+01:04:35.600 --> 01:04:42.600
+So write a function that takes a pointer to int as its only parameter inside the function.
+
+01:04:42.600 --> 01:04:46.600
+Fill the pointer's indirect value with a random number.
+
+01:04:46.600 --> 01:04:51.600
+So it's not returning anything.
+
+01:04:51.600 --> 01:04:55.600
+We'll call it randomize.
+
+01:04:55.600 --> 01:05:03.600
+It's going to take a pointer to an int, an int pointer p.
+
+01:05:03.600 --> 01:05:09.600
+Now if I assigned to p, I would change the value in the pointer.
+
+01:05:09.600 --> 01:05:11.600
+I would point it somewhere else.
+
+01:05:11.600 --> 01:05:12.600
+I don't want to do that.
+
+01:05:12.600 --> 01:05:16.600
+I want to assign to what p points to.
+
+01:05:16.600 --> 01:05:25.600
+Star p equals, and I'm just going to call the rand function from c standard lib.
+
+01:05:25.600 --> 01:05:29.600
+That will just give me a random number.
+
+01:05:29.600 --> 01:05:33.600
+Now you might wonder about this first line on line 21 here.
+
+01:05:33.600 --> 01:05:38.600
+What this does is this gets the time on your hardware clock
+
+01:05:38.600 --> 01:05:43.600
+and what we call seeds the random number generator.
+
+01:05:43.600 --> 01:05:46.600
+So each time we run this function we'll get a different value.
+
+01:05:46.600 --> 01:05:50.600
+If you took this off, you would get the same value each time.
+
+01:05:50.600 --> 01:05:58.600
+It would be statistically random, but it would be exactly the same value each time you called the function.
+
+01:05:58.600 --> 01:06:02.600
+Okay, so let's create an int variable.
+
+01:06:02.600 --> 01:06:03.600
+I'm going to initialize it.
+
+01:06:03.600 --> 01:06:05.600
+It says uninitialize.
+
+01:06:05.600 --> 01:06:15.600
+I'm going to print the value of my variable.
+
+01:06:15.600 --> 01:06:24.600
+See how before n is n.
+
+01:06:24.600 --> 01:06:29.600
+I'm going to do that afterwards as well.
+
+01:06:29.600 --> 01:06:33.600
+I'm going to change that before to after.
+
+01:06:33.600 --> 01:06:36.600
+Now I'm going to call the function.
+
+01:06:36.600 --> 01:06:44.600
+I can't simply say randomize n because the function doesn't want an integer.
+
+01:06:44.600 --> 01:06:46.600
+It wants a pointer to integer.
+
+01:06:46.600 --> 01:06:54.600
+So to call it with a pointer to integer, I can generate one by taking the address of n.
+
+01:06:54.600 --> 01:07:03.600
+So this is an output parameter as a pointer.
+
+01:07:03.600 --> 01:07:04.600
+So let's try that.
+
+01:07:04.600 --> 01:07:16.600
+Let's get a shell here.
+
+01:07:16.600 --> 01:07:20.600
+Let me do make run.
+
+01:07:20.600 --> 01:07:24.600
+So notice before it had the value I put in it, 42.
+
+01:07:24.600 --> 01:07:32.600
+After calling the function randomize with its address, the function took that address, changed the value inside n,
+
+01:07:32.600 --> 01:07:36.600
+and when I print out n, it's an entirely different number.
+
+01:07:36.600 --> 01:07:41.600
+Now as I said, the code here seeds the random number generator,
+
+01:07:41.600 --> 01:07:45.600
+so every time you run this, you should get a different value.
+
+01:07:45.600 --> 01:07:49.600
+Let me try it once again.
+
+01:07:49.600 --> 01:07:55.600
+Yes, notice I'm getting an entirely different value for the random number here this second time.
+
+01:07:55.600 --> 01:08:07.600
+So that's a pointer as an output parameter.
+
+01:08:07.600 --> 01:08:10.600
+Alright, that's all we're going to do today.
+
+01:08:10.600 --> 01:08:20.600
+And when you come back, we're going to look at using pointers like this and output parameters to modify images.
+
+01:08:20.600 --> 01:08:22.600
+Thank you.
+

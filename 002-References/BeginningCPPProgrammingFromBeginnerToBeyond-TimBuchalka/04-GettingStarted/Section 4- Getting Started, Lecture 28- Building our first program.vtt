@@ -1,0 +1,694 @@
+WEBVTT
+
+00:00:05.400 --> 00:00:08.400
+In this video, we'll take our first program,
+
+00:00:08.400 --> 00:00:12.300
+which we've compiled to show that it's got no errors and we'll build it.
+
+00:00:12.500 --> 00:00:14.600
+Now if you recall building means
+
+00:00:14.600 --> 00:00:18.400
+compiling, linking together with extra libraries
+
+00:00:18.400 --> 00:00:22.700
+and external files if we need to and creating an executable file.
+
+00:00:23.000 --> 00:00:24.800
+That's what building is all about.
+
+00:00:24.800 --> 00:00:27.000
+There are several steps involved with building.
+
+00:00:27.000 --> 00:00:29.000
+The first one obviously is compiling.
+
+00:00:29.200 --> 00:00:32.900
+If we can't get a clean compile, then there's no way we're going to build the system.
+
+00:00:33.700 --> 00:00:36.700
+So we want to be able to compile and then link
+
+00:00:36.700 --> 00:00:40.690
+to create the exe file. Finally, we can run our executable.
+
+00:00:41.090 --> 00:00:43.690
+So in this case, you'll notice here's the source code.
+
+00:00:43.690 --> 00:00:46.390
+And there's a lot of space in here. Normally, we don't have all this space in here.
+
+00:00:46.390 --> 00:00:49.890
+I just put it in because it makes a little bit easier for you to read
+
+00:00:49.890 --> 00:00:52.890
+when you're first learning. So let's just keep it like that.
+
+00:00:52.890 --> 00:00:55.390
+This program is exactly the same as it was before.
+
+00:00:55.390 --> 00:00:59.590
+We're entering -- we're asking the user to enter their favorite number between 1 and 100.
+
+00:00:59.590 --> 00:01:03.990
+We're getting that number and storing it in a variable called favorite number.
+
+00:01:04.240 --> 00:01:08.340
+And then we're just saying amazing that's my favorite number too. So it's really really simple program.
+
+00:01:08.840 --> 00:01:10.340
+And we've already compiled it.
+
+00:01:10.340 --> 00:01:12.240
+There's a couple of ways to compile.
+
+00:01:12.240 --> 00:01:16.040
+One is you can come to the source file itself, right click,
+
+00:01:16.040 --> 00:01:19.540
+compile or you can come up to build,
+
+00:01:20.440 --> 00:01:21.940
+compile current file
+
+00:01:23.740 --> 00:01:25.840
+and that's only taking care of the compilation.
+
+00:01:25.840 --> 00:01:29.840
+There's also a lot of things you could do at the project level right here. So if I select the project
+
+00:01:29.840 --> 00:01:32.840
+and right click, you can see that it says build,
+
+00:01:32.840 --> 00:01:35.840
+rebuild, clean, stop build and so forth.
+
+00:01:35.840 --> 00:01:38.040
+Let's talk about clean first.
+
+00:01:38.840 --> 00:01:42.040
+think about this. When I compile
+
+00:01:43.030 --> 00:01:47.430
+a c++ program, I'm converting the cpp source code,
+
+00:01:47.430 --> 00:01:51.830
+this source code you see here, to an object format, right. A machine
+
+00:01:51.830 --> 00:01:54.130
+language or a binary format.
+
+00:01:55.030 --> 00:01:59.030
+That's going to create a .o file or a .obj file, as we mentioned in
+
+00:01:59.030 --> 00:02:00.030
+previous lectures.
+
+00:02:01.130 --> 00:02:03.130
+That's the purpose of compiling.
+
+00:02:04.030 --> 00:02:06.630
+Now as your programs are compiled,
+
+00:02:06.630 --> 00:02:09.230
+they will have many of these .object files.
+
+00:02:10.230 --> 00:02:14.230
+The clean process removes all those object files
+
+00:02:14.230 --> 00:02:17.030
+and puts your project in a clean state.
+
+00:02:17.030 --> 00:02:20.930
+In other words source code only. No object files.
+
+00:02:20.930 --> 00:02:22.290
+Now why is this important.
+
+00:02:23.090 --> 00:02:26.590
+It's important because when you compile your programs
+
+00:02:26.590 --> 00:02:28.090
+and build your programs,
+
+00:02:28.090 --> 00:02:31.090
+sometimes you want to do a clean build.
+
+00:02:31.090 --> 00:02:33.590
+What that means is I want to start from a
+
+00:02:33.590 --> 00:02:37.090
+position where nothing has been built. I just want to clean everything out.
+
+00:02:37.090 --> 00:02:40.690
+Now when we're working with a single cpp file like here,
+
+00:02:41.050 --> 00:02:44.450
+it's pretty much a moot point because it's just one file.
+
+00:02:44.450 --> 00:02:47.850
+But typically, c++ programs are very large
+
+00:02:47.850 --> 00:02:50.620
+and you've got a lot of c++ files.
+
+00:02:50.620 --> 00:02:54.220
+Each one of them is being compiled to an object format
+
+00:02:55.020 --> 00:02:57.820
+and when you say, hey compiler build for me,
+
+00:02:57.820 --> 00:03:01.520
+the compiler is only going to build exactly what it needs to build.
+
+00:03:01.520 --> 00:03:05.020
+So if it realizes that this source code
+
+00:03:05.020 --> 00:03:08.020
+already has an object file associated with it
+
+00:03:08.020 --> 00:03:11.620
+and the source code hasn't changed, then why bother building it again, right.
+
+00:03:12.120 --> 00:03:16.220
+So it's not going to build it and it does that to be efficient, which makes a lot of sense.
+
+00:03:16.880 --> 00:03:21.480
+But occasionally, you want to do a clean that removes all of that stuff.
+
+00:03:21.480 --> 00:03:23.680
+It removes the exe that was created.
+
+00:03:23.680 --> 00:03:27.340
+And then you want to build again. So now we're going to get a clean build.
+
+00:03:28.000 --> 00:03:32.200
+Again, this is really not an issue here when we've got one cpp file.
+
+00:03:32.200 --> 00:03:35.500
+But if you've got thousands and thousands and thousands of files,
+
+00:03:36.000 --> 00:03:39.600
+there can be a significant difference in the amount of time
+
+00:03:39.600 --> 00:03:41.000
+that it takes to do that build.
+
+00:03:41.500 --> 00:03:45.300
+Okay. So in this case, I can come over here to the project.
+
+00:03:45.660 --> 00:03:47.760
+I could right click, and I can say clean.
+
+00:03:48.360 --> 00:03:50.960
+And you'll see here the clean is complete.
+
+00:03:50.960 --> 00:03:54.960
+All it did was remove any object files and all in the exe files.
+
+00:03:55.660 --> 00:03:57.660
+Then I can say build.
+
+00:03:58.160 --> 00:04:00.520
+Now when I say build,
+
+00:04:00.520 --> 00:04:04.620
+by saying build project here pressing F7
+
+00:04:04.620 --> 00:04:07.620
+or on mac whatever the option, command option is
+
+00:04:08.420 --> 00:04:10.820
+or I can right click on the project and say build.
+
+00:04:10.820 --> 00:04:13.620
+Now what's going to happen here is it's going to go through
+
+00:04:13.620 --> 00:04:16.390
+your project looking at all the c++ files
+
+00:04:16.390 --> 00:04:18.390
+and only build what it needs to build.
+
+00:04:18.990 --> 00:04:23.090
+Okay. Now in this case it's going to build everything because it's just the one file and I haven't built it yet.
+
+00:04:23.690 --> 00:04:27.990
+But it's going to not build what it doesn't need to build and that's important to understand.
+
+00:04:28.490 --> 00:04:32.690
+Rebuild is the combination of a clean and a build.
+
+00:04:32.940 --> 00:04:36.040
+So when you say hey rebuild the project, it's going to do a clean,
+
+00:04:36.040 --> 00:04:38.400
+it's going to clean everything out and then it's going to build it again.
+
+00:04:39.760 --> 00:04:43.160
+For the beginning of this course, all of these are going to be just fine.
+
+00:04:43.160 --> 00:04:45.160
+You can use rebuilds because it's going to be pretty quick.
+
+00:04:45.960 --> 00:04:48.560
+Finally, once we get a build, we can run the project.
+
+00:04:48.560 --> 00:04:52.560
+The way we do that is we come up. Again remember, we've got the active project here.
+
+00:04:52.560 --> 00:04:54.960
+I can come up to build and run.
+
+00:04:55.760 --> 00:04:57.160
+Now if I do that now,
+
+00:04:57.960 --> 00:05:02.160
+we have an option we can simply execute the exe file
+
+00:05:02.160 --> 00:05:06.360
+if there if there is one there or we can choose to build and execute.
+
+00:05:07.160 --> 00:05:09.960
+I would generally tell you to select build and execute
+
+00:05:09.960 --> 00:05:14.060
+and probably remember my answer don't ask me again would be a pretty good idea
+
+00:05:14.420 --> 00:05:17.620
+because most of the time our files are going to be fairly smalland the
+
+00:05:17.620 --> 00:05:20.920
+build is not going to take any time at all. So we can build and execute.
+
+00:05:21.820 --> 00:05:23.820
+Okay. So that's how you run.
+
+00:05:23.820 --> 00:05:26.820
+Let's say, I want to do that. Now I'm going to say build and execute,
+
+00:05:28.220 --> 00:05:30.820
+and there's my program it says,
+
+00:05:30.820 --> 00:05:33.420
+enter your favorite number between 1 and 100.
+
+00:05:33.420 --> 00:05:36.720
+Let's say I type in 24, press enter.
+
+00:05:36.720 --> 00:05:39.320
+It says amazing, that's my favorite number too.
+
+00:05:40.120 --> 00:05:43.620
+Now this time elapsed is how long the program took to run.
+
+00:05:43.620 --> 00:05:46.420
+This is being displayed in the latest version of CodeLite.
+
+00:05:46.620 --> 00:05:50.820
+Prior to this last version, you didn't see that and I think it's windows only it's being displayed.
+
+00:05:50.820 --> 00:05:52.820
+I didn't see that display on a mac.
+
+00:05:52.820 --> 00:05:56.220
+When you run the exe file that's created from the command line,
+
+00:05:56.220 --> 00:05:59.820
+you don't see that. That's just mostly for fyi.
+
+00:05:59.820 --> 00:06:01.820
+So that you can tell as a developer
+
+00:06:01.820 --> 00:06:04.620
+if there's something wrong and how quick your program is running.
+
+00:06:04.620 --> 00:06:06.920
+Press any key to continue, I'm done.
+
+00:06:06.920 --> 00:06:07.620
+Okay.
+
+00:06:07.620 --> 00:06:12.060
+Now one of the things that I want to show you. Notice this workspace view,
+
+00:06:12.060 --> 00:06:13.660
+which is where I'm at right now.
+
+00:06:13.660 --> 00:06:17.160
+And again, I've got three projects here. Each one has a main.
+
+00:06:17.960 --> 00:06:20.960
+Where's the exe files. Where are the object files.
+
+00:06:20.960 --> 00:06:23.560
+Where's all that stuff. They should be there, right.
+
+00:06:24.160 --> 00:06:26.760
+Absolutely, they should be there. And they are there.
+
+00:06:27.260 --> 00:06:28.860
+The IDEs
+
+00:06:28.860 --> 00:06:32.860
+generally hide that information from you because you don't need to know about it really.
+
+00:06:33.110 --> 00:06:36.710
+I mean do you care that there's an object file or an exe file, really what you
+
+00:06:36.710 --> 00:06:39.410
+care about is these error messages and so forth.
+
+00:06:39.410 --> 00:06:41.960
+But we have this explorer tab
+
+00:06:41.960 --> 00:06:44.560
+and that'll let you see all that I want to show you what that looks like.
+
+00:06:44.960 --> 00:06:46.960
+You can click on the explorer tab
+
+00:06:47.460 --> 00:06:51.760
+and then you can drag any folder from your operating system, from your file system onto here.
+
+00:06:51.760 --> 00:06:54.660
+So I can just right click, open folder
+
+00:06:54.660 --> 00:06:58.360
+and I'm going to select from my desktop cpp examples
+
+00:06:58.360 --> 00:07:00.240
+that section 4 folder.
+
+00:07:00.240 --> 00:07:02.540
+That's where my workspace is, and I'll select it.
+
+00:07:03.900 --> 00:07:05.900
+Okay. So you can see now if I expand this,
+
+00:07:07.500 --> 00:07:11.600
+you could see a bunch more stuff. Now I've got a .codelite folder that has
+
+00:07:12.000 --> 00:07:16.000
+things that are related to my favorites and compilation
+
+00:07:16.000 --> 00:07:17.400
+and refactoring and so forth.
+
+00:07:18.100 --> 00:07:22.200
+I've also got my three projects, first program project1, project2.
+
+00:07:22.200 --> 00:07:24.970
+I've got a make file. I've got my workspace file
+
+00:07:24.970 --> 00:07:27.170
+but let's look at first program for a second.
+
+00:07:28.270 --> 00:07:30.870
+Now you can see a little extra stuff going on, right.
+
+00:07:30.870 --> 00:07:34.270
+Before all we saw was main cpp. Now we see all this other. Stuff
+
+00:07:34.770 --> 00:07:38.570
+these are the files and the configuration files that CodeLite is using
+
+00:07:38.570 --> 00:07:39.570
+behind the scenes.
+
+00:07:40.070 --> 00:07:42.430
+The IDE workspace here
+
+00:07:42.430 --> 00:07:46.430
+abstracts that out since you don't really need to know all that information
+
+00:07:46.430 --> 00:07:49.030
+to build your system. It's building it for you.
+
+00:07:49.030 --> 00:07:53.020
+But if you really want to see them you can or you can just look right in your file system.
+
+00:07:53.820 --> 00:07:56.420
+Now if I look in my first program debug folder,
+
+00:07:57.080 --> 00:08:01.480
+you'll see that there's my exe, firstprogram.exe.
+
+00:08:01.780 --> 00:08:06.770
+You can see it right here. And there you can see my .object files and .d files and all kinds of stuff that's going on.
+
+00:08:07.370 --> 00:08:09.970
+Now you'll see first -- again first program debug.
+
+00:08:10.470 --> 00:08:13.970
+Now what I'm going to do now is I'm going to clean first program.
+
+00:08:13.970 --> 00:08:16.570
+And all of this stuff should be removed.
+
+00:08:16.570 --> 00:08:18.870
+So again, I'm going to go to build,
+
+00:08:20.470 --> 00:08:21.470
+clean project.
+
+00:08:23.370 --> 00:08:27.470
+Now if I refresh this view by right-clicking up here, refresh,
+
+00:08:27.770 --> 00:08:30.970
+and go back to first program, you can see it's all gone.
+
+00:08:30.970 --> 00:08:35.470
+The entire debug folder is gone. The object files are gone. The exe files are gone.
+
+00:08:35.670 --> 00:08:39.970
+Everything's gone. So now when I rebuild, all that will be created again.
+
+00:08:40.470 --> 00:08:42.970
+And now you'll notice that debug folder, right.
+
+00:08:42.970 --> 00:08:44.770
+Well, if I come back to my workspace,
+
+00:08:45.570 --> 00:08:48.970
+there's my first program. Notice that we've got
+
+00:08:48.970 --> 00:08:53.070
+build configurations here. And there's a couple you've got debug and release.
+
+00:08:53.070 --> 00:08:54.770
+You can choose either one.
+
+00:08:54.770 --> 00:08:58.270
+We're going to use debug throughout the entire course because that's what we're doing.
+
+00:08:58.270 --> 00:09:00.270
+We're basically developing right here.
+
+00:09:00.270 --> 00:09:04.670
+Release is when you want to release the file from two productions for your users to use.
+
+00:09:04.670 --> 00:09:09.330
+So in this case, debug creates that debug folder that you saw a little bit ago.
+
+00:09:09.580 --> 00:09:13.780
+If we do this in release mode, we'll get a release folder as well. So we'll have two exes.
+
+00:09:13.780 --> 00:09:17.080
+Now the difference is the debug configuration
+
+00:09:17.080 --> 00:09:20.880
+creates object files that has debugging information in them.
+
+00:09:20.880 --> 00:09:22.780
+It's got all those variable names and stuff.
+
+00:09:22.780 --> 00:09:24.980
+So later on when we debug our program,
+
+00:09:24.980 --> 00:09:27.580
+we can have all that information available to us
+
+00:09:27.580 --> 00:09:30.080
+and it makes us very, very productive.
+
+00:09:30.080 --> 00:09:32.380
+And it really helps us debug and test our code.
+
+00:09:33.180 --> 00:09:36.780
+The release configuration removes all of that stuff.
+
+00:09:36.780 --> 00:09:38.180
+And it does more optimizations.
+
+00:09:38.180 --> 00:09:41.480
+And it just makes your exe leaner and meaner. So that you don't need all
+
+00:09:41.480 --> 00:09:44.080
+that debugging information at runtime.
+
+00:09:44.080 --> 00:09:46.080
+Okay. So like I said we're going to use debug.
+
+00:09:46.080 --> 00:09:48.080
+You can certainly use this if you like
+
+00:09:48.080 --> 00:09:51.580
+if you do use this because you're curious or you want to see what's going on,
+
+00:09:51.580 --> 00:09:53.910
+don't modify anything from in here.
+
+00:09:53.910 --> 00:09:57.210
+I mean as a matter of fact if I try to open up this make file,
+
+00:09:57.210 --> 00:10:00.410
+you'll see it says auto generated by CodeLite. Don't change it
+
+00:10:01.010 --> 00:10:03.610
+or even if you do change it, we're going to blow it away anyway.
+
+00:10:03.610 --> 00:10:05.610
+So you really don't need any of that.
+
+00:10:05.610 --> 00:10:08.210
+This is where we're going to be working in the workspace mode.
+
+00:10:08.210 --> 00:10:11.810
+But I just wanted to show you how that clean really, really works.
+
+00:10:12.110 --> 00:10:14.310
+Okay. So again, let's recap here.
+
+00:10:14.310 --> 00:10:17.310
+I can select first program. Right click,
+
+00:10:17.310 --> 00:10:18.210
+clean.
+
+00:10:18.210 --> 00:10:21.510
+That'll remove all my object files in the exe file.
+
+00:10:21.510 --> 00:10:25.500
+I can rebuild in which case it will clean and build
+
+00:10:25.750 --> 00:10:29.850
+or I can simply build and that will only build what needs to be built.
+
+00:10:30.350 --> 00:10:33.340
+Okay hopefully, that makes sense. It's a little difference between them.
+
+00:10:33.340 --> 00:10:36.110
+But it said you should understand it's not that big that big a difference.
+
+00:10:36.110 --> 00:10:39.110
+Now finally, we want to run. We come here to run.
+
+00:10:39.610 --> 00:10:42.810
+So let's do this one more time. I'll build and execute,
+
+00:10:44.510 --> 00:10:47.910
+enter your favorite number. My favorite number is 100 this time.
+
+00:10:48.710 --> 00:10:52.610
+Amazing, that's my favorite number too. That's exactly what our program is supposed to do.
+
+00:10:53.510 --> 00:10:55.110
+Now you'll notice a couple of things here.
+
+00:10:55.710 --> 00:10:58.710
+One is we're really not using favorite number,
+
+00:10:58.710 --> 00:11:01.710
+are we? I mean the user is typing it in, but we're not really saying
+
+00:11:02.610 --> 00:11:06.910
+wow that's a great number 13 that you entered or 100 that you entered.
+
+00:11:06.910 --> 00:11:09.510
+And you'll do that in the challenge exercise in this section.
+
+00:11:09.910 --> 00:11:13.710
+But right now we're grabbing it, we're storing it into that variable.
+
+00:11:13.710 --> 00:11:16.010
+But we're not really using it afterward.
+
+00:11:16.010 --> 00:11:18.710
+And then, like I said, in the challenge video, you will use it.
+
+00:11:18.710 --> 00:11:22.210
+So that's it. That's pretty much the build process, the compile process,
+
+00:11:22.210 --> 00:11:25.610
+the run process. It's fairly straightforward.
+
+00:11:25.610 --> 00:11:29.410
+If you've got the toolbar, you can click on buttons to do this.
+
+00:11:29.410 --> 00:11:33.410
+But in this course, I'll come up here and do these things or I'll just right click here
+
+00:11:33.410 --> 00:11:34.770
+and do what I need to do here as well.
+
+00:11:35.370 --> 00:11:38.970
+That's it. Remember, you can also come up to the workspace,
+
+00:11:39.520 --> 00:11:42.320
+and right click on the workspace, you can build
+
+00:11:42.320 --> 00:11:45.320
+the entire workspace or clean the entire workspace.
+
+00:11:45.820 --> 00:11:49.420
+And that will create exe files for all the projects, all in one shot.
+
+00:11:50.720 --> 00:11:52.280
+Okay that's it for that.
+
+00:11:52.280 --> 00:11:55.480
+Now in the next video what we'll do is we'll talk about
+
+00:11:55.480 --> 00:11:57.480
+compiler errors and compiler warnings.
+
+00:11:57.480 --> 00:11:59.480
+And we'll mess around with this program a little bit.
+
+00:11:59.480 --> 00:12:03.680
+And I'll show you some of the common errors and some of the common warnings that you could get
+
+00:12:03.680 --> 00:12:05.180
+as well as why they happen.
+
+00:12:05.880 --> 00:12:09.880
+Now throughout the course, we're obviously going to see a lot of compiler errors.
+
+00:12:09.880 --> 00:12:13.280
+I make it a point that when I teach I'm just coding
+
+00:12:13.280 --> 00:12:14.280
+along with you.
+
+00:12:14.280 --> 00:12:18.280
+So I hope I make some mistakes, so you can see some of the common
+
+00:12:18.280 --> 00:12:19.400
+compiler errors.
+
+00:12:19.400 --> 00:12:22.000
+I'm not trying to make them intentionally, but sometimes
+
+00:12:22.000 --> 00:12:24.000
+you know you forget a semicolon or you forget to do this,
+
+00:12:24.000 --> 00:12:28.400
+this is the wrong type. So that's important that you see these types of errors
+
+00:12:28.400 --> 00:12:30.800
+happening, and you can know how to fix them.
+
+00:12:31.200 --> 00:12:32.860
+All right. So I'll see you in the next video.

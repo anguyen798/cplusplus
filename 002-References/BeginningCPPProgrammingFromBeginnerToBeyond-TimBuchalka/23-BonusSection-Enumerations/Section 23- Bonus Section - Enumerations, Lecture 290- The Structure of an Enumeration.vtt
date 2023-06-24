@@ -1,0 +1,310 @@
+WEBVTT
+
+00:05.370 --> 00:09.690
+In this video, we'll look at the structure or syntax of an enumeration.
+
+00:10.710 --> 00:15.540
+If you've ever seen an enumeration before, you may be confused by the structure shown here.
+
+00:15.810 --> 00:18.840
+That's because many elements of an enumeration are optional.
+
+00:19.200 --> 00:23.640
+So often you'll see enumerations without names, types or attributes.
+
+00:24.360 --> 00:27.510
+You'll notice that we have also omitted attributes from this structure.
+
+00:27.540 --> 00:33.450
+That's because attributes are a separate topic altogether and apply to more than just enumerations in
+
+00:33.450 --> 00:36.540
+this section will only be covering the basics of enumerations.
+
+00:36.540 --> 00:39.270
+So topics such as attributes won't be included.
+
+00:39.720 --> 00:44.370
+With that being said, let's take a look at the elements of an enumeration that will be using.
+
+00:45.780 --> 00:47.940
+First we have the enumeration key.
+
+00:47.970 --> 00:51.690
+This defines the beginning of the enumeration as well as its scope.
+
+00:51.720 --> 00:56.640
+We'll cover the different types of enumeration scopes in detail soon, but for now, just know that
+
+00:56.640 --> 01:01.410
+the enumeration can be either scoped or scoped regardless of the scope.
+
+01:01.410 --> 01:04.740
+And enumeration will always start with the keyword enum.
+
+01:05.430 --> 01:12.120
+The next part of an enumeration is its name naming is optional for scoped enumerations but can be useful
+
+01:12.120 --> 01:16.620
+for imposing type restrictions on variables that you want to be able to enumeration type.
+
+01:17.040 --> 01:22.530
+This is similar to what we saw in the last video where we imposed a type restriction on the state variable
+
+01:22.530 --> 01:25.390
+by declaring it as a state enumeration type.
+
+01:25.410 --> 01:28.960
+If we had not named the state enumeration, we would not been able to do that.
+
+01:28.980 --> 01:31.050
+We'll see soon why this is the case.
+
+01:31.530 --> 01:37.860
+Next, we have a colon followed by a type specified where the specified type serves as the fixed underlying
+
+01:37.890 --> 01:40.500
+type of the enumerations enumerators.
+
+01:40.800 --> 01:46.380
+Specifying the underlying type is optional but can be used to reduce the amount of space and enumeration
+
+01:46.380 --> 01:52.590
+takes up in memory or to increase the accuracy of any calculations involving the enumerator values.
+
+01:53.100 --> 01:58.770
+The last part of the enumeration is a set of curly braces, and this is the Enumerations Enumerator
+
+01:58.770 --> 01:59.370
+List.
+
+01:59.400 --> 02:05.100
+This is where we define the names and integral values of the enumerators belonging to the enumeration.
+
+02:05.130 --> 02:08.070
+This can be done explicitly or implicitly.
+
+02:08.100 --> 02:08.740
+That's it.
+
+02:08.760 --> 02:12.150
+Now let's look at a simple enumeration to see these elements in action.
+
+02:13.580 --> 02:16.640
+This is about as simple of an enumeration as we can get.
+
+02:16.940 --> 02:23.210
+It has no name, no fixed underlying type, and has three enumerators red, green and blue.
+
+02:23.630 --> 02:26.660
+You'll notice that none of the enumerators have been initialized.
+
+02:26.690 --> 02:32.030
+This is because the compiler could do this for us if the first enumerator has no initialization.
+
+02:32.270 --> 02:38.510
+The compiler was signed at a value of zero for all other enumerators without initialize, as the compiler
+
+02:38.510 --> 02:41.820
+will assign the value of the previous enumerator plus one.
+
+02:41.840 --> 02:44.840
+This is known as implicit initialization.
+
+02:45.290 --> 02:50.510
+Of course, we might not always want the integral values assigned by the compiler, so we can always
+
+02:50.510 --> 02:52.670
+explicitly assign them ourselves.
+
+02:52.940 --> 02:58.880
+In some cases, we may want to assign certain enumerator specific values and not care what the others
+
+02:58.880 --> 02:59.510
+are assigned.
+
+02:59.540 --> 03:05.030
+In cases like these, we can explicitly assign certain enumerators the values we want, and have the
+
+03:05.030 --> 03:07.790
+compiler implicitly assign values to the others.
+
+03:07.820 --> 03:11.930
+This is known as explicit implicit initialization.
+
+03:12.260 --> 03:16.100
+Now let's take a look at the enumerations underlying type in more detail.
+
+03:18.000 --> 03:23.910
+If the underlying type of an enumeration is not fixed, the compiler assigns the first integral type
+
+03:23.910 --> 03:27.390
+that it's able to hold the enumerations entire value range.
+
+03:27.420 --> 03:33.810
+These integral types are listed on the right and rank order with signs given preference over unsigned.
+
+03:34.020 --> 03:39.840
+The sizes or widths of these integral types depends on the system being used, but for this example,
+
+03:39.840 --> 03:44.460
+we'll use the C++ minimum standard, which are reflected by the values listed.
+
+03:44.970 --> 03:50.160
+Now with this knowledge, can you tell what underlying type the compiler will assign to our simple enumeration?
+
+03:51.260 --> 03:56.870
+It might help to look at the minimum binary representation of our numerator values, assuming a signed
+
+03:56.870 --> 03:57.890
+bit is used.
+
+03:58.130 --> 04:03.590
+We could see that each of the numerators can be represented by three bits, and so the first integral
+
+04:03.590 --> 04:08.720
+type that is able to hold all three bits is INT, since it has a width of 16 bits.
+
+04:09.110 --> 04:15.830
+Now what if we explicitly initialize the numerator blue with the value negative three 2769?
+
+04:16.430 --> 04:21.950
+Obviously the underlying type will need to be signed since it must be able to hold negative values.
+
+04:21.950 --> 04:25.220
+But can we tell whether it will be an int a long or a long long?
+
+04:25.460 --> 04:29.420
+Let's take a look at the minimum binary representation of our numerator values.
+
+04:29.420 --> 04:36.980
+Again, the numerator is red and green, require three bit representation and blue a 32 bit representation
+
+04:37.190 --> 04:41.020
+because the underlying type must be able to hold all the numerator values.
+
+04:41.030 --> 04:47.450
+The compiler will base its selection on the largest required bit representation in this case blue.
+
+04:47.480 --> 04:51.290
+And so the compiler will assign the enumeration the underlying type of law.
+
+04:52.440 --> 04:58.590
+In some cases we may want to fix an enumerations underlying type for the purposes of saving memory or
+
+04:58.590 --> 05:02.610
+increasing the accuracy of calculations involving enumerator values.
+
+05:03.240 --> 05:09.510
+This can be accomplished by placing a colon and the fixed underlying data type directly before the Enumerators
+
+05:09.510 --> 05:10.860
+Enumeration list.
+
+05:11.430 --> 05:18.900
+C++ has types such as Unit eight, UT 16 and so forth that allow us to specify the exact number of bits
+
+05:18.900 --> 05:19.950
+that we require.
+
+05:20.430 --> 05:25.270
+If we try to fix an underlying type that cannot hold the enumerations entire range.
+
+05:25.290 --> 05:26.910
+The compiler will throw an error.
+
+05:27.300 --> 05:30.600
+Now let's look at the naming of an enumeration in more detail.
+
+05:31.860 --> 05:36.240
+Nameless enumerations are often referred to as anonymous enumerations.
+
+05:36.600 --> 05:39.210
+Because anonymous enumerations have no name.
+
+05:39.210 --> 05:43.050
+It's not possible to declare variables of that enumeration type.
+
+05:43.750 --> 05:47.770
+The best we can do is to clear a variable as the underlying type of the enumeration.
+
+05:47.920 --> 05:52.690
+But this means that while the variable can be assigned to the enumerators, it can also be assigned
+
+05:52.690 --> 05:55.060
+any value belonging to the underlying type.
+
+05:55.450 --> 06:00.250
+Because of this, we say that anonymous enumerations provide no type safety.
+
+06:01.500 --> 06:06.210
+In the case of the anonymous enumeration containing the numerators red, green and blue.
+
+06:06.630 --> 06:12.390
+If we want the variable, my color to be assigned one of these enumerators, we must declare it as the
+
+06:12.390 --> 06:15.840
+underlying type of the enumeration in this case int.
+
+06:16.410 --> 06:21.720
+But this means that while it can be assigned red, green and blue, it can also be assigned any integer
+
+06:21.720 --> 06:22.290
+value.
+
+06:23.330 --> 06:29.120
+Oftentimes we want the variables assignment to be restricted to only the numerators of an enumeration.
+
+06:29.270 --> 06:31.950
+As we saw earlier with the rocket launch example.
+
+06:31.970 --> 06:33.710
+This can be quite important.
+
+06:33.950 --> 06:39.830
+So to accomplish this, we can give an enumeration a meaningful name that represents its enumerators.
+
+06:40.070 --> 06:45.860
+By providing a name, we're defining the enumeration as a unique type that can only assume its enumerated
+
+06:45.860 --> 06:46.610
+values.
+
+06:46.640 --> 06:50.630
+Because of this, we say that the enumeration provides type safety.
+
+06:51.500 --> 06:52.820
+As good design practice.
+
+06:52.820 --> 06:58.100
+The name given to an enumeration should form an is a relationship with its enumerators.
+
+06:58.130 --> 07:01.430
+In this case, color is a good name for the enumeration.
+
+07:01.430 --> 07:04.730
+Since red is a color, green is a color and blue is a color.
+
+07:05.240 --> 07:11.150
+By giving the enumeration the name color, we have defined a unique type of that name, which can only
+
+07:11.150 --> 07:13.580
+assume the values of red, green and blue.
+
+07:14.330 --> 07:20.270
+As such, we can declare the variable my color as a color type, thus restricting its assignment to
+
+07:20.270 --> 07:22.090
+only red, green or blue.
+
+07:22.100 --> 07:23.060
+And that's it.
+
+07:23.420 --> 07:26.570
+Almost everything you need to know about an enumeration structure.
+
+07:26.960 --> 07:30.910
+The only thing that's left to cover other scopes and all the things we can do with them.
+
+07:30.920 --> 07:36.050
+Now let's head over to the next video to learn what scoped enumerations are and how we can use them.

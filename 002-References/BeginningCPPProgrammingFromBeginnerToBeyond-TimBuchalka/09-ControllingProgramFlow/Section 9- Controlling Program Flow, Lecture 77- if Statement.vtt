@@ -1,0 +1,877 @@
+WEBVTT
+
+00:00:05.700 --> 00:00:08.900
+In this video, we'll learn about the c++ if statement.
+
+00:00:09.500 --> 00:00:13.400
+The if statement is the most basic of the c++ selection statements
+
+00:00:13.400 --> 00:00:15.400
+and his syntax couldn't be any simpler.
+
+00:00:16.000 --> 00:00:17.600
+We start with the if keyword.
+
+00:00:17.600 --> 00:00:21.000
+And this is followed with the control expression in parentheses.
+
+00:00:21.550 --> 00:00:25.450
+The control expression must evaluate to a Boolean true false value.
+
+00:00:27.650 --> 00:00:31.550
+If the value of the expression is true, then the statement is executed.
+
+00:00:31.550 --> 00:00:33.350
+Otherwise, the statement is skipped.
+
+00:00:34.650 --> 00:00:36.640
+Note that the statement is indented.
+
+00:00:37.190 --> 00:00:39.090
+We indented our code in the main function
+
+00:00:39.090 --> 00:00:41.990
+but indentation is a very important element of style
+
+00:00:41.990 --> 00:00:43.990
+that we need to start getting used to right away.
+
+00:00:44.890 --> 00:00:48.490
+By indenting the statement, it makes it easier for someone reading the code
+
+00:00:48.490 --> 00:00:50.990
+to see that the statement is part of the if statement.
+
+00:00:51.790 --> 00:00:55.190
+Remember, indentation and style is just for us human programmers
+
+00:00:55.190 --> 00:00:57.190
+to help us see the structure of the code.
+
+00:00:57.490 --> 00:01:00.090
+The compiler doesn't care where you place the statement.
+
+00:01:00.750 --> 00:01:03.050
+So you can see how simple an if statement is.
+
+00:01:03.550 --> 00:01:06.350
+Let's see conceptually what's going on in the if statement.
+
+00:01:09.150 --> 00:01:12.650
+Suppose we have this code. If num is greater than 10,
+
+00:01:12.650 --> 00:01:13.950
+increment num by 1.
+
+00:01:15.150 --> 00:01:19.650
+The expression num greater than 10 will be evaluated to true or false.
+
+00:01:20.310 --> 00:01:23.670
+If it's true, then num will be incremented. If it's false,
+
+00:01:23.670 --> 00:01:25.270
+no increment will take place.
+
+00:01:26.170 --> 00:01:29.770
+The flowchart on the right shows visually what the flow of control looks like.
+
+00:01:30.370 --> 00:01:32.570
+Let's see some simple examples of if statements.
+
+00:01:35.370 --> 00:01:36.870
+In the first if statement,
+
+00:01:36.870 --> 00:01:39.870
+we're checking if selection is equal to the character a.
+
+00:01:40.470 --> 00:01:43.070
+If it is, then we execute the output statement.
+
+00:01:43.870 --> 00:01:46.170
+If it is false we skip the output statement.
+
+00:01:47.160 --> 00:01:50.460
+In the second example we're checking if num is greater than 10.
+
+00:01:50.460 --> 00:01:52.860
+If it is, we execute the output statement.
+
+00:01:53.660 --> 00:01:55.210
+In the last example,
+
+00:01:55.210 --> 00:01:59.310
+we're using the and logical operator in the control expression.
+
+00:01:59.310 --> 00:02:02.970
+In this case, we check to see if health is less than 100
+
+00:02:02.970 --> 00:02:05.220
+and player healed is true.
+
+00:02:05.920 --> 00:02:08.020
+If both these expressions are true,
+
+00:02:08.020 --> 00:02:10.620
+then the entire control expression is true,
+
+00:02:10.620 --> 00:02:14.620
+and we set the player's health to 100. Otherwise, we skip the statement.
+
+00:02:16.500 --> 00:02:20.100
+What if you want to execute more than one statement if the condition is true.
+
+00:02:20.300 --> 00:02:22.300
+Well, that's where block statements come in.
+
+00:02:22.550 --> 00:02:25.550
+A block statement is a sequence of statements inside a block
+
+00:02:25.550 --> 00:02:28.550
+which is made up of opening and closing curly brackets.
+
+00:02:29.540 --> 00:02:31.140
+Notice the code on the left.
+
+00:02:31.140 --> 00:02:34.940
+The two statements in the body of the if statement are inside curly braces.
+
+00:02:35.600 --> 00:02:37.400
+If num is greater than 10,
+
+00:02:37.400 --> 00:02:40.900
+then the block statement is executed which means that the increment
+
+00:02:40.900 --> 00:02:43.400
+and the output statements are both executed.
+
+00:02:44.100 --> 00:02:47.600
+The diagram on the right shows a visual representation of the control flow.
+
+00:02:48.700 --> 00:02:50.700
+Let's talk a little more about blocks.
+
+00:02:51.800 --> 00:02:54.000
+We've actually already seen a block statement.
+
+00:02:54.000 --> 00:02:57.500
+Remember, the main function we've been using in all our programs so far,
+
+00:02:57.500 --> 00:03:01.000
+it has an open curly at the beginning and a closed curly at the end.
+
+00:03:01.000 --> 00:03:04.800
+This is a block statement and we had sequences of statements in the block statement.
+
+00:03:05.680 --> 00:03:08.180
+Block statements introduce a new level of scope.
+
+00:03:08.180 --> 00:03:11.180
+We'll talk about scope as we go through examples in this course.
+
+00:03:11.580 --> 00:03:14.280
+But just like we declared variables in the main block,
+
+00:03:14.280 --> 00:03:18.580
+we can declare variables in any block, even in a block that's inside an if statement.
+
+00:03:19.380 --> 00:03:23.940
+Variables that we declare in a block are only visible to statements that are also in the same block.
+
+00:03:24.640 --> 00:03:28.630
+This lets us modularize our code so we have better control of who sees what,
+
+00:03:28.630 --> 00:03:30.990
+which makes writing and debugging our code easier.
+
+00:03:31.540 --> 00:03:34.840
+Let's head over to the IDE and we'll see some if statements in action.
+
+00:03:36.070 --> 00:03:38.670
+Okay. So I'm in the CodeLite IDE.
+
+00:03:38.670 --> 00:03:42.660
+I'm in the section 9 workspace in the if statement project.
+
+00:03:42.660 --> 00:03:45.260
+And what i want to do here is I want to create
+
+00:03:45.260 --> 00:03:49.660
+a simple program where we'll create four different if statements. Let me show you what we'll do.
+
+00:03:49.960 --> 00:03:53.460
+Let's say we've got a number line here and there's a minimum of 10
+
+00:03:53.460 --> 00:03:55.460
+and the max is 100,
+
+00:03:56.760 --> 00:04:00.060
+let's say, here. What I want to do is i want to ask the user to enter an integer
+
+00:04:00.060 --> 00:04:04.050
+and I want to be able to check that the integer is greater than or equal to 10.
+
+00:04:04.550 --> 00:04:06.250
+So that'll be one of the if statements.
+
+00:04:06.950 --> 00:04:10.250
+I want to make sure that the integer they entered is less than
+
+00:04:11.050 --> 00:04:13.850
+or equal to 100,that would be the second one.
+
+00:04:13.850 --> 00:04:16.650
+The third if statement I want to write is I want to be sure that that
+
+00:04:16.650 --> 00:04:19.150
+integer they enter is within that balance,
+
+00:04:19.150 --> 00:04:22.650
+so between 10 and 100 including 10 and 100.
+
+00:04:22.650 --> 00:04:27.150
+That'll be the third one. And then the fourth if statement we'll write is we'll check that boundary condition,
+
+00:04:27.150 --> 00:04:30.950
+so we want to know whether it's actually equal to 10 or equal to 100.
+
+00:04:30.950 --> 00:04:34.610
+So those are the four if statements we'll write, and we'll talk a little bit about
+
+00:04:34.610 --> 00:04:36.110
+if statements as we go.
+
+00:04:36.110 --> 00:04:39.510
+So first thing I want to do is i want to create some variables.
+
+00:04:39.510 --> 00:04:42.410
+I need an integer, I'll just call it num
+
+00:04:42.410 --> 00:04:46.810
+and I'll initialize it to 0. This is where I'm going to read the integer from the user into.
+
+00:04:48.110 --> 00:04:51.770
+Then I need to model those boundaries, so I'll use constants for that.
+
+00:04:51.770 --> 00:04:54.770
+I'll just say min and max. And we'll set min to 10,
+
+00:04:55.570 --> 00:04:58.870
+and we'll set max to 100.
+
+00:05:00.370 --> 00:05:02.670
+Okay. So that represents those boundaries.
+
+00:05:03.270 --> 00:05:06.770
+So the first thing I'll do is I'll ask the user to enter
+
+00:05:09.070 --> 00:05:11.570
+a number between
+
+00:05:13.230 --> 00:05:14.230
+min and max.
+
+00:05:21.230 --> 00:05:24.830
+Okay. Simple as that, and let me put a little
+
+00:05:25.230 --> 00:05:27.830
+call on here so they can see what they're doing.
+
+00:05:27.830 --> 00:05:30.430
+And then what we'll do is we'll read that into nom.
+
+00:05:31.930 --> 00:05:34.430
+That's the only input we're going to be able to get in this program,
+
+00:05:34.430 --> 00:05:36.530
+just a simple integer we'll get it from the user.
+
+00:05:36.530 --> 00:05:40.730
+Enter a number between min and max. Let's test that. Make sure we didn't make any mistakes.
+
+00:05:41.720 --> 00:05:45.020
+Enter a number between 10 and 100, exactly.
+
+00:05:45.270 --> 00:05:48.570
+And I'm entering 10. I'm doing nothing right now with it.
+
+00:05:48.870 --> 00:05:51.870
+And let me just get rid of that little extra space that I had there.
+
+00:05:51.870 --> 00:05:55.770
+Okay. So now let's write our first if statement, that'll be number one here.
+
+00:05:55.770 --> 00:05:59.870
+So I'm simply going to say if the number that the user entered
+
+00:06:00.530 --> 00:06:03.830
+is greater than or equal to 10, which in this case is min
+
+00:06:04.930 --> 00:06:07.230
+then all I really want to say is
+
+00:06:08.230 --> 00:06:11.230
+there's my output statement I'm going to say num,
+
+00:06:13.030 --> 00:06:16.700
+and I'll say is greater than min.
+
+00:06:20.300 --> 00:06:24.290
+That's it. All right. So let's test that out.
+
+00:06:26.190 --> 00:06:29.850
+So when I am going to type something greater than 10 now, I'm going to type in 20.
+
+00:06:29.850 --> 00:06:33.750
+That if statement should fire. And I get 20 is greater than 10. Perfect.
+
+00:06:33.750 --> 00:06:37.550
+Now if i type something in that is not greater than 10,
+
+00:06:37.550 --> 00:06:40.150
+let's say, 5, I should see no output,
+
+00:06:40.950 --> 00:06:44.050
+which is exactly what happens because that statement will be skipped.
+
+00:06:45.050 --> 00:06:48.350
+Now suppose that I want to display something else,
+
+00:06:48.350 --> 00:06:50.850
+I want to execute more than just that one statement.
+
+00:06:50.850 --> 00:06:54.510
+This is where you need a block. So I'll create a curly here,
+
+00:06:54.510 --> 00:06:57.010
+and I'll put a curly down here below the if.
+
+00:06:57.010 --> 00:07:01.210
+That establishes a block. Notice that I'm indenting. I'm not writing all my code
+
+00:07:01.210 --> 00:07:02.610
+all flush on the left.
+
+00:07:02.610 --> 00:07:06.110
+If you indent, it's much easier to see the structure of the code.
+
+00:07:06.110 --> 00:07:10.010
+And as you indent further and further and you nest things one within, the other
+
+00:07:10.010 --> 00:07:13.610
+the structure of the code really jumps out at you, and it's very easy to follow.
+
+00:07:14.010 --> 00:07:17.010
+So in this case, I want to
+
+00:07:17.010 --> 00:07:21.110
+do a statement right up here since we're going to write four if statements. I'm going to say
+
+00:07:21.410 --> 00:07:24.410
+let's do a slash and to give me a new line at the beginning,
+
+00:07:24.410 --> 00:07:28.010
+and I'm just going to put some dashes and then I'm going to say if
+
+00:07:28.410 --> 00:07:32.510
+statement one. I'll put some more dashes here at the end.
+
+00:07:33.010 --> 00:07:34.610
+You'll see why I'm doing that in a little bit.
+
+00:07:37.310 --> 00:07:40.560
+Okay. So if we run that now, we should see
+
+00:07:40.560 --> 00:07:44.060
+both of those lines display. So I'll enter something greater than 10,
+
+00:07:44.060 --> 00:07:45.460
+I'll put in there 30,
+
+00:07:45.460 --> 00:07:49.160
+and those are both my lines. My if statement one line as well as the
+
+00:07:49.160 --> 00:07:52.860
+30 is greater than 10. So again, really simple anytime you want to execute
+
+00:07:52.860 --> 00:07:55.760
+more than one line of code or more than one statement,
+
+00:07:55.760 --> 00:07:57.160
+you need to wrap them up in a block.
+
+00:07:57.660 --> 00:08:02.650
+Now suppose that I also want to display how far away that is from min,
+
+00:08:02.650 --> 00:08:05.850
+and what's the difference between the number that I entered and min.
+
+00:08:05.850 --> 00:08:08.210
+Well, I could just subtract, right. It's pretty simple.
+
+00:08:08.210 --> 00:08:11.510
+So we could create an integer here,and I'll just call it let me
+
+00:08:11.810 --> 00:08:13.310
+create a little space here.
+
+00:08:16.670 --> 00:08:19.970
+Okay. I'll call I have an integer. I'll just call it diff for the difference,
+
+00:08:20.770 --> 00:08:24.370
+and I'll initialize that to the number the user typed in
+
+00:08:24.670 --> 00:08:26.270
+minus the min, right.
+
+00:08:26.270 --> 00:08:29.270
+Because I know it's greater than min, so that's going to be positive.
+
+00:08:29.930 --> 00:08:31.730
+And then I'll just say cout
+
+00:08:32.930 --> 00:08:34.430
+the number you entered
+
+00:08:35.200 --> 00:08:36.200
+is,
+
+00:08:38.200 --> 00:08:41.500
+and I'll use diff here. They might the difference amount.
+
+00:08:41.500 --> 00:08:43.000
+And I know it's greater.
+
+00:08:44.300 --> 00:08:46.300
+And I know it's greater than min.
+
+00:08:49.600 --> 00:08:50.400
+That's it.
+
+00:08:51.200 --> 00:08:54.400
+Now it's really important to understand a couple of things here.
+
+00:08:54.400 --> 00:08:58.700
+One is this variable, I'm declaring that variable diff
+
+00:08:58.700 --> 00:09:02.500
+inside the block. You can see the block right here. There's one curly.
+
+00:09:02.500 --> 00:09:03.800
+There's the other curly.
+
+00:09:04.460 --> 00:09:06.560
+So what that means is that, that variable
+
+00:09:06.560 --> 00:09:09.560
+diff is only available to the statements
+
+00:09:09.560 --> 00:09:13.860
+after I've declared it inside the block basically. So it's only this block.
+
+00:09:14.360 --> 00:09:18.560
+That's it. Nothing else can see that variable. This is a good thing.
+
+00:09:18.560 --> 00:09:21.560
+If that diff gets a really screwy value in there and it's really out of whack,
+
+00:09:21.560 --> 00:09:25.560
+well then the only place it could have changed that is this block. So I know exactly where to look.
+
+00:09:25.760 --> 00:09:27.760
+Okay. So let me clear a little bit of that,
+
+00:09:27.760 --> 00:09:30.260
+and what I'll do now is let's run this
+
+00:09:32.620 --> 00:09:34.220
+and see if this is correct.
+
+00:09:35.320 --> 00:09:39.120
+So I'm going to enter a number between 10 and 20 and 100 and say 150.
+
+00:09:39.520 --> 00:09:43.020
+I know that that is greater than 10 and I know that it's 40 away from 10.
+
+00:09:43.020 --> 00:09:46.420
+So that's what I'm expecting. And there's my if statement one,
+
+00:09:46.420 --> 00:09:50.420
+50 is greater than 10 and 50 is 40 greater than 10. Perfect.
+
+00:09:50.620 --> 00:09:54.720
+If I again type something in like 5, I'll get no output,
+
+00:09:54.720 --> 00:09:57.420
+which is perfect. That's exactly where I want to be.
+
+00:09:57.420 --> 00:10:00.420
+So that takes care of that first if statement.
+
+00:10:00.420 --> 00:10:02.220
+Now let's write the second if statement.
+
+00:10:02.820 --> 00:10:06.720
+This one we're going to check to see if the number is less than or equal to max,
+
+00:10:06.720 --> 00:10:09.420
+right. So it's the same idea. I'm just going to say if the number
+
+00:10:10.020 --> 00:10:13.320
+is less than or equal to the max, that's the upper bound.
+
+00:10:14.120 --> 00:10:18.110
+Then I want to display this c out statement. Let me just copy and paste that.
+
+00:10:21.110 --> 00:10:24.410
+And I'll just change this to a 2. So that's my if statement 2.
+
+00:10:25.110 --> 00:10:28.910
+And over here, I want to say that my num
+
+00:10:29.310 --> 00:10:31.310
+is less than in this case.
+
+00:10:34.210 --> 00:10:36.570
+Actually, it should be less than or equal to, right.
+
+00:10:38.570 --> 00:10:41.870
+I should fix that up here because it should -- I know that it's greater than
+
+00:10:42.570 --> 00:10:46.370
+or equal to since that's what I'm doing in my condition.
+
+00:10:54.370 --> 00:10:58.370
+Let's fix that real quick. There we go. That should do it. In this case,
+
+00:10:58.370 --> 00:11:01.570
+it's less than or equal to max.
+
+00:11:06.570 --> 00:11:09.670
+Okay. And let's do the difference here as well.
+
+00:11:09.670 --> 00:11:13.660
+Now here, if I say -- if I just do something like diff is
+
+00:11:15.260 --> 00:11:17.560
+equal to max minus num,
+
+00:11:19.460 --> 00:11:22.960
+which is the calculation I want to do but when I compile this you're going to get an error.
+
+00:11:22.960 --> 00:11:26.410
+It's going to say diff was not declared in the scope because
+
+00:11:26.410 --> 00:11:29.010
+diff is gone now. Diff was declared in this block.
+
+00:11:29.010 --> 00:11:31.710
+That block is finished, so diff isn't even visible anymore.
+
+00:11:31.710 --> 00:11:35.110
+So i need to create another if diff. So if i just say int
+
+00:11:37.410 --> 00:11:38.210
+diff,
+
+00:11:39.010 --> 00:11:41.810
+and I'll just initialize it to max minus num.
+
+00:11:42.710 --> 00:11:44.210
+Similar to what i did above.
+
+00:11:44.710 --> 00:11:48.710
+This creates a new copy of that integer diff that's only visible to this block here.
+
+00:11:48.960 --> 00:11:53.160
+Now sure I could have just created that diff way up here
+
+00:11:53.460 --> 00:11:57.960
+like I did with num and it would be visible to everybody. But I just wanted to show you how the scope rules work.
+
+00:11:59.260 --> 00:12:01.560
+Okay. So there's my diff, and I'm going to say cout.
+
+00:12:02.360 --> 00:12:03.860
+The number you entered is diff amount.
+
+00:12:05.360 --> 00:12:08.660
+In this case, less than max.
+
+00:12:09.960 --> 00:12:11.760
+In this case, less than
+
+00:12:15.760 --> 00:12:16.560
+max.
+
+00:12:20.560 --> 00:12:24.260
+And I'll finish that off. Okay. So let's run this, test this out.
+
+00:12:25.860 --> 00:12:27.360
+All right. So let's type a number
+
+00:12:28.760 --> 00:12:30.060
+like 80.
+
+00:12:30.460 --> 00:12:31.960
+We expect
+
+00:12:31.960 --> 00:12:36.760
+both those if statements to fire, right because 80 is greater than 10 and it's also less than 100,
+
+00:12:36.760 --> 00:12:40.120
+less than or equal to 100. So there we go. Both if statements fire,
+
+00:12:40.670 --> 00:12:44.030
+80 is greater than or equal to 10. 80 is 70 greater than 10.
+
+00:12:44.030 --> 00:12:46.730
+And over here we're saying 80 is less than or equal to 100.
+
+00:12:46.730 --> 00:12:50.390
+And it's 20 less than 100. So both those if statements fire.
+
+00:12:50.390 --> 00:12:53.390
+But let's test this with other numbers here.
+
+00:12:53.390 --> 00:12:55.390
+So let's say I type in 150.
+
+00:12:56.390 --> 00:13:01.160
+In this case, only if statement one fires because 150 is greater than or equal to 10,
+
+00:13:01.160 --> 00:13:04.460
+but it's not less than or equal to 100.
+
+00:13:04.460 --> 00:13:07.020
+Okay. Same thing if I type in,
+
+00:13:08.320 --> 00:13:09.320
+let's say, 5.
+
+00:13:10.520 --> 00:13:12.520
+Only if statement two fires now.
+
+00:13:13.720 --> 00:13:16.720
+Okay. So hopefully that makes sense. So now
+
+00:13:17.220 --> 00:13:20.220
+the third if statement we want to write is the one that's right here.
+
+00:13:20.220 --> 00:13:23.220
+It's going to check to make sure that that is within the bounds.
+
+00:13:23.370 --> 00:13:26.870
+Okay. So in this case what we'll say is we'll say if
+
+00:13:27.270 --> 00:13:29.270
+the number the user entered
+
+00:13:29.570 --> 00:13:31.870
+is greater than or equal to the min
+
+00:13:32.870 --> 00:13:35.870
+and the number the user entered
+
+00:13:36.120 --> 00:13:38.620
+is less than or equal to the max.
+
+00:13:39.620 --> 00:13:42.280
+Remember, you've got to do this here with num.
+
+00:13:43.380 --> 00:13:46.380
+You've got to write that word in you can't just say less than we go to max.
+
+00:13:46.380 --> 00:13:48.580
+You've got to say num less than or equal to max.
+
+00:13:49.080 --> 00:13:53.080
+Again, I'll have my block statement here notice that when i type that beginning curly,
+
+00:13:53.080 --> 00:13:55.380
+CodeLite finishes it off with the closed curly.
+
+00:13:55.880 --> 00:13:58.880
+And let's copy this guy right here.
+
+00:14:00.280 --> 00:14:02.580
+And we'll say that this is if statement three.
+
+00:14:04.580 --> 00:14:07.880
+And in this case, we'll just say something like cout,
+
+00:14:08.580 --> 00:14:09.180
+num
+
+00:14:13.180 --> 00:14:15.480
+is in range let's say.
+
+00:14:16.980 --> 00:14:19.180
+Okay. So we know that it's within that range.
+
+00:14:20.980 --> 00:14:24.880
+There's no difference here to take care of we could do differences. But let's just do that.
+
+00:14:24.880 --> 00:14:27.880
+What's interesting here is that statement three
+
+00:14:27.880 --> 00:14:29.380
+will only execute
+
+00:14:29.780 --> 00:14:34.180
+when statements 1 and 2 execute, right, because we're in range. We're greater than 10 and less than 100.
+
+00:14:34.180 --> 00:14:37.480
+So let's write that down as well. We'll say cout.
+
+00:14:40.480 --> 00:14:44.810
+This means statements one and two
+
+00:14:44.810 --> 00:14:46.810
+must also be true
+
+00:14:48.510 --> 00:14:51.810
+or must also display, in this case. Let's just say display.
+
+00:14:55.110 --> 00:14:58.770
+Okay. Hopefully, that makes sense because you can see what's going on here.
+
+00:14:58.770 --> 00:15:02.870
+If I entered a number that's in range somewhere in here,
+
+00:15:02.870 --> 00:15:06.870
+then obviously this is going to be true and this is going to
+
+00:15:06.870 --> 00:15:09.870
+be true. So we'll have all three of those statements displaying.
+
+00:15:12.070 --> 00:15:16.370
+Okay. So we'll run this and test it we'll enter a number in the middle. Let's put in 50.
+
+00:15:16.570 --> 00:15:20.670
+Notice all three if statements fire, which is exactly what we'd expect.
+
+00:15:21.370 --> 00:15:24.370
+If we type in a number that's greater than 100,
+
+00:15:25.970 --> 00:15:29.870
+only if statement one fires. And if we enter a number
+
+00:15:29.870 --> 00:15:33.370
+that's less than 10, only if statement two fires.
+
+00:15:33.970 --> 00:15:38.170
+Okay. So now the last one we'll do is we'll actually check to see if there it's right on those boundary
+
+00:15:38.170 --> 00:15:41.470
+conditions. So we'll say if the number the user entered
+
+00:15:41.770 --> 00:15:44.770
+is equal to the min
+
+00:15:45.430 --> 00:15:49.530
+or the number the user entered is equal to the max.
+
+00:15:50.190 --> 00:15:52.490
+Notice how you have to have that or in there.
+
+00:15:52.490 --> 00:15:55.390
+The and would not work because it's never going to be equal to both.
+
+00:15:55.390 --> 00:15:58.390
+So in this case, we just care if it's equal to one or the other.
+
+00:15:59.190 --> 00:16:01.890
+In which case, we'll output statement four.
+
+00:16:07.250 --> 00:16:11.450
+We'll change that to a four real quick, and I'll leave this code available for you guys to play with afterward
+
+00:16:11.450 --> 00:16:15.550
+and mess around with all you like. And then what we'll say is cout
+
+00:16:16.050 --> 00:16:20.450
+num is right on a boundary.
+
+00:16:26.850 --> 00:16:30.610
+And what's neat about this one is that if this one fires then all four statements
+
+00:16:30.610 --> 00:16:32.910
+must be fired. So again I'll say
+
+00:16:41.910 --> 00:16:43.410
+that all four display.
+
+00:16:45.010 --> 00:16:46.710
+And we'll give this a quick test.
+
+00:16:49.310 --> 00:16:52.910
+Okay. So let's do one of the boundary conditions 10. There you go.
+
+00:16:52.910 --> 00:16:56.210
+All four if statements fire because 10 obviously --
+
+00:16:56.210 --> 00:16:58.710
+we're in the range, we're on the boundary,
+
+00:16:58.710 --> 00:17:01.510
+we're greater than one side and we're less than the other. So we're good here.
+
+00:17:02.010 --> 00:17:05.010
+And again if I just type a 5,
+
+00:17:05.910 --> 00:17:09.310
+only that second if statement fires. So you can see some of the logic.
+
+00:17:09.310 --> 00:17:12.610
+Now what's important to understand here, let me just clear the screen real quick.
+
+00:17:12.610 --> 00:17:15.910
+What's important to understand here is a couple of things.
+
+00:17:15.910 --> 00:17:19.910
+One is these are independent if statements. There are no elses in here.
+
+00:17:19.910 --> 00:17:22.110
+We'll talk about else's in the next video.
+
+00:17:22.110 --> 00:17:26.310
+So this statement will execute. So that condition is checked.
+
+00:17:26.310 --> 00:17:29.610
+If this condition is true, we execute this code.
+
+00:17:29.610 --> 00:17:31.910
+Then we come here and we check this condition.
+
+00:17:32.410 --> 00:17:35.210
+So we're basically checking the condition for
+
+00:17:35.210 --> 00:17:37.310
+all four of those if statements.
+
+00:17:38.110 --> 00:17:42.510
+Okay. So hopefully that gives you some insight into if statements. They're pretty straightforward.
+
+00:17:42.760 --> 00:17:45.300
+Remember, this condition we have in here
+
+00:17:45.300 --> 00:17:46.400
+could be anything.
+
+00:17:46.400 --> 00:17:49.000
+We could use relational operators like we're doing here.
+
+00:17:49.000 --> 00:17:52.300
+We can use equality operators like we're doing down here.
+
+00:17:53.100 --> 00:17:57.400
+We're comparing num and min. We could use logical operators like we're doing right here.
+
+00:17:57.400 --> 00:18:00.700
+And we can use all kinds of combinations of these things as well.
+
+00:18:00.700 --> 00:18:03.700
+Okay. So that finishes up off this video.
+
+00:18:03.700 --> 00:18:07.500
+In the next video, what we'll do is we'll talk about the if else statement.

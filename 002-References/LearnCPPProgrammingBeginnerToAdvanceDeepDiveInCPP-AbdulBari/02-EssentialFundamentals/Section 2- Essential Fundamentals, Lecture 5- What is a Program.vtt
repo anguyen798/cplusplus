@@ -1,0 +1,701 @@
+WEBVTT
+
+0
+00:00.510 --> 00:07.380
+And this video I'm going to discuss what does it mean by a program, why we write program  and how it is possible
+
+1
+00:07.380 --> 00:08.480
+to write a program.
+
+2
+00:08.520 --> 00:11.130
+So we learn about these basic things.
+
+3
+00:11.460 --> 00:16.950
+See in the previous videos already we have discovered that our computers can understand binary form
+
+4
+00:16.950 --> 00:17.720
+of language.
+
+5
+00:18.120 --> 00:22.530
+So there are some predefined set of instructions that a processor or
+
+6
+00:22.560 --> 00:23.700
+CPU can understand.
+
+7
+00:23.880 --> 00:28.290
+And we have to use those instructions for performing a task.
+
+8
+00:28.320 --> 00:29.880
+Now what does it mean by task here.
+
+9
+00:30.300 --> 00:31.680
+So let us understand why.
+
+10
+00:31.680 --> 00:33.180
+Actually we need computers.
+
+11
+00:33.180 --> 00:35.620
+What is the purpose of using computers.
+
+12
+00:35.640 --> 00:40.020
+We use computers for performing computational task.
+
+13
+00:40.020 --> 00:41.900
+So what does this computational task.
+
+14
+00:42.300 --> 00:45.240
+All those tasks which are done using pen and paper.
+
+15
+00:45.290 --> 00:52.500
+The computations by using formulas by using any expression we put the values and get answers so we use
+
+16
+00:52.500 --> 00:55.170
+various formula,  various steps.
+
+17
+00:55.170 --> 00:58.610
+So computation work that is paper work.
+
+18
+00:58.670 --> 01:01.760
+So for that purpose we use computers.
+
+19
+01:02.400 --> 01:05.430
+So that computation work can also be done using calculator.
+
+20
+01:05.880 --> 01:07.980
+Yes it can be done using calculator.
+
+21
+01:08.400 --> 01:11.530
+So let us understand first how do you use a calculator.
+
+22
+01:11.530 --> 01:15.560
+And then I'll show you how we can use computers and what does it mean programming.
+
+23
+01:15.840 --> 01:17.400
+We use calculator like this.
+
+24
+01:17.430 --> 01:20.940
+See for example if I have two numbers I want to add them.
+
+25
+01:20.940 --> 01:22.540
+First  no. is 13,
+
+26
+01:22.740 --> 01:24.670
+And second no. is 27.
+
+27
+01:24.670 --> 01:25.970
+I want to add them.
+
+28
+01:25.980 --> 01:32.580
+So pick a calculator hit first number 13 and then press plus then hit second number 27.
+
+29
+01:32.730 --> 01:34.260
+Then press equal to sign,
+
+30
+01:34.350 --> 01:37.100
+So I'm pressing plus sign and equal to sign.
+
+31
+01:37.110 --> 01:43.120
+And finally I get the answer that is 40 so you can use a calculator for adding two numbers.
+
+32
+01:43.230 --> 01:47.670
+A simple task so I don't need a computer for this one.
+
+33
+01:47.810 --> 01:55.830
+That next if I have a list of numbers and I want to calculate average of those numbers.
+
+34
+01:55.840 --> 02:06.280
+So I'll just write on few numbers here 10 15 8 6 9 5 12 13.
+
+35
+02:06.760 --> 02:09.870
+So 1 2 3 4 5 6 7 8.
+
+36
+02:09.940 --> 02:13.020
+I'm adding more numbers eleven and sixteen.
+
+37
+02:13.360 --> 02:15.140
+So I have to order 10 numbers.
+
+38
+02:15.220 --> 02:17.880
+I want to find average of these numbers.
+
+39
+02:18.040 --> 02:20.490
+Then how to use a calculator.
+
+40
+02:20.530 --> 02:21.550
+Now watch it.
+
+41
+02:21.580 --> 02:24.400
+I have to enter or hit 1 0 for the first number.
+
+42
+02:24.670 --> 02:28.720
+Then + then next number then plus the next number plus next number.
+
+43
+02:28.870 --> 02:32.830
+I have to go on adding them and that's something to be getting accumulated.
+
+44
+02:33.250 --> 02:40.900
+So finally I'll get the total of all these numbers like total is one not five for these numbers then
+
+45
+02:41.410 --> 02:46.860
+I should also have the count of numbers, total how many numbers I have? total 10 no. i have
+
+46
+02:46.860 --> 02:55.600
+that total I should divided by ten then, I get that as ten point five here calculator doesn't
+
+47
+02:55.600 --> 02:59.820
+know how to find the average I should know how to find the average.
+
+48
+02:59.830 --> 03:04.780
+So far finding an average I should have the list of numbers on I should go on adding them and then they
+
+49
+03:04.780 --> 03:08.350
+should divide them by a number of numbers and that is 10.
+
+50
+03:08.350 --> 03:10.770
+Then i get the result right.
+
+51
+03:10.780 --> 03:13.320
+This is not a simple operation.
+
+52
+03:13.330 --> 03:15.190
+This was a simple operation.
+
+53
+03:15.220 --> 03:17.110
+This is having a procedure.
+
+54
+03:17.140 --> 03:20.680
+Yes there is a procedure for finding average.
+
+55
+03:20.710 --> 03:26.770
+Now similarly there is a procedure for finding the maximum number or the total number of numbers.
+
+56
+03:26.770 --> 03:29.260
+There is a procedure for searching a particular number.
+
+57
+03:29.260 --> 03:30.270
+In this list.
+
+58
+03:30.450 --> 03:34.000
+So for various things there are some procedures.
+
+59
+03:34.010 --> 03:39.520
+And if you have learned about statistics then I want to find a mean of these numbers or median of these
+
+60
+03:39.520 --> 03:39.880
+numbers.
+
+61
+03:39.880 --> 03:41.210
+So there is a procedure for that.
+
+62
+03:41.350 --> 03:47.310
+If you want to sort these numbers then there is a procedure so calculator doesn't know the procedure
+
+63
+03:47.350 --> 03:51.430
+means that the steps involve for completing a particular task.
+
+64
+03:51.520 --> 03:53.580
+now how we know it.
+
+65
+03:53.680 --> 03:56.190
+Our teachers have taught us that procedure.
+
+66
+03:56.200 --> 03:58.800
+So we know the procedure right.
+
+67
+03:58.870 --> 04:04.330
+So same procedure can we teach it to calculate that itself so that just we will tell.
+
+68
+04:04.330 --> 04:05.760
+We want average.
+
+69
+04:05.770 --> 04:07.420
+It should ask what are the numbers.
+
+70
+04:07.420 --> 04:11.770
+These are the numbers. and it  should give us the result without asking us how to do it.
+
+71
+04:11.770 --> 04:15.410
+We want our calculator to be trained on this one.
+
+72
+04:15.490 --> 04:20.050
+So it means we want our programmable calculator.
+
+73
+04:20.710 --> 04:22.680
+Yes that's it.
+
+74
+04:22.690 --> 04:28.150
+So the extension of calculator I can see on the next level to calculate there is nothing but computer.
+
+75
+04:28.150 --> 04:32.590
+Computer is a programmable computational device.
+
+76
+04:32.590 --> 04:39.020
+We can define a procedure by giving all the steps one by one to our computer system and we call it as
+
+77
+04:39.040 --> 04:44.830
+a program and the program a computer system or a CPU or processor will execute those set of instructions
+
+78
+04:45.160 --> 04:46.180
+and give us the result.
+
+79
+04:46.960 --> 04:50.990
+So that's what is programming that's it.
+
+80
+04:51.040 --> 04:54.550
+This is what we use computers and what is programming.
+
+81
+04:54.550 --> 04:59.740
+I have told you no more about program more detail and clear picture about a program.
+
+82
+04:59.740 --> 05:02.590
+I will give you my take on a list of numbers.
+
+83
+05:02.650 --> 05:04.110
+So these are the list of numbers.
+
+84
+05:04.270 --> 05:05.660
+Let us say the procedure the same.
+
+85
+05:05.680 --> 05:07.250
+I want to find an average.
+
+86
+05:07.330 --> 05:08.710
+So what are these numbers.
+
+87
+05:08.710 --> 05:11.440
+These numbers are nothing but data.
+
+88
+05:11.440 --> 05:16.190
+This is a data. then for performing average.
+
+89
+05:16.270 --> 05:18.060
+There is a procedure right.
+
+90
+05:18.100 --> 05:19.300
+So that procedure.
+
+91
+05:19.300 --> 05:21.450
+The steps involved in that one.
+
+92
+05:21.490 --> 05:29.100
+So those are nothing but instructions so he can say these are instructions right.
+
+93
+05:29.140 --> 05:34.060
+So there are two things now data and instructions upon that data.
+
+94
+05:34.450 --> 05:42.130
+So program is nothing but collection of data and a set of operations or instructions on that data.
+
+95
+05:42.610 --> 05:45.880
+So we have to focus on only two things in our programs.
+
+96
+05:45.880 --> 05:48.250
+What is the data you have and what you do want.
+
+97
+05:48.250 --> 05:49.810
+What you want to do with that data.
+
+98
+05:50.080 --> 05:51.370
+So what are the steps.
+
+99
+05:51.370 --> 05:52.540
+What is the procedure.
+
+100
+05:52.540 --> 05:53.430
+See without data
+
+101
+05:53.440 --> 05:57.110
+There is no need of instructions like instructions are useless.
+
+102
+05:57.220 --> 06:00.910
+And if you have just the data more instruction than you don't know the results right.
+
+103
+06:01.210 --> 06:03.370
+So these are the two important parts of a program.
+
+104
+06:03.670 --> 06:05.080
+So we have to focus on this one.
+
+105
+06:05.740 --> 06:11.620
+We have to learn how to represent our data and also we have to learn how to write on the instructions
+
+106
+06:12.070 --> 06:15.160
+that will execute our computer data to get that answer.
+
+107
+06:15.190 --> 06:17.760
+So this was a learning programming.
+
+108
+06:17.800 --> 06:24.160
+Now one important thing for learning programming you should already know the procedure right.
+
+109
+06:24.190 --> 06:28.590
+This is the very very very important point here that most of the students get confused.
+
+110
+06:28.600 --> 06:35.030
+The thing that learning programming will make them learn procedure no learning procedures are different.
+
+111
+06:35.320 --> 06:37.300
+writing programs is different.
+
+112
+06:37.300 --> 06:42.950
+So we are going to learn two things how to write a program and how to write what a procedure right.
+
+113
+06:42.970 --> 06:45.010
+How to convert procedure into a program.
+
+114
+06:45.460 --> 06:48.910
+So a program contains a data and a set of instructions.
+
+115
+06:48.910 --> 06:51.220
+Now let us come to the computer site.
+
+116
+06:51.260 --> 06:54.670
+See this is all a machine computer machine right.
+
+117
+06:54.670 --> 07:04.700
+So let us say it is a CPU now this is my self, now language of CPU zeroes and ones.(binary)
+
+118
+07:04.900 --> 07:09.880
+How to represent data in that one? In the form of zeros and ones.
+
+119
+07:09.880 --> 07:11.920
+How do you present instructions.
+
+120
+07:12.010 --> 07:17.520
+That is also in the form of zeros and ones both the data as well as instructions are in the form of
+
+121
+07:17.540 --> 07:19.440
+zeros and ones that is binary.
+
+122
+07:19.570 --> 07:21.790
+Then what is my language.
+
+123
+07:21.790 --> 07:29.560
+My language is English language so instructions are in English and our data is also English.
+
+124
+07:29.560 --> 07:36.430
+Like if I if you asked me to read these numbers I would say 10 15 9 6 8 this is English, numbers are
+
+125
+07:36.430 --> 07:37.210
+also in English.
+
+126
+07:37.540 --> 07:42.040
+If you know any other language then these numbers are called by different word or different
+
+127
+07:42.040 --> 07:44.980
+names are there for them and the figures are also different.
+
+128
+07:45.160 --> 07:47.170
+So this is English.
+
+129
+07:47.170 --> 07:52.990
+So my data is also English and the instructions are also in English and CPU language  is machine
+
+130
+07:52.990 --> 07:55.060
+language is zeros and ones.
+
+131
+07:55.060 --> 07:56.000
+This is binary.
+
+132
+07:56.170 --> 08:02.500
+This is machine language and this is natural language that is human being's language.
+
+133
+08:02.500 --> 08:11.080
+Now we want our machine to learn our procedures so we have to learn in a machine language or we should
+
+134
+08:11.080 --> 08:17.230
+develop our machines so that they understand natural language anyone of this right now.
+
+135
+08:17.230 --> 08:22.630
+Either way it's not possible either way it's not possible we can't run machine language and computers
+
+136
+08:22.630 --> 08:27.280
+are not so much developed that they understand natural language no recent computers they are having
+
+137
+08:27.280 --> 08:32.800
+some artificial intelligence that are useful for pulling the data but not for programming it. for
+
+138
+08:32.800 --> 08:39.040
+programming it machine should understand natural language so this is not yet happening right then what
+
+139
+08:39.040 --> 08:45.030
+we need now we need some intermediate language so that's easy for me on so easy for machine also.
+
+140
+08:45.040 --> 08:51.940
+So that's what Here comes programming languages the programming languages that we use like C C++ Java
+
+141
+08:51.970 --> 08:58.040
+C sharp VB Python all these languages become under programming languages.
+
+142
+08:58.180 --> 09:03.370
+So we learn this language and whatever procedure are we transform them in this form
+
+143
+09:03.730 --> 09:09.340
+and these languages will help us to transform that procedure into machine language.
+
+144
+09:09.340 --> 09:14.940
+So from natural language to programming language and programming language to machine language translation
+
+145
+09:14.940 --> 09:15.620
+is a time.
+
+146
+09:15.770 --> 09:17.410
+So this translation is not there.
+
+147
+09:17.420 --> 09:19.370
+We learn it, we have to learn it right.
+
+148
+09:19.510 --> 09:25.300
+If translation is available then anybody can do programming just you say it will become a program.
+
+149
+09:26.110 --> 09:30.700
+So we have to learn a programming language and write our procedures in that language.
+
+150
+09:30.700 --> 09:35.170
+Then from this language there is something called compiler or interpreter.
+
+151
+09:35.260 --> 09:35.620
+Right.
+
+152
+09:35.700 --> 09:41.410
+I'll just write in short we are going to learn that in this next video compiler interpreter will translate
+
+153
+09:41.470 --> 09:43.360
+that into machine language.
+
+154
+09:43.900 --> 09:47.630
+So this is how programming languages are useful for writing programs.
+
+155
+09:47.680 --> 09:53.140
+So we should learn some programming language so that's all about what does it mean by program and why
+
+156
+09:53.140 --> 09:54.430
+you need programming.
+
+157
+09:54.430 --> 09:56.930
+Let us revise things very quickly.
+
+158
+09:57.150 --> 10:00.650
+So you started with a calculator calculator if not a programable device.
+
+159
+10:00.680 --> 10:03.490
+Now we want our machines to know the procedure.
+
+160
+10:03.580 --> 10:06.580
+Just want given the data we would not know the procedure.
+
+161
+10:06.580 --> 10:09.820
+So for that we need a language so that we can write a program.
+
+162
+10:09.880 --> 10:14.380
+So what a program will contain data and a set of instructions upon that data.
+
+163
+10:14.390 --> 10:17.910
+this are the main part or ingredients of a program.
+
+164
+10:18.370 --> 10:20.470
+But this has to be written in machine language.
+
+165
+10:20.470 --> 10:21.690
+We don't know machine language.
+
+166
+10:21.700 --> 10:27.280
+So we introduce some intermediate language that is a programming language that is helpful for us.
+
+167
+10:27.460 --> 10:30.140
+And it will translate that into machine language.
+
+168
+10:30.140 --> 10:30.900
+Machine code.
+
+169
+10:31.270 --> 10:34.580
+And the program that is understandable by CPU.
+
+170
+10:35.140 --> 10:38.920
+So that's all in this video in the next few days I'll explain you what does it mean by compiler and
+
+171
+10:38.920 --> 10:39.550
+what does it mean by
+
+172
+10:39.640 --> 10:41.560
+INTERPRETER. What are the differences.
+
+173
+10:41.560 --> 10:46.090
+By taking few examples I'll explain them, but I have already used their name here.
+
+174
+10:46.810 --> 10:47.220
+That's what.

@@ -1,0 +1,163 @@
+WEBVTT
+
+00:00.120 --> 00:05.610
+In this video, we learn how to draw patterns in different patterns we can draw and those we can do
+
+00:05.610 --> 00:07.980
+it easily using nested follows.
+
+00:07.980 --> 00:10.160
+So already we have learned about nested follow.
+
+00:10.170 --> 00:12.570
+So let us draw some patterns.
+
+00:12.570 --> 00:17.940
+So before showing you what pattern I want to draw, first of all, I will explain you about nested follow.
+
+00:17.970 --> 00:23.310
+See, I have taken a four by four box here that is 01230123.
+
+00:23.580 --> 00:26.850
+And these are my values and these are values.
+
+00:26.940 --> 00:30.180
+So we have already learned that nested for loops.
+
+00:30.180 --> 00:36.480
+If you have followed inside for loop, then these two follows together will allow you to access all
+
+00:36.480 --> 00:40.020
+the elements, all the elements, all the locations.
+
+00:40.020 --> 00:40.260
+Right?
+
+00:40.260 --> 00:42.450
+This was in two dimensional that I have shown you.
+
+00:42.450 --> 00:49.980
+So actually the value of I and J will be first time 00010203 then 10111213.
+
+00:50.220 --> 00:53.370
+So on the values of IMG will be changing like this.
+
+00:53.790 --> 00:55.890
+Now, based on those values, I have drawn the box.
+
+00:55.890 --> 00:57.160
+This is not a matrix, right?
+
+00:57.210 --> 00:57.500
+Just.
+
+00:57.520 --> 00:58.560
+I have drawn a box.
+
+00:58.860 --> 01:00.540
+Now let us look at the first pattern.
+
+01:00.540 --> 01:04.140
+One of the pattern I'll show you here in this video what I want to display.
+
+01:04.140 --> 01:08.880
+I want to display on the screen display this pattern, this pattern like this.
+
+01:09.090 --> 01:10.380
+So the same as this.
+
+01:10.380 --> 01:16.380
+So it means first I should print one when I should print one when IMG both are zero zero.
+
+01:16.410 --> 01:20.520
+Next I should print it to when I is zero and j is one.
+
+01:20.520 --> 01:23.100
+So three, then four, then five.
+
+01:23.130 --> 01:28.980
+It should come in next line six, seven, eight, the next line nine, ten, so on.
+
+01:29.370 --> 01:37.680
+So for displaying the numbers like this in a box like thing, I need first of all a counter that should
+
+01:37.680 --> 01:39.840
+start from one, two, three, four, so on.
+
+01:39.840 --> 01:44.400
+It should be incrementing and it should be increasing the value and printing it.
+
+01:44.400 --> 01:50.370
+Then I want to print them like this matrix like so nested follows will help us then.
+
+01:50.790 --> 01:56.280
+So for these values I should have a variable called count and that count initially one.
+
+01:56.280 --> 01:59.640
+So I'm not writing a complete main function, I'm just showing the piece of code.
+
+01:59.820 --> 02:05.760
+Now here in this nested for loop, I will print see out count.
+
+02:05.760 --> 02:06.690
+So count.
+
+02:06.690 --> 02:10.290
+Then after displaying a number, I should give some space also.
+
+02:10.290 --> 02:15.270
+So for that gives some space just in double quotes, give one space that's enough.
+
+02:15.270 --> 02:16.950
+So one will be printed next time.
+
+02:16.950 --> 02:19.290
+Two will be printed and three will be printed, so on.
+
+02:20.490 --> 02:25.920
+And after the end of each line I want next line, the next output in the next line.
+
+02:25.920 --> 02:29.130
+So this for loop in there for loop will complete the line.
+
+02:29.130 --> 02:30.150
+One, two, three, four.
+
+02:30.180 --> 02:30.660
+Right.
+
+02:30.660 --> 02:35.250
+So once this inner for loop has finished, I should get a new line.
+
+02:35.250 --> 02:37.440
+So this will go into the next line.
+
+02:37.680 --> 02:39.240
+This will appear in the next slide.
+
+02:40.590 --> 02:41.190
+That's it.
+
+02:41.210 --> 02:44.300
+So in the main function you declare variable count.
+
+02:44.300 --> 02:46.290
+And here I go.
+
+02:46.310 --> 02:50.030
+So you can write entire in J and write on the score.
+
+02:50.060 --> 02:52.760
+This will print the pattern like this on the screen.
+
+02:54.000 --> 02:54.740
+So that's it.
+
+02:54.750 --> 02:55.920
+That's the first pattern.
+
+02:56.430 --> 02:58.530
+Now, next video, we will see another pattern.
+
+02:58.530 --> 03:01.410
+So you practice this one, write a program and check it.

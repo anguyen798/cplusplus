@@ -1,0 +1,1769 @@
+WEBVTT
+
+00:00:05.440 --> 00:00:08.540
+In this video, we'll learn more
+about the stl vector container.
+
+00:00:09.270 --> 00:00:11.590
+We already know a lot about
+it since we've been using it
+
+00:00:11.590 --> 00:00:13.040
+since very early in the course.
+
+00:00:13.830 --> 00:00:16.659
+As you know, in order to use the
+vector container, you have to
+
+00:00:16.660 --> 00:00:18.500
+include the vector header file.
+
+00:00:19.210 --> 00:00:22.145
+The vector is probably the
+main workhorse of the stl.
+
+00:00:22.250 --> 00:00:24.100
+It's used in a lot of applications.
+
+00:00:24.690 --> 00:00:27.330
+The vector allows us to create
+dynamically sized arrays.
+
+00:00:28.670 --> 00:00:32.319
+The cool thing is that the vector can
+expand and contract as needed, and
+
+00:00:32.320 --> 00:00:34.510
+it's handled automatically by the stl.
+
+00:00:34.969 --> 00:00:37.710
+We don't have to worry about the
+details, but the vector does give us
+
+00:00:37.720 --> 00:00:39.680
+some control as to how it can grow.
+
+00:00:39.970 --> 00:00:43.210
+The vector elements themselves
+are stored in contiguous memory.
+
+00:00:43.840 --> 00:00:48.210
+So as the vector expands a new larger
+area in memory is allocated and the
+
+00:00:48.210 --> 00:00:49.650
+current elements are moved to it.
+
+00:00:50.290 --> 00:00:55.190
+Like the std array the vector provides,
+fast direct access in constant time.
+
+00:00:56.120 --> 00:01:00.140
+It also allows for rapid insertion
+and deletion at the back of
+
+00:01:00.140 --> 00:01:01.640
+the vector in constant time.
+
+00:01:02.050 --> 00:01:05.370
+However, inserting elements into
+any other part of the vector other
+
+00:01:05.370 --> 00:01:07.069
+than the back is not as efficient.
+
+00:01:07.520 --> 00:01:11.090
+It happens in linear time, which
+means that the running time increases
+
+00:01:11.090 --> 00:01:12.940
+linearly with the size of the vector.
+
+00:01:14.030 --> 00:01:17.800
+The vector supports all of the iterators,
+and the iterators may become invalid.
+
+00:01:18.070 --> 00:01:22.300
+This is especially true when the
+vector resizes and a new area in memory
+
+00:01:22.300 --> 00:01:24.089
+is allocated for the extra storage.
+
+00:01:26.839 --> 00:01:30.089
+In this slide, we see a diagram of
+what a simple vector might look like.
+
+00:01:30.389 --> 00:01:34.240
+We declare vec as a vector of integers
+and initialize it to 1 2 and 3.
+
+00:01:35.010 --> 00:01:37.140
+The vector has a front and a back.
+
+00:01:37.700 --> 00:01:41.119
+The front in this case is element
+1 and the back is element 3.
+
+00:01:41.939 --> 00:01:46.219
+We typically add elements to the back
+of the vector using the pushback method.
+
+00:01:48.590 --> 00:01:52.929
+So in this case, we're adding the
+element 4 using push back and the 4
+
+00:01:52.929 --> 00:01:54.560
+is added to the back of the vector.
+
+00:01:55.530 --> 00:01:58.250
+We can add elements anywhere
+in the vector, but the back is
+
+00:01:58.250 --> 00:02:01.100
+the location where the addition
+of elements is most efficient.
+
+00:02:02.219 --> 00:02:04.489
+If there's no room and the
+vector needs to allocate more
+
+00:02:04.490 --> 00:02:06.190
+space, it will automatically.
+
+00:02:06.680 --> 00:02:10.190
+Usually, twice the amount of the
+current space is allocated and the
+
+00:02:10.190 --> 00:02:13.550
+current elements are moved over to
+the newly allocated area and then the
+
+00:02:13.550 --> 00:02:15.130
+new element is placed at the back.
+
+00:02:16.270 --> 00:02:18.839
+Let's look at a few ways to
+initialize vectors, and then we'll
+
+00:02:18.840 --> 00:02:20.309
+see some of its member methods.
+
+00:02:22.350 --> 00:02:26.249
+In the first example in this slide,
+I declare vec as a vector of integers
+
+00:02:26.249 --> 00:02:28.842
+and initialize it to 1 2 3 4 and 5.
+
+00:02:28.842 --> 00:02:32.750
+In the second example, I declare
+vect1 is a vector of integers.
+
+00:02:32.990 --> 00:02:36.420
+And I'm using an overloaded
+constructor here to create 10 integers
+
+00:02:36.480 --> 00:02:38.290
+and initialize them all to 100.
+
+00:02:39.360 --> 00:02:42.379
+Of course, the vector supports
+copy and move semantics for
+
+00:02:42.390 --> 00:02:44.000
+initialization and assignment.
+
+00:02:44.330 --> 00:02:48.440
+In the third example, I'm declaring
+stooges as a vector of std strings.
+
+00:02:48.730 --> 00:02:53.179
+And I'm initializing those strings with
+both std strings and c-style strings.
+
+00:02:54.000 --> 00:02:57.020
+Vectors also support assignment
+via an initializer list, just
+
+00:02:57.020 --> 00:02:58.150
+like we did with std array.
+
+00:02:58.350 --> 00:03:00.930
+So let's look at some other
+methods provided by the vector.
+
+00:03:03.510 --> 00:03:07.649
+Again, please refer to the c++
+stl documentation for more detail
+
+00:03:07.650 --> 00:03:08.870
+on these and other methods.
+
+00:03:09.130 --> 00:03:11.849
+There's a lot there, and that's
+the place to look for information,
+
+00:03:12.179 --> 00:03:13.450
+but let's see some other methods.
+
+00:03:13.750 --> 00:03:14.940
+Let's start with size.
+
+00:03:15.089 --> 00:03:17.770
+This method returns the number of
+elements that are in the vector.
+
+00:03:18.129 --> 00:03:19.349
+That's pretty straightforward.
+
+00:03:19.600 --> 00:03:23.200
+The capacity method tells us the
+current capacity of the vector.
+
+00:03:23.800 --> 00:03:28.170
+When this capacity is exceeded, that's
+when the vector will expand dynamically,
+
+00:03:28.170 --> 00:03:33.550
+and max size tells us what the max size of
+a vector would be in our system and that's
+
+00:03:33.550 --> 00:03:35.049
+the number of elements that it can hold.
+
+00:03:35.250 --> 00:03:37.190
+Usually, this is a really large number.
+
+00:03:38.370 --> 00:03:41.250
+Vectors also let us access
+individual elements either using
+
+00:03:41.250 --> 00:03:45.760
+the subscript operator or the .at
+method, just as we've seen before.
+
+00:03:45.760 --> 00:03:50.970
+The subscript operator does not do any
+bounce checking, and the .at method does.
+
+00:03:51.389 --> 00:03:55.499
+You can see in the example code
+that vec at 0 will refer to the 1,
+
+00:03:56.049 --> 00:03:58.900
+and vec sub-1 will refer to the 2.
+
+00:04:01.500 --> 00:04:04.600
+As previously mentioned, the vector
+allows for efficiently inserting
+
+00:04:04.630 --> 00:04:06.309
+elements at the back of the vector.
+
+00:04:06.849 --> 00:04:08.459
+This is done with the pushback method.
+
+00:04:09.150 --> 00:04:11.709
+In this case, we have a
+vector of person objects.
+
+00:04:12.190 --> 00:04:15.980
+We can create a person p1 named
+Larry who's 18 years old, and we
+
+00:04:15.980 --> 00:04:19.859
+can use the pushback method to
+insert p1 at the back of the vector.
+
+00:04:20.459 --> 00:04:24.269
+Remember, all container classes make
+copies of the elements they store.
+
+00:04:24.580 --> 00:04:26.799
+So in this case, a copy of p1 is made.
+
+00:04:27.290 --> 00:04:31.510
+In the second example, we're creating an
+unnamed person object and adding it to the
+
+00:04:31.520 --> 00:04:33.690
+back of the vector using move semantics.
+
+00:04:34.180 --> 00:04:38.470
+The last method we haven't seen yet and
+it's awesome, it's called emplace back.
+
+00:04:39.230 --> 00:04:42.359
+This method expects the parameters
+that would normally be passed
+
+00:04:42.360 --> 00:04:43.640
+into the person constructor.
+
+00:04:44.540 --> 00:04:50.260
+And that's what it does it constructs the person object
+using a person constructor right in place
+
+00:04:50.260 --> 00:04:51.789
+where it's supposed to be in the vector.
+
+00:04:52.150 --> 00:04:53.310
+That's really efficient.
+
+00:04:53.330 --> 00:04:54.570
+No moves, no copies.
+
+00:04:54.570 --> 00:04:56.500
+It just puts it right
+where it's supposed to be.
+
+00:04:56.880 --> 00:04:58.440
+Use this method, it's awesome.
+
+00:05:00.450 --> 00:05:03.719
+The empty method will return true
+if the vector is empty and false
+
+00:05:03.719 --> 00:05:08.080
+otherwise, just as we saw with
+std arrays, we can swap 2 vectors.
+
+00:05:08.600 --> 00:05:11.920
+But in the case of vectors, the
+vector elements have to be the same
+
+00:05:11.960 --> 00:05:13.789
+type, but the sizes can be different.
+
+00:05:14.730 --> 00:05:18.680
+And finally, we can use the sort algorithm
+and any other kind of algorithm to sort
+
+00:05:18.690 --> 00:05:21.019
+vectors with iterators to copy vectors.
+
+00:05:21.460 --> 00:05:23.400
+We'll see some of those
+examples in the IDE.
+
+00:05:24.449 --> 00:05:27.410
+So let's see how we can insert
+elements into a vector at a
+
+00:05:27.410 --> 00:05:28.870
+place other than the back.
+
+00:05:30.430 --> 00:05:32.860
+First, we'll create 2 vectors
+of integers,
+
+00:05:32.860 --> 00:05:36.860
+vec1 and vec2. Vec1 is 1 2 3 4 5,
+
+00:05:36.860 --> 00:05:39.660
+and vector is 10 20 30 40 and 50.
+
+00:05:40.160 --> 00:05:45.010
+Now let's say we want to insert
+some data before the 3 and vec1.
+
+00:05:45.010 --> 00:05:47.540
+First, we need an iterator to
+point to the location of the
+
+00:05:47.540 --> 00:05:51.200
+vector where we want to insert the
+data before, in this case, the 3.
+
+00:05:52.530 --> 00:05:56.350
+We can use the find algorithm to easily
+find the 3 as we've already seen.
+
+00:05:57.440 --> 00:06:02.120
+Once the it iterator is pointing to
+the 3 in the vec1, then we could call
+
+00:06:02.120 --> 00:06:06.630
+the insert method and pass in the
+iterator it and the element we want to
+
+00:06:06.630 --> 00:06:08.290
+insert before it, in this case, the 10.
+
+00:06:09.490 --> 00:06:10.190
+That's it.
+
+00:06:10.490 --> 00:06:13.171
+Now vect1 contains 1 2 10 3 4 and 5.
+
+00:06:13.171 --> 00:06:16.930
+So we inserted the 10 before the 3.
+
+00:06:17.369 --> 00:06:20.270
+That was pretty easy, but we
+can also insert a sequence of
+
+00:06:20.270 --> 00:06:22.100
+elements, how, with iterators.
+
+00:06:23.090 --> 00:06:28.049
+Let's insert the entire contents
+of vec2 before the 4 in vec1.
+
+00:06:29.050 --> 00:06:31.860
+We first find the 4 and
+get an iterator to it.
+
+00:06:31.910 --> 00:06:33.019
+We'll call it it.
+
+00:06:33.290 --> 00:06:37.470
+Then we can use the insert algorithm and
+pass in the iterator it that we want to
+
+00:06:37.470 --> 00:06:42.030
+insert before and the 2 iterators that
+will provide the sequence of elements
+
+00:06:42.040 --> 00:06:43.890
+from vec2 that we want to insert.
+
+00:06:43.990 --> 00:06:45.430
+In this case, all of vec2.
+
+00:06:45.679 --> 00:06:46.249
+That's it.
+
+00:06:46.389 --> 00:06:52.680
+Now vec1 will be 1 2 10
+3 10 20 30 40 50 4 and 5.
+
+00:06:52.680 --> 00:06:57.670
+We inserted a copy of vec2 before the 4.
+
+00:06:58.440 --> 00:07:00.290
+Very powerful and easy to do.
+
+00:07:00.900 --> 00:07:02.740
+All right, so let's head over to the IDE.
+
+00:07:02.740 --> 00:07:06.230
+We'll see these examples, and we'll
+see some more complex examples as well.
+
+00:07:07.910 --> 00:07:09.240
+Okay, so I'm back in the IDE.
+
+00:07:09.240 --> 00:07:12.659
+I'm in the section 20 workspace
+in the vector project.
+
+00:07:13.140 --> 00:07:15.260
+And this project has a lot of examples.
+
+00:07:15.260 --> 00:07:19.340
+I really believe that the best way to
+learn the stl is through examples, a
+
+00:07:19.340 --> 00:07:23.079
+real example-driven approach make it a
+little boring sometimes as I'm giving
+
+00:07:23.080 --> 00:07:25.130
+you example after example after example.
+
+00:07:25.370 --> 00:07:27.240
+But I think it's really
+the best way to learn it.
+
+00:07:27.599 --> 00:07:29.329
+I've got a lot of examples here.
+
+00:07:29.459 --> 00:07:31.120
+I'm going to go through
+them pretty quickly.
+
+00:07:31.240 --> 00:07:34.140
+So please feel free to pause
+the video, look at the example
+
+00:07:34.140 --> 00:07:35.190
+and then continue again.
+
+00:07:35.420 --> 00:07:36.420
+Let's get started.
+
+00:07:36.440 --> 00:07:38.920
+I'm including iostream,
+vector and algorithm.
+
+00:07:38.920 --> 00:07:41.640
+Obviously, I'm going to use vectors
+in this example, and we're going
+
+00:07:41.640 --> 00:07:42.920
+to use some algorithms as well.
+
+00:07:43.130 --> 00:07:46.089
+And I'm going to use integers
+mostly, but I'm going to use this
+
+00:07:46.100 --> 00:07:47.729
+person class in a few places.
+
+00:07:48.820 --> 00:07:50.780
+It's the same kind of person
+class we've used before.
+
+00:07:50.780 --> 00:07:53.650
+A person has a name and an age,
+it's a string and an integer.
+
+00:07:54.100 --> 00:07:58.420
+I've also overloaded the stream insertion
+operator, just to make life easier.
+
+00:07:59.040 --> 00:08:00.460
+I've got a default constructor.
+
+00:08:00.900 --> 00:08:02.320
+I've got an overloaded constructor.
+
+00:08:03.450 --> 00:08:08.360
+And remember, when we're using
+our own classes with the stl,
+
+00:08:08.910 --> 00:08:13.809
+always, always overload less
+than and the quality operator.
+
+00:08:14.510 --> 00:08:17.420
+Okay, those are the 2 Boolean
+operators that are being used
+
+00:08:17.420 --> 00:08:19.450
+by the stl on your own objects.
+
+00:08:20.429 --> 00:08:21.219
+So that's it.
+
+00:08:21.540 --> 00:08:22.799
+I'm comparing 2 people.
+
+00:08:23.049 --> 00:08:25.420
+And I'm comparing whether
+one is less than the other.
+
+00:08:25.420 --> 00:08:28.850
+I'm not really using them in this
+demo, but it's good habit to do.
+
+00:08:30.160 --> 00:08:33.510
+As far as the operator -- the
+insertion operator it's right
+
+00:08:33.510 --> 00:08:35.540
+here same as we've always done.
+
+00:08:35.610 --> 00:08:40.710
+And then what i did was i created these 2
+display functions, one is called display
+
+00:08:40.719 --> 00:08:42.780
+2, and one is just called display.
+
+00:08:42.780 --> 00:08:45.880
+I'm going to use display mostly,
+but I'm going to use display 2.
+
+00:08:45.880 --> 00:08:49.520
+And the reason I did display 2, just so
+you can see a different way to write this.
+
+00:08:49.550 --> 00:08:52.100
+Of course, I could use a
+range-based for loop to do this,
+
+00:08:52.110 --> 00:08:53.220
+and I'm doing that right here.
+
+00:08:54.099 --> 00:08:55.870
+But I wanted you to see
+the for each algorithm.
+
+00:08:56.280 --> 00:08:57.600
+We've seen this before as well.
+
+00:08:57.969 --> 00:08:59.910
+So give me a vector of integers.
+
+00:09:00.370 --> 00:09:02.980
+And I'm going to do for each.
+
+00:09:03.140 --> 00:09:06.940
+What's my sequence from the beginning
+to the end of the vector that was passed
+
+00:09:06.940 --> 00:09:08.810
+in, so in other words the entire vector.
+
+00:09:09.770 --> 00:09:13.170
+At each iteration, this lambda
+expression is going to be called.
+
+00:09:13.790 --> 00:09:15.189
+X will be passed into it.
+
+00:09:15.320 --> 00:09:18.339
+X will be each one of those
+elements in that sequence.
+
+00:09:18.639 --> 00:09:19.930
+And all I'm doing is just display it.
+
+00:09:20.810 --> 00:09:23.750
+So it's really the same effect
+as the range-based for loop.
+
+00:09:24.160 --> 00:09:27.359
+This function here I wrote as a
+template function because sometimes
+
+00:09:27.360 --> 00:09:30.410
+I want to be able to print vectors
+of integers, other times I want to
+
+00:09:30.410 --> 00:09:32.560
+be able to print vectors of persons.
+
+00:09:32.690 --> 00:09:35.209
+So it's nice just to have one
+function to let you do it.
+
+00:09:35.730 --> 00:09:40.340
+Here's my template parameter right here
+t, so I can pass in a vector of anything.
+
+00:09:41.340 --> 00:09:45.160
+And I can loop through here using my
+range-based for loop and the auto takes
+
+00:09:45.179 --> 00:09:46.959
+care of figuring out the type for me.
+
+00:09:47.360 --> 00:09:48.909
+So it makes life really, really easy.
+
+00:09:49.139 --> 00:09:51.300
+Okay, so let's start going
+through these examples.
+
+00:09:51.300 --> 00:09:53.239
+The first few are going to
+be really straightforward.
+
+00:09:53.240 --> 00:09:54.439
+I'm sure you've seen them before.
+
+00:09:54.590 --> 00:09:56.670
+What I've done is I've already
+run this, and the output is
+
+00:09:56.670 --> 00:09:57.890
+over here on the right side.
+
+00:09:57.890 --> 00:09:59.140
+You can see here in the console.
+
+00:09:59.410 --> 00:10:01.306
+But what we'll do is we'll
+go through these examples and
+
+00:10:01.306 --> 00:10:02.550
+then we'll look at the console.
+
+00:10:02.820 --> 00:10:05.040
+And like I said, the first few are
+really, really straightforward.
+
+00:10:05.460 --> 00:10:06.620
+So let's look at this first one.
+
+00:10:06.990 --> 00:10:11.920
+I've got vec as a vector of integers,
+and I'm initializing it to 1 2 3 4 and 5,
+
+00:10:12.890 --> 00:10:15.140
+and I'm calling that display function.
+
+00:10:15.140 --> 00:10:16.270
+That's the template function.
+
+00:10:16.800 --> 00:10:19.020
+It's going to display the vector,
+and you can see the vector being
+
+00:10:19.020 --> 00:10:21.545
+displayed right up here, 1 2 3 4 and 5.
+
+00:10:21.670 --> 00:10:24.439
+Now what I'm doing is -- remember,
+vector has already been initialized,
+
+00:10:24.440 --> 00:10:25.910
+so right now I'm using assignment.
+
+00:10:26.030 --> 00:10:28.529
+This is assignment using an
+initialization of list, which
+
+00:10:28.529 --> 00:10:30.110
+is really really cool and handy.
+
+00:10:31.010 --> 00:10:32.740
+So now vec is 2 4 5 6.
+
+00:10:32.790 --> 00:10:35.530
+And I'm displaying it using
+that other display function.
+
+00:10:35.890 --> 00:10:37.590
+So here I'm displaying vec again.
+
+00:10:37.590 --> 00:10:40.140
+And you can see vec is now 2 4 5 6.
+
+00:10:41.650 --> 00:10:44.929
+And then in this case, I'm creating vec1.
+
+00:10:45.179 --> 00:10:48.079
+It's an object and it's also a
+vector of integers, but I'm not
+
+00:10:48.080 --> 00:10:50.040
+using the curlies here, right.
+
+00:10:50.040 --> 00:10:51.940
+So I'm not using an initialization list.
+
+00:10:51.940 --> 00:10:55.260
+I'm using an overloaded constructor,
+that's part of the vector class.
+
+00:10:56.340 --> 00:10:58.030
+This tells me how many do I want.
+
+00:10:58.110 --> 00:11:00.110
+This tells me what is
+each one going to be.
+
+00:11:00.740 --> 00:11:03.400
+So this is going to create 10 100s.
+
+00:11:03.490 --> 00:11:07.620
+And on a display vec1, you can see
+them right up here, all 10 100s.
+
+00:11:07.980 --> 00:11:09.240
+There are other constructors.
+
+00:11:09.249 --> 00:11:12.440
+There's a lot of different ways to
+do that refer to the documentation.
+
+00:11:12.440 --> 00:11:14.280
+Some of them are are real interesting.
+
+00:11:14.940 --> 00:11:16.459
+These are the one's
+that I use all the time.
+
+00:11:17.280 --> 00:11:18.939
+Okay, so now let's look at test 2.
+
+00:11:19.259 --> 00:11:22.209
+Test 2 is all about
+the size, the capacity.
+
+00:11:22.209 --> 00:11:23.629
+So we understand how this works.
+
+00:11:24.000 --> 00:11:29.510
+So what I'm doing here is I'm saying vec
+is again a vector of integers 1 2 3 4 5.
+
+00:11:29.740 --> 00:11:30.535
+I'm displaying it.
+
+00:11:30.535 --> 00:11:32.070
+You can see it's displaying right here.
+
+00:11:33.070 --> 00:11:35.240
+Then I'm asking what's
+the size of the vector.
+
+00:11:35.630 --> 00:11:37.410
+What's the max size of the vector.
+
+00:11:37.410 --> 00:11:38.910
+And what's the capacity of the vector.
+
+00:11:39.170 --> 00:11:43.219
+So you can see here the size is 5,
+I've got 5 elements in there right now.
+
+00:11:43.740 --> 00:11:46.339
+The max size is a really
+big number, that's how many
+
+00:11:46.350 --> 00:11:47.960
+elements that vector can hold.
+
+00:11:49.010 --> 00:11:51.620
+And the capacity is 5 in this case.
+
+00:11:52.099 --> 00:11:52.910
+What does that mean?
+
+00:11:53.099 --> 00:11:58.810
+That means that if i exceed that capacity,
+this vector will increase in size, right.
+
+00:11:58.830 --> 00:12:03.570
+In other words, the stl is going to
+allocate space for a larger vector.
+
+00:12:03.580 --> 00:12:06.480
+Remember, it's all contiguous in
+memory and copy stuff into it.
+
+00:12:06.860 --> 00:12:09.270
+So that's exactly what I'm
+going to force right now.
+
+00:12:09.719 --> 00:12:11.530
+I'm going to push back 6.
+
+00:12:11.710 --> 00:12:14.029
+So I'm going to add 6 to
+the back of this vector.
+
+00:12:14.029 --> 00:12:15.610
+It's going to be a 6 right in there now.
+
+00:12:16.469 --> 00:12:20.670
+Then I'm going to display it again, and
+then display the size max sizing capacity.
+
+00:12:21.180 --> 00:12:23.410
+We would expect max size not
+to change right now because
+
+00:12:23.410 --> 00:12:24.550
+I'm not doing anything else.
+
+00:12:25.000 --> 00:12:27.090
+So I'm pushing it back and displaying it.
+
+00:12:27.090 --> 00:12:29.620
+So right here, you can
+see the 6 at the end here.
+
+00:12:30.940 --> 00:12:34.539
+What's the size of the vector
+6, max size is the same.
+
+00:12:34.910 --> 00:12:36.620
+But look at the vex capacity here.
+
+00:12:36.730 --> 00:12:37.730
+Now it's 10.
+
+00:12:37.820 --> 00:12:39.439
+This is pretty typical.
+
+00:12:39.920 --> 00:12:43.150
+Whenever you exceed the capacity
+what'll do, it'll double.
+
+00:12:43.600 --> 00:12:48.299
+So the next time the capacity will be
+20 and then 40 and then 80 and so forth.
+
+00:12:48.309 --> 00:12:50.379
+That's a very, very typical behavior.
+
+00:12:50.580 --> 00:12:53.439
+Keep that in mind because if
+you've got 10000 elements in here.
+
+00:12:53.439 --> 00:12:57.610
+And you add that 10000 and 1,
+it's going to go to 20000 big.
+
+00:12:57.610 --> 00:12:59.620
+When you only maybe need
+10000 in a little bit.
+
+00:12:59.840 --> 00:13:03.650
+So there's ways to help that
+and l'll show you a couple.
+
+00:13:03.880 --> 00:13:07.319
+We've got this method called shrink
+to fit, which is pretty cool.
+
+00:13:07.319 --> 00:13:09.300
+And this just came about in c++ plus11.
+
+00:13:09.750 --> 00:13:13.790
+So if I call shrink to fit, it'll
+shrink the amount of storage
+
+00:13:13.790 --> 00:13:16.360
+allocated to exactly the vector size.
+
+00:13:17.070 --> 00:13:19.300
+Okay, so remember, right
+now we had capacity 10.
+
+00:13:19.970 --> 00:13:22.469
+Then i called shrink to fit,
+and I'm displaying it again.
+
+00:13:22.469 --> 00:13:23.820
+And you can see what's happening here.
+
+00:13:24.080 --> 00:13:26.929
+Notice that now the capacity is exactly 6.
+
+00:13:26.929 --> 00:13:29.300
+There's one more method I wanted
+to talk about we don't use it
+
+00:13:29.309 --> 00:13:33.090
+very often but it's nice to know
+that it's there, it's reserve 100.
+
+00:13:34.130 --> 00:13:37.930
+What you're doing here is
+you're reserving 100 spaces for
+
+00:13:37.940 --> 00:13:39.340
+elements, contiguous in memory.
+
+00:13:39.889 --> 00:13:42.690
+And I'm displaying this
+memory, this vector again here.
+
+00:13:43.139 --> 00:13:46.269
+And you can see right here the
+only difference is right there.
+
+00:13:46.760 --> 00:13:49.030
+This vector now has a capacity of a 100.
+
+00:13:49.290 --> 00:13:53.189
+So it won't expand until
+it hits that 101 element.
+
+00:13:53.740 --> 00:13:55.500
+All right, so now let's
+take a look at test 3.
+
+00:13:55.610 --> 00:13:57.210
+L'll scroll both of these up.
+
+00:13:57.679 --> 00:14:00.010
+Again, I've got my vec1 2 3 4 5.
+
+00:14:00.170 --> 00:14:02.750
+I'm displaying it so you can
+see it displaying right here.
+
+00:14:02.750 --> 00:14:07.030
+And here all I'm doing is using the
+subscript operator and the .at method.
+
+00:14:07.030 --> 00:14:09.730
+Remember, the subscript operator
+does no bounce checking.
+
+00:14:10.020 --> 00:14:12.569
+The at method does do bounce checking.
+
+00:14:12.570 --> 00:14:15.189
+So if we exceed the bounds,
+we get an exception.
+
+00:14:16.040 --> 00:14:19.610
+So all I'm doing is I'm putting 100
+here, and I'm putting 200 here, and
+
+00:14:19.610 --> 00:14:23.339
+I'm displaying the vector, and you
+can see that's exactly what we expect.
+
+00:14:23.859 --> 00:14:25.290
+So let's move on to test 4.
+
+00:14:26.050 --> 00:14:27.980
+And again, I know these
+are a lot of examples.
+
+00:14:27.980 --> 00:14:30.600
+But after doing this for many
+many years, I think this is the
+
+00:14:30.600 --> 00:14:31.920
+best way to really learn this.
+
+00:14:32.139 --> 00:14:36.319
+For test 4, we've created stooges
+is a vector of person objects.
+
+00:14:36.340 --> 00:14:38.390
+Remember, we created that
+person class earlier.
+
+00:14:39.339 --> 00:14:41.810
+P1 is Larry and he's 18.
+
+00:14:41.900 --> 00:14:42.740
+That's a person.
+
+00:14:43.030 --> 00:14:44.199
+Let's display stooges.
+
+00:14:44.200 --> 00:14:45.819
+Right now it should be empty, right.
+
+00:14:45.890 --> 00:14:46.790
+There it is empty.
+
+00:14:47.040 --> 00:14:48.410
+Now I'm going to push back p1.
+
+00:14:48.950 --> 00:14:50.580
+That's Larry and display it again.
+
+00:14:50.590 --> 00:14:55.160
+So now you can see that the stooges
+vector has just 1 person in it, Larry.
+
+00:14:55.559 --> 00:14:58.310
+In this case I'm going to push back Moe.
+
+00:14:58.840 --> 00:14:59.890
+Moe is 25.
+
+00:15:00.190 --> 00:15:03.005
+I'm not creating a named object here.
+
+00:15:03.005 --> 00:15:06.460
+So this is going to use move semantics,
+and it's going to push it in the back.
+
+00:15:06.720 --> 00:15:10.090
+When I display again, you can see
+that now I've got Larry and Moe.
+
+00:15:10.330 --> 00:15:12.850
+And then the last example
+I'm using the in place back.
+
+00:15:12.850 --> 00:15:15.139
+And this is awesome, as
+I said, in these slides.
+
+00:15:15.889 --> 00:15:19.429
+What we do here is we pass in the
+arguments that we would have passed
+
+00:15:19.430 --> 00:15:22.680
+into a constructor, you can see right
+here, right, the name and the age.
+
+00:15:23.030 --> 00:15:25.810
+And what it's going to do behind the
+scenes is actually call the constructor
+
+00:15:25.990 --> 00:15:28.850
+for us and put curly at the back.
+
+00:15:29.170 --> 00:15:33.049
+And then when I display again, you can
+see that I've got Larry Moe and Curly.
+
+00:15:33.339 --> 00:15:35.139
+Let's move on to test 5.
+
+00:15:35.650 --> 00:15:39.410
+In this case, I've got the
+stooges vector again right here.
+
+00:15:40.120 --> 00:15:42.080
+And I've initialized it
+to Larry Moe and Curly.
+
+00:15:42.450 --> 00:15:45.360
+And I'm displaying it, and you
+can see it displaying right there.
+
+00:15:45.370 --> 00:15:47.420
+You can see Larry Moe and
+Curly being displayed.
+
+00:15:47.800 --> 00:15:50.360
+We can have the front method,
+and we have a back method.
+
+00:15:50.380 --> 00:15:54.860
+The front method returns a reference to
+the front of the front element of the
+
+00:15:54.970 --> 00:15:57.310
+vector, the back to the back element.
+
+00:15:57.580 --> 00:16:00.500
+Well, the front one is Larry,
+and the back one is Curly.
+
+00:16:00.530 --> 00:16:01.800
+You can see front and back.
+
+00:16:02.280 --> 00:16:06.060
+So when we display that, we can
+see front is Larry, back is Curly.
+
+00:16:06.559 --> 00:16:08.170
+We also have the pop back.
+
+00:16:08.170 --> 00:16:11.740
+And it removes the element
+from the back of the vector.
+
+00:16:11.900 --> 00:16:16.600
+For vectors, when we insert and delete
+from the back, it's very, very efficient.
+
+00:16:16.940 --> 00:16:18.930
+And that's typically how we use vectors.
+
+00:16:19.150 --> 00:16:22.050
+So we're going to get rid of Curly
+in this case and then display the
+
+00:16:22.050 --> 00:16:25.890
+stooges and you can see here, Larry
+and Moe are there, Curly's gone.
+
+00:16:26.320 --> 00:16:27.480
+So here in test 6.
+
+00:16:27.580 --> 00:16:31.550
+There's my vector of integers, 1 2 3 4
+5, and I'm displaying it right there.
+
+00:16:32.720 --> 00:16:35.950
+I can use the clear method to get
+rid of everything in the vector.
+
+00:16:36.130 --> 00:16:38.689
+So I just removed everything,
+and I'm displaying the vector
+
+00:16:38.690 --> 00:16:40.630
+right here, it's empty I'm.
+
+00:16:40.630 --> 00:16:44.169
+Assigning those 10 integers to the
+vector and displaying it again.
+
+00:16:44.700 --> 00:16:46.789
+You can see that being
+displayed right over here.
+
+00:16:47.389 --> 00:16:51.060
+And now what I want to do is I
+want to use the erase method to
+
+00:16:51.060 --> 00:16:53.090
+erase a piece of this vector.
+
+00:16:53.450 --> 00:16:55.320
+So I'm going to say vec.erase.
+
+00:16:55.720 --> 00:16:57.780
+And where do I want to
+start, at the beginning.
+
+00:16:57.790 --> 00:17:01.590
+Where do I want to stop, right
+before that guy, vec began plus 2.
+
+00:17:01.910 --> 00:17:03.159
+So here's vec begin.
+
+00:17:03.599 --> 00:17:04.970
+Here's vec begin plus 2.
+
+00:17:04.970 --> 00:17:07.829
+So what it's going to do is going
+to get rid of those 2 elements.
+
+00:17:08.650 --> 00:17:12.920
+And then when I display, you can see
+right here the 1 and the 2 are gone.
+
+00:17:13.250 --> 00:17:16.340
+Great, now this example is a little
+bit more complicated, but it's
+
+00:17:16.340 --> 00:17:17.579
+really straightforward as well.
+
+00:17:17.809 --> 00:17:19.250
+And I'm just using a while loop here.
+
+00:17:19.549 --> 00:17:22.170
+I'm assigning 1 through
+10 to the vec again.
+
+00:17:22.529 --> 00:17:25.230
+And then I'm getting an
+iterator to the beginning of it.
+
+00:17:25.630 --> 00:17:27.379
+And I'm calling it it.
+
+00:17:27.379 --> 00:17:29.470
+And all I'm doing is
+moving along that vector.
+
+00:17:30.210 --> 00:17:34.629
+And if I see an even number,
+I'm deleting it or erasing it.
+
+00:17:35.380 --> 00:17:38.239
+So in this case, while it
+is not equal to vec end.
+
+00:17:39.009 --> 00:17:45.760
+If what I'm pointing to with the iterator
+is even, then I'm erasing it now.
+
+00:17:45.760 --> 00:17:48.890
+I don't want to increase the iterator
+here, right, because I just erased
+
+00:17:48.890 --> 00:17:50.450
+it so that would kind of skip items.
+
+00:17:50.660 --> 00:17:52.753
+Otherwise, I do want to
+increase the iterator because
+
+00:17:52.940 --> 00:17:54.030
+I didn't see an even number.
+
+00:17:54.030 --> 00:17:55.811
+And then when I'm done, I
+just want to display vec.
+
+00:17:55.811 --> 00:18:00.110
+And you can see right there
+vectors even numbers are all gone.
+
+00:18:00.639 --> 00:18:04.200
+For test 7, we've got 2 vectors, and
+all we're going to do is swap them.
+
+00:18:04.470 --> 00:18:06.270
+So here's vec 1, here's vector.
+
+00:18:07.180 --> 00:18:08.590
+I'm displaying both of them.
+
+00:18:08.590 --> 00:18:09.969
+And you can see them right here.
+
+00:18:10.590 --> 00:18:12.310
+Then I'm just saying vect2 swap vec1.
+
+00:18:13.009 --> 00:18:14.709
+And I'm displaying those 2 again.
+
+00:18:14.709 --> 00:18:16.270
+And you can see that they've swapped.
+
+00:18:16.559 --> 00:18:20.150
+What's cool about vectors is they
+both have to be the same type in this
+
+00:18:20.150 --> 00:18:21.980
+example, but they can be different sizes.
+
+00:18:21.980 --> 00:18:24.280
+So it's a little different
+from the std array that we saw.
+
+00:18:24.750 --> 00:18:28.520
+In test 8, what we're
+doing is we're sorting.
+
+00:18:29.179 --> 00:18:32.770
+So we've got a vector
+of a bunch of integers. They are unsorted.
+
+00:18:33.410 --> 00:18:35.110
+I'm displaying that guy right here.
+
+00:18:35.110 --> 00:18:36.879
+You can see test right over here, test 8.
+
+00:18:37.160 --> 00:18:38.560
+So that's displaying the vector.
+
+00:18:38.950 --> 00:18:43.459
+I'm calling the sort algorithm,
+vect1.began vec1.end are my iterators,
+
+00:18:43.459 --> 00:18:48.119
+so the whole vector, and I'm
+displaying it again, and it's sorted.
+
+00:18:48.550 --> 00:18:50.790
+We can use reverse to sort it in reverse.
+
+00:18:51.559 --> 00:18:52.610
+Let's take a look at this one.
+
+00:18:52.610 --> 00:18:53.629
+This one is really cool.
+
+00:18:53.639 --> 00:18:57.510
+This is one of my -- let me spell
+that right here instructs, this is
+
+00:18:57.510 --> 00:19:01.250
+one of my favorite inserters to use.
+
+00:19:01.250 --> 00:19:02.640
+It's called a back inserter.
+
+00:19:03.200 --> 00:19:05.080
+So let me show you what's going on here.
+
+00:19:05.080 --> 00:19:10.049
+What we want to do is we've got
+vec1, which is 1 2 3 4 and 5, and
+
+00:19:10.119 --> 00:19:12.774
+we've got vec2, which is 10 and 20.
+
+00:19:13.120 --> 00:19:17.280
+So what I want to do is I want
+to basically insert 1 2 3 4 and
+
+00:19:17.280 --> 00:19:18.990
+5 right after the 10 and 20.
+
+00:19:19.320 --> 00:19:22.130
+Now we can do this a whole bunch of
+different ways, but I wanted to show
+
+00:19:22.130 --> 00:19:25.950
+you the back inserter because it's a
+really, really cool inserter to use.
+
+00:19:26.450 --> 00:19:30.090
+First thing we do is let's display
+the 2 vectors, vec1 and vec2.
+
+00:19:30.090 --> 00:19:31.430
+Remember, we're in test 9.
+
+00:19:31.430 --> 00:19:32.290
+So we're right here.
+
+00:19:32.720 --> 00:19:33.840
+We've just displayed them.
+
+00:19:34.490 --> 00:19:36.780
+Now I'm going to use the copy algorithm.
+
+00:19:37.710 --> 00:19:38.710
+What am I going to copy.
+
+00:19:39.090 --> 00:19:44.309
+Well, I'm going to copy vec1
+from vec1 beign to vec1 end.
+
+00:19:44.450 --> 00:19:46.629
+So I'm copying the entire vector1.
+
+00:19:46.629 --> 00:19:53.820
+But where am I copying it to vector2,
+and I'm using this guy right here,
+
+00:19:54.200 --> 00:19:57.069
+which is a really cool output
+iterator called back inserter.
+
+00:19:57.689 --> 00:20:00.679
+And what it'll do is it'll
+insert everything that's
+
+00:20:00.700 --> 00:20:02.630
+passed into it based on vec2.
+
+00:20:02.630 --> 00:20:04.899
+So what it's going to do -- remember,
+the sequence we're going to
+
+00:20:04.900 --> 00:20:07.970
+get is every integer in vec1
+here, that's what we're saying.
+
+00:20:09.220 --> 00:20:11.730
+Each one of those is going to be
+passed into the back inserter, and it's
+
+00:20:11.730 --> 00:20:13.570
+going to insert into the back of vec2.
+
+00:20:13.760 --> 00:20:17.980
+So when I display vec1 and vec2
+again, look what happened right here.
+
+00:20:18.280 --> 00:20:19.600
+see the 10 and the 20.
+
+00:20:19.600 --> 00:20:22.839
+And now you see the 1 2 3 4
+and 5, this is really cool.
+
+00:20:23.690 --> 00:20:29.670
+Let's do the same thing now except that's
+only copy if the elements are even.
+
+00:20:29.920 --> 00:20:33.260
+So in order to do that, we can
+start from scratch right here.
+
+00:20:33.620 --> 00:20:36.200
+So here's my vec1 and vec2.
+
+00:20:37.280 --> 00:20:38.670
+I'm displaying both of them.
+
+00:20:38.679 --> 00:20:42.339
+You can see them being
+displayed right here.
+
+00:20:42.810 --> 00:20:44.990
+And then I'm saying copy if.
+
+00:20:45.040 --> 00:20:46.490
+This is a little different from copy.
+
+00:20:46.490 --> 00:20:47.360
+This has a predicate.
+
+00:20:47.370 --> 00:20:52.880
+So I'm going to copy from vec1 begin
+to -- sorry, let me say that again.
+
+00:20:52.880 --> 00:20:55.850
+I'm going to copy from
+vec1 begin to vec1 end.
+
+00:20:56.070 --> 00:20:57.219
+That's where I'm copying from.
+
+00:20:57.219 --> 00:20:59.300
+In other words, the entire vector1.
+
+00:21:00.039 --> 00:21:04.230
+And I'm copying it to vector
+2 using this back inserter.
+
+00:21:04.680 --> 00:21:07.300
+Now what do I want to copy, that's
+where the predicate comes in.
+
+00:21:07.300 --> 00:21:08.430
+And we're doing it with a lambda.
+
+00:21:08.639 --> 00:21:13.110
+So what does that say even only, right.
+
+00:21:13.290 --> 00:21:15.799
+Mod 2 is 0, so even only.
+
+00:21:16.309 --> 00:21:18.259
+And then I'm displaying
+these 2 guys again.
+
+00:21:18.560 --> 00:21:21.700
+You can see right here I'm just playing
+vec1 hasn't changed, but look at vec2.
+
+00:21:22.590 --> 00:21:23.680
+It had a 10 and a 20.
+
+00:21:24.030 --> 00:21:27.230
+But now it has the 2 the 4 the 6 the
+8 and the 10 that came from vec1/.
+
+00:21:27.230 --> 00:21:32.909
+These 2 guys the back inserter
+and the copy and copy if really
+
+00:21:32.910 --> 00:21:34.000
+get to know those things.
+
+00:21:34.000 --> 00:21:37.399
+And if you're ever in a technical
+interview or a job interview and
+
+00:21:37.400 --> 00:21:40.610
+you're asked one of these questions
+blow the person away by using
+
+00:21:40.610 --> 00:21:42.500
+this, you'll get the job trust me.
+
+00:21:42.760 --> 00:21:43.649
+I do that all the time.
+
+00:21:44.150 --> 00:21:45.420
+There's just a couple left here.
+
+00:21:45.420 --> 00:21:47.260
+Test 10 is a real interesting one.
+
+00:21:47.260 --> 00:21:50.470
+We're going to use the
+transform algorithm right here.
+
+00:21:50.470 --> 00:21:52.750
+And the idea here is
+I've got these 2 vectors.
+
+00:21:52.750 --> 00:21:55.139
+And I want to transform over both ranges.
+
+00:21:55.480 --> 00:21:59.909
+So what I want to do is I want
+to transform over the ranges so I
+
+00:21:59.910 --> 00:22:04.370
+want -- the one in the 10 and the 2
+and the 20 and the 3 and the 30 and 4
+
+00:22:04.370 --> 00:22:08.070
+and the 40 and the 5 and the
+50 being handled at the same time.
+
+00:22:08.330 --> 00:22:09.679
+So this is what's going on here.
+
+00:22:09.679 --> 00:22:13.520
+I'm using transform, and
+I'm starting at vec1.begin.
+
+00:22:13.530 --> 00:22:15.930
+And I'm going all the
+way to the end of vec1.
+
+00:22:16.860 --> 00:22:19.070
+And I'm just starting at vec2 began.
+
+00:22:19.080 --> 00:22:22.940
+You don't have to say the end here because
+it's only going to do this 5 times.
+
+00:22:22.940 --> 00:22:24.099
+This guy could be really long.
+
+00:22:24.929 --> 00:22:26.120
+So what's going to happen.
+
+00:22:26.130 --> 00:22:29.879
+Well, I'm going to use my back
+inserter and insert the results
+
+00:22:29.879 --> 00:22:32.100
+of this into vec3, which is empty.
+
+00:22:32.700 --> 00:22:33.820
+But what am i inserting.
+
+00:22:34.150 --> 00:22:35.430
+Well, that's the really cool part.
+
+00:22:35.430 --> 00:22:38.850
+This is going to be called -- this
+lambda here will be called with both
+
+00:22:38.850 --> 00:22:40.599
+the 1 and the 10 the 2 and the 20.
+
+00:22:41.120 --> 00:22:42.550
+So that would be x and y.
+
+00:22:42.730 --> 00:22:44.430
+And all I'm doing is multiplying them.
+
+00:22:44.740 --> 00:22:48.519
+And then I'm putting those back
+into vec3 using this back inserter.
+
+00:22:48.900 --> 00:22:52.980
+So when i display vec3, you can
+see right here, this is test 10.
+
+00:22:53.590 --> 00:22:56.969
+Check it out 10 40 90 160 250.
+
+00:22:56.980 --> 00:22:57.520
+What is that?
+
+00:22:57.520 --> 00:23:03.100
+Well, that's 1 times 10 is 10, 2
+times 20 is 40, 3 times 30 is 90.
+
+00:23:03.110 --> 00:23:04.310
+You can see what's happening here.
+
+00:23:04.310 --> 00:23:05.569
+This is really really neat.
+
+00:23:05.920 --> 00:23:08.460
+We actually did a challenge
+that was similar to this when
+
+00:23:08.460 --> 00:23:10.700
+we did erase way back when.
+
+00:23:11.350 --> 00:23:13.760
+You could tweak that to
+make this like a 1-liner.
+
+00:23:14.099 --> 00:23:16.969
+It's not exactly the same, but you
+can certainly get it to work that way.
+
+00:23:17.200 --> 00:23:21.199
+All right, and the last one is
+inserting and that would be test 11.
+
+00:23:22.889 --> 00:23:24.199
+And that's where we're at right here.
+
+00:23:24.559 --> 00:23:27.070
+We've got vec1 and vec2.
+
+00:23:27.070 --> 00:23:31.320
+Vec1 is 1 through 10, and
+vec2 is 100 200 300 and 400.
+
+00:23:31.420 --> 00:23:35.320
+And what do we want to do.
+We want to insert the constent of vec2
+
+00:23:35.320 --> 00:23:39.020
+into vec1 before that 5 right here.
+
+00:23:40.020 --> 00:23:42.520
+So here I'm displaying the 2 vectors.
+
+00:23:42.520 --> 00:23:45.520
+You can see them right here
+just as we would expect.
+
+00:23:46.120 --> 00:23:47.090
+So how do I do this?
+
+00:23:47.090 --> 00:23:48.820
+Well, I have to use an
+iterator to do this.
+
+00:23:48.830 --> 00:23:51.810
+Remember, it's not as efficient to
+insert things into the center of a
+
+00:23:51.810 --> 00:23:55.480
+vector as it is on the back of the
+vector, back is really efficient.
+
+00:23:55.759 --> 00:24:01.849
+So what I'm doing here is I'm
+finding that 5 in vec1, right
+
+00:24:02.000 --> 00:24:03.580
+begin end, the entire vector.
+
+00:24:03.870 --> 00:24:06.190
+I'm finding the 5, and
+I get back an iterator.
+
+00:24:07.129 --> 00:24:10.620
+If the iterator is not equal
+to the end, I found the 5.
+
+00:24:10.670 --> 00:24:12.750
+Otherwise, I display this.
+
+00:24:13.570 --> 00:24:15.409
+So in this case, I did find the 5.
+
+00:24:15.869 --> 00:24:17.610
+And I'm outputting inserting.
+
+00:24:17.610 --> 00:24:18.850
+You can see that right here.
+
+00:24:18.990 --> 00:24:22.420
+And then what I'm calling
+is I'm calling vec1.insert.
+
+00:24:22.920 --> 00:24:26.960
+I'm passing in the iterator, and I'm
+passing the sequence of elements I want to
+
+00:24:26.980 --> 00:24:29.990
+iterate to insert rather the entire vec2.
+
+00:24:31.410 --> 00:24:36.079
+So what that's going to do is it's going
+to insert all of vec2 before the 5.
+
+00:24:36.079 --> 00:24:39.530
+And you can see right here 1 2 3 4.
+
+00:24:39.690 --> 00:24:42.590
+Then there's vec2 and
+then 5 6 7 8 9 and 10.
+
+00:24:43.430 --> 00:24:45.290
+So that covers this lecture.
+
+00:24:45.440 --> 00:24:47.389
+There's a lot here to understand.
+
+00:24:47.400 --> 00:24:49.030
+Please take your time going through this.
+
+00:24:49.270 --> 00:24:52.939
+Pause the video, go back, try
+some examples, make these your
+
+00:24:52.940 --> 00:24:54.360
+own and really learn from this.
+
+00:24:54.379 --> 00:24:55.480
+That's the best way to do it.

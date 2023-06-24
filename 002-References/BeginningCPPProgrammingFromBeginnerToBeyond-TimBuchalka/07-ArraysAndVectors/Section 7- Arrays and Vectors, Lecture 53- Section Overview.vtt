@@ -1,0 +1,55 @@
+WEBVTT
+
+00:00:05.500 --> 00:00:09.700
+In this section of the course, we’ll learn about our first compound data type.
+
+00:00:10.500 --> 00:00:13.800
+A compound type is to type that's made up of other types.
+
+00:00:14.400 --> 00:00:17.500
+First, we'll learn about arrays, what they are and why we use them?
+
+00:00:18.000 --> 00:00:21.300
+We'll go over the syntax for declaring and initializing arrays,
+
+00:00:21.700 --> 00:00:24.700
+and we'll learn how to access the individual elements of an array.
+
+00:00:25.300 --> 00:00:27.600
+Then we'll talk about multidimensional arrays.
+
+00:00:27.600 --> 00:00:30.480
+These can be two-dimensional or three-dimensional arrays
+
+00:00:30.480 --> 00:00:32.480
+or they can be as many dimensions as you need.
+
+00:00:33.180 --> 00:00:37.880
+They can be very useful for modeling grids, boards and much more complex data types.
+
+00:00:38.580 --> 00:00:42.780
+Then we’ll learn about vectors. Vectors are better than arrays in so many ways,
+
+00:00:42.780 --> 00:00:44.440
+and we'll discuss their advantages.
+
+00:00:44.440 --> 00:00:48.430
+In fact, in modern c++, we rarely use raw arrays,
+
+00:00:48.430 --> 00:00:51.930
+instead we use vectors. So why cover arrays at all?
+
+00:00:51.930 --> 00:00:54.230
+I think it's important to understand arrays
+
+00:00:54.230 --> 00:00:57.330
+since there's so much legacy c++ code out there.
+
+00:00:57.330 --> 00:00:59.530
+And conceptually, they're easy to understand
+
+00:00:59.530 --> 00:01:02.530
+and will add to your overall knowledge in c++.
+
+00:01:02.530 --> 00:01:07.130
+Okay, so let's get started learning about our first compound data type, arrays.

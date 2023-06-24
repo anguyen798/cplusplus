@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "7022a9383a9b51e3",
+        "id": "41d14dc4ce744cac",
         "type": "tabs",
         "children": [
           {
-            "id": "644bb6957df7c344",
+            "id": "1b20670bffb07100",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -44,7 +44,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "\"f2c\"",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -73,7 +73,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 389.5
   },
   "right": {
     "id": "81c345e9b6dc9024",
@@ -89,6 +89,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "cs150/pepractice/PE-03-4-TheNikNakProblem.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,6 +106,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "cs150/pepractice/PE-03-4-TheNikNakProblem.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +128,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "cs150/pepractice/PE-03-4-TheNikNakProblem.md"
+              }
             }
           },
           {
@@ -156,45 +160,49 @@
       "obsidian-advanced-slides:Show Slide Preview": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
       "templater-obsidian:Templater": false,
-      "omnisearch:Omnisearch": false
+      "omnisearch:Omnisearch": false,
+      "obsidian-to-anki-plugin:Obsidian_to_Anki - Scan Vault": false
     }
   },
-  "active": "644bb6957df7c344",
+  "active": "df8e97ef7a88168c",
   "lastOpenFiles": [
-    "cs150/ppt/cs150-ch7.md",
-    "cs150/ppt/cs150-ch8.md",
-    "cs150/ppt/cs150-ch6.md",
-    "cs150/ppt/cs150-ch5.md",
-    "cs150/ppt/cs150-ch4.md",
-    "cs150/ppt/cs150-ch3.md",
-    "cs150/ppt/cs150-ch2.md",
-    "cs150/ppt/cs150-ch1.md",
-    "cs150/ppt/cs150-ch1-3a.png",
-    "cs150/hw/h31.md",
-    "cs150/hw/h32.md",
-    "cs150/hw/h33.md",
-    "cs150/hw/h20.md",
-    "cs150/hw/h21.md",
-    "cs150/hw/h22.md",
-    "cs150/hw/h23.md",
-    "cs150/hw/h24.md",
-    "cs150/hw/h25.md",
-    "cs150/hw/h26.md",
-    "cs150/hw/h27.md",
-    "cs150/hw/h28.md",
-    "cs150/hw/h29.md",
-    "cs150/hw/h30.md",
-    "cs150/hw/h10.md",
-    "cs150/hw/h11.md",
-    "cs150/hw/h12.md",
-    "cs150/hw/h13.md",
-    "cs150/hw",
-    "003-Files/Welcome.pdf",
-    "004-Templates",
-    "003-Files",
-    "002-References",
-    "001-Zettlekasten",
-    "cs150/ppt",
-    "cs150"
+    "cs150/pepractice/PE-03-3-TheStartOutProblem.md",
+    "cs150/pepractice/PE-03-4-TheNikNakProblem.md",
+    "cs150/pepractice/PE-03-2-ThePlusOutProblem.md",
+    "cs150/pepractice/PE-03-1-TheWordEndsProblem.md",
+    "cs150/pepractice/PE-01-2-Q-TheCylinderAreaProblem.md",
+    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/GPT_Explanations_4983/GPT_Explanations.pdf1",
+    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/GPT_Explanations_4983/GPT_Explanations.pdf",
+    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/GPT_Explanations_4983/GPT_Explanations_4983.log",
+    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/GPT_Explanations_4983",
+    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/QuizHistoryMidterm1S_4982/QuizHistoryMidterm1S.pdf4",
+    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/QuizHistoryMidterm1S_4982/QuizHistoryMidterm1S.pdf3",
+    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/QuizHistoryMidterm1S_4982/QuizHistoryMidterm1S.pdf2",
+    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/QuizHistoryMidterm1S_4982/QuizHistoryMidterm1S.pdf1",
+    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/QuizHistoryMidterm1S_4982/QuizHistoryMidterm1S.pdf",
+    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/QuizHistoryMidterm1S_4982/QuizHistoryMidterm1S_4982.log",
+    "cs150/pepractice/PE-01-2-A-TheCylinderAreaProblem.md",
+    "cs150/pepractice/PE-01-1-A-TheConeVolumeProblem.md",
+    "cs150/pepractice/PE-01-12-Q-TheCapsuleVolumeProblem.md",
+    "cs150/pepractice/PE-01-19-Q-TheHemisphereSurfaceAreaProblem.md",
+    "cs150/pepractice/PE-01-18-Q-TheHemisphereVolumeProblem.md",
+    "cs150/pepractice/PE-01-17-Q-ThePyramidSurfaceAreaProblem.md",
+    "cs150/pepractice/PE-01-16-Q-ThePyramid_Volume-Problem.md",
+    "cs150/pepractice/PE-01-15-Q-TheConicalFrustumVolumeProblem.md",
+    "cs150/pepractice/PE-01-14-Q-TheCapsuleCircumfrenceProblem.md",
+    "cs150/pepractice/PE-01-13-Q-TheCapsuleAreaProblem.md",
+    "cs150/pepractice/PE-01-8-Q-TheOldWindChillProblem.md",
+    "cs150/pepractice/PE-01-13-A-TheCapsuleAreaProblem.md",
+    "cs150/pepractice/PE-01-11-Q-TheStadiumPerimeterProblem.md",
+    "cs150/pepractice/PE-01-12-A-TheCapsuleVolumeProblem.md",
+    "cs150/pepractice/PE-01-10-Q-TheStadiumAreaProblem.md",
+    "cs150/pepractice/PE-01-9-Q-TheConeSlantHeightProblem.md",
+    "cs150/pepractice/PE-01-7-Q-TheNewWindChillProblem.md",
+    "cs150/pepractice/PE-01-6-Q-ThePointDistanceProblem.md",
+    "cs150/pepractice/PE-01-5-Q-TheSphereStatisticsProblem.md",
+    "cs150/pepractice/PE-01-4-Q-ThePolygonAreaProblem.md",
+    "cs150/pepractice/PE-01-4-A-ThePolygonAreaProblem.md",
+    "Untitled.canvas",
+    "cs150/ppt/cs150-ch1-3a.png"
   ]
 }

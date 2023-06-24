@@ -1,0 +1,103 @@
+WEBVTT
+
+00:00:05.600 --> 00:00:09.600
+In this section, we'll learn about expressions, statements and operators
+
+00:00:09.600 --> 00:00:10.700
+in c++.
+
+00:00:11.700 --> 00:00:14.200
+Expressions are the building blocks of statements.
+
+00:00:14.200 --> 00:00:17.700
+And statements are the building blocks of programming in c++.
+
+00:00:18.200 --> 00:00:21.860
+You've already seen variable declaration statements and IO statements,
+
+00:00:21.860 --> 00:00:24.860
+simple assignment statements and even the return statement.
+
+00:00:25.520 --> 00:00:29.520
+First, we'll talk about expressions and statements in general and their role in programming.
+
+00:00:30.020 --> 00:00:32.820
+Then we'll learn about block statements or compound statements.
+
+00:00:32.820 --> 00:00:36.320
+This allows us to group multiple statements that belong together
+
+00:00:36.320 --> 00:00:37.420
+into a single unit.
+
+00:00:38.220 --> 00:00:42.550
+The last part of this section is all about the main c++ operators
+
+00:00:42.550 --> 00:00:44.750
+in the context of statements and expressions.
+
+00:00:45.550 --> 00:00:49.950
+We'll first discuss the assignment operator, which is the key element of an assignment statement.
+
+00:00:51.050 --> 00:00:54.050
+Then we'll look at c++ arithmetic operators.
+
+00:00:54.250 --> 00:00:56.610
+These operators allow us to perform math
+
+00:00:56.610 --> 00:01:00.210
+very easily based on the math rules that we learned in school as kids.
+
+00:01:01.310 --> 00:01:04.010
+We'll then look at the increment and decrement operators.
+
+00:01:04.010 --> 00:01:07.610
+These operators are often used in c++ and can be confusing.
+
+00:01:07.610 --> 00:01:09.910
+I'll walk you through how to use them so it's clear.
+
+00:01:11.210 --> 00:01:14.410
+A common use case in programming is comparing two objects.
+
+00:01:14.410 --> 00:01:18.710
+We often need to know if one object is less than, greater than or equal to another object.
+
+00:01:18.710 --> 00:01:22.210
+And based on that result, we decide what our next action will be.
+
+00:01:23.210 --> 00:01:24.810
+These are the relational operators.
+
+00:01:25.610 --> 00:01:28.610
+After the relational operators, we'll look at the logical operators.
+
+00:01:28.610 --> 00:01:32.610
+The logical operators allow us to embed complex logic into our program,
+
+00:01:32.610 --> 00:01:34.610
+so we can solve difficult problems.
+
+00:01:35.210 --> 00:01:39.510
+If we put together expressions, containing relational and logical operators,
+
+00:01:39.510 --> 00:01:41.870
+we can solve extremely complex problems.
+
+00:01:42.970 --> 00:01:46.270
+Then we'll learn about c++ compound assignment statements.
+
+00:01:46.570 --> 00:01:48.770
+They allow us to perform an operation
+
+00:01:48.770 --> 00:01:52.070
+and assign the result of that operation using a simple syntax.
+
+00:01:52.770 --> 00:01:55.370
+Finally, we'll talk about operator precedence.
+
+00:01:55.370 --> 00:01:58.670
+Precedence determines in what order operators are executed.
+
+00:01:58.670 --> 00:02:01.670
+We've got a lot to cover in this section. So let's get started.

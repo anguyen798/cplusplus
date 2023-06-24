@@ -1,0 +1,1108 @@
+WEBVTT
+
+00:00:05.250 --> 00:00:08.550
+We've seen how we can attempt to write generic functions
+
+00:00:08.550 --> 00:00:10.550
+using preprocessor macros.
+
+00:00:11.540 --> 00:00:15.340
+In this video will see how we can use c++ templates
+
+00:00:15.340 --> 00:00:17.540
+to accomplish writing generic functions.
+
+00:00:18.420 --> 00:00:20.420
+So what is a c++ template.
+
+00:00:20.970 --> 00:00:24.630
+A template is it generic blueprint that the compiler uses
+
+00:00:24.630 --> 00:00:27.620
+to generate specialized functions in classes.
+
+00:00:28.500 --> 00:00:32.800
+As I just said, c++ supports function and class templates.
+
+00:00:33.350 --> 00:00:36.350
+In this video, will learn about function templates,
+
+00:00:36.350 --> 00:00:38.610
+and we'll see class templates in the next video.
+
+00:00:39.600 --> 00:00:44.590
+The idea with templates is that we define a template with a placeholder type,
+
+00:00:44.950 --> 00:00:48.350
+and then we plug in the actual type we want when we need it.
+
+00:00:49.150 --> 00:00:53.150
+Then the compiler generates the specific function or class that we need.
+
+00:00:53.950 --> 00:00:56.550
+Remember, all of this happens at compile time.
+
+00:00:57.250 --> 00:00:59.750
+If you're coming from other programming languages,
+
+00:00:59.750 --> 00:01:02.110
+you might be used to this happening at runtime,
+
+00:01:02.550 --> 00:01:04.750
+c++ does it at compile time.
+
+00:01:04.750 --> 00:01:08.410
+So we get the benefit of the compiler performing type checking for us
+
+00:01:08.410 --> 00:01:10.210
+before the program executes.
+
+00:01:11.570 --> 00:01:15.560
+C++ template supports the concept of generic programming
+
+00:01:15.560 --> 00:01:16.660
+or metaprogramming
+
+00:01:17.210 --> 00:01:20.910
+since we're providing a generic representation of a function of class
+
+00:01:20.910 --> 00:01:25.170
+and then the compiler writes the actual function or class for us.
+
+00:01:25.170 --> 00:01:26.870
+That's very, very powerful.
+
+00:01:27.670 --> 00:01:30.470
+However, with power comes complexity.
+
+00:01:30.470 --> 00:01:33.770
+C++ templates can be very very complex.
+
+00:01:33.770 --> 00:01:36.370
+And while the concept is easy to understand,
+
+00:01:36.370 --> 00:01:39.870
+seeing them in practice can sometimes be very intimidating,
+
+00:01:39.870 --> 00:01:41.870
+even for experienced programmers.
+
+00:01:42.670 --> 00:01:47.960
+Also, the error message is provided by the compiler can be very difficult to understand.
+
+00:01:48.660 --> 00:01:51.260
+So, let's see how we can use function templates
+
+00:01:51.260 --> 00:01:54.360
+with the max function that we used in the previous video.
+
+00:01:55.860 --> 00:01:57.360
+Let's quickly review.
+
+00:01:57.360 --> 00:02:01.960
+We want to write a max function that returns the maximum of 2 integers passed into it.
+
+00:02:02.460 --> 00:02:05.660
+We can use a simple conditional expression, which, if you recall,
+
+00:02:05.660 --> 00:02:07.660
+is equivalent to an if L statement.
+
+00:02:08.760 --> 00:02:11.960
+Now we can simply use the max function in passing integers
+
+00:02:11.960 --> 00:02:13.960
+and get back to max of those integers.
+
+00:02:14.960 --> 00:02:18.960
+Now suppose we need a max function for doubles and another for characters.
+
+00:02:19.210 --> 00:02:22.460
+And we could have another one for floats and long as you get the idea.
+
+00:02:22.460 --> 00:02:25.060
+We could end up writing many of these max functions.
+
+00:02:25.610 --> 00:02:29.810
+Just as we saw in the previous lecture, the code is the same for all of them.
+
+00:02:29.810 --> 00:02:31.810
+It's the code with the conditional operator.
+
+00:02:32.210 --> 00:02:35.460
+The only thing that changes are the types of the parameters.
+
+00:02:36.060 --> 00:02:40.060
+So now let's see how we can use templates to allow to write just one blueprint
+
+00:02:40.060 --> 00:02:41.060
+for this function.
+
+00:02:42.610 --> 00:02:46.270
+Why don't we simply replace the type with an identifier
+
+00:02:46.270 --> 00:02:47.770
+that represents any type.
+
+00:02:48.670 --> 00:02:51.270
+In this case, we'll use the uppercase t,
+
+00:02:51.270 --> 00:02:53.770
+but we can use any valid identifier we wish.
+
+00:02:54.170 --> 00:02:57.370
+So that's it. That was easy. That's what we want, right?
+
+00:02:57.370 --> 00:03:02.360
+Yes, indeed. But the computer won't know what to do with this, and it's going to give us a compiler error.
+
+00:03:02.360 --> 00:03:06.660
+We need to explicitly tell the compiler that this is a template function.
+
+00:03:07.060 --> 00:03:08.860
+So let's do that in the next slide.
+
+00:03:10.520 --> 00:03:14.180
+Noticed that now we provide the compiler with the line template
+
+00:03:14.180 --> 00:03:16.680
+and type name t and angle brackets.
+
+00:03:17.670 --> 00:03:19.670
+That's the template parameter type.
+
+00:03:19.870 --> 00:03:21.870
+This tells a computer the t
+
+00:03:21.870 --> 00:03:25.270
+is the type name that will be replaced with whatever the user needs.
+
+00:03:26.070 --> 00:03:29.970
+Now this will compile, but it will not generate any code.
+
+00:03:29.970 --> 00:03:31.180
+Let me say that again.
+
+00:03:31.180 --> 00:03:35.180
+This will not generate any code. It's simply a template or a blueprint.
+
+00:03:36.060 --> 00:03:39.720
+Code is not generated by the compiler until the user uses a
+
+00:03:39.720 --> 00:03:41.320
+specialized version of the template.
+
+00:03:41.720 --> 00:03:43.380
+I'll show you how to do that as second.
+
+00:03:43.680 --> 00:03:44.480
+But first,
+
+00:03:45.250 --> 00:03:47.910
+I want you to know that we can use the reserved words
+
+00:03:47.910 --> 00:03:50.410
+typed name or class in templates.
+
+00:03:51.510 --> 00:03:53.110
+They are essentially equivalent.
+
+00:03:53.310 --> 00:03:55.670
+I will use type name in this course, but you'll see
+
+00:03:55.670 --> 00:04:00.000
+both type name and class in production code, so please be aware of that.
+
+00:04:00.550 --> 00:04:03.050
+Okay. So now how do we use this template function.
+
+00:04:03.750 --> 00:04:05.410
+Notice the code in the slide.
+
+00:04:05.410 --> 00:04:08.510
+We declare 2 integers A&B and initialize them.
+
+00:04:08.510 --> 00:04:10.870
+Then we call max with A and B as parameters.
+
+00:04:11.530 --> 00:04:14.530
+But also noticed the template parameter we're using.
+
+00:04:14.530 --> 00:04:16.520
+That's the int in angle brackets.
+
+00:04:16.880 --> 00:04:20.870
+This gives the compiler all the information it needs to actually generate
+
+00:04:20.870 --> 00:04:24.230
+a specialized function from the template we created
+
+00:04:24.230 --> 00:04:26.030
+using int in place of t.
+
+00:04:26.630 --> 00:04:28.430
+The syntax should look familiar.
+
+00:04:28.430 --> 00:04:31.530
+We used it previously when we created vectors and smart pointers.
+
+00:04:31.930 --> 00:04:35.590
+You guessed it vectors, unique pointer, shared pointers and so forth
+
+00:04:35.590 --> 00:04:37.790
+are implemented as template classes.
+
+00:04:38.980 --> 00:04:41.380
+Now suppose we need a max function for doubles.
+
+00:04:41.880 --> 00:04:45.240
+Easy, we simply use max and pass into doubles,
+
+00:04:45.240 --> 00:04:49.700
+say c and d and use a template parameter double in the angle brackets.
+
+00:04:50.200 --> 00:04:53.660
+The compiler now knows that it needs to generate the double version
+
+00:04:53.660 --> 00:04:55.020
+of the max function
+
+00:04:55.570 --> 00:04:59.130
+off in the compiler can deduce the type of the template parameter,
+
+00:04:59.490 --> 00:05:02.290
+and we don't even need to provide it as in the second statement.
+
+00:05:02.790 --> 00:05:04.790
+How cool is that? That makes it even easier.
+
+00:05:06.080 --> 00:05:09.680
+And we don't have to stop with doubles. If we need to compare 2 characters
+
+00:05:09.980 --> 00:05:14.130
+and return the max character, we can simply use the template function max
+
+00:05:14.130 --> 00:05:18.630
+with chars, and the compiler will generate the character version of the max function.
+
+00:05:19.330 --> 00:05:21.580
+We can use almost any type we need.
+
+00:05:21.580 --> 00:05:25.380
+Notice, I said almost. What do I mean by almost any type?
+
+00:05:25.880 --> 00:05:29.180
+Well, let's take a closer look at the function again, and you'll see what I mean.
+
+00:05:30.380 --> 00:05:33.480
+Notice that the code in the template function is using
+
+00:05:33.480 --> 00:05:36.280
+the greater than operator to compare a and b.
+
+00:05:36.830 --> 00:05:40.030
+This means that whatever type we use for t,
+
+00:05:40.030 --> 00:05:42.130
+must support this operator.
+
+00:05:42.830 --> 00:05:46.980
+For primitive types, like in int, in chars, in doubles, it's not a problem.
+
+00:05:46.980 --> 00:05:48.970
+But for our own class types,
+
+00:05:48.970 --> 00:05:53.270
+we have to be sure that our class overloads the greater than operator
+
+00:05:53.270 --> 00:05:54.570
+or this won't compile.
+
+00:05:55.770 --> 00:05:58.540
+And this example, we're assuming we have a player class,
+
+00:05:58.900 --> 00:06:01.160
+and we're using max with player objects.
+
+00:06:01.840 --> 00:06:05.500
+So the compiler will generate the max function that expects and compares
+
+00:06:05.500 --> 00:06:06.700
+player objects.
+
+00:06:07.050 --> 00:06:10.650
+Unless the player class overloads to greater than operator,
+
+00:06:10.650 --> 00:06:12.150
+this code won't compile.
+
+00:06:13.140 --> 00:06:16.700
+There is no limit to the number of template parameters you can have.
+
+00:06:16.700 --> 00:06:18.800
+And of course, they can be of different types.
+
+00:06:19.400 --> 00:06:23.600
+In this example, we're creating a function template for a function named func.
+
+00:06:23.900 --> 00:06:27.700
+It expects 2 parameters. The first is a type t1
+
+00:06:27.900 --> 00:06:29.770
+and the second is of type t2.
+
+00:06:30.470 --> 00:06:34.070
+Notice that we specified to template parameters in this case.
+
+00:06:34.070 --> 00:06:37.320
+So there's the function declaration. Now let's see how we would use it.
+
+00:06:38.310 --> 00:06:42.810
+We can call func and explicit would provide an integer in the double in this example.
+
+00:06:43.610 --> 00:06:47.110
+Or in the case of the cost of func with no template parameters,
+
+00:06:47.110 --> 00:06:50.910
+the compiler will deduce the types from the function arguments.
+
+00:06:51.790 --> 00:06:55.290
+That's it. Now, of course, we can pass by value by reference,
+
+00:06:55.290 --> 00:06:58.280
+by pointer with const modifiers and so forth.
+
+00:06:59.180 --> 00:07:02.280
+And all of the function parameters don't have to be generic.
+
+00:07:02.880 --> 00:07:05.380
+You can see all the possibilities and combinations.
+
+00:07:05.740 --> 00:07:09.240
+Now let's head over to the IDE and we'll write a few template functions.
+
+00:07:10.490 --> 00:07:13.740
+Okay, so I'm in the section 20 workspace
+
+00:07:13.740 --> 00:07:15.740
+in the FunctionTemplates project.
+
+00:07:16.740 --> 00:07:20.940
+And what I'd like to do here is go over those 2 templates that we created in the slides,
+
+00:07:20.940 --> 00:07:24.540
+and I'll show you how they work with integers, with doubles, with character
+
+00:07:24.540 --> 00:07:28.340
+basically, with primitive times where there are no issues with overloading operators.
+
+00:07:28.540 --> 00:07:33.140
+Then what we'll do is we'll create our own type, we'll call it person or something like that.
+
+00:07:33.140 --> 00:07:36.140
+Then you'll see some of the issues that we have to address to get that
+
+00:07:36.140 --> 00:07:40.340
+person class or structure in this case to work with these templates.
+
+00:07:40.340 --> 00:07:43.700
+And then what we'll do is we'll create a swap templates function at the end.
+
+00:07:43.700 --> 00:07:46.200
+All right. So let's go over what we've got here.
+
+00:07:46.200 --> 00:07:49.800
+Now if you recall, we've got a function called min,
+
+00:07:50.300 --> 00:07:54.300
+and it's a template function, right? So there's my temple a parameter it.
+
+00:07:54.700 --> 00:07:58.950
+And basically, if you write this with int instead of ts, it's really, really easy,
+
+00:07:58.950 --> 00:08:01.950
+and all you need to do is just replace it with the generic type t.
+
+00:08:02.310 --> 00:08:04.310
+The compiler will take care of the rest.
+
+00:08:04.310 --> 00:08:06.710
+So it's going to be in a of time t,
+
+00:08:06.710 --> 00:08:10.370
+a b of type ts what it expects, and is going to return a type t.
+
+00:08:10.370 --> 00:08:14.970
+And all we're doing is comparing, using less than. Now here's where the issue is.
+
+00:08:14.970 --> 00:08:16.970
+If we're using integers here,
+
+00:08:16.970 --> 00:08:20.330
+then -- assuming a and b are integers, then the less than
+
+00:08:20.330 --> 00:08:24.580
+works great, right. We know how to compare integers and doubles and characters and so forth.
+
+00:08:24.580 --> 00:08:28.680
+But when we use our own types, that's where the issue comes in.
+
+00:08:28.680 --> 00:08:29.880
+I'll talk about that in a second.
+
+00:08:29.880 --> 00:08:33.090
+But first let's just look at the real simple example of using it,
+
+00:08:33.090 --> 00:08:36.190
+and then we'll look at this template function right here next.
+
+00:08:36.190 --> 00:08:40.190
+Remember, at this point the compilers done nothing for us. It hasn't --
+
+00:08:40.190 --> 00:08:42.290
+all it's done is make sure that this is valid,
+
+00:08:42.290 --> 00:08:45.790
+but it has not created an integer version of this or
+
+00:08:45.790 --> 00:08:49.940
+double version of this, nothing gets created. It's just a blueprint right now.
+
+00:08:49.940 --> 00:08:53.300
+So what we've got here is right here on line 18,
+
+00:08:53.600 --> 00:08:55.700
+you can see that I'm calling min
+
+00:08:56.100 --> 00:09:00.100
+and I'm using the template parameter int that I'm passing into integers.
+
+00:09:00.100 --> 00:09:03.660
+At this point, the compiler now sees this blueprint
+
+00:09:03.660 --> 00:09:06.160
+and generates the integer version of it.
+
+00:09:06.160 --> 00:09:10.360
+So t would be int now, right, so this hole template stuff gets taken away,
+
+00:09:10.360 --> 00:09:14.610
+and we just get a function, just like we wrote in the slides with just plain integers.
+
+00:09:14.610 --> 00:09:18.710
+So in this case, I expect that result to be a 2 because that's the minimum.
+
+00:09:19.010 --> 00:09:21.910
+Now you'll also notice right here on line 19
+
+00:09:21.910 --> 00:09:25.460
+that I'm not providing this template parameter right here
+
+00:09:25.460 --> 00:09:27.450
+because here just min 2, 3.
+
+00:09:28.000 --> 00:09:31.990
+The compilers smart enough to deduce that these are integers.
+
+00:09:31.990 --> 00:09:34.650
+So it's going to create the integer version of it.
+
+00:09:34.650 --> 00:09:37.150
+A lot of times the compiler. We'll figure it out.
+
+00:09:37.150 --> 00:09:40.950
+Other times the compiler won't figure it out depending on how complex
+
+00:09:40.950 --> 00:09:42.500
+the template function is.
+
+00:09:42.500 --> 00:09:46.100
+So in this case, they can't figure it out. So all I need to do is just call min,
+
+00:09:46.100 --> 00:09:49.700
+pass in it 2 or 3, and I'll get a 2, just like before.
+
+00:09:50.100 --> 00:09:53.480
+Now here you can see I'm calling min with 2 characters, a and b.
+
+00:09:53.480 --> 00:09:57.260
+In this case,they're literals.
+
+00:09:57.260 --> 00:10:01.260
+So it doesn't really matter if they're literals or variables, along work the same.
+
+00:10:01.660 --> 00:10:04.960
+The compiler will now see haha, 2 characters here.
+
+00:10:04.960 --> 00:10:08.660
+So it would deduce that this template parameter right here is a character,
+
+00:10:08.660 --> 00:10:11.560
+and it would generate the character version of that template function,
+
+00:10:12.860 --> 00:10:15.110
+same will get an a right here when we display it.
+
+00:10:15.110 --> 00:10:19.110
+Same thing one with the doubles here, 12.5 9.2,
+
+00:10:19.110 --> 00:10:22.410
+a double version of the function will get created by the compiler.
+
+00:10:22.910 --> 00:10:26.160
+And in very end here, we got integers, but
+
+00:10:26.160 --> 00:10:29.660
+this is a real difference between the template functions and macros.
+
+00:10:29.660 --> 00:10:32.350
+We don't have to worry about precedent for any thing here.
+
+00:10:32.350 --> 00:10:35.950
+We just do what we need to do. We want 5 + 4.
+
+00:10:36.350 --> 00:10:38.710
+We don't have to worry about c-style,
+
+00:10:38.710 --> 00:10:42.370
+macros that we did before with a pound in the previous video.
+
+00:10:42.870 --> 00:10:45.770
+This is going to work correctly because the compiler
+
+00:10:45.770 --> 00:10:47.570
+knows c++.
+
+00:10:47.570 --> 00:10:51.770
+So that's it. If we run this, we should get what we expect.
+
+00:10:52.020 --> 00:10:53.220
+Let me build and run,
+
+00:10:54.120 --> 00:10:57.480
+and here my results right here. Let me just scroll it up right here.
+
+00:10:57.880 --> 00:11:01.480
+And that's just what we expected, a 2, a 2 and a, a 9.2 and 9.
+
+00:11:02.140 --> 00:11:05.140
+What we'll do is we'll create our own structure.
+
+00:11:05.140 --> 00:11:07.040
+Now this can be anything. It can be a class.
+
+00:11:07.040 --> 00:11:10.190
+So I'm just going to create a structure. So I have to worry about private and public,
+
+00:11:10.190 --> 00:11:12.990
+but it'll work exactly the same way with a class.
+
+00:11:12.990 --> 00:11:16.890
+So right here, I'm going to create a structure, and I'm going to call a person.
+
+00:11:17.770 --> 00:11:21.770
+And I'm just going to say that every person has a name,
+
+00:11:21.770 --> 00:11:25.770
+which is a string, a c++ string,
+
+00:11:26.070 --> 00:11:30.970
+and an age. That's it. There's my person -- let me spell struct correctly.
+
+00:11:31.270 --> 00:11:34.470
+It's a structures, and I can create person objects, right.
+
+00:11:34.470 --> 00:11:38.170
+So let's do that. And I'm going to do it up here right about here.
+
+00:11:38.170 --> 00:11:41.970
+I'm going to say person p1.
+
+00:11:42.630 --> 00:11:46.830
+And remember, I've got a string right here, name and I've got an age.
+
+00:11:46.830 --> 00:11:49.330
+So my first person will be Curly.
+
+00:11:49.830 --> 00:11:52.330
+And let's say that Curly is 50 years old.
+
+00:11:52.330 --> 00:11:54.330
+And my second person
+
+00:11:55.210 --> 00:11:58.210
+is Moe, and Moe is 30 years old.
+
+00:11:59.010 --> 00:12:01.670
+And it keeps giving me that Curly, I'll get rid of that.
+
+00:12:01.670 --> 00:12:04.070
+Okay. So now I've got 2 person objects.
+
+00:12:04.070 --> 00:12:06.770
+So what I want now is I want the minimum of those 2, right.
+
+00:12:06.770 --> 00:12:09.970
+Now I'll be able to use my min function that I wrote to be generic,
+
+00:12:09.970 --> 00:12:13.960
+so it should expect any type that makes sense. Well here,
+
+00:12:13.960 --> 00:12:16.460
+it doesn't quite make sense yet, but it will in a minute
+
+00:12:16.460 --> 00:12:18.460
+because what I want to do is I want to compare their ages.
+
+00:12:18.460 --> 00:12:21.450
+So let's just say a person p3
+
+00:12:21.950 --> 00:12:25.650
+is the minimum of p1 and p2.
+
+00:12:25.650 --> 00:12:29.450
+In other words, one with the least age. Now if we try to compile this,
+
+00:12:30.050 --> 00:12:32.850
+we're going to get an error. In the error, if you can see that here,
+
+00:12:32.850 --> 00:12:35.650
+it says error no match for operator less than
+
+00:12:35.850 --> 00:12:38.450
+for the operand types person, person.
+
+00:12:38.450 --> 00:12:40.950
+So you can see that the compiler has generated
+
+00:12:40.950 --> 00:12:43.150
+that specialized function for the persons,
+
+00:12:43.150 --> 00:12:47.810
+but now I can't compiled it because it doesn't know how to compare 2 persons using that less than. Okay.
+
+00:12:49.310 --> 00:12:50.310
+So what do we do?
+
+00:12:50.710 --> 00:12:53.710
+What -- we tell the compiler how do you -- how to do that?
+
+00:12:53.710 --> 00:12:57.710
+So what we'll do is we'll simply write a real simple overloaded operator.
+
+00:12:58.510 --> 00:13:02.140
+Remember, they return Boolean. The operator is operator
+
+00:13:02.140 --> 00:13:04.440
+less than that's the one that's causing the problem.
+
+00:13:05.240 --> 00:13:09.140
+And what does it expect? Well, remember, this is a member.
+
+00:13:09.140 --> 00:13:12.140
+So we're going to say const person
+
+00:13:12.540 --> 00:13:16.340
+ref right-hand side. Hope you guys remember this part of the
+
+00:13:16.340 --> 00:13:17.040
+course,
+
+00:13:17.040 --> 00:13:20.040
+and it's contst because I really don't want to modify anything here.
+
+00:13:20.040 --> 00:13:23.240
+And all I'm doing here as you can just see I want to return
+
+00:13:23.940 --> 00:13:24.940
+this
+
+00:13:25.940 --> 00:13:27.440
+person's age,
+
+00:13:27.740 --> 00:13:30.840
+is it less than the other person's age?
+
+00:13:31.830 --> 00:13:34.630
+That's it. So if I run this now.
+
+00:13:36.230 --> 00:13:38.230
+Now we've got it clean run, right.
+
+00:13:38.230 --> 00:13:42.030
+We just need to display the result, which we haven't done yet. So I want to do that right here,
+
+00:13:42.530 --> 00:13:44.130
+and I'll just say something like
+
+00:13:45.230 --> 00:13:46.590
+std cout.
+
+00:13:47.390 --> 00:13:50.190
+And I'll just say p3.name
+
+00:13:52.200 --> 00:13:53.200
+is younger.
+
+00:13:56.500 --> 00:13:57.200
+That's it.
+
+00:13:58.000 --> 00:14:02.360
+So if we run this at this point, we should see Moe, right. We should say Moe is younger.
+
+00:14:02.360 --> 00:14:03.360
+So let's run that.
+
+00:14:04.720 --> 00:14:08.870
+There we go. Moe is younger. So let's change this around.
+
+00:14:09.270 --> 00:14:13.270
+Now let's say that Curly is 15 and Moe is 30. We should say Curly is younger,
+
+00:14:13.670 --> 00:14:15.330
+and that's exactly what's going on.
+
+00:14:16.030 --> 00:14:17.830
+Okay. So that's pretty cool.
+
+00:14:17.830 --> 00:14:22.030
+I'm able to use persons and integers, a doubles and all kinds of stuff, right.
+
+00:14:22.030 --> 00:14:25.390
+And in this case, I'm really explicitly saying that
+
+00:14:25.390 --> 00:14:27.390
+I'm interested in comparing ages here.
+
+00:14:28.890 --> 00:14:32.090
+Okay. So now let's look at the second example right here.
+
+00:14:32.590 --> 00:14:36.590
+In this one, we're using 2 template parameters. We're here on line 11.
+
+00:14:37.290 --> 00:14:40.090
+Our function is called func. It expects
+
+00:14:40.090 --> 00:14:43.290
+2 parameters, an b and b. A is of type t1,
+
+00:14:43.290 --> 00:14:46.190
+b is of type t2. They can be the same or they can be different.
+
+00:14:46.690 --> 00:14:50.490
+And all we're doing is just displaying a and b. That's it. Real, real simple.
+
+00:14:50.490 --> 00:14:53.850
+So let's take a look at our main example down here.
+
+00:14:54.550 --> 00:14:56.750
+There's a bunch of test cases here.
+
+00:14:56.750 --> 00:15:00.350
+But you can see, in this case, I'm explicitly providing the template
+
+00:15:00.350 --> 00:15:02.350
+parameters in that first example right here.
+
+00:15:02.850 --> 00:15:04.730
+And you can see that I've got 2 ints,
+
+00:15:05.280 --> 00:15:07.940
+and I am supplying those 2 ints. So we just expect this --
+
+00:15:07.940 --> 00:15:12.300
+all this function does is display with the past into it. So it'll display 10 and 20.
+
+00:15:12.700 --> 00:15:15.400
+Then we can do the same thing. But in this case,
+
+00:15:15.400 --> 00:15:19.700
+the compiler is deducing the types. Notice, I'm not providing them explicitly.
+
+00:15:20.400 --> 00:15:23.200
+Here I'm providing a character and a double explicitly.
+
+00:15:23.200 --> 00:15:25.760
+Here I'm just letting the compiler deduce it.
+
+00:15:25.960 --> 00:15:28.960
+And again, here's an integer, here's a c-string,
+
+00:15:28.960 --> 00:15:32.160
+here's an integer, here's a c++ string.
+
+00:15:32.160 --> 00:15:35.060
+So I am passing all kinds of stuff into this function.
+
+00:15:35.060 --> 00:15:38.860
+And the compiler is going to generate the correct one for me, which is really cool.
+
+00:15:38.860 --> 00:15:40.110
+So if I run this,
+
+00:15:41.910 --> 00:15:45.710
+you could see down here, we're getting a 10 and the 20, the 10 and the 20 again
+
+00:15:45.710 --> 00:15:48.810
+and the a and the 12.4 twice I'm getting that.
+
+00:15:48.810 --> 00:15:53.510
+Then I've seen a 1000 and testing and 2000 and Frank, exactly what we expected.
+
+00:15:54.610 --> 00:15:58.380
+Okay. So now let me scroll up here just before
+
+00:15:58.380 --> 00:16:00.040
+line 31 right here.
+
+00:16:01.030 --> 00:16:05.180
+And what I'd like to do here is let's call func
+
+00:16:05.580 --> 00:16:09.480
+with a person or 2 persons, doesn't really matter. Remember.
+
+00:16:09.480 --> 00:16:13.140
+It's expecting 2 different types or 2 types of the same.
+
+00:16:13.140 --> 00:16:16.440
+So let's do that. Let's call func with p1
+
+00:16:17.100 --> 00:16:17.900
+and p2.
+
+00:16:19.150 --> 00:16:21.150
+Now when we try to compile here,
+
+00:16:21.550 --> 00:16:25.910
+we're going to have a problem. It says error no match for the insertion operator.
+
+00:16:25.910 --> 00:16:30.160
+That expects a stream, and if I come over here just a little bit and a person.
+
+00:16:30.710 --> 00:16:34.370
+What's the problem? Well, the problem is that in this case
+
+00:16:34.370 --> 00:16:35.570
+a is a person.
+
+00:16:36.070 --> 00:16:39.730
+And there is no overloaded insertion operator for a person.
+
+00:16:40.390 --> 00:16:41.390
+So that won't work.
+
+00:16:41.990 --> 00:16:45.790
+So what we want to do is we want to add the overloaded insertion operator,
+
+00:16:45.790 --> 00:16:48.390
+and we could do that really easily, we could do it right here.
+
+00:16:48.390 --> 00:16:51.390
+We don't need a friend function here because this is all --
+
+00:16:51.390 --> 00:16:55.590
+it's a structure, so everything is public. So we can do this. We could just say std
+
+00:16:56.090 --> 00:16:58.090
+ostream. Remember this
+
+00:16:58.790 --> 00:17:01.190
+and we're returning an ostream reference.
+
+00:17:02.290 --> 00:17:04.890
+And what we're going to do here is its operator,
+
+00:17:06.790 --> 00:17:08.890
+and we're doing the insertion operator.
+
+00:17:08.890 --> 00:17:11.090
+The left-hand side is the stream.
+
+00:17:12.590 --> 00:17:15.690
+And we don't want to do that const because we want to change it.
+
+00:17:15.690 --> 00:17:19.570
+Now the right-hand side, this is the person. So in this case, it's a const
+
+00:17:19.570 --> 00:17:21.570
+person reference, let me just call it p.
+
+00:17:23.570 --> 00:17:27.930
+So what do we want to put on the string? Well, we could just say os and let's say it's p's name,
+
+00:17:27.930 --> 00:17:31.130
+that makes it really easy. And we want to return the stream.
+
+00:17:32.630 --> 00:17:34.290
+That's it. We run this now.
+
+00:17:35.280 --> 00:17:36.280
+Now we get Curly and Moe.
+
+00:17:37.160 --> 00:17:39.860
+Notice, they're both printing out right here.
+
+00:17:39.860 --> 00:17:41.630
+That's exactly what we wanted.
+
+00:17:41.630 --> 00:17:45.930
+So this is one of the things that will get you when you're first starting out with template functions
+
+00:17:45.930 --> 00:17:50.030
+is yes,I can supply any kind of type to it for sure.
+
+00:17:50.280 --> 00:17:52.580
+But a lot of times when using operators,
+
+00:17:52.580 --> 00:17:56.080
+you've got to really be careful with those operators to make sure that they were correctly,
+
+00:17:56.080 --> 00:17:57.440
+overload them if you have to.
+
+00:17:57.940 --> 00:18:01.540
+Okay. So now the last thing I want to do is let's create our another
+
+00:18:01.540 --> 00:18:05.540
+template function, and we'll create it right down here right before the main.
+
+00:18:05.540 --> 00:18:08.840
+And what we'll do is we'll just call it my swamp.
+
+00:18:08.840 --> 00:18:11.040
+And I just want to swap 2 elements, right.
+
+00:18:11.040 --> 00:18:14.140
+So how when we do this with an int. I would say something like int --
+
+00:18:14.390 --> 00:18:18.590
+oh, sorry, that would do something like void, and we'll call it my swap.
+
+00:18:19.390 --> 00:18:21.720
+It expects 2 integers, now we want to change them.
+
+00:18:21.720 --> 00:18:23.520
+So we really want them by reference.
+
+00:18:24.820 --> 00:18:26.320
+And here's the second one.
+
+00:18:27.020 --> 00:18:31.320
+And then in here, all we're doing is a signing a temporary, right. So we have an int temp
+
+00:18:31.470 --> 00:18:34.030
+equals a, then a equals b
+
+00:18:34.530 --> 00:18:37.530
+and then b equals temp, right, simple swamp,
+
+00:18:37.930 --> 00:18:39.230
+simple simple logic.
+
+00:18:39.630 --> 00:18:41.630
+That'll work. That'll swap 2 integers.
+
+00:18:41.630 --> 00:18:44.630
+But we don't just want to swap integers, we want to swap anything.
+
+00:18:44.930 --> 00:18:47.930
+So what we can do here is we can come to this int
+
+00:18:47.930 --> 00:18:50.930
+and replace it with the t, replace this guy with a t
+
+00:18:52.180 --> 00:18:54.880
+and replace that guy with a t. And remember that could be any
+
+00:18:54.880 --> 00:18:56.380
+later, I'm just using t.
+
+00:18:56.530 --> 00:19:01.190
+So now we'll tell the compiler that this is a template function,
+
+00:19:01.690 --> 00:19:03.690
+and its type name is t.
+
+00:19:04.690 --> 00:19:07.990
+That's it. Now we've got a template function called my swamp.
+
+00:19:08.540 --> 00:19:09.640
+That's pretty cool.
+
+00:19:09.640 --> 00:19:13.000
+Now I'll do it appear. So we'll see that is the first output.
+
+00:19:13.000 --> 00:19:17.500
+And what we can do here so we could just say int x is 100,
+
+00:19:19.000 --> 00:19:21.250
+int y is 200.
+
+00:19:22.020 --> 00:19:26.320
+And we can swap them, right. So that's a x and y. If we displayed x and y,
+
+00:19:26.320 --> 00:19:30.320
+we obviously get 100 200. But now we can call my swamp,
+
+00:19:31.620 --> 00:19:35.220
+and we can pass in x and y.
+
+00:19:36.320 --> 00:19:37.570
+And at this point
+
+00:19:37.570 --> 00:19:41.560
+what I want to do is just display x and y. So I'll copy that int here real quick.
+
+00:19:43.760 --> 00:19:46.860
+That's it. So it's going to display x and y. What I expect now is
+
+00:19:46.860 --> 00:19:48.560
+200 100, right.
+
+00:19:48.560 --> 00:19:51.060
+Actually you know what, let me put this before and after the swap,
+
+00:19:51.060 --> 00:19:53.560
+that way it'll be really, really obvious what's going on.
+
+00:19:54.560 --> 00:19:57.060
+That's it, right here. So if I run this now,
+
+00:19:58.260 --> 00:20:01.860
+you can see 100 200 at the top, and then 200 100, which
+
+00:20:02.220 --> 00:20:03.220
+swap them.
+
+00:20:03.220 --> 00:20:05.820
+Now the cool thing about that I can write
+
+00:20:05.820 --> 00:20:10.780
+this with strings, characters, all kinds of good stuff, right.
+
+00:20:10.780 --> 00:20:14.080
+And I'll leave that to you guys to play because this video is getting a little bit long.
+
+00:20:14.080 --> 00:20:18.280
+Try replacing some of these with your own types and playing around with it. You'll see it's
+
+00:20:18.280 --> 00:20:22.680
+not so bad. Once you understand the basics of template functions,
+
+00:20:22.680 --> 00:20:24.380
+you'll see how powerful they are.
+
+00:20:24.380 --> 00:20:27.280
+But remember, those little gotches.If you get those errors
+
+00:20:27.280 --> 00:20:29.280
+that are typically about operators that
+
+00:20:29.280 --> 00:20:32.280
+the compiler can't resolve. So it's your job to resolve them.
+
+00:20:32.480 --> 00:20:35.080
+Okay. So that's it for template functions.
+
+00:20:35.080 --> 00:20:39.080
+In the next video, we'll start talking about template classes.

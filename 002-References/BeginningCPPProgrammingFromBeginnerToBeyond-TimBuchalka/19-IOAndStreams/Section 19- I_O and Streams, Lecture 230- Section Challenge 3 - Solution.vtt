@@ -1,0 +1,286 @@
+WEBVTT
+
+00:00:05.500 --> 00:00:09.500
+Hello. Welcome back to the challenge 3 solution for section 19.
+
+00:00:09.500 --> 00:00:14.400
+I'm in the section 19 workspace in the challenge_3_solution project.
+
+00:00:14.400 --> 00:00:18.000
+And this is the project where we try to find the word matches
+
+00:00:18.000 --> 00:00:19.500
+in the Romeo and Juliet play.
+
+00:00:20.100 --> 00:00:22.760
+So let me go over my solution, and I wrote a simple function
+
+00:00:22.760 --> 00:00:26.160
+to help me with the solution. And we'll talk about the function in just a second.
+
+00:00:26.160 --> 00:00:29.760
+But let's just go through the solution at the beginning here. Here's my main
+
+00:00:29.760 --> 00:00:32.760
+I've got my input file stream right here called infile.
+
+00:00:32.760 --> 00:00:36.960
+Here's the word that I want to find. That's what the user is going to give us.
+
+00:00:36.960 --> 00:00:40.160
+Here's the word that I've read. So each time I loop through that file,
+
+00:00:40.160 --> 00:00:43.360
+I'm going to read a word. And then I've got the word count and match count,
+
+00:00:43.360 --> 00:00:47.560
+which are just counters that we're going to increase when we see a word
+
+00:00:47.560 --> 00:00:49.060
+and when we see a matching word.
+
+00:00:49.460 --> 00:00:52.230
+Okay. So that's it. That's the preamble there.
+
+00:00:52.230 --> 00:00:56.030
+And here's the good old recipe that we always adhere to, right.
+
+00:00:56.030 --> 00:00:59.030
+I want to open the file Romeo and Juliet. If it's not open,
+
+00:00:59.030 --> 00:01:01.130
+I display an error, and I leave.
+
+00:01:01.130 --> 00:01:05.130
+So let's get to the part of the program that's doing all the work here.
+
+00:01:05.130 --> 00:01:10.030
+So right here on line 29, I'm asking the user to enter the substring to search for,
+
+00:01:10.430 --> 00:01:12.430
+suppose they enter love.
+
+00:01:14.530 --> 00:01:16.730
+I'm reading that in from standard input.
+
+00:01:16.730 --> 00:01:21.630
+And then I'm in my loop here. So while I want to read a word
+
+00:01:21.630 --> 00:01:22.990
+from infile.
+
+00:01:22.990 --> 00:01:27.650
+Okay. So I'm going to stop at any white space. I'm using the extraction operator here.
+
+00:01:27.650 --> 00:01:30.250
+So I'm going to read a word into word read.
+
+00:01:30.250 --> 00:01:33.950
+And if it didn't fail and if it didn't give me an end file,
+
+00:01:33.950 --> 00:01:37.950
+I've got a word. So I'm going to increment the word count because I've seen a word.
+
+00:01:37.950 --> 00:01:39.650
+And then I'm going to call a function,
+
+00:01:39.650 --> 00:01:44.150
+which I'm going to show you in a minute that I wrote called find substring.
+
+00:01:44.550 --> 00:01:48.350
+And the idea here is I send into this function
+
+00:01:48.350 --> 00:01:52.050
+the word that I want to find and the word that was read from the file.
+
+00:01:52.050 --> 00:01:56.390
+And if this word happens to be a substring in that word,
+
+00:01:56.390 --> 00:02:00.590
+it's going to return true. When it returns true, I increment the match count.
+
+00:02:01.090 --> 00:02:03.790
+If it doesn't return true, i don't increment the match count.
+
+00:02:03.790 --> 00:02:06.390
+And I just simply go back up and loop again.
+
+00:02:06.390 --> 00:02:08.190
+That's it. Pretty straightforward.
+
+00:02:08.190 --> 00:02:10.850
+When I'm done with the loop, I've hit the end of file.
+
+00:02:10.850 --> 00:02:14.210
+I simply display how many words were searched,
+
+00:02:14.210 --> 00:02:16.810
+and how many times my matching word was found.
+
+00:02:17.610 --> 00:02:21.410
+Okay. That's it. So let's talk about that find substring function now,
+
+00:02:21.410 --> 00:02:22.410
+which I wrote up here.
+
+00:02:23.410 --> 00:02:26.710
+And here it is. This function, as I said, expects
+
+00:02:26.710 --> 00:02:29.710
+two parameters, two strings, and they're both const refs.
+
+00:02:29.710 --> 00:02:32.370
+In this case, what's the word to find.
+
+00:02:32.370 --> 00:02:35.270
+Okay. The word to find is what the user gave us love,
+
+00:02:35.670 --> 00:02:38.870
+which is being passed into this. And what's the target.
+
+00:02:38.870 --> 00:02:42.530
+The target is the word that we just read from the file,so maybe we read the word lovely
+
+00:02:43.330 --> 00:02:45.330
+or we read the word Romeo
+
+00:02:46.130 --> 00:02:47.730
+or whatever word we read.
+
+00:02:47.730 --> 00:02:51.630
+So what we're going to do is we're going to use the find method
+
+00:02:51.630 --> 00:02:52.830
+in the string class,
+
+00:02:52.830 --> 00:02:56.330
+which says hey target, which is this guy
+
+00:02:57.130 --> 00:03:00.130
+find that substring word to find within you
+
+00:03:00.530 --> 00:03:04.130
+and give me back the index of where you found it.
+
+00:03:04.630 --> 00:03:08.430
+I really don't care about the index. I just want to -- I just want to know if it was there or not.
+
+00:03:08.430 --> 00:03:12.230
+So if it returns std string no position,
+
+00:03:12.230 --> 00:03:16.890
+that means that it was not in the word, and I returned false. Otherwise, I returned true.
+
+00:03:16.890 --> 00:03:20.550
+Like I said, I really don't care what position it's in. I just want to know whether
+
+00:03:20.550 --> 00:03:24.150
+the substring exists in that target or not. That's it.
+
+00:03:24.750 --> 00:03:26.750
+Really, really simple. Let's run this.
+
+00:03:29.250 --> 00:03:33.610
+And let's search for -- again let's search for Romeo.
+
+00:03:34.510 --> 00:03:36.510
+I said search for Juliet this time.
+
+00:03:37.010 --> 00:03:41.110
+Juliet, 49 times we found the word Juliet.
+
+00:03:41.610 --> 00:03:46.010
+All right. That's it. Now suppose we're trying to debug this along the way. We really want to see what
+
+00:03:46.010 --> 00:03:48.010
+word was actually read from the file.
+
+00:03:48.010 --> 00:03:51.910
+So what we could do here or even better let's just see the words that match.
+
+00:03:52.410 --> 00:03:56.710
+We know the words that match, right, in this if statement right here, right. That's why we're incrementing match count
+
+00:03:56.710 --> 00:04:00.070
+So what we could do is right in here we could stay std count.
+
+00:04:00.570 --> 00:04:03.870
+And we could display the word that we just matched, right,
+
+00:04:03.870 --> 00:04:07.230
+which was the word that we read. So we could display word read
+
+00:04:08.530 --> 00:04:13.130
+followed by a space and no new lines that way it'll just display them one after the other.
+
+00:04:13.130 --> 00:04:15.130
+So let's try running this again now.
+
+00:04:15.430 --> 00:04:17.030
+And let's look for the word love.
+
+00:04:17.630 --> 00:04:20.130
+There we go. Those are all the matches that we found.
+
+00:04:20.130 --> 00:04:23.730
+Lovers, love, love with a question mark, punctuation,
+
+00:04:23.730 --> 00:04:27.030
+love performing you can see here love song,
+
+00:04:27.030 --> 00:04:30.530
+dear loved. There you go. So it gives us a pretty good
+
+00:04:30.530 --> 00:04:33.330
+gauge as to the correctness of our program.
+
+00:04:33.330 --> 00:04:35.130
+Obviously, we would have to do some real testing.
+
+00:04:35.130 --> 00:04:38.630
+And absolutely, know ahead of time how many times this word exists.
+
+00:04:38.630 --> 00:04:41.130
+Let's try it again with a capital l
+
+00:04:41.730 --> 00:04:44.330
+would love four times.
+
+00:04:44.330 --> 00:04:46.330
+Okay. So there you go.
+
+00:04:48.630 --> 00:04:51.230
+And let's see how about Romeo.
+
+00:04:52.430 --> 00:04:55.680
+You can see Romeo was found 132 times,
+
+00:04:55.680 --> 00:04:57.660
+and it was found with a period at the end,
+
+00:04:57.660 --> 00:05:00.660
+a period at the end again at the end of the sentence with question marks,
+
+00:05:00.660 --> 00:05:04.320
+Romeo's with an apostrophe. So that's it.
+
+00:05:04.320 --> 00:05:07.220
+That's the solution. If you came up with another solution,
+
+00:05:07.220 --> 00:05:09.720
+if you figured out a way to do it by reading a whole line
+
+00:05:09.720 --> 00:05:12.600
+of time and then splitting up the straight the words out of the line,
+
+00:05:12.600 --> 00:05:15.200
+that's a lot more work. But if you did that you, think it's cool,
+
+00:05:15.200 --> 00:05:18.160
+post it out there, so we can all learn from one another.
+
+00:05:18.160 --> 00:05:20.460
+All right. So I hope you enjoyed this challenge.
+
+00:05:20.460 --> 00:05:24.460
+In the next video, we'll learn about output streams and writing to files.

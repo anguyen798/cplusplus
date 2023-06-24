@@ -1,0 +1,94 @@
+WEBVTT
+
+00:00:05.400 --> 00:00:06.960
+In this section of the course,
+
+00:00:06.960 --> 00:00:11.460
+we'll learn about the various types of smart pointers in c++ and how to use them.
+
+00:00:12.560 --> 00:00:15.220
+First, we'll understand why we need smart pointers at all.
+
+00:00:15.220 --> 00:00:18.370
+After all, there must be an issue with the way that raw pointers work
+
+00:00:18.370 --> 00:00:20.620
+that motivated the need for smart pointers.
+
+00:00:20.620 --> 00:00:23.980
+So we'll review some of the problems associated with raw pointers.
+
+00:00:24.130 --> 00:00:28.730
+Then we'll see what smart pointers are and understand how the address the issues with raw pointers.
+
+00:00:29.030 --> 00:00:32.230
+One of the most important concepts to understand in this section
+
+00:00:32.230 --> 00:00:37.430
+is that of ownership and RAII or resource acquisition is initialization.
+
+00:00:37.790 --> 00:00:41.990
+I'll go over this idiom since it's central to understanding not only smart pointers
+
+00:00:41.990 --> 00:00:43.490
+but resource management in general.
+
+00:00:44.490 --> 00:00:48.590
+Then we'll look at each type of c++ smart pointer and see how they work and how to use them.
+
+00:00:49.390 --> 00:00:53.190
+Ultimately, we want to write code that has no news and no deletes.
+
+00:00:53.190 --> 00:00:56.390
+So all the memory management is handled by c++.
+
+00:00:56.390 --> 00:01:00.750
+If c++ can automatically clean up the heat whenever a pointer is no longer needed,
+
+00:01:00.750 --> 00:01:05.740
+then we'll never leak memory, and we don't have to worry about needing to know when a pointer is no longer needed.
+
+00:01:05.740 --> 00:01:08.740
+That's the idea anyway. Smart pointers aren't perfect,
+
+00:01:08.740 --> 00:01:11.340
+but they can certainly make our code better in most cases.
+
+00:01:12.330 --> 00:01:15.930
+First, we'll learn about the unique pointer, which is exactly what it sounds like.
+
+00:01:16.330 --> 00:01:20.530
+A unique pointer to keep storage that is not shared and the ownership is clear.
+
+00:01:20.530 --> 00:01:24.130
+When you know who owns the pointer, then you know who needs to delete the pointer
+
+00:01:24.130 --> 00:01:25.730
+or at least c++ does.
+
+00:01:26.830 --> 00:01:30.980
+Then we'll learn about shared pointers. Shared pointers are pointers that share common heap
+
+00:01:30.980 --> 00:01:32.980
+storage and can be very useful.
+
+00:01:33.280 --> 00:01:36.380
+Then we'll learn about weak pointers, and how they can help us avoid a problem
+
+00:01:36.380 --> 00:01:38.040
+associated with shared pointers.
+
+00:01:38.700 --> 00:01:41.360
+Finally, we'll see how we can use custom deleters
+
+00:01:41.360 --> 00:01:44.720
+so that c++ can call a specific version of delete
+
+00:01:44.720 --> 00:01:46.420
+that does exactly what we want.
+
+00:01:47.320 --> 00:01:50.980
+Smart pointers are very important part of modern c++,
+
+00:01:50.980 --> 00:01:54.280
+and we want to use them whenever we can to help us manage memory.

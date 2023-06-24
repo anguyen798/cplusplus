@@ -1,0 +1,1437 @@
+WEBVTT
+
+00:00:05.750 --> 00:00:09.234
+In this video, we'll learn
+about the c++ for loop
+
+00:00:09.230 --> 00:00:10.840
+and a few of its variations.
+
+00:00:11.620 --> 00:00:15.530
+The for loop consists of
+the 4 keyword, followed by 3
+
+00:00:15.530 --> 00:00:17.150
+expressions in parentheses.
+
+00:00:17.750 --> 00:00:20.410
+Each of these expressions
+is separated by semicolon.
+
+00:00:21.610 --> 00:00:24.810
+The semicolons are required but
+the expressions are all optional.
+
+00:00:25.000 --> 00:00:26.400
+We'll see more about this later.
+
+00:00:27.480 --> 00:00:31.680
+In its simplest form, the for
+loop has initialization expression
+
+00:00:31.700 --> 00:00:35.769
+followed by a conditional expression
+that evaluates to a Boolean and
+
+00:00:35.769 --> 00:00:37.300
+then an increment expression.
+
+00:00:38.170 --> 00:00:41.410
+First, the initialization
+expression is executed exactly
+
+00:00:41.410 --> 00:00:43.989
+once before any iteration occurs.
+
+00:00:44.860 --> 00:00:46.419
+Then the condition is checked.
+
+00:00:46.760 --> 00:00:49.170
+If it's true, the body
+of the loop is executed.
+
+00:00:50.030 --> 00:00:53.179
+Then the iteration expression
+is executed, and we check the
+
+00:00:53.180 --> 00:00:54.590
+condition again and repeat.
+
+00:00:55.580 --> 00:00:58.660
+When the condition evaluates
+defaults, the loop is terminated,
+
+00:00:58.930 --> 00:01:01.450
+and we continue processing the
+statements to follow the loop.
+
+00:01:02.389 --> 00:01:05.069
+As you can see in this examples,
+the for loop can execute 1
+
+00:01:05.330 --> 00:01:08.450
+statement or many statements
+by using a block statement.
+
+00:01:09.589 --> 00:01:12.219
+Let's see a simple for loop
+that counts from 1 to 5.
+
+00:01:13.439 --> 00:01:15.670
+Let's walk through this
+for loop 1 step at a time.
+
+00:01:16.220 --> 00:01:18.899
+Notice that in order to count
+we need some sort of variable.
+
+00:01:19.190 --> 00:01:22.280
+It's common to use the variable
+named I as the loop variable.
+
+00:01:22.679 --> 00:01:24.610
+That's incremented or
+decremented in a loop.
+
+00:01:25.330 --> 00:01:29.039
+In this case, we declare I to be
+an integer and initialize it to 0.
+
+00:01:29.940 --> 00:01:31.010
+Now we enter the loop.
+
+00:01:31.260 --> 00:01:33.590
+The first thing that happens
+is the initialization.
+
+00:01:33.890 --> 00:01:36.020
+In this case, we assign 1 to I.
+
+00:01:36.680 --> 00:01:41.710
+Now we check the condition since 1 is
+less than or equal to 5, we execute
+
+00:01:41.710 --> 00:01:44.990
+the body of the loop which is the
+output statement, and we display 1.
+
+00:01:46.020 --> 00:01:49.360
+Then we execute the increment
+expression, which increments I by 1.
+
+00:01:50.820 --> 00:01:55.380
+Note that + + I and I + + mean
+the same thing here since the
+
+00:01:55.380 --> 00:01:58.640
+increment happens on its own and
+it's not in another expression.
+
+00:01:59.080 --> 00:02:00.300
+So now I is 2.
+
+00:02:00.309 --> 00:02:03.169
+We check the condition again
+and it evaluates to true.
+
+00:02:03.420 --> 00:02:06.759
+So we execute the body of
+the loop again and display 2.
+
+00:02:06.759 --> 00:02:10.259
+Then we increment I
+again and keep iterating.
+
+00:02:10.740 --> 00:02:12.960
+After we display 5 items, I will be 5.
+
+00:02:13.480 --> 00:02:14.853
+And then we increment it to 6.
+
+00:02:14.853 --> 00:02:18.470
+At this point, the condition
+fails and the loop terminates.
+
+00:02:19.429 --> 00:02:23.710
+C++ for loops are very efficient,
+and in their basic form very
+
+00:02:23.710 --> 00:02:25.109
+easy to read and modify.
+
+00:02:25.860 --> 00:02:28.060
+Let's see another way to
+declare the looping variable.
+
+00:02:29.300 --> 00:02:33.640
+We can declare and initialize the
+looping variable I in this case right
+
+00:02:33.660 --> 00:02:35.290
+in the initialization statement.
+
+00:02:35.809 --> 00:02:38.430
+This is very commonly done
+and has some advantages.
+
+00:02:39.200 --> 00:02:41.609
+Here, you can see we're
+doing it using 2 styles.
+
+00:02:41.799 --> 00:02:45.970
+The first uses initialization style,
+and the second uses assignment style.
+
+00:02:46.430 --> 00:02:49.000
+I will be using initialization
+style in this course.
+
+00:02:49.980 --> 00:02:53.500
+The looping variable I is only
+visible inside the for loop.
+
+00:02:53.800 --> 00:02:57.170
+Once the loop has finished, I is
+no longer visible, and you'll get a
+
+00:02:57.170 --> 00:02:58.959
+compiler error if you try to use it.
+
+00:02:59.910 --> 00:03:02.850
+This is a great feature since you
+know that I is totally under your
+
+00:03:02.850 --> 00:03:06.020
+control within the loop and won't
+have any strange values coming
+
+00:03:06.030 --> 00:03:07.710
+into the loop or exiting the loop.
+
+00:03:08.360 --> 00:03:09.470
+Let's see another example.
+
+00:03:10.050 --> 00:03:12.510
+In this example, we're
+looping from 1 to 10.
+
+00:03:13.420 --> 00:03:16.820
+The body of the loop tests to
+see if the remainder of I is 0.
+
+00:03:18.270 --> 00:03:20.700
+So it's testing to see
+if I is an even number.
+
+00:03:21.600 --> 00:03:23.570
+If it is, then it displays I.
+
+00:03:24.060 --> 00:03:28.960
+So this loop displays all the even
+numbers between 1 and 10 inclusive.
+
+00:03:29.400 --> 00:03:31.500
+Let's see how we can use
+a for loop with an array.
+
+00:03:32.360 --> 00:03:34.660
+In this example, we're
+using a for loop to display
+
+00:03:34.660 --> 00:03:35.810
+the elements of an array.
+
+00:03:36.160 --> 00:03:39.260
+Here we've declared scores as
+an array of integers, and we've
+
+00:03:39.260 --> 00:03:42.380
+initialized it to 100, 90 and 87.
+
+00:03:43.440 --> 00:03:49.090
+Since array indexes begin at 0
+and go to size -1, we must be sure
+
+00:03:49.090 --> 00:03:52.460
+to stay within those bounds or
+our program could likely crash.
+
+00:03:52.990 --> 00:03:56.880
+So we declare and initialize
+I to 0, and our loop
+
+00:03:56.890 --> 00:03:58.660
+condition is I less than 3.
+
+00:03:59.650 --> 00:04:02.350
+And we increment I by
+1 at each iteration.
+
+00:04:03.099 --> 00:04:07.720
+So we loop for i equal to 0, 1 and
+2, which is exactly what we want.
+
+00:04:08.580 --> 00:04:12.089
+The body of the loop simply displays
+the array element at index I.
+
+00:04:12.350 --> 00:04:16.100
+This will display 100,
+90 and 87, as we wanted.
+
+00:04:16.470 --> 00:04:19.880
+Be very careful when you work with
+loops and arrays, the condition
+
+00:04:19.880 --> 00:04:23.390
+should either be less than the
+size of the array or less than
+
+00:04:23.390 --> 00:04:25.240
+or equal to the size minus 1.
+
+00:04:25.770 --> 00:04:29.130
+Hot tip always use 1 or
+the other and stick to it.
+
+00:04:29.279 --> 00:04:31.620
+Don't start flipping between
+them because eventually you're
+
+00:04:31.620 --> 00:04:32.750
+going to make a mistake.
+
+00:04:32.990 --> 00:04:35.910
+I always use less than the size
+of the array and I've been doing
+
+00:04:35.910 --> 00:04:37.420
+it that way my entire career.
+
+00:04:37.710 --> 00:04:41.810
+This helps prevent what are called
+off by 1 errors, which basically mean
+
+00:04:41.810 --> 00:04:45.190
+that we went over bounds and your
+program could crash or corrupt data.
+
+00:04:46.449 --> 00:04:49.430
+C++ has an operator
+called the comma operator.
+
+00:04:49.610 --> 00:04:51.120
+That isn't used very often in c++.
+
+00:04:52.050 --> 00:04:55.469
+But sometimes, you see it used in
+loops to initialize loop variables.
+
+00:04:55.760 --> 00:04:59.040
+The comma operator allows you to
+separate expressions with a comma
+
+00:04:59.309 --> 00:05:01.150
+and both expressions will execute.
+
+00:05:02.090 --> 00:05:05.849
+Note that the associativity is right
+to left and the result of the comma
+
+00:05:05.850 --> 00:05:07.940
+operator is the leftmost expression.
+
+00:05:08.560 --> 00:05:12.010
+In this case, we're just using it
+to initialize 2 variables and then
+
+00:05:12.010 --> 00:05:13.540
+to increment those 2 variables.
+
+00:05:14.220 --> 00:05:18.109
+In this example, we want I to
+start at 1 and J to start at 5.
+
+00:05:18.769 --> 00:05:21.690
+And we want a loop while I
+is less than or equal to 5.
+
+00:05:22.299 --> 00:05:26.610
+The output statement of the body of
+the loop displays I * J, the product.
+
+00:05:27.350 --> 00:05:32.140
+Then the increment also uses a comma
+operator to increment both I and J.
+
+00:05:33.050 --> 00:05:37.510
+So in this case, I goes from
+1 to 5 and J from 5 to 9.
+
+00:05:37.740 --> 00:05:40.780
+And at every iteration, we
+display the product of I and J.
+
+00:05:41.580 --> 00:05:44.289
+Walk through this example slowly
+yourself and you'll see that
+
+00:05:44.290 --> 00:05:45.409
+it's pretty straightforward.
+
+00:05:45.810 --> 00:05:48.770
+The syntax looks a bit odd though
+since there's so much going on.
+
+00:05:49.700 --> 00:05:53.090
+The basic for loop with all
+3 expressions is concise,
+
+00:05:53.120 --> 00:05:54.540
+easy to read and modify.
+
+00:05:55.130 --> 00:05:58.249
+In the examples I showed we
+used integers but you can use
+
+00:05:58.250 --> 00:05:59.840
+doubles with for loops as well.
+
+00:06:00.440 --> 00:06:02.600
+Also I counted up in these examples.
+
+00:06:02.600 --> 00:06:04.140
+You of course can count down.
+
+00:06:04.760 --> 00:06:07.650
+But since the expressions are
+all optional, it's possible to
+
+00:06:07.650 --> 00:06:09.310
+have all sorts of variations.
+
+00:06:09.750 --> 00:06:13.289
+You can even have a for loop with just
+the semicolons in the parentheses.
+
+00:06:13.750 --> 00:06:16.010
+This is by definition an endless loop.
+
+00:06:16.430 --> 00:06:20.179
+Best practice and pro tip, don't
+write for loops with missing
+
+00:06:20.180 --> 00:06:23.330
+expressions and complicated
+expressions with comma operators.
+
+00:06:23.760 --> 00:06:26.769
+The example I showed is simple
+and understandable but if
+
+00:06:26.770 --> 00:06:29.519
+you find that you're omitting
+expressions, then consider
+
+00:06:29.520 --> 00:06:31.840
+using 1 of c++ as other loops.
+
+00:06:32.719 --> 00:06:33.039
+Great.
+
+00:06:33.059 --> 00:06:35.610
+Let's head over to the IDE,
+we'll see some examples of
+
+00:06:35.610 --> 00:06:36.979
+the for loop in live code.
+
+00:06:37.870 --> 00:06:41.729
+I'm in the code ide and I'm
+in the section 9 workspace
+
+00:06:41.760 --> 00:06:43.510
+in the for loop project.
+
+00:06:44.610 --> 00:06:47.270
+What I want to do here is I want
+to write a few different for loops.
+
+00:06:47.270 --> 00:06:49.129
+We'll write a bunch of them
+that behave differently.
+
+00:06:49.130 --> 00:06:50.640
+Some will count up,
+some will count down.
+
+00:06:50.849 --> 00:06:53.959
+So you get a feel for how these for
+loops work, and I'll write them, and
+
+00:06:53.959 --> 00:06:56.400
+I'll comment them out along the way
+that way they'll be in the source
+
+00:06:56.400 --> 00:06:57.860
+file so you can play with them later.
+
+00:06:58.040 --> 00:06:59.760
+So let's do a simple 1 first.
+
+00:07:00.060 --> 00:07:05.339
+Let's just say something like
+4 int I, will start I at 1.
+
+00:07:05.339 --> 00:07:07.469
+That's the initialization
+expression right there.
+
+00:07:07.670 --> 00:07:11.389
+And then we want to loop while I
+let's say is less than or equal to 10.
+
+00:07:12.389 --> 00:07:15.440
+And at each iteration, what we
+want to do is increment I by 1.
+
+00:07:16.410 --> 00:07:20.240
+Now in this case I can say + + I
+or I + +, it means exactly
+
+00:07:20.240 --> 00:07:21.450
+the same thing in this case.
+
+00:07:22.020 --> 00:07:24.039
+And I'll simply output I.
+
+00:07:28.270 --> 00:07:29.639
+Okay, simple as that.
+
+00:07:29.680 --> 00:07:35.809
+Let's run this, and you can
+see we're going from I1 to 10.
+
+00:07:36.410 --> 00:07:40.000
+Obviously when I hits, 11 this
+condition right here fails.
+
+00:07:40.550 --> 00:07:43.000
+And I stop the loop and then
+I just hit this end line over
+
+00:07:43.000 --> 00:07:44.829
+here, right before the return.
+
+00:07:45.740 --> 00:07:47.699
+Okay, so real simple example.
+
+00:07:47.699 --> 00:07:52.960
+Now I'll just copy and paste this
+so that you can see a variant of it
+
+00:07:54.150 --> 00:07:57.660
+and I'll comment that out here now.
+
+00:07:57.660 --> 00:08:01.349
+Suppose I want to go
+from I to 10 by 2.
+
+00:08:02.580 --> 00:08:05.859
+I don't have to increment by 1., I
+can increment by whatever I want, so I
+
+00:08:05.859 --> 00:08:10.780
+can hear in the increments expression
+I could just say, I + equals 2.
+
+00:08:10.830 --> 00:08:12.350
+So I equals I + 2.
+
+00:08:12.350 --> 00:08:15.660
+So we're going to do the same exact
+thing except when we increment,
+
+00:08:15.670 --> 00:08:16.790
+we're going to increment by 2.
+
+00:08:17.259 --> 00:08:23.019
+So let's run this 1, and there you
+go 1, 3, 5, 7, 9, exactly what I
+
+00:08:23.020 --> 00:08:24.770
+expect because I'm starting at 1.
+
+00:08:25.110 --> 00:08:28.480
+And then eventually, it's
+going to hit 11 and it'll fail.
+
+00:08:30.330 --> 00:08:31.860
+Okay, so hopefully that makes
+
+00:08:31.860 --> 00:08:34.060
+sense let's count
+down on the next one.
+
+00:08:34.799 --> 00:08:37.890
+So let me comment that
+out, and let's do this now.
+
+00:08:37.919 --> 00:08:40.089
+Let's say for int I.
+
+00:08:40.090 --> 00:08:44.469
+And again, I is a real common variable
+name to use with looping i, j, k.
+
+00:08:45.250 --> 00:08:47.850
+You'll see those all over
+the place in c++ code.
+
+00:08:48.130 --> 00:08:51.800
+So let's say I want to
+initialize I to 10 in this case.
+
+00:08:51.860 --> 00:08:57.055
+And I want to loop while I is
+greater than or equal to 0.
+
+00:08:57.320 --> 00:08:58.940
+Let's just say greater than 0.
+
+00:08:59.459 --> 00:09:01.920
+And in this case, I want
+to decrement I every time.
+
+00:09:02.810 --> 00:09:04.850
+Okay, so again, I'm
+starting with I is 10.
+
+00:09:04.850 --> 00:09:09.870
+And as long as I is greater than
+0 or I is positive, I want to
+
+00:09:09.990 --> 00:09:12.570
+execute the statement, which
+I'm going to write right now.
+
+00:09:13.530 --> 00:09:16.939
+And again, I'm just going to output I.
+
+00:09:17.290 --> 00:09:19.180
+And then I want to decrement I.
+
+00:09:19.460 --> 00:09:21.020
+So this should count down now.
+
+00:09:21.440 --> 00:09:22.740
+So let's try that out.
+
+00:09:24.440 --> 00:09:25.200
+And there you go.
+
+00:09:25.200 --> 00:09:27.640
+10, 9, 8, 7, 6, all the way down to 1.
+
+00:09:28.610 --> 00:09:33.559
+If I write in something like
+this, let's say blast off,
+
+00:09:35.709 --> 00:09:39.510
+then we expect that to execute
+after the loop is done.
+
+00:09:42.150 --> 00:09:43.480
+So that works out perfectly.
+
+00:09:43.480 --> 00:09:44.590
+There's your blast off.
+
+00:09:44.800 --> 00:09:49.400
+And one quick thing, some
+compilers not all compilers but
+
+00:09:49.400 --> 00:09:53.990
+some compilers, will give you a
+warning when you indent wrong.
+
+00:09:54.320 --> 00:09:58.980
+Okay, so in this case, if I indented
+cout this blast off statement, over
+
+00:09:58.980 --> 00:10:02.930
+here, that's not correct, right,
+because I don't have curlies.
+
+00:10:03.160 --> 00:10:06.720
+So this for loop really only
+executes that one statement.
+
+00:10:07.219 --> 00:10:11.049
+But when I see this code
+visually, my eyes are telling me
+
+00:10:11.049 --> 00:10:14.640
+that those 2 statements are in
+the for loop, but they're not.
+
+00:10:15.440 --> 00:10:20.670
+If I try to compile this, notice
+it works, but I get a warning.
+
+00:10:21.179 --> 00:10:25.289
+The warning says warning
+this 4 clause does not guard.
+
+00:10:25.590 --> 00:10:27.140
+That's not real helpful, I know.
+
+00:10:27.639 --> 00:10:31.730
+But notice the warning message,
+it says misleading indentation.
+
+00:10:31.740 --> 00:10:32.760
+That's a great warning.
+
+00:10:32.760 --> 00:10:34.470
+A lot of compilers don't do that.
+
+00:10:34.880 --> 00:10:37.610
+So what it's telling you
+is that something's not
+
+00:10:37.610 --> 00:10:39.010
+right with the indentation.
+
+00:10:39.020 --> 00:10:41.900
+You may think it's doing one
+thing but it really isn't.
+
+00:10:42.130 --> 00:10:47.059
+So once you unindent that and
+indent it properly, now you'll
+
+00:10:47.059 --> 00:10:49.860
+have a clean compile with
+no errors and no warnings.
+
+00:10:50.310 --> 00:10:53.939
+That's a really nice feature
+of the GCC compilers.
+
+00:10:54.510 --> 00:10:57.620
+Okay, so let me comment
+that piece out again.
+
+00:10:58.120 --> 00:11:00.430
+And let's write another
+version of a for loop.
+
+00:11:00.849 --> 00:11:04.454
+In this case, why don't we
+count from 10 to 100 x 10.
+
+00:11:04.609 --> 00:11:09.494
+So again, for the
+initialization statement and
+
+00:11:09.670 --> 00:11:11.600
+I will initialize it to 10.
+
+00:11:11.630 --> 00:11:14.900
+Remember that only happens exactly
+one time right before the loop begins.
+
+00:11:15.420 --> 00:11:18.260
+And I want to loop while I
+is less than or equal to 100.
+
+00:11:19.000 --> 00:11:23.119
+And at each iteration, I
+want to say I + equals 10.
+
+00:11:23.160 --> 00:11:25.040
+So I want to increment
+by 10 each time.
+
+00:11:26.480 --> 00:11:29.695
+And I'm going to put in a
+block statement here just
+
+00:11:29.695 --> 00:11:31.699
+because I'm going to use a
+few other statements in a bit.
+
+00:11:31.710 --> 00:11:33.340
+But right now, let's just print I.
+
+00:11:36.000 --> 00:11:39.450
+Okay, so again, we're going
+from 10 to 100 inclusive by 10.
+
+00:11:39.450 --> 00:11:42.879
+So we expect this to print out 10,
+20, 30, 40, all the way to 100.
+
+00:11:42.879 --> 00:11:43.930
+Let's try that out.
+
+00:11:46.000 --> 00:11:49.490
+And that's the result from 10 to
+100 by 10 exactly what we expect.
+
+00:11:49.830 --> 00:11:54.699
+Now suppose I only wanted to
+print out those numbers that are
+
+00:11:54.700 --> 00:12:00.169
+between 10 and 100 by 10 and also
+divisible by 15 without a remainder.
+
+00:12:00.779 --> 00:12:03.780
+Okay, so what we can do here is
+we can put an if statement here.
+
+00:12:04.100 --> 00:12:10.870
+We can say if that specific
+I am looking at mod 15
+
+00:12:12.080 --> 00:12:13.149
+is equal to 0, right.
+
+00:12:15.370 --> 00:12:19.150
+So if that thing is divisible by
+15, then I want to display it.
+
+00:12:19.900 --> 00:12:23.450
+So at this point out of those
+10, 20, 30, 40, 50 and so forth,
+
+00:12:23.480 --> 00:12:27.800
+we really only expect 30, 60
+and 90 to match this criteria.
+
+00:12:27.800 --> 00:12:31.850
+Those are the only ones that are
+divisible by 0, by 15, I'm sorry.
+
+00:12:31.850 --> 00:12:32.979
+So let's run this.
+
+00:12:33.830 --> 00:12:36.980
+And there they are 30, 60,
+90 are the only ones in that
+
+00:12:36.980 --> 00:12:38.730
+set that are divisible by 15.
+
+00:12:40.330 --> 00:12:43.310
+Now let's take a look at that
+comma operator I talked about.
+
+00:12:44.130 --> 00:12:47.180
+The syntax for this
+is -- again, it's not bad.
+
+00:12:47.180 --> 00:12:49.070
+It just gets kind of
+long and convoluted.
+
+00:12:49.280 --> 00:12:50.389
+So let's try that out.
+
+00:12:50.410 --> 00:12:51.460
+Let's say 4.
+
+00:12:51.969 --> 00:12:54.454
+Now in this case, in the
+initialization statement, I want
+
+00:12:54.559 --> 00:12:56.469
+to initialize more than 1 variable.
+
+00:12:56.680 --> 00:12:59.200
+So I can put them all in
+here separated by commas,
+
+00:12:59.220 --> 00:13:01.040
+not semicolons, commas.
+
+00:13:01.220 --> 00:13:04.730
+So I'll say int I, and I
+want to initialize I to 1.
+
+00:13:05.780 --> 00:13:09.830
+Now I put a comma in there and j to 5.
+
+00:13:12.020 --> 00:13:13.580
+That's my initialization.
+
+00:13:13.720 --> 00:13:16.010
+I'm setting I to 1 and j to 5.
+
+00:13:16.360 --> 00:13:18.329
+Now comes my loop condition.
+
+00:13:18.510 --> 00:13:21.829
+I want a loop while I is
+less than or equal to 5.
+
+00:13:21.829 --> 00:13:25.050
+And now is the increment expression.
+
+00:13:25.059 --> 00:13:27.890
+So where I say what do I
+want to do at each iteration.
+
+00:13:27.900 --> 00:13:31.110
+Well, I want to increment I
+and I want to increment j.
+
+00:13:31.110 --> 00:13:34.520
+So I can put the comma
+operator there and increment j.
+
+00:13:35.450 --> 00:13:39.410
+Okay, so you can see the purpose of
+this operator within this for loop
+
+00:13:39.410 --> 00:13:42.790
+is just to make everything concise
+because it makes sense here, right.
+
+00:13:42.790 --> 00:13:46.880
+I mean I want to initialize I
+and j before I loop and I want to
+
+00:13:46.880 --> 00:13:49.239
+increment them both at each iteration.
+
+00:13:49.700 --> 00:13:52.570
+So rather than spread this
+logic all over the body of
+
+00:13:52.570 --> 00:13:54.860
+this loop, you can just put it
+right in the header like that.
+
+00:13:54.860 --> 00:13:57.549
+And it really conveys
+exactly what you want.
+
+00:13:58.400 --> 00:14:01.189
+At this point, I can just
+have a simple output statement
+
+00:14:01.670 --> 00:14:04.530
+that, let's say, we want to
+add I and j at each iteration.
+
+00:14:04.530 --> 00:14:05.639
+So i want to display I.
+
+00:14:06.699 --> 00:14:08.510
+I want to display the + symbol.
+
+00:14:09.900 --> 00:14:11.220
+I want to display j.
+
+00:14:12.750 --> 00:14:14.690
+I want to display the equal sign.
+
+00:14:15.559 --> 00:14:16.299
+That's a literal.
+
+00:14:16.800 --> 00:14:19.560
+And let's just display I + j.
+
+00:14:21.660 --> 00:14:23.179
+And we'll end that with a new line.
+
+00:14:25.559 --> 00:14:26.640
+So let's run that.
+
+00:14:28.280 --> 00:14:30.520
+And you see we have 1 + 5 is 6.
+
+00:14:30.540 --> 00:14:34.370
+Now it's -- I encourage you
+to walk through this example.
+
+00:14:34.380 --> 00:14:37.889
+I mean grab your pen kind of
+like I'm doing right now, and
+
+00:14:37.910 --> 00:14:41.420
+say, okay, this is I., this is j.
+
+00:14:42.309 --> 00:14:45.110
+Right now, I've initialized
+them right 1 and 5.
+
+00:14:47.550 --> 00:14:50.520
+Now I start the loop is I
+less than or equal to 5.
+
+00:14:50.520 --> 00:14:51.090
+Well, I is 1.
+
+00:14:51.559 --> 00:14:53.199
+So sure it's less than equal to 5.
+
+00:14:53.250 --> 00:14:56.640
+I execute the body of the
+loop, which says display I.
+
+00:14:56.690 --> 00:15:03.500
+Okay, 1 then the +, then the j, then
+the equal sign and then their sum.
+
+00:15:05.330 --> 00:15:10.570
+Then we do the increment which
+means now I is 2 j is 6 and just
+
+00:15:10.570 --> 00:15:11.779
+walk through the loop this way.
+
+00:15:11.780 --> 00:15:13.880
+This way, you really get an
+understanding of what's going on.
+
+00:15:13.889 --> 00:15:14.980
+Remember what happens.
+
+00:15:15.130 --> 00:15:19.650
+We do the initialization one
+time, then we check the condition,
+
+00:15:20.140 --> 00:15:21.650
+then we execute the body.
+
+00:15:21.700 --> 00:15:24.810
+If it's true and then
+we do the increment.
+
+00:15:25.000 --> 00:15:27.230
+So that's the order that
+this is all happening in.
+
+00:15:29.460 --> 00:15:31.270
+Okay, so let me close this up.
+
+00:15:32.360 --> 00:15:37.170
+And let's say that we wanted to use
+-- let's use that conditional operator
+
+00:15:37.180 --> 00:15:41.739
+inside the loop, just like I showed
+you in the conditional operator video.
+
+00:15:41.740 --> 00:15:43.200
+There's a handy way to do it here.
+
+00:15:43.440 --> 00:15:47.540
+So suppose I want to print out the
+numbers 1 to 100 in a little bit of
+
+00:15:47.540 --> 00:15:49.259
+a table format, so they look nice.
+
+00:15:49.259 --> 00:15:50.180
+There's 10 across.
+
+00:15:50.270 --> 00:15:52.330
+So 10 rows of 10 columns each.
+
+00:15:53.010 --> 00:15:53.860
+How could I do that?
+
+00:15:53.860 --> 00:16:00.950
+Well, I could do something like for
+sorry may indent that for int I.
+
+00:16:01.200 --> 00:16:06.319
+We can start at 1, and
+we want to loop while I.
+
+00:16:13.090 --> 00:16:14.570
+Okay, let's try that again.
+
+00:16:14.940 --> 00:16:24.210
+Let's loop starting at int I set
+to 1., and I want to loop while
+
+00:16:24.679 --> 00:16:26.840
+I is less than or equal to 100.
+
+00:16:26.840 --> 00:16:30.109
+And in each iteration,
+I want to increment I.
+
+00:16:31.579 --> 00:16:33.400
+Okay, so that's what I want to do.
+
+00:16:33.410 --> 00:16:35.199
+I'm going to put a block
+statement here, so I can
+
+00:16:35.200 --> 00:16:36.319
+write a little bit more code.
+
+00:16:37.660 --> 00:16:39.539
+Now I want to output I.
+
+00:16:42.759 --> 00:16:44.450
+And I don't want to
+put an endline here.
+
+00:16:44.450 --> 00:16:46.099
+I just want to output the I itself.
+
+00:16:46.389 --> 00:16:51.340
+And what I want to do is every 10th
+I, I want to output a new line.
+
+00:16:51.680 --> 00:16:55.900
+Otherwise, I just want to output a
+space to move them across the row so.
+
+00:16:55.960 --> 00:16:57.580
+Let's do that with
+the modulo operator.
+
+00:16:57.580 --> 00:17:03.569
+I can say if I mod 10, so if
+it's the 10th item, equals 0.
+
+00:17:04.719 --> 00:17:05.849
+What do I want to do here.
+
+00:17:06.400 --> 00:17:10.859
+Well, in this case, I just simply
+want to say cout give me a line.
+
+00:17:14.639 --> 00:17:20.919
+And if I is not the 10th item, I
+simply want to output a single space.
+
+00:17:24.089 --> 00:17:25.220
+Okay, that's it.
+
+00:17:25.490 --> 00:17:27.420
+So let's run this and see what we get.
+
+00:17:30.570 --> 00:17:34.509
+You can see we're going 1 to
+10, 11 to 20, 21 through 30.
+
+00:17:35.000 --> 00:17:37.739
+And again, walk through this and
+you'll see exactly what's going on.
+
+00:17:37.750 --> 00:17:39.159
+It should be pretty clear here.
+
+00:17:39.580 --> 00:17:43.510
+I'm printing out the I, and I'm
+checking for every 10th item.
+
+00:17:43.510 --> 00:17:46.330
+And if I get every 10th, I
+I'm going to print a new line.
+
+00:17:46.360 --> 00:17:47.990
+Otherwise, I just put a space.
+
+00:17:48.330 --> 00:17:52.889
+If I wanted to print this as 5
+across, I can just change that
+
+00:17:52.889 --> 00:17:54.680
+guy right there from a 10 to a 5.
+
+00:17:55.030 --> 00:17:57.690
+And now I've got 20 rows of 5.
+
+00:17:58.440 --> 00:18:00.590
+Okay, so that takes care of that one.
+
+00:18:00.950 --> 00:18:06.570
+Now suppose I wanted to
+write this same logic using
+
+00:18:06.580 --> 00:18:08.240
+the conditional operator.
+
+00:18:09.360 --> 00:18:10.920
+Well, let's see.
+
+00:18:10.920 --> 00:18:12.779
+Let's get rid of this stuff here.
+
+00:18:13.830 --> 00:18:17.470
+And what we can say right now
+here with the conditional operator
+
+00:18:17.470 --> 00:18:22.250
+is we could say, let's output
+that I and then let's output,
+
+00:18:25.100 --> 00:18:26.750
+let's check the condition, right.
+
+00:18:26.750 --> 00:18:31.370
+Same condition we had
+before I mod 10 equals 0.
+
+00:18:32.340 --> 00:18:35.989
+And if that is true, we
+just display a new line.
+
+00:18:36.299 --> 00:18:40.260
+We'll use the escape character,
+otherwise, just a space.
+
+00:18:42.070 --> 00:18:44.820
+And if we run this, we should
+get exactly the same behavior
+
+00:18:44.820 --> 00:18:46.470
+we had before, which we do.
+
+00:18:47.929 --> 00:18:51.430
+Okay, now remember since we're
+outputting, we can chain output,
+
+00:18:51.440 --> 00:18:54.730
+we can actually just get rid of
+all of this stuff and just make
+
+00:18:54.730 --> 00:18:57.290
+it all in one line we can do that.
+
+00:18:57.290 --> 00:19:00.389
+We can output the I followed by
+either a space or a new line.
+
+00:19:00.770 --> 00:19:03.199
+So this can be just
+written as a single line.
+
+00:19:05.570 --> 00:19:07.260
+And we get the same
+behavior as before.
+
+00:19:09.240 --> 00:19:12.750
+Okay, the last example I want
+to go over is using a vector.
+
+00:19:14.120 --> 00:19:15.710
+And let me comment that out.
+
+00:19:16.240 --> 00:19:18.850
+In the slides, I showed you
+how to do it with an array,
+
+00:19:18.870 --> 00:19:19.920
+how to loop through an array.
+
+00:19:19.920 --> 00:19:21.560
+And here, I'll show you
+how to use a vector.
+
+00:19:21.740 --> 00:19:24.870
+And in the next video, we'll use
+the range base for loop which makes
+
+00:19:24.870 --> 00:19:26.829
+using vectors really, really simple.
+
+00:19:27.089 --> 00:19:31.490
+But in this case, let's create
+a vector, and I'll just give
+
+00:19:31.520 --> 00:19:32.709
+myself a little room here.
+
+00:19:33.210 --> 00:19:34.760
+And I'll just call the vector nums.
+
+00:19:34.760 --> 00:19:36.480
+And it's going to be
+a vector of integers.
+
+00:19:36.590 --> 00:19:37.350
+Let's just call it nums.
+
+00:19:38.510 --> 00:19:45.260
+And let's initialize it to, I don't
+know, let's say 10, 20, 30, 40 and 50.
+
+00:19:45.830 --> 00:19:48.469
+So we've initialized
+it to those 5 numbers.
+
+00:19:48.480 --> 00:19:52.149
+Now remember, we're using a vector
+so we have to include vector.
+
+00:19:52.450 --> 00:19:56.859
+So I'm going to come back up to
+the top and pound include vector,
+
+00:19:56.860 --> 00:19:58.860
+otherwise we'll get a compiler error.
+
+00:20:00.219 --> 00:20:01.860
+So I'll come back down so.
+
+00:20:01.860 --> 00:20:02.770
+There's my vector.
+
+00:20:03.299 --> 00:20:06.539
+And let's say I want to loop through
+that vector and just display each
+
+00:20:06.570 --> 00:20:08.340
+item in the vector, pretty easy.
+
+00:20:08.570 --> 00:20:12.950
+I could say for int I and
+I want to initialize to 0.
+
+00:20:12.950 --> 00:20:15.649
+Remember, vectors start
+at 0, just like arrays.
+
+00:20:16.219 --> 00:20:22.179
+And I can say while I is less
+than nums.size, we'll use the
+
+00:20:22.180 --> 00:20:28.870
+size method that is in the vector
+class okay that tells me how many
+
+00:20:28.870 --> 00:20:31.900
+items are in the vector, and i
+want to increment by 1 each time.
+
+00:20:32.470 --> 00:20:37.570
+And I just simply want
+to say cout nums sub-I.
+
+00:20:39.889 --> 00:20:42.500
+Now when I run this, I
+expect to get 10 through 50.
+
+00:20:42.810 --> 00:20:44.760
+We're going to get a warning,
+and I'll show you how to fix
+
+00:20:44.760 --> 00:20:45.810
+that warning in a second.
+
+00:20:46.480 --> 00:20:47.670
+And it's actually a good warning.
+
+00:20:47.780 --> 00:20:48.320
+There you go.
+
+00:20:48.320 --> 00:20:49.610
+10 to 50 is the output.
+
+00:20:49.610 --> 00:20:50.540
+That's what we expected.
+
+00:20:50.540 --> 00:20:52.190
+We're printing out
+all of those elements.
+
+00:20:52.809 --> 00:20:55.849
+The warning says warning
+comparison between signed and
+
+00:20:56.079 --> 00:20:58.059
+unsigned integer expressions.
+
+00:20:58.219 --> 00:21:04.630
+Okay, what's going on here is that
+this numbs.size expression right
+
+00:21:04.630 --> 00:21:08.130
+here is returning an unsigned
+integer, that makes sense, right,
+
+00:21:08.130 --> 00:21:11.370
+because you can't have vectors
+that are negatively sized.
+
+00:21:11.820 --> 00:21:14.710
+So that's returning an unsigned
+integer and you return you're
+
+00:21:14.740 --> 00:21:16.609
+comparing it to a signed integer.
+
+00:21:17.059 --> 00:21:21.830
+So you can just simply type
+unsigned here instead of signed,
+
+00:21:21.830 --> 00:21:23.450
+and it actually makes more sense.
+
+00:21:24.950 --> 00:21:27.270
+I've been using signed
+integers all along.
+
+00:21:27.270 --> 00:21:29.800
+But a lot of times when you're looping
+especially when you're looping through
+
+00:21:29.820 --> 00:21:34.070
+all the positive numbers, it makes
+sense to use unsigned integers here.
+
+00:21:34.629 --> 00:21:35.649
+So I'll save that.
+
+00:21:36.180 --> 00:21:38.050
+We'll compile and run and.
+
+00:21:38.050 --> 00:21:41.220
+Now we've got down here, as
+you can see, no errors, no
+
+00:21:41.220 --> 00:21:42.790
+warnings and a clean compile.
+
+00:21:44.410 --> 00:21:47.500
+Okay, so that pretty much
+covers the basics of for loops.
+
+00:21:47.990 --> 00:21:50.969
+I will leave all these examples in
+the source code so you can play with
+
+00:21:50.969 --> 00:21:53.290
+them and change them around as you'd
+like, so you can learn from them.
+
+00:21:53.670 --> 00:21:56.830
+The best way to really learn this
+is just to make up little examples
+
+00:21:56.830 --> 00:21:59.620
+and print out every fifth element
+and see if they're divisible
+
+00:21:59.620 --> 00:22:01.120
+by 7 or something like that.
+
+00:22:01.440 --> 00:22:04.780
+And just really get a feel for the
+way that loops and walk through
+
+00:22:04.780 --> 00:22:07.880
+these examples one step at a time
+that really, really is helpful.

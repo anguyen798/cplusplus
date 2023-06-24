@@ -1,0 +1,141 @@
+WEBVTT
+
+0
+00:00.840 --> 00:09.600
+let us write a program using switch case for taking a day number and displaying day name let us say 1is
+
+1
+00:09.600 --> 00:15.530
+Monday, two is Tuesday and so on I will declare a variable  day.
+
+2
+00:15.570 --> 00:17.430
+And I will say cout,
+
+3
+00:18.180 --> 00:34.170
+enter day number and cin read the value of Day from keyboard then switch up on Day. then, case one, if it is
+
+4
+00:34.170 --> 00:46.260
+one then say cout Monday and slash n For new line and then break.
+
+5
+00:46.580 --> 00:59.450
+Case two cout tuesday and slash n for a new line then break statement case 3.
+
+6
+00:59.460 --> 01:02.530
+Same here I will write on all cout
+
+7
+01:22.540 --> 01:24.040
+defaulted cout
+
+8
+01:27.040 --> 01:28.920
+invalidly Day.
+
+9
+01:29.140 --> 01:31.150
+That's it.
+
+10
+01:31.150 --> 01:35.360
+Now I have written for all the cases and also I have included default.
+
+11
+01:35.380 --> 01:41.880
+Let us run this program. so i have written for all the cases
+
+12
+01:44.620 --> 01:46.850
+So i have written for all the cases.
+
+13
+01:46.890 --> 01:49.400
+And also I have written default here.
+
+14
+01:49.620 --> 01:51.600
+Now let us run the program and see
+
+15
+01:55.700 --> 01:56.790
+I'll give the number.
+
+16
+01:56.780 --> 02:01.920
+Here I have to entera no. I have  given the number one.
+
+17
+02:02.460 --> 02:08.640
+Here i  have to give Day no. but I'll give the numbers as one then it is coming as Monday.
+
+18
+02:08.640 --> 02:12.420
+run once again and give the number 7.
+
+19
+02:12.430 --> 02:15.320
+So it is Sunday.
+
+20
+02:15.320 --> 02:19.280
+One more time, 10 it is invalid.
+
+21
+02:19.390 --> 02:26.800
+day. so like this you can take some month number and display month names also.
+
+22
+02:27.240 --> 02:30.050
+So you have tried all possible cases for that 12 months.
+
+23
+02:30.050 --> 02:33.930
+You have write down and also if you want default you can get a default also.
+
+24
+02:34.160 --> 02:41.510
+And one more interesting thing you can do is you can take one digit on the display digit in words like
+
+25
+02:41.990 --> 02:45.120
+1 meane one, 2 means two
+
+26
+02:45.170 --> 02:49.510
+And so on for all 10 digits from zero to 9.
+
+27
+02:49.700 --> 02:51.200
+You can write on cases.
+
+28
+02:54.660 --> 02:59.340
+and one more interesting thing I have to show you that in between case and the case number there must
+
+29
+02:59.340 --> 03:01.700
+be a space without space.
+
+30
+03:01.740 --> 03:08.310
+It will be a invalid case so the compiler will not give any error message but it is giving him warning
+
+31
+03:08.310 --> 03:11.090
+that code will never be executed.
+
+32
+03:11.340 --> 03:18.380
+So there is no case 1 now Case 2 and 3 and 4 we have on this label is not our case.
+
+33
+03:18.420 --> 03:24.210
+It will be taken as a label so it is giving a warning that will never be executed.
+
+34
+03:24.480 --> 03:31.150
+So give proper spacing between case and the case number so you can try other programs.

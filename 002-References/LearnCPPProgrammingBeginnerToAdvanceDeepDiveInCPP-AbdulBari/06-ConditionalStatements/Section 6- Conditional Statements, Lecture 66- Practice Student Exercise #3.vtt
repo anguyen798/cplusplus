@@ -1,0 +1,77 @@
+WEBVTT
+
+0
+00:00.540 --> 00:05.820
+And here is an exercise program that you have to develop, so program you have to write down for calculating
+
+1
+00:06.110 --> 00:08.070
+discounted bill amount.
+
+2
+00:08.130 --> 00:14.820
+So the input a program will take  is the total bill amount and it will give the discount as follows If it
+
+3
+00:14.820 --> 00:19.170
+is greater than 500 then it is 20 percent discount is  given.
+
+4
+00:19.170 --> 00:25.170
+So you are supposed to take the input as bill amount and based on the bill amount calculate the discount and
+
+5
+00:25.590 --> 00:30.780
+subtract discount from the amount and display a discounted price.
+
+6
+00:31.140 --> 00:36.780
+And here I can show you the program How it should run and what should be the input and output of the
+
+7
+00:36.780 --> 00:42.370
+program file is given in the form of pdf if you the difficulty in writing the program you can check the
+
+8
+00:42.360 --> 00:43.570
+code.
+
+9
+00:44.070 --> 00:47.520
+Here is a program for calculating discounted bill amount.
+
+10
+00:47.540 --> 00:52.050
+I will run the program and show you how the input output is expected.
+
+11
+00:52.050 --> 01:00.540
+See here is asking Bill amount, if I say bill amount is 1000 and the amount is > than 500 So 20 percent
+
+12
+01:00.540 --> 01:01.830
+discount is given.
+
+13
+01:01.890 --> 01:08.610
+I will re run the the program and I will give the amount as a 400 so 10 percent discount I will get.
+
+14
+01:08.640 --> 01:14.830
+So discount is 40 here you can see that the discount is 40 and the discounted amount is 360. i will run
+
+15
+01:14.880 --> 01:16.110
+the program once again.
+
+16
+01:16.110 --> 01:25.740
+And i will give the amount as 50 it is less than 100 so discounted zero and the Bill amount is 50 only we should
+
+17
+01:25.740 --> 01:28.020
+write the program which works like this.
+
+18
+01:28.220 --> 01:32.590
+And if you are unable to do that you can check the program that is available as pdf.

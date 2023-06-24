@@ -1,0 +1,1016 @@
+WEBVTT
+
+00:00:05.500 --> 00:00:08.170
+In this video, we'll learn
+about recursive functions and
+
+00:00:08.170 --> 00:00:10.350
+how to implement them in c++.
+
+00:00:11.190 --> 00:00:14.160
+A recursive function is a
+function that calls itself.
+
+00:00:15.009 --> 00:00:17.490
+The function can call itself
+directly or indirectly
+
+00:00:17.490 --> 00:00:18.500
+through another function.
+
+00:00:19.109 --> 00:00:21.770
+If we end up with two or more
+activation records on the
+
+00:00:21.780 --> 00:00:24.590
+stack for the same function,
+then we have recursion.
+
+00:00:25.680 --> 00:00:27.999
+Recursion is great for
+certain classes of problems.
+
+00:00:28.309 --> 00:00:31.389
+Recursive problem solving is something
+that most programmers have a little
+
+00:00:31.389 --> 00:00:32.960
+trouble doing when they first learn.
+
+00:00:33.370 --> 00:00:34.260
+That's normal.
+
+00:00:34.299 --> 00:00:36.620
+Eventually, you'll understand
+that Recursive Solutions
+
+00:00:36.620 --> 00:00:38.210
+make sense in certain cases.
+
+00:00:38.700 --> 00:00:41.510
+There are many types of recursive
+problems that lend themselves
+
+00:00:41.510 --> 00:00:43.070
+well to a recursive solution.
+
+00:00:43.740 --> 00:00:46.879
+In mathematics, we had
+factorial, Fibonacci numbers
+
+00:00:46.889 --> 00:00:48.140
+fractals and many more.
+
+00:00:48.519 --> 00:00:51.180
+In searching and sorting, we
+have binary search and search
+
+00:00:51.180 --> 00:00:54.520
+trees, depth-first search,
+graphs and also many more.
+
+00:00:54.850 --> 00:00:58.000
+There are also classic problems
+like the towers of Hanoi that
+
+00:00:58.000 --> 00:01:00.980
+can really be hard to solve
+with a non-recursive solution.
+
+00:01:01.510 --> 00:01:04.960
+Let's see how we can calculate the
+factorial of a number using recursion.
+
+00:01:07.059 --> 00:01:09.829
+Here we see the definition
+for factorial as you
+
+00:01:09.830 --> 00:01:10.969
+would find in a math book.
+
+00:01:11.719 --> 00:01:14.190
+Factorial is defined
+in terms of itself.
+
+00:01:14.230 --> 00:01:16.370
+That's what recursion is all about.
+
+00:01:16.830 --> 00:01:17.980
+We have a base case.
+
+00:01:18.190 --> 00:01:22.579
+So in this case, factorial
+of 0 is 1 by definition.
+
+00:01:23.080 --> 00:01:24.679
+And we have the recursive case.
+
+00:01:25.120 --> 00:01:31.314
+Factorial of n or n factorial
+is equal to n x n - 1 factorial,
+
+00:01:31.460 --> 00:01:32.850
+see the recursion there.
+
+00:01:33.410 --> 00:01:35.620
+Let's see how we can
+implement this in c++.
+
+00:01:37.540 --> 00:01:39.419
+So let's look at the
+code starting at main.
+
+00:01:40.010 --> 00:01:43.459
+We call factorial and pass in
+1/8 of the factorial function.
+
+00:01:44.230 --> 00:01:47.409
+When the factorial function
+returns, the value returned
+
+00:01:47.410 --> 00:01:48.820
+will be output to the console.
+
+00:01:48.890 --> 00:01:52.120
+In this case, we expect 40320.
+
+00:01:52.590 --> 00:01:55.250
+Okay, so now let's look at the
+factorial 'function itself.
+
+00:01:55.870 --> 00:01:58.789
+First, we need to decide what
+types will accept the return.
+
+00:01:59.280 --> 00:02:02.669
+The factorial function can
+generate massively huge numbers.
+
+00:02:02.950 --> 00:02:06.780
+So in this case, I'm using
+unsigned long long as the return
+
+00:02:06.790 --> 00:02:08.210
+type and the parameter type.
+
+00:02:09.150 --> 00:02:12.150
+This can hold very, very
+large positive integers, but
+
+00:02:12.150 --> 00:02:14.630
+we can still get an overflow
+even with such a big number.
+
+00:02:15.750 --> 00:02:18.159
+If you look at the code for the
+factorial function, it looks
+
+00:02:18.160 --> 00:02:20.970
+exactly like the mathematical
+definition of factorial.
+
+00:02:21.549 --> 00:02:22.890
+We check a base case.
+
+00:02:23.000 --> 00:02:26.680
+In this case, if n is
+equal to 0, we return 1.
+
+00:02:27.550 --> 00:02:30.280
+Remember, the return knocks you
+out of the function immediately.
+
+00:02:31.010 --> 00:02:34.590
+Otherwise, we return the
+results of calling the factorial
+
+00:02:34.590 --> 00:02:36.810
+function again with n - 1.
+
+00:02:36.810 --> 00:02:41.800
+So in this case, it would be returned
+n x call factorial with n - 1.
+
+00:02:42.079 --> 00:02:43.250
+There's the recursion.
+
+00:02:43.950 --> 00:02:47.780
+The base case is super important
+since it's what stops the recursion.
+
+00:02:48.130 --> 00:02:51.330
+Otherwise, we would request
+indefinitely and eventually we
+
+00:02:51.330 --> 00:02:53.870
+would run out of stack space
+and get a stack overflow error.
+
+00:02:54.230 --> 00:02:57.799
+In a bit, we'll head over to the
+IDE and I'll walk you step-by-step
+
+00:02:57.799 --> 00:03:01.590
+in detail through an example call
+to factorial so you can see exactly
+
+00:03:01.590 --> 00:03:02.840
+what's happening on the stack.
+
+00:03:03.800 --> 00:03:06.250
+Let's look at calculating
+a Fibonacci number now.
+
+00:03:08.420 --> 00:03:10.510
+Here's the definition
+for Fibonacci number.
+
+00:03:11.120 --> 00:03:12.529
+There to base cases.
+
+00:03:12.820 --> 00:03:16.929
+Fibonacci of 00, and
+Fibonacci of 1 is 1.
+
+00:03:17.600 --> 00:03:22.310
+And the recursive case is Fibonacci
+of n is equal to Fibonacci of
+
+00:03:22.340 --> 00:03:25.290
+N - 1 + the Fibonacci of n - 2.
+
+00:03:26.260 --> 00:03:28.280
+Again, notice the
+recursive definition.
+
+00:03:28.560 --> 00:03:31.000
+Fibonacci is defined
+in terms of itself.
+
+00:03:32.070 --> 00:03:34.810
+I think you can see how
+to implement this in c++.
+
+00:03:36.570 --> 00:03:39.900
+Again, I've decided to use
+unsigned long long since Fibonacci
+
+00:03:39.900 --> 00:03:41.460
+can also produce huge numbers.
+
+00:03:42.120 --> 00:03:43.829
+Notice in the main, I call Fibonacci.
+
+00:03:43.829 --> 00:03:48.700
+And the result I
+expect back is 832040.
+
+00:03:49.030 --> 00:03:50.880
+Now let's look at the
+Fibonacci function.
+
+00:03:51.290 --> 00:03:53.350
+Notice the handling of the bass cases.
+
+00:03:53.690 --> 00:03:57.270
+If n is less than or equal to
+1, then we simply return n.
+
+00:03:57.900 --> 00:04:00.010
+So when n is 0., we return 0.
+
+00:04:00.050 --> 00:04:01.950
+And when n is 1, we return 1.
+
+00:04:02.170 --> 00:04:04.720
+That handles both base
+cases in one step.
+
+00:04:05.030 --> 00:04:08.320
+We could easily rewrite this
+condition to explicitly check
+
+00:04:08.360 --> 00:04:12.249
+n equals 0 and n equals 1, but
+this achieve the same result.
+
+00:04:13.080 --> 00:04:15.340
+This base cases with
+stops the recursion.
+
+00:04:15.780 --> 00:04:20.140
+If n is not 0 or 1, then we
+call Fibonacci again with both
+
+00:04:20.170 --> 00:04:21.870
+pieces of the problem definition.
+
+00:04:22.599 --> 00:04:26.000
+Eventually, recursion will stop and
+the result will be returned to main.
+
+00:04:26.610 --> 00:04:28.930
+Notice how much the code
+looks like the mathematical
+
+00:04:28.930 --> 00:04:30.220
+definition of Fibonacci.
+
+00:04:30.540 --> 00:04:31.840
+This is by design.
+
+00:04:32.010 --> 00:04:33.930
+Let me give you a few
+thoughts on recursion.
+
+00:04:35.200 --> 00:04:37.140
+Remember, recursion is
+a form of iteration.
+
+00:04:38.059 --> 00:04:41.093
+So anything that can be done
+recursively can also be done with
+
+00:04:41.093 --> 00:04:42.809
+the iteration and vice versa.
+
+00:04:43.490 --> 00:04:45.719
+Use recursion only
+when it makes sense.
+
+00:04:45.980 --> 00:04:49.020
+The problem must lend itself
+to a recursive solution.
+
+00:04:49.480 --> 00:04:51.800
+Don't use recursion
+to count from 1 to 10.
+
+00:04:52.050 --> 00:04:53.360
+Remember the base cases.
+
+00:04:53.380 --> 00:04:56.000
+They are with stops the recursion
+and are super important.
+
+00:04:56.880 --> 00:04:59.350
+Because of the call stack,
+recursion can be quite
+
+00:04:59.370 --> 00:05:02.870
+resource-intensive especially if
+you have a very deep recursion.
+
+00:05:03.190 --> 00:05:06.670
+It's not uncommon when you're first
+learning recursion to recusing
+
+00:05:06.670 --> 00:05:10.140
+definitely and run out of stacks space
+resulting in a stack overflow error.
+
+00:05:10.530 --> 00:05:11.780
+That's perfectly fine.
+
+00:05:11.780 --> 00:05:12.610
+This is how you learn.
+
+00:05:12.790 --> 00:05:15.469
+I can't tell you how many times
+in my career I've seen recursive
+
+00:05:15.469 --> 00:05:19.670
+functions rewritten to iterative
+solutions because of resource issues.
+
+00:05:20.099 --> 00:05:24.049
+Generally, an iterative solution
+to a recursive define problem
+
+00:05:24.309 --> 00:05:27.140
+is less elegant and more
+difficult to understand in code.
+
+00:05:27.540 --> 00:05:30.289
+But sometimes we have to meet
+non-functional requirements
+
+00:05:30.310 --> 00:05:31.349
+and that's what it takes.
+
+00:05:32.160 --> 00:05:35.879
+Let's head over to the IDE and walk
+through a factorial example in detail.
+
+00:05:37.380 --> 00:05:38.679
+So I'm in the IDE.
+
+00:05:38.940 --> 00:05:40.639
+I'm in the section 11 workspace.
+
+00:05:40.949 --> 00:05:42.890
+And there are two projects
+that are interesting here,
+
+00:05:43.120 --> 00:05:44.719
+both use recursive functions.
+
+00:05:44.970 --> 00:05:48.160
+When is the Fibonacci project to
+me, that's a factorial project.
+
+00:05:48.250 --> 00:05:50.740
+We'll walk through a detailed
+example of how factorial
+
+00:05:50.910 --> 00:05:52.510
+works recursively in a minute.
+
+00:05:52.880 --> 00:05:55.530
+But here's Fibonacci, and it's
+just like I wrote in the slides.
+
+00:05:55.889 --> 00:05:59.609
+So here in the man, I'm calculating
+the Fibonacci number for 5 30 and 40.
+
+00:05:59.840 --> 00:06:01.460
+You can see the 40 is pretty large.
+
+00:06:01.750 --> 00:06:05.270
+If you try to do like a Fibonacci
+a 50 or something like that, it's
+
+00:06:05.270 --> 00:06:08.000
+going to take a while because
+there's a lot of recursion going on.
+
+00:06:08.040 --> 00:06:10.340
+It all depends on how
+fast your machine is.
+
+00:06:10.410 --> 00:06:12.909
+Even here when I do a
+Fibonacci 40, I'll run this.
+
+00:06:12.909 --> 00:06:14.469
+And you will see a
+little bit of a delay.
+
+00:06:16.779 --> 00:06:19.770
+You see that it took just over
+a second delay their to actually
+
+00:06:19.770 --> 00:06:21.440
+calculate that Fibonacci number.
+
+00:06:21.440 --> 00:06:22.520
+It's a pretty large number.
+
+00:06:22.880 --> 00:06:25.640
+But once you start getting to
+really large numbers here,
+
+00:06:25.640 --> 00:06:30.419
+for example, 45 50, then the recursion
+just tremendous, and it takes a
+
+00:06:30.419 --> 00:06:32.119
+while to solve those problems.
+
+00:06:32.340 --> 00:06:34.660
+Okay, so let me go back to Factorial.
+
+00:06:34.660 --> 00:06:36.599
+That's the one I really
+want to go over here.
+
+00:06:36.760 --> 00:06:37.960
+So here's the factorial.
+
+00:06:37.990 --> 00:06:41.619
+Just like we wrote it, the
+factorial of some number and
+
+00:06:41.620 --> 00:06:42.789
+those four examples here.
+
+00:06:42.790 --> 00:06:44.430
+You can see factorial 63.
+
+00:06:44.960 --> 00:06:47.280
+Factorial 8 is 4320 and so forth.
+
+00:06:47.280 --> 00:06:50.270
+You can see the factors of
+20 is a really big number.
+
+00:06:50.700 --> 00:06:54.230
+And as this number grows here,
+that never really grows big time.
+
+00:06:54.279 --> 00:06:55.030
+So let me run.
+
+00:06:55.030 --> 00:06:59.410
+This and you could see
+it's really fast here.
+
+00:06:59.480 --> 00:07:01.890
+But once you start really
+increasing that number there,
+
+00:07:01.890 --> 00:07:03.400
+it's going to slow down big time.
+
+00:07:03.719 --> 00:07:05.930
+Now what I want to do is I want
+to -- I'm going to comment these
+
+00:07:05.940 --> 00:07:09.630
+out just for a minute because I'm
+only interested in factorial of 3.
+
+00:07:10.410 --> 00:07:13.680
+I want to walk through a stack
+example of exactly what's going on
+
+00:07:13.680 --> 00:07:15.539
+when we call factorial with a 3.
+
+00:07:15.860 --> 00:07:17.430
+We could do a 4 or 5 or 6.
+
+00:07:17.500 --> 00:07:19.810
+If we did that, we'd be here
+all day drawing stuff on the
+
+00:07:19.810 --> 00:07:21.189
+stack because of the recursion.
+
+00:07:21.479 --> 00:07:22.620
+3 is an easy number.
+
+00:07:22.889 --> 00:07:26.259
+It'll be pretty easy to do on a
+stack, and it won't take so long.
+
+00:07:26.259 --> 00:07:29.290
+But you'll understand exactly
+what's happening and whether you
+
+00:07:29.290 --> 00:07:31.260
+use 3 or 4 5, you'll understand.
+
+00:07:31.500 --> 00:07:32.980
+Okay, so let's do that now.
+
+00:07:34.500 --> 00:07:35.980
+Okay, so here's my stack.
+
+00:07:36.280 --> 00:07:41.469
+And my main is on the stack, and all
+main is doing is it's out putting
+
+00:07:41.469 --> 00:07:43.719
+the result of factorial with a 3.
+
+00:07:44.000 --> 00:07:46.669
+So I'm just going to use
+fact rather than right out
+
+00:07:46.670 --> 00:07:47.899
+the entire work factorial.
+
+00:07:47.900 --> 00:07:50.280
+So main is calling factorial with a 3.
+
+00:07:50.680 --> 00:07:53.790
+And the resulting gets back,
+it's going to output, right.
+
+00:07:53.930 --> 00:07:55.370
+Okay, so that's simple enough.
+
+00:07:55.520 --> 00:07:56.409
+So what happens?
+
+00:07:56.410 --> 00:07:59.950
+Well, main calls that
+function factorial, right.
+
+00:08:00.179 --> 00:08:02.849
+So we're going to activate
+that function, and we'll
+
+00:08:02.849 --> 00:08:03.940
+put it on the stacks.
+
+00:08:03.950 --> 00:08:07.025
+So main is going to call
+factorial with the 3.
+
+00:08:07.025 --> 00:08:10.240
+So here's the activation
+record for factorial from this
+
+00:08:10.240 --> 00:08:11.300
+call right here from main.
+
+00:08:12.100 --> 00:08:16.320
+Notice a factorial function right
+here has one local variable n.
+
+00:08:16.440 --> 00:08:18.109
+So we need to allocate storage for it.
+
+00:08:18.429 --> 00:08:20.400
+And it's say that
+that's in right here.
+
+00:08:20.980 --> 00:08:22.270
+And what's the value for n?
+
+00:08:22.270 --> 00:08:23.719
+Well, in this case, it's 3, right.
+
+00:08:23.719 --> 00:08:25.469
+I'm passing 3 into this function.
+
+00:08:25.710 --> 00:08:27.260
+So n is going to get a 3.
+
+00:08:28.190 --> 00:08:30.280
+And I'm going to write the
+code right here in the stack.
+
+00:08:30.280 --> 00:08:31.789
+The code doesn't exist on the stack.
+
+00:08:31.790 --> 00:08:33.600
+It exists somewhere else,
+but here you'll be able to
+
+00:08:33.600 --> 00:08:34.740
+follow it easier I think.
+
+00:08:35.120 --> 00:08:35.679
+So what do we do?
+
+00:08:35.679 --> 00:08:36.840
+We start executing the code.
+
+00:08:37.210 --> 00:08:38.329
+Is n equal to 0.
+
+00:08:39.249 --> 00:08:40.530
+No, n is equal to 3.
+
+00:08:40.929 --> 00:08:41.890
+So, what do I do?
+
+00:08:41.940 --> 00:08:50.719
+I return -- I'm just going to write
+n which is 3 x factorial of in -1.
+
+00:08:51.090 --> 00:08:52.980
+Well, 3 - 1 is 2.
+
+00:08:53.829 --> 00:08:55.820
+So we need to call that function.
+
+00:08:56.070 --> 00:08:57.270
+So what do we do?
+
+00:08:57.270 --> 00:09:00.770
+Again, we transfer control
+to the other function.
+
+00:09:00.990 --> 00:09:02.150
+What are the function is it?
+
+00:09:02.150 --> 00:09:02.960
+It's the same one.
+
+00:09:02.960 --> 00:09:04.230
+We're just calling to recursively.
+
+00:09:04.560 --> 00:09:06.170
+So in this case, what am I doing?
+
+00:09:06.170 --> 00:09:09.610
+I'm calling factorial with the 2.
+
+00:09:11.200 --> 00:09:12.800
+Factorial has an n.
+
+00:09:12.840 --> 00:09:14.500
+So we need to allocate
+storage for an n.
+
+00:09:14.500 --> 00:09:16.199
+It's just another activation record.
+
+00:09:16.389 --> 00:09:17.459
+In this case, n is 2.
+
+00:09:19.039 --> 00:09:20.089
+Let's start executing.
+
+00:09:20.100 --> 00:09:21.490
+Is n equal to 0, No.
+
+00:09:21.650 --> 00:09:28.859
+So I want to return n which is 2 x
+factorial of n - 1, well, 2 - 1 is 1.
+
+00:09:30.679 --> 00:09:32.019
+so I'm going to do that.
+
+00:09:33.240 --> 00:09:34.530
+Now notice what just happened.
+
+00:09:34.619 --> 00:09:38.350
+I've got to activation records on
+the stack for the same function.
+
+00:09:38.760 --> 00:09:40.390
+That's the definition of recursion.
+
+00:09:42.110 --> 00:09:43.190
+All right, so now what are we doing?
+
+00:09:43.330 --> 00:09:47.000
+We're going to call
+factorial with a 1.
+
+00:09:50.170 --> 00:09:52.270
+And you could see the
+stack just growing, right.
+
+00:09:52.270 --> 00:09:54.699
+Well, factorial is the same
+function, it's got an n.
+
+00:09:54.960 --> 00:09:56.740
+In this case, I'm
+calling it with the 1.
+
+00:09:56.740 --> 00:09:58.089
+I'm passing the by value.
+
+00:09:58.090 --> 00:09:58.900
+So there's the 1.
+
+00:09:59.620 --> 00:10:00.780
+And what does it do?
+
+00:10:00.780 --> 00:10:01.959
+Is n equal to 0, nope.
+
+00:10:02.360 --> 00:10:07.940
+So it's going to return n,
+which is 1 x factorial of
+
+00:10:08.160 --> 00:10:09.980
+and - 1 which in this case is 0.
+
+00:10:10.750 --> 00:10:11.459
+So what do I do?
+
+00:10:11.490 --> 00:10:15.620
+Again, I stopped and I call factorial
+again in this case with the 0.
+
+00:10:16.140 --> 00:10:17.530
+So let's do that.
+
+00:10:17.950 --> 00:10:25.059
+Well, here, we're going to call
+factorial with a 0 and gets a 0.
+
+00:10:26.340 --> 00:10:27.220
+Now we're here.
+
+00:10:27.330 --> 00:10:28.379
+This is the base case.
+
+00:10:28.379 --> 00:10:30.030
+Finally, we're going
+to start unwinding.
+
+00:10:30.090 --> 00:10:31.229
+Is n equal to 0?
+
+00:10:31.240 --> 00:10:31.730
+Yes.
+
+00:10:31.740 --> 00:10:32.540
+So what do I do?
+
+00:10:32.710 --> 00:10:33.620
+I return 1.
+
+00:10:34.110 --> 00:10:35.240
+Return 1 to who.
+
+00:10:35.590 --> 00:10:36.510
+Whoever called me.
+
+00:10:36.760 --> 00:10:38.190
+Well, here's the call, right here.
+
+00:10:38.840 --> 00:10:40.460
+So the value of that call will be 1.
+
+00:10:41.980 --> 00:10:45.470
+Okay, and now what we do
+is we start unwinding.
+
+00:10:45.719 --> 00:10:48.050
+So this gets popped off the stack.
+
+00:10:48.060 --> 00:10:51.720
+And now we're here.
+
+00:10:52.460 --> 00:10:54.380
+Well, this guy cannot
+return as well, right?
+
+00:10:54.620 --> 00:10:55.650
+So it's going to return what.
+
+00:10:55.650 --> 00:11:01.010
+It's going to return 1 x 1, 1
+x 1 2 to this guy right here.
+
+00:11:02.219 --> 00:11:03.890
+So 1 x 1 is 1.
+
+00:11:04.240 --> 00:11:06.559
+And we're going to pop off the stack.
+
+00:11:07.430 --> 00:11:09.079
+So this function now is gone.
+
+00:11:09.890 --> 00:11:15.949
+That activation record gets
+cleaned up, and we're here, right.
+
+00:11:15.990 --> 00:11:17.300
+So hopefully, everybody's with me.
+
+00:11:17.300 --> 00:11:18.250
+It's pretty straightforward.
+
+00:11:18.250 --> 00:11:20.620
+It's just a matter of keeping
+all your ducks in a row.
+
+00:11:20.860 --> 00:11:26.520
+So here, we're going to return 2 x
+1 which is 2 to this function call.
+
+00:11:26.520 --> 00:11:27.980
+That's the value of
+that function call.
+
+00:11:27.990 --> 00:11:28.800
+That's the 2.
+
+00:11:29.630 --> 00:11:33.110
+And again, we're going to clean
+up the stack and gets popped off.
+
+00:11:33.660 --> 00:11:36.830
+That activation record all
+was -- all those areas in the
+
+00:11:36.830 --> 00:11:38.620
+stack that we allocated are gone.
+
+00:11:38.920 --> 00:11:39.800
+So now we're here.
+
+00:11:40.730 --> 00:11:45.069
+Finally, we can calculate this
+result which is 3 x 2 which is 6.
+
+00:11:45.300 --> 00:11:49.280
+So we're going to return 6 to who,
+this guy is the one that called me.
+
+00:11:49.490 --> 00:11:50.859
+That's a 6 right there, right.
+
+00:11:50.880 --> 00:11:54.529
+The value of that
+function call is a 6.
+
+00:11:54.540 --> 00:11:55.619
+What are we going to do now?
+
+00:11:55.690 --> 00:11:56.979
+Pop off the stack.
+
+00:11:57.009 --> 00:11:58.189
+We're cleaning up finally.
+
+00:11:58.190 --> 00:12:01.540
+See that's the that's called
+unwinding from a recursive call.
+
+00:12:02.270 --> 00:12:03.189
+So we're here.
+
+00:12:03.540 --> 00:12:04.790
+Now we've got us 6.
+
+00:12:05.170 --> 00:12:06.770
+And what do we do with the 6?
+
+00:12:08.050 --> 00:12:08.910
+We out put it.
+
+00:12:09.309 --> 00:12:13.765
+And that's the final result of the
+call to factorial with a 3 days.
+
+00:12:14.040 --> 00:12:15.850
+You can see it's
+pretty straightforward.
+
+00:12:16.119 --> 00:12:20.890
+It's a matter of your recursive
+calls -- pushed on the stack
+
+00:12:20.910 --> 00:12:22.410
+and then you start unwinding.
+
+00:12:22.760 --> 00:12:24.880
+The unwinding is starting right there.
+
+00:12:24.880 --> 00:12:27.040
+That's the critical
+piece, that bass case.
+
+00:12:27.240 --> 00:12:30.790
+If you forget that bass case or
+get it wrong, then this will just
+
+00:12:30.790 --> 00:12:33.780
+keep going and going and eventually
+you're going to run out of stack
+
+00:12:33.780 --> 00:12:35.750
+space and get a stack overflow error.
+
+00:12:35.940 --> 00:12:37.500
+Okay, so there you go.
+
+00:12:37.770 --> 00:12:42.439
+Obviously, if you remember the
+Fibonacci function, it's more
+
+00:12:42.440 --> 00:12:45.039
+complicated than this, right,
+because then he had to go back to
+
+00:12:45.039 --> 00:12:53.070
+this so you can see the Fibonacci
+function, which was right here has
+
+00:12:53.199 --> 00:12:54.859
+two pieces of recursion, right.
+
+00:12:54.860 --> 00:12:57.560
+So we're going to have to call
+recursive functions calling
+
+00:12:57.680 --> 00:13:00.930
+itself obviously, but it's
+calling it twice per call.
+
+00:13:01.180 --> 00:13:04.080
+So the amount of stack
+space it's used is larger.
+
+00:13:04.370 --> 00:13:07.469
+That's why Fibonacci takes
+longer than factorial to execute,
+
+00:13:07.599 --> 00:13:09.210
+especially with very large numbers.
+
+00:13:09.520 --> 00:13:11.570
+Okay, so hopefully this diagram helps.
+
+00:13:11.580 --> 00:13:13.880
+Recursion makes a lot of sense.
+
+00:13:13.880 --> 00:13:16.120
+Once you understand what's
+really going on on the stack,
+
+00:13:16.350 --> 00:13:18.030
+I think it totally makes sense.

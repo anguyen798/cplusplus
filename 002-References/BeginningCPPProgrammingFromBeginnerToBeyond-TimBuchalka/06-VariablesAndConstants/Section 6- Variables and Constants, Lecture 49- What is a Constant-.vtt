@@ -1,0 +1,256 @@
+WEBVTT
+
+00:00:05.360 --> 00:00:08.960
+In this video, we'll learn what constants are in c++.
+
+00:00:09.960 --> 00:00:12.730
+Constants are very much like c++ variables.
+
+00:00:12.730 --> 00:00:13.830
+They have names.
+
+00:00:13.830 --> 00:00:17.330
+The rules for naming is the same, they occupy storage,
+
+00:00:17.330 --> 00:00:18.830
+and they're usually typed.
+
+00:00:18.830 --> 00:00:20.830
+This means that when you declare a constant,
+
+00:00:20.830 --> 00:00:23.530
+you usually declare their type just like you do with a variable.
+
+00:00:24.030 --> 00:00:26.230
+There is one type of constant that is not typed
+
+00:00:26.230 --> 00:00:28.030
+and I'll talk about that at the end of the video.
+
+00:00:28.530 --> 00:00:32.410
+The big difference between variables and constants is that unlike variables
+
+00:00:32.410 --> 00:00:36.400
+the value of c++ constants cannot change once they're declared.
+
+00:00:37.000 --> 00:00:41.200
+For example, if I declare age to be a constant integer and assign 21 to it,
+
+00:00:41.400 --> 00:00:44.300
+then the value of age will always remain 21,
+
+00:00:44.300 --> 00:00:45.600
+and I won't be able to change it.
+
+00:00:46.200 --> 00:00:48.500
+If I try to change it I'll get a compiler error.
+
+00:00:49.300 --> 00:00:51.200
+Why would you need constants in a program?
+
+00:00:51.900 --> 00:00:55.000
+Let's consider a simple application that uses the number of months
+
+00:00:55.000 --> 00:00:56.500
+in a year throughout the code.
+
+00:00:57.300 --> 00:01:00.100
+We could certainly use the number 12 everywhere we need it.
+
+00:01:00.100 --> 00:01:02.100
+However, 12 could mean a lot of things.
+
+00:01:02.600 --> 00:01:06.600
+And if the program is of significant size, it might not be clear to other programmers
+
+00:01:06.600 --> 00:01:08.900
+that 12 means the number of months in a year.
+
+00:01:09.500 --> 00:01:13.490
+So we could create a variable and call it months in a year and assign 12 to it
+
+00:01:13.490 --> 00:01:17.690
+and now use that name in our code whenever we need to use 12 in that context.
+
+00:01:18.090 --> 00:01:22.190
+That's a much better solution than hard coding 12. But that's a variable,
+
+00:01:22.440 --> 00:01:24.800
+which means that it can be changed, even accidentally.
+
+00:01:25.400 --> 00:01:29.400
+A better solution is to declare months in a year to be a constant integer
+
+00:01:29.400 --> 00:01:30.700
+and assign 12 to it.
+
+00:01:31.360 --> 00:01:34.660
+Now we can use a meaningful name in our code that means 12,
+
+00:01:34.660 --> 00:01:36.660
+and we can't change it even by accident.
+
+00:01:37.660 --> 00:01:40.760
+C++ gives us several ways to create constants.
+
+00:01:40.760 --> 00:01:44.660
+We can use literals, declared constants, constant expressions,
+
+00:01:44.660 --> 00:01:48.560
+enumerated constants and finally, we can use defined constants.
+
+00:01:48.880 --> 00:01:53.280
+We'll learn about constant expressions and enumerated constants later in this course.
+
+00:01:53.480 --> 00:01:55.780
+Let's see what literal constants are first.
+
+00:01:56.780 --> 00:01:59.480
+Literals are the most obvious kind of constant.
+
+00:01:59.880 --> 00:02:02.680
+We can use literals throughout our code and we often do.
+
+00:02:02.680 --> 00:02:07.080
+They're used to express specific values. We've already seen examples of literals.
+
+00:02:07.880 --> 00:02:11.380
+In this slide, you can see that 12, 1.56,
+
+00:02:11.380 --> 00:02:15.580
+Frank and the character J are examples of literal constants.
+
+00:02:15.580 --> 00:02:19.580
+For example, the floating point literal constant 1.56
+
+00:02:19.780 --> 00:02:22.780
+always expresses the value 1.56.
+
+00:02:23.480 --> 00:02:26.880
+Literal constants also have types based on a naming convention.
+
+00:02:27.880 --> 00:02:31.580
+You can be explicit with the types of literal constants. For example,
+
+00:02:31.580 --> 00:02:33.480
+for integer literal constants,
+
+00:02:33.480 --> 00:02:36.380
+you can add certain suffixes to the integer literal
+
+00:02:36.380 --> 00:02:38.380
+to specify a different type.
+
+00:02:38.980 --> 00:02:43.740
+For example, the letters u and l specify unsigned and long respectively.
+
+00:02:44.540 --> 00:02:46.640
+These can be either lowercase or uppercase.
+
+00:02:46.640 --> 00:02:49.240
+This slide shows just a few of the combinations.
+
+00:02:50.240 --> 00:02:54.940
+For floating point numbers, you can use the l and f suffixes as shown in this slide.
+
+00:02:56.840 --> 00:03:00.500
+We can also have character literal constants in c++.
+
+00:03:00.500 --> 00:03:04.300
+We haven't used these yet. But they're commonly used within string literals.
+
+00:03:04.850 --> 00:03:08.350
+They consist of the backslash character followed by another character,
+
+00:03:08.350 --> 00:03:12.570
+and they're called escape codes. You can see some examples in this slide.
+
+00:03:13.070 --> 00:03:17.670
+The cout statement will display "Hello" then tab over and display "there".
+
+00:03:17.670 --> 00:03:21.270
+Then it will go to the beginning of the next line and display "my friend"
+
+00:03:21.770 --> 00:03:23.970
+and then it will go to the beginning of the next line again.
+
+00:03:24.630 --> 00:03:28.620
+It's very common to see escape codes embedded in string literals and output statements.
+
+00:03:30.120 --> 00:03:33.820
+By far, the most common way of declaring constants in c++
+
+00:03:33.820 --> 00:03:37.420
+is to use declared constants using the "const" keyword.
+
+00:03:38.220 --> 00:03:41.520
+The syntax is exactly like that of a variable declaration
+
+00:03:41.520 --> 00:03:43.520
+with the const keyword at the beginning.
+
+00:03:43.520 --> 00:03:45.880
+You must initialize the declared constant
+
+00:03:45.880 --> 00:03:49.180
+or the compiler will give you an uninitialized const error message.
+
+00:03:50.060 --> 00:03:54.260
+What happens if you try to change the value of a constant? You guessed it, you can't.
+
+00:03:54.460 --> 00:03:58.060
+The compiler will give you an error letting you know that the constant is read-only,
+
+00:03:58.060 --> 00:03:59.060
+and you can't change it.
+
+00:04:00.380 --> 00:04:02.740
+The last way of declaring constants in c++
+
+00:04:02.740 --> 00:04:07.140
+is by using the preprocessor directive pound define. Let's take a look at that.
+
+00:04:08.440 --> 00:04:12.840
+Defined constants were very commonly used in older c and c++ code.
+
+00:04:12.840 --> 00:04:17.040
+These constants are defined using the pound defined preprocessor directive.
+
+00:04:17.400 --> 00:04:21.280
+I'm showing you defined constants because you may run into them since there is so much
+
+00:04:21.280 --> 00:04:23.490
+c++ legacy code out there.
+
+00:04:23.490 --> 00:04:26.890
+Here you're telling the preprocessor that wherever it sees the word pi
+
+00:04:26.890 --> 00:04:29.890
+replace it with 3.1415926.
+
+00:04:30.770 --> 00:04:34.670
+Think of this as a blind find replace as you might do in a word processor.
+
+00:04:35.270 --> 00:04:38.270
+The preprocessor will gladly substitute one for the other.
+
+00:04:39.070 --> 00:04:42.170
+Since the preprocessor doesn't know c++,
+
+00:04:42.170 --> 00:04:45.170
+it can't type check and this could lead to difficult to find errors.
+
+00:04:45.970 --> 00:04:50.070
+So please don't use defined constants in modern c++ code.
+
+00:04:50.770 --> 00:04:53.770
+In the next video, we'll head over to the CodeLite IDE
+
+00:04:53.770 --> 00:04:56.970
+and see how we can declare and use constants in c++.
+
+00:04:56.970 --> 00:04:59.570
+First, we'll write a program using literal constants,
+
+00:04:59.570 --> 00:05:02.570
+then we'll refactor the code to use declared constants.

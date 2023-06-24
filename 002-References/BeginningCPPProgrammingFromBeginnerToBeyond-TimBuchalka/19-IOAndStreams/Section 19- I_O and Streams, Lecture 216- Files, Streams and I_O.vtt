@@ -1,0 +1,277 @@
+WEBVTT
+
+00:00:05.300 --> 00:00:06.300
+In this video,
+
+00:00:06.300 --> 00:00:10.600
+we'll learn about how c++ uses streams and files for IO.
+
+00:00:11.600 --> 00:00:16.590
+Writing an IO library for any programming language is an extremely difficult task.
+
+00:00:17.140 --> 00:00:20.740
+There can be all sorts of devices providing data to your program,
+
+00:00:20.740 --> 00:00:23.940
+and your program can send data to many types of devices as well.
+
+00:00:24.300 --> 00:00:27.600
+These devices may be physical devices such as hard disks,
+
+00:00:27.600 --> 00:00:31.260
+the console and the keyboard or they can be virtual devices,
+
+00:00:31.260 --> 00:00:33.260
+such as some connection to a web server.
+
+00:00:34.140 --> 00:00:38.340
+C++ provides a stream abstraction to work with IO devices.
+
+00:00:39.220 --> 00:00:43.370
+A stream is an interface that's independent of the actual device.
+
+00:00:43.370 --> 00:00:45.370
+So from the programmer's perspective,
+
+00:00:45.370 --> 00:00:47.370
+we can code to the stream interface,
+
+00:00:47.370 --> 00:00:50.870
+and not worry too much about what device is connected to the stream.
+
+00:00:51.470 --> 00:00:55.130
+A stream is exactly as you would expect. It's a sequence of bytes.
+
+00:00:55.680 --> 00:00:58.280
+C++ provides different types of streams
+
+00:00:58.280 --> 00:01:00.780
+depending on whether we want input or output,
+
+00:01:00.780 --> 00:01:03.140
+but we can also use a stream that does both.
+
+00:01:03.500 --> 00:01:05.500
+Let's see what this looks like visually.
+
+00:01:07.300 --> 00:01:11.500
+In this slide, you can see that the c++ program is on the right side.
+
+00:01:12.160 --> 00:01:14.820
+The upper stream is an input stream that provides
+
+00:01:14.820 --> 00:01:17.700
+input to the program from some input device.
+
+00:01:18.600 --> 00:01:22.700
+This device can be the keyboard of file, a connection to a web service and more.
+
+00:01:23.470 --> 00:01:27.670
+The lower stream is an output stream that takes output from the program
+
+00:01:27.670 --> 00:01:29.770
+and sends it to the output device.
+
+00:01:30.170 --> 00:01:35.160
+Again, the output device can be a file, the console, a connection to a web service and more.
+
+00:01:35.710 --> 00:01:38.510
+So let's see some of the c++ header files
+
+00:01:38.510 --> 00:01:42.500
+that we typically include to allow us to work with iostreams.
+
+00:01:45.000 --> 00:01:49.100
+In this slide, we can see three of the most commonly included header files
+
+00:01:49.100 --> 00:01:51.100
+that allow us to work with stream IO.
+
+00:01:51.650 --> 00:01:54.550
+There are others, but these three are the most commonly used.
+
+00:01:55.210 --> 00:01:57.710
+First, we've already seen and used iostream.
+
+00:01:58.210 --> 00:02:03.010
+Iostream provides the definitions required for formatted input and output
+
+00:02:03.010 --> 00:02:04.110
+to and from streams.
+
+00:02:04.990 --> 00:02:06.490
+The fstream include file
+
+00:02:06.490 --> 00:02:10.490
+provides definitions for formatted IO to and from file streams.
+
+00:02:11.150 --> 00:02:15.850
+And the iomanip header file provides definitions for manipulators
+
+00:02:15.850 --> 00:02:19.100
+that allow us to format iostreams in specific ways.
+
+00:02:19.650 --> 00:02:22.950
+We'll use the iomanip functionality first in this section.
+
+00:02:24.150 --> 00:02:25.810
+When we include these header files,
+
+00:02:25.810 --> 00:02:30.170
+we'll have access to many c++ classes that we can use for file IO,
+
+00:02:30.170 --> 00:02:31.670
+so let's see a few of them.
+
+00:02:33.470 --> 00:02:38.460
+The ios class provides basic support for formatted and unformatted io.
+
+00:02:38.820 --> 00:02:43.020
+It serves as a base class for most other classes in the iostream hierarchy.
+
+00:02:44.120 --> 00:02:48.620
+The ifstream class provides high-level input operations from files.
+
+00:02:48.620 --> 00:02:53.280
+So if you want to read from a file, you can declare your object to be an ifstream object.
+
+00:02:54.580 --> 00:02:58.880
+The ofstream class provides high-level output operations from files.
+
+00:02:59.240 --> 00:03:02.640
+And again, if you want to create a new file or write to a file,
+
+00:03:02.640 --> 00:03:05.640
+you can declare it as an object of ofstream.
+
+00:03:06.940 --> 00:03:10.740
+The fstream class provides high-level IO on file-based streams.
+
+00:03:10.740 --> 00:03:15.730
+Fstream is derived from ifstream and of osstream using multiple inheritance.
+
+00:03:16.230 --> 00:03:20.230
+If we need to do both input and output to a file at the same time,
+
+00:03:20.230 --> 00:03:22.480
+we can declare an fstream object to do it.
+
+00:03:23.580 --> 00:03:25.830
+Finally, we have the stringstream class.
+
+00:03:26.330 --> 00:03:29.730
+This is a very useful class that provides high level io
+
+00:03:29.730 --> 00:03:31.530
+on memory-based strings.
+
+00:03:32.030 --> 00:03:36.030
+Just like we can use insertion and extraction with cin and cout,
+
+00:03:36.030 --> 00:03:41.020
+we can use them with strings to get input and provide output into a string in memory.
+
+00:03:41.020 --> 00:03:44.320
+That's pretty powerful stuff, and we'll see some examples later on.
+
+00:03:45.880 --> 00:03:49.780
+Finally, let's visit our old friends cin and cout
+
+00:03:49.780 --> 00:03:51.380
+and see exactly what they are.
+
+00:03:52.280 --> 00:03:55.530
+The fact that we've used them all along without worrying about how to create
+
+00:03:55.530 --> 00:03:57.530
+them, how to connect them and so forth,
+
+00:03:57.530 --> 00:04:01.290
+is a testament to the design of the c++ io library
+
+00:04:01.290 --> 00:04:03.280
+and the device independence model.
+
+00:04:04.270 --> 00:04:07.270
+Cin, cout, cerr, and clog
+
+00:04:07.270 --> 00:04:08.870
+are global objects.
+
+00:04:08.870 --> 00:04:11.770
+They're initialized before main begins to execute.
+
+00:04:11.770 --> 00:04:14.770
+And all you need to do is include iostream to use them.
+
+00:04:16.070 --> 00:04:20.430
+Cin is the standard input stream and is by default connected to the keyboard.
+
+00:04:20.930 --> 00:04:23.930
+It's an instance of the istream class.
+
+00:04:23.930 --> 00:04:28.730
+Cout is the standard output stream, and by default, it's connected to the console.
+
+00:04:29.090 --> 00:04:31.450
+It's an instance of the ostream class.
+
+00:04:31.950 --> 00:04:36.550
+This class should sound familiar since we used it when we overloaded the insertion operator
+
+00:04:36.550 --> 00:04:38.800
+in the overloading operator section of the course.
+
+00:04:40.100 --> 00:04:43.400
+Cin and cout are generally buffered streams.
+
+00:04:43.400 --> 00:04:48.060
+This means that input from cin won't be automatic until the user presses enter.
+
+00:04:48.260 --> 00:04:52.360
+And output to cout occurs only when the stream buffer fills up
+
+00:04:52.360 --> 00:04:55.910
+or we provide a std endline or we flush the stream.
+
+00:04:57.010 --> 00:05:00.370
+Now cerr and clog are the standard error stream
+
+00:05:00.370 --> 00:05:02.730
+and the standard log stream, respectively.
+
+00:05:03.530 --> 00:05:05.830
+By default, they're both connected to the console.
+
+00:05:05.830 --> 00:05:09.490
+They're both unbuffered, which means that we get input or output from them
+
+00:05:09.490 --> 00:05:13.640
+as we need it. Best practice is to use cerr for error messages
+
+00:05:13.640 --> 00:05:15.640
+and clog for log messages.
+
+00:05:15.840 --> 00:05:19.740
+Those of you who are familiar with the UNIX terminal shell or the windows command prompt.
+
+00:05:19.740 --> 00:05:22.400
+Know that we can redirect these streams easily,
+
+00:05:22.400 --> 00:05:25.500
+so input comes from a file or output goes to a file.
+
+00:05:25.500 --> 00:05:27.700
+I won't be covering this in this course,
+
+00:05:27.700 --> 00:05:31.000
+but if you're interested do an internet search for redirecting io,
+
+00:05:31.000 --> 00:05:33.000
+and you'll see how easy and powerful it can be.
+
+00:05:33.660 --> 00:05:37.660
+Okay. So that concludes this video. In the next video, we'll see how we can use the
+
+00:05:37.660 --> 00:05:40.660
+IO manipulators to help us format our IO.

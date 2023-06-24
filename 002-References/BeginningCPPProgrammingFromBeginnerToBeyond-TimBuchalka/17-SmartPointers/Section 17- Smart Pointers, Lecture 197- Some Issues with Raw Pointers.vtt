@@ -1,0 +1,94 @@
+WEBVTT
+
+00:00:05.660 --> 00:00:08.660
+We've already seen during this course that raw pointers
+
+00:00:08.660 --> 00:00:10.860
+are extremely powerful in c++.
+
+00:00:12.160 --> 00:00:15.460
+They allow us to have absolute flexibility with memory management.
+
+00:00:15.960 --> 00:00:18.960
+With this flexibility, however, comes complexity.
+
+00:00:18.960 --> 00:00:22.840
+We must explicitly allocate and de-allocate storage for heap dynamic
+
+00:00:22.840 --> 00:00:25.440
+variables as well as manage their lifetimes.
+
+00:00:26.040 --> 00:00:28.040
+And that's where we often see problems.
+
+00:00:28.240 --> 00:00:30.740
+In fact, most defects in programs
+
+00:00:30.740 --> 00:00:33.940
+written in programming languages that provide raw pointers
+
+00:00:33.940 --> 00:00:35.740
+are pointer-related defects.
+
+00:00:36.240 --> 00:00:38.540
+We've already discussed some of these errors in this course,
+
+00:00:39.040 --> 00:00:42.040
+errors such as uninitialized or wild pointers
+
+00:00:42.040 --> 00:00:44.040
+that could be pointing anywhere in memory.
+
+00:00:44.040 --> 00:00:48.040
+And if you store data to where they're pointing, you could have a potentially catastrophic result.
+
+00:00:48.540 --> 00:00:52.900
+Another error is when we don't de-allocate the storage that we previously allocated on the heap.
+
+00:00:53.100 --> 00:00:57.100
+In this case, we'll leak memory. We've also seen dangling pointers.
+
+00:00:57.100 --> 00:01:00.600
+That's where one pointer is pointing to storage that it thinks is valid,
+
+00:01:00.600 --> 00:01:02.800
+but in fact has already been de-allocated.
+
+00:01:02.800 --> 00:01:06.700
+Using this invalid memory can lead to all sorts of problems that are sometimes
+
+00:01:06.700 --> 00:01:09.060
+very, very difficult to find and fix.
+
+00:01:09.060 --> 00:01:13.460
+And finally, even if we do everything correctly, our program could throw an exception
+
+00:01:13.460 --> 00:01:16.760
+and the code that releases our allocated memory never execute,
+
+00:01:16.760 --> 00:01:18.260
+and we leak memory anyway.
+
+00:01:18.260 --> 00:01:22.260
+We'll talk about exceptions and exception handling in an upcoming section of the course.
+
+00:01:22.660 --> 00:01:24.260
+That's where smart pointers come in.
+
+00:01:24.620 --> 00:01:27.620
+Smart pointers can help us prevent these types of errors.
+
+00:01:27.980 --> 00:01:30.640
+They can help us be more clear about who owns the pointer,
+
+00:01:30.640 --> 00:01:33.640
+and when a pointer should be deleted to free up allocated memory.
+
+00:01:34.240 --> 00:01:37.240
+And the good news is that they're pretty intuitive and easy to use.
+
+00:01:37.840 --> 00:01:38.840
+In the next video,
+
+00:01:38.840 --> 00:01:43.740
+we'll see what a smart pointer is and the types of smart pointers provided by c++.

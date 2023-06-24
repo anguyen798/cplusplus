@@ -1,0 +1,2288 @@
+﻿WEBVTT
+
+00:00:00.000 --> 00:00:10.000
+Hello everyone, this is Steve Gilbert. Welcome to lecture 8, where we're going to talk about function libraries.
+
+00:00:10.000 --> 00:00:17.000
+In this lecture we're going to build a library of ancient algorithms.
+
+00:00:17.000 --> 00:00:28.000
+And the ancient algorithms we're going to implement in our library are Euclid's algorithm, the greatest common divisor from about 330 BC.
+
+00:00:28.000 --> 00:00:34.000
+We're going to implement Newton's square root algorithm.
+
+00:00:34.000 --> 00:00:43.000
+This was actually developed in ancient Babylon under Hammurabi around 1800 BC, but Newton always gets credit for it.
+
+00:00:43.000 --> 00:00:54.000
+And finally we're going to find a better approximation for pi than the fraction 355 over 113.
+
+00:00:54.000 --> 00:00:59.000
+Now each of these is going to need an indefinite loop.
+
+00:00:59.000 --> 00:01:09.000
+We have two kinds of indefinite loops. We have while condition, and that's generally preferred. It's generally easier to understand and maintain.
+
+00:01:09.000 --> 00:01:16.000
+And we have a do while condition. We use that seldom, but we use that in one of our algorithms here.
+
+00:01:16.000 --> 00:01:25.000
+Now each of these algorithms also uses a new kind of indefinite loop called a limit loop.
+
+00:01:25.000 --> 00:01:32.000
+The loops we looked at in the last lecture were sentinel loops. We were looking until we found a period.
+
+00:01:32.000 --> 00:01:40.000
+Here we're going to use a loop where we reduce a number to zero, or where we do a couple of approximations,
+
+00:01:40.000 --> 00:01:48.000
+where we do some bisection or some non-convergence tests. Are we going closer to zero or further away from zero?
+
+00:01:48.000 --> 00:01:57.000
+Those kinds of things. These are used very much in finance. They're used in graphics. They're used in the sciences.
+
+00:01:57.000 --> 00:02:08.000
+And so we're not only going to learn how to write a function library, but we're going to look at loops, continue looking at loops.
+
+00:02:08.000 --> 00:02:14.000
+So the library we're going to talk about, first we need to define some functions.
+
+00:02:14.000 --> 00:02:26.000
+For the compiler to compile your code, the compiler needs to know the argument types and the return types.
+
+00:02:26.000 --> 00:02:34.000
+And so there are several ways we can go about doing that. First, we could define the function before we use it.
+
+00:02:34.000 --> 00:02:42.000
+Now we'd only do this for the very smallest programs. So you have a main function, and up above the main function,
+
+00:02:42.000 --> 00:02:49.000
+you write the definition for the function that you want to call inside main.
+
+00:02:49.000 --> 00:02:57.000
+For programs that are slightly larger, what we can use, now the problem with defining the functions before you use them,
+
+00:02:57.000 --> 00:03:04.000
+is that if one function calls another function, it has to be defined before it is called in the other function.
+
+00:03:04.000 --> 00:03:09.000
+And so it's quite difficult to order the functions if there are multiple functions,
+
+00:03:09.000 --> 00:03:15.000
+which is why this is only useful for small, one-off kind of programs.
+
+00:03:15.000 --> 00:03:21.000
+However, if you want to define the functions and use them in the same program,
+
+00:03:21.000 --> 00:03:27.000
+what you can do is you can declare the functions before the main function,
+
+00:03:27.000 --> 00:03:31.000
+and then you can define the functions after the main functions.
+
+00:03:31.000 --> 00:03:37.000
+Now this is useful for small programs where you want to keep everything in one file.
+
+00:03:37.000 --> 00:03:43.000
+The third way to handle this is to separately compile the functions,
+
+00:03:43.000 --> 00:03:48.000
+and then link them together with the main function, the function that calls it.
+
+00:03:48.000 --> 00:03:54.000
+And that's the last, it's the most flexible, and that's what we're going to do from now on.
+
+00:03:54.000 --> 00:04:03.000
+So go ahead and open your algo lib folder in your IDE, and we'll look at several different files.
+
+00:04:03.000 --> 00:04:10.000
+So here's algo, algo lib,
+
+00:04:10.000 --> 00:04:14.000
+and so here's my ICO8 algo lib.
+
+00:04:14.000 --> 00:04:21.000
+So I have algo.cpp, algo.h, makefile, and tester.cpp.
+
+00:04:21.000 --> 00:04:28.000
+Let me open the makefile here, and I'll move the makefile down to the end.
+
+00:04:28.000 --> 00:04:34.000
+So let me talk about what these three files are, four files are.
+
+00:04:34.000 --> 00:04:38.000
+Algo.h is our interface file.
+
+00:04:38.000 --> 00:04:42.000
+It will contain the prototypes for all of the functions in our library,
+
+00:04:42.000 --> 00:04:46.000
+and it will contain the documentation.
+
+00:04:46.000 --> 00:04:51.000
+Algo.cpp is the implementation file.
+
+00:04:51.000 --> 00:04:55.000
+That is where we will put our source code.
+
+00:04:55.000 --> 00:05:00.000
+Tester.cpp is our client or testing file.
+
+00:05:00.000 --> 00:05:04.000
+It is the file that will be calling the functions.
+
+00:05:04.000 --> 00:05:12.000
+Algo.cpp will be defining the functions, and algo.h will be declaring the functions.
+
+00:05:12.000 --> 00:05:17.000
+Finally, we have something that needs to put all of these parts together,
+
+00:05:17.000 --> 00:05:25.000
+and that is our makefile, and that is the project file that we're going to use to put everything together.
+
+00:05:25.000 --> 00:05:28.000
+Now you'll notice there are a couple of other files inside there,
+
+00:05:28.000 --> 00:05:34.000
+cs150check.cpp and cs150check.h,
+
+00:05:34.000 --> 00:05:39.000
+and those are files we'll use for the testing framework.
+
+00:05:39.000 --> 00:05:44.000
+So notice we have several different files inside here,
+
+00:05:44.000 --> 00:05:50.000
+and we need to put all of those together, and the job of doing that will be the makefile.
+
+00:05:50.000 --> 00:05:56.000
+We're going to start, though, with algo.h.
+
+00:05:56.000 --> 00:06:04.000
+So before you do anything, you will need to create the interface for your classes,
+
+00:06:04.000 --> 00:06:07.000
+or the interface for your functions.
+
+00:06:07.000 --> 00:06:14.000
+These interfaces are going to be declarations, function declarations, or prototypes.
+
+00:06:14.000 --> 00:06:20.000
+However, what would happen if we had this situation?
+
+00:06:20.000 --> 00:06:38.000
+And so let me just put this code away, and down here in 150, let me create a couple of new files,
+
+00:06:38.000 --> 00:06:42.000
+and I'll call this a.h,
+
+00:06:42.000 --> 00:06:46.000
+and I'll create a new file here.
+
+00:06:46.000 --> 00:06:50.000
+b.h,
+
+00:06:50.000 --> 00:07:01.000
+and in a.h, I'm going to say include b.h,
+
+00:07:01.000 --> 00:07:07.000
+and that's in b.h.
+
+00:07:07.000 --> 00:07:09.000
+I'm going to include a.h,
+
+00:07:09.000 --> 00:07:17.000
+and in a.h, I'm going to include b.h,
+
+00:07:17.000 --> 00:07:26.000
+and finally in my example cpp here, I'm going to include a.h.
+
+00:07:26.000 --> 00:07:30.000
+Now I haven't put anything inside the files, but I want to show you the problem.
+
+00:07:30.000 --> 00:07:37.000
+So now, let me go ahead and open an integrated terminal.
+
+00:07:37.000 --> 00:07:47.000
+Now, if I try and make example.cpp,
+
+00:07:47.000 --> 00:07:59.000
+that actually worked.
+
+00:07:59.000 --> 00:08:10.000
+Let's put something inside here.
+
+00:08:10.000 --> 00:08:20.000
+Okay, so I'll put a prototype in a.h, and I'll put another prototype
+
+00:08:20.000 --> 00:08:23.000
+in b.h.
+
+00:08:23.000 --> 00:08:29.000
+Example.cpp has included a.h,
+
+00:08:29.000 --> 00:08:38.000
+and I'm going to say g++ example.cpp out example.
+
+00:08:38.000 --> 00:08:42.000
+Okay, so this is the error I want you to see.
+
+00:08:42.000 --> 00:08:48.000
+So notice a.h tries to include b,
+
+00:08:48.000 --> 00:08:53.000
+b tries to include a, a tries to include b again,
+
+00:08:53.000 --> 00:08:57.000
+b tries to include a again, and so forth.
+
+00:08:57.000 --> 00:09:01.000
+Now you might think, well, why would anybody do that?
+
+00:09:01.000 --> 00:09:04.000
+That just seems incredibly silly.
+
+00:09:04.000 --> 00:09:07.000
+Nobody would in fact do that.
+
+00:09:07.000 --> 00:09:11.000
+But in fact, if I look at this header, iostream,
+
+00:09:11.000 --> 00:09:18.000
+it needs to have the declarations of the functions that print out strings.
+
+00:09:18.000 --> 00:09:23.000
+So if we look inside iostream.h, or iostream,
+
+00:09:23.000 --> 00:09:27.000
+we'd see that it includes the header for string.
+
+00:09:27.000 --> 00:09:30.000
+Then, when we look at the string class,
+
+00:09:30.000 --> 00:09:34.000
+we'd see that it needs to have a function, like getline,
+
+00:09:34.000 --> 00:09:37.000
+that needs to know about the iostream classes,
+
+00:09:37.000 --> 00:09:39.000
+so it will include iostream.
+
+00:09:39.000 --> 00:09:44.000
+So it's exactly the same as what I did here with a and b.
+
+00:09:44.000 --> 00:09:48.000
+And so we have to have some way of preventing that,
+
+00:09:48.000 --> 00:09:54.000
+and that is what we get with what are called header guards.
+
+00:09:54.000 --> 00:09:59.000
+So open up algol.h, and I'll show you what a header guard looks like.
+
+00:09:59.000 --> 00:10:04.000
+It consists of preprocessor declarations that say
+
+00:10:04.000 --> 00:10:10.000
+#if end if. That means if not defined,
+
+00:10:10.000 --> 00:10:14.000
+then we use the name of the file, typically in all uppercase,
+
+00:10:14.000 --> 00:10:19.000
+so algo, not a period, but an underscore for h.
+
+00:10:19.000 --> 00:10:25.000
+And if that is not defined, then go ahead and define it.
+
+00:10:25.000 --> 00:10:29.000
+So #define algol.h.
+
+00:10:29.000 --> 00:10:34.000
+And then at the end, endif.
+
+00:10:34.000 --> 00:10:39.000
+Now, the first time this header file is discovered,
+
+00:10:39.000 --> 00:10:42.000
+algol.h will not be defined,
+
+00:10:42.000 --> 00:10:46.000
+and so we will run the stuff between the if endif
+
+00:10:46.000 --> 00:10:48.000
+and the endif at the end,
+
+00:10:48.000 --> 00:10:53.000
+the #if endif and the #endif at the end.
+
+00:10:53.000 --> 00:10:58.000
+The first line inside that is define algol.h,
+
+00:10:58.000 --> 00:11:00.000
+and so that allows the compiler to run it,
+
+00:11:00.000 --> 00:11:03.000
+remember it, just for this run.
+
+00:11:03.000 --> 00:11:05.000
+So the next time it sees this,
+
+00:11:05.000 --> 00:11:08.000
+the #if endif algol.h will be false,
+
+00:11:08.000 --> 00:11:11.000
+and all the inner part will be skipped,
+
+00:11:11.000 --> 00:11:14.000
+which would include some other file.
+
+00:11:14.000 --> 00:11:22.000
+Let's put our name on this as well.
+
+00:11:22.000 --> 00:11:32.000
+And...
+
+00:11:32.000 --> 00:11:34.000
+Okay, so these are header guards,
+
+00:11:34.000 --> 00:11:37.000
+they prevent multiple inclusions.
+
+00:11:37.000 --> 00:11:40.000
+They prevent multiple inclusions.
+
+00:11:40.000 --> 00:11:43.000
+So you just need to remember this incantation,
+
+00:11:43.000 --> 00:11:47.000
+every header will be surrounded by this.
+
+00:11:47.000 --> 00:11:52.000
+Now, our header files can contain documentation,
+
+00:11:52.000 --> 00:11:55.000
+it can contain prototypes,
+
+00:11:55.000 --> 00:11:58.000
+which are function declarations,
+
+00:11:58.000 --> 00:12:00.000
+it can contain constant definitions
+
+00:12:00.000 --> 00:12:04.000
+that are used in multiple files or multiple functions,
+
+00:12:04.000 --> 00:12:08.000
+it can contain class or structure definitions,
+
+00:12:08.000 --> 00:12:11.000
+it can contain something called a template,
+
+00:12:11.000 --> 00:12:16.000
+and it can contain global variable declarations,
+
+00:12:16.000 --> 00:12:19.000
+that's the ones with the extern, you remember,
+
+00:12:19.000 --> 00:12:22.000
+not global variable definitions.
+
+00:12:22.000 --> 00:12:26.000
+The things that it may not contain in a header file
+
+00:12:26.000 --> 00:12:30.000
+are function or variable definitions,
+
+00:12:30.000 --> 00:12:34.000
+or using namespace standard.
+
+00:12:34.000 --> 00:12:38.000
+That cannot go in the interface file.
+
+00:12:38.000 --> 00:12:45.000
+So, we're going to add three functions to our header.
+
+00:12:45.000 --> 00:12:49.000
+GCD, for the greatest common divisor,
+
+00:12:49.000 --> 00:12:53.000
+yeah, greatest common divisor, Euclid's algorithm,
+
+00:12:53.000 --> 00:12:55.000
+square root, for Newton's square root,
+
+00:12:55.000 --> 00:12:57.000
+and pi.
+
+00:12:57.000 --> 00:12:59.000
+So that's the prototype.
+
+00:12:59.000 --> 00:13:02.000
+Notice that it ends in a semicolon.
+
+00:13:02.000 --> 00:13:04.000
+Here's the double square root,
+
+00:13:04.000 --> 00:13:06.000
+ends in a semicolon,
+
+00:13:06.000 --> 00:13:08.000
+and here's pi.
+
+00:13:08.000 --> 00:13:11.000
+It's going to take a numerator and a denominator,
+
+00:13:11.000 --> 00:13:14.000
+and there is a parenthesis and a semicolon
+
+00:13:14.000 --> 00:13:16.000
+at the end right here.
+
+00:13:16.000 --> 00:13:20.000
+I apparently did not color them correctly on the slide.
+
+00:13:20.000 --> 00:13:25.000
+So let's go ahead and add those.
+
+00:13:25.000 --> 00:13:27.000
+So here's our prototypes.
+
+00:13:27.000 --> 00:13:35.000
+So int GCD, int A, and int B,
+
+00:13:35.000 --> 00:13:44.000
+and double square root, double n,
+
+00:13:44.000 --> 00:13:52.000
+and void pi with an unsigned reference n
+
+00:13:52.000 --> 00:13:57.000
+and an unsigned reference d,
+
+00:13:57.000 --> 00:14:00.000
+and a semicolon.
+
+00:14:00.000 --> 00:14:06.000
+Okay, so now we've got our prototypes in our interface,
+
+00:14:06.000 --> 00:14:08.000
+but we might actually have a problem.
+
+00:14:08.000 --> 00:14:11.000
+Do you recognize what the problem is?
+
+00:14:11.000 --> 00:14:14.000
+Well, we have two square root functions.
+
+00:14:14.000 --> 00:14:18.000
+The library already has a square root function,
+
+00:14:18.000 --> 00:14:21.000
+and so if we tried to compile the code
+
+00:14:21.000 --> 00:14:23.000
+with our version of square root
+
+00:14:23.000 --> 00:14:27.000
+and the version of square root that the library already has,
+
+00:14:27.000 --> 00:14:29.000
+the compiler would give us an error.
+
+00:14:29.000 --> 00:14:33.000
+It would say we have a name clash or a name collision.
+
+00:14:33.000 --> 00:14:36.000
+Okay, a name collision.
+
+00:14:36.000 --> 00:14:38.000
+And so the solution to these name collisions,
+
+00:14:38.000 --> 00:14:41.000
+and the reason that namespaces were invented,
+
+00:14:41.000 --> 00:14:45.000
+is to put our functions in their own namespace.
+
+00:14:45.000 --> 00:14:49.000
+We'll name our namespace A A for ancient algorithms.
+
+00:14:49.000 --> 00:14:51.000
+Now, we're going to need to do this
+
+00:14:51.000 --> 00:14:55.000
+both in the implementation and in the interface,
+
+00:14:55.000 --> 00:14:59.000
+both in the header file and in the CPP file.
+
+00:14:59.000 --> 00:15:02.000
+And that just looks like namespace A A,
+
+00:15:02.000 --> 00:15:05.000
+an open brace, a closing brace,
+
+00:15:05.000 --> 00:15:07.000
+and I actually don't think we need the semicolon.
+
+00:15:07.000 --> 00:15:11.000
+I'm going to leave it off just to see.
+
+00:15:11.000 --> 00:15:22.000
+So I'm going to say namespace A A,
+
+00:15:22.000 --> 00:15:30.000
+and I'm going to put a closing brace on it.
+
+00:15:30.000 --> 00:15:34.000
+Okay, so there is my declaration file,
+
+00:15:34.000 --> 00:15:43.000
+my declaration file, or my interface file.
+
+00:15:43.000 --> 00:15:50.000
+Now, the client file is the one that calls or tests the functions.
+
+00:15:50.000 --> 00:15:53.000
+In the CS course reader, in the course reader you're going to read,
+
+00:15:53.000 --> 00:15:55.000
+you'll learn to do this manually.
+
+00:15:55.000 --> 00:15:59.000
+And we kind of learned to do it in the first couple weeks,
+
+00:15:59.000 --> 00:16:02.000
+where you wrote code,
+
+00:16:02.000 --> 00:16:07.000
+you wrote, figured out what the output would be for your IPO programs,
+
+00:16:07.000 --> 00:16:11.000
+and you figured out what the expected output should be,
+
+00:16:11.000 --> 00:16:13.000
+for different inputs.
+
+00:16:13.000 --> 00:16:18.000
+We're going to do this using the CS150 automated test framework.
+
+00:16:18.000 --> 00:16:22.000
+And so here's the framework process for testing.
+
+00:16:22.000 --> 00:16:26.000
+You write a function called,
+
+00:16:26.000 --> 00:16:31.000
+so let me go over here to my code,
+
+00:16:31.000 --> 00:16:34.000
+and we'll look at the tester.
+
+00:16:34.000 --> 00:16:37.000
+Let me move that over in second place here.
+
+00:16:37.000 --> 00:16:41.000
+So one thing you do is you include this header file
+
+00:16:41.000 --> 00:16:45.000
+for the functions that are in the test function,
+
+00:16:45.000 --> 00:16:50.000
+and then you include the header for the functions that need to be tested.
+
+00:16:50.000 --> 00:16:56.000
+So I will give you this file with run tests in it,
+
+00:16:56.000 --> 00:17:05.000
+and all you'll need to do is add the include for the functions you're going to test.
+
+00:17:05.000 --> 00:17:12.000
+So let's go ahead, since we're testing this, let's put our ID here.
+
+00:17:12.000 --> 00:17:16.000
+Then inside the function run tests,
+
+00:17:16.000 --> 00:17:20.000
+you will have a begin tests.
+
+00:17:20.000 --> 00:17:23.000
+This will begin all the tests you're going to do,
+
+00:17:23.000 --> 00:17:28.000
+and at the very end you'll have an end tests.
+
+00:17:28.000 --> 00:17:31.000
+For each function you're going to test,
+
+00:17:31.000 --> 00:17:35.000
+you'll write a function called begin function test.
+
+00:17:35.000 --> 00:17:38.000
+So this is the test for GCD.
+
+00:17:38.000 --> 00:17:42.000
+This is the test for square root Newton's method,
+
+00:17:42.000 --> 00:17:46.000
+and this is the test for pi approximate.
+
+00:17:46.000 --> 00:17:50.000
+And so that will begin function test and end function test,
+
+00:17:50.000 --> 00:17:54.000
+and that will create the tests for that.
+
+00:17:54.000 --> 00:18:01.000
+Now in between this, you'll use different versions of what are called assert equals.
+
+00:18:01.000 --> 00:18:04.000
+So this is the version of assert equals.
+
+00:18:04.000 --> 00:18:07.000
+Those are in this header file.
+
+00:18:07.000 --> 00:18:10.000
+So this is assert equals for integers.
+
+00:18:10.000 --> 00:18:15.000
+So we're going to say when we call our GCD function with 12 and 90,
+
+00:18:15.000 --> 00:18:21.000
+we expect to get back 6 as the greatest common divisor.
+
+00:18:21.000 --> 00:18:26.000
+If we call it with 42 and 56, we expect to get back 14,
+
+00:18:26.000 --> 00:18:31.000
+and if we call it with 56 and 42, we expect to get back 14.
+
+00:18:31.000 --> 00:18:35.000
+Notice these two are the same, but I've just exchanged them.
+
+00:18:35.000 --> 00:18:38.000
+For Newton's square root method,
+
+00:18:38.000 --> 00:18:42.000
+we're going to have to call a different version of assert equals,
+
+00:18:42.000 --> 00:18:49.000
+one that checks doubles, and that checks using an epsilon value here.
+
+00:18:49.000 --> 00:18:53.000
+So notice I've set up epsilon 10 e to the minus 4th,
+
+00:18:53.000 --> 00:18:58.000
+and I'm checking the expected value, calling the function,
+
+00:18:58.000 --> 00:19:03.000
+and passing in how close they have to be before they're equal.
+
+00:19:03.000 --> 00:19:07.000
+And finally, for the last one, we're going to call assert equals.
+
+00:19:07.000 --> 00:19:10.000
+We're going to do it for integers again,
+
+00:19:10.000 --> 00:19:13.000
+but we're calling one where we're calling a procedure,
+
+00:19:13.000 --> 00:19:15.000
+and we're testing two things.
+
+00:19:15.000 --> 00:19:18.000
+So I'm calling the function with pi.
+
+00:19:18.000 --> 00:19:22.000
+I'm calling our function pi.
+
+00:19:22.000 --> 00:19:28.000
+I'm setting the variables n and d to 355, 113.
+
+00:19:28.000 --> 00:19:35.000
+Then I have a comma, and this is the value I'm checking against this assert equals.
+
+00:19:35.000 --> 00:19:37.000
+So you don't have to memorize these,
+
+00:19:37.000 --> 00:19:42.000
+but I wanted you to see what the test program looks like.
+
+00:19:42.000 --> 00:19:44.000
+What a test program looks like.
+
+00:19:44.000 --> 00:19:48.000
+So you can use this to write your own tests.
+
+00:19:48.000 --> 00:19:50.000
+So let's go ahead.
+
+00:19:50.000 --> 00:19:51.000
+Where are we here?
+
+00:19:51.000 --> 00:19:55.000
+Let's close each of these bath shells,
+
+00:19:55.000 --> 00:19:58.000
+and let's go ahead and go to Algolib here
+
+00:19:58.000 --> 00:20:01.000
+and open an integrated folder there.
+
+00:20:01.000 --> 00:20:08.000
+So we're in Algolib, and we're going to do make tester.
+
+00:20:08.000 --> 00:20:10.000
+So notice I'm not doing make test.
+
+00:20:10.000 --> 00:20:12.000
+I don't even have a make file yet.
+
+00:20:12.000 --> 00:20:17.000
+I'm doing make tester, which is going to compile this program.
+
+00:20:17.000 --> 00:20:25.000
+And when I do, notice that there are no red things here.
+
+00:20:25.000 --> 00:20:28.000
+All of these are linker errors.
+
+00:20:28.000 --> 00:20:33.000
+It cannot find the function in function start.
+
+00:20:33.000 --> 00:20:38.000
+It doesn't have the main function in function run tests.
+
+00:20:38.000 --> 00:20:40.000
+It can't find begin tests.
+
+00:20:40.000 --> 00:20:43.000
+And so what that tells you,
+
+00:20:43.000 --> 00:20:46.000
+the fact that we only got linker errors here,
+
+00:20:46.000 --> 00:20:54.000
+is that this code compiles without any compile errors.
+
+00:20:54.000 --> 00:20:57.000
+So we only got linker errors there.
+
+00:20:57.000 --> 00:21:00.000
+We didn't get any compile errors.
+
+00:21:00.000 --> 00:21:01.000
+So again, to use the framework,
+
+00:21:01.000 --> 00:21:04.000
+we include the header for the functions we're testing.
+
+00:21:04.000 --> 00:21:08.000
+We place our testing code between begin function test
+
+00:21:08.000 --> 00:21:10.000
+and end function test.
+
+00:21:10.000 --> 00:21:13.000
+And then we use one of the different assert equals varieties
+
+00:21:13.000 --> 00:21:17.000
+that you can see in tester.cpp.
+
+00:21:17.000 --> 00:21:21.000
+And so when we did make tester, again, we got linker errors,
+
+00:21:21.000 --> 00:21:23.000
+but no compiler errors.
+
+00:21:23.000 --> 00:21:30.000
+If we had not written the header file,
+
+00:21:30.000 --> 00:21:32.000
+we would get compiler errors.
+
+00:21:32.000 --> 00:21:35.000
+And just to show you that that's true,
+
+00:21:35.000 --> 00:21:37.000
+let's come over here,
+
+00:21:37.000 --> 00:21:42.000
+and let's comment out that algo.h that we just wrote.
+
+00:21:42.000 --> 00:21:48.000
+And let's do make tester again.
+
+00:21:48.000 --> 00:21:53.000
+So I'll control L and do make tester.
+
+00:21:53.000 --> 00:21:55.000
+And now notice all the red errors.
+
+00:21:55.000 --> 00:21:58.000
+It doesn't know what aa square root is.
+
+00:21:58.000 --> 00:22:02.000
+So now we have a whole bunch of compiler errors.
+
+00:22:02.000 --> 00:22:04.000
+Compiler errors.
+
+00:22:04.000 --> 00:22:10.000
+Before, we did not because we told the compiler here
+
+00:22:10.000 --> 00:22:15.000
+inside algo.h what each function took as an argument
+
+00:22:15.000 --> 00:22:17.000
+and what it returned.
+
+00:22:17.000 --> 00:22:19.000
+Even though we don't have the function yet,
+
+00:22:19.000 --> 00:22:20.000
+we declared them.
+
+00:22:20.000 --> 00:22:26.000
+That's all the compiler needs to do to compile tester.cpp.
+
+00:22:26.000 --> 00:22:32.000
+And just to show you, I'm going to clear this once again.
+
+00:22:32.000 --> 00:22:38.000
+So if I say g++-c, I'm saying only compile,
+
+00:22:38.000 --> 00:22:44.000
+tester.cpp, notice I get no errors or no warnings.
+
+00:22:44.000 --> 00:22:50.000
+It compiles and produces tester.o for us.
+
+00:22:50.000 --> 00:22:53.000
+Okay, so now we're ready to go on to step three.
+
+00:22:53.000 --> 00:22:55.000
+We've written two of those files.
+
+00:22:55.000 --> 00:22:59.000
+The client file, I actually wrote it for you, of course.
+
+00:22:59.000 --> 00:23:01.000
+You added a little bit of code.
+
+00:23:01.000 --> 00:23:04.000
+And the header file.
+
+00:23:04.000 --> 00:23:08.000
+And so now we're ready to add the implementation.
+
+00:23:08.000 --> 00:23:12.000
+Now the implementation is going to go in the cpp file.
+
+00:23:12.000 --> 00:23:17.000
+And so there are five steps that you will want to memorize.
+
+00:23:17.000 --> 00:23:22.000
+You will always want to start with the stubs or skeletons.
+
+00:23:22.000 --> 00:23:25.000
+So add, include, header.
+
+00:23:25.000 --> 00:23:27.000
+Notice the double quotes.
+
+00:23:27.000 --> 00:23:32.000
+So this will be include algo.h.
+
+00:23:32.000 --> 00:23:37.000
+Add any other headers needed to implement your code.
+
+00:23:37.000 --> 00:23:41.000
+You can use using namespace standard in the cpp file.
+
+00:23:41.000 --> 00:23:43.000
+It cannot go in the header file.
+
+00:23:43.000 --> 00:23:45.000
+It can go in the cpp file.
+
+00:23:45.000 --> 00:23:51.000
+Copy the prototypes and the namespace from the header file.
+
+00:23:51.000 --> 00:23:54.000
+Remove the semicolons, add the body,
+
+00:23:54.000 --> 00:23:58.000
+and the return statements.
+
+00:23:58.000 --> 00:24:04.000
+So let's go ahead and do that stubbing step.
+
+00:24:04.000 --> 00:24:10.000
+So we will come over here to algo.cpp.
+
+00:24:10.000 --> 00:24:20.000
+We will include algo.h.
+
+00:24:20.000 --> 00:24:23.000
+Do we need to use any library functions?
+
+00:24:23.000 --> 00:24:25.000
+Well, we might need to use something.
+
+00:24:25.000 --> 00:24:33.000
+So let's assume we need to use something in C math.
+
+00:24:33.000 --> 00:24:36.000
+And because I want to use some of the functions in C math,
+
+00:24:36.000 --> 00:24:45.000
+let's assume I want the using namespace standard.
+
+00:24:45.000 --> 00:24:49.000
+Now I'm going to go back to algo.h.
+
+00:24:49.000 --> 00:24:54.000
+I'm going to copy everything in the namespace.
+
+00:24:54.000 --> 00:24:59.000
+I'm going to come to my -- let me move my tester down to the bottom there.
+
+00:24:59.000 --> 00:25:00.000
+I'm going to come back here.
+
+00:25:00.000 --> 00:25:03.000
+I'm going to paste it in there.
+
+00:25:03.000 --> 00:25:11.000
+And now I'm just going to come remove the semicolons from the prototypes,
+
+00:25:11.000 --> 00:25:14.000
+put in a body,
+
+00:25:14.000 --> 00:25:17.000
+and for those functions that need to return something,
+
+00:25:17.000 --> 00:25:20.000
+I'm just going to return a double value,
+
+00:25:20.000 --> 00:25:23.000
+or I'm just going to return a dummy value.
+
+00:25:23.000 --> 00:25:28.000
+So I'll say return zero, and I'll say return zero here.
+
+00:25:28.000 --> 00:25:30.000
+Okay, so this is a void function,
+
+00:25:30.000 --> 00:25:35.000
+so you notice I don't need to return anything for that.
+
+00:25:35.000 --> 00:25:39.000
+Now you might think right now that this code would build,
+
+00:25:39.000 --> 00:25:43.000
+but it still doesn't build because we need one more file.
+
+00:25:43.000 --> 00:25:49.000
+We need a file to put everything together, and that is the make file.
+
+00:25:49.000 --> 00:25:56.000
+So the make file is the cross-platform builder file.
+
+00:25:56.000 --> 00:25:59.000
+It's instructions to a program called make.
+
+00:25:59.000 --> 00:26:05.000
+Cross-platform means that it works on Windows, it works on Unix, it works on the Mac.
+
+00:26:05.000 --> 00:26:12.000
+Now it's true that different platforms like Visual Studio on Windows,
+
+00:26:12.000 --> 00:26:24.000
+or I can't remember the name of the compiler framework on the Mac, Xcode.
+
+00:26:24.000 --> 00:26:27.000
+Each of those platforms have their own builder programs
+
+00:26:27.000 --> 00:26:30.000
+and their own format for the files,
+
+00:26:30.000 --> 00:26:33.000
+but this one works on every platform.
+
+00:26:33.000 --> 00:26:36.000
+So make is worth using.
+
+00:26:36.000 --> 00:26:43.000
+Now lately, people have started using another program called CMake.
+
+00:26:43.000 --> 00:26:47.000
+What CMake does, it's also a cross-platform builder,
+
+00:26:47.000 --> 00:26:52.000
+is CMake will create for you make files,
+
+00:26:52.000 --> 00:26:56.000
+or if you're on Visual Studio, it'll create Visual Studio projects.
+
+00:26:56.000 --> 00:26:59.000
+If you're on Xcode, it'll create Xcode projects.
+
+00:26:59.000 --> 00:27:03.000
+I think in this class, we're simply going to stick with make
+
+00:27:03.000 --> 00:27:07.000
+because it's easier to learn than CMake, I believe.
+
+00:27:07.000 --> 00:27:10.000
+CMake is a little bit more complex.
+
+00:27:10.000 --> 00:27:15.000
+If you want to learn more about CMake, you can look at the videos I have on the homepage,
+
+00:27:15.000 --> 00:27:18.000
+the ones from the guy from British Columbia,
+
+00:27:18.000 --> 00:27:22.000
+and he has quite a bit on using CMake if you want to learn that.
+
+00:27:22.000 --> 00:27:25.000
+So here's what goes in a make file.
+
+00:27:25.000 --> 00:27:26.000
+There are three parts.
+
+00:27:26.000 --> 00:27:31.000
+There are the variables that describe what the inputs and outputs are.
+
+00:27:31.000 --> 00:27:37.000
+There are rules that are used to combine those variables to produce the inputs and output,
+
+00:27:37.000 --> 00:27:40.000
+and then the actions that are used.
+
+00:27:40.000 --> 00:27:43.000
+So variables, rules, and actions.
+
+00:27:43.000 --> 00:27:47.000
+So the first variables, these are actually technically called macros,
+
+00:27:47.000 --> 00:27:50.000
+but we'll just think of them as variables,
+
+00:27:50.000 --> 00:27:55.000
+is the name for our executable and the name for our object files.
+
+00:27:55.000 --> 00:27:58.000
+So let's go over to our make file,
+
+00:27:58.000 --> 00:28:00.000
+and let's put them inside here.
+
+00:28:00.000 --> 00:28:04.000
+By the way, comments in make files are just the pound sign, like that.
+
+00:28:04.000 --> 00:28:08.000
+So we will create a variable for our exe,
+
+00:28:08.000 --> 00:28:14.000
+and we will say the exe, I'm going to call this algo_tester.
+
+00:28:14.000 --> 00:28:16.000
+So you can have dashes inside there if you want.
+
+00:28:16.000 --> 00:28:19.000
+That's the name of the executable.
+
+00:28:19.000 --> 00:28:28.000
+The objects are algo.o.
+
+00:28:28.000 --> 00:28:32.000
+So for every CPP file, you're going to create an object file.
+
+00:28:32.000 --> 00:28:38.000
+So algo.o, cs150check.o, and tester.o.
+
+00:28:38.000 --> 00:28:48.000
+So algo.o, cs150check.o, and tester.o.
+
+00:28:48.000 --> 00:28:51.000
+So each of these is going to be separately compiled,
+
+00:28:51.000 --> 00:28:56.000
+and then they'll be linked together when we put in our rule.
+
+00:28:56.000 --> 00:29:01.000
+So our second step is the rule to build the target.
+
+00:29:01.000 --> 00:29:04.000
+So our target is going to be our executable.
+
+00:29:04.000 --> 00:29:09.000
+To expand that variable, or to play that macro,
+
+00:29:09.000 --> 00:29:14.000
+what we do is we put it in a parenthesis and precede that by a dollar sign.
+
+00:29:14.000 --> 00:29:18.000
+So in our case, we could type it out manually,
+
+00:29:18.000 --> 00:29:24.000
+but nobody does because then you have to type it out manually all throughout the program.
+
+00:29:24.000 --> 00:29:33.000
+So our target and dependency, our target here, is going to be the executable.
+
+00:29:33.000 --> 00:29:35.000
+That's what we want to build.
+
+00:29:35.000 --> 00:29:42.000
+And our dependency is going to be the object files, objs.
+
+00:29:42.000 --> 00:29:49.000
+Again, in parenthesis, preceded by a dollar sign.
+
+00:29:49.000 --> 00:29:53.000
+So this says to build this executable, algo tester,
+
+00:29:53.000 --> 00:30:01.000
+we need to build first algo.o, cs150check.o, and tester.o.
+
+00:30:01.000 --> 00:30:08.000
+Make knows how to build those, provided we have the CPP files for them.
+
+00:30:08.000 --> 00:30:12.000
+The third step is the actions.
+
+00:30:12.000 --> 00:30:16.000
+So the actions all proceed with a tab character.
+
+00:30:16.000 --> 00:30:21.000
+Can't use a space here. If you use a space, you'll get an error.
+
+00:30:21.000 --> 00:30:25.000
+So press your tab key.
+
+00:30:25.000 --> 00:30:29.000
+And you notice it showed a little tab character.
+
+00:30:29.000 --> 00:30:31.000
+Press your tab key.
+
+00:30:31.000 --> 00:30:35.000
+And we're going to run a variable called cxx.
+
+00:30:35.000 --> 00:30:38.000
+Where'd cxx come from?
+
+00:30:38.000 --> 00:30:45.000
+We created it in the environment when we first set up our program.
+
+00:30:45.000 --> 00:30:49.000
+We're then going to pass a second variable.
+
+00:30:49.000 --> 00:30:52.000
+This is called cxxflags.
+
+00:30:52.000 --> 00:30:53.000
+Where did that come from?
+
+00:30:53.000 --> 00:30:56.000
+Again, we set that up when we set up our program.
+
+00:30:56.000 --> 00:30:59.000
+And you can actually see what they are.
+
+00:30:59.000 --> 00:31:12.000
+Echo $cxx, it's g++, and echo $cxxflags.
+
+00:31:12.000 --> 00:31:19.000
+And you can see it's this long string that we created when we set up our program.
+
+00:31:19.000 --> 00:31:26.000
+When you ran the 150 config file at the beginning of the class.
+
+00:31:26.000 --> 00:31:33.000
+So these are the commands that we use to link our program together and build our program.
+
+00:31:33.000 --> 00:31:38.000
+Then the inputs are going to be our object files.
+
+00:31:38.000 --> 00:31:41.000
+So objs.
+
+00:31:41.000 --> 00:31:44.000
+And then we have a dash lowercase o.
+
+00:31:44.000 --> 00:31:47.000
+That's saying that's what the output is going to be.
+
+00:31:47.000 --> 00:31:57.000
+And the output is going to be our executable.
+
+00:31:57.000 --> 00:32:03.000
+So once we've done that, once we've done that.
+
+00:32:03.000 --> 00:32:07.000
+We can come down here and say make.
+
+00:32:07.000 --> 00:32:11.000
+And it will run each of those steps.
+
+00:32:11.000 --> 00:32:13.000
+It will create alga.o.
+
+00:32:13.000 --> 00:32:16.000
+It will create cs150check.o.
+
+00:32:16.000 --> 00:32:18.000
+It will create tester.o.
+
+00:32:18.000 --> 00:32:20.000
+It will link those three together.
+
+00:32:20.000 --> 00:32:23.000
+And it will produce the output.
+
+00:32:23.000 --> 00:32:26.000
+It will produce the output algo.tester.
+
+00:32:26.000 --> 00:32:30.000
+So that built our program.
+
+00:32:30.000 --> 00:32:34.000
+Now we would really like to say make test.
+
+00:32:34.000 --> 00:32:38.000
+And for that we need one more step, a fourth step.
+
+00:32:38.000 --> 00:32:41.000
+And that's to build a pseudo target.
+
+00:32:41.000 --> 00:32:46.000
+So a pseudo target, the target part, is not something that gets built.
+
+00:32:46.000 --> 00:32:50.000
+Inside the actions we don't build something like the executable.
+
+00:32:50.000 --> 00:32:52.000
+We run something here.
+
+00:32:52.000 --> 00:32:55.000
+So I'm going to run the executable.
+
+00:32:55.000 --> 00:32:58.000
+And I'm going to pass -t to it.
+
+00:32:58.000 --> 00:33:06.000
+And that is just what the framework uses to say, oh run the tests instead of run the program.
+
+00:33:06.000 --> 00:33:11.000
+And so again with my last one I'm going to add a pseudo target here.
+
+00:33:11.000 --> 00:33:14.000
+So I'm going to say test.
+
+00:33:14.000 --> 00:33:20.000
+Test depends on the executable existing.
+
+00:33:20.000 --> 00:33:22.000
+And I'm going to tab.
+
+00:33:22.000 --> 00:33:27.000
+And I'm going to do ./ meaning look in the current directory.
+
+00:33:27.000 --> 00:33:29.000
+Run the executable.
+
+00:33:29.000 --> 00:33:35.000
+And then space -t test that current file.
+
+00:33:35.000 --> 00:33:38.000
+Now -t is not a common thing.
+
+00:33:38.000 --> 00:33:42.000
+It's what our test framework is using to test.
+
+00:33:42.000 --> 00:33:51.000
+Once you've done that we can come over here and we can say make test.
+
+00:33:51.000 --> 00:33:56.000
+Just like you can with your homework.
+
+00:33:56.000 --> 00:34:01.000
+So notice we have the three tests that were written in the program.
+
+00:34:01.000 --> 00:34:07.000
+Checking the GCD, checking the square root, checking pi approximate.
+
+00:34:07.000 --> 00:34:11.000
+What was expected but what our programs found.
+
+00:34:11.000 --> 00:34:22.000
+Remember we returned zero in each of those cases.
+
+00:34:22.000 --> 00:34:26.000
+Okay so now let's look at implementing these three algorithms.
+
+00:34:26.000 --> 00:34:33.000
+And then we'll look at documenting them and generating the documentation.
+
+00:34:33.000 --> 00:34:39.000
+So GCD was developed by Euclid about 300 BC.
+
+00:34:39.000 --> 00:34:44.000
+And if you look at the slides there's a Wikipedia link if you want to read more about it.
+
+00:34:44.000 --> 00:34:52.000
+His essential insight was that if I have two numbers, the divisor of a larger number and a smaller number.
+
+00:34:52.000 --> 00:35:01.000
+That that divisor is going to be the same as the divisor of the smaller number and the larger minus the smaller.
+
+00:35:01.000 --> 00:35:07.000
+In other words by essentially repeatedly subtracting over and over again.
+
+00:35:07.000 --> 00:35:18.000
+I can get to the smallest combination of a and b that have the same divisor.
+
+00:35:18.000 --> 00:35:28.000
+And so when one of these a or b gets to zero then the other one is just going to be the smaller divisor.
+
+00:35:28.000 --> 00:35:34.000
+So that means we have to repeat. We have to do it once. So we're going to do that with a loop.
+
+00:35:34.000 --> 00:35:38.000
+We're reducing to zero so we have a limit loop.
+
+00:35:38.000 --> 00:35:43.000
+So here's the pseudocode for the algorithm GCD a b.
+
+00:35:43.000 --> 00:35:48.000
+Now it really doesn't matter with this algorithm whether a or b is smaller.
+
+00:35:48.000 --> 00:35:59.000
+Because unlike Euclid who originally used subtraction where it makes quite a bit difference that you divide the...
+
+00:35:59.000 --> 00:36:01.000
+you subtract the smaller from the larger.
+
+00:36:01.000 --> 00:36:03.000
+We're going to use remainder.
+
+00:36:03.000 --> 00:36:08.000
+And remainder works regardless of which one is smaller and larger.
+
+00:36:08.000 --> 00:36:15.000
+So this is the algorithm while b is not zero. A limit loop.
+
+00:36:15.000 --> 00:36:21.000
+Let temp be b. Let b be a. Remainder b.
+
+00:36:21.000 --> 00:36:24.000
+And then a equal the temp one.
+
+00:36:24.000 --> 00:36:29.000
+And then at the end GCD will be the a.
+
+00:36:29.000 --> 00:36:31.000
+So let's go ahead and implement that.
+
+00:36:31.000 --> 00:36:37.000
+We'll implement it and we'll test it.
+
+00:36:37.000 --> 00:36:41.000
+So let's minimize that.
+
+00:36:41.000 --> 00:36:47.000
+Let's go to algo.cpp.
+
+00:36:47.000 --> 00:36:55.000
+So we'll say while b is not equal to zero.
+
+00:36:55.000 --> 00:37:02.000
+We'll say temp equals b.
+
+00:37:02.000 --> 00:37:07.000
+b equals a remainder b.
+
+00:37:07.000 --> 00:37:11.000
+And a equals temp.
+
+00:37:11.000 --> 00:37:17.000
+And then at the end we're going to return a.
+
+00:37:17.000 --> 00:37:20.000
+a is going to be the smaller of those two.
+
+00:37:20.000 --> 00:37:23.000
+Or it's going to be the result.
+
+00:37:23.000 --> 00:37:29.000
+So let's try it.
+
+00:37:29.000 --> 00:37:33.000
+Let's go ahead and clear this up again.
+
+00:37:33.000 --> 00:37:38.000
+And do make test once again.
+
+00:37:38.000 --> 00:37:42.000
+And we'll see that for our GCD a...
+
+00:37:42.000 --> 00:37:48.000
+our a a GCD we in fact got the correct values for all of this.
+
+00:37:48.000 --> 00:37:52.000
+So that one worked.
+
+00:37:52.000 --> 00:37:55.000
+The second algorithm we want to look at
+
+00:37:55.000 --> 00:37:59.000
+is Newton's square root method.
+
+00:37:59.000 --> 00:38:03.000
+So this is as I mentioned attributed to Isaac Newton.
+
+00:38:03.000 --> 00:38:06.000
+But it's actually recorded in cuneiform
+
+00:38:06.000 --> 00:38:12.000
+from ancient Babylon, the Hammurabi dynasty about 17 or 1800 BC.
+
+00:38:12.000 --> 00:38:16.000
+And it's recorded in base 60 numbers.
+
+00:38:16.000 --> 00:38:22.000
+So we've looked at base 10, base 2, base 8, and base 16.
+
+00:38:22.000 --> 00:38:25.000
+These were in base 60.
+
+00:38:25.000 --> 00:38:28.000
+And this algorithm also uses a limit loop.
+
+00:38:28.000 --> 00:38:31.000
+It's an approximation algorithm.
+
+00:38:31.000 --> 00:38:35.000
+With an approximation algorithm you take two guesses
+
+00:38:35.000 --> 00:38:38.000
+and then you do a function on those two guesses
+
+00:38:38.000 --> 00:38:41.000
+until the difference is close enough.
+
+00:38:41.000 --> 00:38:44.000
+So here's the algorithm.
+
+00:38:44.000 --> 00:38:47.000
+You make a new guess as to the root of n.
+
+00:38:47.000 --> 00:38:50.000
+It doesn't matter what the guess is.
+
+00:38:50.000 --> 00:38:53.000
+Most people do n divided by 2.
+
+00:38:53.000 --> 00:38:56.000
+Then you write a loop.
+
+00:38:56.000 --> 00:39:00.000
+So we're going to loop. We're going to set the old guess to the new guess.
+
+00:39:00.000 --> 00:39:05.000
+We're going to set new guess to n divided by the old guess
+
+00:39:05.000 --> 00:39:09.000
+plus the old guess and all of that divided by 2.
+
+00:39:09.000 --> 00:39:13.000
+So this is the part that I don't know how they figured out, but they did.
+
+00:39:13.000 --> 00:39:16.000
+And we're going to keep doing that until the difference
+
+00:39:16.000 --> 00:39:20.000
+between the guesses is less than epsilon.
+
+00:39:20.000 --> 00:39:28.000
+So let's go ahead and implement and test that.
+
+00:39:28.000 --> 00:39:32.000
+So let's minimize that.
+
+00:39:32.000 --> 00:39:38.000
+And let's look at the square root function.
+
+00:39:38.000 --> 00:39:42.000
+So what we want to do is we want to make a new guess
+
+00:39:42.000 --> 00:39:45.000
+for the root of n.
+
+00:39:45.000 --> 00:39:51.000
+So double new guess equals n divided by 2.
+
+00:39:51.000 --> 00:39:55.000
+It wouldn't really matter what you set it to.
+
+00:39:55.000 --> 00:39:57.000
+Now we're going to write a loop.
+
+00:39:57.000 --> 00:40:01.000
+So this loop is going to use a do while loop.
+
+00:40:01.000 --> 00:40:12.000
+So we're going to say do while.
+
+00:40:12.000 --> 00:40:16.000
+The difference between the guesses is less than epsilon.
+
+00:40:16.000 --> 00:40:20.000
+So for the difference we're going to take the absolute value
+
+00:40:20.000 --> 00:40:36.000
+of new guess minus old guess.
+
+00:40:36.000 --> 00:40:40.000
+And until it is less than epsilon.
+
+00:40:40.000 --> 00:40:47.000
+So while it is greater or equal to k epsilon,
+
+00:40:47.000 --> 00:40:49.000
+we'll keep going.
+
+00:40:49.000 --> 00:40:54.000
+Now of course my code doesn't compile now because some of those things I don't have.
+
+00:40:54.000 --> 00:41:00.000
+So first notice that I'm checking these two variables new guess minus old guess.
+
+00:41:00.000 --> 00:41:05.000
+My algorithm says in the loop I'm setting old guess equal to new guess.
+
+00:41:05.000 --> 00:41:10.000
+You might be tempted to do this.
+
+00:41:10.000 --> 00:41:15.000
+Double old guess new guess.
+
+00:41:15.000 --> 00:41:18.000
+The problem is that your code won't compile.
+
+00:41:18.000 --> 00:41:22.000
+Because old guess will not be in scope.
+
+00:41:22.000 --> 00:41:26.000
+It will be created here and go out of scope at that point.
+
+00:41:26.000 --> 00:41:28.000
+And so it will not be created.
+
+00:41:28.000 --> 00:41:32.000
+So we have to create old guess up here.
+
+00:41:32.000 --> 00:41:36.000
+Double old guess.
+
+00:41:36.000 --> 00:41:40.000
+And we might just set it to new guess.
+
+00:41:40.000 --> 00:41:44.000
+Or set it to zero. It doesn't make any difference.
+
+00:41:44.000 --> 00:41:50.000
+And so inside the loop we have to set old guess equal to new guess.
+
+00:41:50.000 --> 00:41:55.000
+Now this still won't compile because we don't know what k epsilon is.
+
+00:41:55.000 --> 00:41:59.000
+So let's create k epsilon here.
+
+00:41:59.000 --> 00:42:07.000
+So const double k epsilon.
+
+00:42:07.000 --> 00:42:15.000
+Equals we'll do 1.0 e to the minus 14.
+
+00:42:15.000 --> 00:42:22.000
+So we'll say that's if it's closer than that it's close enough for our work.
+
+00:42:22.000 --> 00:42:27.000
+Finally one more step here in our algorithm from the slides.
+
+00:42:27.000 --> 00:42:32.000
+Is we're going to set new guess.
+
+00:42:32.000 --> 00:42:42.000
+Equal to n divided by old guess.
+
+00:42:42.000 --> 00:42:47.000
+Plus old guess.
+
+00:42:47.000 --> 00:42:58.000
+All of that divided by two.
+
+00:42:58.000 --> 00:43:04.000
+And finally rather than returning zero of course we're going to return either new guess or old guess.
+
+00:43:04.000 --> 00:43:07.000
+They are functionally identical here.
+
+00:43:07.000 --> 00:43:12.000
+So we'll return new guess.
+
+00:43:12.000 --> 00:43:16.000
+Okay so here's our algorithm for square root.
+
+00:43:16.000 --> 00:43:20.000
+Let's go ahead and try that.
+
+00:43:20.000 --> 00:43:24.000
+Make test.
+
+00:43:24.000 --> 00:43:27.000
+And here our square root is working.
+
+00:43:27.000 --> 00:43:31.000
+Of course I checked something that wasn't very complex.
+
+00:43:31.000 --> 00:43:34.000
+We would actually like to check something a little more complex.
+
+00:43:34.000 --> 00:43:40.000
+If we were doing this you know outside of a classroom situation.
+
+00:43:40.000 --> 00:43:43.000
+The third algorithm we're going to look at.
+
+00:43:43.000 --> 00:43:48.000
+Is finding a approximation for pi.
+
+00:43:48.000 --> 00:43:51.000
+So pi is an irrational number.
+
+00:43:51.000 --> 00:43:55.000
+That means there is no rational number.
+
+00:43:55.000 --> 00:43:57.000
+Irrational means a ratio.
+
+00:43:57.000 --> 00:44:01.000
+So there is no fraction that represents pi.
+
+00:44:01.000 --> 00:44:07.000
+And so about 1650 BC.
+
+00:44:07.000 --> 00:44:16.000
+So in 16 BC, 17 BC, 18 BC in Egypt they used 19 over 6.
+
+00:44:16.000 --> 00:44:19.000
+That's the Ames papyrus.
+
+00:44:19.000 --> 00:44:25.000
+In Babylon they used 25 over 8 as the number for pi.
+
+00:44:25.000 --> 00:44:31.000
+Archimedes in 150 BC recognized that pi was irrational.
+
+00:44:31.000 --> 00:44:33.000
+And it was between two fractions.
+
+00:44:33.000 --> 00:44:41.000
+Between 223 over 71 and 220 over 70.
+
+00:44:41.000 --> 00:44:46.000
+In the first century Ptolemy thought he got a little bit closer.
+
+00:44:46.000 --> 00:44:50.000
+He used 377 over 120.
+
+00:44:50.000 --> 00:45:00.000
+Ptolemy is famous of course you remember for the person who thought that the sun went around the earth.
+
+00:45:00.000 --> 00:45:03.000
+And finally in the 5th century in China.
+
+00:45:03.000 --> 00:45:06.000
+This emperor whose name I'm not even going to try and pronounce.
+
+00:45:06.000 --> 00:45:09.000
+I'm going to call him Su.
+
+00:45:09.000 --> 00:45:13.000
+Came up with the number 355 over 113.
+
+00:45:13.000 --> 00:45:18.000
+And that was the approximation we want to try and beat.
+
+00:45:18.000 --> 00:45:23.000
+So our goal is to find a better approximation than Su.
+
+00:45:23.000 --> 00:45:27.000
+And so like the Newton's algorithm.
+
+00:45:27.000 --> 00:45:29.000
+This is going to be an approximation algorithm.
+
+00:45:29.000 --> 00:45:32.000
+We're going to try something, see if we get a better one.
+
+00:45:32.000 --> 00:45:37.000
+Try it again, see if we get a better one and so forth.
+
+00:45:37.000 --> 00:45:40.000
+So we'll make an initial approximation.
+
+00:45:40.000 --> 00:45:44.000
+While it isn't close enough we'll try and get closer.
+
+00:45:44.000 --> 00:45:47.000
+Now to find out if it's close enough.
+
+00:45:47.000 --> 00:45:54.000
+We have to have some way of checking what the actual value of pi is.
+
+00:45:54.000 --> 00:45:58.000
+So this is called a test oracle.
+
+00:45:58.000 --> 00:46:02.000
+And so we're going to use what our computer thinks pi is.
+
+00:46:02.000 --> 00:46:11.000
+By using the libraries arc cosine of -1 as our test oracle for pi.
+
+00:46:11.000 --> 00:46:20.000
+Then we'll use the absolute value of Su - pi as our epsilon value.
+
+00:46:20.000 --> 00:46:26.000
+So let's go ahead and see if we can figure out that last one here.
+
+00:46:26.000 --> 00:46:29.000
+Okay, now notice we're not going to return anything.
+
+00:46:29.000 --> 00:46:35.000
+All we're going to do is change the values of n and d.
+
+00:46:35.000 --> 00:46:37.000
+So let's create some constants.
+
+00:46:37.000 --> 00:46:53.000
+So const double k Su equals 355.0 divided by.
+
+00:46:53.000 --> 00:46:58.000
+And I forgot from my slide what it was.
+
+00:46:58.000 --> 00:47:06.000
+355 by 113.
+
+00:47:06.000 --> 00:47:20.000
+Okay, and so our k pi, const double k pi is going to equal a cosine -1.
+
+00:47:20.000 --> 00:47:27.000
+So this will be our oracle.
+
+00:47:27.000 --> 00:47:51.000
+For our epsilon, const double k epsilon, we'll use the absolute value of k Su - k pi.
+
+00:47:51.000 --> 00:47:55.000
+And we're going to use a while loop.
+
+00:47:55.000 --> 00:47:58.000
+So we're going to guess what our approximation is.
+
+00:47:58.000 --> 00:48:09.000
+So that's going to be double approx equals n divided by d.
+
+00:48:09.000 --> 00:48:11.000
+Now we have a problem.
+
+00:48:11.000 --> 00:48:14.000
+n is an unsigned number, d is an unsigned number.
+
+00:48:14.000 --> 00:48:17.000
+This is undoubtedly going to be wrong.
+
+00:48:17.000 --> 00:48:20.000
+So we need to convert these to doubles.
+
+00:48:20.000 --> 00:48:27.000
+So I need to say static cast double n.
+
+00:48:27.000 --> 00:48:29.000
+Now you don't need to convert it.
+
+00:48:29.000 --> 00:48:34.000
+It will implicitly convert d to a double if one of the arguments in here is a double.
+
+00:48:34.000 --> 00:48:39.000
+Now notice you could not do this.
+
+00:48:39.000 --> 00:48:42.000
+You need to do one of the arguments.
+
+00:48:42.000 --> 00:48:50.000
+So that wouldn't help you at all, right?
+
+00:48:50.000 --> 00:48:54.000
+Because you've already divided n divided by d before you cast it to a double.
+
+00:48:54.000 --> 00:48:56.000
+So you need to do it like this.
+
+00:48:56.000 --> 00:49:02.000
+You need to cast one of the arguments.
+
+00:49:02.000 --> 00:49:05.000
+And some people are trying to add a multiplication in there.
+
+00:49:05.000 --> 00:49:11.000
+So 1.0 times n divided by d would work just as well.
+
+00:49:11.000 --> 00:49:14.000
+It would cast that value to a double.
+
+00:49:14.000 --> 00:49:16.000
+It would promote it.
+
+00:49:16.000 --> 00:49:18.000
+So that's our approximation.
+
+00:49:18.000 --> 00:49:22.000
+So make an additional approximation.
+
+00:49:22.000 --> 00:49:50.000
+So while the difference between our approximation minus k pi is greater or equal to k epsilon,
+
+00:49:50.000 --> 00:49:51.000
+we want to get closer.
+
+00:49:51.000 --> 00:49:53.000
+We want to get it less than epsilon.
+
+00:49:53.000 --> 00:49:56.000
+Less than epsilon.
+
+00:49:56.000 --> 00:50:04.000
+So to get it less than, we're going to find out if our approximation is greater than pi or less than pi.
+
+00:50:04.000 --> 00:50:14.000
+So if approximation is greater than k pi, then what we want to do is make the number smaller.
+
+00:50:14.000 --> 00:50:18.000
+And we make the number smaller by adding to the denominator.
+
+00:50:18.000 --> 00:50:22.000
+So if that is the case, we're going to say d plus plus.
+
+00:50:22.000 --> 00:50:28.000
+We're going to add one to the denominator.
+
+00:50:28.000 --> 00:50:39.000
+And if it's not greater than pi, we're going to add one to the numerator, n plus plus.
+
+00:50:39.000 --> 00:50:42.000
+I'm missing my semicolons there.
+
+00:50:42.000 --> 00:50:46.000
+Put it in there, then took it out.
+
+00:50:46.000 --> 00:50:52.000
+So that's how we're going to move it, get closer to getting closer to this.
+
+00:50:52.000 --> 00:50:57.000
+So now we need to calculate the approximation again.
+
+00:50:57.000 --> 00:51:02.000
+Now that we've changed the difference of values in n and d.
+
+00:51:02.000 --> 00:51:10.000
+So we'll say approximation equals static cast double n over d.
+
+00:51:10.000 --> 00:51:16.000
+And now we'll keep going through there until this is true.
+
+00:51:16.000 --> 00:51:18.000
+Or until that is false.
+
+00:51:18.000 --> 00:51:20.000
+Until that is false.
+
+00:51:20.000 --> 00:51:28.000
+Until absaprox minus k pi is less than k epsilon.
+
+00:51:28.000 --> 00:51:38.000
+So let's try our third test here.
+
+00:51:38.000 --> 00:51:56.000
+Okay, and our last time checking pi approximate shows that the fraction should be the next closer one to pi than 355 over 113 is 52,162 over 16,604.
+
+00:51:56.000 --> 00:51:59.000
+So here's the pi value.
+
+00:51:59.000 --> 00:52:03.000
+Here's what 355 over 113 gives me.
+
+00:52:03.000 --> 00:52:07.000
+And this is our new value that's a little closer.
+
+00:52:07.000 --> 00:52:12.000
+Notice that pi is actually, we're a little less than pi.
+
+00:52:12.000 --> 00:52:15.000
+This was a little greater than pi.
+
+00:52:15.000 --> 00:52:20.000
+But we're still closer to pi than that one was.
+
+00:52:20.000 --> 00:52:23.000
+That one was.
+
+00:52:23.000 --> 00:52:25.000
+Okay, so that's all the tests.
+
+00:52:25.000 --> 00:52:30.000
+The last thing we want to do is we want to look at documenting our code.
+
+00:52:30.000 --> 00:52:39.000
+So we're going to use javadoc style function comments similar to what we used with java.
+
+00:52:39.000 --> 00:52:45.000
+Now the tool we're going to use is not javadoc, it's this program called doxygen.
+
+00:52:45.000 --> 00:52:48.000
+You place these in your header file.
+
+00:52:48.000 --> 00:52:54.000
+And you will always have in every header file a file comment with @file.
+
+00:52:54.000 --> 00:52:56.000
+And you'll have a namespace comment.
+
+00:52:56.000 --> 00:53:00.000
+So let me show you what those look like.
+
+00:53:00.000 --> 00:53:02.000
+So let me minimize that.
+
+00:53:02.000 --> 00:53:04.000
+Let me go to algo.h.
+
+00:53:04.000 --> 00:53:07.000
+So I've already put the file comment here.
+
+00:53:07.000 --> 00:53:09.000
+I've put the @author.
+
+00:53:09.000 --> 00:53:12.000
+And I've put the @version here already.
+
+00:53:12.000 --> 00:53:14.000
+And we already filled that in.
+
+00:53:14.000 --> 00:53:20.000
+Now in front of the namespace we're going to do slash, star, star.
+
+00:53:20.000 --> 00:53:25.000
+And I'm simply going to describe in one sentence what this is.
+
+00:53:25.000 --> 00:53:34.000
+The ancient algorithms library.
+
+00:53:34.000 --> 00:53:37.000
+So that's documenting my namespace.
+
+00:53:37.000 --> 00:53:42.000
+Notice I have to use backspace so that I can do slash, star.
+
+00:53:42.000 --> 00:53:48.000
+If you don't do backspace, notice that this isn't highlighted again.
+
+00:53:48.000 --> 00:53:50.000
+It's not highlighted correctly.
+
+00:53:50.000 --> 00:53:55.000
+So I need to do backspace there to get the slash, star.
+
+00:53:55.000 --> 00:53:58.000
+So this is the file comment.
+
+00:53:58.000 --> 00:54:01.000
+This is the namespace comment.
+
+00:54:01.000 --> 00:54:04.000
+Then in front of each function we're going to add a function comment.
+
+00:54:04.000 --> 00:54:13.000
+So again, slash, star, star, and ending with star, slash.
+
+00:54:13.000 --> 00:54:19.000
+Slash, star, star, ending with star, slash.
+
+00:54:19.000 --> 00:54:22.000
+Slash, star, star, ending with star, slash.
+
+00:54:22.000 --> 00:54:25.000
+So that's the basic structure.
+
+00:54:25.000 --> 00:54:30.000
+It will always start with a single line that describes what it does and ends in a period.
+
+00:54:30.000 --> 00:54:45.000
+So calculates the greatest common divisor, period.
+
+00:54:45.000 --> 00:54:59.000
+This one is going to calculate the square root using Newton's method.
+
+00:54:59.000 --> 00:55:17.000
+And this one is going to calculate a better approximation for pi than 355 over 113.
+
+00:55:17.000 --> 00:55:21.000
+Again, ending with a period.
+
+00:55:21.000 --> 00:55:24.000
+Now for each parameter, you will create a param tag.
+
+00:55:24.000 --> 00:55:26.000
+And the param tag looks like this.
+
+00:55:26.000 --> 00:55:38.000
+It's @param, then the name of the parameter, a, and then description, the first number.
+
+00:55:38.000 --> 00:55:45.000
+@param b, the second number.
+
+00:55:45.000 --> 00:55:58.000
+So we'll do the same thing for this. @param n, the number, the process.
+
+00:55:58.000 --> 00:56:15.000
+And for this one, we have @param n, the initial numerator.
+
+00:56:15.000 --> 00:56:33.000
+I always spell numerator as a numberator. @param d, the initial denominator.
+
+00:56:33.000 --> 00:56:41.000
+Then, so we've got the, we've got the file comment, we've got the param tag,
+
+00:56:41.000 --> 00:56:49.000
+we're going to add a return tag describing what's returned.
+
+00:56:49.000 --> 00:57:06.000
+So this function does @return.
+
+00:57:06.000 --> 00:57:18.000
+I'm the greatest common advisor of a and b.
+
+00:57:18.000 --> 00:57:31.000
+And this returns @return the square root of n.
+
+00:57:31.000 --> 00:57:39.000
+And this one doesn't return anything, it's a void function, so we don't have to say anything about that.
+
+00:57:39.000 --> 00:57:45.000
+Finally, we can add code segments.
+
+00:57:45.000 --> 00:57:50.000
+So those will be syntax highlighted in the generated documentation.
+
+00:57:50.000 --> 00:57:54.000
+So this starts with @code and ends with @encode.
+
+00:57:54.000 --> 00:57:59.000
+Make sure you put the @encode in or your comments will not be processed.
+
+00:57:59.000 --> 00:58:21.000
+So we'll say example@code.cpp @encode.
+
+00:58:21.000 --> 00:58:47.000
+And we'll say double root equals a square root of 3.5.
+
+00:58:47.000 --> 00:58:54.000
+And for the GCD, let's add an example there.
+
+00:58:54.000 --> 00:59:06.000
+Example@code.cpp and @encode.
+
+00:59:06.000 --> 00:59:26.000
+And let's say, let's look at some of our tests so we can, in our test, 12 to 90.
+
+00:59:26.000 --> 00:59:40.000
+[ Typing Sounds ]
+
+00:59:40.000 --> 00:59:45.000
+Okay, so give them an example of what's happening.
+
+00:59:45.000 --> 01:00:12.000
+And for the last one, calling it code@cpp @encode.
+
+01:00:12.000 --> 01:00:33.000
+Let's do unsigned, n equals zero, d equals zero.
+
+01:00:33.000 --> 01:00:47.000
+And this is pi, n and d.
+
+01:00:47.000 --> 01:00:52.000
+And what did it equal?
+
+01:00:52.000 --> 01:01:01.000
+52, 163.
+
+01:01:01.000 --> 01:01:08.000
+N is 52, 163.
+
+01:01:08.000 --> 01:01:21.000
+And d is 16, 604.
+
+01:01:21.000 --> 01:01:26.000
+Okay, so there is our comments.
+
+01:01:26.000 --> 01:01:38.000
+You can take a picture of the comments for the, as one of the things you're going to do for your, for your in-class exercise.
+
+01:01:38.000 --> 01:01:46.000
+There's a place where they want you to shoot a picture of the comments.
+
+01:01:46.000 --> 01:01:53.000
+Okay, the last picture we want to take is we want to turn this into HTML documentation.
+
+01:01:53.000 --> 01:01:57.000
+And for that, we're going to use a tool called Doxygen.
+
+01:01:57.000 --> 01:02:02.000
+Now, we do not yet have that on this platform.
+
+01:02:02.000 --> 01:02:05.000
+It was on the previous one we used.
+
+01:02:05.000 --> 01:02:09.000
+But what we're going to do, no worries, we're just going to install it.
+
+01:02:09.000 --> 01:02:33.000
+So to install it, go to your shell and type in sudo, that means do something as the super user, apt-get install doxygen.
+
+01:02:33.000 --> 01:02:43.000
+And that will read the package lists and if it's already installed, which I've already did it earlier, it will say, you know, it's already here.
+
+01:02:43.000 --> 01:02:50.000
+If it's not installed, it will say, do you want to install this? It will use so many megabytes.
+
+01:02:50.000 --> 01:02:53.000
+Click yes and install it.
+
+01:02:53.000 --> 01:02:59.000
+Once you've installed it, you're going to create a file called the doxy file.
+
+01:02:59.000 --> 01:03:06.000
+Notice I'm in my algol lib file and again you only have to do this once.
+
+01:03:06.000 --> 01:03:15.000
+So I'm going to say doxygen -g and that will generate this file called a doxy file.
+
+01:03:15.000 --> 01:03:27.000
+Then open up the doxy file and go through it, the instructions here, and change each of these lines and save it.
+
+01:03:27.000 --> 01:03:35.000
+Finally, once you've done that, so assuming you've got doxygen, you've opened your doxy file, you've saved your doxy file,
+
+01:03:35.000 --> 01:03:48.000
+to generate your documentation, you're going to say doxygen doxy file, just like that.
+
+01:03:48.000 --> 01:03:58.000
+That is going to look on the left hand side in my algolib folder, you'll see that it created a new folder called html here.
+
+01:03:58.000 --> 01:04:03.000
+In the html folder, there's a folder called search.
+
+01:04:03.000 --> 01:04:14.000
+In the search folder, there's a folder called index.html.
+
+01:04:14.000 --> 01:04:19.000
+Here's index.html in the html folder.
+
+01:04:19.000 --> 01:04:29.000
+So I'm going to close the search folder and find index.html here.
+
+01:04:29.000 --> 01:04:35.000
+What I want to do is I want to preview this.
+
+01:04:35.000 --> 01:04:41.000
+So to preview it, what I'm going to do is I'm going to right click and open that search folder.
+
+01:04:41.000 --> 01:04:52.000
+Actually I didn't want search, let me close that bash shell.
+
+01:04:52.000 --> 01:04:54.000
+And let me close that bash shell.
+
+01:04:54.000 --> 01:04:59.000
+And it will open up a new terminal on the html, open an integrated terminal.
+
+01:04:59.000 --> 01:05:06.000
+So now I'm on the html folder, and what I want to do is I want to look at this folder.
+
+01:05:06.000 --> 01:05:12.000
+And to do that, because I'm already on the internet, I have to run another web server.
+
+01:05:12.000 --> 01:05:17.000
+So I'm going to run the program called http-server.
+
+01:05:17.000 --> 01:05:20.000
+This was installed with our IDE here.
+
+01:05:20.000 --> 01:05:23.000
+And notice that's starting a little web server.
+
+01:05:23.000 --> 01:05:31.000
+And if I control click on this link, it will open that up in my browser.
+
+01:05:31.000 --> 01:05:35.000
+And I can click on index.html.
+
+01:05:35.000 --> 01:05:40.000
+Now of course, normally what you do with this documentation is you put it out on the web.
+
+01:05:40.000 --> 01:05:45.000
+So this is the documentation for our ancient algorithms library.
+
+01:05:45.000 --> 01:05:47.000
+We're going to click on the namespace.
+
+01:05:47.000 --> 01:05:51.000
+And here is our AA, the ancient algorithms library.
+
+01:05:51.000 --> 01:05:54.000
+You remember when we put this in our comments.
+
+01:05:54.000 --> 01:05:56.000
+I'm going to click on that.
+
+01:05:56.000 --> 01:05:59.000
+And notice that's telling me the functions inside that.
+
+01:05:59.000 --> 01:06:04.000
+So notice it's got three functions, gcd, square root, and pi.
+
+01:06:04.000 --> 01:06:15.000
+This is the output that I produced for this.
+
+01:06:15.000 --> 01:06:20.000
+And so notice the examples and everything that people can read.
+
+01:06:20.000 --> 01:06:28.000
+So this is how you generate documentation for your users to use.
+
+01:06:28.000 --> 01:06:31.000
+Okay, so that's it with this lecture.
+
+01:06:31.000 --> 01:06:34.000
+I'll see you when we come back for the next one.
+

@@ -1,0 +1,159 @@
+WEBVTT
+
+0
+00:04.920 --> 00:10.950
+This video will go over the steps necessary to download and install the CodeLite integrated development
+
+1
+00:10.950 --> 00:14.870
+environment for C++ on the Windows platform.
+
+2
+00:15.270 --> 00:20.520
+CodeLite is a free, open source, cross-platform integrated development environment that works across
+
+3
+00:20.520 --> 00:22.770
+Windows, Mac, and Linux.
+
+4
+00:22.830 --> 00:27.330
+And this is the IDE that I'm going to use in this class.
+In order to download it,
+
+5
+00:27.330 --> 00:33.310
+open up your favorite browser and go to codelite, C O D E L I T E dot org.
+
+6
+00:33.690 --> 00:38.400
+You'll get a page that looks similar to this and what you want to do is find a download link. 
+
+7
+00:38.400 --> 00:42.540
+You can find it up here on the menu bar or you can find it right here as well, on the big blue button.
+
+8
+00:42.660 --> 00:48.150
+So I'll select that and it takes you to a page where you can make a donation to the developers if you wish.
+
+9
+00:48.150 --> 00:52.310
+If not, just take me straight to the downloads and I'll sect that.
+
+10
+00:53.400 --> 00:58.350
+And you've got a couple of options here for Windows.
+if you want to download the weekly builds you can
+
+11
+00:58.350 --> 01:02.900
+download that for the 64 bit Windows machines right here at the top.
+
+12
+01:03.060 --> 01:07.620
+And currently it's CodeLite 10.0.7.  That's the one I've been using and it's very
+
+13
+01:07.620 --> 01:08.790
+very stable.
+
+14
+01:08.790 --> 01:14.850
+You can also download the stable release 10.0 for Windows 64 or 32 bit.
+
+15
+01:14.850 --> 01:19.770
+Now if you're not sure whether you have a 64 bit machine or a 32 bit machine. Go over to your Control
+
+16
+01:19.770 --> 01:28.950
+Panel and select System and Security and then System. And in the System information right here you'll see
+
+17
+01:28.950 --> 01:35.160
+System type and it will say 64 bit operating system or 32 bit operating system depending what you've
+
+18
+01:35.160 --> 01:35.940
+got.
+
+19
+01:36.390 --> 01:41.880
+So I'll close this down. In my case I have a 64 bit system so I'm going to use the stable release
+
+20
+01:42.090 --> 01:49.880
+for Windows 64 bit and I can just click the direct link and that'll start the download. The download
+
+21
+01:49.890 --> 01:51.080
+can take some time.
+
+22
+01:51.090 --> 01:52.010
+It's not a big file.
+
+23
+01:52.020 --> 01:56.250
+But the connection tends to be slow to the site, so I'll pause the video while that occurs.
+
+24
+01:56.400 --> 01:57.990
+So the download is now complete.
+
+25
+01:57.990 --> 02:03.990
+What I'm going to do is open it up in the folder and it's basically a compressed file which I'm going
+
+26
+02:03.990 --> 02:07.240
+to extract right to here and then I'm going to run the installer.
+
+27
+02:07.260 --> 02:13.120
+But before I do that I'm going to close the browser. Let's run that installer.
+
+28
+02:13.740 --> 02:19.950
+I'm going to allow the app to make changes to my device and I'm going to close this folder just to clear
+
+29
+02:19.950 --> 02:20.880
+up some of the clutter.
+
+30
+02:21.030 --> 02:24.160
+Now what you want to do here is just basically follow the setup wizard.
+
+31
+02:24.300 --> 02:32.640
+So, I'm going to select Next. I'm going to accept the GNU license agreement and press Next.  I'm going
+
+32
+02:32.640 --> 02:41.830
+to install this to the default location C:\ Program Files\CodeLite and press Next and press Next again.
+
+33
+02:42.090 --> 02:47.200
+And I want to create a desktop icon just to make it easier for myself and I'll press Next one more time.
+
+34
+02:47.310 --> 02:52.770
+And then finally we can install the installation. It's really quick.
+
+35
+02:55.050 --> 02:57.990
+And once it's done it's going to ask you if you want to launch CodeLite.
+
+36
+02:58.020 --> 03:00.090
+I'm not going to launch it yet.
+
+37
+03:00.270 --> 03:05.280
+I'm just going to finish the installation and in the next video will go over the launching and the configuration
+
+38
+03:05.280 --> 03:05.820
+of CodeLite.

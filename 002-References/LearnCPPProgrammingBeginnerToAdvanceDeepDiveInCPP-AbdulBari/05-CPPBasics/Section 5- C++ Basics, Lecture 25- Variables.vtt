@@ -1,0 +1,565 @@
+WEBVTT
+
+0
+00:00.610 --> 00:04.030
+in this video let us learn about variables.
+
+1
+00:04.030 --> 00:07.400
+Variables are the names given to data.
+
+2
+00:07.450 --> 00:13.230
+Variables have data type variable is a place where we will store the data in over  program.
+
+3
+00:13.630 --> 00:18.010
+See if we have data that we can process upon the data way to keep the data.
+
+4
+00:18.130 --> 00:24.380
+So we take variables and stored it. in mathematics also we have the concept of variables like if you
+
+5
+00:24.380 --> 00:28.650
+write any function let us say F(X) .
+
+6
+00:28.690 --> 00:32.040
+Suppose 3x^2+4x
+
+7
+00:32.050 --> 00:34.320
+So what is this x, x is a variable.
+
+8
+00:34.630 --> 00:39.790
+So whatever the value of variable is we substitute here and get the answer for the same concept.
+
+9
+00:39.970 --> 00:45.580
+X can have some value so that concept right is taken in programming also.
+
+10
+00:45.670 --> 00:49.260
+So we have variables so variable should have data type means.
+
+11
+00:49.270 --> 00:50.460
+What type of values.
+
+12
+00:50.910 --> 00:51.110
+So.
+
+13
+00:51.180 --> 00:53.480
+So let us see how they use variables.
+
+14
+00:53.650 --> 01:02.190
+So here suppose I want to store a roll number of a student so roll numbers is of which type? integer
+
+15
+01:02.200 --> 01:03.110
+type.
+
+16
+01:03.210 --> 01:07.240
+It will not have a decimal point roll no. is 2.5
+
+17
+01:07.240 --> 01:13.870
+No it will be integer type and that roll no. will not be negative so we will not be storing
+
+18
+01:13.870 --> 01:14.400
+negative.
+
+19
+01:14.630 --> 01:19.480
+but roll no. will not be in thousand also just roll no. 1 and 2 
+
+20
+01:19.480 --> 01:22.950
+this one digit two digit three digit number at most.
+
+21
+01:22.970 --> 01:29.220
+So we will take integer type so I take a variable of type Integer.
+
+22
+01:29.380 --> 01:32.140
+So this is a method of of declaring a variable.
+
+23
+01:32.200 --> 01:38.170
+This is a variable name and this is the data type so you have to declare the variable before using it
+
+24
+01:38.170 --> 01:38.950
+in the program.
+
+25
+01:39.520 --> 01:42.310
+So every variable must be declared and then only to see you.
+
+26
+01:42.970 --> 01:49.960
+So now this means that this rule number is a variable which is of type Integer and at run time the roll
+
+27
+01:49.960 --> 01:52.660
+number will consume two bytes of memory.
+
+28
+01:52.660 --> 01:55.720
+Rule number will consume two bites of memory.
+
+29
+01:55.720 --> 01:58.090
+This will take 2 byte, i showing it as a single box.
+
+30
+01:58.120 --> 02:04.330
+But there are two bytes in this one because integer takes two bytes if you say no four bytes so it will
+
+31
+02:04.340 --> 02:10.540
+take four bytes of memory and we know very well that every byte in the memory will have its address.
+
+32
+02:10.570 --> 02:14.540
+So let us assume the adress is 200 so the next byte is
+
+33
+02:14.540 --> 02:16.000
+Two hundred and one.
+
+34
+02:16.000 --> 02:17.800
+So these are two bytes actually.
+
+35
+02:17.800 --> 02:19.300
+Two hundred and two not one.
+
+36
+02:19.630 --> 02:25.510
+So these are two ways in which any number you stored in this it will be stored in the memory at runtime
+
+37
+02:25.510 --> 02:26.450
+of a program.
+
+38
+02:26.450 --> 02:29.260
+Next I want to store something in that variable.
+
+39
+02:29.350 --> 02:32.650
+OK you can stored it some level I want to store room number 10.
+
+40
+02:32.650 --> 02:39.760
+Then you can say roll number assign ten now the value will be stored before back what was there in
+
+41
+02:39.760 --> 02:46.300
+this one before assigning 10 so we say there was some garbage value so now it will be storing 10 
+
+42
+02:46.320 --> 02:47.710
+garbage means  unknown value.
+
+43
+02:47.710 --> 02:48.930
+We have not stored it.
+
+44
+02:49.030 --> 02:49.990
+It is already there.
+
+45
+02:50.020 --> 02:51.610
+So for us it's a garbage.
+
+46
+02:51.700 --> 02:55.360
+Yes we say it's a garbage value that doesn't belong to us.
+
+47
+02:55.360 --> 02:58.060
+So we say garbage now we will be storing it.
+
+48
+02:58.060 --> 03:00.190
+So this number ten will be stored.
+
+49
+03:00.400 --> 03:04.090
+Now we say that variable is initialized.
+
+50
+03:04.090 --> 03:06.100
+So let us look at the statements.
+
+51
+03:06.100 --> 03:08.440
+This is declaration of a variable.
+
+52
+03:08.470 --> 03:10.900
+This is initialization of a variable.
+
+53
+03:10.900 --> 03:16.880
+And when you declare the variable and run the program at running time it will occupy memory and the value
+
+54
+03:16.880 --> 03:18.900
+will be stored data will be stored in this.
+
+55
+03:19.090 --> 03:23.280
+So this how variable is stored and initialized now let us learn one more thing.
+
+56
+03:23.380 --> 03:26.500
+Is it possible that i want to initialize at that time only.
+
+57
+03:26.500 --> 03:29.230
+Yes you can assign 10 here also.
+
+58
+03:29.560 --> 03:35.950
+So this will be declared as well as initialize for variable is declared as well as initialized it has 
+
+59
+03:35.950 --> 03:39.550
+value then it will not have a chance of getting garbage value.
+
+60
+03:40.690 --> 03:50.140
+Now little more. suppose,I want to have a variable to store a section or a group Group A group B group
+
+61
+03:50.140 --> 03:51.140
+C like this group are there.
+
+62
+03:51.150 --> 03:55.210
+so I want to store group name group names a or b something.
+
+63
+03:55.210 --> 03:57.920
+So which type of variable i should take.character type
+
+64
+03:58.270 --> 04:01.660
+Okay declared a variable character type, char.
+
+65
+04:01.960 --> 04:06.050
+Group and I want to initialize it.
+
+66
+04:06.050 --> 04:06.280
+Okay.
+
+67
+04:06.290 --> 04:08.090
+You can initialize A.
+
+68
+04:09.230 --> 04:10.790
+Now one thing we learn here.
+
+69
+04:10.970 --> 04:12.930
+This you cannot write it simply like this.
+
+70
+04:12.950 --> 04:15.160
+You have to give it in quotes.
+
+71
+04:15.170 --> 04:19.800
+So every character type variable should be enclosed in single courts.
+
+72
+04:19.800 --> 04:21.620
+It should have been single courts.
+
+73
+04:21.890 --> 04:25.340
+So this is the declaration and initialization.
+
+74
+04:25.380 --> 04:33.620
+No I want to store the price of some items some product prizes twelve dollars 75 cents.
+
+75
+04:33.620 --> 04:40.260
+Suppose then which data type I should take I should take float type is the number of any large.
+
+76
+04:40.260 --> 04:40.850
+No no.
+
+77
+04:40.890 --> 04:41.960
+Not somewhat large.
+
+78
+04:41.990 --> 04:44.780
+So you don't need double that float is sufficient.
+
+79
+04:44.810 --> 04:52.430
+So let us see how to declare a float and initializing so float data type and its price and they i want
+
+80
+04:52.430 --> 04:59.710
+to store twelve point seven five dollar and better write f here after float.
+
+81
+04:59.720 --> 05:05.240
+No. you should write f here to show that it is float though it is not compulsory but it is better if you
+
+82
+05:05.240 --> 05:12.160
+write f otherwise if you don't write f it will assume or double by default.
+
+83
+05:12.170 --> 05:18.360
+If you write any number then it will be taken as the double right, float no. decimal if you write.
+
+84
+05:18.530 --> 05:23.040
+So if you want to write float then better write f even if you don't write F.
+
+85
+05:23.060 --> 05:24.560
+It's not the issue here.
+
+86
+05:24.590 --> 05:27.540
+It will understand that okay you are declaring float so take it.
+
+87
+05:28.000 --> 05:31.240
+Otherwise at other places you have to write f.
+
+88
+05:31.340 --> 05:37.190
+So these are the important things integer type variable and initialization character type initialization
+
+89
+05:37.280 --> 05:38.680
+float type initialization.
+
+90
+05:39.170 --> 05:42.190
+So this all you can declare the variable time in each place.
+
+91
+05:42.400 --> 05:44.010
+No few rules.
+
+92
+05:44.270 --> 05:48.460
+How to take the variable name. i will write down valid and invalid names.
+
+93
+05:48.500 --> 05:51.830
+So I'll just write them and I'll tell you why they are valid and invalid.
+
+94
+05:51.980 --> 05:53.630
+So what are the things that you should take.
+
+95
+05:53.780 --> 05:58.460
+Let us see you can declare a variable like x 1.
+
+96
+05:58.490 --> 06:04.760
+This is valid but you cannot take a variable 1 x means no. in the beginning is not allowed.
+
+97
+06:04.760 --> 06:08.610
+This is invalid and you can take a variable name as a roll no.
+
+98
+06:08.940 --> 06:12.490
+But you cannot take a variable name as a roll *space* number
+
+99
+06:12.490 --> 06:14.660
+No this is not allowed.
+
+100
+06:14.660 --> 06:15.280
+This is allowed.
+
+101
+06:15.290 --> 06:16.280
+This is not allowed.
+
+102
+06:16.280 --> 06:18.840
+This should not be any space in between variable name.
+
+103
+06:18.950 --> 06:26.810
+If you want to read them as two words then you can use underscored in them but this is allowed and it's
+
+104
+06:26.840 --> 06:27.710
+better sometimes.
+
+105
+06:27.770 --> 06:29.300
+This is followed in Java.
+
+106
+06:29.330 --> 06:34.910
+We can use rollno. as roll in small and No. this is second word starting with capital letter
+
+107
+06:34.990 --> 06:38.810
+And does the second word starting with capital letter.
+
+108
+06:38.990 --> 06:42.790
+orelse you can even write like this a RollNo.
+
+109
+06:43.340 --> 06:44.870
+Thisnotation you can follow.
+
+110
+06:44.900 --> 06:47.510
+This is common notation followed in Java.
+
+111
+06:47.540 --> 06:49.340
+Now Java is also a common language.
+
+112
+06:49.340 --> 06:51.890
+Some people know already Java so you can use that one.
+
+113
+06:51.890 --> 06:54.770
+There is no distinction here so you cannot write any variable name.
+
+114
+06:55.190 --> 06:59.290
+So this will be better easy for understanding and even you can follow this.
+
+115
+06:59.330 --> 07:02.190
+Most of the C++ programmer follow this one though.
+
+116
+07:02.210 --> 07:05.050
+They use every word trust letter as capital.
+
+117
+07:05.870 --> 07:08.800
+Then one last thing when you are giving variable name.
+
+118
+07:08.810 --> 07:12.210
+Don't give the names like x1 x2 ABC.
+
+119
+07:12.320 --> 07:19.330
+Use some meaningful name so that the name shows what type of value it is containing like price group.
+
+120
+07:19.480 --> 07:20.340
+Roll number.
+
+121
+07:20.540 --> 07:21.420
+These are readable.
+
+122
+07:21.560 --> 07:24.460
+So it will be easy for you only for writing the program.
+
+123
+07:24.770 --> 07:30.560
+So that's all how to declare the variables and how to use them I have shown you now we will be learning
+
+124
+07:30.560 --> 07:35.930
+how to write on the program so we will use these variables and we learn about the operators and then
+
+125
+07:35.930 --> 07:37.730
+we are in a position to write on the program.
+
+126
+07:37.910 --> 07:39.120
+So don't be in a hurry.
+
+127
+07:39.140 --> 07:45.080
+Watch all the videos peacefully one by one suddenly you will not understand or learn programming
+
+128
+07:45.080 --> 07:51.290
+in one day are suddenly you cannot jump on typing the program and running the program so equal and follow
+
+129
+07:51.290 --> 07:52.650
+the lectures one by one.
+
+130
+07:52.920 --> 07:58.350
+This will build up your knowledge about the programming then you are in a position for writing the programs.
+
+131
+07:58.550 --> 08:00.730
+So watch every video carefully.
+
+132
+08:00.740 --> 08:02.330
+Don't miss any videos.
+
+133
+08:02.330 --> 08:08.060
+So this all about the variables under declaration now more about the variables each and everything in
+
+134
+08:08.060 --> 08:10.100
+detail bring in minor details.
+
+135
+08:10.100 --> 08:12.430
+You'll find a section that is called as miscellaneous.
+
+136
+08:12.440 --> 08:17.800
+You watch that one but if you are a BEGINNERndont watch it now after the end of the course
+
+137
+08:17.810 --> 08:23.320
+you watch it are already you know basics of C programming or C++ programming little bit.
+
+138
+08:23.380 --> 08:24.980
+Then you can watch that miscellaneous.
+
+139
+08:25.450 --> 08:28.180
+So there is a video for database and variables s Watch that.
+
+140
+08:28.390 --> 08:29.760
+So that's all in the video.

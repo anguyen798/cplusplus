@@ -1,0 +1,957 @@
+WEBVTT
+
+0
+00:00.390 --> 00:03.090
+Now the topic is very very important topic.
+
+1
+00:03.090 --> 00:10.050
+This topic is loops which are also called as a repeating statements or interative statements.
+
+2
+00:10.050 --> 00:17.610
+That's the same time this topic plays a very key role in programming and this is a new topic for the
+
+3
+00:17.840 --> 00:19.420
+beginners right.
+
+4
+00:19.470 --> 00:22.910
+Like if you're coming from mathematics, mathematics doesn't have loops.
+
+5
+00:22.950 --> 00:28.620
+So here you have to learn something new in programming and this needs a lot of practice.
+
+6
+00:28.650 --> 00:31.170
+What all the programs you learn here under this topic.
+
+7
+00:31.170 --> 00:35.030
+You must practice all of them and you should solve a set of challenges.
+
+8
+00:35.040 --> 00:40.340
+And coding exercises you must do. if you are confident in this part of programming.
+
+9
+00:40.350 --> 00:42.710
+Then you can solve any problem.
+
+10
+00:42.810 --> 00:45.780
+If you have some knowledge about that problem.
+
+11
+00:46.200 --> 00:49.610
+Now let us see what other loops available in C++.
+
+12
+00:49.830 --> 00:56.780
+C++ is having three type of loops, while loop do while loop, for loop and for each loop.
+
+13
+00:56.930 --> 01:01.560
+now in this video I'll be giving you introduction to the loops and also I will be explaining these
+
+14
+01:01.560 --> 01:07.830
+first two then next video we  will see for loop and for each loop we will see  at some other time. now what are
+
+15
+01:07.820 --> 01:08.730
+these loops.
+
+16
+01:08.730 --> 01:11.050
+Let us understand from this flowchart.
+
+17
+01:11.670 --> 01:13.440
+We have already done some flowchart.
+
+18
+01:13.480 --> 01:15.120
+Now let us look at this flow chart.
+
+19
+01:15.120 --> 01:16.000
+How it is working.
+
+20
+01:16.020 --> 01:20.840
+I will trace it and show you, starting point and some input is taking.
+
+21
+01:20.880 --> 01:23.700
+Whatever the problem it is, some input it is taking.
+
+22
+01:23.730 --> 01:27.700
+The processing is done after that condition is checked.
+
+23
+01:27.900 --> 01:34.390
+If the condition is true then again it goes back here and processing is done and the condition is true.
+
+24
+01:34.440 --> 01:36.130
+Again processing is done.
+
+25
+01:36.180 --> 01:37.640
+This will be repeating.
+
+26
+01:37.650 --> 01:41.060
+So this block, this processing part, will be go on
+
+27
+01:41.070 --> 01:47.700
+Repeating as long as that condition is true and once the conditions become false it will come out and
+
+28
+01:47.700 --> 01:52.920
+whatever the output it has to print and then stop, so in any procedure.
+
+29
+01:52.920 --> 01:59.410
+If you have to repeatedly execute some set of statements then you can repeatedly execute them.
+
+30
+01:59.460 --> 02:08.650
+So using loop this is a loop so these statements are used for repeatedly executing set of statements.
+
+31
+02:08.730 --> 02:14.670
+This type of thing we do commonly in our daily life repeatedly we perform some steps like I'll take
+
+32
+02:14.670 --> 02:20.880
+some simple example suppose you have a coffee and you have to add some sugar in that so you'll put some
+
+33
+02:20.880 --> 02:25.530
+sugar teaspoon of sugar and you wil stir it and check it
+
+34
+02:25.530 --> 02:33.290
+It's not sweet yet though I can put some sugar and stir it and check it's not sweet yet then again put it.
+
+35
+02:33.510 --> 02:40.920
+So you will continue as long as it does not sweet, when it is sufficiently sweet then you will stop so
+
+36
+02:40.910 --> 02:44.460
+put the sugar stir it and check it, put the sugar stir it and check it.
+
+37
+02:44.670 --> 02:46.460
+So this is repeating procedure.
+
+38
+02:46.650 --> 02:48.120
+Let us take one more example.
+
+39
+02:48.230 --> 02:50.850
+You are walking towards your home.
+
+40
+02:50.910 --> 02:52.000
+I have not reached home.
+
+41
+02:52.020 --> 02:54.960
+Then take a step walk and then walk and check.
+
+42
+02:55.020 --> 02:55.790
+You have reached home.
+
+43
+02:55.800 --> 02:57.080
+I have not been at home.
+
+44
+02:57.130 --> 02:58.000
+Then take a step.
+
+45
+02:58.020 --> 02:59.110
+I have not reached home.
+
+46
+02:59.130 --> 02:59.940
+Take a step.
+
+47
+02:59.940 --> 03:05.050
+So as long as you have not reached home you will be going on taking steps.
+
+48
+03:05.160 --> 03:11.220
+One more thing we have seen in the number system like converting a decimal number called binary number
+
+49
+03:11.400 --> 03:15.090
+divided by two, divided by two, divided by two.
+
+50
+03:15.090 --> 03:17.050
+How long?  until it becomes zero.
+
+51
+03:17.100 --> 03:22.650
+So is it zero,  not zero continue, not zero, divide, not zero divide, not zero divide, Zero.
+
+52
+03:22.740 --> 03:23.780
+Stop.
+
+53
+03:23.790 --> 03:30.470
+So thats how at many places we use repeatation so in computation also use repeatation.
+
+54
+03:30.470 --> 03:38.040
+The example I give you converting into decimal, decimal  to binary so thats how we solve those problems
+
+55
+03:38.070 --> 03:42.220
+which have repeating steps using these loops.
+
+56
+03:42.240 --> 03:45.150
+Now let us understand how these loops work.
+
+57
+03:45.180 --> 03:50.400
+I will pick up a while and do while, I ill show this  skeleton and also the flow chart.
+
+58
+03:50.430 --> 03:57.730
+Then later we will see a problem or a program on that let us look at the syntax of two loops.
+
+59
+03:57.760 --> 03:59.890
+That is wild and do while.
+
+60
+04:00.580 --> 04:04.110
+So here is the syntax while condition is there.
+
+61
+04:04.630 --> 04:12.390
+And then this is the body of while loop flower brackets are used, inside that process whatever
+
+62
+04:12.400 --> 04:16.890
+you want to do you can write on that inside. then do while, do 
+
+63
+04:16.890 --> 04:19.840
+First then flower bracket then inside the process is there.
+
+64
+04:19.990 --> 04:26.170
+Then while condition is at the end and the condition that must be closed with semicolon it should end with
+
+65
+04:26.170 --> 04:27.090
+Semicolon right.
+
+66
+04:27.100 --> 04:31.110
+There is no need of semicolon here but here semicolon this must.
+
+67
+04:31.180 --> 04:35.020
+So this is first checking the condition then performing process.
+
+68
+04:35.020 --> 04:38.160
+This is first processing and then checking the condition.
+
+69
+04:38.170 --> 04:38.970
+This is different.
+
+70
+04:38.980 --> 04:40.470
+So there's a minor difference.
+
+71
+04:40.540 --> 04:42.100
+It's not a big difference.
+
+72
+04:42.100 --> 04:43.540
+They're almost the same.
+
+73
+04:43.540 --> 04:45.520
+Mostly student get confused here.
+
+74
+04:45.550 --> 04:46.420
+What is the difference.
+
+75
+04:46.420 --> 04:47.480
+Which one do you use.
+
+76
+04:47.560 --> 04:50.940
+So it's not a big deal you can use any one of them.
+
+77
+04:51.010 --> 04:55.440
+Only the difference is this will first process then check the condition.
+
+78
+04:55.480 --> 04:57.980
+It means the difference i.
+
+79
+04:58.210 --> 05:02.510
+If already the condition is false then this will not execute,  here,
+
+80
+05:02.590 --> 05:08.010
+If already the condition is false, suppose first time only the condition is false then first it will execute.
+
+81
+05:08.050 --> 05:09.190
+Then check the condition.
+
+82
+05:09.190 --> 05:12.070
+So it will execute minimum one time.
+
+83
+05:12.190 --> 05:13.720
+That's the difference.
+
+84
+05:13.780 --> 05:15.040
+No where to use them.
+
+85
+05:15.040 --> 05:17.110
+Are there any different places to use.
+
+86
+05:17.110 --> 05:18.440
+There's nothing like that.
+
+87
+05:18.670 --> 05:23.910
+Mostly program use this loop also this loop also, so there's not a big difference.
+
+88
+05:23.990 --> 05:24.470
+Now
+
+89
+05:24.670 --> 05:27.520
+Let us understand diagrametically, here
+
+90
+05:27.580 --> 05:30.340
+This is a flowchart so we're just starting and has 
+
+91
+05:30.340 --> 05:31.210
+Something in the beginning.
+
+92
+05:31.210 --> 05:31.970
+Just leave it.
+
+93
+05:32.140 --> 05:33.750
+Look at it from this point.
+
+94
+05:33.820 --> 05:34.980
+First condition is check.
+
+95
+05:34.990 --> 05:36.730
+If it is true then processes is done.
+
+96
+05:36.760 --> 05:40.430
+Then again it goes back to this point so that again check the condition.
+
+97
+05:40.510 --> 05:42.990
+If it is true then processes is done then repeat.
+
+98
+05:43.060 --> 05:47.180
+So this is how process is repeating if the condition is false then it will continue normally.
+
+99
+05:47.380 --> 05:50.530
+It will come out of this loop and continue normally.
+
+100
+05:50.530 --> 05:52.660
+So first condition is checked and the processes are done.
+
+101
+05:53.110 --> 05:58.220
+So this is a flowchart for while loop. now do while loop.
+
+102
+05:58.250 --> 06:00.110
+Start first process is done.
+
+103
+06:00.110 --> 06:01.090
+Conditions check.
+
+104
+06:01.370 --> 06:06.070
+And if yes then it will again come on the process and repeat the process so first process is done
+
+105
+06:06.070 --> 06:11.830
+done then condition is check out if the condition is false then it will continue outside the loop it will
+
+106
+06:11.830 --> 06:13.940
+continue the rest of the statements.
+
+107
+06:14.020 --> 06:17.380
+So this is the flow chart for do while loop.
+
+108
+06:17.410 --> 06:20.770
+No I will write on a program first using while loop.
+
+109
+06:20.830 --> 06:27.730
+I will write a program for displaying numbers from one to n and can be 10 or 20 whatever it is
+
+110
+06:27.730 --> 06:28.620
+so  if it is  suppose
+
+111
+06:28.660 --> 06:29.850
+n is a 10.
+
+112
+06:29.850 --> 06:32.850
+We will display numbers from 1 2 3 4 5 to 10.
+
+113
+06:33.880 --> 06:37.290
+Let us write the program for this one for displaying n numbers.
+
+114
+06:37.300 --> 06:37.710
+Okay.
+
+115
+06:37.840 --> 06:40.530
+First I will write a program for this using this loop.
+
+116
+06:40.540 --> 06:46.100
+Then again I will convert that program and show you how to write on the same thing using do while loop.
+
+117
+06:46.480 --> 06:49.000
+So let us look at the program.
+
+118
+06:49.000 --> 06:54.810
+Let us write a program for displaying numbers from 1 to n, so for that already I have a flowchart.
+
+119
+06:54.940 --> 06:56.850
+Let us see the working flow chart.
+
+120
+06:56.890 --> 07:01.750
+First of all we should know a number that 10, 20 till where you want to display a number.
+
+121
+07:01.810 --> 07:03.820
+Write from 1 to till what.
+
+122
+07:03.940 --> 07:05.160
+So that is an idea.
+
+123
+07:05.850 --> 07:13.350
+Now suppose if I have to display up to ten let us say n is 10 then I have to display numbers from
+
+124
+07:13.350 --> 07:14.860
+1 2 3 4.
+
+125
+07:14.860 --> 07:19.790
+So on so for that I need something to count, counter
+
+126
+07:20.020 --> 07:20.550
+Right.
+
+127
+07:20.620 --> 07:26.130
+So for that I have I that is i is initially one here I used initially 1.
+
+128
+07:26.980 --> 07:29.000
+So I will start from 1 onwards.
+
+129
+07:29.000 --> 07:29.880
+So 1.
+
+130
+07:29.890 --> 07:33.440
+Then check if i is less than equal to n.
+
+131
+07:33.540 --> 07:34.480
+n is what?  10.
+
+132
+07:34.540 --> 07:35.470
+So now I will not say n.
+
+133
+07:35.510 --> 07:38.440
+i will say 10.  I  less than equal to 10.
+
+134
+07:38.530 --> 07:39.380
+Yes.
+
+135
+07:39.400 --> 07:43.890
+Then do what? print i, I value is what,  1.
+
+136
+07:44.260 --> 07:52.730
+Then I assign with i plus 1 we have seen this in incremental agreement operate at that time I have shown
+
+137
+07:52.730 --> 07:53.330
+you.
+
+138
+07:53.330 --> 07:54.590
+this is a common practice.
+
+139
+07:54.590 --> 08:00.680
+This is useful for counting that whatever the value of i is you are adding one to it so increment.
+
+140
+08:00.680 --> 08:02.660
+So I will become two.
+
+141
+08:02.720 --> 08:04.450
+This is the first step.
+
+142
+08:04.710 --> 08:05.760
+print I.
+
+143
+08:06.040 --> 08:09.070
+I was one initially then increment.
+
+144
+08:09.080 --> 08:10.490
+I to next number.
+
+145
+08:10.490 --> 08:11.550
+That is 1.
+
+146
+08:11.600 --> 08:17.660
+Then continue so again check the condition again check the condition 2 is less than equal to 10.
+
+147
+08:17.690 --> 08:18.250
+Yes.
+
+148
+08:18.320 --> 08:19.720
+So print and increment.
+
+149
+08:19.970 --> 08:21.160
+So the next is print.
+
+150
+08:21.170 --> 08:21.590
+Now.
+
+151
+08:21.590 --> 08:22.020
+2.
+
+152
+08:22.040 --> 08:26.840
+I is two then after that increment this becomes 3.
+
+153
+08:27.080 --> 08:29.840
+Then again after this continue loop right.
+
+154
+08:29.960 --> 08:31.380
+This is using while loop.
+
+155
+08:31.410 --> 08:35.000
+So next again check the condition i is less than equal to n.
+
+156
+08:35.150 --> 08:37.450
+So 3 is less than equal to 10 yes.
+
+157
+08:37.460 --> 08:38.470
+So next step.
+
+158
+08:38.540 --> 08:39.730
+Print and increment.
+
+159
+08:39.800 --> 08:45.510
+So no I will be repeating it three and four then four then it will become five.
+
+160
+08:45.590 --> 08:52.370
+Five is less than ten so five then make six then six is less than equal to ten to bring six and make
+
+161
+08:52.370 --> 08:58.200
+it seven seven then eight that eight then increment nine.
+
+162
+08:58.400 --> 09:02.610
+Then print nine increment 10 10 is less than equal to.
+
+163
+09:02.780 --> 09:06.480
+Yes so print then increment eleven.
+
+164
+09:06.530 --> 09:11.060
+Now print an eleven this time i is less that equal to 10.
+
+165
+09:11.060 --> 09:12.440
+No false.
+
+166
+09:12.620 --> 09:13.640
+So stop.
+
+167
+09:13.640 --> 09:15.780
+After this it will stop.
+
+168
+09:15.920 --> 09:19.120
+So I have shown you the working of the flow chart.
+
+169
+09:19.140 --> 09:21.200
+It's working like this.
+
+170
+09:21.350 --> 09:24.500
+Now let us convert that flow chart in to program.
+
+171
+09:24.560 --> 09:26.690
+See for lighting the programs like this.
+
+172
+09:26.690 --> 09:29.600
+First of all we should figure out what you have to do.
+
+173
+09:29.630 --> 09:30.990
+First you should do this.
+
+174
+09:31.010 --> 09:33.480
+Then from this you get data of flow chart.
+
+175
+09:33.590 --> 09:35.560
+You will not directly get the idea of  flow chart.
+
+176
+09:35.750 --> 09:36.680
+Work on this one.
+
+177
+09:36.730 --> 09:40.040
+Prepare a table like this and try to work out what you want.
+
+178
+09:41.130 --> 09:44.430
+Then based on this there's a flow chart from that flowchart.
+
+179
+09:44.430 --> 09:51.950
+I will write down a C++ programming so int main now inside this.
+
+180
+09:52.110 --> 09:53.160
+I need some variables.
+
+181
+09:53.160 --> 09:54.850
+What are those n and eye.
+
+182
+09:55.260 --> 09:57.910
+So I will declare those are int type.
+
+183
+09:57.930 --> 09:58.490
+So n
+
+184
+09:58.650 --> 10:03.700
+And I what's the first thing enter a number and read a number.
+
+185
+10:03.720 --> 10:06.540
+So C out enter a number and read a number.
+
+186
+10:06.540 --> 10:18.150
+C out enter number then C in n now initially I is assigned one so I don't have to do it here I
+
+187
+10:18.220 --> 10:24.880
+can directly assign it is equals to one here that is in the beginning next check the condition and repeat
+
+188
+10:24.930 --> 10:25.590
+the statement.
+
+189
+10:25.620 --> 10:31.460
+So this is loop so while Loop, while,  What is the condition in while.
+
+190
+10:31.680 --> 10:33.020
+I is less than equal n.
+
+191
+10:33.300 --> 10:41.430
+I is less than or equal to n then what is there inside the body of loop print  I then increment i so
+
+192
+10:41.430 --> 10:49.650
+print i Cout I then, I initially is one it will print one then 2 should come in the next line.
+
+193
+10:49.650 --> 10:58.200
+So here I should write down endl then next the statement is I plus plus.
+
+194
+10:58.200 --> 11:01.280
+So instead of writing I assign i plus one.
+
+195
+11:01.440 --> 11:07.630
+We have an agreement operator i plus plus this we can use even you can use plus plus i.
+
+196
+11:07.920 --> 11:12.300
+Then after this end of this one end of the main function.
+
+197
+11:12.330 --> 11:14.140
+So here you have to write down return zero.
+
+198
+11:14.160 --> 11:14.920
+You know well.
+
+199
+11:15.090 --> 11:19.180
+So this is a program for printing numbers from one to give a number n.
+
+200
+11:19.260 --> 11:21.450
+And that's it.
+
+201
+11:21.450 --> 11:23.490
+Now I will show you how to convert.
+
+202
+11:23.490 --> 11:25.820
+Same thing using do while loop.
+
+203
+11:26.380 --> 11:30.990
+Okay so I will make changes in the flowchart and then I will show you changes in the program.
+
+204
+11:31.860 --> 11:34.770
+Yes I have made changes to the flowchart.
+
+205
+11:35.040 --> 11:37.670
+Let us read the flow chart.  start,
+
+206
+11:37.670 --> 11:38.390
+Take a number.
+
+207
+11:38.640 --> 11:40.150
+I assign one then.
+
+208
+11:40.410 --> 11:41.190
+First print.
+
+209
+11:42.240 --> 11:43.830
+Then incrementally.
+
+210
+11:44.010 --> 11:50.040
+Then afterwards to check if I is less than equal to n if it is less than or equal to N if it is true
+
+211
+11:50.370 --> 11:51.270
+then continue.
+
+212
+11:51.840 --> 11:53.690
+If it is false then stop.
+
+213
+11:53.790 --> 11:57.300
+So you can see now that condition is checked afterwards.
+
+214
+11:57.360 --> 12:01.320
+First the two statements are done so processing is done first.
+
+215
+12:01.620 --> 12:03.150
+So you get the same result.
+
+216
+12:03.210 --> 12:06.840
+Same thing everything just instead of writing while here.
+
+217
+12:06.930 --> 12:09.570
+I have to write do and here.
+
+218
+12:09.570 --> 12:15.750
+I should write down while i is less than or equal to n that's all.
+
+219
+12:16.170 --> 12:21.120
+So this is the program for do while loop for printing the numbers using do while loop.
+
+220
+12:22.020 --> 12:23.210
+So that's easy.
+
+221
+12:23.250 --> 12:24.600
+So there is no confusion.
+
+222
+12:24.600 --> 12:32.270
+I'll tell you that always you can write a code using while loop also do while loop also. same thing can be 
+
+223
+12:32.270 --> 12:33.060
+written.
+
+224
+12:33.150 --> 12:35.010
+It's like a choice.
+
+225
+12:35.100 --> 12:37.790
+Very rarely we come across that, first
+
+226
+12:37.870 --> 12:40.010
+We need to process then check the condition.
+
+227
+12:40.020 --> 12:41.550
+Very rare situations.
+
+228
+12:41.670 --> 12:44.610
+So if you come across that situation you will understand.
+
+229
+12:45.180 --> 12:47.160
+That that's all about this one.
+
+230
+12:47.400 --> 12:50.100
+So I'll be giving you a coding exercise for this.
+
+231
+12:50.100 --> 12:54.620
+So you may have to write down only the loop part, if you find the coding exercises for this.
+
+232
+12:54.630 --> 12:55.800
+Just write down the loop.
+
+233
+12:56.100 --> 12:59.750
+Okay for loop and also there is a demo given for this one.
+
+234
+12:59.760 --> 13:06.210
+So you look at the demo for while do while as well as including for loop. so now next video will
+
+235
+13:06.210 --> 13:07.370
+be on for loop.
+
+236
+13:07.500 --> 13:09.380
+And that is most commonly used.
+
+237
+13:09.380 --> 13:10.020
+Loop.
+
+238
+13:10.020 --> 13:10.980
+Let us look at follow.

@@ -1,0 +1,320 @@
+WEBVTT
+
+00:00:05.470 --> 00:00:08.290
+In this video, we'll learn
+some of the terminology and
+
+00:00:08.290 --> 00:00:10.200
+notation used with inheritance.
+
+00:00:11.110 --> 00:00:14.010
+The terminology we use is
+pretty straightforward, but it's
+
+00:00:14.010 --> 00:00:16.480
+important that it's clear since
+you'll be using it throughout
+
+00:00:16.480 --> 00:00:18.479
+your career as a c++ developer.
+
+00:00:19.039 --> 00:00:20.550
+First, let's review inheritance.
+
+00:00:21.040 --> 00:00:24.200
+As we've already seen, inheritance
+is the process of creating new
+
+00:00:24.200 --> 00:00:26.340
+classes from existing classes.
+
+00:00:27.020 --> 00:00:30.380
+It's a mechanism that allows
+us to reuse existing code.
+
+00:00:31.250 --> 00:00:34.230
+When we use inheritance to
+create a new class, there may
+
+00:00:34.230 --> 00:00:35.900
+be several classes involved.
+
+00:00:36.369 --> 00:00:40.110
+In this course, we'll mainly talk
+about single inheritance that
+
+00:00:40.110 --> 00:00:43.920
+is when we create a new class
+based on another single class.
+
+00:00:44.730 --> 00:00:47.290
+Multiple inheritance is when
+we create a new class from
+
+00:00:47.309 --> 00:00:48.959
+two or more other classes.
+
+00:00:53.039 --> 00:00:56.360
+The classes that are involved in
+the inheritance relationship also
+
+00:00:56.360 --> 00:00:58.020
+have terms associated with them.
+
+00:00:59.080 --> 00:01:02.930
+The base class is the class
+being extended or inherited from.
+
+00:01:03.570 --> 00:01:07.740
+This class is also referred to as
+the parent class or super class
+
+00:01:07.789 --> 00:01:09.289
+in the inheritance relationship.
+
+00:01:10.560 --> 00:01:15.030
+The derived class is the class that's
+being created from the base class.
+
+00:01:15.820 --> 00:01:19.679
+This class will inherit the attributes
+and operations from the base class.
+
+00:01:20.429 --> 00:01:24.600
+And this class is also referred to
+as the child class or the subclass.
+
+00:01:25.740 --> 00:01:28.949
+You can see in the diagram, the
+commonly used notation used to
+
+00:01:28.949 --> 00:01:30.910
+express this inheritance relationship.
+
+00:01:31.670 --> 00:01:35.130
+We draw a solid line between the
+base class and the derived class
+
+00:01:35.350 --> 00:01:40.030
+with a closed unfilled arrowhead or
+triangle pointing to the base class.
+
+00:01:40.860 --> 00:01:44.710
+This is a uml class diagram and
+can also show much more information
+
+00:01:44.719 --> 00:01:46.089
+about the classes we're modeling.
+
+00:01:48.889 --> 00:01:52.110
+A very important concept to
+understand is that of an is a
+
+00:01:52.110 --> 00:01:55.610
+relationship with object-oriented
+programming and inheritance.
+
+00:01:56.590 --> 00:02:00.240
+When we use classic or public
+inheritance, our derived
+
+00:02:00.420 --> 00:02:03.439
+classes are generally subtypes
+of their base classes.
+
+00:02:04.160 --> 00:02:06.439
+This implies an is a relationship.
+
+00:02:06.920 --> 00:02:11.230
+So a circle is a shape, a
+savings account is an account.
+
+00:02:11.930 --> 00:02:15.510
+This very simple concept will provide
+us with a great deal of power.
+
+00:02:16.050 --> 00:02:18.890
+We'll learn how to leverage this
+is a relationship in the next
+
+00:02:18.890 --> 00:02:22.100
+section of the course when we
+learn about polymorphic functions.
+
+00:02:22.760 --> 00:02:27.110
+Generalization is about combining
+similar classes into a single,
+
+00:02:27.340 --> 00:02:30.830
+more general class based on
+the class's common attributes.
+
+00:02:31.430 --> 00:02:35.109
+The more general class is obviously
+more abstract and can therefore
+
+00:02:35.110 --> 00:02:37.129
+potentially be reused more easily.
+
+00:02:38.340 --> 00:02:41.120
+Specialization is the
+opposite of generalization.
+
+00:02:41.520 --> 00:02:44.660
+This is about creating new
+classes from existing classes.
+
+00:02:44.959 --> 00:02:48.380
+And these new classes generally
+add attributes and operations
+
+00:02:48.660 --> 00:02:50.250
+to the already inherited ones.
+
+00:02:51.290 --> 00:02:55.899
+As programmers and designers, we use
+both generalization and specialization
+
+00:02:56.170 --> 00:02:57.909
+to create inheritance hierarchies.
+
+00:02:58.809 --> 00:03:02.700
+Inheritance hierarchies is how we
+organize our inheritance relationships
+
+00:03:02.910 --> 00:03:06.060
+so that we can more effectively
+organize and reuse our code.
+
+00:03:07.210 --> 00:03:08.609
+Let's see a simple example.
+
+00:03:09.330 --> 00:03:14.070
+In this example, we have classes
+a b c d, and e and we have public
+
+00:03:14.070 --> 00:03:19.130
+inheritance that is is a relationship
+between derived and based classes.
+
+00:03:19.820 --> 00:03:23.320
+You can see that class a is not
+being derived from any other class.
+
+00:03:23.850 --> 00:03:27.800
+This class is often referred to as
+the root class in the hierarchy.
+
+00:03:28.670 --> 00:03:33.010
+B is derived from a, c is also
+derived from a, d is derived
+
+00:03:33.020 --> 00:03:35.029
+from c and e is derived from d.
+
+00:03:35.750 --> 00:03:38.070
+You can see the class
+hierarchy in the diagram.
+
+00:03:38.560 --> 00:03:41.010
+Notice that the higher up
+we go in the hierarchy, the
+
+00:03:41.010 --> 00:03:42.809
+more general our classes are.
+
+00:03:43.310 --> 00:03:46.489
+And the lower we go in our hierarchy,
+the more specialized they are.
+
+00:03:47.880 --> 00:03:50.220
+Also notice the is a relationships.
+
+00:03:50.929 --> 00:03:52.950
+In this example, b is an a.
+
+00:03:53.329 --> 00:03:58.830
+C is also an a since they're both
+derived from the class a, and e is a
+
+00:03:58.830 --> 00:04:02.330
+d because e is derived from class d.
+
+00:04:03.010 --> 00:04:07.699
+Now notice that e is also a c
+since inheritance is transitive.
+
+00:04:08.200 --> 00:04:11.109
+In fact, in this
+example, e is also an a.
+
+00:04:12.100 --> 00:04:15.510
+However, class b is not a c.
+
+00:04:16.240 --> 00:04:20.040
+There is no inheritance relationship
+directly between b and c.
+
+00:04:20.339 --> 00:04:21.979
+Let's look at a more concrete example.
+
+00:04:23.730 --> 00:04:26.719
+In this example, we have
+a root class person that's
+
+00:04:26.719 --> 00:04:29.939
+the most general or abstract
+class in this class hierarchy.
+
+00:04:30.730 --> 00:04:33.560
+We can see that student
+is derived from person.
+
+00:04:33.560 --> 00:04:38.270
+So a student is a person and
+inherits the attributes and operations
+
+00:04:38.270 --> 00:04:39.770
+of the person class.
+
+00:04:39.770 --> 00:04:43.790
+We also see that employee is a
+person, and faculty staff
+
+00:04:43.790 --> 00:04:47.683
+and administrators are derived from
+employee, so they are employees.
+
+00:04:47.683 --> 00:04:50.230
+In fact, they're also persons.
+
+00:04:51.490 --> 00:04:55.160
+But notice that a student is not an
+employee in this class hierarchy.
+
+00:04:55.490 --> 00:04:59.410
+Also notice that the is a
+relationships are not bi-directional.
+
+00:04:59.700 --> 00:05:04.539
+For example, a person is not
+necessarily an employee because
+
+00:05:04.539 --> 00:05:05.729
+they could be a student.
+
+00:05:06.559 --> 00:05:09.950
+You can see how useful a class
+diagram can be since it provides a
+
+00:05:09.950 --> 00:05:13.750
+high level structural overview of
+the classes and the relationships.
+
+00:05:14.470 --> 00:05:17.200
+In the next video, we'll look at
+another way of reusing classes
+
+00:05:17.200 --> 00:05:21.400
+in c++ called composition and see
+how it differs from inheritance.

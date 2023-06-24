@@ -1,0 +1,353 @@
+WEBVTT
+
+0
+00:00.210 --> 00:02.630
+The topic is overflow.
+
+1
+00:02.670 --> 00:09.180
+This is just a concept and this is a very useful concept for interviews. In interviews they may ask
+
+2
+00:09.180 --> 00:16.230
+questions directly upon overflow or questions they may frame depending on overflow under the general
+
+3
+00:16.230 --> 00:19.790
+topic not just a to C++ in every programming language.
+
+4
+00:19.800 --> 00:25.710
+This concept applies before  understanding over-flow we have to revise few concepts that we have studied
+
+5
+00:25.710 --> 00:27.880
+in previous videos.
+
+6
+00:27.990 --> 00:30.220
+Then I'm explaining what does it mean by over-flow.
+
+7
+00:30.270 --> 00:37.220
+So far that I have taken an example here I have a character type variable and X is having value 127
+
+8
+00:38.820 --> 00:40.660
+how many bytes character takes.
+
+9
+00:41.040 --> 00:43.620
+It takes one bite one bite means 8 bit.
+
+10
+00:43.620 --> 00:47.450
+So this is one bite and I'm showing all the bits that is 0 to 7.
+
+11
+00:47.460 --> 00:54.230
+This is least significant bit and this is most significant then how data is actually represented in memory.
+
+12
+00:54.240 --> 00:59.790
+It is represented in binary form so this number of 127 is stored in binary forms, so how it looks like
+
+13
+00:59.790 --> 01:00.790
+in binary form.
+
+14
+01:00.990 --> 01:04.350
+This is the conversion from decimal number to binary number.
+
+15
+01:04.440 --> 01:09.990
+We have already learn this so I have got the digits as 1 1 1 1 1, seven ones.
+
+16
+01:09.990 --> 01:14.520
+So 7 ones and leading bit that is most significant is 0.
+
+17
+01:14.760 --> 01:20.090
+So you should be knowing this one that already we have discussed this one I have said that this is signed
+
+18
+01:20.130 --> 01:22.870
+bit if it is 0 means No. it's positive.
+
+19
+01:23.160 --> 01:25.020
+If it is one means number is negative.
+
+20
+01:25.290 --> 01:26.710
+So right now it is zero.
+
+21
+01:26.850 --> 01:30.370
+means this is positive and it is positive 127.
+
+22
+01:30.450 --> 01:36.410
+Then one more thing we should know what is the range of values that a character can store.
+
+23
+01:36.730 --> 01:42.270
+C characters are alphabets we use but we don't write the alphabet in the memory we write ascii codes
+
+24
+01:42.270 --> 01:42.930
+for them right.
+
+25
+01:43.410 --> 01:51.090
+So what are the range of values it is from minus 128 to 127 so range of character is minus 128
+
+26
+01:51.220 --> 01:55.740
+to 127. now coming to the concept.
+
+27
+01:55.840 --> 01:58.200
+Let us understand the concept see right.
+
+28
+01:58.230 --> 01:58.600
+Now.
+
+29
+01:58.600 --> 02:04.300
+The variable is having the largest value possible that is maximum value beyond that.
+
+30
+02:04.300 --> 02:08.980
+We cannot have any value in the character type variable if we have it.
+
+31
+02:08.980 --> 02:10.360
+Then what happens.
+
+32
+02:10.390 --> 02:15.890
+So right now it is 127 I will make it as plus plus x.
+
+33
+02:15.940 --> 02:18.880
+If I write this statement then what it will become.
+
+34
+02:18.880 --> 02:21.790
+It will try to go to the next value which is not there.
+
+35
+02:22.570 --> 02:24.380
+So what happens to the data.
+
+36
+02:24.850 --> 02:30.730
+This will become minus 128 when you will try to cross this value beyond this one.
+
+37
+02:30.730 --> 02:34.150
+So it will come down to this one and vice versa.
+
+38
+02:34.150 --> 02:41.320
+If it is minus 128 and if we try to reduce it decrease it by 1 then it will goto 127.
+
+39
+02:41.440 --> 02:43.270
+So it's more like cyclic.
+
+40
+02:43.270 --> 02:47.340
+So if you come from 127 beyond that it be minus 128.
+
+41
+02:47.350 --> 02:55.000
+And from the site it will go to 127 just like our hand in a clock like this 12'O clock, one, two
+
+42
+02:55.030 --> 03:00.690
+three four five six seven eight nine ten eleven.
+
+43
+03:00.810 --> 03:02.040
+now if the hand is here.
+
+44
+03:02.170 --> 03:07.840
+Then if you move next it would not go to  13 and it will go to 1 and if the hand is here if you move
+
+45
+03:07.840 --> 03:09.580
+here it will not go to 0.
+
+46
+03:09.580 --> 03:12.220
+That is less than 1 0 but it will come to 12.
+
+47
+03:12.760 --> 03:16.120
+So just like cyclic and this cyclic behavior.
+
+48
+03:16.130 --> 03:18.930
+So this is called as overflow.
+
+49
+03:18.960 --> 03:24.760
+So when the value is more than the capacity so it will take the values again from the beginning that
+
+50
+03:24.760 --> 03:25.810
+is overflow.
+
+51
+03:25.960 --> 03:30.670
+Why it happens how magical it takes the values that i will show you here.
+
+52
+03:30.670 --> 03:34.680
+See suppose this is the byte and already I have a number here.
+
+53
+03:34.780 --> 03:40.050
+Not in this let us add 1 because plus plus means it will increase by 1.
+
+54
+03:40.090 --> 03:46.210
+So if it is increased by 1 if one is added to this what will be the result?   one plus one one plus one
+
+55
+03:46.210 --> 03:49.110
+is two means one zero in binary form.
+
+56
+03:49.210 --> 03:52.720
+So this is zero carry one then again one plus one two.
+
+57
+03:52.750 --> 03:58.170
+So this is zero and carry one this is zero carry one, so for all this we get cary one.
+
+58
+03:58.360 --> 03:58.850
+Right.
+
+59
+03:58.870 --> 04:00.070
+So this is zero.
+
+60
+04:00.070 --> 04:03.080
+cary 1 This is zero cary one.
+
+61
+04:03.100 --> 04:06.960
+So one two three four five six seven zeros.
+
+62
+04:07.000 --> 04:08.280
+And this is one.
+
+63
+04:08.320 --> 04:10.240
+So what is this bit sign bit.
+
+64
+04:10.300 --> 04:12.590
+So it has became one so it has became negative.
+
+65
+04:13.060 --> 04:14.530
+Yes this is a negative number.
+
+66
+04:14.620 --> 04:15.820
+But what is the value.
+
+67
+04:15.820 --> 04:19.460
+Let us check the value, this is two power zero, two power one.
+
+68
+04:19.600 --> 04:27.070
+And this is four, eight, sixteen, thirty two, 64, and one twenty eight.
+
+69
+04:27.190 --> 04:30.210
+So yes this is 128.
+
+70
+04:30.310 --> 04:37.330
+See the value is 128 and also the same bit does acting as a sign bit so it is minus 128 indeed.
+
+71
+04:37.510 --> 04:46.870
+So this is minus one twenty eight see magical it has came to minus 128, we were at
+
+72
+04:46.870 --> 04:53.200
+the 127 then we tried to go to the next value and it has came down to the beginning of the range that
+
+73
+04:53.200 --> 04:54.940
+is minus 128.
+
+74
+04:55.060 --> 05:01.170
+Now one more thing actually the number that we got is in two's compliment because negative numbers are
+
+75
+05:01.170 --> 05:06.550
+stored in two complement it is in  twos complements so if I want to get the original number then again
+
+76
+05:06.550 --> 05:12.450
+I should find out it's twos complement but in this case I get back the same number you can do it by yourself
+
+77
+05:12.780 --> 05:16.070
+find two's complement you'll get back same thing again.
+
+78
+05:16.120 --> 05:20.280
+So I'm not doing it directly I'm showing you that it's minus 128.
+
+79
+05:20.680 --> 05:29.540
+No let us display this value and check it so if I write to see out X if I write X it will display a
+
+80
+05:29.650 --> 05:35.260
+symbol that is character symbol like for this one there is minus 128 it will get some junk
+
+81
+05:35.260 --> 05:42.250
+character will appear I want numeric value that is minus 128 so typecast it as integer and display it
+
+82
+05:42.640 --> 05:51.130
+so integer of x no you can see minus one twenty eight on display on the screen so that's all this is
+
+83
+05:51.130 --> 05:57.880
+the topic of overflow. I have shown it only for the character but it same thing applies on
+
+84
+05:57.940 --> 06:01.580
+integer also a long integer also it's the same thing.
+
+85
+06:01.750 --> 06:07.120
+So there is a demo available in the next video you can see the demo the same thing I will demonstrate
+
+86
+06:07.120 --> 06:12.020
+and show you there are no programs we don't use it in the program just as a concept.
+
+87
+06:12.240 --> 06:13.990
+Okay so that's all in the video.

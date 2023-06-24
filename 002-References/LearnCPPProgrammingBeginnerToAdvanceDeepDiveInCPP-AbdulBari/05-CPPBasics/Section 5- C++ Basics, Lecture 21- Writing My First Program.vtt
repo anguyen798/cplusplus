@@ -1,0 +1,921 @@
+WEBVTT
+
+0
+00:00.830 --> 00:05.380
+In the previous video we have already learned the skeleton of a C++ program.
+
+1
+00:05.480 --> 00:09.800
+Now here in this video we learn how to write a program.
+
+2
+00:10.280 --> 00:16.820
+So we learn the steps for writing basic programs so we will be writing a lot of programs while following these
+
+3
+00:16.820 --> 00:17.460
+steps.
+
+4
+00:17.480 --> 00:19.210
+So what are the steps.
+
+5
+00:19.220 --> 00:20.150
+Let us learn.
+
+6
+00:20.320 --> 00:23.540
+See every program will have three elements.
+
+7
+00:23.540 --> 00:25.970
+One is it will take some input.
+
+8
+00:26.030 --> 00:27.940
+Then it will process them.
+
+9
+00:28.100 --> 00:31.890
+It will give the output. so what is this.
+
+10
+00:31.890 --> 00:32.590
+See suppose
+
+11
+00:32.610 --> 00:33.960
+I am a program.
+
+12
+00:33.960 --> 00:39.030
+I know how to add two numbers and you are a user of a program.
+
+13
+00:39.030 --> 00:40.020
+Imagine this right.
+
+14
+00:40.070 --> 00:42.780
+Always you have to keep the scenario in your mind.
+
+15
+00:42.840 --> 00:45.390
+Now you want to use the program.
+
+16
+00:45.450 --> 00:47.280
+You want me to add two numbers.
+
+17
+00:47.400 --> 00:49.350
+Then I should know two numbers.
+
+18
+00:49.350 --> 00:51.250
+First of all you give two numbers.
+
+19
+00:51.280 --> 00:53.730
+Then I will add them then I will give you the output.
+
+20
+00:54.300 --> 00:55.050
+That's it.
+
+21
+00:55.050 --> 01:01.350
+So from my side if you'll see I'm taking input then processing and giving the output.
+
+22
+01:01.380 --> 01:03.810
+Now let us take another example.
+
+23
+01:03.810 --> 01:11.010
+Suppose I'm a program for finding the area of a rectangle and you're the user, you want me to find the area
+
+24
+01:11.250 --> 01:11.900
+for that
+
+25
+01:11.910 --> 01:13.540
+I should know length and breadth.
+
+26
+01:13.710 --> 01:15.900
+So let us see how I should work.
+
+27
+01:15.900 --> 01:19.730
+First of all I should ask you what is the length and what is a breadth.
+
+28
+01:19.830 --> 01:21.380
+You will give me length and breadth.
+
+29
+01:21.690 --> 01:23.900
+I would take and multiply them or
+
+30
+01:24.000 --> 01:27.830
+Whatever the formula is, I will process and I will get the result.
+
+31
+01:27.990 --> 01:31.260
+Then I will give you the output, area is so and so.
+
+32
+01:31.980 --> 01:33.100
+So you are a user.
+
+33
+01:33.120 --> 01:37.050
+I am the program so now when you are thinking of writing a program.
+
+34
+01:37.050 --> 01:43.220
+Keep yourself at a place of program and other people who are going to use their users.
+
+35
+01:43.530 --> 01:45.980
+So start on the side of a program and imagine.
+
+36
+01:46.560 --> 01:54.000
+So now let us see how we can follow these steps for writing a simple program for adding two numbers.
+
+37
+01:54.300 --> 02:00.590
+So first of all I will draw a flowchart for this one then I will take our algorithm using pseudo code.
+
+38
+02:00.690 --> 02:04.910
+Then I will write down a c++ program for adding two numbers.
+
+39
+02:05.070 --> 02:07.410
+So let us draw a flow chart.
+
+40
+02:07.590 --> 02:10.380
+So here I will draw a flowchart for adding two number.
+
+41
+02:10.380 --> 02:12.230
+So what are the things we have to do.
+
+42
+02:12.240 --> 02:17.700
+Let us learn see first of on a starting point of a flow chart that is start.
+
+43
+02:18.620 --> 02:24.150
+Then our program should take 2 numbers as input.
+
+44
+02:24.510 --> 02:28.420
+So for input and output values we use parallelogram.
+
+45
+02:28.500 --> 02:29.890
+So let us draw on a parallelogram.
+
+46
+02:30.150 --> 02:32.330
+So the next thing is take input.
+
+47
+02:32.460 --> 02:34.890
+So for that is better giving a message.
+
+48
+02:34.890 --> 02:36.170
+So printing a message.
+
+49
+02:36.210 --> 02:40.520
+I will say print Enter two numbers like when i give the example.
+
+50
+02:41.100 --> 02:45.030
+I have told you that first of all I should take two numbers from you.
+
+51
+02:45.060 --> 02:46.820
+So enter two numbers.
+
+52
+02:46.830 --> 02:47.400
+I should tell you.
+
+53
+02:47.430 --> 02:48.330
+Enter two numbers.
+
+54
+02:48.360 --> 02:51.910
+Then you will give me two numbers so I should read two number see.
+
+55
+02:51.960 --> 02:58.410
+I'm a program, right? so, read, i will  read these numbers, two numbers whatever no. you have given.
+
+56
+02:58.410 --> 02:59.640
+I will give names to them.
+
+57
+02:59.670 --> 03:04.230
+So these are called as variables so I will take them in a and b.
+
+58
+03:04.230 --> 03:07.990
+Now first number is in a, second number you have given me is in B.
+
+59
+03:08.040 --> 03:13.110
+Now I have two numbers I can add them so I can process so for process rectangle is used.
+
+60
+03:13.140 --> 03:15.920
+so the next step is process.
+
+61
+03:15.990 --> 03:17.610
+So a rectangle is used.
+
+62
+03:17.820 --> 03:22.760
+So I should add a and b and the result I should store it in some other variables.
+
+63
+03:22.800 --> 03:30.390
+so result is in 'c' so it mean for any program for taking input you have to write this and process
+
+64
+03:30.420 --> 03:32.080
+you have to write this.then,
+
+65
+03:32.530 --> 03:39.450
+Now I have the result ready, I should give the result to you say that some of two numbers is  so and so that
+
+66
+03:39.450 --> 03:46.440
+is output so for output again the parallelogram, so draw a parallelogram and give a output here.
+
+67
+03:47.100 --> 03:54.660
+So here I will see print addition is (in quotes).
+
+68
+03:55.020 --> 04:02.910
+This is in quotes because it's a message then comma C so it will be saying "addition is" then the result
+
+69
+04:03.000 --> 04:08.640
+whatever the result is that is there in 'c'. then, next this end of this procedure.
+
+70
+04:09.360 --> 04:10.230
+So this is stop.
+
+71
+04:10.770 --> 04:18.510
+So for that oval is the shape that we use or ellipses the shape we use so start, and take input, process, give
+
+72
+04:18.510 --> 04:20.070
+output, and end.
+
+73
+04:20.610 --> 04:25.710
+This is how the flow chart for adding two numbers. now same thing
+
+74
+04:25.710 --> 04:29.240
+I will write it as a algorithm  using pseudocode.
+
+75
+04:29.250 --> 04:30.090
+So what is pseudocode.
+
+76
+04:30.090 --> 04:31.970
+The same thing I write on, this is pseudocode.
+
+77
+04:32.020 --> 04:35.770
+It's not a C language code. so the same pseudo code I will write down.
+
+78
+04:36.120 --> 04:39.990
+So let us write an algorithm for adding two numbers.
+
+79
+04:39.990 --> 04:45.810
+Now here I will say begin the algorithm begin see already I have explained you that you can write.
+
+80
+04:45.810 --> 04:47.750
+Begin or  you can write on the flower  bracket.
+
+81
+04:47.760 --> 04:48.700
+That is your choice.
+
+82
+04:48.720 --> 04:50.290
+So I am writing begin here.
+
+83
+04:50.310 --> 04:52.050
+Now what is the first thing it has to do.
+
+84
+04:52.080 --> 04:57.820
+It should print and say enter two numbers 
+
+85
+04:58.440 --> 05:02.900
+Okay then this is the message I'm giving then writing semicolon or not.
+
+86
+05:02.910 --> 05:04.940
+That's a choice because this you pseudo code
+
+87
+05:04.950 --> 05:06.060
+It's not strict.
+
+88
+05:06.240 --> 05:09.590
+Then I should read two numbers in two variables.
+
+89
+05:09.600 --> 05:12.150
+That is a and b.
+
+90
+05:12.150 --> 05:13.430
+This is over.
+
+91
+05:13.470 --> 05:15.510
+Next  step is this one processing.
+
+92
+05:15.510 --> 05:18.960
+So C is assigned with a plus b.
+
+93
+05:18.990 --> 05:20.810
+So I'm writing this as assignment.
+
+94
+05:20.810 --> 05:29.140
+Don't take it as equal to otherwise write arrow like this next step is printing additional of number is so-and-so
+
+95
+05:29.410 --> 05:33.120
+so print "addition is"
+
+96
+05:36.200 --> 05:38.790
+c, so this is the result.
+
+97
+05:38.930 --> 05:41.840
+And this the end of the algorithm.
+
+98
+05:42.260 --> 05:46.710
+So those are steps I have completed them and written them as algorithm.
+
+99
+05:46.730 --> 05:47.510
+This is the beginning.
+
+100
+05:47.510 --> 05:52.030
+Everything looks simple right as we go on writing more program.
+
+101
+05:52.040 --> 05:56.820
+So this may be becoming little Lengthy  or complex so slowly we'll move to it.
+
+102
+05:56.880 --> 05:57.420
+Now.
+
+103
+05:57.450 --> 06:01.130
+Next I have to write a C++ program for adding 2 no.
+
+104
+06:01.190 --> 06:04.920
+So here I will write don't c++ program so let as write.
+
+105
+06:04.940 --> 06:08.380
+so, First of all I will write down the skeleton of C++ program.
+
+106
+06:08.450 --> 06:13.060
+So for that I have to write #include iostream right.
+
+107
+06:13.250 --> 06:16.090
+So this is the thing that we have already learned.
+
+108
+06:16.160 --> 06:21.800
+So this iostream then I have to write using namespace.
+
+109
+06:21.950 --> 06:22.950
+Right.
+
+110
+06:23.120 --> 06:28.220
+So whenever I'm using cin or cout this would be useful.
+
+111
+06:28.220 --> 06:31.730
+std So using namespace.
+
+112
+06:32.330 --> 06:41.080
+No main function, int main and starting off a main function.
+
+113
+06:41.100 --> 06:43.910
+Now what I have to do so here I have a flowchart here.
+
+114
+06:43.910 --> 06:47.590
+I have a algorithm these two things I have to convert them.
+
+115
+06:47.630 --> 06:48.500
+So let us read it.
+
+116
+06:48.500 --> 06:50.330
+So what are the things that I have to do.
+
+117
+06:50.330 --> 06:53.680
+So from there one of them will convert it into a C++ program.
+
+118
+06:53.780 --> 06:56.260
+see begin, inside this first is print.
+
+119
+06:56.390 --> 06:59.630
+Enter two numbers how to print anything on the monitor.
+
+120
+06:59.630 --> 07:03.360
+cout we know that so c out enter two numbers.
+
+121
+07:03.380 --> 07:10.620
+So here I will write down C out enter two numbers, this will print message on the screen.
+
+122
+07:10.730 --> 07:12.610
+The next thing  read a,b.
+
+123
+07:12.640 --> 07:17.810
+So from where?  A program will read some numbers or data from the keyboard.
+
+124
+07:17.810 --> 07:24.110
+So for that we have object called C in and that is present in this std.
+
+125
+07:24.110 --> 07:26.480
+The C out and cin present in this study.
+
+126
+07:26.480 --> 07:28.520
+So C in right.
+
+127
+07:28.820 --> 07:34.130
+So C in where? see for this I have to use a double greater than symbol for reading anything.
+
+128
+07:34.180 --> 07:41.660
+Now when you have to read it in variables A as well as B don't give comma again give this a greater
+
+129
+07:41.660 --> 07:48.050
+than symbols and write this variable B so cin a, b.
+
+130
+07:48.170 --> 07:54.800
+Now the important thing seeing C++ you cannot directly use the variables unless you have declared them
+
+131
+07:55.370 --> 07:56.590
+so we should declare them.
+
+132
+07:56.600 --> 07:59.970
+So declaring means before using them here I should declare.
+
+133
+07:59.960 --> 08:01.710
+So total how many variables I have.
+
+134
+08:01.730 --> 08:09.740
+ABC three variable are there, a b c three variables and all these variables will have a data type.
+
+135
+08:10.290 --> 08:11.630
+Now what does it mean by data type.
+
+136
+08:11.620 --> 08:13.020
+We have it the next video right.
+
+137
+08:13.520 --> 08:14.690
+So we will be learning it.
+
+138
+08:14.690 --> 08:18.830
+So we have to mention the data type means what type of value you are storing in them.
+
+139
+08:18.860 --> 08:20.350
+We had a integer type.
+
+140
+08:20.360 --> 08:22.580
+So numbers only we are storing.
+
+141
+08:22.580 --> 08:26.520
+So that's why this is integer so this is a method of declaring them.
+
+142
+08:26.580 --> 08:29.760
+see This declaration was not there in algorithm.
+
+143
+08:29.800 --> 08:33.700
+So it's not strict it's not stick because that is not C++.
+
+144
+08:33.700 --> 08:35.420
+So you can write as you like.
+
+145
+08:35.420 --> 08:37.930
+This is English like, now here,
+
+146
+08:37.970 --> 08:39.860
+You have to write everything perfectly.
+
+147
+08:39.890 --> 08:44.720
+If you miss anything compiler will not compile your program, so you should write on the things that are
+
+148
+08:44.720 --> 08:46.660
+understandable by compiler right.
+
+149
+08:47.030 --> 08:48.540
+So write everything properly.
+
+150
+08:48.560 --> 08:50.880
+So this should be terminated by semicolon.
+
+151
+08:51.410 --> 08:54.230
+So  till here we have each other next step.
+
+152
+08:54.240 --> 08:54.840
+This is over.
+
+153
+08:54.860 --> 08:55.500
+This is over.
+
+154
+08:55.820 --> 08:56.570
+And this one.
+
+155
+08:56.580 --> 09:03.220
+C assign a plus b, so a plus b I want to do okay additions will be done then it should be stored.
+
+156
+09:03.410 --> 09:09.740
+So it should be stored inC so I write down like this C equal to A plus B but don't read it as equal to
+
+157
+09:10.090 --> 09:11.740
+read it as assign.
+
+158
+09:11.810 --> 09:13.890
+This means the same thing.
+
+159
+09:13.970 --> 09:20.150
+Add this two, result is stored in C. that's it.
+
+160
+09:20.150 --> 09:22.920
+Now the last thing remaining we have finished this one.
+
+161
+09:22.980 --> 09:23.970
+we Have to print the output.
+
+162
+09:24.340 --> 09:32.150
+So say c out what is the message we want to print addition is then c.
+
+163
+09:32.250 --> 09:35.450
+I will write down hear addition is in quotes.
+
+164
+09:35.540 --> 09:39.830
+And then right again the double less than and then say C..
+
+165
+09:39.940 --> 09:40.660
+Right.
+
+166
+09:40.760 --> 09:41.770
+So that's all.
+
+167
+09:41.780 --> 09:47.150
+And so here inside the main function we must write down return zero.
+
+168
+09:47.240 --> 09:50.640
+That is always you have to write because we have written int here.
+
+169
+09:50.660 --> 09:51.480
+So that's all.
+
+170
+09:51.620 --> 09:55.920
+This is a program in C++ for adding two numbers.
+
+171
+09:56.000 --> 10:01.450
+Now i will continue and I will show you how to read a name in C++ and give a message.
+
+172
+10:01.460 --> 10:05.710
+Its name means a string, a string, set of characters.
+
+173
+10:05.810 --> 10:08.310
+I will show you, it is a simple program.
+
+174
+10:08.330 --> 10:09.480
+Let us learn it.
+
+175
+10:09.600 --> 10:15.660
+Now let us write a program or take the name of a user and display a welcome message with the name right.
+
+176
+10:15.680 --> 10:22.540
+So let us assume that I am a program for what I should do I should ask you may I know your name.
+
+177
+10:22.670 --> 10:27.230
+Then you will tell the name then I should take the name then I should give a message.
+
+178
+10:27.230 --> 10:31.900
+I should tell you that Hello Mr or Miss whatever it is underneath.
+
+179
+10:32.660 --> 10:33.890
+So let us write on this.
+
+180
+10:33.920 --> 10:37.220
+So for this I have a skeleton already available here.
+
+181
+10:37.220 --> 10:40.750
+Now let us write on the steps so I'm not showing flowchart all these things.
+
+182
+10:40.750 --> 10:44.260
+This is a simple one, so first thing I have to give a message to you.
+
+183
+10:44.270 --> 10:45.770
+So what does that
+
+184
+10:45.770 --> 10:48.860
+'may I know your name' so for displaying a message on the screen.
+
+185
+10:48.860 --> 10:54.500
+I should use cout may i know your name.
+
+186
+10:55.130 --> 10:56.950
+So this will appear on the screen.
+
+187
+10:56.950 --> 10:58.990
+Now you are the user, I'm the program.
+
+188
+10:59.000 --> 11:02.150
+When you see this you trying to write your name from the keyboard.
+
+189
+11:02.180 --> 11:02.450
+Right.
+
+190
+11:02.780 --> 11:05.480
+So I know you will hit enter so that I should read.
+
+191
+11:05.480 --> 11:08.580
+So I should read it by using C in right.
+
+192
+11:08.720 --> 11:13.560
+This extraction operator, and here I should read your name.
+
+193
+11:14.150 --> 11:15.500
+So what is this.
+
+194
+11:15.530 --> 11:22.190
+This is a variable name is a variable which you type it should read a word that is name so it should
+
+195
+11:22.190 --> 11:23.260
+be string type.
+
+196
+11:23.330 --> 11:26.780
+So in C++ you should declare the variables before using them.
+
+197
+11:26.780 --> 11:27.250
+Right.
+
+198
+11:27.290 --> 11:28.160
+So I should declare it.
+
+199
+11:28.310 --> 11:34.700
+So which type I should declare it as a string string and variable name is name.
+
+200
+11:34.730 --> 11:36.080
+So what is it is a string.
+
+201
+11:36.080 --> 11:37.190
+Does the data type.
+
+202
+11:37.310 --> 11:39.390
+We are going to learn about the data types afterwards.
+
+203
+11:39.410 --> 11:41.180
+So this is the name of a variable.
+
+204
+11:41.360 --> 11:44.880
+So it will read the name from the keyboard.
+
+205
+11:45.000 --> 11:46.630
+Next I should give a message.
+
+206
+11:46.760 --> 11:52.760
+Welcome Mr. So-and-so here I should give a message so far that I should write C out.
+
+207
+11:52.970 --> 11:58.270
+Welcome Mr. or Miss.
+
+208
+11:58.390 --> 11:59.470
+I'm followed by this.
+
+209
+11:59.480 --> 12:00.290
+Your name.
+
+210
+12:00.330 --> 12:03.950
+So for this again write down. see this is enclosed in double quotes.
+
+211
+12:03.950 --> 12:09.080
+now the variable name should not be in double quotes it should be directly given.
+
+212
+12:09.080 --> 12:14.540
+So it will display a message welcome Mr. or Miss whatever it is then name.
+
+213
+12:15.440 --> 12:19.010
+So this will give a message that all end of the program.
+
+214
+12:19.640 --> 12:25.380
+So this is a simple program for taking name of a user and showing off welcome message.
+
+215
+12:25.520 --> 12:26.980
+Now one problem in this one.
+
+216
+12:27.140 --> 12:31.420
+If your name is having more than one word then it can not read all the words.
+
+217
+12:31.460 --> 12:33.600
+It will be just one word.
+
+218
+12:33.650 --> 12:36.240
+It will not read second or third word.
+
+219
+12:36.290 --> 12:40.340
+Suppose your name is Ravi Kumar so it will just read Ravi right.
+
+220
+12:40.640 --> 12:43.930
+So if your name is Anil Kumar.
+
+221
+12:44.630 --> 12:49.690
+Then it will just read Anil and then how to make it read everything.
+
+222
+12:49.790 --> 12:57.560
+So instead of seeing we have a function called getline inside this I should write cin variable
+
+223
+12:57.560 --> 12:58.370
+name.
+
+224
+12:58.520 --> 13:00.010
+This name.
+
+225
+13:00.050 --> 13:03.380
+This will read all the words until you hit enter.
+
+226
+13:03.380 --> 13:08.310
+So this only perfect for taking the names of people that may be off more than one word.
+
+227
+13:08.340 --> 13:09.320
+So this is better.
+
+228
+13:10.190 --> 13:11.960
+So that's all in the next video.
+
+229
+13:11.960 --> 13:14.000
+We will have the demo of these programs.

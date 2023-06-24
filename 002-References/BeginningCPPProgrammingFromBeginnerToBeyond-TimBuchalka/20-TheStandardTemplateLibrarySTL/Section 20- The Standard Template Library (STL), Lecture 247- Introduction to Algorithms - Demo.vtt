@@ -1,0 +1,1353 @@
+WEBVTT
+
+00:00:05.440 --> 00:00:08.920
+In this video, I'd like to go over
+some of the algorithms in the stl.
+
+00:00:09.389 --> 00:00:11.840
+Now there are a lot of algorithms
+in the stl, I'm only going to
+
+00:00:11.840 --> 00:00:14.629
+cover a few of them, but the
+techniques you'll see apply to
+
+00:00:14.639 --> 00:00:18.179
+many of them, and you can be very
+productive with them very quickly.
+
+00:00:19.559 --> 00:00:23.299
+I'm in the section 20 workspace,
+and I'm in the algorithms project.
+
+00:00:23.900 --> 00:00:26.080
+And let me just go over
+these includes real quick.
+
+00:00:26.439 --> 00:00:27.920
+I am including algorithm.
+
+00:00:27.950 --> 00:00:29.619
+We need that to use these algorithms.
+
+00:00:29.980 --> 00:00:33.120
+I'm also including
+vector, list and cc type.
+
+00:00:33.139 --> 00:00:36.730
+Now cc type we're going to use for
+the 2 upper function that converts a
+
+00:00:36.730 --> 00:00:38.530
+character from lowercase to uppercase.
+
+00:00:38.780 --> 00:00:40.350
+That's the only reason
+we're going to do it.
+
+00:00:40.420 --> 00:00:43.047
+And most of the examples we use
+a vector, but there's 1 that's
+
+00:00:43.047 --> 00:00:45.449
+going to use the list just to
+change things around a little bit.
+
+00:00:45.830 --> 00:00:47.419
+Okay, so that's that.
+
+00:00:48.380 --> 00:00:51.470
+We're also going to use this person
+class that I created right here.
+
+00:00:51.470 --> 00:00:53.449
+It's a really really
+simple person class.
+
+00:00:53.830 --> 00:00:55.129
+A person has a name and age.
+
+00:00:55.160 --> 00:00:58.839
+I think we've used a class like
+this or very similar to this before.
+
+00:00:59.410 --> 00:01:02.280
+I have a default constructor
+that pilot will generate for me.
+
+00:01:02.809 --> 00:01:05.889
+I've got an overloaded constructor
+that expects a name and age.
+
+00:01:06.139 --> 00:01:07.899
+Then I've got these 2 operators.
+
+00:01:07.920 --> 00:01:08.940
+These are really important.
+
+00:01:08.940 --> 00:01:13.500
+Whenever we use the stl, it's got to
+have a way to compare our own objects.
+
+00:01:13.500 --> 00:01:15.090
+Now these are all user-defined types.
+
+00:01:15.090 --> 00:01:18.262
+So I need to provide the less
+than and the equality operators.
+
+00:01:18.310 --> 00:01:24.140
+And all I'm doing here is I'm
+saying that 1 person is less than
+
+00:01:24.140 --> 00:01:27.220
+another person if their age is
+less than the other person's age.
+
+00:01:27.220 --> 00:01:29.749
+This is just totally
+arbitrary in this example.
+
+00:01:29.989 --> 00:01:32.619
+This really would depend on whatever
+business logic you're using.
+
+00:01:33.100 --> 00:01:34.900
+And how do I compare 2 persons?
+
+00:01:34.900 --> 00:01:38.220
+Well, their names have to be the same,
+and their age have to be the same.
+
+00:01:38.220 --> 00:01:39.639
+So we've got that and here.
+
+00:01:39.950 --> 00:01:43.310
+So that's it, a real simple person
+class that we're going to use in here.
+
+00:01:43.690 --> 00:01:47.039
+So I've also divided this
+into functions just like I did
+
+00:01:47.039 --> 00:01:48.449
+with the iterators lecture.
+
+00:01:49.049 --> 00:01:50.979
+So let's take a look
+at this first 1 here.
+
+00:01:51.980 --> 00:01:53.309
+What is the algorithm we're using?
+
+00:01:53.320 --> 00:01:54.910
+The algorithm is right there.
+
+00:01:55.260 --> 00:01:57.270
+That function is defined function.
+
+00:01:57.870 --> 00:02:00.710
+It finds an element in a container.
+
+00:02:01.410 --> 00:02:04.069
+Okay, the first occurrence of
+the element in the container.
+
+00:02:04.440 --> 00:02:05.519
+So what are we going to do?
+
+00:02:05.990 --> 00:02:09.870
+Let's create a vector
+of integers 1 2 3 4 5.
+
+00:02:09.870 --> 00:02:12.920
+And then I'm going to call std find.
+
+00:02:13.340 --> 00:02:15.439
+I'm going to give it the
+beginning and the end.
+
+00:02:15.710 --> 00:02:18.500
+Now notice that this syntax
+here is a little different, I
+
+00:02:18.500 --> 00:02:21.040
+just wanted to show you that
+syntax in case you run into it.
+
+00:02:21.040 --> 00:02:31.200
+It's equivalent to vec.begin and
+vec.end, like we've seen before but.
+
+00:02:31.200 --> 00:02:35.680
+In this case, it std began, and you
+pass in the vector or the container.
+
+00:02:35.840 --> 00:02:38.359
+So it's just another way to do,
+it means exactly the same thing.
+
+00:02:38.750 --> 00:02:39.980
+So let's get back to this.
+
+00:02:40.459 --> 00:02:43.860
+I'm calling the find function
+I'm passing in where I want to
+
+00:02:43.870 --> 00:02:47.260
+start where I want to end, right,
+that's the sequence that I'm going
+
+00:02:47.260 --> 00:02:49.670
+to get back from the container.
+
+00:02:49.670 --> 00:02:50.810
+I'm using these iterators.
+
+00:02:51.000 --> 00:02:52.120
+And that's what I want to find.
+
+00:02:52.120 --> 00:02:53.619
+I want to find that element 1.
+
+00:02:54.150 --> 00:02:54.960
+I know it's there.
+
+00:02:54.969 --> 00:02:55.739
+It's right here.
+
+00:02:57.250 --> 00:02:58.630
+Okay, now what does this return?
+
+00:02:58.910 --> 00:03:02.590
+Well, if it finds it, it will
+return an iterator pointing to it.
+
+00:03:02.590 --> 00:03:06.450
+If it doesn't find it, it'll
+return an iterator to the end.
+
+00:03:07.300 --> 00:03:08.650
+So it's really simple to check.
+
+00:03:08.920 --> 00:03:11.760
+Okay, so let me clear this, and
+let's look at the logic here.
+
+00:03:12.139 --> 00:03:13.940
+So we're executing that function.
+
+00:03:14.309 --> 00:03:17.129
+And if the location -- remember,
+location I'm using auto,
+
+00:03:17.129 --> 00:03:20.940
+but location is an iterator
+to a vector of integers.
+
+00:03:22.210 --> 00:03:25.390
+If the location is not equal to the
+end of the vector, then we found it.
+
+00:03:25.970 --> 00:03:28.700
+We found the number, and we could
+just dereference it and print it out.
+
+00:03:28.700 --> 00:03:29.790
+In this case, it'll print out 1.
+
+00:03:30.730 --> 00:03:32.370
+Otherwise, we couldn't
+find the number.
+
+00:03:32.799 --> 00:03:34.170
+So let's execute this.
+
+00:03:34.199 --> 00:03:36.080
+And then we'll change the
+code just a little bit.
+
+00:03:36.090 --> 00:03:37.160
+So let me run this real quick.
+
+00:03:38.550 --> 00:03:39.610
+We found the number 1.
+
+00:03:39.820 --> 00:03:41.070
+Absolutely, it's in there.
+
+00:03:41.520 --> 00:03:43.920
+Now let's change the 1
+to something like a 7.
+
+00:03:44.000 --> 00:03:46.000
+We know that the 7
+is not in the vector.
+
+00:03:46.280 --> 00:03:50.289
+So let's execute this again,
+couldn't find the number,
+
+00:03:50.320 --> 00:03:51.300
+just what we expected.
+
+00:03:51.690 --> 00:03:54.630
+Now I'm going to change this back to 1
+so you guys can play with it when you
+
+00:03:54.650 --> 00:03:56.030
+have the the source code on your end.
+
+00:03:57.040 --> 00:03:58.400
+That's as simple as it gets.
+
+00:03:58.410 --> 00:04:01.535
+The really cool thing about this
+is I'm finding the first occurrence
+
+00:04:01.740 --> 00:04:04.440
+of an element in any container.
+
+00:04:05.040 --> 00:04:07.289
+That's mind-blowing, right,
+because you're not worried about
+
+00:04:07.290 --> 00:04:08.710
+how this stuff is implemented.
+
+00:04:08.710 --> 00:04:11.930
+You've got all these different
+containers how easy is this you.
+
+00:04:11.930 --> 00:04:14.270
+Know I just want to find some
+things, just go call find.
+
+00:04:14.270 --> 00:04:14.900
+Where do I start.
+
+00:04:14.900 --> 00:04:15.470
+Where do I end.
+
+00:04:15.490 --> 00:04:16.350
+What do I want to find.
+
+00:04:16.950 --> 00:04:19.430
+That's real classic
+abstraction, that's pretty cool.
+
+00:04:19.829 --> 00:04:21.829
+That's using a primitive
+type an integer.
+
+00:04:22.300 --> 00:04:24.500
+What would it look like if
+we're trying to find a player.
+
+00:04:24.509 --> 00:04:27.110
+So that's what this example
+right here is going to show you.
+
+00:04:27.900 --> 00:04:29.060
+So let's take a look at that.
+
+00:04:29.340 --> 00:04:31.680
+In this case, I'm not using
+a vector, I'm using a list,
+
+00:04:31.730 --> 00:04:32.750
+but it's all the same.
+
+00:04:33.100 --> 00:04:35.660
+I've got a list of persons, right.
+
+00:04:35.690 --> 00:04:36.590
+I'm calling them player.
+
+00:04:36.590 --> 00:04:40.360
+I'm initializing it to Larry is 18
+years old, Moe is 20 and Curly's 21.
+
+00:04:40.849 --> 00:04:43.019
+Remember, that person class I
+showed you a little bit ago.
+
+00:04:43.940 --> 00:04:46.360
+I want to find that
+person in that list.
+
+00:04:46.690 --> 00:04:51.700
+Look at the code, auto location
+1 equals std find, where do
+
+00:04:51.700 --> 00:04:54.600
+I start, where do I end,
+what do I want to find.
+
+00:04:55.640 --> 00:04:59.349
+The stl algorithms is going to
+use the equality operator that
+
+00:04:59.349 --> 00:05:03.169
+I've overloaded for my person
+class to compare these guys.
+
+00:05:03.380 --> 00:05:05.710
+So hopefully, it'll find
+this guy right here, right.
+
+00:05:06.889 --> 00:05:11.800
+So if location 1 is not equal
+to the end, then I found Moe.
+
+00:05:12.470 --> 00:05:13.659
+Otherwise, I didn't find Moe.
+
+00:05:13.849 --> 00:05:16.280
+And how do I know that Moe is Moe.
+
+00:05:16.300 --> 00:05:17.230
+Well, Moe has to be.
+
+00:05:17.240 --> 00:05:19.159
+His name it has to be
+Moe and he has to be 20.
+
+00:05:19.380 --> 00:05:21.850
+Remember, our equality
+operator is checking for both.
+
+00:05:22.260 --> 00:05:26.960
+All right, so let's give this one
+a run, and we should see found Moe.
+
+00:05:27.030 --> 00:05:28.250
+That's exactly what we get.
+
+00:05:28.470 --> 00:05:30.310
+Now if I change Moe's age here.
+
+00:05:30.310 --> 00:05:32.530
+Let's see I'll make them 18 or 12.
+
+00:05:33.050 --> 00:05:34.010
+That's not in there.
+
+00:05:34.059 --> 00:05:35.609
+I don't have a Moe 12 in there.
+
+00:05:35.990 --> 00:05:39.170
+So at this point when I run
+it, I should not find Moe.
+
+00:05:39.170 --> 00:05:40.559
+And it says Moe not found.
+
+00:05:40.619 --> 00:05:42.109
+That's exactly what we expected.
+
+00:05:42.590 --> 00:05:44.219
+So let me change this
+again back to 20.
+
+00:05:45.050 --> 00:05:47.190
+Okay, so that is the find test.
+
+00:05:47.200 --> 00:05:50.270
+That shows you how to use the
+find function, super powerful.
+
+00:05:50.540 --> 00:05:53.230
+I mean when you think about
+it how hard is it to write a
+
+00:05:53.230 --> 00:05:54.869
+find function for an array.
+
+00:05:55.219 --> 00:05:55.900
+It's not really.
+
+00:05:55.900 --> 00:05:57.909
+You start at the beginning, and
+you move along, we found it.
+
+00:05:57.910 --> 00:05:58.640
+I'm done.
+
+00:05:58.690 --> 00:06:03.140
+But what about a list, a doubly
+linked list, a priority queue, a set.
+
+00:06:03.180 --> 00:06:05.790
+Wow, that's a lot of code you
+would have to write yourself.
+
+00:06:06.160 --> 00:06:07.479
+You don't have to worry
+about any of that.
+
+00:06:07.480 --> 00:06:10.250
+You just call find tell it where to
+start, tell it what it were to end
+
+00:06:10.250 --> 00:06:13.340
+and tell it what you want to find, and
+you're done, it's as simple as that.
+
+00:06:14.780 --> 00:06:16.070
+Okay, so that's the find test.
+
+00:06:16.080 --> 00:06:17.669
+Let me show you the count test now.
+
+00:06:18.100 --> 00:06:21.140
+So I'll uncomment that out, and
+let's take a look for the count test.
+
+00:06:22.270 --> 00:06:24.350
+This one is really,
+really dead simple.
+
+00:06:24.720 --> 00:06:29.329
+All it does is it counts the number of
+elements in a container, but it take…
+
+00:06:29.340 --> 00:06:30.920
+you can take it a little bit further.
+
+00:06:30.929 --> 00:06:35.889
+You can actually count the number of
+occurrences of that specific element.
+
+00:06:36.020 --> 00:06:38.630
+Remember, we could just use size
+for the count of the elements.
+
+00:06:38.630 --> 00:06:42.780
+But in this case, how many times
+does the 1 appear in this container.
+
+00:06:43.040 --> 00:06:45.090
+Well, I've got it here, here and here.
+
+00:06:45.320 --> 00:06:46.460
+It occurs 3 times.
+
+00:06:46.730 --> 00:06:50.890
+So what's my algorithm count
+from the beginning to the end.
+
+00:06:50.890 --> 00:06:52.849
+And again, you can use
+a subset if you like.
+
+00:06:52.850 --> 00:06:55.010
+I'm always going to do beginning
+to end in these examples.
+
+00:06:55.410 --> 00:06:56.479
+This will return an integer.
+
+00:06:56.910 --> 00:06:58.790
+If we get back a 0, didn't find it.
+
+00:06:58.790 --> 00:07:02.810
+If we get back a 1 or 2 or 3 that's
+how many times the 1 occurred.
+
+00:07:03.450 --> 00:07:05.830
+So in this case, I expect back a 3.
+
+00:07:06.660 --> 00:07:10.679
+Let's run this, and there
+it is, 3 occurrences found.
+
+00:07:10.679 --> 00:07:12.550
+So the 1 was there 3 times.
+
+00:07:12.960 --> 00:07:16.060
+Again, if I put something that's
+not in there like a 10 in this
+
+00:07:16.080 --> 00:07:19.900
+case and I run this, it should
+get back 0 occurrences found
+
+00:07:19.900 --> 00:07:21.189
+and that's exactly what we get.
+
+00:07:21.969 --> 00:07:23.390
+Okay, simple as that.
+
+00:07:24.070 --> 00:07:25.520
+So let's close this one down.
+
+00:07:25.719 --> 00:07:29.319
+And let's take a look at a more
+powerful one called the count if test.
+
+00:07:30.820 --> 00:07:32.359
+So here's the count if.
+
+00:07:32.380 --> 00:07:33.910
+The count if is a
+little bit different.
+
+00:07:33.910 --> 00:07:35.760
+We're going to use the
+lambda expression for it.
+
+00:07:35.990 --> 00:07:37.200
+This one is super powerful.
+
+00:07:37.490 --> 00:07:40.960
+We're only going to count how
+many times that element occurs
+
+00:07:41.270 --> 00:07:43.099
+if it matches some condition.
+
+00:07:43.480 --> 00:07:45.500
+Okay, that condition
+is called a predicate.
+
+00:07:45.830 --> 00:07:48.029
+It's something that
+returns a true false value.
+
+00:07:48.389 --> 00:07:49.790
+So here's my vector.
+
+00:07:50.390 --> 00:07:53.040
+And you can see that
+what's my condition.
+
+00:07:53.040 --> 00:07:54.599
+Well, you can see right here.
+
+00:07:55.200 --> 00:07:58.230
+Look at the lambda, the lambda
+tells you exactly what I'm doing.
+
+00:07:58.780 --> 00:08:01.254
+I'm only looking for
+numbers that mod 2 or 0.
+
+00:08:01.410 --> 00:08:04.319
+I'm only looking for
+even numbers here, right.
+
+00:08:04.340 --> 00:08:06.229
+That's what that predicate
+right here is doing.
+
+00:08:06.680 --> 00:08:09.440
+So I'm starting at the
+beginning, and here's my lambda.
+
+00:08:09.560 --> 00:08:12.640
+I'll write it up here just we
+understand exactly what's going on.
+
+00:08:13.590 --> 00:08:14.520
+There's my lambda.
+
+00:08:14.770 --> 00:08:17.539
+And here's the code for the lambda,
+which is this piece right here,
+
+00:08:17.539 --> 00:08:18.580
+and I won't write that again.
+
+00:08:19.420 --> 00:08:20.179
+That's my lambda.
+
+00:08:20.370 --> 00:08:21.080
+So what's going on.
+
+00:08:21.080 --> 00:08:23.210
+I'm starting at the
+beginning of that vec.
+
+00:08:24.090 --> 00:08:26.180
+I'm going toward the end of the vec.
+
+00:08:27.530 --> 00:08:32.250
+And for each element, in that
+sequence, I'm passing it into here.
+
+00:08:33.120 --> 00:08:35.039
+And that's going to
+return true or false.
+
+00:08:35.080 --> 00:08:38.019
+Depending on what it's returned, it's
+going to include it in the count here.
+
+00:08:38.610 --> 00:08:42.360
+Okay, so in this case, what's
+being passed into this lambda here is
+
+00:08:42.360 --> 00:08:46.140
+1 and then 2 and then 3 and
+then 4 and then 5 and so forth.
+
+00:08:46.140 --> 00:08:49.610
+And all it's doing is if this is
+true, if this predicate right here
+
+00:08:49.610 --> 00:08:51.830
+is true, it's just counting them up.
+
+00:08:53.110 --> 00:08:55.170
+Okay, so in this case, how
+many even numbers do we have.
+
+00:08:55.170 --> 00:08:58.710
+We have 1, we have 2,
+we have 3, we have 4.
+
+00:08:59.209 --> 00:09:01.150
+So I would expect a 4 coming back.
+
+00:09:02.240 --> 00:09:04.750
+Over here, you can see it's
+the same idea except this
+
+00:09:04.750 --> 00:09:05.990
+time, what am I looking for.
+
+00:09:06.590 --> 00:09:08.180
+I'm looking for odd numbers.
+
+00:09:08.670 --> 00:09:09.960
+How many odd numbers do we have.
+
+00:09:09.960 --> 00:09:13.909
+We have 1 2 3 4 5.
+
+00:09:13.950 --> 00:09:16.140
+So we've got 5, I
+expect a 4 from here.
+
+00:09:16.430 --> 00:09:18.270
+I expect this to print out of 5.
+
+00:09:19.359 --> 00:09:21.870
+Now let's write another function,
+we'll write this one together.
+
+00:09:22.000 --> 00:09:25.730
+How can we determine, how
+many elements in the vec are
+
+00:09:25.730 --> 00:09:27.000
+greater than or equal to 5.
+
+00:09:27.099 --> 00:09:27.840
+So what do we do.
+
+00:09:27.880 --> 00:09:29.800
+Well, we write the
+statement real simple.
+
+00:09:29.800 --> 00:09:35.249
+Num equals std count
+if, that's my algorithm.
+
+00:09:36.090 --> 00:09:37.490
+We're going to do vec.begin.
+
+00:09:37.740 --> 00:09:39.189
+Let's search the entire vector.
+
+00:09:39.189 --> 00:09:40.620
+We're going to go to vec.end.
+
+00:09:41.500 --> 00:09:43.870
+Now we could have used a
+constant iterator here.
+
+00:09:43.870 --> 00:09:44.830
+We could use a lot of things.
+
+00:09:44.830 --> 00:09:46.290
+I'm just going to do real simple.
+
+00:09:46.570 --> 00:09:48.070
+So I'm going from beginning to end.
+
+00:09:48.530 --> 00:09:52.120
+And at this point, this
+is where I need my lambda.
+
+00:09:52.490 --> 00:09:54.810
+So all these elements are
+being passed into this.
+
+00:09:54.810 --> 00:09:56.850
+What am I going to do, I'm
+going to put my lambda in here.
+
+00:09:57.110 --> 00:09:59.100
+It's going to expect a single integer.
+
+00:09:59.840 --> 00:10:02.140
+I'm going to write my
+code right in here.
+
+00:10:02.980 --> 00:10:06.879
+Then I'm going to close this and
+close it like that with a semicolon.
+
+00:10:07.150 --> 00:10:08.489
+So what is the predicate.
+
+00:10:09.370 --> 00:10:14.210
+I'm going to return true
+if x is greater than or
+
+00:10:14.240 --> 00:10:16.660
+equal to 5, just like that.
+
+00:10:17.720 --> 00:10:20.410
+And let me just copy this line
+right here, I'll move it down here.
+
+00:10:21.630 --> 00:10:25.109
+So all I'm going to do is
+I'm going to output num,
+
+00:10:26.639 --> 00:10:28.220
+numbers are greater than 5.
+
+00:10:30.750 --> 00:10:32.160
+How many of those do we expect.
+
+00:10:32.440 --> 00:10:36.020
+Well, we've got 2 greater
+than or equal to 5.
+
+00:10:36.020 --> 00:10:38.650
+Sorry, so we have 5 and the 100.
+
+00:10:38.650 --> 00:10:39.320
+So there's only 2.
+
+00:10:39.320 --> 00:10:40.859
+So let's run this.
+
+00:10:42.710 --> 00:10:45.269
+We have 4 even numbers,
+just what we expected.
+
+00:10:45.549 --> 00:10:49.220
+We've got 5 odd numbers and 2
+of the numbers are greater than
+
+00:10:49.330 --> 00:10:50.980
+or equal to 5, I'll change that.
+
+00:10:52.100 --> 00:10:54.710
+There you go, pretty simple.
+
+00:10:55.170 --> 00:10:57.209
+These lambdas take a little
+getting used to, but you get
+
+00:10:57.210 --> 00:10:59.539
+used to them really quickly, and
+they're so powerful, it makes
+
+00:10:59.559 --> 00:11:01.110
+programming much, much simpler.
+
+00:11:02.139 --> 00:11:03.609
+Okay, so that's count if.
+
+00:11:03.820 --> 00:11:05.739
+The next one we'll
+do is a replace test.
+
+00:11:05.990 --> 00:11:07.850
+So let's take a look at replace test.
+
+00:11:07.910 --> 00:11:09.370
+Let me comment that out here.
+
+00:11:10.080 --> 00:11:10.925
+So what is this doing.
+
+00:11:11.120 --> 00:11:14.420
+Well, this is looking through a
+vector in this case or any container.
+
+00:11:14.800 --> 00:11:17.319
+And it's going to replace
+one number with another.
+
+00:11:17.559 --> 00:11:18.109
+Pretty cool.
+
+00:11:18.620 --> 00:11:19.975
+So here I've got a std vec.
+
+00:11:20.170 --> 00:11:22.609
+And I've got 1 2 3, notice the one.
+
+00:11:22.660 --> 00:11:24.189
+That's all I really
+care about in this case.
+
+00:11:24.190 --> 00:11:26.110
+I've got 3 of those 1s right in here.
+
+00:11:26.650 --> 00:11:30.260
+I'm just displaying them out right
+now, and we'll display them out.
+
+00:11:30.260 --> 00:11:34.099
+And then I'm calling std
+replace, and I'm starting at
+
+00:11:34.130 --> 00:11:37.930
+the beginning, going to the end,
+and I'm replacing 1 with a 100.
+
+00:11:39.020 --> 00:11:41.190
+And remember, I'm using
+primitives here, but we can use
+
+00:11:41.190 --> 00:11:42.780
+our own objects if you like so.
+
+00:11:42.780 --> 00:11:46.660
+In this case, I'm replacing
+those 3 1s with a 100 and then
+
+00:11:46.730 --> 00:11:47.990
+I'm just displaying it again.
+
+00:11:48.310 --> 00:11:49.430
+So let's give that a run.
+
+00:11:50.460 --> 00:11:54.119
+And we'll be able to see that
+we've got 1 2 -- let me move this
+
+00:11:54.179 --> 00:11:56.170
+-- over just a little bit, 1 2 3.
+
+00:11:56.170 --> 00:11:57.110
+You can see the 3 1s here.
+
+00:11:57.110 --> 00:12:00.020
+And you can see that the 3 1s
+have been replaced with 100s.
+
+00:12:00.630 --> 00:12:02.110
+Really cool, really easy.
+
+00:12:02.550 --> 00:12:04.090
+Okay, let's do a couple of more.
+
+00:12:04.570 --> 00:12:08.060
+And the point of this is not to
+show you these specific algorithms.
+
+00:12:08.230 --> 00:12:11.069
+There's, like I said, over
+50, probably closer to
+
+00:12:11.070 --> 00:12:12.439
+90 algorithms out there.
+
+00:12:12.590 --> 00:12:16.579
+If you look at the numeric header
+as well, they all work in a similar
+
+00:12:16.580 --> 00:12:19.219
+way, they all use iterators,
+many of them use predicates.
+
+00:12:19.220 --> 00:12:22.140
+So this gives you a pretty good
+feeling for the power that's out
+
+00:12:22.140 --> 00:12:23.260
+there and the things you can do.
+
+00:12:23.630 --> 00:12:25.540
+So this is the all of test.
+
+00:12:26.620 --> 00:12:27.730
+This is really cool.
+
+00:12:27.860 --> 00:12:28.700
+Let me show you this one.
+
+00:12:28.980 --> 00:12:30.169
+So here's my vec1.
+
+00:12:31.240 --> 00:12:36.140
+And I've got a 1 a 3 a 5 a 6 or
+9 a 1 a 3 a 13 a 19 and 5, just
+
+00:12:36.140 --> 00:12:37.490
+some arbitrary numbers in there.
+
+00:12:38.680 --> 00:12:39.610
+What this is doing.
+
+00:12:39.610 --> 00:12:41.199
+There is the function all of.
+
+00:12:41.390 --> 00:12:44.190
+It's going to see whether
+all of the elements in that
+
+00:12:44.190 --> 00:12:46.310
+container match this predicate.
+
+00:12:46.530 --> 00:12:47.670
+That's super powerful.
+
+00:12:48.400 --> 00:12:53.059
+So in this case, I'm saying if all
+of those elements are greater than
+
+00:12:53.059 --> 00:12:54.930
+10, then this will return true.
+
+00:12:55.860 --> 00:12:58.510
+Otherwise, they would
+it will return false.
+
+00:12:58.860 --> 00:13:01.209
+So obviously, then they're not
+all greater than 10, right.
+
+00:13:01.210 --> 00:13:02.356
+I've got a 1 and a 3 and a 5.
+
+00:13:02.380 --> 00:13:06.340
+So I expect this to return false,
+and I expect this to print out.
+
+00:13:07.630 --> 00:13:11.720
+In this case here, all of that I'm
+starting at the beginning going
+
+00:13:11.740 --> 00:13:15.130
+toward the end, I'm checking to see
+if all the elements are less than 20.
+
+00:13:15.480 --> 00:13:17.689
+You can see in here
+they are less than 20.
+
+00:13:17.700 --> 00:13:19.520
+Every single one of
+them is less than 20.
+
+00:13:19.760 --> 00:13:22.209
+So I expect this guy
+to display right now.
+
+00:13:23.440 --> 00:13:24.780
+We have the all of.
+
+00:13:24.950 --> 00:13:28.539
+There's also another algorithm
+called any of, which.
+
+00:13:28.549 --> 00:13:31.150
+So if any of them is greater
+than 10 it'll be true.
+
+00:13:31.400 --> 00:13:34.270
+So you've got the power to compare
+them all or just compare one of them.
+
+00:13:35.090 --> 00:13:36.920
+So let's execute this.
+
+00:13:38.270 --> 00:13:42.230
+And we can see here, not all of
+the elements are greater than 10.
+
+00:13:42.259 --> 00:13:45.020
+Absolutely, we've got some
+that are less than 10, but all
+
+00:13:45.020 --> 00:13:46.579
+the elements are less than 20.
+
+00:13:48.080 --> 00:13:50.569
+And I can't impress upon
+you the fact enough times
+
+00:13:50.570 --> 00:13:52.650
+about how powerful this is.
+
+00:13:52.660 --> 00:13:55.020
+We don't really care
+about the container.
+
+00:13:55.020 --> 00:13:55.910
+That's the cool part.
+
+00:13:56.420 --> 00:13:57.700
+I don't need to worry about it.
+
+00:13:57.790 --> 00:14:01.800
+It could be implemented in a really,
+really complex way, doesn't matter.
+
+00:14:02.020 --> 00:14:04.079
+The algorithms library
+handles it for us.
+
+00:14:04.639 --> 00:14:09.569
+All right, so the last example
+is a string transform test.
+
+00:14:09.650 --> 00:14:10.460
+This is pretty cool.
+
+00:14:11.100 --> 00:14:13.030
+There's an algorithm called transform.
+
+00:14:13.030 --> 00:14:16.239
+And it works not just with strings, it
+works with with containers obviously.
+
+00:14:16.610 --> 00:14:18.660
+But it's used very often with strings.
+
+00:14:18.700 --> 00:14:19.700
+Let me show you what it does.
+
+00:14:20.700 --> 00:14:23.019
+And this is where that 2
+upper function comes in.
+
+00:14:23.549 --> 00:14:27.470
+So here I've got str1 is a std string.
+
+00:14:28.000 --> 00:14:30.190
+And it's initialized
+to this is a test.
+
+00:14:30.610 --> 00:14:33.550
+And all I'm doing is I'm
+displaying before the transform,
+
+00:14:33.570 --> 00:14:34.660
+I'm displaying the string.
+
+00:14:34.660 --> 00:14:37.580
+So that's just going to display
+this is a test, just like that.
+
+00:14:38.639 --> 00:14:41.070
+Then I'm going to call the
+std transform function.
+
+00:14:41.080 --> 00:14:44.339
+I'm going to tell it where
+to start at str1 begin.
+
+00:14:44.880 --> 00:14:48.370
+Where to end in, other words,
+it's processing the entire string.
+
+00:14:48.980 --> 00:14:51.600
+And then where to start
+placing its results at the
+
+00:14:51.600 --> 00:14:52.699
+beginning of the string again.
+
+00:14:53.520 --> 00:14:54.550
+And what do I want to do.
+
+00:14:54.690 --> 00:14:58.009
+Well, I want to make each character
+2 upper, and i can pass my own
+
+00:14:58.100 --> 00:15:01.800
+function in here, but we already
+have the 2 upper function defined
+
+00:15:01.800 --> 00:15:04.719
+in cc type so may as well use it.
+
+00:15:05.120 --> 00:15:09.339
+Whenever you put that scope
+resolution operator in the front
+
+00:15:09.360 --> 00:15:12.729
+of something with nothing here
+just that guy followed by something
+
+00:15:12.730 --> 00:15:15.189
+else, that means global scope.
+
+00:15:16.770 --> 00:15:17.960
+And that's what's going on here.
+
+00:15:18.219 --> 00:15:21.000
+So I'm using the 2 upper
+method or function actually
+
+00:15:21.000 --> 00:15:22.340
+that's in the global scope.
+
+00:15:22.580 --> 00:15:25.360
+So what do you think this does,
+it makes every single character
+
+00:15:25.390 --> 00:15:27.230
+in that string uppercase.
+
+00:15:27.710 --> 00:15:28.660
+Super powerful.
+
+00:15:28.660 --> 00:15:30.219
+We can process strings.
+
+00:15:30.219 --> 00:15:33.209
+If you remember that one example
+we did a while back with the
+
+00:15:33.230 --> 00:15:35.480
+way back in the course, right,
+where we encrypted a string.
+
+00:15:36.379 --> 00:15:39.630
+This makes it really easy because you
+can transform that string, you can
+
+00:15:39.630 --> 00:15:43.060
+play all kinds of games with it, and
+the algorithm becomes much cleaner.
+
+00:15:43.310 --> 00:15:44.870
+So let's run this example.
+
+00:15:46.090 --> 00:15:48.119
+And we should see the
+string in lowercase and then
+
+00:15:48.120 --> 00:15:49.470
+the string and uppercase. There it is.
+
+00:15:49.470 --> 00:15:50.340
+This is a test.
+
+00:15:50.670 --> 00:15:51.760
+This is a test.
+
+00:15:53.379 --> 00:15:56.990
+All right, so that gives you
+a little bit of introduction.
+
+00:15:57.280 --> 00:16:00.470
+And let me uncomment this out,
+set it up just like that, so I'll
+
+00:16:00.470 --> 00:16:02.970
+save it like that for you guys to
+be able to download it and play
+
+00:16:02.970 --> 00:16:04.550
+with this from the beginning.
+
+00:16:05.090 --> 00:16:07.690
+So here you can see the find,
+the count, the count if, the
+
+00:16:07.690 --> 00:16:11.189
+replace, the all of, you can
+play around with the any of.
+
+00:16:11.590 --> 00:16:14.580
+And what I would encourage
+you to do is -- let me just
+
+00:16:14.580 --> 00:16:15.620
+close this up a little bit.
+
+00:16:16.020 --> 00:16:18.490
+What I want to encourage you to
+do is play with these lambdas.
+
+00:16:18.630 --> 00:16:21.089
+Give yourself different conditions,
+make them a little bit more
+
+00:16:21.090 --> 00:16:24.890
+complicated if you like, and just
+get used to the lambda syntax.
+
+00:16:25.139 --> 00:16:28.900
+One of the things that we're not going
+to do in this course or maybe I will
+
+00:16:28.900 --> 00:16:32.230
+in a different section later on, I
+can add a section just on lambdas.
+
+00:16:32.620 --> 00:16:35.719
+That guy, right there, those 2
+square brackets, that's the lambda's
+
+00:16:35.870 --> 00:16:39.259
+capture block, that's a real
+important piece of the lambda that
+
+00:16:39.260 --> 00:16:41.000
+allows you to capture the context.
+
+00:16:41.000 --> 00:16:43.779
+So if I have variables in
+here, I can catch them in there
+
+00:16:43.780 --> 00:16:45.630
+and set them and use them.
+
+00:16:46.250 --> 00:16:48.120
+We're not doing that in
+here, we're just keeping
+
+00:16:48.120 --> 00:16:49.359
+the lambdas really simple.
+
+00:16:49.400 --> 00:16:52.270
+Hopefully, you do understand these
+lambdas and how powerful they are.
+
+00:16:52.620 --> 00:16:54.520
+Play around with them,
+get comfortable with them.
+
+00:16:54.820 --> 00:16:56.420
+It's really the way
+to go with modern c++.
+
+00:16:56.550 --> 00:17:00.810
+All right, so that's it
+for the algorithms demo.
+
+00:17:01.349 --> 00:17:04.020
+Now we're going to start talking
+about the actual containers.
+
+00:17:04.020 --> 00:17:06.480
+The first one we'll
+talk about is std array.
+
+00:17:06.639 --> 00:17:08.400
+So I'll be right back
+to talk about that.

@@ -1,0 +1,373 @@
+WEBVTT
+
+0
+00:02.620 --> 00:11.310
+Let's see default arguments in functions. I want to write a function for finding sum of two integers
+
+1
+00:11.320 --> 00:18.730
+so I will take a function name as a sum and integer a comma integer B.
+
+2
+00:18.730 --> 00:23.020
+Now here I will say return
+
+3
+00:25.870 --> 00:28.540
+a plus b.
+
+4
+00:28.540 --> 00:32.200
+I want to modify this function for now.
+
+5
+00:32.530 --> 00:37.180
+Now this function can take two integers and find the sum of those.
+
+6
+00:37.180 --> 00:38.730
+Let us call this one.
+
+7
+00:38.770 --> 00:45.670
+cout sum 10, 5  just now we have seen this type of function.
+
+8
+00:45.670 --> 00:52.300
+Now I want to write one more function with the three parameters finding the sum of three numbers so I
+
+9
+00:52.300 --> 00:53.410
+will declare a variable.
+
+10
+00:53.410 --> 00:58.870
+See here itself and I will add these three numbers in them.
+
+11
+00:58.900 --> 01:00.610
+Now this function is gone.
+
+12
+01:00.610 --> 01:04.070
+I don't have a function which takes two parameters so see here.
+
+13
+01:04.270 --> 01:06.740
+No matching function for call to sum.
+
+14
+01:06.810 --> 01:07.700
+Not found.
+
+15
+01:07.840 --> 01:09.170
+But this is available.
+
+16
+01:09.280 --> 01:15.200
+cout sum 12 13 14.
+
+17
+01:15.210 --> 01:21.800
+I have passed three Parmeter So this is valid and this function became invalid.
+
+18
+01:21.810 --> 01:24.980
+This is valid because there are three arguments.
+
+19
+01:25.050 --> 01:29.090
+No what I will do here is the last argument I'll make it as zero.
+
+20
+01:29.100 --> 01:31.760
+So this is optional.
+
+21
+01:32.010 --> 01:34.490
+Now this is not an error.
+
+22
+01:34.710 --> 01:42.250
+If I pass two arguments this  10 goes into A and five goes in B and by default C will be zero.
+
+23
+01:42.390 --> 01:46.070
+And when this A B C are added the value of c is zero.
+
+24
+01:46.080 --> 01:49.280
+So I'll get the exact result of ten plus five.
+
+25
+01:49.620 --> 01:56.550
+So a single function will work as 2 different function one with the two arguments and one with the three
+
+26
+01:56.550 --> 01:57.270
+arguments
+
+27
+02:00.600 --> 02:05.420
+and these arguments called as default arguments.
+
+28
+02:05.990 --> 02:13.660
+The benefit of default argument is we can define overloaded functions by writing a single function.
+
+29
+02:13.680 --> 02:26.460
+Now let me write one function for finding maximum of three numbers, let us see int Max integer A integer
+
+30
+02:26.550 --> 02:28.680
+b  integer C.
+
+31
+02:28.890 --> 02:31.730
+So this is taking three arguments and here.
+
+32
+02:31.980 --> 02:45.120
+I will check return if A is greater than B as well as A is greater than c then written A..
+
+33
+02:45.780 --> 02:54.190
+Otherwise if B is greater than c return B otherwise written C.
+
+34
+02:54.480 --> 03:00.450
+So using ternary operators I have hit this function just in a single line
+
+35
+03:03.660 --> 03:13.620
+See this is the conditional statement and this is part and this is as part if I will if I want I can
+
+36
+03:13.620 --> 03:15.370
+put it in brackets also.
+
+37
+03:15.420 --> 03:16.610
+This is the else part.
+
+38
+03:16.620 --> 03:23.250
+This else part is again having a conditional statement and this is the if part and this is the else part.
+
+39
+03:23.340 --> 03:31.710
+Now  let me call this function that is Max by passing some arguments 10, 13, 12
+
+40
+03:31.710 --> 03:38.030
+ilet us see what is the result.
+
+41
+03:38.040 --> 03:39.640
+It will return.
+
+42
+03:39.960 --> 03:42.020
+It should return 13.
+
+43
+03:42.300 --> 03:44.550
+So this answer is 13.
+
+44
+03:44.730 --> 03:46.310
+I got the answer.
+
+45
+03:47.370 --> 03:51.580
+Now I want to make one of the argument as default so I'll make C as default.
+
+46
+03:51.780 --> 03:59.240
+And here I will pass  just two arguments that is 10 and 13 let us see what will be the result.
+
+47
+03:59.730 --> 04:00.970
+Again it is working.
+
+48
+04:01.050 --> 04:03.820
+So it's working for just two parameters also.
+
+49
+04:03.880 --> 04:06.270
+And it is working for three parameters.
+
+50
+04:06.270 --> 04:07.280
+Let me check that with.
+
+51
+04:07.290 --> 04:08.930
+Value 15.
+
+52
+04:09.030 --> 04:10.500
+I should get that result 15.
+
+53
+04:10.540 --> 04:13.290
+Yes so it is working for two arguments.
+
+54
+04:13.290 --> 04:19.010
+Also it's working for three arguments also because the last argument is optional and it is having default 
+
+55
+04:19.010 --> 04:21.510
+i will make first argument.
+
+56
+04:21.510 --> 04:27.000
+Also as default this is zero then only one argument is also allowed.
+
+57
+04:27.000 --> 04:31.520
+So I let me remove all this and just take ten and call this one.
+
+58
+04:31.750 --> 04:33.300
+Yeah it is not an error.
+
+59
+04:33.330 --> 04:39.660
+It is able to call that function so it is sending the value 10.
+
+60
+04:39.750 --> 04:41.120
+So this is working even.
+
+61
+04:41.130 --> 04:44.250
+Even if I send a single parameter also it's working.
+
+62
+04:44.250 --> 04:47.090
+I will give this also as zero A also as zero.
+
+63
+04:47.160 --> 04:49.140
+And I will not pass any argument.
+
+64
+04:49.290 --> 04:51.090
+Yes still it is valid.
+
+65
+04:51.150 --> 04:56.700
+So this single function is acting as four different functions.
+
+66
+04:56.700 --> 05:01.250
+One is max without any arguments and one is max 
+
+67
+05:01.430 --> 05:09.360
+with one argument that a 10 and Max with the two arguments.
+
+68
+05:09.480 --> 05:15.860
+I'll pass two arguments 10, 13 and one more Max.
+
+69
+05:15.870 --> 05:21.960
+with three arguments that is 10,  13, 15.
+
+70
+05:21.960 --> 05:29.190
+So for all these function calls the same function will be called and it means it is just like an
+
+71
+05:29.280 --> 05:30.680
+overloaded function.
+
+72
+05:30.720 --> 05:33.100
+So you can see the complete program here.
+
+73
+05:33.390 --> 05:38.810
+So the single function is acting as four different overloaded functions that is zero argument.
+
+74
+05:38.810 --> 05:42.510
+One argument two argument and three argument.
+
+75
+05:42.540 --> 05:46.380
+So it works it's not an error and it will show different results.
+
+76
+05:49.610 --> 05:51.790
+So the values are zero 10.
+
+77
+05:51.890 --> 05:53.400
+13 15.
+
+78
+05:53.470 --> 06:01.540
+So I got the perfect result for all four function calls. first time and I'm not passing anything so zero
+
+79
+06:01.550 --> 06:02.890
+is the greatest number here.
+
+80
+06:03.080 --> 06:11.610
+But a past 10 so 10 is the greatest number and so on.
+
+81
+06:12.300 --> 06:18.510
+now one more thing i will show you here that if I remove this default argument then what happens.
+
+82
+06:18.870 --> 06:25.750
+So it is an error missing default argument on parameter b. so parameter b we have missed this one so
+
+83
+06:25.750 --> 06:28.180
+we must give the default argument to this one.
+
+84
+06:28.240 --> 06:30.150
+If you want you can skip this one.
+
+85
+06:30.280 --> 06:35.140
+It means if you want to fill the default arguments to the parameters you should fill them from the right
+
+86
+06:35.140 --> 06:40.660
+hand side not from left hand side and without skipping any argument.
+
+87
+06:40.660 --> 06:48.920
+See I have removed the default arguments for this function so it became an invalid function.
+
+88
+06:48.950 --> 06:51.670
+I'll make this also as default argument.
+
+89
+06:51.670 --> 06:59.160
+Now everything is perfect so the default argument feature is a very useful feature in C++.
+
+90
+06:59.170 --> 07:00.450
+I'll give you some exercises.
+
+91
+07:00.460 --> 07:02.320
+You have to solve those challenges.
+
+92
+07:02.440 --> 07:04.890
+So by the time you try this on your computer.

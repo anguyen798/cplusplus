@@ -1,0 +1,1169 @@
+﻿WEBVTT
+
+00:00:00.000 --> 00:00:10.000
+Hello everyone, this is Steve Gilbert. Welcome to lecture 11, where we're going to talk about streams and filters.
+
+00:00:10.000 --> 00:00:24.000
+So what is a stream? A stream is an abstract data flow. So data comes into your program from something called a source.
+
+00:00:24.000 --> 00:00:35.000
+So that may be your keyboard, you may read data from a file, it may be a satellite if your program is reading data from a GPS satellite,
+
+00:00:35.000 --> 00:00:41.000
+it may be a little sensor on the brakes of your car or somewhere in the engine of your car.
+
+00:00:41.000 --> 00:00:51.000
+The data flows from that source, wherever the data comes from, and it flows into your program where your program processes the data.
+
+00:00:51.000 --> 00:01:00.000
+When your program is done processing the data, then it sends it out of your program to some kind of sync.
+
+00:01:00.000 --> 00:01:08.000
+Now that again may be your screen, it may be a printer, it may be an internet connection somewhere out on the internet,
+
+00:01:08.000 --> 00:01:23.000
+it may be a little light or a dial on the dashboard of your car, it may be some numbers that appear in your GPS machine.
+
+00:01:23.000 --> 00:01:36.000
+So the sync is where the data appears, the output appears. So you notice this is the input/output processing cycle that we've done from the very beginning.
+
+00:01:36.000 --> 00:01:45.000
+Now sending information to a sync is called writing to the sync, and getting information from a source is called reading from a source.
+
+00:01:45.000 --> 00:01:58.000
+So how do we do that in the C++ program? Well, your operating system, not C++, but your operating system has three global stream objects.
+
+00:01:58.000 --> 00:02:07.000
+These are called standard in, standard out, and standard error, where the error messages are sent.
+
+00:02:07.000 --> 00:02:16.000
+Now C++ has specialized classes which interact with these global stream objects.
+
+00:02:16.000 --> 00:02:24.000
+And these classes know how to do input, in other words read, and how to do output, in other words write.
+
+00:02:24.000 --> 00:02:33.000
+And those two classes in the header file Iostream are called Istream, which are objects that know how to read information.
+
+00:02:33.000 --> 00:02:37.000
+In Java this class is generally called InputStream.
+
+00:02:37.000 --> 00:02:43.000
+And Ostream, objects which know how to write information.
+
+00:02:43.000 --> 00:02:54.000
+Now, as you remember from Java, a class is a blueprint for creating objects. And the objects are what actually do the work in your program.
+
+00:02:54.000 --> 00:02:59.000
+So we can't do anything with Istream or Ostream, we need to create some objects.
+
+00:02:59.000 --> 00:03:07.000
+And C++ will automatically create several global stream objects every time you run a program.
+
+00:03:07.000 --> 00:03:21.000
+So cin is the type of Istream, it's the input object, and it wraps or connects to the operating system object called standard in.
+
+00:03:21.000 --> 00:03:30.000
+cout is the output object, and it wraps standard out, and cerror wraps standard error.
+
+00:03:30.000 --> 00:03:40.000
+So these three objects, cin, cout, and cerror, are automatically created for you whenever you include Iostream.h.
+
+00:03:40.000 --> 00:03:44.000
+You don't need to do anything else to create them.
+
+00:03:44.000 --> 00:03:57.000
+Now, these are objects, cin and cout and cerror, of course, are all objects so they have member functions, or methods as we call them in Java.
+
+00:03:57.000 --> 00:04:05.000
+And so the get member function reads a single character from standard in.
+
+00:04:05.000 --> 00:04:11.000
+The put member function writes a single character to standard out.
+
+00:04:11.000 --> 00:04:18.000
+And if we use cerrorput, we'll write a single character to standard error.
+
+00:04:18.000 --> 00:04:25.000
+So you notice I'm using the object and telling it to put the character, or asking it to get the character.
+
+00:04:25.000 --> 00:04:32.000
+Notice we use the input object cin to get the characters, and cout or cerror to put the characters.
+
+00:04:32.000 --> 00:04:41.000
+Now, using these single member functions is much more efficient than using the insertion or extraction operators,
+
+00:04:41.000 --> 00:04:50.000
+the little arrow arrow that we've been using so far, because they don't have to, these methods just read raw characters.
+
+00:04:50.000 --> 00:04:57.000
+They don't have to convert, and so much, much more efficient, much, much faster.
+
+00:04:57.000 --> 00:05:04.000
+So to use these to read more than a single character, what we do is we use a loop.
+
+00:05:04.000 --> 00:05:07.000
+And this kind of loop is called a data loop.
+
+00:05:07.000 --> 00:05:15.000
+And so we create a character object, we pass that character object to cin get.
+
+00:05:15.000 --> 00:05:22.000
+When cin get fails, then this loop will end, and each time we get a character, we print it out.
+
+00:05:22.000 --> 00:05:33.000
+So this kind of loop, a data loop, is a loop that stops processing, stops running, when there's no more data to process.
+
+00:05:33.000 --> 00:05:36.000
+Now let's look at those two member functions.
+
+00:05:36.000 --> 00:05:44.000
+So both the get and put member functions return the stream that they're used to call them on.
+
+00:05:44.000 --> 00:05:47.000
+That means that stream is modified.
+
+00:05:47.000 --> 00:05:58.000
+So when we read a stream with get, it takes in this character, reads the character, and returns the stream after it's read the character,
+
+00:05:58.000 --> 00:06:00.000
+returns the input stream.
+
+00:06:00.000 --> 00:06:04.000
+Now, the character c is an output parameter.
+
+00:06:04.000 --> 00:06:08.000
+That means we must pass it a variable.
+
+00:06:08.000 --> 00:06:14.000
+And we can use this stream that we get back to check to see if there's more data.
+
+00:06:14.000 --> 00:06:18.000
+And so this is the basic input data loop.
+
+00:06:18.000 --> 00:06:24.000
+While cin get ch, process whatever we got.
+
+00:06:24.000 --> 00:06:28.000
+To write a character, we use the put member function.
+
+00:06:28.000 --> 00:06:33.000
+This also returns a stream that was written, in other words, c out or c error.
+
+00:06:33.000 --> 00:06:36.000
+But notice that the argument is slightly different.
+
+00:06:36.000 --> 00:06:42.000
+Up here we add a character by reference, an output parameter, which must be a variable.
+
+00:06:42.000 --> 00:06:46.000
+Here we have an input or value parameter.
+
+00:06:46.000 --> 00:06:48.000
+That means it's convertible.
+
+00:06:48.000 --> 00:06:54.000
+That means I can call put with not only a character, like a, and print out a,
+
+00:06:54.000 --> 00:06:58.000
+I can call it with a number, and that number will be converted to a character.
+
+00:06:58.000 --> 00:07:02.000
+In this case, this number is just going to represent the ASCII character.
+
+00:07:02.000 --> 00:07:06.000
+So this will also print out an a.
+
+00:07:06.000 --> 00:07:10.000
+OK, so let's put those to work. That seems kind of theoretical.
+
+00:07:10.000 --> 00:07:16.000
+We're going to write what's called the basic text echo filter program.
+
+00:07:16.000 --> 00:07:21.000
+And the basic echo text filter program is simply this.
+
+00:07:21.000 --> 00:07:23.000
+I've already showed it to you.
+
+00:07:23.000 --> 00:07:25.000
+Create a character.
+
+00:07:25.000 --> 00:07:29.000
+While cin get ch, c output ch.
+
+00:07:29.000 --> 00:07:34.000
+So this reads a character and it stores it in the variable ch,
+
+00:07:34.000 --> 00:07:37.000
+and then it prints it to the output.
+
+00:07:37.000 --> 00:07:45.000
+And this, the cin get ch, returns a stream, which is false when there is no more data.
+
+00:07:45.000 --> 00:07:50.000
+So let's flip over to our exercises here.
+
+00:07:50.000 --> 00:07:54.000
+So again, make sure you're in week three.
+
+00:07:54.000 --> 00:07:59.000
+Make sure you have gone to the streams and filters lecture exercise.
+
+00:07:59.000 --> 00:08:02.000
+Make sure you've gone to lecture 11.
+
+00:08:02.000 --> 00:08:05.000
+Of course, if you're watching this, you have already.
+
+00:08:05.000 --> 00:08:09.000
+And make sure you've started the lecture 11 exercise.
+
+00:08:09.000 --> 00:08:14.000
+And we'll look at this data loop.
+
+00:08:14.000 --> 00:08:21.000
+So let's get IC11.
+
+00:08:21.000 --> 00:08:26.000
+Let's right click on this folder A
+
+00:08:26.000 --> 00:08:28.000
+and open a terminal there.
+
+00:08:28.000 --> 00:08:30.000
+So there I have a terminal.
+
+00:08:30.000 --> 00:08:35.000
+And let's open up this ceco.cpp.
+
+00:08:35.000 --> 00:08:38.000
+So open it up. Here's our basic data loop.
+
+00:08:38.000 --> 00:08:46.000
+And let's just do make run.
+
+00:08:46.000 --> 00:08:50.000
+So notice the program doesn't appear to be doing anything.
+
+00:08:50.000 --> 00:08:52.000
+It's just sitting there.
+
+00:08:52.000 --> 00:08:56.000
+And what it's doing is it's waiting for a character from input.
+
+00:08:56.000 --> 00:08:59.000
+So let's type a character, A.
+
+00:08:59.000 --> 00:09:01.000
+That didn't seem to do anything, right?
+
+00:09:01.000 --> 00:09:03.000
+B, C, D, E, F.
+
+00:09:03.000 --> 00:09:09.000
+So when C++ asks for a character,
+
+00:09:09.000 --> 00:09:19.000
+what it does is it turns over the request to a program that is at the source.
+
+00:09:19.000 --> 00:09:23.000
+In our case, since standard in is reading from the keyboard,
+
+00:09:23.000 --> 00:09:29.000
+that's called the keyboard driver or the terminal driver.
+
+00:09:29.000 --> 00:09:32.000
+And so the terminal driver gets a request.
+
+00:09:32.000 --> 00:09:38.000
+And what it does is it allows you to type in different characters, edit them.
+
+00:09:38.000 --> 00:09:45.000
+And only sends the programs to your program when you hit the enter key.
+
+00:09:45.000 --> 00:09:48.000
+So I'm hitting the enter key. This is called buffered input.
+
+00:09:48.000 --> 00:09:50.000
+I'm hitting the enter key.
+
+00:09:50.000 --> 00:09:54.000
+And notice that it then went and read the A from input.
+
+00:09:54.000 --> 00:09:56.000
+It asked for input.
+
+00:09:56.000 --> 00:10:00.000
+Now my keyboard driver had already gotten some input from me.
+
+00:10:00.000 --> 00:10:05.000
+And so only when it exhausted all the input that I had sent to it
+
+00:10:05.000 --> 00:10:11.000
+in my one input, my one buffer, did it stop and ask for more input.
+
+00:10:11.000 --> 00:10:14.000
+So this is called a data loop.
+
+00:10:14.000 --> 00:10:16.000
+This is called a data loop.
+
+00:10:16.000 --> 00:10:19.000
+It stops when the input is exhausted.
+
+00:10:19.000 --> 00:10:22.000
+Now you might wonder why it hasn't stopped.
+
+00:10:22.000 --> 00:10:24.000
+It's still running.
+
+00:10:24.000 --> 00:10:26.000
+How do we make it stop?
+
+00:10:26.000 --> 00:10:31.000
+Well, at the console, there really is no running out of data.
+
+00:10:31.000 --> 00:10:35.000
+The keyboard driver will simply say, "Do you want to type in any more?"
+
+00:10:35.000 --> 00:10:39.000
+So from the console, we can simulate that out of data
+
+00:10:39.000 --> 00:10:46.000
+simply by holding down the control key and pressing D in Unix,
+
+00:10:46.000 --> 00:10:48.000
+which we're in, like that.
+
+00:10:48.000 --> 00:10:52.000
+And notice the program ended when it tried to get a character,
+
+00:10:52.000 --> 00:10:57.000
+it got the symbol, it was out of file, out of data.
+
+00:10:57.000 --> 00:11:04.000
+So on Windows, we would do this with Control and Z on Windows.
+
+00:11:04.000 --> 00:11:09.000
+Now this is not normally how we use an input file like this.
+
+00:11:09.000 --> 00:11:14.000
+It's not meant to be used interactively in an IPO program.
+
+00:11:14.000 --> 00:11:19.000
+Instead, it's meant to process data using redirection
+
+00:11:19.000 --> 00:11:23.000
+to open and process files.
+
+00:11:23.000 --> 00:11:30.000
+So the operating system facility, which connects standard in and standard out
+
+00:11:30.000 --> 00:11:38.000
+to different files, devices, or processes, is called redirection.
+
+00:11:38.000 --> 00:11:43.000
+So if we want to redirect C out, in other words,
+
+00:11:43.000 --> 00:11:49.000
+so the source that C out is writing to is no longer the screen,
+
+00:11:49.000 --> 00:11:55.000
+but something else, we use a little symbol here when we run the program.
+
+00:11:55.000 --> 00:12:01.000
+So this would run the program, this would redirect it to output.txt,
+
+00:12:01.000 --> 00:12:06.000
+this would create output.txt, erase it if it already exists,
+
+00:12:06.000 --> 00:12:11.000
+and anything written to C out would appear in output.txt.
+
+00:12:11.000 --> 00:12:17.000
+If we wanted to not erase it, and we wanted to run the program several times,
+
+00:12:17.000 --> 00:12:23.000
+and simply append to the output, we'd simply use a couple of different arrows.
+
+00:12:23.000 --> 00:12:26.000
+So two arrows instead of one arrow.
+
+00:12:26.000 --> 00:12:32.000
+Now don't confuse these with the arrows we use for C in or C out.
+
+00:12:32.000 --> 00:12:37.000
+Don't confuse them with the arrows we use for C in or C out.
+
+00:12:37.000 --> 00:12:42.000
+Because first, those arrows go the opposite direction.
+
+00:12:42.000 --> 00:12:49.000
+And secondly, this happens when you run the program, not from inside your program.
+
+00:12:49.000 --> 00:12:55.000
+Now we can send the output that's sent to C out in your program,
+
+00:12:55.000 --> 00:12:59.000
+and the output that's sent to C air to different files.
+
+00:12:59.000 --> 00:13:03.000
+And we do that by putting a little number before the little arrow.
+
+00:13:03.000 --> 00:13:09.000
+So one is called the standard out, and two is the standard air.
+
+00:13:09.000 --> 00:13:13.000
+So we're saying run this program, anything that goes to standard out,
+
+00:13:13.000 --> 00:13:16.000
+open and put the data in out.txt,
+
+00:13:16.000 --> 00:13:21.000
+anything that was sent to standard air, put in the air.txt.
+
+00:13:21.000 --> 00:13:29.000
+Now normally, when you run a program, both standard air and standard out appear on the screen.
+
+00:13:29.000 --> 00:13:34.000
+There's no difference to them. You can't tell which one is which.
+
+00:13:34.000 --> 00:13:40.000
+And if you want that same thing, but you want to combine the two and have it appear in one file,
+
+00:13:40.000 --> 00:13:43.000
+you have to combine the two files.
+
+00:13:43.000 --> 00:13:48.000
+So here I'm running the output. I'm sending all of it, or I'm running the executable.
+
+00:13:48.000 --> 00:13:52.000
+I'm sending all of its output to combo.txt,
+
+00:13:52.000 --> 00:13:59.000
+but I'm combining the error stream two on the output stream one.
+
+00:13:59.000 --> 00:14:04.000
+So those are combined or duped together.
+
+00:14:04.000 --> 00:14:10.000
+Now sometimes you might want to discard the output.
+
+00:14:10.000 --> 00:14:13.000
+For instance, we ran the program Doxygen,
+
+00:14:13.000 --> 00:14:19.000
+which produces a lot of output that isn't really useful when you're running the program.
+
+00:14:19.000 --> 00:14:22.000
+I would rather only see the errors.
+
+00:14:22.000 --> 00:14:27.000
+And you can do that by sending the output to the null device.
+
+00:14:27.000 --> 00:14:33.000
+Now, unlike these ones right here, which work in Windows or the Mac,
+
+00:14:33.000 --> 00:14:37.000
+this changes depending on the operating system.
+
+00:14:37.000 --> 00:14:41.000
+So this is the Unix or the Mac version.
+
+00:14:41.000 --> 00:14:47.000
+In Windows, instead of /dev/null,
+
+00:14:47.000 --> 00:14:51.000
+you would simply use nul colon.
+
+00:14:51.000 --> 00:14:54.000
+That's called the null device in Windows.
+
+00:14:54.000 --> 00:14:58.000
+But it would work exactly the same way.
+
+00:14:58.000 --> 00:15:03.000
+Now, what if we wanted to run the program,
+
+00:15:03.000 --> 00:15:08.000
+send its output, and have another program run that output,
+
+00:15:08.000 --> 00:15:14.000
+or eat that output, you know, read that output?
+
+00:15:14.000 --> 00:15:17.000
+We do this by doing exe.
+
+00:15:17.000 --> 00:15:20.000
+All of our output is not sent to the screen.
+
+00:15:20.000 --> 00:15:22.000
+It's not sent to the file.
+
+00:15:22.000 --> 00:15:28.000
+It's simply kept in memory until this program runs.
+
+00:15:28.000 --> 00:15:32.000
+And when this program runs, every piece of output,
+
+00:15:32.000 --> 00:15:35.000
+every CN statement inside this program,
+
+00:15:35.000 --> 00:15:40.000
+would consume the data that was sitting there in memory.
+
+00:15:40.000 --> 00:15:42.000
+This is called a pipe.
+
+00:15:42.000 --> 00:15:47.000
+And a combination of different programs running one program,
+
+00:15:47.000 --> 00:15:50.000
+sending its output as the input to the next program,
+
+00:15:50.000 --> 00:15:53.000
+and sending the output of that as the input to the next program,
+
+00:15:53.000 --> 00:15:57.000
+is called a pipeline.
+
+00:15:57.000 --> 00:15:59.000
+Finally, for input.
+
+00:15:59.000 --> 00:16:03.000
+So this would be a way to run this program,
+
+00:16:03.000 --> 00:16:07.000
+and then pipe its output as the input to this program.
+
+00:16:07.000 --> 00:16:12.000
+Or, if we want to run the program and get its input from a text file,
+
+00:16:12.000 --> 00:16:19.000
+we can use the input redirection with the arrows that go the other way.
+
+00:16:19.000 --> 00:16:26.000
+So we're going to modify our program to read aliceinwonderland.txt.
+
+00:16:26.000 --> 00:16:30.000
+So, let's go back and look at our code.
+
+00:16:30.000 --> 00:16:34.000
+So what do you suppose I need to change inside here
+
+00:16:34.000 --> 00:16:38.000
+to get it to read aliceinwonderland.txt?
+
+00:16:38.000 --> 00:16:40.000
+Well, that's kind of the magic of filter programs.
+
+00:16:40.000 --> 00:16:42.000
+We don't need to change anything.
+
+00:16:42.000 --> 00:16:46.000
+It's ready to run aliceinwonderland.txt.
+
+00:16:46.000 --> 00:16:51.000
+All we have to do is change our make file and tell it.
+
+00:16:51.000 --> 00:16:56.000
+So when we do make run, it runs from the keyboard.
+
+00:16:56.000 --> 00:17:00.000
+If we want to do make read alice,
+
+00:17:00.000 --> 00:17:03.000
+we run the program and we tell it,
+
+00:17:03.000 --> 00:17:10.000
+"I want you to get your input from alice.txt."
+
+00:17:10.000 --> 00:17:12.000
+Get your input from alice.txt.
+
+00:17:12.000 --> 00:17:19.000
+Now notice we have not changed our program, CECO, at all.
+
+00:17:19.000 --> 00:17:23.000
+All we've done is change how we're running the program.
+
+00:17:23.000 --> 00:17:26.000
+So let's come over here.
+
+00:17:26.000 --> 00:17:34.000
+Let's do make read alice, our pseudo target,
+
+00:17:34.000 --> 00:17:38.000
+and now it's going to run exactly the same code that we ran here.
+
+00:17:38.000 --> 00:17:42.000
+No change to our code, but it's going to get its input
+
+00:17:42.000 --> 00:17:46.000
+when we run it from aliceinwonderland.txt.
+
+00:17:46.000 --> 00:17:50.000
+And so there is the whole text of aliceinwonderland
+
+00:17:50.000 --> 00:17:54.000
+printed to the screen, character by character.
+
+00:17:54.000 --> 00:18:00.000
+We read each line one piece at a time and printed it.
+
+00:18:00.000 --> 00:18:03.000
+Okay, now that's somewhat useful, right?
+
+00:18:03.000 --> 00:18:06.000
+It's like the type program in Windows
+
+00:18:06.000 --> 00:18:09.000
+or the cat program in Unix.
+
+00:18:09.000 --> 00:18:14.000
+Basically, that is what the program looks like inside.
+
+00:18:14.000 --> 00:18:18.000
+Now, and so basically I could do the same thing.
+
+00:18:18.000 --> 00:18:22.000
+Let me just show you.
+
+00:18:22.000 --> 00:18:24.000
+Let me clear that.
+
+00:18:24.000 --> 00:18:28.000
+I could simply run the program cat, which is built in,
+
+00:18:28.000 --> 00:18:31.000
+which looks just like our CECO program, basically.
+
+00:18:31.000 --> 00:18:34.000
+And I could say alice.txt,
+
+00:18:34.000 --> 00:18:38.000
+and we would get exactly the same output as we had before
+
+00:18:38.000 --> 00:18:40.000
+from our own program, right?
+
+00:18:40.000 --> 00:18:43.000
+So cat is a filter program.
+
+00:18:43.000 --> 00:18:46.000
+So let's talk about filter programs.
+
+00:18:46.000 --> 00:18:52.000
+So filter programs are programs that read from standard input
+
+00:18:52.000 --> 00:18:55.000
+and write to standard output,
+
+00:18:55.000 --> 00:18:59.000
+so they can be used with redirection.
+
+00:18:59.000 --> 00:19:02.000
+And there are two general categories of filters.
+
+00:19:02.000 --> 00:19:07.000
+A state filter will examine ch for changes,
+
+00:19:07.000 --> 00:19:12.000
+and when it sees a change, it will take some action,
+
+00:19:12.000 --> 00:19:15.000
+ch meaning the character as it goes by.
+
+00:19:15.000 --> 00:19:19.000
+A process filter will modify ch.
+
+00:19:19.000 --> 00:19:26.000
+So let me go ahead and just show you what I mean by that.
+
+00:19:26.000 --> 00:19:33.000
+I'm going to modify CECO.
+
+00:19:33.000 --> 00:19:38.000
+So I'm just going to say instead of printing out ch,
+
+00:19:38.000 --> 00:19:44.000
+I'm going to print out QUIPR.
+
+00:19:44.000 --> 00:19:49.000
+So I'm getting a character, I'm modifying as it goes through.
+
+00:19:49.000 --> 00:19:56.000
+And now I'm going to say down here,
+
+00:19:56.000 --> 00:19:59.000
+I'm going to say CECO,
+
+00:19:59.000 --> 00:20:04.000
+and I'm going to read alice.txt,
+
+00:20:04.000 --> 00:20:07.000
+the text from Alice in Wonderland.
+
+00:20:07.000 --> 00:20:10.000
+So notice we haven't changed Alice in text.
+
+00:20:10.000 --> 00:20:14.000
+I'm filtering the data and turning it into--
+
+00:20:14.000 --> 00:20:16.000
+oh, it didn't work, did it?
+
+00:20:16.000 --> 00:20:19.000
+Oh, I didn't build--sorry, I didn't make to echo,
+
+00:20:19.000 --> 00:20:24.000
+so make CECO.
+
+00:20:24.000 --> 00:20:27.000
+And let me do it once again.
+
+00:20:27.000 --> 00:20:29.000
+So now I'm doing it with Alice.txt,
+
+00:20:29.000 --> 00:20:32.000
+and so now notice we have created a filter.
+
+00:20:32.000 --> 00:20:34.000
+This is called a process filter
+
+00:20:34.000 --> 00:20:37.000
+that looks at each character and input
+
+00:20:37.000 --> 00:20:40.000
+and makes a change to it, right?
+
+00:20:40.000 --> 00:20:47.000
+Does something or processes or modifies that character.
+
+00:20:47.000 --> 00:20:54.000
+OK, instead of that, let's go ahead and look for changes.
+
+00:20:54.000 --> 00:20:58.000
+Now what we want to do is print the chapter headings only,
+
+00:20:58.000 --> 00:21:02.000
+and what we're going to look for is a new line
+
+00:21:02.000 --> 00:21:06.000
+followed by a capital C.
+
+00:21:06.000 --> 00:21:11.000
+We'll continue printing until we encounter the next new line.
+
+00:21:11.000 --> 00:21:14.000
+And so this is called a process filter.
+
+00:21:14.000 --> 00:21:17.000
+We're not doing anything with every character.
+
+00:21:17.000 --> 00:21:21.000
+We're only doing something when we're in a particular state,
+
+00:21:21.000 --> 00:21:23.000
+when we're in the printing state.
+
+00:21:23.000 --> 00:21:27.000
+So one of the things with state filters
+
+00:21:27.000 --> 00:21:33.000
+is that we will always want to--
+
+00:21:33.000 --> 00:21:37.000
+we will always want to have some way of maintaining the state.
+
+00:21:37.000 --> 00:21:39.000
+So the state we're trying to maintain
+
+00:21:39.000 --> 00:21:41.000
+is whether we're printing or not.
+
+00:21:41.000 --> 00:21:48.000
+So we'll create a variable
+
+00:21:48.000 --> 00:21:53.000
+and say we're never printing.
+
+00:21:53.000 --> 00:21:59.000
+Now whenever we read a character,
+
+00:21:59.000 --> 00:22:03.000
+what we'll need to decide is that are we going to start printing
+
+00:22:03.000 --> 00:22:07.000
+or are we not going to start printing.
+
+00:22:07.000 --> 00:22:11.000
+So what we're going to need to do is we're going to say
+
+00:22:11.000 --> 00:22:31.000
+if ch equals a capital C, printing equals true.
+
+00:22:31.000 --> 00:22:35.000
+And then if we're printing,
+
+00:22:35.000 --> 00:22:39.000
+we're going to print the character.
+
+00:22:39.000 --> 00:22:48.000
+And finally, if ch equals the new line,
+
+00:22:48.000 --> 00:22:53.000
+we're going to turn printing off.
+
+00:22:53.000 --> 00:22:57.000
+So notice how I'm going from printing on to printing off.
+
+00:22:57.000 --> 00:23:01.000
+I'm monitoring the state and only printing the characters
+
+00:23:01.000 --> 00:23:04.000
+under certain circumstances.
+
+00:23:04.000 --> 00:23:09.000
+So this is not really what we want yet, but let's try it.
+
+00:23:09.000 --> 00:23:16.000
+Let's do make read Alice.
+
+00:23:16.000 --> 00:23:23.000
+Well, it looks like there are a lot of capital C's here.
+
+00:23:23.000 --> 00:23:27.000
+So we really need to, in this filter,
+
+00:23:27.000 --> 00:23:34.000
+keep track of only capital C's that precede a new line.
+
+00:23:34.000 --> 00:23:37.000
+And so for that we're going to need another variable.
+
+00:23:37.000 --> 00:23:40.000
+So here's my char ch.
+
+00:23:40.000 --> 00:23:42.000
+I'm going to create a char.
+
+00:23:42.000 --> 00:23:45.000
+I call it prev for previous.
+
+00:23:45.000 --> 00:23:50.000
+I'm going to set it to a value that is not meaningful.
+
+00:23:50.000 --> 00:23:53.000
+I don't want a random value.
+
+00:23:53.000 --> 00:24:03.000
+And so we'll say if previous is the new line
+
+00:24:03.000 --> 00:24:07.000
+and ch is that, then printing is true.
+
+00:24:07.000 --> 00:24:10.000
+And of course, previous is never going to be the new line
+
+00:24:10.000 --> 00:24:11.000
+unless we change it.
+
+00:24:11.000 --> 00:24:15.000
+So at the end of every go round in the loop,
+
+00:24:15.000 --> 00:24:19.000
+we want to say previous equals ch.
+
+00:24:19.000 --> 00:24:23.000
+So this will let us look at the character before the one
+
+00:24:23.000 --> 00:24:26.000
+we're processing.
+
+00:24:26.000 --> 00:24:28.000
+OK, let's try that now.
+
+00:24:28.000 --> 00:24:34.000
+Make read Alice.
+
+00:24:34.000 --> 00:24:37.000
+Whoa, it looked like it works pretty good,
+
+00:24:37.000 --> 00:24:40.000
+except for one sentence right here.
+
+00:24:40.000 --> 00:24:45.000
+One sentence looks like it's broken.
+
+00:24:45.000 --> 00:24:48.000
+So that looks like it almost does what we want,
+
+00:24:48.000 --> 00:24:50.000
+but not quite.
+
+00:24:50.000 --> 00:24:55.000
+So what we'd really like to do is now, in our example,
+
+00:24:55.000 --> 00:24:59.000
+it looks like I need to look ahead to make sure
+
+00:24:59.000 --> 00:25:03.000
+I'm not only getting a C, but that the next character
+
+00:25:03.000 --> 00:25:05.000
+is an H.
+
+00:25:05.000 --> 00:25:09.000
+If it's an H, it looks like I have chapter 1, 2, 3, 4, 5, 6,
+
+00:25:09.000 --> 00:25:12.000
+7, 8, 9, 10, 11.
+
+00:25:12.000 --> 00:25:15.000
+So it looks like that filter will work OK
+
+00:25:15.000 --> 00:25:20.000
+for this particular program.
+
+00:25:20.000 --> 00:25:23.000
+And so let's talk about how we would look ahead.
+
+00:25:23.000 --> 00:25:31.000
+So we can look at the next character in the stream
+
+00:25:31.000 --> 00:25:35.000
+by calling in peak, cnpeak.
+
+00:25:35.000 --> 00:25:38.000
+Now notice this doesn't take any arguments.
+
+00:25:38.000 --> 00:25:42.000
+It doesn't take a ch like the other one did.
+
+00:25:42.000 --> 00:25:45.000
+Instead, it returns the character
+
+00:25:45.000 --> 00:25:48.000
+embedded inside an integer.
+
+00:25:48.000 --> 00:25:52.000
+So if the integer is OK,
+
+00:25:52.000 --> 00:25:55.000
+three of those four bytes will be zeros,
+
+00:25:55.000 --> 00:26:01.000
+and the lower byte will be the ASCII character we want.
+
+00:26:01.000 --> 00:26:04.000
+If we are out of data,
+
+00:26:04.000 --> 00:26:09.000
+it will return minus 1 in all four of those bytes.
+
+00:26:09.000 --> 00:26:13.000
+So notice it's an int, not a character,
+
+00:26:13.000 --> 00:26:16.000
+but we use it to read a character.
+
+00:26:16.000 --> 00:26:20.000
+We can put a character that we've read back into the stream.
+
+00:26:20.000 --> 00:26:23.000
+This supports at least one character,
+
+00:26:23.000 --> 00:26:27.000
+and we don't need to put the same character that we read back.
+
+00:26:27.000 --> 00:26:29.000
+So I could read a character.
+
+00:26:29.000 --> 00:26:32.000
+If it's uppercase, I could change the character to lowercase
+
+00:26:32.000 --> 00:26:36.000
+and put it back in the stream, and then try reading it again.
+
+00:26:36.000 --> 00:26:39.000
+I could read a digit. If the digit I read is a digit,
+
+00:26:39.000 --> 00:26:42.000
+I might want to push it back into the stream
+
+00:26:42.000 --> 00:26:45.000
+and use it to then read with formatted input
+
+00:26:45.000 --> 00:26:49.000
+to read a larger number from the stream.
+
+00:26:49.000 --> 00:26:51.000
+If you want to put back the same character,
+
+00:26:51.000 --> 00:26:56.000
+you can just do cn_unget, and you don't have to pass an argument.
+
+00:26:56.000 --> 00:27:01.000
+Finally, we might want to read and discard unwanted input.
+
+00:27:01.000 --> 00:27:04.000
+And so this is the method called ignore.
+
+00:27:04.000 --> 00:27:08.000
+You tell it the maximum number of characters you want to ignore
+
+00:27:08.000 --> 00:27:14.000
+and the delimiter you want to stop on.
+
+00:27:14.000 --> 00:27:18.000
+So this is usually when you're doing line-by-line input
+
+00:27:18.000 --> 00:27:21.000
+and you want to discard the rest of the line.
+
+00:27:21.000 --> 00:27:24.000
+The delimiter would be the new line.
+
+00:27:24.000 --> 00:27:28.000
+So let's go ahead and do that, and we're going to read from Alice.txt,
+
+00:27:28.000 --> 00:27:35.000
+and then we're going to change it so the output is toc.txt.
+
+00:27:35.000 --> 00:27:38.000
+So that's going to require a couple of changes.
+
+00:27:38.000 --> 00:27:45.000
+First, in our program, we're going to have to not only say
+
+00:27:45.000 --> 00:27:50.000
+is the previous the new line, and is the current character the c,
+
+00:27:50.000 --> 00:28:06.000
+but also and cn_peak equals a capital H.
+
+00:28:06.000 --> 00:28:08.000
+Then I'll put the printing down like that.
+
+00:28:08.000 --> 00:28:11.000
+So all three of these have to happen.
+
+00:28:11.000 --> 00:28:20.000
+Let's go ahead and try that now and do make read Alice.
+
+00:28:20.000 --> 00:28:24.000
+Ooh, that looks pretty good.
+
+00:28:24.000 --> 00:28:30.000
+Now, that's all we have to do, but we want to put the output in a text file.
+
+00:28:30.000 --> 00:28:36.000
+And so for that, we're going to need to go back to our make file.
+
+00:28:36.000 --> 00:28:40.000
+And I've written you a stub here for the write toc version.
+
+00:28:40.000 --> 00:28:50.000
+So to read, we're going to need to read from Alice.txt.
+
+00:28:50.000 --> 00:28:55.000
+And then we're going to write to toc.txt.
+
+00:28:55.000 --> 00:28:58.000
+Now, we might want to print some extra information on that,
+
+00:28:58.000 --> 00:29:00.000
+so I'm going to do that.
+
+00:29:00.000 --> 00:29:05.000
+I'm going to do tab, and I'm going to write some code out
+
+00:29:05.000 --> 00:29:09.000
+just by using the operating system, the echo function,
+
+00:29:09.000 --> 00:29:20.000
+and I'm going to pass echo Alice in Wonderland,
+
+00:29:20.000 --> 00:29:24.000
+and I'm going to send that to toc.txt.
+
+00:29:24.000 --> 00:29:34.000
+And then I'm going to print table of contents,
+
+00:29:34.000 --> 00:29:38.000
+and I'm going to try and print that out.
+
+00:29:38.000 --> 00:29:42.000
+So it's centered. I'm not quite sure if that will work.
+
+00:29:42.000 --> 00:29:47.000
+And I'm going to send that out to toc.txt.
+
+00:29:47.000 --> 00:29:51.000
+Okay, now I have a problem, because when I do this second line,
+
+00:29:51.000 --> 00:29:57.000
+and when I do the third line, each one is going to reopen toc.txt and erase it.
+
+00:29:57.000 --> 00:30:04.000
+So I really don't want that line or this line to erase my table of contents.
+
+00:30:04.000 --> 00:30:06.000
+I want to append to it.
+
+00:30:06.000 --> 00:30:19.000
+Let's do one more, and I'll simply do a dash dash like that.
+
+00:30:19.000 --> 00:30:24.000
+So this is our pseudo target, write toc,
+
+00:30:24.000 --> 00:30:27.000
+so we'd run it with make write toc.
+
+00:30:27.000 --> 00:30:31.000
+Of course, we could just type in these commands manually, right?
+
+00:30:31.000 --> 00:30:35.000
+In other words, the make file is only typing the commands for us,
+
+00:30:35.000 --> 00:30:39.000
+so we can type a simpler command.
+
+00:30:39.000 --> 00:30:49.000
+Okay, let's do make toc, make write toc, table of contents.
+
+00:30:49.000 --> 00:30:51.000
+It didn't do anything.
+
+00:30:51.000 --> 00:30:55.000
+Oh, no, that's because all the output didn't go to our screen this time.
+
+00:30:55.000 --> 00:31:00.000
+Instead, our output went to this file, toc.txt,
+
+00:31:00.000 --> 00:31:04.000
+and notice that we not only have this in here,
+
+00:31:04.000 --> 00:31:08.000
+we have the other lines that we wrote to it as well.
+
+00:31:08.000 --> 00:31:12.000
+Other lines we wrote to it as well.
+
+00:31:12.000 --> 00:31:21.000
+So that's it for our initial exercise on streams and filters.
+
+00:31:21.000 --> 00:31:26.000
+When we come back in the next lecture, lecture 12,
+
+00:31:26.000 --> 00:31:30.000
+we'll continue and we'll look at reading and writing files.
+
+00:31:30.000 --> 00:31:32.000
+See you then.
+
+00:31:32.000 --> 00:31:36.000
+[END]
+

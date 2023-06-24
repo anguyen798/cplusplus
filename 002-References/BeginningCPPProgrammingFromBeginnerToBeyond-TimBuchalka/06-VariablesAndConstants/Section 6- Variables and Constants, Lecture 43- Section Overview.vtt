@@ -1,0 +1,58 @@
+WEBVTT
+
+00:00:05.500 --> 00:00:09.100
+In this section of the course, we'll learn about variables and constants.
+
+00:00:09.900 --> 00:00:14.230
+It's virtually impossible to write a c++ program without using variables.
+
+00:00:14.730 --> 00:00:18.030
+Variables are a fundamental concept in programming languages.
+
+00:00:18.030 --> 00:00:21.830
+First, we're learned what variables are and how to declare them so we can use them.
+
+00:00:22.530 --> 00:00:24.830
+There are rules for how we name our variables,
+
+00:00:24.830 --> 00:00:27.830
+and there are also styled issues to discuss as we go along.
+
+00:00:28.330 --> 00:00:31.330
+Then we'll go over some of the primitive types in c++
+
+00:00:31.330 --> 00:00:32.530
+such as integers,
+
+00:00:32.530 --> 00:00:35.030
+floating point numbers Booleans and characters.
+
+00:00:35.690 --> 00:00:39.490
+We'll also learn how to determine how much storage is allocated to variables
+
+00:00:39.490 --> 00:00:41.490
+by using the size of operator.
+
+00:00:42.490 --> 00:00:44.690
+Then we'll learn about constants, what they are
+
+00:00:44.690 --> 00:00:49.190
+and what they're used and why they're so important to keeping our code correct and modifiable.
+
+00:00:50.190 --> 00:00:54.790
+We'll learn how to declare and use constants, understand literals and constant expressions.
+
+00:00:55.090 --> 00:00:58.290
+This section is very straightforward and easy to understand.
+
+00:00:58.290 --> 00:01:00.890
+However, the concepts you'll learn in this section
+
+00:01:00.890 --> 00:01:04.390
+service fundamental building blocks in c++ programming
+
+00:01:04.390 --> 00:01:08.750
+since nearly every program you ripe will have variables and constants.
+
+00:01:08.750 --> 00:01:09.750
+Lets get started.

@@ -1,0 +1,105 @@
+WEBVTT
+
+0
+00:00.270 --> 00:05.340
+Write a class for a rectangle, class Rectangle.
+
+1
+00:05.340 --> 00:15.020
+Now here I will make everything public an integer length integer Breadth.
+
+2
+00:15.360 --> 00:21.890
+Then I will define area function and perimeter function integer area.
+
+3
+00:21.990 --> 00:26.630
+Now there's a simple function which returns length into breadth.
+
+4
+00:27.020 --> 00:38.530
+perimeter returns 2X length plus breadth that's it, this is a complete class for rectangle.
+
+5
+00:38.640 --> 00:40.530
+There's a class for rectangle.
+
+6
+00:40.620 --> 00:48.650
+So I have a class for rectangle having data member length and breadth and member functions are area
+
+7
+00:48.700 --> 00:49.730
+and perimeter.
+
+8
+00:50.100 --> 00:54.660
+Now let us create the objects of rectangles and use them.
+
+9
+00:54.660 --> 01:04.310
+So here inside the main function I will create an object of rectangle rone then r1.length  assign
+
+10
+01:04.320 --> 01:09.620
+10 then r1.breadth assign 5.
+
+11
+01:09.710 --> 01:15.550
+Now I will call area function by using dot operator we can access all the members.
+
+12
+01:15.870 --> 01:28.500
+So call area function it should display area here write I write a message area is Re of a rectangle.
+
+13
+01:28.550 --> 01:35.160
+Then also I will display perimeter is r1.perimeter.
+
+14
+01:35.210 --> 01:41.840
+So here I am creating an object of rectangle setting its length and breadth and calling the functions
+
+15
+01:42.140 --> 01:43.370
+and perimeter.
+
+16
+01:43.670 --> 01:50.120
+So object of rectangle will have a length and breadth as data members and I can call these functions
+
+17
+01:50.150 --> 01:58.010
+which will give me an area and perimeter for rectangle so for ten,5 area should be 50 and the
+
+18
+01:58.010 --> 01:59.770
+perimeters should be 30.
+
+19
+01:59.780 --> 02:01.500
+Let us run this and see.
+
+20
+02:01.670 --> 02:04.460
+Yes five and thirty.
+
+21
+02:04.490 --> 02:08.440
+So this was the first program using classes.
+
+22
+02:08.510 --> 02:10.150
+So the things to take care in the beginning.
+
+23
+02:10.160 --> 02:15.500
+I made everything as public and here after the class I should make semi-colon this is mandatory.
+
+24
+02:15.680 --> 02:20.930
+So without semi-colon it is an error and dot operator is used for accessing the member.
+
+25
+02:20.930 --> 02:24.530
+So I have access length breadth as well as area and perimeter.

@@ -1,0 +1,97 @@
+WEBVTT
+
+0
+00:01.170 --> 00:06.750
+let's Write a program to take two numbers for dividing them and before division let us check whether their
+
+1
+00:06.760 --> 00:08.040
+denominator is zero.
+
+2
+00:08.340 --> 00:21.060
+So integer A B and C i will take three variables then out enter two numbers then cin i will read A and B
+
+3
+00:21.060 --> 00:25.920
+and I want to divide A and B and store the result in C.
+
+4
+00:26.340 --> 00:34.620
+But before dividing I want to know whether B is valid denominator or not meant if B is zero then division
+
+5
+00:34.620 --> 00:35.800
+cannot be done.
+
+6
+00:35.850 --> 00:40.940
+So if  B is equal to zero, I will give a message that cout
+
+7
+00:46.340 --> 00:54.600
+division by zero means if I continue further the value will be get divided by 0.
+
+8
+00:54.620 --> 01:04.450
+So I will not divide the number else if it is a valid denominator.
+
+9
+01:04.470 --> 01:06.070
+So it is not a zero.
+
+10
+01:06.230 --> 01:13.520
+Then we will divide and display the result that is cout c and endl
+
+11
+01:17.300 --> 01:20.690
+is a type of validation again before dividing two numbers.
+
+12
+01:20.690 --> 01:24.480
+We are verifying that the denominator is non-zero.
+
+13
+01:24.530 --> 01:27.280
+If it is 0 we will say division by zero.
+
+14
+01:27.850 --> 01:28.960
+Let us run and see
+
+15
+01:31.890 --> 01:32.670
+enter two numbers.
+
+16
+01:32.680 --> 01:34.300
+I have entered so the first number
+
+17
+01:34.300 --> 01:36.890
+I will enter 10 and the second number is zero.
+
+18
+01:37.240 --> 01:41.070
+See the error message that I got is division by zero.
+
+19
+01:41.380 --> 01:43.370
+This is a division by zero.
+
+20
+01:44.050 --> 01:45.300
+I run once again
+
+21
+01:48.200 --> 01:52.170
+enter the two numbers, so I will give the first number as a 10 and the second number as two.
+
+22
+01:52.310 --> 01:56.210
+So I got the answer that is 5.
+
+23
+01:56.210 --> 02:02.140
+This is 5, so you can try this program by yourself.

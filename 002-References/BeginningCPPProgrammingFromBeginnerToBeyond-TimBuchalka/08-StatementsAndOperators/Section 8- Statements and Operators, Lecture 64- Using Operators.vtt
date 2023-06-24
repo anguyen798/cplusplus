@@ -1,0 +1,100 @@
+WEBVTT
+
+00:00:05.900 --> 00:00:08.500
+C++ has a rich set of operators
+
+00:00:08.500 --> 00:00:10.700
+that can be used to build up expressions.
+
+00:00:11.300 --> 00:00:14.400
+Most of the c++ operators are binary operators,
+
+00:00:14.400 --> 00:00:16.800
+which means they operate on two operands.
+
+00:00:16.800 --> 00:00:19.300
+For example, the multiplication operator.
+
+00:00:19.900 --> 00:00:20.800
+However,
+
+00:00:20.800 --> 00:00:24.600
+some are unary operators, which means they operate on only one operand.
+
+00:00:24.600 --> 00:00:29.300
+An example of this is the unary minus operator, which simply negates its operand.
+
+00:00:31.000 --> 00:00:34.400
+There's even a ternary operator that operates on three operands.
+
+00:00:34.400 --> 00:00:35.900
+This is the conditional operator.
+
+00:00:36.800 --> 00:00:40.700
+The c++ common operators can be grouped into several categories.
+
+00:00:41.200 --> 00:00:44.700
+Assignment operators are used to modify the value of some object
+
+00:00:44.700 --> 00:00:46.300
+by assigning a new value to it.
+
+00:00:47.180 --> 00:00:51.780
+Arithmetic operators are used to perform mathematical operations on operands.
+
+00:00:52.880 --> 00:00:55.380
+The increment and decrement operators are interesting
+
+00:00:55.380 --> 00:00:59.280
+because part of them work like an assignment and part of them work like arithmetic.
+
+00:00:59.940 --> 00:01:02.480
+They're super useful and very commonly used.
+
+00:01:03.880 --> 00:01:06.380
+Relational operators or comparison operators
+
+00:01:06.380 --> 00:01:08.980
+allow you to compare the values of two objects.
+
+00:01:09.380 --> 00:01:12.180
+These are very useful and include equal to
+
+00:01:12.180 --> 00:01:14.980
+not equal to less than greater than and so forth.
+
+00:01:15.780 --> 00:01:20.280
+The logical operators are used to test for logical or Boolean conditions.
+
+00:01:20.280 --> 00:01:23.500
+For example, if you want to execute a specific statement
+
+00:01:23.500 --> 00:01:27.300
+only when the temperature is less than freezing and it isn't snowing, 
+
+00:01:27.700 --> 00:01:31.500
+these include the logical not, and, and or operators.
+
+00:01:32.160 --> 00:01:35.760
+There are also several member access operators.We've already seen one of them.
+
+00:01:35.760 --> 00:01:38.060
+Remember, the array subscript operator.
+
+00:01:38.060 --> 00:01:40.760
+It allows access to a specific member.
+
+00:01:40.760 --> 00:01:45.020
+There are others that work with objects and pointers,which we'll cover later in this course.
+
+00:01:45.020 --> 00:01:47.270
+Finally, there's the other category.
+
+00:01:47.270 --> 00:01:51.470
+This includes those operators that really don't fit very well into the previous categories.
+
+00:01:52.070 --> 00:01:54.570
+In the next several videos, we'll head over to CodeLite
+
+00:01:54.570 --> 00:01:57.570
+and see some examples of these operators in live code.

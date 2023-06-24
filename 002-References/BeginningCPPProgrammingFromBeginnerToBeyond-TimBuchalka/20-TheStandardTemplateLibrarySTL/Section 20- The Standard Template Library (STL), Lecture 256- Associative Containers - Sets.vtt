@@ -1,0 +1,1146 @@
+WEBVTT
+
+00:00:05.420 --> 00:00:08.590
+In this video, we'll learn
+about the stl set containers.
+
+00:00:09.550 --> 00:00:11.289
+These are associative containers.
+
+00:00:12.009 --> 00:00:14.930
+Associative containers are collections
+of stored objects that allow
+
+00:00:14.930 --> 00:00:17.000
+for fast retrieval using a key.
+
+00:00:17.969 --> 00:00:20.320
+The stl provides both sets and maps.
+
+00:00:20.750 --> 00:00:22.900
+In this video, we'll learn
+about sets, and we'll learn
+
+00:00:22.910 --> 00:00:24.240
+about maps in the next video.
+
+00:00:24.710 --> 00:00:27.920
+Depending on the type of the
+associate container, they're usually
+
+00:00:27.929 --> 00:00:32.100
+implemented behind the scenes as a
+balanced binary tree, something like
+
+00:00:32.100 --> 00:00:34.939
+a red black tree or as a hash set.
+
+00:00:35.410 --> 00:00:37.370
+These are very efficient
+data structures.
+
+00:00:37.380 --> 00:00:40.070
+So operations on sets
+and maps are very fast.
+
+00:00:40.750 --> 00:00:43.380
+The stl has 4 types of set containers.
+
+00:00:43.630 --> 00:00:48.870
+The, set, the unordered set, the
+multi-set and the unordered multi-set.
+
+00:00:49.799 --> 00:00:53.670
+We'll focus mainly on the set
+since it's the one most often used.
+
+00:00:54.489 --> 00:00:56.310
+But I'll also describe
+the others as well.
+
+00:00:58.610 --> 00:01:00.280
+Let's first talk about the set.
+
+00:01:01.000 --> 00:01:03.749
+In order to use a set, you must
+include the set header file.
+
+00:01:04.590 --> 00:01:07.740
+The set class is similar in
+concept to a mathematical set.
+
+00:01:08.299 --> 00:01:10.910
+The elements in this set
+are ordered by key and no
+
+00:01:10.910 --> 00:01:12.520
+duplicate elements are allowed.
+
+00:01:13.600 --> 00:01:15.730
+All iterators are available for sets.
+
+00:01:19.060 --> 00:01:21.090
+Let's initialize a few set objects.
+
+00:01:21.539 --> 00:01:25.810
+In the first example in this slide,
+I declare s as a set of integers and
+
+00:01:25.810 --> 00:01:28.434
+i initialize it to 1 2 3 4 and 5.
+
+00:01:28.434 --> 00:01:33.000
+In the second example, I declare
+stooges as a set of std strings and
+
+00:01:33.000 --> 00:01:34.770
+I initialize it to some strings.
+
+00:01:35.030 --> 00:01:37.850
+Then at the bottom of the slide,
+you can see that sets also support
+
+00:01:37.850 --> 00:01:40.110
+assignment via an initialization list.
+
+00:01:41.730 --> 00:01:44.779
+But there are some differences
+with sets. On the first line,
+
+00:01:44.780 --> 00:01:49.169
+I'm initializing s as a set of integers
+and I'm providing the initializers.
+
+00:01:49.680 --> 00:01:52.960
+But notice that the initializer
+list contains duplicate elements.
+
+00:01:53.180 --> 00:01:54.480
+That's not allowed in a set.
+
+00:01:54.800 --> 00:01:55.970
+This won't cause an error though.
+
+00:01:55.980 --> 00:01:59.420
+The duplicates are simply ignored
+and we end up with a proper set.
+
+00:01:59.530 --> 00:02:01.600
+Also notice that the set is sorted.
+
+00:02:01.679 --> 00:02:04.939
+The size method returns the number
+of elements that are in the set and
+
+00:02:04.940 --> 00:02:08.320
+max size tells us what the maximum
+number of elements a set can hold.
+
+00:02:08.509 --> 00:02:12.890
+Remember, sets do not allow direct
+access to elements, so we can't use the
+
+00:02:12.890 --> 00:02:16.600
+subscript operator or the .at method
+as we have with other containers.
+
+00:02:16.840 --> 00:02:18.730
+Sets also don't have a front and back.
+
+00:02:18.940 --> 00:02:21.369
+So methods like push back
+and pop back in the front
+
+00:02:21.370 --> 00:02:23.370
+versions do not apply to sets.
+
+00:02:24.160 --> 00:02:26.010
+So how do we add elements to sets.
+
+00:02:26.480 --> 00:02:28.710
+Simple, we use the sets insert method.
+
+00:02:28.800 --> 00:02:30.870
+We can also use the
+in-place method if we want.
+
+00:02:30.980 --> 00:02:33.080
+In the last statement on the
+slide, we insert 7 into the set.
+
+00:02:33.080 --> 00:02:36.230
+If 7 is in the set, it
+won't be added again.
+
+00:02:36.230 --> 00:02:39.329
+If it's not in this set, then it will
+be added and it will be added in order.
+
+00:02:40.879 --> 00:02:43.230
+So let's talk a little bit
+more about the insert method.
+
+00:02:43.520 --> 00:02:48.410
+Suppose I have an object p1 that's a
+person object, in this case Larry 18.
+
+00:02:49.120 --> 00:02:52.620
+I also have p2 as a
+person object, Moe 25.
+
+00:02:52.900 --> 00:02:56.860
+We can insert p1 into the
+stooges set by simply calling
+
+00:02:56.860 --> 00:02:59.329
+stooges.insert and passing in p1.
+
+00:02:59.899 --> 00:03:02.540
+If the element is not in
+the set, it will be added.
+
+00:03:02.630 --> 00:03:03.870
+Otherwise, it won't be added.
+
+00:03:04.260 --> 00:03:08.110
+The set class uses the overloaded
+less than operator to determine
+
+00:03:08.110 --> 00:03:09.540
+if the element exists in the set.
+
+00:03:09.590 --> 00:03:11.810
+That's fine, but sometimes we
+want to know whether an element
+
+00:03:11.830 --> 00:03:13.790
+was inserted successfully or not.
+
+00:03:13.900 --> 00:03:16.299
+The insert method returns a std pair.
+
+00:03:16.639 --> 00:03:19.700
+Remember, std pair we talked about
+it a few times in this section,
+
+00:03:20.090 --> 00:03:22.640
+and we'll talk about it some
+more in the maps video as well.
+
+00:03:22.850 --> 00:03:27.179
+The pair object that's returned has
+its first attribute as an iterator
+
+00:03:27.429 --> 00:03:31.214
+to the element that we just inserted
+or an iterator to the duplicate
+
+00:03:31.490 --> 00:03:32.899
+element that's already in the set.
+
+00:03:32.899 --> 00:03:36.039
+And then the second attribute is a
+Boolean that indicates whether the
+
+00:03:36.060 --> 00:03:37.660
+operation was successful or not.
+
+00:03:37.960 --> 00:03:38.780
+That's pretty cool.
+
+00:03:38.960 --> 00:03:41.359
+Now we have all the information
+we need and we can do whatever
+
+00:03:41.360 --> 00:03:42.490
+we need in our program.
+
+00:03:43.940 --> 00:03:46.880
+We can also erase elements
+in a set very easily.
+
+00:03:47.290 --> 00:03:51.230
+S.erase 3 will erase the 3
+in the set s if it exists.
+
+00:03:51.460 --> 00:03:54.490
+We can use the sets find
+method to find the 5.
+
+00:03:54.830 --> 00:03:58.880
+And if it exists, delete it by passing
+the iterator to the erase method.
+
+00:03:59.240 --> 00:04:02.570
+Notice that the sets find method
+is different from the find function
+
+00:04:02.570 --> 00:04:04.709
+in the stl algorithms library.
+
+00:04:05.030 --> 00:04:09.579
+You should use the sets find because
+the sets find knows all about the
+
+00:04:09.580 --> 00:04:13.290
+internal implementation of the set, and
+it's going to be much more efficient.
+
+00:04:15.330 --> 00:04:17.769
+Finally, we can use the count
+method to see how many times
+
+00:04:17.769 --> 00:04:19.290
+an element appears in a set.
+
+00:04:20.130 --> 00:04:22.389
+If you think about that it doesn't
+make a lot of sense, right.
+
+00:04:22.400 --> 00:04:24.950
+I mean a set can only have an
+element in there once at most.
+
+00:04:25.320 --> 00:04:28.189
+But in this case, it's real
+handy to tell whether an
+
+00:04:28.190 --> 00:04:29.649
+element is in the set or not.
+
+00:04:30.049 --> 00:04:32.390
+If we get back to 0, we
+know it's not in the set.
+
+00:04:32.400 --> 00:04:34.869
+If we get back a 1, it is in the set.
+
+00:04:35.349 --> 00:04:39.159
+We're going to use this in multi-sets
+because multi-sets can have duplicates.
+
+00:04:39.159 --> 00:04:41.689
+So this method is really
+useful there as well.
+
+00:04:41.889 --> 00:04:45.979
+Finally, as with all other stl
+containers s.clear removes all
+
+00:04:45.979 --> 00:04:49.660
+of the elements from the set,
+and s.empty returns true if the
+
+00:04:49.660 --> 00:04:51.510
+set is empty or false otherwise.
+
+00:04:52.360 --> 00:04:54.780
+Well, that's a quick
+summary of the set class.
+
+00:04:54.890 --> 00:04:57.440
+Please refer to the set
+documentation since there's
+
+00:04:57.450 --> 00:05:00.919
+more and many of the methods I
+show you have variants as well.
+
+00:05:01.590 --> 00:05:03.810
+So let's talk about
+the other set classes.
+
+00:05:05.219 --> 00:05:07.520
+First, let's talk about
+the multi-set class.
+
+00:05:07.620 --> 00:05:09.820
+It's also defined in
+the set header file.
+
+00:05:10.340 --> 00:05:14.950
+A multi-set is a set that's ordered by
+key but it allows duplicate elements.
+
+00:05:15.059 --> 00:05:16.770
+All iterators are available.
+
+00:05:17.870 --> 00:05:21.550
+The unordered set is in the
+unordered set header file.
+
+00:05:21.950 --> 00:05:24.839
+The unordered set is a set
+that's unordered, and it does
+
+00:05:24.850 --> 00:05:26.590
+not allow duplicate elements.
+
+00:05:27.370 --> 00:05:30.200
+Due to the way that unordered
+sets are implemented, elements
+
+00:05:30.200 --> 00:05:32.000
+can't be modified in place.
+
+00:05:32.450 --> 00:05:34.710
+If you need to change an element,
+you have to remove it and
+
+00:05:34.710 --> 00:05:36.100
+then insert the updated one.
+
+00:05:36.480 --> 00:05:38.969
+Also unordered sets do not
+allow reverse iterators.
+
+00:05:41.109 --> 00:05:45.330
+The last type of set provided by
+the stl is the unordered multi-set.
+
+00:05:45.830 --> 00:05:50.100
+The unordered multi-set does not order
+elements and it does allow duplicates.
+
+00:05:50.320 --> 00:05:52.440
+Again, no reverse
+iterators are allowed.
+
+00:05:53.280 --> 00:05:56.810
+As you can see the stl provides
+powerful set classes for nearly
+
+00:05:56.810 --> 00:06:00.660
+every need, however, by far the
+most used is the set, and that's
+
+00:06:00.660 --> 00:06:01.690
+one we're going to focus on.
+
+00:06:02.000 --> 00:06:05.680
+So let's head over to the IDE and
+we'll look at examples of using sets.
+
+00:06:07.100 --> 00:06:08.400
+Okay, so I'm back in the IDE.
+
+00:06:08.470 --> 00:06:12.780
+Again, I'm in the section 20
+workspace, and I'm in the set project.
+
+00:06:14.299 --> 00:06:17.260
+And what I've got here is I've got
+the same person class and I won't
+
+00:06:17.260 --> 00:06:19.640
+bother going over it again we've
+gone over it a bunch of times.
+
+00:06:19.840 --> 00:06:22.110
+I haven't made any changes
+to it since the last time.
+
+00:06:22.490 --> 00:06:26.060
+But I do want to bring that to
+your attention again the operator
+
+00:06:26.060 --> 00:06:31.050
+that we're using for the operator
+less than is comparing ages.
+
+00:06:32.110 --> 00:06:35.530
+Okay, so we're considering
+one person less than the other
+
+00:06:35.559 --> 00:06:37.260
+based on the age, not the name.
+
+00:06:37.510 --> 00:06:40.670
+And that's going to be important
+because the set uses that operator.
+
+00:06:40.850 --> 00:06:43.640
+So when we see these guys sorted,
+you're going to see them sorted
+
+00:06:43.640 --> 00:06:46.110
+by age rather than by name.
+
+00:06:46.520 --> 00:06:47.870
+And that's important to understand.
+
+00:06:47.990 --> 00:06:50.640
+A lot of people think that
+it's this operator right here
+
+00:06:50.889 --> 00:06:52.100
+that's doing it, and it's not.
+
+00:06:53.299 --> 00:06:55.450
+Okay, so let's get started.
+
+00:06:56.440 --> 00:06:59.340
+There's 3 tests here.
+
+00:06:59.350 --> 00:07:02.979
+So not as long as the other videos,
+but let's start with test 1.
+
+00:07:03.210 --> 00:07:08.490
+And you can see the
+output right up here.
+
+00:07:08.490 --> 00:07:10.470
+You can see that's where
+the test 1 is right here.
+
+00:07:10.889 --> 00:07:11.610
+So let's start.
+
+00:07:12.279 --> 00:07:15.030
+I'm going to create a set called s1.
+
+00:07:15.580 --> 00:07:17.229
+And you can see it's a set of integers.
+
+00:07:17.500 --> 00:07:22.239
+You can see the consistency with
+the syntax across the entire stl.
+
+00:07:23.090 --> 00:07:25.120
+And I'm putting in 1 4 3 5 2.
+
+00:07:25.120 --> 00:07:26.529
+Notice I did that on purpose.
+
+00:07:26.530 --> 00:07:27.460
+I changed the order.
+
+00:07:27.460 --> 00:07:29.890
+The sets are ordered by default.
+
+00:07:30.000 --> 00:07:32.850
+So when I display s1, you can
+see that it's being displayed in
+
+00:07:32.870 --> 00:07:35.050
+order, in this case, integer order.
+
+00:07:35.890 --> 00:07:40.629
+If I had put in the stooges with
+ages, then we get a different order.
+
+00:07:40.630 --> 00:07:41.960
+I'm doing that in the next test.
+
+00:07:43.059 --> 00:07:48.610
+In this example here, I'm assigning
+this initializer list to s1, but notice
+
+00:07:48.630 --> 00:07:50.250
+there are duplicates in here, right.
+
+00:07:50.290 --> 00:07:52.020
+There's duplicates all
+over the place here.
+
+00:07:52.270 --> 00:07:53.919
+Duplicates aren't allowed in sets.
+
+00:07:54.230 --> 00:07:55.150
+This will still work.
+
+00:07:55.150 --> 00:07:56.120
+This will work just fine.
+
+00:07:56.120 --> 00:08:00.189
+When I go to display s1, you can
+see that the duplicates were not
+
+00:08:00.190 --> 00:08:01.570
+handled, of course, they're omitted.
+
+00:08:01.880 --> 00:08:04.109
+So it's not going to add
+duplicates to a set that's
+
+00:08:04.219 --> 00:08:05.459
+not going to allow duplicates.
+
+00:08:06.119 --> 00:08:09.980
+Then we've got right here we're
+inserting 0 and we're inserting 10
+
+00:08:09.980 --> 00:08:11.469
+and then we're displaying it again.
+
+00:08:11.469 --> 00:08:13.880
+And you can see that right
+there, there's the output.
+
+00:08:14.099 --> 00:08:16.240
+You can see the 0 at the
+beginning and the 10 at the end.
+
+00:08:16.540 --> 00:08:18.700
+So they were inserted where
+they should have been inserted,
+
+00:08:18.700 --> 00:08:19.839
+which is exactly right.
+
+00:08:20.440 --> 00:08:22.279
+Now let me just scroll up
+here just a little bit.
+
+00:08:22.850 --> 00:08:25.580
+And we're right about here on line 50.
+
+00:08:27.400 --> 00:08:30.060
+I'm seeing how many times
+does 10 occur in the list?
+
+00:08:30.070 --> 00:08:31.719
+This is going to return an integer.
+
+00:08:31.980 --> 00:08:36.510
+It's either going to return 0 or 1,
+in this case of a set because the set
+
+00:08:36.549 --> 00:08:38.159
+either has the element in it or not.
+
+00:08:38.830 --> 00:08:43.690
+There is the multi-set, which allows
+multiple entries, right, duplicates.
+
+00:08:44.039 --> 00:08:46.900
+In that case, this could return
+2 or 3 or 4 depending on how
+
+00:08:46.900 --> 00:08:48.530
+many times that element exists.
+
+00:08:48.530 --> 00:08:51.300
+But in this case, I'm saying
+is the 10 in the list.
+
+00:08:51.349 --> 00:08:55.540
+This will either return a 1 or
+a 0, 1 being true 0 being false.
+
+00:08:56.030 --> 00:08:58.460
+So 10 is in the set or
+10 is not in the set.
+
+00:08:58.559 --> 00:09:01.260
+We know 10 is in the set because
+we just added it right here.
+
+00:09:01.600 --> 00:09:04.580
+So I expect to get
+back 10 is in the set.
+
+00:09:05.870 --> 00:09:09.390
+Okay, and now I'm using
+the find method here.
+
+00:09:09.969 --> 00:09:11.700
+I'm using s1.find.
+
+00:09:11.700 --> 00:09:15.140
+I'm not I'm not using std find
+which is in the algorithms library.
+
+00:09:15.140 --> 00:09:17.119
+I'm using the sets version of find.
+
+00:09:17.730 --> 00:09:19.260
+A lot of people use the other one.
+
+00:09:19.710 --> 00:09:23.060
+The other one is a very generic type
+find that's going to use an iterator
+
+00:09:23.060 --> 00:09:24.780
+and just search through the entire set.
+
+00:09:25.210 --> 00:09:26.300
+This guy's real smart.
+
+00:09:26.319 --> 00:09:29.950
+This one understands how the set
+is implemented behind the scenes.
+
+00:09:30.300 --> 00:09:34.609
+So if it's implemented as a balanced
+binary tree, it's going to be
+
+00:09:34.609 --> 00:09:36.940
+pretty smart about finding things.
+
+00:09:37.290 --> 00:09:40.130
+So let's find the 5 in the set.
+
+00:09:40.170 --> 00:09:41.160
+Is the 5 in there?
+
+00:09:41.240 --> 00:09:42.829
+Absolutely, it's in there right here.
+
+00:09:43.610 --> 00:09:44.540
+So what are we going to do?
+
+00:09:44.980 --> 00:09:47.870
+We're going to assign the
+results of that to an iterator.
+
+00:09:48.840 --> 00:09:51.949
+If we get back the end of the
+set obviously, it wasn't there.
+
+00:09:52.440 --> 00:09:56.070
+If we don't get it back, then we
+found the 5 and what's pointing to
+
+00:09:56.070 --> 00:09:57.670
+it, so that's what we got right here.
+
+00:09:57.670 --> 00:09:58.300
+We know it's in there.
+
+00:09:58.300 --> 00:09:59.380
+And that's what we got back.
+
+00:10:00.060 --> 00:10:02.359
+We can clear the set and
+then display it again.
+
+00:10:02.360 --> 00:10:04.700
+And obviously, that clears
+out the set just like it
+
+00:10:04.700 --> 00:10:05.939
+does with all the containers.
+
+00:10:06.840 --> 00:10:08.389
+Okay, so there you go.
+
+00:10:08.799 --> 00:10:11.280
+Hopefully, the consistency
+is is paying off.
+
+00:10:11.910 --> 00:10:14.939
+Like I said, there was a method to
+my madness with all these examples.
+
+00:10:15.510 --> 00:10:18.430
+Usually, when you see a lot of them
+and more and more, you'll see the
+
+00:10:18.450 --> 00:10:20.250
+pattern and it just really clicks.
+
+00:10:20.389 --> 00:10:21.870
+So now let's see the test 2.
+
+00:10:22.849 --> 00:10:26.410
+What we've got here is
+a set of person objects.
+
+00:10:27.049 --> 00:10:30.199
+And we'll call them stooges, and
+we said the person had a name and
+
+00:10:30.220 --> 00:10:34.090
+age. I just put 1 2 3 here because
+I want to show you the order that
+
+00:10:34.100 --> 00:10:35.130
+these are going to be put in.
+
+00:10:35.670 --> 00:10:39.680
+So now when I display stooges,
+look at them right here.
+
+00:10:39.780 --> 00:10:42.780
+That's the order Larry
+1, Moe 2, Curly 3.
+
+00:10:43.110 --> 00:10:45.759
+Notice that it's
+ordering by age, 1 2 3.
+
+00:10:45.759 --> 00:10:47.420
+It's not ordering by name.
+
+00:10:47.420 --> 00:10:50.400
+Otherwise, Curly would
+be the first one, right.
+
+00:10:50.400 --> 00:10:51.620
+So that's important to understand.
+
+00:10:51.620 --> 00:10:57.640
+It's using operator less
+than to do the ordering.
+
+00:10:59.610 --> 00:11:02.080
+All right, so that's what
+it's using right here.
+
+00:11:03.139 --> 00:11:05.079
+So we can emplace James 50.
+
+00:11:05.600 --> 00:11:07.940
+And we can display the Stooges again.
+
+00:11:07.940 --> 00:11:12.410
+And you can see that at this point
+James 50 was added at the end because
+
+00:11:12.590 --> 00:11:14.819
+the 50 is what it's using to order.
+
+00:11:15.700 --> 00:11:17.790
+So this really drives the point home.
+
+00:11:17.800 --> 00:11:22.070
+Suppose I want to emplace Frank
+50, it won't let me because it's
+
+00:11:22.070 --> 00:11:25.459
+using the 50 to decide whether
+to put it in there or not.
+
+00:11:25.460 --> 00:11:28.420
+So according to this, that
+50 is already in there.
+
+00:11:29.180 --> 00:11:33.189
+Now had I checked to see that the that
+the upper or less than was the name
+
+00:11:33.260 --> 00:11:37.010
+and the key and the age I'm sorry then
+this would have definitely worked.
+
+00:11:37.270 --> 00:11:39.980
+But when I display it again right
+here, there's no Frank in there.
+
+00:11:41.059 --> 00:11:43.320
+As far as this is concerned,
+it already exists.
+
+00:11:44.420 --> 00:11:46.710
+All right, so now we've got a
+couple of more output statements.
+
+00:11:46.730 --> 00:11:49.130
+Let me scroll up a bit, and
+I'll show you how these work.
+
+00:11:50.330 --> 00:11:55.200
+In this case, I'm finding
+Moe 2 in the list.
+
+00:11:55.219 --> 00:11:56.430
+I know Moe 2 is there.
+
+00:11:56.770 --> 00:11:58.819
+I'm going to get an iterator back.
+
+00:11:59.330 --> 00:12:02.000
+And if it's not equal to the
+end of the list, then what
+
+00:12:02.000 --> 00:12:03.540
+I'm going to do is erase Moe.
+
+00:12:04.430 --> 00:12:07.330
+That's all I'm doing. I'm not displaying
+Moe, I'm erasing Moe.
+
+00:12:07.330 --> 00:12:08.750
+Then I'm displaying stooges.
+
+00:12:08.770 --> 00:12:11.949
+And you can see right here
+that Moe right there is
+
+00:12:11.980 --> 00:12:14.390
+gone, which is kind of cool.
+
+00:12:15.170 --> 00:12:18.410
+Now this is the one that really shows
+you how the power of that operator.
+
+00:12:18.699 --> 00:12:24.170
+In this case, I'm finding a person
+whose name is x and whose age is 50.
+
+00:12:24.610 --> 00:12:27.220
+This doesn't come into play
+because I'm not using that in
+
+00:12:27.220 --> 00:12:29.410
+my overloaded less than operator.
+
+00:12:29.639 --> 00:12:32.650
+So it's going to find
+James there at 50.
+
+00:12:33.210 --> 00:12:35.140
+And it's going to erase James.
+
+00:12:35.969 --> 00:12:38.830
+And then I display stooges again,
+you can see that James is gone.
+
+00:12:39.960 --> 00:12:42.439
+This gets a lot of people when
+you're first starting out with the
+
+00:12:42.440 --> 00:12:44.960
+stl, a lot of these containers.
+
+00:12:44.960 --> 00:12:47.050
+Some of them use equality,
+some of them use less than.
+
+00:12:47.059 --> 00:12:48.480
+The set uses the less than.
+
+00:12:48.480 --> 00:12:49.860
+So be aware of that.
+
+00:12:50.500 --> 00:12:54.899
+The final test is this guy, and
+this is important one because it
+
+00:12:54.910 --> 00:12:58.970
+shows you what's what happens when
+we insert some data into a set.
+
+00:12:59.440 --> 00:13:00.810
+Let's just start up here first.
+
+00:13:01.200 --> 00:13:04.870
+I'm creating a set of std
+strings, and it's called s.
+
+00:13:04.910 --> 00:13:06.110
+And I'm putting in there abc.
+
+00:13:06.390 --> 00:13:07.959
+Now obviously we're using strings.
+
+00:13:07.960 --> 00:13:10.079
+So it's going to use the
+string order to sort.
+
+00:13:10.389 --> 00:13:13.829
+I'm displaying s and you can
+see abc right here is displaying.
+
+00:13:14.290 --> 00:13:16.770
+Actually, you know what let me
+scroll that up just a little bit so
+
+00:13:16.770 --> 00:13:18.060
+it kind of aligns a little better.
+
+00:13:18.140 --> 00:13:18.640
+There we go.
+
+00:13:18.990 --> 00:13:21.790
+So we're displaying abc right here.
+
+00:13:22.480 --> 00:13:25.670
+Now I'm inserting a d
+and I'm displaying s.
+
+00:13:25.770 --> 00:13:27.870
+You can see the d has
+been inserted in here.
+
+00:13:28.490 --> 00:13:33.450
+But notice at this time, I assigned
+the return value of the insert method
+
+00:13:33.870 --> 00:13:35.939
+to this guy right here, result.
+
+00:13:35.970 --> 00:13:37.010
+And I'm using auto.
+
+00:13:37.740 --> 00:13:41.149
+What I'm getting back
+here is a std pair.
+
+00:13:41.730 --> 00:13:45.690
+Remember, the std pair has 2
+attributes, first and second.
+
+00:13:46.330 --> 00:13:51.849
+In this case, first is an iterator
+that's pointing to either the d
+
+00:13:51.850 --> 00:13:55.689
+that we just inserted or the d
+that's already duplicated in there
+
+00:13:55.690 --> 00:13:57.090
+that didn't allow me to insert.
+
+00:13:57.490 --> 00:14:01.120
+In either case, I'm getting an iterator
+to the element that I'm inserting or
+
+00:14:01.429 --> 00:14:03.100
+it's copy that's already in there.
+
+00:14:03.120 --> 00:14:04.480
+Hopefully, that makes sense.
+
+00:14:04.930 --> 00:14:09.520
+Then the second part of the
+pair -- the second attribute is
+
+00:14:09.520 --> 00:14:13.050
+going to have a boolean true false
+was the insertion successful.
+
+00:14:13.680 --> 00:14:16.920
+So I've changed this to bool alpha
+so it displays the true false value.
+
+00:14:17.280 --> 00:14:18.860
+And here I'm displaying first.
+
+00:14:18.889 --> 00:14:19.929
+And we expect that d.
+
+00:14:19.940 --> 00:14:21.000
+You see it right there.
+
+00:14:21.860 --> 00:14:24.219
+So we we either got a d
+that we inserted or the
+
+00:14:24.219 --> 00:14:25.340
+d that was already there.
+
+00:14:25.350 --> 00:14:26.760
+That's when we look here.
+
+00:14:27.430 --> 00:14:30.800
+So if this guy is true, it
+is right here that means our
+
+00:14:30.880 --> 00:14:32.620
+insertion was successful.
+
+00:14:32.880 --> 00:14:34.089
+Had it been false?
+
+00:14:34.380 --> 00:14:36.600
+That means that i already
+had a duplicate in there.
+
+00:14:37.480 --> 00:14:39.810
+Okay, I know it can be a little
+confusing, but it's it makes
+
+00:14:39.810 --> 00:14:42.049
+sense when you think about
+it, and this is pretty cool.
+
+00:14:42.500 --> 00:14:46.530
+If you think about it what's going
+on here is I've got a return from a
+
+00:14:46.530 --> 00:14:49.920
+function that's returning multiple
+items, right, which is kind of neat.
+
+00:14:50.410 --> 00:14:53.760
+It's really wrapping it up into a
+one pair, but even so I can still
+
+00:14:53.760 --> 00:14:55.210
+get to those pieces of the pair.
+
+00:14:55.679 --> 00:14:59.450
+Some other functions return tuples,
+which can have even more than 2.
+
+00:14:59.450 --> 00:15:02.730
+Okay, so let's do that
+last one right here.
+
+00:15:02.890 --> 00:15:06.480
+And in this case, I am inserting the a.
+
+00:15:07.360 --> 00:15:08.150
+And I'm right here.
+
+00:15:08.150 --> 00:15:09.210
+This is where I'm at right now.
+
+00:15:09.210 --> 00:15:11.750
+I'm inserting the a
+and I'm displaying s.
+
+00:15:11.770 --> 00:15:13.580
+Now the a was already in there.
+
+00:15:14.509 --> 00:15:16.080
+So I'm displaying it right here.
+
+00:15:16.600 --> 00:15:19.080
+And now what I'm doing is what's first.
+
+00:15:19.150 --> 00:15:21.110
+Well, first was the a.
+
+00:15:21.120 --> 00:15:23.680
+It's the iterator that's pointing
+to the a that was already there,
+
+00:15:24.110 --> 00:15:25.090
+that's why I'm getting that.
+
+00:15:25.820 --> 00:15:28.510
+And when I display the results
+with the second attribute,
+
+00:15:28.630 --> 00:15:29.890
+now I'm getting the false.
+
+00:15:30.179 --> 00:15:34.000
+So right here I know that that
+insertion was not successful because
+
+00:15:34.000 --> 00:15:35.400
+there was a duplicate in there already.
+
+00:15:35.619 --> 00:15:36.859
+So that covers sets.
+
+00:15:37.390 --> 00:15:40.060
+What we're going to do in
+the next video is cover maps.
+
+00:15:40.120 --> 00:15:42.970
+And then the challenge for the
+sets and the maps is going to
+
+00:15:42.970 --> 00:15:46.849
+incorporate using sets and maps
+together, which is kind of cool.
+
+00:15:47.500 --> 00:15:49.900
+All right, so in the next
+video, we'll talk about maps.

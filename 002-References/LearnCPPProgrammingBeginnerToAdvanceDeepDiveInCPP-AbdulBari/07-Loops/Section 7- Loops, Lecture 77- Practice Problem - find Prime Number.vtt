@@ -1,0 +1,317 @@
+WEBVTT
+
+0
+00:00.450 --> 00:02.170
+Now our next program is
+
+1
+00:02.220 --> 00:06.400
+Checking a number is prime number or not.
+
+2
+00:06.450 --> 00:10.480
+So First of all, what is a prime number then procedure then program.
+
+3
+00:11.250 --> 00:12.610
+So what is a prime number.
+
+4
+00:13.140 --> 00:20.940
+If a number is divisible by one and itself no other number should be divided then that number is a prime
+
+5
+00:21.960 --> 00:23.080
+number. example
+
+6
+00:23.100 --> 00:25.040
+I have a number here eight.
+
+7
+00:25.080 --> 00:26.840
+What are the factors of a number.
+
+8
+00:26.940 --> 00:28.270
+1 2 4 8.
+
+9
+00:28.290 --> 00:29.610
+How many factors are there.
+
+10
+00:29.670 --> 00:30.560
+Four.
+
+11
+00:30.580 --> 00:32.250
+It's not a prime number.
+
+12
+00:32.250 --> 00:33.670
+How many factors must be there.
+
+13
+00:33.690 --> 00:34.710
+Only two.
+
+14
+00:34.710 --> 00:36.360
+Let us take another number 13.
+
+15
+00:36.360 --> 00:38.010
+What are the factors of 13.
+
+16
+00:38.100 --> 00:41.820
+13 is exactly divisible by one and  13 itself.
+
+17
+00:41.850 --> 00:43.550
+So how many factors are there.
+
+18
+00:43.570 --> 00:44.660
+Count only two.
+
+19
+00:44.880 --> 00:49.010
+Yes it is a prime number that one more number 15.
+
+20
+00:49.020 --> 00:52.060
+What are the factors 1 3 5 and 15. total
+
+21
+00:52.080 --> 00:56.850
+How many factors count, total 4 are there it's not a prime number.
+
+22
+00:56.910 --> 00:57.600
+So simple.
+
+23
+00:58.290 --> 01:00.420
+So do you know how to find factors.
+
+24
+01:00.420 --> 01:00.990
+Yes.
+
+25
+01:01.020 --> 01:03.040
+Already we have seen this.
+
+26
+01:03.450 --> 01:08.340
+Whatever the number is given we start from 1 and up to that number we will check out if it is exactly
+
+27
+01:08.340 --> 01:15.260
+divisible mod is zero then it is  the factor, we have already done this one time we have printing
+
+28
+01:15.400 --> 01:16.230
+factors.
+
+29
+01:16.290 --> 01:21.530
+Second time in a perfect number we have added them now what  we have to do? count them, 
+
+30
+01:21.840 --> 01:28.590
+So yes that's all. simple change in the logic so count them, at the end check if the count is two
+
+31
+01:28.680 --> 01:31.010
+then is a prime number.
+
+32
+01:31.020 --> 01:32.200
+So how to count.
+
+33
+01:32.220 --> 01:36.130
+So for that I should have one variable count right. initially
+
+34
+01:36.330 --> 01:42.200
+count should be is equal to zero. then that count I should make it as one here.
+
+35
+01:42.630 --> 01:44.670
+And here it is a factor so make it two.
+
+36
+01:45.560 --> 01:50.120
+And that count I should make it one here because one is a factor, two is the factor.
+
+37
+01:50.370 --> 01:52.680
+Make it two then four the factor.
+
+38
+01:52.710 --> 01:56.640
+So incremented to 3, then 8 is also a factor increment 4.
+
+39
+01:56.640 --> 02:01.270
+So what I should do every time, count plus plus, when ever  this condition is true.
+
+40
+02:01.610 --> 02:07.540
+count Plus plus increment count and at the end check what is the count four.
+
+41
+02:07.770 --> 02:11.790
+It's not a prime, see for all of these things we have the code ready here.
+
+42
+02:11.880 --> 02:17.490
+This loop I'm checking but it's a fact or not than here we were printing one time we were finding sum
+
+43
+02:17.510 --> 02:24.990
+not here we have two count, so count I have taken, here simply write count plus plus at the end of the
+
+44
+02:24.990 --> 02:25.920
+table you check
+
+45
+02:26.220 --> 02:35.650
+So at the end of a loop check, what to check here, if count is equal to two, then it is a prime number.
+
+46
+02:35.790 --> 02:36.920
+So here only i will write down.
+
+47
+02:36.930 --> 02:40.860
+write down cout it is a prime.
+
+48
+02:41.340 --> 02:44.600
+It's a prime number right.
+
+49
+02:46.160 --> 02:51.870
+else you can write type like this also, you don't have to write the next line and again give gap, in the same line
+
+50
+02:51.870 --> 02:58.680
+also you can continue Cout, you can say it is not a prime number.
+
+51
+03:00.000 --> 03:04.760
+Yes, this is  simple finished. this is the end of the program.
+
+52
+03:05.310 --> 03:09.240
+So this program is for checking a if a number is prime or not.
+
+53
+03:09.540 --> 03:11.630
+So now in our example, this is not a prime number.
+
+54
+03:11.700 --> 03:15.120
+If it is 13 or 7 or 11 These are all prime numbers.
+
+55
+03:15.360 --> 03:22.140
+If I few prime numbers, let us see, two is a prime number three is a prime number five and seven then Eleven
+
+56
+03:22.210 --> 03:25.050
+and 13 then 17.
+
+57
+03:25.410 --> 03:29.730
+So so on like this these are the prime number 19 and 23.
+
+58
+03:29.730 --> 03:34.700
+These are the prime numbers all of them will have factors only two factors.
+
+59
+03:34.980 --> 03:36.680
+So that's what count the factors.
+
+60
+03:36.690 --> 03:40.480
+If there are two then say  its  a prime otherwise not a prime.
+
+61
+03:41.850 --> 03:43.390
+So write this program.
+
+62
+03:43.410 --> 03:48.720
+There is a demo also available right and there are some coding exercises do that, related to this
+
+63
+03:48.720 --> 03:54.660
+topic only. usually, i starts from zero when you use for loop but in our examples I was starting
+
+64
+03:54.660 --> 03:55.800
+from 1 onwards.
+
+65
+03:55.980 --> 04:01.410
+Then every time we were either adding or multiplying or checking the condition counting something
+
+66
+04:01.410 --> 04:02.910
+we were doing based on this one.
+
+67
+04:03.270 --> 04:08.600
+So all the programs that we have seen using loops,  they are on similar pattern 
+
+68
+04:09.000 --> 04:15.750
+some minor changes are there so we learn how to add the values we learn how to check the condition right
+
+69
+04:15.760 --> 04:16.860
+now how to check the condition.
+
+70
+04:17.190 --> 04:22.340
+So these are the things we have learned so you can use them in solving other problems.
+
+71
+04:22.470 --> 04:24.890
+So these are the basic elements we have learned.
+
+72
+04:25.170 --> 04:28.260
+It's not that just we have Sol prime no. problem.
+
+73
+04:28.290 --> 04:30.170
+We have not just written this program.
+
+74
+04:30.180 --> 04:32.280
+We have learned something here right.
+
+75
+04:32.730 --> 04:36.340
+So like counting can be done and at the end we can check the count.
+
+76
+04:36.360 --> 04:38.250
+So we have got a approach here.
+
+77
+04:38.610 --> 04:41.730
+So this approach you have to use it in other programs.
+
+78
+04:41.730 --> 04:47.390
+Other exercises. that's all in this video will continue with a few more programs using loops.

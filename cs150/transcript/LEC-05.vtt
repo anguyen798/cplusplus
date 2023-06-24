@@ -1,0 +1,2150 @@
+﻿WEBVTT
+
+00:00:00.000 --> 00:00:09.000
+Hello everyone, this is Steve Gilbert. Welcome to lecture 5. In this lecture we're going to look at strings and characters.
+
+00:00:09.000 --> 00:00:18.000
+Now characters are built in to the C++ language, just like ints are and just like doubles are.
+
+00:00:18.000 --> 00:00:30.000
+Unlike Java though, or unlike Python, in C++ the C++ char type is a 7-bit ASCII character.
+
+00:00:30.000 --> 00:00:39.000
+Now you might think, with 8 bits, how can you, with a byte being the smallest thing, how can you have a 7-bit character set?
+
+00:00:39.000 --> 00:00:51.000
+Well, originally when C++ was created, they used the extra bit as part of the communication protocol, and so they only defined 7 bits from 0 to 127.
+
+00:00:51.000 --> 00:00:58.000
+And so that means that in C++ only 128 characters are defined.
+
+00:00:58.000 --> 00:01:18.000
+Now those extra 128 characters, or 127 characters, that you would have from 128 on to 255, those are what's called the extended ASCII character set.
+
+00:01:18.000 --> 00:01:26.000
+But that is not standardized and it's not built in to C++, so you really can't rely on what those characters are.
+
+00:01:26.000 --> 00:01:40.000
+Instead, for larger character sets, in other words for Unicode and so forth, C++ has always had the Wchar_t, or the Wchar type.
+
+00:01:40.000 --> 00:01:54.000
+Now, because different versions of Unicode are represented different ways, since C++11, C++ has added two additional types for Unicode.
+
+00:01:54.000 --> 00:02:12.000
+So Wchar_t, which is 16-bit Unicode, which is the same as Java's Unicode, and Wchar_t, which is the same as Python's Unicode.
+
+00:02:12.000 --> 00:02:18.000
+Now, we also, remember, use the Wchar type for small numbers.
+
+00:02:18.000 --> 00:02:27.000
+Java has the type byte, C++ does not, and instead of byte, it uses a signed char.
+
+00:02:27.000 --> 00:02:36.000
+In C++, we can also use an unsigned char, which is actually useful, a byte that goes from 0 to 255.
+
+00:02:36.000 --> 00:02:49.000
+Now, to deal with this built-in type, we inherited from C, all the headers that start with C, like C, C type, are inherited from the C library.
+
+00:02:49.000 --> 00:02:57.000
+It has functions, actually they're called macros, we'll learn a little bit later what those are, that are used for char.
+
+00:02:57.000 --> 00:03:02.000
+So again, the headers that start with C are inherited from the C library.
+
+00:03:02.000 --> 00:03:06.000
+So there are some classification functions inside here.
+
+00:03:06.000 --> 00:03:10.000
+So I can take a character, C, and I can ask, "Is it a digit?"
+
+00:03:10.000 --> 00:03:12.000
+And I'll get back yes or no.
+
+00:03:12.000 --> 00:03:20.000
+Actually, because it's C and they didn't have true or false, you get back 0 and 1, but you treat it as true or false.
+
+00:03:20.000 --> 00:03:25.000
+Or, "Is it an alpha character?" or "Is it a space?" or "Is it punctuation?" and so forth.
+
+00:03:25.000 --> 00:03:35.000
+There are two conversion functions in here that you can use to convert a character from lowercase to uppercase and from uppercase to lowercase.
+
+00:03:35.000 --> 00:03:39.000
+These functions only convert if it's appropriate.
+
+00:03:39.000 --> 00:03:51.000
+So it's perfectly legal to pass a lowercase character to C, a lowercase character to toLower, and it simply won't do the conversion.
+
+00:03:51.000 --> 00:03:53.000
+It'll work just fine.
+
+00:03:53.000 --> 00:03:59.000
+You don't have to say, "If it's upper, pass it to toLower."
+
+00:03:59.000 --> 00:04:04.000
+Now, a sequence of characters we call a string.
+
+00:04:04.000 --> 00:04:07.000
+So what we call text is called a string.
+
+00:04:07.000 --> 00:04:10.000
+C++ has two kinds of strings.
+
+00:04:10.000 --> 00:04:18.000
+The built-in string inherited from C is called a C-style or C-string.
+
+00:04:18.000 --> 00:04:23.000
+It's an array of characters which are terminated with a null byte.
+
+00:04:23.000 --> 00:04:28.000
+It's not a class. It's not a library type. It's built into the language.
+
+00:04:28.000 --> 00:04:36.000
+Anytime you have a string literal, like "Hello, world," what you're working with is a C-style string.
+
+00:04:36.000 --> 00:04:40.000
+We'll study these when we look at pointers and arrays.
+
+00:04:40.000 --> 00:04:44.000
+We're going to kind of ignore them for right now.
+
+00:04:44.000 --> 00:04:49.000
+The C++ standard library, however, has a type called string.
+
+00:04:49.000 --> 00:04:56.000
+Now, remember in Java, it was uppercase string. It's lowercase in C++.
+
+00:04:56.000 --> 00:05:00.000
+Just like in Java, this is a class type.
+
+00:05:00.000 --> 00:05:05.000
+It's not built into the C++ language. It's part of the library.
+
+00:05:05.000 --> 00:05:12.000
+And remember in C++, in Java, you can use the string type without doing any extra work.
+
+00:05:12.000 --> 00:05:19.000
+But in C++, to use the string type, you have to remember to include the string header.
+
+00:05:19.000 --> 00:05:26.000
+Remember, none of the library functions are included if you do not include them explicitly.
+
+00:05:26.000 --> 00:05:38.000
+Now, a C++ string literal, starting in C++14, can be written as "Hello," just like a C-string literal, in double quotes,
+
+00:05:38.000 --> 00:05:45.000
+with an "s" at the end of it. And that will be a string object.
+
+00:05:45.000 --> 00:05:55.000
+So let me show you briefly. I'm going to do a little exploring here over in our example CPP.
+
+00:05:55.000 --> 00:06:02.000
+I'm going to make sure I want to use the string class, so I'm going to include string.
+
+00:06:02.000 --> 00:06:06.000
+And I'm going to create a couple of different things.
+
+00:06:06.000 --> 00:06:23.000
+I'm going to try "Hello." I'm going to try and actually print out "cl hello.size."
+
+00:06:23.000 --> 00:06:33.000
+And then I'm going to try and print out "cl hello s.size."
+
+00:06:33.000 --> 00:06:42.000
+Now when I try and compile this, "make example," notice I get an error.
+
+00:06:42.000 --> 00:06:51.000
+This is not a string object. I'm trying to ask for a member function on a C-style string.
+
+00:06:51.000 --> 00:07:00.000
+So these are not string objects. However, let me comment that one that doesn't work out.
+
+00:07:00.000 --> 00:07:11.000
+So, do "make example" again. Notice that that compiles. So "hello" with an "s" is a C++ string literal.
+
+00:07:11.000 --> 00:07:21.000
+If I run "example," of course it prints out 5, because there are 5 characters in the word "hello."
+
+00:07:21.000 --> 00:07:28.000
+Alright, let's go back and look at creating string variables.
+
+00:07:28.000 --> 00:07:36.000
+Now, because this is a library type, all library types you create with a constructor.
+
+00:07:36.000 --> 00:07:44.000
+So, the syntax is slightly different with C++ using a constructor than it is with Java.
+
+00:07:44.000 --> 00:07:51.000
+So, in Java, we would write "string s = new string hello world."
+
+00:07:51.000 --> 00:07:57.000
+Now, of course, there's a shorthand, so we don't have to do the new string. We could just put the "hello world."
+
+00:07:57.000 --> 00:08:03.000
+But behind the scenes, Java is doing this new string "hello world."
+
+00:08:03.000 --> 00:08:12.000
+In C++, you don't need to repeat the name "string," and you don't use the new operator.
+
+00:08:12.000 --> 00:08:20.000
+So this is a string object. Now, if we did that in Java, we would have a string variable,
+
+00:08:20.000 --> 00:08:27.000
+but the variable would not be a string object. It would not refer to a string object at that point.
+
+00:08:27.000 --> 00:08:36.000
+In C++, when you create a class type, you do not need to call the constructor explicitly.
+
+00:08:36.000 --> 00:08:39.000
+It is automatically implicitly called.
+
+00:08:39.000 --> 00:08:46.000
+So this is the same as writing "string s = " the empty quote.
+
+00:08:46.000 --> 00:08:50.000
+So, it is the empty string.
+
+00:08:50.000 --> 00:08:56.000
+We can also do it exactly like we do in Java, "string s = hello world."
+
+00:08:56.000 --> 00:09:03.000
+And, again, that works just the same in C++ as it does in Java, more or less.
+
+00:09:03.000 --> 00:09:08.000
+You can also use parentheses or braces around it.
+
+00:09:08.000 --> 00:09:17.000
+So I can say "string s," not use the equal sign, and use the new style, "uniform initialization," if I want.
+
+00:09:17.000 --> 00:09:20.000
+I also have some more complex constructors.
+
+00:09:20.000 --> 00:09:26.000
+For instance, I can tell it how many characters I want and tell it the character I want.
+
+00:09:26.000 --> 00:09:31.000
+So here, this string is 50 dashes. That's really useful sometimes.
+
+00:09:31.000 --> 00:09:38.000
+I can take a C-style string and extract part of it, like taking a substring.
+
+00:09:38.000 --> 00:09:45.000
+So here I'm constructing a string from the literal "hello" and I'm getting the first through third characters.
+
+00:09:45.000 --> 00:09:48.000
+I'm getting three characters from it.
+
+00:09:48.000 --> 00:09:55.000
+So I'm getting "ell" starts at index 1, which is the "e," of course, and gives me three characters.
+
+00:09:55.000 --> 00:10:07.000
+And finally, if you've ever had to use escape characters in Java, in C++ you can get around that by creating what's called a "raw" string.
+
+00:10:07.000 --> 00:10:17.000
+So a raw string starts with a capital "R," a quote, and a left paren, and then what you want inside the parentheses.
+
+00:10:17.000 --> 00:10:22.000
+So notice that this is not an escape character. This is not a delimiter.
+
+00:10:22.000 --> 00:10:27.000
+This is literally the thing that will appear out.
+
+00:10:27.000 --> 00:10:35.000
+So if you ever have to do something where you would need to escape a string, using a raw string is a useful thing.
+
+00:10:35.000 --> 00:10:38.000
+Notice it ends with the parentheses and quote.
+
+00:10:38.000 --> 00:10:43.000
+So quote, paren on the beginning, and paren, quote on the end of it.
+
+00:10:43.000 --> 00:10:50.000
+Everything between is just passed through as if it were a raw string.
+
+00:10:50.000 --> 00:11:01.000
+Now, a C++ string is a library type like it is in Java, but it's a value type.
+
+00:11:01.000 --> 00:11:06.000
+In Java, the library types are all references types.
+
+00:11:06.000 --> 00:11:19.000
+So that means that the C++ library types act like the built-in types when it comes to assignment and copying and all of those kinds of features when it comes to comparison.
+
+00:11:19.000 --> 00:11:21.000
+So let's see how that works.
+
+00:11:21.000 --> 00:11:25.000
+So here is a Java reference type.
+
+00:11:25.000 --> 00:11:28.000
+Notice I've used the capital string for Java.
+
+00:11:28.000 --> 00:11:34.000
+I've created a string "A," pointed it to "Hello," so I have a string variable.
+
+00:11:34.000 --> 00:11:38.000
+That string variable points to the word "Hi," not "Hello."
+
+00:11:38.000 --> 00:11:42.000
+Then I create a second string and assign it to "B."
+
+00:11:42.000 --> 00:11:47.000
+That creates another variable, but it doesn't create another copy of the word "Hi."
+
+00:11:47.000 --> 00:11:51.000
+We have one string object with Java.
+
+00:11:51.000 --> 00:11:56.000
+C++ acts as if these strings were integers.
+
+00:11:56.000 --> 00:12:00.000
+It uses value or copy assignment.
+
+00:12:00.000 --> 00:12:03.000
+Java uses reference assignment.
+
+00:12:03.000 --> 00:12:11.000
+And so when I write the same thing in C++, when I create the string "A," "A" contains "By."
+
+00:12:11.000 --> 00:12:19.000
+It's not a variable that points to "Hi." It's a variable that points to "By." It contains "By."
+
+00:12:19.000 --> 00:12:24.000
+When I say "B" equals "A," I get another copy of the "By."
+
+00:12:24.000 --> 00:12:31.000
+I have two copies of strings, two string objects here, one string object in Java.
+
+00:12:31.000 --> 00:12:39.000
+So how else are C++ strings like built-in types unlike Java's types?
+
+00:12:39.000 --> 00:12:44.000
+Well, we can use native operator comparison.
+
+00:12:44.000 --> 00:12:50.000
+In Java, you have to use the method equals or compareTo.
+
+00:12:50.000 --> 00:13:00.000
+So if I have two string objects, "A" is Zebra, "B" is Aardvark, I can say if "A" less than "B," illegal in Java.
+
+00:13:00.000 --> 00:13:06.000
+Or if "A" equals equals "B," that's legal in Java, but it's kind of meaningless.
+
+00:13:06.000 --> 00:13:12.000
+You really should use equals in that case.
+
+00:13:12.000 --> 00:13:17.000
+Now, strings in C++ may be modified.
+
+00:13:17.000 --> 00:13:21.000
+Java strings may not. Java strings are immutable.
+
+00:13:21.000 --> 00:13:27.000
+So it's legal to do this. I've created a string str that contains "Hello."
+
+00:13:27.000 --> 00:13:30.000
+I've constructed it from this C-style string.
+
+00:13:30.000 --> 00:13:36.000
+And then I've gone in and I've changed the zeroth element to the character "J."
+
+00:13:36.000 --> 00:13:39.000
+So this string now contains "Jello."
+
+00:13:39.000 --> 00:13:43.000
+Again, this is illegal in Java.
+
+00:13:43.000 --> 00:13:52.000
+Now, like Java, C++ strings can be concatenated to either string literals or to characters.
+
+00:13:52.000 --> 00:14:04.000
+So if I have two strings, "Hello" and "World," I can say str3 equals str1 plus, and this can be a string literal or it could be a character.
+
+00:14:04.000 --> 00:14:07.000
+So notice I've got a character here at the end. That works fine.
+
+00:14:07.000 --> 00:14:11.000
+I've got a string literal here. That works fine.
+
+00:14:11.000 --> 00:14:19.000
+What you cannot do, though, because string literals are not string objects, you cannot concatenate C string literals.
+
+00:14:19.000 --> 00:14:22.000
+You also cannot concatenate numbers.
+
+00:14:22.000 --> 00:14:34.000
+So if I did this, str1 equals "Hello," a C string literal, plus another C string literal, plus "World," that would be illegal.
+
+00:14:34.000 --> 00:14:41.000
+Now, just to tell you how you can actually do that without this, is if you leave off the plus signs,
+
+00:14:41.000 --> 00:14:49.000
+any C string literals that appear in code that are adjacent to each other will be automatically concatenated.
+
+00:14:49.000 --> 00:14:53.000
+You don't need the plus sign, and that would work perfectly fine.
+
+00:14:53.000 --> 00:15:02.000
+Another thing we might want to do in Java that's illegal in C++ is we might want to say concatenate a string plus a number
+
+00:15:02.000 --> 00:15:09.000
+and have a new string that says "amount 23.45" as a string.
+
+00:15:09.000 --> 00:15:15.000
+That's, again, illegal in C++.
+
+00:15:15.000 --> 00:15:21.000
+How about input and output? So with cin and cout, we can do that with strings.
+
+00:15:21.000 --> 00:15:25.000
+Again, you have to include string when you do this.
+
+00:15:25.000 --> 00:15:31.000
+So here's a string called "firstname." I've printed out "firstname" for my prompt.
+
+00:15:31.000 --> 00:15:36.000
+Notice I've ended in a little space, and then I've just read it like that.
+
+00:15:36.000 --> 00:15:40.000
+Now, that will read only the first name.
+
+00:15:40.000 --> 00:15:44.000
+What if your first name has two words? It won't work.
+
+00:15:44.000 --> 00:15:49.000
+It reads only one token. It stops on any whitespace character.
+
+00:15:49.000 --> 00:15:52.000
+What if I wanted to read the whole name?
+
+00:15:52.000 --> 00:16:01.000
+Well, to read the whole name, I need to use a function, not just cin, but I need to pass cin to a function called "getline."
+
+00:16:01.000 --> 00:16:07.000
+This is a function in the string header. It's not in Iostream, so you have to include string.
+
+00:16:07.000 --> 00:16:10.000
+And so here's a full name.
+
+00:16:10.000 --> 00:16:17.000
+Then I've printed out "cout fullname," and I've given them a little example, last comma first, of what I want.
+
+00:16:17.000 --> 00:16:24.000
+And then I've done "getline." The first argument to "getline" is where I want to get the data from.
+
+00:16:24.000 --> 00:16:27.000
+In this case, I want to read from cin.
+
+00:16:27.000 --> 00:16:34.000
+And the second argument is an empty string that is going to be filled in inside the function.
+
+00:16:34.000 --> 00:16:39.000
+We call this a reference parameter or an output parameter.
+
+00:16:39.000 --> 00:16:49.000
+So "getline" to read a line, just cin with the extraction operator here to read only a word.
+
+00:16:49.000 --> 00:16:55.000
+Now, as in Java, objects have methods associated with them.
+
+00:16:55.000 --> 00:17:00.000
+So when you create an object, there are functions associated with that object.
+
+00:17:00.000 --> 00:17:05.000
+In C++, we actually call them member functions instead of methods.
+
+00:17:05.000 --> 00:17:10.000
+But member functions and methods are synonymous with each other.
+
+00:17:10.000 --> 00:17:20.000
+So the number of characters from a string you can get with str.size or str.length.
+
+00:17:20.000 --> 00:17:28.000
+Size is shorter, it's less words, and if you remember in Java, if you had the string type,
+
+00:17:28.000 --> 00:17:34.000
+you called str.length as a function, a member function or a method.
+
+00:17:34.000 --> 00:17:41.000
+If you had an array, you called a.length but didn't put the parenthesis around it.
+
+00:17:41.000 --> 00:17:48.000
+And if you had an array list to get the number of elements, you did list.size.
+
+00:17:48.000 --> 00:17:52.000
+Well, in C++, you can use size for everything.
+
+00:17:52.000 --> 00:18:00.000
+So size is shorter, it works for everything, so I just forget about using length at all, even though you can.
+
+00:18:00.000 --> 00:18:05.000
+Now, another difference between Java, when we get the number of characters,
+
+00:18:05.000 --> 00:18:10.000
+is in C++, the value that's returned is an unsigned number.
+
+00:18:10.000 --> 00:18:13.000
+And it has its own type.
+
+00:18:13.000 --> 00:18:20.000
+The type of the number returned from string is string colon colon size type.
+
+00:18:20.000 --> 00:18:24.000
+Now, the colon colon here, you remember, is the scope operator.
+
+00:18:24.000 --> 00:18:33.000
+And in this context, the scope operator means the size type that is defined inside the string class.
+
+00:18:33.000 --> 00:18:37.000
+It tells us the size type from the string type.
+
+00:18:37.000 --> 00:18:43.000
+And each type, if we had a vector, it would be vector colon colon size type.
+
+00:18:43.000 --> 00:18:45.000
+Now, that's kind of a lot of typing.
+
+00:18:45.000 --> 00:18:51.000
+To type string colon colon size type, len equals str.size.
+
+00:18:51.000 --> 00:18:58.000
+And so you can reduce typing by using the general type, which is what I'll do normally,
+
+00:18:58.000 --> 00:19:01.000
+and that is size underscore t.
+
+00:19:01.000 --> 00:19:05.000
+This is the general size type.
+
+00:19:05.000 --> 00:19:08.000
+Now, don't use int.
+
+00:19:08.000 --> 00:19:11.000
+And don't compare int to a variable.
+
+00:19:11.000 --> 00:19:15.000
+So, many of you in Java were used to doing something like this.
+
+00:19:15.000 --> 00:19:20.000
+For int i equals zero, i less than s size.
+
+00:19:20.000 --> 00:19:25.000
+You notice our compiler is set up so this will not even compile.
+
+00:19:25.000 --> 00:19:33.000
+That's because i is an int, s.size is this unsigned type, and you cannot compare them legally.
+
+00:19:33.000 --> 00:19:39.000
+You cannot compare them safely.
+
+00:19:39.000 --> 00:19:45.000
+Okay, so we select an individual character in a string by indexing.
+
+00:19:45.000 --> 00:19:51.000
+So you're probably familiar with this with arrays from both Java or Python.
+
+00:19:51.000 --> 00:19:57.000
+So legal subscripts are from zero to the string size minus one.
+
+00:19:57.000 --> 00:20:02.000
+So string size, of course, is outside the bounds of the array.
+
+00:20:02.000 --> 00:20:04.000
+You can do this two ways.
+
+00:20:04.000 --> 00:20:10.000
+You can use the subscript operator, the square brackets that you're familiar with with arrays.
+
+00:20:10.000 --> 00:20:17.000
+So if I create a string hello, I can say str sub zero equals j.
+
+00:20:17.000 --> 00:20:23.000
+Now, in Java, you would expect if you went outside the bounds of the array,
+
+00:20:23.000 --> 00:20:32.000
+like str bracket bracket five, we pronounce this str subs five, or str sub five equals that.
+
+00:20:32.000 --> 00:20:35.000
+Notice that that would be beyond the O.
+
+00:20:35.000 --> 00:20:40.000
+It would be in this position out here, and we would get an exception thrown.
+
+00:20:40.000 --> 00:20:42.000
+In C++, you will not.
+
+00:20:42.000 --> 00:20:44.000
+It is not range checked.
+
+00:20:44.000 --> 00:20:47.000
+It's up to you to say in bounds.
+
+00:20:47.000 --> 00:20:55.000
+Because of that, because it's obvious that all of us frequently make mistakes when we're programming or when we're typing,
+
+00:20:55.000 --> 00:21:02.000
+C++ has a simpler, the string class has a simpler and safer way to do it,
+
+00:21:02.000 --> 00:21:04.000
+which is the method called at.
+
+00:21:04.000 --> 00:21:10.000
+So this is range checked, and this is the preferred way to do this.
+
+00:21:10.000 --> 00:21:18.000
+So string str equals hello, str at zero equals j, that's okay,
+
+00:21:18.000 --> 00:21:22.000
+and str at five equals the exclamation point.
+
+00:21:22.000 --> 00:21:29.000
+This is safe because just like Java, this will throw an exception.
+
+00:21:29.000 --> 00:21:35.000
+So you want to use at instead of the square brackets.
+
+00:21:35.000 --> 00:21:38.000
+So let's look at extracting substrings.
+
+00:21:38.000 --> 00:21:42.000
+You can copy a portion of a string into another string.
+
+00:21:42.000 --> 00:21:44.000
+That's called a substring.
+
+00:21:44.000 --> 00:21:49.000
+In Java, you do this with a method called substring.
+
+00:21:49.000 --> 00:21:55.000
+In Java, this method uses two indexes, pos1 and pos2.
+
+00:21:55.000 --> 00:22:03.000
+So if I have the string, hello world, and I ask for the substring from six to 11,
+
+00:22:03.000 --> 00:22:10.000
+it goes zero, one, two, three, four, five, six, so it's going to start at w,
+
+00:22:10.000 --> 00:22:16.000
+seven, eight, nine, ten, and it's going to stop when it reaches 11.
+
+00:22:16.000 --> 00:22:21.000
+So this will be world without the exclamation point.
+
+00:22:21.000 --> 00:22:27.000
+C++ changes the name, it's substr, not with substring,
+
+00:22:27.000 --> 00:22:33.000
+and it is simpler.
+
+00:22:33.000 --> 00:22:43.000
+If we wanted the same characters world, we'd say start at six, which is the w,
+
+00:22:43.000 --> 00:22:46.000
+and give me just five characters.
+
+00:22:46.000 --> 00:22:50.000
+So to count one, two, three, four, five, and it'd give me world.
+
+00:22:50.000 --> 00:22:57.000
+I don't need to figure out where this ending index is like I do with Java.
+
+00:22:57.000 --> 00:23:03.000
+So if you're used to programming in Java, keep this in mind.
+
+00:23:03.000 --> 00:23:08.000
+Now, there is only one exception thrown by substring,
+
+00:23:08.000 --> 00:23:14.000
+and that is if this initial position is greater than the string size.
+
+00:23:14.000 --> 00:23:17.000
+Well, you might ask, well, what if it is the string size?
+
+00:23:17.000 --> 00:23:19.000
+Shouldn't that be out of range?
+
+00:23:19.000 --> 00:23:23.000
+No, in that case, the substring will return an empty string to you.
+
+00:23:23.000 --> 00:23:27.000
+So if pos1 is greater than the string size, you'll get an exception.
+
+00:23:27.000 --> 00:23:33.000
+If the length, this five here, is larger than the numbers accepted,
+
+00:23:33.000 --> 00:23:37.000
+it'll only give you the ones that are there.
+
+00:23:37.000 --> 00:23:40.000
+You can also call substring with only one argument,
+
+00:23:40.000 --> 00:23:44.000
+and if you do that, it'll just give you from that position
+
+00:23:44.000 --> 00:23:48.000
+to the rest of the characters in the string.
+
+00:23:48.000 --> 00:23:51.000
+So we're going to do an exercise with substrings,
+
+00:23:51.000 --> 00:23:55.000
+but first I want to talk about references.
+
+00:23:55.000 --> 00:23:56.000
+What is a reference?
+
+00:23:56.000 --> 00:24:00.000
+Because we're going to write a function that works on a substring,
+
+00:24:00.000 --> 00:24:05.000
+and so we have to learn how to pass strings to functions.
+
+00:24:05.000 --> 00:24:10.000
+So a reference is a C++ derived type.
+
+00:24:10.000 --> 00:24:13.000
+It's based on other types,
+
+00:24:13.000 --> 00:24:19.000
+and it's basically a name that acts as an alias for a variable.
+
+00:24:19.000 --> 00:24:22.000
+It is not a new variable.
+
+00:24:22.000 --> 00:24:28.000
+So here I have one variable, a, that has the value 42,
+
+00:24:28.000 --> 00:24:32.000
+and here I've given a a new name, b.
+
+00:24:32.000 --> 00:24:36.000
+So I have two names for one object in memory.
+
+00:24:36.000 --> 00:24:39.000
+I've said b is a reference to an int,
+
+00:24:39.000 --> 00:24:42.000
+and the int it references is a.
+
+00:24:42.000 --> 00:24:45.000
+b is just another name for a.
+
+00:24:45.000 --> 00:24:51.000
+These are not references like in Java or C#.
+
+00:24:51.000 --> 00:24:58.000
+References in Java and C# are much closer to what we call pointers in C++,
+
+00:24:58.000 --> 00:25:01.000
+and we'll study those later.
+
+00:25:01.000 --> 00:25:07.000
+Now, references can only refer to L values or variables.
+
+00:25:07.000 --> 00:25:12.000
+So if I were to say n is a reference to an int,
+
+00:25:12.000 --> 00:25:15.000
+and I refer it to 42,
+
+00:25:15.000 --> 00:25:17.000
+42 is not an int variable.
+
+00:25:17.000 --> 00:25:21.000
+It's not an object, so that would be illegal.
+
+00:25:21.000 --> 00:25:25.000
+Now, there are also no conversions possible.
+
+00:25:25.000 --> 00:25:27.000
+Only exact type matches.
+
+00:25:27.000 --> 00:25:33.000
+So if I said pi is 3.1459,
+
+00:25:33.000 --> 00:25:37.000
+and I tried to write int ref pi2 = pi,
+
+00:25:37.000 --> 00:25:39.000
+I'd get an error. Why?
+
+00:25:39.000 --> 00:25:42.000
+Because pi2 is a reference to an int,
+
+00:25:42.000 --> 00:25:45.000
+and I've given it a double here.
+
+00:25:45.000 --> 00:25:47.000
+Now, of course, if these were values,
+
+00:25:47.000 --> 00:25:50.000
+if I said int pi2 = pi,
+
+00:25:50.000 --> 00:25:55.000
+it would simply truncate this and give me a new value of 3 in pi.
+
+00:25:55.000 --> 00:25:58.000
+But a reference is not a new variable.
+
+00:25:58.000 --> 00:26:01.000
+It refers to something that already exists.
+
+00:26:01.000 --> 00:26:07.000
+Of course, to get it right, I'd have to write double ref pi3 = pi.
+
+00:26:07.000 --> 00:26:11.000
+This is an exact match. That works OK.
+
+00:26:11.000 --> 00:26:14.000
+Now, what are references good for?
+
+00:26:14.000 --> 00:26:21.000
+Well, references are useful because we pass them to functions.
+
+00:26:21.000 --> 00:26:25.000
+A reference parameter, like this string ref s,
+
+00:26:25.000 --> 00:26:27.000
+is not a new variable,
+
+00:26:27.000 --> 00:26:31.000
+and you indicate that it's a reference by putting the ampersand
+
+00:26:31.000 --> 00:26:34.000
+after the variable's type.
+
+00:26:34.000 --> 00:26:39.000
+So that says the reverse function is not going to take,
+
+00:26:39.000 --> 00:26:42.000
+as its argument, a copy of the string.
+
+00:26:42.000 --> 00:26:46.000
+It's going to work on the string that you pass to it.
+
+00:26:46.000 --> 00:26:51.000
+Now, if I were to change s inside this function,
+
+00:26:51.000 --> 00:26:54.000
+which obviously the reverse function is going to do,
+
+00:26:54.000 --> 00:27:01.000
+it would change the argument that s was used to call the function with.
+
+00:27:01.000 --> 00:27:06.000
+These are called output parameters.
+
+00:27:06.000 --> 00:27:11.000
+So here I've got string str = "hello",
+
+00:27:11.000 --> 00:27:15.000
+and here I have reverse str.
+
+00:27:15.000 --> 00:27:20.000
+We're going to ignore that phone that's ringing in the background here for a second.
+
+00:27:20.000 --> 00:27:22.000
+There, it stopped.
+
+00:27:22.000 --> 00:27:27.000
+So notice that I've called it with the function str,
+
+00:27:27.000 --> 00:27:29.000
+but inside the function,
+
+00:27:29.000 --> 00:27:35.000
+that str is simply s is simply another name for this function str.
+
+00:27:35.000 --> 00:27:41.000
+When I print out str, of course the reverse function will reverse the arguments.
+
+00:27:41.000 --> 00:27:47.000
+We're going to write this function a little bit later, not today.
+
+00:27:47.000 --> 00:27:52.000
+Now, reference parameters, the reason we use reference parameters
+
+00:27:52.000 --> 00:27:55.000
+is because they're much more efficient than value parameters
+
+00:27:55.000 --> 00:27:58.000
+for large objects like string.
+
+00:27:58.000 --> 00:28:03.000
+You remember in Java, when we make a copy of a string,
+
+00:28:03.000 --> 00:28:06.000
+we actually don't make a copy of the string object.
+
+00:28:06.000 --> 00:28:10.000
+We simply create another variable that points to the one variable.
+
+00:28:10.000 --> 00:28:13.000
+Since C++ doesn't work like that,
+
+00:28:13.000 --> 00:28:16.000
+if we had parameters that were strings,
+
+00:28:16.000 --> 00:28:22.000
+every time you called the function, you'd make a copy of the entire string.
+
+00:28:22.000 --> 00:28:26.000
+And so with references, no copies are made,
+
+00:28:26.000 --> 00:28:29.000
+and so less memory is used.
+
+00:28:29.000 --> 00:28:33.000
+And because no constructors are called to make those copies,
+
+00:28:33.000 --> 00:28:35.000
+they run faster.
+
+00:28:35.000 --> 00:28:37.000
+But there's a downside.
+
+00:28:37.000 --> 00:28:40.000
+Reference parameters are also more dangerous,
+
+00:28:40.000 --> 00:28:43.000
+and they're not quite as flexible.
+
+00:28:43.000 --> 00:28:45.000
+That's because with a reference parameter,
+
+00:28:45.000 --> 00:28:48.000
+you may accidentally change an argument
+
+00:28:48.000 --> 00:28:51.000
+when you didn't mean to change that argument.
+
+00:28:51.000 --> 00:28:54.000
+And so C++ prevents that
+
+00:28:54.000 --> 00:28:58.000
+by providing you with constant references.
+
+00:28:58.000 --> 00:29:02.000
+And so if I were writing a function called print,
+
+00:29:02.000 --> 00:29:04.000
+and I wanted to print a string,
+
+00:29:04.000 --> 00:29:08.000
+I wouldn't say "string s" because that would be expensive.
+
+00:29:08.000 --> 00:29:12.000
+It would use more memory, and it would run slower.
+
+00:29:12.000 --> 00:29:14.000
+I wouldn't say "string ref s"
+
+00:29:14.000 --> 00:29:18.000
+because I don't expect the print function to change this string.
+
+00:29:18.000 --> 00:29:22.000
+Instead, I'd write "const string ref s."
+
+00:29:22.000 --> 00:29:27.000
+So any time we have a function that takes a string as an argument,
+
+00:29:27.000 --> 00:29:31.000
+and we don't intend to change that string inside the function,
+
+00:29:31.000 --> 00:29:35.000
+we're going to pass it as "const string ref."
+
+00:29:35.000 --> 00:29:37.000
+So let's go ahead and do that,
+
+00:29:37.000 --> 00:29:42.000
+and we'll do our first exercise, the substring member function.
+
+00:29:42.000 --> 00:29:45.000
+So let me pull up my thing here.
+
+00:29:45.000 --> 00:29:49.000
+I'm going to go over to IC05A,
+
+00:29:49.000 --> 00:29:55.000
+and we're going to write the function called inside out.
+
+00:29:55.000 --> 00:30:00.000
+So you're going to put your name on this.
+
+00:30:00.000 --> 00:30:03.000
+And I'm going to look here at the starter code.
+
+00:30:03.000 --> 00:30:06.000
+We're going to write a function called inside out
+
+00:30:06.000 --> 00:30:09.000
+that takes a string as an argument and returns a new string
+
+00:30:09.000 --> 00:30:13.000
+where the middle character, if the string length is odd, has been removed,
+
+00:30:13.000 --> 00:30:16.000
+and placed both at the beginning and the end.
+
+00:30:16.000 --> 00:30:19.000
+If the string length is even, then the middle two characters are removed
+
+00:30:19.000 --> 00:30:23.000
+with the first placed before and the second placed after the string.
+
+00:30:23.000 --> 00:30:26.000
+If the length of the string is less than three,
+
+00:30:26.000 --> 00:30:28.000
+then we're going to return the original string.
+
+00:30:28.000 --> 00:30:33.000
+And here are three examples that show you those possibilities.
+
+00:30:33.000 --> 00:30:38.000
+So what we want now is just how we write this function.
+
+00:30:38.000 --> 00:30:40.000
+So remember the six steps.
+
+00:30:40.000 --> 00:30:42.000
+What does this function produce?
+
+00:30:42.000 --> 00:30:44.000
+It's producing a new string.
+
+00:30:44.000 --> 00:30:46.000
+What's the name of the function?
+
+00:30:46.000 --> 00:30:48.000
+Inside out.
+
+00:30:48.000 --> 00:30:50.000
+What is it going to take?
+
+00:30:50.000 --> 00:30:54.000
+It's going to take a string that doesn't change.
+
+00:30:54.000 --> 00:31:03.000
+So const string reference str.
+
+00:31:03.000 --> 00:31:04.000
+What's it going to return?
+
+00:31:04.000 --> 00:31:05.000
+A new string.
+
+00:31:05.000 --> 00:31:10.000
+So string result;.
+
+00:31:10.000 --> 00:31:13.000
+Notice we do not need to write equals quote, quote.
+
+00:31:13.000 --> 00:31:18.000
+That will call the constructor automatically and create the empty string
+
+00:31:18.000 --> 00:31:23.000
+and return result.
+
+00:31:23.000 --> 00:31:25.000
+Okay, we have our stub.
+
+00:31:25.000 --> 00:31:28.000
+We're going to right click on A here.
+
+00:31:28.000 --> 00:31:30.000
+Open it terminal on A.
+
+00:31:30.000 --> 00:31:42.000
+And we're going to do make test.
+
+00:31:42.000 --> 00:31:43.000
+And I got a warning.
+
+00:31:43.000 --> 00:31:48.000
+Now I'm going to move this over here to the side so we can see the whole thing.
+
+00:31:48.000 --> 00:31:51.000
+I got a warning telling me I'm not using this parameter.
+
+00:31:51.000 --> 00:31:55.000
+But notice my code compiles and it runs.
+
+00:31:55.000 --> 00:31:57.000
+Compiles and it runs.
+
+00:31:57.000 --> 00:32:02.000
+Okay, let's move that down to the bottom here.
+
+00:32:02.000 --> 00:32:05.000
+And let's look at our code.
+
+00:32:05.000 --> 00:32:08.000
+So we have three possibilities here, right?
+
+00:32:08.000 --> 00:32:13.000
+Remember looking here, we have this case, it's less than three.
+
+00:32:13.000 --> 00:32:15.000
+We have this case, it's odd.
+
+00:32:15.000 --> 00:32:16.000
+And this case, it's even.
+
+00:32:16.000 --> 00:32:19.000
+So let's write that skeleton out.
+
+00:32:19.000 --> 00:32:23.000
+Remembering what we learned in the last lecture about selection.
+
+00:32:23.000 --> 00:32:33.000
+So if something result equals str.
+
+00:32:33.000 --> 00:32:42.000
+Else if something else, else this.
+
+00:32:42.000 --> 00:32:43.000
+So what are these possibilities?
+
+00:32:43.000 --> 00:32:49.000
+Well this is if str size is less than three.
+
+00:32:49.000 --> 00:32:53.000
+The result is str.
+
+00:32:53.000 --> 00:33:04.000
+This is if str size remainder two equals one.
+
+00:33:04.000 --> 00:33:10.000
+This is odd.
+
+00:33:10.000 --> 00:33:16.000
+And this one of course is even.
+
+00:33:16.000 --> 00:33:20.000
+Okay, so what do we want to do if it's odd or even?
+
+00:33:20.000 --> 00:33:24.000
+Now you notice I've used str size here, str size here.
+
+00:33:24.000 --> 00:33:26.000
+And I'm going to have to use it again.
+
+00:33:26.000 --> 00:33:31.000
+So you might want to say create a variable for it.
+
+00:33:31.000 --> 00:33:36.000
+Now we can do this.
+
+00:33:36.000 --> 00:33:41.000
+String colon colon size type.
+
+00:33:41.000 --> 00:33:46.000
+Len equals str size.
+
+00:33:46.000 --> 00:33:49.000
+Or both.
+
+00:33:49.000 --> 00:33:52.000
+We can do size t.
+
+00:33:52.000 --> 00:33:58.000
+Len equals str size.
+
+00:33:58.000 --> 00:34:03.000
+I prefer this.
+
+00:34:03.000 --> 00:34:09.000
+Or we can use auto len.
+
+00:34:09.000 --> 00:34:13.000
+That's also okay.
+
+00:34:13.000 --> 00:34:19.000
+So I'm going to actually use the last one here.
+
+00:34:19.000 --> 00:34:22.000
+Okay, and now I can come along and I can say,
+
+00:34:22.000 --> 00:34:25.000
+now I don't have to calculate the size again, right?
+
+00:34:25.000 --> 00:34:29.000
+I can say if length is less than three.
+
+00:34:29.000 --> 00:34:32.000
+If length remainder two equals one.
+
+00:34:32.000 --> 00:34:36.000
+And now if I need to use len and these other ones, which I will,
+
+00:34:36.000 --> 00:34:39.000
+I don't have to call str size again.
+
+00:34:39.000 --> 00:34:42.000
+So in general, any time you call a member function,
+
+00:34:42.000 --> 00:34:46.000
+if you're going to not change that value, save it inside a variable.
+
+00:34:46.000 --> 00:34:50.000
+Cache it. Use it again later.
+
+00:34:50.000 --> 00:34:53.000
+So let's look at our problem.
+
+00:34:53.000 --> 00:34:56.000
+Okay, so if the length is odd,
+
+00:34:56.000 --> 00:34:58.000
+we're going to take the middle character
+
+00:34:58.000 --> 00:35:03.000
+and place it both at the beginning and the end.
+
+00:35:03.000 --> 00:35:11.000
+So let's find out where the middle character.
+
+00:35:11.000 --> 00:35:22.000
+So I'll do char mid equals str at len divided by two.
+
+00:35:22.000 --> 00:35:24.000
+That's the middle character.
+
+00:35:24.000 --> 00:35:29.000
+Notice I used len again so I didn't have to say str size.
+
+00:35:29.000 --> 00:35:35.000
+I'm going to set result equals to the mid character.
+
+00:35:35.000 --> 00:35:37.000
+Remember I'm putting it at the beginning and end.
+
+00:35:37.000 --> 00:35:41.000
+Plus str, substr.
+
+00:35:41.000 --> 00:35:44.000
+Starting at position zero,
+
+00:35:44.000 --> 00:35:50.000
+I'm going up to len divided by two.
+
+00:35:50.000 --> 00:35:55.000
+Not going up to, but taking that many characters.
+
+00:35:55.000 --> 00:36:05.000
+And then I'm going to add to that the substring.
+
+00:36:05.000 --> 00:36:10.000
+Starting at len divided by two plus one.
+
+00:36:10.000 --> 00:36:14.000
+Right after the middle character.
+
+00:36:14.000 --> 00:36:21.000
+Finally, I'm going to add on the middle character again.
+
+00:36:21.000 --> 00:36:24.000
+Okay, so that's the odd one.
+
+00:36:24.000 --> 00:36:26.000
+Now with the even one,
+
+00:36:26.000 --> 00:36:30.000
+with the even one, we get the middle two characters.
+
+00:36:30.000 --> 00:36:33.000
+So let's do ourselves a little example here.
+
+00:36:33.000 --> 00:36:36.000
+Many times it helps me a lot.
+
+00:36:36.000 --> 00:36:42.000
+So frog is a string that's larger than two,
+
+00:36:42.000 --> 00:36:45.000
+or larger than three, and is even number.
+
+00:36:45.000 --> 00:36:52.000
+And so the middle one, if I divide that size by four,
+
+00:36:52.000 --> 00:36:57.000
+let me do this, size is four,
+
+00:36:57.000 --> 00:37:02.000
+mid would be two.
+
+00:37:02.000 --> 00:37:04.000
+Do I want the character at two?
+
+00:37:04.000 --> 00:37:07.000
+Zero, one, two.
+
+00:37:07.000 --> 00:37:09.000
+No, I want the middle two, so I want r.
+
+00:37:09.000 --> 00:37:13.000
+So I want mid minus one, right for that.
+
+00:37:13.000 --> 00:37:20.000
+And I want two characters, so I can't use a char type.
+
+00:37:20.000 --> 00:37:31.000
+So I'm going to do string mid equals str, substring.
+
+00:37:31.000 --> 00:37:35.000
+Starting at len minus two.
+
+00:37:35.000 --> 00:37:40.000
+That would give me the o, len divided by two, I'm sorry.
+
+00:37:40.000 --> 00:37:43.000
+Minus one.
+
+00:37:43.000 --> 00:37:46.000
+That would give me the r in frog.
+
+00:37:46.000 --> 00:37:50.000
+And again, do this on a piece of paper if you want,
+
+00:37:50.000 --> 00:37:56.000
+but draw yourself a little picture so you know what these calculations are going to be each time.
+
+00:37:56.000 --> 00:38:02.000
+And I want two characters.
+
+00:38:02.000 --> 00:38:07.000
+Now, this time I'm going to create a couple of variables for it.
+
+00:38:07.000 --> 00:38:12.000
+Here I just created the calculations without the variables.
+
+00:38:12.000 --> 00:38:17.000
+Let me create the variables so you see what I was doing in this calculation.
+
+00:38:17.000 --> 00:38:22.000
+So I'm going to say string front equals str, substring.
+
+00:38:22.000 --> 00:38:33.000
+Starting at zero, going up to len minus two, divided by two, minus one.
+
+00:38:33.000 --> 00:38:43.000
+And string back equals str, substring, len divided by two, plus one.
+
+00:38:43.000 --> 00:38:45.000
+Which is exactly the same as this.
+
+00:38:45.000 --> 00:38:48.000
+So this is the back part.
+
+00:38:48.000 --> 00:38:50.000
+This is the front part of the string.
+
+00:38:50.000 --> 00:39:08.000
+And here I can do result equals mid at zero, or like that.
+
+00:39:08.000 --> 00:39:12.000
+Or in fact I can say mid front, like that.
+
+00:39:12.000 --> 00:39:14.000
+Either of those work.
+
+00:39:14.000 --> 00:39:23.000
+So I'm going to say mid at zero plus front plus back, plus mid at one.
+
+00:39:23.000 --> 00:39:36.000
+And here of course I could write, or since there are only two characters, right?
+
+00:39:36.000 --> 00:39:38.000
+Alright, that looks pretty good.
+
+00:39:38.000 --> 00:39:43.000
+Let's go ahead and see if we got it correct.
+
+00:39:43.000 --> 00:39:46.000
+Let's clear this with control L.
+
+00:39:46.000 --> 00:39:48.000
+Do make test.
+
+00:39:48.000 --> 00:39:52.000
+Ok, we didn't get any errors or any warnings this time.
+
+00:39:52.000 --> 00:39:56.000
+And all of our tests pass.
+
+00:39:56.000 --> 00:40:01.000
+All of our tests pass.
+
+00:40:01.000 --> 00:40:07.000
+Alright, let's go ahead now
+
+00:40:07.000 --> 00:40:12.000
+and look at searching for strings and characters.
+
+00:40:12.000 --> 00:40:20.000
+So in Java, you search for a string or character using indexOf and lastIndexOf.
+
+00:40:20.000 --> 00:40:25.000
+And you get back of course the index where that string exists.
+
+00:40:25.000 --> 00:40:30.000
+The same thing with Java, but you use the member function find.
+
+00:40:30.000 --> 00:40:35.000
+So find will return the position where arg is found in str.
+
+00:40:35.000 --> 00:40:42.000
+And arg can be a character, it can be a C string literal, or it can be a string object.
+
+00:40:42.000 --> 00:40:50.000
+Now in Java, when indexOf can't find the position, it returns minus one.
+
+00:40:50.000 --> 00:40:55.000
+However, find, like size, doesn't return an integer.
+
+00:40:55.000 --> 00:41:02.000
+It returns a string colon colon size type, which is an unsigned number.
+
+00:41:02.000 --> 00:41:09.000
+Thus we have to have a special value that signifies that it wasn't found.
+
+00:41:09.000 --> 00:41:13.000
+That special value is called string colon colon inpos.
+
+00:41:13.000 --> 00:41:17.000
+Inpos says no position found.
+
+00:41:17.000 --> 00:41:20.000
+That's how you think of it.
+
+00:41:20.000 --> 00:41:23.000
+Now there's an optional second argument to find.
+
+00:41:23.000 --> 00:41:26.000
+You can say string find arg pos.
+
+00:41:26.000 --> 00:41:35.000
+This would be good in a loop where you want to continue to look through the loop and find different copies of this by passing in different positions.
+
+00:41:35.000 --> 00:41:40.000
+So this search for arg starting at pos in the string position.
+
+00:41:40.000 --> 00:41:48.000
+Finally, the equivalent of lastIndexOf is called rfind.
+
+00:41:48.000 --> 00:41:54.000
+And that will search from the right and find the last instance of that in the string.
+
+00:41:54.000 --> 00:42:06.000
+So let's go ahead and do an example with the file, our second exercise called initials.
+
+00:42:06.000 --> 00:42:09.000
+Alright.
+
+00:42:09.000 --> 00:42:16.000
+Let's put that down. Let's bring this over here.
+
+00:42:16.000 --> 00:42:19.000
+Let's close inside out.
+
+00:42:19.000 --> 00:42:24.000
+Let's open up B, get initials.
+
+00:42:24.000 --> 00:42:29.000
+And let's open up a terminal there.
+
+00:42:29.000 --> 00:42:32.000
+So I can work on get initials.
+
+00:42:32.000 --> 00:42:39.000
+By the way, you can close the previous terminals you had open here. Like that.
+
+00:42:39.000 --> 00:42:46.000
+Okay, let's put our name on this.
+
+00:42:46.000 --> 00:42:58.000
+Okay, so write a function named initials that takes a string containing a person's name, return a new string consisting of the person's initials.
+
+00:42:58.000 --> 00:43:03.000
+So let's go ahead and write our stub first.
+
+00:43:03.000 --> 00:43:05.000
+So it's going to return a string.
+
+00:43:05.000 --> 00:43:09.000
+It's going to name initials.
+
+00:43:09.000 --> 00:43:16.000
+It's going to take a new string, so const string reference str.
+
+00:43:16.000 --> 00:43:26.000
+It's going to return a string, string result, and return result.
+
+00:43:26.000 --> 00:43:36.000
+Let's go ahead and do make test on that.
+
+00:43:36.000 --> 00:43:41.000
+Again, we got a warning because we're not using this string.
+
+00:43:41.000 --> 00:43:51.000
+But in fact it worked okay.
+
+00:43:51.000 --> 00:43:56.000
+Okay, so now we can go and think about it. So we want the person's initials.
+
+00:43:56.000 --> 00:44:01.000
+So it will return sdg. We're going to assume that there's no space.
+
+00:44:01.000 --> 00:44:06.000
+We're going to assume there's exactly three words, before or after.
+
+00:44:06.000 --> 00:44:13.000
+And so what I want to do is find the position of the first space, the position of the last space.
+
+00:44:13.000 --> 00:44:23.000
+And that will allow me to get the initials, the s, d, and g.
+
+00:44:23.000 --> 00:44:42.000
+So I can say, the initials are char, right? So I can say char first equals str at zero, or str sub zero, or str.
+
+00:44:42.000 --> 00:44:46.000
+All three of those will give me the first character.
+
+00:44:46.000 --> 00:44:56.000
+For the middle, I want auto. I'm going to use auto instead of size t, or I could use size t.
+
+00:44:56.000 --> 00:45:14.000
+I'll use size t here. Size t first space equals first find.
+
+00:45:14.000 --> 00:45:19.000
+Here I'm going to use a quote for the space.
+
+00:45:19.000 --> 00:45:47.000
+So I know that my second initial equals str at first space plus one.
+
+00:45:47.000 --> 00:46:03.000
+And my third one, I need the last space. So size p last space equals first r find.
+
+00:46:03.000 --> 00:46:11.000
+Oh no, not first. I'm saying str r find.
+
+00:46:11.000 --> 00:46:18.000
+Str find and str r find. Mistake there.
+
+00:46:18.000 --> 00:46:44.000
+And this will be the position of the last space. And char third equals str at last space plus one.
+
+00:46:44.000 --> 00:46:54.000
+And then the result equals first plus second plus third.
+
+00:46:54.000 --> 00:47:01.000
+Okay, now this isn't going to work. Let's see why it doesn't work.
+
+00:47:01.000 --> 00:47:08.000
+Let's do control L. I'm not sure it's even going to compile. Hit test.
+
+00:47:08.000 --> 00:47:15.000
+Now it compiles. But look at I have a little weird thing inside here. What's that?
+
+00:47:15.000 --> 00:47:19.000
+That's really pretty weird, isn't it?
+
+00:47:19.000 --> 00:47:23.000
+Okay, so let me tell you what the problem is.
+
+00:47:23.000 --> 00:47:27.000
+What kind of thing are first and second and third?
+
+00:47:27.000 --> 00:47:31.000
+Those are chars. The built in type.
+
+00:47:31.000 --> 00:47:36.000
+What do I get when I use this symbol with a char?
+
+00:47:36.000 --> 00:47:41.000
+I don't get concatenation. I get addition.
+
+00:47:41.000 --> 00:47:50.000
+So this is adding the ASCII value of this plus the ASCII value of that plus the ASCII value of that.
+
+00:47:50.000 --> 00:47:57.000
+Obviously when we print it out, it doesn't think that it's any kind of printable character at all.
+
+00:47:57.000 --> 00:48:00.000
+And so that doesn't work.
+
+00:48:00.000 --> 00:48:07.000
+So we can get around this by doing quote quote S plus.
+
+00:48:07.000 --> 00:48:11.000
+So now I have a string. Now I have concatenation.
+
+00:48:11.000 --> 00:48:16.000
+Now I've got another string. I have concatenation. I have another string. And I have concatenation.
+
+00:48:16.000 --> 00:48:20.000
+And so that would work. Make tests.
+
+00:48:20.000 --> 00:48:25.000
+And so now all of them work. I get SDG, HST and so forth.
+
+00:48:25.000 --> 00:48:29.000
+But that's really not a clean solution, is it?
+
+00:48:29.000 --> 00:48:38.000
+It's kind of a "Oh, I did something wrong and I need to fix it."
+
+00:48:38.000 --> 00:48:44.000
+The cleaner solution is not to make these chars in the first place.
+
+00:48:44.000 --> 00:48:47.000
+Let's make those strings.
+
+00:48:47.000 --> 00:48:49.000
+So string first.
+
+00:48:49.000 --> 00:48:55.000
+Then it can't be string at. It needs to be string substring.
+
+00:48:55.000 --> 00:49:03.000
+Zero. And one character. Same thing here.
+
+00:49:03.000 --> 00:49:14.000
+String. Second equals third substring.
+
+00:49:14.000 --> 00:49:20.000
+First base plus one. And we want one character inside that.
+
+00:49:20.000 --> 00:49:25.000
+And string third.
+
+00:49:25.000 --> 00:49:33.000
+Stir substring.
+
+00:49:33.000 --> 00:49:35.000
+One.
+
+00:49:35.000 --> 00:49:38.000
+OK. So this is clearer. Right?
+
+00:49:38.000 --> 00:49:45.000
+And so this of course, we could not use those. That wouldn't work at all in that case.
+
+00:49:45.000 --> 00:49:50.000
+OK. So let's try that.
+
+00:49:50.000 --> 00:49:54.000
+Let's clear the thing and do a test again.
+
+00:49:54.000 --> 00:50:07.000
+And we have a solution that works. And it's a little clearer when we look at it.
+
+00:50:07.000 --> 00:50:15.000
+The last thing we're going to look at today before we end this lecture is we're going to look at range or iterator loops.
+
+00:50:15.000 --> 00:50:22.000
+So C++11 introduced a new simplified called a range-based for loop.
+
+00:50:22.000 --> 00:50:32.000
+And this will work with all collection types including string, including vector, and including the built-in array types.
+
+00:50:32.000 --> 00:50:39.000
+Java has a similar loop called the simplified for loop introduced in Java 5.
+
+00:50:39.000 --> 00:50:47.000
+But it doesn't work with string. It only works with the collection types in the library.
+
+00:50:47.000 --> 00:50:57.000
+And so this is for the type of the element e and a colon and then the collection.
+
+00:50:57.000 --> 00:51:06.000
+Now in Java, what this does is it goes into the collection, gets the first element, puts it in the local variable e,
+
+00:51:06.000 --> 00:51:10.000
+and then you can work with that local variable e.
+
+00:51:10.000 --> 00:51:16.000
+The next time through, it gets the second element, puts it in the e, and you work with the variable e.
+
+00:51:16.000 --> 00:51:20.000
+So this is called value iteration.
+
+00:51:20.000 --> 00:51:23.000
+So C++ has that.
+
+00:51:23.000 --> 00:51:29.000
+You can use auto here or you could use the type. So you could use int or char, whatever the type is.
+
+00:51:29.000 --> 00:51:33.000
+I frequently use auto so I don't have to think about it.
+
+00:51:33.000 --> 00:51:37.000
+But that's the only kind you can do in Java.
+
+00:51:37.000 --> 00:51:47.000
+In C++, you can actually not get each copy, but look at each element directly in the collection.
+
+00:51:47.000 --> 00:51:50.000
+So this is called reference iteration.
+
+00:51:50.000 --> 00:51:55.000
+This is what you want to do when you want to change each of the elements.
+
+00:51:55.000 --> 00:52:04.000
+Finally, if you want to look at the elements, not make a copy, but you don't want to change them,
+
+00:52:04.000 --> 00:52:08.000
+you want to make sure they're not changed, you can do a const reference.
+
+00:52:08.000 --> 00:52:11.000
+So const auto ref e.
+
+00:52:11.000 --> 00:52:25.000
+So we're going to do two exercises, flipper and upper.
+
+00:52:25.000 --> 00:52:35.000
+OK, and for these, I'm going to look at the character functions to upper and to lower and is upper and is lower.
+
+00:52:35.000 --> 00:52:38.000
+And we're going to skip those.
+
+00:52:38.000 --> 00:52:41.000
+And we're going to look at how they're written.
+
+00:52:41.000 --> 00:52:47.000
+So we're going to write a function flip case that takes a string as an argument and returns a new string.
+
+00:52:47.000 --> 00:52:53.000
+Where every lower case character has been converted to upper case and vice versa.
+
+00:52:53.000 --> 00:52:56.000
+We're not going to use any library functions at all.
+
+00:52:56.000 --> 00:53:04.000
+That includes size or at or the square brackets or to upper or to lower.
+
+00:53:04.000 --> 00:53:08.000
+Now normally we would use to upper and to lower.
+
+00:53:08.000 --> 00:53:12.000
+OK, so let's bring that over. Let's drop that down.
+
+00:53:12.000 --> 00:53:16.000
+Let's close up B.
+
+00:53:16.000 --> 00:53:22.000
+Let's open up C and open up flipper.
+
+00:53:22.000 --> 00:53:25.000
+And let me drop this over.
+
+00:53:25.000 --> 00:53:32.000
+Put my name on that.
+
+00:53:32.000 --> 00:53:36.000
+And I believe the thing was called flipper, right? No, flip case.
+
+00:53:36.000 --> 00:53:43.000
+So string flip case.
+
+00:53:43.000 --> 00:53:51.000
+We're not going to change this string. So it's constant string ref str.
+
+00:53:51.000 --> 00:53:55.000
+We're going to have a string for the result.
+
+00:53:55.000 --> 00:54:01.000
+And we're going to return the result.
+
+00:54:01.000 --> 00:54:04.000
+OK, let's open a terminal there.
+
+00:54:04.000 --> 00:54:10.000
+We'll go on C, right click, open an integrated folder.
+
+00:54:10.000 --> 00:54:17.000
+And we will do make test.
+
+00:54:17.000 --> 00:54:20.000
+And in fact it compiles and links. OK.
+
+00:54:20.000 --> 00:54:22.000
+It compiles and links. OK.
+
+00:54:22.000 --> 00:54:33.000
+We didn't get a warning this time. I'm not quite sure because we didn't use the str at all.
+
+00:54:33.000 --> 00:54:39.000
+OK, so visit every element.
+
+00:54:39.000 --> 00:54:41.000
+I'm going to look at every element. I'm not going to change it.
+
+00:54:41.000 --> 00:54:47.000
+So for auto e in str.
+
+00:54:47.000 --> 00:54:52.000
+Now because each thing is a character, let's call it C here.
+
+00:54:52.000 --> 00:54:55.000
+So auto e in str.
+
+00:54:55.000 --> 00:54:58.000
+Now there are three possibilities. Right?
+
+00:54:58.000 --> 00:55:01.000
+Uppercase, lowercase, neither.
+
+00:55:01.000 --> 00:55:12.000
+So if something
+
+00:55:12.000 --> 00:55:21.000
+else if
+
+00:55:21.000 --> 00:55:24.000
+else it's neither.
+
+00:55:24.000 --> 00:55:30.000
+Now if it's neither, all we want to do is add result, add C to the result.
+
+00:55:30.000 --> 00:55:35.000
+So result plus equals C.
+
+00:55:35.000 --> 00:55:40.000
+Or result equals result plus C. It means the same thing.
+
+00:55:40.000 --> 00:55:43.000
+Now how do I tell if it's uppercase?
+
+00:55:43.000 --> 00:56:06.000
+Well, the uppercase characters look like A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, X, Y, Z.
+
+00:56:06.000 --> 00:56:10.000
+And they're all contiguous.
+
+00:56:10.000 --> 00:56:14.000
+It means they're right next to each other in memory.
+
+00:56:14.000 --> 00:56:22.000
+So if C is greater or equal to the character A,
+
+00:56:22.000 --> 00:56:29.000
+and C is less than or equal to the character Z,
+
+00:56:29.000 --> 00:56:31.000
+then it's an uppercase. Right?
+
+00:56:31.000 --> 00:56:38.000
+So that is in fact what the code is inside the isUpper function.
+
+00:56:38.000 --> 00:56:41.000
+And the same thing for toLower.
+
+00:56:41.000 --> 00:56:43.000
+isLower.
+
+00:56:43.000 --> 00:56:47.000
+If C is greater or equal to the lowercase A,
+
+00:56:47.000 --> 00:56:52.000
+and C is less than or equal to the lowercase Z,
+
+00:56:52.000 --> 00:56:58.000
+then it's a lowercase character.
+
+00:56:58.000 --> 00:57:22.000
+Now, let me put the lowercase characters here.
+
+00:57:22.000 --> 00:57:34.000
+Okay, these characters start with the ASCII character 97.
+
+00:57:34.000 --> 00:57:39.000
+That's the lowercase A.
+
+00:57:39.000 --> 00:57:47.000
+And these characters start with the ASCII character 65.
+
+00:57:47.000 --> 00:57:52.000
+So imagine that my character C here was the letter A.
+
+00:57:52.000 --> 00:57:54.000
+It had the value 65.
+
+00:57:54.000 --> 00:57:57.000
+I want to turn it to lowercase.
+
+00:57:57.000 --> 00:58:00.000
+That means I have to change it to 97.
+
+00:58:00.000 --> 00:58:08.000
+And so all I do is add the difference between 65 and 97 to that character.
+
+00:58:08.000 --> 00:58:13.000
+So again, imagine it was a lowercase character.
+
+00:58:13.000 --> 00:58:27.000
+I'd add, I'd say C plus equals, remember I'm turning it to lowercase, 97 minus 65.
+
+00:58:27.000 --> 00:58:32.000
+In other words, that's the difference between this character and this character.
+
+00:58:32.000 --> 00:58:35.000
+This character, right? This A.
+
+00:58:35.000 --> 00:58:38.000
+That's the difference between the two.
+
+00:58:38.000 --> 00:58:41.000
+Now, this is of course a magic number.
+
+00:58:41.000 --> 00:58:45.000
+It would be nice if we had a constant that represented that.
+
+00:58:45.000 --> 00:58:49.000
+It would also be nice that we didn't just have the numbers 97 and 65.
+
+00:58:49.000 --> 00:58:51.000
+We had some meaning.
+
+00:58:51.000 --> 00:59:09.000
+And so the way we can write that is const if equals the 97 minus the 65.
+
+00:59:09.000 --> 00:59:16.000
+So this is the case difference.
+
+00:59:16.000 --> 00:59:25.000
+And so now I can simply add C plus equals diff.
+
+00:59:25.000 --> 00:59:31.000
+And I can say result plus equals C.
+
+00:59:31.000 --> 00:59:35.000
+Now, notice I'm repeating this code here and here.
+
+00:59:35.000 --> 00:59:38.000
+And I'm going to repeat it here in this third one.
+
+00:59:38.000 --> 00:59:42.000
+So we'll see how we can simplify this a little bit in a moment.
+
+00:59:42.000 --> 00:59:46.000
+So C plus equals diff.
+
+00:59:46.000 --> 00:59:51.000
+Here we're going to do the same thing, except I'm going to say C,
+
+00:59:51.000 --> 00:59:57.000
+in other words, I want to go from 97 down to 65.
+
+00:59:57.000 --> 01:00:07.000
+So I'm going to say C minus equals diff and result C equals C.
+
+01:00:07.000 --> 01:00:08.000
+And we add the new character.
+
+01:00:08.000 --> 01:00:14.000
+So in each case I'm changing the character and then adding it to the end.
+
+01:00:14.000 --> 01:00:20.000
+Now, I want to improve this a little bit for the efficiency part.
+
+01:00:20.000 --> 01:00:23.000
+But let's just go see if it works right now.
+
+01:00:23.000 --> 01:00:29.000
+Let's go control L, make test.
+
+01:00:29.000 --> 01:00:37.000
+Yes, it does in fact flip all of these things and give us the correct output in all of those cases.
+
+01:00:37.000 --> 01:00:39.000
+So redundant code.
+
+01:00:39.000 --> 01:00:41.000
+What do we do when we have redundant code?
+
+01:00:41.000 --> 01:00:43.000
+Is it in all three of these?
+
+01:00:43.000 --> 01:00:44.000
+Yes, it is.
+
+01:00:44.000 --> 01:00:49.000
+That means it can appear after this.
+
+01:00:49.000 --> 01:00:52.000
+We don't need it here.
+
+01:00:52.000 --> 01:00:55.000
+If there's nothing inside there, we don't need the else.
+
+01:00:55.000 --> 01:00:58.000
+So this is still three branches.
+
+01:00:58.000 --> 01:01:02.000
+One if it's uppercase, one if it's lowercase, and one if it's neither.
+
+01:01:02.000 --> 01:01:05.000
+But now I don't need it there.
+
+01:01:05.000 --> 01:01:08.000
+I don't need it there.
+
+01:01:08.000 --> 01:01:12.000
+And we can see our code is much simpler.
+
+01:01:12.000 --> 01:01:17.000
+More efficient, easier to maintain, and so forth.
+
+01:01:17.000 --> 01:01:22.000
+And again, we can test that out once again to make sure we didn't make any mistakes.
+
+01:01:22.000 --> 01:01:29.000
+And flip case still gives us the correct answer.
+
+01:01:29.000 --> 01:01:36.000
+Okay, so let's close the flipper.
+
+01:01:36.000 --> 01:01:42.000
+And let's go to our last one on D, which is upper.
+
+01:01:42.000 --> 01:01:46.000
+Put your name on it.
+
+01:01:46.000 --> 01:01:57.000
+Open a terminal on there.
+
+01:01:57.000 --> 01:02:00.000
+And let's look at the function.
+
+01:02:00.000 --> 01:02:02.000
+Write a procedure to upper.
+
+01:02:02.000 --> 01:02:06.000
+Now, you remember a procedure is a function that doesn't return anything.
+
+01:02:06.000 --> 01:02:13.000
+It's going to take a single string as an argument and modify the string so that every lowercase character has been converted to uppercase.
+
+01:02:13.000 --> 01:02:18.000
+Again, we're going to not use any library functions here.
+
+01:02:18.000 --> 01:02:30.000
+So a procedure is void to upper string reference because we're going to modify str.
+
+01:02:30.000 --> 01:02:32.000
+That's our whole stub.
+
+01:02:32.000 --> 01:02:35.000
+We don't need to return anything.
+
+01:02:35.000 --> 01:02:43.000
+We can go ahead and do make test.
+
+01:02:43.000 --> 01:02:45.000
+And you can see it compiles and runs.
+
+01:02:45.000 --> 01:02:55.000
+It actually gives us the correct output if the string doesn't have any lowercase characters inside it.
+
+01:02:55.000 --> 01:03:02.000
+So to upper means we're going to convert everything that's a lowercase character to upper.
+
+01:03:02.000 --> 01:03:10.000
+So we're going to say for auto.
+
+01:03:10.000 --> 01:03:12.000
+Or, again, we don't need to use auto here.
+
+01:03:12.000 --> 01:03:16.000
+We can use char, right, because every character inside there.
+
+01:03:16.000 --> 01:03:23.000
+So char ref for each character inside the string.
+
+01:03:23.000 --> 01:03:27.000
+If it's a lower -- if it is uppercase, lowercase.
+
+01:03:27.000 --> 01:03:33.000
+If -- and let's give that a name, char c.
+
+01:03:33.000 --> 01:03:46.000
+If c is greater or equal to a and c is less than or equal to z.
+
+01:03:46.000 --> 01:03:49.000
+It's lower.
+
+01:03:49.000 --> 01:03:52.000
+Then what we want to do is we want to make it uppercase.
+
+01:03:52.000 --> 01:03:55.000
+We want to make it -- give it a smaller ASCII character.
+
+01:03:55.000 --> 01:03:57.000
+You remember from the last one.
+
+01:03:57.000 --> 01:04:00.000
+So we want to add the difference to it.
+
+01:04:00.000 --> 01:04:03.000
+So I can write the difference up there.
+
+01:04:03.000 --> 01:04:12.000
+Or I can just say c minus equals a minus a.
+
+01:04:12.000 --> 01:04:14.000
+That's the difference.
+
+01:04:14.000 --> 01:04:17.000
+I can write it like that and that will work perfectly fine.
+
+01:04:17.000 --> 01:04:21.000
+Or I could write it up here before my loop and create a const again.
+
+01:04:21.000 --> 01:04:35.000
+So const int case difference equals a minus lowercase a minus capital A.
+
+01:04:35.000 --> 01:04:41.000
+And maybe make my code a little bit readable.
+
+01:04:41.000 --> 01:04:45.000
+Now, what do I need to do if it's an uppercase character already?
+
+01:04:45.000 --> 01:04:46.000
+Nothing.
+
+01:04:46.000 --> 01:04:48.000
+Punctuation, nothing.
+
+01:04:48.000 --> 01:04:50.000
+So this one is slightly different.
+
+01:04:50.000 --> 01:04:55.000
+This will turn everything into uppercase.
+
+01:04:55.000 --> 01:04:57.000
+So let's try it.
+
+01:04:57.000 --> 01:04:59.000
+Make test.
+
+01:04:59.000 --> 01:05:00.000
+Ah, good.
+
+01:05:00.000 --> 01:05:02.000
+All of our tests pass.
+
+01:05:02.000 --> 01:05:05.000
+So you now have all your screenshots.
+
+01:05:05.000 --> 01:05:09.000
+You have everything done.
+
+01:05:09.000 --> 01:05:17.000
+And for chapter 5, you've got to read the chapter, take the quiz, do the reading exercises and so forth.
+
+01:05:17.000 --> 01:05:23.000
+And I will see you back here for lecture 6.
+

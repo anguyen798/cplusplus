@@ -1,0 +1,117 @@
+WEBVTT
+
+0
+00:00.510 --> 00:06.120
+Here is an exercise program for linear search, you are supposed to write this program using function.
+
+1
+00:06.120 --> 00:07.610
+You should have the list of elements in
+
+2
+00:07.650 --> 00:13.050
+an array,and array shoould be paased as a parameter to  a function for searching it  given
+
+3
+00:13.050 --> 00:13.830
+key element.
+
+4
+00:13.830 --> 00:19.410
+So you should now what should be the name of the function what should be the parametal list of a function
+
+5
+00:19.500 --> 00:21.290
+write the logic for linear search.
+
+6
+00:21.380 --> 00:25.370
+already  we have seen linear search logic.
+
+7
+00:25.430 --> 00:31.100
+So here I will run the program and show you how the input and output of the program should be.
+
+8
+00:31.100 --> 00:35.010
+And even PDF of a program is given as a resource.
+
+9
+00:35.060 --> 00:38.020
+You can check if you need it.
+
+10
+00:38.160 --> 00:40.040
+Here is a program for linear search.
+
+11
+00:40.070 --> 00:43.880
+Already I have discussed and explain what is linear search how it works.
+
+12
+00:44.090 --> 00:49.300
+But we have to write down the program using a function a function should take the array of elements as parameters 
+
+13
+00:49.350 --> 00:53.340
+that is number of elements and the key to be searched.
+
+14
+00:53.660 --> 00:56.040
+So you have to write down the same program using function.
+
+15
+00:56.030 --> 01:00.900
+So more focus here is how to write a program using functions.
+
+16
+01:00.980 --> 01:03.480
+I have given the name of a function as search.
+
+17
+01:03.560 --> 01:08.790
+Let me run the program and show you, already I have given you have given the list of elements here.
+
+18
+01:08.900 --> 01:12.050
+It will be searching within those given elements.
+
+19
+01:12.080 --> 01:14.830
+Now here is asking for the element to be searched.
+
+20
+01:14.870 --> 01:20.600
+I have an element 9, available in my array so element 9 has found at index 5.
+
+21
+01:20.640 --> 01:22.880
+I wil run the program once again.
+
+22
+01:22.880 --> 01:26.410
+I'll give the element as 12 now, 12 is  not there in my list.
+
+23
+01:26.600 --> 01:29.150
+So now it is giving the index size minus 1.
+
+24
+01:29.150 --> 01:31.680
+So that's what, if the elrment is not found on the list.
+
+25
+01:31.700 --> 01:33.370
+It should give the index minus 1.
+
+26
+01:33.470 --> 01:37.830
+If  it is found then it should return its index.
+
+27
+01:38.000 --> 01:39.930
+So try this program by yourself.
+
+28
+01:39.950 --> 01:43.130
+And if any difficulty you can check the program in PDF.

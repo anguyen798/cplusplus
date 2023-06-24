@@ -1,0 +1,154 @@
+WEBVTT
+
+00:00:05.500 --> 00:00:10.000
+Hello, everyone. Welcome to the section 19 challenge 2 project.
+
+00:00:10.800 --> 00:00:14.000
+In this project, what I'd like you to do is
+
+00:00:14.000 --> 00:00:15.700
+write an automated grader.
+
+00:00:15.700 --> 00:00:19.360
+Let me explain what that is. We want to write a program that reads a file,
+
+00:00:19.360 --> 00:00:23.460
+and this file is called responses.txt which I'm providing for you.
+
+00:00:24.260 --> 00:00:28.260
+That file contains the answer key for a quiz that some students have taken
+
+00:00:28.260 --> 00:00:31.250
+as well as the responses from the students for that quiz.
+
+00:00:32.050 --> 00:00:33.950
+The structure of the file is really simple.
+
+00:00:33.950 --> 00:00:36.450
+The first item in the file is the answer key,
+
+00:00:36.450 --> 00:00:38.750
+and it's just a simple string with a bunch of letters in it.
+
+00:00:39.410 --> 00:00:42.910
+Then you've got student pairs. As far as student response,
+
+00:00:42.910 --> 00:00:45.910
+student response and so forth so. Here's a sample file.
+
+00:00:46.160 --> 00:00:51.060
+You'll see right here on line 17 is the very first line of the file.
+
+00:00:51.060 --> 00:00:55.160
+That's the answer key. So in other words, the correct answers to this quiz are a
+
+00:00:55.160 --> 00:00:56.060
+b c and d.
+
+00:00:57.050 --> 00:00:59.950
+Now we've got student response pairs here.
+
+00:01:01.310 --> 00:01:03.670
+As you can see there are five students here.
+
+00:01:03.670 --> 00:01:07.670
+Frank's answers are abcd and e. So Frank got a 5 out of 5.
+
+00:01:08.470 --> 00:01:12.270
+Larry got abc a and c. So we only got the abc part right.
+
+00:01:12.270 --> 00:01:15.870
+So Larry got a 3 out of 5. Moe got the
+
+00:01:15.870 --> 00:01:18.870
+bcde, so he's got a 4 out of 5.
+
+00:01:19.670 --> 00:01:23.030
+Curly's got the b and the e, so he's got a 2 out of 5.
+
+00:01:23.030 --> 00:01:26.930
+And Michael's got all but the first one, so he's got a 4 out of 5.
+
+00:01:28.230 --> 00:01:31.110
+That's it so what you have to do is basically read this file,
+
+00:01:31.110 --> 00:01:34.470
+process the data and then display the output.
+
+00:01:34.470 --> 00:01:38.580
+The output display is pretty straightforward. You can format it, so it looks nice.
+
+00:01:39.080 --> 00:01:40.780
+But it'll look something like this.
+
+00:01:40.780 --> 00:01:45.680
+So it'll say student and score. It'll display the student, it'll display the score that they got out of 5.
+
+00:01:45.930 --> 00:01:49.930
+And then at the very end, you'll have a little footer that shows the average score, in this case,
+
+00:01:49.930 --> 00:01:54.030
+3.6. You can assume that the data file is properly formatted.
+
+00:01:54.030 --> 00:01:56.830
+You're always going to have pairs. You're not going to have missing data.
+
+00:01:56.830 --> 00:01:59.530
+And you'll always have at least one student in there.
+
+00:01:59.890 --> 00:02:03.190
+Okay. So let me give a sample run so you can see what it looks like.
+
+00:02:05.180 --> 00:02:07.880
+So there's a sample run given this data right here.
+
+00:02:08.380 --> 00:02:11.070
+And as you can see here, I've got the student, the score
+
+00:02:11.070 --> 00:02:12.970
+Frank Larry Moe Curly and Michael.
+
+00:02:12.970 --> 00:02:16.630
+And there's a score out of 5. And the average in this case is the 3.6.
+
+00:02:17.130 --> 00:02:20.790
+So here you'll get a chance to read a file to do some processing.
+
+00:02:21.090 --> 00:02:25.390
+And you'll get a chance to use your manipulators to line this up, so it looks nice.
+
+00:02:25.390 --> 00:02:28.830
+Let me show you the file itself. It's called responses.txt.
+
+00:02:28.830 --> 00:02:33.030
+And there it is. You can add data to this, and test it all you like.
+
+00:02:33.330 --> 00:02:37.230
+There is no test case right now with a 0, so you might want to add that as well.
+
+00:02:37.230 --> 00:02:41.590
+And that's about it. You can find it in the section 19 workspace,
+
+00:02:41.590 --> 00:02:44.590
+in the challenge_2 project.
+
+00:02:45.090 --> 00:02:48.150
+There's also a challenge_2_solution project,
+
+00:02:48.150 --> 00:02:50.410
+which is the one we're going to talk about in the next video,
+
+00:02:50.410 --> 00:02:53.290
+where I'll show you my solution. So have fun.
+
+00:02:53.290 --> 00:02:57.090
+Add fields to it, if you like. Change the the length of the answers.
+
+00:02:57.090 --> 00:03:01.890
+Right now the quiz is only 5 questions. You can change that around if you like.
+
+00:03:02.190 --> 00:03:04.990
+Like I said, do the base challenge, and then just have fun and learn from it.
+
+00:03:04.990 --> 00:03:08.490
+All right. So I'll see you in the next video, and I'll show you a solution.

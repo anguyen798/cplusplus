@@ -1,0 +1,425 @@
+WEBVTT
+
+0
+00:00.550 --> 00:04.750
+Let us see what are the arithmetic operations allowed on pointers.
+
+1
+00:04.780 --> 00:15.010
+So I'll take an example and through example I will explain you suppose I have an array int a of size of
+
+2
+00:15.010 --> 00:19.630
+five and with some elements that is 2 4 6 8 10
+
+3
+00:19.660 --> 00:26.020
+I have some elements here and then I will take one pointer P and this
+
+4
+00:26.020 --> 00:31.270
+I will make it point on this array so I will draw a diagram medically and show you.
+
+5
+00:31.420 --> 00:32.950
+This is an array 
+
+6
+00:35.610 --> 00:40.850
+the indices are, suppose  the addresses are
+
+7
+00:40.850 --> 00:46.080
+200 and 201, two and three four and five.
+
+8
+00:46.180 --> 00:49.810
+Two hundred and six and seven, two hundred and eight and nine.
+
+9
+00:49.810 --> 00:53.740
+These are the addresses and also I have a pointer P.
+
+10
+00:53.740 --> 01:00.760
+So this P is a pointer which is having address 200 because I have assigned A.
+
+11
+01:01.150 --> 01:06.640
+So pointer  is pointing to A. pointer is pointing to the beginning address of A.
+
+12
+01:06.940 --> 01:12.020
+Now I can access this array by name A as well as with the help of pointer.
+
+13
+01:12.070 --> 01:13.990
+So I will right on the elements also here.
+
+14
+01:13.990 --> 01:17.060
+Two four six eight 10.
+
+15
+01:17.290 --> 01:24.130
+Let us see what other operations allowed using pointers so there are total five operations allowed using
+
+16
+01:24.130 --> 01:24.690
+pointers.
+
+17
+01:24.710 --> 01:35.690
+So the first operation, I can say P plus plus, what does it mean, pointer will move to next location.
+
+18
+01:35.820 --> 01:38.790
+So what is the address inside the pointer 200.
+
+19
+01:38.900 --> 01:42.020
+Then it will move to next location.
+
+20
+01:42.040 --> 01:46.780
+I will not write the box and show you, then it will move to the location here.
+
+21
+01:46.780 --> 01:53.090
+That is 202 how. P was 200 then
+
+22
+01:53.240 --> 01:57.030
+P++ means it should become two hundred and one.
+
+23
+01:57.260 --> 01:58.640
+No here.
+
+24
+01:58.640 --> 02:07.310
+Plus plus we  don't mean adding one to the address we mean move to the next location.
+
+25
+02:08.580 --> 02:16.980
+Just like when we C it's a C language when he says C++ it doesn't mean that we want to add a one
+
+26
+02:16.980 --> 02:18.570
+to C language.
+
+27
+02:18.570 --> 02:25.230
+We want to move to the next step in C and that is object oriented C language.
+
+28
+02:25.230 --> 02:29.590
+That's how plus plus means next not plus one.
+
+29
+02:29.610 --> 02:31.380
+So that's how the meaning we make.
+
+30
+02:31.380 --> 02:35.910
+So when you say p++ pointer will move to the next location.
+
+31
+02:35.940 --> 02:40.470
+So this is one of the operation, suite thingo it means you can move the pointer forward.
+
+32
+02:40.770 --> 02:47.490
+It is a integer pointer so it has incremented by two, when it was 200 then it became 202,  if
+
+33
+02:47.490 --> 02:54.240
+it was float pointer then it will move by 4 bytes because float takes four bytes if it is a character
+
+34
+02:54.240 --> 03:00.650
+pointer then it will move by one byte so, how many bytes pointer will move forward.
+
+35
+03:00.660 --> 03:06.030
+when you say ++ it depends on the data type of a pointer.
+
+36
+03:06.480 --> 03:10.100
+So that's how the data type is useful here.
+
+37
+03:10.170 --> 03:17.310
+When you perform pointer arithmetic, then plus plus means pointer is moving forward.
+
+38
+03:17.310 --> 03:19.770
+So can you say P minus minus.
+
+39
+03:19.770 --> 03:20.430
+Yes.
+
+40
+03:20.500 --> 03:21.960
+pointer will move backward.
+
+41
+03:22.230 --> 03:26.070
+If right now suppose it is on 202  and it will come on 200.
+
+42
+03:26.400 --> 03:27.160
+So just how
+
+43
+03:27.210 --> 03:27.980
+plus plus work.
+
+44
+03:27.990 --> 03:36.360
+Similarly minus minus works. then other operation 3rd operation, can I add some constant a value to a
+
+45
+03:36.370 --> 03:37.110
+pointer.
+
+46
+03:37.380 --> 03:41.690
+And again I will assign it to P only, can I say p+2
+
+47
+03:41.850 --> 03:46.580
+Yes I can. suppose the pointer is pointing on 202 right now.
+
+48
+03:46.590 --> 03:53.840
+Then if you say P assign p+2, then it will move by two integers 2 elements 1 2.
+
+49
+03:53.850 --> 04:00.350
+So where the pointer will go now? pointer will be  pointing on 206.
+
+50
+04:00.660 --> 04:04.590
+So this will move the pointer forward by two elements.
+
+51
+04:04.710 --> 04:13.590
+So same way, P assign P minus two then move the pointer backward by two elements.
+
+52
+04:13.590 --> 04:18.180
+So here you can write on some constant value two or three or 200.
+
+53
+04:18.270 --> 04:19.270
+Any number you can write.
+
+54
+04:19.590 --> 04:22.950
+So these are the four operations that are allowed on the pointer.
+
+55
+04:23.490 --> 04:26.490
+No fifth operation I will show you.
+
+56
+04:26.490 --> 04:32.420
+Suppose I have a pointer P that is pointing on two hundred.
+
+57
+04:32.580 --> 04:38.550
+Again I have one more pointer that is q that is pointing on two hundred and six.
+
+58
+04:38.550 --> 04:48.800
+Assume this one so I will declare it here integer star q that is pointing on & A[3].
+
+59
+04:49.110 --> 04:51.870
+So it's pointing on two hundred and six.
+
+60
+04:51.870 --> 05:00.590
+Now see this I can say q minus p and take it in some variable.
+
+61
+05:00.630 --> 05:02.770
+D So this is the fifth operation.
+
+62
+05:02.800 --> 05:03.950
+So what is the result.
+
+63
+05:04.000 --> 05:08.140
+What happens when you subtract two pointers Q minus P.
+
+64
+05:08.200 --> 05:11.190
+That is 206 minus two hundred.
+
+65
+05:11.200 --> 05:13.980
+This will give six but it divided by two.
+
+66
+05:13.990 --> 05:16.360
+What is that why we are dividing it by 2.
+
+67
+05:16.480 --> 05:19.680
+Because these are integers and their sizes are 2.
+
+68
+05:19.720 --> 05:21.670
+So answer it is what 3.
+
+69
+05:23.410 --> 05:25.150
+So what is this 3.
+
+70
+05:25.150 --> 05:29.400
+This shows that this pointer is three elements away.
+
+71
+05:29.410 --> 05:30.420
+From this point.
+
+72
+05:30.760 --> 05:33.600
+So we get to know the distance between two pointers.
+
+73
+05:33.610 --> 05:39.670
+So this gives the distance between two pointers or the number of elements in between two pointers.
+
+74
+05:39.670 --> 05:41.770
+How many elements are away from one another.
+
+75
+05:42.490 --> 05:44.840
+So actually addresses subtracted.
+
+76
+05:44.860 --> 05:47.780
+day difference is divided by the size of the data type.
+
+77
+05:47.780 --> 05:51.220
+Then that's all we get done number of elements between them.
+
+78
+05:51.390 --> 05:53.200
+Now one morequestion is what if
+
+79
+05:53.420 --> 05:57.520
+I write 200 minus 206.
+
+80
+05:57.520 --> 06:01.430
+Then will it not be  minus six by 2 and the minus three.
+
+81
+06:01.600 --> 06:05.610
+That happens when I say instead of Q minus P.
+
+82
+06:05.620 --> 06:08.680
+If I say a P minus Q Then what is the result.
+
+83
+06:08.710 --> 06:10.710
+Yes I get from minus 3 only.
+
+84
+06:10.930 --> 06:16.210
+And this gives the meaning that minus means what this point is nearer and this point is farther
+
+85
+06:16.220 --> 06:16.650
+...
+
+86
+06:17.150 --> 06:19.360
+So with this negative you can also know weather.
+
+87
+06:19.360 --> 06:22.740
+which point is first and  which point is next.
+
+88
+06:22.960 --> 06:27.180
+If I'm getting positive result then it means the first point is far away.
+
+89
+06:27.520 --> 06:32.950
+If I'm getting negative result, then it means the second point  is farther, and this is the
+
+90
+06:32.950 --> 06:34.220
+difference.
+
+91
+06:34.450 --> 06:39.660
+So that's all only 5 arithmetic operations are allowed on the pointer.
+
+92
+06:39.700 --> 06:47.020
+Apart from this you cannot perform any operation like addition of 2 pointers or multiplication division because
+
+93
+06:47.020 --> 06:48.890
+that doesn't make any sense.
+
+94
+06:48.910 --> 06:49.740
+Like here.
+
+95
+06:49.870 --> 06:54.580
+Plus plus was making sense that you go to the next element and minus minus.
+
+96
+06:54.580 --> 07:00.160
+It was making sense that you come back to the previous element or move this element away in forward
+
+97
+07:00.370 --> 07:04.870
+and backward then give the difference between two pointers.
+
+98
+07:04.870 --> 07:11.140
+These are making sense so that's the reason only  these five operations are there now I made it very clearly
+
+99
+07:11.140 --> 07:11.980
+here.
+
+100
+07:12.070 --> 07:15.910
+Otherwise the pointer topic is very confusing.
+
+101
+07:15.910 --> 07:24.380
+If you believe that there may be other operations also you will get confduse. these are the only 5operation
+
+102
+07:24.440 --> 07:27.360
+and these are there meanings that's all.
+
+103
+07:27.620 --> 07:34.760
+We have learn completely about the syntax of pointers then how to use them and how they are working with
+
+104
+07:34.760 --> 07:36.310
+the help of adresses.
+
+105
+07:36.320 --> 07:41.030
+I'll show you using programs. so practically I will show you.

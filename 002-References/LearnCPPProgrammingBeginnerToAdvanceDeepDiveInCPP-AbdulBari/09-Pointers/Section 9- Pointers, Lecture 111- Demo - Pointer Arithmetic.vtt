@@ -1,0 +1,466 @@
+WEBVTT
+
+0
+00:00.900 --> 00:09.210
+Now let's see how I can take a point to an array I will declare an array of size 5 and to this I will assign
+
+1
+00:09.210 --> 00:18.390
+some values that is 2 4 6 8 10,  I have taken five values then I will take a pointer P
+
+2
+00:18.690 --> 00:22.150
+and I will make it point on A capital A.
+
+3
+00:26.650 --> 00:31.320
+A that is address of A base address of A is given to P.
+
+4
+00:31.400 --> 00:35.390
+Now I will say Cout star P.
+
+5
+00:35.470 --> 00:37.900
+Let us see what the  output I get, see
+
+6
+00:37.910 --> 00:42.800
+P is pointing on the first location of an array that is data.
+
+7
+00:42.920 --> 00:43.680
+present there is, two.
+
+8
+00:43.700 --> 00:50.740
+So when I say you star P I should get the value two. here I got the value 2.
+
+9
+00:50.770 --> 00:52.620
+So 2 is printed.
+
+10
+00:52.870 --> 00:56.940
+Then if I use  pointer arithmatic P++ and again if I say .
+
+11
+00:57.120 --> 01:01.870
+cout star B.
+
+12
+01:02.120 --> 01:08.680
+And endl, here also I will write endl, let us see what I get.
+
+13
+01:11.570 --> 01:13.590
+Yeah I got first as 2.
+
+14
+01:13.620 --> 01:18.440
+And second value as 4, see P was initially pointing on 2.
+
+15
+01:18.490 --> 01:21.680
+then P plus plus has moved this P
+
+16
+01:21.730 --> 01:27.540
+On next element that is four so when I dereference I'm getting the value four.
+
+17
+01:27.670 --> 01:33.910
+So this P++ will increment the pointer and make it point on next data element.
+
+18
+01:33.910 --> 01:37.650
+Now similarly after this I will say, P minus minus.
+
+19
+01:37.810 --> 01:41.470
+I'm using pointer arithmetic and while using pointer arithmetic.
+
+20
+01:41.470 --> 01:43.970
+You don't have to write star for the pointer.
+
+21
+01:44.470 --> 01:53.510
+Then here I will say cout dereference P And also endl, let's see what the output I get.
+
+22
+01:53.590 --> 02:00.700
+I have taken a pointer to first location and I have printed that data moved the point to the next location
+
+23
+02:00.760 --> 02:06.040
+printed the data moved at that point to the previous location and again printed the data
+
+24
+02:06.540 --> 02:09.350
+So I'm getting the values as 2 4 2, so
+
+25
+02:09.350 --> 02:11.900
+First P was on two then it went on four.
+
+26
+02:11.900 --> 02:14.500
+Then again it came back on two.
+
+27
+02:15.430 --> 02:19.470
+So P++ and minus minus works like this.
+
+28
+02:19.740 --> 02:22.470
+let's see more pointer arithmetic here.
+
+29
+02:25.540 --> 02:26.830
+I will say  cout
+
+30
+02:33.320 --> 02:39.250
+and then I will endl, cout P plus 2.
+
+31
+02:39.700 --> 02:43.050
+endl let's see what I get.
+
+32
+02:44.200 --> 02:44.690
+Yeah.
+
+33
+02:44.770 --> 02:47.500
+when P is pointing on the first location.
+
+34
+02:47.710 --> 02:53.170
+when i print I'm getting there first beginning address of this A and he's off type integer.
+
+35
+02:53.170 --> 02:57.240
+So when I say P plus two I should get the address of 6.
+
+36
+02:57.250 --> 02:59.010
+That is two elements away.
+
+37
+02:59.200 --> 03:04.720
+So as this is a integer and it is taking four bytes in my compiler.
+
+38
+03:04.720 --> 03:07.530
+So for two elements it will be 8 byte.
+
+39
+03:07.540 --> 03:10.750
+So you can see that the address is  28.
+
+40
+03:10.750 --> 03:15.380
+So the first int  address was the last two digits 20.
+
+41
+03:15.550 --> 03:18.270
+And here it is 28.
+
+42
+03:18.310 --> 03:19.890
+I will deference this one.
+
+43
+03:19.900 --> 03:20.500
+I will write
+
+44
+03:20.500 --> 03:23.290
+Star in front of this one, star
+
+45
+03:23.590 --> 03:26.820
+Then let us see what happens.
+
+46
+03:28.890 --> 03:34.610
+here I'm getting data at the first location as well as the second location that is B plus two
+
+47
+03:38.880 --> 03:45.120
+now I will write down code for displaying all the elements of an array using a for loop that is counter control
+
+48
+03:45.150 --> 03:49.430
+for loop for I assign zero i is less than five.
+
+49
+03:49.810 --> 03:56.750
+I ++ then, here I will say Cout,
+
+50
+03:56.840 --> 03:57.210
+I
+
+51
+04:01.310 --> 04:10.750
+and also endl. let us run and see it should display all the elements in an array Yes I got all the
+
+52
+04:10.750 --> 04:14.070
+elements that is two four six eight ten.
+
+53
+04:14.110 --> 04:17.830
+Now let me make some modifications in the code instead of writing A[I].
+
+54
+04:17.830 --> 04:20.190
+Can I write I[a]
+
+55
+04:25.900 --> 04:28.720
+yes it's working I'm getting the same result.
+
+56
+04:28.750 --> 04:35.340
+So instead of this can I see star in brackets a plus I
+
+57
+04:41.620 --> 04:42.930
+ya again it's working.
+
+58
+04:42.930 --> 04:44.370
+I can use this syntax.
+
+59
+04:44.430 --> 04:51.480
+Also. if I don't write star in the beginning then I should get addresses star will give the
+
+60
+04:51.480 --> 04:52.150
+data.
+
+61
+04:52.380 --> 04:56.980
+And this should give addresses, it will give addresses of all the locations of an array .
+
+62
+04:57.220 --> 05:04.110
+See the first location was the last two digits 20 then 24 and then 28,  because it's hexadecimal
+
+63
+05:04.830 --> 05:06.240
+then 30.
+
+64
+05:06.690 --> 05:09.680
+So this is in hexa=decimal forms of 4-4 bytes each.
+
+65
+05:09.690 --> 05:14.440
+So I'm getting the  addresses of all. instead of a can i use p here.
+
+66
+05:14.500 --> 05:16.530
+I'm changing it to P here. P+i
+
+67
+05:16.580 --> 05:21.140
+let's see what happens.
+
+68
+05:21.150 --> 05:22.910
+Still am getting the same thing.
+
+69
+05:22.920 --> 05:24.130
+So can I  write
+
+70
+05:24.160 --> 05:27.240
+Star in front of this P-plus.
+
+71
+05:27.270 --> 05:27.870
+I.
+
+72
+05:28.080 --> 05:29.350
+What happens now.
+
+73
+05:29.490 --> 05:32.900
+So P should add just like the name of an array
+
+74
+05:32.910 --> 05:33.940
+A, Yes.
+
+75
+05:33.990 --> 05:34.940
+It is working.
+
+76
+05:35.220 --> 05:40.700
+So it means that instead of using array name in place of a array name I can also use the point name
+
+77
+05:40.800 --> 05:44.240
+just like array name, let us run.
+
+78
+05:44.280 --> 05:48.690
+I have written it as P[i] instead of writing A[i] I am writing P[i]
+
+79
+05:51.460 --> 05:58.570
+yah its working, it's working and it's displaying all the elements. now i will make some more modification here.
+
+80
+05:58.620 --> 06:00.890
+I will say star p.
+
+81
+06:00.900 --> 06:02.360
+So I will be printing P.
+
+82
+06:02.490 --> 06:05.820
+Then after this I will say P plus plus.
+
+83
+06:06.090 --> 06:12.300
+So P be moving to the next element.
+
+84
+06:12.300 --> 06:21.970
+I got the result but outside this if I say cout p endl,  and also in the beginning I will say Cout
+
+85
+06:23.210 --> 06:25.050
+P endl.
+
+86
+06:25.200 --> 06:28.530
+So what I'm doing here is in the beginning I'm displaying the address
+
+87
+06:28.630 --> 06:33.810
+That is there in P then I'm writing this loop their pointer p is incrementing and also displaying
+
+88
+06:33.810 --> 06:35.640
+all elements in an array.
+
+89
+06:35.670 --> 06:44.160
+Then after that again I'm printing the adress of P let's see
+what are the addressesi get see first time i got the
+
+90
+06:44.160 --> 06:47.000
+last two digits of an adress as  20.
+
+91
+06:47.040 --> 06:51.190
+Now the last two digits of that number are 34.
+
+92
+06:51.210 --> 06:53.400
+So it means pointer is not on the same place.
+
+93
+06:53.450 --> 06:58.790
+pointer has moved to the location outside.
+
+94
+06:58.860 --> 07:05.370
+That is after the last index because every time pointer P was moving forward. using the code for
+
+95
+07:05.370 --> 07:08.210
+displaying we have seen some pointers arithmetic.
+
+96
+07:08.280 --> 07:15.520
+So next one more pointer arithmetic operation we will see.
+
+97
+07:15.570 --> 07:18.220
+I have taken P pointing on a.
+
+98
+07:18.270 --> 07:20.260
+I will take one more pointer that is.
+
+99
+07:20.260 --> 07:26.380
+Q And that I will make  point on A[4].
+
+100
+07:27.100 --> 07:33.030
+For now let us see what happens if I cout.
+
+101
+07:33.180 --> 07:34.670
+Q minus P.
+
+102
+07:34.890 --> 07:41.670
+So I'm printing this difference between two pointers P is pointing on the first element and Q is pointing
+
+103
+07:41.670 --> 07:44.610
+on the fourth element in an array so this is the fourth index.
+
+104
+07:44.790 --> 07:46.520
+So the difference would be four.
+
+105
+07:46.520 --> 07:49.460
+Let us see what happens.
+
+106
+07:50.120 --> 07:55.210
+Yeah I got the difference as 4, for showing that there are four elements away from each other.
+
+107
+07:55.230 --> 08:01.350
+So instead of Q minus P I will write P minus Q And let us run and see what that is and
+
+108
+08:04.240 --> 08:05.350
+so it's minus 4.
+
+109
+08:05.360 --> 08:11.120
+It means that the second point that is far and the first pointer is in the beginning that is in front
+
+110
+08:11.120 --> 08:16.270
+we have first one pointer and then there have the second pointer.
+
+111
+08:16.430 --> 08:21.080
+So that's why we are getting the value as negative so we can also know which pointer is first at which
+
+112
+08:21.080 --> 08:22.490
+point that is next.
+
+113
+08:22.520 --> 08:27.230
+Along with the number of element, four gives the number of elements and the minus give us of which pointer
+
+114
+08:27.250 --> 08:29.740
+comes first.
+
+115
+08:29.750 --> 08:36.330
+So this is some sample code I have shown you for pointer arithmetic and a pointer to an array.

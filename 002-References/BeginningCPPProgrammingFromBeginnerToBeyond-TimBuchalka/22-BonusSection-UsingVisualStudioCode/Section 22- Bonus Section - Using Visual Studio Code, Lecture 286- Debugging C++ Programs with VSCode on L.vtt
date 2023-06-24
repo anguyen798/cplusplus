@@ -1,0 +1,289 @@
+WEBVTT
+
+00:05.070 --> 00:06.000
+Hello, everyone.
+
+00:06.660 --> 00:11.190
+In this video, we'll set up Visual Studio code to debug C++ programs.
+
+00:11.550 --> 00:15.510
+We've already set up IntelliSense and we've set up a build task.
+
+00:15.510 --> 00:17.190
+So now we're going to set up the debug.
+
+00:17.220 --> 00:18.180
+Where do we start?
+
+00:18.270 --> 00:19.530
+It's really quite simple.
+
+00:19.530 --> 00:27.480
+Select one of your C++ files, it doesn't matter which one, and then come up here to run and add configuration.
+
+00:27.840 --> 00:35.250
+Now you can be asked for your environment, select C++, GDB, LD, DB, and then the C++ compiler again,
+
+00:35.250 --> 00:37.230
+which in our case is G plus plus.
+
+00:38.990 --> 00:42.390
+Now you're going to have some stuff happen and things are going to be changing colors and so forth.
+
+00:42.410 --> 00:43.550
+Don't worry about any of that.
+
+00:44.000 --> 00:48.970
+What we're going to do now is modify this file that was just created called Launch JSON.
+
+00:48.980 --> 00:50.840
+We're going to make one minor change to it.
+
+00:51.380 --> 00:53.290
+You close this window up so we can see it.
+
+00:53.300 --> 00:57.890
+What we're going to do is we're going to change the entry for CW.
+
+00:57.890 --> 01:03.600
+DX It's on line 14 on my system here, and we're going to change this from workspace folder to file
+
+01:03.620 --> 01:04.160
+your name.
+
+01:04.160 --> 01:05.690
+So I'm just going to copy that.
+
+01:06.790 --> 01:08.200
+And paste it in here.
+
+01:10.200 --> 01:11.620
+And that's all we're going to do.
+
+01:11.640 --> 01:15.930
+Now, I'm going to save this and I'm going to close it since we don't need it any longer.
+
+01:15.960 --> 01:18.210
+All right, let's debug our first program.
+
+01:18.420 --> 01:22.650
+Let's modify Project Two's main CPP file just a little.
+
+01:22.650 --> 01:24.950
+So we have a little bit information to see in the debugger.
+
+01:24.960 --> 01:30.600
+So what I'm going to do here, I'm going to add an integer and let's just call this my favorite number
+
+01:30.600 --> 01:34.320
+and I'm going to initialize it to, let's say, 100 just so we have something to look at.
+
+01:34.320 --> 01:38.700
+So it's still going to display hello from Project two, but now we want to prompt the user to enter
+
+01:38.700 --> 01:39.690
+their favorite number.
+
+01:39.690 --> 01:41.590
+So we'll put another display statement in here.
+
+01:41.620 --> 01:47.700
+We'll just say Enter your favorite number and then we'll read in what type, and we're going to read
+
+01:47.700 --> 01:49.380
+that into favorite number.
+
+01:49.590 --> 01:54.750
+And then finally we're going to display your favorite number is and we'll display what they typed in
+
+01:54.750 --> 01:55.710
+right back at them.
+
+01:55.830 --> 02:01.110
+So we'll say your favorite number is and we'll display what they entered fave number, followed by a
+
+02:01.110 --> 02:01.740
+new line.
+
+02:02.160 --> 02:03.040
+All right, so that's it.
+
+02:03.040 --> 02:07.230
+So we made a small change, but an important change because we want to be able to see that favorite
+
+02:07.230 --> 02:09.180
+number change in the debugger.
+
+02:09.270 --> 02:09.660
+All right.
+
+02:09.660 --> 02:13.530
+So how do we debug now select the program you want to debug?
+
+02:13.530 --> 02:16.890
+Again, very important that we select that CP file that we want to debug.
+
+02:16.890 --> 02:19.440
+In this case, this is the one we want to debug.
+
+02:19.470 --> 02:25.740
+What we can do now is we can click that bug icon right there where it says run and debug and nothing
+
+02:25.740 --> 02:26.910
+will happen right away.
+
+02:26.910 --> 02:30.030
+But we need to do is we need to set a breakpoint in our code.
+
+02:30.510 --> 02:34.980
+This is where the debugger is going to stop when when it starts to debug our code.
+
+02:34.980 --> 02:40.770
+So I want it to stop right there, right on line five, so you can just move along here and just select
+
+02:40.770 --> 02:45.090
+the breakpoint, just click and it turns red and you can select as many breakpoints as you want.
+
+02:45.750 --> 02:51.960
+Notice now that the breakpoints show up here, there is a glitch in Visual Studio code where sometimes
+
+02:51.960 --> 02:55.890
+when you have multiple breakpoints across different projects, they all show here.
+
+02:56.100 --> 03:01.260
+And what I recommend you do is when just when you're about to start debugging, click on that X right
+
+03:01.260 --> 03:03.780
+there that erases all the breakpoints from everywhere.
+
+03:03.780 --> 03:07.980
+Now, you don't see any down here, and then you could just come up to your project and put the breakpoint
+
+03:07.980 --> 03:09.210
+exactly where you want it.
+
+03:09.780 --> 03:14.580
+So now that we've done that, we can click on this little green run icon right up here.
+
+03:15.210 --> 03:17.730
+And when I do that, the debugger will engage.
+
+03:17.730 --> 03:22.020
+You can see that there's a build happening and now this bottom bar turns orange.
+
+03:22.020 --> 03:24.180
+And now there's a couple of things that have just happened.
+
+03:24.540 --> 03:30.270
+Notice that this line five is highlighted and the play head is right there, right on line five.
+
+03:30.270 --> 03:33.850
+That tells you that the debugger stopped at line five just like you asked it to.
+
+03:33.900 --> 03:35.220
+That's where you put the breakpoint.
+
+03:35.310 --> 03:37.530
+So line five has not been executed.
+
+03:37.530 --> 03:42.990
+Line four has notice that line four is our declaration of favorite number.
+
+03:43.380 --> 03:46.740
+And if you look over here in your local variables, there you see its value.
+
+03:46.740 --> 03:47.670
+That's pretty cool.
+
+03:47.970 --> 03:51.870
+So you can see favorite number is 100 and you can also hover over favorite number.
+
+03:52.330 --> 03:53.550
+You'll see the 100 pop up.
+
+03:53.550 --> 03:55.200
+You can do that anywhere it occurs.
+
+03:55.500 --> 03:59.790
+Now, what we want to do is we want to execute one line at a time and we could do that with this button
+
+03:59.790 --> 04:00.150
+right here.
+
+04:00.150 --> 04:04.380
+You can see we've got a series of buttons here that allow us to interact with the debugger.
+
+04:05.130 --> 04:10.260
+This steps over the code, it steps into code and I discuss these in more detail throughout the course
+
+04:10.500 --> 04:10.950
+here.
+
+04:10.950 --> 04:14.190
+We can just stop the debugger and here we can just continue.
+
+04:14.190 --> 04:16.890
+So what I want to do is I want to execute one line at a time.
+
+04:16.890 --> 04:22.740
+So I'm going to select step over and you can see the play head now moves to line six and the line five
+
+04:22.740 --> 04:26.460
+executed and displayed something on the screen just like we expected.
+
+04:27.060 --> 04:27.510
+All right.
+
+04:27.510 --> 04:30.360
+And now it's going to ask me, what's your favorite number?
+
+04:30.360 --> 04:33.480
+So I'm just going to type in something other than 100 so you can see a change.
+
+04:33.480 --> 04:39.990
+This is type in 45 and I'll press enter and notice my local variable right here, 45.
+
+04:39.990 --> 04:41.010
+That's pretty neat.
+
+04:41.220 --> 04:45.260
+This allows me to step through my code and see what's happening.
+
+04:45.270 --> 04:46.740
+Maybe I made a mistake somewhere.
+
+04:46.740 --> 04:52.260
+It's much easier to see it this way and then we can just continue running the program and we're done.
+
+04:52.260 --> 04:52.770
+So you see.
+
+04:52.770 --> 04:54.780
+Hello from project to enter your favorite number?
+
+04:54.780 --> 04:57.090
+I entered 45 and then it displayed.
+
+04:57.090 --> 04:59.730
+Your favorite number is 45, just as we expected.
+
+04:59.850 --> 05:07.620
+When you're done debugging, you can click over here, go back to explore and just debug or code whatever
+
+05:07.620 --> 05:08.580
+project you like.
+
+05:09.180 --> 05:09.630
+All right.
+
+05:09.630 --> 05:11.700
+So that shows you how to set up debugging.
+
+05:11.700 --> 05:16.110
+So at this point, we've got building, we've got running and we've got debugging all set up.
+
+05:16.110 --> 05:21.120
+In the next video, I'm going to show you how to use Visual Studio code with the source code that I
+
+05:21.120 --> 05:22.380
+provide for the course.

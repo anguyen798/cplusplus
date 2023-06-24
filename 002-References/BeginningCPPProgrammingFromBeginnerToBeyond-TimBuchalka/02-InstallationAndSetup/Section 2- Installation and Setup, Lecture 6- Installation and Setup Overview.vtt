@@ -1,0 +1,157 @@
+WEBVTT
+
+00:00:05.300 --> 00:00:09.600
+In this video, I'd like to go over the content in this section of the course.
+
+00:00:10.260 --> 00:00:13.860
+This is a very important section since we described the installation
+
+00:00:13.860 --> 00:00:18.260
+of the tools necessary to create, build and execute C++
+
+00:00:18.260 --> 00:00:19.060
+programs.
+
+00:00:20.320 --> 00:00:24.620
+We wanted to make this course accessible to as many students as possible
+
+00:00:24.620 --> 00:00:26.620
+who want to learn C++.
+
+00:00:26.620 --> 00:00:29.820
+So if you're running Microsoft windows,
+
+00:00:29.820 --> 00:00:32.420
+macOS 10 or ubuntu Linux,
+
+00:00:32.420 --> 00:00:36.820
+we have videos detailing the steps necessary to get up and running on your platform.
+
+00:00:37.720 --> 00:00:41.420
+The following section includes videos for installing the C++
+
+00:00:41.420 --> 00:00:45.420
+compiler and the CodeLite IDE on specific
+
+00:00:45.420 --> 00:00:46.620
+operating systems.
+
+00:00:47.280 --> 00:00:49.580
+Then we show you how to configure CodeLite,
+
+00:00:49.780 --> 00:00:53.380
+so that it's using the C++ compiler we just installed.
+
+00:00:54.040 --> 00:00:57.940
+Then we'll go over how to create a default CodeLite project template
+
+00:00:57.940 --> 00:01:01.240
+that you can use when you need to create new C++ projects.
+
+00:01:02.100 --> 00:01:05.300
+This will make it very easy to start new projects quickly
+
+00:01:05.300 --> 00:01:07.900
+since all the required settings will be ready to go.
+
+00:01:09.560 --> 00:01:13.460
+In all the videos, we use a very simple C++ program
+
+00:01:13.460 --> 00:01:14.960
+to test the installations.
+
+00:01:15.950 --> 00:01:19.950
+All the elements of the C++ program will be explained in detail
+
+00:01:19.950 --> 00:01:21.650
+as we progress through the course.
+
+00:01:22.530 --> 00:01:26.630
+In this section, just type in the program and follow along to ensure your
+
+00:01:26.630 --> 00:01:28.130
+installation is complete.
+
+00:01:29.430 --> 00:01:32.030
+In addition to using the CodeLite IDE,
+
+00:01:32.030 --> 00:01:36.030
+we want to be sure that students can learn and build C++ programs
+
+00:01:36.030 --> 00:01:40.430
+even though they may not be able to install an IDE due to hardware limitations.
+
+00:01:41.680 --> 00:01:45.480
+So we created a section that uses just a simple text editor
+
+00:01:45.480 --> 00:01:47.780
+and the command line tools to do just that.
+
+00:01:48.480 --> 00:01:50.280
+If you're unable to use an IDE,
+
+00:01:50.280 --> 00:01:53.400
+then please don't let that stop you from learning C++.
+
+00:01:53.400 --> 00:01:55.900
+You can still use the command line just fine.
+
+00:01:57.560 --> 00:02:01.560
+Finally, we'll look at a few websites that have C++ compilers
+
+00:02:01.560 --> 00:02:03.920
+available that you can use to write and execute
+
+00:02:03.920 --> 00:02:05.820
+basic C++ programs.
+
+00:02:06.420 --> 00:02:08.020
+This has some limitations
+
+00:02:08.020 --> 00:02:11.020
+but it's great if you're on the road or away from your PC.
+
+00:02:11.020 --> 00:02:12.820
+All you need is a web browser
+
+00:02:12.820 --> 00:02:15.820
+and you can run much of the code presented in this class.
+
+00:02:16.810 --> 00:02:18.710
+Remember, websites,
+
+00:02:18.710 --> 00:02:22.010
+software versions and tools change over time.
+
+00:02:22.010 --> 00:02:24.310
+If there are any changes that are important,
+
+00:02:24.310 --> 00:02:27.310
+I'll post the information in the resources section
+
+00:02:27.310 --> 00:02:28.810
+of the specific videos.
+
+00:02:29.310 --> 00:02:32.610
+So if a new version of CodeLite is released and it's different from
+
+00:02:32.610 --> 00:02:36.410
+the previous version, I'll post an update in the resources section,
+
+00:02:36.410 --> 00:02:38.770
+explaining how to use the new version.
+
+00:02:38.770 --> 00:02:41.770
+This allows everyone to carry on using the new version
+
+00:02:41.770 --> 00:02:44.270
+while new videos are recorded and uploaded.
+
+00:02:44.970 --> 00:02:47.970
+Okay. So go to the videos that apply to your operating system.
+
+00:02:47.970 --> 00:02:50.770
+We'll get started installing the tools we need to create
+
+00:02:50.770 --> 00:02:53.070
+C++ programs. I'll see you there.

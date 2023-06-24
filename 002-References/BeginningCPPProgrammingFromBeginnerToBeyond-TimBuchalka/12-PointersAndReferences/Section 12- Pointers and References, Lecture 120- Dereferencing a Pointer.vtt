@@ -1,0 +1,965 @@
+WEBVTT
+
+00:00:05.540 --> 00:00:07.930
+In this video, we'll learn
+how to access the data that
+
+00:00:07.930 --> 00:00:09.130
+a pointer is pointing to.
+
+00:00:10.150 --> 00:00:12.400
+In order to access the data
+that a pointer is pointing
+
+00:00:12.490 --> 00:00:15.129
+to, we need to follow the
+pointer to where it's pointing.
+
+00:00:15.750 --> 00:00:17.819
+This is called
+dereferencing the pointer.
+
+00:00:18.590 --> 00:00:21.060
+Let's say that score pointer
+is a pointer to an integer
+
+00:00:21.220 --> 00:00:22.619
+and it has a valid address.
+
+00:00:22.910 --> 00:00:26.550
+And in order to access the integer
+that score pointer is pointing to, we
+
+00:00:26.550 --> 00:00:30.250
+use the dereferencing or indirection
+operator, which is the asterisk.
+
+00:00:31.170 --> 00:00:33.510
+I know what you're thinking, the
+asterisk didn't we just use the
+
+00:00:33.510 --> 00:00:34.979
+asterisk to declare the pointer?
+
+00:00:35.279 --> 00:00:38.860
+Yes, and lots of people over the
+years have been critical of c++'s
+
+00:00:38.870 --> 00:00:43.100
+choice to use the asterisk to both
+declare and dereference a pointer.
+
+00:00:43.760 --> 00:00:44.680
+But it is what it is.
+
+00:00:44.830 --> 00:00:47.970
+And once we understand how all this
+works, it isn't confusing at all.
+
+00:00:48.680 --> 00:00:50.170
+Let's take a look at the example.
+
+00:00:50.880 --> 00:00:54.570
+First, we declare score to be an
+integer and initialize it to a 100.
+
+00:00:54.870 --> 00:00:57.770
+Then we declare score pointer to
+be a pointer to an integer
+
+00:00:57.770 --> 00:00:59.860
+and initialize it to the address of score.
+
+00:01:00.720 --> 00:01:02.839
+Now score pointer points to score.
+
+00:01:03.500 --> 00:01:06.829
+If we want to get to score
+via the pointer, then we must
+
+00:01:06.830 --> 00:01:08.070
+dereference the pointer.
+
+00:01:08.309 --> 00:01:10.950
+Notice that in the first output
+statement, we're using the
+
+00:01:11.160 --> 00:01:13.020
+dereference operator on score pointer.
+
+00:01:13.540 --> 00:01:16.399
+This follows the pointer and
+gives us what it points to.
+
+00:01:16.660 --> 00:01:20.320
+In this case, we display 100 since
+score pointer points to score.
+
+00:01:20.820 --> 00:01:23.440
+When we dereference a pointer
+on the left hand side of an
+
+00:01:23.440 --> 00:01:27.389
+assignment statement, this results
+in an l value or the address of
+
+00:01:27.389 --> 00:01:30.839
+what score pointer is pointing
+to which in this case is score.
+
+00:01:31.140 --> 00:01:34.780
+So we store 200 in that address,
+which is the address of score.
+
+00:01:35.570 --> 00:01:39.550
+So now, we just change the value of
+score indirectly via the pointer.
+
+00:01:40.150 --> 00:01:41.759
+Notice the syntax makes sense.
+
+00:01:41.960 --> 00:01:43.989
+We use the asterisk to
+declare the pointer
+
+00:01:44.190 --> 00:01:46.539
+and then once the pointer
+is declared, the asterisk
+
+00:01:46.539 --> 00:01:47.959
+is used to dereference it.
+
+00:01:48.420 --> 00:01:49.509
+Let's see another example.
+
+00:01:51.440 --> 00:01:54.600
+In this example, we declare two
+doubles, high temp and low temp
+
+00:01:54.630 --> 00:01:58.130
+and we initialize them
+to 100.7 and 37.4.
+
+00:01:58.320 --> 00:02:00.929
+We also declare temp pointer
+as a pointer to a double and
+
+00:02:01.559 --> 00:02:02.909
+initialize it to point to high temp.
+
+00:02:03.440 --> 00:02:06.280
+So if we have a pointer and
+we want what it points to,
+
+00:02:06.280 --> 00:02:07.590
+we dereference the pointer.
+
+00:02:07.950 --> 00:02:10.549
+That's exactly what we're doing
+in the first output statement.
+
+00:02:10.770 --> 00:02:14.140
+We're following or dereferencing
+temp pointer, which gives
+
+00:02:14.140 --> 00:02:15.130
+us what it points to.
+
+00:02:15.130 --> 00:02:17.400
+And in this case, we display 100.7.
+
+00:02:17.730 --> 00:02:20.720
+Now in the assignment statement,
+we're storing the address
+
+00:02:20.720 --> 00:02:22.329
+of low temp to temp pointer.
+
+00:02:22.480 --> 00:02:24.810
+So now temp pointer is
+pointing to low temp.
+
+00:02:25.140 --> 00:02:29.360
+And again, if we want the low temp,
+we dereference temp pointer and
+
+00:02:29.360 --> 00:02:31.030
+that gets us to where it's pointing.
+
+00:02:31.750 --> 00:02:35.060
+So far I've used instant doubles
+but the data type can be anything.
+
+00:02:37.389 --> 00:02:41.499
+In this case, name is a c++ string
+object with the value Frank.
+
+00:02:42.270 --> 00:02:44.600
+And string pointer is a
+pointer to a string, and we
+
+00:02:44.600 --> 00:02:46.070
+initialize it to point to name.
+
+00:02:46.079 --> 00:02:50.460
+If we dereference string
+pointer, as in the first output
+
+00:02:50.460 --> 00:02:52.189
+statement, we display Frank.
+
+00:02:52.830 --> 00:02:56.449
+If name then changes to James
+and we execute the same output
+
+00:02:56.449 --> 00:02:58.450
+statement, then we display James.
+
+00:02:59.019 --> 00:03:01.920
+Let's head over to the IDE, and
+we'll see some more examples of
+
+00:03:01.929 --> 00:03:03.780
+dereferencing pointers in live code.
+
+00:03:05.140 --> 00:03:08.550
+Okay, so I'm in the IDE, and
+I'm in the section 12 workspace
+
+00:03:08.920 --> 00:03:10.720
+in the dereference project.
+
+00:03:11.540 --> 00:03:14.079
+I'd like to go over some
+examples of dereferencing
+
+00:03:14.080 --> 00:03:16.600
+pointers, so you're really clear
+as to what's going on here.
+
+00:03:17.049 --> 00:03:19.130
+Let's start with a very
+simple example here.
+
+00:03:19.490 --> 00:03:22.040
+And again, we'll draw it out, we'll
+work through it before we run it.
+
+00:03:22.520 --> 00:03:25.850
+In this case, I've got an
+integer called score, and I'm
+
+00:03:25.850 --> 00:03:27.360
+initializing it to a 1000.
+
+00:03:27.490 --> 00:03:29.459
+So let's say that score is over here.
+
+00:03:30.480 --> 00:03:32.230
+It has storage obviously.
+
+00:03:32.240 --> 00:03:33.429
+We have a 100 in it.
+
+00:03:34.590 --> 00:03:37.150
+And let's say that it's
+at location a 1000 again.
+
+00:03:38.370 --> 00:03:40.050
+So that's my score variable.
+
+00:03:40.450 --> 00:03:42.790
+Now I've got another variable
+right here, score pointer
+
+00:03:42.840 --> 00:03:44.290
+is a pointer to an integer.
+
+00:03:44.750 --> 00:03:51.920
+So here's score pointer, and it's
+a pointer to an integer that means
+
+00:03:51.920 --> 00:03:53.479
+it can hold addresses of integers.
+
+00:03:53.719 --> 00:03:55.910
+And I'm initializing it
+to the address of score.
+
+00:03:56.870 --> 00:03:58.140
+The address of score is a 1000.
+
+00:03:58.460 --> 00:04:01.540
+So we're putting a 1000 in
+this variable, which means
+
+00:04:01.560 --> 00:04:03.510
+that that's my pointer.
+
+00:04:04.179 --> 00:04:06.660
+So if you want to follow the pointer
+and get to what it's pointing to,
+
+00:04:06.660 --> 00:04:08.420
+you need to dereference the pointer.
+
+00:04:09.100 --> 00:04:11.000
+That's exactly what
+I'm doing right here.
+
+00:04:11.000 --> 00:04:12.489
+I'm dereferencing score pointer.
+
+00:04:12.800 --> 00:04:15.299
+So it's going to follow the
+pointer to where it's pointing.
+
+00:04:15.690 --> 00:04:17.830
+And in this case, it's
+pointing to that memory address
+
+00:04:17.830 --> 00:04:19.149
+right here which has a 100.
+
+00:04:19.200 --> 00:04:20.269
+That's what displays.
+
+00:04:21.790 --> 00:04:24.220
+In this case, I'm dereferencing
+the pointer again
+
+00:04:24.559 --> 00:04:26.980
+but it's on the left hand side
+of an assignment statement.
+
+00:04:27.270 --> 00:04:30.309
+Remember, the left-hand side of
+an assignment statement is an
+
+00:04:30.310 --> 00:04:32.940
+address or a location that's where
+we want to store things, right.
+
+00:04:32.980 --> 00:04:35.460
+After all, when we're
+assigning something we're
+
+00:04:35.460 --> 00:04:37.040
+storing that value somewhere.
+
+00:04:37.930 --> 00:04:40.030
+In this case, I'm
+dereferencing score pointer.
+
+00:04:40.040 --> 00:04:43.119
+So if i dereference score
+pointer, I follow the pointer to
+
+00:04:43.210 --> 00:04:45.340
+this address right here, right.
+
+00:04:45.360 --> 00:04:47.260
+So I'm putting 200 in here now.
+
+00:04:49.039 --> 00:04:51.310
+So now when I come back and display
+
+00:04:51.310 --> 00:04:53.180
+the dereference score pointer,
+
+00:04:53.180 --> 00:04:54.310
+it's going to go back over here.
+
+00:04:54.310 --> 00:04:56.170
+But this time, it's
+going to see a 200.
+
+00:04:56.440 --> 00:04:59.830
+And if I just display score
+all on its own since score
+
+00:04:59.860 --> 00:05:03.030
+is that variable, right, it's
+going to print 200 as well.
+
+00:05:03.870 --> 00:05:06.940
+Okay, so again play with these,
+and you can follow these pointers
+
+00:05:06.940 --> 00:05:08.000
+around and see what's happening.
+
+00:05:08.000 --> 00:05:11.599
+So let's run this, and we're
+expecting 100, 200 and 200.
+
+00:05:12.490 --> 00:05:16.580
+So let's give this a run,
+and there you go, 100, 200 and
+
+00:05:16.590 --> 00:05:18.270
+200, exactly what we expected.
+
+00:05:18.759 --> 00:05:20.250
+All right, let's do
+a few more of these.
+
+00:05:20.349 --> 00:05:24.249
+I'm going to comment out this code and
+then we'll walk through it together,
+
+00:05:24.309 --> 00:05:26.359
+and I'll do some diagrams as well.
+
+00:05:26.669 --> 00:05:28.419
+Okay, so in this
+case, what do we have?
+
+00:05:29.499 --> 00:05:30.369
+We have two doubles.
+
+00:05:30.369 --> 00:05:33.509
+We have a double called high
+temp, and I'll draw it over here.
+
+00:05:34.029 --> 00:05:36.229
+So this double is called high temp.
+
+00:05:38.689 --> 00:05:41.149
+And its value is 100.7.
+
+00:05:41.149 --> 00:05:45.400
+And let's again say that this
+is at location 1000 in memory.
+
+00:05:46.090 --> 00:05:48.599
+Then I've got another double
+right here called low temp.
+
+00:05:50.620 --> 00:05:56.040
+And let's say that its location is
+at 2000 in memory, and its value
+
+00:05:56.040 --> 00:05:58.910
+right now is initialized to 37.4.
+
+00:06:00.510 --> 00:06:01.620
+Okay, pretty easy.
+
+00:06:02.290 --> 00:06:04.859
+Now here we've got a pointer,
+called temperature pointer.
+
+00:06:05.030 --> 00:06:06.570
+So there's my temperature pointer.
+
+00:06:07.780 --> 00:06:11.550
+It's got storage associated with
+it, and we're initializing it to the
+
+00:06:11.559 --> 00:06:15.080
+address of high temperature where the
+address of high temperature is a 1000.
+
+00:06:16.600 --> 00:06:17.709
+And there's my pointer.
+
+00:06:18.299 --> 00:06:20.810
+Okay, and when we're doing this, we
+always have to be sure that we got it -
+
+00:06:20.810 --> 00:06:21.940
+we have our types correct.
+
+00:06:22.780 --> 00:06:26.580
+Temp pointer can point to a
+double, high temp is a double.
+
+00:06:27.260 --> 00:06:28.619
+So all looks good here.
+
+00:06:29.630 --> 00:06:33.320
+Now if we dereference the
+pointer, right here, we're
+
+00:06:33.320 --> 00:06:36.440
+going to follow that temperature
+pointer to where it's pointing.
+
+00:06:36.790 --> 00:06:38.919
+It happens to be pointing
+here to high temp.
+
+00:06:39.290 --> 00:06:40.310
+And we display 100.7.
+
+00:06:42.390 --> 00:06:44.810
+Now what we're doing here
+is we're changing where
+
+00:06:44.810 --> 00:06:46.079
+the pointer is pointing to.
+
+00:06:46.910 --> 00:06:50.070
+So we're saying temp pointer now
+holds the address of low temp.
+
+00:06:50.750 --> 00:06:54.890
+So what we're doing is we're
+changing that value right here.
+
+00:06:55.160 --> 00:06:56.980
+We're breaking this link right here.
+
+00:06:57.970 --> 00:07:03.700
+And we're now putting a 2000 in
+here, which is the value of low temp.
+
+00:07:04.330 --> 00:07:06.230
+So this now points to low temp.
+
+00:07:06.840 --> 00:07:09.460
+And when we dereference the pointer
+now, we follow the pointer to where
+
+00:07:09.460 --> 00:07:11.929
+it's pointing, it's not pointing here.
+
+00:07:12.299 --> 00:07:15.849
+So in this case, it'll print out 37.4.
+
+00:07:15.850 --> 00:07:17.570
+Okay, so let's give that a run,
+
+00:07:19.770 --> 00:07:21.570
+and we've got the 100.7 and the
+
+00:07:21.570 --> 00:07:23.750
+37.4, just like we expected.
+
+00:07:24.340 --> 00:07:26.719
+All right, now let's do a couple
+more complicated examples.
+
+00:07:27.929 --> 00:07:31.280
+This example isn't more complicated,
+but it's a little bit different.
+
+00:07:31.970 --> 00:07:37.210
+In this case, we've got a string
+object right here, called name.
+
+00:07:39.130 --> 00:07:42.400
+And a string object is an object
+so I've got my object here, and
+
+00:07:42.400 --> 00:07:44.400
+it's got a Frank string in it.
+
+00:07:45.870 --> 00:07:47.419
+So that's kind of
+what name looks like.
+
+00:07:47.420 --> 00:07:50.580
+Let's again say that it's an address
+a 1000, that way it's easy to follow.
+
+00:07:51.640 --> 00:07:53.299
+Here I've got a string pointer.
+
+00:07:53.650 --> 00:07:55.470
+So here's my string pointer.
+
+00:07:56.440 --> 00:07:59.810
+Again, it's a variable that
+points to a string object.
+
+00:08:00.139 --> 00:08:03.620
+So in this case, my string
+pointer holds the address of
+
+00:08:03.670 --> 00:08:09.560
+name, which is a 1000, and
+there's my pointer, all set up.
+
+00:08:10.060 --> 00:08:13.260
+Now if I want to follow the string
+pointer to where it's pointing
+
+00:08:13.270 --> 00:08:15.650
+to, I de-reference it right there.
+
+00:08:16.349 --> 00:08:18.979
+So in this case, I'm following the
+pointer to where it's pointing to
+
+00:08:18.980 --> 00:08:20.609
+and I'm printing out what's there.
+
+00:08:20.759 --> 00:08:22.469
+In this case, Frank right here.
+
+00:08:24.619 --> 00:08:28.280
+Okay, but what if we change
+name, not through the pointer,
+
+00:08:28.330 --> 00:08:30.909
+but just name itself, we can
+certainly do that, right.
+
+00:08:31.240 --> 00:08:33.910
+In this case, we're
+changing name to James.
+
+00:08:34.120 --> 00:08:38.340
+So we're changing this
+right here to James.
+
+00:08:38.350 --> 00:08:47.030
+And now we're coming back here and
+dereferencing the pointer again.
+
+00:08:47.170 --> 00:08:48.449
+We never change the pointer.
+
+00:08:48.450 --> 00:08:51.300
+The pointer is still pointing
+to the same name, right, the
+
+00:08:51.300 --> 00:08:52.620
+same memory address a 1000.
+
+00:08:52.620 --> 00:08:55.610
+But this time we're
+going to see James there.
+
+00:08:55.610 --> 00:08:57.510
+So it's going to print
+James instead of Frank.
+
+00:08:58.859 --> 00:09:01.130
+This really shows you the
+difference between the pointer
+
+00:09:01.130 --> 00:09:02.360
+and what it's pointing to.
+
+00:09:02.700 --> 00:09:05.880
+In this case, we never modified
+that pointer, but the area we
+
+00:09:05.880 --> 00:09:07.510
+were pointing to was modified.
+
+00:09:07.820 --> 00:09:13.210
+So let's give this a run, and we
+expect Frank and James to display.
+
+00:09:13.219 --> 00:09:14.580
+And there they are, Frank and James.
+
+00:09:16.330 --> 00:09:18.459
+Okay, so let's do one last example.
+
+00:09:18.459 --> 00:09:22.050
+And this one will really show
+you the difference between a
+
+00:09:22.050 --> 00:09:23.570
+pointer and what it's pointing to.
+
+00:09:24.360 --> 00:09:25.720
+And let's work through this one.
+
+00:09:26.540 --> 00:09:29.079
+What we've got here is we've
+got -- and this is where it
+
+00:09:29.080 --> 00:09:30.590
+starts, right here on line 41.
+
+00:09:31.450 --> 00:09:34.350
+We've got a vector of string
+objects, called stooges.
+
+00:09:34.369 --> 00:09:36.339
+And it's initialized
+to Larry Moe and Curly.
+
+00:09:36.460 --> 00:09:37.930
+All right, so what
+does that look like?
+
+00:09:38.020 --> 00:09:38.990
+Well, let's put it over here.
+
+00:09:38.990 --> 00:09:40.460
+Let's say it's called stooges.
+
+00:09:41.840 --> 00:09:43.870
+It's at a location a 1000 again.
+
+00:09:44.820 --> 00:09:46.520
+And stooges is a vector.
+
+00:09:46.520 --> 00:09:49.509
+So it's a vector of
+three items in this case.
+
+00:09:49.509 --> 00:09:51.430
+And each one of those
+items is a string.
+
+00:09:51.799 --> 00:09:55.660
+So here's Larry, here's
+Moe and here's Curly.
+
+00:09:58.910 --> 00:10:00.670
+And these are strings.
+
+00:10:00.670 --> 00:10:02.319
+I won't put the quotes
+around them just to save a
+
+00:10:02.330 --> 00:10:03.700
+little writing time here.
+
+00:10:04.000 --> 00:10:06.120
+So that's my stooges vector.
+
+00:10:07.660 --> 00:10:10.250
+Now I've got a vector pointer.
+
+00:10:10.420 --> 00:10:12.450
+All right, so it's right
+here, it's called vector
+
+00:10:12.450 --> 00:10:14.100
+pointer, it's a variable.
+
+00:10:15.750 --> 00:10:17.860
+And I'm initializing
+that to null pointer.
+
+00:10:17.860 --> 00:10:19.439
+Right now it's pointing nowhere.
+
+00:10:20.300 --> 00:10:23.299
+And that's perfectly fine
+because pointers are variables.
+
+00:10:24.059 --> 00:10:29.060
+Here is where I'm initializing my
+vector pointer to point somewhere.
+
+00:10:29.430 --> 00:10:34.220
+So at this point, I'm saying vector
+pointer is the address of stooges.
+
+00:10:34.500 --> 00:10:36.390
+Well, the address of
+stooges is a 1000.
+
+00:10:36.700 --> 00:10:38.500
+So I'm putting a thousand in here now.
+
+00:10:38.530 --> 00:10:40.140
+So it's no longer a null pointer.
+
+00:10:40.580 --> 00:10:42.100
+And I'm pointing there.
+
+00:10:44.120 --> 00:10:48.410
+So now how do I work with that
+vector through the vector pointer.
+
+00:10:49.530 --> 00:10:52.740
+It's really straightforward as long
+as you've got your syntax correct.
+
+00:10:53.330 --> 00:10:56.300
+And you're - the way it works
+is, is very very logical.
+
+00:10:56.520 --> 00:11:00.170
+So suppose I want to print
+out Larry, just Larry.
+
+00:11:00.259 --> 00:11:01.659
+And I want to go through this pointer.
+
+00:11:01.660 --> 00:11:03.060
+I don't just want to say stooges.
+
+00:11:03.219 --> 00:11:08.260
+Obviously, I could say something
+like stooges.at0, right.
+
+00:11:09.170 --> 00:11:11.610
+That'll definitely print out
+Larry inside an output statement.
+
+00:11:11.930 --> 00:11:13.320
+That's basically what I want to do.
+
+00:11:13.320 --> 00:11:15.110
+But I want to do it
+through the vector pointer.
+
+00:11:15.710 --> 00:11:16.539
+So what do I do?
+
+00:11:16.679 --> 00:11:19.550
+Here's the syntax right here, and
+I'll go over really carefully here.
+
+00:11:19.550 --> 00:11:21.809
+So I take my vector pointer
+
+00:11:23.580 --> 00:11:24.760
+and I dereference it.
+
+00:11:25.180 --> 00:11:27.840
+That gives me the vector
+that I'm pointing to.
+
+00:11:29.380 --> 00:11:31.660
+I put some parens around it
+because that's - I want the
+
+00:11:31.790 --> 00:11:33.229
+the priority to be high here.
+
+00:11:34.170 --> 00:11:35.350
+That gives me the vector.
+
+00:11:35.520 --> 00:11:39.470
+So all I need to do now is say .at0.
+
+00:11:40.170 --> 00:11:44.310
+Remember, if I follow my
+vector pointer, what do I get?
+
+00:11:44.340 --> 00:11:45.350
+I get stooges.
+
+00:11:46.560 --> 00:11:49.120
+So that's effectively
+the same as doing that.
+
+00:11:50.170 --> 00:11:53.120
+So when I execute that code right
+there, it'll print out Larry.
+
+00:11:54.120 --> 00:11:55.290
+Okay, hopefully, that makes sense.
+
+00:11:55.299 --> 00:11:57.390
+It may take a little bit to
+understand, and these parens are
+
+00:11:57.390 --> 00:12:01.479
+critical right here because we
+want to dereference that pointer
+
+00:12:01.480 --> 00:12:04.350
+before we use a dot because
+the dot has higher precedence
+
+00:12:04.350 --> 00:12:05.740
+than the dereference operator.
+
+00:12:06.030 --> 00:12:08.000
+So it's important that you
+put those parens around there.
+
+00:12:09.070 --> 00:12:11.300
+Suppose I want to print out
+all of the stooges through
+
+00:12:11.300 --> 00:12:13.290
+the vector pointer? Same idea.
+
+00:12:13.620 --> 00:12:16.099
+What we can do is we can
+use a range base for loop.
+
+00:12:16.639 --> 00:12:17.890
+And what's the collection.
+
+00:12:17.890 --> 00:12:19.920
+Well, the collection
+is not vector pointer.
+
+00:12:20.450 --> 00:12:22.580
+It's what vector
+pointer is pointing to.
+
+00:12:23.190 --> 00:12:26.470
+So if i dereference a vector
+pointer, then really what I'm
+
+00:12:26.480 --> 00:12:28.140
+getting in here is stooges, right.
+
+00:12:29.400 --> 00:12:30.770
+That's what I'm pointing to.
+
+00:12:31.330 --> 00:12:33.730
+And now you can see the syntax
+is really straightforward.
+
+00:12:33.990 --> 00:12:36.990
+For every stooge and
+stooges, print it out.
+
+00:12:37.049 --> 00:12:39.430
+So it's going to print
+out Larry, Moe, and Curly.
+
+00:12:40.250 --> 00:12:42.609
+Okay, again we're following
+that vector pointer.
+
+00:12:43.060 --> 00:12:44.040
+We get the vector.
+
+00:12:44.040 --> 00:12:46.550
+And then once we're at the vector,
+we can do whatever we want.
+
+00:12:46.910 --> 00:12:51.160
+So here's an example, again, of
+really, really distinguishing between
+
+00:12:51.160 --> 00:12:53.230
+the pointer and what it points to.
+
+00:12:53.539 --> 00:12:56.020
+Remember, pointers are simple.
+
+00:12:56.070 --> 00:12:58.890
+It's just a simple variable
+that holds addresses.
+
+00:12:59.080 --> 00:13:01.589
+What it points to can
+be super complicated.
+
+00:13:01.600 --> 00:13:04.060
+I mean we can have vectors
+of vectors of vectors.
+
+00:13:04.520 --> 00:13:07.349
+And we could certainly get to
+them through the pointer by
+
+00:13:07.360 --> 00:13:08.459
+dereferencing the pointer.
+
+00:13:08.790 --> 00:13:10.839
+Once we have them, we could
+do whatever we want with them.
+
+00:13:11.740 --> 00:13:13.490
+Okay, so that finishes up this video.

@@ -1,0 +1,265 @@
+WEBVTT
+
+00:00:05.360 --> 00:00:09.160
+In this video, we'll see how we can throw and catch multiple exceptions.
+
+00:00:10.660 --> 00:00:13.260
+Suppose we have a function such as the one in this slide.
+
+00:00:13.660 --> 00:00:16.260
+The function is called calculate miles per gallon,
+
+00:00:16.260 --> 00:00:19.760
+and it expects the number of miles and the number of gallons as parameters.
+
+00:00:19.760 --> 00:00:22.760
+And it just simply divides miles by gallons and returns the result.
+
+00:00:23.660 --> 00:00:28.260
+This function will fail if the number of gallons is 0 because we'd have a divide by 0 error,
+
+00:00:28.260 --> 00:00:29.960
+that's what we did in the previous video.
+
+00:00:30.560 --> 00:00:33.960
+But it would also produce incorrect results if either miles
+
+00:00:33.960 --> 00:00:35.460
+or gallons is negative.
+
+00:00:36.360 --> 00:00:39.360
+In this case, we can check for both of these situations
+
+00:00:39.360 --> 00:00:42.020
+and throw a different exception for each case.
+
+00:00:42.020 --> 00:00:45.020
+Let's see how we can write this function so it does just that.
+
+00:00:46.010 --> 00:00:49.910
+The code is pretty much what you would expect. We check if gallons is 0.
+
+00:00:49.910 --> 00:00:52.710
+And if it is, we throw an integer 0 exception.
+
+00:00:53.070 --> 00:00:56.970
+We also check if either miles or gallons are negative. And if they are,
+
+00:00:56.970 --> 00:01:01.430
+we throw a std string object initialized to the string negative value error.
+
+00:01:02.330 --> 00:01:05.530
+Otherwise, we simply perform the division and return the result.
+
+00:01:05.830 --> 00:01:07.500
+Let's see how we would call this function.
+
+00:01:07.860 --> 00:01:11.060
+Notice that in the try block, we're calling calculate miles per gallon
+
+00:01:11.060 --> 00:01:13.560
+and that function may or may not throw an exception.
+
+00:01:14.060 --> 00:01:18.560
+If it does not, then we simply assign the result of the function to miles per gallon,
+
+00:01:18.560 --> 00:01:22.460
+display it, and then we display buy at the end of the program, and we're done.
+
+00:01:22.860 --> 00:01:26.460
+However, what if calculate miles per gallon does throw an exception.
+
+00:01:26.760 --> 00:01:29.760
+Remember, it could throw an int or a std string.
+
+00:01:30.660 --> 00:01:34.660
+So we create two catch handlers, one for each exception type.
+
+00:01:34.660 --> 00:01:37.360
+And we write our exception handling code in the catch blocks.
+
+00:01:38.350 --> 00:01:41.910
+If an exception is thrown, then one of these catch handlers will handle it.
+
+00:01:42.410 --> 00:01:46.210
+If we don't handle a particular exception type here, then c++
+
+00:01:46.210 --> 00:01:50.570
+will terminate this function and proceed up the call stack looking for a handler
+
+00:01:50.570 --> 00:01:53.070
+until it finds one or the program terminates.
+
+00:01:54.430 --> 00:01:57.090
+It's also possible to have a catch-all handler.
+
+00:01:57.890 --> 00:02:01.770
+This catch handler will fire no matter what type of exception is thrown.
+
+00:02:01.770 --> 00:02:05.650
+If this is used, it's common to place it as the last of your catch blocks
+
+00:02:05.650 --> 00:02:08.880
+since it really serves to catch anything that wasn't handled before.
+
+00:02:08.880 --> 00:02:12.780
+Notice the three dots or ellipsis in the catch all parameter list.
+
+00:02:12.780 --> 00:02:16.280
+You don't have access to the exception object thrown in this case,
+
+00:02:16.280 --> 00:02:19.160
+but you can deal with the exception in the body of the catch-all block.
+
+00:02:19.790 --> 00:02:21.890
+Now let's head over to the IDE,
+
+00:02:21.890 --> 00:02:25.890
+and we'll rewrite that calculate miles per gallon to throw multiple exceptions.
+
+00:02:27.250 --> 00:02:30.810
+Okay. So I'm in the CodeLite IDE. I'm in the section 18 workspace.
+
+00:02:30.810 --> 00:02:34.710
+And I'm in the MPG function multiple exceptions project.
+
+00:02:35.410 --> 00:02:38.810
+What we've got is the same calculate MPG function
+
+00:02:38.810 --> 00:02:42.010
+that is simply throwing an exception when gallons was 0.
+
+00:02:42.010 --> 00:02:44.910
+And what we want to do is we want to extend this a little bit
+
+00:02:44.910 --> 00:02:47.610
+so that will also throw a different exception
+
+00:02:47.610 --> 00:02:50.910
+when miles or gallons is less than 0. Okay.
+
+00:02:51.570 --> 00:02:55.070
+So right now we've got it throwing 0 if gallons is 0,
+
+00:02:55.070 --> 00:02:59.470
+and we can simply add another check that says if miles is less than 0
+
+00:03:00.830 --> 00:03:04.130
+or gallons is less than 0,
+
+00:03:06.130 --> 00:03:09.520
+then we want to throw an exception here. Now it can't be another integer.
+
+00:03:09.520 --> 00:03:11.180
+We're already throwing an integer type.
+
+00:03:11.180 --> 00:03:14.180
+So in this case, I simply want to throw a std string,
+
+00:03:17.740 --> 00:03:20.740
+and I'll just initialize it to something like
+
+00:03:21.140 --> 00:03:25.140
+negative value error or something like that,
+
+00:03:25.440 --> 00:03:27.840
+and let me include string up here.
+
+00:03:30.640 --> 00:03:34.640
+That's it. So in this case, if we're going to get a division by 0 error right here
+
+00:03:34.640 --> 00:03:36.940
+with gallons equals 0, I'm throwing the integer.
+
+00:03:36.940 --> 00:03:41.540
+In this case, if I've got an illegal negative value, I'm just going to throw a std string,
+
+00:03:41.540 --> 00:03:44.540
+that's been initialized to that string negative value error.
+
+00:03:44.540 --> 00:03:48.320
+That's it. Now down here, if I run this now and throw a string,
+
+00:03:48.320 --> 00:03:51.120
+it's going to terminate, right, because I'm not catching a string.
+
+00:03:51.120 --> 00:03:55.720
+So what I need to do down here is add another catch handler for that std string.
+
+00:03:56.380 --> 00:04:00.680
+So I can add that right down here, and I can say I'm catching a string by reference.
+
+00:04:00.930 --> 00:04:05.630
+We can call it anything we like. I just -- I always call them ex for exception,
+
+00:04:05.630 --> 00:04:08.930
+a lot of people call them e., whatever you like,
+
+00:04:08.930 --> 00:04:09.930
+it's just a variable name.
+
+00:04:10.430 --> 00:04:14.030
+And in this case, I'm going to display to standard error,
+
+00:04:15.690 --> 00:04:20.740
+the actual exception, which is a string, so I don't really have to type anything here for the string.
+
+00:04:20.740 --> 00:04:24.400
+It's just going to display that string value. That's in that exception object.
+
+00:04:25.760 --> 00:04:26.460
+That's it.
+
+00:04:27.060 --> 00:04:28.760
+So let's try this. Let's run it,
+
+00:04:30.260 --> 00:04:35.060
+and let's do something like 120 divided by 0, which gives us the
+
+00:04:35.420 --> 00:04:37.420
+try to divide by 0 error.
+
+00:04:38.020 --> 00:04:40.520
+And now we've got a buy, so that's correct.
+
+00:04:40.520 --> 00:04:42.020
+And now let's try to throw on negative.
+
+00:04:42.520 --> 00:04:44.720
+So let's say negative 1
+
+00:04:45.120 --> 00:04:49.020
+and 123, negative value error, just like we expected.
+
+00:04:49.420 --> 00:04:50.920
+And we'll test it with
+
+00:04:51.720 --> 00:04:54.920
+negative 1 for gallons or negative anything actually,
+
+00:04:54.920 --> 00:04:56.420
+there's your negative value error.
+
+00:04:57.220 --> 00:05:02.100
+That's it, simple as that. So you can see here we're throwing multiple exception types.
+
+00:05:02.100 --> 00:05:04.900
+And down here, we're catching multiple exception types now.
+
+00:05:04.900 --> 00:05:08.400
+If I had a catch-all handler here, if I didn't have this handler right here,
+
+00:05:08.800 --> 00:05:10.300
+and I simply had a catch
+
+00:05:12.300 --> 00:05:14.500
+something like this with the ellipsis
+
+00:05:15.490 --> 00:05:17.290
+and not have the string here,
+
+00:05:17.290 --> 00:05:21.280
+then that would certainly catch the string. I just wouldn't have access to the object. That's all.
+
+00:05:23.080 --> 00:05:25.580
+Okay. So that's it for this video. I'll see you in the next video.

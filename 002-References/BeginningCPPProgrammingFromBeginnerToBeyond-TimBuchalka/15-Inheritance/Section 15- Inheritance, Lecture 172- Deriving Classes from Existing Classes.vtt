@@ -1,0 +1,990 @@
+WEBVTT
+
+00:00:05.340 --> 00:00:10.060
+In this video, we'll learn the c++
+syntax for deriving classes from
+
+00:00:10.060 --> 00:00:12.080
+existing classes using inheritance.
+
+00:00:13.150 --> 00:00:16.349
+First, we start with the class
+declaration for the base class.
+
+00:00:16.629 --> 00:00:19.370
+This is the class that we'll
+be creating the new class from.
+
+00:00:20.170 --> 00:00:23.360
+This class will have its own
+member data and methods as we've
+
+00:00:23.360 --> 00:00:24.660
+already learned in this course.
+
+00:00:25.580 --> 00:00:29.080
+Then we declare the new class
+derived in this case, followed by
+
+00:00:29.090 --> 00:00:33.160
+a colon then an access specifier
+and the name of the base class.
+
+00:00:34.199 --> 00:00:37.690
+The access specifier can be
+public, private or protected.
+
+00:00:38.480 --> 00:00:41.360
+If you don't provide an
+access specifier, private
+
+00:00:41.360 --> 00:00:42.450
+inheritance is used.
+
+00:00:43.200 --> 00:00:45.250
+Let's see what the
+access specifiers do.
+
+00:00:47.880 --> 00:00:52.089
+C++ allows for three types
+of inheritance: public,
+
+00:00:52.209 --> 00:00:53.519
+private and protected.
+
+00:00:54.129 --> 00:00:57.870
+This is very different from many other
+object-oriented programming languages.
+
+00:00:58.170 --> 00:01:00.660
+Most other object-oriented
+programming languages only
+
+00:01:00.660 --> 00:01:02.180
+support public inheritance.
+
+00:01:02.860 --> 00:01:06.059
+Public inheritance is the most
+common form of inheritance, and
+
+00:01:06.059 --> 00:01:10.010
+it's the type of inheritance that
+we'll most often see used in c++.
+
+00:01:10.720 --> 00:01:14.540
+Public inheritance establishes
+an "is a" relationship between
+
+00:01:14.540 --> 00:01:18.250
+derived and based classes, and
+it's the type of inheritance
+
+00:01:18.260 --> 00:01:19.850
+we'll focus on in this course.
+
+00:01:20.880 --> 00:01:24.919
+Private and protected inheritance
+establish a derived class has
+
+00:01:24.950 --> 00:01:26.510
+a base class relationship.
+
+00:01:27.020 --> 00:01:30.120
+It is often used to implement
+one class in terms of another.
+
+00:01:31.129 --> 00:01:34.070
+Private and protected inheritance
+are beyond the scope of this course.
+
+00:01:36.250 --> 00:01:40.219
+Let's see an example of deriving a
+savings account class from an account
+
+00:01:40.219 --> 00:01:42.199
+class using public inheritance.
+
+00:01:43.280 --> 00:01:46.889
+Notice that we're assuming that we
+already have an existing account class
+
+00:01:47.150 --> 00:01:50.660
+and it's got its own member data and
+methods, and we want to reuse it.
+
+00:01:51.610 --> 00:01:54.540
+Now suppose we want to create
+a savings account class that
+
+00:01:54.540 --> 00:01:57.820
+has much in common with an
+account class, but it also has
+
+00:01:57.830 --> 00:01:59.390
+some more specialized behavior.
+
+00:02:00.210 --> 00:02:04.589
+We can declare the savings account
+class, then provide a colon followed
+
+00:02:04.600 --> 00:02:08.870
+by the public access specifier, and
+finally, the name of the base class.
+
+00:02:09.600 --> 00:02:14.050
+This establishes an "is a" relationship
+between savings account and account.
+
+00:02:15.130 --> 00:02:18.480
+Now a savings account inherits
+everything in the account class,
+
+00:02:18.870 --> 00:02:22.590
+and it's free to implement its own
+specialized behaviors based on the
+
+00:02:22.590 --> 00:02:24.279
+behaviors it inherited from account.
+
+00:02:27.050 --> 00:02:30.830
+Of course, we now have two classes
+in our application, so we can create
+
+00:02:30.830 --> 00:02:32.529
+account objects as in this slide.
+
+00:02:32.990 --> 00:02:36.000
+We assume that we have a no args
+constructor in the deposit and
+
+00:02:36.070 --> 00:02:39.469
+withdraw methods handle deposit
+and withdraw funds to an account.
+
+00:02:40.109 --> 00:02:43.380
+We can create account objects on
+the stack or on the heap via pointer
+
+00:02:43.570 --> 00:02:45.420
+and call these methods as we need.
+
+00:02:47.560 --> 00:02:50.470
+We also have a savings account
+class, so we can create
+
+00:02:50.470 --> 00:02:51.840
+savings account objects.
+
+00:02:52.389 --> 00:02:55.639
+In this case, the specialized
+deposit and withdraw methods of the
+
+00:02:55.639 --> 00:02:57.589
+savings account class will be used.
+
+00:02:57.980 --> 00:03:02.030
+So as you can see, conceptually
+inheritance is pretty simple.
+
+00:03:02.450 --> 00:03:05.560
+However, the nuances of
+inheritance can get very complex.
+
+00:03:06.480 --> 00:03:09.719
+Let's head over to the IDE and
+create account and savings account
+
+00:03:09.730 --> 00:03:12.840
+classes, and then we'll learn
+about protected member access
+
+00:03:12.840 --> 00:03:14.749
+specifiers in the next video.
+
+00:03:16.539 --> 00:03:18.190
+Okay, so I'm in the CodeLite IDE.
+
+00:03:18.190 --> 00:03:23.609
+I'm in the section 15 workspace in
+the DerivingOurFirstClass project.
+
+00:03:24.570 --> 00:03:28.350
+And what I've done is I've created a
+real simple account hierarchy with two
+
+00:03:28.350 --> 00:03:30.660
+classes, and it really does nothing.
+
+00:03:30.660 --> 00:03:34.450
+It just has a couple of deposit
+withdraw methods that just say, hi
+
+00:03:34.450 --> 00:03:37.620
+I'm deposit, hi I'm withdraw, just
+so we can see them being called.
+
+00:03:37.900 --> 00:03:41.290
+And then what we'll do is we'll tweak
+this just a little bit so that we can
+
+00:03:41.300 --> 00:03:44.239
+add some attributes so you can really
+understand what's going on here.
+
+00:03:44.540 --> 00:03:46.820
+So let's take a look at
+the account class first.
+
+00:03:47.050 --> 00:03:48.470
+This is our base class.
+
+00:03:48.950 --> 00:03:50.849
+Notice that there's
+nothing going on here.
+
+00:03:50.900 --> 00:03:51.899
+Everything's public.
+
+00:03:51.900 --> 00:03:55.480
+We'll worry about protected and
+private in the next couple of videos.
+
+00:03:55.670 --> 00:03:59.560
+But right, now all we've got is a
+deposit method, a withdraw method, no
+
+00:03:59.570 --> 00:04:02.220
+args constructor and a destructor.
+
+00:04:02.220 --> 00:04:04.620
+Okay, so let's take a look
+at the implementation.
+
+00:04:05.280 --> 00:04:08.100
+And as you can see, the
+constructors and the destructors
+
+00:04:08.100 --> 00:04:09.480
+are just there with no code.
+
+00:04:10.260 --> 00:04:13.679
+Our deposit method just simply
+says account deposit called with
+
+00:04:13.680 --> 00:04:15.079
+whatever amount we called it with.
+
+00:04:15.970 --> 00:04:20.260
+And the withdraw method says account
+withdraw called with that same amount.
+
+00:04:20.610 --> 00:04:22.610
+So can't get any easier than this.
+
+00:04:23.410 --> 00:04:25.469
+So now what we're going to
+do is we're going to derive a
+
+00:04:25.469 --> 00:04:28.000
+savings account from an account.
+
+00:04:28.670 --> 00:04:31.760
+So what we'll do is we'll create
+a savings account header as
+
+00:04:31.760 --> 00:04:33.250
+well as implementation files.
+
+00:04:33.580 --> 00:04:36.340
+And you'll notice right here
+in savings account, we're
+
+00:04:36.340 --> 00:04:38.590
+including account.h, right.
+
+00:04:38.590 --> 00:04:40.170
+We've got to include that header file.
+
+00:04:40.940 --> 00:04:43.870
+Otherwise, this class of the compiler
+won't know what an account is.
+
+00:04:44.400 --> 00:04:47.780
+And here's the syntax class
+Savings Account. That's the
+
+00:04:47.780 --> 00:04:51.185
+class we're deriving and then
+public account account in
+
+00:04:51.240 --> 00:04:52.680
+this case is the base class.
+
+00:04:53.530 --> 00:04:56.090
+And you can see that this
+class is also really simple.
+
+00:04:56.410 --> 00:04:57.989
+It's got a no args constructor,
+
+00:04:58.170 --> 00:04:59.410
+it's got a destructor,
+
+00:04:59.620 --> 00:05:02.450
+and it's got its own
+version of deposit and its
+
+00:05:02.460 --> 00:05:03.789
+own version of withdrawal.
+
+00:05:04.680 --> 00:05:05.920
+And the implementation.
+
+00:05:07.690 --> 00:05:09.690
+Again, the constructor
+and the destructor don't
+
+00:05:09.690 --> 00:05:10.860
+have any code in the body.
+
+00:05:11.690 --> 00:05:15.609
+The deposit simply says savings
+account deposit called with amount
+
+00:05:15.620 --> 00:05:18.739
+that way we tell the difference
+between when the account deposit
+
+00:05:18.740 --> 00:05:21.640
+method is called and the savings
+account deposit method is called
+
+00:05:21.990 --> 00:05:23.450
+and the same for withdrawal.
+
+00:05:24.490 --> 00:05:27.560
+Okay, good, so now let's
+take a look at our main.
+
+00:05:27.570 --> 00:05:30.810
+It's just a real simple main that
+exercises some of these classes.
+
+00:05:31.010 --> 00:05:33.960
+So what we'll do here is
+we'll create an account
+
+00:05:34.330 --> 00:05:35.450
+object right here named acc.
+
+00:05:37.170 --> 00:05:38.369
+And again, this is an account.
+
+00:05:38.380 --> 00:05:39.350
+This is our base class.
+
+00:05:39.350 --> 00:05:41.289
+This is not using inheritance
+right here, right.
+
+00:05:41.289 --> 00:05:44.000
+This is just instantiating
+a base account.
+
+00:05:44.440 --> 00:05:46.110
+And then I'm going to
+call deposit and withdraw.
+
+00:05:46.160 --> 00:05:49.320
+What we expect there is for the
+deposit and withdraw methods of
+
+00:05:49.330 --> 00:05:50.710
+the account class to be called.
+
+00:05:51.650 --> 00:05:53.650
+And we'll do the same thing
+here with a pointer, just so you
+
+00:05:53.650 --> 00:05:56.060
+can see that it works exactly
+the same way with the pointer.
+
+00:05:56.790 --> 00:05:59.659
+Then what we'll do is we'll do the
+same but with a savings account.
+
+00:05:59.959 --> 00:06:03.960
+So we'll create this object right
+here savings account, and it will
+
+00:06:03.960 --> 00:06:07.380
+be a savings account, and we'll
+call the deposit and the withdraw
+
+00:06:07.380 --> 00:06:09.070
+methods for the savings account.
+
+00:06:09.300 --> 00:06:13.500
+And what we expect there is to see
+the output saying savings account
+
+00:06:13.530 --> 00:06:15.380
+deposit, savings account withdrawal.
+
+00:06:15.900 --> 00:06:17.740
+Okay, and again, we're doing
+down here with the pointer.
+
+00:06:17.900 --> 00:06:20.890
+So I'm going to build and run this,
+and we'll take a look at the output.
+
+00:06:20.990 --> 00:06:23.630
+And then what we'll do is we'll
+modify these files just a little bit
+
+00:06:23.640 --> 00:06:25.990
+so that you can really understand
+what's going on behind the scenes.
+
+00:06:28.010 --> 00:06:29.489
+Okay, so there's my output.
+
+00:06:30.090 --> 00:06:32.450
+And I'm going to move this
+just next to the main so we can
+
+00:06:32.450 --> 00:06:33.889
+see exactly what's going on.
+
+00:06:35.049 --> 00:06:35.519
+Here we go.
+
+00:06:35.520 --> 00:06:39.099
+So we're creating this acc
+object, and we're calling
+
+00:06:39.120 --> 00:06:41.020
+deposit and withdraw on it.
+
+00:06:41.350 --> 00:06:44.030
+And you can see right here we're
+calling the account deposit and
+
+00:06:44.030 --> 00:06:47.020
+the account withdraw, that's
+exactly what we expect because
+
+00:06:47.040 --> 00:06:49.299
+acc is an account object.
+
+00:06:49.940 --> 00:06:52.320
+In this case, there is
+no inheritance going on.
+
+00:06:52.320 --> 00:06:55.680
+I'm simply using a base
+class as I've used all along.
+
+00:06:57.130 --> 00:07:00.360
+And down here, you can see these last
+two statements right there for the
+
+00:07:00.360 --> 00:07:01.930
+account is just using the pointer.
+
+00:07:03.160 --> 00:07:05.620
+Okay, so now let's take a
+look at the savings account.
+
+00:07:06.259 --> 00:07:10.729
+So here's the savings account
+right here, and I'm creating a
+
+00:07:10.730 --> 00:07:13.810
+save account object right here
+and then I'm saying saving account
+
+00:07:14.020 --> 00:07:16.030
+.deposit saving account.withdraw.
+
+00:07:16.290 --> 00:07:19.850
+So in this case, I expect the
+savings account versions of
+
+00:07:19.850 --> 00:07:20.960
+those methods to be called.
+
+00:07:20.960 --> 00:07:23.190
+You can see that that's
+exactly what's happening here.
+
+00:07:24.219 --> 00:07:28.010
+Okay, so again, the account
+is the more general class
+
+00:07:28.029 --> 00:07:30.400
+the savings account is a
+more specialized class.
+
+00:07:30.760 --> 00:07:34.900
+And since we've got those methods
+that we've specialized in the savings
+
+00:07:34.900 --> 00:07:37.849
+account class, those are the ones
+that are being called right here.
+
+00:07:39.420 --> 00:07:40.860
+Okay, so hopefully, that's clear.
+
+00:07:41.090 --> 00:07:43.960
+Now let me make a couple of small
+changes, and then we'll run this
+
+00:07:43.969 --> 00:07:47.359
+through the debugger, so you can
+see the structure of these classes.
+
+00:07:47.770 --> 00:07:50.060
+So let's go into the account class.
+
+00:07:51.720 --> 00:07:53.590
+And what we can do here -- and
+again, I'm going to keep
+
+00:07:53.590 --> 00:07:54.800
+everything public for now.
+
+00:07:54.800 --> 00:07:56.330
+We'll change that in the next videos.
+
+00:07:56.780 --> 00:08:00.469
+What I'm going to do here is I'm
+simply going to create a double
+
+00:08:00.799 --> 00:08:07.390
+balance and a string name just for
+a real simple name for an account,
+
+00:08:07.410 --> 00:08:10.470
+and let me include the string header.
+
+00:08:13.890 --> 00:08:16.250
+Okay, so now we're saying that
+all accounts have a balance
+
+00:08:16.250 --> 00:08:18.060
+and all accounts have a name.
+
+00:08:18.360 --> 00:08:20.070
+We obviously, need
+to initialize those.
+
+00:08:20.110 --> 00:08:22.380
+I'm just going to initialize
+balance to 0 and name to
+
+00:08:22.380 --> 00:08:23.429
+something like an account.
+
+00:08:23.820 --> 00:08:26.599
+So we can do that in our
+implementation file right here.
+
+00:08:27.300 --> 00:08:30.390
+We can do it right here in
+the no args constructor.
+
+00:08:30.390 --> 00:08:32.690
+We can simply say balance is 0
+
+00:08:36.810 --> 00:08:39.510
+and name is an account or something, anything really.
+
+00:08:44.540 --> 00:08:46.000
+Okay, so that's it.
+
+00:08:46.780 --> 00:08:51.860
+So now we'll go into our savings
+account, and we'll say okay, a
+
+00:08:51.860 --> 00:08:57.380
+savings account will also provides
+its own version of functionality.
+
+00:08:57.380 --> 00:08:59.320
+Remember, this is the
+specialized class.
+
+00:08:59.449 --> 00:09:02.560
+So let's say that a savings
+account has an interest
+
+00:09:02.560 --> 00:09:04.540
+rate, and it's a double.
+
+00:09:05.080 --> 00:09:07.330
+So obviously, we'll
+initialize that as well.
+
+00:09:07.330 --> 00:09:08.890
+We don't want it to have garbage data.
+
+00:09:09.160 --> 00:09:11.800
+So we're going to come into our
+implementation file, and we'll do that
+
+00:09:11.800 --> 00:09:13.849
+right here using an initializer list.
+
+00:09:14.219 --> 00:09:19.060
+We'll say interest rate, and, I don't
+know, let's say it's 3% interest.
+
+00:09:20.160 --> 00:09:21.270
+Okay, perfect.
+
+00:09:21.540 --> 00:09:24.420
+Now if we run this we should
+get exactly the same output
+
+00:09:24.420 --> 00:09:25.990
+because nothing is being changed.
+
+00:09:26.270 --> 00:09:28.519
+Output statements really
+aren't displaying interest
+
+00:09:28.520 --> 00:09:29.820
+rate or name or anything else.
+
+00:09:30.080 --> 00:09:31.760
+So let's just be sure that it runs.
+
+00:09:31.830 --> 00:09:33.799
+There's our build there's our run.
+
+00:09:33.799 --> 00:09:36.139
+And again, nothing here has changed.
+
+00:09:36.559 --> 00:09:38.850
+But let's take a look
+at this in the debugger.
+
+00:09:38.860 --> 00:09:41.790
+So let me close this up real quick
+and I'm going to go back to my main.
+
+00:09:42.370 --> 00:09:45.240
+And what I want to do is i just want
+to put a couple of break points here.
+
+00:09:45.500 --> 00:09:49.300
+We'll put a break point right here
+on line 14 where we're actually
+
+00:09:49.300 --> 00:09:50.910
+creating that account object.
+
+00:09:51.250 --> 00:09:55.110
+We'll put another break point
+right here on line 29 where we're
+
+00:09:55.110 --> 00:09:57.090
+creating the savings account object.
+
+00:09:57.820 --> 00:10:01.060
+Okay, and what I want to do is
+debug this, and I'll start it
+
+00:10:03.260 --> 00:10:05.010
+and I'm really not interested in the output.
+
+00:10:05.030 --> 00:10:07.010
+What I'm interested in
+here is the local variable.
+
+00:10:07.010 --> 00:10:08.680
+So that's really what we're
+going to concentrate on.
+
+00:10:08.990 --> 00:10:12.750
+So here on line 14, I'm just
+about ready to execute that line
+
+00:10:12.750 --> 00:10:15.710
+and that's going to instantiate
+or create that account object.
+
+00:10:16.030 --> 00:10:18.560
+So I'm going go next.
+
+00:10:18.630 --> 00:10:19.630
+Now it's created.
+
+00:10:19.630 --> 00:10:20.820
+Let's take a look at it.
+
+00:10:21.370 --> 00:10:22.480
+There's acc.
+
+00:10:22.480 --> 00:10:25.210
+It was just created. You can see the balance is 0,
+
+00:10:25.210 --> 00:10:26.920
+and the name is an account.
+
+00:10:27.420 --> 00:10:29.540
+Remember, the name is a c++ string.
+
+00:10:30.900 --> 00:10:34.010
+Perfect, now I'm going to come down
+here to line 29, I'll just keep
+
+00:10:34.010 --> 00:10:35.450
+hitting next until i get to it.
+
+00:10:35.940 --> 00:10:38.770
+And what's going to happen when I
+get here is I'm going to create a
+
+00:10:38.780 --> 00:10:41.290
+savings account object right here.
+
+00:10:41.639 --> 00:10:43.580
+So I'm going to press next.
+
+00:10:43.910 --> 00:10:46.640
+Now that savings account
+object has been created.
+
+00:10:46.640 --> 00:10:48.279
+It's called save underscore account.
+
+00:10:48.870 --> 00:10:50.990
+I'll refresh this, and
+let's take a look at it.
+
+00:10:50.990 --> 00:10:53.670
+Remember, what account
+was, 0, "An Account".
+
+00:10:53.970 --> 00:10:55.640
+Now let's look at savings account.
+
+00:10:56.679 --> 00:10:59.660
+Notice that savings account
+has an interest rate, right.
+
+00:10:59.670 --> 00:11:00.990
+That's what it brought to the table.
+
+00:11:01.349 --> 00:11:04.449
+But it's also an account
+because we've got inheritance.
+
+00:11:04.449 --> 00:11:06.780
+So everything that was
+in my parent is in me.
+
+00:11:07.060 --> 00:11:11.099
+So there's the account part of
+me, me being a savings account.
+
+00:11:11.540 --> 00:11:14.380
+And you can see that the account
+part of me is 0 and the account
+
+00:11:14.420 --> 00:11:16.699
+name part of me is "an account".
+
+00:11:17.320 --> 00:11:19.850
+Okay, so hopefully, you get
+some insight into what's
+
+00:11:19.850 --> 00:11:20.740
+really going on here.
+
+00:11:21.000 --> 00:11:24.810
+We really are inheriting all
+that information from our parent.
+
+00:11:25.090 --> 00:11:28.060
+So let me just draw this
+out so to be really clear.
+
+00:11:28.380 --> 00:11:31.210
+Suppose that this is acc right here.
+
+00:11:32.750 --> 00:11:34.060
+That's acc.
+
+00:11:34.839 --> 00:11:40.749
+That's that object right up here, and
+it's an account, and it has two local
+
+00:11:40.750 --> 00:11:45.860
+variables, right, balance and name.
+
+00:11:47.550 --> 00:11:49.390
+And we're not going to worry
+about what they're set to. You
+
+00:11:49.390 --> 00:11:50.530
+can kind of see that over here.
+
+00:11:51.080 --> 00:11:55.530
+And it also has access to those two methods right,
+
+00:11:55.530 --> 00:11:58.650
+deposit and withdraw
+
+00:12:00.350 --> 00:12:03.450
+as well as the constructors and the destructor but I'm not worried about those right now.
+
+00:12:03.490 --> 00:12:05.420
+I'm just really concentrating
+on these two methods.
+
+00:12:05.640 --> 00:12:08.510
+So the account knows
+about its methods.
+
+00:12:09.450 --> 00:12:11.760
+Now down here, I've
+got a savings account.
+
+00:12:12.020 --> 00:12:16.320
+So let me create that and
+I'll just draw a big box and
+
+00:12:16.320 --> 00:12:17.610
+this is a savings account.
+
+00:12:17.640 --> 00:12:22.210
+That's the name of the object,
+and its type is savings account.
+
+00:12:25.540 --> 00:12:26.939
+That's this guy, right there.
+
+00:12:29.320 --> 00:12:32.260
+Now savings account,
+remember, is an account.
+
+00:12:33.870 --> 00:12:38.829
+So it's got an account part inside
+it, and that account part is going to
+
+00:12:38.830 --> 00:12:40.160
+look just like this guy right here.
+
+00:12:40.470 --> 00:12:43.960
+It's going to have a balance, right.
+
+00:12:43.960 --> 00:12:44.960
+It's going to have a name.
+
+00:12:46.230 --> 00:12:49.780
+It's going to have access to those
+deposit and withdraw methods.
+
+00:12:50.230 --> 00:12:55.319
+I'll just write them here and
+those are the deposit and withdraw
+
+00:12:55.350 --> 00:12:57.359
+methods for the account class.
+
+00:12:58.160 --> 00:13:01.240
+But then our savings account -
+our savings account class
+
+00:13:01.710 --> 00:13:03.010
+adds an interest rate
+
+00:13:04.130 --> 00:13:08.210
+and it's got its own versions
+of deposit and withdraw.
+
+00:13:11.760 --> 00:13:14.660
+Okay, so conceptually, this
+is really what's going on.
+
+00:13:14.660 --> 00:13:16.579
+And you can obviously
+see it right here.
+
+00:13:16.580 --> 00:13:18.880
+You can see that it's got the
+account part of it right there.
+
+00:13:19.100 --> 00:13:21.840
+Now obviously the methods aren't
+here, and the methods aren't going
+
+00:13:21.840 --> 00:13:23.560
+to be copied in every single object.
+
+00:13:23.590 --> 00:13:27.830
+They're going to be in in one place,
+but think of it conceptually this way
+
+00:13:27.830 --> 00:13:31.309
+and I think you'll be good to
+go because this is really what's
+
+00:13:31.309 --> 00:13:32.420
+happening behind the scenes.
+
+00:13:32.430 --> 00:13:36.450
+So when we say that a savings account
+is an account, it sure is, right.
+
+00:13:36.450 --> 00:13:37.880
+There's the account part of me.
+
+00:13:38.380 --> 00:13:39.580
+Now a couple of things.
+
+00:13:39.950 --> 00:13:45.990
+We need to talk about what in
+here, what in here is accessible
+
+00:13:47.000 --> 00:13:48.120
+to the savings account?
+
+00:13:48.350 --> 00:13:50.739
+How do we initialize
+the account part of us?
+
+00:13:50.980 --> 00:13:53.880
+So this is where we're headed with the
+next few lectures because we really
+
+00:13:53.880 --> 00:13:57.860
+need to be able to know you know
+what can I access from these methods.
+
+00:13:58.020 --> 00:14:01.349
+Am I able to access these
+guys right here or not?
+
+00:14:01.389 --> 00:14:02.120
+I'm not sure, right.
+
+00:14:02.120 --> 00:14:03.980
+It all depends on
+our access modifiers.
+
+00:14:04.180 --> 00:14:08.270
+And also I need to be able
+to instantiate or initialize
+
+00:14:08.450 --> 00:14:10.220
+that account part of me.
+
+00:14:10.610 --> 00:14:12.210
+Okay, so that's what we'll do next.

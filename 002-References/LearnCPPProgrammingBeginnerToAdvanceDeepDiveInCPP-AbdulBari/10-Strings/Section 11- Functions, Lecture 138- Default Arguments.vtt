@@ -1,0 +1,189 @@
+WEBVTT
+
+0
+00:00.570 --> 00:07.260
+yea in this video we will learn about default argument and so for explaining that I have taken two functions 
+
+1
+00:07.260 --> 00:13.850
+here both these function names are ADD but two integers and three integers.
+
+2
+00:14.040 --> 00:20.610
+So yes they are over loaded function with same name and different number of arguments
+
+3
+00:20.850 --> 00:22.090
+what they are doing.
+
+4
+00:22.380 --> 00:27.340
+They are adding numbers, this is adding two numbers this is adding three numbers.
+
+5
+00:27.390 --> 00:36.530
+So let me write main function. main I'm not writing void in everything so just I will say integer
+
+6
+00:36.530 --> 00:47.370
+in C assign add 2, 5 so which function it will call, it will call the first function. now C assign
+
+7
+00:47.490 --> 00:54.000
+add 2 5 8 which function it will call it will call the second function.
+
+8
+00:55.470 --> 01:00.030
+So just the number of parameters are different and here it is  working this little bit different
+
+9
+01:00.570 --> 01:01.980
+but I will show you one more thing.
+
+10
+01:02.030 --> 01:03.160
+Can't I say this add.
+
+11
+01:03.360 --> 01:12.510
+and say 2, 5, 0  which function will be called first but what results it will be giving.
+
+12
+01:12.510 --> 01:14.210
+Same as the first function.
+
+13
+01:14.340 --> 01:15.310
+Same as this one 2. 5.
+
+14
+01:15.420 --> 01:18.880
+because the third argument i made it as zero.
+
+15
+01:18.990 --> 01:24.210
+So if I am ready to pass the third argument as zero then I dont need the first function. come to the
+
+16
+01:24.210 --> 01:24.980
+point.
+
+17
+01:25.020 --> 01:29.140
+Can I combine these two functions and write a single function.
+
+18
+01:29.220 --> 01:50.240
+Let us see, int ADD  int X int Y, int Z assigned with zero and return x plus y plus Z.
+
+19
+01:50.430 --> 01:58.710
+Now imagine they don't have these functions, then what I have done here I have assign some default value
+
+20
+01:58.710 --> 02:03.550
+to this argument with in the argument list only and said that Z is zero.
+
+21
+02:05.450 --> 02:09.500
+So if I call ADD same function would be called.
+
+22
+02:09.740 --> 02:16.880
+So this two goes into x and 5 goes into Y and Z will become Zero because I'm not passing it.
+
+23
+02:16.970 --> 02:21.810
+Second time 2 5 8, 2 5 8, Z will take the value 8.
+
+24
+02:22.040 --> 02:28.580
+So this means this argument, this parameter it becomes optional.
+
+25
+02:29.300 --> 02:31.590
+If you don't pass it here it will take 0.
+
+26
+02:31.610 --> 02:34.400
+If you pass it then it will take that argument.
+
+27
+02:34.400 --> 02:38.620
+So Even when I pass this Zero, already  it was only so it will take zero.
+
+28
+02:38.700 --> 02:39.800
+and I get the result.
+
+29
+02:39.800 --> 02:43.670
+So it means I have  combine these two functions.
+
+30
+02:43.670 --> 02:48.120
+You see the one which is taking two arguments, the one which is taking three argument.
+
+31
+02:48.270 --> 02:52.680
+So a single function can work as 2 argument  function also.
+
+32
+02:52.730 --> 02:54.260
+3 argument function also.
+
+33
+02:54.500 --> 02:58.990
+So I have combined these two over loaded function and return one function.
+
+34
+02:59.000 --> 03:02.080
+So this is called as default argument.
+
+35
+03:02.160 --> 03:07.370
+So assigning some default values to the argument is default argument function and the benefit
+
+36
+03:07.370 --> 03:13.900
+of a different argument is you can combine the overloaded function and write one single function so
+
+37
+03:13.900 --> 03:18.630
+this is a very powerful feature of C++ and it is friendly for the programmer.
+
+38
+03:18.660 --> 03:24.110
+But he can combine various overloaded functions and write them as a single function with the help of
+
+39
+03:24.110 --> 03:26.670
+default arguments.
+
+40
+03:26.670 --> 03:32.390
+Now one important thing about this one suppose if you have one function, let's say function fun and you
+
+41
+03:32.390 --> 03:39.200
+are picking some arguments A B C and D.
+
+42
+03:39.610 --> 03:46.870
+And if you want to make a default then you should make default this one or this one you cannot make
+
+43
+03:46.870 --> 03:52.930
+this as default  then skip this one make this as mandatory so whatever the default arguments are
+
+44
+03:53.090 --> 03:57.550
+you can make this as Default, means  you should start making a Default argument from
+
+45
+03:57.560 --> 04:02.520
+right towards left without skipping any. I will show you these things practically.
+
+46
+04:02.570 --> 04:03.610
+Let us check it there.

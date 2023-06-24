@@ -1,0 +1,592 @@
+WEBVTT
+
+00:00:05.300 --> 00:00:08.500
+In this video, we'll learn a little bit more about the const qualifier
+
+00:00:08.500 --> 00:00:10.200
+in the context of class methods.
+
+00:00:10.860 --> 00:00:14.360
+We've already learned that we can create const variables, which can't be changed.
+
+00:00:15.160 --> 00:00:18.260
+And we've also seen how we can pass references and pointers
+
+00:00:18.260 --> 00:00:22.510
+into functions as const, and they can't be modified while in the function.
+
+00:00:23.310 --> 00:00:26.110
+Well, in this video, we'll learn how to create const objects
+
+00:00:26.110 --> 00:00:30.410
+and see what happens when we pass constant objects to methods that don't expect the const.
+
+00:00:31.010 --> 00:00:35.160
+Using const correctly in parameters as well as method declarations
+
+00:00:35.160 --> 00:00:37.860
+is the basis for const correctness in a program.
+
+00:00:39.560 --> 00:00:43.220
+In this example, we're creating a const object named villain.
+
+00:00:43.220 --> 00:00:44.880
+Now once villain is created,
+
+00:00:44.880 --> 00:00:48.680
+we can't change any of its attributes, that's the whole idea with it being const.
+
+00:00:49.480 --> 00:00:53.280
+So what happens if we call member methods on a const object.
+
+00:00:53.940 --> 00:00:56.940
+Let's look at calling a setter method that changes the object.
+
+00:00:57.490 --> 00:01:01.370
+Obviously, this can't be allowed since the object is declared as const.
+
+00:01:01.370 --> 00:01:03.670
+And in fact, this produces a compiler error.
+
+00:01:04.030 --> 00:01:08.030
+The compiler complains that you're passing a const object as this
+
+00:01:08.030 --> 00:01:09.430
+to a method that could change it.
+
+00:01:10.030 --> 00:01:11.630
+But what about the output statement.
+
+00:01:11.990 --> 00:01:14.690
+In this case, I'm not modifying the const object.
+
+00:01:14.690 --> 00:01:17.290
+I'm simply getting a copy of its name for display.
+
+00:01:17.650 --> 00:01:22.310
+Well, this won't compile either. In fact you get the same error that you get when you called set name.
+
+00:01:22.670 --> 00:01:23.470
+So what's up.
+
+00:01:23.830 --> 00:01:28.490
+Well, the compiler assumes that the get name function could potentially change the object,
+
+00:01:28.490 --> 00:01:29.490
+so it gives an error.
+
+00:01:30.290 --> 00:01:32.290
+But we need a solution to this problem
+
+00:01:32.290 --> 00:01:35.790
+since we would like to call the getter methods and other methods that are public
+
+00:01:35.790 --> 00:01:37.390
+that don't modify the object.
+
+00:01:38.190 --> 00:01:42.190
+Here's another example. Again, we defined the villain object and it's a constant
+
+00:01:42.190 --> 00:01:43.180
+so it can't change.
+
+00:01:43.980 --> 00:01:48.280
+Now we have a display player name function that expects a reference to a const object.
+
+00:01:49.080 --> 00:01:50.780
+Again, we get a compiler error.
+
+00:01:51.330 --> 00:01:54.330
+Here the problem is that when we call p.get name
+
+00:01:54.330 --> 00:01:56.330
+in the display player name function
+
+00:01:56.830 --> 00:01:59.830
+this pointer isn't expecting a const object,
+
+00:02:00.030 --> 00:02:02.630
+so get name could potentially change the object.
+
+00:02:03.430 --> 00:02:06.930
+The compiler is being very careful not to allow a const object
+
+00:02:06.930 --> 00:02:08.430
+to lose its constness.
+
+00:02:08.830 --> 00:02:10.330
+So what's the solution?
+
+00:02:11.530 --> 00:02:13.520
+The solution is actually very simple.
+
+00:02:13.520 --> 00:02:17.880
+We need to tell the compiler that specific methods will not modify the object.
+
+00:02:18.380 --> 00:02:22.880
+And all we have to do is put the const modifier before the semicolon and the method prototype.
+
+00:02:23.540 --> 00:02:24.140
+That's it.
+
+00:02:24.640 --> 00:02:28.840
+Now the compiler will not only allow this method to be called on const objects,
+
+00:02:28.840 --> 00:02:32.840
+it will also produce a compiler error if you try to modify any of the object
+
+00:02:32.840 --> 00:02:34.200
+attributes in the method.
+
+00:02:35.300 --> 00:02:38.300
+The idea of class methods having const qualifiers
+
+00:02:38.300 --> 00:02:40.900
+is part of what's referred to as const correctness.
+
+00:02:41.560 --> 00:02:44.160
+Const correctness can get pretty complicated,
+
+00:02:44.160 --> 00:02:48.460
+but this video serves to give you a basic idea of what it is and how important it is.
+
+00:02:50.360 --> 00:02:53.160
+Now you can see that the call to get name works just fine,
+
+00:02:53.490 --> 00:02:55.990
+but the call to set name is still not allowed
+
+00:02:55.990 --> 00:02:58.590
+since set name is not a const function.
+
+00:03:00.290 --> 00:03:04.690
+Remember, since you're telling the compiler that get name is a const member function.
+
+00:03:05.050 --> 00:03:09.510
+Then if you write code in the body of get name that modifies the object, you'll get a compiler error.
+
+00:03:10.010 --> 00:03:12.010
+That's const correctness in action.
+
+00:03:12.010 --> 00:03:14.310
+Let's go to the IDE and see this example in code.
+
+00:03:16.610 --> 00:03:20.210
+Okay. So I'm in the ide, I'm in the section 13 workspace
+
+00:03:20.570 --> 00:03:23.270
+in the ConstInClasses project.
+
+00:03:24.260 --> 00:03:26.860
+And this is basically the player class. Again,
+
+00:03:26.860 --> 00:03:30.760
+you can see we've got our private attributes, some public methods and so forth.
+
+00:03:30.760 --> 00:03:34.260
+And this is the real method that we're interested in in this example right here.
+
+00:03:34.260 --> 00:03:36.920
+It's a simple getter that returns the name.
+
+00:03:36.920 --> 00:03:39.520
+So you can see get name is the name of the method.
+
+00:03:39.520 --> 00:03:42.720
+It returns name which is a string, simple as that.
+
+00:03:42.720 --> 00:03:45.220
+That's the one we're going to have to fix
+
+00:03:45.220 --> 00:03:48.220
+so that we achieve cons correctness with this program.
+
+00:03:48.220 --> 00:03:51.100
+So let me go down to and you can see I've got constructor
+
+00:03:51.100 --> 00:03:53.300
+copy constructor all the normal stuff.
+
+00:03:53.850 --> 00:03:57.750
+I'm going to comment this function out because we're going to use that one in a minute,
+
+00:03:57.750 --> 00:04:01.750
+but this is what I've got so far. I've created a villain object
+
+00:04:01.750 --> 00:04:03.250
+that is a player type
+
+00:04:03.250 --> 00:04:07.750
+and it's constant. I've also created a hero, which is a player type.
+
+00:04:08.450 --> 00:04:11.450
+Hero is not constant. So what does this mean.
+
+00:04:11.450 --> 00:04:14.750
+This means that I cannot change any of villains attributes.
+
+00:04:14.750 --> 00:04:18.850
+So here's a real simple way to tell that this actually works.
+
+00:04:19.350 --> 00:04:22.050
+If I take that xp attribute, that's private
+
+00:04:22.050 --> 00:04:24.050
+and just make it public for a minute
+
+00:04:26.250 --> 00:04:30.610
+and then I come down here, again and I'm just going to say something really simple like villain
+
+00:04:31.110 --> 00:04:33.610
+.xp is a 1000.
+
+00:04:34.310 --> 00:04:36.910
+It should let me do that right because xp is public,
+
+00:04:36.910 --> 00:04:40.510
+but it won't because villain is constant. So if i try to compile this,
+
+00:04:40.510 --> 00:04:44.510
+I'll get an error right here. It says assignment of member player xp
+
+00:04:44.510 --> 00:04:46.010
+in a read-only object,
+
+00:04:46.010 --> 00:04:47.170
+makes a lot of sense.
+
+00:04:47.270 --> 00:04:49.070
+That's actually a really good compiler error.
+
+00:04:49.320 --> 00:04:53.680
+It's telling you that that object villain is read-only. You can't change any of it, right.
+
+00:04:53.680 --> 00:04:55.280
+That's what that const right there does.
+
+00:04:55.530 --> 00:04:58.830
+So let me undo what I just did here,
+
+00:04:59.030 --> 00:05:01.030
+and I'll make xp private again.
+
+00:05:03.020 --> 00:05:06.620
+Okay. So let's do a couple of things now.
+
+00:05:06.620 --> 00:05:09.120
+Let's come down again to our main here,
+
+00:05:09.370 --> 00:05:13.370
+and I'll remove that line right here. So we're right back to where we started. We've got the villain,
+
+00:05:13.620 --> 00:05:15.220
+and we've got the hero.
+
+00:05:15.220 --> 00:05:18.220
+Now obviously, I should never be allowed to change villain, right.
+
+00:05:18.220 --> 00:05:21.220
+So doing something like villain.set name
+
+00:05:22.320 --> 00:05:24.320
+to super villain
+
+00:05:26.620 --> 00:05:27.920
+that should never be allowed.
+
+00:05:27.920 --> 00:05:30.720
+Because if you look at the set name method up here,
+
+00:05:31.120 --> 00:05:34.220
+it is actually changing that name attribute.
+
+00:05:34.580 --> 00:05:36.580
+So if you try to compile this,
+
+00:05:36.580 --> 00:05:38.940
+you would expect an error, and you do get an error.
+
+00:05:39.300 --> 00:05:42.760
+And the the error message is saying passing const player.
+
+00:05:42.760 --> 00:05:44.570
+That's what this is right here villain.
+
+00:05:45.170 --> 00:05:48.370
+As this argument discards qualifier.
+
+00:05:48.370 --> 00:05:52.170
+So what it's telling you is that you're passing this in as a constant,
+
+00:05:52.170 --> 00:05:54.370
+but the class is not expecting a constant.
+
+00:05:54.870 --> 00:05:56.570
+And it's going to be able to change it.
+
+00:05:56.570 --> 00:05:59.010
+Now you'd get the same error if you call the get name function.
+
+00:05:59.010 --> 00:06:01.510
+So let's try that on villain.
+
+00:06:03.010 --> 00:06:07.470
+You may not -- this one may not seem so obvious as to why.
+
+00:06:07.470 --> 00:06:09.350
+But let's say we did something like that.
+
+00:06:10.150 --> 00:06:12.750
+I'll just put that in an output statement.
+
+00:06:13.250 --> 00:06:15.250
+So we'll say something we can cout.
+
+00:06:16.050 --> 00:06:19.410
+There we go, something like that.I'll comment this one out because we know that one's --
+
+00:06:19.410 --> 00:06:24.010
+that one should never work right, ever. No even once we're const correct that should never be allowed.
+
+00:06:24.410 --> 00:06:28.810
+But now we're here. So I'm saying villain get me your name.
+
+00:06:29.210 --> 00:06:33.110
+That should work and you really think about it, right. Because it's not changing the object,
+
+00:06:33.110 --> 00:06:37.470
+it's simply returning that string and display it. But it won't work.
+
+00:06:37.470 --> 00:06:40.430
+It's going to give you an error. And the error is again same error,
+
+00:06:40.430 --> 00:06:43.430
+passing const player as this argument discards qualifier.
+
+00:06:43.930 --> 00:06:45.590
+So what's going on?
+
+00:06:46.090 --> 00:06:49.790
+Well, that get name method
+
+00:06:49.790 --> 00:06:51.670
+could change the object,
+
+00:06:51.670 --> 00:06:55.670
+right. There's no reason. I couldn't write some code in the get method right here,
+
+00:06:56.370 --> 00:06:58.070
+that changed one of those attributes.
+
+00:06:58.070 --> 00:07:02.070
+And the compiler can't guarantee that at this point. So it's going to throw the error.
+
+00:07:02.270 --> 00:07:04.270
+The fix will come up in a little bit.
+
+00:07:04.270 --> 00:07:06.970
+But now what if I did
+
+00:07:08.570 --> 00:07:09.560
+something like this.
+
+00:07:11.160 --> 00:07:13.760
+What if I did the same output statement,
+
+00:07:14.660 --> 00:07:17.960
+but I did it with hero instead of villain.
+
+00:07:18.620 --> 00:07:19.920
+Let's compile that.
+
+00:07:20.520 --> 00:07:24.680
+There you go. You get a clean run, right. That makes sense because hero is not const.
+
+00:07:25.040 --> 00:07:28.840
+So the compiler doesn't really care if you change hero in that method or not.
+
+00:07:29.740 --> 00:07:33.040
+Okay. So we'll make all this const correct in a little bit.
+
+00:07:33.400 --> 00:07:36.000
+So there you can see some of the issues here.
+
+00:07:36.000 --> 00:07:40.000
+Now suppose that I'm going to comment all this out, and then I'll uncomment it in a little bit.
+
+00:07:40.000 --> 00:07:44.200
+But now suppose we have this function right here, this is not a member function,
+
+00:07:44.200 --> 00:07:47.500
+it's just a regular function. It's called display player name,
+
+00:07:47.500 --> 00:07:51.500
+and it expects p, which is a reference to a const player object,
+
+00:07:51.800 --> 00:07:55.800
+right. And all we're doing is getting that that player object's name and displaying it.
+
+00:07:56.790 --> 00:07:58.990
+So let's call that method.
+
+00:07:59.870 --> 00:08:01.970
+So we'll call display player name,
+
+00:08:02.970 --> 00:08:04.470
+and we'll pass in villain.
+
+00:08:06.830 --> 00:08:10.630
+And what we'd expect it is to print out villain, right. So let's compile that.
+
+00:08:11.400 --> 00:08:15.830
+We get an error. Error passing const player is this argument discards qualifier.
+
+00:08:15.830 --> 00:08:18.330
+It's like the problem's right here, right there.
+
+00:08:18.330 --> 00:08:21.330
+And okay. You know we can sort of understand that error.
+
+00:08:21.330 --> 00:08:23.930
+But now let's try this with hero.
+
+00:08:26.930 --> 00:08:30.230
+And we'll just replace villain with hero here,
+
+00:08:30.480 --> 00:08:32.480
+and I'll comment this line out so
+
+00:08:32.680 --> 00:08:35.180
+we're definitely sure what's causing any errors if we get any.
+
+00:08:36.180 --> 00:08:39.430
+So look what's happening here. Hero is not a const, right.
+
+00:08:39.430 --> 00:08:41.930
+So I'm going to pass hero into display player
+
+00:08:41.930 --> 00:08:44.930
+as a const that means this function can't change it, right.
+
+00:08:45.430 --> 00:08:46.630
+That's the problem.
+
+00:08:46.630 --> 00:08:48.990
+When I call p.get name,
+
+00:08:48.990 --> 00:08:52.450
+as far as p dot get name is concerned, that's a const.
+
+00:08:52.700 --> 00:08:55.800
+It can't change it, right. But there's no way to guarantee that.
+
+00:08:55.800 --> 00:08:58.680
+So this is going to give me the same error as before.
+
+00:08:59.180 --> 00:09:00.380
+There's the error again.
+
+00:09:01.780 --> 00:09:05.140
+Okay. So what's the fix? Well, the fix is pretty simple.
+
+00:09:05.140 --> 00:09:06.940
+The fix is we come up here to our class,
+
+00:09:06.940 --> 00:09:09.540
+and we come to that method get name.
+
+00:09:09.940 --> 00:09:12.740
+And we want to tell the compiler hey compiler
+
+00:09:12.740 --> 00:09:15.340
+I guarantee and you double check for me
+
+00:09:15.340 --> 00:09:19.940
+that this method get name is not modifying the object at all.
+
+00:09:20.440 --> 00:09:23.740
+You do that with the const qualifier right there.
+
+00:09:24.640 --> 00:09:27.140
+You put a const right after the parameter list.
+
+00:09:27.140 --> 00:09:29.740
+If you've just got a prototype, you just put it like right
+
+00:09:29.740 --> 00:09:32.100
+before the prototype, right in there before the semicolon.
+
+00:09:32.900 --> 00:09:36.330
+That's it. Now you've just told the compiler I guarantee
+
+00:09:36.330 --> 00:09:38.890
+that I'm not changing that object in this method.
+
+00:09:38.890 --> 00:09:42.890
+So now the compiler is happy, and all of this stuff will work now, right.
+
+00:09:42.890 --> 00:09:45.790
+Let's uncomment all of these out.
+
+00:09:47.790 --> 00:09:50.790
+And I'll uncomment this guy out as well because that should work as well.
+
+00:09:51.690 --> 00:09:55.290
+And that's it. So now if we run this.We should get a clean run.
+
+00:09:55.690 --> 00:09:58.050
+Villain hero, villain hero, just what we expect.
+
+00:09:59.410 --> 00:10:02.910
+Obviously, this will never work, right.
+
+00:10:04.210 --> 00:10:08.010
+That should never work because it's -- we don't want to set anything
+
+00:10:08.010 --> 00:10:12.110
+in villain, which -- that should never be allowed. So I'll just leave that commented out.
+
+00:10:12.470 --> 00:10:16.070
+And then the other thing that's important to understand is once you define
+
+00:10:16.570 --> 00:10:18.570
+a method here is const,
+
+00:10:19.070 --> 00:10:22.070
+you can't mess around with those attributes in here.
+
+00:10:22.070 --> 00:10:23.930
+I can't say xp equals a 100
+
+00:10:24.730 --> 00:10:26.630
+right because now it's -- you're just violating what
+
+00:10:26.630 --> 00:10:28.630
+you just said you were going to do it's no longer const.
+
+00:10:28.630 --> 00:10:32.430
+So if I compile, I'm going to get an error right there on that line,
+
+00:10:32.430 --> 00:10:35.230
+right. You're changing something at a read-only object.
+
+00:10:36.030 --> 00:10:39.230
+So this is const correctness. It can get pretty complicated
+
+00:10:39.230 --> 00:10:41.730
+when you're passing things all over the place as
+
+00:10:42.030 --> 00:10:44.630
+const here, non-const here and so forth.
+
+00:10:44.630 --> 00:10:48.530
+But the rule of thumb is all your getters should be const.
+
+00:10:48.530 --> 00:10:51.430
+Basically, any method that you have in your class
+
+00:10:51.430 --> 00:10:54.030
+that doesn't modify the object should be const.
+
+00:10:55.230 --> 00:10:58.230
+Okay. So that's it for the const correctness.

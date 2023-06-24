@@ -1,0 +1,321 @@
+WEBVTT
+
+00:00:05.350 --> 00:00:08.510
+Pointers are very powerful
+constructs in programming languages.
+
+00:00:08.809 --> 00:00:11.310
+However, there are some potential
+pitfalls that you should be
+
+00:00:11.310 --> 00:00:12.749
+aware of when using pointers.
+
+00:00:13.410 --> 00:00:15.479
+In this video, we'll go
+over some of those pitfalls.
+
+00:00:15.759 --> 00:00:19.630
+These include using uninitialized
+pointers, dangling or stray
+
+00:00:19.630 --> 00:00:23.820
+pointers, not checking if new
+allocated memory and leaking memory.
+
+00:00:25.530 --> 00:00:27.640
+First, let's look at
+uninitialized pointers.
+
+00:00:27.869 --> 00:00:30.399
+We've seen these already, but let's
+talk about them one more time.
+
+00:00:31.119 --> 00:00:33.809
+Uninitialized pointers
+contain garbage, which means
+
+00:00:33.809 --> 00:00:35.099
+they could point anywhere.
+
+00:00:35.330 --> 00:00:38.490
+If we try to access or modify the
+data they're pointing to, we could
+
+00:00:38.490 --> 00:00:40.080
+run into some major problems.
+
+00:00:40.460 --> 00:00:42.760
+The pointer might be pointing
+to a very important area in
+
+00:00:42.760 --> 00:00:44.150
+memory, and we could wipe it out.
+
+00:00:44.720 --> 00:00:47.339
+Modern operating systems today
+are pretty good at protecting
+
+00:00:47.340 --> 00:00:50.510
+critical areas of system memory,
+but you could still trash an area
+
+00:00:50.510 --> 00:00:53.589
+important to your program that
+could cause your program to crash.
+
+00:00:54.119 --> 00:00:56.670
+Worst-case scenario is that the
+program continues to work as
+
+00:00:56.670 --> 00:01:00.430
+expected for a long time since
+the memory access isn't used.
+
+00:01:00.850 --> 00:01:04.129
+Then an update to your program later
+on changes everything, and all of
+
+00:01:04.129 --> 00:01:05.660
+a sudden the program is crashing.
+
+00:01:06.230 --> 00:01:08.930
+You think it's because of the new
+change, but it's actually a bug that's
+
+00:01:08.930 --> 00:01:10.259
+been in the code for a long time.
+
+00:01:10.910 --> 00:01:13.419
+In the old days of computing,
+it wasn't uncommon to corrupt
+
+00:01:13.420 --> 00:01:16.700
+data on storage devices by
+using uninitialized pointers.
+
+00:01:18.960 --> 00:01:21.520
+Another potential problem
+with pointers is the dangling
+
+00:01:21.520 --> 00:01:25.570
+pointer, sometimes called
+wild or stray pointers.
+
+00:01:25.889 --> 00:01:29.020
+These are pointers that are pointing
+to memory that's no longer valid.
+
+00:01:29.760 --> 00:01:32.660
+If you try to use these pointers
+to access that data, you don't
+
+00:01:32.670 --> 00:01:33.890
+know what the results will be.
+
+00:01:34.260 --> 00:01:37.330
+The main reasons for dangling
+pointers are returning addresses
+
+00:01:37.490 --> 00:01:40.670
+of function local variables on
+the stack that are no longer valid
+
+00:01:40.860 --> 00:01:42.349
+since the function is terminated.
+
+00:01:42.880 --> 00:01:46.420
+Another common scenario is that you
+allocate storage dynamically and
+
+00:01:46.420 --> 00:01:49.720
+assign it to a pointer variable, then
+you assign another pointer variable
+
+00:01:49.720 --> 00:01:51.250
+to point to that same storage.
+
+00:01:51.800 --> 00:01:54.369
+Now you have two pointers pointing
+to the same area on the heap.
+
+00:01:54.630 --> 00:01:56.200
+That's okay, and we
+do it all the time.
+
+00:01:56.530 --> 00:01:59.779
+The problem comes in when one of
+the pointers releases the memory
+
+00:01:59.880 --> 00:02:02.510
+but the other pointer is still
+referencing to it and you use it.
+
+00:02:02.809 --> 00:02:04.839
+Again, unpredictable
+results can happen.
+
+00:02:05.469 --> 00:02:08.210
+Best case is your program
+crashes during development
+
+00:02:08.229 --> 00:02:09.360
+and you fix these errors.
+
+00:02:11.990 --> 00:02:15.030
+The next pointer pitfall is not
+checking to see if new failed.
+
+00:02:15.250 --> 00:02:18.160
+If new fails to allocate
+storage an exception is thrown
+
+00:02:18.160 --> 00:02:19.350
+in your program terminates.
+
+00:02:19.929 --> 00:02:22.859
+We can use exception handling
+to get more fine-grained control
+
+00:02:23.010 --> 00:02:24.930
+over these exceptional situations.
+
+00:02:25.330 --> 00:02:27.850
+If you try to de-reference a
+pointer which is pointing to
+
+00:02:27.850 --> 00:02:29.380
+null, your program would crash.
+
+00:02:29.610 --> 00:02:31.970
+This is good in testing
+but not good in production.
+
+00:02:32.840 --> 00:02:35.470
+The last pointer pitfall we'll
+discuss is the memory leak.
+
+00:02:35.750 --> 00:02:38.680
+This is probably right up there with
+the uninitialized pointer as the most
+
+00:02:38.680 --> 00:02:40.500
+common type of pointer-related error.
+
+00:02:41.119 --> 00:02:43.010
+Memory leaks are easy to understand.
+
+00:02:43.320 --> 00:02:47.010
+When you allocate storage dynamically
+on the heap, this storage has no name.
+
+00:02:47.260 --> 00:02:50.269
+It's simply an area of memory
+that's returned to you and you
+
+00:02:50.270 --> 00:02:51.579
+stored the value in the pointer.
+
+00:02:52.059 --> 00:02:54.510
+The only way to get to this
+memory is through the pointer.
+
+00:02:55.020 --> 00:02:58.440
+But what if you lose the pointer, say
+you allocated the memory in a function
+
+00:02:58.440 --> 00:03:01.589
+and the pointer was declared in the
+function and the function terminates.
+
+00:03:01.980 --> 00:03:03.390
+Now you just lost your pointer.
+
+00:03:03.570 --> 00:03:06.410
+There's no way you can reference
+that allocated memory on the heap.
+
+00:03:07.340 --> 00:03:10.330
+This memory is still
+considered in use by c++.
+
+00:03:10.490 --> 00:03:11.960
+So this is called a memory leak.
+
+00:03:12.349 --> 00:03:14.830
+If you leak enough memory, you
+could run out of storage on the
+
+00:03:14.830 --> 00:03:16.359
+heap for future allocations.
+
+00:03:17.250 --> 00:03:19.840
+Memory leaks used to be much
+more problematic when memory
+
+00:03:19.840 --> 00:03:22.870
+was limited, but there's still
+an error in a sign of bad code.
+
+00:03:23.560 --> 00:03:26.299
+As you can see, the potential
+problems are well understood.
+
+00:03:26.559 --> 00:03:28.570
+And as you become more
+experienced with pointers, you
+
+00:03:28.570 --> 00:03:31.389
+become very aware of them, and
+you don't make these mistakes.
+
+00:03:32.070 --> 00:03:36.229
+Now that I've mentioned the pitfalls
+with using raw c++ pointers, c++
+
+00:03:36.230 --> 00:03:39.700
+has smart pointers now that take
+care of many of these problems
+
+00:03:39.730 --> 00:03:41.170
+and are still very efficient.
+
+00:03:41.740 --> 00:03:44.020
+They're a more advanced topic,
+and it's something that you
+
+00:03:44.020 --> 00:03:45.970
+should learn as you become
+more proficient with c++.
+
+00:03:47.250 --> 00:03:50.399
+I'll revisit smart pointers in
+the context of object-oriented
+
+00:03:50.400 --> 00:03:51.870
+programming in the next section.
+
+00:03:52.359 --> 00:03:54.549
+Well, that wraps up c++ pointers.
+
+00:03:54.820 --> 00:03:56.770
+I hope I did a good job
+explaining them since they
+
+00:03:56.770 --> 00:03:57.970
+can be very intimidating.
+
+00:03:58.290 --> 00:03:59.970
+Please let me know if
+you have any questions.
+
+00:04:00.340 --> 00:04:03.709
+Practice with pointers, write simple
+programs, print out the values of the
+
+00:04:03.710 --> 00:04:07.019
+pointers so you can understand how
+to work with them and with memory.
+
+00:04:07.429 --> 00:04:09.600
+Okay, now let's move on to references.

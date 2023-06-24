@@ -1,0 +1,805 @@
+WEBVTT
+
+00:00:05.370 --> 00:00:07.720
+In this video, we'll learn
+about function overloading.
+
+00:00:08.580 --> 00:00:11.540
+In c++, we can have functions
+with different parameter
+
+00:00:11.540 --> 00:00:13.380
+lists that have the same name.
+
+00:00:13.960 --> 00:00:17.680
+For example, I may have many ways
+to display information to the screen
+
+00:00:17.680 --> 00:00:19.320
+depending on what I want to display.
+
+00:00:19.630 --> 00:00:22.240
+So rather than having many
+functions with different names
+
+00:00:22.250 --> 00:00:26.600
+such as display char, display int,
+display double and so forth, we
+
+00:00:26.600 --> 00:00:30.259
+can have a single name display,
+and then implement a version of the
+
+00:00:30.259 --> 00:00:32.070
+function for each type of parameter.
+
+00:00:32.710 --> 00:00:35.840
+Then we just let the compiler figure
+out which function to use based
+
+00:00:35.850 --> 00:00:39.360
+on the function call arguments and
+the defined function parameters.
+
+00:00:40.420 --> 00:00:43.030
+It sounds more complicated than
+it is, and we'll see an example
+
+00:00:43.110 --> 00:00:45.730
+in the next slide that'll show
+you just how simple it is.
+
+00:00:46.330 --> 00:00:50.350
+This is a great use of abstraction
+since as a developer all I need
+
+00:00:50.380 --> 00:00:53.560
+to think is display and pass
+in whatever information I need.
+
+00:00:54.070 --> 00:00:57.040
+I don't have to keep track of
+dozens of different function names.
+
+00:00:58.700 --> 00:01:02.180
+In software engineering, we have a
+principle called polymorphism, which
+
+00:01:02.200 --> 00:01:04.599
+means many forms for the same concept.
+
+00:01:04.860 --> 00:01:06.749
+This is an example of polymorphism.
+
+00:01:07.530 --> 00:01:09.399
+Let's see what overloaded
+functions look like.
+
+00:01:12.389 --> 00:01:16.539
+In this example, we have two functions
+that are both called add numbers.
+
+00:01:17.430 --> 00:01:20.110
+The first function expects
+two integers and the second
+
+00:01:20.110 --> 00:01:21.539
+function expects two doubles.
+
+00:01:22.940 --> 00:01:25.310
+I'm only showing the function
+prototypes in this slide,
+
+00:01:25.549 --> 00:01:27.600
+but we actually have to
+implement both functions.
+
+00:01:27.620 --> 00:01:28.840
+I'll do that in the next slide.
+
+00:01:29.609 --> 00:01:32.920
+Notice that in main I'm calling
+both functions, but I don't have
+
+00:01:32.920 --> 00:01:34.370
+to think about different names.
+
+00:01:34.430 --> 00:01:36.120
+I just want to add two numbers.
+
+00:01:36.690 --> 00:01:40.519
+If I call add numbers with
+two integers, then the int int
+
+00:01:40.580 --> 00:01:42.079
+version of the function is called.
+
+00:01:42.770 --> 00:01:46.139
+If I call add numbers with two
+doubles, then the double double
+
+00:01:46.150 --> 00:01:47.659
+version of the function is called.
+
+00:01:49.459 --> 00:01:52.090
+In this slide, I'm providing
+the function definitions for the
+
+00:01:52.090 --> 00:01:54.790
+add numbers functions that we
+prototyped in the previous slide.
+
+00:01:55.250 --> 00:01:57.649
+It's important to understand
+that we must implement all
+
+00:01:57.650 --> 00:01:58.960
+of the overloaded versions.
+
+00:01:59.570 --> 00:02:01.940
+Notice that the code for
+these two functions is nearly
+
+00:02:01.940 --> 00:02:03.480
+identical except for the types.
+
+00:02:04.090 --> 00:02:07.880
+C++ has a feature called function
+templates that allow us to just
+
+00:02:07.880 --> 00:02:11.140
+write one generic version of
+the add numbers function and it
+
+00:02:11.140 --> 00:02:13.790
+will take care of providing the
+correct version when called.
+
+00:02:14.250 --> 00:02:16.750
+Function templates are a little
+bit more advanced topic, and we'll
+
+00:02:16.750 --> 00:02:19.620
+discuss it when we talk about
+the standard template library.
+
+00:02:20.380 --> 00:02:21.860
+Let's take a look at another example.
+
+00:02:24.059 --> 00:02:26.530
+In this example, I'll only
+show the function prototypes.
+
+00:02:26.800 --> 00:02:29.130
+But remember, that you'd have
+to implement all of these.
+
+00:02:29.840 --> 00:02:31.810
+I have five functions named display.
+
+00:02:32.139 --> 00:02:34.849
+The parameter list for these
+functions must be different so
+
+00:02:34.849 --> 00:02:36.279
+the compiler can tell them apart.
+
+00:02:36.950 --> 00:02:39.150
+Once these functions are
+implemented, I can call
+
+00:02:39.170 --> 00:02:40.949
+display and pass in my data.
+
+00:02:41.209 --> 00:02:44.429
+The compiler will check the type
+of the argument in the function and
+
+00:02:44.429 --> 00:02:47.389
+match it to one of the available
+overloaded display functions.
+
+00:02:47.839 --> 00:02:51.279
+If it can't match it or if it can't
+convert the argument to one that
+
+00:02:51.279 --> 00:02:53.219
+matches, then we get a compiler error.
+
+00:02:56.639 --> 00:02:58.699
+There is one restriction
+to function overloading.
+
+00:02:59.139 --> 00:03:02.190
+The return type is not considered
+when the compiler is trying to
+
+00:03:02.190 --> 00:03:03.829
+determine, which function to call.
+
+00:03:04.640 --> 00:03:08.080
+So here we have two overloaded
+functions, both called get value,
+
+00:03:08.559 --> 00:03:10.299
+and both expect no parameters.
+
+00:03:10.599 --> 00:03:12.669
+The only difference is
+that one returns an integer
+
+00:03:12.670 --> 00:03:13.550
+and the other a double.
+
+00:03:14.240 --> 00:03:16.470
+This will produce a compiler
+error since the only
+
+00:03:16.470 --> 00:03:17.969
+difference is the return type.
+
+00:03:18.719 --> 00:03:21.100
+Consider the output statement
+at the bottom of the slide.
+
+00:03:21.500 --> 00:03:23.299
+Which function would
+the compiler call?
+
+00:03:23.650 --> 00:03:26.460
+It could call either and that's
+the problem, it won't guess.
+
+00:03:26.670 --> 00:03:28.250
+So it'll produce a compiler error.
+
+00:03:29.010 --> 00:03:32.549
+Overloading functions is used
+extensively in object-oriented design,
+
+00:03:32.730 --> 00:03:36.469
+and we'll see it again when we design
+our own c++ object-oriented classes.
+
+00:03:37.740 --> 00:03:41.510
+I'm in the CodeLite IDE in
+the section 11 workspace.
+
+00:03:41.850 --> 00:03:44.240
+And I'm in the function
+overloading project.
+
+00:03:45.000 --> 00:03:47.999
+Here, I just want to go through some
+examples of overloading a function.
+
+00:03:48.009 --> 00:03:51.930
+Remember, overloading a function
+simply means using the same name for
+
+00:03:51.940 --> 00:03:54.049
+various forms of that same function.
+
+00:03:54.469 --> 00:03:56.100
+In this case, it's print.
+
+00:03:56.570 --> 00:03:58.900
+And what I want to do is, I want
+to overload print to work with
+
+00:03:58.910 --> 00:04:01.910
+different types, so you can see some
+of the function prototypes here.
+
+00:04:02.590 --> 00:04:06.210
+In this case, I've got an int version
+of print so if I pass in an integer
+
+00:04:06.240 --> 00:04:09.570
+to print, it'll use this version
+of the function, one that expects
+
+00:04:09.570 --> 00:04:13.959
+a double, one that expects a c++
+string object, one that expects two
+
+00:04:13.960 --> 00:04:18.370
+c++ string objects and the last one
+expects a vector of string objects.
+
+00:04:18.519 --> 00:04:21.620
+Okay, remember, we have to
+implement each one of these
+
+00:04:21.730 --> 00:04:22.749
+and that's what I'm doing here.
+
+00:04:22.750 --> 00:04:25.450
+I'm just saying printing in
+printing double, so that we
+
+00:04:25.450 --> 00:04:26.790
+know which one is being called.
+
+00:04:27.120 --> 00:04:30.339
+So in the case of print int,
+it simply says printing integer
+
+00:04:30.340 --> 00:04:31.480
+and it displays the number.
+
+00:04:31.940 --> 00:04:35.000
+For double, it's doing the
+same thing string and so forth.
+
+00:04:35.140 --> 00:04:37.669
+Okay, and then for the vector
+version, it's just iterating
+
+00:04:37.670 --> 00:04:40.320
+through the vector and printing
+out all the strings in the vector.
+
+00:04:41.880 --> 00:04:43.190
+So let's see how this works?
+
+00:04:43.440 --> 00:04:47.310
+In this first case, I'm simply
+calling print and I'm passing in 100.
+
+00:04:47.340 --> 00:04:48.860
+Now 100 is an integer.
+
+00:04:48.949 --> 00:04:52.540
+So I expect that this integer version
+of print is the one that's going to
+
+00:04:52.540 --> 00:04:54.620
+be called and it'll say printing it.
+
+00:04:54.840 --> 00:04:56.140
+Okay, so let's give that a try.
+
+00:04:59.150 --> 00:05:01.879
+Printing in 100, exactly
+what we expected.
+
+00:05:02.990 --> 00:05:06.279
+In this version, I'm
+passing in a character.
+
+00:05:06.830 --> 00:05:09.210
+Now characters are always
+promoted to integers.
+
+00:05:09.580 --> 00:05:12.470
+So in this case, it's going to
+call the same function the one that
+
+00:05:12.470 --> 00:05:15.680
+expects an integer, but it's not
+going to print out the character a.
+
+00:05:15.690 --> 00:05:19.560
+It's going to print out 65,
+which is the ASCII code for a.
+
+00:05:19.570 --> 00:05:21.140
+Remember, it's using integers here.
+
+00:05:21.490 --> 00:05:24.710
+So let's run that, and there
+you see it says printing
+
+00:05:24.710 --> 00:05:26.650
+integer and it's printing to 65.
+
+00:05:28.290 --> 00:05:30.239
+In this case, I'll
+comment both of these out.
+
+00:05:31.000 --> 00:05:33.799
+In this case, we're going to use
+the double version which is this
+
+00:05:33.809 --> 00:05:37.059
+version right up here print expecting
+a double and it's just going to
+
+00:05:37.059 --> 00:05:39.700
+say printing double and display
+the number that was passed in.
+
+00:05:39.830 --> 00:05:43.430
+So in the first example,
+I'm passing in 123.5.
+
+00:05:43.640 --> 00:05:46.030
+No problem, 123.5 is a double.
+
+00:05:46.050 --> 00:05:47.430
+So that should match perfectly.
+
+00:05:48.110 --> 00:05:51.069
+However, in the second example,
+that f right there makes
+
+00:05:51.070 --> 00:05:52.640
+this a float, not a double.
+
+00:05:52.870 --> 00:05:55.590
+So in this case, I'm passing
+a float to the function.
+
+00:05:56.009 --> 00:05:58.829
+But there is no overloaded
+function that expects a float.
+
+00:05:59.059 --> 00:06:03.740
+So what the compiler does is it will
+promote the float to a double, it'll
+
+00:06:03.740 --> 00:06:05.400
+match that function and call it.
+
+00:06:05.550 --> 00:06:08.450
+So both these statements
+will use that same function.
+
+00:06:08.900 --> 00:06:09.850
+Okay, let's run that.
+
+00:06:10.690 --> 00:06:12.115
+And you can see here 123.5.
+
+00:06:12.560 --> 00:06:15.459
+And in this case 123.3.
+
+00:06:17.849 --> 00:06:21.650
+Okay, so what about c-style strings.
+
+00:06:22.530 --> 00:06:23.720
+Let me uncomment that out.
+
+00:06:23.720 --> 00:06:27.120
+And remember, we've got a version
+of print right here that expects
+
+00:06:27.150 --> 00:06:30.649
+a string object, and it simply
+prints out that string object.
+
+00:06:31.500 --> 00:06:34.649
+However, I'm not passing in a
+string object here, I'm passing
+
+00:06:34.650 --> 00:06:38.250
+in a c-style string, an array
+of characters, that does not
+
+00:06:38.250 --> 00:06:39.930
+match that function prototype.
+
+00:06:40.350 --> 00:06:44.630
+But the c++ compiler knows how
+to convert a c-style string,
+
+00:06:44.820 --> 00:06:48.190
+right, an array of characters
+to a c++ string object.
+
+00:06:48.429 --> 00:06:50.150
+So it will use that conversion.
+
+00:06:50.340 --> 00:06:54.079
+And it'll pass in the literal,
+make it an object and then we're
+
+00:06:54.080 --> 00:06:55.330
+going to display the object.
+
+00:06:55.490 --> 00:07:00.960
+So if we run it, you'll see a
+printing string, c-style string.
+
+00:07:01.590 --> 00:07:02.960
+Okay, exactly what we expect.
+
+00:07:02.970 --> 00:07:05.140
+Once you understand how
+the conversions work, it
+
+00:07:05.140 --> 00:07:06.230
+all makes a lot of sense.
+
+00:07:06.830 --> 00:07:12.599
+In this next example, I'm declaring
+right here s to be a string object.
+
+00:07:12.690 --> 00:07:17.210
+This is not a c-style string,
+this is a c++ style string object.
+
+00:07:17.790 --> 00:07:19.169
+And I'm passing it into print.
+
+00:07:19.480 --> 00:07:22.749
+That's going to match exactly
+and it'll print out c++ string.
+
+00:07:23.710 --> 00:07:27.280
+All right, in this print
+statement here, we're passing
+
+00:07:27.280 --> 00:07:30.910
+in a c-style string and a
+string object, okay, both.
+
+00:07:31.150 --> 00:07:33.314
+Now we've got a version of us
+of a print function right here
+
+00:07:33.330 --> 00:07:34.980
+that expects two string objects.
+
+00:07:35.160 --> 00:07:36.430
+Well, no problem, right.
+
+00:07:36.480 --> 00:07:40.469
+We'll convert the first argument
+to a string object, and then
+
+00:07:40.469 --> 00:07:41.820
+pass the second one as well.
+
+00:07:42.210 --> 00:07:45.249
+So in this case, when I run it
+you'll see that that same printing
+
+00:07:45.259 --> 00:07:49.140
+two strings method is called with
+a c-style string and a c++ string.
+
+00:07:49.379 --> 00:07:50.030
+Okay, pretty cool.
+
+00:07:51.460 --> 00:07:53.010
+And then the last one is this vector.
+
+00:07:54.280 --> 00:07:57.350
+Here I'm creating a vector
+called three stooges, which
+
+00:07:57.350 --> 00:07:58.860
+is a vector of string objects.
+
+00:07:58.860 --> 00:08:00.660
+And we've got Larry
+Moe and Curly in there.
+
+00:08:01.259 --> 00:08:03.900
+And I'm calling the print function
+and passing in three stooges.
+
+00:08:04.070 --> 00:08:08.030
+So it's going to match this one right
+here that expects a vector of strings.
+
+00:08:08.030 --> 00:08:10.510
+And I'm just going to iterate
+through there and print
+
+00:08:10.510 --> 00:08:11.710
+out the three stooges name.
+
+00:08:11.710 --> 00:08:13.890
+So the three strings in
+that particular vector.
+
+00:08:14.270 --> 00:08:18.790
+Okay, so I'll run it, and
+there you go printing vector of
+
+00:08:18.799 --> 00:08:20.169
+strings: Larry Moue and Curly.
+
+00:08:20.349 --> 00:08:23.310
+So you can see how nice it is to
+be able to overload functions.
+
+00:08:23.310 --> 00:08:25.650
+The nice part about it isn't
+so much all the code that I've
+
+00:08:25.650 --> 00:08:27.470
+written, that's not that great.
+
+00:08:27.780 --> 00:08:29.940
+The nice part about it is
+once the code is written,
+
+00:08:30.190 --> 00:08:31.719
+I can just think print.
+
+00:08:32.190 --> 00:08:35.690
+So if I'm solving an application,
+I'm printing print print print.
+
+00:08:35.690 --> 00:08:36.419
+I'm printing everywhere.
+
+00:08:36.419 --> 00:08:39.819
+I'm not doing -- I don't
+have to do print int and
+
+00:08:39.819 --> 00:08:41.169
+print string and so forth.
+
+00:08:41.240 --> 00:08:45.060
+I'm just thinking print, which
+is what abstraction is all about.
+
+00:08:45.660 --> 00:08:47.900
+Now there's some -- couple of
+things you need to worry about
+
+00:08:47.900 --> 00:08:49.330
+when you're overloading functions.
+
+00:08:49.600 --> 00:08:53.350
+Be careful when you overload functions
+and you use default arguments.
+
+00:08:53.360 --> 00:08:54.339
+Okay, I'll show you why.
+
+00:08:54.730 --> 00:08:57.680
+Here's an example of the print
+with the integer version.
+
+00:08:58.190 --> 00:09:01.130
+I could certainly default
+this to a 100, let's say.
+
+00:09:02.050 --> 00:09:05.040
+So if I don't supply the
+argument to the print function,
+
+00:09:05.070 --> 00:09:06.640
+it's going to default to 100.
+
+00:09:07.240 --> 00:09:09.319
+And let's test that out,
+we'll do it right up here.
+
+00:09:10.690 --> 00:09:13.610
+Okay, so at this point now, we
+should get 100 here, and then 100
+
+00:09:13.610 --> 00:09:14.810
+on the next line as well, right.
+
+00:09:15.200 --> 00:09:18.420
+So let's run that, and you
+can see there's the 100.
+
+00:09:18.420 --> 00:09:20.790
+That's the default
+argument right there.
+
+00:09:21.420 --> 00:09:22.350
+That makes sense.
+
+00:09:22.650 --> 00:09:24.780
+But what about if we didn't do that.
+
+00:09:25.260 --> 00:09:27.770
+And we did it down here
+in the print double.
+
+00:09:28.389 --> 00:09:31.860
+Let's say that we want to
+default this one to 125.5.
+
+00:09:33.599 --> 00:09:39.840
+Now when I call print here, it
+will default to 125.5 because
+
+00:09:39.840 --> 00:09:41.900
+it's up here right there.
+
+00:09:41.900 --> 00:09:43.630
+That's the one that's
+going to match, right.
+
+00:09:43.780 --> 00:09:47.730
+So there's the 125.5, and the
+double version gets called.
+
+00:09:47.929 --> 00:09:49.040
+Again, it makes sense.
+
+00:09:49.620 --> 00:09:51.680
+Where you run into trouble
+is when you do both.
+
+00:09:52.640 --> 00:09:54.109
+Let's say you do something like that.
+
+00:09:54.549 --> 00:09:57.520
+Now you're really in trouble
+because the compiler can't
+
+00:09:57.520 --> 00:09:58.890
+figure out, which one to use.
+
+00:09:59.230 --> 00:10:01.069
+Again, look at the
+print call right here.
+
+00:10:01.520 --> 00:10:05.550
+It says print but it doesn't
+supply any type information.
+
+00:10:05.840 --> 00:10:09.140
+So now the compiler can choose
+either one because they both match.
+
+00:10:09.349 --> 00:10:10.780
+And it's not going to
+choose either, it's going to
+
+00:10:10.789 --> 00:10:12.030
+give you a compiler error.
+
+00:10:12.389 --> 00:10:14.050
+And when I write it, it'll
+say something about an
+
+00:10:14.050 --> 00:10:15.709
+ambiguous call right here.
+
+00:10:16.220 --> 00:10:18.689
+Error call of overloaded,
+print is ambiguous.
+
+00:10:18.890 --> 00:10:22.260
+So whenever you use overloaded
+functions with default arguments,
+
+00:10:22.260 --> 00:10:23.430
+you've got to be a little careful.
+
+00:10:23.940 --> 00:10:25.270
+So let me get rid of that.
+
+00:10:25.470 --> 00:10:27.930
+And I'll set those back
+up to the way they were.
+
+00:10:29.889 --> 00:10:32.760
+Okay, so that covers
+overloaded functions.
+
+00:10:32.780 --> 00:10:35.020
+We're going to see overloaded
+functions a lot when we talk
+
+00:10:35.030 --> 00:10:38.730
+about object orientation and
+when we create our own classes.
+
+00:10:38.730 --> 00:10:41.470
+We want to have different ways
+to initialize our classes.
+
+00:10:42.030 --> 00:10:44.919
+You saw that with the vector class and
+the string class, all the different
+
+00:10:44.920 --> 00:10:46.820
+ways that we can create those objects.
+
+00:10:47.049 --> 00:10:49.609
+Well, that's all based
+on overloading functions.

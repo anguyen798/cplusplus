@@ -1,0 +1,79 @@
+WEBVTT
+
+00:00:05.300 --> 00:00:09.500
+In this section of the course, we’ll learn about overloading operators in c++.
+
+00:00:10.300 --> 00:00:15.870
+C++ allows the programmer to overload most operators to work with user-defined classes.
+
+00:00:16.530 --> 00:00:19.530
+This is intended to make code more readable and writable
+
+00:00:19.530 --> 00:00:22.830
+by allowing the use of familiar operators in a familiar manner,
+
+00:00:22.830 --> 00:00:24.830
+but with our own classes and objects.
+
+00:00:25.230 --> 00:00:28.230
+First look at exactly what operator overloading is
+
+00:00:28.230 --> 00:00:31.530
+and some of the basic rules that C++ enforces.
+
+00:00:31.530 --> 00:00:33.330
+We’ll start with the assignment operator.
+
+00:00:33.430 --> 00:00:36.990
+The assignment operators a very important operator in C++.
+
+00:00:36.990 --> 00:00:41.190
+It defines the semantics of what happens when you assigned one object to another.
+
+00:00:41.550 --> 00:00:45.150
+C++  provides a default way of doing object assignment
+
+00:00:45.150 --> 00:00:49.150
+much as it did with the copy constructor that we learned about in the last section.
+
+00:00:49.150 --> 00:00:53.150
+However, many times we want to be in control of what happens during object assignment,
+
+00:00:53.150 --> 00:00:56.350
+and we can overload the assignment operator to do exactly that.
+
+00:00:57.010 --> 00:00:59.910
+For example, when we use raw pointers in our classes,
+
+00:00:59.910 --> 00:01:03.110
+we must provide our own version of the assignment operator.
+
+00:01:03.110 --> 00:01:06.610
+Additionally, we could override the assignment operator to handle both
+
+00:01:06.610 --> 00:01:09.210
+copy and move semantics as we did with the copy
+
+00:01:09.210 --> 00:01:11.410
+and move constructors in the last section.
+
+00:01:11.410 --> 00:01:13.310
+We will learn how to do that in this section.
+
+00:01:13.970 --> 00:01:18.070
+We’ll also see how we can overload other operators as both member functions
+
+00:01:18.070 --> 00:01:21.570
+and its global functions, and why do we want to choose one over the other.
+
+00:01:22.070 --> 00:01:26.370
+We’ll finish up this section by overloading the stream insertion and extraction operator
+
+00:01:26.370 --> 00:01:29.970
+so that we can easily use our objects with c++ streams
+
+00:01:29.970 --> 00:01:32.170
+just like we've been doing with the built-in types.
+
+00:01:32.170 --> 00:01:34.670
+So let's get started with operator overloading.

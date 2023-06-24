@@ -1,0 +1,293 @@
+WEBVTT
+
+0
+00:00.750 --> 00:06.250
+let's look at function template here I am writing one function for finding the maximum of two integers.
+
+1
+00:06.250 --> 00:16.180
+So I'm calling the function name as maxim and I will send two arguments A and integer B.
+
+2
+00:16.300 --> 00:20.400
+Now in this one just say return a
+
+3
+00:23.370 --> 00:26.020
+greater than B then return A.
+
+4
+00:26.040 --> 00:27.700
+Otherwise return B.
+
+5
+00:27.840 --> 00:34.290
+So using turnery operator, conditional operator I have written this code this is finding the maximum of two
+
+6
+00:34.350 --> 00:35.490
+integers.
+
+7
+00:35.490 --> 00:38.260
+Now one more function I want that is float.
+
+8
+00:38.370 --> 00:46.410
+Maxim same name but defining maximum of 2 floats, float a and float b.
+
+9
+00:46.470 --> 00:54.020
+And here also I have to write down the same logic return A>B then return A.
+
+10
+00:54.060 --> 00:56.560
+Otherwise return B.
+
+11
+00:56.670 --> 01:02.910
+So I have two overloaded functions just logic is same number of parameters are the same but the type
+
+12
+01:02.910 --> 01:04.920
+of parameters are different.
+
+13
+01:04.920 --> 01:09.720
+Instead of writing these two functions separately I can write a single template function which will
+
+14
+01:09.720 --> 01:13.450
+work for both and also for other data types.
+
+15
+01:13.500 --> 01:19.680
+So let us define a template function, template class T.
+
+16
+01:19.710 --> 01:24.900
+You can give any name not just T for template so that that can be easily identified so that we
+
+17
+01:24.900 --> 01:26.700
+use T.
+
+18
+01:27.240 --> 01:30.360
+Now what is the name of a function Maxim.
+
+19
+01:30.510 --> 01:36.960
+And what is the return type of a function, it is integer in case of int and it is float in case of float
+
+20
+01:36.960 --> 01:37.550
+number.
+
+21
+01:37.680 --> 01:40.110
+So it should be a generic one.
+
+22
+01:40.110 --> 01:45.390
+So let us take as take it as T Maxim and here what are the parameters.
+
+23
+01:45.400 --> 01:54.350
+It may be in int or float  or double, any thing so let us call them as a T A and T B, now let us write down
+
+24
+01:54.360 --> 01:55.190
+the function.
+
+25
+01:55.300 --> 01:57.190
+Here I will write on the same logic.
+
+26
+01:57.280 --> 02:00.450
+return A is greater than B than return A.
+
+27
+02:00.480 --> 02:02.710
+Otherwise return B.
+
+28
+02:02.750 --> 02:05.790
+Now I don't need these two functions.
+
+29
+02:05.790 --> 02:09.080
+This function will work as these two different functions.
+
+30
+02:09.240 --> 02:15.240
+I'm not getting error that redefinition of a function because already int and float I have defined so
+
+31
+02:15.270 --> 02:22.110
+this will be acting as a double long car for all other data types but if I remove these definitions
+
+32
+02:22.180 --> 02:27.550
+also now that will function will act as integer and flow type also.
+
+33
+02:27.780 --> 02:28.610
+So let us see.
+
+34
+02:28.610 --> 02:39.220
+By calling this function cout maxim pass 12, 14 and endl.
+
+35
+02:39.600 --> 02:43.740
+So this function should be called by passing integers.
+
+36
+02:43.740 --> 02:46.920
+Now cout maxim.
+
+37
+02:47.520 --> 02:51.530
+2.3,  1.4
+
+38
+02:54.190 --> 03:02.410
+and endl. yeah I am able to call the same function by passing int also.
+
+39
+03:02.490 --> 03:10.690
+And by passing float also just one minute these are not flaws by default These are doubles.
+
+40
+03:10.710 --> 03:14.130
+So yes this became doubles these became doubles.
+
+41
+03:14.370 --> 03:19.160
+So if I want to pass float only then I should write float literal.
+
+42
+03:19.170 --> 03:24.670
+So that is 2.3 f, 5.6 f.
+
+43
+03:24.690 --> 03:34.850
+Now these are floats, this will work perfectly. yea see this  function is working perfectly for all three types of
+
+44
+03:34.890 --> 03:41.570
+parameters weather they are integers or doubles or floats see fourteen point three and five point six is
+
+45
+03:41.570 --> 03:42.920
+working perfectly.
+
+46
+03:42.920 --> 03:48.350
+So this is how we can write generic functions or function templates we call them as.
+
+47
+03:48.560 --> 03:58.740
+Now one more interesting thing I will show you here that instead of 5.6 F I'll just remove f.
+
+48
+03:58.840 --> 04:00.200
+See it's an error.
+
+49
+04:00.480 --> 04:03.940
+No matching function for call to Maxim. why,
+
+50
+04:03.960 --> 04:05.160
+What is the reason.
+
+51
+04:05.170 --> 04:06.760
+See this is a template T.
+
+52
+04:06.920 --> 04:13.640
+And both these are T only, when I have given one parameter as float and one parameter as double then
+
+53
+04:13.650 --> 04:17.480
+is unable to judge which data type should be selected.
+
+54
+04:17.620 --> 04:22.040
+So it's causing ambiguity so it's unable to decide the datatype.
+
+55
+04:22.040 --> 04:27.440
+So that's why it's called giving a message that no matching function call for Maxim.
+
+56
+04:27.450 --> 04:32.320
+So both these arguments must be same because there is only one template argument that we're using T
+
+57
+04:32.560 --> 04:35.020
+and T is used through out this function.
+
+58
+04:35.040 --> 04:37.810
+So it's used here also and is used here also.
+
+59
+04:37.890 --> 04:46.700
+It is ame T so if this is giving a datatype to that T as integer then this must also be an integer.
+
+60
+04:46.770 --> 04:50.720
+If I make it double or float then here also I will get an error.
+
+61
+04:50.730 --> 04:52.090
+There is no such function.
+
+62
+04:52.100 --> 05:00.480
+Just having one is int, other one is double this function both the data types are same, so be careful with
+
+63
+05:00.480 --> 05:01.080
+this one.
+
+64
+05:01.140 --> 05:02.790
+Anyway it is a syntax error.
+
+65
+05:02.940 --> 05:03.710
+It will not.
+
+66
+05:03.810 --> 05:06.580
+It's not a big problem.
+
+67
+05:06.870 --> 05:10.890
+So I have given the same argument.
+
+68
+05:11.700 --> 05:12.400
+So that's it.
+
+69
+05:12.450 --> 05:13.710
+It's working perfectly.
+
+70
+05:13.710 --> 05:16.590
+So this how we can define template functions.
+
+71
+05:16.590 --> 05:18.390
+I'll give you some challenges on this one.
+
+72
+05:18.390 --> 05:23.030
+So you solve those problems and you can practice this one by yourself.

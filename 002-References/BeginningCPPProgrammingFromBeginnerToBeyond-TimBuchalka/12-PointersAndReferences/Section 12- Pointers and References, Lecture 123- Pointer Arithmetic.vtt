@@ -1,0 +1,1047 @@
+WEBVTT
+
+00:00:05.520 --> 00:00:08.820
+In this video we'll, learn
+about pointer arithmetic in c++.
+
+00:00:09.430 --> 00:00:12.770
+In c++, pointers can be used
+in assignment expressions,
+
+00:00:13.200 --> 00:00:15.870
+arithmetic expressions and
+comparison expressions.
+
+00:00:16.760 --> 00:00:19.920
+C++ allows a subset of the
+arithmetic operators to
+
+00:00:19.920 --> 00:00:21.190
+work with pointer variables.
+
+00:00:22.009 --> 00:00:24.959
+Pointer arithmetic operators only
+make sense when you use them with
+
+00:00:24.970 --> 00:00:28.530
+raw arrays, but they're a very
+powerful way to manipulate them.
+
+00:00:32.469 --> 00:00:35.219
+Let's start by looking at the
+increment and decrement operators
+
+00:00:35.250 --> 00:00:36.820
+in the context of pointers.
+
+00:00:38.730 --> 00:00:41.540
+The increment operator increments
+the address stored in a pointer
+
+00:00:41.540 --> 00:00:45.199
+variable, so that it points to the
+next element in contiguous memory.
+
+00:00:45.590 --> 00:00:49.930
+So if integer pointer is currently
+pointing to address 1000, then integer
+
+00:00:49.930 --> 00:00:53.400
+pointer plus plus will increment
+it by the size of whatever it's
+
+00:00:53.400 --> 00:00:55.830
+pointing to, in this case, an integer.
+
+00:00:56.130 --> 00:00:59.250
+It's 4 on my machine, so
+now we will point to 1004.
+
+00:01:00.460 --> 00:01:02.650
+in the case of a double,
+it would be larger.
+
+00:01:03.139 --> 00:01:06.050
+If a pointer is pointing to the
+address of a very large data
+
+00:01:06.050 --> 00:01:09.330
+type, then the increment operator
+would increment it by whatever the
+
+00:01:09.330 --> 00:01:11.410
+size of that large data type is.
+
+00:01:12.320 --> 00:01:14.820
+The decrement operator works
+exactly the same way except
+
+00:01:14.820 --> 00:01:17.150
+that it decrements the values
+stored in the pointer variable.
+
+00:01:21.700 --> 00:01:24.890
+We can also use the addition and
+subtraction operators with pointers.
+
+00:01:25.580 --> 00:01:28.429
+The addition operator determines the
+operand on the right hand side of the
+
+00:01:28.430 --> 00:01:32.950
+expression and multiplies that number
+by the size of the element, and that's
+
+00:01:32.950 --> 00:01:34.310
+what's being added to the pointer.
+
+00:01:34.850 --> 00:01:37.800
+So adding two to an integer
+pointer increments the pointer by
+
+00:01:37.820 --> 00:01:39.550
+two times the size of an integer.
+
+00:01:40.400 --> 00:01:44.600
+Obviously, pointer arithmetic is
+machine specific-since the size of c++
+
+00:01:44.610 --> 00:01:46.369
+types vary from machine to machine.
+
+00:01:47.449 --> 00:01:50.580
+The subtraction operator works
+in the same way except that we're
+
+00:01:50.590 --> 00:01:52.310
+decrementing the pointer's value.
+
+00:01:55.790 --> 00:01:58.710
+What do you think is the result of
+subtracting one pointer from another.
+
+00:01:59.950 --> 00:02:02.810
+Well, if both pointers point
+to the same data type, then the
+
+00:02:02.810 --> 00:02:05.640
+result will be the number of
+elements between the two pointers.
+
+00:02:06.250 --> 00:02:08.289
+If the pointers point to
+different data types then
+
+00:02:08.289 --> 00:02:09.350
+you'll get a compiler error.
+
+00:02:12.420 --> 00:02:14.500
+Finally, let's see how
+we can compare pointers.
+
+00:02:14.730 --> 00:02:17.199
+We can compare pointers
+with the equality operators.
+
+00:02:17.610 --> 00:02:20.539
+If we want to compare two pointers,
+we can simply compare them using
+
+00:02:20.540 --> 00:02:22.290
+the equal or not equal operators.
+
+00:02:22.869 --> 00:02:26.610
+But be aware that this will compare
+the values of the pointer variables.
+
+00:02:26.740 --> 00:02:30.070
+So if the pointers are pointing
+to the same address, then they're
+
+00:02:30.070 --> 00:02:33.030
+considered equal, otherwise
+they're considered not equal.
+
+00:02:33.630 --> 00:02:36.309
+The data that they're pointing
+to is not considered when
+
+00:02:36.309 --> 00:02:37.400
+checking for equality.
+
+00:02:38.370 --> 00:02:40.949
+The sample code shows an
+example of comparing pointers.
+
+00:02:40.949 --> 00:02:45.179
+In this example, p1 and p2
+point to different addresses.
+
+00:02:46.119 --> 00:02:48.840
+And p1 and p3 point
+to the same address.
+
+00:02:49.860 --> 00:02:53.430
+So you can see that if we compare
+p1 and p2 we get back false.
+
+00:02:53.980 --> 00:02:56.840
+And if we compare p1 and
+p3, we get back true.
+
+00:02:58.190 --> 00:03:00.780
+All three pointers point to
+strings with the value frank
+
+00:03:00.780 --> 00:03:03.359
+but that's not considered when
+you want to compare pointers.
+
+00:03:03.870 --> 00:03:06.160
+So how do you compare what
+the pointers are pointing to?
+
+00:03:06.630 --> 00:03:09.700
+Simple, just follow the pointers,
+dereference them and then
+
+00:03:09.700 --> 00:03:10.920
+check what they're pointing to.
+
+00:03:11.110 --> 00:03:12.400
+I'll show you an example next.
+
+00:03:15.559 --> 00:03:18.309
+Here we have the same example
+except that we're dereferencing the
+
+00:03:18.310 --> 00:03:19.839
+pointers before we're comparing them.
+
+00:03:20.340 --> 00:03:24.220
+So in this case, p1 and p2 point
+to different strings but those
+
+00:03:24.220 --> 00:03:27.740
+strings both happen to be frank,
+so this will display true.
+
+00:03:28.200 --> 00:03:31.259
+P1 and p3 point to the same
+string which is Frank, so
+
+00:03:31.259 --> 00:03:32.519
+this will also display true.
+
+00:03:33.099 --> 00:03:35.000
+So that's an intro to
+pointer arithmetic.
+
+00:03:35.260 --> 00:03:37.990
+Let's head over to the ide, and
+I'll show you some more examples.
+
+00:03:39.930 --> 00:03:43.109
+Okay, so I'm in the IDE, and I'm
+in the section 12 workspace in
+
+00:03:43.110 --> 00:03:44.790
+the pointer arithmetic project.
+
+00:03:45.110 --> 00:03:47.969
+So let's go over a couple of
+examples of pointer arithmetic.
+
+00:03:48.690 --> 00:03:51.509
+You can see here that I've
+got a scores array, which
+
+00:03:51.509 --> 00:03:52.649
+is an array of integers.
+
+00:03:53.010 --> 00:03:59.855
+And I've initialized it to
+100 95 89 68 and negative 1.
+
+00:03:59.960 --> 00:04:03.289
+I'm using the negative 1 as a sentinel
+because what I want to do is I want
+
+00:04:03.290 --> 00:04:06.639
+to loop through this array and when
+I see negative one I want to stop.
+
+00:04:06.950 --> 00:04:10.359
+Okay, so I also have and
+this is called scores, that's
+
+00:04:10.359 --> 00:04:11.600
+the name of this array here.
+
+00:04:11.889 --> 00:04:13.480
+Then I've got my score pointer.
+
+00:04:15.700 --> 00:04:17.520
+And I'm initializing two scores.
+
+00:04:17.520 --> 00:04:19.539
+So right now, it's
+pointing right here.
+
+00:04:19.810 --> 00:04:24.510
+Let's say that this is addressed
+a, 1000, 1004, 1008, and we'll
+
+00:04:24.950 --> 00:04:30.730
+use decimal, here 1012 and 10016,
+assuming 4 byte integers here.
+
+00:04:31.379 --> 00:04:32.120
+Okay, perfect.
+
+00:04:32.260 --> 00:04:36.040
+So now let's loop through
+this array using the pointer.
+
+00:04:36.430 --> 00:04:40.389
+Okay, so what I'm doing here is
+I'm dereferencing score pointer.
+
+00:04:40.389 --> 00:04:42.890
+So follow the pointer
+to where it's pointing.
+
+00:04:43.309 --> 00:04:46.520
+And then I'm checking the value
+at that location to be negative 1.
+
+00:04:46.920 --> 00:04:50.034
+Okay, so I want to loop while
+it's not equal to negative 1.
+
+00:04:50.160 --> 00:04:51.440
+So I want to loop through this here.
+
+00:04:51.650 --> 00:04:53.690
+Once I see negative 1 I want to stop.
+
+00:04:54.380 --> 00:04:56.210
+Okay, so that's what's
+going to happen here.
+
+00:04:56.210 --> 00:04:59.630
+So score pointer right now is
+pointing to memory location of 1000.
+
+00:05:00.260 --> 00:05:02.630
+I'm going to dereference
+that I've got my 100.
+
+00:05:02.900 --> 00:05:04.340
+It's definitely not equal to minus 1.
+
+00:05:05.070 --> 00:05:08.330
+So what am i going to display,
+I'm not just playing score pointer
+
+00:05:08.330 --> 00:05:11.410
+because that would display a 1000,
+I'm dereferencing score pointer
+
+00:05:11.590 --> 00:05:13.180
+and that'll display the 100.
+
+00:05:14.830 --> 00:05:17.070
+Okay, now we get into
+the pointer arithmetic.
+
+00:05:17.330 --> 00:05:19.810
+What we're saying is score
+pointer plus plus, in other words
+
+00:05:19.849 --> 00:05:21.280
+increment the score pointer.
+
+00:05:21.849 --> 00:05:23.820
+Well, what do we increment it by.
+
+00:05:24.129 --> 00:05:26.150
+We're connecting it by
+whatever it's pointing to.
+
+00:05:26.150 --> 00:05:29.780
+So in this case, by 4 because
+I've got 4 byte integers.
+
+00:05:30.030 --> 00:05:33.020
+So this will no longer point
+here, it'll now point here.
+
+00:05:33.700 --> 00:05:36.799
+We go back up to the loop, we check
+to see if we're pointing to minus
+
+00:05:36.799 --> 00:05:42.090
+1, we're not, and we display our
+dereference pointer, which is now 95.
+
+00:05:43.830 --> 00:05:45.680
+Again, we point to the next one.
+
+00:05:46.110 --> 00:05:49.615
+Now we're pointing to a 1008,
+it's not minus 1, so I'm
+
+00:05:49.615 --> 00:05:51.090
+going to display that 89.
+
+00:05:51.150 --> 00:05:52.929
+I'm going to increment
+my pointer again.
+
+00:05:53.580 --> 00:05:57.530
+Now I'm pointing to address 1012,
+which is again not equal to minus 1.
+
+00:05:58.279 --> 00:06:01.840
+I'm going to display the 68, and
+I'm going to increment my pointer
+
+00:06:01.840 --> 00:06:03.370
+for the last time right here.
+
+00:06:04.320 --> 00:06:06.890
+I check to see that my pointer
+is not pointing to minus 1.
+
+00:06:07.240 --> 00:06:08.140
+Well, it is.
+
+00:06:08.260 --> 00:06:09.960
+In this case my dereference pointer.
+
+00:06:10.460 --> 00:06:11.330
+So I stop.
+
+00:06:12.030 --> 00:06:16.589
+So this is the way you can loop
+through an array using a pointer
+
+00:06:16.589 --> 00:06:18.229
+and a sentinel value in this case.
+
+00:06:18.230 --> 00:06:19.709
+This is called a sentimental value.
+
+00:06:20.769 --> 00:06:23.409
+And this is commonly used
+as the terminator basically.
+
+00:06:23.659 --> 00:06:25.719
+So you keep looping until
+you hit a terminator.
+
+00:06:26.699 --> 00:06:29.219
+Okay, so let me clear
+this, and let's run this.
+
+00:06:29.699 --> 00:06:32.199
+And we should see that those
+array elements display.
+
+00:06:33.429 --> 00:06:36.577
+And there they are, 100 95 89 and 68.
+
+00:06:36.650 --> 00:06:38.060
+Those are our four array elements.
+
+00:06:38.060 --> 00:06:41.130
+We don't display minus 1
+because that is our sentinel.
+
+00:06:42.330 --> 00:06:45.010
+Okay, so that's a simple
+example of pointer arithmetic.
+
+00:06:45.210 --> 00:06:47.689
+Now let me show you another way
+to do this, that's commonly seen.
+
+00:06:48.960 --> 00:06:52.919
+Okay, so it's everything's exactly
+the same except you'll notice right
+
+00:06:52.920 --> 00:06:57.570
+here in the previous example, we had
+two lines of code, one dereference the
+
+00:06:57.570 --> 00:07:00.719
+pointer right here and then the other
+one incremented the pointer to point
+
+00:07:00.720 --> 00:07:02.780
+to the next integer in the array.
+
+00:07:03.280 --> 00:07:04.630
+Here we're doing it all in one.
+
+00:07:04.900 --> 00:07:07.150
+So we've got this piece
+of code right here.
+
+00:07:07.370 --> 00:07:12.529
+So we're saying dereference
+score pointer and increment it.
+
+00:07:12.709 --> 00:07:15.580
+Okay, so there's a lot going
+on here and it's important to
+
+00:07:15.580 --> 00:07:16.670
+understand what's going on.
+
+00:07:17.630 --> 00:07:19.250
+First of all, we have two operators.
+
+00:07:19.300 --> 00:07:21.770
+So the first thing we do is we
+look in the precedence chart to
+
+00:07:21.770 --> 00:07:23.159
+see which one has precedence.
+
+00:07:23.300 --> 00:07:25.409
+Well, they both have
+the same precedence.
+
+00:07:25.639 --> 00:07:28.630
+So in this case, what we do is
+we look at the associativity.
+
+00:07:29.990 --> 00:07:32.060
+The associativity is right to left.
+
+00:07:32.270 --> 00:07:36.100
+So what that means is that I'm
+incrementing score pointer.
+
+00:07:36.160 --> 00:07:37.530
+So I'm incrementing the pointer.
+
+00:07:37.840 --> 00:07:40.300
+I'm not incrementing the
+what it's pointing to if
+
+00:07:40.300 --> 00:07:41.780
+I had something like this.
+
+00:07:46.070 --> 00:07:48.790
+That's real different now right
+because what I'm doing here is
+
+00:07:48.790 --> 00:07:51.620
+I'm dereferencing the pointer,
+so I'm getting the integer
+
+00:07:51.620 --> 00:07:55.500
+it's pointing to, and then I'm
+incrementing that integer, but
+
+00:07:55.510 --> 00:07:56.680
+that's not what we're doing here.
+
+00:07:56.690 --> 00:08:00.120
+In this case, what we're doing
+is we're dereferencing the pointer
+
+00:08:00.120 --> 00:08:04.720
+and we're incrementing the pointer after
+we use it. Well, the use is right here.
+
+00:08:05.720 --> 00:08:09.260
+The use is basically
+de-reference the pointer and
+
+00:08:09.260 --> 00:08:10.660
+then increment the pointer.
+
+00:08:10.660 --> 00:08:12.860
+So it's exactly what we're
+doing here, right. We are doing
+
+00:08:12.860 --> 00:08:15.960
+de-reference to pointer
+and then increment the pointer.
+
+00:08:15.960 --> 00:08:19.280
+But this, you see a
+lot in c++ code, right.
+
+00:08:19.280 --> 00:08:21.720
+You dereference and an
+increment or a decrement if
+
+00:08:21.720 --> 00:08:22.659
+you want to go the other way.
+
+00:08:23.590 --> 00:08:27.160
+If we run this example -- let me
+clear this real quick, if we run
+
+00:08:27.160 --> 00:08:31.622
+this example, you'll see that we
+get exactly the same output 100
+
+00:08:31.622 --> 00:08:35.249
+95 89 68, exactly the same thing.
+
+00:08:36.380 --> 00:08:39.260
+Okay, I just wanted to show you
+that style because you tend to see
+
+00:08:39.260 --> 00:08:41.350
+this sort of style a lot out there.
+
+00:08:43.080 --> 00:08:44.660
+Okay, so now let's do another example.
+
+00:08:45.570 --> 00:08:47.739
+Let me scroll up just a little
+bit and let's see how we can
+
+00:08:47.740 --> 00:08:50.030
+compare pointers in this example.
+
+00:08:50.520 --> 00:08:55.460
+So let's right about here, I'm
+going to comment this code out or
+
+00:08:55.460 --> 00:08:56.990
+I should say uncomment this code.
+
+00:08:57.420 --> 00:08:58.750
+And let's go through this.
+
+00:08:59.160 --> 00:09:03.760
+So here I've got three
+string objects: s1 s2 s3.
+
+00:09:04.020 --> 00:09:07.640
+So they're here s1 s2 and s3.
+
+00:09:09.130 --> 00:09:11.950
+S1 points to a string, Frank.
+
+00:09:13.030 --> 00:09:14.340
+S2 also a different string.
+
+00:09:14.340 --> 00:09:14.730
+Frank.
+
+00:09:14.730 --> 00:09:17.439
+It's the same Frank but in
+a different memory location.
+
+00:09:17.840 --> 00:09:19.510
+And s3 is James.
+
+00:09:20.610 --> 00:09:25.600
+Now each these objects has a memory
+location associated with it, right.
+
+00:09:25.810 --> 00:09:28.420
+So let's say that this one
+is at a 1000, this one is a
+
+00:09:28.420 --> 00:09:30.649
+2000, and this one is at 3000.
+
+00:09:30.889 --> 00:09:32.719
+That way it's really easy
+to keep them straight.
+
+00:09:34.820 --> 00:09:35.470
+Perfect.
+
+00:09:35.949 --> 00:09:36.550
+Now here we go.
+
+00:09:36.550 --> 00:09:40.480
+Now we've got p1 is a pointer to a
+string, so it can hold the addresses
+
+00:09:40.480 --> 00:09:43.810
+of strings that those guys right
+here are addresses of strings,
+
+00:09:43.820 --> 00:09:44.999
+so we can assign any of them.
+
+00:09:45.270 --> 00:09:46.070
+So let's do that.
+
+00:09:46.260 --> 00:09:46.970
+So what is s1?
+
+00:09:48.559 --> 00:09:54.079
+S1 is the string object right here, so
+we can assign the address of s1 to p1.
+
+00:09:54.380 --> 00:09:59.800
+So p1 now has a 1000 in it,
+and there's my pointer, right.
+
+00:09:59.910 --> 00:10:04.540
+P2 is the address of
+string2, which is 2000.
+
+00:10:06.020 --> 00:10:07.630
+And there's my pointer to that one.
+
+00:10:08.110 --> 00:10:11.469
+And now p3, we're assigning
+the address of s1 again.
+
+00:10:11.680 --> 00:10:13.260
+So there's the 1000.
+
+00:10:14.600 --> 00:10:17.310
+And p1 -- p3 goes around this way.
+
+00:10:17.310 --> 00:10:19.230
+Let me do it that way,
+it's pointing there.
+
+00:10:20.270 --> 00:10:23.230
+Okay, so now I'm using the
+bool alpha modifier, so we
+
+00:10:23.230 --> 00:10:24.309
+just print true and false.
+
+00:10:24.320 --> 00:10:25.929
+So let's do some comparisons here.
+
+00:10:26.449 --> 00:10:28.440
+Does p1 equal p2?
+
+00:10:29.580 --> 00:10:31.369
+Well, p1 is a 1000.
+
+00:10:31.499 --> 00:10:32.780
+P2 is 2000.
+
+00:10:32.810 --> 00:10:34.560
+So no, right.
+
+00:10:34.830 --> 00:10:39.030
+They both points to strings who
+are Frank but we're not considering
+
+00:10:39.030 --> 00:10:41.910
+what this what they're pointing
+to, we're only considering the
+
+00:10:41.910 --> 00:10:45.310
+value of p1 and the value of p2,
+which are definitely different.
+
+00:10:45.520 --> 00:10:46.759
+So we get back false.
+
+00:10:47.760 --> 00:10:49.569
+How about this, p1 and p3?
+
+00:10:49.569 --> 00:10:52.200
+Well, p1 is a 1000 and p3 is a 1000.
+
+00:10:52.570 --> 00:10:53.980
+So that's definitely true.
+
+00:10:54.850 --> 00:10:58.150
+Okay, so notice that we're
+checking the pointer's value
+
+00:10:58.150 --> 00:10:59.460
+not what it's pointing to.
+
+00:10:59.870 --> 00:11:02.560
+Now if we want to look to see
+if we're pointing to the same
+
+00:11:02.560 --> 00:11:06.429
+string, then what we do is we
+de-reference the pointers here.
+
+00:11:07.289 --> 00:11:11.300
+Okay, so you can see here
+this will output p1, right,
+
+00:11:11.460 --> 00:11:13.250
+follow p1 so dereference p1.
+
+00:11:13.550 --> 00:11:15.589
+If I dereference p1, I get Frank.
+
+00:11:16.260 --> 00:11:21.800
+So this will say Frank
+compared to dereference p2.
+
+00:11:22.049 --> 00:11:24.039
+Follow p2, I get Frank again.
+
+00:11:26.210 --> 00:11:27.200
+Frank is Frank.
+
+00:11:27.420 --> 00:11:29.350
+That's true because
+now we're comparing the
+
+00:11:29.350 --> 00:11:31.080
+strings not the pointers.
+
+00:11:32.010 --> 00:11:33.970
+Now over here, we've got p1 and p3.
+
+00:11:34.000 --> 00:11:38.999
+P1 and p3 both point to the same
+memory address, so obviously what
+
+00:11:39.000 --> 00:11:40.390
+they're pointing to is the same.
+
+00:11:40.390 --> 00:11:42.750
+And in this case, Frank is Frank also.
+
+00:11:43.400 --> 00:11:49.193
+But now let's say we change p3 and we
+change the pointer in p3 to 0.2 s3.
+
+00:11:49.193 --> 00:11:52.879
+The address of this
+guy right here 3000.
+
+00:11:53.199 --> 00:11:54.539
+So this is now 3000.
+
+00:11:54.820 --> 00:11:55.690
+We're pointing here.
+
+00:11:55.700 --> 00:11:57.250
+No longer pointing here.
+
+00:11:58.779 --> 00:12:01.880
+Now what we're doing is we're
+comparing -- we're dereferencing
+
+00:12:02.320 --> 00:12:07.060
+p1, which points to Frank and
+we're dereferencing p3, which
+
+00:12:07.070 --> 00:12:10.169
+points to james so now what
+we're doing is we're comparing
+
+00:12:10.530 --> 00:12:13.700
+the string Frank and the string
+James which we get back a false.
+
+00:12:15.139 --> 00:12:17.669
+Okay, I know it's a lot of
+pointers to follow, but it's pretty
+
+00:12:17.920 --> 00:12:20.439
+pretty clear once you really take
+your time and walk through it.
+
+00:12:20.670 --> 00:12:22.740
+So let's clear this and
+give this one a run.
+
+00:12:23.130 --> 00:12:25.170
+And like I said you can
+play with this code.
+
+00:12:25.500 --> 00:12:29.080
+So you can see what's
+happening here, right.
+
+00:12:29.230 --> 00:12:32.420
+This address and this address
+are not true, not the same.
+
+00:12:32.420 --> 00:12:34.590
+So obviously those
+pointers are not the same.
+
+00:12:35.420 --> 00:12:38.900
+In this case, it is the same
+address, so we have a true.
+
+00:12:39.790 --> 00:12:42.200
+And then we're comparing Frank
+and Frank, which is true, Frank
+
+00:12:42.200 --> 00:12:44.810
+and Frank, which is true and
+Frank and James which is false.
+
+00:12:45.230 --> 00:12:47.410
+In the bottom three examples
+here, we're actually comparing
+
+00:12:47.410 --> 00:12:49.230
+the strings, not the pointers.
+
+00:12:50.509 --> 00:12:53.680
+Okay, So let's do one more
+with subtraction, so you can
+
+00:12:53.740 --> 00:12:54.870
+see what that looks like.
+
+00:12:55.650 --> 00:12:57.650
+And I'll uncomment all this out.
+
+00:12:59.000 --> 00:13:00.370
+And we'll walk through this example.
+
+00:13:00.370 --> 00:13:01.990
+This is a real simple example here.
+
+00:13:02.429 --> 00:13:03.620
+In this case what have I got?
+
+00:13:03.900 --> 00:13:07.410
+I've got name which is an
+array of characters, right.
+
+00:13:07.410 --> 00:13:13.680
+So I've got f r a n k and
+a null character because
+
+00:13:13.680 --> 00:13:15.110
+this is a c-style string.
+
+00:13:16.990 --> 00:13:19.170
+So I've got character pointer one.
+
+00:13:19.380 --> 00:13:21.800
+So I've got character pointer one.
+
+00:13:22.210 --> 00:13:23.490
+It's a pointer to a character.
+
+00:13:23.490 --> 00:13:25.250
+So I can point to any
+one of these guys here.
+
+00:13:25.910 --> 00:13:27.830
+And I'm initializing
+that to null pointer.
+
+00:13:28.190 --> 00:13:34.060
+And then I've got character
+pointer two, both nulled out.
+
+00:13:34.840 --> 00:13:35.780
+Okay, So now what do I do.
+
+00:13:35.780 --> 00:13:39.689
+I'm saying character pointer one
+is pointing to the address of
+
+00:13:39.710 --> 00:13:41.900
+name sub-0, what's name sub 0?
+
+00:13:42.570 --> 00:13:43.850
+That f, right there.
+
+00:13:43.850 --> 00:13:44.630
+The address of f.
+
+00:13:44.630 --> 00:13:46.989
+I could have just said name
+it means exactly the same
+
+00:13:47.000 --> 00:13:49.510
+thing, but I wanted to do it a
+different way so you could see.
+
+00:13:49.760 --> 00:13:52.740
+So character pointer
+one is pointing here.
+
+00:13:53.750 --> 00:13:59.419
+And character pointer two is
+pointing to remember 0 1 2
+
+00:13:59.679 --> 00:14:02.219
+3 4 5, in this case, right.
+
+00:14:02.469 --> 00:14:05.650
+So it's pointing to the address
+of name sub-3, which is the n.
+
+00:14:06.760 --> 00:14:11.080
+Right now, assuming that characters
+are one byte, this would be a 1000.
+
+00:14:12.310 --> 00:14:15.710
+This one would be at
+a 1001, 1002 and 1003.
+
+00:14:19.360 --> 00:14:23.380
+So this would be a 1003
+and this would be 1000.
+
+00:14:24.270 --> 00:14:27.150
+So when I subtract those two
+pointers like I'm doing right here,
+
+00:14:27.150 --> 00:14:29.599
+it's subtracting 1003 from a 1000.
+
+00:14:30.460 --> 00:14:31.550
+And that's what I'm getting back.
+
+00:14:31.570 --> 00:14:34.270
+There's three characters
+between those two pointers.
+
+00:14:34.280 --> 00:14:37.110
+And that's all the point of
+subtraction means, right.
+
+00:14:37.210 --> 00:14:38.520
+So let's let's give this a run.
+
+00:14:40.260 --> 00:14:43.520
+And the last example here
+says in the string Frank n is
+
+00:14:43.520 --> 00:14:45.250
+three characters away from f.
+
+00:14:45.740 --> 00:14:47.390
+And that's exactly what we expected.
+
+00:14:48.560 --> 00:14:52.920
+Okay, So this gives you a little bit
+of a intro to pointer arithmetic.
+
+00:14:52.920 --> 00:14:54.430
+You can see it's
+pretty straightforward.
+
+00:14:54.759 --> 00:14:57.089
+Never think of adding 1
+or adding 2 or adding 3.
+
+00:14:57.089 --> 00:15:01.040
+Always think about adding one of
+the type that I'm pointing to, it
+
+00:15:01.040 --> 00:15:05.350
+could be 4 bytes, 8 bytes 100 bytes
+depending on what I'm pointing to.

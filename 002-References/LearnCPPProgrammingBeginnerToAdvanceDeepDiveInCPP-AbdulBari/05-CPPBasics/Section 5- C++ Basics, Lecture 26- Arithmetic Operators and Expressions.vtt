@@ -1,0 +1,697 @@
+WEBVTT
+
+0
+00:00.710 --> 00:06.680
+In this let us learn ABOUT OPERATORS and also expression just to get the basic idea.
+
+1
+00:06.730 --> 00:09.880
+Then in the next video we will use them in the programs.
+
+2
+00:10.420 --> 00:13.440
+So let us understand what are operators.
+
+3
+00:13.450 --> 00:16.180
+Operators are predefined in C++ programming.
+
+4
+00:16.180 --> 00:23.760
+They are useful for performing some operations and there are symbols used for operators like in mathematics
+
+5
+00:23.800 --> 00:27.340
+a plus is the symbol used for adding two no. same way
+
+6
+00:27.450 --> 00:32.600
+Here symbols are there and every symbol is having some operation associated with that.
+
+7
+00:32.770 --> 00:36.010
+So let us look at some of the operators I have written here.
+
+8
+00:36.110 --> 00:41.410
+See first of all are arithmetic operators arithmetic operators are addition subtraction multiplication
+
+9
+00:41.410 --> 00:42.880
+division and the module.
+
+10
+00:43.000 --> 00:46.140
+These are the operators I'm going to discuss them right now.
+
+11
+00:46.270 --> 00:51.820
+Then the other operators that is relational operators these are useful for comparing numbers, comparing
+
+12
+00:51.820 --> 00:52.570
+values.
+
+13
+00:52.630 --> 00:57.850
+So these operators are less than, less than equal to, greater than, greater than equal to, equal to and not equal
+
+14
+00:57.850 --> 00:58.060
+to.
+
+15
+00:58.510 --> 01:01.640
+So these operators will learn afterwards. so next logical.
+
+16
+01:01.840 --> 01:06.880
+Now I don't know whether you have the idea about this one or not but I will go at it as a very new and
+
+17
+01:06.880 --> 01:08.290
+fresh topic for you.
+
+18
+01:08.290 --> 01:15.160
+So later on we will learn about AND, OR, NOT logical operations and this Bitwise operations
+
+19
+01:15.160 --> 01:19.510
+are also similar but they have a big difference compared to these two.
+
+20
+01:19.540 --> 01:23.440
+These are also AND, OR, NOT & XOR.
+
+21
+01:23.570 --> 01:28.780
+So we learn we have a separate video on this. then increment decrement operator.
+
+22
+01:28.780 --> 01:34.030
+These are more powerful and more commonly use operations in C++ programming.
+
+23
+01:34.030 --> 01:40.150
+Next this assignment, we have used this one right for storing the value, and there are many other operations so
+
+24
+01:40.150 --> 01:44.620
+we will learn them as we go on covering the new topics over the course move on.
+
+25
+01:44.620 --> 01:46.600
+We will learn about more operators.
+
+26
+01:46.680 --> 01:52.360
+So right now in this video we will learn about arithmetic operations and also we will learn how to form
+
+27
+01:52.540 --> 01:53.810
+expressions.
+
+28
+01:53.950 --> 02:00.290
+So let us get the idea about this. let us take the operation see addition subtraction multiplication.
+
+29
+02:00.310 --> 02:01.140
+this is star.
+
+30
+02:01.150 --> 02:04.210
+It is also called us astrik.
+
+31
+02:04.240 --> 02:07.650
+This is called as astrik, students call it as star but
+
+32
+02:07.660 --> 02:08.060
+This is astrik.
+
+33
+02:08.060 --> 02:09.750
+addition, subtraction, 
+
+34
+02:09.760 --> 02:13.100
+This is used as multiplication and then this is a division.
+
+35
+02:13.270 --> 02:20.260
+And this is percentile symbol and this is mod this we call it s mod in C++.
+
+36
+02:20.290 --> 02:22.020
+Let us understand how they work.
+
+37
+02:22.840 --> 02:28.830
+see They are meant for performing operation on data for first of all you should have data where do you
+
+38
+02:28.840 --> 02:30.400
+keep data in your program.
+
+39
+02:30.480 --> 02:31.630
+In the variables.
+
+40
+02:31.720 --> 02:34.150
+So let me take some variables.
+
+41
+02:34.210 --> 02:37.070
+I'm not writing a complete program just I'm showing you here.
+
+42
+02:37.090 --> 02:45.600
+I have two variables a b as will as I will take C now a is having value 10 and the b is having value of
+
+43
+02:45.610 --> 02:47.300
+5.
+
+44
+02:47.360 --> 02:50.210
+Now let us perform those operations so first one.
+
+45
+02:50.380 --> 02:57.450
+If I say C assign a plus b then the value of a and b are added and the result is is stored here.
+
+46
+02:57.450 --> 03:00.610
+So the system plus 5 and the result is 15.
+
+47
+03:00.610 --> 03:02.690
+That is a stored in this form.
+
+48
+03:03.010 --> 03:05.920
+This is how it works very well do you use it in your program.
+
+49
+03:06.240 --> 03:08.190
+So we'll be using it afterwards.
+
+50
+03:08.210 --> 03:10.030
+Now instead of this one first one.
+
+51
+03:10.060 --> 03:17.340
+If I use this C assign a minus B then this is 10 minus five and the result of this one is 5.
+
+52
+03:17.350 --> 03:19.630
+That is stored here.
+
+53
+03:20.050 --> 03:21.580
+Then let us look at next.
+
+54
+03:21.580 --> 03:24.190
+That is multiplication. third one,
+
+55
+03:24.340 --> 03:31.940
+If I write like this C assign a multiplied by B then this is 10*5 i.e 50.
+
+56
+03:31.970 --> 03:35.350
+That is the 50 that is stored in this one.
+
+57
+03:35.650 --> 03:37.470
+Now other 2 we have to see.
+
+58
+03:37.540 --> 03:39.330
+These are important right.
+
+59
+03:39.360 --> 03:41.340
+There is a divide and mod.
+
+60
+03:41.560 --> 03:42.790
+So let us look at this.
+
+61
+03:42.820 --> 03:47.830
+So here I will show you first one that is a divide so ask but this order is the fourth one.
+
+62
+03:48.130 --> 03:54.830
+So if I say a divided by b and the result is in C so what does it mean.
+
+63
+03:54.850 --> 03:58.040
+Let us look at this see here.
+
+64
+03:58.210 --> 04:03.070
+It is divided by B values how much 10 and the B values how much.
+
+65
+04:03.070 --> 04:04.420
+5.
+
+66
+04:04.420 --> 04:11.780
+So this gets divided this 5 will divide this 10 for 2 times 5 two's 10.
+
+67
+04:12.020 --> 04:12.480
+Right.
+
+68
+04:12.550 --> 04:13.900
+And this is Zero.
+
+69
+04:14.080 --> 04:16.470
+So let us look at these things.
+
+70
+04:16.600 --> 04:18.270
+Let us learn this.
+
+71
+04:18.370 --> 04:19.890
+This is a dividend.
+
+72
+04:21.000 --> 04:22.690
+This is divisor.
+
+73
+04:23.810 --> 04:26.120
+And this is quotient.
+
+74
+04:26.150 --> 04:34.900
+And what ever is remaining after dividing is a remainder dividend and be divisor.
+
+75
+04:34.910 --> 04:36.490
+So this is important for us.
+
+76
+04:36.500 --> 04:37.960
+This is quotient.
+
+77
+04:38.030 --> 04:42.710
+This is a reminder this is quotient and this reminder.
+
+78
+04:42.720 --> 04:44.250
+So when i use a divide.
+
+79
+04:44.490 --> 04:51.540
+What I get if I use a divide I get the result that is quotient  10 divided by 5 quotient is
+
+80
+04:51.660 --> 04:55.820
+two this is two if suppose.
+
+81
+04:55.880 --> 04:59.760
+This is not a ten I will change it now instead of ten.
+
+82
+04:59.810 --> 05:03.280
+If a is thirteen then what.
+
+83
+05:03.530 --> 05:05.330
+So let us see it by removing this one.
+
+84
+05:05.330 --> 05:06.780
+I will show it here.
+
+85
+05:07.010 --> 05:09.520
+See here I have a is 13 and B is a five.
+
+86
+05:09.530 --> 05:10.890
+These are integers.
+
+87
+05:10.940 --> 05:20.000
+Then if I c assign a divided by B then what happens is a 13, 13 divided by five and
+
+88
+05:20.000 --> 05:24.230
+this gets divided by two dimes and that is ten and this is remainder.
+
+89
+05:24.710 --> 05:28.700
+So what is quotient? quotient is two, and the remainder is a 3.
+
+90
+05:28.700 --> 05:28.940
+Right.
+
+91
+05:29.150 --> 05:32.290
+So this gives what? quotient. division gives quotient.
+
+92
+05:32.360 --> 05:41.840
+So what will be the result 13 divided by 5 is two it is not two but  two point six.
+
+93
+05:41.970 --> 05:43.740
+So that is the decimal.
+
+94
+05:43.860 --> 05:45.010
+It is a floating point.
+
+95
+05:45.060 --> 05:46.050
+But what is the data type.
+
+96
+05:46.050 --> 05:46.730
+We have taken.
+
+97
+05:46.740 --> 05:50.190
+We have taken integer so it will be integer only.
+
+98
+05:50.280 --> 05:54.930
+So this is the one important thing that we should know if you're performing division on integers.
+
+99
+05:54.930 --> 05:57.220
+Then the result is also integer.
+
+100
+05:57.390 --> 06:01.600
+Even though if you're getting the floating point than it will not be showing it.
+
+101
+06:01.600 --> 06:02.750
+how to get floating point result,
+
+102
+06:02.790 --> 06:04.230
+I will show you afterwards.
+
+103
+06:04.270 --> 06:11.410
+Now next thing we will see how to use mod, see here instead of this next statement I
+
+104
+06:11.410 --> 06:15.060
+will write C assign a mod B.
+
+105
+06:15.330 --> 06:17.590
+So what is mod? the remainder.
+
+106
+06:17.610 --> 06:18.210
+What is that.
+
+107
+06:18.250 --> 06:22.260
+3. So when 13 is mod by 5.
+
+108
+06:22.260 --> 06:24.110
+So after division that remainder is 3.
+
+109
+06:24.120 --> 06:26.900
+So this gives the remainder 3.
+
+110
+06:27.110 --> 06:27.570
+That's it.
+
+111
+06:27.900 --> 06:32.080
+So the more operation gifts remained of two numbers.
+
+112
+06:32.340 --> 06:37.370
+So there's a difference if you should remember it clearly that divide gets quotient.
+
+113
+06:37.420 --> 06:39.930
+This quotient and the mod gives.
+
+114
+06:40.030 --> 06:46.350
+remainder. it's sometimes confusing for the students to understand this but this is very easy.
+
+115
+06:46.350 --> 06:50.700
+So you should know clearly what is quotient and what is a reminder that you can easily remember this
+
+116
+06:51.080 --> 06:55.670
+now I will show you if you want a float result than what you should do.
+
+117
+06:55.730 --> 06:57.250
+i will remove this and i will show you.
+
+118
+06:57.290 --> 07:03.650
+Now let us see how to get the floating point result if two integers are divided see already we have seen
+
+119
+07:03.700 --> 07:11.040
+you want to divide a and b as a and b are both integer types so 13 divided by 5.
+
+120
+07:11.040 --> 07:13.880
+This gives the result as a 2 Actual.
+
+121
+07:13.890 --> 07:16.620
+Division gives the result at two point six.
+
+122
+07:16.620 --> 07:17.530
+That is float.
+
+123
+07:18.480 --> 07:20.380
+So we want the result in float.
+
+124
+07:20.460 --> 07:26.970
+But these two are integers we won't get it but we have to typecast it to get off float.
+
+125
+07:26.970 --> 07:28.710
+So what is type casting.
+
+126
+07:28.740 --> 07:31.020
+So we can change the data type of this result.
+
+127
+07:31.030 --> 07:35.200
+This is true if you write about it we want it to be a float.
+
+128
+07:35.250 --> 07:36.560
+So the actual result.
+
+129
+07:36.570 --> 07:37.220
+What do we get.
+
+130
+07:37.220 --> 07:41.550
+That's two point six that two point six will be given to us and the variable we take.
+
+131
+07:41.550 --> 07:42.680
+This should be float.
+
+132
+07:42.720 --> 07:49.500
+So I have taken c that is float type here. now this integer division gifts floating point result.
+
+133
+07:50.340 --> 07:54.970
+So this is called us type casting type casting means changing our data type here.
+
+134
+07:55.020 --> 08:01.030
+The result would be integer but we are converting into float at the time of division only at that time
+
+135
+08:01.030 --> 08:06.480
+only like because the result what we are getting it just two point six I imagine it is truncated and
+
+136
+08:06.480 --> 08:13.050
+it is giving us 2 but  we want to point six only so right typecasting here you get
+
+137
+08:13.050 --> 08:16.030
+the actual result that is two point six.
+
+138
+08:16.080 --> 08:17.180
+So the type casting.
+
+139
+08:17.190 --> 08:20.890
+So this how we can get the float result from integer division.
+
+140
+08:20.940 --> 08:26.880
+Now next here I have one more example I have three variables all out are float only, now if I want to divide
+
+141
+08:26.970 --> 08:33.620
+a by B then the result will be floating point result only, and the
+
+142
+08:33.660 --> 08:39.480
+result I will take it in variable C so I don't have to worry about type casting anything because a and
+
+143
+08:39.480 --> 08:42.600
+b are off type float so the result will be float.
+
+144
+08:43.110 --> 08:49.310
+So from this we can understand that if we have integers and you perform any arithmetic operation on integer
+
+145
+08:49.320 --> 08:51.000
+we get the result in integer.
+
+146
+08:51.270 --> 08:53.830
+If it is a float then we get the result in float.
+
+147
+08:53.850 --> 08:59.030
+Similarly if you have any other data type then you would get the same data type.
+
+148
+08:59.190 --> 09:01.140
+Now next I will show one more thing.
+
+149
+09:01.260 --> 09:06.420
+We have seen the mod operator which gives the remainder when the two no. are divided.
+
+150
+09:06.660 --> 09:12.900
+So in this case a mod B when a is divided by B the remainder will be 3.
+
+151
+09:12.900 --> 09:15.400
+So this gives the remainder that is 3.
+
+152
+09:15.510 --> 09:16.110
+Right.
+
+153
+09:16.140 --> 09:24.560
+So this mod operation can be performed over integers. can I do a mod b here and store the result
+
+154
+09:24.560 --> 09:25.620
+in some variable.
+
+155
+09:25.740 --> 09:33.840
+No we cannot perform mod operation on float no. this you must know. then I have one more data type
+
+156
+09:33.840 --> 09:35.790
+here that is character type.
+
+157
+09:35.790 --> 09:42.720
+Suppose I wanted to perform a mod b and store them the result in c. is it allowed on characters?
+
+158
+09:42.720 --> 09:43.790
+Yes it is allowed.
+
+159
+09:43.950 --> 09:47.790
+So mod is allowed only on integers and characters.
+
+160
+09:48.880 --> 09:54.580
+Here you may get confused that how come I am storing numbers in character so if you remember we have
+
+161
+09:54.580 --> 09:59.350
+learned in the data types that characters are nothing but the numbers.
+
+162
+09:59.350 --> 10:00.920
+These are codes.
+
+163
+10:01.000 --> 10:07.640
+So every character is having a ASCII code so actually a character is integral type only so it store 
+
+164
+10:07.640 --> 10:09.160
+to the codes of the character.
+
+165
+10:09.190 --> 10:16.720
+So if you're not storing any character directly you can assign a code also or else if I right a  here
+
+166
+10:17.190 --> 10:19.290
+then this is nothing but 65.
+
+167
+10:19.630 --> 10:21.130
+It's a numeric value 65.
+
+168
+10:21.430 --> 10:28.300
+So then you perform mod mod operations perform on their numeric values that is integral values.
+
+169
+10:28.300 --> 10:32.000
+So that's all. mod operation is allowed on these two.
+
+170
+10:32.320 --> 10:35.720
+So in this video we have learned about the operators.
+
+171
+10:35.800 --> 10:38.880
+I have explained to the working of the operators. now in the 
+
+172
+10:38.880 --> 10:44.180
+Next video I will show you how to write expression and what does it mean by precedence.
+
+173
+10:44.230 --> 10:48.000
+Then after that we will write some programs using operators.

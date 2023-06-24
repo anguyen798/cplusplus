@@ -1,0 +1,115 @@
+WEBVTT
+
+00:00:05.250 --> 00:00:09.450
+In this video, we'll discuss another way to create objects in c++
+
+00:00:09.450 --> 00:00:11.450
+using a struct or structure.
+
+00:00:12.050 --> 00:00:15.050
+The struct comes from the c programming language.
+
+00:00:15.050 --> 00:00:17.950
+In c, we create structs as a container for data,
+
+00:00:18.100 --> 00:00:20.700
+much like a record in many other programming languages.
+
+00:00:21.100 --> 00:00:24.900
+C++ also supports struct since it has to be compatible with c.
+
+00:00:24.900 --> 00:00:29.000
+However, it adds the ability to treat structs very much like classes.
+
+00:00:29.660 --> 00:00:32.460
+Everything you can do with classes, you can do with structs.
+
+00:00:32.460 --> 00:00:36.460
+The only difference is that the members of the structs are public by default.
+
+00:00:36.460 --> 00:00:39.260
+Whereas, the members of a class are private by default.
+
+00:00:40.620 --> 00:00:43.620
+Here's a simple class declaration for a person class.
+
+00:00:43.620 --> 00:00:48.220
+It has a string attribute called name and a method called getname that returns that name.
+
+00:00:48.990 --> 00:00:51.290
+By default, class members are private.
+
+00:00:51.290 --> 00:00:53.790
+So if we create a p object that's a person
+
+00:00:54.190 --> 00:00:56.690
+and try to access name or call getname,
+
+00:00:56.690 --> 00:01:01.190
+the compiler will give us a compiler error saying that we don't have access to those private elements.
+
+00:01:01.740 --> 00:01:03.440
+Now let's see the same as a struct.
+
+00:01:05.000 --> 00:01:07.360
+Here we have person declared as a struct.
+
+00:01:07.360 --> 00:01:09.720
+We have the same attribute and the same member method.
+
+00:01:10.220 --> 00:01:12.520
+But now when we create the person object p
+
+00:01:12.520 --> 00:01:16.520
+and try to access its attribute or member function, the compiler is okay with it.
+
+00:01:17.070 --> 00:01:20.070
+That's because the default access for a struct is public.
+
+00:01:20.730 --> 00:01:21.390
+That's it.
+
+00:01:21.390 --> 00:01:25.050
+That's the only difference between structs and classes in c++.
+
+00:01:25.250 --> 00:01:29.950
+But there's a few general guidelines that you can use to determine if you need a structural class.
+
+00:01:30.940 --> 00:01:34.140
+It would be appropriate to use a struct when you have passive data.
+
+00:01:34.140 --> 00:01:36.740
+So the struct would act very much like a struct in c.
+
+00:01:36.990 --> 00:01:39.190
+It simply holds data and that data is public.
+
+00:01:39.590 --> 00:01:43.250
+And since the data's passive, you really don't need to create any methods in the struct.
+
+00:01:44.050 --> 00:01:46.550
+As for a class we've already seen many examples.
+
+00:01:47.050 --> 00:01:50.250
+If your objects are active or they have complex behavior,
+
+00:01:50.250 --> 00:01:54.450
+then you should use a class and implement getters and setters and member methods as needed.
+
+00:01:55.250 --> 00:01:57.850
+These guidelines are very general. But remember,
+
+00:01:57.850 --> 00:02:02.150
+other c++ programmers will likely be modifying and extending your code.
+
+00:02:02.150 --> 00:02:05.050
+So don't use c++ in a way that's very different
+
+00:02:05.050 --> 00:02:07.350
+from what c++ programmers expect.
+
+00:02:07.650 --> 00:02:10.650
+For example, don't use a struct and then make everything
+
+00:02:10.650 --> 00:02:14.450
+private in the struct so it behaves like a class, just use a class instead.

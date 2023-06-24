@@ -1,0 +1,814 @@
+WEBVTT
+
+00:00:05.300 --> 00:00:09.300
+In this video, I'd like to go over some live examples of how to use iterators.
+
+00:00:09.300 --> 00:00:12.400
+There'll be a bunch of examples here, and I'll go through them 1 at a time
+
+00:00:12.400 --> 00:00:14.600
+so that you can really understand what's going on.
+
+00:00:14.600 --> 00:00:18.900
+I'm in the section 20 workspace in the iterators project.
+
+00:00:19.800 --> 00:00:22.800
+And first things first. You'll notice that I'm including
+
+00:00:23.400 --> 00:00:25.600
+a bunch of header files here:
+
+00:00:25.600 --> 00:00:29.700
+vector, set, map and list. These are all containers in the stl.
+
+00:00:29.700 --> 00:00:32.700
+We haven't really talked about set, map and list too much,
+
+00:00:32.700 --> 00:00:35.900
+but that's the whole point. We really don't need to know that much about them
+
+00:00:35.900 --> 00:00:37.560
+to be able to iterate through them.
+
+00:00:37.560 --> 00:00:40.420
+We'll talk about them in detail in future videos.
+
+00:00:40.420 --> 00:00:43.780
+So the first thing we'll do is we'll have a couple of functions, and
+
+00:00:43.780 --> 00:00:46.660
+here's a function that we're going to use, and we're not going to use it too much.
+
+00:00:46.660 --> 00:00:48.540
+But if we ever need to display
+
+00:00:48.540 --> 00:00:52.940
+a vector of integers, we're going to call this function, it's just going to display it a nice little format.
+
+00:00:53.140 --> 00:00:57.130
+Okay. So I'm going to close that up, and that way you know what it is.
+
+00:00:57.130 --> 00:00:58.790
+So here's my first function.
+
+00:00:58.790 --> 00:01:02.780
+And what I did was I broke this up into I think 5 different functions.
+
+00:01:02.780 --> 00:01:07.440
+That way it's all more self-contained rather than having 1 just huge main with all the
+
+00:01:07.440 --> 00:01:08.440
+examples in it.
+
+00:01:08.940 --> 00:01:11.540
+So in this case, let's walk through this.
+
+00:01:11.540 --> 00:01:15.300
+We're creating a vector right here of integers called nums1.
+
+00:01:15.300 --> 00:01:18.500
+And we're putting 1 2 3 4 and 5 into that vector.
+
+00:01:18.500 --> 00:01:22.860
+So this is where we're at right now 1 2 3 4 and 5.
+
+00:01:23.460 --> 00:01:27.260
+And remember, the end of the vector is after the last element.
+
+00:01:28.060 --> 00:01:32.360
+So we want to create an iterator now, and that's what I'm doing right here.
+
+00:01:32.360 --> 00:01:36.720
+I'm using it, and notice I'm using auto. I'm letting the compiler reduce
+
+00:01:36.720 --> 00:01:38.220
+the type of the iterator.
+
+00:01:38.440 --> 00:01:41.800
+Obviously, it's going to be an iterator that iterates over vectors of integers,
+
+00:01:41.800 --> 00:01:45.460
+right. That's the idea here. So I'm going to call nums1.begin.
+
+00:01:45.460 --> 00:01:49.460
+That's going to give me the iterator to that first element
+
+00:01:49.460 --> 00:01:51.960
+and assign it to it. So "it" is here,
+
+00:01:52.760 --> 00:01:57.060
+and it's going to be pointing there. Now remember, this is not a real pointer.
+
+00:01:57.210 --> 00:02:00.010
+This is an object okay, but the syntax
+
+00:02:00.010 --> 00:02:03.670
+and the way it feels is very pointer like, and that's by design.
+
+00:02:03.670 --> 00:02:06.550
+So that's pointing to the 1. In order to get to the 1,
+
+00:02:06.550 --> 00:02:09.210
+I need to dereference that iterator right there.
+
+00:02:10.090 --> 00:02:14.090
+And what that's going to do is it's going to give me the 1, the - the object in the container.
+
+00:02:14.090 --> 00:02:18.450
+And in this case, I'm going to display it. Okay. So it's as simple as that.
+
+00:02:18.450 --> 00:02:20.750
+Now what I want to do is move this iterator.
+
+00:02:20.750 --> 00:02:25.450
+So I'm incrementing the iterator right here, and I'm incrementing it by 1.
+
+00:02:25.450 --> 00:02:30.050
+So what's going to happen, the iterator now will be pointing to 2.
+
+00:02:32.550 --> 00:02:36.250
+What do we do? We're displaying it again, so I'm going to display a 2.
+
+00:02:36.910 --> 00:02:39.510
+Now you'll notice what's happening in the next line I'm saying
+
+00:02:39.870 --> 00:02:43.770
+iterator plus equals 2. So I'm incrementing the iterator by 2.
+
+00:02:43.770 --> 00:02:47.570
+It was at 2. So I'm going to go 1 2. Now it's going to be
+
+00:02:47.570 --> 00:02:49.930
+pointing to the element number 4.
+
+00:02:50.920 --> 00:02:52.280
+What do I do? Display it.
+
+00:02:53.480 --> 00:02:57.280
+Now I'm going to move it right back down by 2. So I'm going to move it back to the 2
+
+00:03:00.840 --> 00:03:01.840
+and display that.
+
+00:03:03.340 --> 00:03:07.140
+And then the last thing I'll do is I'll set the iterator to point to the element
+
+00:03:07.140 --> 00:03:11.340
+that's not at the end. Remember, there is no element at.The end the end just means you're at the end of the list.
+
+00:03:11.340 --> 00:03:13.640
+But I want to go 1 back from it,
+
+00:03:13.640 --> 00:03:16.790
+so I really want to point to the end of the list the 5 in this case.
+
+00:03:16.790 --> 00:03:21.390
+So what we're doing is, in this case, we're going over here and then we're backing up 1,
+
+00:03:22.190 --> 00:03:22.990
+so that.
+
+00:03:23.590 --> 00:03:26.790
+So if I run this this test function right here,
+
+00:03:26.790 --> 00:03:29.290
+that should be the output 1 2 4 2 5.
+
+00:03:29.290 --> 00:03:30.790
+And what's interesting here is,
+
+00:03:30.790 --> 00:03:34.450
+you can see how these iterators feel just like pointers, right.
+
+00:03:34.450 --> 00:03:36.550
+And that's real handy.
+
+00:03:36.550 --> 00:03:40.420
+I'm using the auto here. It saves a lot of -- makes it a lot easier to read.
+
+00:03:40.420 --> 00:03:45.120
+I'll use it in some places. I won't use it in others that way you can actually see both styles.
+
+00:03:45.120 --> 00:03:47.620
+So that's it. If I run this program now,
+
+00:03:48.220 --> 00:03:51.720
+let me go down to my main and make sure that I'm calling test 1,
+
+00:03:52.080 --> 00:03:55.580
+I am right there. So if I run this now, what I've got is
+
+00:03:56.680 --> 00:03:59.680
+I should get 1 2 4 2 5, exactly like we thought.
+
+00:04:00.340 --> 00:04:04.040
+So that's test 1. So let me collapse this guy, and we'll move on to test 2,
+
+00:04:05.030 --> 00:04:08.690
+and I'll go down to my main, and I'll just make sure that i comment out test 1
+
+00:04:08.990 --> 00:04:11.990
+and uncomment out test 2. Perfect.
+
+00:04:11.990 --> 00:04:15.190
+So now let's take a look at test 2 and see what's going on in there.
+
+00:04:15.640 --> 00:04:16.640
+So here's test 2.
+
+00:04:17.240 --> 00:04:21.040
+We're doing the same thing we're creating a vector of integers and initializing it
+
+00:04:21.040 --> 00:04:25.840
+from 1 to 5, so we've got 1 2 3 4 5
+
+00:04:25.840 --> 00:04:27.840
+and here is the end right here.
+
+00:04:28.740 --> 00:04:31.740
+I'm creating another iterator. I'm calling it it again.
+
+00:04:31.740 --> 00:04:34.740
+This way this time I'm doing it long style I'm not using auto.
+
+00:04:34.740 --> 00:04:38.540
+And you can see it's really pretty straightforward. It's just a lot of extra typing.
+
+00:04:38.540 --> 00:04:42.530
+So we're creating a stud vector of integers and that's the iterator,
+
+00:04:42.930 --> 00:04:44.530
+and we're calling it "it".
+
+00:04:44.530 --> 00:04:48.130
+And we're initializing it nums1.begin which is the first
+
+00:04:48.130 --> 00:04:51.130
+element in this vector which is that 1 right there.
+
+00:04:51.730 --> 00:04:53.090
+So that's where we're at now.
+
+00:04:53.090 --> 00:04:55.390
+And now you can see what's happening here I've got a while loop.
+
+00:04:55.390 --> 00:04:58.050
+It's really simple. I'm saying while the iterator
+
+00:04:58.050 --> 00:05:01.650
+is not pointing to this guy over here the end.
+
+00:05:01.950 --> 00:05:05.450
+In other words, while the iterator is in the real list in the container,
+
+00:05:05.810 --> 00:05:07.110
+in this case, a vector.
+
+00:05:07.410 --> 00:05:11.210
+What I want to do is display what it's pointing to and then increment.
+
+00:05:11.810 --> 00:05:15.810
+So you can see what this is doing. It's just going here and then here and then here and then here
+
+00:05:15.810 --> 00:05:20.800
+and then it's going to stop. So this will print out 1 2 3 4 and 5,
+
+00:05:21.790 --> 00:05:22.790
+right, just like that.
+
+00:05:23.780 --> 00:05:25.980
+So let's take a look at this loop right here.
+
+00:05:27.080 --> 00:05:31.860
+What we're doing here it's really the same thing. Now remember, this iterator now, "it" is over here.
+
+00:05:32.360 --> 00:05:36.360
+It's pointing to the end. So if I want to go back to the beginning,
+
+00:05:36.360 --> 00:05:39.610
+I could just simply say it equals numbs1.begin,
+
+00:05:39.610 --> 00:05:44.170
+rightSo I'm resetting that iterator to point to the beginning of this container of this vector.
+
+00:05:45.030 --> 00:05:48.530
+So what I'm doing is the same loop while I'm not at the end of the list.
+
+00:05:48.530 --> 00:05:52.130
+This time I'm doing this right here. Now that's an interesting statement.
+
+00:05:52.130 --> 00:05:56.490
+Remember, it's dereference the iterator equals 0,
+
+00:05:57.150 --> 00:05:58.750
+just like we did with pointers.
+
+00:05:59.410 --> 00:06:02.910
+What are we doing, we're storing 0 where the iterator is pointing,
+
+00:06:02.910 --> 00:06:05.110
+and we're looping through. So what we're doing is we're doing this.
+
+00:06:05.910 --> 00:06:09.710
+We're changing all of those values in that vector to 0,
+
+00:06:09.710 --> 00:06:13.210
+and then I'm just calling display numbers which should display a bunch of  0s.
+
+00:06:13.570 --> 00:06:17.670
+All right. So let me erase this and give this a run and see what we get.
+
+00:06:19.470 --> 00:06:21.970
+There's our output 1 2 3 4 5,
+
+00:06:21.970 --> 00:06:26.330
+just like we expected and then a bunch of  0s when we call the display function.
+
+00:06:27.130 --> 00:06:30.430
+Hopefully, you all are with me. These iterators are pretty straightforward,
+
+00:06:30.430 --> 00:06:34.190
+but it's important to understand them because we really need to use them with the
+
+00:06:34.190 --> 00:06:34.690
+algorithms.
+
+00:06:34.690 --> 00:06:37.790
+So we have to be able to make sure that what we're getting is what we want.
+
+00:06:37.790 --> 00:06:41.590
+So let's take a look at test 3. Let me take care of main real quick,
+
+00:06:41.590 --> 00:06:44.590
+and I'll uncomment this one out so we can run test 3.
+
+00:06:44.950 --> 00:06:49.150
+And here's test 3. Now what we're going to do here is we're going to use a constant iterator.
+
+00:06:49.700 --> 00:06:52.400
+All a constant iterator is is an iterator but I can't
+
+00:06:52.400 --> 00:06:54.760
+change what it's pointing to. It's constant.
+
+00:06:54.960 --> 00:06:58.160
+So we could do this a couple of different ways. We're doing the same
+
+00:06:58.160 --> 00:07:01.960
+declaration here of num1s that's my vector of integers, again
+
+00:07:01.960 --> 00:07:03.460
+1 2 3 4 5.
+
+00:07:04.060 --> 00:07:06.730
+Now what I'm doing here is I'm saying it1
+
+00:07:06.730 --> 00:07:09.030
+is a const iterator,
+
+00:07:09.180 --> 00:07:11.170
+notice const_iterator.
+
+00:07:11.670 --> 00:07:15.030
+What that's doing is it's creating a constant iterator not just an iterator,
+
+00:07:15.030 --> 00:07:17.730
+again a constant iterator
+
+00:07:17.730 --> 00:07:20.730
+and it's starting at the 1 again, num1 to begin.
+
+00:07:20.730 --> 00:07:23.730
+And I'm not going to write that again because you guys kind of know what's going on.
+
+00:07:24.230 --> 00:07:28.730
+Now if I wanted to not use this long style and just use the auto,
+
+00:07:29.090 --> 00:07:32.890
+I can't just say auto it1 equals nums1.begin
+
+00:07:32.890 --> 00:07:36.550
+because that'll give me a regular iterator. I have to say cbegin
+
+00:07:36.850 --> 00:07:39.210
+that's going to give me the constant iterator.
+
+00:07:39.210 --> 00:07:41.810
+So these 2 lines would be equivalent.
+
+00:07:43.470 --> 00:07:44.570
+Okay. We could do it either way.
+
+00:07:45.120 --> 00:07:49.420
+Now what we're doing here is we're just looping through and printing all out again 1 through 5.
+
+00:07:49.870 --> 00:07:53.470
+But let's see if we can change things, right. Remember, here
+
+00:07:54.270 --> 00:07:57.470
+we're trying to change each one of those elements to 0 just like
+
+00:07:57.470 --> 00:08:00.470
+we did in test 2 a little while ago. I can't do that.
+
+00:08:00.870 --> 00:08:04.470
+I'm not allowed to do that because it's a const iterator right here.
+
+00:08:04.720 --> 00:08:06.520
+So if I try to do that,
+
+00:08:07.180 --> 00:08:09.780
+let me uncomment that line out right here,
+
+00:08:10.660 --> 00:08:13.260
+if I try to do that, I should get a compiler error,
+
+00:08:13.810 --> 00:08:17.310
+and it's exactly right. Now this is one of the things that you'll notice about
+
+00:08:17.310 --> 00:08:20.110
+compiler errors for the standard template library.
+
+00:08:20.110 --> 00:08:24.910
+They're not exactly readable compiler errors. Some of them are really really nasty and hard to understand,
+
+00:08:24.910 --> 00:08:29.210
+but this 1's not too bad. It says error assignment of read only location.
+
+00:08:29.210 --> 00:08:32.510
+That gives you a clue, right. I mean we've got a constant iterator here.
+
+00:08:32.510 --> 00:08:34.210
+You're trying to write through it.
+
+00:08:34.210 --> 00:08:38.010
+So that's the rest of the error message, which is kind of nasty to read.
+
+00:08:38.370 --> 00:08:41.970
+So I'll comment this back out. And if I run it now,
+
+00:08:41.970 --> 00:08:45.870
+I should just get the 1 through the 5, just like we did before. Perfect.
+
+00:08:45.870 --> 00:08:50.130
+Now let's take a look at test 4, which adds a few more little things to the mix.
+
+00:08:50.130 --> 00:08:52.830
+We'll use some containers that we haven't used yet.
+
+00:08:54.330 --> 00:08:56.990
+So let me uncomment test 4,
+
+00:08:56.990 --> 00:08:59.990
+and let's take a look at test 4. There's a lot going on here.
+
+00:09:00.650 --> 00:09:03.850
+First thing is we're going to use a reverse iterator first.
+
+00:09:04.650 --> 00:09:06.150
+So what we're doing here,
+
+00:09:06.150 --> 00:09:10.850
+we've got a vector 1 2 3 4, I probably should have put the 5 in there, I forgot,
+
+00:09:10.850 --> 00:09:15.840
+so but it doesn't matter. We've got a vector 1 2 3 4, and it's vec. It's a vector of integers.
+
+00:09:16.440 --> 00:09:19.940
+Now I'm creating it1 as my iterator.
+
+00:09:20.240 --> 00:09:22.120
+And notice that I'm using auto,
+
+00:09:22.520 --> 00:09:26.820
+and I'm using rbegin right there. That's a reverse iterator.
+
+00:09:27.420 --> 00:09:30.920
+That's what the r stands for. And then what I'm doing is
+
+00:09:30.920 --> 00:09:34.920
+while it1 is not equal to vec.rend.
+
+00:09:35.420 --> 00:09:40.410
+So now we're just going the other way around, right. So we're going 4 3 2 1
+
+00:09:40.410 --> 00:09:42.100
+and the end is actually over here now,
+
+00:09:43.100 --> 00:09:46.300
+and we're simply displaying and notice I'm incrementing,
+
+00:09:46.300 --> 00:09:49.400
+right. You may want to decrement since you're going the other way,
+
+00:09:49.400 --> 00:09:51.000
+but we're using a reverse iterator.
+
+00:09:51.000 --> 00:09:54.860
+So incrementing here really means decrementing here
+
+00:09:54.860 --> 00:09:59.060
+and the other way around as well. Now let's look at a couple more examples.
+
+00:09:59.560 --> 00:10:02.860
+Here what we've got is a container we haven't used yet.
+
+00:10:02.860 --> 00:10:07.410
+We'll use it a lot later on. We'll actually do a nice little challenge with it. It's a list.
+
+00:10:07.910 --> 00:10:11.570
+A list is basically a doubly linked list. So
+
+00:10:11.570 --> 00:10:15.830
+remember how a vector was a bunch of data contiguous in memory.
+
+00:10:15.830 --> 00:10:20.530
+Well, a list is some items that kind of look like that or elements.
+
+00:10:20.830 --> 00:10:23.430
+And then we've got pointers back and forth
+
+00:10:24.310 --> 00:10:27.310
+so that we can move from one to the next one really easily.
+
+00:10:27.710 --> 00:10:31.370
+So that's all it is. We don't really have to worry too much about how it's implemented
+
+00:10:31.370 --> 00:10:33.730
+behind the scenes to use it which is really cool.
+
+00:10:33.730 --> 00:10:37.090
+So look what I'm doing here, I'm declaring name,
+
+00:10:38.190 --> 00:10:41.180
+actually I should call that names, but that's okay. Name
+
+00:10:41.180 --> 00:10:43.840
+is a list of strings.
+
+00:10:44.740 --> 00:10:47.070
+And I'm initializing it to Larry Moe and Curly.
+
+00:10:47.670 --> 00:10:52.270
+Now what I'm doing is I'm setting it2, and this would be Larry here, this would be Moe here,
+
+00:10:52.470 --> 00:10:54.070
+and this would be Curly over here.
+
+00:10:54.730 --> 00:10:57.330
+Then I'm saying it2
+
+00:10:58.630 --> 00:11:03.620
+is a constant reverse iterator. That's the cr.
+
+00:11:03.620 --> 00:11:07.610
+So right now, it2 is pointing right over here at the end
+
+00:11:08.270 --> 00:11:09.870
+because it's a reverse iterator.
+
+00:11:10.530 --> 00:11:14.780
+If i dereference it, it's going to print out Curly.
+
+00:11:16.280 --> 00:11:20.080
+Now I'm going to increment it which simply means move it over here.
+
+00:11:20.080 --> 00:11:22.740
+Remember, incrementing means going reverse.
+
+00:11:22.740 --> 00:11:25.040
+So in this case, I'm coming over here,
+
+00:11:26.030 --> 00:11:29.630
+and I'm pointing to Moe. And right here I'm going to display Moe.
+
+00:11:30.880 --> 00:11:32.380
+Over here, I displayed Curly.
+
+00:11:34.380 --> 00:11:38.380
+So that takes care of that one. And then let's do a few more.
+
+00:11:39.680 --> 00:11:43.180
+Now this is a data structure that we haven't used yet, a container we haven't used.
+
+00:11:43.180 --> 00:11:47.180
+It's a map. What is a map. A map is --
+
+00:11:47.180 --> 00:11:48.680
+think of a map as a key
+
+00:11:49.670 --> 00:11:50.660
+and a value.
+
+00:11:52.020 --> 00:11:53.010
+So it's a pair.
+
+00:11:53.810 --> 00:11:57.310
+And I talked about this earlier. There's a class called std pair,
+
+00:11:57.810 --> 00:12:02.410
+and that's basically what's happening. The first item in there is called first,
+
+00:12:03.110 --> 00:12:05.810
+and the second item in the pair is called second,
+
+00:12:06.360 --> 00:12:10.360
+and we can access them directly. So look what I'm doing here, I'm creating
+
+00:12:11.160 --> 00:12:12.040
+favorites.
+
+00:12:12.040 --> 00:12:16.400
+And favorites is a map of string, string pairs.
+
+00:12:16.650 --> 00:12:18.100
+And I'm just initializing them.
+
+00:12:18.100 --> 00:12:21.360
+So all we're doing here is creating an association between 2 strings.
+
+00:12:21.360 --> 00:12:25.720
+So Frank likes c++. Bill likes Java. James likes Haskell.
+
+00:12:25.720 --> 00:12:29.080
+Or Frank hates c++. Bill hates Java,whatever makes sense here.
+
+00:12:29.080 --> 00:12:30.440
+So that's the map.
+
+00:12:30.440 --> 00:12:34.540
+And now what we're going to do we're going to have another iterator, in this case, it3,
+
+00:12:35.200 --> 00:12:39.360
+and it's favorites.begin. So it's going to go to the first item
+
+00:12:39.360 --> 00:12:41.860
+in that map, which, in this case, is Frank.
+
+00:12:43.860 --> 00:12:48.320
+And I'm going to loop while it3 while that iterator is not
+
+00:12:48.320 --> 00:12:50.620
+pointing to the end of that map.
+
+00:12:50.620 --> 00:12:53.280
+Now how is a map stored behind the scenes?
+
+00:12:53.280 --> 00:12:55.880
+It's a complex data structure. It doesn't matter.
+
+00:12:55.880 --> 00:12:58.880
+I don't need to know that to use this kind of logic.
+
+00:12:58.880 --> 00:13:03.380
+That's the beauty of this. I don't -- really doesn't matter what how it's implemented behind the scenes.
+
+00:13:03.380 --> 00:13:06.580
+So in this case, while I haven't hit the end of that map,
+
+00:13:07.130 --> 00:13:09.570
+for each one of those guys, I'm going to take
+
+00:13:09.570 --> 00:13:12.370
+it3 first and it3 second,.
+
+00:13:13.250 --> 00:13:16.500
+Makes sense, right? So we're basically using the arrow operator
+
+00:13:16.500 --> 00:13:18.300
+dereferencing the iterator,
+
+00:13:18.300 --> 00:13:21.960
+getting to that pair and then taking the first item and the second item in the pair
+
+00:13:21.960 --> 00:13:24.260
+and then we're incrementing the iterator.
+
+00:13:25.060 --> 00:13:26.660
+So let's run this.
+
+00:13:27.960 --> 00:13:31.460
+And here are results. Let me scroll up just a little bit here.
+
+00:13:31.460 --> 00:13:34.350
+Here we're displaying this reverse iterator.
+
+00:13:34.350 --> 00:13:39.010
+We're using the reverse iterator to display this vector vec, and we're getting 4 3 2 1.
+
+00:13:39.810 --> 00:13:43.810
+Over here, we got Curly and Moe. Remember, we're starting at the back. So we're getting Curly, and then
+
+00:13:43.810 --> 00:13:46.810
+we're incrementing, which means moves to the left, and I've got Moe.
+
+00:13:47.710 --> 00:13:50.810
+And then I'm just iterating over this map. So I'm getting Bill
+
+00:13:50.810 --> 00:13:53.010
+Java, Frank c++,
+
+00:13:53.010 --> 00:13:56.260
+James Haskell. Now notice the order here.
+
+00:13:56.260 --> 00:14:00.560
+It's not the order I put them in. The last one we'll do is we'll do test 5.
+
+00:14:01.220 --> 00:14:05.020
+And test 5 is pretty easy. So far everything we've done,
+
+00:14:05.020 --> 00:14:08.220
+we've iterated through an entire container.
+
+00:14:08.220 --> 00:14:12.520
+What we're going to do here we're just going to iterate over a subset of the container.
+
+00:14:12.520 --> 00:14:16.020
+So we have a vector of integers, again
+
+00:14:16.020 --> 00:14:20.920
+1 2 3 4 5 6 7 8 9 and 10.
+
+00:14:21.520 --> 00:14:22.750
+And here's the end.
+
+00:14:24.250 --> 00:14:25.910
+And now I've got 2 iterators.
+
+00:14:26.900 --> 00:14:30.150
+I'm using auto for both so the compiler can figure out the type.
+
+00:14:30.150 --> 00:14:33.750
+And I'm saying start that's the name of my iterator
+
+00:14:34.550 --> 00:14:37.150
+is equal to vec.begin plus 2.
+
+00:14:37.150 --> 00:14:40.950
+Well vec.begin as this guy, plus 2 would be
+
+00:14:41.310 --> 00:14:41.970
+the 3.
+
+00:14:43.520 --> 00:14:44.920
+And finish
+
+00:14:47.580 --> 00:14:52.570
+vec.end minus 3. Well, here's vec.end minus 1 2 3.
+
+00:14:55.230 --> 00:14:57.530
+That's what we've got. That's start and finish.
+
+00:14:57.530 --> 00:15:02.190
+So now what I want to do is I just want to display the elements between them. So right there is the logic
+
+00:15:02.190 --> 00:15:04.790
+while start is not equal to finish.
+
+00:15:05.390 --> 00:15:09.050
+Display what start is pointing to. So it's going to display 3
+
+00:15:09.050 --> 00:15:13.950
+and then increment start, display 4, display 5, display 6, display 7.
+
+00:15:14.200 --> 00:15:18.200
+Now they are equal. So this fails, and we're done. So this will display
+
+00:15:18.200 --> 00:15:21.200
+this subset of that vector.
+
+00:15:22.760 --> 00:15:24.420
+All right. So let's run this.
+
+00:15:26.220 --> 00:15:30.120
+And you can see 3 4 5 6 and 7 being displayed right here.
+
+00:15:30.520 --> 00:15:33.020
+Okay. So play with these examples.
+
+00:15:33.020 --> 00:15:35.920
+I've broken them up into these small test cases
+
+00:15:35.920 --> 00:15:39.280
+that way you know tweak them a little bit rather than having one huge main
+
+00:15:39.280 --> 00:15:42.580
+that's going to get really complicated. So come in here, comment them out,
+
+00:15:42.580 --> 00:15:45.680
+add your own logic, play around with reverse iterators,
+
+00:15:45.680 --> 00:15:48.040
+constant iterators, regular iterators.
+
+00:15:48.040 --> 00:15:50.920
+You saw how I created the map so you can kind of figure out
+
+00:15:50.920 --> 00:15:54.220
+based on my code what I did. Obviously, I'm going to talk about
+
+00:15:54.220 --> 00:15:58.220
+lists and forward lists and maps and vectors and
+
+00:15:58.220 --> 00:16:02.220
+sets and everything else in the upcoming videos.

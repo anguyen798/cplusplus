@@ -1,0 +1,101 @@
+WEBVTT
+
+0
+00:00.270 --> 00:07.050
+Let us look at static variables I will have one function in this I will declare one variable static
+
+1
+00:07.440 --> 00:11.840
+integer S whose value is 10.
+
+2
+00:11.850 --> 00:13.840
+Now here I will say Splus plus.
+
+3
+00:13.890 --> 00:20.790
+And then I will say cout S endl. the value of S is 10 then it becomes 11.
+
+4
+00:20.790 --> 00:22.100
+This is displayed.
+
+5
+00:22.470 --> 00:29.190
+So when I called this function fun first time I will get the  value 11, Let's see.  yea 11,  if I call the function
+
+6
+00:29.460 --> 00:29.960
+again.
+
+7
+00:29.970 --> 00:32.400
+Then again I should get the value 11.
+
+8
+00:32.820 --> 00:35.170
+No this is a static variable.
+
+9
+00:35.550 --> 00:41.640
+So the value was already 11 in the first function call then it remains 11 only then s plus plus will
+
+10
+00:41.640 --> 00:47.650
+become 12 if it is not static then it should give again 11.
+
+11
+00:47.870 --> 00:53.060
+Let us run, yea first time it was 11 and the next time it is 12.
+
+12
+00:53.310 --> 00:59.440
+Now if I remove static then see every time when I call the function it will display value 11.
+
+13
+00:59.600 --> 01:01.220
+yea Again I'm adding value 11.
+
+14
+01:01.230 --> 01:07.050
+It means that this variable s is a declared again and the value is incremented.
+
+15
+01:07.320 --> 01:11.140
+But in static the variable will not be declared again.
+
+16
+01:11.160 --> 01:15.120
+It will be declared only one time that already I have explained you.
+
+17
+01:15.510 --> 01:21.240
+So these are the static variables that are useful inside the function and these are more useful in modular
+
+18
+01:21.270 --> 01:24.640
+programming that is function programming, function based programming.
+
+19
+01:24.720 --> 01:29.760
+These are more useful in modular programming or procedural programming where everything is done in the
+
+20
+01:29.760 --> 01:32.140
+form of functions, there it is useful.
+
+21
+01:32.260 --> 01:35.850
+This is a static variable inside the function are available in C++.
+
+22
+01:35.850 --> 01:37.770
+These are not available in Java.
+
+23
+01:37.890 --> 01:44.520
+So that's all about static variables inside functions and static variables inside functions are
+
+24
+01:44.520 --> 01:47.490
+there in c, C++ but not in Java.

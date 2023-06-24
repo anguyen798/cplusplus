@@ -1,0 +1,235 @@
+WEBVTT
+
+00:00.210 --> 00:01.910
+Now let us return by address.
+
+00:01.920 --> 00:06.240
+We have seen that our function can return the address also.
+
+00:06.240 --> 00:14.100
+So for that I will write one function which returns or pointer of type integer and here I will declare
+
+00:14.100 --> 00:20.580
+some variable x with some value and here I'll write return address of x.
+
+00:20.610 --> 00:22.110
+Let us see what happens.
+
+00:22.110 --> 00:23.880
+I got a warning here.
+
+00:23.880 --> 00:29.070
+That address of stack memory associated with the local variable x return.
+
+00:29.070 --> 00:33.480
+So the problem here is that I cannot return the address of local variables.
+
+00:33.510 --> 00:39.240
+Olivier said that once the function ends, this variable x will be lost from the memory D located from
+
+00:39.240 --> 00:39.840
+the memory.
+
+00:39.960 --> 00:42.480
+So we should not use these local variables.
+
+00:42.480 --> 00:45.750
+So then which type of addresses we can return?
+
+00:45.750 --> 00:49.230
+We can return the address of heap memory.
+
+00:49.230 --> 00:56.610
+So if I am allocating a heap memory here, if I'm allocating a heap memory here, like I will take a
+
+00:56.610 --> 01:00.420
+pointer and I will say new integer of size.
+
+01:00.450 --> 01:10.470
+Suppose five and then I will also initialize this memory integer is sine zero is less than five and
+
+01:10.470 --> 01:11.430
+I plus plus.
+
+01:11.430 --> 01:16.590
+So what I will do is I will store values that is multiples of five.
+
+01:16.590 --> 01:27.870
+I will store it p of I assign with five into a then finally I will say return return p.
+
+01:28.440 --> 01:36.300
+So using this pointer it will create a heap memory of size five integers and it will initialize this
+
+01:36.300 --> 01:41.100
+array of size with the multiples of five, five and 205 into one and so on.
+
+01:41.100 --> 01:45.860
+And the values will be initialized and it will return this address that is allocated in heap.
+
+01:45.870 --> 01:53.010
+So here inside the main function, I will declare one pointer Q and I will call the function and that
+
+01:53.010 --> 01:57.030
+function will return the address of this heap memory.
+
+01:57.060 --> 02:02.490
+Here in the main function, I will declare a pointer with the name Q and I will call this function.
+
+02:02.490 --> 02:07.740
+So that function will allocate the memory in heap with the name P and it will return P.
+
+02:07.740 --> 02:15.540
+So the address of that pointer will be stored here in Q and here I will display all these elements once
+
+02:15.540 --> 02:16.500
+and let us see.
+
+02:16.500 --> 02:29.440
+For Integer I assign zero is less than five I plus plus then I will say see out q of I then also l'll
+
+02:30.030 --> 02:31.890
+let us run this and see.
+
+02:32.550 --> 02:37.950
+Yeah, it is displaying the values first values zero, then five, then ten, then 15 and 20 because
+
+02:37.950 --> 02:39.130
+there are five values.
+
+02:39.150 --> 02:43.200
+Now here I would like to show you what is the address there in P.
+
+02:43.200 --> 02:55.170
+So I will say see out P and and L let us see the what is the address in Q, C, out Q and NL.
+
+02:56.400 --> 03:00.430
+See the speed's creating memory in heap and it is returning the address.
+
+03:00.430 --> 03:04.370
+So that address I am displaying here and then it is returning the address.
+
+03:04.380 --> 03:10.020
+Then here inside this function, that address is taken in queue and let us print this queue and see
+
+03:10.020 --> 03:10.980
+what happens.
+
+03:11.010 --> 03:16.770
+Oh the address that is there in P and the address that is there in Q both are same.
+
+03:16.770 --> 03:20.040
+So it means Q is pointing on to the same memory.
+
+03:20.040 --> 03:26.490
+So as heap memory is global to the program which can be accessed from any part of a program provided
+
+03:26.490 --> 03:28.350
+address of that memory must be there.
+
+03:28.350 --> 03:33.900
+So this function is sharing the address of this memory to the main function and the pointer.
+
+03:33.900 --> 03:35.760
+Q is accessing that memory.
+
+03:36.120 --> 03:37.290
+So that's it.
+
+03:37.410 --> 03:39.450
+This is written by address.
+
+03:39.450 --> 03:43.260
+So at some places we need the returning of value by address.
+
+03:43.260 --> 03:45.120
+Now let us look at return by reference.
+
+03:45.120 --> 03:51.810
+For that I will write on the function which returns a reference and here I will have some local variable
+
+03:51.810 --> 03:56.460
+and I will say return x that is written by reference.
+
+03:57.000 --> 03:58.990
+Now let us see what happens again.
+
+03:58.990 --> 04:00.060
+I got the same warning.
+
+04:00.060 --> 04:05.970
+That reference to stack memory associated with local variable x return.
+
+04:05.970 --> 04:10.380
+So I cannot return the reference of local variable.
+
+04:10.710 --> 04:15.930
+Then even reference is not a pointer to point on some heap memory then where it is useful.
+
+04:15.960 --> 04:21.450
+So suppose I have a local variable and main function having value ten and its name is a.
+
+04:21.480 --> 04:28.320
+Then I will call the function fund and I will pass a and let us make this function fun.
+
+04:28.380 --> 04:34.170
+Take a reference variable x instead of having local variable declared.
+
+04:34.200 --> 04:41.010
+Now what I am doing here is I'm just taking this value of a as reference and simply returning nothing
+
+04:41.010 --> 04:41.280
+else.
+
+04:41.280 --> 04:43.890
+I'm not doing anything, no modifications at all.
+
+04:44.310 --> 04:50.640
+Then when it is written by reference, this x will come back here and the entire function becomes a
+
+04:50.640 --> 04:51.450
+reference.
+
+04:52.140 --> 04:53.280
+So who's the reference ID?
+
+04:53.280 --> 04:56.460
+This is a reference of local variable of main.
+
+04:56.640 --> 05:03.690
+Main is having a a sent to this x and x is a reference to same a and then it returns.
+
+05:03.690 --> 05:06.630
+So this becomes a, this becomes a.
+
+05:07.650 --> 05:13.560
+So you can see this, it is taking a parameter as reference and returning same thing as reference.
+
+05:13.830 --> 05:20.640
+So here this becomes a so it means can I assign something to here a here, let us see.
+
+05:20.640 --> 05:26.070
+I will display this value of a So what I should get, I should get the value as 25 yeah.
+
+05:26.070 --> 05:27.150
+It's not an error.
+
+05:27.150 --> 05:32.430
+So I can write function call on the left hand side of assignment so it works as a value.
+
+05:33.030 --> 05:40.020
+Let us run this here value quantifies the stored in a so it's working that's it.
+
+05:40.140 --> 05:42.060
+This is written by reference.
+
+05:42.060 --> 05:44.040
+So this is useful at some places.
+
+05:44.040 --> 05:48.990
+We will see where it is useful, both written by address and written by reference.
+
+05:48.990 --> 05:51.030
+I will use it in some examples.
+
+05:51.030 --> 05:52.620
+This was just the introduction.

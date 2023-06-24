@@ -1,0 +1,484 @@
+WEBVTT
+
+00:00.940 --> 00:01.450
+Yeah.
+
+00:01.450 --> 00:06.300
+In this video I will show you various member functions of a string class.
+
+00:06.310 --> 00:10.360
+I have a few more functions listed here, so I'll explain you one by one.
+
+00:10.480 --> 00:13.300
+And also I will give the demonstration simultaneously.
+
+00:14.410 --> 00:16.270
+See a function append.
+
+00:16.720 --> 00:20.560
+This will add a new content to a string.
+
+00:21.690 --> 00:22.020
+Right.
+
+00:22.020 --> 00:24.630
+Suppose you already have a string.
+
+00:25.300 --> 00:27.450
+I'm using the same word.
+
+00:27.450 --> 00:27.840
+That is.
+
+00:27.840 --> 00:28.490
+Hello.
+
+00:29.410 --> 00:29.940
+Right.
+
+00:30.400 --> 00:34.510
+Then after this, if you say X dot append.
+
+00:36.780 --> 00:42.510
+And if I write war, then it becomes Hello world.
+
+00:43.400 --> 00:45.650
+So this will be added at the end.
+
+00:45.650 --> 00:48.020
+So amendments it will be added at the end.
+
+00:48.050 --> 00:52.340
+So as already told you that it will be stored in an area.
+
+00:55.370 --> 00:55.610
+Right.
+
+00:55.730 --> 00:57.140
+Help is already there.
+
+00:57.680 --> 00:58.290
+Right.
+
+00:58.310 --> 01:00.170
+Then it was null character.
+
+01:00.200 --> 01:01.550
+Now this will be removed.
+
+01:01.730 --> 01:04.580
+And here it will store world.
+
+01:05.410 --> 01:07.410
+And then add Noel Gallagher.
+
+01:07.840 --> 01:12.160
+Now, whether it will increase the capacity or not is a different thing.
+
+01:12.370 --> 01:18.070
+See, already we have seen that though we have a certain size as five, the capacity was more than this.
+
+01:18.310 --> 01:21.620
+So in our example, it was showing some size 22.
+
+01:21.650 --> 01:22.260
+Right.
+
+01:22.270 --> 01:24.220
+So it means more spaces are there.
+
+01:24.310 --> 01:30.490
+So now this word will be stored in that vacant spaces that are free spaces.
+
+01:30.490 --> 01:31.180
+After this.
+
+01:31.180 --> 01:31.690
+Hello.
+
+01:32.350 --> 01:35.290
+And if it require, it may increase the size.
+
+01:35.290 --> 01:37.450
+So actually it will not increase the same size.
+
+01:37.450 --> 01:41.840
+It will create a bigger size array and it will store it there.
+
+01:41.860 --> 01:42.760
+So what happens?
+
+01:42.760 --> 01:49.210
+We can see how that function, this open function will handle it, how it is defined inside the compiler.
+
+01:49.210 --> 01:50.110
+We can see that.
+
+01:50.110 --> 01:52.960
+So just we can run it and observe how it is working.
+
+01:53.650 --> 02:02.080
+So right now this is as but after appending in the same as this is also stored well or else a new array
+
+02:02.080 --> 02:04.250
+is created where everything is done here.
+
+02:04.280 --> 02:05.650
+Both things are possible.
+
+02:06.430 --> 02:09.150
+All right, so let us test this function.
+
+02:09.160 --> 02:11.080
+I will write down hello.
+
+02:11.080 --> 02:11.410
+And then.
+
+02:11.440 --> 02:15.610
+Well, then also I will try to take a bigger string and see what happens.
+
+02:15.940 --> 02:21.220
+So already I have written a program here which is having a string containing hello.
+
+02:21.250 --> 02:25.780
+Then here I will say str dot append.
+
+02:29.340 --> 02:31.230
+Then I will write word.
+
+02:33.230 --> 02:35.270
+Then afterwards, I'm displaying a string.
+
+02:35.720 --> 02:37.190
+Let us see what happens.
+
+02:39.200 --> 02:39.650
+Yeah.
+
+02:39.650 --> 02:41.300
+It has became Hello World.
+
+02:42.140 --> 02:46.060
+And if you want a space after this hello, then you can give a space here.
+
+02:46.070 --> 02:47.370
+Space world.
+
+02:47.390 --> 02:49.910
+Then it will become Hello Space, then world.
+
+02:51.410 --> 02:53.070
+Now one more thing I will do.
+
+02:53.090 --> 02:54.680
+Let us check the capacity.
+
+02:54.950 --> 02:58.490
+See out star capacity.
+
+02:59.420 --> 02:59.990
+Right.
+
+03:00.950 --> 03:09.050
+And here and before adding this content, then also after adding this content, let us see the capacity.
+
+03:09.050 --> 03:09.890
+What happens?
+
+03:12.030 --> 03:15.950
+See the capacity was 22 and after opening also the capacity is 22.
+
+03:15.960 --> 03:18.870
+Only then helloworld is the new string.
+
+03:21.030 --> 03:22.590
+Moral change the string.
+
+03:23.400 --> 03:24.840
+I will write it as.
+
+03:25.710 --> 03:28.620
+How are you all?
+
+03:29.640 --> 03:31.650
+Hope all are fine.
+
+03:32.220 --> 03:36.020
+I guess this is longer than size 22, right?
+
+03:36.030 --> 03:38.070
+This is the size 22, maybe longer than that.
+
+03:38.070 --> 03:41.040
+Or else I'll type a few more things just randomly.
+
+03:41.790 --> 03:43.320
+Now let us see what happens.
+
+03:46.280 --> 03:51.590
+See capacity before this attending was 22.
+
+03:51.650 --> 03:56.390
+Then when I have appended something, the capacity has increased, so it has automatically increased
+
+03:56.390 --> 03:57.530
+the size of an array.
+
+03:58.370 --> 04:03.830
+Right now here, after the capacity, I will also display length.
+
+04:03.860 --> 04:06.800
+Let us see what is the length and what is the capacity?
+
+04:07.610 --> 04:09.880
+Length will be definitely less than the capacity.
+
+04:09.890 --> 04:15.590
+So here by taking length, I know how many characters are there in a string.
+
+04:15.590 --> 04:17.180
+So first I am displaying capacity.
+
+04:17.200 --> 04:20.030
+Next time displaying length, let us run it.
+
+04:22.200 --> 04:23.190
+Yes.
+
+04:23.790 --> 04:27.180
+See, capacity is 79 and land is 74.
+
+04:28.110 --> 04:28.470
+Right?
+
+04:28.470 --> 04:31.610
+So total 74 characters I have typed here.
+
+04:31.620 --> 04:32.010
+Right.
+
+04:32.010 --> 04:36.360
+Including the helo and the capacity it has.
+
+04:37.590 --> 04:40.410
+The capacity it has taken us 79.
+
+04:41.310 --> 04:43.980
+So this is about append function.
+
+04:44.880 --> 04:46.920
+Let us continue with next function.
+
+04:47.310 --> 04:49.030
+So we have finished this one.
+
+04:49.050 --> 04:49.860
+Now let us see.
+
+04:49.860 --> 04:55.980
+Insert this function will insert a given a string at a given index.
+
+04:56.490 --> 04:58.680
+Suppose I have a string.
+
+05:01.910 --> 05:04.220
+SDR and the string is.
+
+05:04.220 --> 05:05.060
+Hello.
+
+05:06.990 --> 05:07.560
+Right.
+
+05:07.600 --> 05:11.460
+Then if I say a star dot insert.
+
+05:13.670 --> 05:16.190
+Now this is index zero.
+
+05:16.190 --> 05:19.490
+Index one, two, three and four.
+
+05:20.570 --> 05:22.190
+Now, I want to insert something.
+
+05:22.190 --> 05:25.430
+Let us say k k at index three onwards.
+
+05:25.430 --> 05:26.790
+So from index three onwards.
+
+05:26.810 --> 05:33.980
+So if I say three and some letters like k k, I'm inserting this a string at this place.
+
+05:33.980 --> 05:43.310
+So the new string will be it becomes h e l so this is 012, then it will be k k, then this l zero will
+
+05:43.310 --> 05:44.630
+be shifted on this side.
+
+05:45.380 --> 05:51.260
+So I can insert a string at this place, so you can insert at any location.
+
+05:51.260 --> 05:54.500
+So you have to mention the index at which you want to insert.
+
+05:54.680 --> 05:56.720
+There is one more version of insert function.
+
+05:56.720 --> 06:01.850
+I'll show that insert right now here.
+
+06:02.450 --> 06:02.960
+Index.
+
+06:02.960 --> 06:04.280
+I'm giving three only.
+
+06:04.460 --> 06:07.210
+Then the word is apple.
+
+06:07.220 --> 06:08.690
+The string is apple here.
+
+06:08.780 --> 06:12.940
+And from this I don't want all these five letters from this word.
+
+06:12.950 --> 06:15.980
+I just want two letters so I can mention two.
+
+06:16.190 --> 06:20.780
+So it will take only two letters, first two letters of this string and insert them in this.
+
+06:20.780 --> 06:21.360
+Hello.
+
+06:21.380 --> 06:25.690
+So if I am inserting it in hello, then this will become edge.
+
+06:25.700 --> 06:27.160
+That is index zero.
+
+06:27.170 --> 06:29.510
+Index one, index two.
+
+06:30.390 --> 06:40.710
+Then afterwards a p just it will take ap then remaining alphabets of hello so it will be apl0.
+
+06:41.190 --> 06:46.440
+So you can take selected number of alphabets from this one from the beginning.
+
+06:46.740 --> 06:47.160
+Right?
+
+06:47.190 --> 06:51.420
+If you don't mention this, then it will insert this entire string at this place.
+
+06:52.860 --> 06:54.990
+So let us look at the demonstration of this one.
+
+06:55.860 --> 06:57.090
+Now I have a string.
+
+06:57.090 --> 06:57.390
+Hello.
+
+06:57.390 --> 06:58.140
+Here, then.
+
+06:58.140 --> 07:02.580
+Here I will say dot insert.
+
+07:03.420 --> 07:09.360
+At Index three and I want to insert kick in so that same string I'm writing here.
+
+07:13.080 --> 07:17.090
+So you can see that this is X Index zero, right?
+
+07:17.100 --> 07:20.310
+Then this is one and this is two.
+
+07:20.310 --> 07:23.370
+And from third index is inserted.
+
+07:23.970 --> 07:25.530
+So that's all you can insert.
+
+07:26.130 --> 07:28.800
+Now, I will write something meaningful here.
+
+07:32.790 --> 07:36.420
+How, you know, art is missing here.
+
+07:36.420 --> 07:40.530
+So I want to insert R with spaces on either side.
+
+07:40.530 --> 07:42.000
+And what should be the index?
+
+07:42.030 --> 07:47.670
+Zero one, zero one, two then three at space three.
+
+07:48.030 --> 07:48.540
+Right.
+
+07:48.540 --> 07:49.590
+So index three.
+
+07:49.590 --> 07:51.060
+So, yes, this is perfect.
+
+07:51.060 --> 07:52.410
+So let us run it.
+
+07:55.320 --> 07:55.770
+Yes.
+
+07:55.770 --> 08:00.530
+It has became how are you know, let us try to take a new word.
+
+08:00.540 --> 08:02.450
+I will change it to area.
+
+08:02.460 --> 08:03.480
+What is area?
+
+08:03.480 --> 08:05.550
+And I don't want all three letters.
+
+08:05.550 --> 08:06.450
+All four letters.
+
+08:06.450 --> 08:08.310
+Just say one, three letters from this one.
+
+08:08.400 --> 08:10.050
+So let us see what happens.
+
+08:14.890 --> 08:18.480
+So it has taken three litres that is space and A and R.
+
+08:18.490 --> 08:21.080
+So actually I should mention four letters total here.
+
+08:21.100 --> 08:22.750
+There are five letters here.
+
+08:22.750 --> 08:24.760
+So I should mention it as four.
+
+08:25.330 --> 08:26.080
+Yes.
+
+08:26.470 --> 08:28.660
+So it will take only a R.
+
+08:29.560 --> 08:31.630
+So this is about insert function.
+
+08:33.720 --> 08:35.100
+So there are a few more operations.
+
+08:35.100 --> 08:37.080
+I will show them in next video.

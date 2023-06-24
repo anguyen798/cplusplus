@@ -1,0 +1,55 @@
+WEBVTT
+
+00:00:05.550 --> 00:00:10.450
+In this section of the course, we'll take a quick tour of the CodeLite IDE interface.
+
+00:00:11.250 --> 00:00:13.350
+It's important to feel comfortable with the environment
+
+00:00:13.350 --> 00:00:15.950
+that we're using to create our c++ programs.
+
+00:00:15.950 --> 00:00:19.450
+So I'll walk you through the major functionality of the CodeLite IDE,
+
+00:00:19.750 --> 00:00:21.350
+so you can get up and running quickly.
+
+00:00:21.750 --> 00:00:24.250
+Then we'll write our first c++ program.
+
+00:00:24.250 --> 00:00:28.150
+It'll be a pretty simple program that simply asks the user for their favorite number
+
+00:00:28.150 --> 00:00:29.950
+and then displays it on the console.
+
+00:00:29.950 --> 00:00:33.750
+We'll use this program to look at the build options provided by CodeLite,
+
+00:00:34.000 --> 00:00:36.000
+and I'll show you how they work and what they do.
+
+00:00:36.500 --> 00:00:39.200
+Finally, we'll introduce some problems into our program
+
+00:00:39.200 --> 00:00:41.400
+so that you can see some of the typical errors
+
+00:00:41.400 --> 00:00:45.200
+and warnings that you'll probably encounter as you write c++ programs
+
+00:00:45.200 --> 00:00:46.800
+and understand them and know how to fix them.
+
+00:00:47.460 --> 00:00:50.960
+That's it. This section short and simple, but very, very important
+
+00:00:50.960 --> 00:00:53.160
+since it lays the foundation for writing,
+
+00:00:53.160 --> 00:00:56.960
+building and running c++ programs in the CodeLite IDE.
+
+00:00:57.510 --> 00:00:58.510
+Let's get started.

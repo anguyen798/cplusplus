@@ -1,0 +1,181 @@
+WEBVTT
+
+00:05.580 --> 00:06.330
+Hello, everyone.
+
+00:06.330 --> 00:11.520
+In this video, I'd like to show you how to use the source code that's provided with the course.
+
+00:12.000 --> 00:19.080
+Each section of the course contains a compressed zip file that contains a workspace and all the projects
+
+00:19.080 --> 00:20.910
+that I've created in that workspace.
+
+00:20.910 --> 00:26.190
+So, for example, suppose that we're working on Section eight, there'll be a Section eight zip file.
+
+00:26.220 --> 00:29.250
+It may be a different name, but it will have everything you need in there.
+
+00:29.250 --> 00:35.220
+And what you can do here is just extract that file and I'll extract here, and I'm simply going to extract
+
+00:35.220 --> 00:36.540
+it right to my desktop.
+
+00:39.830 --> 00:41.800
+You can see the folders have all been extracted.
+
+00:41.810 --> 00:45.710
+So if I double click on section eight, you can see all the projects in there.
+
+00:45.920 --> 00:48.470
+Now there's one special file you'll see down at the bottom here.
+
+00:48.470 --> 00:51.080
+It's called Section eight and it's a workspace file.
+
+00:51.110 --> 00:57.890
+If you right click on that, you can open with code light and that'll open up the workspace in code
+
+00:57.890 --> 00:58.250
+light.
+
+00:58.250 --> 01:01.910
+And once the workspace is open, you have access to all the projects in there.
+
+01:01.910 --> 01:03.410
+So that's one way to do it.
+
+01:03.440 --> 01:07.850
+Another way to do this is once you've extracted the file, just open code light.
+
+01:11.000 --> 01:15.260
+So now once code light is opened, you can choose to open a workspace right over here.
+
+01:15.260 --> 01:20.960
+So I'll select that open workspace and then you can just navigate to the workspace you want to open.
+
+01:20.960 --> 01:23.270
+In this case, it's on it's section eight workspace.
+
+01:23.270 --> 01:27.830
+You can just simply select that file and you can see the workspace opens up right here with all your
+
+01:27.830 --> 01:28.520
+projects.
+
+01:28.520 --> 01:33.200
+Now I'm going to close the workspace and show you another way to do it would be right up here.
+
+01:33.200 --> 01:34.610
+You just come to workspace.
+
+01:34.610 --> 01:38.690
+If you have a workspace that's already open, you can simply workspace close.
+
+01:40.070 --> 01:41.090
+It wouldn't be grayed out.
+
+01:41.090 --> 01:42.040
+It would be right there.
+
+01:42.050 --> 01:43.940
+In this case, I just want to open a workspace.
+
+01:43.940 --> 01:49.340
+And again, you navigate to the workspace you want to open, select it, and there it is.
+
+01:49.340 --> 01:54.950
+So now I've got Section eight workspace with all the projects that I created and provided for you.
+
+01:55.340 --> 01:59.180
+In order to run these projects, you simply double click the project you're interested in.
+
+01:59.180 --> 02:01.820
+And so suppose I want I'm interested in this Euros project.
+
+02:01.850 --> 02:07.340
+You can see the source code and all you really need to do is build and run.
+
+02:07.340 --> 02:11.900
+But I'd suggest that you clean it first, especially if you're going from Windows to PC to Linux.
+
+02:11.900 --> 02:16.640
+I'm developing on Windows, so if you're on a mac or Linux machine or even a Windows machine, it's
+
+02:16.640 --> 02:18.650
+always a good idea to clean the project.
+
+02:18.650 --> 02:23.810
+And what you can do, you can right click and clean, or you can come up to here where it says Build
+
+02:23.810 --> 02:24.530
+Clean.
+
+02:25.010 --> 02:29.990
+So we'll clean the project that removes all the object files, the X files, and just gets rid of a
+
+02:29.990 --> 02:32.780
+bunch of stuff that you might not need depending on your system.
+
+02:33.320 --> 02:41.030
+Now that we've got that ready, we can simply build and run and we should be good to go euro's to us
+
+02:41.030 --> 02:41.450
+dollars.
+
+02:41.540 --> 02:45.410
+So we'll type in 100, $119 is €100.
+
+02:45.410 --> 02:46.370
+So that's it.
+
+02:46.370 --> 02:47.930
+It's really pretty straightforward.
+
+02:47.930 --> 02:53.210
+What I would suggest is that you create obviously your own way of organizing your files.
+
+02:53.870 --> 02:58.820
+I'd use folders or directory structures, and also something that's important to understand as well
+
+02:58.820 --> 03:01.190
+with code like code light does things a little differently.
+
+03:01.190 --> 03:08.270
+So suppose that you've got projects in another workspace and then you select the workspace here and
+
+03:08.270 --> 03:10.220
+you say Add existing project.
+
+03:10.430 --> 03:14.870
+Well, what happens here is it doesn't actually copy that project into the workspace.
+
+03:14.870 --> 03:20.480
+It'll create a new project in this workspace, but the files will still be where they were before.
+
+03:20.480 --> 03:25.460
+So your dot CP files and your header files and everything will still be where they were.
+
+03:25.460 --> 03:29.510
+So think of this more of a logical project rather than a physical copy of it.
+
+03:30.200 --> 03:33.260
+But once you play around with it, you'll understand exactly what's going on.
+
+03:33.260 --> 03:34.940
+So really straightforward.
+
+03:34.940 --> 03:40.490
+You've got the zip files that were providing, unzip them, you have a folder structure and then just
+
+03:40.490 --> 03:42.020
+open that workspace file in there.
+
+03:42.020 --> 03:43.280
+All your projects should come in.
+
+03:43.280 --> 03:44.270
+No problem at all.

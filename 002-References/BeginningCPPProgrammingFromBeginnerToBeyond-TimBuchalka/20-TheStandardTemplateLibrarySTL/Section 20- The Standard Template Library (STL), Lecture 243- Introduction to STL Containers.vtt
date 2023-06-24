@@ -1,0 +1,238 @@
+WEBVTT
+
+00:00:05.300 --> 00:00:08.100
+In this video, I'd like to go over some of the basics
+
+00:00:08.100 --> 00:00:10.300
+of the standard template library containers.
+
+00:00:11.200 --> 00:00:14.800
+We won't go over the details of specific containers in this video,
+
+00:00:14.800 --> 00:00:16.200
+we'll get to that soon enough.
+
+00:00:16.600 --> 00:00:19.900
+Instead, it's important to understand what the containers have to offer
+
+00:00:19.900 --> 00:00:22.260
+as far as functionality is concerned
+
+00:00:22.260 --> 00:00:25.260
+and understand what types of elements we can store in them.
+
+00:00:26.360 --> 00:00:29.560
+First, we know that the stl containers are data structures
+
+00:00:29.560 --> 00:00:31.760
+that can store almost any type of object,
+
+00:00:32.010 --> 00:00:34.610
+and they're implemented as template-based classes.
+
+00:00:35.610 --> 00:00:38.610
+Each container has a set of member functions that we can use.
+
+00:00:38.610 --> 00:00:42.210
+Some of these member functions are specific to a particular container.
+
+00:00:42.870 --> 00:00:46.120
+But there are quite a few member functions that all containers implement.
+
+00:00:46.620 --> 00:00:49.820
+We'll go over a table with some of these methods in the next few slides.
+
+00:00:50.920 --> 00:00:54.280
+Finally, each container has an associated header file
+
+00:00:54.280 --> 00:00:57.080
+that must be included in order to use the container.
+
+00:00:57.930 --> 00:01:00.830
+We've already seen this with vector and string.
+
+00:01:01.330 --> 00:01:05.320
+I'll tell you what the specific header files are for each container class we go over.
+
+00:01:05.980 --> 00:01:08.640
+Okay. So let's take a look at some of the common methods
+
+00:01:08.640 --> 00:01:10.840
+provided by the stl containers.
+
+00:01:13.040 --> 00:01:15.700
+This table and the table on the next slide
+
+00:01:15.700 --> 00:01:19.360
+show some of the functionality provided by the stl containers.
+
+00:01:20.360 --> 00:01:22.560
+Let's start with the default constructor.
+
+00:01:22.560 --> 00:01:25.160
+All containers provide default constructors,
+
+00:01:25.160 --> 00:01:27.160
+and it results in an empty container.
+
+00:01:28.040 --> 00:01:31.640
+They also provide many versions of overloaded constructors
+
+00:01:31.640 --> 00:01:34.640
+that allow you to initialize the containers in many ways.
+
+00:01:34.640 --> 00:01:39.630
+You have to refer to the specific container you want to use to see the various overloaded constructors.
+
+00:01:40.930 --> 00:01:44.290
+Containers also provide copy and move constructors.
+
+00:01:44.290 --> 00:01:47.790
+So we can create a new container based on an existing container.
+
+00:01:48.560 --> 00:01:50.560
+We can choose to copy it or move it.
+
+00:01:51.450 --> 00:01:54.150
+Of course, containers provide destructors.
+
+00:01:54.150 --> 00:01:58.030
+The container destructors clean up the container and delete all the objects in it.
+
+00:01:59.130 --> 00:02:02.120
+Containers also provide copy and move assignment.
+
+00:02:02.120 --> 00:02:05.920
+This, of course, will allow you to copy or move an existing container
+
+00:02:05.920 --> 00:02:07.920
+into another existing container.
+
+00:02:07.920 --> 00:02:10.170
+Remember, this is not initialization.
+
+00:02:11.470 --> 00:02:14.470
+And containers provide the last three methods in the table,
+
+00:02:14.470 --> 00:02:16.070
+which are used very often.
+
+00:02:16.430 --> 00:02:19.310
+Size returns the number of elements in the container,
+
+00:02:19.610 --> 00:02:23.710
+empty returns true or false depending on whether the container is empty or not,
+
+00:02:24.370 --> 00:02:28.570
+and the insert method allows us to insert an element into a container.
+
+00:02:30.470 --> 00:02:34.730
+In this table, we can see that we also have the ability to compare two containers.
+
+00:02:35.230 --> 00:02:38.030
+We can test to see if the elements of one container
+
+00:02:38.030 --> 00:02:40.330
+are less than the elements of a second container.
+
+00:02:40.830 --> 00:02:45.130
+And we can also test for less than or equal to greater than and greater than or equal to.
+
+00:02:46.120 --> 00:02:50.320
+We can also check to see if the contents of two containers are the same or not,
+
+00:02:50.320 --> 00:02:52.620
+using the equality operators
+
+00:02:52.680 --> 00:02:55.680
+We have the swap function, which swaps two containers.
+
+00:02:56.280 --> 00:03:01.080
+And we can remove one or all elements from a container, using erase and clear.
+
+00:03:01.440 --> 00:03:04.640
+And finally, we can get iterators to elements in containers.
+
+00:03:04.940 --> 00:03:07.440
+Not all containers support all these iterators,
+
+00:03:07.440 --> 00:03:09.940
+but I listed them anyway so you could see them here.
+
+00:03:09.940 --> 00:03:13.930
+We'll talk about iterators in more detail in the next video. So don't worry,
+
+00:03:13.930 --> 00:03:15.730
+you'll learn about them in a few minutes.
+
+00:03:17.730 --> 00:03:19.610
+This last slide is super important.
+
+00:03:20.010 --> 00:03:23.780
+Now that we know a little bit more about the functionality provided by containers,
+
+00:03:23.780 --> 00:03:27.280
+let's talk about what types of objects we can store in containers.
+
+00:03:28.430 --> 00:03:31.430
+First, we can store all of the primitive types in containers,
+
+00:03:31.430 --> 00:03:33.430
+int, float, double, all of them.
+
+00:03:33.930 --> 00:03:35.430
+But what about our objects.
+
+00:03:35.930 --> 00:03:39.230
+It's important to remember that when we store an element in a container
+
+00:03:39.230 --> 00:03:41.430
+the container makes a copy of that element.
+
+00:03:42.090 --> 00:03:45.790
+So we must be sure that our objects are copyable and assignable.
+
+00:03:46.450 --> 00:03:49.450
+This means they must have default copy constructors
+
+00:03:49.450 --> 00:03:52.950
+or our own copy constructors as well as copy assignment.
+
+00:03:53.450 --> 00:03:56.150
+We can also provide move semantics for efficiency.
+
+00:03:57.340 --> 00:04:01.990
+Finally, the ordered associative containers must be able to compare objects.
+
+00:04:02.540 --> 00:04:06.140
+They do this using the less than and the equality operators.
+
+00:04:06.140 --> 00:04:10.690
+So your objects must support these operators via operator overloading.
+
+00:04:11.690 --> 00:04:15.290
+Okay. I hope you can see that everything we've learned and done in this
+
+00:04:15.290 --> 00:04:16.890
+course comes together right here.
+
+00:04:17.550 --> 00:04:21.550
+We now know exactly what we have to do to make our own objects work with the stl.
+
+00:04:21.850 --> 00:04:25.350
+And you know what it's not that complicated. In most cases,
+
+00:04:25.350 --> 00:04:28.350
+we can use all of the compiler provided functionality
+
+00:04:28.350 --> 00:04:29.850
+unless we have raw pointers,
+
+00:04:30.210 --> 00:04:33.190
+and we already learned how to handle classes with raw pointers.
+
+00:04:33.690 --> 00:04:37.290
+Well, that completes this video. In the next video, we'll learn about iterators,
+
+00:04:37.290 --> 00:04:40.490
+which give us something to do with these containers. I'll see you there.

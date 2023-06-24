@@ -1,0 +1,343 @@
+WEBVTT
+
+00:01.140 --> 00:07.260
+Now let us look at a program for checking if a number is Armstrong number or not.
+
+00:08.040 --> 00:09.840
+So what does it mean by Armstrong?
+
+00:09.870 --> 00:11.250
+First we will learn that.
+
+00:11.280 --> 00:13.380
+Then we'll see the procedure in that program.
+
+00:13.860 --> 00:15.840
+Let us see what is an Armstrong number?
+
+00:15.870 --> 00:18.300
+See if I have a number 153.
+
+00:18.330 --> 00:19.720
+Take out the digits of a number.
+
+00:19.740 --> 00:20.710
+What are the digits?
+
+00:20.730 --> 00:24.300
+If we take out, we have already seen that we can get the digits from the last.
+
+00:24.330 --> 00:24.570
+Okay.
+
+00:24.570 --> 00:25.230
+No problem.
+
+00:25.230 --> 00:27.190
+For three, then five.
+
+00:27.210 --> 00:28.080
+Then one.
+
+00:28.290 --> 00:30.150
+Take the cubes of these digits.
+
+00:30.180 --> 00:30.900
+Cubic.
+
+00:30.930 --> 00:32.760
+Then are there cubes?
+
+00:32.760 --> 00:36.270
+So one cube is one only and five cubes.
+
+00:36.270 --> 00:39.180
+125 and three cubes.
+
+00:39.180 --> 00:40.250
+27.
+
+00:40.260 --> 00:41.700
+So how much this is.
+
+00:41.700 --> 00:45.620
+125 140, 52 153.
+
+00:45.630 --> 00:47.670
+Again, we got a number 153.
+
+00:48.100 --> 00:54.090
+See some of the cubes of the digits of a number is equal to number itself.
+
+00:54.090 --> 01:00.240
+So that is Carlos Armstrong, number one, five three digits are taken and the cubes are taken added.
+
+01:00.330 --> 01:04.080
+We get 153 some of the cubes of digits of a number.
+
+01:04.080 --> 01:06.900
+If they are equal to a number, then it is an Armstrong number.
+
+01:07.520 --> 01:08.760
+Now, how to do this?
+
+01:08.880 --> 01:10.290
+We need the digits.
+
+01:10.650 --> 01:12.770
+Don't we know how to get digit digits?
+
+01:12.780 --> 01:15.300
+Yes, we have already seen it in the previous video.
+
+01:15.600 --> 01:18.350
+So for 153, also, we can take out the digits.
+
+01:18.360 --> 01:25.980
+If you remember this, I have changed it for 153 153 more by ten we get three divided by 1015, then
+
+01:25.980 --> 01:27.750
+more by ten we get five.
+
+01:27.780 --> 01:31.890
+Divide more by ten one then divide we can get it.
+
+01:32.280 --> 01:36.840
+Then what we have to do, we have to find some of the cubes.
+
+01:36.840 --> 01:38.280
+Some of the cubes.
+
+01:38.280 --> 01:46.560
+So we will have one more variable sum that is initially equal to zero, then zero plus first time three
+
+01:46.560 --> 01:46.980
+cubes.
+
+01:46.980 --> 01:48.780
+So I'll write down three cubes like this.
+
+01:50.130 --> 01:51.450
+This will be three cube.
+
+01:51.480 --> 01:54.930
+The next is three cube plus five cubes, right?
+
+01:54.930 --> 02:03.150
+So three three cube plus five cube and we get total 152 here I'll write like that then 152 plus one
+
+02:03.150 --> 02:11.610
+cube is 153 and a number became zero stop so we can take the sum and here I can write down the statement.
+
+02:11.610 --> 02:13.920
+Sum, assign, sum plus.
+
+02:15.560 --> 02:17.330
+The three and five.
+
+02:17.330 --> 02:20.380
+And one way we are getting it here are.
+
+02:20.390 --> 02:22.100
+So this is our cube.
+
+02:22.310 --> 02:23.090
+Our cube.
+
+02:23.510 --> 02:28.490
+So, yes, in the same procedure where we were displaying the digits, now we will add the cubes of
+
+02:28.490 --> 02:32.270
+those digits and some variable and we get the number.
+
+02:32.720 --> 02:34.520
+Now check the number that you got.
+
+02:34.520 --> 02:37.250
+153 is the same as the original number.
+
+02:37.250 --> 02:40.250
+Where is the original number and what it has became?
+
+02:40.250 --> 02:41.930
+Oh, this has become zero.
+
+02:42.630 --> 02:44.670
+So this is the problem in this one.
+
+02:44.730 --> 02:47.420
+The original number, you are dividing it by ten.
+
+02:47.430 --> 02:49.080
+So it is becoming zero finally.
+
+02:49.080 --> 02:50.700
+So you should preserve that number.
+
+02:50.700 --> 02:57.960
+So let us take some more variable m inside that we will keep this value 153 Then check with this m right.
+
+02:57.990 --> 03:01.410
+153 that sum is 153 Is it same as this?
+
+03:01.410 --> 03:03.370
+M Yes, at the same.
+
+03:03.570 --> 03:05.670
+So it's an Armstrong number.
+
+03:05.670 --> 03:07.020
+So we have seen the procedure.
+
+03:07.020 --> 03:08.610
+Now let us look at the flow chart.
+
+03:08.610 --> 03:09.720
+So it is the flow chart.
+
+03:09.720 --> 03:15.900
+Take a number, some is initialized with zero and just said that our number is becoming zero, so we
+
+03:15.900 --> 03:17.550
+should preserve it in some other variable.
+
+03:17.550 --> 03:23.070
+So in I have taken this is the loop already you are familiar with, right in the previous video we have
+
+03:23.070 --> 03:28.800
+discussed now I was printing after this so I don't have to print, I'm writing some assign some plus
+
+03:28.800 --> 03:29.490
+R cube.
+
+03:29.490 --> 03:33.480
+So I have to take the cube of a digit and add it.
+
+03:33.480 --> 03:39.360
+To sum that step I have to add then once the loop ends, see, I have to show it separately because
+
+03:39.360 --> 03:40.320
+there's is a loop, right?
+
+03:40.350 --> 03:47.460
+If it is false, it comes here and check if man same are same if same same strong otherwise not and
+
+03:47.460 --> 03:48.900
+strong and stop.
+
+03:48.900 --> 03:54.660
+So I have to check the number whether some is equal to that m original number.
+
+03:54.960 --> 03:56.820
+So same thing I will write down here.
+
+03:57.000 --> 03:59.220
+See we need some.
+
+03:59.220 --> 04:02.520
+Also we need one more variable m also.
+
+04:02.520 --> 04:08.400
+So after taking a variable I will make m assign nn value will keep it here.
+
+04:08.430 --> 04:14.190
+The procedure is same already we have written this logic while number is greater than zero and we were
+
+04:14.190 --> 04:22.140
+finding out first more that is last digit and the more the ten then n was getting divided by ten.
+
+04:22.140 --> 04:31.050
+Now one more extra work we have to do that is some assign some plus r cubed, so r into r into r three
+
+04:31.050 --> 04:31.620
+times.
+
+04:32.040 --> 04:33.120
+This is the procedure.
+
+04:34.470 --> 04:35.340
+This is Luke.
+
+04:35.430 --> 04:36.390
+This is Luke.
+
+04:36.660 --> 04:38.100
+Steps repeated.
+
+04:38.130 --> 04:42.840
+Then once we come out of the loop, check if M is equal to someone.
+
+04:42.870 --> 04:49.650
+So outside the loop, check here if sum is equal to M.
+
+04:49.980 --> 04:53.730
+If so, see out as Armstrong.
+
+04:55.260 --> 04:55.620
+Right.
+
+04:57.350 --> 04:59.990
+Armstrong say it's Armstrong.
+
+05:00.440 --> 05:06.840
+Otherwise, else she'll say Not Armstrong.
+
+05:06.860 --> 05:07.820
+So that's all.
+
+05:07.820 --> 05:09.890
+At last we have to say return zero.
+
+05:10.670 --> 05:12.650
+So outside the loop here.
+
+05:12.800 --> 05:17.600
+So this is a program for finding numbers, Armstrong, or not?
+
+05:17.900 --> 05:18.890
+Simple logic.
+
+05:19.070 --> 05:22.760
+In the previous program, we have just added one statement.
+
+05:22.760 --> 05:25.760
+That is, we are finding the sum of the cubes.
+
+05:25.790 --> 05:26.510
+That's all.
+
+05:27.910 --> 05:29.850
+So write this program by yourself.
+
+05:29.860 --> 05:34.630
+There is a coding exercise for this one, so complete that and also write on the program by yourself
+
+05:34.630 --> 05:35.500
+in coding exercise.
+
+05:35.500 --> 05:36.820
+Just you have to write on this part.
+
+05:36.820 --> 05:38.760
+You don't have to take input, right?
+
+05:38.770 --> 05:43.090
+Since your you read the description, you'll find out only the logic you have to write on.
+
+05:44.230 --> 05:49.300
+Now, in the next video, again, the topic is based on the same logic.
+
+05:50.070 --> 05:50.460
+Okay.
+
+05:50.460 --> 05:51.570
+So I'll keep it as it is.
+
+05:51.570 --> 05:52.620
+This I will not change.
+
+05:52.640 --> 05:54.240
+The number will also be same.
+
+05:54.450 --> 05:56.940
+Now let us look at the next program.

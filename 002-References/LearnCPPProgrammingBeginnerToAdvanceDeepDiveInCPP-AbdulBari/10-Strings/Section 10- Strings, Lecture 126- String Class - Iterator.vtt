@@ -1,0 +1,343 @@
+WEBVTT
+
+00:01.090 --> 00:05.470
+In this video I will explain you about iterator over string.
+
+00:06.340 --> 00:13.030
+Aerators are used for traversing or accessing all the characters of a string.
+
+00:13.420 --> 00:16.720
+Built in operators are available for string class.
+
+00:16.750 --> 00:23.590
+This is a charter which will allow us to access a string in forward direction from left to right.
+
+00:24.040 --> 00:26.580
+And this is a reverse iterator.
+
+00:26.590 --> 00:32.020
+It will allow us to access a string in backward direction that is from right to left.
+
+00:32.770 --> 00:35.610
+We can access all these characters from right to left.
+
+00:35.620 --> 00:37.750
+One by one, we can access the characters.
+
+00:38.050 --> 00:43.120
+So this iterator object will work like a pointer to a character in a string.
+
+00:43.600 --> 00:50.110
+By using this iterator, we can either read an alphabet or a character as well as we can modify it.
+
+00:51.190 --> 00:53.350
+Now let us see how to access this one.
+
+00:53.350 --> 00:59.710
+So first of all, you should have an object of type iterator, so I will try it on the code here.
+
+01:00.880 --> 01:06.550
+This is how we can declare iterator so it is not yet assigned to n string object.
+
+01:06.550 --> 01:14.290
+So now I can assign it by writing it as iterator assign SDR or dot begin.
+
+01:14.590 --> 01:15.760
+This is the function.
+
+01:15.760 --> 01:19.690
+So this gives the beginning index of this string.
+
+01:19.690 --> 01:21.250
+So say begin.
+
+01:22.460 --> 01:24.560
+And similarly we have end.
+
+01:24.590 --> 01:27.170
+So that gives the ending index of a string.
+
+01:28.480 --> 01:36.640
+So if I have to iterate this all these characters in a string, then I can use a followup for first
+
+01:36.640 --> 01:38.140
+of all starts from Begin.
+
+01:38.530 --> 01:42.700
+And for moving the iterator to the next letter, I can say.
+
+01:44.160 --> 01:44.900
+Iterator.
+
+01:44.910 --> 01:45.210
+Plus.
+
+01:45.210 --> 01:47.010
+Plus it plus plus.
+
+01:47.640 --> 01:50.970
+Then I should stop when it has reached the end of a string.
+
+01:51.010 --> 01:51.500
+Right.
+
+01:51.510 --> 01:52.290
+So here.
+
+01:52.290 --> 01:58.320
+Say a traitor is not equal to astronaut and.
+
+02:00.030 --> 02:00.540
+Right.
+
+02:00.750 --> 02:03.780
+So until it reaches NW, it will be gone.
+
+02:03.780 --> 02:06.280
+Moving to the next letter and it will be accessing.
+
+02:06.300 --> 02:12.300
+Suppose I want to print all the letters then see out now for printing a letter.
+
+02:12.300 --> 02:13.530
+For accessing a letter.
+
+02:13.540 --> 02:21.180
+As I said, this iterator will act like a pointer, so I should reference it for accessing a character.
+
+02:21.180 --> 02:21.960
+C Start.
+
+02:21.960 --> 02:23.400
+B So I'll get a letter.
+
+02:24.540 --> 02:30.250
+So in this way, we can access all the characters one by one by using a follow up.
+
+02:30.270 --> 02:34.140
+So here I am displaying and if you want to modify, you can modify it also.
+
+02:35.160 --> 02:38.250
+Now same way we can use a reverse iterator.
+
+02:38.250 --> 02:45.600
+Also that will start from the end of a string and when it reaches the beginning of a string it will
+
+02:45.600 --> 02:51.840
+be R and that is reverse and will be true and iterator will be moving forward.
+
+02:51.840 --> 02:55.680
+Only we will be saying iterator plus plus four moving on to next.
+
+02:55.680 --> 02:58.350
+So next month it will be moving backwards.
+
+02:59.100 --> 03:05.730
+But we don't have to say minus minus we have to use C++ only means moving ahead plus plus doesn't mean
+
+03:05.730 --> 03:10.470
+add one moving ahead as it is moving in backward direction.
+
+03:10.470 --> 03:13.440
+So far, it's moving ahead means moving on the left hand side.
+
+03:13.860 --> 03:15.870
+So let us look at the removal of this one.
+
+03:15.870 --> 03:23.340
+I will write down this code and show you here I have a string, so I will write down word today here
+
+03:23.340 --> 03:25.200
+into this one then.
+
+03:25.530 --> 03:28.290
+So first of all, I will take a iterator.
+
+03:28.320 --> 03:31.140
+So inside a string iterator is there.
+
+03:31.140 --> 03:36.570
+So even I can write down that iterator because I already have included this header file.
+
+03:36.600 --> 03:40.260
+So iterator is taken now using for loop.
+
+03:40.260 --> 03:44.850
+I will initialize iterator to str begin.
+
+03:46.140 --> 03:46.740
+Right.
+
+03:47.130 --> 03:52.590
+And I will continue as long as iterator is not equal to str dot and.
+
+03:54.050 --> 03:56.270
+Then every time a traitor.
+
+03:56.270 --> 03:58.910
+Plus, plus, it will be moving to the next letter.
+
+04:00.440 --> 04:00.770
+Yeah.
+
+04:00.830 --> 04:04.520
+I will see out by referencing it.
+
+04:04.550 --> 04:07.420
+So this will be printing all the alphabets.
+
+04:07.430 --> 04:08.480
+Let us take it.
+
+04:10.150 --> 04:10.570
+Yes.
+
+04:10.570 --> 04:12.370
+All the alphabets are painted.
+
+04:13.430 --> 04:17.570
+Now all these are lowercase letters, so I'll make some changes here.
+
+04:18.560 --> 04:20.660
+I will make them uppercase.
+
+04:20.660 --> 04:24.470
+So for that, I should subtract 32 from each letter.
+
+04:24.470 --> 04:26.960
+So it will become uppercase.
+
+04:26.960 --> 04:29.940
+So I will say I'd assign it 32.
+
+04:29.960 --> 04:32.240
+So now the string should become uppercase.
+
+04:32.270 --> 04:35.060
+Now, at the end, I will print the string.
+
+04:35.090 --> 04:37.910
+After the loop ends, I will print the string.
+
+04:38.000 --> 04:40.370
+So it should print capital letters.
+
+04:42.340 --> 04:48.040
+Yes, you can see that the string is modified so we can read as well as write a string.
+
+04:49.330 --> 04:49.500
+Okay.
+
+04:50.240 --> 04:52.940
+Now, next, as I said, there is a reverse iterator also.
+
+04:52.940 --> 04:56.930
+So simply l make changes in the same code instead of writing it again.
+
+04:57.140 --> 05:06.020
+Here I will say reverse underscore iterator and here I will say are begin and here I say our end.
+
+05:06.200 --> 05:09.200
+So it will access in the reverse direction.
+
+05:09.410 --> 05:13.730
+Now this modification may not help us understand it's working.
+
+05:13.850 --> 05:16.760
+So I will say see out.
+
+05:17.360 --> 05:18.620
+Start it.
+
+05:20.210 --> 05:21.950
+Now I'll remove this.
+
+05:22.720 --> 05:23.320
+Let us run.
+
+05:25.750 --> 05:30.200
+Now you can see that the string is displayed in reverse, right?
+
+05:30.580 --> 05:32.980
+Today is displayed in reverse.
+
+05:33.280 --> 05:40.420
+So this will move this iterator from back end that is end of a string to the front end of the string.
+
+05:42.040 --> 05:48.690
+So even you can use for loop for displaying all the characters of a string or you can use a iterator.
+
+05:48.700 --> 05:50.290
+So I'll show you how you can do it.
+
+05:50.290 --> 05:52.210
+Just using a follow up letter by letter.
+
+05:52.240 --> 05:55.170
+Each letter we can display by using follow.
+
+05:55.210 --> 06:01.270
+So I will say for integer I assign zero.
+
+06:01.390 --> 06:02.380
+I is.
+
+06:07.150 --> 06:18.490
+Star of I as not equal to slash and zero that is not character an A-plus plus and here I will say see
+
+06:18.490 --> 06:19.090
+out.
+
+06:21.040 --> 06:22.690
+Strove, I.
+
+06:26.150 --> 06:27.890
+It will display all the letters.
+
+06:30.060 --> 06:30.330
+Yeah.
+
+06:30.360 --> 06:31.680
+Same thing is happening.
+
+06:32.160 --> 06:36.270
+Even using iterator or just using for loop and the subscript operator.
+
+06:39.040 --> 06:41.350
+The subscript operator.
+
+06:41.350 --> 06:44.140
+We can access all the characters of a string.
+
+06:44.770 --> 06:46.450
+I will try to modify it.
+
+06:46.720 --> 06:48.640
+Let us see whether it works or not.
+
+06:50.280 --> 06:55.050
+A steer of is assigned with the steer of I -32.
+
+06:56.900 --> 06:59.420
+Then I will display this string.
+
+06:59.690 --> 07:01.520
+It should change to uppercase.
+
+07:04.090 --> 07:05.560
+Yes, it is changing.
+
+07:06.100 --> 07:11.560
+So this is how we can access a string by using either iterator or by using Follow-Up.
+
+07:11.560 --> 07:14.830
+So whichever you feel is simple for you, you can use that one.
+
+07:16.910 --> 07:18.890
+So that's all about the iterator.
+
+07:19.130 --> 07:21.140
+So you try this and practice them.
+
+07:21.860 --> 07:24.890
+Next, we will look at some exercise programs.

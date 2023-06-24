@@ -1,0 +1,595 @@
+WEBVTT
+
+00:05.440 --> 00:11.620
+In this video, we're going to configure the code light ID that we just installed to work on our Windows
+
+00:11.620 --> 00:13.420
+system with C++.
+
+00:13.420 --> 00:15.940
+So the first thing we want to do is we want to start code light.
+
+00:15.940 --> 00:17.830
+So I'm just going to double click on the icon.
+
+00:18.580 --> 00:25.960
+And the first time that you run code light, you'll probably get a little setup wizard pop up and here
+
+00:25.960 --> 00:26.290
+it is.
+
+00:26.290 --> 00:30.880
+You may also get a window that says you want to update to the latest version, which you can certainly
+
+00:30.880 --> 00:31.230
+do.
+
+00:31.240 --> 00:34.930
+I'm going to cancel for this video and here's the setup wizard.
+
+00:35.050 --> 00:37.930
+Now, it's important that you run through this setup wizard.
+
+00:37.930 --> 00:42.040
+If this does not show up for the first time, you can always find it up here.
+
+00:42.040 --> 00:45.940
+You can select help and then you can run the setup wizard here.
+
+00:45.940 --> 00:47.710
+But in this case it does show up.
+
+00:47.710 --> 00:50.560
+So I'm going to go through this and you only have to do this one time.
+
+00:50.560 --> 00:51.970
+I'm going to select next.
+
+00:54.040 --> 01:00.640
+Now here, the way that code light works is it uses a lot of plug ins to support PHP, C, C++ and so
+
+01:00.640 --> 01:01.120
+forth.
+
+01:01.120 --> 01:03.670
+We only care about C++ in this case.
+
+01:03.670 --> 01:08.890
+So what we want to do is we want to clear these plug ins so you can see all the checkmarks are gone
+
+01:09.130 --> 01:12.400
+and then we want to toggle the C++ plug ins only.
+
+01:12.400 --> 01:17.590
+So I'm going to select that until only the C++ ones show up.
+
+01:18.610 --> 01:19.750
+So that's what we need to do.
+
+01:19.750 --> 01:22.300
+Just make sure that not all of them are set up, just some of them.
+
+01:22.300 --> 01:23.860
+You can use the toggle to do it.
+
+01:24.100 --> 01:25.270
+I'll select next.
+
+01:26.440 --> 01:28.120
+Now we want to set up the compiler.
+
+01:28.120 --> 01:33.490
+Now, remember, if you've already installed the GW compiler, then you can just click scan.
+
+01:33.490 --> 01:35.740
+If you have it, go back to the video and install it.
+
+01:35.740 --> 01:40.690
+I wouldn't install it from this option because it installs an older version of the GW compiler.
+
+01:41.080 --> 01:43.960
+So I'm going to scan and it should find it.
+
+01:43.960 --> 01:44.620
+There it is.
+
+01:44.620 --> 01:47.560
+So I want to select it and press next.
+
+01:49.270 --> 01:51.910
+Now here you can customize the colors to whatever you like.
+
+01:51.910 --> 01:54.280
+This dark monarchy theme.
+
+01:54.280 --> 01:55.870
+It's kind of nice on the on the vision.
+
+01:55.870 --> 01:57.190
+It's not so hard on your eyes.
+
+01:57.190 --> 01:59.980
+But for the video, I'm going to choose the classic eclipse.
+
+01:59.980 --> 02:07.330
+Look that way I think it shows up a little better on video so I'll select next will leave these defaults
+
+02:07.330 --> 02:13.690
+as is and we'll press finish now at this point you want to save an exit.
+
+02:13.690 --> 02:16.870
+It's going to ask you this every time you make a change and it gets pretty annoying.
+
+02:16.870 --> 02:19.780
+So I'm just going to say remember my answer and don't ask me again.
+
+02:19.780 --> 02:22.750
+And every time I make a change, I want to save an exit.
+
+02:22.750 --> 02:23.860
+So I'll save an exit.
+
+02:27.370 --> 02:29.320
+So it saves it and it opens it up again.
+
+02:29.320 --> 02:32.140
+And now these settings that I set were applied.
+
+02:32.530 --> 02:34.810
+And again, I'll cancel the new download here.
+
+02:35.410 --> 02:37.510
+So let me make this full screen here.
+
+02:38.650 --> 02:43.300
+And as I mentioned before, if that setup wizard does not show up, you can start it here.
+
+02:43.630 --> 02:45.160
+Run the setup wizard.
+
+02:46.390 --> 02:52.990
+Okay, so now what we want to do is we want to create a new workspace and once we create the new workspace,
+
+02:52.990 --> 02:56.380
+we'll run a couple of settings to do, and then once that's done, it'll be all set.
+
+02:56.380 --> 02:58.300
+So let's create a new workspace.
+
+02:58.330 --> 03:03.430
+A workspace is basically an area where you can have different C++ projects in.
+
+03:03.430 --> 03:05.890
+So the first thing we want to do is create a new workspace.
+
+03:05.890 --> 03:06.820
+I'll select that.
+
+03:06.820 --> 03:12.160
+You can also say file new workspace, so I'll do it right here.
+
+03:12.430 --> 03:14.620
+And it's going to ask me for the name of the workspace.
+
+03:14.620 --> 03:18.040
+So I'll just say Keep workspace.
+
+03:19.030 --> 03:20.650
+You could do this whatever you like.
+
+03:20.650 --> 03:26.950
+If you want to have a workspace for all the section one exercises, section two, section three, or
+
+03:26.950 --> 03:32.230
+whatever you like, whatever it makes sense for you, I'm going to put it in my documents folder and
+
+03:32.230 --> 03:37.270
+I want to create the workspace under a separate directory that just helps me organize my files.
+
+03:37.300 --> 03:37.870
+I'll select.
+
+03:37.870 --> 03:40.330
+Okay, good.
+
+03:40.330 --> 03:44.650
+Now you can see here on the left pane of my workspace view, I've got a workspace now.
+
+03:44.650 --> 03:47.200
+The workspace in and of itself isn't real useful.
+
+03:47.200 --> 03:54.310
+I need to create a project within the workspace so I can right click on workspace and say new project.
+
+03:54.880 --> 03:57.040
+So I'll do that and I'll select new project.
+
+03:57.820 --> 03:59.950
+At this point, we've got some options.
+
+04:01.060 --> 04:07.120
+We're going to select the console option and then simple executable, G Plus Plus.
+
+04:07.510 --> 04:10.750
+That's basically the C++ compiler.
+
+04:10.750 --> 04:13.210
+It's called G Plus Plus because it's from Janu.
+
+04:13.720 --> 04:18.070
+So I'll select that next and then you give your project a name.
+
+04:18.070 --> 04:19.960
+This could be again any name you like.
+
+04:19.990 --> 04:23.290
+Avoid spaces just to be safe, just simple name.
+
+04:23.290 --> 04:26.470
+So I'll say test one, let's say.
+
+04:27.370 --> 04:30.790
+And again I want to create a project under in a separate directory.
+
+04:31.330 --> 04:32.470
+I'll press next.
+
+04:33.520 --> 04:35.140
+Here you can choose the compiler.
+
+04:35.140 --> 04:37.300
+It's probably already chosen it for you.
+
+04:37.300 --> 04:43.090
+If you've got multiple compilers, you can set individual compilers on a per project level, but we're
+
+04:43.090 --> 04:46.900
+using the GW compiler and we're using the new debugger.
+
+04:47.500 --> 04:51.040
+The build system will be default and select finish.
+
+04:51.520 --> 04:53.860
+So it's gone off and created a new project.
+
+04:53.860 --> 04:55.330
+You can see it here on the left side.
+
+04:55.330 --> 04:56.380
+It's called Test one.
+
+04:56.380 --> 05:01.390
+And as I explode these, you can see that there's my main CPP file.
+
+05:01.480 --> 05:03.610
+That's the program that it's created for me.
+
+05:03.720 --> 05:04.560
+By default.
+
+05:04.650 --> 05:08.640
+The DOT CPP extension means that it's a C++ file.
+
+05:08.670 --> 05:14.460
+I'm going to double click on that and you can see my font is pretty small here because I just installed
+
+05:14.460 --> 05:14.670
+this.
+
+05:14.670 --> 05:16.170
+Let me increase my font.
+
+05:16.200 --> 05:20.040
+You may not have to do this on your end, but it's going to show up better on video if I do it.
+
+05:20.040 --> 05:26.010
+So I'm going to go to settings, colors and fonts and I'll just set it to 16 I think should be nice.
+
+05:27.840 --> 05:28.230
+Okay.
+
+05:28.260 --> 05:28.740
+There we go.
+
+05:28.740 --> 05:30.390
+That way it's much easier for you to see.
+
+05:30.420 --> 05:33.600
+Now, what we want to do is we want to delete all this.
+
+05:33.600 --> 05:36.300
+This is actually C code, not C++ code.
+
+05:36.300 --> 05:40.320
+So let's delete all that and let's write a real simple test from scratch.
+
+05:40.710 --> 05:46.140
+So the first thing we'll do is we'll include IO Stream.
+
+05:47.370 --> 05:52.830
+This allows us to do input and output and we'll talk much more about what these include directives mean
+
+05:52.830 --> 05:53.910
+in a future video.
+
+05:53.910 --> 05:58.020
+In this example, just type along and make sure that the environment is working.
+
+05:58.020 --> 06:02.640
+So you want to say pound, include and IO stream and angle brackets.
+
+06:03.090 --> 06:05.550
+Then we want to say int space main.
+
+06:05.550 --> 06:13.950
+This is our main function to parens and we'll create a couple of curlies, curly braces.
+
+06:14.660 --> 06:18.570
+Then in here, all we're going to say is STD, colon, colon.
+
+06:18.600 --> 06:27.270
+See out the insertion operator, which is two less than sines followed by hello testing or anything
+
+06:27.270 --> 06:31.620
+you like and then a semicolon at the end and then finally return zero.
+
+06:31.740 --> 06:32.340
+That's it.
+
+06:32.340 --> 06:33.660
+That's a simple test.
+
+06:34.200 --> 06:39.270
+Again, there'll be a separate video where I go over the anatomy of a C++ program and we'll go over
+
+06:39.270 --> 06:40.410
+all this in detail.
+
+06:40.410 --> 06:43.080
+So in this case, again, we're including IO stream.
+
+06:43.080 --> 06:47.580
+We've got our main function and we're printing hello testing to the screen.
+
+06:48.240 --> 06:50.820
+We're returning zero, which means program successful.
+
+06:51.810 --> 06:57.300
+I'm going to save this and I'm not going to do this on the videos, but you can certainly do this at
+
+06:57.300 --> 07:01.890
+home if you come up to view and you can toggle the minimal view.
+
+07:02.640 --> 07:08.100
+When you do that, you'll get some icons up here and you can use these icons to build and say, for
+
+07:08.100 --> 07:09.840
+example, that's the save right there.
+
+07:09.930 --> 07:14.010
+I'm not going to do that because I want as much screen real estate as possible on the videos.
+
+07:14.010 --> 07:17.040
+So I'll just toggle that off.
+
+07:18.390 --> 07:26.400
+So I'm going to file save and at this point we're ready to run the program, but we need to make a couple
+
+07:26.400 --> 07:30.120
+of changes just because we want to use modern C++.
+
+07:30.120 --> 07:36.630
+So what we can do is we can click on the project test one in this example and I'll right click and down
+
+07:36.630 --> 07:38.370
+at the bottom you'll see settings.
+
+07:38.550 --> 07:44.700
+So we'll select settings and you can see right down here at the bottom where it says Global Settings,
+
+07:44.700 --> 07:51.300
+I want to select that and where it says C++ compiler options.
+
+07:51.420 --> 07:55.590
+You can click right in there and then you'll see these three little dots here on the button.
+
+07:55.590 --> 07:57.930
+So it gives us another menu so you can select that.
+
+07:58.710 --> 08:00.840
+And we want to make sure that a couple of things are set.
+
+08:00.840 --> 08:05.040
+We want to be sure that C++ 14 is checked.
+
+08:05.490 --> 08:10.560
+That means we're using the latest version of the standard, which is modern C++.
+
+08:11.040 --> 08:16.020
+We also want to be sure that the W lx all warnings is checked.
+
+08:18.180 --> 08:19.260
+So that's it for now.
+
+08:19.260 --> 08:19.980
+That'll be fine.
+
+08:19.980 --> 08:21.120
+We'll select OC
+
+08:24.000 --> 08:28.060
+and will apply and OC.
+
+08:28.110 --> 08:28.770
+Perfect.
+
+08:29.730 --> 08:35.970
+Now I also want to click on the workspace itself and right click on that and come down to workspace
+
+08:35.970 --> 08:38.280
+settings and select that.
+
+08:38.280 --> 08:44.340
+And when you come to code completion, you want to be sure that C++ 14 standard is enabled.
+
+08:45.330 --> 08:48.960
+Code completion is something that the IDE does as you type.
+
+08:48.960 --> 08:52.740
+It's trying to figure out what you want to do and help you out so you don't have to do a lot of typing.
+
+08:52.890 --> 08:57.420
+And in this case we want to tell it to use the for the C++ 14 standard.
+
+08:57.420 --> 09:00.000
+So when it's trying to figure things out, so I'll select.
+
+09:00.000 --> 09:00.610
+Okay.
+
+09:01.260 --> 09:04.290
+Now at this point, we should be ready to try this out.
+
+09:04.290 --> 09:08.340
+So I'm going to expand this little window down here at the bottom and I'm going to come up to where
+
+09:08.340 --> 09:12.270
+it says Build and then we'll select Clean Project.
+
+09:14.090 --> 09:16.920
+Then we'll go back to build and just say Run.
+
+09:17.520 --> 09:19.400
+At this point it's going to say, What do you want to do?
+
+09:19.430 --> 09:20.280
+Do you just want to run it?
+
+09:20.280 --> 09:21.720
+Or You want to build it and run it?
+
+09:21.990 --> 09:23.670
+In this case, I want to build it and run it.
+
+09:23.670 --> 09:28.680
+And I'll talk more about the workflow that's used for cleaning and compiling and so forth a little bit
+
+09:28.680 --> 09:29.910
+later on in the course.
+
+09:30.750 --> 09:35.520
+So in this case, I want to say build and execute and it will compile and run the program.
+
+09:35.520 --> 09:39.690
+If there are no errors, it'll run and you'll get a window pop up with the output.
+
+09:39.690 --> 09:40.020
+Hello?
+
+09:40.020 --> 09:40.950
+Testing in there.
+
+09:40.950 --> 09:44.880
+If there are errors, let me show you what they might look like, just in case you do see them.
+
+09:45.810 --> 09:53.250
+Suppose I forget that semicolon at the end there and I'm going to say build, run, build and execute.
+
+09:53.520 --> 09:59.970
+And you can see this red down here that says error expected a semicolon before the return.
+
+09:59.970 --> 10:03.540
+You also get a red error here and it says.
+
+10:03.650 --> 10:05.110
+Again, semicolon expected.
+
+10:05.120 --> 10:12.800
+So basically you just put the semicolon in there, save it and then go back up to build and run, build
+
+10:12.800 --> 10:13.420
+an execute.
+
+10:13.430 --> 10:18.080
+You can click on here for it to remember, to always build an execute or just execute again.
+
+10:18.080 --> 10:18.890
+Don't do that yet.
+
+10:18.890 --> 10:22.700
+We'll do that as the course progresses and I'll show you the different workflows we can use.
+
+10:22.700 --> 10:23.960
+So build and execute.
+
+10:24.830 --> 10:25.670
+There we go.
+
+10:25.670 --> 10:33.020
+Now, if at this point you get an error that says that some DLL can't be found, then what you want
+
+10:33.020 --> 10:40.550
+to do is you want to go back to the project, right click and go down to settings and remember you only
+
+10:40.550 --> 10:47.390
+have to do this if you get some kind of runtime error that says some CP DLL file is not found and go
+
+10:47.390 --> 10:48.590
+to global settings.
+
+10:48.920 --> 10:54.410
+And then what you want to do is you want to go to the linker options and just select right on there
+
+10:54.410 --> 10:55.730
+and click that little button.
+
+10:56.480 --> 11:00.410
+And down here at the bottom, what you want to do is you just want to add a couple of lines.
+
+11:00.410 --> 11:14.220
+You could say dash static, dash lib GCSE and then press enter and then dash static dash lib std c plus
+
+11:14.300 --> 11:14.990
+plus.
+
+11:16.610 --> 11:21.530
+So what will happen here is now the linker is going to statically link the files and not have to use
+
+11:21.530 --> 11:23.870
+dynamically linked libraries or DLLs.
+
+11:24.530 --> 11:28.220
+Again, you only have to do this if you if you get that error, if you don't get the error, you can
+
+11:28.220 --> 11:29.570
+do it also and it's not going to hurt.
+
+11:29.570 --> 11:38.180
+But I'll select OC apply and let's do a build, rebuild, let's do a clean first.
+
+11:38.180 --> 11:42.380
+Whenever you change any kind of settings, you want to clean the project, which really just cleans
+
+11:42.380 --> 11:44.300
+everything up and gives you a starting place.
+
+11:44.300 --> 11:48.770
+So we'll clean the project and then we'll just say, run, build and execute.
+
+11:48.770 --> 11:52.010
+In this case, it's going to statically link it, which is just as good.
+
+11:52.340 --> 11:53.930
+And hello, testing.
+
+11:53.930 --> 11:55.670
+We're all set at this point.
+
+11:55.670 --> 11:57.200
+We've got a good install.
+
+11:57.200 --> 11:59.630
+It's configured and we're ready to use code.
+
+11:59.630 --> 12:01.670
+Like to start learning C++.

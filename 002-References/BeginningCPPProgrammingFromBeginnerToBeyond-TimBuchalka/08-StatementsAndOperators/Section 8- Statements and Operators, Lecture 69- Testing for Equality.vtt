@@ -1,0 +1,442 @@
+WEBVTT
+
+00:00:05.500 --> 00:00:09.100
+In this video, we'll go over the c++ equality operators.
+
+00:00:10.000 --> 00:00:13.200
+These operators compare the values of two expressions
+
+00:00:13.200 --> 00:00:16.200
+and evaluate to a Boolean that's a true false value.
+
+00:00:16.880 --> 00:00:21.130
+The operators are the equals which is represented by two equal signs
+
+00:00:21.130 --> 00:00:22.830
+and the not equals operator,
+
+00:00:22.830 --> 00:00:26.430
+which is represented by the exclamation point or bang symbol,
+
+00:00:26.430 --> 00:00:28.430
+followed immediately by an equal symbol.
+
+00:00:29.330 --> 00:00:33.630
+Be extra careful when you're starting. It's super common for beginning c++
+
+00:00:33.630 --> 00:00:38.030
+programmers to use a single equal sign. That's assignment, not comparison.
+
+00:00:39.330 --> 00:00:43.730
+These simple operators, along with the operators we'll learn about in the next several videos,
+
+00:00:43.730 --> 00:00:45.730
+give us so much power in programming.
+
+00:00:46.230 --> 00:00:49.890
+We use these operators all the time in control flow statements that we'll learn shortly.
+
+00:00:50.390 --> 00:00:54.090
+So suppose we want to do something when x is equal to 100. We can do that.
+
+00:00:54.090 --> 00:00:56.970
+We can also test for two expressions not being equal.
+
+00:00:57.570 --> 00:01:00.670
+So if my password doesn't match the password on file then
+
+00:01:00.670 --> 00:01:02.270
+you want to do something specific.
+
+00:01:02.970 --> 00:01:06.370
+The following code snippets only show the equality expressions.
+
+00:01:06.870 --> 00:01:08.670
+They're always used within statements.
+
+00:01:09.270 --> 00:01:13.170
+The first example evaluate to true if the value of expression 1
+
+00:01:13.170 --> 00:01:15.170
+is equal to the value of expression 2.
+
+00:01:15.830 --> 00:01:19.030
+These two expressions could be very complex or very simple.
+
+00:01:19.580 --> 00:01:24.130
+The second example will evaluate to true if the value of expression 1
+
+00:01:24.130 --> 00:01:26.530
+is not equal to the value of expression 2.
+
+00:01:27.530 --> 00:01:32.230
+The third example will always evaluate defaults since 100 will never equal 200.
+
+00:01:32.430 --> 00:01:37.030
+We don't usually write expressions like these but it serves to illustrate how this operator works.
+
+00:01:37.930 --> 00:01:42.630
+The final example evaluates to true if num1 is not equal to num2.
+
+00:01:44.330 --> 00:01:46.530
+Let's go over a few more examples that use statements.
+
+00:01:47.190 --> 00:01:50.390
+First, we're declaring a variable named result that's of type Boolean,
+
+00:01:50.390 --> 00:01:52.050
+and we're initializing it to false.
+
+00:01:52.820 --> 00:01:56.420
+Then we compare 100 and 50 plus 50 for equality.
+
+00:01:57.020 --> 00:02:01.220
+This will result in a Boolean, that's a true false value which we assign to result.
+
+00:02:02.320 --> 00:02:05.220
+In the next example we compare num1 and num2.
+
+00:02:05.220 --> 00:02:09.220
+And if they're not equal, we store true in result. Otherwise, false.
+
+00:02:10.020 --> 00:02:13.120
+Notice how we can use Boolean expressions and output statements.
+
+00:02:13.620 --> 00:02:16.620
+In the first output statement, we're comparing num1 and num2.
+
+00:02:17.170 --> 00:02:20.170
+And we're displaying one if they're equal or zero if they're not equal.
+
+00:02:20.770 --> 00:02:23.760
+Sometimes it's handy to display the words true and false
+
+00:02:23.760 --> 00:02:26.420
+rather than 1 and 0 in the output statements.
+
+00:02:26.420 --> 00:02:29.620
+We can do that using the boolalpha stream manipulator.
+
+00:02:29.620 --> 00:02:33.610
+Boolalpha and noboolalpha are located in the standard namespace.
+
+00:02:33.610 --> 00:02:37.410
+Once you use them, all Boolean output to the stream will result in the words true and
+
+00:02:37.410 --> 00:02:39.770
+false being displayed, that can be pretty handy.
+
+00:02:40.370 --> 00:02:44.270
+If you want to go back to the default of zero and one, just use no bool alpha.
+
+00:02:44.970 --> 00:02:47.470
+Let's head over to CodeLite and see some examples.
+
+00:02:48.470 --> 00:02:52.670
+So I'm in CodeLite, I'm in the section 8 workspace, the equality
+
+00:02:52.670 --> 00:02:54.270
+operators project.
+
+00:02:54.770 --> 00:02:57.970
+Let's run over a few examples of using these equality operators.
+
+00:02:57.970 --> 00:03:01.970
+These are going to be really, really straightforward examples. I don't think you'll have any issues understanding
+
+00:03:01.970 --> 00:03:05.870
+these but you may see a couple of surprises. So stay tuned for that.
+
+00:03:06.470 --> 00:03:10.670
+So here we go. We've got a Boolean called equal result,
+
+00:03:10.670 --> 00:03:14.070
+which I'm initializing to false, and another Boolean called not equal result,
+
+00:03:14.070 --> 00:03:16.070
+which I'm also initializing to false.
+
+00:03:16.570 --> 00:03:20.970
+And I've got two integers here num1 and num2. And we'll just play around with this a little bit.
+
+00:03:21.270 --> 00:03:25.270
+I've got my cout bool alpha here commented out. I'll uncomment that
+
+00:03:25.270 --> 00:03:29.150
+out in a moment, so you can see the difference between the behavior when you do that.
+
+00:03:29.150 --> 00:03:33.450
+So here, I'm prompting the user to enter two integers separated by a space.
+
+00:03:33.650 --> 00:03:36.250
+I'm reading in those two integers on line 15.
+
+00:03:36.750 --> 00:03:40.860
+I'm comparing those two integers for equality, right here on line 16.
+
+00:03:40.860 --> 00:03:44.460
+So I'm saying, is num1 equal to num2
+
+00:03:44.960 --> 00:03:47.620
+That result is going to be stored in equal results.
+
+00:03:47.620 --> 00:03:50.920
+So it's either going to be true if they're equal or not true if they're not equal.
+
+00:03:51.280 --> 00:03:55.080
+Then I'm going to compare the same two numbers using the not equal operator.
+
+00:03:55.080 --> 00:03:58.720
+So is num1 not equal to num2. In this case if they are not equal,
+
+00:03:58.720 --> 00:04:01.220
+then I'm going to store true into the not equal result.
+
+00:04:01.720 --> 00:04:05.490
+Otherwise false. Okay and then I'm just going to print out those two results.
+
+00:04:05.490 --> 00:04:08.090
+So let's run this piece of the code right now.
+
+00:04:08.590 --> 00:04:11.590
+And you'll see what happens. Let's enter two integers.
+
+00:04:11.590 --> 00:04:14.590
+In this case, let's enter two integers that are equal to one another.
+
+00:04:14.590 --> 00:04:17.390
+So I'll type in 10 and 10 and press enter.
+
+00:04:18.050 --> 00:04:22.250
+And you can see here, the comparison result for equals is one which is true
+
+00:04:22.450 --> 00:04:26.150
+and for not equals it's zero because they obviously are equal.
+
+00:04:26.950 --> 00:04:29.750
+Okay. Now notice I have a one and a zero being outputted here.
+
+00:04:29.750 --> 00:04:32.350
+When I uncomment out the
+
+00:04:32.350 --> 00:04:35.350
+bool alpha stream manipulator and recompile and run,
+
+00:04:36.850 --> 00:04:39.350
+now I can say, let's say, 2020
+
+00:04:40.250 --> 00:04:43.250
+and instead of zero one, we see true false. So that's pretty handy.
+
+00:04:44.240 --> 00:04:48.040
+So in this case they are true. So the equals will be true and the not equals will be false.
+
+00:04:48.040 --> 00:04:50.340
+Now let's use an example where they are not equal.
+
+00:04:52.240 --> 00:04:54.940
+And let's say we're trying to do 10 and 20 this time.
+
+00:04:56.940 --> 00:05:01.140
+So equals is false and not equals is true, just like what we'd expect.
+
+00:05:01.740 --> 00:05:04.400
+Okay. So like I said, that's pretty straightforward.
+
+00:05:04.400 --> 00:05:07.700
+I'm going to comment out this piece of code right here.
+
+00:05:07.700 --> 00:05:10.500
+And now we'll do the same thing except we'll do it with characters.
+
+00:05:10.500 --> 00:05:13.380
+Remember, we can do this with any type. We can compare any type.
+
+00:05:13.380 --> 00:05:16.180
+So in this case, I've declared
+
+00:05:16.180 --> 00:05:17.280
+two characters,
+
+00:05:17.280 --> 00:05:21.280
+char1 and char2 and initialize them both to empty to 0.
+
+00:05:21.680 --> 00:05:24.780
+And I'm asking the user to enter two characters separated by space.
+
+00:05:24.780 --> 00:05:29.380
+I'm reading in the characters, then I'm doing exactly the same thing. I'm comparing them for equality,
+
+00:05:29.680 --> 00:05:31.670
+and I'm comparing them to see if they're not equal.
+
+00:05:32.070 --> 00:05:35.730
+So let's run this, and the first test we'll do is
+
+00:05:35.730 --> 00:05:38.730
+we'll say lowercase a and uppercase a.
+
+00:05:38.730 --> 00:05:41.530
+Those are different characters. I'll press enter,
+
+00:05:42.030 --> 00:05:44.130
+are they equals? Nope, that's false.
+
+00:05:44.130 --> 00:05:47.630
+Are they not equals? True, that's true. So that's exactly what we expect.
+
+00:05:48.030 --> 00:05:52.330
+And let's test it one more time with, let's say, a capital z
+
+00:05:53.230 --> 00:05:56.230
+and another capital z. In this case, they are equal.
+
+00:05:56.230 --> 00:05:58.230
+So that's true and the not equals is false.
+
+00:05:59.230 --> 00:06:01.730
+Okay. So you can understand the logic that's going on here.
+
+00:06:02.230 --> 00:06:03.530
+I'll comment that out,
+
+00:06:05.030 --> 00:06:08.630
+and I will uncomment the next section, which is dealing with doubles.
+
+00:06:10.630 --> 00:06:14.730
+And so again, exactly the same thing except I'm using doubles. I'll run this,
+
+00:06:15.130 --> 00:06:18.680
+and we'll type in just say two doubles that are the same
+
+00:06:18.680 --> 00:06:21.280
+12.1 and 12.1,
+
+00:06:21.980 --> 00:06:25.580
+the comparison result is they are equal. Exactly what we'd expect again.
+
+00:06:26.580 --> 00:06:29.380
+And let's do an example where they are not equal.
+
+00:06:29.380 --> 00:06:32.380
+So let's say 12.5 and 13.2,
+
+00:06:34.260 --> 00:06:38.920
+the equals is false because they're not equals. And the not equals is true because they are not equals.
+
+00:06:38.920 --> 00:06:43.120
+Okay. Now this is the example that I wanted to run to show you
+
+00:06:43.920 --> 00:06:48.520
+something that may not be real obvious. Let's say we want to enter two doubles separated by a space.
+
+00:06:48.520 --> 00:06:52.520
+So I'm going to type in 12.0
+
+00:06:52.520 --> 00:06:56.820
+and 11 point a lot of nines.
+
+00:06:58.420 --> 00:07:01.320
+Now to us those are not the same number.
+
+00:07:01.320 --> 00:07:04.320
+But remember, the way the computer stores floating point numbers,
+
+00:07:04.320 --> 00:07:06.680
+it stores approximations. So
+
+00:07:07.480 --> 00:07:11.780
+that might be surprising. As far as the computer is concerned,
+
+00:07:12.180 --> 00:07:16.280
+those numbers are equal because the representation that it's using to store them behind the scenes is equal.
+
+00:07:16.780 --> 00:07:18.780
+Okay. So it's important to understand that
+
+00:07:19.480 --> 00:07:22.980
+if you're dealing with applications that need this kind of precision,
+
+00:07:22.980 --> 00:07:24.780
+you know scientific application,
+
+00:07:24.780 --> 00:07:28.440
+medical applications, many many safety critical type applications
+
+00:07:28.940 --> 00:07:30.940
+you, would not use these built-in doubles.
+
+00:07:30.940 --> 00:07:34.640
+We would use specific specialized libraries
+
+00:07:34.640 --> 00:07:36.240
+that really help us deal with this.
+
+00:07:36.240 --> 00:07:40.600
+So that 12.0 is not equal to 11.99999.
+
+00:07:40.600 --> 00:07:45.100
+Okay. So it's important to understand that. But the way that it stores it is in approximation.
+
+00:07:45.100 --> 00:07:48.760
+So as far as the computer is concerned, these are the same.
+
+00:07:49.660 --> 00:07:53.160
+So let's do one more, and I'll leave that double
+
+00:07:53.760 --> 00:07:57.260
+declaration there. And I'll uncomment this last piece of code here.
+
+00:07:57.860 --> 00:08:00.660
+And here, I'm just grabbing an integer and a double.
+
+00:08:00.660 --> 00:08:03.460
+So we're doing some mixed mode comparison here.
+
+00:08:03.460 --> 00:08:08.450
+I'll run it and it says give me an integer and a double separated by a space.
+
+00:08:08.450 --> 00:08:11.750
+In this case, I could say 10 and 10.0.
+
+00:08:11.750 --> 00:08:16.250
+Remember, what happens. It's using an operator to compare two different types.
+
+00:08:16.450 --> 00:08:19.330
+It doesn't want to do that. Those types have to be the same.
+
+00:08:19.330 --> 00:08:22.330
+So the 10 will be promoted to a 10.0.
+
+00:08:22.830 --> 00:08:26.390
+And then the comparison happens. That's the mixed mode expressions.
+
+00:08:26.390 --> 00:08:30.990
+So what we're doing here is we're eventually comparing 10.0 and 10.0.
+
+00:08:30.990 --> 00:08:33.990
+So we expect this to be true. And it is right there.
+
+00:08:35.990 --> 00:08:39.890
+And you get the same sort of issue here if i say 10
+
+00:08:39.890 --> 00:08:43.690
+and 9.999, a whole bunch of nines.
+
+00:08:43.690 --> 00:08:48.390
+What's going to happen again is the 10 will be promoted to 10.0.
+
+00:08:48.390 --> 00:08:51.890
+10.0 and nine point a bunch of nines as far as the
+
+00:08:51.890 --> 00:08:55.250
+internal representation is concerned are equal.
+
+00:08:55.250 --> 00:08:56.250
+So there's your true.
+
+00:08:57.250 --> 00:09:00.350
+Okay. So that's it, that finishes off this video.
+
+00:09:00.350 --> 00:09:02.350
+And that's it. I'll see you in the next video.

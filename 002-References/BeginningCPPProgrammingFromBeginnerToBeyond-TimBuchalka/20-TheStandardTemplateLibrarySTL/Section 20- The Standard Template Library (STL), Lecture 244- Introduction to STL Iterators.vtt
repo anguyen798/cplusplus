@@ -1,0 +1,529 @@
+WEBVTT
+
+00:00:05.500 --> 00:00:08.700
+In this video, I'd like to go over the basics of iterators
+
+00:00:09.000 --> 00:00:10.770
+in the standard template library.
+
+00:00:11.970 --> 00:00:15.770
+Iterators allow us to think of a container as a sequence of elements,
+
+00:00:15.770 --> 00:00:18.570
+it doesn't matter what the container is. For example,
+
+00:00:18.570 --> 00:00:21.570
+we might have a vector or a set or a map,
+
+00:00:21.970 --> 00:00:23.960
+they're all very different containers.
+
+00:00:23.960 --> 00:00:28.260
+But iterators allow us to process sequence of elements from these containers
+
+00:00:28.460 --> 00:00:32.960
+without worrying or even needing to know about how the container is implemented behind the scenes.
+
+00:00:33.840 --> 00:00:35.500
+That gives us so much power.
+
+00:00:36.050 --> 00:00:38.930
+Iterators are implemented as template classes,
+
+00:00:38.930 --> 00:00:43.030
+so we create iterator objects and use them to iterate through our containers.
+
+00:00:44.020 --> 00:00:47.520
+The syntax we use with iterators will remind you of pointers.
+
+00:00:48.020 --> 00:00:52.520
+We can use the dereference operator, the increment and decrement operators and so forth.
+
+00:00:53.050 --> 00:00:54.450
+This was done intentionally.
+
+00:00:54.810 --> 00:00:58.110
+C++ programmers are comfortable with the pointer syntax,
+
+00:00:58.360 --> 00:01:00.860
+and it's very easy to learn how to use iterators
+
+00:01:00.860 --> 00:01:03.460
+without having to learn some other arbitrary syntax.
+
+00:01:04.120 --> 00:01:07.320
+Most of the stl containers can be traversed with iterators.
+
+00:01:07.870 --> 00:01:11.230
+There are a few exceptions, such as a stack and a queue, and we'll see them later.
+
+00:01:11.630 --> 00:01:14.630
+So what do iterators look like and how do we use them.
+
+00:01:16.330 --> 00:01:20.480
+An iterator must be declared based on the type of container type
+
+00:01:20.480 --> 00:01:21.980
+that it will iterate over.
+
+00:01:21.980 --> 00:01:26.780
+So if I have a vector of integers, then my iterator must know that when I create it.
+
+00:01:27.280 --> 00:01:31.280
+The syntax is very straightforward. We provide the container type,
+
+00:01:31.580 --> 00:01:34.830
+the scope resolution operator, the iterator type,
+
+00:01:34.830 --> 00:01:36.830
+and then the name of our iterator object.
+
+00:01:37.730 --> 00:01:40.330
+That sounds complicated, I know, but it's not.
+
+00:01:40.330 --> 00:01:42.230
+Let's see some examples and you'll see.
+
+00:01:43.030 --> 00:01:47.030
+In the following declarations, I'm declaring four iterator objects.
+
+00:01:47.630 --> 00:01:51.630
+The first, it1, is an iterator that will iterate over
+
+00:01:51.630 --> 00:01:53.130
+a vector of integers.
+
+00:01:53.930 --> 00:01:56.530
+It can only be used on vectors of integers.
+
+00:01:57.330 --> 00:02:01.690
+The second, it2, can iterate over a list of strings.
+
+00:02:01.940 --> 00:02:05.540
+A list is a container in the stl, which we'll see later in this section.
+
+00:02:06.140 --> 00:02:10.290
+The third, it3, can iterate over a map of string stream pairs.Maps are like dictionaries,
+
+00:02:10.840 --> 00:02:13.840
+we'll also see them in this section.
+
+00:02:14.440 --> 00:02:18.800
+Finally, it4 is an iterator that can iterate over sets of characters.
+
+00:02:19.900 --> 00:02:23.500
+As you can see, we must be very specific when declaring iterators.
+
+00:02:23.900 --> 00:02:28.400
+Now let's look at an example using a vector, so we can see how to initialize iterators.
+
+00:02:30.400 --> 00:02:34.400
+In this example, we've created a vector of integers named vec
+
+00:02:34.400 --> 00:02:36.700
+and initialized it to 1 2 and 3.
+
+00:02:37.200 --> 00:02:39.900
+Remember, a vector is a container in the stl
+
+00:02:39.900 --> 00:02:42.600
+that stores elements in contiguous memory
+
+00:02:42.600 --> 00:02:46.200
+and can resize itself to accommodate elements dynamically.
+
+00:02:47.200 --> 00:02:50.900
+How this is implemented in the stl doesn't really matter to us.
+
+00:02:50.900 --> 00:02:54.900
+What we do need to know is that a container has a beginning and an end.
+
+00:02:55.450 --> 00:02:59.350
+The stl defines the beginning as the first element in the container,
+
+00:02:59.650 --> 00:03:01.010
+in this case, the 1.
+
+00:03:01.560 --> 00:03:06.360
+And the stl defines the end as 1 after the last element in the container.
+
+00:03:07.060 --> 00:03:10.660
+This is very important, and it's consistent throughout the stl.
+
+00:03:11.020 --> 00:03:14.780
+The end is not the last element, it's 1 after the last element.
+
+00:03:15.280 --> 00:03:19.080
+Almost all of the stl containers have begin and end methods.
+
+00:03:19.580 --> 00:03:22.830
+When we call these methods, they return an iterator object
+
+00:03:22.830 --> 00:03:25.710
+that's pointing to either the first element in the container
+
+00:03:25.710 --> 00:03:28.210
+or one past the last element in the container.
+
+00:03:28.810 --> 00:03:31.010
+In this, case vec.begin
+
+00:03:31.010 --> 00:03:34.010
+we'll return an iterator that's pointing to the element one,
+
+00:03:34.310 --> 00:03:36.810
+and vec.end will return an iterator
+
+00:03:36.810 --> 00:03:39.810
+pointing one past the element 3 in this case.
+
+00:03:40.610 --> 00:03:44.070
+When we write code we, use vect.end as the sentinel
+
+00:03:44.070 --> 00:03:46.070
+so that we know when we're at the end of the list.
+
+00:03:47.770 --> 00:03:49.270
+Now suppose we have a set.
+
+00:03:49.870 --> 00:03:54.570
+A set may or may not be implemented in contiguous memory, it doesn't matter, and that's the point.
+
+00:03:54.570 --> 00:03:55.820
+We don't need to know.
+
+00:03:56.320 --> 00:04:00.020
+If we want to iterate over a set of characters name suits, in this case.
+
+00:04:00.680 --> 00:04:05.040
+We know that suits.begin will return an iterator to the first element in the set.
+
+00:04:05.640 --> 00:04:09.640
+And suits.n will return an iterator 1 past the last element in the set.
+
+00:04:11.440 --> 00:04:14.940
+We can use this information to initialize our iterators.
+
+00:04:15.490 --> 00:04:18.490
+For example, we can declare an iterator named it
+
+00:04:18.490 --> 00:04:21.040
+that will iterate over a vector of integers
+
+00:04:21.040 --> 00:04:25.140
+and then initialize it to point to the first element in that vector.
+
+00:04:25.800 --> 00:04:28.100
+We do that by calling vec.begin.
+
+00:04:28.400 --> 00:04:32.000
+In this case, it will point to the element 1 in the vector.
+
+00:04:32.500 --> 00:04:36.300
+If the vector had been empty, then it would point to vec.end.
+
+00:04:37.600 --> 00:04:40.160
+Now the syntax can get long when we do this.
+
+00:04:40.160 --> 00:04:44.360
+So we can use auto to let the compiler deduce the type of the iterator.
+
+00:04:44.360 --> 00:04:46.860
+This is really handy, and it's used very often.
+
+00:04:47.760 --> 00:04:51.010
+So the compiler deduces the type of it as an iterator
+
+00:04:51.010 --> 00:04:55.370
+to a vector of integers based on the result returned by vec.begin.
+
+00:04:55.870 --> 00:04:59.370
+This is much more readable and much more writable and easier to debug.
+
+00:05:01.370 --> 00:05:04.360
+There are a bunch of operations that we can use on iterators.
+
+00:05:04.760 --> 00:05:07.460
+Most will feel very similar to using pointers.
+
+00:05:08.120 --> 00:05:12.820
+In this table, we have a few of the most commonly used operations for iterators.
+
+00:05:13.220 --> 00:05:15.220
+The first column is the operation,
+
+00:05:15.220 --> 00:05:17.420
+the second column explains what it does,
+
+00:05:17.420 --> 00:05:21.420
+and the third column shows what type of iterator supports the operation.
+
+00:05:22.300 --> 00:05:26.300
+In this table, we'll assume that it is an iterator and i is an integer.
+
+00:05:26.900 --> 00:05:29.450
+Notice the first two iterator operations,
+
+00:05:29.450 --> 00:05:31.450
+pre-increment and post-increment.
+
+00:05:31.850 --> 00:05:33.850
+When we increment an iterator,
+
+00:05:33.850 --> 00:05:36.850
+we're asking it to point to the next element in the container.
+
+00:05:37.450 --> 00:05:40.450
+How's that determined, it's up to the container we're using.
+
+00:05:41.810 --> 00:05:45.410
+The third operation is assigning one iterator to another.
+
+00:05:45.910 --> 00:05:48.610
+Of course, the types of the iterators must be the same.
+
+00:05:49.470 --> 00:05:52.670
+These three operations are supported by all iterators.
+
+00:05:53.560 --> 00:05:56.160
+The fourth operator is the dereference operator,
+
+00:05:56.160 --> 00:05:58.410
+just like when we dereference a pointer.
+
+00:05:58.410 --> 00:06:00.110
+When we dereference an iterator,
+
+00:06:00.110 --> 00:06:03.110
+we get the element in the container that it's pointing to.
+
+00:06:03.790 --> 00:06:05.990
+And we can also use the arrow operator
+
+00:06:05.990 --> 00:06:09.790
+when we're pointing to objects and we want to access their attributes and methods.
+
+00:06:10.450 --> 00:06:13.450
+Both input and output iterators support this,
+
+00:06:13.450 --> 00:06:16.450
+and we're able to read and write elements to containers.
+
+00:06:17.210 --> 00:06:20.810
+For the rest of the operators, you can pause the video and look at them on your own.
+
+00:06:21.060 --> 00:06:23.720
+Notice that we have ways to compare iterators,
+
+00:06:23.720 --> 00:06:25.720
+and we can also decrement operators.
+
+00:06:26.380 --> 00:06:31.670
+Some containers support bi-directional iterators, which means that we can move forward and backwards
+
+00:06:31.670 --> 00:06:35.670
+through the container, others support random access iterators,
+
+00:06:35.670 --> 00:06:37.170
+like arrays and vectors.
+
+00:06:37.570 --> 00:06:40.070
+So how can we use these operators to work with iterators.
+
+00:06:40.470 --> 00:06:42.730
+Here's a really simple but common example.
+
+00:06:43.230 --> 00:06:46.030
+First, we declare vec as a vector of integers
+
+00:06:46.030 --> 00:06:48.280
+and we'll initialize it to 1 2 and 3.
+
+00:06:48.980 --> 00:06:52.680
+What we want to do is use an iterator to iterate over the vector
+
+00:06:52.680 --> 00:06:54.680
+and display the contents of the vector.
+
+00:06:55.380 --> 00:06:57.780
+So we declare our iterator it
+
+00:06:57.780 --> 00:07:00.480
+as an iterator over a vector of integers
+
+00:07:00.480 --> 00:07:04.840
+and we initialize it to the first element of vec by calling vec.begin.
+
+00:07:05.990 --> 00:07:10.980
+Now we simply iterate through the vector, while it is not equal to vec.end.
+
+00:07:11.480 --> 00:07:14.480
+And at each iteration, we display the element
+
+00:07:14.480 --> 00:07:17.840
+the iterator is pointing to by dereferencing the iterator,
+
+00:07:17.840 --> 00:07:21.840
+then we move to the next element by incrementing the iterator. That's it,
+
+00:07:21.840 --> 00:07:22.840
+simple as pi.
+
+00:07:23.640 --> 00:07:26.840
+I know what you're thinking, why not just use a range-based for loop
+
+00:07:26.840 --> 00:07:28.340
+or a counter controlled for loop?
+
+00:07:28.740 --> 00:07:30.740
+We absolutely could and we often do.
+
+00:07:31.140 --> 00:07:34.500
+We'll see in a bit that a range based for loop is converted
+
+00:07:34.500 --> 00:07:37.500
+to an iterator-based loop behind the scenes by the compiler.
+
+00:07:38.050 --> 00:07:42.050
+But the real answer is that in the case of a vector, we could do it a lot of different ways.
+
+00:07:42.050 --> 00:07:46.650
+But other containers don't allow us to randomly access elements like a vector does.
+
+00:07:47.050 --> 00:07:49.820
+So for those containers, iterators are necessary.
+
+00:07:52.420 --> 00:07:55.780
+We can achieve the same result with a for loop instead of a while loop.
+
+00:07:55.980 --> 00:07:58.340
+Here we declare it using auto.
+
+00:07:58.640 --> 00:08:02.890
+This makes the code much more readable. We start at vec.begin.
+
+00:08:03.250 --> 00:08:06.610
+We loop while it is not equal to vect.end,
+
+00:08:06.970 --> 00:08:09.870
+and we display the element by dereferencing the iterator.
+
+00:08:09.870 --> 00:08:12.470
+Then we increment the iterator and do it all over again.
+
+00:08:13.460 --> 00:08:16.340
+This is exactly how range-based for loops work.
+
+00:08:16.740 --> 00:08:20.240
+In fact, sometimes we might mess up the code in a range based for loop
+
+00:08:20.240 --> 00:08:24.040
+that iterates over a container and the compiler gives us an error message
+
+00:08:24.040 --> 00:08:26.300
+saying that something is wrong with the iterator.
+
+00:08:27.000 --> 00:08:30.800
+This error is really confusing to beginning students but no more.
+
+00:08:30.800 --> 00:08:33.800
+If you ever get an error like that, you'll know exactly what's going on.
+
+00:08:35.360 --> 00:08:38.760
+Now let's iterate over a set of characters using an iterator.
+
+00:08:39.160 --> 00:08:42.520
+Here we define suits to be a set of characters,
+
+00:08:42.520 --> 00:08:45.520
+and we initialize it to the character C H S D.
+
+00:08:46.770 --> 00:08:51.570
+We can also declare our iterator it as auto and let the compiler deduce its type
+
+00:08:51.770 --> 00:08:54.270
+based on the result of suit stop begin.
+
+00:08:55.270 --> 00:08:59.820
+Then we loop while it is not equal to suits.end and display the character.
+
+00:09:00.480 --> 00:09:04.680
+Increment the iterator, and loop again. The pattern should look familiar.
+
+00:09:06.680 --> 00:09:10.230
+Finally, let's wrap up these slides by looking at a reverse iterator.
+
+00:09:10.780 --> 00:09:14.780
+A reverse iterator is exactly what you would expect, it works in reverse.
+
+00:09:15.080 --> 00:09:18.080
+So the last element is the first and the first is the last.
+
+00:09:18.880 --> 00:09:23.380
+And when we increment the iterator, we move backwards through the container in reverse.
+
+00:09:23.580 --> 00:09:26.080
+When we decrement the iterator, we move forward.
+
+00:09:26.880 --> 00:09:31.240
+Here's the same example with vec as a vector of the 3 integers 1 2 and 3.
+
+00:09:31.900 --> 00:09:35.670
+We then declare it as a reverse iterator
+
+00:09:35.670 --> 00:09:38.670
+and initialize it to vec.begin.
+
+00:09:39.370 --> 00:09:42.730
+Since it's a reverse iterator, it will be pointing
+
+00:09:42.730 --> 00:09:45.930
+to the last element in the list, not the first.
+
+00:09:46.330 --> 00:09:48.630
+Now we can write code as we did before,
+
+00:09:48.630 --> 00:09:53.030
+and this will display the vector elements in reverse, 3 2 1 in this case.
+
+00:09:54.130 --> 00:09:58.380
+In addition to the reverse iterator, there's a few variants that are const iterators,
+
+00:09:58.380 --> 00:10:01.380
+that are read-only iterators. Let's take a look at those really quickly.
+
+00:10:03.380 --> 00:10:07.380
+So in this slide, we'll wrap up the iterators by learning about the const iterators.
+
+00:10:07.930 --> 00:10:11.530
+These are methods in the appropriate container class that return specific
+
+00:10:11.530 --> 00:10:12.780
+types of iterators.
+
+00:10:12.780 --> 00:10:16.080
+You can see that we used begin and end for regular iterators.
+
+00:10:16.080 --> 00:10:20.280
+We can also use cbegin and cend for const iterators.
+
+00:10:20.830 --> 00:10:25.330
+Rbegan an rend for reverse iterators, as we saw in the previous slide
+
+00:10:25.530 --> 00:10:30.030
+and crbegan and crend for const reverse iterators.
+
+00:10:30.830 --> 00:10:34.490
+Okay. So that's a basic introduction to the stl iterators.
+
+00:10:34.490 --> 00:10:36.480
+There's much, much more to learn,
+
+00:10:36.480 --> 00:10:40.360
+but this foundation will let you use iterators with containers and algorithms
+
+00:10:40.360 --> 00:10:42.360
+and solve a bunch of problems.
+
+00:10:42.360 --> 00:10:46.860
+So let's head over to the IDE, and I'll go over some of these simple iterators in live code.

@@ -1,0 +1,1244 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:00.000
+ Hello everyone, this is Steve Gilbert. Welcome to lecture 18 where we're going to talk about pointers in graphics.
+
+00:00:00.000 --> 00:00:00.000
+ Now C++, unlike Java, has no built-in graphics support. You need to use an external library.
+
+00:00:00.000 --> 00:00:00.000
+ That's because in C++, rather than trying to be the lowest common denominator, they expect the libraries to work with the platform that you're on.
+
+00:00:00.000 --> 00:00:00.000
+ So we are going to use a library to process images. When I say images, I mean image files, like PNG files or GIF files or JPEG files.
+
+00:00:00.000 --> 00:00:00.000
+ And the image, the library we're going to use is called the STB or the Sean T. Bartlett libraries. Those libraries are written in the C programming language.
+
+00:00:00.000 --> 00:00:00.000
+ And this is going to be really, really common when you work with C++, that you want to go out and use a library, and the library will be written in C.
+
+00:00:00.000 --> 00:00:00.000
+ So we're going to look at how we use this C graphics library to read and write images and use pointers to manipulate the image data.
+
+00:00:00.000 --> 00:00:00.000
+ So first we want to look at pointers as output parameters to load the picture into memory.
+
+00:00:00.000 --> 00:00:00.000
+ And so there is a function in this library called load, and we will use that. But to get the output, we can't use references because C doesn't have references.
+
+00:00:00.000 --> 00:00:00.000
+ We need to use pointers. We're going to look at opening a file, and with that we're going to have to pass C strings.
+
+00:00:00.000 --> 00:00:00.000
+ In our program we're going to have a string object, and so that's going to be a problem. When we open the file, rather than checking for fail, like we've done with C in and C out,
+
+00:00:00.000 --> 00:00:00.000
+ with C libraries it's very common to check to see if the pointer is null or not. So we're going to check for null pointer instead of fail.
+
+00:00:00.000 --> 00:00:00.000
+ Because we're going to process the data, we don't know how big the data is, we're going to use address arithmetic instead of size.
+
+00:00:00.000 --> 00:00:00.000
+ In other words, we're not going to have a vector, we're going to have a raw buffer of memory, a raw chunk of memory loaded somewhere,
+
+00:00:00.000 --> 00:00:00.000
+ and all we're going to have are addresses to the beginning and end of it.
+
+00:00:00.000 --> 00:00:00.000
+ To get through those, we're going to use iterator loops using pointers, and we're going to call these pointers begin and end, just like we use begin and end on our iterators.
+
+00:00:00.000 --> 00:00:00.000
+ And finally we're going to look at pointer increment and dereferencing.
+
+00:00:00.000 --> 00:00:00.000
+ So go ahead and in the images folder of chapter 18, you can load your own picture or you can choose one of the pictures that I have.
+
+00:00:00.000 --> 00:00:00.000
+ So here's Austin Powers, Dr. Evil, here is Vermeer, and here is Wayne.
+
+00:00:00.000 --> 00:00:00.000
+ So a lot of that guy.
+
+00:00:00.000 --> 00:00:00.000
+ Or you can just drop your own picture inside here and try posterizing one of your own.
+
+00:00:00.000 --> 00:00:00.000
+ I'm actually going to go get a picture here while I'm talking to you.
+
+00:00:00.000 --> 00:00:00.000
+ I'm going to go over to one of my folders.
+
+00:00:00.000 --> 00:00:00.000
+ Let's look at some of my folders down on the web.
+
+00:00:00.000 --> 00:00:00.000
+ Let's see what I have. I want only a little photo.
+
+00:00:00.000 --> 00:00:00.000
+ So let's look at one of the ones I have from one of my syllabi.
+
+00:00:00.000 --> 00:00:00.000
+ And so here's a small picture of me. Let's see if I have a bigger one more recently.
+
+00:00:00.000 --> 00:00:00.000
+ Here's Steve P&G. I'm going to use that one. So I'm just going to drag it over there.
+
+00:00:00.000 --> 00:00:00.000
+ I'm going to drop it on the images folder.
+
+00:00:00.000 --> 00:00:00.000
+ And so this is the picture that I'm going to posterize. You can drop your own inside there if you want.
+
+00:00:00.000 --> 00:00:00.000
+ And what we're going to do is we're going to posterize it. So this is an example of posterization.
+
+00:00:00.000 --> 00:00:00.000
+ We are going to use the library called STBI Load.
+
+00:00:00.000 --> 00:00:00.000
+ Let's go over here and let's go into posterize.cpp and I'll talk a little bit about how this works.
+
+00:00:00.000 --> 00:00:00.000
+ So the library we're using is called STBI Image for reading and writing.
+
+00:00:00.000 --> 00:00:00.000
+ These are called header only C libraries. In other words, you only need to include the header.
+
+00:00:00.000 --> 00:00:00.000
+ But we've said before that header files should usually only contain prototypes, not actually code.
+
+00:00:00.000 --> 00:00:00.000
+ Well, with a header only library, you actually have to put the code inside there.
+
+00:00:00.000 --> 00:00:00.000
+ But if you need to use the code in multiple files, you don't want to have two copies of the code.
+
+00:00:00.000 --> 00:00:00.000
+ Your code would actually not link if you did that.
+
+00:00:00.000 --> 00:00:00.000
+ And so when we are using it in one file like this, we use these two special defines.
+
+00:00:00.000 --> 00:00:00.000
+ These are required for the image and the image write one.
+
+00:00:00.000 --> 00:00:00.000
+ And that's just to tell the compiler when it sees this that it's not only going to use the declarations out of this,
+
+00:00:00.000 --> 00:00:00.000
+ but the definitions out of it as well.
+
+00:00:00.000 --> 00:00:00.000
+ And you're free to look through these files. There's documentation at the top of it.
+
+00:00:00.000 --> 00:00:00.000
+ And you might find it actually kind of interesting.
+
+00:00:00.000 --> 00:00:00.000
+ So what we're going to do is we're going to just follow this code right here.
+
+00:00:00.000 --> 00:00:00.000
+ So I'm going to ask the user CL file to open.
+
+00:00:00.000 --> 00:00:00.000
+ And I'm going to create a string, FNAME, and I say CNFNAME.
+
+00:00:00.000 --> 00:00:00.000
+ So just like our IPO programs, nothing different there.
+
+00:00:00.000 --> 00:00:00.000
+ Now I'm going to load the image into memory.
+
+00:00:00.000 --> 00:00:00.000
+ And to do that I'm going to call this function called STBI_LOAD.
+
+00:00:00.000 --> 00:00:00.000
+ So let's look at the prototype for that function.
+
+00:00:00.000 --> 00:00:00.000
+ So STBI_LOAD takes not a string, but a CONT_CHAR_STAR file name.
+
+00:00:00.000 --> 00:00:00.000
+ This is called a C style string.
+
+00:00:00.000 --> 00:00:00.000
+ It doesn't take an int for the width and the height and the bits.
+
+00:00:00.000 --> 00:00:00.000
+ This is bytes per pixel or the channels. Channels it does take an int.
+
+00:00:00.000 --> 00:00:00.000
+ But these it takes a pointer to an int and a pointer to height
+
+00:00:00.000 --> 00:00:00.000
+ and a pointer to an int for bytes per pixel.
+
+00:00:00.000 --> 00:00:00.000
+ And it returns a pointer to an unsigned char.
+
+00:00:00.000 --> 00:00:00.000
+ So this function is a C function.
+
+00:00:00.000 --> 00:00:00.000
+ And file name is a C style string.
+
+00:00:00.000 --> 00:00:00.000
+ So we have a string, FNAME.
+
+00:00:00.000 --> 00:00:00.000
+ We cannot pass that in place of the C style string.
+
+00:00:00.000 --> 00:00:00.000
+ But we can call one of the functions in the C++ string class
+
+00:00:00.000 --> 00:00:00.000
+ to return a C style string.
+
+00:00:00.000 --> 00:00:00.000
+ So the first argument we're going to need to pass to STBI_LOAD is that.
+
+00:00:00.000 --> 00:00:00.000
+ Now first I'm going to need to add images to the file name to look for
+
+00:00:00.000 --> 00:00:00.000
+ because we'll put our images in an images folder.
+
+00:00:00.000 --> 00:00:00.000
+ So I'm going to say FNAME = images/ + FNAME
+
+00:00:00.000 --> 00:00:00.000
+ And actually let's not do that. Let's create another string variable.
+
+00:00:00.000 --> 00:00:00.000
+ I'll call it path =
+
+00:00:00.000 --> 00:00:00.000
+ because I actually want to use the FNAME later.
+
+00:00:00.000 --> 00:00:00.000
+ Now I'm also going to create variables for height, width, and bits per pixel.
+
+00:00:00.000 --> 00:00:00.000
+ I'm going to make those int.
+
+00:00:00.000 --> 00:00:00.000
+ So int width, height, and bytes per pixel.
+
+00:00:00.000 --> 00:00:00.000
+ In other words we can have 2 bytes per pixel, 1 byte per pixel, 4 bytes per pixel, and so forth.
+
+00:00:00.000 --> 00:00:00.000
+ And then I'm going to call STBI_LOAD.
+
+00:00:00.000 --> 00:00:00.000
+ So I'm going to call STBI_LOAD
+
+00:00:00.000 --> 00:00:00.000
+ And I'm going to pass my path, but I'm going to convert it to a C string.
+
+00:00:00.000 --> 00:00:00.000
+ Now, because we cannot pass variables by reference, C has no references,
+
+00:00:00.000 --> 00:00:00.000
+ we need to create address output parameters.
+
+00:00:00.000 --> 00:00:00.000
+ So I've already put the variables, width, height, and bytes per pixel,
+
+00:00:00.000 --> 00:00:00.000
+ but I need to then pass the addresses.
+
+00:00:00.000 --> 00:00:00.000
+ So the address of width, the address of height, and the address of BPP.
+
+00:00:00.000 --> 00:00:00.000
+ And I think we're going to create a variable for channels here as well.
+
+00:00:00.000 --> 00:00:00.000
+ And set that to 4.
+
+00:00:00.000 --> 00:00:00.000
+ So when we read this data in, we're going to read it in 4 bytes per pixel.
+
+00:00:00.000 --> 00:00:00.000
+ Sorry, I'm recording this at work and I just had the janitors come in,
+
+00:00:00.000 --> 00:00:00.000
+ so I had to shut everything down and come back and try and remember where I left off.
+
+00:00:00.000 --> 00:00:00.000
+ So we're looking at loading the images.
+
+00:00:00.000 --> 00:00:00.000
+ We pass this address of the width, the height, and the bytes per pixel.
+
+00:00:00.000 --> 00:00:00.000
+ And those are filled in in the function when you call the function.
+
+00:00:00.000 --> 00:00:00.000
+ Now we had one additional argument here, the channels, so that's not filled in.
+
+00:00:00.000 --> 00:00:00.000
+ That's just passed as normal, rather than an output parameter.
+
+00:00:00.000 --> 00:00:00.000
+ So I'm going to pass the channels.
+
+00:00:00.000 --> 00:00:00.000
+ And that's just saying we want 4 bytes per pixel,
+
+00:00:00.000 --> 00:00:00.000
+ regardless of how many bytes per pixel were used in the original image.
+
+00:00:00.000 --> 00:00:00.000
+ Now this is going to return a pointer to the image data.
+
+00:00:00.000 --> 00:00:00.000
+ The image data is going to be stored on the heap if this function succeeds.
+
+00:00:00.000 --> 00:00:00.000
+ And so we're going to store that in an unsigned char pointer,
+
+00:00:00.000 --> 00:00:00.000
+ but we're going to make that pointer const.
+
+00:00:00.000 --> 00:00:00.000
+ If it can't open the file, it will return null pointer.
+
+00:00:00.000 --> 00:00:00.000
+ And we need to make the pointer const because we need to free the memory later,
+
+00:00:00.000 --> 00:00:00.000
+ and I don't want to take a chance that I accidentally change this pointer,
+
+00:00:00.000 --> 00:00:00.000
+ which would crash my whole program.
+
+00:00:00.000 --> 00:00:00.000
+ So let's finish that last part there.
+
+00:00:00.000 --> 00:00:00.000
+ So I'm going to say unsigned char, so that's just an 8-bit value,
+
+00:00:00.000 --> 00:00:00.000
+ an 8-bit numeric value, pointer, I'll call it data,
+
+00:00:00.000 --> 00:00:00.000
+ and I'm going to make the pointer const, and I'll load the image there.
+
+00:00:00.000 --> 00:00:00.000
+ And let me just move this comment up above the line that I actually did that with.
+
+00:00:00.000 --> 00:00:00.000
+ So I'm saving the value in an unsigned pointer, and notice I made it const.
+
+00:00:00.000 --> 00:00:00.000
+ Now, how am I going to tell if my code succeeded?
+
+00:00:00.000 --> 00:00:00.000
+ I'm going to tell if my code succeeded because I'll get null pointer if it can't open the file.
+
+00:00:00.000 --> 00:00:00.000
+ So let's process that here.
+
+00:00:00.000 --> 00:00:00.000
+ So we'll say if data equals null pointer, then I am going to print an error message,
+
+00:00:00.000 --> 00:00:00.000
+ "Sierra cannot open path," and I'll simply return.
+
+00:00:00.000 --> 00:00:00.000
+ I think this is a void function.
+
+00:00:00.000 --> 00:00:00.000
+ No, no, it's main, so I'm going to return minus 1.
+
+00:00:00.000 --> 00:00:00.000
+ Okay, now we're ready to process the data.
+
+00:00:00.000 --> 00:00:00.000
+ Now we're ready to process the image data.
+
+00:00:00.000 --> 00:00:00.000
+ So I've got a chunk of data loaded out somewhere on the heap.
+
+00:00:00.000 --> 00:00:00.000
+ I've got a pointer to the first byte of that data,
+
+00:00:00.000 --> 00:00:00.000
+ and I have the width and the height and the bytes per pixel filled in in calling the function right here.
+
+00:00:00.000 --> 00:00:00.000
+ So first I'm going to create a pointer to the first byte of data.
+
+00:00:00.000 --> 00:00:00.000
+ I've already got one data, but I can't change that.
+
+00:00:00.000 --> 00:00:00.000
+ So I need to create a pointer. I'll call it "beg" and I'll initialize it with "data."
+
+00:00:00.000 --> 00:00:00.000
+ Then I'll create a second pointer named "n" and I'll use address arithmetic.
+
+00:00:00.000 --> 00:00:00.000
+ What's address arithmetic?
+
+00:00:00.000 --> 00:00:00.000
+ Well, if I add an integer, "n," to an address, what I end up with is a new address.
+
+00:00:00.000 --> 00:00:00.000
+ So I'm going to use width times height times the bytes per pixel for "n."
+
+00:00:00.000 --> 00:00:00.000
+ Actually, I'm just going to use the channels rather than bytes per pixel in that.
+
+00:00:00.000 --> 00:00:00.000
+ So I'm going to create a pointer beginning.
+
+00:00:00.000 --> 00:00:00.000
+ So I'm going to say "unsigned char pointer beg equals data."
+
+00:00:00.000 --> 00:00:00.000
+ And then I'm going to say "unsigned char pointer end equals beg plus width times height times the channels."
+
+00:00:00.000 --> 00:00:00.000
+ And that will give me the total number of bytes.
+
+00:00:00.000 --> 00:00:00.000
+ And this pointer end will be pointing to the byte that would be right after this chunk of data.
+
+00:00:00.000 --> 00:00:00.000
+ Right after that chunk of data.
+
+00:00:00.000 --> 00:00:00.000
+ Now, I've got those two pointers, and I'm going to use the pointer beg and an iterator loop to visit each element.
+
+00:00:00.000 --> 00:00:00.000
+ So each pixel in the image contains four unsigned char values.
+
+00:00:00.000 --> 00:00:00.000
+ A pixel contains a red part, a byte, a green part, a byte, a blue part, a byte.
+
+00:00:00.000 --> 00:00:00.000
+ And since we requested that this be a four channel or a four component color, it will also contain an "a" or an "alpha" or a transparency channel.
+
+00:00:00.000 --> 00:00:00.000
+ So even if the original one didn't have transparency, we added it to the image here.
+
+00:00:00.000 --> 00:00:00.000
+ So that means we can write a loop that looks like this.
+
+00:00:00.000 --> 00:00:00.000
+ While beg is not equal to end, that will be our loop. That will be our iterator loop.
+
+00:00:00.000 --> 00:00:00.000
+ We're going to remember that the first byte is red, the second byte is green, and the third byte is blue.
+
+00:00:00.000 --> 00:00:00.000
+ The last byte is alpha.
+
+00:00:00.000 --> 00:00:00.000
+ So you'll increment, so we want to process red, green, blue, and the alpha channel.
+
+00:00:00.000 --> 00:00:00.000
+ Now for the alpha channel, we're not going to do anything to process it, so we're just going to say beg++ and skip it.
+
+00:00:00.000 --> 00:00:00.000
+ For the red channel, what we're going to do is we're going to pass it to a function called "posterized".
+
+00:00:00.000 --> 00:00:00.000
+ So what I'm going to do is I'm going to write a function up here at the top.
+
+00:00:00.000 --> 00:00:00.000
+ It's going to be a void function.
+
+00:00:00.000 --> 00:00:00.000
+ And I'm going to take an unsigned char by reference, and I'll just call it "c".
+
+00:00:00.000 --> 00:00:00.000
+ And we'll do something to it inside here.
+
+00:00:00.000 --> 00:00:00.000
+ So I want to take my red pixel, I want to pass that unsigned char, and so I'm going to say "poster"
+
+00:00:00.000 --> 00:00:00.000
+ and I'm going to dereference the pointer to modify that part of the pixel.
+
+00:00:00.000 --> 00:00:00.000
+ Then I'm going to go look at the next color, or the next component.
+
+00:00:00.000 --> 00:00:00.000
+ So beg++.
+
+00:00:00.000 --> 00:00:00.000
+ For green, I'm going to say "poster *beg"
+
+00:00:00.000 --> 00:00:00.000
+ and then I'm going to move the pointer so it's pointing at the next one, beg++.
+
+00:00:00.000 --> 00:00:00.000
+ Then I'm going to point blue, "poster *beg"
+
+00:00:00.000 --> 00:00:00.000
+ I'm going to point it to the next one, so now it's pointing to the alpha.
+
+00:00:00.000 --> 00:00:00.000
+ I don't want to do anything for the alpha, so I'm just going to skip it.
+
+00:00:00.000 --> 00:00:00.000
+ So notice we're taking each of these four parts, the red, the green, the blue, and the alpha
+
+00:00:00.000 --> 00:00:00.000
+ and we are passing it to this poster function, the rgb and a.
+
+00:00:00.000 --> 00:00:00.000
+ So in the image, we're going to use this rule to posterize it.
+
+00:00:00.000 --> 00:00:00.000
+ So notice that this is an unsigned char, so it can have the values between 0 and 255.
+
+00:00:00.000 --> 00:00:00.000
+ 0 meaning there's no color, 255 meaning it's fully saturated with that red or that green or the blue.
+
+00:00:00.000 --> 00:00:00.000
+ So we're going to put in our rule, and we're going to say "if c < 64, let's set c to 31."
+
+00:00:00.000 --> 00:00:00.000
+ Now notice that this is an output parameter, or input/output, it's coming in with one value, somewhere under 64.
+
+00:00:00.000 --> 00:00:00.000
+ We're setting it to 31.
+
+00:00:00.000 --> 00:00:00.000
+ So "else if c < 128, we'll set c = 95. Else if c < 192, we'll set c to 159.
+
+00:00:00.000 --> 00:00:00.000
+ And if it's none of those, we'll set c = 223.
+
+00:00:00.000 --> 00:00:00.000
+ So basically, we're changing the original image inside there.
+
+00:00:00.000 --> 00:00:00.000
+ So we passed each pixel to the poster function and we skipped the alpha.
+
+00:00:00.000 --> 00:00:00.000
+ Now we're going to save the image data with another function from the library, stb_write, so we've only used two functions so far, stb_load, stb_iload, and stb_write.
+
+00:00:00.000 --> 00:00:00.000
+ We're going to save ours as a png, no matter which of those styles you originally read.
+
+00:00:00.000 --> 00:00:00.000
+ And then we're going to free the data by passing data to stb_image_free.
+
+00:00:00.000 --> 00:00:00.000
+ So this is an example of dynamic memory.
+
+00:00:00.000 --> 00:00:00.000
+ When we called load, we borrowed memory from the operating system and put this image on the heap.
+
+00:00:00.000 --> 00:00:00.000
+ Now that we're done, we want to free that memory up so it can be used for other things, for strings and vectors and so forth.
+
+00:00:00.000 --> 00:00:00.000
+ So there's our processing. Now let's save it under a new name.
+
+00:00:00.000 --> 00:00:00.000
+ This is the prototype, and so that's going to return true if it worked, false if it didn't.
+
+00:00:00.000 --> 00:00:00.000
+ So we'll say if stb_iwrite
+
+00:00:00.000 --> 00:00:00.000
+ And actually let's say string modified equals
+
+00:00:00.000 --> 00:00:00.000
+ images
+
+00:00:00.000 --> 00:00:00.000
+ plus
+
+00:00:00.000 --> 00:00:00.000
+ Well, let's think about it. So I have, let's see, my original file is ap.png.
+
+00:00:00.000 --> 00:00:00.000
+ My path is ap.png.
+
+00:00:00.000 --> 00:00:00.000
+ So I'll say
+
+00:00:00.000 --> 00:00:00.000
+ posterized dash
+
+00:00:00.000 --> 00:00:00.000
+ plus fname
+
+00:00:00.000 --> 00:00:00.000
+ Okay, so that's the, I'll say modified file.
+
+00:00:00.000 --> 00:00:00.000
+ So that's the data we're going to save it in.
+
+00:00:00.000 --> 00:00:00.000
+ Now it's a string, so notice my first argument is not a string, it's a const char star, a C style string.
+
+00:00:00.000 --> 00:00:00.000
+ So when I call write, I have to pass modified file
+
+00:00:00.000 --> 00:00:00.000
+ C_str to turn it into a C string.
+
+00:00:00.000 --> 00:00:00.000
+ I need to pass the width, the height, the channels,
+
+00:00:00.000 --> 00:00:00.000
+ the data,
+
+00:00:00.000 --> 00:00:00.000
+ remember that pointer we didn't change,
+
+00:00:00.000 --> 00:00:00.000
+ and for this png files we need to pass the stride in bytes.
+
+00:00:00.000 --> 00:00:00.000
+ In other words, how long is a row?
+
+00:00:00.000 --> 00:00:00.000
+ And the row is, each row will be width long times the number of channels.
+
+00:00:00.000 --> 00:00:00.000
+ So times four in this case.
+
+00:00:00.000 --> 00:00:00.000
+ Okay, so if that's true, if that's true,
+
+00:00:00.000 --> 00:00:00.000
+ we're going to write out cout, saved file, saved posterized file,
+
+00:00:00.000 --> 00:00:00.000
+ saved modification in modified file.
+
+00:00:00.000 --> 00:00:00.000
+ Else, Sierre did not write data in modified file.
+
+00:00:00.000 --> 00:00:00.000
+ Okay, regardless of whether we saved it, regardless of whether we saved it,
+
+00:00:00.000 --> 00:00:00.000
+ we're going to need to free the memory.
+
+00:00:00.000 --> 00:00:00.000
+ To free the memory, use the function stbiImageFree,
+
+00:00:00.000 --> 00:00:00.000
+ and we pass in the original pointer we originally got from using the memory.
+
+00:00:00.000 --> 00:00:00.000
+ Okay, you ready to try it?
+
+00:00:00.000 --> 00:00:00.000
+ Let's go ahead and open a shell.
+
+00:00:00.000 --> 00:00:00.000
+ I'm going to do make run,
+
+00:00:00.000 --> 00:00:00.000
+ and it didn't compile, so I've made some syntax errors.
+
+00:00:00.000 --> 00:00:00.000
+ Let's go fix those first.
+
+00:00:00.000 --> 00:00:00.000
+ Okay, so I'm going to guess that these aren't a problem.
+
+00:00:00.000 --> 00:00:00.000
+ I'm going to hope they're not a problem.
+
+00:00:00.000 --> 00:00:00.000
+ Okay, so these probably only showed up because of my problem here.
+
+00:00:00.000 --> 00:00:00.000
+ So in line 38, when you have errors like this, just scroll down until you find some code that you've actually written,
+
+00:00:00.000 --> 00:00:00.000
+ like posterize.cpp on line 38,
+
+00:00:00.000 --> 00:00:00.000
+ and that problem is because I put the pointer in the wrong place.
+
+00:00:00.000 --> 00:00:00.000
+ So it's a const data is a const pointer to a char,
+
+00:00:00.000 --> 00:00:00.000
+ and the pointer cannot go to the other half.
+
+00:00:00.000 --> 00:00:00.000
+ Okay, let's save that and do make again, just make sure it compiles.
+
+00:00:00.000 --> 00:00:00.000
+ Oh, a bunch more errors.
+
+00:00:00.000 --> 00:00:00.000
+ And if these errors occur in...
+
+00:00:00.000 --> 00:00:00.000
+ Okay, I'm going to pause this right now while I go look this up, because I don't expect you to have this problem.
+
+00:00:00.000 --> 00:00:00.000
+ Okay, folks, I'm back.
+
+00:00:00.000 --> 00:00:00.000
+ We had a problem on the make file. I'm doing this in late spring, just before the summer starts,
+
+00:00:00.000 --> 00:00:00.000
+ and apparently they changed one of the versions of the files we're using, so I had to change the make file.
+
+00:00:00.000 --> 00:00:00.000
+ So I'm going to do make run again.
+
+00:00:00.000 --> 00:00:00.000
+ You guys will never see this when you actually do it, because I will change the make file before you get the starter code.
+
+00:00:00.000 --> 00:00:00.000
+ And it's going to ask me...
+
+00:00:00.000 --> 00:00:00.000
+ STBI write 3. Okay, I'm stopping again. I'm going to try and fix that.
+
+00:00:00.000 --> 00:00:00.000
+ Okay, that was an error with my code. It should not be STBI write. That's probably the reason I got all the errors.
+
+00:00:00.000 --> 00:00:00.000
+ It's STBI write PNG.
+
+00:00:00.000 --> 00:00:00.000
+ I should have just copied it from up here instead of just typing it myself.
+
+00:00:00.000 --> 00:00:00.000
+ Okay, so now let's try it.
+
+00:00:00.000 --> 00:00:00.000
+ Make run.
+
+00:00:00.000 --> 00:00:00.000
+ So I'm going to open Steve.png.
+
+00:00:00.000 --> 00:00:00.000
+ And it saved my modification in images.
+
+00:00:00.000 --> 00:00:00.000
+ Posterized Steve.png.
+
+00:00:00.000 --> 00:00:00.000
+ So here was the original Steve that I showed you before.
+
+00:00:00.000 --> 00:00:00.000
+ And here's the posterized version of it.
+
+00:00:00.000 --> 00:00:00.000
+ So here's posterized Steve.
+
+00:00:00.000 --> 00:00:00.000
+ So Steve and posterized Steve.
+
+00:00:00.000 --> 00:00:00.000
+ Okay, so that worked.
+
+00:00:00.000 --> 00:00:00.000
+ Boy, that was kind of frustrating. It took me a little bit of time to figure out what was actually going on there.
+
+00:00:00.000 --> 00:00:00.000
+ Okay.
+
+00:00:00.000 --> 00:00:00.000
+ So pretty neat. Can I go ahead and flip this as...
+
+00:00:00.000 --> 00:00:00.000
+ Yeah, so I can see them side by side there. That's kind of neat.
+
+00:00:00.000 --> 00:00:00.000
+ Alright, so let's go on.
+
+00:00:00.000 --> 00:00:00.000
+ Again, that was all caused by user error. My problem.
+
+00:00:00.000 --> 00:00:00.000
+ So we're going to do a second one in B.
+
+00:00:00.000 --> 00:00:00.000
+ We're going to convert an image to its grayscale value.
+
+00:00:00.000 --> 00:00:00.000
+ And with STBI load. So let's look at B here.
+
+00:00:00.000 --> 00:00:00.000
+ So notice we have the same starter here.
+
+00:00:00.000 --> 00:00:00.000
+ I have a type alias so I don't have to keep typing unsigned char.
+
+00:00:00.000 --> 00:00:00.000
+ I've loaded the image instead of width, height, and bytes per pixel, I've used W and H.
+
+00:00:00.000 --> 00:00:00.000
+ And I'm loading the specific image here and I'm hard coding in the channels.
+
+00:00:00.000 --> 00:00:00.000
+ So I'm doing this part that we did in the last one by hand.
+
+00:00:00.000 --> 00:00:00.000
+ And at the bottom I've got the right part and that's working okay.
+
+00:00:00.000 --> 00:00:00.000
+ And I'm freeing the data down here already.
+
+00:00:00.000 --> 00:00:00.000
+ So I want to convert this image to a grayscale value.
+
+00:00:00.000 --> 00:00:00.000
+ And with the way we did the previous problem, we were processing it a character at a time.
+
+00:00:00.000 --> 00:00:00.000
+ So let's go back and just look at that code just briefly.
+
+00:00:00.000 --> 00:00:00.000
+ So I'm going to look in A at posterize. Not the images.
+
+00:00:00.000 --> 00:00:00.000
+ Posterize.cpp
+
+00:00:00.000 --> 00:00:00.000
+ And you'll notice in here when I'm processing that, I'm processing all four pieces one piece at a time.
+
+00:00:00.000 --> 00:00:00.000
+ Wouldn't it be nice if I could process this whole thing as one pixel instead of the red part of pixel one, the blue part of pixel one, the green part of pixel one, and so forth.
+
+00:00:00.000 --> 00:00:00.000
+ And we can actually do that and that's what we're going to do in grayscale.
+
+00:00:00.000 --> 00:00:00.000
+ So when we call STBI load we get a pointer to an unsigned char.
+
+00:00:00.000 --> 00:00:00.000
+ We can store all that data in a pixel by creating a pixel structure.
+
+00:00:00.000 --> 00:00:00.000
+ So let's go ahead and do that here.
+
+00:00:00.000 --> 00:00:00.000
+ We'll create a pixel structure here. So struct pixel.
+
+00:00:00.000 --> 00:00:00.000
+ And it's going to take a Uchar red, green, blue, and alpha.
+
+00:00:00.000 --> 00:00:00.000
+ So we can cut and remember the semicolon at the end of the structure definition.
+
+00:00:00.000 --> 00:00:00.000
+ Now I can create a pixel pointer.
+
+00:00:00.000 --> 00:00:00.000
+ So I'm going to create a pixel pointer here.
+
+00:00:00.000 --> 00:00:00.000
+ Pointer beg equals data.
+
+00:00:00.000 --> 00:00:00.000
+ Now when we try and compile this, let me go ahead and open a shell on B.
+
+00:00:00.000 --> 00:00:00.000
+ When I try and compile this with make
+
+00:00:00.000 --> 00:00:00.000
+ I'm still getting my missing field initializers here.
+
+00:00:00.000 --> 00:00:00.000
+ Ok, so what I'm going to do is I'm going to change the makefile on this one as well.
+
+00:00:00.000 --> 00:00:00.000
+ And again this will be fixed before you guys get to it.
+
+00:00:00.000 --> 00:00:00.000
+ So 18 A and B need to be fixed.
+
+00:00:00.000 --> 00:00:00.000
+ I get this error.
+
+00:00:00.000 --> 00:00:00.000
+ So this error tells me I cannot convert an unsigned char pointer to a pixel pointer when I initialize it.
+
+00:00:00.000 --> 00:00:00.000
+ And so what we need to do is we need to use a special cast called a reinterpret cast
+
+00:00:00.000 --> 00:00:00.000
+ to tell the compiler to look at data four pixels at a time instead of one pixel at a time.
+
+00:00:00.000 --> 00:00:00.000
+ Four pixels at a time instead of one pixel at a time.
+
+00:00:00.000 --> 00:00:00.000
+ And so what I'm going to do is I'm going to say reinterpret that pointer as a pixel pointer.
+
+00:00:00.000 --> 00:00:00.000
+ And now my code will compile.
+
+00:00:00.000 --> 00:00:00.000
+ Now my code will compile.
+
+00:00:00.000 --> 00:00:00.000
+ Now you remember address arithmetic is how we got the end pointer.
+
+00:00:00.000 --> 00:00:00.000
+ Address arithmetic is a pointer plus an integer gives me a new address.
+
+00:00:00.000 --> 00:00:00.000
+ The end is expressed now not in terms of bytes but pixel in our case.
+
+00:00:00.000 --> 00:00:00.000
+ That means we don't need to use the bytes per pixel to create a new pointer named end.
+
+00:00:00.000 --> 00:00:00.000
+ We can just do it directly.
+
+00:00:00.000 --> 00:00:00.000
+ So pixel pointer end equals beg plus, now notice not data.
+
+00:00:00.000 --> 00:00:00.000
+ It has to be beg because we want to add to this pointer beg plus width times height.
+
+00:00:00.000 --> 00:00:00.000
+ Notice we don't need to multiply it like we did in the previous program.
+
+00:00:00.000 --> 00:00:00.000
+ So now we're going to use an iterator loop to process each pixel.
+
+00:00:00.000 --> 00:00:00.000
+ So while beg not equal to end just like we did in the previous one.
+
+00:00:00.000 --> 00:00:00.000
+ And at the end we're going to do beg plus plus.
+
+00:00:00.000 --> 00:00:00.000
+ So that's going to process a pixel at a time.
+
+00:00:00.000 --> 00:00:00.000
+ I don't need four beg plus pluses to go through that.
+
+00:00:00.000 --> 00:00:00.000
+ So this will process each pixel.
+
+00:00:00.000 --> 00:00:00.000
+ We're going to increment the pointer to go to the next pixel.
+
+00:00:00.000 --> 00:00:00.000
+ Now we're going to take that image and we're going to grayscale it.
+
+00:00:00.000 --> 00:00:00.000
+ So I'm going to write two functions.
+
+00:00:00.000 --> 00:00:00.000
+ I'm going to copy this 38, line 38 and 39.
+
+00:00:00.000 --> 00:00:00.000
+ And I'm going to go up here.
+
+00:00:00.000 --> 00:00:00.000
+ It doesn't actually tell me where to write those functions so I'm going to write those here.
+
+00:00:00.000 --> 00:00:00.000
+ So my average function is going to take a pixel by reference.
+
+00:00:00.000 --> 00:00:00.000
+ So void average pixel reference p.
+
+00:00:00.000 --> 00:00:00.000
+ And my luminance function, and I've spelled luminance wrong.
+
+00:00:00.000 --> 00:00:00.000
+ I'm going to try and correct that before you guys see that.
+
+00:00:00.000 --> 00:00:00.000
+ My luminance function is going to take a pixel pointer p.
+
+00:00:00.000 --> 00:00:00.000
+ So I just want you to see how these two functions work.
+
+00:00:00.000 --> 00:00:00.000
+ So we've already incremented the beg pointer to point to the next pixel.
+
+00:00:00.000 --> 00:00:00.000
+ The type of the pointer determines how far the pointer moves.
+
+00:00:00.000 --> 00:00:00.000
+ An unsigned char moves only one byte.
+
+00:00:00.000 --> 00:00:00.000
+ And pixel pointer moves the size of a pixel or four bytes.
+
+00:00:00.000 --> 00:00:00.000
+ Now if we have a pointer to a pixel, we access the structure members using pointer to member.
+
+00:00:00.000 --> 00:00:00.000
+ So beg arrow red not star beg red.
+
+00:00:00.000 --> 00:00:00.000
+ So we're going to pass each pixel to our two grayscale functions, average and luminance.
+
+00:00:00.000 --> 00:00:00.000
+ First one by reference and the second one by address.
+
+00:00:00.000 --> 00:00:00.000
+ And then I'm going to write one using average and one using luminance.
+
+00:00:00.000 --> 00:00:00.000
+ And I'm going to manually change the name of the files so you can compare.
+
+00:00:00.000 --> 00:00:00.000
+ So the average is going to look like this.
+
+00:00:00.000 --> 00:00:00.000
+ Int average, I'll call it ADG, equals p red plus p blue plus p green.
+
+00:00:00.000 --> 00:00:00.000
+ Doesn't make any difference which order I put them in.
+
+00:00:00.000 --> 00:00:00.000
+ All divided by three.
+
+00:00:00.000 --> 00:00:00.000
+ That's the average.
+
+00:00:00.000 --> 00:00:00.000
+ Now what I want to do is I want to set those back to the average.
+
+00:00:00.000 --> 00:00:00.000
+ So p red equals p green equals p blue equals the average.
+
+00:00:00.000 --> 00:00:00.000
+ So we're assigning average to p blue.
+
+00:00:00.000 --> 00:00:00.000
+ We're assigning the result of that to p green and the result of that to p red.
+
+00:00:00.000 --> 00:00:00.000
+ So that's going to be the average.
+
+00:00:00.000 --> 00:00:00.000
+ So let's go ahead and for each pixel let's just say average.
+
+00:00:00.000 --> 00:00:00.000
+ And I want the pixel so I'm going to get the pixel by star beg.
+
+00:00:00.000 --> 00:00:00.000
+ Star beg, that's a pixel pointer.
+
+00:00:00.000 --> 00:00:00.000
+ I'm going to get the average by star beg.
+
+00:00:00.000 --> 00:00:00.000
+ Ok, let's run it.
+
+00:00:00.000 --> 00:00:00.000
+ So let me open a terminal again on it.
+
+00:00:00.000 --> 00:00:00.000
+ I guess I closed my terminal.
+
+00:00:00.000 --> 00:00:00.000
+ Let me close the other terminals I have open here.
+
+00:00:00.000 --> 00:00:00.000
+ And we'll do make run.
+
+00:00:00.000 --> 00:00:00.000
+ Ok, variable or field average declared void.
+
+00:00:00.000 --> 00:00:00.000
+ My problem there, of course, is that I put my two functions here
+
+00:00:00.000 --> 00:00:00.000
+ when they needed to go after my structure.
+
+00:00:00.000 --> 00:00:00.000
+ Let's say make run.
+
+00:00:00.000 --> 00:00:00.000
+ Ok, so images grayscale.png.
+
+00:00:00.000 --> 00:00:00.000
+ And so let's look in images.
+
+00:00:00.000 --> 00:00:00.000
+ Here's our original picture, billiards.
+
+00:00:00.000 --> 00:00:00.000
+ And here's the grayscale version of that.
+
+00:00:00.000 --> 00:00:00.000
+ So let's rename this.
+
+00:00:00.000 --> 00:00:00.000
+ So just right click and do rename.
+
+00:00:00.000 --> 00:00:00.000
+ Or you can press F2.
+
+00:00:00.000 --> 00:00:00.000
+ And let's change that to average.png.
+
+00:00:00.000 --> 00:00:00.000
+ Ok, now let's go back to our code.
+
+00:00:00.000 --> 00:00:00.000
+ And for the luminance we're going to use these values.
+
+00:00:00.000 --> 00:00:00.000
+ Now this is to make sure that the color averages reflect the sensitivity of our eyes.
+
+00:00:00.000 --> 00:00:00.000
+ And so we're going to say int average equals static cast int.
+
+00:00:00.000 --> 00:00:00.000
+ And then p, notice we have a pointer, p arrow red times .299 plus p arrow green times .587 plus p arrow blue times .114.
+
+00:00:00.000 --> 00:00:00.000
+ And now we're simply going to do the same thing that we did on line 27.
+
+00:00:00.000 --> 00:00:00.000
+ But instead of using the dot, because p is a pointer in this one, we're going to use the arrow here to do this.
+
+00:00:00.000 --> 00:00:00.000
+ Ok, so there's the luminance version.
+
+00:00:00.000 --> 00:00:00.000
+ Ok, now let's just run it once again.
+
+00:00:00.000 --> 00:00:00.000
+ So make run.
+
+00:00:00.000 --> 00:00:00.000
+ It's going to save the image in grayscale.png.
+
+00:00:00.000 --> 00:00:00.000
+ So in images, grayscale.png.
+
+00:00:00.000 --> 00:00:00.000
+ We're going to select it, press F2 or right click and rename.
+
+00:00:00.000 --> 00:00:00.000
+ I'm going to name this luminance.
+
+00:00:00.000 --> 00:00:00.000
+ And here's the luminance version.
+
+00:00:00.000 --> 00:00:00.000
+ So let's look at the luminance and look at the average.
+
+00:00:00.000 --> 00:00:00.000
+ And right click.
+
+00:00:00.000 --> 00:00:00.000
+ So there's the average.png and let's look at the luminance.png.
+
+00:00:00.000 --> 00:00:00.000
+ Ok, and what you'll notice is that the colors that were red and, actually both those look exactly the same, don't they?
+
+00:00:00.000 --> 00:00:00.000
+ Oh, you know why they look the same?
+
+00:00:00.000 --> 00:00:00.000
+ Because I'm calling average in both cases.
+
+00:00:00.000 --> 00:00:00.000
+ So let's go back to our code here now.
+
+00:00:00.000 --> 00:00:00.000
+ And comment out where to call the average.
+
+00:00:00.000 --> 00:00:00.000
+ And now call luminance.
+
+00:00:00.000 --> 00:00:00.000
+ Spell it right here.
+
+00:00:00.000 --> 00:00:00.000
+ And let's pass in big this time.
+
+00:00:00.000 --> 00:00:00.000
+ So notice this time we don't dereference it because the luminance function takes a pointer.
+
+00:00:00.000 --> 00:00:00.000
+ Let's run it. Let's delete our luminance.png before because it was really the wrong one.
+
+00:00:00.000 --> 00:00:00.000
+ Let's run it again. Make run.
+
+00:00:00.000 --> 00:00:00.000
+ Let's go over and rename this.
+
+00:00:00.000 --> 00:00:00.000
+ And let's open up a terminal there.
+
+00:00:00.000 --> 00:00:00.000
+ And let's open up average.
+
+00:00:00.000 --> 00:00:00.000
+ So I have the average and the luminance.
+
+00:00:00.000 --> 00:00:00.000
+ So here's what I want you to see.
+
+00:00:00.000 --> 00:00:00.000
+ Actually, let's look at the billiards.png.
+
+00:00:00.000 --> 00:00:00.000
+ Maybe we can open it in three things.
+
+00:00:00.000 --> 00:00:00.000
+ So there's the billiards.
+
+00:00:00.000 --> 00:00:00.000
+ Let's open this one and change that to average.
+
+00:00:00.000 --> 00:00:00.000
+ Ok, so that's nice.
+
+00:00:00.000 --> 00:00:00.000
+ Let's close that so we can see them a little better.
+
+00:00:00.000 --> 00:00:00.000
+ Let's move that over there so we can see them a little better.
+
+00:00:00.000 --> 00:00:00.000
+ What we want to look at is our eyes are more sensitive to green light than they are to red light.
+
+00:00:00.000 --> 00:00:00.000
+ So you notice in the color pictures, notice that these green balls, 14 and I can't see what the other number is, right in the middle there,
+
+00:00:00.000 --> 00:00:00.000
+ appear lighter than the red ones over here or the blue ones.
+
+00:00:00.000 --> 00:00:00.000
+ The blue ones appear darkest.
+
+00:00:00.000 --> 00:00:00.000
+ And when we average them, notice how the blue ones become light and the two green ones become very, very dark.
+
+00:00:00.000 --> 00:00:00.000
+ And so by adjusting to the sensitivity of our light, we get a picture that is more like the luminance over here, the picture over here.
+
+00:00:00.000 --> 00:00:00.000
+ Notice how the blue appears relatively dark, the green appears light, just like it normally appears to our eyes.
+
+00:00:00.000 --> 00:00:00.000
+ Ok, so this kind of took a long time. I hope when you guys do it, it actually won't take you that much time
+
+00:00:00.000 --> 00:00:00.000
+ because I don't think you're going to run into the same problems I had because I'm going to go right now
+
+00:00:00.000 --> 00:00:00.000
+ and I'm going to fix the starter code so you don't end up with those problems.
+
+00:00:00.000 --> 00:00:00.000
+ Ok, I'll see you next time for lecture 19.
+

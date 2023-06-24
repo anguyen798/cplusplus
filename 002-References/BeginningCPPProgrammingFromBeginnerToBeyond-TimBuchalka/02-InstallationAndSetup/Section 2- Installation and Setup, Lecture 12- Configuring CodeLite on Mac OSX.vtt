@@ -1,0 +1,838 @@
+WEBVTT
+
+00:05.480 --> 00:06.470
+Hello, everyone.
+
+00:06.470 --> 00:12.590
+In this video we're going to configure code light to work with the compiler that we've already installed.
+
+00:12.590 --> 00:16.340
+So at this point, we've installed the compiler and we've installed code light.
+
+00:16.370 --> 00:20.090
+The first time you run code light, you're going to get a welcome message like this.
+
+00:20.090 --> 00:22.340
+And this is basically a setup wizard.
+
+00:22.340 --> 00:28.010
+If you don't get this the first time you run code light, you can just come up to help and select run
+
+00:28.010 --> 00:29.750
+the setup wizard right there.
+
+00:29.870 --> 00:30.160
+Okay.
+
+00:30.170 --> 00:31.490
+But I did get the setup wizard.
+
+00:31.490 --> 00:34.550
+Also, you might get the light mode or you may get the dark mode.
+
+00:34.550 --> 00:36.920
+It really depends on how you've got your Mac set up.
+
+00:36.920 --> 00:40.670
+So what we want to do is we do want to run this setup wizard.
+
+00:40.670 --> 00:43.430
+So once it comes up, we want to click next.
+
+00:44.050 --> 00:46.930
+We want to select c c plus plus development.
+
+00:47.290 --> 00:48.880
+Select next again.
+
+00:49.720 --> 00:54.610
+And now we're going to ask code light to scan our system for installed compilers.
+
+00:54.610 --> 00:57.700
+Since we've already installed a compiler, it should find one.
+
+00:57.700 --> 01:00.370
+So I'll select scan and you can see it.
+
+01:00.370 --> 01:01.420
+Found a bunch of stuff.
+
+01:01.420 --> 01:03.220
+The most important one is the GCC.
+
+01:03.250 --> 01:05.050
+That's the one we're going to use.
+
+01:05.080 --> 01:07.830
+If you see a GCC there, you're good to go.
+
+01:07.840 --> 01:11.800
+So I'm going to select next Then what theme do I want to use?
+
+01:11.800 --> 01:13.900
+You can use a light theme or a dark theme.
+
+01:13.900 --> 01:17.680
+I'm just going to stick to the dark theme because the light theme, although it comes off better on
+
+01:17.680 --> 01:22.690
+video, is giving me some really weird glitchy stuff with the recording that just doesn't look good.
+
+01:22.690 --> 01:24.310
+So I'm going to select next.
+
+01:25.540 --> 01:28.330
+Don't make any changes here and click finish.
+
+01:29.990 --> 01:33.410
+Now code light is going to stop and restart.
+
+01:34.030 --> 01:36.580
+And once you're opened up, we're good to go.
+
+01:36.580 --> 01:39.370
+Now down here, you can see where it says local workspaces.
+
+01:39.370 --> 01:40.300
+There aren't any yet.
+
+01:40.330 --> 01:45.610
+Once we start creating workspaces, they will show up here and you can easily go back to previously
+
+01:45.610 --> 01:47.920
+used workspaces by just clicking on them.
+
+01:48.040 --> 01:54.310
+The idea here is we want to create a workspace and then within that workspace we want to create projects.
+
+01:54.310 --> 01:57.550
+Each project would be a working C plus plus program.
+
+01:57.550 --> 02:00.430
+So the first step is to create a workspace.
+
+02:00.430 --> 02:01.870
+Now, there are several ways to do it.
+
+02:01.870 --> 02:04.360
+You can see the workspace view over here.
+
+02:04.390 --> 02:08.590
+We can select new Create Workspace, this big button right here.
+
+02:08.590 --> 02:10.990
+We can go to workspace, new workspace.
+
+02:10.990 --> 02:14.800
+And I believe we can go to file new workspace as well.
+
+02:14.800 --> 02:16.540
+So there's a lot of places we could do it.
+
+02:16.540 --> 02:19.120
+I'm just going to click this big button right here.
+
+02:19.330 --> 02:21.370
+Now, what is the workspace type?
+
+02:21.370 --> 02:23.170
+Well, we're going to stick to C plus plus.
+
+02:23.170 --> 02:24.400
+That's what we'll be using.
+
+02:24.400 --> 02:27.190
+So I'm going to select C plus plus and click okay.
+
+02:27.640 --> 02:32.650
+Now it's going to ask me where I want to store these workspaces and what I want to name them.
+
+02:32.650 --> 02:34.280
+So you've got some choices here.
+
+02:34.280 --> 02:36.920
+You can put them in your documents, you can put them on your desktop.
+
+02:36.920 --> 02:41.990
+I'm going to create a path right off of my home directory and I'm going to call it workspaces.
+
+02:42.010 --> 02:45.290
+Then I'm going to create as many workspaces as I want within that area.
+
+02:45.290 --> 02:49.640
+That way I'm nicely organized, so I'm just going to click this button over here with the three dots,
+
+02:49.640 --> 02:55.220
+and right here I'm going to create a new folder and I'm going to call it workspaces.
+
+02:55.370 --> 02:59.240
+Let me make that a capital W workspaces.
+
+02:59.360 --> 03:00.140
+That's it.
+
+03:00.140 --> 03:01.040
+I'll create it.
+
+03:01.700 --> 03:03.110
+And I'll select it.
+
+03:03.110 --> 03:09.530
+And you can see now that the workspace path is going to be my home folder workspaces and the workspace
+
+03:09.530 --> 03:13.160
+name for the workspace that I'm going to create now is going to be called Workspace One.
+
+03:13.160 --> 03:17.150
+That can be anything that could be Section five, that could be pointers.
+
+03:17.150 --> 03:22.490
+If you're working on pointers, anything that makes sense for you, make sure that create the workspace
+
+03:22.490 --> 03:26.300
+under a separate directory is checked and click okay.
+
+03:26.480 --> 03:32.870
+Now you can see over here in the Workspace view, you have a workspace created called Workspace One.
+
+03:32.900 --> 03:36.620
+Now that's not real useful until we create projects and that's the next step.
+
+03:36.620 --> 03:38.510
+Let's create some projects within it.
+
+03:38.510 --> 03:40.640
+So we'll start with creating one project.
+
+03:40.640 --> 03:44.780
+So I'm going to right click on there and select new project.
+
+03:44.810 --> 03:47.540
+Again, you can go up to file new project.
+
+03:47.570 --> 03:51.170
+A lot of different ways to do it, but let's just right click on the workspace.
+
+03:52.080 --> 03:53.850
+You create a new project?
+
+03:55.640 --> 03:58.150
+Okay, so now we've got our new project wizard.
+
+03:58.160 --> 04:03.200
+You can see that this project is going to go into Workspace one, which is the workspace we have open.
+
+04:03.200 --> 04:05.110
+And what do you want to name your project?
+
+04:05.120 --> 04:06.290
+You can name it anything you want.
+
+04:06.320 --> 04:08.030
+I'm going to name it Project One.
+
+04:09.120 --> 04:12.120
+Now something that's really, really important throughout.
+
+04:12.150 --> 04:14.250
+Do not use any spaces anywhere.
+
+04:14.280 --> 04:20.340
+Do not use any special characters like pluses and dots and dollar signs and all kinds of weird things
+
+04:20.340 --> 04:22.950
+and do not use any international characters.
+
+04:22.950 --> 04:25.470
+So just keep it really plain simple.
+
+04:25.470 --> 04:29.490
+No spaces, no international characters, no special characters.
+
+04:30.000 --> 04:34.440
+Once we do that, we want to check the create the project in folder.
+
+04:35.090 --> 04:38.080
+Then what category console.
+
+04:38.090 --> 04:41.060
+We're going to run these programs in a terminal window.
+
+04:41.270 --> 04:45.860
+The type is going to be simple executable, G plus plus.
+
+04:46.280 --> 04:49.220
+So again, simple executable G plus plus.
+
+04:49.940 --> 04:53.090
+The compiler we're going to use is the GCC compiler.
+
+04:53.090 --> 04:55.640
+You may have other choices here, but just select GCC.
+
+04:57.000 --> 05:00.870
+The debugger is going to be the Lldb Vscode debugger.
+
+05:00.870 --> 05:02.100
+That's the one on Mac.
+
+05:02.490 --> 05:06.570
+And the build system is code light Makefile generator.
+
+05:06.720 --> 05:08.640
+And again, you've got some choices here.
+
+05:08.640 --> 05:14.550
+Two choices we're going to use that one in version 17.3, which is the version that I'm running now
+
+05:14.550 --> 05:15.540
+of code light.
+
+05:15.570 --> 05:18.590
+The developer removed the default build system.
+
+05:18.600 --> 05:22.220
+Unfortunately that makes it a little tougher for us to configure this.
+
+05:22.230 --> 05:23.790
+The default build system work great.
+
+05:23.790 --> 05:25.920
+I really don't know why he removed it, but he did.
+
+05:25.920 --> 05:27.660
+So we'll deal with it.
+
+05:27.750 --> 05:30.270
+At this point, we're going to click okay.
+
+05:30.950 --> 05:34.550
+And you can see in the workspace project one has been created.
+
+05:34.580 --> 05:40.010
+There is a source folder for our source code and there is our main.cpp file.
+
+05:40.100 --> 05:44.450
+So if I double click on that, you can see the source code right there and I'm going to make this a
+
+05:44.450 --> 05:45.320
+little bit bigger.
+
+05:45.320 --> 05:53.000
+So I'm going to go over to my settings, colors and fonts and I'm going to set the font to something
+
+05:53.000 --> 05:54.980
+around 20 or so so you guys can see.
+
+05:55.090 --> 05:55.280
+Let's see.
+
+05:55.310 --> 05:56.150
+24.
+
+05:56.630 --> 05:58.280
+So I'll click okay.
+
+06:00.190 --> 06:03.160
+And then I'll click apply and then okay, there we go.
+
+06:03.160 --> 06:05.660
+So that fonts a little bit easier to see now on video.
+
+06:05.680 --> 06:07.270
+So what are we going to do?
+
+06:07.300 --> 06:12.000
+We're going to remove all this and we're going to write a real simple program.
+
+06:12.010 --> 06:15.830
+Now notice that when I did that, this little red dot showed up.
+
+06:15.850 --> 06:20.740
+What that means is that whatever is in here, in my editor, has not been saved.
+
+06:20.860 --> 06:24.580
+So this is a good clue for you to make sure you save everything.
+
+06:24.580 --> 06:27.190
+So let's write the program and then we'll worry about saving it.
+
+06:27.250 --> 06:30.300
+At this point, just type along and follow along.
+
+06:30.310 --> 06:34.060
+The point of this video is to make sure that our development environment is set up.
+
+06:34.060 --> 06:35.890
+It's not about learning C plus plus yet.
+
+06:35.920 --> 06:37.750
+We'll have plenty of time to do that.
+
+06:37.750 --> 06:39.070
+All this will be explained.
+
+06:39.070 --> 06:41.560
+So pound include.
+
+06:42.830 --> 06:49.340
+We have a left angle bracket or less than sign iostream and the right angle bracket.
+
+06:49.640 --> 06:56.590
+Then we're going to say using namespace space STD with a semicolon at the end.
+
+06:56.600 --> 06:59.930
+Make sure you have spaces between using namespace and STD.
+
+07:00.500 --> 07:07.580
+Now we're going to write the main function, so we're going to type int int space main left n right
+
+07:07.580 --> 07:09.830
+per n and then a left curly brace.
+
+07:10.930 --> 07:18.730
+And in here we're just going to say C out to left angle brackets side by side, no spaces between them.
+
+07:18.730 --> 07:21.880
+And I'm going to say hello world.
+
+07:22.030 --> 07:23.770
+That's what I'm going to display.
+
+07:23.890 --> 07:27.550
+Make sure that that hello world is within double quotes the whole thing.
+
+07:27.670 --> 07:32.230
+Then we have to left angle brackets and end for an end line.
+
+07:32.260 --> 07:35.860
+Make sure that that's end and not end one.
+
+07:36.220 --> 07:40.480
+And then we're going to return zero with a semicolon at the end.
+
+07:40.510 --> 07:43.090
+Make sure there's a space between the return and the zero.
+
+07:43.120 --> 07:43.900
+That's it.
+
+07:43.930 --> 07:45.790
+Now you can see that that red dot is there.
+
+07:45.790 --> 07:51.070
+So I'm going to save this and I'm going to press command S You can also come up to file save file,
+
+07:51.070 --> 07:54.900
+but I'm just going to press command s and that little red dot is gone.
+
+07:54.910 --> 07:59.980
+Before we build this, we need to configure our compiler to work with this project the way we want.
+
+08:00.010 --> 08:06.370
+The way we can do that is you'll notice that Project one right there is bold and italicized that tells
+
+08:06.370 --> 08:10.430
+code Light and us that this project is the active project.
+
+08:10.430 --> 08:12.770
+Remember, we could have many projects in here.
+
+08:12.800 --> 08:16.250
+The active project is the one that's going to be built and run.
+
+08:16.250 --> 08:18.710
+So it's really important that we select the one we want.
+
+08:18.740 --> 08:20.930
+In this case, there's only one, so it's pretty easy.
+
+08:20.930 --> 08:25.340
+So I want to select the project and then I'm going to come up here and click that wrench icon.
+
+08:26.200 --> 08:29.700
+I can also right click on the project and come down here to settings.
+
+08:29.710 --> 08:30.550
+Same thing.
+
+08:30.550 --> 08:32.620
+So I'm just going to click that wrench icon.
+
+08:34.250 --> 08:35.780
+And we get our project settings.
+
+08:35.780 --> 08:39.110
+Now, most of this we're not going to mess with, we're just going to leave it alone.
+
+08:39.200 --> 08:41.870
+Most of this has been set up for us already.
+
+08:41.870 --> 08:46.160
+There's one thing that we definitely have to do is this working directory right here.
+
+08:46.490 --> 08:51.770
+I'm going to come over here and I'm going to delete what's in there and I'm just going to type dollar
+
+08:51.800 --> 08:59.300
+left per N and the word project path with no spaces and both PS are uppercase.
+
+08:59.300 --> 09:00.590
+Then I want to press tab.
+
+09:00.710 --> 09:08.240
+So dollar left per n project path right per n and the two PS and project path uppercase.
+
+09:08.450 --> 09:09.380
+That's it.
+
+09:09.410 --> 09:11.360
+Now we'll go over to the compiler.
+
+09:12.430 --> 09:16.980
+Select it on the left and right where it says C plus plus compiler options.
+
+09:16.990 --> 09:21.640
+I'm just going to click on there and this little button with three dots shows up.
+
+09:21.640 --> 09:27.370
+I want to click that and I'm going to come over here and I'm going to select Enable C plus plus 17 features
+
+09:27.370 --> 09:28.390
+right there.
+
+09:29.080 --> 09:34.210
+That's going to use the C plus plus 17 version of the C plus plus compiler select.
+
+09:34.210 --> 09:35.010
+Okay.
+
+09:35.020 --> 09:36.100
+At this point, we're done.
+
+09:36.100 --> 09:36.640
+I'll select.
+
+09:36.640 --> 09:37.450
+Okay.
+
+09:37.450 --> 09:40.270
+And now I'm going to come over here and build this project.
+
+09:40.270 --> 09:42.700
+I'm going to come up here and I'm going to select Build.
+
+09:43.460 --> 09:45.140
+And rebuild the project.
+
+09:45.140 --> 09:48.020
+When I do that and output pane comes up down here.
+
+09:49.940 --> 09:51.340
+And you get the build.
+
+09:51.350 --> 09:55.930
+Notice that the C plus plus 17 shows up over here and so forth.
+
+09:55.940 --> 09:57.380
+So this is a good build.
+
+09:57.380 --> 09:59.150
+It says build completed successfully.
+
+09:59.150 --> 10:00.620
+No errors, no warnings.
+
+10:00.650 --> 10:04.670
+Our program has been built, so now we have an executable that we can run.
+
+10:04.760 --> 10:08.030
+When we run that executable, we expect it to say Hello world, right?
+
+10:08.030 --> 10:09.260
+And that's what we wrote.
+
+10:10.200 --> 10:10.530
+Great.
+
+10:10.530 --> 10:12.030
+So I'm going to close this.
+
+10:12.910 --> 10:15.640
+And I'm going to come up to build and now I'm going to run.
+
+10:17.150 --> 10:18.870
+Do we want to build it again and execute?
+
+10:18.920 --> 10:19.670
+No, I've already built it.
+
+10:19.670 --> 10:20.870
+I just want to execute it.
+
+10:21.610 --> 10:25.480
+And we get a terminal up here and you notice it says Hello world right there.
+
+10:26.440 --> 10:27.830
+Right there.
+
+10:27.850 --> 10:29.230
+So we've got a good build.
+
+10:29.230 --> 10:30.190
+We've got a good run.
+
+10:30.200 --> 10:35.620
+And it says hit any key to continue and you can hit the key and get used to closing this window like
+
+10:35.620 --> 10:38.740
+that by clicking on that little red dot up there.
+
+10:38.740 --> 10:39.730
+So that's it.
+
+10:39.760 --> 10:41.350
+We've got a program.
+
+10:41.350 --> 10:42.400
+It's running.
+
+10:42.400 --> 10:44.200
+It's pretty easy to do.
+
+10:44.230 --> 10:46.630
+We can create another project, so why don't we do that?
+
+10:46.630 --> 10:47.410
+Let's do that.
+
+10:47.410 --> 10:49.540
+I'm going to click the workspace again.
+
+10:49.960 --> 10:51.160
+Right click.
+
+10:52.620 --> 10:54.930
+New new project.
+
+10:55.830 --> 10:59.520
+I'm going to put it in the same workspace, but I want to call this one project to.
+
+11:02.310 --> 11:03.960
+Again, you can name these anything you want.
+
+11:03.990 --> 11:09.170
+Just be sure that there are no spaces, no international characters and no special characters.
+
+11:09.180 --> 11:13.710
+I know I say that a lot, but there are so many support questions, and when things don't work, it's
+
+11:13.710 --> 11:18.720
+almost always there's a dollar sign somewhere, there's a dot somewhere, there's a percent sign somewhere,
+
+11:18.750 --> 11:20.070
+there's a space somewhere.
+
+11:20.070 --> 11:21.630
+So be sure you don't have any of that.
+
+11:21.720 --> 11:24.860
+So again, make sure create the project in its own folder.
+
+11:24.870 --> 11:32.340
+We've got console simple executable g plus plus GCC lldb vs code code light makefile generator.
+
+11:32.340 --> 11:34.920
+So it remembered the previous settings I'll select.
+
+11:34.920 --> 11:35.640
+Okay.
+
+11:37.190 --> 11:41.390
+We'll go over to the project and we'll select the wrench.
+
+11:42.660 --> 11:46.740
+We'll come over here to General and in the working directory.
+
+11:47.590 --> 11:49.240
+We'll delete what's there.
+
+11:51.330 --> 11:56.820
+And we'll replace it with duller open paren project path.
+
+11:56.850 --> 11:58.080
+Close the parentheses.
+
+11:58.200 --> 11:59.370
+Just like that.
+
+11:59.730 --> 12:01.290
+Then we'll come over to compiler.
+
+12:02.660 --> 12:06.920
+We'll select the compiler options, the C plus plus compiler options right there.
+
+12:07.220 --> 12:08.690
+Click that little button.
+
+12:08.900 --> 12:10.220
+Select Enable.
+
+12:10.250 --> 12:12.530
+C plus plus 17 Features.
+
+12:12.800 --> 12:13.430
+Select.
+
+12:13.430 --> 12:14.210
+Okay.
+
+12:14.960 --> 12:17.000
+Apply these settings and hit.
+
+12:17.000 --> 12:17.660
+Okay.
+
+12:17.660 --> 12:18.590
+And we're done.
+
+12:18.620 --> 12:22.760
+Now we can write our code for the project too.
+
+12:22.790 --> 12:27.620
+So in this case, you'll notice this is the code for Project one, and you can tell up here where it
+
+12:27.620 --> 12:29.060
+says Project One.
+
+12:30.030 --> 12:35.210
+If we select this code now, Project two opens up and that's the main CPP file.
+
+12:35.220 --> 12:39.990
+So what I'd like to do is I want to reuse this code here, so I'm going to just copy it.
+
+12:40.850 --> 12:43.930
+I'm doing command A and then command C to copy.
+
+12:44.040 --> 12:49.580
+I'm just going to come in here and paste it with Command V, so I'm just going to say Hello world from
+
+12:49.580 --> 12:50.600
+project to.
+
+12:52.650 --> 12:53.340
+That's it.
+
+12:53.340 --> 12:56.880
+I'm going to save because it was unsaved before.
+
+12:56.910 --> 13:02.520
+If I build now, it's going to build Project one because you can see Project one right here is italicized.
+
+13:02.520 --> 13:09.060
+Project one is the active project, so we can make Project two, the active project by right clicking
+
+13:09.060 --> 13:12.720
+and saying make active, or we can also just double click on it.
+
+13:12.750 --> 13:17.430
+Now you can see Project two is italicized and bold and it's good to go.
+
+13:17.430 --> 13:19.200
+So now I can build.
+
+13:19.950 --> 13:25.050
+And I can build my project or rebuild my project, I'll go into more the differences between those in
+
+13:25.050 --> 13:25.740
+the class.
+
+13:25.770 --> 13:27.480
+We have a clean build.
+
+13:28.080 --> 13:31.620
+I come up to build and run, execute.
+
+13:31.620 --> 13:36.150
+And at this point we should see Hello from project to that's exactly what we see.
+
+13:36.150 --> 13:38.610
+And you can make this window bigger by just hitting command.
+
+13:38.610 --> 13:42.510
+Plus, if you like, you can see a little bit better hit enter to continue.
+
+13:42.540 --> 13:44.610
+We're done and we'll close this window up.
+
+13:46.190 --> 13:46.880
+That's it.
+
+13:46.910 --> 13:48.590
+We're pretty much done with this.
+
+13:49.100 --> 13:54.950
+A couple of videos down refer to the video that shows us how to make a default project template because
+
+13:54.950 --> 13:58.850
+that'll save us some time from having to do all this stuff over and over and over again.
+
+13:58.850 --> 14:04.370
+What we can do is we can create a default project template and then create new projects from it, and
+
+14:04.370 --> 14:05.900
+all our settings will be there already.
+
+14:05.900 --> 14:10.790
+So the last thing I'd like you to do is to come up to code light preferences.
+
+14:11.780 --> 14:13.940
+And go over here to miscellaneous.
+
+14:14.690 --> 14:15.980
+And there's a setting right here.
+
+14:15.980 --> 14:17.870
+Check for new version on startup.
+
+14:17.900 --> 14:18.980
+Uncheck that.
+
+14:20.250 --> 14:27.090
+My advice would be once you have a working code, light setup and compiler setup, don't mess with it.
+
+14:27.090 --> 14:28.800
+Use it throughout the course.
+
+14:29.100 --> 14:33.590
+Many times as developers we want oh, I want the latest and greatest.
+
+14:33.600 --> 14:35.580
+That's usually a really bad idea.
+
+14:35.610 --> 14:38.070
+The latest and greatest is usually on the bleeding edge.
+
+14:38.070 --> 14:40.110
+It's buggy and there's all kinds of issues.
+
+14:40.110 --> 14:45.000
+So once you have a working development environment, leave it alone, don't mess with it.
+
+14:45.000 --> 14:50.370
+So just uncheck that and this thing won't keep prompting you and pestering you to update to the latest
+
+14:50.370 --> 14:52.260
+and greatest, which may not be.
+
+14:52.260 --> 14:55.260
+So I'm going to apply click okay.
+
+14:55.260 --> 14:56.970
+And at that point we're done.
+
+14:56.970 --> 14:58.830
+We're almost ready to start coding.
+
+14:58.830 --> 15:04.110
+Refer to the section about creating the default template and I'll see you in the next video.

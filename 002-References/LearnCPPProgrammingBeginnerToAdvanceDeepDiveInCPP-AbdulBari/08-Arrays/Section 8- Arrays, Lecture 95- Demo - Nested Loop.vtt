@@ -1,0 +1,337 @@
+WEBVTT
+
+00:00.570 --> 00:06.120
+Let us see the working of nested for loop that is for loop inside our for loop.
+
+00:06.150 --> 00:09.450
+I'll write first for loop for integer.
+
+00:09.660 --> 00:11.850
+I assign one.
+
+00:11.850 --> 00:16.380
+I'm starting from one and I is less than or equal to five.
+
+00:17.100 --> 00:18.030
+I plus.
+
+00:18.030 --> 00:18.750
+Plus.
+
+00:20.780 --> 00:26.240
+Now you know well that this loop will repeat four or five times where I will start taking the value
+
+00:26.240 --> 00:28.310
+from one and up to five.
+
+00:28.310 --> 00:29.090
+It will continue.
+
+00:29.090 --> 00:32.090
+When it becomes greater than five, it will stop.
+
+00:32.390 --> 00:35.350
+What I'll do is I'll see out I.
+
+00:35.360 --> 00:38.720
+And also after every I, I'll give some space.
+
+00:39.980 --> 00:42.140
+Let us run and see what happens.
+
+00:45.380 --> 00:51.740
+Displaying numbers from one through five instead of I, I will print.
+
+00:54.750 --> 00:56.570
+Star and the space.
+
+00:56.580 --> 00:57.930
+Let us see what I get.
+
+01:01.700 --> 01:05.600
+I got five stars with spaces in between them.
+
+01:08.980 --> 01:14.420
+Now here, I'll remove the code and I write one more follow up just like I.
+
+01:14.440 --> 01:21.590
+I will use J assign from one and J is less than or equal to five j plus plus.
+
+01:22.420 --> 01:27.910
+Now inside this loop I will say see out.
+
+01:30.790 --> 01:34.360
+G and I'll give some space.
+
+01:35.710 --> 01:37.330
+Let us see what happens.
+
+01:38.200 --> 01:41.020
+See, I have loop inside a loop.
+
+01:41.020 --> 01:44.530
+So this for loop is inside outer for loop.
+
+01:45.610 --> 01:46.120
+Right.
+
+01:46.120 --> 01:47.950
+So how many times it will repeat.
+
+01:47.980 --> 01:54.760
+Now in there for loop will j start from 1 to 5 and outer for loop also 1 to 5.
+
+01:54.760 --> 02:01.690
+So this inner for loop or this code will execute for 25 times five and to five times.
+
+02:01.690 --> 02:05.170
+So this j values I will get 25 g values.
+
+02:05.170 --> 02:06.430
+Let us run and see.
+
+02:10.250 --> 02:11.120
+Yes.
+
+02:11.300 --> 02:12.590
+1 to 5.
+
+02:12.620 --> 02:14.320
+Then again, 1 to 5.
+
+02:14.330 --> 02:16.130
+Then again, 1 to 5.
+
+02:16.370 --> 02:17.180
+1 to 5.
+
+02:17.180 --> 02:19.400
+So I got five times 1 to 5.
+
+02:19.520 --> 02:21.170
+They all are in a single line.
+
+02:21.170 --> 02:22.340
+So what I do is.
+
+02:25.960 --> 02:28.850
+This fall loop is displaying one line.
+
+02:28.870 --> 02:34.180
+After this I will say C out and L so that it moves into the next line.
+
+02:34.420 --> 02:41.410
+So in there for loop is for displaying one line and the outer for loop is for repeating those lines.
+
+02:41.680 --> 02:42.730
+Let us check.
+
+02:45.090 --> 02:48.430
+Yes in that follow up is displaying 1 to 5 first time.
+
+02:48.450 --> 02:53.100
+Then again next in that follow up is repeating for one more time and one more time.
+
+02:53.100 --> 02:57.810
+So it is totally repeating four or five times instead of just J.
+
+02:57.840 --> 03:00.600
+I will display both I and J.
+
+03:00.600 --> 03:03.720
+So I will try to include them inside a bracket.
+
+03:03.720 --> 03:05.090
+So there's a bracket.
+
+03:05.100 --> 03:09.540
+Then say I, then comma.
+
+03:10.690 --> 03:14.890
+Then Jay, then after that closing bracket.
+
+03:15.070 --> 03:21.910
+So I'm displaying both I and Jay with some space, and they're enclosed inside brackets.
+
+03:22.420 --> 03:24.400
+Let us see how we get the result.
+
+03:27.970 --> 03:28.690
+Yes.
+
+03:28.690 --> 03:30.910
+So now you can see that these are high values.
+
+03:30.910 --> 03:33.570
+First is high value and the second is g value.
+
+03:33.580 --> 03:34.870
+So I value is one.
+
+03:34.870 --> 03:38.440
+Then J is changing from 1 to 5 and this row.
+
+03:38.710 --> 03:47.500
+Then again I value the two and the j is taking the values from 1 to 5 for I values as three j is taking
+
+03:47.500 --> 03:52.870
+the values from 1 to 3, 4 to 5, and same way it is repeating up to five.
+
+03:52.870 --> 03:54.790
+So I got five squared.
+
+03:56.570 --> 03:59.150
+So it is just like a two dimensional array.
+
+04:00.280 --> 04:04.060
+If I take a matrix, then this is how we get the indices for the elements.
+
+04:04.060 --> 04:08.380
+One comma, one one comma to one comma, three one comma for one comma, five, then two comma, one
+
+04:08.380 --> 04:09.610
+to comma two so on.
+
+04:10.690 --> 04:12.790
+I try to change this from five.
+
+04:12.790 --> 04:14.140
+I will just make it as three.
+
+04:14.140 --> 04:16.050
+So it means I want just three rows.
+
+04:16.060 --> 04:17.890
+Let us see what output I get.
+
+04:20.630 --> 04:25.700
+C 1 to 5 G is taking values from 1 to 5, but is taking only three values.
+
+04:25.700 --> 04:27.170
+That is one, two, three.
+
+04:27.830 --> 04:32.090
+So that time I have taken square set of values, but now it is rectangular.
+
+04:32.540 --> 04:35.720
+Rows are three and columns are five.
+
+04:35.720 --> 04:38.270
+So if you check here, those are three and columns are five.
+
+04:38.270 --> 04:42.380
+So it means I is four rows and J is four columns.
+
+04:43.970 --> 04:45.830
+I will debug this and show you for this.
+
+04:45.830 --> 04:48.410
+I will change this g also to three.
+
+04:48.410 --> 04:52.970
+So I'll get just nine values three into three and let us run and see for that.
+
+04:52.970 --> 04:57.050
+I'll put a breakpoint on first for loop, then I will start running it.
+
+05:00.110 --> 05:00.980
+Yes.
+
+05:00.980 --> 05:03.860
+I values zero.
+
+05:04.160 --> 05:04.740
+Right.
+
+05:04.760 --> 05:06.300
+It is not yet executed.
+
+05:06.320 --> 05:09.620
+Then function seven.
+
+05:09.620 --> 05:10.760
+That is f seven.
+
+05:11.360 --> 05:17.000
+I value is one and the j value is still zero because this has not yet executed.
+
+05:17.030 --> 05:18.350
+Then next.
+
+05:18.380 --> 05:19.990
+Now it is on c out.
+
+05:20.000 --> 05:22.430
+I'll complete this and say next.
+
+05:22.430 --> 05:28.370
+So you can see that one comma one is displayed here, one comma one is displayed and the IMG values
+
+05:28.370 --> 05:29.400
+are one one.
+
+05:29.420 --> 05:36.710
+Now I will again press f seven so you can see that it is inside this inner for loop only that is using
+
+05:36.710 --> 05:37.100
+j.
+
+05:37.130 --> 05:38.840
+This is inside this loop only.
+
+05:39.200 --> 05:42.590
+I'll be continuing with one more time.
+
+05:42.650 --> 05:44.780
+Now J has became three.
+
+05:44.780 --> 05:45.890
+Now it will become four.
+
+05:45.890 --> 05:50.480
+So it will come out and take NL and it has gone on to outer loop again.
+
+05:50.480 --> 05:57.080
+I Now this time if I continue next now you can see that the value is two.
+
+05:57.230 --> 05:59.960
+Yes, J was four.
+
+05:59.960 --> 06:02.360
+Now again it will start from one onwards.
+
+06:03.350 --> 06:06.950
+Now you can see the value of J is one.
+
+06:06.950 --> 06:07.790
+Yes.
+
+06:07.880 --> 06:14.060
+Now it will display two comma one, two, comma, one and two comma two to comma three.
+
+06:14.180 --> 06:17.150
+Again, it has gone out and I became three now.
+
+06:17.150 --> 06:19.520
+So three, one, three, two, three, three.
+
+06:20.120 --> 06:20.660
+That's it.
+
+06:20.660 --> 06:27.260
+So this is how you can debug the program and check how the program is working.
+
+06:27.260 --> 06:30.590
+So this is very easy for understanding the program code.
+
+06:35.150 --> 06:35.660
+That's it.
+
+06:35.660 --> 06:38.860
+In the next video, we will see how to draw a few patterns.
+
+06:38.870 --> 06:42.200
+We will draw a few patterns using two for loops.
+
+06:42.740 --> 06:46.520
+I use the same code and modify it for showing patterns.

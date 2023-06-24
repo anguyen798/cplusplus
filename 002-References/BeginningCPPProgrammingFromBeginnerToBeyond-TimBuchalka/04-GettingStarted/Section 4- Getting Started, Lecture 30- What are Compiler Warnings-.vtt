@@ -1,0 +1,205 @@
+WEBVTT
+
+00:00:05.600 --> 00:00:09.100
+In this video, we'll talk about compiler warnings and why they happen.
+
+00:00:09.900 --> 00:00:14.260
+Big tip, don't ignore compiler warnings. We'll talk more about that in a minute.
+
+00:00:15.160 --> 00:00:17.930
+The compiler has noticed a potential problem in your code,
+
+00:00:17.930 --> 00:00:19.230
+and it's warning you about it.
+
+00:00:19.230 --> 00:00:21.330
+That's what compiler warnings are all about.
+
+00:00:21.330 --> 00:00:25.590
+It's only a warning because the compiler is still able to understand your code
+
+00:00:25.590 --> 00:00:27.740
+and produce object code from it.
+
+00:00:27.740 --> 00:00:31.640
+However it's letting you know to be aware that something could be problematic.
+
+00:00:32.630 --> 00:00:36.230
+In this example, we've declared a variable called miles driven.
+
+00:00:36.830 --> 00:00:39.430
+And it's an integer, it can hold any kind of whole number.
+
+00:00:39.430 --> 00:00:43.430
+Then on the next line, we display the value of miles driven to the console.
+
+00:00:44.530 --> 00:00:46.730
+The compiler produces a warning here.
+
+00:00:46.730 --> 00:00:50.330
+It's warning us that you've used the variable miles driven
+
+00:00:50.330 --> 00:00:51.990
+but you never initialized it.
+
+00:00:51.990 --> 00:00:55.290
+So in other words, the value that it contains could be anything.
+
+00:00:55.790 --> 00:00:58.390
+Once again, don't ignore compiler warnings.
+
+00:00:58.390 --> 00:01:00.590
+Many programmers treat them as errors
+
+00:01:00.590 --> 00:01:02.590
+and fix the potential issues up front.
+
+00:01:03.390 --> 00:01:05.990
+Let's head over to CodeLite and we'll see some of these warnings.
+
+00:01:07.190 --> 00:01:10.890
+So now I'm back in CodeLite, and I’ve created a project called compiler warnings.
+
+00:01:11.550 --> 00:01:14.350
+And again, it's a default project just simple hello world.
+
+00:01:14.350 --> 00:01:18.350
+Now what I’d like to do is let's use that favorite number variable again.
+
+00:01:18.350 --> 00:01:21.050
+So let's create that here. I’m going to say int space
+
+00:01:21.050 --> 00:01:24.850
+and the name of my variable. Let's call it favorite number.
+
+00:01:28.510 --> 00:01:31.810
+Perfect. Now suppose
+
+00:01:31.810 --> 00:01:33.610
+I want to print out that favorite number,
+
+00:01:33.610 --> 00:01:37.510
+so I’m going to remove this hello world right here. And I’m just going to replace it with favorite number.
+
+00:01:38.810 --> 00:01:41.810
+So that's all I want to do. I’ve got a favorite number I want to print it out.
+
+00:01:41.810 --> 00:01:43.810
+Now if I try to compile this,
+
+00:01:44.510 --> 00:01:46.910
+syntactically there's nothing wrong with this program.
+
+00:01:46.910 --> 00:01:49.410
+But there is a problem and the compiler is warning you right here.
+
+00:01:49.810 --> 00:01:54.410
+It's saying favorite number is used uninitialized in this function.
+
+00:01:54.660 --> 00:01:57.960
+So in other words, you haven't told the compiler what the value
+
+00:01:57.960 --> 00:01:59.360
+of favorite number is.
+
+00:01:59.360 --> 00:02:02.660
+You haven't asked the user to input anything into favorite number
+
+00:02:02.660 --> 00:02:03.960
+and you're going to print it.
+
+00:02:05.060 --> 00:02:08.560
+The compiler telling you be careful because anything could print here.
+
+00:02:08.560 --> 00:02:12.670
+And in this case anything, will print here. So let's run this, you can see what it looks like.
+
+00:02:12.670 --> 00:02:14.970
+I’m going to run, I’ll build and execute
+
+00:02:16.270 --> 00:02:19.570
+and look at what favorite number is, 4200971.
+
+00:02:19.570 --> 00:02:21.470
+Probably, not what you expected.
+
+00:02:21.470 --> 00:02:25.470
+That's the reason for the warning. The compiler is telling you, you never set that
+
+00:02:25.470 --> 00:02:27.670
+variable to any specific value.
+
+00:02:27.670 --> 00:02:30.570
+So when I print it, who knows what's going to be in there.
+
+00:02:30.570 --> 00:02:33.570
+Okay. We'll talk more about that when we talk about variables.
+
+00:02:34.270 --> 00:02:36.770
+So that's one of the issues that you could have.
+
+00:02:36.770 --> 00:02:39.770
+Another issue you could have is let me go back to hello world here.
+
+00:02:40.430 --> 00:02:43.330
+Another issue you could have is suppose that
+
+00:02:43.330 --> 00:02:47.130
+in this case now we do assign something to that favorite number.
+
+00:02:47.130 --> 00:02:49.730
+Let's just say favorite number is,
+
+00:02:51.330 --> 00:02:52.330
+I don't know,
+
+00:02:53.630 --> 00:02:56.130
+100. So look what we've done now. We've created a variable.
+
+00:02:56.130 --> 00:02:58.630
+We've assigned a value to the variable, but we haven't used it.
+
+00:02:59.430 --> 00:03:01.870
+So the compiler's thinking wait a minute, did you
+
+00:03:01.870 --> 00:03:05.170
+plan to use that variable? Why did you create a variable and not use it at all?
+
+00:03:05.170 --> 00:03:06.770
+So we'll compile,
+
+00:03:08.130 --> 00:03:12.230
+and the warning is variable favorite number set but not used.
+
+00:03:12.730 --> 00:03:15.530
+Okay, so it's telling you, are you sure you want this?
+
+00:03:15.530 --> 00:03:18.530
+There's no reason for you to create a value and then not use it.
+
+00:03:19.190 --> 00:03:21.790
+And similarly, if I get rid of favorite number here
+
+00:03:22.190 --> 00:03:26.090
+and I just do something like that and compile,
+
+00:03:28.090 --> 00:03:30.090
+there's the warning again, unused variable.
+
+00:03:30.090 --> 00:03:34.490
+And you've created a variable, but you haven't even used it. So what do you want.
+
+00:03:34.490 --> 00:03:38.850
+The idea is you should have a no warnings policy in your code.
+
+00:03:39.250 --> 00:03:42.050
+You should have clean compiles with no warnings.
+
+00:03:42.050 --> 00:03:45.350
+Now there's many, many more warnings, and we'll run into them when we talk about
+
+00:03:45.350 --> 00:03:47.050
+if statements and looping
+
+00:03:47.050 --> 00:03:50.850
+and assigning and doing math. And we'll talk more about those mornings when we get there.

@@ -1,0 +1,1212 @@
+WEBVTT
+
+00:00:05.400 --> 00:00:08.309
+In this video, we'll learn
+about how constructors work
+
+00:00:08.330 --> 00:00:09.459
+when we use inheritance.
+
+00:00:10.690 --> 00:00:14.659
+We know that a derived class inherits
+data and methods from its base class.
+
+00:00:15.139 --> 00:00:18.980
+Before c++ can initialize the
+derived object, it must initialize
+
+00:00:19.280 --> 00:00:21.279
+the base part of the derived object.
+
+00:00:22.259 --> 00:00:26.120
+This makes sense since the derived
+class might use base class information
+
+00:00:26.330 --> 00:00:28.040
+during its own initialization.
+
+00:00:29.280 --> 00:00:33.370
+So since constructors are responsible
+for object initialization, when a
+
+00:00:33.370 --> 00:00:38.630
+derived object is created, first the
+base class constructor executes, and
+
+00:00:38.630 --> 00:00:40.610
+then the drive constructor executes.
+
+00:00:41.340 --> 00:00:44.240
+Let's see a simple example
+with no args constructors.
+
+00:00:47.080 --> 00:00:51.339
+In this example we have a base class
+that has a no args constructor that
+
+00:00:51.339 --> 00:00:53.029
+simply displays base constructor.
+
+00:00:54.239 --> 00:00:57.790
+And we have a derived class that
+inherits publicly from base.
+
+00:00:58.900 --> 00:01:01.940
+The drive class also has a
+no args constructor, and it
+
+00:01:01.950 --> 00:01:03.529
+displays derived constructor.
+
+00:01:04.349 --> 00:01:08.219
+Now let's create a base class object
+and a derived class object and see
+
+00:01:08.219 --> 00:01:09.610
+how the constructors are called.
+
+00:01:12.260 --> 00:01:14.710
+Let's create a base object
+from the base class.
+
+00:01:15.490 --> 00:01:18.820
+In this case, there is no inheritance
+involved so we expect the base
+
+00:01:18.820 --> 00:01:22.249
+class constructor to be invoked
+and that's exactly what happens.
+
+00:01:23.480 --> 00:01:27.589
+Now if we create a derived class
+object, this is where things change.
+
+00:01:28.150 --> 00:01:30.920
+In this case, we have
+inheritance since the derived
+
+00:01:30.920 --> 00:01:32.420
+class is a base class.
+
+00:01:32.940 --> 00:01:37.530
+So c++ initializes the base part
+of the derived object first.
+
+00:01:38.200 --> 00:01:41.130
+And you can see on the right-hand
+side of the slide that the base
+
+00:01:41.130 --> 00:01:45.360
+constructor is invoked first and then
+the derived constructor is invoked.
+
+00:01:48.400 --> 00:01:50.440
+Now let's look at how
+destructors are handled.
+
+00:01:51.520 --> 00:01:55.360
+Class destructors are invoked in the
+reverse order as the constructors,
+
+00:01:56.130 --> 00:02:00.750
+so the derived part of the class must
+be destroyed before the base part is.
+
+00:02:01.849 --> 00:02:03.130
+Again, this makes sense.
+
+00:02:03.469 --> 00:02:07.190
+So when a derived object is
+destroyed, first, the derived
+
+00:02:07.210 --> 00:02:11.450
+class destructor executes then the
+base class destructor executes.
+
+00:02:12.380 --> 00:02:15.300
+Each destructor should free
+any resources that its own
+
+00:02:15.300 --> 00:02:16.989
+class constructors allocated.
+
+00:02:19.740 --> 00:02:23.840
+In this slide, we added destructors
+to the base and derived classes.
+
+00:02:24.639 --> 00:02:27.780
+The destructors simply display
+base destructor or derived
+
+00:02:27.780 --> 00:02:29.540
+destructor when they're invoked.
+
+00:02:29.740 --> 00:02:32.760
+So let's create those two
+same base and derived objects
+
+00:02:32.760 --> 00:02:33.899
+now and see the output.
+
+00:02:36.349 --> 00:02:38.360
+First, let's look at
+the base class object.
+
+00:02:38.900 --> 00:02:41.279
+In this case, again, we're
+not using inheritance at all.
+
+00:02:41.680 --> 00:02:44.970
+So the output on the right side of
+the slide is exactly what we expect.
+
+00:02:45.490 --> 00:02:49.730
+First, the base constructor is invoked
+and then the base destructor is invoked
+
+00:02:49.730 --> 00:02:51.230
+and the object is destroyed.
+
+00:02:52.150 --> 00:02:54.699
+Now let's see what happens when
+we create a derived object.
+
+00:02:55.860 --> 00:02:59.219
+First, the derived object must
+be initialized, and we know that
+
+00:02:59.219 --> 00:03:02.100
+the base part must be initialized
+before the derived part.
+
+00:03:02.520 --> 00:03:05.500
+So you can see that the base
+constructor is invoked and then
+
+00:03:05.500 --> 00:03:07.280
+the derived constructor is invoked.
+
+00:03:08.400 --> 00:03:11.329
+Now when the object is
+destroyed the opposite happens.
+
+00:03:11.590 --> 00:03:14.690
+First, the derived destructor
+is invoked, and then the
+
+00:03:14.690 --> 00:03:16.755
+base destructor is invoked.
+
+00:03:17.320 --> 00:03:20.290
+This order of construction and
+destruction occurs in the same
+
+00:03:20.290 --> 00:03:24.030
+manner whether you have two classes
+or ten classes in the hierarchy.
+
+00:03:26.010 --> 00:03:29.320
+Finally, let's talk about a few
+important topics in inheritance and
+
+00:03:29.490 --> 00:03:31.850
+what is not inherited automatically?
+
+00:03:32.700 --> 00:03:37.340
+A derived class does not inherit
+base class constructors, base
+
+00:03:37.340 --> 00:03:40.620
+class destructor, the base
+class overloaded assignment
+
+00:03:40.620 --> 00:03:42.880
+operators and base class friends.
+
+00:03:43.560 --> 00:03:47.610
+However, we can invoke base class
+constructors, destructors and
+
+00:03:47.790 --> 00:03:50.790
+overloaded assignment operators
+from the derived classes.
+
+00:03:52.010 --> 00:03:56.019
+Sometimes, you'll see a using
+base scope operator base directive
+
+00:03:56.020 --> 00:03:57.670
+in the body of a derived class.
+
+00:03:58.180 --> 00:04:02.370
+This was introduced in c++11
+to allow explicit inheritance
+
+00:04:02.370 --> 00:04:03.890
+of base class constructors.
+
+00:04:04.780 --> 00:04:07.120
+There are lots of rules
+associated with this.
+
+00:04:07.370 --> 00:04:11.319
+For example, default copy and move
+constructors are not included.
+
+00:04:12.119 --> 00:04:15.930
+Each inherited constructor has
+the same access specifier as its
+
+00:04:15.930 --> 00:04:17.920
+corresponding base class constructor.
+
+00:04:18.660 --> 00:04:21.559
+If you provide an overloaded
+constructor in the derived class,
+
+00:04:21.589 --> 00:04:24.250
+then the base class overloaded
+constructor is not inherited.
+
+00:04:24.910 --> 00:04:27.920
+A base class's constructor default
+arguments are not inherited.
+
+00:04:28.260 --> 00:04:30.909
+So you can see, there's a bunch
+of rules these are just a few.
+
+00:04:31.710 --> 00:04:35.970
+However, the using statement can be
+useful and save a bit of typing, but
+
+00:04:35.970 --> 00:04:39.030
+I prefer not to use this feature and
+write out the constructors I need
+
+00:04:39.040 --> 00:04:42.909
+in my derived classes and invoke the
+base class constructors as needed.
+
+00:04:42.909 --> 00:04:46.820
+It isn't that much more typing
+and it's very clear to programmers
+
+00:04:47.010 --> 00:04:50.270
+that come after you to modify your
+code exactly what you're doing.
+
+00:04:50.960 --> 00:04:52.370
+Let's head over to the IDE.
+
+00:04:52.420 --> 00:04:54.299
+And I'll show you how
+this works in live code.
+
+00:04:56.150 --> 00:04:59.610
+Hello, so I'm in the section
+15 workspace,
+
+00:04:59.610 --> 00:05:02.990
+and I'm in the ConstructorsAndDestructors project.
+
+00:05:03.599 --> 00:05:05.900
+And what we'll do is we'll step
+through the debugger, and we'll
+
+00:05:05.900 --> 00:05:09.789
+see exactly when these constructors
+are called, so we absolutely
+
+00:05:09.790 --> 00:05:12.850
+understand you know the order
+that things happen in and what and
+
+00:05:12.850 --> 00:05:14.450
+what isn't inherited in this case.
+
+00:05:14.849 --> 00:05:19.210
+So here I've got a base class that
+has an integer, attribute name
+
+00:05:19.219 --> 00:05:24.379
+value, and it's got a simple, no args
+constructor here that sets value to 0.
+
+00:05:24.750 --> 00:05:27.789
+It's got an overloaded constructor
+that expects an integer and sets
+
+00:05:27.790 --> 00:05:30.330
+the value to that integer, and
+it's got a simple destructor.
+
+00:05:30.330 --> 00:05:33.890
+And all of these, just say,
+what they're doing base no
+
+00:05:33.890 --> 00:05:37.039
+args, base int, base destructor.
+
+00:05:37.040 --> 00:05:40.380
+We also have a derived class,
+which is derived publicly from
+
+00:05:40.380 --> 00:05:44.540
+base, and it adds its own attribute
+doubled value, which is just that
+
+00:05:44.540 --> 00:05:46.190
+value double two times the value.
+
+00:05:46.860 --> 00:05:50.050
+And it's got its own constructors here
+and destructor, but I've commented
+
+00:05:50.070 --> 00:05:53.530
+all of them out for now and what we'll
+do is we'll uncomment them as we go.
+
+00:05:53.759 --> 00:05:55.930
+So let's start with
+the simple example.
+
+00:05:56.200 --> 00:05:58.530
+We're here in the main, and
+let's create a base object
+
+00:05:58.910 --> 00:06:00.000
+and we'll just call it b.
+
+00:06:00.480 --> 00:06:01.850
+Really, really straightforward.
+
+00:06:01.890 --> 00:06:03.650
+We're not using any
+inheritance at all here.
+
+00:06:03.650 --> 00:06:04.599
+We're not using derived.
+
+00:06:04.630 --> 00:06:05.770
+We're only dealing with base.
+
+00:06:05.780 --> 00:06:08.320
+So let's review that, and
+make sure that that's very
+
+00:06:08.320 --> 00:06:09.280
+clear what's going on.
+
+00:06:09.580 --> 00:06:13.860
+So if I Step through the debugger here
+what we've got going on is -- and let
+
+00:06:13.860 --> 00:06:16.909
+me move this screen over here to the
+right so what we've got going on here
+
+00:06:16.910 --> 00:06:20.619
+is we're right here on line 26, we're
+just about to create that base object.
+
+00:06:21.500 --> 00:06:24.570
+Now what we expect is for the
+base no args constructor to be
+
+00:06:24.570 --> 00:06:28.420
+called to set that value to 0 and
+then to display no args, right.
+
+00:06:28.679 --> 00:06:31.439
+And then when it goes out of scope,
+we expect the base d structure
+
+00:06:31.440 --> 00:06:32.550
+to be called to clean it up.
+
+00:06:32.839 --> 00:06:35.340
+That's really what we've
+seen up to this point in the
+
+00:06:35.340 --> 00:06:37.740
+course, and it should be pretty
+straightforward at this point.
+
+00:06:37.890 --> 00:06:42.060
+So let's step through and you can see
+right now we're on line 26 right here.
+
+00:06:42.470 --> 00:06:45.570
+As I step through, now I'm
+coming up to line 11 which is
+
+00:06:45.630 --> 00:06:47.389
+our base no args constructor.
+
+00:06:47.950 --> 00:06:50.669
+It's going to initialize value
+to 0, and then just simply
+
+00:06:50.670 --> 00:06:52.590
+display bass no args constructor.
+
+00:06:53.200 --> 00:06:54.970
+And that's exactly what happened.
+
+00:06:55.119 --> 00:06:58.520
+Now b goes out of scope,
+so we expect the base class
+
+00:06:58.600 --> 00:06:59.789
+d structure to be called.
+
+00:07:01.490 --> 00:07:02.940
+And let me step through here.
+
+00:07:02.940 --> 00:07:05.459
+There we go, now we're on
+line 13, and you can see the
+
+00:07:05.460 --> 00:07:06.780
+destructor is being called.
+
+00:07:07.080 --> 00:07:09.619
+And obviously, the value is 0, right.
+
+00:07:09.620 --> 00:07:11.640
+It was set to 0 by
+the constructor here.
+
+00:07:12.580 --> 00:07:14.680
+So at this point, we get
+the destructor called and
+
+00:07:14.680 --> 00:07:15.840
+our program is complete.
+
+00:07:16.300 --> 00:07:17.900
+Okay, that's pretty straightforward.
+
+00:07:18.240 --> 00:07:22.250
+Now what we can do is we can just
+change this, just a little bit, and
+
+00:07:22.320 --> 00:07:26.470
+what we'll do is I'll comment this
+out just to keep it in the code so
+
+00:07:26.509 --> 00:07:27.930
+you guys can play with it on your own.
+
+00:07:28.289 --> 00:07:31.430
+What we'll do here now is we'll
+just say base, we'll call b
+
+00:07:31.430 --> 00:07:32.890
+again, and this time with a 100.
+
+00:07:34.720 --> 00:07:36.740
+And I'll move the break
+point down to here.
+
+00:07:37.080 --> 00:07:39.880
+Okay, so now what we're doing is
+we're creating a b object, which
+
+00:07:39.880 --> 00:07:44.340
+is a base class object, and we're
+providing the 100 as an initializer.
+
+00:07:44.799 --> 00:07:46.699
+So what happens here?
+
+00:07:47.049 --> 00:07:49.989
+Well, in this case, again, we're
+not working with derived, yes,
+
+00:07:50.010 --> 00:07:51.050
+we're not using inheritance.
+
+00:07:51.230 --> 00:07:54.320
+We expect the overloaded
+constructor here on line 12 to
+
+00:07:54.320 --> 00:07:56.030
+execute which expects an integer.
+
+00:07:56.389 --> 00:08:00.560
+We expect it to set the value to 100
+in this case and then just display
+
+00:08:00.849 --> 00:08:04.799
+base int overloaded constructor when
+the object is -- goes out of scope,
+
+00:08:04.799 --> 00:08:06.470
+we expect the destructor to be called.
+
+00:08:07.230 --> 00:08:12.119
+Okay, so let's do that, and we'll
+get these these base examples
+
+00:08:12.120 --> 00:08:14.580
+out of the way, so that we can
+definitely work on the derived
+
+00:08:14.580 --> 00:08:16.039
+examples and understand it better.
+
+00:08:16.530 --> 00:08:18.099
+Okay, so I'm here on line 27.
+
+00:08:18.099 --> 00:08:19.270
+I'm going to step through.
+
+00:08:20.860 --> 00:08:23.810
+Here I am on line 12, that's
+exactly what I expected.
+
+00:08:24.230 --> 00:08:27.570
+I'm providing an integer, so that
+overloaded constructor right here
+
+00:08:27.570 --> 00:08:29.130
+that expects an integer is called.
+
+00:08:29.810 --> 00:08:33.689
+It's going to initialize value to
+100, which is what I'm passing in.
+
+00:08:34.969 --> 00:08:38.120
+And if I look at b's value, there
+you go, you can see the 100.
+
+00:08:38.820 --> 00:08:43.559
+Now the object goes out of scope, and
+the destructor is called right there.
+
+00:08:43.580 --> 00:08:45.900
+So you can see the base
+class destructor was called.
+
+00:08:47.020 --> 00:08:50.370
+Okay, so that's real simple
+examples using base object.
+
+00:08:50.710 --> 00:08:52.670
+Now let's create some derived objects.
+
+00:08:54.190 --> 00:08:58.189
+So for our first example what we'll
+do is we'll comment that line out.
+
+00:08:58.719 --> 00:09:01.720
+And what we'll do is we'll just
+simply create a derived object, we'll
+
+00:09:01.720 --> 00:09:06.069
+just call it d, and we'll provide
+no initialization information.
+
+00:09:06.690 --> 00:09:08.410
+So what do we expect to happen?
+
+00:09:08.410 --> 00:09:10.370
+Well, look at all these
+constructors here.
+
+00:09:10.380 --> 00:09:12.260
+They're all commented out.
+
+00:09:12.660 --> 00:09:15.860
+So when we don't provide
+a constructor, we get a
+
+00:09:15.860 --> 00:09:17.109
+default constructor, right.
+
+00:09:17.109 --> 00:09:18.759
+The default no args constructor.
+
+00:09:19.130 --> 00:09:21.250
+That's going to be called in derived.
+
+00:09:21.650 --> 00:09:25.050
+But because we're in derived
+and it's derived from base, we
+
+00:09:25.050 --> 00:09:26.730
+need to create our base part.
+
+00:09:26.980 --> 00:09:30.180
+So automatically, the base
+classes default constructor
+
+00:09:30.620 --> 00:09:31.780
+right here will be called.
+
+00:09:32.219 --> 00:09:34.799
+So in this case what's going to
+happen is that this value will
+
+00:09:34.799 --> 00:09:38.630
+be set in my base part, but this
+double value will never be set
+
+00:09:38.630 --> 00:09:42.040
+because I'm not using my own
+version of this no args constructor.
+
+00:09:42.980 --> 00:09:46.550
+Okay, so let's run through this one,
+and we'll run the debugger here.
+
+00:09:47.590 --> 00:09:49.309
+And you can see what's going on here.
+
+00:09:49.349 --> 00:09:52.789
+I'm right on line 28, I'm just
+about to create that derived object.
+
+00:09:53.379 --> 00:09:57.630
+Now obviously, the derived object's default
+constructor is going to get called.
+
+00:09:57.630 --> 00:09:58.530
+It's not here, right.
+
+00:09:58.530 --> 00:10:00.100
+That's because it's compiler provided.
+
+00:10:00.310 --> 00:10:03.329
+And it's going to call the
+base class constructor.
+
+00:10:03.330 --> 00:10:04.100
+You can see right there.
+
+00:10:04.100 --> 00:10:07.819
+You can see how it almost really
+just skipped our own default
+
+00:10:07.830 --> 00:10:09.329
+constructor, the derived class.
+
+00:10:09.500 --> 00:10:10.399
+It didn't really skip it.
+
+00:10:10.400 --> 00:10:11.240
+It actually got called.
+
+00:10:11.240 --> 00:10:13.900
+It's just not doing anything
+because it's compiler provided.
+
+00:10:14.210 --> 00:10:19.074
+So in this case I'm setting value to
+0 and saying base no args constructor
+
+00:10:19.420 --> 00:10:21.170
+right here, and now I'm back.
+
+00:10:21.190 --> 00:10:23.300
+But now look at the
+state that derived is in.
+
+00:10:23.889 --> 00:10:27.950
+You see derives base has a value
+0, right, that's exactly what
+
+00:10:27.950 --> 00:10:30.830
+we expected because the base
+default constructor was called.
+
+00:10:31.230 --> 00:10:34.750
+But this doubled value was never
+set, so I've got garbage here.
+
+00:10:36.790 --> 00:10:38.440
+Okay, so hopefully that makes sense.
+
+00:10:38.440 --> 00:10:42.189
+Now what we can do is to
+fix this is we can uncomment
+
+00:10:42.679 --> 00:10:45.589
+out this guy, right here.
+
+00:10:45.950 --> 00:10:50.280
+So now we've just uncommented
+our own no args destructor.
+
+00:10:50.410 --> 00:10:53.400
+So let's run this again now,
+you'll see exactly what happens.
+
+00:10:54.710 --> 00:10:57.450
+Okay, so now in this case, again,
+I'm on line 28, I'm just about
+
+00:10:57.450 --> 00:11:01.189
+to create that derived object
+again with no information here,
+
+00:11:01.190 --> 00:11:02.910
+no initialization information.
+
+00:11:03.179 --> 00:11:04.150
+So I'll step through.
+
+00:11:04.799 --> 00:11:09.610
+This time our own version of our no
+args constructor gets called, right.
+
+00:11:09.890 --> 00:11:13.360
+And what's going to happen right
+now is the base constructor
+
+00:11:13.370 --> 00:11:16.020
+gets called because before I
+start executing anything in this
+
+00:11:16.020 --> 00:11:19.900
+derived constructor, the base
+part of me must be initialized.
+
+00:11:20.139 --> 00:11:23.504
+So you can see when I select
+step here now I've invoked that
+
+00:11:23.770 --> 00:11:25.550
+base class default constructor.
+
+00:11:26.140 --> 00:11:31.180
+It's going to set value to 0,
+and say base no args constructor
+
+00:11:31.180 --> 00:11:35.350
+then I come back down here to the
+constructor, which sets my doubled
+
+00:11:35.350 --> 00:11:38.070
+value to 0 and then displays that
+message that happened kind of
+
+00:11:38.070 --> 00:11:39.300
+quick I think I double clicked.
+
+00:11:39.490 --> 00:11:42.630
+So what happens here is
+look at my d object now.
+
+00:11:42.960 --> 00:11:46.229
+The base part is 0 and the
+doubled value part is 0.
+
+00:11:47.530 --> 00:11:50.790
+Okay, so there you can see that
+we're really chaining here, and we're
+
+00:11:50.790 --> 00:11:52.179
+taking care of our own attributes.
+
+00:11:52.179 --> 00:11:53.290
+And that's what you really want.
+
+00:11:53.550 --> 00:11:55.490
+You want the base class
+to handle its value.
+
+00:11:55.500 --> 00:11:57.960
+You want the derived class
+to handle its doubled value.
+
+00:11:59.410 --> 00:12:02.370
+Okay, so now let's do
+another example here.
+
+00:12:02.560 --> 00:12:03.650
+And again, I'll comment this out.
+
+00:12:03.650 --> 00:12:05.620
+So I'll leave it in there so
+that you can play with it.
+
+00:12:06.270 --> 00:12:08.040
+We'll create a derived object d.
+
+00:12:08.429 --> 00:12:13.750
+And let's pass in a 1000 to it and
+I'll move the break point down here.
+
+00:12:14.730 --> 00:12:16.200
+Okay, so now what do we expect?
+
+00:12:16.209 --> 00:12:22.300
+Well, we expect our derived classes
+overloaded integer constructor to
+
+00:12:22.410 --> 00:12:23.850
+be called, this guy right here.
+
+00:12:24.340 --> 00:12:25.930
+It's commented out right now.
+
+00:12:26.320 --> 00:12:28.759
+So this won't compile, right.
+
+00:12:29.139 --> 00:12:32.760
+As far as the compiler is concerned,
+it doesn't know anything about this.
+
+00:12:33.000 --> 00:12:35.930
+And remember, these
+constructors are not inherited.
+
+00:12:36.289 --> 00:12:38.830
+If this constructor up here
+on line 12 was inherited,
+
+00:12:38.830 --> 00:12:39.990
+then that would be called.
+
+00:12:40.160 --> 00:12:41.319
+And we'll force that in a minute.
+
+00:12:41.370 --> 00:12:44.330
+But for now, let's just compile
+this, and you'll see that we do get
+
+00:12:44.330 --> 00:12:48.719
+a compiler error right here that
+says no matching function call.
+
+00:12:48.750 --> 00:12:52.230
+So basically, it can't find that
+constructor because it's not there.
+
+00:12:53.000 --> 00:12:57.030
+So let's uncomment that out
+and tell it that it's there.
+
+00:12:57.920 --> 00:12:58.860
+Now what do we expect?
+
+00:12:58.880 --> 00:13:02.400
+Well, now what we expect is when we
+execute this line here on line 29,
+
+00:13:02.400 --> 00:13:04.170
+and we want to create that object.
+
+00:13:04.440 --> 00:13:08.660
+What's going to happen is the
+constructor here on line 21 executes.
+
+00:13:09.440 --> 00:13:12.060
+But what's going to execute up here?
+
+00:13:12.740 --> 00:13:16.490
+What we really want is for this guy to
+execute, right, this one on line 12,
+
+00:13:16.490 --> 00:13:18.200
+the overloaded integer constructor.
+
+00:13:18.400 --> 00:13:21.459
+But that's not going to happen
+because I'm not explicitly calling it.
+
+00:13:21.840 --> 00:13:23.660
+We'll learn how to do
+that in the next video.
+
+00:13:23.910 --> 00:13:26.630
+What's going to happen here
+is that the base class default
+
+00:13:26.639 --> 00:13:28.020
+constructor right here is called.
+
+00:13:28.380 --> 00:13:29.999
+Okay, so let's walk through this.
+
+00:13:30.199 --> 00:13:33.170
+Okay, so again, I'm on line 29.
+
+00:13:33.170 --> 00:13:35.260
+I'm just about to
+create that d object.
+
+00:13:35.720 --> 00:13:38.520
+And you can see now that
+line 21 executes, right.
+
+00:13:38.540 --> 00:13:41.450
+That's my overloaded constructor
+that expects an integer.
+
+00:13:41.460 --> 00:13:42.510
+That's exactly right.
+
+00:13:42.960 --> 00:13:45.170
+So now the base part of me
+needs to be initialized.
+
+00:13:45.200 --> 00:13:47.780
+The compiler is not going to guess
+as to which one of these to call.
+
+00:13:47.949 --> 00:13:52.580
+So it's simply going to call the no
+args version and set that value to 0.
+
+00:13:53.190 --> 00:13:56.740
+And when I step through this, you can
+see right there the no args version
+
+00:13:56.740 --> 00:13:58.100
+of the constructor is being called.
+
+00:13:58.469 --> 00:13:59.840
+It's set to value to 0.
+
+00:14:00.540 --> 00:14:03.399
+You can see right there base
+no args, then the derived
+
+00:14:03.410 --> 00:14:07.009
+constructor gets called and
+finishes off by initializing
+
+00:14:07.220 --> 00:14:09.250
+its double value to two times x.
+
+00:14:09.700 --> 00:14:13.439
+And if you look right now at the state
+of this d object right here, you can
+
+00:14:13.440 --> 00:14:17.530
+see that the base is indeed 0 because
+that constructor took care of it and
+
+00:14:17.840 --> 00:14:19.699
+the doubled value is two thousand.
+
+00:14:20.040 --> 00:14:23.280
+We probably wanted the
+value to be one 1000, not 0.
+
+00:14:23.940 --> 00:14:25.710
+But we didn't do that because
+we really don't know how to
+
+00:14:25.710 --> 00:14:26.990
+call these constructors yet.
+
+00:14:27.000 --> 00:14:28.590
+Like I said, we'll do
+that in the next video.
+
+00:14:29.870 --> 00:14:32.530
+Okay, and then obviously
+the destructors get called.
+
+00:14:33.550 --> 00:14:36.380
+All right, so what if we
+didn't have this right here.
+
+00:14:37.309 --> 00:14:38.599
+I'll comment that out.
+
+00:14:38.599 --> 00:14:40.479
+We saw that didn't
+compile a second ago.
+
+00:14:40.850 --> 00:14:43.906
+But what we could do is we can
+use a using statement, and we
+
+00:14:43.906 --> 00:14:45.620
+can just say using base base.
+
+00:14:46.760 --> 00:14:51.620
+And what that will do is it will
+allow us to inherit the non-special
+
+00:14:51.620 --> 00:14:53.230
+constructors from my base class.
+
+00:14:53.270 --> 00:14:54.580
+And this is a non-special constructor.
+
+00:14:55.509 --> 00:14:58.310
+You can think of the special
+constructors as a default, as a
+
+00:14:58.320 --> 00:14:59.880
+copy constructor that kind of thing.
+
+00:15:00.719 --> 00:15:02.590
+So now this will be inherited.
+
+00:15:02.790 --> 00:15:08.890
+So this line right here what it'll do
+is since that's inherited, it matches.
+
+00:15:09.030 --> 00:15:10.159
+So this will be called.
+
+00:15:10.679 --> 00:15:13.150
+And again, that has a problem,
+right because it's not going to
+
+00:15:13.150 --> 00:15:16.410
+deal with the double value so let's
+run this through the debugger,
+
+00:15:16.410 --> 00:15:17.520
+and we'll walk through this.
+
+00:15:18.219 --> 00:15:19.420
+And we're right here now.
+
+00:15:19.910 --> 00:15:21.520
+We're creating that derived object.
+
+00:15:21.540 --> 00:15:22.680
+You notice it compiled, right.
+
+00:15:22.680 --> 00:15:23.760
+Before it didn't compile.
+
+00:15:23.940 --> 00:15:27.000
+Well, this time it compiled
+because I'm inheriting this one.
+
+00:15:27.620 --> 00:15:31.709
+So it's available in my derive, so
+it does match that integer right.
+
+00:15:32.170 --> 00:15:35.650
+So when I execute this, you'll
+see what happens is that this guy
+
+00:15:35.650 --> 00:15:37.300
+gets called right here on line 12.
+
+00:15:38.740 --> 00:15:39.400
+There you go.
+
+00:15:39.640 --> 00:15:41.200
+So control is right here now.
+
+00:15:41.430 --> 00:15:46.890
+So I'm going to initialize the
+base part of me to a 1000, but
+
+00:15:46.900 --> 00:15:48.220
+now look at the state of d.
+
+00:15:49.219 --> 00:15:52.700
+My base is correct a 1000,
+but my doubled value never got
+
+00:15:52.700 --> 00:15:56.000
+initialized, right, because
+I simply inherited that.
+
+00:15:56.000 --> 00:15:59.300
+And that's one of the issues with
+using automatically inheriting
+
+00:15:59.550 --> 00:16:00.979
+your non-special constructors.
+
+00:16:01.260 --> 00:16:05.050
+It'll take care of initializing
+the base part of you, but it
+
+00:16:05.050 --> 00:16:07.590
+won't take care of initializing
+the derived part of you.
+
+00:16:07.590 --> 00:16:09.200
+So you really should do that yourself.
+
+00:16:09.200 --> 00:16:11.700
+And like I said, we'll learn how to do all that in the next video,
+
+00:16:11.700 --> 00:16:14.300
+but it's important that you understand this behavior first.
+
+00:16:14.700 --> 00:16:17.600
+And then I'll just uncomment these last two out
+
+00:16:17.600 --> 00:16:19.600
+and then you'll see the whole thing happening.
+
+00:16:20.800 --> 00:16:23.800
+So at this point, let's run this one final time.
+
+00:16:25.800 --> 00:16:30.400
+So right here we're creating a derived
+object d with a 1000 as an initializer.
+
+00:16:30.900 --> 00:16:34.400
+And what we expect is line 22 to be called,
+
+00:16:34.400 --> 00:16:35.950
+that's exactly correct.
+
+00:16:36.150 --> 00:16:38.950
+Now obviously, behind the scenes what's going to happen is
+
+00:16:39.250 --> 00:16:43.450
+we -- the compiler is not going to guess as to which
+constructor to call in the base class.
+
+00:16:43.450 --> 00:16:45.850
+So it's going to call the no args.
+
+00:16:45.850 --> 00:16:47.620
+And you can see that happening right here.
+
+00:16:47.990 --> 00:16:51.320
+That'll set value to 0, display the message,
+
+00:16:51.320 --> 00:16:55.120
+then we come back and that will set double value to x times 2.
+
+00:16:55.120 --> 00:16:58.920
+So in this case, you can see I've got 0 and 2000,
+
+00:16:58.920 --> 00:17:03.620
+again which is not what I want. But then the destructors get
+called, and you'll see what happens here.
+
+00:17:03.990 --> 00:17:07.620
+First, the destructor for the derived gets called,
+
+00:17:08.220 --> 00:17:10.880
+and then the destructor for the base gets called.
+
+00:17:10.880 --> 00:17:14.880
+So the destructors happen in the order
+opposite from the constructors.
+
+00:17:15.480 --> 00:17:17.880
+Okay, now this isn't really what we want.
+
+00:17:17.880 --> 00:17:22.880
+We really would like this to be a 1000,
+value a thousand double value 2000.
+
+00:17:23.219 --> 00:17:25.560
+And like I said, we'll learn
+how to do all that in the next video,
+
+00:17:25.560 --> 00:17:30.820
+when we learn about calling our base class constructors
+explicitly from the derived constructors.

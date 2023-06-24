@@ -1,0 +1,214 @@
+WEBVTT
+
+00:05.240 --> 00:10.400
+In this video, we'll look at the structure or the syntax of a lambda expression.
+
+00:11.340 --> 00:17.370
+The first time you see a lambda expression, the syntax might look intimidating, but lambda expressions
+
+00:17.370 --> 00:20.430
+actually have a pretty simple and regular structure.
+
+00:20.700 --> 00:24.660
+In this slide, we can see the basic structure of a lambda expression.
+
+00:24.690 --> 00:27.330
+Let's look at each of its elements one by one.
+
+00:28.620 --> 00:31.570
+First, we have a set of square brackets.
+
+00:31.590 --> 00:37.740
+This defines the beginning of the lambda expression and is also the capture list that allows us to capture
+
+00:37.740 --> 00:42.450
+the context or the closure in which the Lambda Expression executes.
+
+00:42.480 --> 00:47.490
+We'll see this in more detail when we talk about stateful lambda expressions in a couple of videos.
+
+00:47.490 --> 00:52.500
+Depending on what we put in these square brackets, we can tell the compiler what elements we want to
+
+00:52.500 --> 00:55.410
+capture and whether by value or reference.
+
+00:55.710 --> 00:59.140
+The next part of the lambda expression is the parameter list.
+
+00:59.160 --> 01:05.130
+Every time the lambda executes, whatever parameters we specify in this parameter list will be passed
+
+01:05.130 --> 01:06.070
+into the lambda.
+
+01:06.090 --> 01:09.600
+This works very much like the parameter list in a function call.
+
+01:09.810 --> 01:13.110
+Next we have an arrow operator followed by a type.
+
+01:13.440 --> 01:16.950
+This is the type that's returned by the lambda expression.
+
+01:17.280 --> 01:20.400
+If the return is void, then we can omit this.
+
+01:20.520 --> 01:26.130
+Also, if the lambda is pretty simple, the compiler can generally deduce the return type of the lambda
+
+01:26.130 --> 01:27.510
+and you can omit this.
+
+01:27.540 --> 01:30.120
+Think of this as the return type of the function.
+
+01:31.270 --> 01:35.570
+The next part of the lambda expression is optional specifiers.
+
+01:35.590 --> 01:39.210
+The specifiers are mutable and context poor.
+
+01:39.580 --> 01:43.960
+I'll show you mutable in the ID and context, but will leave for another time.
+
+01:44.260 --> 01:48.340
+And the last part of the lambda expression is a set of curly braces.
+
+01:48.340 --> 01:51.040
+And this is where you write the code you want to execute.
+
+01:51.400 --> 01:52.060
+That's it.
+
+01:52.060 --> 01:53.580
+As you can see, it's pretty regular.
+
+01:53.590 --> 01:56.140
+So now let's look at a few lambda expressions.
+
+01:58.880 --> 02:02.210
+This is about a simple, a lambda expression as we can have.
+
+02:02.480 --> 02:06.770
+There's no capture list, there's no parameter list, there's no return type.
+
+02:06.770 --> 02:08.960
+And the body of the lambda simply displays.
+
+02:08.960 --> 02:09.370
+Hi.
+
+02:09.380 --> 02:11.690
+So let's see how we can use this lambda expression.
+
+02:14.030 --> 02:15.990
+Notice the function call operator.
+
+02:16.010 --> 02:19.700
+Those are the two parentheses in red on the right side of the statement.
+
+02:20.120 --> 02:26.120
+This will instantiate a function object from this lambda expression and call the function object using
+
+02:26.120 --> 02:27.890
+the overloaded function call operator.
+
+02:27.890 --> 02:29.480
+So this will display high.
+
+02:29.900 --> 02:34.880
+You don't typically see lambda expressions use this way, but you can clearly see how they work in this
+
+02:34.880 --> 02:35.660
+example.
+
+02:37.330 --> 02:38.770
+Here's another example.
+
+02:38.830 --> 02:43.570
+In this example, the lambda expression has a single integer X in the parameter list.
+
+02:43.570 --> 02:48.700
+When the lambda is instantiated and called, an integer will be passed into it and it will be available
+
+02:48.700 --> 02:53.770
+to the code in the lambda expression, just like a parameter would be available to the code and a regular
+
+02:53.770 --> 02:54.490
+function.
+
+02:56.520 --> 03:01.980
+In this example, we have two integers in the parameter list and the body simply displays the sum of
+
+03:01.980 --> 03:03.060
+the two integers.
+
+03:04.230 --> 03:06.990
+So let's go a little bit further with the lambda expression.
+
+03:07.290 --> 03:10.200
+We can assign lambda expressions to variables.
+
+03:10.350 --> 03:15.150
+We can use auto to tell the compiler to deduce the type of the land expression.
+
+03:15.570 --> 03:21.030
+The type is actually a function with template arguments, and I'll show you that in the ID a bit later.
+
+03:21.030 --> 03:26.160
+Now that we have a variable, we can call the function object created from the land expression.
+
+03:26.160 --> 03:31.680
+And as you can see in this case we're calling L and it displays hi and it looks just like a function
+
+03:31.680 --> 03:32.190
+call.
+
+03:34.120 --> 03:38.590
+This is a similar example, except that we have a single integer X in the parameter list of the lambda
+
+03:38.590 --> 03:39.430
+expression.
+
+03:39.640 --> 03:43.360
+So we call L and we pass in a ten and ten is displayed.
+
+03:43.360 --> 03:46.780
+We can call L and pass in 101 hundred is displayed.
+
+03:47.110 --> 03:52.270
+Again, you can see that the syntax is much simpler than creating a function object class like we did
+
+03:52.270 --> 03:52.930
+before.
+
+03:54.620 --> 04:00.140
+Now, if we want to provide a return value from the lambda expression, we could do it explicitly with
+
+04:00.140 --> 04:03.070
+the arrow and the return type as in the first example.
+
+04:03.080 --> 04:09.620
+But this is optional since the compiler can very often deduce the type from the return statement itself.
+
+04:09.920 --> 04:15.980
+So it's much more common to see these types of expressions written as in the second example.
+
+04:16.640 --> 04:22.400
+Since this lambda expression expects to integers and returns there some, we can call l the same way
+
+04:22.400 --> 04:23.690
+we can call a function.
+
+04:24.050 --> 04:29.830
+All of these lambda expressions that I've shown you so far are examples of stateless lambda expressions.
+
+04:29.840 --> 04:33.350
+These are lambda expressions that have empty capture lists.
+
+04:33.470 --> 04:38.750
+In the next video, we'll head to the ID and I'll create some more stateless lambda expressions and
+
+04:38.750 --> 04:40.430
+we'll use them in a few different ways.

@@ -1,0 +1,340 @@
+WEBVTT
+
+00:00:05.250 --> 00:00:09.350
+In this video, we'll see how we can create our own exception classes
+
+00:00:09.350 --> 00:00:10.950
+and throw and catch them.
+
+00:00:11.950 --> 00:00:15.710
+This has the advantage of making the type of the exception thrown
+
+00:00:15.710 --> 00:00:19.710
+very explicit and also very specific for our application.
+
+00:00:19.960 --> 00:00:23.960
+Best practice is to throw objects, not primitive types.
+
+00:00:23.960 --> 00:00:28.860
+Also we want to throw by value and catch by reference or const reference.
+
+00:00:29.660 --> 00:00:33.260
+There are several other best practices that we'll talk about in a few videos.
+
+00:00:33.260 --> 00:00:36.260
+So let's see how we can create our own exception classes.
+
+00:00:37.460 --> 00:00:40.960
+Here we create two exception classes for our simple example.
+
+00:00:41.460 --> 00:00:44.460
+The first is a class called divide by 0 exception,
+
+00:00:45.060 --> 00:00:47.760
+and the second is called negative value exception.
+
+00:00:48.460 --> 00:00:49.460
+That's it.
+
+00:00:49.460 --> 00:00:54.360
+Now when we throw an exception in our code, we create an object of one of these types and throw it.
+
+00:00:55.020 --> 00:00:59.220
+Of course, we can provide constructors, attributes and methods for these classes
+
+00:00:59.220 --> 00:01:01.220
+as we would for any other class.
+
+00:01:01.220 --> 00:01:05.580
+And sometimes it's a good idea to provide information about the exception in these attributes,
+
+00:01:05.580 --> 00:01:08.080
+but as I said, let's keep it simple in this example.
+
+00:01:08.380 --> 00:01:11.980
+So now let's see what our code would look like throwing these exception objects.
+
+00:01:13.480 --> 00:01:17.680
+Here's the calculate miles per gallon function that we saw earlier in this section.
+
+00:01:18.560 --> 00:01:20.560
+The code is pretty much what you would expect.
+
+00:01:20.760 --> 00:01:23.640
+We check to see if gallons is 0. And if it is,
+
+00:01:23.640 --> 00:01:26.940
+we throw a divide by 0 exception object by value.
+
+00:01:27.840 --> 00:01:31.200
+We then check if either miles or gallons are negative.
+
+00:01:31.200 --> 00:01:34.700
+And if they are, we throw a negative value exception object by value.
+
+00:01:35.200 --> 00:01:38.800
+That's all there is to. It now let's see how we'll call this function.
+
+00:01:40.500 --> 00:01:44.760
+Notice that in the try block, we're again calling calculate miles per gallon,
+
+00:01:45.120 --> 00:01:47.620
+and the function may or may not throw an exception.
+
+00:01:48.170 --> 00:01:52.630
+If it does not, then we simply assign the result of the function to miles per gallon,
+
+00:01:52.830 --> 00:01:56.930
+display it, transfer control all the way to the bottom, and display buy,
+
+00:01:56.930 --> 00:01:57.930
+and we're done.
+
+00:01:58.430 --> 00:02:01.530
+However, what if calculate miles per gallon does throw an exception.
+
+00:02:02.030 --> 00:02:06.330
+Remember, it could throw a divide by 0 exception or a negative value exception.
+
+00:02:06.730 --> 00:02:10.630
+So we create two catch handlers, one for each exception type,
+
+00:02:10.630 --> 00:02:13.630
+and we write our exception handling code in the catch blocks.
+
+00:02:14.430 --> 00:02:17.630
+If an exception is thrown then one of these catch handlers will handle it.
+
+00:02:18.030 --> 00:02:20.730
+Notice how we're catching the exceptions by const ref.
+
+00:02:21.170 --> 00:02:25.870
+If we had provided attributes or methods in the exception classes, we would access them here.
+
+00:02:26.370 --> 00:02:29.570
+As before, if we don't handle a particular exception type here,
+
+00:02:29.570 --> 00:02:33.870
+then c++ will terminate this function and proceed up the call stack
+
+00:02:33.870 --> 00:02:37.470
+looking for a handler until it finds one or the program terminates.
+
+00:02:37.970 --> 00:02:41.570
+Let's head over to the IDE, and we'll see this example in action.
+
+00:02:42.570 --> 00:02:45.170
+All right. So I'm back in the IDE.
+
+00:02:45.170 --> 00:02:48.160
+And what I've got here is the section 18 workspace,
+
+00:02:48.160 --> 00:02:52.150
+and I'm in the MPG function exception classes project.
+
+00:02:52.450 --> 00:02:56.250
+And what we're doing here is we're creating a couple of user-defined exception classes
+
+00:02:56.250 --> 00:02:59.850
+which we're going to throw and catch, same thing we did in the slides.
+
+00:02:59.850 --> 00:03:03.850
+You can see here that on lines 5 through 8, we're creating two classes,
+
+00:03:03.850 --> 00:03:07.750
+one is called divide by 0 exception the other is called negative value exception.
+
+00:03:08.300 --> 00:03:11.700
+Notice there are no attributes, no methods, no constructors, nothing.
+
+00:03:11.700 --> 00:03:16.600
+These are just plain old classes, and we're getting the default constructor,and that's good enough for me right now.
+
+00:03:17.000 --> 00:03:21.000
+We could provide attributes and methods and all kinds of good stuff.
+
+00:03:21.000 --> 00:03:25.700
+But the names of the classes in this case give us all the information we need about the exception.
+
+00:03:25.700 --> 00:03:30.690
+So what do we do. Well, we have to throw these exception objects when we
+
+00:03:30.690 --> 00:03:31.690
+have an error.
+
+00:03:32.050 --> 00:03:33.050
+So in this case,
+
+00:03:33.550 --> 00:03:37.110
+we check to see if gallons is equal to 0. And if it is, we throw
+
+00:03:37.110 --> 00:03:41.010
+a divide by 0 exception object. This causes the default constructor.
+
+00:03:41.610 --> 00:03:44.110
+We check to see if miles is less than 0 or
+
+00:03:44.110 --> 00:03:48.710
+gallons is less than 0, right. So if either one of those is negative, then the result won't be valid.
+
+00:03:48.710 --> 00:03:52.310
+So we're going to throw a negative value exception object.
+
+00:03:52.310 --> 00:03:55.310
+If none of those is true and we're good to go,
+
+00:03:55.310 --> 00:03:59.010
+we simply do the calculation and we return miles divided by gallons.
+
+00:03:59.810 --> 00:04:03.110
+Okay. Just like we've done before. So now down here,
+
+00:04:04.610 --> 00:04:06.610
+let's look at our try block.
+
+00:04:06.610 --> 00:04:09.410
+Here we're just grabbing the information from the user,
+
+00:04:09.410 --> 00:04:14.010
+they've typed in the number of miles the number of gallons. And here's our try block right here.
+
+00:04:14.010 --> 00:04:17.370
+This is the function we're calling calculate miles per gallon.
+
+00:04:17.370 --> 00:04:20.970
+It could throw an exception. If it does not throw an exception,
+
+00:04:20.970 --> 00:04:24.530
+we simply assign two miles per gallon the result of that function call.
+
+00:04:24.530 --> 00:04:27.530
+We print out the result. We're done.And then we come down here.
+
+00:04:27.830 --> 00:04:30.430
+And we're finished with the program, and we terminate normally.
+
+00:04:30.930 --> 00:04:32.730
+If it does throw an exception,
+
+00:04:32.730 --> 00:04:36.630
+calculate miles per gallon could throw a divide by 0 exception
+
+00:04:36.630 --> 00:04:38.430
+or a negative value exception.
+
+00:04:38.430 --> 00:04:41.230
+So I've got two catch handlers here, one for each.
+
+00:04:41.630 --> 00:04:44.630
+If I get a divide by 0 exception, it's coming in here.
+
+00:04:44.630 --> 00:04:46.630
+There's my exception object.
+
+00:04:46.630 --> 00:04:49.430
+If my class did have attributes and methods,
+
+00:04:49.430 --> 00:04:51.930
+I would certainly be able to call them and use them here.
+
+00:04:52.330 --> 00:04:55.130
+But in this case, I'm just saying sorry you can't divide by 0.
+
+00:04:55.130 --> 00:04:59.830
+At that point, I transfer control down to here. It says buy, and I terminate normally.
+
+00:05:00.530 --> 00:05:03.930
+Same thing with negative value exception. If I get a negative value exception,
+
+00:05:04.230 --> 00:05:08.930
+I catch that object here. And notice I'm catching both of these by const ref.
+
+00:05:09.290 --> 00:05:12.290
+Now I display sorry one of your parameters is negative.
+
+00:05:12.790 --> 00:05:16.790
+The catch handler completes. Again, I come back here and i finish normally.
+
+00:05:16.790 --> 00:05:19.680
+So I don't have any abnormal termination in this case.
+
+00:05:19.680 --> 00:05:22.340
+So let's run this. And we'll give it a test real quick.
+
+00:05:23.330 --> 00:05:28.320
+So let's do a normal test case. 123 miles, and let's say i use 13 gallons.
+
+00:05:28.520 --> 00:05:32.120
+So my result is 9.46. Exactly what we expect.
+
+00:05:32.720 --> 00:05:33.720
+Let's run it again.
+
+00:05:34.720 --> 00:05:40.010
+This time we'll say 123 with 0 gallons. So we expect a divide by 0 message.
+
+00:05:40.510 --> 00:05:43.310
+Sorry you can't divide by 0. Notice the buy
+
+00:05:43.310 --> 00:05:47.300
+also happens, which means our function terminates -- our program terminates normally.
+
+00:05:48.100 --> 00:05:52.700
+Let's run it one more time with negative for miles and
+
+00:05:52.700 --> 00:05:53.900
+something else for gallons.
+
+00:05:54.560 --> 00:05:56.560
+Sorry one of your parameters is negative.
+
+00:05:56.560 --> 00:06:00.460
+And actually we'll do it one more time for the gallons being negative. That's the last test case.
+
+00:06:01.460 --> 00:06:03.260
+And we'll say negative three.
+
+00:06:03.560 --> 00:06:07.560
+Sorry one of your parameters is negative. So that's handling all the cases that we've got.
+
+00:06:07.560 --> 00:06:11.560
+And we're basically creating our own user
+
+00:06:11.560 --> 00:06:13.360
+defined exception classes.
+
+00:06:13.360 --> 00:06:14.920
+Now this is pretty common.
+
+00:06:14.920 --> 00:06:18.720
+And you can see that it's real nice as far as very readable, you're throwing an object
+
+00:06:18.720 --> 00:06:22.520
+as you're supposed to, you're catching it by const ref like you're supposed to.
+
+00:06:22.520 --> 00:06:26.420
+In a few videos, we'll talk about c++ standard exception
+
+00:06:26.420 --> 00:06:30.320
+hierarchy where it's possible for us to
+
+00:06:30.320 --> 00:06:35.120
+derive our exception classes from one of c++ exception classes.
+
+00:06:35.420 --> 00:06:38.520
+If you're coming from the world of java and other programming languages,
+
+00:06:38.520 --> 00:06:40.320
+that's pretty much what you do.
+
+00:06:40.320 --> 00:06:44.820
+In c++, you have the option of creating these standalone exception classes
+
+00:06:44.820 --> 00:06:47.820
+or buying into the standard exception class
+
+00:06:47.820 --> 00:06:51.120
+hierarchy that's provided by c++,
+
+00:06:51.120 --> 00:06:53.120
+but we'll talk about that soon.

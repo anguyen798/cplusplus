@@ -1,0 +1,418 @@
+WEBVTT
+
+00:00:05.500 --> 00:00:09.000
+In this video, we'll take a high level look at how all this works.
+
+00:00:09.600 --> 00:00:14.100
+If you're completely new to programming, then many of these terms will probably be new to you.
+
+00:00:15.000 --> 00:00:18.500
+The most important thing to remember is that the computer isn't smart at all.
+
+00:00:19.000 --> 00:00:22.300
+It simply does exactly what it's told to do by the programmer,
+
+00:00:22.800 --> 00:00:24.400
+and the programmer in this case is you.
+
+00:00:25.200 --> 00:00:27.200
+A computer program is like a recipe.
+
+00:00:27.200 --> 00:00:31.700
+If you want to bake a cake, there are a series of tasks that you must execute in a specific order,
+
+00:00:32.000 --> 00:00:34.500
+otherwise the final product won't be a cake.
+
+00:00:35.000 --> 00:00:38.300
+Suppose that one of the tasks is to put four eggs in a bowl and mix.
+
+00:00:38.600 --> 00:00:41.900
+A human might assume that the number of eggs need to be cracked
+
+00:00:41.900 --> 00:00:43.900
+and only the egg whites should be used.
+
+00:00:44.300 --> 00:00:48.400
+But that's not necessarily true. They might assume something else. See that's the problem.
+
+00:00:48.400 --> 00:00:52.400
+A computer would probably put the eggs, shells and all into a bowl and mix them.
+
+00:00:52.800 --> 00:00:56.800
+So when we write programs, we need to be very, very explicit about
+
+00:00:56.800 --> 00:00:58.400
+what we want the computer to do.
+
+00:00:58.700 --> 00:01:01.500
+Otherwise, our result will probably be incorrect.
+
+00:01:03.000 --> 00:01:06.000
+In order to write programs, we use programming languages.
+
+00:01:06.000 --> 00:01:08.460
+There are many, many programming languages out there.
+
+00:01:08.460 --> 00:01:10.460
+In this class, we'll be using C++.
+
+00:01:11.060 --> 00:01:13.360
+The code we write is called source code.
+
+00:01:13.660 --> 00:01:16.960
+Source code is generally higher level than computer code
+
+00:01:16.960 --> 00:01:19.260
+since it needs to be understandable by humans,
+
+00:01:19.460 --> 00:01:22.860
+and humans aren't very good at reading long streams of zeros and ones.
+
+00:01:24.360 --> 00:01:27.360
+We write our programs using programming editors.
+
+00:01:27.360 --> 00:01:31.560
+These editors are like word processors, specifically designed to write
+
+00:01:31.560 --> 00:01:34.560
+these recipes in a specific programming language.
+
+00:01:35.860 --> 00:01:39.760
+C++ programs have an extension like .cpp .h .cc
+
+00:01:39.760 --> 00:01:43.760
+hpp and there are several others.
+
+00:01:44.160 --> 00:01:46.960
+In this course, we will use .cpp
+
+00:01:46.960 --> 00:01:49.960
+and .h as the extensions for the code we write.
+
+00:01:50.960 --> 00:01:54.060
+Just as humans aren't very good at reading computer code,
+
+00:01:54.060 --> 00:01:56.560
+computers aren't very good at reading source code.
+
+00:01:56.560 --> 00:02:01.160
+We need to translate the source code to a form that's understandable by the computer.
+
+00:02:01.710 --> 00:02:05.810
+This form is called object code, and the compiler is the translator.
+
+00:02:07.010 --> 00:02:10.570
+The c++ compiler is a program that takes as input
+
+00:02:10.570 --> 00:02:14.770
+C++ source code and produces object code as output.
+
+00:02:15.370 --> 00:02:19.170
+If the source code has errors, then no object code is produced.
+
+00:02:20.770 --> 00:02:24.130
+Since our code might depend on code that other programmers wrote,
+
+00:02:24.630 --> 00:02:28.830
+this is actually a very likely scenario because we want to reuse as much existing code
+
+00:02:28.830 --> 00:02:30.130
+that's out there as possible.
+
+00:02:30.330 --> 00:02:32.530
+This makes it easier for us to solve our problems.
+
+00:02:33.190 --> 00:02:37.290
+So a program called the linker takes our object code
+
+00:02:37.290 --> 00:02:40.790
+and the object code that exists out there in the form of libraries
+
+00:02:40.790 --> 00:02:44.090
+and links it all together to form an executable program.
+
+00:02:44.750 --> 00:02:49.150
+That is a program that we can now run that follows the recipe we told the computer
+
+00:02:49.150 --> 00:02:50.650
+to do using C++.
+
+00:02:52.450 --> 00:02:57.350
+Now that our program is complete, we test it to find as many errors as possible,
+
+00:02:57.350 --> 00:02:59.850
+and we debug it to eliminate those errors.
+
+00:03:00.250 --> 00:03:03.050
+As you can see, there's a lot going on and understanding
+
+00:03:03.050 --> 00:03:05.050
+what's going on at this high level is important.
+
+00:03:06.050 --> 00:03:08.930
+The integrated development environments are programs
+
+00:03:08.930 --> 00:03:12.830
+that allow you to do everything I just mentioned from a common interface.
+
+00:03:12.830 --> 00:03:16.930
+Sometimes they make the process seem like magic since all you need to do is click a button
+
+00:03:16.930 --> 00:03:18.930
+and the entire build process happens.
+
+00:03:19.290 --> 00:03:22.290
+Let's go over this build process one more time in a visual manner.
+
+00:03:23.790 --> 00:03:27.840
+First, we use an editor to enter our C++ code or to edit
+
+00:03:27.840 --> 00:03:29.440
+existing C++ code.
+
+00:03:30.240 --> 00:03:33.240
+Note that we can have many C++ source files.
+
+00:03:33.240 --> 00:03:36.840
+In this course, we'll be using a single main.cpp file
+
+00:03:36.840 --> 00:03:38.440
+until our programs get larger.
+
+00:03:39.100 --> 00:03:43.200
+Then we'll need several C++ source files to better organize our program.
+
+00:03:43.200 --> 00:03:47.600
+Production C++ programs can have hundreds and even thousands of source files
+
+00:03:47.600 --> 00:03:49.100
+and millions of lines of code.
+
+00:03:50.500 --> 00:03:54.700
+Then we need to compile the C++ code using a C++ compiler.
+
+00:03:55.300 --> 00:03:58.500
+If the code contains no syntax errors,
+
+00:03:58.500 --> 00:04:01.600
+then the compiler will generate an object code file
+
+00:04:01.600 --> 00:04:03.600
+for each C++ source file.
+
+00:04:05.000 --> 00:04:08.800
+On windows, the object files have .obj extensions,
+
+00:04:08.800 --> 00:04:11.800
+and on UNIX and mac they will have .o extensions.
+
+00:04:12.750 --> 00:04:16.550
+Finally, the object files and any libraries that our program
+
+00:04:16.550 --> 00:04:18.550
+requires must be linked together.
+
+00:04:19.750 --> 00:04:23.250
+This final step creates an executable file that can run.
+
+00:04:23.750 --> 00:04:26.950
+On windows, the file extension will be .exe.
+
+00:04:26.950 --> 00:04:29.950
+And on UNIX and mac, they typically don't have any extensions.
+
+00:04:30.450 --> 00:04:32.150
+But remember, we're not done yet.
+
+00:04:32.150 --> 00:04:35.050
+You must test your program to find any logic errors
+
+00:04:35.050 --> 00:04:37.050
+and debug it to eliminate those errors.
+
+00:04:37.850 --> 00:04:41.850
+Let's wrap up this video by looking at some of the available IDEs that can help us
+
+00:04:41.850 --> 00:04:42.750
+with this process.
+
+00:04:44.750 --> 00:04:46.310
+As mentioned previously,
+
+00:04:46.310 --> 00:04:50.770
+IDEs are programs that provide an editor a way to compile,
+
+00:04:50.770 --> 00:04:52.570
+link and execute your source code.
+
+00:04:53.370 --> 00:04:57.870
+They also often have debuggers that can help you understand your code and fix errors.
+
+00:04:58.370 --> 00:05:02.070
+Most beginning C++ courses don't cover integrated debuggers at all.
+
+00:05:02.370 --> 00:05:05.070
+I think this is a mistake and I plan to cover the debugger
+
+00:05:05.070 --> 00:05:08.070
+once we have the basics of C++ behind us.
+
+00:05:08.470 --> 00:05:11.800
+IDEs also help us keep our files in sync
+
+00:05:11.800 --> 00:05:16.000
+and provide hooks to version control systems such as git and subversion.
+
+00:05:17.200 --> 00:05:21.300
+There are many IDEs available. I've used all the ones listed here and others.
+
+00:05:21.300 --> 00:05:24.600
+The selection of an IDE for this course was not an easy one.
+
+00:05:25.000 --> 00:05:27.300
+I wanted an IDE that was free,
+
+00:05:27.300 --> 00:05:31.290
+cross-platform and had a relatively small hardware requirement to run.
+
+00:05:31.790 --> 00:05:35.890
+In this course, we'll use CodeLight as the IDE since it meets all of these criteria.
+
+00:05:36.390 --> 00:05:38.390
+However, there is no perfect IDE.
+
+00:05:38.890 --> 00:05:41.190
+As a professional developer many times you use
+
+00:05:41.190 --> 00:05:43.790
+whatever ide is used by the team you're working with,
+
+00:05:44.390 --> 00:05:48.990
+as a consultant you should learn as many IDEs as you can and always have an editor
+
+00:05:48.990 --> 00:05:50.890
+command line preference available as well.
+
+00:05:51.690 --> 00:05:55.390
+As you gain experience in C++, I encourage you to experiment with the various
+
+00:05:55.390 --> 00:05:57.890
+IDEs and find one that works for you.
+
+00:05:58.390 --> 00:06:00.690
+Let me talk briefly about the ones that are listed here.
+
+00:06:01.190 --> 00:06:04.690
+CodeLight, as I mentioned, is the IDE that we're going to use in this course.
+
+00:06:04.690 --> 00:06:09.290
+It's free. It's cross-platform. It's fast and the memory requirements are minimal.
+
+00:06:10.090 --> 00:06:13.590
+Code Blocks is also a nice cross-platform IDE.
+
+00:06:13.590 --> 00:06:17.890
+However, the mac version is pretty buggy and it kept crashing on me all the time.
+
+00:06:19.090 --> 00:06:21.590
+NetBeans is the oracle IDE.
+
+00:06:22.250 --> 00:06:24.910
+It's used mainly to develop java code,
+
+00:06:24.910 --> 00:06:28.810
+but they've got a plug-in for C++. It's actually very good.
+
+00:06:28.810 --> 00:06:31.310
+It's a great cross-platform IDE.
+
+00:06:31.310 --> 00:06:35.310
+The problem is that it requires Java jre install and the memory requirements
+
+00:06:35.310 --> 00:06:36.510
+can be pretty significant.
+
+00:06:37.760 --> 00:06:40.460
+Same thing with Eclipse it supports many different languages.
+
+00:06:40.460 --> 00:06:43.460
+It's cross-platform but it's got pretty good memory requirements.
+
+00:06:44.120 --> 00:06:46.820
+CLion is an IDE by JetBrains.
+
+00:06:46.820 --> 00:06:50.620
+This is the company that's created Kotlin, intellij, android studio.
+
+00:06:51.020 --> 00:06:54.620
+This is an awesome IDE. This is my ide of choice,
+
+00:06:54.770 --> 00:06:57.370
+but it's not free, it's actually quite expensive.
+
+00:06:58.170 --> 00:07:02.270
+But there's a download available that gives you a 30-day trial. You can try it out and see if you like it.
+
+00:07:02.930 --> 00:07:07.130
+Dev-C++ is a CC++ windows only environment.
+
+00:07:07.130 --> 00:07:11.030
+It's small. It's fast and it's a nice IDE but again it's windows only.
+
+00:07:11.580 --> 00:07:14.880
+KDevelop is a cross-platform, multiple-language IDE.
+
+00:07:15.380 --> 00:07:17.880
+However, there is no mac binary available.
+
+00:07:17.880 --> 00:07:20.480
+If you want to use it on mac, you have to build it from the source.
+
+00:07:21.780 --> 00:07:26.280
+Finally, visual studio and XCode are Microsoft
+
+00:07:26.280 --> 00:07:28.980
+and apple's development environments respectively.
+
+00:07:28.980 --> 00:07:31.580
+Visual studio is a great development environment.
+
+00:07:31.580 --> 00:07:34.570
+It runs on windows only in the C++ version.
+
+00:07:34.570 --> 00:07:38.570
+They have a mac version of visual studio now but it doesn't support C++.
+
+00:07:39.170 --> 00:07:41.770
+And XCode is mac only.
+
+00:07:41.770 --> 00:07:45.370
+Again it's a great development environment. If you're a mac developer,
+
+00:07:45.370 --> 00:07:49.170
+you're probably already using it for iOS development, mac OS 10 development,
+
+00:07:49.170 --> 00:07:50.670
+swift development and so forth.
+
+00:07:51.170 --> 00:07:55.370
+But as I mentioned, it's mac only but it's a great development environment.
+
+00:07:55.370 --> 00:07:57.570
+There are many more IDEs available.
+
+00:07:57.570 --> 00:08:00.570
+If you find one you like and you think others in the course should know about it,
+
+00:08:00.570 --> 00:08:03.570
+please post that information about the IDE in the course forum.
+
+00:08:04.230 --> 00:08:06.330
+Well, that wraps up this video. I hope you now have a
+
+00:08:06.330 --> 00:08:09.630
+better understanding of the build process in C++
+
+00:08:09.630 --> 00:08:12.630
+and how IDEs can help make programmers more productive.

@@ -1,0 +1,665 @@
+WEBVTT
+
+00:00:05.500 --> 00:00:10.699
+In this video, we'll learn about our
+first STL adapter container, the stack.
+
+00:00:11.509 --> 00:00:15.210
+The stack is a last-in,
+first-out data structure.
+
+00:00:16.049 --> 00:00:18.969
+It's an adapter because it's
+implemented in terms of already
+
+00:00:19.010 --> 00:00:20.830
+existing STL containers.
+
+00:00:22.180 --> 00:00:25.900
+Since all operations on a stack
+happen on only one end, the top.
+
+00:00:26.439 --> 00:00:30.480
+We can easily implement a stack based
+on any container that has a back.
+
+00:00:31.059 --> 00:00:32.829
+These are vector, list, and deque.
+
+00:00:33.480 --> 00:00:37.009
+So, the way that the stack methods
+work is they use delegation.
+
+00:00:37.010 --> 00:00:39.600
+And they call the back, push
+back, and pop back methods
+
+00:00:39.820 --> 00:00:41.320
+of the underlying container.
+
+00:00:42.560 --> 00:00:46.409
+Stacks have wide applications in
+computer science, and the STL provides
+
+00:00:46.410 --> 00:00:48.440
+a simple concise implementation.
+
+00:00:49.380 --> 00:00:52.579
+You can think of a stack as a stack
+of books or a stack of plates.
+
+00:00:52.900 --> 00:00:55.880
+If we stack plates one on top of
+the other, we can't pull out a
+
+00:00:55.880 --> 00:00:59.140
+plate from the middle or from the
+bottom, instead we add plates at the
+
+00:00:59.150 --> 00:01:00.950
+top and remove them from the top.
+
+00:01:02.240 --> 00:01:05.910
+Since stacks are limited to
+insertions and deletions only one end.
+
+00:01:06.250 --> 00:01:08.869
+Iterators really don't make
+sense and they're not supported.
+
+00:01:09.280 --> 00:01:11.750
+So, we can't use stacks
+with STL algorithms.
+
+00:01:13.830 --> 00:01:18.910
+In order to use the stack container, we
+have to include the stack header file.
+
+00:01:19.800 --> 00:01:23.310
+The stack provides a handful of methods
+that have well-defined behavior.
+
+00:01:23.980 --> 00:01:27.149
+The push method inserts an
+element at the top of the stack.
+
+00:01:28.230 --> 00:01:31.240
+The pop method removes an element
+from the top of the stack.
+
+00:01:31.730 --> 00:01:35.840
+The top method accesses the top element
+of the stack but it doesn't remove it.
+
+00:01:36.370 --> 00:01:39.000
+Finally, we have the empty and
+size methods that we've already
+
+00:01:39.000 --> 00:01:40.740
+seen in the other STL containers.
+
+00:01:43.789 --> 00:01:47.449
+Since the stack is an adapter
+class, we can choose what
+
+00:01:47.500 --> 00:01:50.789
+underlying container will be used
+when we create our stack objects.
+
+00:01:51.860 --> 00:01:54.399
+In the first example, I'm
+providing no information about
+
+00:01:54.400 --> 00:01:58.250
+the underlying container, so the
+STL will use a deque by default.
+
+00:01:58.900 --> 00:02:01.470
+You can see in the next three
+examples that I'm explicitly
+
+00:02:01.470 --> 00:02:05.159
+stating which underlying container
+to use in the template parameter.
+
+00:02:08.739 --> 00:02:10.739
+So, let's see how the
+push method works.
+
+00:02:11.280 --> 00:02:14.440
+Suppose we have a stack of
+integers named ‘s’ and it's empty.
+
+00:02:15.050 --> 00:02:19.509
+When we push 10 onto the stack,
+we add 10 at the top of the stack.
+
+00:02:20.190 --> 00:02:23.529
+You can see the top of the stack
+is the shaded box in the diagrams.
+
+00:02:24.510 --> 00:02:28.050
+We then push 20, now 20
+becomes the top of the stack.
+
+00:02:28.760 --> 00:02:32.529
+Finally, we push 30 and the 30
+becomes the new top of the stack.
+
+00:02:35.670 --> 00:02:38.919
+Once we have a stack that
+contains elements, we can access
+
+00:02:38.920 --> 00:02:41.470
+the element at the top of the
+stack with the top method.
+
+00:02:42.049 --> 00:02:44.360
+This returns a reference
+to the element at the top.
+
+00:02:44.370 --> 00:02:45.380
+It does not remove it.
+
+00:02:45.740 --> 00:02:49.730
+In this example, s.top
+returns 30, which we display.
+
+00:02:50.900 --> 00:02:54.409
+Now, if we pop the stack, the
+element at the top is removed.
+
+00:02:54.420 --> 00:02:58.320
+In this case, the 30 and now the 20
+becomes the new top of the stack.
+
+00:02:59.329 --> 00:03:02.929
+If I pop the stack again, the
+20 is removed, and now the 10
+
+00:03:02.960 --> 00:03:04.280
+is the new top of the stack.
+
+00:03:05.260 --> 00:03:09.049
+If we call the size method for s
+here, it will display 1 since there's
+
+00:03:09.050 --> 00:03:10.670
+just one element left in the stack.
+
+00:03:11.170 --> 00:03:14.629
+As you can see the stack
+api is very straightforward.
+
+00:03:14.880 --> 00:03:17.970
+But a stack is extremely useful,
+and it's used in computer science
+
+00:03:17.970 --> 00:03:19.570
+to solve many types of problems.
+
+00:03:20.620 --> 00:03:23.410
+Let's head over to the ide,
+we'll see some stack examples.
+
+00:03:24.770 --> 00:03:26.162
+Okay, so I'm back in the ide.
+
+00:03:26.162 --> 00:03:29.890
+I'm in the section 20
+workspace in the stack project.
+
+00:03:30.740 --> 00:03:32.269
+This is a really simple example.
+
+00:03:32.270 --> 00:03:34.170
+There's not really a lot
+we can do with a stack.
+
+00:03:34.690 --> 00:03:36.269
+Push, pop and top, that's about it.
+
+00:03:36.530 --> 00:03:38.270
+So, let's go over a few examples here.
+
+00:03:38.800 --> 00:03:41.459
+I'm including stack right here.
+
+00:03:41.490 --> 00:03:44.470
+So, I'm going to use it. I'm also including vector list, just
+I'm going to show you how you can
+
+00:03:44.470 --> 00:03:48.860
+create those stacks based on vector
+and the list underlying container.
+
+00:03:48.940 --> 00:03:50.480
+So, that's the only
+reason I'm including them.
+
+00:03:50.589 --> 00:03:51.450
+I'm really not using it.
+
+00:03:51.450 --> 00:03:53.439
+I just wanted to show you how
+you would declare it here.
+
+00:03:53.980 --> 00:03:56.350
+But let's talk about
+this template function.
+
+00:03:56.350 --> 00:03:58.540
+This is the one that's
+going to display a stack.
+
+00:03:58.990 --> 00:04:02.470
+We can't use iterators with
+stacks, so there's no real
+
+00:04:02.470 --> 00:04:04.220
+way to display a stack easily.
+
+00:04:04.400 --> 00:04:07.540
+The only way to display a stack
+is to let's say, we've got a
+
+00:04:07.540 --> 00:04:10.539
+stack here with the 10 and a
+20, and I want to display it.
+
+00:04:10.850 --> 00:04:15.659
+I need to get the top display it, pop
+it, get the top, display it, pop it.
+
+00:04:16.029 --> 00:04:17.189
+So, it's a destructive process.
+
+00:04:18.019 --> 00:04:21.780
+Because of that I'm passing
+in this stack by value.
+
+00:04:21.780 --> 00:04:25.400
+I don't want to upset the stack
+that's being passed into me at all.
+
+00:04:25.400 --> 00:04:26.870
+I don't want to modify it at all.
+
+00:04:27.000 --> 00:04:29.890
+So, that's making a copy, and
+what I'm doing over here is
+
+00:04:29.890 --> 00:04:32.040
+I'm destroying that copy which is fine.
+
+00:04:32.040 --> 00:04:35.210
+Once I finish this function, the
+stack that's being passed into
+
+00:04:35.210 --> 00:04:36.860
+me has not been modified at all.
+
+00:04:37.410 --> 00:04:39.330
+And you can see the code,
+it's pretty straightforward.
+
+00:04:39.330 --> 00:04:41.430
+This is a template function.
+
+00:04:42.050 --> 00:04:43.280
+There's the type right here.
+
+00:04:43.280 --> 00:04:45.330
+We're using integer
+stacks in this example.
+
+00:04:45.670 --> 00:04:50.729
+And while the stack is not empty, I'm
+getting the top element of the stack.
+
+00:04:50.739 --> 00:04:53.810
+Then I'm deleting it from the
+stack, and then I'm displaying it.
+
+00:04:54.580 --> 00:04:56.920
+That's it. So, that's just going to display
+my stack, and you can see the
+
+00:04:56.929 --> 00:04:58.850
+output over here and I'll go
+over that in just a second.
+
+00:04:59.750 --> 00:05:00.849
+Alright, so let me scroll up.
+
+00:05:00.849 --> 00:05:01.969
+And there's no tests here.
+
+00:05:01.969 --> 00:05:04.179
+It's just domain which is
+pretty straightforward.
+
+00:05:04.859 --> 00:05:06.540
+Let's go over these examples here.
+
+00:05:06.980 --> 00:05:09.370
+Here, I'm creating a stack of integers.
+
+00:05:09.650 --> 00:05:10.890
+I call it ‘s’, that's the one.
+
+00:05:10.900 --> 00:05:12.210
+We're going to use in these examples.
+
+00:05:12.600 --> 00:05:16.359
+But I can also create s1, s2, and
+s3, that are stacks of integers
+
+00:05:16.760 --> 00:05:19.429
+but the underlying container
+would be a vector, a list, or
+
+00:05:19.429 --> 00:05:21.299
+a deque, whatever you choose.
+
+00:05:22.180 --> 00:05:25.510
+On line 25 here, you can see that
+I'm just not providing anything in
+
+00:05:25.510 --> 00:05:27.490
+which case it defaults to a deque.
+
+00:05:28.310 --> 00:05:31.550
+Alright, so let's push some values
+on the stack, and pop them off, and
+
+00:05:31.550 --> 00:05:32.780
+play around with it a little bit.
+
+00:05:33.630 --> 00:05:35.830
+Let me just scroll up just a
+little bit right about there.
+
+00:05:35.929 --> 00:05:38.719
+Okay, so I've got that stack
+s that I've already defined.
+
+00:05:39.000 --> 00:05:42.420
+And what I want to do is I want to
+use a range base for loop that's
+
+00:05:42.420 --> 00:05:45.910
+going to loop over this range right
+here, 1, 2, 3, 4, 5, and it's going to
+
+00:05:45.910 --> 00:05:48.230
+push those numbers onto that stack s.
+
+00:05:48.560 --> 00:05:51.390
+Remember, let's assume that
+this is my stack right here.
+
+00:05:51.700 --> 00:05:54.759
+The numbers are being pushed
+this way and then popped off.
+
+00:05:55.000 --> 00:05:58.419
+So, first, I'm going to
+push 1, and then 2, and then
+
+00:05:58.469 --> 00:06:01.250
+3, and then 4, and then 5.
+
+00:06:01.590 --> 00:06:03.460
+So, that's the situation right now.
+
+00:06:04.010 --> 00:06:05.560
+Then I'm going to call display.
+
+00:06:05.560 --> 00:06:07.715
+Remember, display's going to
+make a copy of this stack,
+
+00:06:07.710 --> 00:06:08.969
+it's not going to mess with this one.
+
+00:06:09.450 --> 00:06:12.540
+And what it's going to do is it's going
+to pop the elements off the stack.
+
+00:06:12.540 --> 00:06:15.599
+So, it's going to pop off the 5,
+the 4, the 3, the 2, and the 1.
+
+00:06:15.599 --> 00:06:17.460
+Remember, everything
+happens up here at the top.
+
+00:06:18.049 --> 00:06:21.060
+So, it's going to display
+exactly what I just said.
+
+00:06:21.070 --> 00:06:26.400
+5,4,3,2,1, you can see 5 was the
+top of the stack in that copy.
+
+00:06:27.760 --> 00:06:31.750
+Now if I pop two elements off
+of this stack, the 5 and the 4.
+
+00:06:32.719 --> 00:06:35.510
+I'm sorry, I missed one step
+right here, let's back up to that.
+
+00:06:35.799 --> 00:06:39.370
+In this case, I'm pushing 100 onto the
+stack, so I'm pushing 100 onto here.
+
+00:06:39.950 --> 00:06:41.590
+And then I'm displaying
+that stack again.
+
+00:06:41.590 --> 00:06:43.359
+And now, you can see
+that the 100 is there.
+
+00:06:44.360 --> 00:06:46.210
+The 100 is now at the top of the stack.
+
+00:06:46.599 --> 00:06:50.860
+Now I'm popping off two elements
+off the stack, the 100 and the 5
+
+00:06:50.860 --> 00:06:52.010
+are being popped off the stack.
+
+00:06:52.010 --> 00:06:54.299
+So, the top of my stack now is the 4.
+
+00:06:54.890 --> 00:06:58.120
+And when I display my stack
+right here on line 39, you can
+
+00:06:58.120 --> 00:07:00.210
+see it's displaying 4,3,2 and 1.
+
+00:07:02.370 --> 00:07:07.090
+In this code here on line 41, I'm just
+looping while the stack is not empty.
+
+00:07:07.090 --> 00:07:09.870
+So, as long as the stack is not
+empty, I'm deleting stuff in it.
+
+00:07:10.199 --> 00:07:11.729
+This is how we can clear a stack.
+
+00:07:11.730 --> 00:07:14.300
+There is no dot clear
+method for a stack.
+
+00:07:14.580 --> 00:07:15.761
+So, this is how you would clear it.
+
+00:07:15.761 --> 00:07:17.360
+You would just have to
+pop everything off of it.
+
+00:07:17.940 --> 00:07:22.050
+Then when we display the stack here
+on line 43, we get the empty stack
+
+00:07:22.080 --> 00:07:23.650
+which is exactly what we expected.
+
+00:07:24.280 --> 00:07:25.860
+What's the size of that stack?
+
+00:07:26.070 --> 00:07:26.889
+It better be zero.
+
+00:07:26.889 --> 00:07:30.100
+Alright, because it's empty and that's
+exactly what it is, right here, zero.
+
+00:07:30.760 --> 00:07:34.260
+And the last thing I wanted to show you
+is suppose, I push 10 onto the stack.
+
+00:07:34.270 --> 00:07:35.760
+Remember that stack is gone.
+
+00:07:35.760 --> 00:07:36.760
+It's empty now.
+
+00:07:36.830 --> 00:07:40.440
+So, let's say I wanted to push 10 onto
+the stack just like I did right here.
+
+00:07:41.139 --> 00:07:42.479
+And then I display the stack.
+
+00:07:42.480 --> 00:07:43.520
+I get back at 10.
+
+00:07:44.690 --> 00:07:47.339
+Top returns a reference
+to the top of the stack.
+
+00:07:47.350 --> 00:07:49.070
+The top of the stack
+right now is the 10.
+
+00:07:49.490 --> 00:07:51.160
+It's a reference, so I can modify it.
+
+00:07:51.490 --> 00:07:54.260
+I could say s.top is 100.
+
+00:07:54.570 --> 00:07:56.909
+So, I can change that top to 100 now.
+
+00:07:57.130 --> 00:08:00.519
+So, when I display the stack, you can
+see it's displaying 100 right here.
+
+00:08:02.230 --> 00:08:03.769
+Okay, I think that's about it.
+
+00:08:03.780 --> 00:08:05.309
+That's really all there is to a stack.
+
+00:08:05.559 --> 00:08:09.550
+It's a very, very, specific data
+structure that we're going to use.
+
+00:08:09.990 --> 00:08:13.469
+When you use it, all you care
+about is pushing, popping, top
+
+00:08:13.650 --> 00:08:15.049
+checking to see if it's empty.
+
+00:08:15.210 --> 00:08:15.920
+That's it.
+
+00:08:15.950 --> 00:08:17.549
+You're not concerned
+with anything else.
+
+00:08:17.710 --> 00:08:21.010
+Those are the only methods that
+are important and those are
+
+00:08:21.010 --> 00:08:22.419
+only methods you actually want.
+
+00:08:23.070 --> 00:08:25.490
+If you've got a stack that gives
+you a bunch of other methods,
+
+00:08:25.490 --> 00:08:28.049
+it's not really a stack, and
+then, you know, be careful.
+
+00:08:28.240 --> 00:08:34.230
+Because you don't want to have a stack
+of integers, let's say 10, 20, and 30.
+
+00:08:34.919 --> 00:08:38.239
+And that whatever thing you're
+using that you think might be a
+
+00:08:38.240 --> 00:08:41.540
+stack is letting you have access
+to these guys that's not a stack.
+
+00:08:41.909 --> 00:08:45.089
+Stack everything happens
+right up here at the top.
+
+00:08:46.420 --> 00:08:49.230
+Sometimes, you'll see these data
+structures defined by programmers
+
+00:08:49.230 --> 00:08:54.400
+that have pushes, and pops, and
+insert stack, and all kinds of things.
+
+00:08:54.400 --> 00:08:56.620
+And it's not really a
+stack, it's just a mess.
+
+00:08:56.660 --> 00:08:59.390
+Okay, in this case, this is a true stack.
+
+00:08:59.520 --> 00:09:02.680
+It supports exactly what a
+stack is supposed to support.
+
+00:09:03.400 --> 00:09:05.750
+Alright, in the next video,
+we'll talk about the queue
+
+00:09:05.810 --> 00:09:07.200
+which is a waiting line.
+
+00:09:07.640 --> 00:09:12.270
+And of course, here you can see that
+the last one in was the first one out.
+
+00:09:12.290 --> 00:09:15.930
+That's why the stack is
+called a LIFO data structure.
+
+00:09:16.330 --> 00:09:18.650
+The queue is called a
+FIFO data structure.
+
+00:09:18.650 --> 00:09:22.079
+So, the first one in is the first
+one out like a waiting line or
+
+00:09:22.080 --> 00:09:24.680
+a waiting queue, And that's what
+we'll talk about in the next video.

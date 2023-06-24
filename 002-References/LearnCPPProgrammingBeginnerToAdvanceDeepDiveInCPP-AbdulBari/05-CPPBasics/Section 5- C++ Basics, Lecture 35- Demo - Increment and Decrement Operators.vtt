@@ -1,0 +1,181 @@
+WEBVTT
+
+0
+00:00.700 --> 00:10.200
+Let us look at the Increment and Decrement Operators I have a variable i, and this is Five
+
+1
+00:13.850 --> 00:24.300
+now one method incrementing value of i is,  i assign i plus 1 or else I can say i plus assign 1 or even
+
+2
+00:24.300 --> 00:31.510
+I can say i plus plus there's a uninary OPERATOR We don't need any other thing like here we're require one.
+
+3
+00:31.530 --> 00:33.330
+But here nothing is required.
+
+4
+00:33.480 --> 00:35.830
+So this will increase the value of i.
+
+5
+00:36.150 --> 00:50.760
+Let us try to print the value of i and see, endl, I became 6 even if I write plus plus I then also get
+
+6
+00:50.760 --> 00:51.820
+the same result.
+
+7
+00:54.590 --> 01:01.760
+6. Then what is the difference between pre-increment and post-increment like this is called as pre-increment
+
+8
+01:02.120 --> 01:08.580
+and writing I plus plus is called as post-increment. let's see the difference here.
+
+9
+01:08.690 --> 01:17.940
+I will take one more variable that is j and I will say j assigned with I plus plus I'm using post-increment.
+
+10
+01:18.110 --> 01:23.560
+Let us print the value of i as well as j.
+
+11
+01:26.210 --> 01:29.340
+Let's see these values I'm incrementing i,
+
+12
+01:29.710 --> 01:32.400
+And also assigning the result in written J.
+
+13
+01:32.560 --> 01:38.390
+So let's see what happens whether the assignment is done first or in agreement is done.
+
+14
+01:38.660 --> 01:43.030
+See I became six because I has incremented and j is a 5.
+
+15
+01:43.030 --> 01:51.060
+So it means the first value of i is assigning j then the value of i is increment to six.
+
+16
+01:51.220 --> 01:56.800
+If I write it other way,  PLUS PLUS i, let's see what happens.
+
+17
+01:56.810 --> 01:57.090
+Now
+
+18
+02:00.380 --> 02:01.340
+both are 6.
+
+19
+02:01.340 --> 02:04.550
+So it means the value of i is change to 6 first.
+
+20
+02:04.700 --> 02:08.460
+That is i plus plus then the result is assigned to j.
+
+21
+02:08.600 --> 02:11.930
+So this is pre-increment and that one was post increment
+
+22
+02:16.510 --> 02:17.990
+i will add one more expression here.
+
+23
+02:18.010 --> 02:28.340
+I will say two multiply by Plus plus I and two multiplied by I plus plus.
+
+24
+02:28.720 --> 02:33.760
+So if I get the value it should be value of i is 5 so it should become 6
+
+25
+02:36.430 --> 02:38.280
+then 6 should be multiplied by 2.
+
+26
+02:38.290 --> 02:43.000
+So that should become 12 then this I value will increment afterwards.
+
+27
+02:43.030 --> 02:44.740
+So still  i is a 6.
+
+28
+02:44.740 --> 02:50.920
+So this is 12 so it should be 24 like already I have discussed that we should not use as multiple
+
+29
+02:50.980 --> 02:58.990
+increment decrement operators on the same variable inside single expression so multiple unsequence modifications
+
+30
+02:58.990 --> 02:59.330
+to i.
+
+31
+02:59.370 --> 03:05.710
+this the one thing showing you that we cannot guarantee you the result whatever you are expecting.
+
+32
+03:05.710 --> 03:08.930
+So let us run and see if we are expecting 24 from here.
+
+33
+03:12.060 --> 03:14.160
+ok we got 24 that's good.
+
+34
+03:14.400 --> 03:16.260
+So we got the correct result.
+
+35
+03:16.300 --> 03:21.680
+Now if I write this as I plus plus So I guess that value of five will change afterwards.
+
+36
+03:21.720 --> 03:24.300
+So they should be 2 into five that is 10.
+
+37
+03:24.390 --> 03:27.010
+Then I changed to 6 so 6 into.
+
+38
+03:27.010 --> 03:27.780
+2. that is 12.
+
+39
+03:28.170 --> 03:33.530
+So this should be 22 on.
+
+40
+03:33.970 --> 03:39.830
+Yes I am getting the same result but here whatever I was expecting I was getting the same result.
+
+41
+03:39.850 --> 03:43.600
+It might not be true in every compiler of C++.
+
+42
+03:43.600 --> 03:46.770
+You can try in different compilers and check the results.
+
+43
+03:46.780 --> 03:55.010
+The results may vary. similarly as we have increment operator decrement operators are also there.
+
+44
+03:55.030 --> 04:01.620
+They are also pre-decrement and post-decrement operator So you can try those operators.

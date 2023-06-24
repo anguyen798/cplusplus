@@ -1,0 +1,427 @@
+WEBVTT
+
+00:00:05.200 --> 00:00:09.200
+In this video, we'll see how to format Boolean types to output streams.
+
+00:00:09.800 --> 00:00:12.400
+Note that we're using cout in these examples,
+
+00:00:12.400 --> 00:00:15.760
+but any output stream will work, including file output streams,
+
+00:00:15.760 --> 00:00:17.760
+which we'll learn about later in this section.
+
+00:00:19.260 --> 00:00:24.160
+By default, a Boolean value is displayed as a 1 if the value is true
+
+00:00:24.160 --> 00:00:26.160
+or is a 0 if the value is false.
+
+00:00:26.660 --> 00:00:30.560
+But sometimes, we'd like to display the strings true or false.
+
+00:00:30.560 --> 00:00:35.060
+And we really don't want to write if else logic all over our code every time we need to do that,
+
+00:00:35.460 --> 00:00:39.560
+instead, we can tell our output stream to display Boolean values as
+
+00:00:39.560 --> 00:00:42.360
+01 or as true false,
+
+00:00:42.360 --> 00:00:43.360
+whichever we want.
+
+00:00:44.960 --> 00:00:48.460
+First, let's see an example of the default behavior for Boolean values.
+
+00:00:49.260 --> 00:00:52.720
+First, we display the value of the expression 10 equals 10.
+
+00:00:52.720 --> 00:00:55.220
+Since this is true, a 1 will be displayed.
+
+00:00:55.620 --> 00:00:58.980
+Then we display the value of the expression 10 equals 20,
+
+00:00:58.980 --> 00:01:01.980
+which is false, and as you see a 0 is displayed.
+
+00:01:02.640 --> 00:01:06.140
+Now let's use a stream manipulator to switch this to true false mode.
+
+00:01:07.500 --> 00:01:08.700
+In the first statement,
+
+00:01:08.700 --> 00:01:12.200
+we're setting the output stream c out to bool alpha mode.
+
+00:01:12.200 --> 00:01:14.760
+This means that all further output to cout
+
+00:01:14.760 --> 00:01:17.640
+will display true or false as strings.
+
+00:01:17.640 --> 00:01:22.240
+And you can see the output from the same program now displays true and false.
+
+00:01:24.140 --> 00:01:27.020
+It's important to understand that with Boolean formatting
+
+00:01:27.020 --> 00:01:30.320
+once we set it with bool alpha or noble alpha,
+
+00:01:30.320 --> 00:01:33.820
+then all further Boolean values will be displayed that way.
+
+00:01:33.820 --> 00:01:37.320
+We can toggle back and forth as appropriate as shown in this slide.
+
+00:01:38.820 --> 00:01:42.820
+We can also set the format for Boolean types using the setf method.
+
+00:01:43.420 --> 00:01:46.920
+In this case, we have a bunch of flags that can be used to set
+
+00:01:46.920 --> 00:01:48.620
+and reset formatting directives.
+
+00:01:49.500 --> 00:01:53.500
+In this example, we can pass std IOS bull alpha
+
+00:01:53.500 --> 00:01:57.160
+or std IOS no bool alpha to the cout object
+
+00:01:57.160 --> 00:01:58.560
+to change its formatting.
+
+00:01:59.560 --> 00:02:03.220
+Finally, we also have a method named reset ios flags
+
+00:02:03.220 --> 00:02:05.580
+that expects the flag to reset.
+
+00:02:05.580 --> 00:02:08.880
+In this case, we can pass in std ios bool alpha,
+
+00:02:08.880 --> 00:02:12.680
+and it will reset the stream to whatever the default is for that flag.
+
+00:02:13.180 --> 00:02:16.980
+In this case, it will go back to displaying Booleans as 0s and 1s.
+
+00:02:17.860 --> 00:02:20.630
+Although you sometimes see this type of code in production,
+
+00:02:20.630 --> 00:02:23.130
+it's more common to see the manipulator version,
+
+00:02:23.130 --> 00:02:25.380
+and that's what I'll focus on in this section.
+
+00:02:25.380 --> 00:02:30.280
+So let's head over to the IDE. We'll do a couple of examples using bool alpha and no bool alpha.
+
+00:02:31.080 --> 00:02:35.180
+Okay. So I mean the IDE. I mean the section 19 workspace
+
+00:02:35.180 --> 00:02:38.180
+in the manip_Boolean project.
+
+00:02:38.680 --> 00:02:43.180
+And in this project, I've got a bunch of simple test cases here that just display
+
+00:02:43.180 --> 00:02:45.180
+certain values to standard out or cout.
+
+00:02:45.180 --> 00:02:45.980
+or cout.
+
+00:02:45.980 --> 00:02:49.340
+In this case, those values are Boolean values, and we're going to manipulate
+
+00:02:49.340 --> 00:02:53.780
+them using the no bool alpha and bool alpha
+
+00:02:53.780 --> 00:02:54.770
+manipulators.
+
+00:02:54.770 --> 00:02:57.170
+So here's the default.
+
+00:02:57.470 --> 00:03:00.350
+What we're doing here, we're going to use this same test case throughout.
+
+00:03:00.350 --> 00:03:02.450
+You can see what we've got here, we've got --
+
+00:03:02.450 --> 00:03:06.550
+word is 10 equal to 10, that's either true or false. Obviously, this is true, so this will
+
+00:03:06.550 --> 00:03:11.540
+always display true. And 10 equals 20 will never be true so that'll always display false.
+
+00:03:11.840 --> 00:03:15.840
+In this case, we're using an expression, but we could certainly use a variable
+
+00:03:15.840 --> 00:03:18.340
+anything that evaluates to a true false value.
+
+00:03:18.840 --> 00:03:22.830
+So by default, this will display true, which is a 1,
+
+00:03:22.830 --> 00:03:25.490
+and this will display false, which is a 0.
+
+00:03:25.490 --> 00:03:30.880
+Okay. So by default, that is the way that we display Boolean values as we saw in the slides.
+
+00:03:30.880 --> 00:03:33.980
+So why don't we run this program, and then we'll start
+
+00:03:33.980 --> 00:03:38.310
+modifying it just a little bit so we can start displaying the actual string true faults.
+
+00:03:38.310 --> 00:03:39.810
+Okay. So let me run this.
+
+00:03:39.810 --> 00:03:43.610
+And you can see right here, I'll move this over here so you can see what's going,
+
+00:03:44.810 --> 00:03:46.810
+on bool alpha is the default.
+
+00:03:47.110 --> 00:03:50.110
+I didn't set it, but it was just the default you can see I've set nothing here.
+
+00:03:50.110 --> 00:03:52.310
+All I'm doing is those 2 cout statements.
+
+00:03:52.310 --> 00:03:56.310
+And I'm getting a 1 here, and I'm getting a 0 here, exactly what I expect.
+
+00:03:56.970 --> 00:03:59.970
+Okay. So now let's make a few changes here.
+
+00:04:00.330 --> 00:04:02.230
+So you can see what I'm doing here on line 14.
+
+00:04:02.230 --> 00:04:06.220
+I'm inserting std bool alpha onto cout. It's a manipulator.
+
+00:04:06.220 --> 00:04:10.320
+This will switch the default formatting in this case now
+
+00:04:10.320 --> 00:04:11.820
+to true false.
+
+00:04:11.820 --> 00:04:16.320
+Now it's important to understand, and we'll show you on lines 19 and 20 that this is true.
+
+00:04:16.320 --> 00:04:21.020
+Once we set that everything else whenever you need to display a Boolean value,
+
+00:04:21.380 --> 00:04:23.380
+this is the setting that will stick.
+
+00:04:23.380 --> 00:04:27.060
+Okay. So if we need to go back to 0 1, we have to do that manually.
+
+00:04:27.060 --> 00:04:31.360
+All right. So what we expect here now is to actually display the word true
+
+00:04:31.360 --> 00:04:33.160
+and the word false. So let's give this a run.
+
+00:04:34.360 --> 00:04:39.060
+And here you go. You can see the original 2 statements 1 0, but now we're seeing true false.
+
+00:04:40.660 --> 00:04:43.160
+Okay. So here all we're doing is showing that
+
+00:04:43.160 --> 00:04:47.260
+once we set it it's set, right. So here it's set to true false,
+
+00:04:47.260 --> 00:04:50.260
+and we just displayed 2 statements to cout.
+
+00:04:50.260 --> 00:04:54.360
+Now we've got another 2, and we expect those to be true false as well.
+
+00:04:54.360 --> 00:04:59.020
+There you go, true false, true false. It's going to keep doing this until you change it.
+
+00:04:59.020 --> 00:05:02.920
+And that's what we're going to do here on this lines 23 to 25.
+
+00:05:05.170 --> 00:05:08.970
+I'm using std no bool alpha, so this is toggling it back
+
+00:05:08.970 --> 00:05:10.670
+to the default of 0 1.
+
+00:05:11.370 --> 00:05:14.170
+And at this point, we should be getting 0 1.
+
+00:05:14.170 --> 00:05:16.830
+So I should get, again, 1 0
+
+00:05:17.630 --> 00:05:21.230
+true false, true false and then 1 0 again.
+
+00:05:23.000 --> 00:05:27.770
+And that's exactly what I'm getting, 1 0 true false, true false and then 1 0 here.
+
+00:05:28.870 --> 00:05:32.670
+Okay. So that's pretty straightforward. And believe it or not,
+
+00:05:33.170 --> 00:05:36.270
+what you're seeing here holds for every 1 of the manipulators
+
+00:05:36.270 --> 00:05:38.770
+that we're going to see. So it's the same kind of behavior,
+
+00:05:38.770 --> 00:05:42.430
+not the part of once you set it, it's set some of them just work for
+
+00:05:42.430 --> 00:05:44.930
+1 insertion, but we'll talk about those.
+
+00:05:44.930 --> 00:05:47.600
+But I'm talking about the syntax and the general flow here.
+
+00:05:47.600 --> 00:05:49.400
+It's pretty much the same for all of them.
+
+00:05:49.400 --> 00:05:52.400
+So let me comment out these lines, 28 to 30.
+
+00:05:53.200 --> 00:05:57.400
+And in this case, I'm doing the same thing except I'm not using the manipulator,
+
+00:05:57.400 --> 00:06:02.300
+I'm using the setf method. So you can see I'm saying std cout.setf.
+
+00:06:02.550 --> 00:06:06.350
+Setf is the method, and it expects
+
+00:06:06.350 --> 00:06:08.600
+a std ios bool alpha.
+
+00:06:08.600 --> 00:06:13.460
+Now that looks maybe kind of intimidating and nasty, it's not so bad. Std is the namespace,
+
+00:06:13.460 --> 00:06:18.160
+ios is a class and bool alpha is a flag that's defined in that class.
+
+00:06:18.410 --> 00:06:23.010
+Okay. So c++ is doing exactly what it was expected to do.
+
+00:06:23.010 --> 00:06:26.510
+If you just type bool alpha, it won't know where to find it.
+
+00:06:26.510 --> 00:06:31.310
+So you have to say it's std namespace ios class bool alpha flag.
+
+00:06:31.670 --> 00:06:35.870
+If you're using namespace standard, then you don't need to put std here
+
+00:06:35.870 --> 00:06:40.860
+or here or anywhere here that you see it lighting up right, you could just use ios bool alpha.
+
+00:06:41.640 --> 00:06:44.300
+Okay. So in this case, again, I'm setting it
+
+00:06:44.300 --> 00:06:47.300
+back to true false, but I'm doing it with this method.
+
+00:06:47.300 --> 00:06:51.300
+Now so you should see those last 2 statements display the words true false,
+
+00:06:51.800 --> 00:06:55.160
+and there they are right here. You can see there's true and here's false.
+
+00:06:55.160 --> 00:06:59.520
+And then the last one is used to reset
+
+00:07:00.320 --> 00:07:01.520
+certain flags.
+
+00:07:01.520 --> 00:07:04.820
+All of these flags that we're going to use have default values.
+
+00:07:04.820 --> 00:07:06.820
+Okay. So when we talk about
+
+00:07:07.220 --> 00:07:09.900
+left and right justification and
+
+00:07:09.900 --> 00:07:12.200
+you know the way we display numbers
+
+00:07:12.200 --> 00:07:16.100
+or the way we display Booleans is in this case, they have default ways of doing it.
+
+00:07:16.100 --> 00:07:20.400
+We know the default for the Booleans is the numbers 0 or 1,
+
+00:07:20.400 --> 00:07:23.200
+right. So there is a
+
+00:07:23.200 --> 00:07:26.200
+manipulator here called reset ios flags.
+
+00:07:26.500 --> 00:07:30.160
+And again, it's in std namespace, so reset ios flags,
+
+00:07:30.160 --> 00:07:33.150
+and then you pass into it whatever flag you want to reset.
+
+00:07:33.450 --> 00:07:34.850
+And it will reset that
+
+00:07:34.850 --> 00:07:38.650
+not to bool alpha, but it'll reset it to the default behavior for
+
+00:07:38.650 --> 00:07:42.650
+displaying Booleans, which, in this case, will be numbers, right, 0 1.
+
+00:07:42.650 --> 00:07:46.350
+So when we run this, we expect that to be reset to the default.
+
+00:07:46.350 --> 00:07:50.610
+And what's nice about this is, suppose you've got a modifier that has --
+
+00:07:50.610 --> 00:07:54.510
+there aren't any like this, but suppose you had 8 different values, right,
+
+00:07:54.760 --> 00:07:59.200
+1 of them is obviously see the default, you don't have to worry about which one to set. You can just
+
+00:07:59.200 --> 00:08:01.100
+basically call this with the
+
+00:08:01.100 --> 00:08:04.090
+flag you want, and it'll reset it to the appropriate behavior.
+
+00:08:04.090 --> 00:08:08.890
+So let's run this, and now we expect that those last 2 statements to print out 1 and 0.
+
+00:08:09.590 --> 00:08:10.690
+And there you go.
+
+00:08:11.980 --> 00:08:14.980
+So that's it. The the basics of everything else
+
+00:08:14.980 --> 00:08:17.680
+we're going to do with the manipulators are here.
+
+00:08:18.340 --> 00:08:21.540
+We can use them in line. We can use them with functions.
+
+00:08:21.540 --> 00:08:24.440
+And what we'll do next is we'll talk about integer output.
+
+00:08:24.440 --> 00:08:27.440
+output. So we'll be right back to do that.

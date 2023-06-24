@@ -1,0 +1,201 @@
+WEBVTT
+
+0
+00:00.490 --> 00:06.870
+Yea now we will learn about function templates. see what are function templates, the functions which are
+
+1
+00:06.960 --> 00:10.730
+genetic. genetic in what sense, it's a generalized.
+
+2
+00:10.770 --> 00:18.180
+In what sense in terms of data type. see to understand generic functions that this template functions.
+
+3
+00:18.180 --> 00:21.390
+I have taken two example functions here, Max.
+
+4
+00:21.390 --> 00:22.180
+Max.
+
+5
+00:22.340 --> 00:29.020
+They are same, but the data type of these parameters are integers and these parameters are float.
+
+6
+00:29.040 --> 00:33.220
+So they are overloaded functions number of parameters are same.
+
+7
+00:33.230 --> 00:36.630
+But the data type of parameters are different.
+
+8
+00:37.080 --> 00:40.570
+So from main function if I call
+
+9
+00:43.590 --> 00:53.250
+integer C assign Max of 10,5,  then first function will be called and float
+
+10
+00:53.400 --> 01:02.370
+D assign Max if I say 10.5f,  6.9f then second function will be called
+
+11
+01:02.610 --> 01:07.020
+depending on the parameters these are float values so this function will be called, these are int values
+
+12
+01:07.020 --> 01:14.830
+so this function will be called, now thing to observe here is, we see the body of these function, the logic written
+
+13
+01:14.830 --> 01:21.710
+is as it is,   only the difference is in the data type see if x>y then return  X  else
+
+14
+01:21.720 --> 01:22.720
+return y.
+
+15
+01:22.950 --> 01:30.610
+If X >y return X, else return Y. logic is same, why to write the same function two times
+
+16
+01:30.640 --> 01:32.340
+when there is only  difference in the data type.
+
+17
+01:32.700 --> 01:39.660
+So can't I write a single function combining these two functions for any data type any type of data
+
+18
+01:39.990 --> 01:40.890
+Yes I can.
+
+19
+01:40.900 --> 01:41.370
+write.
+
+20
+01:41.430 --> 01:53.160
+So what I will do is Max, T template X and template y.return type is also template if x is greater than
+
+21
+01:53.160 --> 02:04.740
+Y return X, else return Y, then what is the T.
+
+22
+02:04.800 --> 02:15.630
+So here I will define template class t, so this is a definition of T which is defined as a class of
+
+23
+02:15.630 --> 02:16.650
+type template.
+
+24
+02:16.800 --> 02:21.750
+So now this T Is a template class so functions is a template function.
+
+25
+02:22.260 --> 02:31.470
+So I have written a same logic but instead of data type  see int, float, int float int float so only int, float
+
+26
+02:31.470 --> 02:35.030
+differences were there so that i have replaces with T.
+
+27
+02:35.040 --> 02:37.000
+Now let us see how it works.
+
+28
+02:37.230 --> 02:39.310
+Just think that these functions are not there.
+
+29
+02:39.310 --> 02:44.070
+I have written just one function now inside main when I say Max 10 comma 5.
+
+30
+02:44.130 --> 02:48.120
+This function will be called and this T will become integer.
+
+31
+02:48.150 --> 02:56.250
+The T will become Integer, and this will work as a  int function so it will work as a first version
+
+32
+02:56.760 --> 03:04.230
+and when I sat D assign Max these values again the same function is called and this becomes float this time
+
+33
+03:04.230 --> 03:05.330
+it will become float.
+
+34
+03:05.430 --> 03:09.970
+So this is float, so the same function work as a float.
+
+35
+03:09.990 --> 03:12.010
+So this works as this version.
+
+36
+03:12.150 --> 03:19.610
+So the benefit of function template is that I can write down multiple functions together as a single function.
+
+37
+03:19.680 --> 03:24.600
+where if there is a difference in the data type. so I just remove this.
+
+38
+03:24.600 --> 03:27.180
+You can see it clearly.
+
+39
+03:27.180 --> 03:33.590
+So this template function will not just work for int or float but it works for any data type you pass
+
+40
+03:33.600 --> 03:37.220
+or even if you pass the objects of your classes.
+
+41
+03:37.830 --> 03:40.790
+So this works perfectly for any type of data.
+
+42
+03:42.330 --> 03:47.970
+So this is one of the more powerful feature of C++ and this is confusing feature.
+
+43
+03:47.970 --> 03:51.840
+Also if you don't understand it you cannot use it properly.
+
+44
+03:51.990 --> 03:59.040
+or you scared of using this type of feature but this is more programmer friendly feature where this was
+
+45
+03:59.040 --> 04:04.830
+removed in other languages like java and c sharp but later they have introduced to some extent but
+
+46
+04:04.920 --> 04:11.080
+this is fully in the control of programmer in C++. so it is a very powerful feature.
+
+47
+04:11.190 --> 04:14.760
+Try to use it wherever it can work for you.
+
+48
+04:16.110 --> 04:17.870
+So try this by yourself.
+
+49
+04:17.880 --> 04:21.900
+I have written the program so again even I may be showing it practically.

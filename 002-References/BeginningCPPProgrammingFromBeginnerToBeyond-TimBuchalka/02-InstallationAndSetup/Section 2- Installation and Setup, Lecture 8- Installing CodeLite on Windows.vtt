@@ -1,0 +1,241 @@
+WEBVTT
+
+00:05.160 --> 00:06.210
+Hello everyone.
+
+00:06.210 --> 00:08.970
+In this video we'll be installing code light.
+
+00:08.970 --> 00:11.520
+Code light is an integrated development environment.
+
+00:11.520 --> 00:17.520
+What that is, is basically a piece of software that allows us to enter our code, build our programs,
+
+00:17.520 --> 00:20.610
+run our programs, test our programs all in one place.
+
+00:20.640 --> 00:22.230
+Code light is open source.
+
+00:22.230 --> 00:25.280
+It's free, it's cross-platform, and it works really well.
+
+00:25.290 --> 00:32.580
+So open up your favorite browser and head over to code light org and you'll see a web page that looks
+
+00:32.580 --> 00:33.410
+like this.
+
+00:33.420 --> 00:36.180
+Then you want to click on the download button.
+
+00:38.100 --> 00:39.330
+And you'll get this page.
+
+00:39.330 --> 00:42.460
+And if you want to support the developer, please, by all means do so.
+
+00:42.480 --> 00:45.330
+I'm going to click not now continue to the download page.
+
+00:46.490 --> 00:49.460
+I'm recording this in June of 2023.
+
+00:49.670 --> 00:58.430
+They just released the code light 17 .3.0 Build Code lite became really unstable in code lite 17.
+
+00:58.430 --> 01:01.670
+So this 17.3 build is pretty good.
+
+01:01.700 --> 01:04.790
+The only problem is that it changed the way that we build things.
+
+01:04.790 --> 01:08.300
+So going forward, we're going to use 17.3.
+
+01:08.630 --> 01:15.890
+Also, if you're downloading this in the future and you see something like 17.5 or 18 or something like
+
+01:15.890 --> 01:18.710
+that, check the resources section for this video.
+
+01:18.980 --> 01:21.500
+A lot of times I'll say just stick to 17.3.
+
+01:21.530 --> 01:26.210
+Don't update to 18.0 because you could have bugs in those releases.
+
+01:26.210 --> 01:33.020
+So I want to install 17 .3.0 and I'm going to click the Windows 64 installer here and that's going to
+
+01:33.050 --> 01:35.860
+download an executable file that's an installer.
+
+01:35.870 --> 01:41.030
+Now I've already gone ahead and done that and I saved it to my desktop and you can see that right here.
+
+01:41.030 --> 01:43.910
+Now if I double click this and install it.
+
+01:45.990 --> 01:47.910
+You might get something that looks like this.
+
+01:47.940 --> 01:49.500
+Windows protected your PC.
+
+01:49.890 --> 01:52.350
+Microsoft Defender does this a lot.
+
+01:52.350 --> 01:56.190
+And basically what it's saying is, hey, I don't know where this file came from.
+
+01:56.190 --> 01:57.910
+It's not from the Windows store.
+
+01:57.930 --> 01:59.620
+If you get this, that's okay.
+
+01:59.640 --> 02:01.200
+It's really easy to work around it.
+
+02:01.230 --> 02:03.810
+What you can do is you right click on the installer.
+
+02:04.480 --> 02:06.460
+And select properties.
+
+02:06.880 --> 02:10.960
+Then in the general tab, you'll see right here security unblock.
+
+02:11.320 --> 02:14.690
+If you do that, then you can run the installer with no problems.
+
+02:14.690 --> 02:15.850
+So I'm going to apply.
+
+02:16.060 --> 02:16.360
+Click.
+
+02:16.360 --> 02:16.990
+Okay.
+
+02:17.020 --> 02:18.610
+Now I'm going to double click.
+
+02:20.680 --> 02:25.210
+And I get this little message that pops up that says, Your app is going to change my device.
+
+02:25.210 --> 02:26.080
+I want it to.
+
+02:26.110 --> 02:26.740
+So I'm going to click.
+
+02:26.740 --> 02:27.400
+Yes.
+
+02:28.530 --> 02:29.740
+And here's the installer.
+
+02:29.760 --> 02:30.870
+There's the license agreement.
+
+02:30.870 --> 02:32.370
+You can read it and agree to it.
+
+02:32.580 --> 02:33.450
+I'll accept it.
+
+02:33.450 --> 02:34.650
+I'll select next.
+
+02:35.440 --> 02:37.060
+Now where do we want to install this?
+
+02:37.090 --> 02:40.180
+I would strongly recommend to not change this.
+
+02:40.210 --> 02:41.140
+Leave it alone.
+
+02:41.170 --> 02:42.310
+C Program files.
+
+02:42.310 --> 02:44.320
+Code light is a great place to install it.
+
+02:44.350 --> 02:46.270
+Do not install this on a shared drive.
+
+02:46.300 --> 02:48.640
+Do not install this on a cloud drive for example.
+
+02:48.640 --> 02:49.690
+One drive.
+
+02:49.720 --> 02:54.270
+Don't change these names and start adding really strange symbols and things in there.
+
+02:54.280 --> 02:57.760
+That's just asking for trouble with builds later on.
+
+02:57.760 --> 02:59.770
+So select the default.
+
+03:00.550 --> 03:01.540
+Click next.
+
+03:02.890 --> 03:05.530
+And it says the program code already exists.
+
+03:05.530 --> 03:07.480
+Would you like to install to that folder anyway?
+
+03:07.480 --> 03:11.830
+Yours probably won't say that mine is saying it because I already had code light installed, so I'm
+
+03:11.830 --> 03:12.340
+going to select.
+
+03:12.340 --> 03:13.060
+Yes.
+
+03:15.310 --> 03:16.760
+Give the program a name.
+
+03:16.780 --> 03:18.260
+I'll select next again.
+
+03:18.280 --> 03:21.570
+Do you want to create a desktop icon and a quick launch icon?
+
+03:21.580 --> 03:22.090
+I'll say yes.
+
+03:22.090 --> 03:22.680
+You don't have to.
+
+03:22.690 --> 03:24.200
+That's your personal preference.
+
+03:24.220 --> 03:29.170
+I'll select next and then I'm going to click install and it's going to go through the install.
+
+03:29.170 --> 03:30.780
+It's a pretty quick install.
+
+03:30.790 --> 03:32.740
+You can just run right through this.
+
+03:32.770 --> 03:38.320
+Now at this point, we've installed the C plus plus compiler in the previous video and now we've installed
+
+03:38.320 --> 03:40.180
+code lite, so we're ready to go.
+
+03:40.210 --> 03:45.820
+The next step is to configure code lite to work with the compiler that we've already installed, and
+
+03:45.820 --> 03:47.380
+we'll do that in the next video.

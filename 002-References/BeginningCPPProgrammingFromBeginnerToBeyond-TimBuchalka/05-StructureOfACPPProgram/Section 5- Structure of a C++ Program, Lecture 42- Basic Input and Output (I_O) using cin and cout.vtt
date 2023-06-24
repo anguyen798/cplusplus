@@ -1,0 +1,1047 @@
+WEBVTT
+
+00:00:05.880 --> 00:00:09.880
+In this video, we'll look at basic input output, using cin
+
+00:00:09.880 --> 00:00:10.680
+and cout.
+
+00:00:11.580 --> 00:00:16.380
+Cout, cin, cerr and clog are defined in the c++ standard.
+
+00:00:16.380 --> 00:00:18.580
+To use them, you must include iostream.
+
+00:00:19.080 --> 00:00:23.080
+C++ uses a stream abstraction to handle IO on devices like
+
+00:00:23.080 --> 00:00:24.380
+the console and keyboard.
+
+00:00:25.570 --> 00:00:29.230
+Cout is an output stream that defaults to the console or the screen.
+
+00:00:29.830 --> 00:00:31.430
+Cerr and clog
+
+00:00:31.430 --> 00:00:35.630
+are also output streams that default to standard error and standard log, respectively.
+
+00:00:35.630 --> 00:00:39.430
+And finally, cin is an input stream that defaults to the keyboard.
+
+00:00:40.330 --> 00:00:43.030
+The insertion operator is used with output streams,
+
+00:00:43.030 --> 00:00:46.030
+and the extraction operator is used with input streams.
+
+00:00:46.030 --> 00:00:49.030
+Let's look at how we can use cout and the insertion operator.
+
+00:00:51.390 --> 00:00:55.390
+The insertion operator inserts the value of the operand to its right.
+
+00:00:55.390 --> 00:00:58.990
+In this case, the variable data into the cout output stream.
+
+00:00:59.390 --> 00:01:01.590
+Since cout is by default the console,
+
+00:01:01.590 --> 00:01:03.890
+the value of data will be displayed on the screen.
+
+00:01:04.690 --> 00:01:06.490
+Since we're using stream abstraction,
+
+00:01:06.490 --> 00:01:09.490
+we can chain multiple insertions in the same statement.
+
+00:01:09.850 --> 00:01:12.450
+This makes basic IO very, very easy to do.
+
+00:01:13.150 --> 00:01:17.250
+It's important to understand that the insertion operator does not automatically add line
+
+00:01:17.250 --> 00:01:19.250
+breaks to move to the next line on the console.
+
+00:01:20.050 --> 00:01:24.150
+You must do this explicitly either by using the n line manipulator
+
+00:01:24.150 --> 00:01:28.150
+or by including a new line character, the /n you see in the last example.
+
+00:01:29.050 --> 00:01:32.710
+If you use the end line stream manipulator, it will also flush the stream,
+
+00:01:32.710 --> 00:01:35.480
+this is important to know since if the stream is buffered,
+
+00:01:35.480 --> 00:01:38.180
+it may not get written to the console until it's flushed.
+
+00:01:38.680 --> 00:01:42.880
+We'll talk more about this when we talk about file streams since it's more applicable there.
+
+00:01:43.480 --> 00:01:46.080
+Let's see how the extraction operator works with cin.
+
+00:01:47.680 --> 00:01:51.880
+The extraction operator extracts information from the cin input stream which
+
+00:01:51.880 --> 00:01:53.380
+defaults to the keyboard
+
+00:01:53.380 --> 00:01:57.380
+and stores the information into the variable to the right of the extraction operator.
+
+00:01:58.370 --> 00:02:02.570
+The way in which the information is interpreted is based on the type of the variable.
+
+00:02:03.120 --> 00:02:07.220
+So in this case, if data is an integer then an integer representation
+
+00:02:07.220 --> 00:02:08.620
+will be read from the keyboard.
+
+00:02:08.620 --> 00:02:12.020
+If data is a double then a real number will be read and stored.
+
+00:02:12.020 --> 00:02:15.380
+If data is a string a sequence of characters will be read and stored.
+
+00:02:16.480 --> 00:02:20.040
+Extraction operators can also be chained. In the second example,
+
+00:02:20.040 --> 00:02:24.140
+two variables data1 and data2 will be assigned values read from the keyboard
+
+00:02:24.140 --> 00:02:25.440
+based on their type.
+
+00:02:26.440 --> 00:02:31.040
+The characters entered using the keyboard will only be processed when the enter key is pressed.
+
+00:02:31.640 --> 00:02:34.540
+Cin extraction uses white space that is
+
+00:02:34.540 --> 00:02:38.640
+spaces, tabs, new lines as terminating the value being extracted.
+
+00:02:39.340 --> 00:02:43.340
+That's important to understand. So if you put spaces between the things that you type in,
+
+00:02:43.340 --> 00:02:44.640
+the spaces will be ignored.
+
+00:02:45.840 --> 00:02:48.440
+It's possible that the extraction operator could fail.
+
+00:02:48.440 --> 00:02:52.440
+For example, suppose you want to read an integer and the user enters my name Frank.
+
+00:02:52.940 --> 00:02:57.140
+In this case, the operation fails and the data will have an undetermined value.
+
+00:02:58.340 --> 00:03:01.540
+Cin extraction is very easy and useful, however,
+
+00:03:01.540 --> 00:03:04.440
+we'll later learn about other methods we can use with cin
+
+00:03:04.440 --> 00:03:07.040
+that give us more control over the data that's being input.
+
+00:03:08.040 --> 00:03:12.430
+Finally, we can use the same operators to insert and extract data from file streams.
+
+00:03:12.430 --> 00:03:16.730
+This is pretty cool since the syntax is already familiar and the behavior is very similar.
+
+00:03:17.030 --> 00:03:19.230
+We'll work with files later in this course.
+
+00:03:20.130 --> 00:03:23.790
+Now let's head over to the CodeLite IDE and go over some examples in live code.
+
+00:03:25.990 --> 00:03:28.990
+Okay. So now I'm back in the CodeLite IDE,
+
+00:03:28.990 --> 00:03:33.190
+and I've got a section 5 workspace, within the workspace, I've created a basic
+
+00:03:33.190 --> 00:03:36.490
+IO project. And this is the main file for that project.
+
+00:03:37.250 --> 00:03:41.450
+Now what we're going to do is we're going to do some basic IO using cin and cout,
+
+00:03:41.450 --> 00:03:45.050
+and I'll show you some of the nuances so that you really understand what's going on here.
+
+00:03:45.750 --> 00:03:49.350
+First of all, remember, on line 4, we've got to include iostream.
+
+00:03:50.010 --> 00:03:52.210
+And on line 6, I'm using namespace standard,
+
+00:03:52.210 --> 00:03:54.510
+just to make the code a little bit easier to read.
+
+00:03:54.910 --> 00:03:57.910
+Best practice would be to actually include standard
+
+00:03:57.910 --> 00:04:00.370
+scope resolution operator cout and so forth,
+
+00:04:00.370 --> 00:04:02.670
+as we talked about in the last lecture.
+
+00:04:03.170 --> 00:04:07.070
+So first thing we'll talk about is this statement on line 10 right here,
+
+00:04:07.070 --> 00:04:11.060
+cout, insertion operator, a string hello world.
+
+00:04:11.060 --> 00:04:14.420
+We've got another insertion operator and then we've got the endline manipulator.
+
+00:04:14.420 --> 00:04:18.020
+What this does is, it prints hello world to the console
+
+00:04:18.270 --> 00:04:20.870
+and then advances the cursor to the next line.
+
+00:04:20.870 --> 00:04:25.070
+Okay. I'm going to run this and I'm going to run it by pressing ctrl F5, which is
+
+00:04:25.070 --> 00:04:26.470
+the same as run here.
+
+00:04:31.270 --> 00:04:35.470
+So when we build and run, you can see it prints out to the screen hello world
+
+00:04:35.470 --> 00:04:39.270
+and then it goes to the next line and this time elapsed message prints out after that.
+
+00:04:39.630 --> 00:04:43.130
+Okay. Pretty straightforward. If I leave out the
+
+00:04:43.130 --> 00:04:44.120
+end line
+
+00:04:44.920 --> 00:04:47.220
+and I'll do that really quickly and I'll run it again,
+
+00:04:48.320 --> 00:04:51.820
+you could see that it prints out hello world. It does not advance to the next line,
+
+00:04:51.820 --> 00:04:54.020
+and then everything just prints out right after that.
+
+00:04:54.900 --> 00:04:57.200
+Okay. So that's pretty straightforward.
+
+00:04:58.700 --> 00:05:00.700
+Let's take a look at a couple of other examples.
+
+00:05:00.700 --> 00:05:04.000
+Look at this example here. I'm going to uncomment this out.
+
+00:05:04.000 --> 00:05:05.700
+First, I'm displaying hello,
+
+00:05:05.700 --> 00:05:09.300
+and then I'm displaying world and then I'm displaying an end line at the end.
+
+00:05:09.800 --> 00:05:13.160
+Notice that there is no end line after the first hello.
+
+00:05:13.160 --> 00:05:16.460
+So you would expect that these two should run together with no spaces.
+
+00:05:16.460 --> 00:05:20.260
+So we should see hello world all bunched together. So let's try that,
+
+00:05:22.060 --> 00:05:24.060
+and you can see that that's exactly what happens.
+
+00:05:24.060 --> 00:05:26.860
+You can see hello here followed by world with no spaces.
+
+00:05:26.860 --> 00:05:31.060
+It does advance to the end to the next line because we have that end line manipulator here.
+
+00:05:31.660 --> 00:05:33.660
+Okay. So let's do a few more.
+
+00:05:34.460 --> 00:05:38.360
+And as you can see by default,
+
+00:05:38.860 --> 00:05:42.220
+right here when we use the insertion operator with a string in this case hello,
+
+00:05:42.220 --> 00:05:46.090
+it does not advance to the next line until -- unless we do it specifically
+
+00:05:46.090 --> 00:05:49.090
+and explicitly. So that's what end line does.
+
+00:05:49.090 --> 00:05:52.890
+So here are four more output statements. The first one just says cout hello world,
+
+00:05:52.890 --> 00:05:55.090
+just like we've done before and advances the line.
+
+00:05:56.090 --> 00:05:58.390
+The next one change the insertion operators.
+
+00:05:58.390 --> 00:06:01.990
+So you could see that I'm putting hello on the output stream,
+
+00:06:01.990 --> 00:06:03.990
+then I'm putting world on the output stream.
+
+00:06:03.990 --> 00:06:06.990
+And you can see there's a space right before that w there,
+
+00:06:06.990 --> 00:06:08.590
+and then I'm printing a new line.
+
+00:06:08.950 --> 00:06:11.550
+So we're getting the same effect as the previous one.
+
+00:06:11.950 --> 00:06:15.050
+Same here, I could say hello world. But here, in this case,
+
+00:06:15.050 --> 00:06:18.710
+you can see that I'm using a
+.
+
+00:06:18.710 --> 00:06:22.700
+This character right here is a new line character.
+
+00:06:22.700 --> 00:06:26.500
+So what happens is you can embed that new line character in the string
+
+00:06:26.500 --> 00:06:28.800
+and it will advance to the next line.
+
+00:06:28.800 --> 00:06:33.300
+So it's similar to end line. It doesn't flush the buffer but it still advances to the next line.
+
+00:06:34.000 --> 00:06:38.460
+And then the last line you can see, you can see that there's a couple things going on here.
+
+00:06:38.460 --> 00:06:41.140
+You can see that I've got a new line here,
+
+00:06:41.140 --> 00:06:42.640
+a new line here and a new line here.
+
+00:06:43.300 --> 00:06:46.600
+So you expect us to print out hello and then go to the new line
+
+00:06:49.600 --> 00:06:51.260
+and then print out out here
+
+00:06:51.260 --> 00:06:54.560
+then go to the advanced to the next line and print out there
+
+00:06:54.560 --> 00:06:56.360
+and then advance to the next line here.
+
+00:06:56.860 --> 00:07:00.730
+So that's what. We expect we expect the first three statements
+
+00:07:01.530 --> 00:07:05.430
+on lines 15 through 17 to print out exactly the same thing that's
+
+00:07:05.430 --> 00:07:08.130
+the same effect and the last one to be a little bit different.
+
+00:07:08.130 --> 00:07:09.430
+So let's try this out
+
+00:07:10.730 --> 00:07:12.730
+and we'll compile and run here.
+
+00:07:14.130 --> 00:07:16.930
+And you can see hello world, hello world, hello world
+
+00:07:16.930 --> 00:07:20.930
+exactly the same and then we have hello out there one word per line.
+
+00:07:20.930 --> 00:07:24.530
+And remember, even though that this is all in one string literal here,
+
+00:07:24.530 --> 00:07:27.530
+we still have the
+s there, which -- that's how they work.
+
+00:07:27.530 --> 00:07:29.530
+You embed them inside those strings.
+
+00:07:30.330 --> 00:07:32.830
+Okay. So now let's do a little bit with variables.
+
+00:07:32.830 --> 00:07:35.430
+We'll talk a lot about variables in the next section.
+
+00:07:35.430 --> 00:07:39.730
+But I'm going to declare three variables right here, and I'll explain that to you real quick. They're really easy.
+
+00:07:40.130 --> 00:07:44.730
+In this case, I'm declaring three variables: num1 num2 and num3.
+
+00:07:44.730 --> 00:07:49.130
+Those are the names. Num1 is an integer, and num2 is an integer.
+
+00:07:49.530 --> 00:07:54.430
+And then num3 is a double. That's a floating point number like 2.5 or 100.7,
+
+00:07:54.790 --> 00:07:57.990
+a real number. We'll use num2 and num3 a little bit later.
+
+00:07:57.990 --> 00:08:01.490
+But right now, we're only going to use num1. So I'm going to comment this line,
+
+00:08:01.490 --> 00:08:05.090
+uncomment this line. And you can see what's happening here.
+
+00:08:05.090 --> 00:08:08.090
+I'm saying I'm prompting the user enter an integer.
+
+00:08:08.750 --> 00:08:12.350
+Then I'm reading an integer using the extraction operator.
+
+00:08:12.350 --> 00:08:15.150
+I'm extracting an integer from the input stream,
+
+00:08:15.150 --> 00:08:19.250
+and I'm storing it in num1. You can see it's going right in here.
+
+00:08:20.550 --> 00:08:24.650
+And then I'm simply going to output. You entered whatever they typed in.
+
+00:08:24.650 --> 00:08:27.850
+So let me explain how this works. Here's your keyboard.
+
+00:08:28.850 --> 00:08:32.210
+And remember, cin is by default tied to your keyboard.
+
+00:08:32.610 --> 00:08:35.810
+We can redirect it as we wish but by default it's the keyboard.
+
+00:08:35.810 --> 00:08:39.470
+Now what happens is characters are read from your keyboard,
+
+00:08:39.470 --> 00:08:42.830
+and they're not read directly by cin, they're stored in a buffer.
+
+00:08:42.830 --> 00:08:46.930
+This is done to make the program more efficient. So if. I type in
+
+00:08:46.930 --> 00:08:49.130
+123 on the keyboard,
+
+00:08:50.490 --> 00:08:54.740
+then what happens is the numbers are read from the buffer,
+
+00:08:54.740 --> 00:08:57.040
+the characters in this case are read from the buffer.
+
+00:08:57.540 --> 00:09:00.140
+And the compiler knows that num1
+
+00:09:00.540 --> 00:09:01.840
+is an integer.
+
+00:09:02.640 --> 00:09:05.000
+So it's going to read those characters,
+
+00:09:05.000 --> 00:09:08.800
+and it's only going to process what makes sense to be an integer.
+
+00:09:08.800 --> 00:09:13.000
+So in this case, it's going to read the one and say yeah. It's going to read the two,
+
+00:09:13.500 --> 00:09:17.600
+yep. Going to read the three, yep. Now we're done.
+
+00:09:17.600 --> 00:09:19.590
+So we've got 123.
+
+00:09:19.590 --> 00:09:22.790
+So 123 gets stored into num1,
+
+00:09:22.990 --> 00:09:24.490
+and that will print out here.
+
+00:09:26.190 --> 00:09:30.180
+Okay. Now you need to press enter when you do this on the keyboard.
+
+00:09:30.680 --> 00:09:33.890
+And also white space is ignored.
+
+00:09:33.890 --> 00:09:37.190
+So if I type in like 10 whites, 10 spaces
+
+00:09:37.190 --> 00:09:39.490
+or tabs or anything that's considered white space
+
+00:09:39.490 --> 00:09:41.490
+and then I type in 123,
+
+00:09:41.490 --> 00:09:44.490
+then I type in a whole bunch more white space, it'll all be ignored.
+
+00:09:44.490 --> 00:09:48.590
+Okay. So let's take a look at that in action, and I'll just clear this real quick.
+
+00:09:48.890 --> 00:09:50.190
+And let's run this,
+
+00:09:51.690 --> 00:09:54.990
+and it's going to say enter an integer. So I'm going to type in 123,
+
+00:09:55.350 --> 00:09:57.950
+press enter. Remember, I have to press enter,
+
+00:09:58.550 --> 00:10:02.450
+and it says you entered 123. Just what we'd expect.
+
+00:10:02.450 --> 00:10:06.650
+I'll run it one more time. And this time, I'm going to type in a bunch of spaces,
+
+00:10:06.650 --> 00:10:09.250
+I'm pressing the space bar now I'm pressing tab.
+
+00:10:09.850 --> 00:10:13.950
+Then I'll press 123. And I'll type in some more spaces.
+
+00:10:14.350 --> 00:10:18.450
+Now when I press enter, you can see you still entered 123.
+
+00:10:18.450 --> 00:10:20.750
+All that beginning white space is ignored.
+
+00:10:21.250 --> 00:10:25.550
+And everything after the 3 is considered not an integer. So this is where
+
+00:10:25.550 --> 00:10:29.050
+if you read from cin again, it's going to start right after that 3.
+
+00:10:30.450 --> 00:10:33.750
+Okay so that gives you an idea of what's going on there and let me
+
+00:10:33.750 --> 00:10:36.750
+comment thatout again and we'll keep going through some more examples.
+
+00:10:37.150 --> 00:10:40.450
+In this case, we're going to read two numbers.
+
+00:10:41.950 --> 00:10:44.250
+We're going to say enter a first integer,
+
+00:10:44.810 --> 00:10:46.810
+and we're going to read that into num1.
+
+00:10:46.810 --> 00:10:50.110
+Enter a second integer, and we're going to read that into num2.
+
+00:10:50.110 --> 00:10:53.310
+And then we're just simply going to say you entered num1 and num2.
+
+00:10:53.310 --> 00:10:55.910
+Remember, in this case here num1
+
+00:10:55.910 --> 00:10:57.910
+and num2, right here,
+
+00:10:58.710 --> 00:11:01.700
+will be replaced by whatever values the user typed in. Okay.
+
+00:11:02.700 --> 00:11:04.700
+Okay. So let's do this. Let's run this one,
+
+00:11:05.300 --> 00:11:07.900
+and you'll see it's exactly what you would expect.
+
+00:11:11.400 --> 00:11:14.400
+And let's see, oops I should have commented these guys out.
+
+00:11:14.400 --> 00:11:17.000
+Let me uncomment them. And let's try that again.
+
+00:11:19.500 --> 00:11:22.500
+So enter a first integer. Let's say we want to type in 100.
+
+00:11:22.500 --> 00:11:26.300
+And I'm going to press enter, enter a second integer 200,
+
+00:11:26.300 --> 00:11:27.800
+I'll press enter again,
+
+00:11:28.500 --> 00:11:32.100
+you entered 100 and 200. Again, just what we expected.
+
+00:11:32.600 --> 00:11:36.590
+Now let me show you something that you might not expect. Let me run this one more time,
+
+00:11:37.390 --> 00:11:41.390
+and I'm going to enter 100, followed by a space,
+
+00:11:41.390 --> 00:11:44.890
+followed by 200, and press enter.
+
+00:11:46.250 --> 00:11:47.950
+You can see my output statement worked.
+
+00:11:47.950 --> 00:11:52.250
+It says you entered 100 and 200, but the output looks a little different, right.
+
+00:11:52.650 --> 00:11:55.650
+Well, you can see what's happening, I've entered two integers.
+
+00:11:55.950 --> 00:11:58.950
+So what happens is when I read those integers
+
+00:11:58.950 --> 00:12:02.550
+from the standard input, right, via the extraction operator,
+
+00:12:02.950 --> 00:12:07.350
+it's going to grab both of them. It's not going to wait because it's got both of them in there already.
+
+00:12:07.350 --> 00:12:10.120
+Again it's not going to wait for me to press enter two times
+
+00:12:10.120 --> 00:12:13.120
+because it's got them in there. Let me show you what that looks like.
+
+00:12:13.120 --> 00:12:17.320
+So you can better understand it. All right. So let's say that we're here,
+
+00:12:19.720 --> 00:12:22.520
+and we just ran this program, and we entered 100
+
+00:12:23.180 --> 00:12:26.540
+followed by a space, and I'll just use that character there for a space
+
+00:12:27.040 --> 00:12:28.440
+followed by 200.
+
+00:12:29.940 --> 00:12:33.940
+Okay so right here it's waiting for me what I did was I entered 100
+
+00:12:33.940 --> 00:12:35.540
+space 200 and I pressed enter.
+
+00:12:36.640 --> 00:12:40.440
+The extraction operator realizes that num1 is an integer,
+
+00:12:40.940 --> 00:12:43.820
+so it's going to try to read an integer from this stream here.
+
+00:12:43.820 --> 00:12:48.020
+It's going to start right here and it's going to say I got a 1 a 0 and a 0.
+
+00:12:48.020 --> 00:12:51.380
+Boom I hit a white space that must mean that my integer is done.
+
+00:12:51.380 --> 00:12:54.680
+So it's going to take 100 and store it right into num1.
+
+00:12:56.480 --> 00:12:59.480
+Now it's going to output, enter another integer.
+
+00:13:00.480 --> 00:13:04.380
+And it's going to try to read that second integer from the input stream.
+
+00:13:04.380 --> 00:13:07.680
+Well, it's already in there, right. So it's going to start right here, and it's going to say
+
+00:13:07.680 --> 00:13:12.480
+200, hit the end, aha that's 200.
+
+00:13:12.480 --> 00:13:16.160
+It's not going to wait for me to press enter because there's already data
+
+00:13:16.160 --> 00:13:19.560
+in that buffer. So in this case, the 200
+
+00:13:19.560 --> 00:13:23.560
+gets put into num2 and this will print out 100 and 200.
+
+00:13:23.560 --> 00:13:25.260
+So your output will be correct
+
+00:13:25.260 --> 00:13:28.460
+but the way that the the prompts are displayed is a little
+
+00:13:28.460 --> 00:13:31.060
+different because it's got data in that buffer already.
+
+00:13:31.610 --> 00:13:35.110
+Same thing with -- let me run this one more time and I'll show you a little bit
+
+00:13:35.110 --> 00:13:36.410
+of a different example.
+
+00:13:38.610 --> 00:13:43.010
+Same thing with space 100 space
+
+00:13:43.310 --> 00:13:46.310
+tab 200 or 200.
+
+00:13:47.210 --> 00:13:51.010
+Yeah, you can see you entered 100 and 200, it's just ignoring all that space,
+
+00:13:51.610 --> 00:13:56.270
+but it's got those two values in that stream. It's just going to process the stream.
+
+00:13:56.270 --> 00:13:58.270
+It doesn't wait for you to press enter twice.
+
+00:13:59.930 --> 00:14:02.810
+Okay. So I'll comment those out, and
+
+00:14:06.410 --> 00:14:10.070
+we can chain the extraction operator,
+
+00:14:10.070 --> 00:14:12.270
+just like we we can chain the insertion operator.
+
+00:14:12.270 --> 00:14:16.670
+So in this case, you can see that we've got the cin
+
+00:14:18.030 --> 00:14:21.330
+followed by an extraction operator right there,
+
+00:14:21.330 --> 00:14:23.630
+followed by another extraction operator, right.
+
+00:14:23.630 --> 00:14:27.230
+So what I'm doing here is the the output statement for the user is a little different.
+
+00:14:27.230 --> 00:14:30.530
+It just says enter two integers separated with a space.
+
+00:14:30.530 --> 00:14:34.430
+So let's say I enter 100 a space and then 200.
+
+00:14:35.930 --> 00:14:39.530
+Now this guy is going to read two integers from the input stream.
+
+00:14:40.130 --> 00:14:43.790
+And it'll assign 100 here and 200 here.
+
+00:14:44.790 --> 00:14:46.090
+Okay. Let's do that.
+
+00:14:50.290 --> 00:14:53.090
+And you can see right here enter two integers separated with a space.
+
+00:14:53.090 --> 00:14:56.890
+Remember, I could put leading spaces too if I want, but in this case I'll just say 100
+
+00:14:56.890 --> 00:14:58.090
+space 200.
+
+00:14:59.390 --> 00:15:01.390
+And it says here you entered 100 and 200.
+
+00:15:01.390 --> 00:15:05.750
+This is actually a really handy way to get information from the user when you want them to
+
+00:15:05.750 --> 00:15:08.110
+you know enter more than one number,
+
+00:15:08.110 --> 00:15:12.210
+enter three numbers separated by spaces. That's really easy for them to do
+
+00:15:12.210 --> 00:15:16.200
+rather than say enter number one, enter number two, enter number three and so forth.
+
+00:15:16.200 --> 00:15:18.200
+Okay. So that's another option you've got.
+
+00:15:19.400 --> 00:15:23.700
+Okay. So I'll comment this out. And now we'll process some doubles.
+
+00:15:23.700 --> 00:15:27.500
+In this case, if you remember, let me scroll up just a little bit, if you remember
+
+00:15:27.500 --> 00:15:30.000
+num3 was a double, right.
+
+00:15:30.000 --> 00:15:32.300
+So it's a floating point number, a real number.
+
+00:15:32.300 --> 00:15:35.600
+And what I'll do here is I'll just uncomment this out.
+
+00:15:36.900 --> 00:15:41.000
+And the prompt to the user is enter a double
+
+00:15:41.660 --> 00:15:42.560
+right here.
+
+00:15:43.260 --> 00:15:47.360
+And you're going to read the double into num3 from the input stream.
+
+00:15:48.260 --> 00:15:50.260
+Again, here's the input stream.
+
+00:15:50.760 --> 00:15:53.360
+Suppose I typed in 12.5.
+
+00:15:53.860 --> 00:15:55.360
+That's a real number.
+
+00:15:55.860 --> 00:15:59.860
+It realizes that it needs to read a real number from the input stream
+
+00:15:59.860 --> 00:16:02.520
+because num3 was defined up top as a double.
+
+00:16:03.020 --> 00:16:06.020
+So it's going to come here. It's going to read a 1, it's going to get the 2,
+
+00:16:06.020 --> 00:16:10.120
+it's going to see the decimal point that's valid in a real number. Then it's going to read the 5.
+
+00:16:10.120 --> 00:16:13.920
+Then it's done. And 12.5 will be assigned here
+
+00:16:13.920 --> 00:16:15.820
+and will be displayed down here.
+
+00:16:16.320 --> 00:16:17.920
+Okay. So let's run that.
+
+00:16:21.910 --> 00:16:25.510
+Enter my double, I'll press 12.5 and enter.
+
+00:16:25.510 --> 00:16:28.110
+And it says right there, you entered 12.5.
+
+00:16:28.610 --> 00:16:29.910
+Just like we expected.
+
+00:16:32.410 --> 00:16:35.710
+Okay. So let's do this last one.
+
+00:16:36.210 --> 00:16:37.910
+And I'll show you what could go wrong here.
+
+00:16:38.410 --> 00:16:42.610
+There's always something that could go wrong, right. So let me uncomment that.
+
+00:16:42.610 --> 00:16:46.210
+And look at this example here. This one is saying
+
+00:16:46.610 --> 00:16:47.810
+enter an integer,
+
+00:16:47.810 --> 00:16:49.810
+and you're going to read the integer into num1.
+
+00:16:50.310 --> 00:16:54.710
+And then it's saying enter a double, and you're going to read the the double into num3.
+
+00:16:55.610 --> 00:17:00.410
+Okay. Now if we run this and I type in, let's say 10,
+
+00:17:01.010 --> 00:17:03.510
+and 12 space 12.5,
+
+00:17:04.410 --> 00:17:08.070
+that's not a problem at all, right, because it's going to read the integer
+
+00:17:08.730 --> 00:17:10.730
+and it's going to say 10.
+
+00:17:10.730 --> 00:17:14.230
+I see a space. I'm done. The 10 goes into num1.
+
+00:17:14.830 --> 00:17:17.030
+Then it's going to read a double here, num3.
+
+00:17:18.030 --> 00:17:22.030
+It's going to say 12 decimal point 5, 12.5,
+
+00:17:22.030 --> 00:17:23.530
+perfect. It's going to go in here.
+
+00:17:24.230 --> 00:17:26.230
+The integer is 10.
+
+00:17:26.930 --> 00:17:30.290
+The double is 12.5, and that'll work just fine.
+
+00:17:31.090 --> 00:17:32.890
+Let me run that just so you can see that.
+
+00:17:33.590 --> 00:17:38.090
+And then we'll do one more example -- a couple more examples where you can see some of the issues here.
+
+00:17:38.090 --> 00:17:40.090
+So there's my integer. Let's say, it's 10
+
+00:17:40.590 --> 00:17:42.490
+and the double is 12.5.
+
+00:17:43.150 --> 00:17:46.450
+And you can see the integer is 10 and the double is 12.5.
+
+00:17:46.950 --> 00:17:50.750
+Okay. But what happens if I enter something like,
+
+00:17:51.050 --> 00:17:54.050
+let's say, 10.5
+
+00:17:57.710 --> 00:17:58.710
+something like that.
+
+00:17:59.810 --> 00:18:04.170
+Think about this logically, you're probably guessing what's going to happen.
+
+00:18:04.170 --> 00:18:07.050
+It's going to read an integer. So it's going to see that
+
+00:18:07.050 --> 00:18:11.550
+the 1 and the 0 and it's going to say yep that's an integer. When it sees the decimal point,
+
+00:18:11.750 --> 00:18:15.250
+it knows it can't be an integer anymore. So it's just going to take the 10
+
+00:18:15.250 --> 00:18:16.450
+and store it here.
+
+00:18:16.950 --> 00:18:19.450
+Then you're going to say read me a double.
+
+00:18:19.450 --> 00:18:22.810
+Well, it's going to start at the decimal point, and it's going to read 0.5.
+
+00:18:22.810 --> 00:18:27.010
+0.5 is a double, right. So it's going to store 0.5 here.
+
+00:18:27.510 --> 00:18:30.810
+So your output is going to be 10 and 0.5.,
+
+00:18:31.610 --> 00:18:36.210
+maybe not what you expected but you can see the behavior makes perfect sense. You're telling it
+
+00:18:36.210 --> 00:18:40.810
+what to do. You typed in 10.5. Well, 10 is an integer and 0.5 is a double and
+
+00:18:40.810 --> 00:18:42.110
+I can read those.
+
+00:18:42.110 --> 00:18:46.310
+So let's try that with 10.5., and we'll see what that looks like.
+
+00:18:47.310 --> 00:18:51.410
+So let's enter the integer 10.5. Now remember,
+
+00:18:52.010 --> 00:18:55.510
+there's going to be that 0.5 left in the buffer. So it's not going to ask me.
+
+00:18:55.510 --> 00:18:57.710
+It's going to ask me to enter the double,
+
+00:18:57.710 --> 00:19:01.470
+but it's not going to wait for me to press enter because it's already got data in the buffer.
+
+00:19:01.470 --> 00:19:04.070
+So I press enter and you can see
+
+00:19:04.070 --> 00:19:06.270
+enter a double, right, it's not waiting for me here.
+
+00:19:06.630 --> 00:19:09.500
+The integer is 10, and the double is 0.5.
+
+00:19:10.500 --> 00:19:14.800
+Now the last example is, let's run this one more time and we'll do something really weird here,
+
+00:19:14.800 --> 00:19:15.800
+we'll just type Frank.
+
+00:19:16.460 --> 00:19:20.060
+Now that's really wonky because you've just told it that
+
+00:19:20.060 --> 00:19:23.260
+you're going to read an integer and a double and you just gave it a string of
+
+00:19:23.260 --> 00:19:25.560
+characters here. So if I press enter,
+
+00:19:26.860 --> 00:19:29.560
+you can see what's going on here. The integer is zero,
+
+00:19:29.560 --> 00:19:33.160
+and the double is some undefined crazy small number here.
+
+00:19:33.660 --> 00:19:37.460
+Okay. Well, what happens is when it tried to read the integer,
+
+00:19:37.460 --> 00:19:39.960
+it got the F in Frank and it's lost.
+
+00:19:39.960 --> 00:19:43.260
+So the input failed, and it goes into a fail state.
+
+00:19:43.920 --> 00:19:45.420
+From that point on,
+
+00:19:45.420 --> 00:19:48.920
+everything that's happening is unreliable. You can see that the integer got 0.
+
+00:19:48.920 --> 00:19:52.720
+It got basically initialized to 0 there. But everything else
+
+00:19:52.720 --> 00:19:56.720
+after that point is completely unreliable, you've got to be really careful.
+
+00:19:56.920 --> 00:19:59.280
+Now in real-world, programs
+
+00:19:59.280 --> 00:20:02.280
+we're not really using cin to to read characters.
+
+00:20:02.280 --> 00:20:05.580
+We're using strings. We're reading them into strings, and then we're trying to convert those strings
+
+00:20:05.580 --> 00:20:07.880
+to numbers or whatever else we really need.
+
+00:20:07.880 --> 00:20:11.870
+But they're really, really handy and easy to use, and that's what we're going to do for the
+
+00:20:11.870 --> 00:20:13.530
+vast majority of this course.
+
+00:20:13.530 --> 00:20:17.190
+We're going to use cin and cout so that we can read numbers,
+
+00:20:17.190 --> 00:20:20.190
+and we can output numbers or strings or whatever we like.
+
+00:20:20.850 --> 00:20:22.850
+So that finishes off this video.
+
+00:20:22.850 --> 00:20:27.350
+This is basic io using cin and cout. You can see it's pretty straightforward.
+
+00:20:27.350 --> 00:20:31.350
+Don't worry about mistakes right now as we're working through these programs.
+
+00:20:31.350 --> 00:20:35.950
+If it says enter an integer, enter the integer. If it says enter a string, enter the string.
+
+00:20:35.950 --> 00:20:38.450
+Don't worry about error handling that comes later.

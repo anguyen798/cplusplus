@@ -1,0 +1,340 @@
+WEBVTT
+
+00:00:05.400 --> 00:00:09.800
+In this video, we'll learn about the c++11 override specifier.
+
+00:00:10.600 --> 00:00:15.000
+We know that we can override base class virtual functions in our derived classes.
+
+00:00:15.800 --> 00:00:19.160
+We also know that we must provide the exact function signature
+
+00:00:19.160 --> 00:00:21.520
+in the derived class, including the return type.
+
+00:00:22.180 --> 00:00:23.380
+But what if we don't?
+
+00:00:23.780 --> 00:00:27.780
+What if we inadvertently make a small change to the function signature by mistake?
+
+00:00:28.880 --> 00:00:33.880
+If this happens, then the function we intended to override doesn't get overwritten at all.
+
+00:00:34.280 --> 00:00:36.280
+Instead it gets redefined,
+
+00:00:36.280 --> 00:00:40.680
+and we know that redefined functions are statically bound, not dynamically bound.
+
+00:00:41.480 --> 00:00:44.360
+This type of error is really hard to find sometimes
+
+00:00:44.360 --> 00:00:47.240
+since the function signatures may look very, very similar,
+
+00:00:47.240 --> 00:00:49.440
+and it may not be easy to spot the difference.
+
+00:00:50.320 --> 00:00:52.680
+C++11 addresses this issue
+
+00:00:52.680 --> 00:00:55.040
+by providing the override specifier.
+
+00:00:55.700 --> 00:00:59.360
+You can add this specifier to the method you're writing in your derived class,
+
+00:00:59.360 --> 00:01:04.220
+and the c++ compiler will ensure that you're indeed overriding and not redefining.
+
+00:01:05.020 --> 00:01:08.020
+This is a simple addition to the language but a very useful one.
+
+00:01:08.680 --> 00:01:10.180
+Let's see what it looks like in code.
+
+00:01:12.380 --> 00:01:14.980
+Here we have two simple classes in a class hierarchy.
+
+00:01:15.580 --> 00:01:18.580
+The base class has a virtual function named "say hello".
+
+00:01:18.940 --> 00:01:22.600
+It returns nothing, expects nothing and is a const function.
+
+00:01:23.580 --> 00:01:26.830
+In the derived class, I wanted to override this function.
+
+00:01:26.830 --> 00:01:30.930
+But when I wrote the function prototype, I forgot the const at the end of the prototype.
+
+00:01:31.590 --> 00:01:34.790
+Since the function signatures are not exactly, the same
+
+00:01:34.790 --> 00:01:39.450
+the c++ compiler considers this function redefinition and not overriding.
+
+00:01:40.150 --> 00:01:43.150
+It will compile just fine since this is perfectly legal.
+
+00:01:43.920 --> 00:01:45.920
+Let's see the difference between the methods.
+
+00:01:47.120 --> 00:01:50.720
+Here it might be easier to see that the function signatures are indeed different.
+
+00:01:51.820 --> 00:01:56.020
+So the say hello function of the derived class will be statically bound,
+
+00:01:56.020 --> 00:01:58.420
+not dynamically bound, as we expected.
+
+00:01:58.920 --> 00:02:02.420
+This will cause unexpected behavior when we use a base class pointer.
+
+00:02:04.920 --> 00:02:09.120
+Here we have two pointers to a base class object, P1 and p2.
+
+00:02:09.480 --> 00:02:13.980
+P1 is pointing to a base object, and p2 is pointing to a derived object.
+
+00:02:14.780 --> 00:02:17.180
+When I call say hello via p1,
+
+00:02:17.180 --> 00:02:20.980
+this will be bound dynamically, and it will call bases "say hello".
+
+00:02:21.480 --> 00:02:24.480
+However, when I call say hello via pointer 2,
+
+00:02:24.880 --> 00:02:28.240
+I expect it to display hello I'm a derived class object
+
+00:02:28.240 --> 00:02:30.540
+because I expected dynamic binding,
+
+00:02:30.540 --> 00:02:34.740
+but I messed up when i created the function by not matching the signature exactly.
+
+00:02:34.740 --> 00:02:38.140
+So the function call is statically bound to base say hello.
+
+00:02:38.640 --> 00:02:43.300
+We can easily prevent this error by using the c++11 override specifier.
+
+00:02:45.750 --> 00:02:48.310
+Notice the say hello function of the derived class.
+
+00:02:48.810 --> 00:02:52.470
+We can place the override specifier after the function prototype.
+
+00:02:52.470 --> 00:02:56.130
+This tells the compiler that you intend to override this function,
+
+00:02:56.130 --> 00:02:58.130
+and it should make sure that you do so.
+
+00:02:58.730 --> 00:03:03.230
+In this case, the compiler will produce an error, and you can add that const to fix the problem.
+
+00:03:03.930 --> 00:03:06.930
+Let's head over to the IDE and see this example in live code.
+
+00:03:08.430 --> 00:03:12.230
+I'm in the IDE, and I'm on the section 16 workspace
+
+00:03:12.230 --> 00:03:14.430
+in the UsingOverride project.
+
+00:03:15.930 --> 00:03:18.630
+You can see here that I've got a simple base class.
+
+00:03:18.630 --> 00:03:22.230
+And all it has inside is a virtual function right here
+
+00:03:22.230 --> 00:03:25.830
+called say hello. And notice that this is a const function.
+
+00:03:26.330 --> 00:03:28.930
+And all it says is hello I'm a base class object.
+
+00:03:29.730 --> 00:03:33.830
+Now I've got a derived class here that's derived publicly from the base class.
+
+00:03:34.230 --> 00:03:38.590
+And what I meant to do here was to override this say hello function right here.
+
+00:03:39.360 --> 00:03:42.760
+But I messed up, and I forgot that const right there.
+
+00:03:44.160 --> 00:03:48.410
+So it should have had a const there, but it doesn't. So now as far as the compiler is concerned,
+
+00:03:48.770 --> 00:03:51.770
+this function, right here in my derived class,
+
+00:03:51.770 --> 00:03:55.970
+is redefining the base class function, not overriding it.
+
+00:03:55.970 --> 00:03:59.470
+So it's going to statically bind it rather than dynamically bind it.
+
+00:03:59.830 --> 00:04:02.330
+Okay. So let's take a look at the main,
+
+00:04:02.330 --> 00:04:05.330
+and we'll walk through this you can see exactly what's going to happen.
+
+00:04:05.330 --> 00:04:09.330
+Okay, so here's p1 and p1 is a pointer to a base object.
+
+00:04:09.330 --> 00:04:12.690
+And I'm instantiating a base object and pointing right to it.
+
+00:04:12.690 --> 00:04:16.590
+So now when I call say hello via that p1 pointer,
+
+00:04:17.090 --> 00:04:20.890
+obviously, this is going to do dynamic binding,
+
+00:04:21.390 --> 00:04:24.750
+and it's going to bind it to my base class since that's what I'm pointing to so
+
+00:04:24.750 --> 00:04:26.550
+this will call base say hello.
+
+00:04:27.350 --> 00:04:29.850
+In this example, this is a little different than what we've seen.
+
+00:04:30.510 --> 00:04:34.010
+Here I have p2 is a pointer to a derived object,
+
+00:04:34.010 --> 00:04:36.610
+and I'm instantiating a derived object.
+
+00:04:36.610 --> 00:04:40.910
+So in this case, what's going to happen is this is not a base class pointer,
+
+00:04:40.910 --> 00:04:43.170
+this is just a regular old pointer to an object.
+
+00:04:43.170 --> 00:04:47.970
+So in this case, it's going to be statically bound, and we're going to call derived say hello.
+
+00:04:48.870 --> 00:04:51.470
+This is the problematic one right here, p3.
+
+00:04:51.720 --> 00:04:55.920
+The problem here is since we did not override instead we redefined,
+
+00:04:56.220 --> 00:05:00.100
+this will not be bound dynamically, it'll be bound statically.
+
+00:05:00.100 --> 00:05:01.800
+So as far as the compiler is concerned,
+
+00:05:01.800 --> 00:05:06.000
+I've got a base pointer right here, so it's going to bind it to base say hello.
+
+00:05:06.000 --> 00:05:08.700
+But I really wanted it to bind to derive say hello.
+
+00:05:09.060 --> 00:05:13.560
+All right. So let's run this, and then what we'll do is we'll fix this with the override keyword.
+
+00:05:14.260 --> 00:05:15.260
+So let me run this.
+
+00:05:16.760 --> 00:05:21.460
+And here's our output. And you can see our main. Let me scroll up just a little bit right here.
+
+00:05:21.460 --> 00:05:24.720
+So you can see here p1 points to a base and it's looking at a base.
+
+00:05:24.720 --> 00:05:27.080
+So hi, I'm a base class object.
+
+00:05:27.880 --> 00:05:29.380
+In the case of p2,
+
+00:05:29.380 --> 00:05:34.380
+we're statically binding because we're pointing to a derived object and that's exactly what we have.
+
+00:05:34.380 --> 00:05:37.250
+So it's going to say hello, I'm a derived class object.
+
+00:05:37.250 --> 00:05:39.750
+Here's the problematic one on line 30.
+
+00:05:39.750 --> 00:05:43.650
+P3 is pointing to a base object, and it's currently
+
+00:05:43.650 --> 00:05:45.210
+pointing to the derived, right.
+
+00:05:46.010 --> 00:05:47.710
+Here's where the problem is because
+
+00:05:47.710 --> 00:05:52.310
+I redefined that function so it's going to be statically bound rather than dynamically bound,
+
+00:05:52.310 --> 00:05:55.510
+so it's going to call base say hello and you can see right there,
+
+00:05:55.510 --> 00:05:58.390
+Hi, I'm a base class object. That's not what I wanted.
+
+00:05:58.390 --> 00:06:01.060
+I wanted it to say "hello, I'm a derived class object"
+
+00:06:01.360 --> 00:06:03.860
+because I wanted it to use dynamic polymorphism.
+
+00:06:04.360 --> 00:06:08.460
+So how do we fix this? Well, the fix is easy, right. We just come up here and put const in there.
+
+00:06:08.660 --> 00:06:12.860
+But we can also use the override keyword in c++11,
+
+00:06:12.860 --> 00:06:17.460
+which is really handy. You really should do this every time that you're going to overwrite a function in a derived class,
+
+00:06:17.960 --> 00:06:19.960
+simply put the override word in there.
+
+00:06:20.660 --> 00:06:24.560
+Right there, you can put the override specifier right at the end of the function prototype.
+
+00:06:24.560 --> 00:06:27.920
+So now when you compile, let me just build this real quick,
+
+00:06:28.920 --> 00:06:33.420
+now you get an error. And the error says virtual void derive say hello marked as override,
+
+00:06:33.420 --> 00:06:34.780
+but it does not override.
+
+00:06:35.280 --> 00:06:39.080
+That gives you a really good clue as to you're not overriding anything here.
+
+00:06:39.080 --> 00:06:42.580
+So you can come in here and say oh okay, I got it. There's my const.
+
+00:06:43.080 --> 00:06:46.380
+You can put your const in there now. And then when you run,
+
+00:06:47.380 --> 00:06:50.380
+you can see that now -- let me scroll up just a little bit,
+
+00:06:51.080 --> 00:06:55.480
+now you can see that third statement it says "hello, I'm a derived class object". That's what we want.
+
+00:06:55.480 --> 00:06:57.840
+So now we've got our polymorphic behavior.
+
+00:06:57.840 --> 00:07:01.400
+So real handy, really easy to do, use it all the time,
+
+00:07:01.400 --> 00:07:04.000
+and it'll save you a lot of grief with debugging.

@@ -1,0 +1,91 @@
+WEBVTT
+
+00:00:05.500 --> 00:00:07.700
+All right. So let's get ready for the challenge.
+
+00:00:07.700 --> 00:00:12.200
+This is a pretty simple challenge that's based on one of the problems that we solved in this section.
+
+00:00:12.600 --> 00:00:15.900
+If you recall, we had a problem for Frank's Carpet Cleaning Service,
+
+00:00:15.900 --> 00:00:17.900
+where Frank charged so much per room.
+
+00:00:17.900 --> 00:00:22.000
+Well, this is a little bit different. In this case, Frank has two charges.
+
+00:00:22.300 --> 00:00:24.800
+One for small rooms and one for large rooms.
+
+00:00:24.800 --> 00:00:28.000
+So as you can see here he charges $25 for small rooms
+
+00:00:28.000 --> 00:00:30.000
+and $35 for large rooms.
+
+00:00:30.500 --> 00:00:35.100
+The sales tax rate is still 6% and estimates are still valid for 30 days.
+
+00:00:35.300 --> 00:00:37.740
+So what you need to do here is prompt the user
+
+00:00:37.740 --> 00:00:41.740
+both for how many small rooms they want cleaned and how many large rooms they want cleaned
+
+00:00:41.740 --> 00:00:44.040
+and then provide an estimate that looks something like this.
+
+00:00:44.840 --> 00:00:48.200
+Number of small rooms, for example, 3, number of large rooms 1.
+
+00:00:48.200 --> 00:00:52.560
+Price per small room $25, price per large room $35.
+
+00:00:52.560 --> 00:00:56.860
+Calculate the cost. Calculate the tax and then come up with a total estimate
+
+00:00:56.860 --> 00:00:59.360
+and tell them that the estimate is valid for 30 days.
+
+00:00:59.360 --> 00:01:03.020
+Okay. So hopefully that makes a lot of sense. And here's a sample run
+
+00:01:03.020 --> 00:01:04.320
+that you can see.
+
+00:01:04.320 --> 00:01:08.820
+So here, hello welcome to Frank's Carpet Cleaning Service. How many small rooms would you like clean?
+
+00:01:08.820 --> 00:01:13.180
+Let's say I want 3 small rooms cleaned and 1 large room clean.
+
+00:01:14.080 --> 00:01:17.380
+And you can see here the estimate is number of small rooms 3,
+
+00:01:17.380 --> 00:01:20.380
+number of large rooms 1- that's what I just typed in -
+
+00:01:20.380 --> 00:01:22.680
+the price per small rooms is $25,
+
+00:01:22.680 --> 00:01:26.580
+the price per large room is $35 and the cost is $110.
+
+00:01:26.580 --> 00:01:30.780
+if you do the math, you can see that 3 x 25 is 75
+
+00:01:30.780 --> 00:01:35.580
+plus 35 is 110. 6% of that is $6.60.
+
+00:01:35.580 --> 00:01:39.140
+If you add it all together you get a $116.60.
+
+00:01:39.140 --> 00:01:42.140
+And then you display, "This estimate is valid for 30 days".
+
+00:01:42.140 --> 00:01:46.040
+All right. So give it a shot, take your time. I'm sure you'll do it just fine.
+
+00:01:46.040 --> 00:01:50.140
+If you want to see the solution, in the next video, I'll present my solution to this problem.

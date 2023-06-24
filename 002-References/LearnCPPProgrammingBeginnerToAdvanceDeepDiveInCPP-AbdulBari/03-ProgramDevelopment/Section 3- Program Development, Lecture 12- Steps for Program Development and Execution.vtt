@@ -1,0 +1,761 @@
+WEBVTT
+
+0
+00:00.350 --> 00:02.090
+this is a important video.here we will
+
+1
+00:02.090 --> 00:09.900
+the steps involved in development and execution of a program so development and execution of a
+
+2
+00:09.900 --> 00:10.280
+program.
+
+3
+00:10.310 --> 00:13.360
+So what are the steps we will learn about those steps in detail.
+
+4
+00:13.590 --> 00:18.520
+So we will not be learning again and again but we will be using these steps every time when we are writing
+
+5
+00:18.520 --> 00:19.130
+an program.
+
+6
+00:19.980 --> 00:24.290
+So what are the steps involve let us see. first step is editing.
+
+7
+00:24.360 --> 00:29.160
+Second is compiling third linking libraries then loading and execution.
+
+8
+00:29.870 --> 00:32.940
+So let us pick up the first one.
+
+9
+00:33.830 --> 00:35.300
+So let us pick up the first one.
+
+10
+00:35.390 --> 00:42.890
+Editing means typing a program. where do you type the program so you can type a program in any text editor but
+
+11
+00:42.950 --> 00:47.180
+after typing you have to compile link and also you will be executing.
+
+12
+00:47.180 --> 00:48.180
+So that is difficult.
+
+13
+00:48.650 --> 00:56.780
+So we want all these things at one place editing a program compiling a program linking libraries loading
+
+14
+00:56.780 --> 01:00.260
+and execution all these should be together at one place.
+
+15
+01:00.290 --> 01:01.720
+So what is that place.
+
+16
+01:01.730 --> 01:08.180
+So the softwares are available for performing all these things together at one place those software are
+
+17
+01:08.180 --> 01:17.030
+called as I D E integrated development environment development involves these things so integrated means
+
+18
+01:17.030 --> 01:19.710
+all these things together at one place.
+
+19
+01:19.880 --> 01:26.960
+So I.DE is out there so we use IDE for programming whether it is C language C++ Java any language
+
+20
+01:26.960 --> 01:33.140
+we use I.DE. so for every language there is a different IDE available and some IDE are there for all
+
+21
+01:33.140 --> 01:34.490
+programming languages.
+
+22
+01:34.500 --> 01:41.650
+So to name a few ideas for C++ we have I.DE. that is turbo C++.
+
+23
+01:41.720 --> 01:45.050
+This works for C language as well as a C++.
+
+24
+01:45.050 --> 01:48.530
+Then we have devC++, Dev CPB.
+
+25
+01:48.770 --> 01:57.410
+This also for C++ as well as C languages both the languages which supports right and Xcode, codeblocks
+
+26
+01:58.190 --> 02:01.450
+and Eclipse, visual studio.
+
+27
+02:03.050 --> 02:05.870
+This is from Microsoft.
+
+28
+02:06.170 --> 02:13.250
+So so on. SO many IDE are available these are available provided by different software vendor.
+
+29
+02:13.250 --> 02:18.860
+So software development companies they have their own version of IDE whichever what you are comfortable
+
+30
+02:18.860 --> 02:24.440
+you can use that if you are very new to programming then you can select Dev C++ right.
+
+31
+02:24.580 --> 02:31.760
+And if you're using Mac machine then you can go for X code ot codeblocks you can use any of these
+
+32
+02:31.850 --> 02:33.760
+IDE which are what you work on.
+
+33
+02:33.830 --> 02:34.300
+Right.
+
+34
+02:34.340 --> 02:41.830
+Mostly in India in colleges they use Turbo C++ for teaching C C++ programming.
+
+35
+02:41.840 --> 02:44.360
+The students in the college laboratory.
+
+36
+02:44.360 --> 02:48.060
+They use this one or else they use a Linux upon Linux.
+
+37
+02:48.070 --> 02:49.970
+Also you can use the GCC compiler.
+
+38
+02:51.080 --> 02:53.860
+I am using x code in my course.
+
+39
+02:53.930 --> 02:58.660
+The reason of using x Code is is easy for explanation purpose right.
+
+40
+02:59.210 --> 03:07.240
+But in the next section you will find how to install all these things not a few more things when you
+
+41
+03:07.240 --> 03:09.260
+install any one of these.
+
+42
+03:09.370 --> 03:17.310
+You will also get A compiler along with that or in some cases for some I.D. You have to install compilers
+
+43
+03:17.310 --> 03:23.370
+separately IDE separate compilers separate and you have to integrate that compiler with the IDE .
+
+44
+03:23.590 --> 03:29.720
+You have to do it and in some cases when you install IDEit will also install compiler.
+
+45
+03:30.340 --> 03:36.250
+So setup an installation part is shown in the next section so from there you can learn and you can set
+
+46
+03:36.250 --> 03:38.220
+up your own environment for development.
+
+47
+03:38.800 --> 03:42.310
+So in that IDE write the program.
+
+48
+03:42.340 --> 03:45.220
+So example program already you have taken here.
+
+49
+03:45.220 --> 03:48.420
+Suppose I have written the program so editing is over.
+
+50
+03:48.670 --> 03:52.280
+So we have finished  with editing now next compiling.
+
+51
+03:52.660 --> 03:58.780
+I'll remove this next step is compiling suppose I have written this program I'm not going to explaining
+
+52
+03:58.820 --> 04:02.000
+the program so this will be going in the next section.
+
+53
+04:02.000 --> 04:04.960
+So just a program is there, a C++ program.
+
+54
+04:05.210 --> 04:11.970
+Suppose I have written the program and file name is first.cpp this is a C++ program
+
+55
+04:11.980 --> 04:12.310
+file
+
+56
+04:13.030 --> 04:17.110
+If I type this in IDE edit it I should save it.
+
+57
+04:17.260 --> 04:19.660
+So if it is saved then it will be on the hard disk
+
+58
+04:19.660 --> 04:21.810
+So here it is on the hard disk.
+
+59
+04:22.180 --> 04:25.970
+So I have written a program so it is saved in a file.
+
+60
+04:26.020 --> 04:34.310
+that is first.cpp so there's a source code and c++ compiler based language.
+
+61
+04:34.330 --> 04:40.900
+So next thing to have to do compile it so if I call the compiler from IDE options will be available
+
+62
+04:40.910 --> 04:47.260
+you can call the compiler and if you call the compiler compiler will convert this into machine code
+
+63
+04:47.500 --> 04:56.140
+and let us say it gives first.exe file on window Based machine that EXE extension depends on Windows
+
+64
+04:56.140 --> 04:57.060
+based machine.
+
+65
+04:57.100 --> 05:01.800
+Most of the user who use Windows so I'm using extension.exe.
+
+66
+05:01.930 --> 05:03.410
+It means executable file.
+
+67
+05:03.820 --> 05:08.330
+Now how that exe file looks like see in my program there are two pieces.
+
+68
+05:08.380 --> 05:14.320
+One is a function called Max and another is a function called main and at the end inside main and I should have
+
+69
+05:14.350 --> 05:16.580
+written zero because it is returning.
+
+70
+05:16.660 --> 05:22.540
+So there are two functions max function and main function so machine codelooks like this.
+
+71
+05:22.540 --> 05:25.530
+This is Max function machine code of Max.
+
+72
+05:25.780 --> 05:28.930
+And this is main function machine code of main.
+
+73
+05:29.920 --> 05:34.930
+So two pieces of code will be there that this is a separate file.
+
+74
+05:34.960 --> 05:42.180
+So here are file will be stored on the hard disk that is first.exe and this is a machine code
+
+75
+05:42.210 --> 05:42.700
+file.
+
+76
+05:43.330 --> 05:49.000
+Let us say that is generated who generated that Compiler, Compiler will convert this .
+
+77
+05:49.160 --> 05:50.860
+If there are no errors here.
+
+78
+05:50.950 --> 05:55.010
+If there are any errors it will highlight and show you the errors and ask you to remove them.
+
+79
+05:55.120 --> 05:58.060
+If you have removed them perfectly then you get that file.
+
+80
+05:58.730 --> 06:01.140
+So compilation is over now.
+
+81
+06:01.150 --> 06:05.620
+Next thing this is a during compilation along with the compilation only.
+
+82
+06:05.800 --> 06:06.470
+This is over.
+
+83
+06:06.580 --> 06:09.370
+Now we will pickup this linking of library.
+
+84
+06:09.460 --> 06:12.700
+What is this ? see for writing the programs.
+
+85
+06:12.730 --> 06:17.910
+We need a lot of things that are actually available inside the language.
+
+86
+06:17.950 --> 06:24.160
+So language provide some built in  code element code that makes it easy for us to write the programs.
+
+87
+06:24.160 --> 06:30.010
+If that ready made code is not there then you have to do a lot of work before even doing a smaller task
+
+88
+06:30.280 --> 06:35.630
+like one thing as a reading something from the keyboard  or printing something on the monitor.
+
+89
+06:35.740 --> 06:36.170
+Right.
+
+90
+06:36.250 --> 06:37.670
+Saving something in a file.
+
+91
+06:38.080 --> 06:43.330
+So in mathematical operations like the Cos and sin. log calculating these things.
+
+92
+06:43.450 --> 06:51.920
+So for various operation build in functions or classes are available in C++ that are available in header
+
+93
+06:51.950 --> 06:55.390
+files or library files.
+
+94
+06:55.450 --> 07:00.580
+So there's a header file we include and supporting with this one is a library file that is having
+
+95
+07:00.580 --> 07:03.070
+the machine code readily available.
+
+96
+07:04.460 --> 07:06.690
+So let me show you here in my program.
+
+97
+07:06.770 --> 07:09.610
+See all these things are my own means.
+
+98
+07:09.650 --> 07:10.840
+I have defined them.
+
+99
+07:11.060 --> 07:13.740
+Then what does this c out std, c out.
+
+100
+07:13.910 --> 07:18.170
+this is a build in object level  in C++ that is useful for printing.
+
+101
+07:18.170 --> 07:22.100
+If you look inside the main function these are the variables.
+
+102
+07:22.100 --> 07:24.260
+This is a max function where is Max.
+
+103
+07:24.290 --> 07:27.030
+Here is Max then C already C out.
+
+104
+07:27.030 --> 07:28.540
+It is there iostream.
+
+105
+07:28.550 --> 07:34.410
+I have included it so machine code for that C out should also be included right.
+
+106
+07:34.430 --> 07:39.720
+So yes that will also be included in my first.exe.
+
+107
+07:39.740 --> 07:45.040
+This is the machine code for c out machine code for c in and many more.
+
+108
+07:45.050 --> 07:52.370
+Whatever available here iosteam.h so iostream is the header file  and that is
+
+109
+07:52.370 --> 07:54.390
+supported by Library file.
+
+110
+07:54.770 --> 07:59.480
+So when you are using the library means the machine code of the library will be copied in
+
+111
+07:59.480 --> 08:01.550
+your exe file.
+
+112
+08:02.420 --> 08:03.310
+That's it.
+
+113
+08:03.320 --> 08:09.530
+So this process is called us linking of libraries that libraries link with your program.
+
+114
+08:09.830 --> 08:13.860
+So link means file is not linked the contend is so far copied in here.
+
+115
+08:13.900 --> 08:19.760
+EXE file and this is one of the important thing  which ever the function that you're using their machine
+
+116
+08:19.760 --> 08:22.220
+code will be copied in your file.
+
+117
+08:22.250 --> 08:26.640
+Actually the header file you use entire header if I will be copied it fine.
+
+118
+08:26.930 --> 08:29.150
+So we should be careful if you're not using.
+
+119
+08:29.150 --> 08:31.920
+Don't include the header files.
+
+120
+08:32.060 --> 08:32.690
+This is all.
+
+121
+08:33.050 --> 08:35.040
+So now the exe is ready.
+
+122
+08:35.210 --> 08:40.670
+This is done after the compilation along with the compilation process everything is already there.
+
+123
+08:40.670 --> 08:40.970
+Right.
+
+124
+08:41.930 --> 08:42.560
+Now.
+
+125
+08:42.830 --> 08:46.730
+File is already exe program is ready so till here.
+
+126
+08:46.750 --> 08:48.250
+Development work is over.
+
+127
+08:48.520 --> 08:51.300
+So this is development closed.
+
+128
+08:51.760 --> 08:55.870
+Now 2 steps for execution booster for execution.
+
+129
+08:55.870 --> 08:59.720
+Now I want to run the program so far running the program.
+
+130
+08:59.830 --> 09:05.380
+First of all this exefile the content that is machine code should be brought into the main memory.
+
+131
+09:05.380 --> 09:09.990
+I've been telling you this in the previous videos also so it should be brought into the main memory.
+
+132
+09:10.090 --> 09:11.650
+So does this is the main memory.
+
+133
+09:11.650 --> 09:18.580
+So this main memory we will study a little bit that main memory is divided in two three logical sections
+
+134
+09:18.700 --> 09:19.560
+and it is used.
+
+135
+09:20.350 --> 09:23.560
+So there are three Section One is the code section.
+
+136
+09:23.560 --> 09:29.650
+Another one is a stack from the top and this middle one is a heap so it is divided into three sections
+
+137
+09:30.550 --> 09:33.640
+sometimes for explanation I write stock here and him.
+
+138
+09:33.730 --> 09:36.670
+So basically there are three sections right  where there they are.
+
+139
+09:36.670 --> 09:37.430
+That is a different thing.
+
+140
+09:38.050 --> 09:41.770
+So let us see how it will run. for running the program.
+
+141
+09:41.770 --> 09:47.540
+This program code machine code has to be brought into the main memory which area code section.
+
+142
+09:47.540 --> 09:54.260
+So all this machine code will be copied in this code section Max machine or main machine code.
+
+143
+09:54.550 --> 09:55.860
+And so on.
+
+144
+09:56.060 --> 09:59.220
+So I don't have space to show all. for that machine code copied.
+
+145
+10:00.100 --> 10:07.840
+This is called us loading bringing up program from hard disk to the main memory for getting it executed
+
+146
+10:07.840 --> 10:09.020
+by CPU.
+
+147
+10:09.040 --> 10:13.570
+This process is called loading bringing it here inside the main memory.
+
+148
+10:13.570 --> 10:14.250
+It's loading.
+
+149
+10:14.260 --> 10:21.940
+So this loading process is also important process and while loading whatever the arrangements are required
+
+150
+10:22.570 --> 10:23.380
+that are done.
+
+151
+10:23.410 --> 10:24.470
+So that arrangement.
+
+152
+10:24.490 --> 10:28.480
+We don't have to go in detail that is called as relocation.
+
+153
+10:28.570 --> 10:35.200
+So all of these things are done by operating system operating system will bring that from
+
+154
+10:35.200 --> 10:37.050
+hard disk to the main memory.
+
+155
+10:37.150 --> 10:42.190
+I'm not showing that in this picture it is that in the memory already  it is that operating system is running
+
+156
+10:42.190 --> 10:45.340
+so it will bring the program into the main memory right.
+
+157
+10:45.610 --> 10:50.830
+Then after bringing it it will ask the CPU to start executing the program from the first line.
+
+158
+10:50.830 --> 10:56.470
+So here is the main function so it will give the address of the main function and CPU will start executing
+
+159
+10:56.470 --> 11:02.470
+that program and that machine code will execute and it will utilize all the functions whatever the machine
+
+160
+11:02.470 --> 11:03.840
+code is it will run
+
+161
+11:05.440 --> 11:07.990
+So that's about execution now.
+
+162
+11:08.080 --> 11:10.060
+Little bit more toward the execution.
+
+163
+11:10.090 --> 11:11.700
+Now last step I'm showing.
+
+164
+11:12.130 --> 11:14.830
+Once the CPU is given their address it will start executing.
+
+165
+11:14.830 --> 11:22.090
+So if you look into the program this is an instruction, instruction this is instruction this is an instruction
+
+166
+11:22.320 --> 11:29.160
+this is an instruction but this ABC is a data variable, X Y are the variable.
+
+167
+11:29.170 --> 11:30.160
+This is variable.
+
+168
+11:30.160 --> 11:31.240
+These are the variables.
+
+169
+11:31.310 --> 11:33.700
+Now for the variables also space should be there.
+
+170
+11:34.000 --> 11:39.030
+So for the variable space is taken here inside stack.
+
+171
+11:39.250 --> 11:42.470
+This is taken inside stack right.
+
+172
+11:42.760 --> 11:50.280
+So those variables will be created inside the stack during execution of a program that are created there
+
+173
+11:50.290 --> 11:51.000
+inside.
+
+174
+11:51.130 --> 11:58.630
+So stack is useful for variable creation and code section is useful for program itself.
+
+175
+11:58.730 --> 12:00.740
+Heap. what is the use of heap.
+
+176
+12:01.060 --> 12:03.420
+It is used for dynamic memory allocation.
+
+177
+12:04.000 --> 12:06.280
+So we are going to learn more about this stack.
+
+178
+12:06.280 --> 12:10.000
+heap and all in later sections we will learn about this in detail.
+
+179
+12:10.000 --> 12:11.250
+This is sufficient here.
+
+180
+12:11.290 --> 12:15.310
+Just the introduction that there is something called stag this something called Code section and heap
+
+181
+12:15.790 --> 12:24.070
+that is sufficient so that's all about the steps for development and execution of a program.
+
+182
+12:24.070 --> 12:30.190
+So this is how a program has developed and executed it now will be using IDEand we will writting .
+
+183
+12:30.190 --> 12:31.460
+the programs.
+
+184
+12:31.600 --> 12:36.480
+This is all behind the scene so we don't see all these things just we type the program in.
+
+185
+12:36.580 --> 12:38.720
+So this is what all happening at the background.
+
+186
+12:39.970 --> 12:44.610
+So that's all in this video and that's all in this section next section.
+
+187
+12:44.620 --> 12:53.490
+As for setting up an IDE how to  install Xcord and chord blocks and devC++.
+
+188
+12:53.500 --> 12:59.370
+I have shown that if you are already aware you already have of environment already have an IDE then
+
+189
+12:59.370 --> 13:02.740
+you can skip that and you can directly start from next section.

@@ -1,0 +1,1760 @@
+﻿WEBVTT
+
+00:00:00.000 --> 00:00:03.540
+Hi everyone, this is Steve Gilbert.
+
+00:00:03.540 --> 00:00:06.740
+Welcome to Lecture 19, where we're going to talk
+
+00:00:06.740 --> 00:00:09.460
+about arrays and pointers.
+
+00:00:09.460 --> 00:00:16.100
+Now, an array is like a vector, except it's built in.
+
+00:00:16.100 --> 00:00:19.280
+So it's a built in derived type.
+
+00:00:19.280 --> 00:00:21.300
+What do we mean by a derived type?
+
+00:00:21.300 --> 00:00:25.620
+A derived type is one that is built from another type.
+
+00:00:25.620 --> 00:00:27.760
+So a pointer is a derived type.
+
+00:00:27.760 --> 00:00:32.020
+You just can't have a raw pointer that is not of any type.
+
+00:00:32.020 --> 00:00:35.260
+It has to be a pointer to an integer or a pointer
+
+00:00:35.260 --> 00:00:37.060
+to a double, and so forth.
+
+00:00:37.060 --> 00:00:39.060
+And an array is the same way.
+
+00:00:39.060 --> 00:00:41.480
+We can't just have an array that collects anything.
+
+00:00:41.480 --> 00:00:45.140
+We have to have an array of int or an array of double.
+
+00:00:45.140 --> 00:00:50.300
+So it's a built in derived type for collecting elements.
+
+00:00:50.300 --> 00:00:54.100
+Now, we use the term array in Java as well,
+
+00:00:54.580 --> 00:00:58.060
+but arrays are quite, quite different in C++.
+
+00:00:58.060 --> 00:01:02.980
+They are much closer to the actual machine type,
+
+00:01:02.980 --> 00:01:07.720
+the way that your CPU works and memory works under the hood.
+
+00:01:07.720 --> 00:01:12.460
+So like the vector, they're a homogeneous collection.
+
+00:01:12.460 --> 00:01:14.220
+All of them has to be the same type.
+
+00:01:14.220 --> 00:01:18.300
+And like a vector, we have continuous storage,
+
+00:01:18.300 --> 00:01:21.580
+contiguous storage, meaning one element right next
+
+00:01:21.580 --> 00:01:24.220
+to each other, and random access,
+
+00:01:24.220 --> 00:01:26.420
+direct access to any element.
+
+00:01:26.420 --> 00:01:30.120
+So let's see how we define an array.
+
+00:01:30.120 --> 00:01:34.120
+So to define an array, we give the base type double,
+
+00:01:34.120 --> 00:01:39.300
+the name of the array, and then in brackets afterwards,
+
+00:01:39.300 --> 00:01:43.480
+the number of elements inside the array.
+
+00:01:43.480 --> 00:01:47.580
+So unlike Java, where you could create an array variable,
+
+00:01:47.580 --> 00:01:52.700
+double nums bracket bracket or double bracket bracket nums,
+
+00:01:52.700 --> 00:01:55.260
+you cannot create an array variable
+
+00:01:55.260 --> 00:01:58.600
+without specifying how many elements you want.
+
+00:01:58.600 --> 00:02:02.260
+And that capacity must be a constant,
+
+00:02:02.260 --> 00:02:05.160
+and it must be known at compile time.
+
+00:02:05.160 --> 00:02:07.080
+Again, this is different than Java.
+
+00:02:07.080 --> 00:02:10.280
+In Java, you could ask the user how big an array,
+
+00:02:10.280 --> 00:02:13.240
+and then you could create a new array with that size.
+
+00:02:13.240 --> 00:02:17.320
+You can't create a regular, what we call a static array,
+
+00:02:17.640 --> 00:02:19.980
+that way in C++.
+
+00:02:19.980 --> 00:02:25.760
+Now, this array definition will allocate an entire block.
+
+00:02:25.760 --> 00:02:31.920
+So int a5, if we put that line inside a function,
+
+00:02:31.920 --> 00:02:35.880
+will allocate a block of five integers on the heap.
+
+00:02:35.880 --> 00:02:39.860
+There is no separate variable that points to this.
+
+00:02:39.860 --> 00:02:44.900
+The address is simply, the name a is simply the address
+
+00:02:44.900 --> 00:02:46.220
+of the first element.
+
+00:02:46.620 --> 00:02:48.760
+There's no additional, what we would call,
+
+00:02:48.760 --> 00:02:51.160
+metadata associated with it.
+
+00:02:51.160 --> 00:02:54.500
+Now, the access is sequential.
+
+00:02:54.500 --> 00:02:59.120
+One right on top of another on the stack, and contiguous.
+
+00:02:59.120 --> 00:03:02.480
+So we can simply go from one to another,
+
+00:03:02.480 --> 00:03:05.160
+simply by using addresses.
+
+00:03:05.160 --> 00:03:09.820
+So if we want the element at 795,
+
+00:03:09.820 --> 00:03:12.540
+we just take the address a,
+
+00:03:13.000 --> 00:03:17.840
+and add 795 times the size of whatever the element is.
+
+00:03:17.840 --> 00:03:20.280
+So the size of int, in this case.
+
+00:03:20.280 --> 00:03:22.660
+And that gives us the address.
+
+00:03:22.660 --> 00:03:25.220
+So it's simple, simple arithmetic.
+
+00:03:25.220 --> 00:03:26.980
+It's very, very fast.
+
+00:03:26.980 --> 00:03:30.060
+And as a matter of fact, it's even faster than it looks like,
+
+00:03:30.060 --> 00:03:35.440
+because your CPU has dedicated address circuits that know how
+
+00:03:35.440 --> 00:03:37.780
+to do these calculations without having to go
+
+00:03:37.780 --> 00:03:39.420
+through the regular addition
+
+00:03:39.420 --> 00:03:42.380
+and multiplication part of the CPU.
+
+00:03:42.860 --> 00:03:46.780
+So there is really no faster way to store data in memory
+
+00:03:46.780 --> 00:03:50.100
+at all than built-in arrays.
+
+00:03:50.100 --> 00:03:57.000
+Now, arrays can be initialized in all versions of C++.
+
+00:03:57.000 --> 00:04:01.380
+And so I can allocate space for four elements,
+
+00:04:01.380 --> 00:04:05.040
+and I can supply values for all four of them.
+
+00:04:05.040 --> 00:04:07.360
+Now, notice this is slightly different than what we did
+
+00:04:07.360 --> 00:04:08.880
+with vectors, because with vectors,
+
+00:04:08.880 --> 00:04:10.700
+we didn't use the equal sign here.
+
+00:04:11.160 --> 00:04:14.280
+The equal sign's required as part of the syntax.
+
+00:04:14.280 --> 00:04:18.100
+So I've allocated and initialized four elements.
+
+00:04:18.100 --> 00:04:22.120
+I can allocate more and only initialize one,
+
+00:04:22.120 --> 00:04:26.700
+in which case the remaining elements will be initialized
+
+00:04:26.700 --> 00:04:28.820
+to zero as well.
+
+00:04:28.820 --> 00:04:31.840
+Now, not because I put zero inside here.
+
+00:04:31.840 --> 00:04:35.140
+If I had to put four, the first element would be initialized
+
+00:04:35.140 --> 00:04:37.920
+to four, and the remaining elements would be initialized
+
+00:04:37.920 --> 00:04:38.880
+to zero.
+
+00:04:40.320 --> 00:04:41.920
+What happens if I do this?
+
+00:04:41.920 --> 00:04:46.240
+Allocate room for three and provide four initializers.
+
+00:04:46.240 --> 00:04:48.640
+Well, C++ won't let you do that,
+
+00:04:48.640 --> 00:04:50.620
+and it simply doesn't compile.
+
+00:04:50.620 --> 00:04:54.060
+How about if I don't allocate any space?
+
+00:04:54.060 --> 00:04:55.380
+I just leave that blank.
+
+00:04:55.380 --> 00:04:57.020
+That's fine as well.
+
+00:04:57.020 --> 00:05:00.980
+C++ will come along, and it will count the number of elements,
+
+00:05:00.980 --> 00:05:04.500
+and it will implicitly fill this three in for you.
+
+00:05:04.500 --> 00:05:08.560
+Now, there's one new thing in C++11.
+
+00:05:08.560 --> 00:05:11.620
+So all versions of C++ work like this.
+
+00:05:11.620 --> 00:05:16.480
+In C++11, you can simply default initialize it just
+
+00:05:16.480 --> 00:05:18.700
+by putting braces after it.
+
+00:05:18.700 --> 00:05:23.840
+If you do not initialize it, the elements are just random.
+
+00:05:23.840 --> 00:05:28.940
+Now, the individual elements are indexed or subscripted,
+
+00:05:28.940 --> 00:05:30.520
+just like they would in a vector,
+
+00:05:30.520 --> 00:05:34.040
+and you access them using the subscript operator.
+
+00:05:34.040 --> 00:05:35.900
+So A and then the subscript.
+
+00:05:36.300 --> 00:05:39.920
+That subscript can go from zero to whatever the capacity
+
+00:05:39.920 --> 00:05:41.520
+of the array is minus one.
+
+00:05:41.520 --> 00:05:48.120
+So if A has four elements, the elements would be zero, one,
+
+00:05:48.120 --> 00:05:50.040
+two, three, capacity is five.
+
+00:05:50.040 --> 00:05:56.620
+What happens with an array if we go out of bounds?
+
+00:05:56.620 --> 00:06:00.480
+We saw with the vector that it was undefined
+
+00:06:00.480 --> 00:06:02.440
+if we use the subscript operator,
+
+00:06:02.800 --> 00:06:05.780
+but we could use V.at three,
+
+00:06:05.780 --> 00:06:08.940
+and we could throw an exception if that happens.
+
+00:06:08.940 --> 00:06:13.040
+There's no thing like that for arrays.
+
+00:06:13.040 --> 00:06:16.520
+If you go out of bounds, you simply get undefined behavior.
+
+00:06:16.520 --> 00:06:19.440
+The program may crash.
+
+00:06:19.440 --> 00:06:21.760
+It may access parts of memory it should not.
+
+00:06:21.760 --> 00:06:25.880
+It may overwrite other variables inside your program.
+
+00:06:25.880 --> 00:06:28.180
+So you don't know what it's going to do.
+
+00:06:28.180 --> 00:06:31.700
+What you do know is that it is never an exception.
+
+00:06:31.920 --> 00:06:33.400
+It is never an exception.
+
+00:06:33.400 --> 00:06:38.040
+C++ does not throw exceptions for out of bounds.
+
+00:06:38.040 --> 00:06:40.740
+You may get a segmentation fault, as I said,
+
+00:06:40.740 --> 00:06:43.940
+if the area you're reading and writing to is outside the
+
+00:06:43.940 --> 00:06:46.920
+segment that the operating system allows you to write to,
+
+00:06:46.920 --> 00:06:51.160
+or you may simply overwrite other variables
+
+00:06:51.160 --> 00:06:52.140
+in your own program.
+
+00:06:52.140 --> 00:06:57.820
+Now, there's no array variable like there is in Java.
+
+00:06:57.820 --> 00:07:01.760
+So this is what an array would look like in Java.
+
+00:07:02.360 --> 00:07:05.700
+We create an array variable, and then we'd create
+
+00:07:05.700 --> 00:07:09.980
+or allocate room for 10 arrays, or 10 ints.
+
+00:07:09.980 --> 00:07:12.020
+The 10 ints would be on the heap.
+
+00:07:12.020 --> 00:07:13.220
+That would be the array,
+
+00:07:13.220 --> 00:07:16.580
+and the variable would be separate from the array.
+
+00:07:16.580 --> 00:07:18.820
+That doesn't happen in Java.
+
+00:07:18.820 --> 00:07:22.160
+There's not these two parts with a variable and an array.
+
+00:07:22.160 --> 00:07:25.620
+Instead, or that doesn't happen in C++.
+
+00:07:25.620 --> 00:07:26.260
+Excuse me.
+
+00:07:27.140 --> 00:07:31.020
+Instead, in C++, the array name acts
+
+00:07:31.020 --> 00:07:33.240
+like a constant pointer or literal.
+
+00:07:33.240 --> 00:07:36.840
+Because of that, because there is no array variable,
+
+00:07:36.840 --> 00:07:40.920
+you can't assign or compare using array names.
+
+00:07:40.920 --> 00:07:43.760
+So here I have two arrays.
+
+00:07:43.760 --> 00:07:46.180
+A1 has three elements.
+
+00:07:46.180 --> 00:07:47.940
+It's initialized, 2, 3, 4.
+
+00:07:47.940 --> 00:07:51.260
+A2 also has three elements of the same type,
+
+00:07:51.260 --> 00:07:53.060
+but they're uninitialized.
+
+00:07:53.620 --> 00:07:58.680
+Could I initialize A2 by simply assigning A1?
+
+00:07:58.680 --> 00:08:00.120
+No, you cannot.
+
+00:08:00.120 --> 00:08:03.120
+A2 and A1 are addresses.
+
+00:08:03.120 --> 00:08:07.000
+Imagine it's address 1,000 and 2,000.
+
+00:08:07.000 --> 00:08:11.560
+That's like writing 2,000 equals 1,000.
+
+00:08:11.560 --> 00:08:14.840
+Again, in your code, you can see why that wouldn't compile.
+
+00:08:14.840 --> 00:08:18.600
+It is okay, of course, to assign
+
+00:08:18.600 --> 00:08:21.260
+to different arrays using the elements
+
+00:08:21.260 --> 00:08:23.060
+or the subscripted name.
+
+00:08:23.580 --> 00:08:28.040
+So we could say A2 sub 0 equals A1 sub 0.
+
+00:08:28.040 --> 00:08:30.360
+And you could write a loop that would go through
+
+00:08:30.360 --> 00:08:31.820
+and assign each of those.
+
+00:08:31.820 --> 00:08:36.440
+You might think, well, you notice on the first line there,
+
+00:08:36.440 --> 00:08:39.900
+I could assign to A1 using these braces,
+
+00:08:39.900 --> 00:08:41.700
+what we call an initializer list.
+
+00:08:41.700 --> 00:08:44.440
+Can I do that to assign to A2?
+
+00:08:44.440 --> 00:08:48.480
+No. You can only do that when you're initializing the thing.
+
+00:08:48.480 --> 00:08:51.360
+You cannot use it for assignment later.
+
+00:08:51.360 --> 00:08:53.160
+That simply doesn't work.
+
+00:08:53.660 --> 00:08:55.720
+Finally, you can do this.
+
+00:08:55.720 --> 00:09:00.640
+If A2 equals equals A3, okay, well,
+
+00:09:00.640 --> 00:09:02.220
+actually I don't have an A3 here.
+
+00:09:02.220 --> 00:09:06.100
+It probably should say if A1 equals equals A2.
+
+00:09:06.100 --> 00:09:09.320
+But both of those would be perfectly legal.
+
+00:09:09.320 --> 00:09:13.500
+They will compile, but they are really not very smart.
+
+00:09:13.500 --> 00:09:17.900
+That's because, again, A1 and A2 are different arrays.
+
+00:09:17.900 --> 00:09:22.860
+That means all A1 and A2 are are addresses.
+
+00:09:23.340 --> 00:09:26.660
+So we're not comparing what's at those addresses to see
+
+00:09:26.660 --> 00:09:27.480
+if they're the same.
+
+00:09:27.480 --> 00:09:29.880
+We're comparing the addresses themselves.
+
+00:09:29.880 --> 00:09:33.160
+So address 1000 is never, never,
+
+00:09:33.160 --> 00:09:36.460
+ever going to be equal to address 2000.
+
+00:09:36.460 --> 00:09:38.480
+By definition, that's false.
+
+00:09:38.480 --> 00:09:43.240
+So the compiler can't check things
+
+00:09:43.240 --> 00:09:45.200
+that simply don't make sense that way.
+
+00:09:45.200 --> 00:09:47.640
+It can only check things that are illegal.
+
+00:09:50.400 --> 00:09:55.300
+Now, the array does not carry around its size like a vector.
+
+00:09:55.300 --> 00:09:59.040
+As I mentioned, there is no metadata associated
+
+00:09:59.040 --> 00:10:01.360
+with an array like there is with a vector.
+
+00:10:01.360 --> 00:10:05.880
+There is no A dot length data member or field
+
+00:10:05.880 --> 00:10:07.880
+as there is with Java arrays.
+
+00:10:07.880 --> 00:10:11.440
+Now, the compiler knows the size of an array
+
+00:10:11.440 --> 00:10:13.040
+when it's declared, however.
+
+00:10:13.040 --> 00:10:17.660
+And so if you're in scope of that declaration,
+
+00:10:18.300 --> 00:10:21.280
+the compiler knows that information.
+
+00:10:21.280 --> 00:10:26.860
+So I can find out in scope, here I've created an array A,
+
+00:10:26.860 --> 00:10:32.660
+I can find the size of this declaration in bytes if I'm
+
+00:10:32.660 --> 00:10:34.920
+in the scope of this declaration.
+
+00:10:34.920 --> 00:10:38.800
+And if I want to find the number of elements,
+
+00:10:38.800 --> 00:10:44.380
+all I do is divide the size of the whole array by the size
+
+00:10:44.380 --> 00:10:45.400
+of the first element.
+
+00:10:45.800 --> 00:10:49.180
+And since they're all the same size by definition,
+
+00:10:49.180 --> 00:10:52.900
+this will give me the number of elements in the array.
+
+00:10:52.900 --> 00:10:57.100
+But again, only in scope.
+
+00:10:57.100 --> 00:11:00.900
+C++11 added a new way to do that.
+
+00:11:00.900 --> 00:11:06.060
+We can take the array and pass it to end and subtract begin
+
+00:11:06.060 --> 00:11:09.300
+from it, and that will give us the number of elements.
+
+00:11:09.300 --> 00:11:12.320
+And finally, in C++14,
+
+00:11:12.660 --> 00:11:16.200
+they had a new function simply called size
+
+00:11:16.200 --> 00:11:18.780
+that will also work on arrays.
+
+00:11:18.780 --> 00:11:22.160
+So you could pass A to standard size,
+
+00:11:22.160 --> 00:11:25.500
+and you could get back the number of elements in the array.
+
+00:11:25.500 --> 00:11:29.100
+Again, I want to stress this, this only works
+
+00:11:29.100 --> 00:11:30.600
+when the array is in scope,
+
+00:11:30.600 --> 00:11:33.820
+not when you've passed the array to a function.
+
+00:11:33.820 --> 00:11:38.400
+All right.
+
+00:11:38.400 --> 00:11:43.320
+So how -- if we have an array, it doesn't have any metadata,
+
+00:11:43.320 --> 00:11:47.040
+it doesn't know how long the function is,
+
+00:11:47.040 --> 00:11:49.560
+it doesn't have a size member function,
+
+00:11:49.560 --> 00:11:53.300
+it doesn't have a length data member, how does the loop know
+
+00:11:53.300 --> 00:11:58.320
+how to stop in your function if when you pass the array
+
+00:11:58.320 --> 00:12:02.140
+to a function, the only thing the function gets is the address
+
+00:12:02.140 --> 00:12:03.260
+of the first element?
+
+00:12:05.120 --> 00:12:09.200
+Well, number first method, we could pass the allocated
+
+00:12:09.200 --> 00:12:12.700
+or maximum size along with the address.
+
+00:12:12.700 --> 00:12:15.920
+Method two, we could use a sentinel
+
+00:12:15.920 --> 00:12:18.420
+to mark the end of the array.
+
+00:12:18.420 --> 00:12:23.380
+Number three, we could calculate a pointer to the end,
+
+00:12:23.380 --> 00:12:26.660
+and we could pass that pointer to the end as well
+
+00:12:26.660 --> 00:12:28.380
+and write an iterator loop.
+
+00:12:28.380 --> 00:12:32.280
+We could pass -- use the begin and end iterators
+
+00:12:32.280 --> 00:12:36.080
+and pass those instead of the address of the first element.
+
+00:12:36.080 --> 00:12:40.000
+Or finally, inside the scope of the array
+
+00:12:40.000 --> 00:12:43.320
+where it's declared, we can use a for each loop.
+
+00:12:43.320 --> 00:12:47.680
+So we're going to do that in our only exercise today.
+
+00:12:47.680 --> 00:12:52.700
+We're going to create some arrays, and we're going
+
+00:12:52.700 --> 00:12:53.980
+to loop through them.
+
+00:12:53.980 --> 00:12:58.800
+So go ahead and open arrays.cpp in your workspace,
+
+00:12:58.800 --> 00:13:01.820
+and then let's create five arrays.
+
+00:13:02.260 --> 00:13:05.120
+A three-element int, a four-element char,
+
+00:13:05.120 --> 00:13:08.500
+a five-element long, a six-element float,
+
+00:13:08.500 --> 00:13:11.220
+and a seven-element double.
+
+00:13:11.220 --> 00:13:18.220
+Okay. So I've got arrays.cpp open over here,
+
+00:13:18.220 --> 00:13:21.460
+and I want to create my arrays.
+
+00:13:21.460 --> 00:13:25.860
+So I can -- first for my three-element int,
+
+00:13:26.460 --> 00:13:35.920
+I could do const int iSize -- I'll do it like this --
+
+00:13:35.920 --> 00:13:48.020
+k iSize equals three.
+
+00:13:48.880 --> 00:13:56.480
+And then I could do int integer array IA equals kSize.
+
+00:13:56.480 --> 00:14:08.080
+Now, what would happen -- what would happen if I were
+
+00:14:08.080 --> 00:14:11.640
+to take off this const in front of this, if I were to take off
+
+00:14:11.640 --> 00:14:13.480
+that const in front of it?
+
+00:14:13.480 --> 00:14:15.620
+First, let's do make on this.
+
+00:14:16.460 --> 00:14:19.580
+Let me make my shell so I'm over in that folder, of course.
+
+00:14:19.580 --> 00:14:31.320
+Okay. So I'm in A, and that's k iSize.
+
+00:14:31.320 --> 00:14:38.000
+So that was giving me an error because I had spelled that wrong.
+
+00:14:38.000 --> 00:14:44.600
+So make, and I don't have any problems with that at all.
+
+00:14:44.880 --> 00:14:49.240
+Okay. Now I'm going to remove the int from this,
+
+00:14:49.240 --> 00:14:51.460
+const from that, and try it again.
+
+00:14:51.460 --> 00:14:58.720
+And you will probably find that it will compile.
+
+00:14:58.720 --> 00:15:01.420
+Okay. That's because most --
+
+00:15:01.420 --> 00:15:04.800
+and if we were doing this in Visual Studio,
+
+00:15:04.800 --> 00:15:05.940
+it would not compile.
+
+00:15:05.940 --> 00:15:09.420
+Visual Studio would be correct in that case.
+
+00:15:09.420 --> 00:15:13.300
+What I can do over here is open up my make file
+
+00:15:14.200 --> 00:15:17.360
+and add an extra flag on the flags, and say I want
+
+00:15:17.360 --> 00:15:22.300
+to make this pedantic, and that will ensure
+
+00:15:22.300 --> 00:15:25.460
+that it only uses the C++ standard.
+
+00:15:25.460 --> 00:15:33.360
+Now when I do make, notice it says ISO C++ forbids an area --
+
+00:15:33.360 --> 00:15:37.980
+a variable length array IA.
+
+00:15:37.980 --> 00:15:42.060
+So this needs to be const to be correct,
+
+00:15:43.240 --> 00:15:46.960
+even if in some compilers you can get away with it.
+
+00:15:46.960 --> 00:15:49.580
+In some compilers you can get away with it.
+
+00:15:49.580 --> 00:15:53.540
+But since it's not really correct according
+
+00:15:53.540 --> 00:15:55.720
+to the language, you shouldn't do it.
+
+00:15:55.720 --> 00:15:58.280
+So we could create an array like this.
+
+00:15:58.280 --> 00:16:01.940
+This is uninitialized.
+
+00:16:01.940 --> 00:16:07.960
+So let's create an array with four chars.
+
+00:16:08.040 --> 00:16:17.180
+So char CA, and put the brackets there
+
+00:16:17.180 --> 00:16:19.040
+and initialize it like this.
+
+00:16:19.040 --> 00:16:22.660
+Brace brace semicolon.
+
+00:16:22.660 --> 00:16:33.860
+C -- hold on, I'm having a hard time getting my fingers
+
+00:16:33.860 --> 00:16:34.900
+on the right keys here.
+
+00:16:35.480 --> 00:16:43.560
+A P -- and I'm going to put a terminator in here, a sentinel,
+
+00:16:43.560 --> 00:16:46.600
+that we're going to look for when we process
+
+00:16:46.600 --> 00:16:48.100
+that array, okay?
+
+00:16:48.100 --> 00:16:49.600
+A sentinel, okay?
+
+00:16:49.600 --> 00:16:53.520
+And notice this time I didn't initialize it.
+
+00:16:53.520 --> 00:16:56.700
+We're going to create a five element long.
+
+00:16:56.700 --> 00:16:59.040
+So char LA.
+
+00:16:59.040 --> 00:17:01.880
+You can put in a literal like that.
+
+00:17:04.380 --> 00:17:14.780
+And for our LA we'll do it 10, 20, 30.
+
+00:17:14.780 --> 00:17:22.160
+And we'll find out that there won't be a 40 or 50,
+
+00:17:22.160 --> 00:17:25.260
+it'll just be zeros and zeros for that last one.
+
+00:17:25.260 --> 00:17:27.440
+A six element float.
+
+00:17:27.440 --> 00:17:45.580
+[ Typing ]
+
+00:17:45.580 --> 00:17:47.280
+Okay, now you might notice
+
+00:17:47.280 --> 00:17:50.060
+that these are not floats inside of here, these are doubles.
+
+00:17:50.060 --> 00:17:52.420
+But because this is initialization,
+
+00:17:52.420 --> 00:17:55.680
+this will require a conversion to convert it
+
+00:17:55.680 --> 00:17:56.640
+down to the floats.
+
+00:17:56.640 --> 00:17:58.120
+If you didn't want that conversion,
+
+00:17:58.120 --> 00:18:00.500
+we could make each one a float.
+
+00:18:00.500 --> 00:18:06.720
+[ Typing ]
+
+00:18:06.720 --> 00:18:07.800
+Like that.
+
+00:18:07.800 --> 00:18:12.520
+That's always a better thing, you know,
+
+00:18:12.520 --> 00:18:18.860
+to say in your code exactly what you're trying to do.
+
+00:18:21.080 --> 00:18:24.940
+Okay, and finally we had our double, double DA.
+
+00:18:24.940 --> 00:18:30.660
+And I'm going to use C++11.
+
+00:18:30.660 --> 00:18:36.220
+And just default initialize everything to zero, okay?
+
+00:18:36.220 --> 00:18:38.100
+Everything to zero.
+
+00:18:38.100 --> 00:18:44.720
+All right, let's do make here again on this.
+
+00:18:44.720 --> 00:18:49.160
+And now it compiles without errors.
+
+00:18:49.700 --> 00:18:55.220
+So that's initializing and creating five arrays.
+
+00:18:55.220 --> 00:18:58.940
+Now we're going to print each array using the array name
+
+00:18:58.940 --> 00:19:00.420
+and see what happens.
+
+00:19:00.420 --> 00:19:13.800
+So this is one print using the array name.
+
+00:19:18.420 --> 00:19:19.840
+So I'm going to C out.
+
+00:19:19.840 --> 00:19:22.200
+I'm going to print the array name as well.
+
+00:19:22.200 --> 00:19:26.680
+So I'm going to print IA equals IA.
+
+00:19:26.680 --> 00:19:34.860
+CA equals CA.
+
+00:19:34.860 --> 00:19:41.420
+C out. LA. Oops.
+
+00:19:41.420 --> 00:19:45.100
+LA equals LA.
+
+00:19:47.340 --> 00:19:52.220
+C out. FA equals FA.
+
+00:19:52.220 --> 00:19:55.360
+And C out.
+
+00:19:55.360 --> 00:19:58.060
+DA.
+
+00:19:58.060 --> 00:20:08.220
+DA didn't turn blue.
+
+00:20:08.220 --> 00:20:09.160
+Oh, there it turned blue.
+
+00:20:09.160 --> 00:20:14.460
+Okay. So let's go ahead and do make run.
+
+00:20:14.460 --> 00:20:20.540
+Nothing ran.
+
+00:20:20.540 --> 00:20:22.460
+Oh, I didn't.
+
+00:20:22.460 --> 00:20:30.440
+No. Let me save it and do make once again.
+
+00:20:40.980 --> 00:20:44.540
+Okay. I'm going to pause this while I figure
+
+00:20:44.540 --> 00:20:46.700
+out what's going on right now.
+
+00:20:46.700 --> 00:20:51.280
+Because that doesn't make any sense at all.
+
+00:20:51.280 --> 00:20:54.760
+Oh, no. I don't need to pause it.
+
+00:20:54.760 --> 00:20:58.000
+I just need to look and that my return zero is
+
+00:20:58.000 --> 00:20:59.180
+up there before my print.
+
+00:20:59.180 --> 00:21:01.820
+Which is a bad thing.
+
+00:21:01.820 --> 00:21:07.140
+Okay. So let's do make run.
+
+00:21:08.860 --> 00:21:19.700
+Okay. So IA prints out.
+
+00:21:19.700 --> 00:21:23.340
+IA is simply the address for where I starts.
+
+00:21:23.340 --> 00:21:28.460
+CA doesn't print out the address where the C starts.
+
+00:21:28.460 --> 00:21:30.100
+It prints out cat.
+
+00:21:30.100 --> 00:21:34.940
+LA. So I apparently made a mistake here.
+
+00:21:34.940 --> 00:21:40.600
+LA prints that.
+
+00:21:40.600 --> 00:21:42.220
+FA doesn't appear to be -- oh, no.
+
+00:21:42.220 --> 00:21:43.040
+There's FA.
+
+00:21:43.040 --> 00:21:46.740
+LA prints there and then seems to print a new line at the end.
+
+00:21:46.740 --> 00:21:50.020
+I'm not quite sure why.
+
+00:21:50.020 --> 00:21:52.920
+What did we do with LA?
+
+00:21:52.920 --> 00:21:55.960
+LA we initialized to three elements, right?
+
+00:21:55.960 --> 00:21:58.460
+And it's five long.
+
+00:21:58.460 --> 00:22:04.380
+So I'm not sure why LA is not printing -- oh, you know.
+
+00:22:05.220 --> 00:22:06.340
+I made LA a char.
+
+00:22:06.340 --> 00:22:07.860
+I'm supposed to make it a long.
+
+00:22:07.860 --> 00:22:10.520
+So again, user error here.
+
+00:22:10.520 --> 00:22:12.100
+User error here.
+
+00:22:12.100 --> 00:22:20.300
+Okay. Make run.
+
+00:22:20.300 --> 00:22:28.460
+Okay. So IA, LA, FA, DA, all of those print the address
+
+00:22:28.460 --> 00:22:31.860
+of the first element of the array.
+
+00:22:31.860 --> 00:22:34.100
+CA does not.
+
+00:22:35.060 --> 00:22:41.060
+So to explain why CA does not, look at this piece of code.
+
+00:22:41.060 --> 00:22:47.760
+Okay? What is this quote?
+
+00:22:47.760 --> 00:22:49.280
+Is that a string object?
+
+00:22:49.280 --> 00:22:51.360
+No, it is not a string object.
+
+00:22:51.360 --> 00:22:55.900
+It is an array of characters terminated with a null,
+
+00:22:55.900 --> 00:22:57.180
+what we call a C string.
+
+00:22:57.180 --> 00:23:03.480
+And so C out has an overloaded operator that looks like this
+
+00:23:03.480 --> 00:23:06.720
+or string has an overloaded operator that looks like this.
+
+00:23:06.720 --> 00:23:10.160
+O stream ref operator.
+
+00:23:10.160 --> 00:23:21.600
+O stream ref out const char star S or CS for C string.
+
+00:23:21.600 --> 00:23:25.800
+Okay? So when we pass CA here,
+
+00:23:25.800 --> 00:23:30.440
+what we're doing is we're passing a pointer
+
+00:23:30.440 --> 00:23:34.700
+to a constant character or a pointer to a char.
+
+00:23:34.700 --> 00:23:38.840
+And so it's treating it exactly the same way it treats this.
+
+00:23:38.840 --> 00:23:46.220
+So for all arrays, we will get the address IA, LA, FA, and DA.
+
+00:23:46.220 --> 00:23:50.840
+But for character arrays, we will actually get the sequence
+
+00:23:50.840 --> 00:23:53.000
+of characters that's inside it.
+
+00:23:53.000 --> 00:23:56.020
+What do I do if I want to find out where the address
+
+00:23:56.020 --> 00:23:56.940
+where CA is?
+
+00:23:57.660 --> 00:24:04.760
+What I can do is I can cast this, so static cast void pointer.
+
+00:24:04.760 --> 00:24:08.340
+In other words, a raw pointer to nothing, CA.
+
+00:24:08.340 --> 00:24:17.920
+And now if I run that, make run, notice we'll get the addresses
+
+00:24:17.920 --> 00:24:20.900
+where each of these items are stored in memory.
+
+00:24:20.900 --> 00:24:23.700
+These are all stored in the stack because they're
+
+00:24:23.700 --> 00:24:26.360
+in the local storage.
+
+00:24:26.800 --> 00:24:30.100
+If I had created all of these outside of this function,
+
+00:24:30.100 --> 00:24:32.400
+this global variables, they would be
+
+00:24:32.400 --> 00:24:34.120
+in the static storage area.
+
+00:24:34.120 --> 00:24:36.460
+All right.
+
+00:24:36.460 --> 00:24:37.660
+So we've created them.
+
+00:24:37.660 --> 00:24:41.440
+We've seen that the name of the array is just an address.
+
+00:24:41.440 --> 00:24:44.200
+Now let's print the contents of each array.
+
+00:24:44.200 --> 00:24:46.460
+And I'm going to use five different loops,
+
+00:24:46.460 --> 00:24:49.640
+the five different loops we had on the previous slide.
+
+00:24:49.640 --> 00:24:53.920
+Okay? So let's start.
+
+00:24:54.780 --> 00:25:01.780
+Print the arrays, array contents.
+
+00:25:01.780 --> 00:25:15.920
+And let's start is a traditional loop with size.
+
+00:25:15.920 --> 00:25:19.720
+So I'm going to print IA.
+
+00:25:19.720 --> 00:25:22.300
+We have a constant for IA.
+
+00:25:23.060 --> 00:25:35.220
+So I'm going to say for I equals zero, IIA less than KI size,
+
+00:25:35.220 --> 00:25:38.260
+plus plus I.
+
+00:25:44.700 --> 00:25:52.660
+C out IA. Let me go there.
+
+00:25:52.660 --> 00:26:01.060
+IA at I. And let me just do space.
+
+00:26:01.060 --> 00:26:08.160
+And let me print.
+
+00:26:08.160 --> 00:26:31.860
+[ Typing ]
+
+00:26:31.860 --> 00:26:33.680
+Okay. So let's print.
+
+00:26:33.680 --> 00:26:36.020
+Let's do that first one, make run.
+
+00:26:37.500 --> 00:26:39.160
+And here's our first array.
+
+00:26:39.160 --> 00:26:40.720
+You can see I have three elements.
+
+00:26:40.720 --> 00:26:42.040
+They're uninitialized.
+
+00:26:42.040 --> 00:26:44.560
+So they're just random values.
+
+00:26:44.560 --> 00:26:47.720
+Now notice I didn't use the fence post algorithm here.
+
+00:26:47.720 --> 00:26:50.560
+I used an algorithm where we have a space before
+
+00:26:50.560 --> 00:26:52.260
+and after each element here.
+
+00:26:52.260 --> 00:26:55.700
+And so I didn't need to print the first one separately.
+
+00:26:55.700 --> 00:26:58.820
+I used this fence post for the next ones.
+
+00:27:00.480 --> 00:27:08.080
+So now we're going to do 2B, use a sentinel.
+
+00:27:08.080 --> 00:27:14.720
+Of course, you saw we could just print out the string.
+
+00:27:14.720 --> 00:27:17.160
+But I want to show you how a sentinel works.
+
+00:27:17.160 --> 00:27:20.020
+So here I'll use a sentinel.
+
+00:27:20.020 --> 00:27:27.800
+So I'll say C out CA equals.
+
+00:27:28.640 --> 00:27:30.140
+I use square brackets.
+
+00:27:30.140 --> 00:27:39.660
+[ Typing ]
+
+00:27:39.660 --> 00:27:42.100
+I'll say for.
+
+00:27:42.100 --> 00:27:48.100
+[ Typing ]
+
+00:27:48.100 --> 00:27:54.860
+And here we're going to say CA at I not equal
+
+00:27:54.860 --> 00:27:56.700
+to the null character.
+
+00:27:56.700 --> 00:28:00.960
+So you notice I'm not using size for my bounds at all.
+
+00:28:00.960 --> 00:28:04.860
+I'm using the sentinel in there.
+
+00:28:05.700 --> 00:28:30.720
+[ Typing ]
+
+00:28:31.220 --> 00:28:36.280
+I want actually a space between each one.
+
+00:28:36.280 --> 00:28:37.680
+And we'll print that.
+
+00:28:37.680 --> 00:28:53.240
+[ Typing ]
+
+00:28:53.240 --> 00:28:54.680
+And C out.
+
+00:28:55.220 --> 00:29:05.240
+[ Typing ]
+
+00:29:05.240 --> 00:29:08.680
+Okay. So here's CA using a sentinel loop.
+
+00:29:08.680 --> 00:29:09.980
+Let me clear that.
+
+00:29:09.980 --> 00:29:11.900
+Demake run.
+
+00:29:11.900 --> 00:29:16.440
+So here's CAT.
+
+00:29:16.440 --> 00:29:18.480
+Notice we didn't take the length
+
+00:29:18.480 --> 00:29:20.740
+into consideration at all with CA.
+
+00:29:20.740 --> 00:29:23.080
+We just took into consideration the fact
+
+00:29:23.080 --> 00:29:26.720
+that it contained a terminating character.
+
+00:29:26.720 --> 00:29:28.900
+A sentinel character.
+
+00:29:28.900 --> 00:29:32.760
+Okay. All right.
+
+00:29:32.760 --> 00:29:34.000
+Our third kind of loop.
+
+00:29:34.000 --> 00:29:40.120
+Third kind of loop is calculate a pointer to the end.
+
+00:29:40.120 --> 00:29:44.620
+Okay. And then we're going to use that.
+
+00:29:44.620 --> 00:29:50.640
+[ Typing ]
+
+00:29:50.640 --> 00:29:52.040
+To see.
+
+00:29:52.040 --> 00:30:02.680
+[ Typing ]
+
+00:30:02.680 --> 00:30:06.120
+And we're going to calculate a pointer to the end
+
+00:30:06.120 --> 00:30:09.600
+with the size of it.
+
+00:30:09.600 --> 00:30:13.420
+So this is going to be -- our third one is going
+
+00:30:13.420 --> 00:30:15.500
+to be LA and it's five long.
+
+00:30:15.500 --> 00:30:20.760
+[ Typing ]
+
+00:30:21.260 --> 00:30:22.900
+And so we're going to --
+
+00:30:22.900 --> 00:30:25.280
+[ Typing ]
+
+00:30:25.280 --> 00:30:31.180
+LA equals the opening bracket.
+
+00:30:31.180 --> 00:30:38.720
+And let's actually on this one since I know --
+
+00:30:38.720 --> 00:30:44.500
+[ Typing ]
+
+00:30:44.500 --> 00:30:46.380
+We print the first one up there.
+
+00:30:47.260 --> 00:30:57.280
+[ Typing ]
+
+00:30:57.280 --> 00:30:59.740
+Okay. Now we don't want to go to the size.
+
+00:30:59.740 --> 00:31:12.520
+What we want to do is say for I equals zero, LA plus I.
+
+00:31:15.320 --> 00:31:17.880
+So actually let's create the pointer to it
+
+00:31:17.880 --> 00:31:21.260
+because when we're calling a function we would pass this
+
+00:31:21.260 --> 00:31:22.020
+pointer to it.
+
+00:31:22.020 --> 00:31:33.500
+So I'll say auto end P equals LA plus the size
+
+00:31:33.500 --> 00:31:40.820
+of LA divided by the size of LA sub zero.
+
+00:31:42.020 --> 00:31:45.860
+Okay. So I've calculated a pointer to the end.
+
+00:31:45.860 --> 00:31:50.820
+Okay. I'm going to use a pointer to the beginning.
+
+00:31:50.820 --> 00:32:04.180
+[ Typing ]
+
+00:32:04.680 --> 00:32:20.140
+For a long pointer P equals LA, P less than end P, P plus plus.
+
+00:32:20.140 --> 00:32:32.700
+[ Typing ]
+
+00:32:32.700 --> 00:32:34.140
+LA plus one.
+
+00:32:35.140 --> 00:32:56.160
+[ Typing ]
+
+00:32:56.160 --> 00:32:58.080
+Oh, not an end.
+
+00:32:58.080 --> 00:33:00.180
+Okay. Not an end.
+
+00:33:00.180 --> 00:33:03.940
+Okay. So here we're just using pointers, right,
+
+00:33:03.940 --> 00:33:06.920
+a pointer to the beginning and a pointer to the end.
+
+00:33:06.920 --> 00:33:09.440
+And we calculate that pointer to the end
+
+00:33:09.440 --> 00:33:12.580
+by taking the size of LA, its allocated size,
+
+00:33:12.580 --> 00:33:14.980
+divided by the size of the first element
+
+00:33:14.980 --> 00:33:16.600
+which gives us the number of elements.
+
+00:33:16.600 --> 00:33:19.460
+This will give us a pointer right past the end.
+
+00:33:19.460 --> 00:33:24.800
+And we'll see how square bracket ends up.
+
+00:33:24.800 --> 00:33:31.100
+Okay. Let's try that third one.
+
+00:33:31.600 --> 00:33:38.240
+I have end there instead of P end or end P.
+
+00:33:38.240 --> 00:33:52.820
+[ Typing ]
+
+00:33:52.820 --> 00:33:55.860
+Okay. And then we got our 10, 20, 30.
+
+00:33:55.860 --> 00:33:59.180
+And as I mentioned, we only initialized the first three
+
+00:33:59.180 --> 00:34:01.160
+so the last two are initialized to zero.
+
+00:34:01.600 --> 00:34:05.620
+Unlike this one up here where everything is uninitialized.
+
+00:34:05.620 --> 00:34:07.280
+Everything is uninitialized.
+
+00:34:07.280 --> 00:34:10.980
+Okay. Okay.
+
+00:34:10.980 --> 00:34:13.020
+So that was 2C for 2D.
+
+00:34:13.020 --> 00:34:21.100
+[ Typing ]
+
+00:34:21.100 --> 00:34:23.040
+We can just use iterators.
+
+00:34:23.040 --> 00:34:29.000
+[ Typing ]
+
+00:34:29.500 --> 00:34:32.080
+Let's see how FA.
+
+00:34:32.080 --> 00:34:44.860
+[ Typing ]
+
+00:34:44.860 --> 00:34:52.280
+And we'll do star, begin, FA.
+
+00:34:52.280 --> 00:34:55.240
+Print out the first element.
+
+00:34:56.100 --> 00:35:04.020
+[ Typing ]
+
+00:35:04.020 --> 00:35:12.900
+For auto iter equals begin FA plus 1.
+
+00:35:12.900 --> 00:35:21.800
+Iter not equal to end FA plus plus iter.
+
+00:35:23.100 --> 00:35:41.620
+[ Typing ]
+
+00:35:41.620 --> 00:35:43.420
+And for 2E.
+
+00:35:43.420 --> 00:35:47.440
+[ Typing ]
+
+00:35:47.940 --> 00:35:53.120
+Now all of these will work inside a function
+
+00:35:53.120 --> 00:35:55.900
+if you pass the arguments.
+
+00:35:55.900 --> 00:36:00.360
+If you pass up here the size as an argument.
+
+00:36:00.360 --> 00:36:03.040
+This you don't need to pass anything.
+
+00:36:03.040 --> 00:36:05.040
+If it's got a terminator in it, you're fine.
+
+00:36:05.040 --> 00:36:05.860
+A sentinel in it.
+
+00:36:05.860 --> 00:36:10.880
+This you would have to pass this second argument, the end pointer.
+
+00:36:10.880 --> 00:36:15.760
+This you'd have to pass both begin and end to the function
+
+00:36:15.760 --> 00:36:17.520
+to do your calculation.
+
+00:36:18.000 --> 00:36:21.280
+And for this one, only works inside a loop.
+
+00:36:21.280 --> 00:36:23.340
+This one would not work inside a function.
+
+00:36:23.340 --> 00:36:30.980
+So this is the range for loop.
+
+00:36:30.980 --> 00:36:32.620
+Okay.
+
+00:36:32.620 --> 00:36:36.460
+[ Typing ]
+
+00:36:36.460 --> 00:36:38.780
+So this is a little harder.
+
+00:36:39.600 --> 00:36:51.600
+If we want to do -- this is going to be DA equals square bracket.
+
+00:36:51.600 --> 00:36:58.400
+And we're going to do DA sub zero.
+
+00:37:07.900 --> 00:37:11.240
+We're going -- so this one with a range for loop,
+
+00:37:11.240 --> 00:37:16.660
+it's kind of hard to do the fence post algorithm.
+
+00:37:16.660 --> 00:37:19.640
+And so we're going to have to create a Boolean.
+
+00:37:19.640 --> 00:37:24.920
+[ Typing ]
+
+00:37:24.920 --> 00:37:28.720
+We're going to have to go for auto E and DA.
+
+00:37:32.400 --> 00:37:48.800
+If printing C out comma E. And then that will skip the first one.
+
+00:37:48.800 --> 00:37:52.820
+We'll turn on the printing for the second one.
+
+00:38:00.820 --> 00:38:03.980
+Okay. So a little hard to do fence post with the range base loop
+
+00:38:03.980 --> 00:38:06.880
+because it goes through every element in the array.
+
+00:38:06.880 --> 00:38:10.700
+Okay. So that's it.
+
+00:38:10.700 --> 00:38:13.720
+Let's go ahead and try these out.
+
+00:38:13.720 --> 00:38:15.840
+Do make run.
+
+00:38:15.840 --> 00:38:20.100
+And here's our last one.
+
+00:38:20.100 --> 00:38:24.040
+This one, remember, we initialized all to zeros like that.
+
+00:38:24.040 --> 00:38:25.920
+All to zeros like that.
+
+00:38:25.920 --> 00:38:30.620
+Okay. We're going to do one more thing here.
+
+00:38:31.400 --> 00:38:35.580
+[ Typing ]
+
+00:38:35.580 --> 00:38:40.700
+And that is I'm going to try and read and write outside
+
+00:38:40.700 --> 00:38:42.560
+of the array bounds before printing.
+
+00:38:42.560 --> 00:38:45.440
+And we want to see what happens to the other arrays.
+
+00:38:45.440 --> 00:38:48.420
+So this, like I said, it's undefined.
+
+00:38:48.420 --> 00:38:51.080
+You're not sure exactly what's going to happen.
+
+00:38:51.080 --> 00:38:52.680
+But I want to show you
+
+00:38:52.680 --> 00:39:00.960
+that the compiler won't stop us from doing this.
+
+00:39:00.960 --> 00:39:04.620
+So let's come up here.
+
+00:39:04.620 --> 00:39:10.620
+After we've printed out those names.
+
+00:39:10.620 --> 00:39:14.640
+It's going to be part three.
+
+00:39:15.680 --> 00:39:28.200
+[ Typing ]
+
+00:39:28.200 --> 00:39:41.480
+So let's say FA sub minus 2 equals 3.
+
+00:39:42.480 --> 00:39:48.500
+And let's say LA.
+
+00:39:48.500 --> 00:39:50.780
+How big was LA?
+
+00:39:50.780 --> 00:39:53.260
+LA was 5.
+
+00:39:53.260 --> 00:40:04.740
+LA sub 7 equals 15.
+
+00:40:04.740 --> 00:40:06.800
+Okay. So 3 and 15.
+
+00:40:06.800 --> 00:40:10.620
+Now let's run it again.
+
+00:40:11.400 --> 00:40:13.660
+I want you to see what it looked like before.
+
+00:40:13.660 --> 00:40:15.160
+So here's what it looked like before.
+
+00:40:15.160 --> 00:40:17.720
+We'll do make run.
+
+00:40:17.720 --> 00:40:23.180
+[ Typing ]
+
+00:40:23.180 --> 00:40:26.440
+And now look down here at DA.
+
+00:40:26.440 --> 00:40:34.740
+At DA. And notice that we have this value put inside here.
+
+00:40:34.740 --> 00:40:40.800
+So by changing FA, we actually changed DA.
+
+00:40:41.520 --> 00:40:43.240
+Now it doesn't look like the one we did
+
+00:40:43.240 --> 00:40:46.820
+in LA actually overwrote any other variables.
+
+00:40:46.820 --> 00:40:48.580
+But it could have.
+
+00:40:48.580 --> 00:40:51.520
+We could have kept going and changed.
+
+00:40:51.520 --> 00:40:53.160
+We were writing at LA 7.
+
+00:40:53.160 --> 00:40:57.060
+Let's write it LA 9.
+
+00:40:57.060 --> 00:41:01.800
+Let's try it again and see if the LA changes anything.
+
+00:41:01.800 --> 00:41:03.240
+So we'll do make run again.
+
+00:41:03.240 --> 00:41:08.100
+And okay.
+
+00:41:08.100 --> 00:41:11.720
+So this looking at LA, that looks like that's the LA is the
+
+00:41:11.720 --> 00:41:12.760
+one I'm changing.
+
+00:41:12.760 --> 00:41:17.600
+Looks like the FA, I didn't actually affect any
+
+00:41:17.600 --> 00:41:18.800
+of the other variables.
+
+00:41:18.800 --> 00:41:21.220
+So we'd have to look at these addresses.
+
+00:41:21.220 --> 00:41:24.440
+We'd have to draw ourselves a little memory map.
+
+00:41:24.440 --> 00:41:26.840
+And we'd be able to tell what happens
+
+00:41:26.840 --> 00:41:28.680
+when we write outside of that.
+
+00:41:28.680 --> 00:41:31.740
+But you notice it didn't give me a syntax error.
+
+00:41:31.740 --> 00:41:33.800
+It didn't give me a compiler error.
+
+00:41:33.800 --> 00:41:37.740
+It simply overwrote parts of my other program.
+
+00:41:38.220 --> 00:41:41.140
+Those are very, very hard bugs to find.
+
+00:41:41.140 --> 00:41:45.960
+Okay. So that's it for Lecture 19.
+
+00:41:45.960 --> 00:41:48.380
+When you come on back for Lecture 20,
+
+00:41:48.380 --> 00:41:51.940
+we'll look at some algorithms for arrays.
+

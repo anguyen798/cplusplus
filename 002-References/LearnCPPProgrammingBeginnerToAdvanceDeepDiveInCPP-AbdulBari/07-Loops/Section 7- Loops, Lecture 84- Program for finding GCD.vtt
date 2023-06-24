@@ -1,0 +1,137 @@
+WEBVTT
+
+0
+00:00.500 --> 00:06.600
+Let us write a program to find  gcd of two numbers. for that and I'm taking two variables m and n
+
+1
+00:06.790 --> 00:18.480
+then cout i will say enter 2 numbers then cin taking two numbers.
+
+2
+00:18.970 --> 00:23.220
+m and n. now logic already we know how to do that.
+
+3
+00:23.220 --> 00:33.210
+So we have to go on subtracting either n from m or m from n until they both  becomes equal.
+
+4
+00:33.210 --> 00:36.670
+So while m is not equal to n.
+
+5
+00:36.750 --> 00:48.920
+if M is greater than n, IF m  is  a greater value, then from m subtract n and and store the value in m only
+
+6
+00:48.950 --> 00:50.100
+...
+
+7
+00:52.770 --> 01:07.320
+else if n is greater than m and n is a greater number than in n subtract m from n then store
+
+8
+01:07.320 --> 01:07.970
+the result in 
+
+9
+01:08.040 --> 01:11.460
+n, once they become equal they will stop.
+
+10
+01:11.580 --> 01:13.490
+So if they're not equal you will continue.
+
+11
+01:13.530 --> 01:18.610
+If they're not equal this condition will be true if they are equal the condition will be false and loop
+
+12
+01:18.620 --> 01:19.730
+will stop.
+
+13
+01:19.870 --> 01:27.450
+And after this loop we will say cout now either m or n both of them are having the answer the actual
+
+14
+01:27.450 --> 01:29.470
+numbers m and n are lost.
+
+15
+01:29.520 --> 01:30.900
+We have decreased them right.
+
+16
+01:30.900 --> 01:32.990
+We have made them both of them equal.
+
+17
+01:33.180 --> 01:37.580
+So simply I will give a message that is gcd is.
+
+18
+01:37.650 --> 01:39.130
+We don't have original numbers.
+
+19
+01:39.150 --> 01:46.040
+If you want to preserve original number then you can take them in some other variables before running off
+
+20
+01:46.230 --> 01:47.360
+loop.
+
+21
+01:47.370 --> 01:49.520
+So this is GCD.
+
+22
+01:49.650 --> 01:53.160
+Let us run the program and see.
+
+23
+01:54.150 --> 01:56.430
+I'll give 2 numbers 21.
+
+24
+01:56.460 --> 02:11.180
+So 7 is a factor of 21 and 35 7 is a factor of 35,  see 7 is gcd is the answer.
+
+25
+02:11.970 --> 02:15.920
+Let me try once more and give some different numbers.
+
+26
+02:15.930 --> 02:17.150
+Heere i will write endl
+
+27
+02:20.180 --> 02:21.680
+now here two numbers.
+
+28
+02:21.700 --> 02:24.580
+I'll give nine.
+
+29
+02:24.580 --> 02:27.640
+So factor is three.
+
+30
+02:27.650 --> 02:33.990
+One factor is three as well as 7 seven so the common highest factor is three.
+
+31
+02:34.000 --> 02:39.580
+So yes GCD is three.
+
+32
+02:39.820 --> 02:40.370
+That's it.
+
+33
+02:40.450 --> 02:42.360
+You can try this program by yourself.

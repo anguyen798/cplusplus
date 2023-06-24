@@ -1,0 +1,310 @@
+WEBVTT
+
+00:05.170 --> 00:05.770
+Hello, everyone.
+
+00:05.800 --> 00:11.290
+So in this video, what we'll do is we'll download and install Visual Studio code on Mac and then we'll
+
+00:11.290 --> 00:15.010
+install a couple of extensions as well to get it going.
+
+00:15.010 --> 00:22.900
+So I open up your favorite browser and go to code Visual Studio, or you could just type Visual Studio
+
+00:22.900 --> 00:26.260
+code and in Google and Press Enter and it'll take you there.
+
+00:26.260 --> 00:28.630
+So you're going to get to a page, something like this.
+
+00:28.660 --> 00:30.040
+This is a microsoft product.
+
+00:30.040 --> 00:35.380
+So we're here on this website and what you want to do is you can click right here and download the Mac
+
+00:35.410 --> 00:36.670
+Universal build.
+
+00:36.910 --> 00:37.990
+I'd rather not do that.
+
+00:37.990 --> 00:41.320
+I'd rather download the specific build for my Mac.
+
+00:41.410 --> 00:49.360
+As many of you know, Mac now comes in the Apple, Silicon and Intel version, so may as well grab the
+
+00:49.360 --> 00:49.960
+one you need.
+
+00:49.960 --> 00:53.050
+And Visual Studio code supports both, which is really nice.
+
+00:53.050 --> 00:59.260
+So right now I'm on an Apple silicon iMac, so I'm just going to select download over here on the right.
+
+01:00.490 --> 01:02.830
+And you can see here where the max stuff is.
+
+01:02.830 --> 01:08.880
+You can download the universal build, which will run on both the Intel build or the Apple silicon build.
+
+01:08.890 --> 01:11.080
+So you know what you've got if you've got a mac.
+
+01:11.110 --> 01:15.550
+Like I said, I've got the Apple silicon right now, so I'm just going to click on here and we'll get
+
+01:15.550 --> 01:16.780
+the download coming.
+
+01:17.260 --> 01:19.980
+And I'm just going to open it with the archive utility.
+
+01:19.990 --> 01:22.080
+You can save it and then open it there as well.
+
+01:22.090 --> 01:26.200
+So I'm just going to click okay and give it a minute to download.
+
+01:28.450 --> 01:31.330
+And once it's downloaded, it should open up.
+
+01:33.490 --> 01:37.570
+There's the archive utility and it opened up in my other window.
+
+01:37.570 --> 01:41.340
+So let me drag that over here and that over from my other monitor.
+
+01:41.350 --> 01:44.290
+And you can see it's downloaded and extracted it.
+
+01:44.300 --> 01:49.240
+So all you want to do now is just want to click on Visual Studio code here and drag it over to your
+
+01:49.240 --> 01:50.860
+applications, just like the.
+
+01:51.980 --> 01:52.580
+That's it.
+
+01:52.610 --> 01:54.290
+Now, what we want to do is we want to run it.
+
+01:54.290 --> 01:58.310
+So I'm just going to click on applications and scroll down until you find it.
+
+01:58.310 --> 02:01.040
+And it is right there.
+
+02:01.780 --> 02:03.460
+So I'm just going to run that.
+
+02:05.030 --> 02:10.040
+Of course, first time you run it on Mac, depending on your security settings and your privacy settings,
+
+02:10.040 --> 02:14.540
+you may get a message like this or you may not even let you run it and you'll have to go and let it
+
+02:14.540 --> 02:14.780
+run.
+
+02:14.780 --> 02:17.300
+But again, if you're a mac user, you know what to do.
+
+02:17.600 --> 02:19.250
+I'm just going to select Open.
+
+02:20.780 --> 02:24.530
+And Visual Studio code opened up and enlarge this a little bit.
+
+02:25.590 --> 02:28.510
+And we've got this big old screen here with nothing going on.
+
+02:28.530 --> 02:31.500
+We've got some options over here on the left side.
+
+02:31.740 --> 02:35.130
+And I'm just going to close this little guy up right here.
+
+02:35.130 --> 02:39.900
+So this font is pretty small, so I'm just going to press command plus to make everything a little bit
+
+02:39.900 --> 02:44.370
+bigger for you guys and you can come through here and see what's going on.
+
+02:44.370 --> 02:45.300
+You can pick a theme.
+
+02:45.300 --> 02:47.280
+I'm just going to stick with this dark theme.
+
+02:47.670 --> 02:49.520
+There's a lot of themes that you can choose.
+
+02:49.530 --> 02:54.570
+It talks about coding in different programming languages, switching from other editors and so forth.
+
+02:54.570 --> 02:55.740
+I'm not going to do any of that.
+
+02:55.740 --> 02:57.240
+I'm just going to keep it default.
+
+02:57.240 --> 02:59.670
+So I'm just going to close this little window up right here.
+
+03:00.300 --> 03:05.490
+What we have to do is we have to tell Visual Studio code that we're going to do C++.
+
+03:05.490 --> 03:11.610
+And the way we do that is we add an extension and this bottom icon right here is the extensions.
+
+03:11.610 --> 03:13.860
+And what I want to do is I want to select that.
+
+03:15.020 --> 03:19.760
+And you can see that I've got nothing installed right now obviously because I just installed VS code,
+
+03:19.760 --> 03:22.990
+so there are no default extensions installed.
+
+03:23.000 --> 03:29.810
+But what I want to do is install the C++ extension right here where it says popular ones, it's right
+
+03:29.810 --> 03:30.080
+there.
+
+03:30.080 --> 03:31.340
+That's one of the real popular ones.
+
+03:31.340 --> 03:37.910
+If it doesn't show up here for you, you could just type C++ up here and press enter and it will find
+
+03:37.910 --> 03:38.060
+it.
+
+03:38.060 --> 03:39.770
+And it's this guy right here.
+
+03:39.830 --> 03:44.930
+If you just select it and this is what it's supposed to look like, you have this purple circle here
+
+03:44.930 --> 03:45.690
+with CC plus.
+
+03:45.710 --> 03:47.600
+Plus, it says Microsoft.
+
+03:47.600 --> 03:49.790
+It's got over 20 million downloads.
+
+03:50.180 --> 03:55.100
+I don't know how many downloads it's going to have when you guys watch this video, which may be a long
+
+03:55.100 --> 03:55.700
+time from now.
+
+03:55.700 --> 03:59.330
+Maybe so that's what this is the one we want to install.
+
+03:59.330 --> 04:05.300
+And in order to install it, all we need to do is just click install right here and it says installing
+
+04:05.300 --> 04:07.340
+and it's doing it down here.
+
+04:07.340 --> 04:08.690
+Just let it do its thing.
+
+04:11.400 --> 04:18.300
+And once it's finished, we are done installing that extension so we can erase that.
+
+04:19.270 --> 04:22.570
+And the next one we want to do is we want to type code.
+
+04:22.600 --> 04:23.710
+LL be.
+
+04:24.800 --> 04:25.630
+Now LDP.
+
+04:25.640 --> 04:26.270
+Sorry.
+
+04:26.540 --> 04:29.330
+And this is the one that we want to install next.
+
+04:29.360 --> 04:32.570
+These are the only two extensions that we're going to install.
+
+04:32.600 --> 04:34.170
+There are a lot of other ones out there.
+
+04:34.190 --> 04:36.080
+You've got CMA Code Runner.
+
+04:36.170 --> 04:40.470
+There's a whole bunch of them that just make things a lot more complicated than they need to be.
+
+04:40.490 --> 04:46.910
+So this is the one that allows us to run the ADB debugger, which is the debugger that we're going to
+
+04:46.910 --> 04:48.110
+be using in this class.
+
+04:48.110 --> 04:50.410
+And I'll let you run that in Visual Studio code.
+
+04:50.420 --> 04:54.940
+And it works really well, and it also supports Apple Silicon, which is pretty cool.
+
+04:54.950 --> 04:59.710
+So if you've got your Intel version or the Apple Silicon version, that will work.
+
+04:59.720 --> 05:01.400
+So I'm just going to select it.
+
+05:01.760 --> 05:09.890
+And you can see if you look at the Changelog, you can see that right there where it says new on version
+
+05:09.890 --> 05:12.110
+162 added support for Apple silicon.
+
+05:12.110 --> 05:13.090
+So that's pretty cool.
+
+05:13.100 --> 05:16.730
+So if again, if you've got Intel or Apple silicon, this will work just fine.
+
+05:16.730 --> 05:18.950
+So I'm going to select install here as well.
+
+05:20.930 --> 05:22.140
+And just let it do its thing.
+
+05:22.160 --> 05:22.760
+Be patient.
+
+05:22.760 --> 05:23.870
+Don't interrupt it.
+
+05:24.630 --> 05:25.440
+And that's it.
+
+05:25.690 --> 05:30.820
+I'm going to close this up and I'm going to go back to my explorer right here.
+
+05:30.840 --> 05:33.060
+What we're going to do now is we're going to open up a folder.
+
+05:33.060 --> 05:40.470
+We're going to set up a little folder structure, and then we're going to configure C++ in Visual Studio
+
+05:40.470 --> 05:42.870
+code so that we can build and run programs.
+
+05:42.870 --> 05:44.490
+So I'll see you all in the next video.

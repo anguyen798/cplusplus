@@ -1,0 +1,213 @@
+WEBVTT
+
+0
+00:01.080 --> 00:06.990
+Let us write a program to take the age of a person and check whether he's young or not so for that I
+
+1
+00:06.990 --> 00:12.030
+will declare a variable called age and cout
+
+2
+00:16.250 --> 00:17.990
+enter your age
+
+3
+00:20.780 --> 00:24.460
+then cin age, a condition
+
+4
+00:24.470 --> 00:29.630
+We have already seen that age is greater than or equal to twelve.
+
+5
+00:30.530 --> 00:37.150
+And age is less than or equal to 50.
+
+6
+00:37.310 --> 00:40.630
+Then we will see he's young.
+
+7
+00:40.640 --> 00:42.980
+cout young
+
+8
+00:46.450 --> 00:51.410
+else see out.
+
+9
+00:51.420 --> 00:57.720
+Not young.
+
+10
+00:57.930 --> 00:58.500
+That's it.
+
+11
+00:59.010 --> 01:02.660
+So this will check the conditions so two conditions are there.
+
+12
+01:02.670 --> 01:05.300
+So this is a compound conditional statement.
+
+13
+01:05.670 --> 01:06.870
+Let us run it and see
+
+14
+01:10.700 --> 01:12.060
+is asking for age.
+
+15
+01:12.080 --> 01:14.800
+I will enter ten years not young.
+
+16
+01:14.810 --> 01:16.190
+You can see the message here.
+
+17
+01:16.410 --> 01:17.360
+It's not young
+
+18
+01:21.220 --> 01:22.680
+age is thirty.
+
+19
+01:22.790 --> 01:27.170
+So the message is young you are young.
+
+20
+01:27.320 --> 01:27.990
+Let me try.
+
+21
+01:27.990 --> 01:30.810
+comma here and see what happens.
+
+22
+01:30.830 --> 01:33.620
+I have given comma it's a warning you see.
+
+23
+01:33.620 --> 01:37.200
+Possible misuse of comma because comma is not used here.
+
+24
+01:37.190 --> 01:42.930
+We use compound conditional statement, we logical operators here.
+
+25
+01:43.040 --> 01:48.440
+If I'm using comma then the first condition whether it's true or false it will execute only based on
+
+26
+01:48.440 --> 01:51.230
+the second condition.
+
+27
+01:51.410 --> 01:54.760
+If the number is less than 50 it will look.
+
+28
+01:55.250 --> 01:56.960
+Let us run and see.
+
+29
+01:57.530 --> 02:05.050
+I'm giving age as a minus 5 which is less than or equal to 50 so it is less than equal to 50.
+
+30
+02:05.180 --> 02:08.290
+I'm giving five minus five young.
+
+31
+02:08.420 --> 02:13.350
+I got a message that it is young because first condition though it was false.
+
+32
+02:13.390 --> 02:16.510
+But the second condition in was true so it has entered into this one.
+
+33
+02:16.890 --> 02:19.510
+So it will check these two conditions independently.
+
+34
+02:19.550 --> 02:25.880
+If we write comma here so coma is not use here you should use either and or OR.
+
+35
+02:26.090 --> 02:27.930
+So as per our condition.
+
+36
+02:27.980 --> 02:35.680
+AND is useful, now we convert this program using order.
+
+37
+02:35.900 --> 02:43.390
+Now let us convert this program to take age and check if he's eligible for some offer or not.
+
+38
+02:43.400 --> 02:51.260
+Like if age is less than 12 years or if age is greater than 50.
+
+39
+02:51.260 --> 02:53.390
+Then he is eligible for an offer.
+
+40
+02:53.840 --> 02:55.760
+So I'll make a message that
+
+41
+02:59.430 --> 03:04.910
+eligible otherwise not eligible.
+
+42
+03:10.550 --> 03:11.330
+See here.
+
+43
+03:11.490 --> 03:16.580
+Age of a person is taken and the condition is check whether he is less than 12 means he is
+
+44
+03:16.580 --> 03:19.070
+a child or greater than 50 means,
+
+45
+03:19.070 --> 03:20.250
+He an old man.
+
+46
+03:20.300 --> 03:24.320
+So suppose the offer is valid only for children and old people.
+
+47
+03:24.470 --> 03:29.700
+Then cout eligible otherwise not eligible.
+
+48
+03:29.850 --> 03:30.920
+I run the program
+
+49
+03:34.610 --> 03:37.820
+and mention age as 60.
+
+50
+03:37.830 --> 03:41.300
+So I got a message that is eligible.
+
+51
+03:41.400 --> 03:49.900
+I'll run the program once again and now i will mentioned age that is 30 so I get a message that is not eligible.
+
+52
+03:49.910 --> 03:51.750
+The participants not eligible.

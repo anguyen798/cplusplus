@@ -1,0 +1,361 @@
+WEBVTT
+
+0
+00:00.540 --> 00:03.600
+Let us see heap memory is access using pointers.
+
+1
+00:03.600 --> 00:09.780
+Heap Memory is access a dynamically means the memory is allocated dynamically the size of
+
+2
+00:09.780 --> 00:11.520
+the memory required in the heap.
+
+3
+00:11.520 --> 00:14.410
+is  decided at run time not at compile time.
+
+4
+00:14.580 --> 00:21.480
+So mostly when we  want to locate memory in heap we allocate arrays, not just one integer or one
+
+5
+00:21.480 --> 00:23.980
+float or one character we will have array of characters,
+
+6
+00:23.980 --> 00:28.110
+Characters, array of floats, or array of integers so it takes arrays
+
+7
+00:28.230 --> 00:34.640
+So let us see the difference when the  memory is allocated in stack and when the memory is allocated in heap
+
+8
+00:34.700 --> 00:38.080
+so I will write down the syntax here.
+
+9
+00:38.080 --> 00:48.600
+Integer A[5] and  I will also assign some elements that is 1 2 3 4 5.
+
+10
+00:49.920 --> 00:53.760
+So this is an array if I write this in our main program.
+
+11
+00:53.790 --> 00:59.320
+If I am writing this in main function then this array will be created inside stack.
+
+12
+00:59.460 --> 01:06.560
+A inside the stack.
+
+13
+01:07.460 --> 01:10.800
+So when you declare a array like this it will be created in stock.
+
+14
+01:10.800 --> 01:16.180
+Then how it is created in heap, so far that I have to declare integer star P
+
+15
+01:16.240 --> 01:20.050
+This is one line, I can write it in next line.
+
+16
+01:20.100 --> 01:21.250
+P assign
+
+17
+01:21.390 --> 01:27.090
+Let us finish should this line when you declare a pointer P then this P is also created inside the
+
+18
+01:27.090 --> 01:27.850
+stack.
+
+19
+01:31.180 --> 01:36.770
+Then next if I said P assign new int of size of five.
+
+20
+01:36.810 --> 01:40.000
+Then Newman's the memories I look at it from he.
+
+21
+01:40.210 --> 01:44.170
+So I will get in heap,  so where I got I don't know.
+
+22
+01:44.380 --> 01:50.690
+So just I'm drawing at some random place inside the heap and the address of this array is stored in P.
+
+23
+01:50.770 --> 01:55.090
+So this P will be having the address of this one. so when you declare an array like this
+
+24
+01:55.510 --> 02:02.660
+It will be created in stack. when you take a pointer and whenever you say new, the array will be created
+
+25
+02:02.670 --> 02:03.310
+in heap.
+
+26
+02:03.460 --> 02:07.910
+And when you said new then you need to take that address in a pointer.
+
+27
+02:08.140 --> 02:09.860
+So that's what we are taking in a point.
+
+28
+02:10.180 --> 02:11.170
+And you have a pointer.
+
+29
+02:12.310 --> 02:13.330
+So that's it.
+
+30
+02:13.330 --> 02:20.500
+New means  memory is allocated in heap and just declare an array, it is created in the stack. if you 
+
+31
+02:20.500 --> 02:24.010
+see integer star P again in the stack.
+
+32
+02:24.010 --> 02:27.260
+So what are the variables you declare inside the program.
+
+33
+02:27.260 --> 02:30.200
+let's say the main function, whatever the variable should declare int, int.
+
+34
+02:30.460 --> 02:34.670
+i have declared two variables all the variables they will get the memory inside the stack.
+
+35
+02:35.020 --> 02:41.650
+Then when you get a memory in heap, this  side, new new,when  you said new you're going to get the memory
+
+36
+02:41.650 --> 02:47.940
+in heap and that address should be kept in some adresss variable, that's all, in C++ programs if you're
+
+37
+02:47.960 --> 02:53.980
+declaring array like this then this is in stock and if you are creating an array like this then
+
+38
+02:53.980 --> 02:55.330
+this is in heap.
+
+39
+02:55.330 --> 02:57.870
+The same thing can also be written in a single line.
+
+40
+02:57.880 --> 03:05.470
+I will re write the same thing again that is Star P assign new int of size 5.
+
+41
+03:05.740 --> 03:09.130
+This is created in heap so you can write it like this.
+
+42
+03:09.130 --> 03:14.200
+Also. now one more difference between stack memory and the heap memory is that,
+
+43
+03:14.280 --> 03:19.360
+See this array when it is created inside stack, automatically.
+
+44
+03:19.480 --> 03:26.830
+Then it will automatically get deleted and it is going out of the scope but heap memory will not be
+
+45
+03:26.830 --> 03:28.820
+getting deleted automatically.
+
+46
+03:28.900 --> 03:34.690
+It will be there as well as your program is running so if you don't want it through the program you wanted
+
+47
+03:34.690 --> 03:43.390
+for limited time then you should also dealocte it, heap memory must be dealocated, this is a very important
+
+48
+03:43.390 --> 03:50.980
+thing, as you are saying new for allocation then after some time if you do need it then you should say
+
+49
+03:51.240 --> 03:56.600
+delete P, but the P is an array as you have created.
+
+50
+03:56.820 --> 04:00.080
+Then you should write on this subscript symbol.
+
+51
+04:00.340 --> 04:04.850
+Delete P, if it it is not be deleted like this beforehand.
+
+52
+04:04.860 --> 04:07.810
+Only if I say P assign  null
+
+53
+04:08.160 --> 04:14.540
+Let us see what happens, if I said this thing, without saying P, after delete  I can say, P 
+
+54
+04:14.540 --> 04:19.040
+assigned null means pointer P is not pointing in any where I can say this one.
+
+55
+04:19.120 --> 04:22.590
+This is okay but I should not do this at all.
+
+56
+04:22.660 --> 04:24.030
+with out this is being deleted.
+
+57
+04:24.400 --> 04:26.030
+If I say P assign null
+
+58
+04:26.030 --> 04:32.090
+Then pointer  will not be pointing this memory the memory is still there inside heap as long as program is
+
+59
+04:32.180 --> 04:35.440
+running. so assume that you have a big program somewhere.
+
+60
+04:35.440 --> 04:42.400
+Not in main functions, some where in other function you allocated and function has stop but program is
+
+61
+04:42.400 --> 04:45.070
+running that memory will be as it is.
+
+62
+04:45.220 --> 04:48.100
+So you must dealocate when you're not using it.
+
+63
+04:48.670 --> 04:54.360
+Otherwise if you're not deleting it then it is called as memory leak problem, means
+
+64
+04:54.370 --> 04:59.000
+This memory belongs to a program and suppose the pointer is not pointing onto that one.
+
+65
+04:59.020 --> 05:05.440
+assume that if removed, pointer is  not pointing on that one, then it is a memory leak that memory
+
+66
+05:05.440 --> 05:06.550
+is of no use.
+
+67
+05:06.580 --> 05:09.650
+There is no pointer and it is not also free.
+
+68
+05:12.790 --> 05:16.660
+now one thing if a pointer is not pointing any where then we say a pointer as null.
+
+69
+05:16.650 --> 05:17.000
+...
+
+70
+05:17.200 --> 05:18.270
+It's a null pointer.
+
+71
+05:19.290 --> 05:20.560
+Not have to show more things.
+
+72
+05:20.560 --> 05:22.030
+Just let us see.
+
+73
+05:22.170 --> 05:22.400
+Now.
+
+74
+05:22.450 --> 05:24.280
+Let us talk about accessibility.
+
+75
+05:24.640 --> 05:30.630
+If I have this array then I can say A of two assign 15.
+
+76
+05:30.640 --> 05:38.770
+So what happens A of 2 at this place  0 1 2 at this place  15 will be written so I can assign some value there.
+
+77
+05:38.770 --> 05:40.770
+or I can evem read that value, write
+
+78
+05:40.780 --> 05:46.650
+The value I can do anything with this array by using its index, can I access
+
+79
+05:46.660 --> 05:47.550
+This array also.
+
+80
+05:47.560 --> 05:49.520
+Yes you can access with the help of P.
+
+81
+05:49.660 --> 05:53.500
+How I can say that P[2]  assign 15.
+
+82
+05:53.740 --> 06:03.990
+So this is 0 1 2 3 4 so this place is 15 will be written, so you can access p[2] as if it's an array.
+
+83
+06:04.020 --> 06:04.460
+Yes.
+
+84
+06:04.470 --> 06:05.420
+this is a array name.
+
+85
+06:05.530 --> 06:07.460
+Just like array name you can access it.
+
+86
+06:08.260 --> 06:09.400
+So that is the benefits.
+
+87
+06:09.400 --> 06:15.820
+Once you have a pointer to array inside  heap you can access it with the help of pointer and the pointer
+
+88
+06:15.820 --> 06:17.950
+can be treated as a name.
+
+89
+06:17.980 --> 06:22.260
+on anarray.  we will write down the sample code and show you how this works.

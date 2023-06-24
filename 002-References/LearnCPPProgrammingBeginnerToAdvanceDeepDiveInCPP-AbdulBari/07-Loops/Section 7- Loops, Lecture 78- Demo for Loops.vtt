@@ -1,0 +1,313 @@
+WEBVTT
+
+0
+00:00.650 --> 00:03.940
+Leet's write a program to display a multiplication table.
+
+1
+00:04.290 --> 00:09.090
+I will take n, and i will ask for what number you want
+
+2
+00:09.150 --> 00:10.450
+Multiplication table.
+
+3
+00:10.650 --> 00:20.430
+So enter a number then cin n, using a for loop.
+
+4
+00:20.460 --> 00:22.120
+I can easily display this one.
+
+5
+00:22.170 --> 00:30.520
+I assign one, and I is less than or equal to 10 I plus plus inside
+
+6
+00:30.530 --> 00:38.860
+this as, already we have seen this what I have to write and multiplied by for multiplication I'm using
+
+7
+00:38.860 --> 00:51.270
+symbol X here with I and equal to I into n, I multiplied by n then also.
+
+8
+00:51.670 --> 00:56.020
+endl for the next line that's it.
+
+9
+00:56.020 --> 01:02.190
+So this will us ask a number and based on that number it will display a multiplication table.
+
+10
+01:02.500 --> 01:03.630
+Let us run the program
+
+11
+01:08.310 --> 01:09.890
+enter a Number five.
+
+12
+01:10.080 --> 01:13.870
+So here is multiplication table for number 5.
+
+13
+01:14.490 --> 01:18.400
+I run once again, enter a number:  9.
+
+14
+01:18.420 --> 01:25.730
+So here is a multiplication table for number 9.
+
+15
+01:26.160 --> 01:27.120
+That's it.
+
+16
+01:27.190 --> 01:31.010
+So there's a program for multiplication table for a given number.
+
+17
+01:31.020 --> 01:39.840
+Now let me convert this program for finding the sum of First n natural numbers. already we
+
+18
+01:39.880 --> 01:42.230
+have seen the program in the previous video.
+
+19
+01:42.230 --> 01:47.840
+So here I will take one variable sum and which is initialized to zero.
+
+20
+01:49.970 --> 01:57.510
+Now using for loop I will take integer i starting from 1 onwards and I is less than equal to
+
+21
+01:57.520 --> 02:06.810
+n , so it will be incrementing from one through n then every time I will say some assigns some plus i
+
+22
+02:08.480 --> 02:09.880
+And after the end of the loop.
+
+23
+02:09.920 --> 02:15.140
+cout sum of first
+
+24
+02:18.040 --> 02:18.460
+n
+
+25
+02:21.780 --> 02:30.360
+natural numbers is, then display sum.
+
+26
+02:30.360 --> 02:33.710
+So there's a formula for sum of the first natural numbers.
+
+27
+02:33.720 --> 02:35.150
+Also you can use the formula.
+
+28
+02:35.150 --> 02:37.540
+Otherwise this program will take
+
+29
+02:37.570 --> 02:39.920
+I and it will be go on adding I.
+
+30
+02:39.960 --> 02:43.000
+One by one so I will be one then two then three.
+
+31
+02:43.020 --> 02:44.180
+And so on till
+
+32
+02:44.250 --> 02:47.060
+n, let me see what is the answer for
+
+33
+02:47.070 --> 02:53.390
+ten, it should be 55,   10 yes.
+
+34
+02:53.430 --> 02:56.120
+Sum of first natural number is 55.
+
+35
+02:56.120 --> 02:57.060
+Here is the o/p.
+
+36
+02:57.740 --> 02:58.970
+I have not given endl.
+
+37
+02:59.060 --> 03:05.550
+I can write endl here and run it again for another number.
+
+38
+03:08.420 --> 03:10.840
+Now here I will mention 20.
+
+39
+03:10.960 --> 03:12.950
+I got the answer that is 210 .
+
+40
+03:12.950 --> 03:17.630
+So the sum of first 20 natural numbers is 210
+
+41
+03:20.580 --> 03:22.080
+so ywe ou have seen one more  program
+
+42
+03:27.560 --> 03:33.370
+now i will this program to find the factors of a given number.
+
+43
+03:33.490 --> 03:35.440
+So for factors of a number
+
+44
+03:35.440 --> 03:42.590
+Again I should iterate from one to n, so I'll remove the sum I don't need this.
+
+45
+03:42.680 --> 03:49.780
+Now this is the basic thing that i require n entry a number and we will iterate from one through n
+
+46
+03:50.140 --> 04:02.220
+then every time what we see is if that number is exactly divisible by i
+
+47
+04:02.380 --> 04:05.870
+So how it is exactly divisible if it is leaving remainder  zero.
+
+48
+04:06.070 --> 04:14.590
+Then we cout  that number i and also I  will gives some space between the numbers.
+
+49
+04:15.130 --> 04:16.750
+Let us run it and see
+
+50
+04:20.870 --> 04:23.770
+enter a number 15.
+
+51
+04:23.870 --> 04:30.160
+So the factors of 15 are 1 3 5 and 15 yes
+
+52
+04:36.670 --> 04:37.670
+27.
+
+53
+04:37.770 --> 04:41.960
+So the factors of 27 are 1 3 9 and 27.
+
+54
+04:42.380 --> 04:45.890
+So yes this is how to find factors
+
+55
+04:45.890 --> 04:49.880
+Now even I have shown you how to find a number is prime or not.
+
+56
+04:49.880 --> 04:52.520
+So I will take one counter and that is initial as
+
+57
+04:55.590 --> 04:58.310
+I would take one counter and initialize to zero.
+
+58
+04:58.310 --> 05:07.970
+The variable name is Count and whenever there is a exact division I will try to count plus plus then
+
+59
+05:08.030 --> 05:09.150
+outside the for loop.
+
+60
+05:09.200 --> 05:21.480
+I will check if count is exactly 2 then I will say its a prime and \n
+
+61
+05:25.160 --> 05:39.330
+else, cout not prime \n. see already we have discussed in a previous video that if the
+
+62
+05:44.320 --> 05:50.710
+see already we have discussed in a previous video that if the number of factors are only two then
+
+63
+05:50.710 --> 05:51.800
+the number is prime.
+
+64
+05:51.910 --> 05:54.930
+So this the number for checking that the number is prime or not.
+
+65
+05:55.060 --> 05:56.140
+Let me run and see
+
+66
+05:59.060 --> 06:01.180
+enter a number 17.
+
+67
+06:01.330 --> 06:03.160
+It's a prime
+
+68
+06:06.620 --> 06:08.680
+enter the number 28.
+
+69
+06:08.930 --> 06:10.230
+It's not a prime.
+
+70
+06:10.280 --> 06:10.850
+Perfect
+
+71
+06:13.400 --> 06:15.150
+two, its a prime.
+
+72
+06:15.250 --> 06:16.650
+Yes it is perfect.
+
+73
+06:16.670 --> 06:18.330
+So it's working perfectly.
+
+74
+06:18.350 --> 06:22.520
+We are counting the number of factors of a number.
+
+75
+06:22.530 --> 06:24.610
+If they are two then it's a prime.
+
+76
+06:24.610 --> 06:30.140
+So you can try out all these programs by yourself so you need to practice this and with this you get
+
+77
+06:30.140 --> 06:33.320
+the ideas and you can write on more programs from your side.

@@ -1,0 +1,712 @@
+WEBVTT
+
+00:00:06.100 --> 00:00:10.350
+Hello, everyone. Welcome back to the section 19 challenge 1 solution.
+
+00:00:10.350 --> 00:00:12.600
+I'm in the section 19 workspace.
+
+00:00:12.600 --> 00:00:16.200
+And I'm in the challenge_1_solution project.
+
+00:00:17.000 --> 00:00:20.400
+I hope you found this challenge challenging.
+
+00:00:20.400 --> 00:00:23.200
+There was probably a couple of pieces that were kind of tricky,
+
+00:00:23.200 --> 00:00:26.800
+one of them had to do with displaying the country right next to that
+
+00:00:26.800 --> 00:00:30.300
+city, the first time around, and I'll talk about that in a second.
+
+00:00:30.700 --> 00:00:34.300
+The other one might have been trying to center that title, so we'll go over both of those.
+
+00:00:34.800 --> 00:00:37.300
+Here is the structures again. Here's my city,
+
+00:00:37.300 --> 00:00:41.180
+my country and my tours. I've got this simple function called ruler,
+
+00:00:41.180 --> 00:00:45.280
+which I'm just going to use one time at the very beginning just so we can look at our alignment.
+
+00:00:45.280 --> 00:00:46.780
+And then I've got my
+
+00:00:46.780 --> 00:00:50.180
+structure, which has been initialized here, exactly like I gave it to you.
+
+00:00:50.180 --> 00:00:52.680
+So the first thing I want to do is I want to look at my data.
+
+00:00:53.180 --> 00:00:55.370
+And I want to kind of look at the sizes of the data,
+
+00:00:55.370 --> 00:00:59.370
+make sure that there's nothing like a city that's got 30 or 40 characters in it.
+
+00:00:59.370 --> 00:01:02.670
+That way I can gauge what kind of field widths I want.
+
+00:01:02.870 --> 00:01:04.170
+So that's what I did.
+
+00:01:04.170 --> 00:01:07.050
+And what I've done here is I've decided to go with
+
+00:01:07.050 --> 00:01:11.930
+a total width of 70. And the reason I did that was just purely console based because some
+
+00:01:11.930 --> 00:01:15.120
+terminal windows and some DOS windows and some shell windows,
+
+00:01:15.120 --> 00:01:19.320
+which is where we're running these programs are 80 max. So I didn't really want them
+
+00:01:19.320 --> 00:01:22.320
+going over the 80 and then wrapping over and really making it ugly.
+
+00:01:22.320 --> 00:01:26.920
+So what I decided to do is keep the total width of the entire report
+
+00:01:26.920 --> 00:01:30.720
+to 70 characters. Okay. So 70 is our goal here.
+
+00:01:30.720 --> 00:01:34.520
+And then we've got 4 fields, right. We've got the name of the country,
+
+00:01:34.520 --> 00:01:39.220
+the name of the city, the population and the cost. And obviously, we have a title up here centered somewhere.
+
+00:01:40.520 --> 00:01:43.720
+And I'll talk about the title in just a second. So
+
+00:01:43.720 --> 00:01:46.720
+the way I decided to do this was to create 4 field widths.
+
+00:01:46.720 --> 00:01:50.920
+And I'm going to make constants from all of these guys. That way I don't have to use my numbers everywhere.
+
+00:01:50.920 --> 00:01:52.520
+And I just use these names.
+
+00:01:52.520 --> 00:01:56.670
+And if I ever need to tweak anything, I could just come here and tweak them, and it should be good to go.
+
+00:01:56.670 --> 00:01:59.170
+So 70 is the total width.
+
+00:01:59.470 --> 00:02:03.970
+My first field is a width of 20. So let's say that this is my first one here.
+
+00:02:03.970 --> 00:02:06.220
+Let's say that this is another 20 here.
+
+00:02:06.220 --> 00:02:09.020
+And then my last 2 are 15, which were a little bit smaller.
+
+00:02:09.020 --> 00:02:12.620
+This isn't to scale, but you get the idea. So this would be
+
+00:02:12.620 --> 00:02:16.220
+the country's name, right. So this would say, let's say,
+
+00:02:17.100 --> 00:02:21.300
+Columbia would display here, and then the city would be over here.
+
+00:02:23.300 --> 00:02:26.960
+The population and both of these guys I'll just draw arrows here will be left
+
+00:02:26.960 --> 00:02:31.260
+justified in that field width. Then I've got the population,
+
+00:02:31.620 --> 00:02:34.920
+which is a number, which will be right justified here.
+
+00:02:34.920 --> 00:02:39.280
+And I've got the cost which would be some number with 2 decimal points on the end,
+
+00:02:39.280 --> 00:02:41.880
+and that's going to be right justified here as well.
+
+00:02:41.880 --> 00:02:42.540
+Okay.
+
+00:02:42.540 --> 00:02:45.340
+I've got a header over here, which is going to say country,
+
+00:02:46.540 --> 00:02:47.200
+city,
+
+00:02:48.860 --> 00:02:52.660
+population will be right justified over here, so it lines up
+
+00:02:52.660 --> 00:02:55.860
+and over here costs will be right justified. So that's sort of
+
+00:02:55.860 --> 00:02:59.220
+the the structure that I've got in my mind. And I can tweak this as I go.
+
+00:02:59.880 --> 00:03:01.880
+Okay. So that's really
+
+00:03:01.880 --> 00:03:05.240
+pretty much it. Here are my field widths that I've defined. So again,
+
+00:03:05.240 --> 00:03:09.840
+20 20 15 15. We add them up to 70.
+
+00:03:09.840 --> 00:03:13.040
+So I know that I'm in the ballpark. Let's deal with that title.
+
+00:03:13.040 --> 00:03:17.140
+So I'm going to erase this real quick. And I'll scroll down just a bit.
+
+00:03:17.940 --> 00:03:22.340
+And what we want to do is we want to display the title. Now you'll notice on line 71 down here,
+
+00:03:22.340 --> 00:03:23.840
+I'm displaying the ruler.
+
+00:03:24.340 --> 00:03:28.140
+That's just going to display that series of numbers so that we can line things up.
+
+00:03:28.140 --> 00:03:31.740
+But let's talk about the title and what kind of algorithm we want.
+
+00:03:31.740 --> 00:03:35.240
+Again, we've got 70 for our
+
+00:03:36.040 --> 00:03:38.040
+field -- -- our total width of our report.
+
+00:03:38.700 --> 00:03:43.580
+And suppose, I wanted to display something -- well, obviously, the center here is 35, right.
+
+00:03:43.580 --> 00:03:44.980
+That's pretty clear.
+
+00:03:44.980 --> 00:03:47.750
+And suppose I wanted to display something that was
+
+00:03:47.750 --> 00:03:50.740
+10 characters wide, a string that's 10 characters wide.
+
+00:03:50.740 --> 00:03:53.000
+The idea would be that I'd want to display
+
+00:03:53.000 --> 00:03:56.300
+5 of those characters on this side and 5 on this side, right.
+
+00:03:56.300 --> 00:04:00.400
+That would center that string. If the string was 20 characters wide,
+
+00:04:00.400 --> 00:04:04.200
+I'd want to display 10 over here and I'd want to display 10 over here.
+
+00:04:04.450 --> 00:04:06.950
+That way we know that that string is always centered.
+
+00:04:06.950 --> 00:04:09.450
+So we've got to do the math that let's just do that.
+
+00:04:09.450 --> 00:04:12.100
+And it's pretty straightforward. If you think about this,
+
+00:04:12.100 --> 00:04:16.090
+notice here, if the if the string is 20 large, right,
+
+00:04:16.590 --> 00:04:19.190
+we want 10 on this side, 10 on that side. And if 35
+
+00:04:19.190 --> 00:04:22.690
+was the center, that means we really want to start printing that guy at 25,
+
+00:04:23.350 --> 00:04:24.650
+at column 25.
+
+00:04:24.650 --> 00:04:28.550
+And if the string was 10 characters big, we want to print it at
+
+00:04:28.950 --> 00:04:31.950
+35 minus the 5, which is 30 right here.
+
+00:04:32.850 --> 00:04:35.450
+Okay. So that's really what my algorithm is going to be.
+
+00:04:35.450 --> 00:04:37.250
+Let me clear this because it's a little messy,
+
+00:04:37.250 --> 00:04:41.750
+and I'll I'll do it one more time with an actual example. So here's the 70.
+
+00:04:42.550 --> 00:04:44.150
+We know we're at 35.
+
+00:04:44.810 --> 00:04:48.410
+And I want to display a string that's 40 characters wide.
+
+00:04:49.610 --> 00:04:53.610
+Okay. So what do I do. How do I figure this out. Well, I want to display 20 of them
+
+00:04:54.110 --> 00:04:54.910
+and 20 of them.
+
+00:04:54.910 --> 00:04:58.910
+And I want to line those up, right. So 35 minus 20 gives me 15.
+
+00:04:58.910 --> 00:05:01.510
+And that's where I want to start displaying that string.
+
+00:05:02.310 --> 00:05:06.310
+So how do we do this. You take the total length, which is 70.
+
+00:05:06.670 --> 00:05:10.670
+You subtract from it the length of the string that you want, which is 40.
+
+00:05:12.170 --> 00:05:16.670
+That gives you a 30, and then you divide that by 2. That gives you the 15,
+
+00:05:16.970 --> 00:05:21.170
+that gives you exactly where you need to start displaying the string, so it's centered.
+
+00:05:21.620 --> 00:05:25.520
+Okay. Let's do another example. Suppose the string is 20 big.
+
+00:05:25.720 --> 00:05:28.320
+I need 70 minus 20
+
+00:05:28.320 --> 00:05:31.980
+divided by 2, gives me 25.
+
+00:05:31.980 --> 00:05:33.580
+Does that make sense.
+
+00:05:33.580 --> 00:05:36.830
+Well, let's see if it's 20, I want to do 10 on this side and 10 on this side.
+
+00:05:36.830 --> 00:05:39.330
+35 minus the 10 is 25,
+
+00:05:39.330 --> 00:05:42.130
+exactly right. So my algorithm makes sense,
+
+00:05:42.130 --> 00:05:45.630
+and it's really easy to implement. Let me show you how to do it.
+
+00:05:46.030 --> 00:05:49.630
+I'm going to scroll down just a little bit, and we'll do the header right here.
+
+00:05:49.630 --> 00:05:52.620
+So what I'm doing here on line 72 is
+
+00:05:52.620 --> 00:05:56.120
+I'm determining what is the length of that title string.
+
+00:05:56.120 --> 00:05:59.620
+string. It's in tours.title.string. It's in tours.title.
+
+00:06:00.520 --> 00:06:02.520
+I just want the length of it.
+
+00:06:02.820 --> 00:06:07.620
+Whatever that length is, I'm going to subtract it from the total width divide it by 2.
+
+00:06:07.620 --> 00:06:11.320
+That's where i want to start displaying tours.title.
+
+00:06:11.980 --> 00:06:15.640
+But how do I do that. Well, it's really easy. I can set a width to that
+
+00:06:15.640 --> 00:06:19.740
+amount and just display an empty string. Remember,
+
+00:06:19.740 --> 00:06:24.640
+that the set width applies to the next item that's being put on the stream,
+
+00:06:25.190 --> 00:06:28.390
+there it is. I'm not putting anything. It's just an empty string, but it's still going on the stream.
+
+00:06:29.050 --> 00:06:32.050
+Okay So that should take care of centering that.
+
+00:06:32.300 --> 00:06:36.300
+And then the rest is pretty easy in this context because what we're doing here is
+
+00:06:36.300 --> 00:06:39.800
+I'm setting my field width for the country
+
+00:06:39.800 --> 00:06:41.900
+to field 1 which is 20,
+
+00:06:42.400 --> 00:06:45.700
+right. I'm justifying left, and I'm displaying country.
+
+00:06:45.900 --> 00:06:50.100
+So field width one, which is 20 is going to be left justified.
+
+00:06:50.100 --> 00:06:55.090
+And right there is what I'm putting on the stream. So country that string is going to be left justified.
+
+00:06:55.590 --> 00:06:57.590
+Then field 2 is 20 again.
+
+00:06:57.920 --> 00:07:02.120
+Then I've got 15 15. I'm doing the 2 left and the 2 right,just like I did before,
+
+00:07:02.920 --> 00:07:07.320
+and then I've got a new line. So that should display the title centered
+
+00:07:07.320 --> 00:07:11.420
+and my headers, those 4 names, right, where I want them.
+
+00:07:12.080 --> 00:07:15.880
+The next thing I need to do is I need to do a line of dashes, right, to separate my
+
+00:07:15.880 --> 00:07:19.480
+header from the content, and I want 70 of those dashes.
+
+00:07:19.480 --> 00:07:23.870
+I could just say cout a big string of 70 dashes, right.
+
+00:07:24.370 --> 00:07:28.250
+But if I ever change my total width, then I've got to change that as well.
+
+00:07:28.250 --> 00:07:32.500
+So what I can do here is I can simply say set the field width
+
+00:07:32.500 --> 00:07:34.490
+to the total width, that'll be 70.
+
+00:07:34.740 --> 00:07:37.100
+Set the fill character to the dash,
+
+00:07:37.100 --> 00:07:39.100
+and that's what I want to display,
+
+00:07:39.100 --> 00:07:42.600
+which is just an empty string, but it doesn't really matter because it's going to
+
+00:07:42.600 --> 00:07:46.700
+fill up everything with the dashes and then give me a new line at the end.
+
+00:07:47.700 --> 00:07:50.700
+That's it. Let's run this, and we'll see where we're at.
+
+00:07:54.060 --> 00:07:59.050
+And there we go. You can see tour ticket prices from Miami that's centered.
+
+00:07:59.550 --> 00:08:02.950
+I've got my country left justified in 20,
+
+00:08:02.950 --> 00:08:06.750
+my city left justified in 20, my population and my price
+
+00:08:06.750 --> 00:08:09.350
+both right justified here in 15.
+
+00:08:09.350 --> 00:08:13.010
+And if you count them, you can actually see that that's all lining up just right.
+
+00:08:13.010 --> 00:08:16.010
+And there's my dash mind of 70.
+
+00:08:16.510 --> 00:08:19.810
+Okay. In this case 70. If I change total width to 80, it'll do 80.
+
+00:08:19.810 --> 00:08:23.800
+If I change it to 40, it'll do 40. That's the nice part about using those consts.
+
+00:08:24.900 --> 00:08:29.440
+Okay. So that's it. Now we need to get into the body of the report.
+
+00:08:29.440 --> 00:08:32.800
+Before we do that, let's do a couple of things here.
+
+00:08:32.800 --> 00:08:36.900
+This is important right here. Let me go back to where I was.
+
+00:08:37.780 --> 00:08:41.080
+Here we go. I want to uncomment these 2 lines out.
+
+00:08:41.080 --> 00:08:42.580
+Let's talk about these for a second.
+
+00:08:44.880 --> 00:08:48.240
+I want to set my fill back to blank, right.
+
+00:08:48.600 --> 00:08:52.750
+Remember, I changed the fill right here, and that's persistent.
+
+00:08:52.750 --> 00:08:56.350
+So I don't want to keep it that way. Otherwise, I'm going to get dashes all over the place.
+
+00:08:56.350 --> 00:08:58.850
+So I want to set it back to a blank character,
+
+00:08:59.650 --> 00:09:02.010
+and I want to set the precision
+
+00:09:02.010 --> 00:09:06.610
+to 2 and fix and that's basically for this guy right here for the price.
+
+00:09:07.010 --> 00:09:11.260
+I want to be able to make sure that I've got 2 digits to the right side of the decimal.
+
+00:09:12.560 --> 00:09:15.560
+I only need to do that one time, and then we're good to go.
+
+00:09:15.560 --> 00:09:18.560
+And now comes the logic for actually displaying
+
+00:09:18.560 --> 00:09:19.750
+the data.
+
+00:09:19.750 --> 00:09:22.250
+And this is it. This is all there really is to it.
+
+00:09:22.250 --> 00:09:24.610
+There's a couple of tricky parts here.
+
+00:09:24.610 --> 00:09:29.010
+And I'll talk about that in a minute, but let's just talk about the outer loop first.
+
+00:09:29.260 --> 00:09:33.860
+Here's the outer loop. My collection is tours.countries, right.
+
+00:09:34.160 --> 00:09:38.460
+So each time I go through there, I'm going to grab a country structure.
+
+00:09:38.660 --> 00:09:42.760
+And each one of those country structures has city structures within it,
+
+00:09:42.760 --> 00:09:46.120
+right. So that's the idea vector of cities. So in this case,
+
+00:09:46.120 --> 00:09:49.720
+for each country in tours country,
+
+00:09:50.820 --> 00:09:52.820
+I want to execute this inner loop.
+
+00:09:53.480 --> 00:09:55.780
+And now this inner loop, we could have done this a
+
+00:09:55.780 --> 00:09:58.580
+lot more complicated a couple of different
+
+00:09:58.580 --> 00:10:02.580
+ways to do this. I chose to do it a simple way with jus one
+
+00:10:02.580 --> 00:10:05.480
+standard out statement right here, one cout statement
+
+00:10:05.480 --> 00:10:09.580
+that kind of does everything. But the only thing that's different here is -- and let me
+
+00:10:09.580 --> 00:10:12.570
+make a little room down here so I can show you what I'm talking about.
+
+00:10:13.270 --> 00:10:14.630
+In the report,
+
+00:10:14.630 --> 00:10:17.930
+we could have done something like this. We could have said
+
+00:10:18.180 --> 00:10:19.680
+Colombia
+
+00:10:21.680 --> 00:10:24.880
+and then the cities down here, Bogota
+
+00:10:25.240 --> 00:10:28.240
+the population, the amount and cali
+
+00:10:28.240 --> 00:10:31.540
+and the population of the amount. I didn't want to do it that way.
+
+00:10:31.540 --> 00:10:34.900
+I wanted to do it where this guy is down here right
+
+00:10:34.900 --> 00:10:38.100
+there right, next to the first city.So it looks more like a report.
+
+00:10:38.100 --> 00:10:41.700
+Here it kind of just leaves all this empty space here, which I didn't like.
+
+00:10:41.700 --> 00:10:46.500
+But in order to achieve this, you've got to do a little bit of a extra logic to do it.
+
+00:10:46.500 --> 00:10:48.000
+So let me show you what I did.
+
+00:10:49.200 --> 00:10:53.400
+For each one of those cities, remember, outer loop is the country,
+
+00:10:53.400 --> 00:10:58.060
+inner loop is we're looping through the cities vector in the country.
+
+00:10:58.560 --> 00:11:01.460
+So each time we loop in here, we're going to get a city.
+
+00:11:02.260 --> 00:11:05.700
+So what we're going to do is the only time that we want to display --
+
+00:11:05.700 --> 00:11:09.060
+let me write that again, the only time that we want to display the city
+
+00:11:10.560 --> 00:11:11.760
+and the country
+
+00:11:13.120 --> 00:11:17.780
+is that first time, right. That very first city is going to be different.
+
+00:11:17.780 --> 00:11:20.680
+The second city I just want to display it like this.
+
+00:11:20.680 --> 00:11:24.450
+I don't want to display Colombia again or I don't want to display Argentina again,
+
+00:11:24.450 --> 00:11:25.250
+makes sense.
+
+00:11:25.750 --> 00:11:31.350
+Okay. So what we're doing here is we're looping through the cities vector.
+
+00:11:31.950 --> 00:11:34.950
+And I've got my width set, exactly like we did before;
+
+00:11:34.950 --> 00:11:37.450
+left, left; right, right, none of that changes.
+
+00:11:37.450 --> 00:11:41.050
+The only difference here is this one line of code right here.
+
+00:11:42.050 --> 00:11:44.850
+This is using the conditional operator.
+
+00:11:44.850 --> 00:11:48.510
+Now if you remember the conditional operator, it's an if else statement
+
+00:11:48.510 --> 00:11:51.210
+built right into an expression, which is kind of cool.
+
+00:11:51.210 --> 00:11:55.210
+So here I'm -- I've decided to use a for loop,
+
+00:11:55.210 --> 00:11:59.210
+not a range-based for loop, but a regular for loop because I need to know
+
+00:11:59.210 --> 00:12:00.710
+when I'm at the first one.
+
+00:12:01.070 --> 00:12:03.070
+The first one will be when I 0.
+
+00:12:03.570 --> 00:12:06.930
+So notice what's happening here, when I is equal to 0,
+
+00:12:07.480 --> 00:12:10.180
+I am displaying the country's name.
+
+00:12:10.980 --> 00:12:12.080
+That's what I want.
+
+00:12:12.080 --> 00:12:15.580
+When I is not equal to 0, that means that I've already displayed the country name,
+
+00:12:15.580 --> 00:12:20.080
+I'm just displaying cities now, then I just don't want to display anything on that line,
+
+00:12:21.520 --> 00:12:25.280
+makes sense. So the first time through, I'm displaying the country
+
+00:12:26.380 --> 00:12:30.980
+and then the city, the population and the cost. The city, population, cost.
+
+00:12:30.980 --> 00:12:34.580
+The next time around, I will not be equal to 0,
+
+00:12:34.580 --> 00:12:37.830
+right. So I'm just displaying a blank. So I'm not displaying anything here,
+
+00:12:37.830 --> 00:12:39.330
+but I am displaying these 3.
+
+00:12:40.830 --> 00:12:43.190
+Okay. So it's just a nice little way to do this.
+
+00:12:43.190 --> 00:12:46.190
+That way you don't have to write multiple cout statements
+
+00:12:46.190 --> 00:12:48.690
+depending on all kinds of conditions.
+
+00:12:48.690 --> 00:12:51.490
+Okay. So that's that first one. The rest are really simple,
+
+00:12:51.490 --> 00:12:56.050
+right. Grab the city at I or the name of the city at I,
+
+00:12:56.050 --> 00:13:00.050
+the population and the cost we're just looping through that vector grabbing the fields that
+
+00:13:00.050 --> 00:13:02.850
+we want. And simple as that.
+
+00:13:02.850 --> 00:13:06.850
+Now there's -- there are different ways to do this, and we'll learn how to do this
+
+00:13:06.850 --> 00:13:10.150
+when we talk about the standard template library using iterators,
+
+00:13:10.150 --> 00:13:13.810
+which is much nicer than using these loops. But when we get there we get there.
+
+00:13:13.810 --> 00:13:17.710
+That's it. Let me run this, and we'll verify that it works.
+
+00:13:20.370 --> 00:13:25.250
+And there you go. And you can see right here, this is exactly what we wanted.You can see Colombia's here.
+
+00:13:25.550 --> 00:13:28.550
+Then I'm printing out that city right next to it.
+
+00:13:28.550 --> 00:13:31.850
+And then on the second city, I'm not displaying Colombia again.
+
+00:13:32.210 --> 00:13:36.210
+Okay. If you did it this way, great. If you didn't do it this way, you just wrote
+
+00:13:36.210 --> 00:13:40.210
+a blank line here and then you started with the cities underneath, that's fine too.
+
+00:13:40.210 --> 00:13:42.510
+I just think that this report looks nicer this way.
+
+00:13:43.410 --> 00:13:46.910
+All right. So that's it. You've got a whole bunch of stuff to look at here.
+
+00:13:46.910 --> 00:13:48.910
+Hopefully, your solution was close.
+
+00:13:48.910 --> 00:13:52.900
+If your solution was better or quicker or more efficient or
+
+00:13:52.900 --> 00:13:55.000
+you used a different kind of looping construct,
+
+00:13:55.000 --> 00:13:56.500
+post it in the forums.
+
+00:13:56.500 --> 00:14:00.800
+You'd have to post the whole program, just post this piece here, this loop right here
+
+00:14:00.800 --> 00:14:04.900
+because that's really the interesting part. The rest of the data is all same for everybody.
+
+00:14:05.700 --> 00:14:09.700
+Okay. So in the next video, we'll start talking about files.
