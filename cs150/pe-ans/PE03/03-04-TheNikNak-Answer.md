@@ -19,18 +19,25 @@ string nik_nak(const string& str)
 {
     string result;
   // Add your code here
-    for (size_t i {0}, len {str.size()}; i < len; ++i) {
+    size_t len {str.size()}, count {0}; // Index to track position in the result string
+    result = string(len, ' '); // Assign result with same size filled with spaces
+    for (size_t i {0}; i < len; ++i) 
+    {
         // check if current character and next two characters form "n_k"
-        if (i + 2 < len && str.at(i) == 'n' && str.at(i + 2) == 'k') {
-            result.push_back('n');
-            result.push_back('k');
+        if (i + 2 < len && str.at(i) == 'n' && str.at(i + 2) == 'k') 
+        {
+            result.at(count++) = 'n';
+            result.at(count++) = 'k';
             i += 2; // skip the next two characters
         }
         else
         {
-            result.push_back(str.at(i));
+            result.at(count++) = str.at(i);
         }
     }
+    
+    // Trim result to contain only valid chars
+    result = result.substr(0, count);
     
     return result;
 }
