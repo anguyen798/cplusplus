@@ -54,7 +54,7 @@ int count_yz(const string& str)
 
 [countYZ.cpp](https://codecheck.io/files/23020921215sxy2vjyydptkb578yc0eav49)
 
-|Name|Arguments|Actual|Expected|
+| |Name|Arguments|Actual|Expected|
 |---|---|---|---|---|
 |pass|count_yz|"fez day"|2|2|
 |pass|count_yz|"day fez"|2|2|

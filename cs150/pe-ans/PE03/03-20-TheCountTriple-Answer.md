@@ -41,7 +41,7 @@ int count_triple(const string& str)
 
 [countTriple.cpp](https://codecheck.io/files/2302092104d079itf5mtbjas0h4vm6ujrjr)
 
-|Name|Arguments|Actual|Expected|
+| |Name|Arguments|Actual|Expected|
 |---|---|---|---|---|
 |pass|count_triple|"abcXXXabc"|1|1|
 |pass|count_triple|"xxxabyyyycd"|3|3|

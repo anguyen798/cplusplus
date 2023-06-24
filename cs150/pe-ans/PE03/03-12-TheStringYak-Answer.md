@@ -38,7 +38,7 @@ string string_yak(const string& str)
 
 [stringYak.cpp](https://codecheck.io/files/23020923094b9xms74qqg159f0kg2u7lgl4)
 
-|Name|Arguments|Actual|Expected|
+| |Name|Arguments|Actual|Expected|
 |---|---|---|---|---|
 |pass|string_yak|"yakpak"|"pak"|"pak"|
 |pass|string_yak|"pakyak"|"pak"|"pak"|

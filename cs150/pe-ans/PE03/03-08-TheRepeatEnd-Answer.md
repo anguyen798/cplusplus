@@ -32,7 +32,7 @@ string repeat_end(const string& str, int n)
 
 [repeatEnd.cpp](https://codecheck.io/files/23020920564ub5dprbojbgty0c5av4kce3a)
 
-|Name|Arguments|Actual|Expected|
+| |Name|Arguments|Actual|Expected|
 |---|---|---|---|---|
 |pass|repeat_end|"Hello", 3|"llollollo"|"llollollo"|
 |pass|repeat_end|"Hello", 2|"lolo"|"lolo"|

@@ -33,7 +33,7 @@ int sum_digits(const string& str)
 
 [sumDigits.cpp](https://codecheck.io/files/230210240734cgify30km5u49fdntly1k5d)
 
-|Name|Arguments|Actual|Expected|
+| |Name|Arguments|Actual|Expected|
 |---|---|---|---|---|
 |pass|sum_digits|"aa1bc2d3"|6|6|
 |pass|sum_digits|"aa11b33"|8|8|

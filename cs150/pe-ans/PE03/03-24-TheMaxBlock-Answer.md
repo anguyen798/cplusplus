@@ -42,7 +42,7 @@ int max_run(const string& str)
 
 [maxBlock.cpp](https://codecheck.io/files/2302092037blz0eij5mubyn6u557wk7kgrc)
 
-|Name|Arguments|Actual|Expected|
+| |Name|Arguments|Actual|Expected|
 |---|---|---|---|---|
 |pass|max_run|"hoopla"|2|2|
 |pass|max_run|"abbCCCddBBBxx"|3|3|

@@ -53,7 +53,7 @@ string star_out(const string& str)
 
 [startOut.cpp](https://codecheck.io/files/2302092225owznnm3sirjg9i9uhe865n00)
 
-|Name|Arguments|Actual|Expected|
+| |Name|Arguments|Actual|Expected|
 |---|---|---|---|---|
 |pass|star_out|"ab\*cd"|"ad"|"ad"|
 |pass|star_out|"ab\*\*cd"|"ad"|"ad"|

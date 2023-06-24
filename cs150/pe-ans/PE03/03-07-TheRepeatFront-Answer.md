@@ -33,7 +33,7 @@ string repeat_front(const string& str, int n)
 
 [repeatFront.cpp](https://codecheck.io/files/23020921131lpd8k21cp87daqzoaruxesvx)
 
-|Name|Arguments|Actual|Expected|
+| |Name|Arguments|Actual|Expected|
 |---|---|---|---|---|
 |pass|repeat_front|"Chocolate", 4|"ChocChoChC"|"ChocChoChC"|
 |pass|repeat_front|"Chocolate", 3|"ChoChC"|"ChoChC"|

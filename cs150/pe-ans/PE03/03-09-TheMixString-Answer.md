@@ -43,7 +43,7 @@ string mix_string(const string& a, const string& b)
 
 [mixString.cpp](https://codecheck.io/files/23020920482acg6zblh1rt3re7d6appj705)
 
-|Name|Arguments|Actual|Expected|
+| |Name|Arguments|Actual|Expected|
 |---|---|---|---|---|
 |pass|mix_string|"abc", "xyz"|"axbycz"|"axbycz"|
 |pass|mix_string|"Hi", "There"|"HTihere"|"HTihere"|

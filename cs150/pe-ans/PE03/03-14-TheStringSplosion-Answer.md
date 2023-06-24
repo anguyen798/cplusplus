@@ -31,7 +31,7 @@ string string_splosion(const string& str)
 
 [stringSplosion.cpp](https://codecheck.io/files/2302092318376z5dsjt4m0dvt66wudl1mmr)
 
-|Name|Arguments|Actual|Expected|
+| |Name|Arguments|Actual|Expected|
 |---|---|---|---|---|
 |pass|string_splosion|"Code"|"CCoCodCode"|"CCoCodCode"|
 |pass|string_splosion|"abc"|"aababc"|"aababc"|

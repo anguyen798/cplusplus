@@ -30,7 +30,7 @@ string front_times(const string& str, int n)
 
 [frontTimes.cpp](https://codecheck.io/files/23020920341l81svyfw80vsnck780z35vof)
 
-|Name|Arguments|Actual|Expected|
+| |Name|Arguments|Actual|Expected|
 |---|---|---|---|---|
 |pass|front_times|"Chocolate", 2|"ChoCho"|"ChoCho"|
 |pass|front_times|"Chocolate", 3|"ChoChoCho"|"ChoChoCho"|

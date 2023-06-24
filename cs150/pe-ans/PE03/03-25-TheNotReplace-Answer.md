@@ -46,7 +46,7 @@ string is_not(const string& s)
 
 [notReplace.cpp](https://codecheck.io/files/23020920524wlozhfq7de54mnwrpu7hhyso)
 
-|Name|Arguments|Actual|Expected|
+| |Name|Arguments|Actual|Expected|
 |---|---|---|---|---|
 |pass|is_not|"is test"|"is not test"|"is not test"|
 |pass|is_not|"is-is"|"is not-is not"|"is not-is not"|

@@ -40,7 +40,7 @@ int last_two(const string& str)
 
 [lastTwoProblem.cpp](https://codecheck.io/files/230209204262fj8d8l706cg2o59391dhbf2)
 
-|Name|Arguments|Actual|Expected|
+| |Name|Arguments|Actual|Expected|
 |---|---|---|---|---|
 |pass|last_two|"hixxhi"|1|1|
 |pass|last_two|"xaxxaxaxx"|1|1|

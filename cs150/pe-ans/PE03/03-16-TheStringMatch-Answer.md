@@ -40,7 +40,7 @@ int string_match(const string& a, const string& b)
 
 [stringMatch.cpp](https://codecheck.io/files/2302092352b1ousn9ux6rhe1bqf4d1o4xk4)
 
-|Name|Arguments|Actual|Expected|
+| |Name|Arguments|Actual|Expected|
 |---|---|---|---|---|
 |pass|string_match|"xxcaazz", "xxbaaz"|3|3|
 |pass|string_match|"abc", "abc"|2|2|

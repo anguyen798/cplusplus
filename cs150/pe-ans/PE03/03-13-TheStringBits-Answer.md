@@ -28,7 +28,7 @@ string string_bits(const string& str)
 
 [stringBits.cpp](https://codecheck.io/files/23020923123byrkw833uk413jzv2rtpwlp9)
 
-|Name|Arguments|Actual|Expected|
+| |Name|Arguments|Actual|Expected|
 |---|---|---|---|---|
 |pass|string_bits|"Hello"|"Hlo"|"Hlo"|
 |pass|string_bits|"Hi"|"H"|"H"|

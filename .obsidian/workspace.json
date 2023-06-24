@@ -8,7 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "88c094f6fde33cd6",
+            "id": "c8920e2ec3cb469d",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -456,7 +456,7 @@
       "obsidian-to-anki-plugin:Obsidian_to_Anki - Scan Vault": false
     }
   },
-  "active": "793a51ba06e21bf1",
+  "active": "c8920e2ec3cb469d",
   "lastOpenFiles": [
     "cs150/pe-ans/PE03/03-02-ThePlusOut-Answer.md",
     "cs150/pe-ans/PE03/03-01-TheWordEnds-Answer.md",
@@ -483,7 +483,9 @@
     "cs150/pe-ans/PE03/03-05-TheSandwich-Answer.md",
     "cs150/pe-ans/PE03/03-04-TheNikNak-Answer.md",
     "cs150/pe-ans/PE03/03-03-TheStartOut-Answer.md",
-    "cs150/pepractice/PE03/PE-03-20-TheCountTripleProblem.md",
+    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/brick_steel_4984/brick_steel.pdf",
+    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/brick_steel_4984/brick_steel_4984.log",
+    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/brick_steel_4984",
     "cs150/pepractice/PE03",
     "cs150/pepractice/New folder",
     "cs150/pepractice/PE02",
@@ -491,9 +493,6 @@
     "cs150/pepractice/PE-01",
     "cs150/pepractice-answers/PE02",
     "cs150/pepractice-answers/New folder",
-    "cs150/pepractice-answers/PE01",
-    "cs150/pepractice-answers/PE03",
-    "cs150/pepractice-answers",
     "Untitled.canvas",
     "cs150/ppt/cs150-ch1-3a.png"
   ]

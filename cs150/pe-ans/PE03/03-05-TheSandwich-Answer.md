@@ -70,7 +70,7 @@ string bread_jam(const string& str)
 
 [sandWich.cpp](https://codecheck.io/files/23020922534fu10ghmqrpg7ecmrso27ly6g)
 
-|Name|Arguments|Actual|Expected|
+| |Name|Arguments|Actual|Expected|
 |---|---|---|---|---|
 |pass|bread_jam|"breadjambread"|"jam"|"jam"|
 |pass|bread_jam|"xxbreadjambreadyy"|"jam"|"jam"|

@@ -45,7 +45,7 @@ string nik_nak(const string& str)
 
 [nikNak.cpp](https://codecheck.io/files/230209223150ppfzygyhcl1c21a5ldq50kf)
 
-|Name|Arguments|Actual|Expected|
+| |Name|Arguments|Actual|Expected|
 |---|---|---|---|---|
 |pass|nik_nak|"nikXnak"|"nkXnk"|"nkXnk"|
 |pass|nik_nak|"noknok"|"nknk"|"nknk"|

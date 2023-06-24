@@ -35,7 +35,7 @@ string same_ends(const string& str)
 
 [sameEnds.cpp](https://codecheck.io/files/23021024111wo43c96la7h5smnpo4atw0sj)
 
-|Name|Arguments|Actual|Expected|
+| |Name|Arguments|Actual|Expected|
 |---|---|---|---|---|
 |pass|same_ends|"abXYab"|"ab"|"ab"|
 |pass|same_ends|"xx"|"x"|"x"|

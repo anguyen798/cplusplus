@@ -32,7 +32,7 @@ string repeat_separator(const string& word, const string& separator, int count)
 
 [repeatSeparator.cpp](https://codecheck.io/files/230209225988ltfgyodjxlsyb5mjhf5l0rl)
 
-|Name|Arguments|Actual|Expected|
+| |Name|Arguments|Actual|Expected|
 |---|---|---|---|---|
 |pass|repeat_separator|"Word", "X", 3|"WordXWordXWord"|"WordXWordXWord"|
 |pass|repeat_separator|"This", "And", 2|"ThisAndThis"|"ThisAndThis"|

@@ -33,7 +33,7 @@ int count_code(const string& str)
 
 [countCode.cpp](https://codecheck.io/files/230209230485dil05w42eu2a0r0vzmhiour)
 
-|Name|Arguments|Actual|Expected|
+| |Name|Arguments|Actual|Expected|
 |---|---|---|---|---|
 |pass|count_code|"aaacodebbb"|1|1|
 |pass|count_code|"codexxcode"|2|2|

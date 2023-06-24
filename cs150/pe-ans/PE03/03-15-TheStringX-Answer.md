@@ -46,7 +46,7 @@ string string_x(const string& str)
 
 [stringX.cpp](https://codecheck.io/files/2302092325662ltflq8xu3wlctcxphiy4lw)
 
-|Name|Arguments|Actual|Expected|
+| |Name|Arguments|Actual|Expected|
 |---|---|---|---|---|
 |pass|string_x|"xxHxix"|"xHix"|"xHix"|
 |pass|string_x|"abxxxcd"|"abcd"|"abcd"|

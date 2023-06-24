@@ -35,7 +35,7 @@ string mirror_ends(const string& str)
 
 [mirrorEnds.cpp](https://codecheck.io/files/23020920459n9yy0lwabl9iuqdp6q27xt1l)
 
-|Name|Arguments|Actual|Expected|
+| |Name|Arguments|Actual|Expected|
 |---|---|---|---|---|
 |pass|mirror_ends|"abXYZba"|"ab"|"ab"|
 |pass|mirror_ends|"abca"|"a"|"a"|

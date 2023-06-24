@@ -61,7 +61,7 @@ string without_string(const string& base, const string& remove)
 
 [withoutString.cpp](https://codecheck.io/files/230210240278eo7mvnj4e5ddtps56xaqifp)
 
-|Name|Arguments|Actual|Expected|
+| |Name|Arguments|Actual|Expected|
 |---|---|---|---|---|
 |pass|without_string|"Hello there", "llo"|"He there"|"He there"|
 |pass|without_string|"Hello there", "e"|"Hllo thr"|"Hllo thr"|
