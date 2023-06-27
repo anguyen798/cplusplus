@@ -11,300 +11,8 @@
             "id": "c8920e2ec3cb469d",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "cs150/pe-ans/PE03/03-01-TheWordEnds-Answer.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "b47b4ccbbf13c2f1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "cs150/pe-ans/PE03/03-02-ThePlusOut-Answer.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "a8c456850cd427c5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "cs150/pe-ans/PE03/03-03-TheStartOut-Answer.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "931031c1c87e1f58",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "cs150/pe-ans/PE03/03-04-TheNikNak-Answer.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "5591e83744c95dee",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "cs150/pe-ans/PE03/03-05-TheSandwich-Answer.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "f842b593b15f2fed",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "cs150/pe-ans/PE03/03-06-TheRepeatSeparator-Answer.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "5e1a45f056be201b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "cs150/pe-ans/PE03/03-07-TheRepeatFront-Answer.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "8566f2b2ceb0e18b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "cs150/pe-ans/PE03/03-08-TheRepeatEnd-Answer.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "804453d71f01b854",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "cs150/pe-ans/PE03/03-09-TheMixString-Answer.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "56b28daadfed6a20",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "cs150/pe-ans/PE03/03-10-TheCountCode-Answer.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "dbb364346df4bd3e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "cs150/pe-ans/PE03/03-11-TheFrontTimes-Answer.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "d7abe311485434e5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "cs150/pe-ans/PE03/03-12-TheStringYak-Answer.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "3c701e10ae6a2dc0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "cs150/pe-ans/PE03/03-13-TheStringBits-Answer.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "f417be60365663c5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "cs150/pe-ans/PE03/03-14-TheStringSplosion-Answer.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "7c461b39a2673927",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "cs150/pe-ans/PE03/03-15-TheStringX-Answer.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "6512c0499c43b167",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "cs150/pe-ans/PE03/03-16-TheStringMatch-Answer.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "835ff8867ace5f6e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "cs150/pe-ans/PE03/03-17-TheLastTwo-Answer.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "3c04f38e59b50beb",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "cs150/pe-ans/PE03/03-18-TheCountYZ-Answer.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "cdd4a1127718fcd0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "cs150/pe-ans/PE03/03-19-TheWithoutString-Answer.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "2bf7fd14f1ded2f5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "cs150/pe-ans/PE03/03-20-TheCountTriple-Answer.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "6d5c1e490156041c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "cs150/pe-ans/PE03/03-21-TheSumDigits-Answer.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "1ba80ef6471b3936",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "cs150/pe-ans/PE03/03-22-TheSameEnds-Answer.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "290c647857c0a906",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "cs150/pe-ans/PE03/03-23-TheMirrorEnds-Answer.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "1f2f189e2c42476d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "cs150/pe-ans/PE03/03-24-TheMaxBlock-Answer.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "1e43ea9c09bb43bc",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "cs150/pe-ans/PE03/03-25-TheNotReplace-Answer.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -381,7 +89,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "cs150/pe-ans/PE03/03-01-TheWordEnds-Answer.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -398,7 +105,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "cs150/pe-ans/PE03/03-01-TheWordEnds-Answer.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -420,9 +126,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "cs150/pe-ans/PE03/03-01-TheWordEnds-Answer.md"
-              }
+              "state": {}
             }
           },
           {
@@ -458,13 +162,23 @@
   },
   "active": "c8920e2ec3cb469d",
   "lastOpenFiles": [
-    "cs150/pe-ans/PE03/03-02-ThePlusOut-Answer.md",
-    "cs150/pe-ans/PE03/03-01-TheWordEnds-Answer.md",
+    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/REX-089_4989/REX-089.pdf1",
+    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/REX-089_4989/REX-089.pdf",
+    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/REX-089_4989/REX-089_4989.log",
+    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/REX-089_4989",
     "cs150/pe-ans/PE03/03-25-TheNotReplace-Answer.md",
+    "cs150/pe-ans/PE03/-.md",
     "cs150/pe-ans/PE03/03-24-TheMaxBlock-Answer.md",
     "cs150/pe-ans/PE03/03-23-TheMirrorEnds-Answer.md",
     "cs150/pe-ans/PE03/03-22-TheSameEnds-Answer.md",
     "cs150/pe-ans/PE03/03-21-TheSumDigits-Answer.md",
+    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/PlexMediaServer-1.32_4988/PlexMediaServer-1.32.exe10",
+    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/PlexMediaServer-1.32_4988/PlexMediaServer-1.32.exe9",
+    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/PlexMediaServer-1.32_4988/PlexMediaServer-1.32.exe8",
+    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/PlexMediaServer-1.32_4988/PlexMediaServer-1.32.exe7",
+    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/PlexMediaServer-1.32_4988/PlexMediaServer-1.32.exe6",
+    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/PlexMediaServer-1.32_4988/PlexMediaServer-1.32.exe5",
+    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/PlexMediaServer-1.32_4988/PlexMediaServer-1.32.exe4",
     "cs150/pe-ans/PE03/03-20-TheCountTriple-Answer.md",
     "cs150/pe-ans/PE03/03-19-TheWithoutString-Answer.md",
     "cs150/pe-ans/PE03/03-18-TheCountYZ-Answer.md",
@@ -483,16 +197,7 @@
     "cs150/pe-ans/PE03/03-05-TheSandwich-Answer.md",
     "cs150/pe-ans/PE03/03-04-TheNikNak-Answer.md",
     "cs150/pe-ans/PE03/03-03-TheStartOut-Answer.md",
-    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/brick_steel_4984/brick_steel.pdf",
-    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/brick_steel_4984/brick_steel_4984.log",
-    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/brick_steel_4984",
-    "cs150/pepractice/PE03",
-    "cs150/pepractice/New folder",
-    "cs150/pepractice/PE02",
-    "cs150/pepractice/PE01",
-    "cs150/pepractice/PE-01",
-    "cs150/pepractice-answers/PE02",
-    "cs150/pepractice-answers/New folder",
+    "cs150/pe-ans/PE03/03-01-TheWordEnds-Answer.md",
     "Untitled.canvas",
     "cs150/ppt/cs150-ch1-3a.png"
   ]
