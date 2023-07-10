@@ -1,0 +1,75 @@
+Folder D:\github.com\anguyen798\cplusplus\002-References\BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka\DwnlData\user\storage_googleapis_c_5078\ was created.
+Rebuilding old downloaded file parts...
+Connecting...
+Windows 10.0
+v6.41b15   Time: Sat Jul 01 15:07:41.106 2023 (1688249261 sec)
+owp https://www.chatpdf.com/c/RWUc6g2WQtQzEwktpM8BW
+Url https://storage.googleapis.com/autoclass-chatpdf/content_by_hash_v3/nqtG3CZvbcVnnB1H1z8lg5a0T8dz2cue1NI9kmZI?X-Goog-Algorithm=GOOG4-RSA-SHA256&X-Goog-Credential=775316963807-compute%40developer.gserviceaccount.com%2F20230701%2Fauto%2Fstorage%2Fgoog4_request&X-Goog-Date=20230701T220740Z&X-Goog-Expires=561600&X-Goog-SignedHeaders=host&X-Goog-Signature=6fd4704e6a5fa4cea73a290d294f1bfea0c5bc9d4b4b2f4c6838d20925974c4f33f81579b004c111e76cc3bbdf459c5f4941b9ff38bc8835d2358e76460c764008024f8e18f5575c7f7e109d7ce247a7715c3a80f9866335b47c84857fff20fde14a2fb87bbf5074b4080a21bec1610ba60fd25b9d180f7f6830f7c2cb69ac49bda2d49324e9a98442276c13c181ab17d4f8a0817ed7834291034e4fd9da479d99efacefb23b8d5809e59885ccc65aa83a0ecf7c8930b1f7bdfb511c1786ad88d01d43ce3576c65f8bf4802c73b32f6bdb37df2789336f919ccd5514870c85a2a04b8ea6e7f6786dc3ce28eb2401db193e46b96571a0fc463d9b8df29efe2797
+User : anonymous, password :xxx
+EM = 0x6e489920, 0x6e489920,
+DM = 0x6e489980, 0x6e489980.
+Time: 1688249261.107
+C0:gethost
+C0:Found 142.250.68.112
+Time: 1688249261.107
+C0:Connecting...
+C0:Checking connect, socket = 19684 
+C0:Connect OK.
+Time: 1688249261.120
+C0:178 bytes of handshake (2) data sent
+C0:4211 bytes of handshake data received (L711)
+C0:93 bytes of handshake (4) data sent
+C0:295 bytes of handshake data received (L711)
+C0:InitializeSecurityContext (2) ret=0x0
+C0:Handshake was successful
+C0:Protocol: 0x800
+Cipher: 0x660e
+Cipher strength: 128
+Hash: 0x800c
+Hash strength: 0
+Key exchange: 0xae06
+Key exchange strength: 255
+C0:Send GET...
+C0:SC step1, Time: 1688249261.158
+C0:SC step12, Time: 1688249261.159
+C0:SC step16, Time: 1688249261.159, cookies: NULL
+C0:Header: 13, Trailer: 16, MaxMessage: 16384
+C0:1145 bytes of request sent
+C0:HTTP/1.1 200 OK
+C0:X-GUploader-UploadID: ADPycdtJA6bdlMAyGGQoiSLi4I567bgKxQ_kIMHgCATAHZ3gKJhgKTX-IadvkiyC3_VCQoi5P88AgiJs0zvUrSh_KvNRqZ2T7GwZ
+C0:Expires: Sat, 01 Jul 2023 22:07:40 GMT
+C0:Date: Sat, 01 Jul 2023 22:07:40 GMT
+C0:Cache-Control: private, max-age=0
+C0:Last-Modified: Sat, 01 Jul 2023 22:07:39 GMT
+C0:ETag: W/"a1ab5f5b0e2d41a88e31ad6ef1e5b69d"
+C0:Vary: Accept-Encoding
+C0:x-goog-generation: 1688249259298962
+C0:x-goog-metageneration: 1
+C0:x-goog-stored-content-encoding: gzip
+C0:x-goog-stored-content-length: 258300
+C0:Content-Type: application/pdf
+C0:x-goog-hash: crc32c=aSzMAA==
+C0:x-goog-hash: md5=oatfWw4tQaiOMa1u8eW2nQ==
+C0:x-goog-storage-class: STANDARD
+C0:Access-Control-Allow-Origin: https://www.chatpdf.com
+C0:Access-Control-Expose-Headers: Content-Length, Content-Type, Date, Server, Transfer-Encoding, Warning, X-GUploader-Response-Body-Transformations, X-GUploader-UploadID, X-Google-Trace
+C0:Vary: Origin
+C0:X-GUploader-Response-Body-Transformations: gunzipped
+C0:Warning: 214 UploadServer gunzipped
+C0:Transfer-Encoding: chunked
+C0:Server: UploadServer
+C0:Alt-Svc: h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+C0:
+C0:Time: 1688249261.287
+C0:Receiving data...
+Receiving data...
+C0:Recv transfer encoding chunked, size=0, eb:C0:0
+C0:stratPos=0, endPos=0, downloaded=337880, posInCmpBuff3=0
+C0:Sending Close Notify
+C0:Disconnect.
+http:rcd, dwnl finished, s1(t7)
+Download complete. Downloaded 337880 Bytes Total
+Assembling all downloaded portions into one file...
+Size of D:\github.com\anguyen798\cplusplus\002-References\BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka\DwnlData\user\storage_googleapis_c_5078\storage_googleapis_c is 337880
+Rebuilding complete, real size = 337880
+time 1688249261, speed 1291097, downl 337880 Bytes

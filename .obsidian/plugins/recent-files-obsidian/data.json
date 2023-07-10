@@ -1,132 +1,204 @@
 {
   "recentFiles": [
     {
-      "basename": "-",
-      "path": "cs150/pe-ans/PE03/-.md"
+      "basename": "26-TheStrDistProblem",
+      "path": "cs150/pe/PE05/26-TheStrDistProblem.md"
     },
     {
-      "basename": "03-25-TheNotReplace-Answer",
-      "path": "cs150/pe-ans/PE03/03-25-TheNotReplace-Answer.md"
+      "basename": "25-TheStrCopiesProblem",
+      "path": "cs150/pe/PE05/25-TheStrCopiesProblem.md"
     },
     {
-      "basename": "03-24-TheMaxBlock-Answer",
-      "path": "cs150/pe-ans/PE03/03-24-TheMaxBlock-Answer.md"
+      "basename": "24-TheStrCountProblem",
+      "path": "cs150/pe/PE05/24-TheStrCountProblem.md"
     },
     {
-      "basename": "03-23-TheMirrorEnds-Answer",
-      "path": "cs150/pe-ans/PE03/03-23-TheMirrorEnds-Answer.md"
+      "basename": "23-TheNestParenProblem",
+      "path": "cs150/pe/PE05/23-TheNestParenProblem.md"
     },
     {
-      "basename": "03-22-TheSameEnds-Answer",
-      "path": "cs150/pe-ans/PE03/03-22-TheSameEnds-Answer.md"
+      "basename": "22-TheParenBitProblem",
+      "path": "cs150/pe/PE05/22-TheParenBitProblem.md"
     },
     {
-      "basename": "03-21-TheSumDigits-Answer",
-      "path": "cs150/pe-ans/PE03/03-21-TheSumDigits-Answer.md"
+      "basename": "21-TheCountHiProblem",
+      "path": "cs150/pe/PE05/21-TheCountHiProblem.md"
     },
     {
-      "basename": "03-20-TheCountTriple-Answer",
-      "path": "cs150/pe-ans/PE03/03-20-TheCountTriple-Answer.md"
+      "basename": "20-TheStringCleanProblem",
+      "path": "cs150/pe/PE05/20-TheStringCleanProblem.md"
     },
     {
-      "basename": "03-19-TheWithoutString-Answer",
-      "path": "cs150/pe-ans/PE03/03-19-TheWithoutString-Answer.md"
+      "basename": "19-TheCount11Problem",
+      "path": "cs150/pe/PE05/19-TheCount11Problem.md"
     },
     {
-      "basename": "03-18-TheCountYZ-Answer",
-      "path": "cs150/pe-ans/PE03/03-18-TheCountYZ-Answer.md"
+      "basename": "18-TheCountABCProblem",
+      "path": "cs150/pe/PE05/18-TheCountABCProblem.md"
     },
     {
-      "basename": "03-17-TheLastTwo-Answer",
-      "path": "cs150/pe-ans/PE03/03-17-TheLastTwo-Answer.md"
+      "basename": "17-TheCountPairsProblem",
+      "path": "cs150/pe/PE05/17-TheCountPairsProblem.md"
     },
     {
-      "basename": "03-16-TheStringMatch-Answer",
-      "path": "cs150/pe-ans/PE03/03-16-TheStringMatch-Answer.md"
+      "basename": "16-TheXToEndProblem",
+      "path": "cs150/pe/PE05/16-TheXToEndProblem.md"
     },
     {
-      "basename": "03-15-TheStringX-Answer",
-      "path": "cs150/pe-ans/PE03/03-15-TheStringX-Answer.md"
+      "basename": "15-ThePairStarProblem",
+      "path": "cs150/pe/PE05/15-ThePairStarProblem.md"
     },
     {
-      "basename": "03-14-TheStringSplosion-Answer",
-      "path": "cs150/pe-ans/PE03/03-14-TheStringSplosion-Answer.md"
+      "basename": "14-TheAllStarProblem",
+      "path": "cs150/pe/PE05/14-TheAllStarProblem.md"
     },
     {
-      "basename": "03-13-TheStringBits-Answer",
-      "path": "cs150/pe-ans/PE03/03-13-TheStringBits-Answer.md"
+      "basename": "13-TheNoXProblem",
+      "path": "cs150/pe/PE05/13-TheNoXProblem.md"
     },
     {
-      "basename": "03-12-TheStringYak-Answer",
-      "path": "cs150/pe-ans/PE03/03-12-TheStringYak-Answer.md"
+      "basename": "12-TheChangePiProblem",
+      "path": "cs150/pe/PE05/12-TheChangePiProblem.md"
     },
     {
-      "basename": "03-11-TheFrontTimes-Answer",
-      "path": "cs150/pe-ans/PE03/03-11-TheFrontTimes-Answer.md"
+      "basename": "11-TheChangeXToYProblem",
+      "path": "cs150/pe/PE05/11-TheChangeXToYProblem.md"
     },
     {
-      "basename": "03-10-TheCountCode-Answer",
-      "path": "cs150/pe-ans/PE03/03-10-TheCountCode-Answer.md"
+      "basename": "10-TheCountHiProblem",
+      "path": "cs150/pe/PE05/10-TheCountHiProblem.md"
     },
     {
-      "basename": "03-09-TheMixString-Answer",
-      "path": "cs150/pe-ans/PE03/03-09-TheMixString-Answer.md"
+      "basename": "09-TheCountXProblem",
+      "path": "cs150/pe/PE05/09-TheCountXProblem.md"
     },
     {
-      "basename": "03-08-TheRepeatEnd-Answer",
-      "path": "cs150/pe-ans/PE03/03-08-TheRepeatEnd-Answer.md"
+      "basename": "08-ThePowerNProblem",
+      "path": "cs150/pe/PE05/08-ThePowerNProblem.md"
     },
     {
-      "basename": "03-07-TheRepeatFront-Answer",
-      "path": "cs150/pe-ans/PE03/03-07-TheRepeatFront-Answer.md"
+      "basename": "07-TheCount8Problem",
+      "path": "cs150/pe/PE05/07-TheCount8Problem.md"
     },
     {
-      "basename": "03-06-TheRepeatSeparator-Answer",
-      "path": "cs150/pe-ans/PE03/03-06-TheRepeatSeparator-Answer.md"
+      "basename": "06-TheCount7Problem",
+      "path": "cs150/pe/PE05/06-TheCount7Problem.md"
     },
     {
-      "basename": "03-05-TheSandwich-Answer",
-      "path": "cs150/pe-ans/PE03/03-05-TheSandwich-Answer.md"
+      "basename": "05-TheSumDigitsProblem",
+      "path": "cs150/pe/PE05/05-TheSumDigitsProblem.md"
     },
     {
-      "basename": "03-04-TheNikNak-Answer",
-      "path": "cs150/pe-ans/PE03/03-04-TheNikNak-Answer.md"
+      "basename": "04-TheTriangleProblem",
+      "path": "cs150/pe/PE05/04-TheTriangleProblem.md"
     },
     {
-      "basename": "03-03-TheStartOut-Answer",
-      "path": "cs150/pe-ans/PE03/03-03-TheStartOut-Answer.md"
+      "basename": "03-TheBunnyEarsIIProblem",
+      "path": "cs150/pe/PE05/03-TheBunnyEarsIIProblem.md"
     },
     {
-      "basename": "03-01-TheWordEnds-Answer",
-      "path": "cs150/pe-ans/PE03/03-01-TheWordEnds-Answer.md"
+      "basename": "02-TheBunnyEarsProblem",
+      "path": "cs150/pe/PE05/02-TheBunnyEarsProblem.md"
     },
     {
-      "basename": "03-02-ThePlusOut-Answer",
-      "path": "cs150/pe-ans/PE03/03-02-ThePlusOut-Answer.md"
+      "basename": "01-TheFactorialProblem",
+      "path": "cs150/pe/PE05/01-TheFactorialProblem.md"
     },
     {
-      "basename": "h05",
-      "path": "cs150/hw/h05.md"
+      "basename": "26-TheStrDistAnswer",
+      "path": "cs150/pe-ans/PE05/26-TheStrDistAnswer.md"
     },
     {
-      "basename": "h03-answer",
-      "path": "cs150/hw/h03-answer.md"
+      "basename": "25-TheStrCopiesAnswer",
+      "path": "cs150/pe-ans/PE05/25-TheStrCopiesAnswer.md"
     },
     {
-      "basename": "PE-03-25-TheNotReplaceProblem",
-      "path": "cs150/pepractice/PE-03-25-TheNotReplaceProblem.md"
+      "basename": "24-TheStrCountAnswer",
+      "path": "cs150/pe-ans/PE05/24-TheStrCountAnswer.md"
     },
     {
-      "basename": "PE-03-24-TheMaxBlockProblem",
-      "path": "cs150/pepractice/PE-03-24-TheMaxBlockProblem.md"
+      "basename": "23-TheNestParenAnswer",
+      "path": "cs150/pe-ans/PE05/23-TheNestParenAnswer.md"
     },
     {
-      "basename": "PE-03-23-TheMirrorEndsProblem",
-      "path": "cs150/pepractice/PE-03-23-TheMirrorEndsProblem.md"
+      "basename": "22-TheParenBitAnswer",
+      "path": "cs150/pe-ans/PE05/22-TheParenBitAnswer.md"
     },
     {
-      "basename": "PE-03-22-TheSameEndsProblem",
-      "path": "cs150/pepractice/PE-03-22-TheSameEndsProblem.md"
+      "basename": "21-TheCountHiAnswer",
+      "path": "cs150/pe-ans/PE05/21-TheCountHiAnswer.md"
+    },
+    {
+      "basename": "20-TheStringCleanAnswer",
+      "path": "cs150/pe-ans/PE05/20-TheStringCleanAnswer.md"
+    },
+    {
+      "basename": "19-TheCount11Answer",
+      "path": "cs150/pe-ans/PE05/19-TheCount11Answer.md"
+    },
+    {
+      "basename": "18-TheCountABCAnswer",
+      "path": "cs150/pe-ans/PE05/18-TheCountABCAnswer.md"
+    },
+    {
+      "basename": "17-TheCountPairsAnswer",
+      "path": "cs150/pe-ans/PE05/17-TheCountPairsAnswer.md"
+    },
+    {
+      "basename": "16-TheXToEndAnswer",
+      "path": "cs150/pe-ans/PE05/16-TheXToEndAnswer.md"
+    },
+    {
+      "basename": "15-ThePairStarAnswer",
+      "path": "cs150/pe-ans/PE05/15-ThePairStarAnswer.md"
+    },
+    {
+      "basename": "14-TheAllStarAnswer",
+      "path": "cs150/pe-ans/PE05/14-TheAllStarAnswer.md"
+    },
+    {
+      "basename": "13-TheNoXAnswer",
+      "path": "cs150/pe-ans/PE05/13-TheNoXAnswer.md"
+    },
+    {
+      "basename": "12-TheChangePiAnswer",
+      "path": "cs150/pe-ans/PE05/12-TheChangePiAnswer.md"
+    },
+    {
+      "basename": "11-TheChangeXToYAnswer",
+      "path": "cs150/pe-ans/PE05/11-TheChangeXToYAnswer.md"
+    },
+    {
+      "basename": "10-TheCountHiAnswer",
+      "path": "cs150/pe-ans/PE05/10-TheCountHiAnswer.md"
+    },
+    {
+      "basename": "09-TheCountXAnswer",
+      "path": "cs150/pe-ans/PE05/09-TheCountXAnswer.md"
+    },
+    {
+      "basename": "08-ThePowerNAnswer",
+      "path": "cs150/pe-ans/PE05/08-ThePowerNAnswer.md"
+    },
+    {
+      "basename": "07-TheCount8Answer",
+      "path": "cs150/pe-ans/PE05/07-TheCount8Answer.md"
+    },
+    {
+      "basename": "06-TheCount7Answer",
+      "path": "cs150/pe-ans/PE05/06-TheCount7Answer.md"
+    },
+    {
+      "basename": "05-TheSumDigitsAnswer",
+      "path": "cs150/pe-ans/PE05/05-TheSumDigitsAnswer.md"
+    },
+    {
+      "basename": "04-TheTriangleAnswer",
+      "path": "cs150/pe-ans/PE05/04-TheTriangleAnswer.md"
+    },
+    {
+      "basename": "03-TheBunnyEarsIIAnswer",
+      "path": "cs150/pe-ans/PE05/03-TheBunnyEarsIIAnswer.md"
     }
   ],
   "omittedPaths": [],
