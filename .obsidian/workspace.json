@@ -4,15 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "f6eeaaa9d7898c3d",
+        "id": "602252e8f241e1ac",
         "type": "tabs",
         "children": [
           {
-            "id": "590a2bd092d6d177",
+            "id": "697e9e57ee377be6",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "cs150/pe-ans/PE07/08-ThebestValueAnswer.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -73,7 +77,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 405.5
+    "width": 407.5
   },
   "right": {
     "id": "81c345e9b6dc9024",
@@ -89,6 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "cs150/pe-ans/PE07/08-ThebestValueAnswer.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,6 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "cs150/pe-ans/PE07/08-ThebestValueAnswer.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +132,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "cs150/pe-ans/PE07/08-ThebestValueAnswer.md"
+              }
             }
           },
           {
@@ -160,44 +168,44 @@
       "obsidian-to-anki-plugin:Obsidian_to_Anki - Scan Vault": false
     }
   },
-  "active": "590a2bd092d6d177",
+  "active": "697e9e57ee377be6",
   "lastOpenFiles": [
-    "cs150/pe/PE05/26-TheStrDistProblem.md",
-    "cs150/pe/PE05/25-TheStrCopiesProblem.md",
-    "cs150/pe/PE05/24-TheStrCountProblem.md",
-    "cs150/pe/PE05/23-TheNestParenProblem.md",
-    "cs150/pe/PE05/22-TheParenBitProblem.md",
-    "cs150/pe/PE05/21-TheCountHiProblem.md",
-    "cs150/pe/PE05/20-TheStringCleanProblem.md",
-    "cs150/pe/PE05/19-TheCount11Problem.md",
-    "cs150/pe/PE05/18-TheCountABCProblem.md",
-    "cs150/pe/PE05/17-TheCountPairsProblem.md",
-    "cs150/pe/PE05/16-TheXToEndProblem.md",
-    "cs150/pe/PE05/15-ThePairStarProblem.md",
-    "cs150/pe/PE05/14-TheAllStarProblem.md",
-    "cs150/pe/PE05/13-TheNoXProblem.md",
-    "cs150/pe/PE05/12-TheChangePiProblem.md",
-    "cs150/pe/PE05/11-TheChangeXToYProblem.md",
-    "cs150/pe/PE05/10-TheCountHiProblem.md",
-    "cs150/pe/PE05/09-TheCountXProblem.md",
-    "cs150/pe/PE05/08-ThePowerNProblem.md",
-    "cs150/pe/PE05/07-TheCount8Problem.md",
-    "cs150/pe/PE05/06-TheCount7Problem.md",
-    "cs150/pe/PE05/05-TheSumDigitsProblem.md",
-    "cs150/pe/PE05/04-TheTriangleProblem.md",
-    "cs150/pe/PE05/03-TheBunnyEarsIIProblem.md",
-    "cs150/pe/PE05/02-TheBunnyEarsProblem.md",
-    "cs150/pe/PE05/01-TheFactorialProblem.md",
-    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/storage_googleapis_c_5032/storage_googleapis_c",
-    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/storage_googleapis_c_5032/log_5032.log",
-    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/storage_googleapis_c_5032",
-    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/c6_kemono_party_5000/c6_kemono_party11",
-    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/c6_kemono_party_5000/c6_kemono_party10",
-    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/c6_kemono_party_5000/c6_kemono_party9",
-    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/c6_kemono_party_5000/c6_kemono_party8",
-    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/c6_kemono_party_5000/c6_kemono_party7",
-    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/c6_kemono_party_5000/c6_kemono_party6",
-    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/c6_kemono_party_5000/c6_kemono_party5",
+    "cs150/pe-ans/PE07/07-ThebestMileageAnswer.md",
+    "cs150/pe-ans/PE07/06-TheclosestDistanceAnswer.md",
+    "cs150/pe-ans/PE07/05-TheroundTripAnswer.md",
+    "cs150/pe-ans/PE07/04-ThelongestHopAnswer.md",
+    "cs150/pe-ans/PE07/03-ThestarsBetweenAnswer.md",
+    "cs150/pe-ans/PE07/02-ThemagnitudeBetweenAnswer.md",
+    "cs150/pe-ans/PE07/01-TheFindStarsAnswer.md",
+    "cs150/pe-ans/PE07/08-ThebestValueAnswer.md",
+    "cs150/pe-ans/PE06/21-ThemostCommonNamesAnswer.md",
+    "cs150/pe-ans/PE06/20-ThematchIndexAnswer.md",
+    "cs150/pe-ans/PE06/19-TheflipLinesAnswer.md",
+    "cs150/pe-ans/PE06/18-TherunningSumAnswer.md",
+    "cs150/pe-ans/PE06/17-ThehalfCapsAnswer.md",
+    "cs150/pe-ans/PE06/16-ThecountWordsAnswer.md",
+    "cs150/pe-ans/PE06/15-ThepizzaAnswer.md",
+    "cs150/pe-ans/PE06/14-ThewordStatsAnswer.md",
+    "cs150/pe-ans/PE06/13-ThemostUniqueAnswer.md",
+    "cs150/pe-ans/PE06/12-ThetriathalonAnswer.md",
+    "cs150/pe-ans/PE06/11-TheprintStringsAnswer.md",
+    "cs150/pe-ans/PE06/10-ThecountCoinsAnswer.md",
+    "cs150/pe-ans/PE06/09-ThenegativeSumAnswer.md",
+    "cs150/pe-ans/PE06/08-TheevenStatsAnswer.md",
+    "cs150/pe-ans/PE06/07-TheleetSpeakAnswer.md",
+    "cs150/pe-ans/PE06/06-ThepercentPlusAnswer.md",
+    "cs150/pe-ans/PE06/05-ThetokenStatsAnswer.md",
+    "cs150/pe-ans/PE06/04-ThecoinFlipAnswer.md",
+    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/www_internetdownload_5106/www_internetdownload",
+    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/www_internetdownload_5106/log_5106.log",
+    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/www_internetdownload_5106",
+    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/account-management-w_5105/account-management-w",
+    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/account-management-w_5105/log_5105.log",
+    "002-References/BeginningCPPProgrammingFromBeginnerToBeyond-TimBuchalka/DwnlData/user/account-management-w_5105",
+    "cs150/pe/PE06/PE06.zip",
+    "cs150/pe/PE06/PE06.7z",
+    "cs150/pe-ans/PE07",
+    "cs150/pe/PE07",
     "Untitled.canvas",
     "cs150/ppt/cs150-ch1-3a.png"
   ]
